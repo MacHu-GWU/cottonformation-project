@@ -1,0 +1,7 @@
+pathlib_mate                    # autopep8 your code
+twine>=1.13.0                   # make distribution archive
+wheel>=0.33.1                   # make pre-compiled distribution package
+configirl==0.0.7                # centralized config management
+# AWS
+boto3                           # AWS Python SDK
+troposphere_mate                # CloudFormation SDK
