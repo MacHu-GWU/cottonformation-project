@@ -101,13 +101,7 @@ todo_include_todos = True
 html_theme = 'furo'
 html_theme_options = {
     "sidebar_hide_name": True,
-    "light_logo": "cottonformation-logo.png",
     "dark_logo": "cottonformation-logo.png",
-    # "light_css_variables": {
-    #     "color-brand-primary": "#DE1D46",
-    #     "color-brand-content": "#2D3CCD",
-    #     "color-admonition-background": "#2DCD67",
-    # },
 }
 pygments_dark_style = "monokai"
 
