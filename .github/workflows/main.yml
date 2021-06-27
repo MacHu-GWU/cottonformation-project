@@ -18,10 +18,10 @@ jobs:
       USING_COVERAGE: "3.6,3.7,3.8,3.9"
     strategy:
       matrix:
-        os: ["ubuntu-latest", "windows-latest"]
-#        os: ["ubuntu-latest", ] # for debug only
-        python-version: ["3.6", "3.7", "3.8", "3.9"]
-#        python-version: ["3.6", ] # for debug only
+#        os: ["ubuntu-latest", "windows-latest"]
+        os: ["ubuntu-latest", ] # for debug only
+#        python-version: ["3.6", "3.7", "3.8", "3.9"]
+        python-version: ["3.6", ] # for debug only
         exclude:
           - os: windows-latest # this is a useless exclude rules for demonstration use only
             python-version: 2.7
@@ -38,15 +38,17 @@ jobs:
           python -VV
           python -m site
           python -m pip install --upgrade pip setuptools wheel virtualenv codecov
-          pip install .
+          pip install -r requirements.txt
           pip install -r requirements-test.txt
+          pip install .
       - if: matrix.os == 'windows-latest'
         name: "Install dependencies on Windows"
         run: |
           python -m site
           python -m pip install --upgrade pip setuptools wheel virtualenv codecov
-          pip install .
+          pip install -r requirements.txt
           pip install -r requirements-test.txt
+          pip install .
       - name: "Run pytest"
         run: "python -m pytest tests --cov=cottonformation"
 
