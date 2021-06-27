@@ -52,7 +52,7 @@
 
 
 Welcome to ``cottonformation`` Documentation
-------------------------------------------------------------------------------
+==============================================================================
 
 ``cottonformation`` is a Python tool providing best development experience and highest productivity. Powered by modern **Type Hint, Advanced Auto Complete, Parameter Hint, Instant official AWS Document look up**. Here's how it looks like in `PyCharm <https://www.jetbrains.com/pycharm/>`_ (Supported by PyCharm out-of-the-box, but you can configure it by installing extension or plugin in VSCode, Sublime, Atom ...).
 
@@ -90,7 +90,7 @@ Welcome to ``cottonformation`` Documentation
 .. image:: https://user-images.githubusercontent.com/6800411/123478144-0bec9c80-d5cd-11eb-8260-a9de04690177.gif
 
 
-A sample infrastructure as code script may looks like this. And you can immediately deploy it from Python:
+**A sample infrastructure as code script may looks like this. And you can immediately deploy it from Python**:
 
 .. code-block:: python
 
