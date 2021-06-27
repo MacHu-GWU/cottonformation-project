@@ -2,7 +2,7 @@
 .. image:: https://github.com/MacHu-GWU/cottonformation-project/workflows/CI/badge.svg
     :target: https://github.com/MacHu-GWU/cottonformation-project/actions?query=workflow:CI
 
-.. image:: https://codecov.io/gh/MacHu-GWU/cottonformation-project/branch/master/graph/badge.svg
+.. image:: https://codecov.io/gh/MacHu-GWU/cottonformation-project/branch/main/graph/badge.svg
     :target: https://codecov.io/gh/MacHu-GWU/cottonformation-project
 
 .. image:: https://readthedocs.org/projects/cottonformation/badge/
