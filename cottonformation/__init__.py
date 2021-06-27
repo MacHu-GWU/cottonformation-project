@@ -19,9 +19,9 @@ __github_username__ = "MacHu-GWU"
 __fingerprint_of_license_file = "e5834e80c86c4898dd9f1462a2349cbf"
 
 
+from .core import constant, helpers
 from .core.model import (
     # data model
-    Template,
     Parameter, Resource, Output, Export,
     Rule, Mapping, Condition, Transform,
 
@@ -29,5 +29,5 @@ from .core.model import (
     Ref, Base64, Cidr, FindInMap, GetAtt, GetAZs,
     ImportValue, Join, Select, Split, Sub
 )
-from .core import constant, helpers
+from .core.template import Template
 from .core.env import Env

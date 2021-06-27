@@ -19,13 +19,13 @@ Release and Version History
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Features and Improvements**
 
-- Implement more instrinct function.
-- Implement
-- migrate lots of fancy feature I invented in `troposphere_mate <https://github.com/MacHu-GWU/troposphere_mate-project>`_ to cottonformation
+- Implement all intrinsic function.
+- Add ``Tag.make_many`` helper factory method.
+- Add support to deploy complex nested stacks from the top template. ``cottonformation`` handles all underlying trivial steps for you.
 
 **Minor Improvements**
 
-- 95% + code cov
+- more test to cover object serialization
 
 **Bugfixes**
 
