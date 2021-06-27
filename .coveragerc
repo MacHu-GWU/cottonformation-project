@@ -3,11 +3,12 @@
 [run]
 omit =
     cottonformation/_version.py
-    cottonformation/cli.py
-    cottonformation/pkg/*
+    cottonformation/cf.py
     cottonformation/docs/*
+    cottonformation/res/*
     cottonformation/tests/*
-    cottonformation/handlers/*
+    cottonformation/code/*
+    cottonformation/core/env.py
 
 [report]
 # Regexes for lines to exclude from consideration

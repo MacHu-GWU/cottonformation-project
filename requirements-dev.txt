@@ -1,7 +1,9 @@
-pathlib_mate                    # autopep8 your code
+# dependencies for dev
 twine>=1.13.0                   # make distribution archive
 wheel>=0.33.1                   # make pre-compiled distribution package
-configirl==0.0.7                # centralized config management
+pathlib_mate                    # autopep8 your code
+requests                        # download cloudformation schema file
+jinja2                          # template engine
+
 # AWS
 boto3                           # AWS Python SDK
-troposphere_mate                # CloudFormation SDK

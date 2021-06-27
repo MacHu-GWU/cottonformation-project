@@ -2,6 +2,8 @@
 cottonformation_venv/
 cottonformation.egg-info/
 cottonformation-*/
+cottonformation/core/helpers/*.json
+cft-spec.json
 
 
 # Byte-compiled / optimized / DLL files

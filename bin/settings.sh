@@ -13,10 +13,6 @@ else
 fi
 dir_project_root=$(dirname "${dir_here}")
 
-path_shared_config_file="${dir_project_root}/config/00-config-shared.json"
-path_read_config_value_script="${dir_project_root}/config/read-config-value"
-
-
 # GitHub
 github_account="MacHu-GWU"
 github_repo_name="cottonformation-project"
@@ -25,10 +21,10 @@ github_repo_name="cottonformation-project"
 # Python
 package_name="cottonformation"
 py_ver_major="3"
-py_ver_minor="6"
-py_ver_micro="2"
+py_ver_minor="7"
+py_ver_micro="9"
 use_pyenv="N" # "Y" or "N"
-supported_py_versions="3.7.9" # e.g: "2.7.13 3.6.2"
+supported_py_versions="3.7.9 3.6.2 3.8.6" # e.g: "2.7.13 3.6.2"
 
 
 #--- Doc Build
