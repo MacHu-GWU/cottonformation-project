@@ -17,6 +17,9 @@
 .. image:: https://img.shields.io/pypi/pyversions/cottonformation.svg
     :target: https://pypi.python.org/pypi/cottonformation
 
+.. image:: https://badges.gitter.im/cottonformation/community.svg
+    :target: https://gitter.im/cottonformation/community
+
 .. image:: https://img.shields.io/badge/STAR_Me_on_GitHub!--None.svg?style=social
     :target: https://github.com/MacHu-GWU/cottonformation-project
 
@@ -49,7 +52,7 @@
 
 
 Welcome to ``cottonformation`` Documentation
-==============================================================================
+------------------------------------------------------------------------------
 
 ``cottonformation`` is a Python tool providing best development experience and highest productivity. Powered by modern **Type Hint, Advanced Auto Complete, Parameter Hint, Instant official AWS Document look up**. Here's how it looks like in `PyCharm <https://www.jetbrains.com/pycharm/>`_ (Supported by PyCharm out-of-the-box, but you can configure it by installing extension or plugin in VSCode, Sublime, Atom ...).
 
@@ -87,12 +90,118 @@ Welcome to ``cottonformation`` Documentation
 .. image:: https://user-images.githubusercontent.com/6800411/123478144-0bec9c80-d5cd-11eb-8260-a9de04690177.gif
 
 
-That's NOT everything, cottonformation can do far more than this.
+A sample infrastructure as code script may looks like this. And you can immediately deploy it from Python:
+
+.. code-block:: python
+
+    # -*- coding: utf-8 -*-
+
+    # First, import cottonformation, I prefer to use ctf for a short name
+    import cottonformation as ctf
+
+    # import the aws service module you need
+    from cottonformation.res import iam, awslambda
+
+    # create a ``Template`` object to represent your cloudformation template
+    tpl = ctf.Template()
+
+    # create a ``Parameter`` object, and add it to template.
+    param_env_name = ctf.Parameter(
+        "EnvName",
+        Type=ctf.Parameter.TypeEnum.String,
+    )
+    tpl.add(param_env_name)
+
+    # create a ``Resource`` object for aws iam role
+    iam_role_for_lambda = iam.Role(
+        "IamRoleForLambdaExecution",
+        # you don't need to remember the exact name or syntax for
+        # trusted entity / assume role policy, cottonformation has a helper for this
+        rp_AssumeRolePolicyDocument=ctf.helpers.iam.AssumeRolePolicyBuilder(
+            ctf.helpers.iam.ServicePrincipal.awslambda()
+        ).build(),
+        p_RoleName=ctf.Sub("${EnvName}-iam-role-for-lambda", dict(EnvName=param_env_name.ref())),
+        p_Description="Minimal iam role for lambda execution",
+        # you don't need to remember the exact ARN for aws managed policy.
+        # cottonformation has a helper for this
+        p_ManagedPolicyArns=[
+            ctf.helpers.iam.AwsManagedPolicy.AWSLambdaBasicExecutionRole,
+        ]
+    )
+    tpl.add(iam_role_for_lambda)
+
+
+    # create a ``Resource`` object for aws lambda function
+    lbd_source_code = """
+    def handler(event, context):
+        return "hello cottonformation"
+    """.strip()
+
+    lbd_func = awslambda.Function(
+        "LbdFuncHelloWorld",
+        # rp_ stands for Required Property, it will gives you parameter-hint
+        # for all valid required properties.
+        rp_Code=awslambda.FunctionCode(
+            p_ZipFile=lbd_source_code,
+        ),
+        # normally we need to explicitly call GetAtt(resource, attribute)
+        # and you need to remember the exact attribute name
+        # but cottonformation allow you to instantly reference the attribute
+        # powered by auto-complete. the prefix rv_ stands for Return Value
+        rp_Role=iam_role_for_lambda.rv_Arn,
+        # p_ stands for Property, it will gives you parameter-hint
+        # for all valid properties
+        p_MemorySize=256,
+        p_Timeout=3,
+        # some constant value helper here too
+        p_Runtime=ctf.helpers.awslambda.LambdaRuntime.python37,
+        p_Handler="index.handler",
+        ra_DependsOn=iam_role_for_lambda,
+    )
+    tpl.add(lbd_func)
+
+    out_lambda_role_arn = ctf.Output(
+        "LbdRoleArn",
+        Description="aws lambda basic execution iam role for reuse",
+        Value=iam_role_for_lambda.rv_Arn
+    )
+    tpl.add(out_lambda_role_arn)
+
+
+    if __name__ == "__main__":
+        # my private aws account session and bucket for testing
+        from cottonformation.tests.boto_ses import boto_ses, bucket
+
+        # define the Parameter.EnvName value
+        env_name = "ctf-1-quick-start-1-basic"
+
+        # create an environment for deployment, it is generally a boto3 session
+        # and a s3 bucket to upload cloudformation template
+        env = ctf.Env(boto_ses=boto_ses)
+        env.deploy(
+            template=tpl,
+            stack_name=env_name,
+            stack_parameters=dict(
+                EnvName=env_name,
+            ),
+            bucket_name=bucket,
+            include_iam=True,
+        )
+
+
+Getting Help
+------------------------------------------------------------------------------
+
+To avoid asking duplicate questions, I recommend to post your question in the `GITHUB ISSUE BOARD <https://github.com/MacHu-GWU/cottonformation-project/issues>`_ so other people may see the discussion and solution too.
+
+And there's a `cottonformation community <https://gitter.im/cottonformation/community>`_ on gitter to ask questions to the author.
+
+.. image:: https://badges.gitter.im/cottonformation/community.svg
+    :target: https://gitter.im/cottonformation/community
 
 
 Overview
 ------------------------------------------------------------------------------
-
 
 
 Why this Project?
@@ -114,7 +223,7 @@ The rule breaker ``troposphere`` was released on 2013. It is a Python project al
 
 I started to maintain a parallel library ``troposphere_mate`` to support "Auto Complete" and "Type Hint" and more advanced feature. However, it cannot evolve fast since it is based on ``troposphere`` and I have no control at all on it. I used to think of re-design a new project using latest programming model to replace ``troposphere`` in my Organization. But there are 162 AWS Service, 768 AWS Resource, 2,499 AWS Property and 43,200 lines of declaration code to work on. It is impossible to keep it up-to-date as an individual developer.
 
-Fortunately, AWS published the `AWS CloudFormation resource specification <https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-resource-specification.html>`_ as a machine readable json file, and type hint and static check technology is already mature in Python community, I believe it is a good timing to re-invent a modernized CloudFormation tool.
+**Fortunately, AWS published the** `AWS CloudFormation resource specification <https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-resource-specification.html>`_ as **a machine readable json file**, and type hint and static check technology is already mature in Python community, I believe it is a good timing to re-invent a modernized CloudFormation tool. **I figured out a way to automatically generate the 162 AWS Service, 768 AWS Resource, 2,499 AWS Property and 43,200 lines of declaration code with type hint / auto complete / aws doc jump features. Now we can easily keep cottonformation up-to-date with AWS CloudFormation!**
 
 
 What about AWS CDK or Pulumi?
