@@ -5,6 +5,9 @@
 .. image:: https://codecov.io/gh/MacHu-GWU/cottonformation-project/branch/master/graph/badge.svg
     :target: https://codecov.io/gh/MacHu-GWU/cottonformation-project
 
+.. image:: https://readthedocs.org/projects/cottonformation/badge/
+    :target: https://cottonformation.readthedocs.io/en/latest/index.html
+
 .. image:: https://img.shields.io/pypi/v/cottonformation.svg
     :target: https://pypi.python.org/pypi/cottonformation
 
@@ -21,7 +24,7 @@
 
 
 .. image:: https://img.shields.io/badge/Link-Document-blue.svg
-    :target: https://cottonformation.readthedocs.io/index.html
+    :target: https://cottonformation.readthedocs.io/en/latest/index.html
 
 .. image:: https://img.shields.io/badge/Link-API-blue.svg
     :target: https://cottonformation.readthedocs.io/en/latest/py-modindex.html
