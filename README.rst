@@ -123,7 +123,7 @@ Again, ``cottomformation`` don't want to be the improved AWS CDK or Pulumi. It w
 
 Python is not first class member in AWS CDK. The nature of AWS CDK is a TypeScript Library, and AWS find a way to call TypeScript / JavaScript API from other programming language like Java / Ruby / Python / C# / Go. When you run AWS CDK in programming language other than TypeScript, the code is actually been converted to low level api, and been handled by the backend TypeScript code. This causes two issue:
 
-1. **Significant delay in editing**. Since "Type hint" and "Code Complete" is based on static code analysis technique and Python import engine. But internally AWS CDK import the underlying compiled Python - TypeScript *.jsii code when you import a AWS Resource declaration class. This is why it's slow with a 2019, 16GB memory Macbook Pro.
+1. **Significant delay in editing**. Since "Type hint" and "Code Complete" is based on static code analysis technique and Python import engine. But internally AWS CDK import the underlying compiled Python - TypeScript ``*.jsii`` code when you import a AWS Resource declaration class. This is why it's slow with a 2019, 16GB memory Macbook Pro.
 2. **Hard to customize and extend**. Because the python code is underlying calling TypeScript API, there's no way you can inject your custom logic in the python code because it is not recognized by TypeScript API.
 3. **You have to configure the Node.JS environment the Node.JS version of AWS CDK**. In python community, we expect a simple ``pip install something`` then ``import something``. You need additional configuration steps when you run it in a remote or a CI environment.
 

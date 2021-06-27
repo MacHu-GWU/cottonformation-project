@@ -45,6 +45,7 @@ extensions = [
     'sphinx.ext.viewcode',
     'sphinxcontrib.jinja',
     'sphinx_copybutton',
+    'sphinx_inline_tabs',
     'docfly.directives',
 ]
 
@@ -97,7 +98,18 @@ todo_include_todos = True
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'alabaster'
+html_theme = 'furo'
+html_theme_options = {
+    "sidebar_hide_name": True,
+    "light_logo": "cottonformation-logo.png",
+    "dark_logo": "cottonformation-logo.png",
+    # "light_css_variables": {
+    #     "color-brand-primary": "#DE1D46",
+    #     "color-brand-content": "#2D3CCD",
+    #     "color-admonition-background": "#2DCD67",
+    # },
+}
+pygments_dark_style = "monokai"
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
@@ -117,15 +129,15 @@ html_favicon = "./_static/cottonformation-favicon.ico"
 #
 # This is required for the alabaster theme
 # refs: http://alabaster.readthedocs.io/en/latest/installation.html#sidebars
-html_sidebars = {
-    '**': [
-        'about.html',
-        'navigation.html',
-        'relations.html',  # needs 'show_related': True theme option to display
-        'searchbox.html',
-        'donate.html',
-    ]
-}
+# html_sidebars = {
+#     '**': [
+#         'about.html',
+#         'navigation.html',
+#         'relations.html',  # needs 'show_related': True theme option to display
+#         'searchbox.html',
+#         'donate.html',
+#     ]
+# }
 
 # -- Options for HTMLHelp output ------------------------------------------
 
