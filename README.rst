@@ -1,6 +1,6 @@
 
-.. image:: https://travis-ci.org/MacHu-GWU/cottonformation-project.svg?branch=master
-    :target: https://travis-ci.org/MacHu-GWU/cottonformation-project?branch=master
+.. image:: https://github.com/MacHu-GWU/cottonformation-project/workflows/CI/badge.svg
+    :target: https://github.com/MacHu-GWU/cottonformation-project/actions?query=workflow:CI
 
 .. image:: https://codecov.io/gh/MacHu-GWU/cottonformation-project/branch/master/graph/badge.svg
     :target: https://codecov.io/gh/MacHu-GWU/cottonformation-project
@@ -21,13 +21,13 @@
 
 
 .. image:: https://img.shields.io/badge/Link-Document-blue.svg
-    :target: http://cottonformation.my-docs.com/index.html
+    :target: https://cottonformation.readthedocs.io/index.html
 
 .. image:: https://img.shields.io/badge/Link-API-blue.svg
-    :target: http://cottonformation.my-docs.com/py-modindex.html
+    :target: https://cottonformation.readthedocs.io/en/latest/py-modindex.html
 
 .. image:: https://img.shields.io/badge/Link-Source_Code-blue.svg
-    :target: http://cottonformation.my-docs.com/py-modindex.html
+    :target: https://cottonformation.readthedocs.io/en/latestpy-modindex.html
 
 .. image:: https://img.shields.io/badge/Link-Install-blue.svg
     :target: `install`_
