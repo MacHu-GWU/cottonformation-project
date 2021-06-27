@@ -92,9 +92,7 @@ class TestTemplate:
             Value=iam_role_for_lambda
         )
         tpl.add(out_lambda_role_arn)
-
-        print(tpl.to_json())
-
+        tpl.to_json()
 
 
 if __name__ == "__main__":
