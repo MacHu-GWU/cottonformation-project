@@ -48,20 +48,20 @@ class Template:
     AWSTemplateFormatVersion: str = attr.ib(default="2010-09-09")
     Description: str = attr.ib(default="No description for this template")
     Metadata: dict = attr.ib(factory=OrderedDict)
-    Parameters: typing.OrderedDict[str, Parameter] = attr.ib(factory=OrderedDict)
-    Rules: typing.OrderedDict[str, Rule] = attr.ib(factory=OrderedDict)
-    Mappings: typing.OrderedDict[str, Mapping] = attr.ib(factory=OrderedDict)
-    Conditions: typing.OrderedDict[str, Condition] = attr.ib(factory=OrderedDict)
-    Resources: typing.OrderedDict[str, Resource] = attr.ib(factory=OrderedDict)
-    Outputs: typing.OrderedDict[str, Output] = attr.ib(factory=OrderedDict)
+    Parameters: typing.Dict[str, Parameter] = attr.ib(factory=OrderedDict)
+    Rules: typing.Dict[str, Rule] = attr.ib(factory=OrderedDict)
+    Mappings: typing.Dict[str, Mapping] = attr.ib(factory=OrderedDict)
+    Conditions: typing.Dict[str, Condition] = attr.ib(factory=OrderedDict)
+    Resources: typing.Dict[str, Resource] = attr.ib(factory=OrderedDict)
+    Outputs: typing.Dict[str, Output] = attr.ib(factory=OrderedDict)
     Transform: typing.List['Transform'] = attr.ib(factory=list)
-    NestedStack: typing.OrderedDict[str, 'Template'] = attr.ib(factory=OrderedDict)
+    NestedStack: typing.Dict[str, 'Template'] = attr.ib(factory=OrderedDict)
 
     _deps_data_need_build_flag: bool = attr.ib(default=True)
-    _deps_on_data_cache: typing.OrderedDict[str, typing.Set[str]] = attr.ib(factory=OrderedDict)
-    _deps_by_data_cache: typing.OrderedDict[str, typing.Set[str]] = attr.ib(factory=OrderedDict)
+    _deps_on_data_cache: typing.Dict[str, typing.Set[str]] = attr.ib(factory=OrderedDict)
+    _deps_by_data_cache: typing.Dict[str, typing.Set[str]] = attr.ib(factory=OrderedDict)
     _deps_sort_need_build_flag: bool = attr.ib(default=True)
-    _deps_sort_cache: typing.OrderedDict[str, int] = attr.ib(factory=OrderedDict)
+    _deps_sort_cache: typing.Dict[str, int] = attr.ib(factory=OrderedDict)
 
     # handle the inter dependency relationship among Parameter, Mapping,
     # Condition, Resource, Output
@@ -92,7 +92,7 @@ class Template:
     def _iterate_addable_keys(self) -> typing.List[str]:
         return [gid for gid, _ in self._iterate_addable()]
 
-    def _build_deps_data(self) -> typing.Tuple[typing.OrderedDict[str, typing.Set[str]], typing.OrderedDict[str, typing.Set[str]]]:
+    def _build_deps_data(self) -> typing.Tuple[typing.Dict[str, typing.Set[str]], typing.Dict[str, typing.Set[str]]]:
         deps_on_data = OrderedDict()
         deps_by_data = OrderedDict()
         for gid, _ in self._iterate_addable():
@@ -127,7 +127,7 @@ class Template:
         return self._deps_by_data_cache
 
     @property
-    def deps_sort(self) -> typing.OrderedDict[str, int]:
+    def deps_sort(self) -> typing.Dict[str, int]:
         if self._deps_sort_need_build_flag:
             self._deps_sort_cache = OrderedDict()
             for ind, st in enumerate(toposort(self.deps_on_data)):
