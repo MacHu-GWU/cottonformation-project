@@ -91,3 +91,13 @@ class Collections:
     RESOURCE_ATTRIBUTE_SET = set(RESOURCE_ATTRIBUTE_LIST)
 
     PARAMETER_TYPE_ENUM_SET = set()
+
+
+class MetaData:
+    CTF = "cottonformation"
+    Version = "version"
+    DependsOn = "depends_on"
+    Parameters = "parameters"
+    Resources = "resources"
+    Mappings = "mappings"
+    Conditions = "conditions"

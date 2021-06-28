@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 
-import json
 import typing
 
 import attr
@@ -19,6 +18,9 @@ class TypeHint:
         'Parameter', 'Resource', 'Output',
         'Rule', 'Mapping', 'Condition',
     ]
+    dependency_obj = typing.Union[
+        str, 'Resource', 'Parameter', 'Mapping', 'Condition'
+    ]
 
 
 @attr.s
@@ -33,6 +35,9 @@ class _Addable:
     """
     A base class for type check for item to be added to a Template.
     """
+    @property
+    def gid(self) -> str:
+        raise NotImplementedError
 
 
 @attr.s
@@ -47,9 +52,35 @@ class _ListMember(_Addable):
 class _DictMember(_Addable):
     """
     A base class for type check for item to be added to a Template, stored
-    in a dict.
-    """
+    in a dict. Includes:
 
+    - :class:`Parameter`
+    - :class:`Resource`
+    - :class:`Output`
+    - :class:`Rule`
+    - :class:`Mapping`
+    - :class:`Condition`
+    """
+    @property
+    def gid(self) -> str:
+        """
+        Global Logic Id for
+        :return:
+        """
+        return f"{self.CLASS_TYPE}--{self.id}"
+
+
+@attr.s
+class _Dependency:
+    """
+    A base class for type check for item that can be a dependency of another.
+    (another object depends on this one)
+
+    **中文文档**
+
+    Dependency 是指那些可能被别人需要的人.
+    Dependent 是指需要别人的人.
+    """
 
 
 class TypeCheck:
@@ -68,6 +99,8 @@ class AwsObject:
 
 @attr.s
 class IntrinsicFunction(AwsObject, _IntrinsicFunctionType):
+    CLASS_TYPE = "IntrinsicFunction"
+
     def special_int_fun(self):
         pass
 
@@ -143,9 +176,17 @@ class Property(_PropertyOrResource):
         return property_dct
 
 
+def ensure_list(obj):
+    if not isinstance(obj, list):
+        return [obj,]
+    else:
+        return obj
+
+
 @attr.s
-class Resource(_PropertyOrResource, _DictMember):
+class Resource(_PropertyOrResource, _DictMember, _Dependency):
     AWS_OBJECT_TYPE = None
+    CLASS_TYPE = "5-Resource"
 
     id: str = attr.ib(
         validator=vs.optional(vs.instance_of(str)),
@@ -153,7 +194,7 @@ class Resource(_PropertyOrResource, _DictMember):
     )
 
     ra_CreationPolicy: str = attr.ib(
-        default=None,
+        factory=dict,
         validator=None,
         metadata={constant.AttrMeta.PROPERTY_NAME: constant.ResourceAttribute.CREATION_POLICY},
     )
@@ -162,13 +203,13 @@ class Resource(_PropertyOrResource, _DictMember):
         validator=None,
         metadata={constant.AttrMeta.PROPERTY_NAME: constant.ResourceAttribute.DELETION_POLICY},
     )
-    ra_DependsOn: typing.Union[str, 'Resource', typing.List[typing.Union[str, 'Resource']]] = attr.ib(
-        default=None,
+    ra_DependsOn: typing.Union[TypeHint.dependency_obj, typing.List[TypeHint.dependency_obj]] = attr.ib(
+        factory=list,
+        validator=vs.instance_of((str, _Dependency, list)),
         metadata={constant.AttrMeta.PROPERTY_NAME: constant.ResourceAttribute.DEPENDS_ON},
     )
-    ra_Metadata: str = attr.ib(
-        default=None,
-        validator=None,
+    ra_Metadata: dict = attr.ib(
+        factory=dict,
         metadata={constant.AttrMeta.PROPERTY_NAME: constant.ResourceAttribute.METADATA},
     )
     ra_UpdatePolicy: str = attr.ib(
@@ -187,31 +228,34 @@ class Resource(_PropertyOrResource, _DictMember):
         metadata={constant.AttrMeta.PROPERTY_NAME: constant.ResourceAttribute.CONDITION},
     )
 
-    @ra_DependsOn.validator
-    def check_depends_on(self, attribute, value):
-        if value is None:
-            pass
-        elif isinstance(value, (str, Resource)):
-            pass
-        elif isinstance(value, list):
-            for item in value:
-                if not isinstance(item, (str, Resource)):
-                    raise TypeError
-        else:
-            raise TypeError
-
     def __attrs_post_init__(self):
-        if self.ra_DependsOn is None:
-            pass
-        elif isinstance(self.ra_DependsOn, list):
-            self.ra_DependsOn = [
-                get_id(obj)
-                for obj in self.ra_DependsOn
-            ]
-        else:
-            self.ra_DependsOn = [
-                get_id(self.ra_DependsOn)
-            ]
+        self.ra_DependsOn = ensure_list(self.ra_DependsOn)
+
+        # mt = constant.MetaData
+        # if len(self.ra_DependsOn):
+        #     self.ra_Metadata.setdefault(mt.CTF, dict())
+        #     self.ra_Metadata[mt.CTF].setdefault(mt.DependsOn, dict())
+        #     for k in [
+        #         mt.Parameters,
+        #         mt.Resources,
+        #         mt.Mappings,
+        #         mt.Conditions,
+        #     ]:
+        #         self.ra_Metadata[mt.CTF][mt.DependsOn].setdefault(k, dict())
+        #
+        # for obj in self.ra_DependsOn:
+        #     if isinstance(obj, Parameter):
+        #         self.ra_Metadata[mt.CTF][mt.DependsOn][mt.Parameters][get_id(obj)] = True
+        #     elif isinstance(obj, Mapping):
+        #         self.ra_Metadata[mt.CTF][mt.DependsOn][mt.Mappings][get_id(obj)] = True
+        #     elif isinstance(obj, Condition):
+        #         self.ra_Metadata[mt.CTF][mt.DependsOn][mt.Conditions][get_id(obj)] = True
+        #     elif isinstance(obj, (str, Resource)):
+        #         self.ra_Metadata[mt.CTF][mt.DependsOn][mt.Resources][get_id(obj)] = True
+
+    @property
+    def DependsOn(self) -> typing.List[TypeHint.dependency_obj]:
+        return self.ra_DependsOn
 
     def ref(self) -> 'Ref':
         return Ref(self)
@@ -231,6 +275,19 @@ class Resource(_PropertyOrResource, _DictMember):
                 if v is not None:
                     resource_dct[attr_name_to_cf_name_mapper[k]] = v
         resource_dct[constant.CloudFomation.Properties] = properties_dct
+
+        # only keep resource type depends on. other depends on object like
+        # parameter, mapping, condition are only for cottonformation internal use
+        depends_on = list()
+        for obj in resource_dct[constant.ResourceAttribute.DEPENDS_ON]:
+            if isinstance(obj, (str, Resource)):
+                depends_on.append(get_id(obj))
+        resource_dct[constant.ResourceAttribute.DEPENDS_ON] = depends_on
+
+        resource_dct = remove_id_and_empty(resource_dct)
+        if constant.CloudFomation.Properties not in resource_dct:
+            resource_dct[constant.CloudFomation.Properties] = dict()
+
         resource_dct = serialize(resource_dct)
         return resource_dct
 
@@ -247,7 +304,7 @@ class Resource(_PropertyOrResource, _DictMember):
             ]
 
 @attr.s
-class Parameter(AwsObject, _DictMember):
+class Parameter(AwsObject, _DictMember, _Dependency):
     """
     Reference:
 
@@ -256,6 +313,8 @@ class Parameter(AwsObject, _DictMember):
     - AWS-specific parameter types: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html#aws-specific-parameter-types
     - SSM parameter types: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html#parameters-section-structure-grouping
     """
+    CLASS_TYPE = "1-Parameter"
+
     id: str = attr.ib(validator=vs.instance_of(str))
     Type: str = attr.ib(validator=vs.instance_of(str))
     Default: str = attr.ib(
@@ -296,6 +355,11 @@ class Parameter(AwsObject, _DictMember):
     ConstraintDescription: str = attr.ib(
         default=None,
         validator=vs.optional(vs.instance_of(str))
+    )
+    DependsOn: typing.Union[TypeHint.dependency_obj, typing.List[TypeHint.dependency_obj]] = attr.ib(
+        factory=list,
+        validator=vs.optional(vs.instance_of((str, _Dependency, list))),
+        converter=ensure_list,
     )
 
     class TypeEnum:
@@ -352,6 +416,8 @@ class Export(AwsObject):
 
 @attr.s
 class Output(AwsObject, _DictMember):
+    CLASS_TYPE = "6-Output"
+
     id: str = attr.ib(
         validator=vs.instance_of(str)
     )
@@ -363,6 +429,11 @@ class Output(AwsObject, _DictMember):
     Export: Export = attr.ib(
         default=None,
         validator=vs.optional(vs.instance_of(Export))
+    )
+    DependsOn: typing.Union[TypeHint.dependency_obj, typing.List[TypeHint.dependency_obj]] = attr.ib(
+        factory=list,
+        validator=vs.optional(vs.instance_of((str, _Dependency, list))),
+        converter=ensure_list,
     )
 
     def serialize(self, **kwargs) -> typing.Any:
@@ -639,27 +710,49 @@ class Split(IntrinsicFunction):
 
 
 @attr.s
-class Rule(AwsObject, _DictMember):
+class Mapping(AwsObject, _DictMember, _Dependency):
+    CLASS_TYPE = "2-Mapping"
+
     id: str = attr.ib(
         validator=vs.instance_of(str)
+    )
+    DependsOn: typing.Union[TypeHint.dependency_obj, typing.List[TypeHint.dependency_obj]] = attr.ib(
+        factory=list,
+        validator=vs.optional(vs.instance_of((str, _Dependency, list))),
+        converter=ensure_list,
     )
 
 
 @attr.s
-class Mapping(AwsObject, _DictMember):
-    pass
+class Condition(AwsObject, _DictMember, _Dependency):
+    CLASS_TYPE = "3-Condition"
+
+    id: str = attr.ib(
+        validator=vs.instance_of(str)
+    )
+    DependsOn: typing.Union[TypeHint.dependency_obj, typing.List[TypeHint.dependency_obj]] = attr.ib(
+        factory=list,
+        validator=vs.optional(vs.instance_of((str, _Dependency, list))),
+        converter=ensure_list,
+    )
 
 
 @attr.s
-class Condition(AwsObject, _DictMember):
+class Rule(AwsObject, _DictMember):
+    CLASS_TYPE = "4-Rule"
+
     id: str = attr.ib(
         validator=vs.instance_of(str)
+    )
+    DependsOn: typing.Union[TypeHint.dependency_obj, typing.List[TypeHint.dependency_obj]] = attr.ib(
+        factory=list,
+        validator=vs.optional(vs.instance_of((str, _Dependency, list))),
     )
 
 
 @attr.s
 class Transform(AwsObject, _ListMember):
-    pass
+    CLASS_TYPE = "7-Transform"
 
 
 def get_key_value_dict(obj: attr.s) -> dict:
@@ -718,3 +811,13 @@ def serialize(obj: typing.Union['AwsObject', dict, typing.Any]) -> typing.Any:
         }
     else:
         return obj
+
+
+AWS_ACCOUNT_ID = Ref(constant.PseudoParameter.AWS_ACCOUNT_ID)
+AWS_NOTIFICATION_ARNS = Ref(constant.PseudoParameter.AWS_NOTIFICATION_ARNS)
+AWS_NO_VALUE = Ref(constant.PseudoParameter.AWS_NO_VALUE)
+AWS_PARTITION = Ref(constant.PseudoParameter.AWS_PARTITION)
+AWS_REGION = Ref(constant.PseudoParameter.AWS_REGION)
+AWS_STACK_ID = Ref(constant.PseudoParameter.AWS_STACK_ID)
+AWS_STACK_NAME = Ref(constant.PseudoParameter.AWS_STACK_NAME)
+AWS_URL_SURFIX = Ref(constant.PseudoParameter.AWS_URL_SURFIX)

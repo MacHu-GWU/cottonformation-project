@@ -22,6 +22,8 @@ Release and Version History
 - Implement all intrinsic function.
 - Add ``Tag.make_many`` helper factory method.
 - Add support to deploy complex nested stacks from the top template. ``cottonformation`` handles all underlying trivial steps for you.
+- TODO: Add Template.remove method, allow visit resource from template object.
+
 
 **Minor Improvements**
 

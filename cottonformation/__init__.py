@@ -27,7 +27,18 @@ from .core.model import (
 
     # intrinsic function
     Ref, Base64, Cidr, FindInMap, GetAtt, GetAZs,
-    ImportValue, Join, Select, Split, Sub
+    ImportValue, Join, Select, Split, Sub,
+
+    # pseudo parameter
+    AWS_ACCOUNT_ID,
+    AWS_NOTIFICATION_ARNS,
+    AWS_NO_VALUE,
+    AWS_PARTITION,
+    AWS_REGION,
+    AWS_STACK_ID,
+    AWS_STACK_NAME,
+    AWS_URL_SURFIX,
 )
+from .core.config import CtfConfig
 from .core.template import Template
 from .core.env import Env
