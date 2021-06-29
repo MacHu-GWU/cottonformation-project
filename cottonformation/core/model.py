@@ -1,5 +1,9 @@
 # -*- coding: utf-8 -*-
 
+"""
+This module implements the AWS Object used in CloudFormation template.
+"""
+
 import typing
 from collections import OrderedDict
 import attr

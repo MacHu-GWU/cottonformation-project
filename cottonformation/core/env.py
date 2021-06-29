@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 """
-AWS Environment
+AWS Environment and Deployment component.
 """
 
 import hashlib

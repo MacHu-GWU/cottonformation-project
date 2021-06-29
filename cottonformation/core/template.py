@@ -1,5 +1,10 @@
 # -*- coding: utf-8 -*-
 
+"""
+This module implements the core component CloudFormation Template. Many
+black magic features are provided.
+"""
+
 import json
 import attr
 import typing

@@ -2,6 +2,8 @@
 
 class LambdaRuntime:
     """
+    Aws Lambda related constant helpers.
+
     This data is based on https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html
     """
     nodejs14 = "nodejs14.x"
