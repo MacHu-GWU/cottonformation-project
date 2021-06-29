@@ -192,9 +192,10 @@ Welcome to ``cottonformation`` Documentation
 Getting Help
 ------------------------------------------------------------------------------
 
-To avoid asking duplicate questions, I recommend to post your question in the `GITHUB ISSUE BOARD <https://github.com/MacHu-GWU/cottonformation-project/issues>`_ so other people may see the discussion and solution too.
+1. The easiest way to learn the best practice is to **learn by example**. You can start from `cottonformation by example <https://cottonformation.readthedocs.io/en/latest/01-cottonformation-by-example/index.html>`_
 
-And there's a `cottonformation community <https://gitter.im/cottonformation/community>`_ on gitter to ask questions to the author.
+
+2. Second method is to `submit an GitHub issue <https://github.com/MacHu-GWU/cottonformation-project/issues>`_. So other people may see the discussion and solution too. In addition there's a `cottonformation community <https://gitter.im/cottonformation/community>`_ **on gitter to directly ASK THE AUTHOR**.
 
 .. image:: https://badges.gitter.im/cottonformation/community.svg
     :target: https://gitter.im/cottonformation/community

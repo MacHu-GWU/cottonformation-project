@@ -7,28 +7,19 @@ import typing
 from collections import OrderedDict
 from toposort import toposort
 from .model import (
-    _Addable, _Dependency,
-    Parameter, Resource, Output, Rule, Mapping, Condition, Transform,
-    TypeHint, TypeCheck,
+    _Addable,
+    Parameter, Resource, Output, Rule, Mapping, Condition, Transform, Tag,
+    TypeHint,
     get_id,
     get_key_value_dict,
     remove_id_and_empty,
     serialize,
+    _class_type_to_attr_mapper,
 )
 from .constant import MetaData
 from .config import CtfConfig
 from ..res.cloudformation import Stack
 from .._version import __version__
-
-
-_class_type_to_attr_mapper = {
-    Parameter.CLASS_TYPE: "Parameters",
-    Resource.CLASS_TYPE: "Resources",
-    Output.CLASS_TYPE: "Outputs",
-    Rule.CLASS_TYPE: "Rules",
-    Mapping.CLASS_TYPE: "Mappings",
-    Condition.CLASS_TYPE: "Conditions",
-}
 
 
 @attr.s
@@ -267,6 +258,11 @@ class Template:
 
         dct = get_key_value_dict(self)
         dct.pop("NestedStack")
+        dct.pop("_deps_data_need_build_flag")
+        dct.pop("_deps_on_data_cache")
+        dct.pop("_deps_by_data_cache")
+        dct.pop("_deps_sort_need_build_flag")
+        dct.pop("_deps_sort_cache")
         dct = remove_id_and_empty(dct)
         dct = serialize(dct)
         return dct
@@ -315,5 +311,10 @@ class Template:
         """
         pass
 
-
-
+    def batch_tagging(self, overwrite: bool = False, **kwargs):
+        """
+        Batch tag all resources if supporting Tags.
+        """
+        for r in self.Resources.values():
+            if r.support_tags():
+                r.update_tags(overwrite, **kwargs)

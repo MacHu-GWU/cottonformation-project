@@ -1,6 +1,18 @@
 # -*- coding: utf-8 -*-
 
 """
+Copyright (c) 2021-Current, Sanhe Hu <husanhe@gmail.com> https://github.com/MacHu-GWU/cottonformation-project
+All rights reserved.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are met:
+
+1. Redistributions of source code must retain the above copyright notice, this
+   list of conditions and the following disclaimer.
+2. Redistributions in binary form must reproduce the above copyright notice,
+   this list of conditions and the following disclaimer in the documentation
+   and/or other materials provided with the distribution.
+
 Modern CloudFormation Python tool with Type hint, Parameter hint, Doc hint +
 Auto Validation in Real Objective Programming Style
 """
@@ -23,7 +35,7 @@ from .core import constant, helpers
 from .core.model import (
     # data model
     Parameter, Resource, Output, Export,
-    Rule, Mapping, Condition, Transform,
+    Rule, Mapping, Condition, Transform, Tag,
 
     # intrinsic function
     Ref, Base64, Cidr, FindInMap, GetAtt, GetAZs,

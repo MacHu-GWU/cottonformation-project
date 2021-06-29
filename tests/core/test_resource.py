@@ -1,15 +1,38 @@
 # -*- coding: utf-8 -*-
 
 import pytest
+from pytest import raises
 import cottonformation as ctf
 from cottonformation.res import s3
-from cottonformation.core.model import _Dependency
+from cottonformation.core.model import Tag
 
 
 class TestResource:
     def test_ref(self):
         r = ctf.Resource(id="MyResource")
         assert isinstance(r.ref(), ctf.Ref)
+
+    def test_tags(self):
+        with raises(TypeError):
+            s3.BucketPolicy("Res", p_Tags=Tag.make_many(k="v"))
+
+        with raises(ValueError):
+            b = s3.Bucket("Res", p_Tags=[Tag(p_Key="k", p_Value="v1"), Tag(p_Key="k", p_Value="v2")])
+            _ = b.tags_dict
+
+        b = s3.Bucket("Res", p_Tags=Tag.make_many(k1="v1"))
+        assert b.tags_dict == dict(k1="v1")
+        b.update_tags(k1="v1")
+        assert b.tags_dict == dict(k1="v1")
+
+        b.update_tags(k1="v11", overwrite=True)
+        assert b.tags_dict == dict(k1="v11")
+
+        b.update_tags(k1="v111", k2="v2")
+        assert b.tags_dict == dict(k1="v11", k2="v2")
+
+        b.update_tags(k1="v111", k2="v22", overwrite=True)
+        assert b.tags_dict == dict(k1="v111", k2="v22")
 
     def test_serialize(self):
         p = ctf.Parameter("p", Type=ctf.Parameter.TypeEnum.String)

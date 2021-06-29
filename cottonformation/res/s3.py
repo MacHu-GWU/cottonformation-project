@@ -2329,7 +2329,6 @@ class Bucket(Resource):
     """
     AWS_OBJECT_TYPE = "AWS::S3::Bucket"
 
-    
     p_AccelerateConfiguration: typing.Union['BucketAccelerateConfiguration', dict] = attr.ib(
         default=None,
         converter=BucketAccelerateConfiguration.from_dict,

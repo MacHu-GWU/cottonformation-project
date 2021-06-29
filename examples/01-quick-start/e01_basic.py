@@ -1,5 +1,23 @@
 # -*- coding: utf-8 -*-
 
+"""
+To get started, let's learn how to define a very standard cloudformation template
+including a simple Parameter, two Resource depending on each other, and
+an Output. Eventually we deploy it to AWS Console. Everything is PURE PYTHON.
+
+**I recommend to NOT COPY AND PASTE but typing the code in Pycharm to see
+how type hint / auto complete / doc hint helps you to accelerate code writing**
+
+You are responsible to prepare your AWS Credential to call cloudformation API
+and a S3 bucket to upload template. Follow this
+`boto3 Session reference <https://boto3.amazonaws.com/v1/documentation/api/latest/reference/core/session.html>`_
+document to create your own boto session object for authentication.
+My recommendation is to create a named profile in
+``${HOME}/.aws/credentials`` and ``${HOME}/.aws/config``. And then the code
+to create boto session looks like this
+https://github.com/MacHu-GWU/cottonformation-project/blob/main/cottonformation/tests/boto_ses.py.
+"""
+
 # First, import cottonformation, I prefer to use ctf for a short name
 import cottonformation as ctf
 
@@ -7,7 +25,9 @@ import cottonformation as ctf
 from cottonformation.res import iam, awslambda
 
 # create a ``Template`` object to represent your cloudformation template
-tpl = ctf.Template()
+tpl = ctf.Template(
+    Description="Sample CloudFormation template build on cottonformation library",
+)
 
 # create a ``Parameter`` object, and add it to template.
 param_env_name = ctf.Parameter(
@@ -26,6 +46,7 @@ iam_role_for_lambda = iam.Role(
     ).build(),
     p_RoleName=ctf.Sub("${EnvName}-iam-role-for-lambda", dict(EnvName=param_env_name.ref())),
     p_Description="Minimal iam role for lambda execution",
+
     # you don't need to remember the exact ARN for aws managed policy.
     # cottonformation has a helper for this
     p_ManagedPolicyArns=[
@@ -48,15 +69,18 @@ lbd_func = awslambda.Function(
     rp_Code=awslambda.FunctionCode(
         p_ZipFile=lbd_source_code,
     ),
+
     # normally we need to explicitly call GetAtt(resource, attribute)
     # and you need to remember the exact attribute name
     # but cottonformation allow you to instantly reference the attribute
     # powered by auto-complete. the prefix rv_ stands for Return Value
     rp_Role=iam_role_for_lambda.rv_Arn,
+
     # p_ stands for Property, it will gives you parameter-hint
     # for all valid properties
     p_MemorySize=256,
     p_Timeout=3,
+
     # some constant value helper here too
     p_Runtime=ctf.helpers.awslambda.LambdaRuntime.python37,
     p_Handler="index.handler",

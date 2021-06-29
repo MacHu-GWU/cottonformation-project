@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import typing
-
+from collections import OrderedDict
 import attr
 from attr import validators as vs
 
@@ -39,6 +39,10 @@ class _Addable:
     def gid(self) -> str:
         raise NotImplementedError
 
+    @property
+    def _ez_repr(self) -> str:
+        raise NotImplementedError
+
 
 @attr.s
 class _ListMember(_Addable):
@@ -68,6 +72,14 @@ class _DictMember(_Addable):
         :return:
         """
         return f"{self.CLASS_TYPE}--{self.id}"
+
+
+    @property
+    def _ez_repr(self) -> str:
+        return "{}({})".format(
+            _class_type_to_attr_mapper[self.CLASS_TYPE][:-1],
+            self.id,
+        )
 
 
 @attr.s
@@ -260,6 +272,51 @@ class Resource(_PropertyOrResource, _DictMember, _Dependency):
     def ref(self) -> 'Ref':
         return Ref(self)
 
+    @property
+    def tags_dict(self) -> OrderedDict:
+        if self.p_Tags is None:
+            return OrderedDict()
+        dct = OrderedDict([
+            (t.p_Key, t.p_Value)
+            for t in self.p_Tags
+        ])
+        if len(self.p_Tags) != len(dct):
+            raise ValueError(f"duplicate key found in {self._ez_repr}")
+        return dct
+
+    @classmethod
+    def support_tags(cls) -> bool:
+        """
+        Return a boolean value to indicate that whether this AWS Resource type
+        support tagging.
+        """
+        return "p_Tags" in attr.fields_dict(cls)
+
+    def update_tags(self, overwrite: bool = False, **kwargs):
+        """
+        Update tags. overwrite flag can be used to decide whether you want to
+        the tag value if tag key already exists.
+        """
+        if self.p_Tags is None:
+            existing_tags = OrderedDict()
+        else:
+            existing_tags = OrderedDict([
+                (tag.p_Key, tag)
+                for tag in self.p_Tags
+            ])
+
+        for k, v in kwargs.items():
+            if k not in existing_tags:
+                existing_tags[k] = Tag(p_Key=k, p_Value=v)
+            elif overwrite:
+                existing_tags[k] = Tag(p_Key=k, p_Value=v)
+            else:
+                pass
+
+        if len(existing_tags):
+            self.p_Tags = list(existing_tags.values())
+
+
     def serialize(self):
         class_data = get_key_value_dict(self)
         attr_name_to_cf_name_mapper = self.get_attr_name_to_cf_name()
@@ -446,7 +503,7 @@ class Output(AwsObject, _DictMember):
         return dct
 
 
-@attr.s
+@attr.s(frozen=True)
 class Tag(Property):
     p_Key: TypeHint.intrinsic_str = attr.ib(
         validator=vs.optional(vs.instance_of(TypeCheck.intrinsic_str_type)),
@@ -475,7 +532,6 @@ class Tag(Property):
         else:
             dct = dict_data
         dct.update(kwargs)
-
         return [
             cls(p_Key=k, p_Value=v)
             for k, v in dct.items()
@@ -821,3 +877,13 @@ AWS_REGION = Ref(constant.PseudoParameter.AWS_REGION)
 AWS_STACK_ID = Ref(constant.PseudoParameter.AWS_STACK_ID)
 AWS_STACK_NAME = Ref(constant.PseudoParameter.AWS_STACK_NAME)
 AWS_URL_SURFIX = Ref(constant.PseudoParameter.AWS_URL_SURFIX)
+
+
+_class_type_to_attr_mapper = {
+    Parameter.CLASS_TYPE: "Parameters",
+    Resource.CLASS_TYPE: "Resources",
+    Output.CLASS_TYPE: "Outputs",
+    Rule.CLASS_TYPE: "Rules",
+    Mapping.CLASS_TYPE: "Mappings",
+    Condition.CLASS_TYPE: "Conditions",
+}

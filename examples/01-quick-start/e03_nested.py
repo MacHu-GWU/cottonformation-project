@@ -1,16 +1,28 @@
 # -*- coding: utf-8 -*-
 
 """
+The best way to organize multi tier / multi app infrastructure is using
+CloudFormation nested stack https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-nested-stacks.html.
+However, with cottonformation, your nested template / resource can be easily declared
+and import. The original purpose of CloudFormation nested stack is to split
+big template into multiple small one. **With cottonformation, this is unnecessary**.
 
-infrastructure
-|-- app tier
-    |-- app1
-    |-- app2
-|-- data tier
-    |-- data1
-    |-- data2
-...
+But if you still want to do that in nested stack, cottonformation can easily do
+that too.
+
+Assume you have a complex architect design like this. Each line represent a
+CloudFormation Template (Stack)::
+
+    infrastructure
+    |-- app tier
+        |-- app1
+        |-- app2
+    |-- data tier
+        |-- data1
+        |-- data2
+    ...
 """
+
 import cottonformation as ctf
 from cottonformation.res import iam, awslambda, cloudformation
 
@@ -24,6 +36,8 @@ param_stage = ctf.Parameter(
 )
 
 
+# We declared lots of template here. Each one can be deployed independently
+# but cottonformation will put them together using nested stack at the end.
 #--- Template(infra) ---
 tpl_infra_tier = ctf.Template(Description="the master/infra tier")
 
@@ -141,10 +155,11 @@ app_tier_stack = cloudformation.Stack(
     },
 )
 tpl_infra_tier.add(app_tier_stack)
-# associate stack and template
+# associate stack and template 'infra tier' <---> 'app tier'
 tpl_infra_tier.add_nested_stack(app_tier_stack, tpl_app_tier)
 
 
+# repeat this for 'app tier' <---> 'app1 tier'
 app1_stack = cloudformation.Stack(
     "App1",
     rp_TemplateURL="", # will know later
@@ -157,7 +172,7 @@ app1_stack = cloudformation.Stack(
 tpl_app_tier.add(app1_stack)
 tpl_app_tier.add_nested_stack(app1_stack, tpl_app1)
 
-
+# repeat this for 'app tier' <---> 'app2 tier'
 app2_stack = cloudformation.Stack(
     "App2",
     rp_TemplateURL="", # will know later
@@ -170,17 +185,21 @@ app2_stack = cloudformation.Stack(
 tpl_app_tier.add(app2_stack)
 tpl_app_tier.add_nested_stack(app2_stack, tpl_app2)
 
+# Note, data tier is intentionally skipped. Since you can easily repeat
+# this pattern for data tier
+
 
 if __name__ == "__main__":
     # my private aws account session and bucket for testing
     from cottonformation.tests.boto_ses import boto_ses, bucket
 
     # define the Parameter.EnvName value
-    project_name = "ctf-nested-stack-demo"
+    project_name = "ctf-1-quick-start-3-nested-stack"
     stage = "dev"
 
     # there's no additional step to deploy a nested stack
-    # cottonformation will automatically handle everything for you.
+    # cottonformation will automatically upload all nested template to s3
+    # and update the AWS::CloudFormation::Stack.TemplateUrl property for you.
     env = ctf.Env(boto_ses=boto_ses)
     env.deploy(
         template=tpl_infra_tier,

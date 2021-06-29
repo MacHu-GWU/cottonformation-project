@@ -100,7 +100,7 @@ todo_include_todos = True
 #
 html_theme = 'furo'
 html_theme_options = {
-    "sidebar_hide_name": True,
+    "sidebar_hide_name": False,
     "dark_logo": "cottonformation-logo.png",
 }
 pygments_dark_style = "monokai"

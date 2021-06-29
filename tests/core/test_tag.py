@@ -28,6 +28,13 @@ class TestTag:
         assert tags[1].p_Key == "stage"
         assert tags[2].p_Key == "creator"
 
+    def test_immutable(self):
+        t = Tag("k", "v")
+        with raises(Exception):
+            t.p_Key = "k1"
+        with raises(Exception):
+            t.p_Value = "v1"
+
     def test_serialize(self):
         assert Tag("Name", "Alice").serialize() == {"Key": "Name", "Value": "Alice"}
         p = Parameter("Name", Type=Parameter.TypeEnum.String)
