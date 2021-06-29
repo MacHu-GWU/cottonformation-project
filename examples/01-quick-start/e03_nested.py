@@ -11,7 +11,11 @@ But if you still want to do that in nested stack, cottonformation can easily do
 that too.
 
 Assume you have a complex architect design like this. Each line represent a
-CloudFormation Template (Stack)::
+CloudFormation Stack / Template. The ``infrastructure tier`` defines
+the common resource for all other tier, for example, IAM Role, Security Group.
+And the ``shared app tier`` can define the resources used for all other apps,
+for example s3 bucket. Eventually the concrete ``app1, 2, ...`` can define
+the resources needed to run the app::
 
     infrastructure
     |-- app tier
