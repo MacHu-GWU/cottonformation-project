@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class ScalingPlanMetricDimension(Property):
+class PropScalingPlanMetricDimension(Property):
     """
     AWS Object Type = "AWS::AutoScalingPlans::ScalingPlan.MetricDimension"
 
@@ -42,7 +42,7 @@ class ScalingPlanMetricDimension(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-metricdimension.html#cfn-autoscalingplans-scalingplan-metricdimension-value"""
 
 @attr.s
-class ScalingPlanPredefinedScalingMetricSpecification(Property):
+class PropScalingPlanPredefinedScalingMetricSpecification(Property):
     """
     AWS Object Type = "AWS::AutoScalingPlans::ScalingPlan.PredefinedScalingMetricSpecification"
 
@@ -69,7 +69,7 @@ class ScalingPlanPredefinedScalingMetricSpecification(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-predefinedscalingmetricspecification.html#cfn-autoscalingplans-scalingplan-predefinedscalingmetricspecification-resourcelabel"""
 
 @attr.s
-class ScalingPlanCustomizedScalingMetricSpecification(Property):
+class PropScalingPlanCustomizedScalingMetricSpecification(Property):
     """
     AWS Object Type = "AWS::AutoScalingPlans::ScalingPlan.CustomizedScalingMetricSpecification"
 
@@ -103,10 +103,10 @@ class ScalingPlanCustomizedScalingMetricSpecification(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Statistic"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-customizedscalingmetricspecification.html#cfn-autoscalingplans-scalingplan-customizedscalingmetricspecification-statistic"""
-    p_Dimensions: typing.List[typing.Union['ScalingPlanMetricDimension', dict]] = attr.ib(
+    p_Dimensions: typing.List[typing.Union['PropScalingPlanMetricDimension', dict]] = attr.ib(
         default=None,
-        converter=ScalingPlanMetricDimension.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ScalingPlanMetricDimension), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropScalingPlanMetricDimension.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropScalingPlanMetricDimension), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Dimensions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-customizedscalingmetricspecification.html#cfn-autoscalingplans-scalingplan-customizedscalingmetricspecification-dimensions"""
@@ -118,7 +118,7 @@ class ScalingPlanCustomizedScalingMetricSpecification(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-customizedscalingmetricspecification.html#cfn-autoscalingplans-scalingplan-customizedscalingmetricspecification-unit"""
 
 @attr.s
-class ScalingPlanTagFilter(Property):
+class PropScalingPlanTagFilter(Property):
     """
     AWS Object Type = "AWS::AutoScalingPlans::ScalingPlan.TagFilter"
 
@@ -145,7 +145,7 @@ class ScalingPlanTagFilter(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-tagfilter.html#cfn-autoscalingplans-scalingplan-tagfilter-values"""
 
 @attr.s
-class ScalingPlanCustomizedLoadMetricSpecification(Property):
+class PropScalingPlanCustomizedLoadMetricSpecification(Property):
     """
     AWS Object Type = "AWS::AutoScalingPlans::ScalingPlan.CustomizedLoadMetricSpecification"
 
@@ -179,10 +179,10 @@ class ScalingPlanCustomizedLoadMetricSpecification(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Statistic"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-customizedloadmetricspecification.html#cfn-autoscalingplans-scalingplan-customizedloadmetricspecification-statistic"""
-    p_Dimensions: typing.List[typing.Union['ScalingPlanMetricDimension', dict]] = attr.ib(
+    p_Dimensions: typing.List[typing.Union['PropScalingPlanMetricDimension', dict]] = attr.ib(
         default=None,
-        converter=ScalingPlanMetricDimension.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ScalingPlanMetricDimension), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropScalingPlanMetricDimension.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropScalingPlanMetricDimension), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Dimensions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-customizedloadmetricspecification.html#cfn-autoscalingplans-scalingplan-customizedloadmetricspecification-dimensions"""
@@ -194,7 +194,7 @@ class ScalingPlanCustomizedLoadMetricSpecification(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-customizedloadmetricspecification.html#cfn-autoscalingplans-scalingplan-customizedloadmetricspecification-unit"""
 
 @attr.s
-class ScalingPlanApplicationSource(Property):
+class PropScalingPlanApplicationSource(Property):
     """
     AWS Object Type = "AWS::AutoScalingPlans::ScalingPlan.ApplicationSource"
 
@@ -213,16 +213,16 @@ class ScalingPlanApplicationSource(Property):
         metadata={AttrMeta.PROPERTY_NAME: "CloudFormationStackARN"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-applicationsource.html#cfn-autoscalingplans-scalingplan-applicationsource-cloudformationstackarn"""
-    p_TagFilters: typing.List[typing.Union['ScalingPlanTagFilter', dict]] = attr.ib(
+    p_TagFilters: typing.List[typing.Union['PropScalingPlanTagFilter', dict]] = attr.ib(
         default=None,
-        converter=ScalingPlanTagFilter.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ScalingPlanTagFilter), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropScalingPlanTagFilter.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropScalingPlanTagFilter), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "TagFilters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-applicationsource.html#cfn-autoscalingplans-scalingplan-applicationsource-tagfilters"""
 
 @attr.s
-class ScalingPlanTargetTrackingConfiguration(Property):
+class PropScalingPlanTargetTrackingConfiguration(Property):
     """
     AWS Object Type = "AWS::AutoScalingPlans::ScalingPlan.TargetTrackingConfiguration"
 
@@ -246,10 +246,10 @@ class ScalingPlanTargetTrackingConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "TargetValue"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-targettrackingconfiguration.html#cfn-autoscalingplans-scalingplan-targettrackingconfiguration-targetvalue"""
-    p_CustomizedScalingMetricSpecification: typing.Union['ScalingPlanCustomizedScalingMetricSpecification', dict] = attr.ib(
+    p_CustomizedScalingMetricSpecification: typing.Union['PropScalingPlanCustomizedScalingMetricSpecification', dict] = attr.ib(
         default=None,
-        converter=ScalingPlanCustomizedScalingMetricSpecification.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ScalingPlanCustomizedScalingMetricSpecification)),
+        converter=PropScalingPlanCustomizedScalingMetricSpecification.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropScalingPlanCustomizedScalingMetricSpecification)),
         metadata={AttrMeta.PROPERTY_NAME: "CustomizedScalingMetricSpecification"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-targettrackingconfiguration.html#cfn-autoscalingplans-scalingplan-targettrackingconfiguration-customizedscalingmetricspecification"""
@@ -265,10 +265,10 @@ class ScalingPlanTargetTrackingConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "EstimatedInstanceWarmup"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-targettrackingconfiguration.html#cfn-autoscalingplans-scalingplan-targettrackingconfiguration-estimatedinstancewarmup"""
-    p_PredefinedScalingMetricSpecification: typing.Union['ScalingPlanPredefinedScalingMetricSpecification', dict] = attr.ib(
+    p_PredefinedScalingMetricSpecification: typing.Union['PropScalingPlanPredefinedScalingMetricSpecification', dict] = attr.ib(
         default=None,
-        converter=ScalingPlanPredefinedScalingMetricSpecification.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ScalingPlanPredefinedScalingMetricSpecification)),
+        converter=PropScalingPlanPredefinedScalingMetricSpecification.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropScalingPlanPredefinedScalingMetricSpecification)),
         metadata={AttrMeta.PROPERTY_NAME: "PredefinedScalingMetricSpecification"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-targettrackingconfiguration.html#cfn-autoscalingplans-scalingplan-targettrackingconfiguration-predefinedscalingmetricspecification"""
@@ -286,7 +286,7 @@ class ScalingPlanTargetTrackingConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-targettrackingconfiguration.html#cfn-autoscalingplans-scalingplan-targettrackingconfiguration-scaleoutcooldown"""
 
 @attr.s
-class ScalingPlanPredefinedLoadMetricSpecification(Property):
+class PropScalingPlanPredefinedLoadMetricSpecification(Property):
     """
     AWS Object Type = "AWS::AutoScalingPlans::ScalingPlan.PredefinedLoadMetricSpecification"
 
@@ -313,7 +313,7 @@ class ScalingPlanPredefinedLoadMetricSpecification(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-predefinedloadmetricspecification.html#cfn-autoscalingplans-scalingplan-predefinedloadmetricspecification-resourcelabel"""
 
 @attr.s
-class ScalingPlanScalingInstruction(Property):
+class PropScalingPlanScalingInstruction(Property):
     """
     AWS Object Type = "AWS::AutoScalingPlans::ScalingPlan.ScalingInstruction"
 
@@ -368,17 +368,17 @@ class ScalingPlanScalingInstruction(Property):
         metadata={AttrMeta.PROPERTY_NAME: "ServiceNamespace"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-scalinginstruction.html#cfn-autoscalingplans-scalingplan-scalinginstruction-servicenamespace"""
-    rp_TargetTrackingConfigurations: typing.List[typing.Union['ScalingPlanTargetTrackingConfiguration', dict]] = attr.ib(
+    rp_TargetTrackingConfigurations: typing.List[typing.Union['PropScalingPlanTargetTrackingConfiguration', dict]] = attr.ib(
         default=None,
-        converter=ScalingPlanTargetTrackingConfiguration.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ScalingPlanTargetTrackingConfiguration), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropScalingPlanTargetTrackingConfiguration.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropScalingPlanTargetTrackingConfiguration), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "TargetTrackingConfigurations"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-scalinginstruction.html#cfn-autoscalingplans-scalingplan-scalinginstruction-targettrackingconfigurations"""
-    p_CustomizedLoadMetricSpecification: typing.Union['ScalingPlanCustomizedLoadMetricSpecification', dict] = attr.ib(
+    p_CustomizedLoadMetricSpecification: typing.Union['PropScalingPlanCustomizedLoadMetricSpecification', dict] = attr.ib(
         default=None,
-        converter=ScalingPlanCustomizedLoadMetricSpecification.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ScalingPlanCustomizedLoadMetricSpecification)),
+        converter=PropScalingPlanCustomizedLoadMetricSpecification.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropScalingPlanCustomizedLoadMetricSpecification)),
         metadata={AttrMeta.PROPERTY_NAME: "CustomizedLoadMetricSpecification"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-scalinginstruction.html#cfn-autoscalingplans-scalingplan-scalinginstruction-customizedloadmetricspecification"""
@@ -388,10 +388,10 @@ class ScalingPlanScalingInstruction(Property):
         metadata={AttrMeta.PROPERTY_NAME: "DisableDynamicScaling"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-scalinginstruction.html#cfn-autoscalingplans-scalingplan-scalinginstruction-disabledynamicscaling"""
-    p_PredefinedLoadMetricSpecification: typing.Union['ScalingPlanPredefinedLoadMetricSpecification', dict] = attr.ib(
+    p_PredefinedLoadMetricSpecification: typing.Union['PropScalingPlanPredefinedLoadMetricSpecification', dict] = attr.ib(
         default=None,
-        converter=ScalingPlanPredefinedLoadMetricSpecification.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ScalingPlanPredefinedLoadMetricSpecification)),
+        converter=PropScalingPlanPredefinedLoadMetricSpecification.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropScalingPlanPredefinedLoadMetricSpecification)),
         metadata={AttrMeta.PROPERTY_NAME: "PredefinedLoadMetricSpecification"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscalingplans-scalingplan-scalinginstruction.html#cfn-autoscalingplans-scalingplan-scalinginstruction-predefinedloadmetricspecification"""
@@ -444,17 +444,17 @@ class ScalingPlan(Resource):
     AWS_OBJECT_TYPE = "AWS::AutoScalingPlans::ScalingPlan"
 
     
-    rp_ApplicationSource: typing.Union['ScalingPlanApplicationSource', dict] = attr.ib(
+    rp_ApplicationSource: typing.Union['PropScalingPlanApplicationSource', dict] = attr.ib(
         default=None,
-        converter=ScalingPlanApplicationSource.from_dict,
-        validator=attr.validators.instance_of(ScalingPlanApplicationSource),
+        converter=PropScalingPlanApplicationSource.from_dict,
+        validator=attr.validators.instance_of(PropScalingPlanApplicationSource),
         metadata={AttrMeta.PROPERTY_NAME: "ApplicationSource"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscalingplans-scalingplan.html#cfn-autoscalingplans-scalingplan-applicationsource"""
-    rp_ScalingInstructions: typing.List[typing.Union['ScalingPlanScalingInstruction', dict]] = attr.ib(
+    rp_ScalingInstructions: typing.List[typing.Union['PropScalingPlanScalingInstruction', dict]] = attr.ib(
         default=None,
-        converter=ScalingPlanScalingInstruction.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ScalingPlanScalingInstruction), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropScalingPlanScalingInstruction.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropScalingPlanScalingInstruction), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "ScalingInstructions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-autoscalingplans-scalingplan.html#cfn-autoscalingplans-scalingplan-scalinginstructions"""

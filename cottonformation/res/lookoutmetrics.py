@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class AnomalyDetectorCsvFormatDescriptor(Property):
+class PropAnomalyDetectorCsvFormatDescriptor(Property):
     """
     AWS Object Type = "AWS::LookoutMetrics::AnomalyDetector.CsvFormatDescriptor"
 
@@ -70,7 +70,7 @@ class AnomalyDetectorCsvFormatDescriptor(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-anomalydetector-csvformatdescriptor.html#cfn-lookoutmetrics-anomalydetector-csvformatdescriptor-quotesymbol"""
 
 @attr.s
-class AnomalyDetectorVpcConfiguration(Property):
+class PropAnomalyDetectorVpcConfiguration(Property):
     """
     AWS Object Type = "AWS::LookoutMetrics::AnomalyDetector.VpcConfiguration"
 
@@ -97,7 +97,7 @@ class AnomalyDetectorVpcConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-anomalydetector-vpcconfiguration.html#cfn-lookoutmetrics-anomalydetector-vpcconfiguration-subnetidlist"""
 
 @attr.s
-class AnomalyDetectorRDSSourceConfig(Property):
+class PropAnomalyDetectorRDSSourceConfig(Property):
     """
     AWS Object Type = "AWS::LookoutMetrics::AnomalyDetector.RDSSourceConfig"
 
@@ -158,16 +158,16 @@ class AnomalyDetectorRDSSourceConfig(Property):
         metadata={AttrMeta.PROPERTY_NAME: "TableName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-anomalydetector-rdssourceconfig.html#cfn-lookoutmetrics-anomalydetector-rdssourceconfig-tablename"""
-    rp_VpcConfiguration: typing.Union['AnomalyDetectorVpcConfiguration', dict] = attr.ib(
+    rp_VpcConfiguration: typing.Union['PropAnomalyDetectorVpcConfiguration', dict] = attr.ib(
         default=None,
-        converter=AnomalyDetectorVpcConfiguration.from_dict,
-        validator=attr.validators.instance_of(AnomalyDetectorVpcConfiguration),
+        converter=PropAnomalyDetectorVpcConfiguration.from_dict,
+        validator=attr.validators.instance_of(PropAnomalyDetectorVpcConfiguration),
         metadata={AttrMeta.PROPERTY_NAME: "VpcConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-anomalydetector-rdssourceconfig.html#cfn-lookoutmetrics-anomalydetector-rdssourceconfig-vpcconfiguration"""
 
 @attr.s
-class AnomalyDetectorTimestampColumn(Property):
+class PropAnomalyDetectorTimestampColumn(Property):
     """
     AWS Object Type = "AWS::LookoutMetrics::AnomalyDetector.TimestampColumn"
 
@@ -194,7 +194,7 @@ class AnomalyDetectorTimestampColumn(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-anomalydetector-timestampcolumn.html#cfn-lookoutmetrics-anomalydetector-timestampcolumn-columnname"""
 
 @attr.s
-class AnomalyDetectorJsonFormatDescriptor(Property):
+class PropAnomalyDetectorJsonFormatDescriptor(Property):
     """
     AWS Object Type = "AWS::LookoutMetrics::AnomalyDetector.JsonFormatDescriptor"
 
@@ -221,7 +221,7 @@ class AnomalyDetectorJsonFormatDescriptor(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-anomalydetector-jsonformatdescriptor.html#cfn-lookoutmetrics-anomalydetector-jsonformatdescriptor-filecompression"""
 
 @attr.s
-class AnomalyDetectorAppFlowConfig(Property):
+class PropAnomalyDetectorAppFlowConfig(Property):
     """
     AWS Object Type = "AWS::LookoutMetrics::AnomalyDetector.AppFlowConfig"
 
@@ -248,7 +248,7 @@ class AnomalyDetectorAppFlowConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-anomalydetector-appflowconfig.html#cfn-lookoutmetrics-anomalydetector-appflowconfig-rolearn"""
 
 @attr.s
-class AnomalyDetectorRedshiftSourceConfig(Property):
+class PropAnomalyDetectorRedshiftSourceConfig(Property):
     """
     AWS Object Type = "AWS::LookoutMetrics::AnomalyDetector.RedshiftSourceConfig"
 
@@ -309,16 +309,16 @@ class AnomalyDetectorRedshiftSourceConfig(Property):
         metadata={AttrMeta.PROPERTY_NAME: "TableName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-anomalydetector-redshiftsourceconfig.html#cfn-lookoutmetrics-anomalydetector-redshiftsourceconfig-tablename"""
-    rp_VpcConfiguration: typing.Union['AnomalyDetectorVpcConfiguration', dict] = attr.ib(
+    rp_VpcConfiguration: typing.Union['PropAnomalyDetectorVpcConfiguration', dict] = attr.ib(
         default=None,
-        converter=AnomalyDetectorVpcConfiguration.from_dict,
-        validator=attr.validators.instance_of(AnomalyDetectorVpcConfiguration),
+        converter=PropAnomalyDetectorVpcConfiguration.from_dict,
+        validator=attr.validators.instance_of(PropAnomalyDetectorVpcConfiguration),
         metadata={AttrMeta.PROPERTY_NAME: "VpcConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-anomalydetector-redshiftsourceconfig.html#cfn-lookoutmetrics-anomalydetector-redshiftsourceconfig-vpcconfiguration"""
 
 @attr.s
-class AnomalyDetectorMetric(Property):
+class PropAnomalyDetectorMetric(Property):
     """
     AWS Object Type = "AWS::LookoutMetrics::AnomalyDetector.Metric"
 
@@ -352,7 +352,7 @@ class AnomalyDetectorMetric(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-anomalydetector-metric.html#cfn-lookoutmetrics-anomalydetector-metric-namespace"""
 
 @attr.s
-class AnomalyDetectorCloudwatchConfig(Property):
+class PropAnomalyDetectorCloudwatchConfig(Property):
     """
     AWS Object Type = "AWS::LookoutMetrics::AnomalyDetector.CloudwatchConfig"
 
@@ -372,7 +372,7 @@ class AnomalyDetectorCloudwatchConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-anomalydetector-cloudwatchconfig.html#cfn-lookoutmetrics-anomalydetector-cloudwatchconfig-rolearn"""
 
 @attr.s
-class AnomalyDetectorFileFormatDescriptor(Property):
+class PropAnomalyDetectorFileFormatDescriptor(Property):
     """
     AWS Object Type = "AWS::LookoutMetrics::AnomalyDetector.FileFormatDescriptor"
 
@@ -385,23 +385,23 @@ class AnomalyDetectorFileFormatDescriptor(Property):
     """
     AWS_OBJECT_TYPE = "AWS::LookoutMetrics::AnomalyDetector.FileFormatDescriptor"
     
-    p_CsvFormatDescriptor: typing.Union['AnomalyDetectorCsvFormatDescriptor', dict] = attr.ib(
+    p_CsvFormatDescriptor: typing.Union['PropAnomalyDetectorCsvFormatDescriptor', dict] = attr.ib(
         default=None,
-        converter=AnomalyDetectorCsvFormatDescriptor.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(AnomalyDetectorCsvFormatDescriptor)),
+        converter=PropAnomalyDetectorCsvFormatDescriptor.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropAnomalyDetectorCsvFormatDescriptor)),
         metadata={AttrMeta.PROPERTY_NAME: "CsvFormatDescriptor"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-anomalydetector-fileformatdescriptor.html#cfn-lookoutmetrics-anomalydetector-fileformatdescriptor-csvformatdescriptor"""
-    p_JsonFormatDescriptor: typing.Union['AnomalyDetectorJsonFormatDescriptor', dict] = attr.ib(
+    p_JsonFormatDescriptor: typing.Union['PropAnomalyDetectorJsonFormatDescriptor', dict] = attr.ib(
         default=None,
-        converter=AnomalyDetectorJsonFormatDescriptor.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(AnomalyDetectorJsonFormatDescriptor)),
+        converter=PropAnomalyDetectorJsonFormatDescriptor.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropAnomalyDetectorJsonFormatDescriptor)),
         metadata={AttrMeta.PROPERTY_NAME: "JsonFormatDescriptor"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-anomalydetector-fileformatdescriptor.html#cfn-lookoutmetrics-anomalydetector-fileformatdescriptor-jsonformatdescriptor"""
 
 @attr.s
-class AnomalyDetectorS3SourceConfig(Property):
+class PropAnomalyDetectorS3SourceConfig(Property):
     """
     AWS Object Type = "AWS::LookoutMetrics::AnomalyDetector.S3SourceConfig"
 
@@ -416,10 +416,10 @@ class AnomalyDetectorS3SourceConfig(Property):
     """
     AWS_OBJECT_TYPE = "AWS::LookoutMetrics::AnomalyDetector.S3SourceConfig"
     
-    rp_FileFormatDescriptor: typing.Union['AnomalyDetectorFileFormatDescriptor', dict] = attr.ib(
+    rp_FileFormatDescriptor: typing.Union['PropAnomalyDetectorFileFormatDescriptor', dict] = attr.ib(
         default=None,
-        converter=AnomalyDetectorFileFormatDescriptor.from_dict,
-        validator=attr.validators.instance_of(AnomalyDetectorFileFormatDescriptor),
+        converter=PropAnomalyDetectorFileFormatDescriptor.from_dict,
+        validator=attr.validators.instance_of(PropAnomalyDetectorFileFormatDescriptor),
         metadata={AttrMeta.PROPERTY_NAME: "FileFormatDescriptor"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-anomalydetector-s3sourceconfig.html#cfn-lookoutmetrics-anomalydetector-s3sourceconfig-fileformatdescriptor"""
@@ -443,7 +443,7 @@ class AnomalyDetectorS3SourceConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-anomalydetector-s3sourceconfig.html#cfn-lookoutmetrics-anomalydetector-s3sourceconfig-templatedpathlist"""
 
 @attr.s
-class AnomalyDetectorMetricSource(Property):
+class PropAnomalyDetectorMetricSource(Property):
     """
     AWS Object Type = "AWS::LookoutMetrics::AnomalyDetector.MetricSource"
 
@@ -459,44 +459,44 @@ class AnomalyDetectorMetricSource(Property):
     """
     AWS_OBJECT_TYPE = "AWS::LookoutMetrics::AnomalyDetector.MetricSource"
     
-    p_AppFlowConfig: typing.Union['AnomalyDetectorAppFlowConfig', dict] = attr.ib(
+    p_AppFlowConfig: typing.Union['PropAnomalyDetectorAppFlowConfig', dict] = attr.ib(
         default=None,
-        converter=AnomalyDetectorAppFlowConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(AnomalyDetectorAppFlowConfig)),
+        converter=PropAnomalyDetectorAppFlowConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropAnomalyDetectorAppFlowConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "AppFlowConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-anomalydetector-metricsource.html#cfn-lookoutmetrics-anomalydetector-metricsource-appflowconfig"""
-    p_CloudwatchConfig: typing.Union['AnomalyDetectorCloudwatchConfig', dict] = attr.ib(
+    p_CloudwatchConfig: typing.Union['PropAnomalyDetectorCloudwatchConfig', dict] = attr.ib(
         default=None,
-        converter=AnomalyDetectorCloudwatchConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(AnomalyDetectorCloudwatchConfig)),
+        converter=PropAnomalyDetectorCloudwatchConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropAnomalyDetectorCloudwatchConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "CloudwatchConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-anomalydetector-metricsource.html#cfn-lookoutmetrics-anomalydetector-metricsource-cloudwatchconfig"""
-    p_RDSSourceConfig: typing.Union['AnomalyDetectorRDSSourceConfig', dict] = attr.ib(
+    p_RDSSourceConfig: typing.Union['PropAnomalyDetectorRDSSourceConfig', dict] = attr.ib(
         default=None,
-        converter=AnomalyDetectorRDSSourceConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(AnomalyDetectorRDSSourceConfig)),
+        converter=PropAnomalyDetectorRDSSourceConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropAnomalyDetectorRDSSourceConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "RDSSourceConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-anomalydetector-metricsource.html#cfn-lookoutmetrics-anomalydetector-metricsource-rdssourceconfig"""
-    p_RedshiftSourceConfig: typing.Union['AnomalyDetectorRedshiftSourceConfig', dict] = attr.ib(
+    p_RedshiftSourceConfig: typing.Union['PropAnomalyDetectorRedshiftSourceConfig', dict] = attr.ib(
         default=None,
-        converter=AnomalyDetectorRedshiftSourceConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(AnomalyDetectorRedshiftSourceConfig)),
+        converter=PropAnomalyDetectorRedshiftSourceConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropAnomalyDetectorRedshiftSourceConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "RedshiftSourceConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-anomalydetector-metricsource.html#cfn-lookoutmetrics-anomalydetector-metricsource-redshiftsourceconfig"""
-    p_S3SourceConfig: typing.Union['AnomalyDetectorS3SourceConfig', dict] = attr.ib(
+    p_S3SourceConfig: typing.Union['PropAnomalyDetectorS3SourceConfig', dict] = attr.ib(
         default=None,
-        converter=AnomalyDetectorS3SourceConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(AnomalyDetectorS3SourceConfig)),
+        converter=PropAnomalyDetectorS3SourceConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropAnomalyDetectorS3SourceConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "S3SourceConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-anomalydetector-metricsource.html#cfn-lookoutmetrics-anomalydetector-metricsource-s3sourceconfig"""
 
 @attr.s
-class AnomalyDetectorMetricSet(Property):
+class PropAnomalyDetectorMetricSet(Property):
     """
     AWS Object Type = "AWS::LookoutMetrics::AnomalyDetector.MetricSet"
 
@@ -516,10 +516,10 @@ class AnomalyDetectorMetricSet(Property):
     """
     AWS_OBJECT_TYPE = "AWS::LookoutMetrics::AnomalyDetector.MetricSet"
     
-    rp_MetricList: typing.List[typing.Union['AnomalyDetectorMetric', dict]] = attr.ib(
+    rp_MetricList: typing.List[typing.Union['PropAnomalyDetectorMetric', dict]] = attr.ib(
         default=None,
-        converter=AnomalyDetectorMetric.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(AnomalyDetectorMetric), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropAnomalyDetectorMetric.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropAnomalyDetectorMetric), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "MetricList"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-anomalydetector-metricset.html#cfn-lookoutmetrics-anomalydetector-metricset-metriclist"""
@@ -529,10 +529,10 @@ class AnomalyDetectorMetricSet(Property):
         metadata={AttrMeta.PROPERTY_NAME: "MetricSetName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-anomalydetector-metricset.html#cfn-lookoutmetrics-anomalydetector-metricset-metricsetname"""
-    rp_MetricSource: typing.Union['AnomalyDetectorMetricSource', dict] = attr.ib(
+    rp_MetricSource: typing.Union['PropAnomalyDetectorMetricSource', dict] = attr.ib(
         default=None,
-        converter=AnomalyDetectorMetricSource.from_dict,
-        validator=attr.validators.instance_of(AnomalyDetectorMetricSource),
+        converter=PropAnomalyDetectorMetricSource.from_dict,
+        validator=attr.validators.instance_of(PropAnomalyDetectorMetricSource),
         metadata={AttrMeta.PROPERTY_NAME: "MetricSource"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-anomalydetector-metricset.html#cfn-lookoutmetrics-anomalydetector-metricset-metricsource"""
@@ -560,10 +560,10 @@ class AnomalyDetectorMetricSet(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Offset"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-anomalydetector-metricset.html#cfn-lookoutmetrics-anomalydetector-metricset-offset"""
-    p_TimestampColumn: typing.Union['AnomalyDetectorTimestampColumn', dict] = attr.ib(
+    p_TimestampColumn: typing.Union['PropAnomalyDetectorTimestampColumn', dict] = attr.ib(
         default=None,
-        converter=AnomalyDetectorTimestampColumn.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(AnomalyDetectorTimestampColumn)),
+        converter=PropAnomalyDetectorTimestampColumn.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropAnomalyDetectorTimestampColumn)),
         metadata={AttrMeta.PROPERTY_NAME: "TimestampColumn"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-anomalydetector-metricset.html#cfn-lookoutmetrics-anomalydetector-metricset-timestampcolumn"""
@@ -657,10 +657,10 @@ class AnomalyDetector(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "AnomalyDetectorConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lookoutmetrics-anomalydetector.html#cfn-lookoutmetrics-anomalydetector-anomalydetectorconfig"""
-    rp_MetricSetList: typing.List[typing.Union['AnomalyDetectorMetricSet', dict]] = attr.ib(
+    rp_MetricSetList: typing.List[typing.Union['PropAnomalyDetectorMetricSet', dict]] = attr.ib(
         default=None,
-        converter=AnomalyDetectorMetricSet.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(AnomalyDetectorMetricSet), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropAnomalyDetectorMetricSet.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropAnomalyDetectorMetricSet), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "MetricSetList"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lookoutmetrics-anomalydetector.html#cfn-lookoutmetrics-anomalydetector-metricsetlist"""

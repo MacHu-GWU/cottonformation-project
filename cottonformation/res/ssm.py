@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class DocumentDocumentRequires(Property):
+class PropDocumentDocumentRequires(Property):
     """
     AWS Object Type = "AWS::SSM::Document.DocumentRequires"
 
@@ -42,7 +42,7 @@ class DocumentDocumentRequires(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-document-documentrequires.html#cfn-ssm-document-documentrequires-version"""
 
 @attr.s
-class PatchBaselinePatchStringDate(Property):
+class PropPatchBaselinePatchStringDate(Property):
     """
     AWS Object Type = "AWS::SSM::PatchBaseline.PatchStringDate"
 
@@ -55,7 +55,7 @@ class PatchBaselinePatchStringDate(Property):
     
 
 @attr.s
-class MaintenanceWindowTaskLoggingInfo(Property):
+class PropMaintenanceWindowTaskLoggingInfo(Property):
     """
     AWS Object Type = "AWS::SSM::MaintenanceWindowTask.LoggingInfo"
 
@@ -89,7 +89,7 @@ class MaintenanceWindowTaskLoggingInfo(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-logginginfo.html#cfn-ssm-maintenancewindowtask-logginginfo-s3prefix"""
 
 @attr.s
-class MaintenanceWindowTaskTarget(Property):
+class PropMaintenanceWindowTaskTarget(Property):
     """
     AWS Object Type = "AWS::SSM::MaintenanceWindowTask.Target"
 
@@ -116,7 +116,7 @@ class MaintenanceWindowTaskTarget(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-target.html#cfn-ssm-maintenancewindowtask-target-values"""
 
 @attr.s
-class MaintenanceWindowTaskNotificationConfig(Property):
+class PropMaintenanceWindowTaskNotificationConfig(Property):
     """
     AWS Object Type = "AWS::SSM::MaintenanceWindowTask.NotificationConfig"
 
@@ -150,7 +150,7 @@ class MaintenanceWindowTaskNotificationConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-notificationconfig.html#cfn-ssm-maintenancewindowtask-notificationconfig-notificationtype"""
 
 @attr.s
-class ResourceDataSyncAwsOrganizationsSource(Property):
+class PropResourceDataSyncAwsOrganizationsSource(Property):
     """
     AWS Object Type = "AWS::SSM::ResourceDataSync.AwsOrganizationsSource"
 
@@ -177,7 +177,7 @@ class ResourceDataSyncAwsOrganizationsSource(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-resourcedatasync-awsorganizationssource.html#cfn-ssm-resourcedatasync-awsorganizationssource-organizationalunits"""
 
 @attr.s
-class AssociationTarget(Property):
+class PropAssociationTarget(Property):
     """
     AWS Object Type = "AWS::SSM::Association.Target"
 
@@ -204,7 +204,7 @@ class AssociationTarget(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-association-target.html#cfn-ssm-association-target-values"""
 
 @attr.s
-class ResourceDataSyncSyncSource(Property):
+class PropResourceDataSyncSyncSource(Property):
     """
     AWS Object Type = "AWS::SSM::ResourceDataSync.SyncSource"
 
@@ -231,10 +231,10 @@ class ResourceDataSyncSyncSource(Property):
         metadata={AttrMeta.PROPERTY_NAME: "SourceType"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-resourcedatasync-syncsource.html#cfn-ssm-resourcedatasync-syncsource-sourcetype"""
-    p_AwsOrganizationsSource: typing.Union['ResourceDataSyncAwsOrganizationsSource', dict] = attr.ib(
+    p_AwsOrganizationsSource: typing.Union['PropResourceDataSyncAwsOrganizationsSource', dict] = attr.ib(
         default=None,
-        converter=ResourceDataSyncAwsOrganizationsSource.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ResourceDataSyncAwsOrganizationsSource)),
+        converter=PropResourceDataSyncAwsOrganizationsSource.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropResourceDataSyncAwsOrganizationsSource)),
         metadata={AttrMeta.PROPERTY_NAME: "AwsOrganizationsSource"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-resourcedatasync-syncsource.html#cfn-ssm-resourcedatasync-syncsource-awsorganizationssource"""
@@ -246,7 +246,7 @@ class ResourceDataSyncSyncSource(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-resourcedatasync-syncsource.html#cfn-ssm-resourcedatasync-syncsource-includefutureregions"""
 
 @attr.s
-class MaintenanceWindowTaskMaintenanceWindowAutomationParameters(Property):
+class PropMaintenanceWindowTaskMaintenanceWindowAutomationParameters(Property):
     """
     AWS Object Type = "AWS::SSM::MaintenanceWindowTask.MaintenanceWindowAutomationParameters"
 
@@ -273,7 +273,7 @@ class MaintenanceWindowTaskMaintenanceWindowAutomationParameters(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-maintenancewindowautomationparameters.html#cfn-ssm-maintenancewindowtask-maintenancewindowautomationparameters-parameters"""
 
 @attr.s
-class PatchBaselinePatchFilter(Property):
+class PropPatchBaselinePatchFilter(Property):
     """
     AWS Object Type = "AWS::SSM::PatchBaseline.PatchFilter"
 
@@ -300,7 +300,7 @@ class PatchBaselinePatchFilter(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-patchbaseline-patchfilter.html#cfn-ssm-patchbaseline-patchfilter-values"""
 
 @attr.s
-class PatchBaselinePatchFilterGroup(Property):
+class PropPatchBaselinePatchFilterGroup(Property):
     """
     AWS Object Type = "AWS::SSM::PatchBaseline.PatchFilterGroup"
 
@@ -312,16 +312,16 @@ class PatchBaselinePatchFilterGroup(Property):
     """
     AWS_OBJECT_TYPE = "AWS::SSM::PatchBaseline.PatchFilterGroup"
     
-    p_PatchFilters: typing.List[typing.Union['PatchBaselinePatchFilter', dict]] = attr.ib(
+    p_PatchFilters: typing.List[typing.Union['PropPatchBaselinePatchFilter', dict]] = attr.ib(
         default=None,
-        converter=PatchBaselinePatchFilter.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PatchBaselinePatchFilter), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropPatchBaselinePatchFilter.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropPatchBaselinePatchFilter), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "PatchFilters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-patchbaseline-patchfiltergroup.html#cfn-ssm-patchbaseline-patchfiltergroup-patchfilters"""
 
 @attr.s
-class PatchBaselinePatchSource(Property):
+class PropPatchBaselinePatchSource(Property):
     """
     AWS Object Type = "AWS::SSM::PatchBaseline.PatchSource"
 
@@ -355,7 +355,7 @@ class PatchBaselinePatchSource(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-patchbaseline-patchsource.html#cfn-ssm-patchbaseline-patchsource-products"""
 
 @attr.s
-class MaintenanceWindowTargetTargets(Property):
+class PropMaintenanceWindowTargetTargets(Property):
     """
     AWS Object Type = "AWS::SSM::MaintenanceWindowTarget.Targets"
 
@@ -382,7 +382,7 @@ class MaintenanceWindowTargetTargets(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtarget-targets.html#cfn-ssm-maintenancewindowtarget-targets-values"""
 
 @attr.s
-class MaintenanceWindowTaskMaintenanceWindowStepFunctionsParameters(Property):
+class PropMaintenanceWindowTaskMaintenanceWindowStepFunctionsParameters(Property):
     """
     AWS Object Type = "AWS::SSM::MaintenanceWindowTask.MaintenanceWindowStepFunctionsParameters"
 
@@ -409,7 +409,7 @@ class MaintenanceWindowTaskMaintenanceWindowStepFunctionsParameters(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-maintenancewindowstepfunctionsparameters.html#cfn-ssm-maintenancewindowtask-maintenancewindowstepfunctionsparameters-name"""
 
 @attr.s
-class ResourceDataSyncS3Destination(Property):
+class PropResourceDataSyncS3Destination(Property):
     """
     AWS Object Type = "AWS::SSM::ResourceDataSync.S3Destination"
 
@@ -457,7 +457,7 @@ class ResourceDataSyncS3Destination(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-resourcedatasync-s3destination.html#cfn-ssm-resourcedatasync-s3destination-kmskeyarn"""
 
 @attr.s
-class AssociationS3OutputLocation(Property):
+class PropAssociationS3OutputLocation(Property):
     """
     AWS Object Type = "AWS::SSM::Association.S3OutputLocation"
 
@@ -491,7 +491,7 @@ class AssociationS3OutputLocation(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-association-s3outputlocation.html#cfn-ssm-association-s3outputlocation-outputs3region"""
 
 @attr.s
-class DocumentAttachmentsSource(Property):
+class PropDocumentAttachmentsSource(Property):
     """
     AWS Object Type = "AWS::SSM::Document.AttachmentsSource"
 
@@ -525,7 +525,7 @@ class DocumentAttachmentsSource(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-document-attachmentssource.html#cfn-ssm-document-attachmentssource-values"""
 
 @attr.s
-class MaintenanceWindowTaskMaintenanceWindowRunCommandParameters(Property):
+class PropMaintenanceWindowTaskMaintenanceWindowRunCommandParameters(Property):
     """
     AWS Object Type = "AWS::SSM::MaintenanceWindowTask.MaintenanceWindowRunCommandParameters"
 
@@ -563,10 +563,10 @@ class MaintenanceWindowTaskMaintenanceWindowRunCommandParameters(Property):
         metadata={AttrMeta.PROPERTY_NAME: "DocumentHashType"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-maintenancewindowruncommandparameters.html#cfn-ssm-maintenancewindowtask-maintenancewindowruncommandparameters-documenthashtype"""
-    p_NotificationConfig: typing.Union['MaintenanceWindowTaskNotificationConfig', dict] = attr.ib(
+    p_NotificationConfig: typing.Union['PropMaintenanceWindowTaskNotificationConfig', dict] = attr.ib(
         default=None,
-        converter=MaintenanceWindowTaskNotificationConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(MaintenanceWindowTaskNotificationConfig)),
+        converter=PropMaintenanceWindowTaskNotificationConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropMaintenanceWindowTaskNotificationConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "NotificationConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-maintenancewindowruncommandparameters.html#cfn-ssm-maintenancewindowtask-maintenancewindowruncommandparameters-notificationconfig"""
@@ -602,7 +602,7 @@ class MaintenanceWindowTaskMaintenanceWindowRunCommandParameters(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-maintenancewindowruncommandparameters.html#cfn-ssm-maintenancewindowtask-maintenancewindowruncommandparameters-timeoutseconds"""
 
 @attr.s
-class MaintenanceWindowTaskMaintenanceWindowLambdaParameters(Property):
+class PropMaintenanceWindowTaskMaintenanceWindowLambdaParameters(Property):
     """
     AWS Object Type = "AWS::SSM::MaintenanceWindowTask.MaintenanceWindowLambdaParameters"
 
@@ -636,7 +636,7 @@ class MaintenanceWindowTaskMaintenanceWindowLambdaParameters(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-maintenancewindowlambdaparameters.html#cfn-ssm-maintenancewindowtask-maintenancewindowlambdaparameters-qualifier"""
 
 @attr.s
-class AssociationInstanceAssociationOutputLocation(Property):
+class PropAssociationInstanceAssociationOutputLocation(Property):
     """
     AWS Object Type = "AWS::SSM::Association.InstanceAssociationOutputLocation"
 
@@ -648,16 +648,16 @@ class AssociationInstanceAssociationOutputLocation(Property):
     """
     AWS_OBJECT_TYPE = "AWS::SSM::Association.InstanceAssociationOutputLocation"
     
-    p_S3Location: typing.Union['AssociationS3OutputLocation', dict] = attr.ib(
+    p_S3Location: typing.Union['PropAssociationS3OutputLocation', dict] = attr.ib(
         default=None,
-        converter=AssociationS3OutputLocation.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(AssociationS3OutputLocation)),
+        converter=PropAssociationS3OutputLocation.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropAssociationS3OutputLocation)),
         metadata={AttrMeta.PROPERTY_NAME: "S3Location"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-association-instanceassociationoutputlocation.html#cfn-ssm-association-instanceassociationoutputlocation-s3location"""
 
 @attr.s
-class MaintenanceWindowTaskTaskInvocationParameters(Property):
+class PropMaintenanceWindowTaskTaskInvocationParameters(Property):
     """
     AWS Object Type = "AWS::SSM::MaintenanceWindowTask.TaskInvocationParameters"
 
@@ -672,37 +672,37 @@ class MaintenanceWindowTaskTaskInvocationParameters(Property):
     """
     AWS_OBJECT_TYPE = "AWS::SSM::MaintenanceWindowTask.TaskInvocationParameters"
     
-    p_MaintenanceWindowAutomationParameters: typing.Union['MaintenanceWindowTaskMaintenanceWindowAutomationParameters', dict] = attr.ib(
+    p_MaintenanceWindowAutomationParameters: typing.Union['PropMaintenanceWindowTaskMaintenanceWindowAutomationParameters', dict] = attr.ib(
         default=None,
-        converter=MaintenanceWindowTaskMaintenanceWindowAutomationParameters.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(MaintenanceWindowTaskMaintenanceWindowAutomationParameters)),
+        converter=PropMaintenanceWindowTaskMaintenanceWindowAutomationParameters.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropMaintenanceWindowTaskMaintenanceWindowAutomationParameters)),
         metadata={AttrMeta.PROPERTY_NAME: "MaintenanceWindowAutomationParameters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-taskinvocationparameters.html#cfn-ssm-maintenancewindowtask-taskinvocationparameters-maintenancewindowautomationparameters"""
-    p_MaintenanceWindowLambdaParameters: typing.Union['MaintenanceWindowTaskMaintenanceWindowLambdaParameters', dict] = attr.ib(
+    p_MaintenanceWindowLambdaParameters: typing.Union['PropMaintenanceWindowTaskMaintenanceWindowLambdaParameters', dict] = attr.ib(
         default=None,
-        converter=MaintenanceWindowTaskMaintenanceWindowLambdaParameters.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(MaintenanceWindowTaskMaintenanceWindowLambdaParameters)),
+        converter=PropMaintenanceWindowTaskMaintenanceWindowLambdaParameters.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropMaintenanceWindowTaskMaintenanceWindowLambdaParameters)),
         metadata={AttrMeta.PROPERTY_NAME: "MaintenanceWindowLambdaParameters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-taskinvocationparameters.html#cfn-ssm-maintenancewindowtask-taskinvocationparameters-maintenancewindowlambdaparameters"""
-    p_MaintenanceWindowRunCommandParameters: typing.Union['MaintenanceWindowTaskMaintenanceWindowRunCommandParameters', dict] = attr.ib(
+    p_MaintenanceWindowRunCommandParameters: typing.Union['PropMaintenanceWindowTaskMaintenanceWindowRunCommandParameters', dict] = attr.ib(
         default=None,
-        converter=MaintenanceWindowTaskMaintenanceWindowRunCommandParameters.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(MaintenanceWindowTaskMaintenanceWindowRunCommandParameters)),
+        converter=PropMaintenanceWindowTaskMaintenanceWindowRunCommandParameters.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropMaintenanceWindowTaskMaintenanceWindowRunCommandParameters)),
         metadata={AttrMeta.PROPERTY_NAME: "MaintenanceWindowRunCommandParameters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-taskinvocationparameters.html#cfn-ssm-maintenancewindowtask-taskinvocationparameters-maintenancewindowruncommandparameters"""
-    p_MaintenanceWindowStepFunctionsParameters: typing.Union['MaintenanceWindowTaskMaintenanceWindowStepFunctionsParameters', dict] = attr.ib(
+    p_MaintenanceWindowStepFunctionsParameters: typing.Union['PropMaintenanceWindowTaskMaintenanceWindowStepFunctionsParameters', dict] = attr.ib(
         default=None,
-        converter=MaintenanceWindowTaskMaintenanceWindowStepFunctionsParameters.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(MaintenanceWindowTaskMaintenanceWindowStepFunctionsParameters)),
+        converter=PropMaintenanceWindowTaskMaintenanceWindowStepFunctionsParameters.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropMaintenanceWindowTaskMaintenanceWindowStepFunctionsParameters)),
         metadata={AttrMeta.PROPERTY_NAME: "MaintenanceWindowStepFunctionsParameters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-taskinvocationparameters.html#cfn-ssm-maintenancewindowtask-taskinvocationparameters-maintenancewindowstepfunctionsparameters"""
 
 @attr.s
-class PatchBaselineRule(Property):
+class PropPatchBaselineRule(Property):
     """
     AWS Object Type = "AWS::SSM::PatchBaseline.Rule"
 
@@ -724,10 +724,10 @@ class PatchBaselineRule(Property):
         metadata={AttrMeta.PROPERTY_NAME: "ApproveAfterDays"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-patchbaseline-rule.html#cfn-ssm-patchbaseline-rule-approveafterdays"""
-    p_ApproveUntilDate: typing.Union['PatchBaselinePatchStringDate', dict] = attr.ib(
+    p_ApproveUntilDate: typing.Union['PropPatchBaselinePatchStringDate', dict] = attr.ib(
         default=None,
-        converter=PatchBaselinePatchStringDate.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PatchBaselinePatchStringDate)),
+        converter=PropPatchBaselinePatchStringDate.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropPatchBaselinePatchStringDate)),
         metadata={AttrMeta.PROPERTY_NAME: "ApproveUntilDate"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-patchbaseline-rule.html#cfn-ssm-patchbaseline-rule-approveuntildate"""
@@ -743,16 +743,16 @@ class PatchBaselineRule(Property):
         metadata={AttrMeta.PROPERTY_NAME: "EnableNonSecurity"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-patchbaseline-rule.html#cfn-ssm-patchbaseline-rule-enablenonsecurity"""
-    p_PatchFilterGroup: typing.Union['PatchBaselinePatchFilterGroup', dict] = attr.ib(
+    p_PatchFilterGroup: typing.Union['PropPatchBaselinePatchFilterGroup', dict] = attr.ib(
         default=None,
-        converter=PatchBaselinePatchFilterGroup.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PatchBaselinePatchFilterGroup)),
+        converter=PropPatchBaselinePatchFilterGroup.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropPatchBaselinePatchFilterGroup)),
         metadata={AttrMeta.PROPERTY_NAME: "PatchFilterGroup"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-patchbaseline-rule.html#cfn-ssm-patchbaseline-rule-patchfiltergroup"""
 
 @attr.s
-class PatchBaselineRuleGroup(Property):
+class PropPatchBaselineRuleGroup(Property):
     """
     AWS Object Type = "AWS::SSM::PatchBaseline.RuleGroup"
 
@@ -764,10 +764,10 @@ class PatchBaselineRuleGroup(Property):
     """
     AWS_OBJECT_TYPE = "AWS::SSM::PatchBaseline.RuleGroup"
     
-    p_PatchRules: typing.List[typing.Union['PatchBaselineRule', dict]] = attr.ib(
+    p_PatchRules: typing.List[typing.Union['PropPatchBaselineRule', dict]] = attr.ib(
         default=None,
-        converter=PatchBaselineRule.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PatchBaselineRule), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropPatchBaselineRule.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropPatchBaselineRule), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "PatchRules"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-patchbaseline-rulegroup.html#cfn-ssm-patchbaseline-rulegroup-patchrules"""
@@ -807,10 +807,10 @@ class PatchBaseline(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Name"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-name"""
-    p_ApprovalRules: typing.Union['PatchBaselineRuleGroup', dict] = attr.ib(
+    p_ApprovalRules: typing.Union['PropPatchBaselineRuleGroup', dict] = attr.ib(
         default=None,
-        converter=PatchBaselineRuleGroup.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PatchBaselineRuleGroup)),
+        converter=PropPatchBaselineRuleGroup.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropPatchBaselineRuleGroup)),
         metadata={AttrMeta.PROPERTY_NAME: "ApprovalRules"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-approvalrules"""
@@ -838,10 +838,10 @@ class PatchBaseline(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Description"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-description"""
-    p_GlobalFilters: typing.Union['PatchBaselinePatchFilterGroup', dict] = attr.ib(
+    p_GlobalFilters: typing.Union['PropPatchBaselinePatchFilterGroup', dict] = attr.ib(
         default=None,
-        converter=PatchBaselinePatchFilterGroup.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PatchBaselinePatchFilterGroup)),
+        converter=PropPatchBaselinePatchFilterGroup.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropPatchBaselinePatchFilterGroup)),
         metadata={AttrMeta.PROPERTY_NAME: "GlobalFilters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-globalfilters"""
@@ -869,10 +869,10 @@ class PatchBaseline(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "RejectedPatchesAction"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-rejectedpatchesaction"""
-    p_Sources: typing.List[typing.Union['PatchBaselinePatchSource', dict]] = attr.ib(
+    p_Sources: typing.List[typing.Union['PropPatchBaselinePatchSource', dict]] = attr.ib(
         default=None,
-        converter=PatchBaselinePatchSource.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PatchBaselinePatchSource), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropPatchBaselinePatchSource.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropPatchBaselinePatchSource), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Sources"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-patchbaseline.html#cfn-ssm-patchbaseline-sources"""
@@ -911,10 +911,10 @@ class MaintenanceWindowTarget(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "ResourceType"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtarget.html#cfn-ssm-maintenancewindowtarget-resourcetype"""
-    rp_Targets: typing.List[typing.Union['MaintenanceWindowTargetTargets', dict]] = attr.ib(
+    rp_Targets: typing.List[typing.Union['PropMaintenanceWindowTargetTargets', dict]] = attr.ib(
         default=None,
-        converter=MaintenanceWindowTargetTargets.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(MaintenanceWindowTargetTargets), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropMaintenanceWindowTargetTargets.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropMaintenanceWindowTargetTargets), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "Targets"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtarget.html#cfn-ssm-maintenancewindowtarget-targets"""
@@ -1001,10 +1001,10 @@ class MaintenanceWindowTask(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Description"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html#cfn-ssm-maintenancewindowtask-description"""
-    p_LoggingInfo: typing.Union['MaintenanceWindowTaskLoggingInfo', dict] = attr.ib(
+    p_LoggingInfo: typing.Union['PropMaintenanceWindowTaskLoggingInfo', dict] = attr.ib(
         default=None,
-        converter=MaintenanceWindowTaskLoggingInfo.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(MaintenanceWindowTaskLoggingInfo)),
+        converter=PropMaintenanceWindowTaskLoggingInfo.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropMaintenanceWindowTaskLoggingInfo)),
         metadata={AttrMeta.PROPERTY_NAME: "LoggingInfo"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html#cfn-ssm-maintenancewindowtask-logginginfo"""
@@ -1032,17 +1032,17 @@ class MaintenanceWindowTask(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "ServiceRoleArn"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html#cfn-ssm-maintenancewindowtask-servicerolearn"""
-    p_Targets: typing.List[typing.Union['MaintenanceWindowTaskTarget', dict]] = attr.ib(
+    p_Targets: typing.List[typing.Union['PropMaintenanceWindowTaskTarget', dict]] = attr.ib(
         default=None,
-        converter=MaintenanceWindowTaskTarget.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(MaintenanceWindowTaskTarget), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropMaintenanceWindowTaskTarget.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropMaintenanceWindowTaskTarget), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Targets"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html#cfn-ssm-maintenancewindowtask-targets"""
-    p_TaskInvocationParameters: typing.Union['MaintenanceWindowTaskTaskInvocationParameters', dict] = attr.ib(
+    p_TaskInvocationParameters: typing.Union['PropMaintenanceWindowTaskTaskInvocationParameters', dict] = attr.ib(
         default=None,
-        converter=MaintenanceWindowTaskTaskInvocationParameters.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(MaintenanceWindowTaskTaskInvocationParameters)),
+        converter=PropMaintenanceWindowTaskTaskInvocationParameters.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropMaintenanceWindowTaskTaskInvocationParameters)),
         metadata={AttrMeta.PROPERTY_NAME: "TaskInvocationParameters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-maintenancewindowtask.html#cfn-ssm-maintenancewindowtask-taskinvocationparameters"""
@@ -1083,10 +1083,10 @@ class Document(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Content"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-document.html#cfn-ssm-document-content"""
-    p_Attachments: typing.List[typing.Union['DocumentAttachmentsSource', dict]] = attr.ib(
+    p_Attachments: typing.List[typing.Union['PropDocumentAttachmentsSource', dict]] = attr.ib(
         default=None,
-        converter=DocumentAttachmentsSource.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(DocumentAttachmentsSource), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropDocumentAttachmentsSource.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDocumentAttachmentsSource), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Attachments"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-document.html#cfn-ssm-document-attachments"""
@@ -1108,10 +1108,10 @@ class Document(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Name"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-document.html#cfn-ssm-document-name"""
-    p_Requires: typing.List[typing.Union['DocumentDocumentRequires', dict]] = attr.ib(
+    p_Requires: typing.List[typing.Union['PropDocumentDocumentRequires', dict]] = attr.ib(
         default=None,
-        converter=DocumentDocumentRequires.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(DocumentDocumentRequires), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropDocumentDocumentRequires.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDocumentDocumentRequires), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Requires"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-document.html#cfn-ssm-document-requires"""
@@ -1372,10 +1372,10 @@ class ResourceDataSync(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "KMSKeyArn"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-resourcedatasync.html#cfn-ssm-resourcedatasync-kmskeyarn"""
-    p_S3Destination: typing.Union['ResourceDataSyncS3Destination', dict] = attr.ib(
+    p_S3Destination: typing.Union['PropResourceDataSyncS3Destination', dict] = attr.ib(
         default=None,
-        converter=ResourceDataSyncS3Destination.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ResourceDataSyncS3Destination)),
+        converter=PropResourceDataSyncS3Destination.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropResourceDataSyncS3Destination)),
         metadata={AttrMeta.PROPERTY_NAME: "S3Destination"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-resourcedatasync.html#cfn-ssm-resourcedatasync-s3destination"""
@@ -1385,10 +1385,10 @@ class ResourceDataSync(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "SyncFormat"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-resourcedatasync.html#cfn-ssm-resourcedatasync-syncformat"""
-    p_SyncSource: typing.Union['ResourceDataSyncSyncSource', dict] = attr.ib(
+    p_SyncSource: typing.Union['PropResourceDataSyncSyncSource', dict] = attr.ib(
         default=None,
-        converter=ResourceDataSyncSyncSource.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ResourceDataSyncSyncSource)),
+        converter=PropResourceDataSyncSyncSource.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropResourceDataSyncSyncSource)),
         metadata={AttrMeta.PROPERTY_NAME: "SyncSource"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-resourcedatasync.html#cfn-ssm-resourcedatasync-syncsource"""
@@ -1495,10 +1495,10 @@ class Association(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "MaxErrors"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-maxerrors"""
-    p_OutputLocation: typing.Union['AssociationInstanceAssociationOutputLocation', dict] = attr.ib(
+    p_OutputLocation: typing.Union['PropAssociationInstanceAssociationOutputLocation', dict] = attr.ib(
         default=None,
-        converter=AssociationInstanceAssociationOutputLocation.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(AssociationInstanceAssociationOutputLocation)),
+        converter=PropAssociationInstanceAssociationOutputLocation.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropAssociationInstanceAssociationOutputLocation)),
         metadata={AttrMeta.PROPERTY_NAME: "OutputLocation"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-outputlocation"""
@@ -1520,10 +1520,10 @@ class Association(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "SyncCompliance"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-synccompliance"""
-    p_Targets: typing.List[typing.Union['AssociationTarget', dict]] = attr.ib(
+    p_Targets: typing.List[typing.Union['PropAssociationTarget', dict]] = attr.ib(
         default=None,
-        converter=AssociationTarget.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(AssociationTarget), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropAssociationTarget.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropAssociationTarget), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Targets"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-targets"""

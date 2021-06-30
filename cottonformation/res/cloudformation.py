@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class ResourceVersionLoggingConfig(Property):
+class PropResourceVersionLoggingConfig(Property):
     """
     AWS Object Type = "AWS::CloudFormation::ResourceVersion.LoggingConfig"
 
@@ -42,7 +42,7 @@ class ResourceVersionLoggingConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudformation-resourceversion-loggingconfig.html#cfn-cloudformation-resourceversion-loggingconfig-logrolearn"""
 
 @attr.s
-class StackSetAutoDeployment(Property):
+class PropStackSetAutoDeployment(Property):
     """
     AWS Object Type = "AWS::CloudFormation::StackSet.AutoDeployment"
 
@@ -69,7 +69,7 @@ class StackSetAutoDeployment(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudformation-stackset-autodeployment.html#cfn-cloudformation-stackset-autodeployment-retainstacksonaccountremoval"""
 
 @attr.s
-class StackSetDeploymentTargets(Property):
+class PropStackSetDeploymentTargets(Property):
     """
     AWS Object Type = "AWS::CloudFormation::StackSet.DeploymentTargets"
 
@@ -96,7 +96,7 @@ class StackSetDeploymentTargets(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudformation-stackset-deploymenttargets.html#cfn-cloudformation-stackset-deploymenttargets-organizationalunitids"""
 
 @attr.s
-class StackSetOperationPreferences(Property):
+class PropStackSetOperationPreferences(Property):
     """
     AWS Object Type = "AWS::CloudFormation::StackSet.OperationPreferences"
 
@@ -151,7 +151,7 @@ class StackSetOperationPreferences(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudformation-stackset-operationpreferences.html#cfn-cloudformation-stackset-operationpreferences-regionorder"""
 
 @attr.s
-class StackSetParameter(Property):
+class PropStackSetParameter(Property):
     """
     AWS Object Type = "AWS::CloudFormation::StackSet.Parameter"
 
@@ -178,7 +178,7 @@ class StackSetParameter(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudformation-stackset-parameter.html#cfn-cloudformation-stackset-parameter-parametervalue"""
 
 @attr.s
-class StackSetStackInstances(Property):
+class PropStackSetStackInstances(Property):
     """
     AWS Object Type = "AWS::CloudFormation::StackSet.StackInstances"
 
@@ -192,10 +192,10 @@ class StackSetStackInstances(Property):
     """
     AWS_OBJECT_TYPE = "AWS::CloudFormation::StackSet.StackInstances"
     
-    rp_DeploymentTargets: typing.Union['StackSetDeploymentTargets', dict] = attr.ib(
+    rp_DeploymentTargets: typing.Union['PropStackSetDeploymentTargets', dict] = attr.ib(
         default=None,
-        converter=StackSetDeploymentTargets.from_dict,
-        validator=attr.validators.instance_of(StackSetDeploymentTargets),
+        converter=PropStackSetDeploymentTargets.from_dict,
+        validator=attr.validators.instance_of(PropStackSetDeploymentTargets),
         metadata={AttrMeta.PROPERTY_NAME: "DeploymentTargets"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudformation-stackset-stackinstances.html#cfn-cloudformation-stackset-stackinstances-deploymenttargets"""
@@ -205,10 +205,10 @@ class StackSetStackInstances(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Regions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudformation-stackset-stackinstances.html#cfn-cloudformation-stackset-stackinstances-regions"""
-    p_ParameterOverrides: typing.List[typing.Union['StackSetParameter', dict]] = attr.ib(
+    p_ParameterOverrides: typing.List[typing.Union['PropStackSetParameter', dict]] = attr.ib(
         default=None,
-        converter=StackSetParameter.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(StackSetParameter), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropStackSetParameter.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropStackSetParameter), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "ParameterOverrides"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudformation-stackset-stackinstances.html#cfn-cloudformation-stackset-stackinstances-parameteroverrides"""
@@ -261,10 +261,10 @@ class StackSet(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "AdministrationRoleARN"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-stackset.html#cfn-cloudformation-stackset-administrationrolearn"""
-    p_AutoDeployment: typing.Union['StackSetAutoDeployment', dict] = attr.ib(
+    p_AutoDeployment: typing.Union['PropStackSetAutoDeployment', dict] = attr.ib(
         default=None,
-        converter=StackSetAutoDeployment.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(StackSetAutoDeployment)),
+        converter=PropStackSetAutoDeployment.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropStackSetAutoDeployment)),
         metadata={AttrMeta.PROPERTY_NAME: "AutoDeployment"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-stackset.html#cfn-cloudformation-stackset-autodeployment"""
@@ -292,24 +292,24 @@ class StackSet(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "ExecutionRoleName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-stackset.html#cfn-cloudformation-stackset-executionrolename"""
-    p_OperationPreferences: typing.Union['StackSetOperationPreferences', dict] = attr.ib(
+    p_OperationPreferences: typing.Union['PropStackSetOperationPreferences', dict] = attr.ib(
         default=None,
-        converter=StackSetOperationPreferences.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(StackSetOperationPreferences)),
+        converter=PropStackSetOperationPreferences.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropStackSetOperationPreferences)),
         metadata={AttrMeta.PROPERTY_NAME: "OperationPreferences"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-stackset.html#cfn-cloudformation-stackset-operationpreferences"""
-    p_Parameters: typing.List[typing.Union['StackSetParameter', dict]] = attr.ib(
+    p_Parameters: typing.List[typing.Union['PropStackSetParameter', dict]] = attr.ib(
         default=None,
-        converter=StackSetParameter.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(StackSetParameter), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropStackSetParameter.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropStackSetParameter), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Parameters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-stackset.html#cfn-cloudformation-stackset-parameters"""
-    p_StackInstancesGroup: typing.List[typing.Union['StackSetStackInstances', dict]] = attr.ib(
+    p_StackInstancesGroup: typing.List[typing.Union['PropStackSetStackInstances', dict]] = attr.ib(
         default=None,
-        converter=StackSetStackInstances.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(StackSetStackInstances), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropStackSetStackInstances.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropStackSetStackInstances), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "StackInstancesGroup"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-stackset.html#cfn-cloudformation-stackset-stackinstancesgroup"""
@@ -534,10 +534,10 @@ class ResourceVersion(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "ExecutionRoleArn"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-resourceversion.html#cfn-cloudformation-resourceversion-executionrolearn"""
-    p_LoggingConfig: typing.Union['ResourceVersionLoggingConfig', dict] = attr.ib(
+    p_LoggingConfig: typing.Union['PropResourceVersionLoggingConfig', dict] = attr.ib(
         default=None,
-        converter=ResourceVersionLoggingConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ResourceVersionLoggingConfig)),
+        converter=PropResourceVersionLoggingConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropResourceVersionLoggingConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "LoggingConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-resourceversion.html#cfn-cloudformation-resourceversion-loggingconfig"""

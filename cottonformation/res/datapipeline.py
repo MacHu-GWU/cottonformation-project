@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class PipelineParameterAttribute(Property):
+class PropPipelineParameterAttribute(Property):
     """
     AWS Object Type = "AWS::DataPipeline::Pipeline.ParameterAttribute"
 
@@ -42,7 +42,7 @@ class PipelineParameterAttribute(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datapipeline-pipeline-parameterobjects-attributes.html#cfn-datapipeline-pipeline-parameterobjects-attribtues-stringvalue"""
 
 @attr.s
-class PipelinePipelineTag(Property):
+class PropPipelinePipelineTag(Property):
     """
     AWS Object Type = "AWS::DataPipeline::Pipeline.PipelineTag"
 
@@ -69,7 +69,7 @@ class PipelinePipelineTag(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datapipeline-pipeline-pipelinetags.html#cfn-datapipeline-pipeline-pipelinetags-value"""
 
 @attr.s
-class PipelineParameterObject(Property):
+class PropPipelineParameterObject(Property):
     """
     AWS Object Type = "AWS::DataPipeline::Pipeline.ParameterObject"
 
@@ -82,10 +82,10 @@ class PipelineParameterObject(Property):
     """
     AWS_OBJECT_TYPE = "AWS::DataPipeline::Pipeline.ParameterObject"
     
-    rp_Attributes: typing.List[typing.Union['PipelineParameterAttribute', dict]] = attr.ib(
+    rp_Attributes: typing.List[typing.Union['PropPipelineParameterAttribute', dict]] = attr.ib(
         default=None,
-        converter=PipelineParameterAttribute.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PipelineParameterAttribute), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropPipelineParameterAttribute.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropPipelineParameterAttribute), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "Attributes"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datapipeline-pipeline-parameterobjects.html#cfn-datapipeline-pipeline-parameterobjects-attributes"""
@@ -97,7 +97,7 @@ class PipelineParameterObject(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datapipeline-pipeline-parameterobjects.html#cfn-datapipeline-pipeline-parameterobjects-id"""
 
 @attr.s
-class PipelineParameterValue(Property):
+class PropPipelineParameterValue(Property):
     """
     AWS Object Type = "AWS::DataPipeline::Pipeline.ParameterValue"
 
@@ -124,7 +124,7 @@ class PipelineParameterValue(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datapipeline-pipeline-parametervalues.html#cfn-datapipeline-pipeline-parametervalues-stringvalue"""
 
 @attr.s
-class PipelineField(Property):
+class PropPipelineField(Property):
     """
     AWS Object Type = "AWS::DataPipeline::Pipeline.Field"
 
@@ -158,7 +158,7 @@ class PipelineField(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datapipeline-pipeline-pipelineobjects-fields.html#cfn-datapipeline-pipeline-pipelineobjects-fields-stringvalue"""
 
 @attr.s
-class PipelinePipelineObject(Property):
+class PropPipelinePipelineObject(Property):
     """
     AWS Object Type = "AWS::DataPipeline::Pipeline.PipelineObject"
 
@@ -172,10 +172,10 @@ class PipelinePipelineObject(Property):
     """
     AWS_OBJECT_TYPE = "AWS::DataPipeline::Pipeline.PipelineObject"
     
-    rp_Fields: typing.List[typing.Union['PipelineField', dict]] = attr.ib(
+    rp_Fields: typing.List[typing.Union['PropPipelineField', dict]] = attr.ib(
         default=None,
-        converter=PipelineField.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PipelineField), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropPipelineField.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropPipelineField), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "Fields"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datapipeline-pipeline-pipelineobjects.html#cfn-datapipeline-pipeline-pipelineobjects-fields"""
@@ -221,10 +221,10 @@ class Pipeline(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Name"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datapipeline-pipeline.html#cfn-datapipeline-pipeline-name"""
-    rp_ParameterObjects: typing.List[typing.Union['PipelineParameterObject', dict]] = attr.ib(
+    rp_ParameterObjects: typing.List[typing.Union['PropPipelineParameterObject', dict]] = attr.ib(
         default=None,
-        converter=PipelineParameterObject.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PipelineParameterObject), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropPipelineParameterObject.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropPipelineParameterObject), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "ParameterObjects"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datapipeline-pipeline.html#cfn-datapipeline-pipeline-parameterobjects"""
@@ -240,24 +240,24 @@ class Pipeline(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Description"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datapipeline-pipeline.html#cfn-datapipeline-pipeline-description"""
-    p_ParameterValues: typing.List[typing.Union['PipelineParameterValue', dict]] = attr.ib(
+    p_ParameterValues: typing.List[typing.Union['PropPipelineParameterValue', dict]] = attr.ib(
         default=None,
-        converter=PipelineParameterValue.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PipelineParameterValue), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropPipelineParameterValue.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropPipelineParameterValue), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "ParameterValues"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datapipeline-pipeline.html#cfn-datapipeline-pipeline-parametervalues"""
-    p_PipelineObjects: typing.List[typing.Union['PipelinePipelineObject', dict]] = attr.ib(
+    p_PipelineObjects: typing.List[typing.Union['PropPipelinePipelineObject', dict]] = attr.ib(
         default=None,
-        converter=PipelinePipelineObject.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PipelinePipelineObject), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropPipelinePipelineObject.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropPipelinePipelineObject), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "PipelineObjects"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datapipeline-pipeline.html#cfn-datapipeline-pipeline-pipelineobjects"""
-    p_PipelineTags: typing.List[typing.Union['PipelinePipelineTag', dict]] = attr.ib(
+    p_PipelineTags: typing.List[typing.Union['PropPipelinePipelineTag', dict]] = attr.ib(
         default=None,
-        converter=PipelinePipelineTag.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PipelinePipelineTag), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropPipelinePipelineTag.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropPipelinePipelineTag), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "PipelineTags"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datapipeline-pipeline.html#cfn-datapipeline-pipeline-pipelinetags"""

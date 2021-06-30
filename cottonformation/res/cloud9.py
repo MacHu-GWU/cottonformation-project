@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class EnvironmentEC2Repository(Property):
+class PropEnvironmentEC2Repository(Property):
     """
     AWS Object Type = "AWS::Cloud9::EnvironmentEC2.Repository"
 
@@ -109,10 +109,10 @@ class EnvironmentEC2(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "OwnerArn"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloud9-environmentec2.html#cfn-cloud9-environmentec2-ownerarn"""
-    p_Repositories: typing.List[typing.Union['EnvironmentEC2Repository', dict]] = attr.ib(
+    p_Repositories: typing.List[typing.Union['PropEnvironmentEC2Repository', dict]] = attr.ib(
         default=None,
-        converter=EnvironmentEC2Repository.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(EnvironmentEC2Repository), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropEnvironmentEC2Repository.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropEnvironmentEC2Repository), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Repositories"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloud9-environmentec2.html#cfn-cloud9-environmentec2-repositories"""

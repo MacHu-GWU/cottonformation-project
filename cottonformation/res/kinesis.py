@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class StreamStreamEncryption(Property):
+class PropStreamStreamEncryption(Property):
     """
     AWS Object Type = "AWS::Kinesis::Stream.StreamEncryption"
 
@@ -80,10 +80,10 @@ class Stream(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "RetentionPeriodHours"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesis-stream.html#cfn-kinesis-stream-retentionperiodhours"""
-    p_StreamEncryption: typing.Union['StreamStreamEncryption', dict] = attr.ib(
+    p_StreamEncryption: typing.Union['PropStreamStreamEncryption', dict] = attr.ib(
         default=None,
-        converter=StreamStreamEncryption.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(StreamStreamEncryption)),
+        converter=PropStreamStreamEncryption.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropStreamStreamEncryption)),
         metadata={AttrMeta.PROPERTY_NAME: "StreamEncryption"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesis-stream.html#cfn-kinesis-stream-streamencryption"""

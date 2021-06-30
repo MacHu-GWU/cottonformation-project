@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class BackupSelectionConditionResourceType(Property):
+class PropBackupSelectionConditionResourceType(Property):
     """
     AWS Object Type = "AWS::Backup::BackupSelection.ConditionResourceType"
 
@@ -49,7 +49,7 @@ class BackupSelectionConditionResourceType(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-conditionresourcetype.html#cfn-backup-backupselection-conditionresourcetype-conditionvalue"""
 
 @attr.s
-class BackupVaultNotificationObjectType(Property):
+class PropBackupVaultNotificationObjectType(Property):
     """
     AWS Object Type = "AWS::Backup::BackupVault.NotificationObjectType"
 
@@ -76,7 +76,7 @@ class BackupVaultNotificationObjectType(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupvault-notificationobjecttype.html#cfn-backup-backupvault-notificationobjecttype-snstopicarn"""
 
 @attr.s
-class BackupPlanAdvancedBackupSettingResourceType(Property):
+class PropBackupPlanAdvancedBackupSettingResourceType(Property):
     """
     AWS Object Type = "AWS::Backup::BackupPlan.AdvancedBackupSettingResourceType"
 
@@ -103,7 +103,7 @@ class BackupPlanAdvancedBackupSettingResourceType(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-advancedbackupsettingresourcetype.html#cfn-backup-backupplan-advancedbackupsettingresourcetype-resourcetype"""
 
 @attr.s
-class BackupPlanLifecycleResourceType(Property):
+class PropBackupPlanLifecycleResourceType(Property):
     """
     AWS Object Type = "AWS::Backup::BackupPlan.LifecycleResourceType"
 
@@ -130,7 +130,7 @@ class BackupPlanLifecycleResourceType(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-lifecycleresourcetype.html#cfn-backup-backupplan-lifecycleresourcetype-movetocoldstorageafterdays"""
 
 @attr.s
-class BackupSelectionBackupSelectionResourceType(Property):
+class PropBackupSelectionBackupSelectionResourceType(Property):
     """
     AWS Object Type = "AWS::Backup::BackupSelection.BackupSelectionResourceType"
 
@@ -157,10 +157,10 @@ class BackupSelectionBackupSelectionResourceType(Property):
         metadata={AttrMeta.PROPERTY_NAME: "SelectionName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-backupselectionresourcetype.html#cfn-backup-backupselection-backupselectionresourcetype-selectionname"""
-    p_ListOfTags: typing.List[typing.Union['BackupSelectionConditionResourceType', dict]] = attr.ib(
+    p_ListOfTags: typing.List[typing.Union['PropBackupSelectionConditionResourceType', dict]] = attr.ib(
         default=None,
-        converter=BackupSelectionConditionResourceType.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(BackupSelectionConditionResourceType), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropBackupSelectionConditionResourceType.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropBackupSelectionConditionResourceType), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "ListOfTags"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-backupselectionresourcetype.html#cfn-backup-backupselection-backupselectionresourcetype-listoftags"""
@@ -172,7 +172,7 @@ class BackupSelectionBackupSelectionResourceType(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-backupselectionresourcetype.html#cfn-backup-backupselection-backupselectionresourcetype-resources"""
 
 @attr.s
-class BackupPlanCopyActionResourceType(Property):
+class PropBackupPlanCopyActionResourceType(Property):
     """
     AWS Object Type = "AWS::Backup::BackupPlan.CopyActionResourceType"
 
@@ -191,16 +191,16 @@ class BackupPlanCopyActionResourceType(Property):
         metadata={AttrMeta.PROPERTY_NAME: "DestinationBackupVaultArn"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-copyactionresourcetype.html#cfn-backup-backupplan-copyactionresourcetype-destinationbackupvaultarn"""
-    p_Lifecycle: typing.Union['BackupPlanLifecycleResourceType', dict] = attr.ib(
+    p_Lifecycle: typing.Union['PropBackupPlanLifecycleResourceType', dict] = attr.ib(
         default=None,
-        converter=BackupPlanLifecycleResourceType.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(BackupPlanLifecycleResourceType)),
+        converter=PropBackupPlanLifecycleResourceType.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropBackupPlanLifecycleResourceType)),
         metadata={AttrMeta.PROPERTY_NAME: "Lifecycle"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-copyactionresourcetype.html#cfn-backup-backupplan-copyactionresourcetype-lifecycle"""
 
 @attr.s
-class BackupPlanBackupRuleResourceType(Property):
+class PropBackupPlanBackupRuleResourceType(Property):
     """
     AWS Object Type = "AWS::Backup::BackupPlan.BackupRuleResourceType"
 
@@ -238,10 +238,10 @@ class BackupPlanBackupRuleResourceType(Property):
         metadata={AttrMeta.PROPERTY_NAME: "CompletionWindowMinutes"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-backupruleresourcetype.html#cfn-backup-backupplan-backupruleresourcetype-completionwindowminutes"""
-    p_CopyActions: typing.List[typing.Union['BackupPlanCopyActionResourceType', dict]] = attr.ib(
+    p_CopyActions: typing.List[typing.Union['PropBackupPlanCopyActionResourceType', dict]] = attr.ib(
         default=None,
-        converter=BackupPlanCopyActionResourceType.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(BackupPlanCopyActionResourceType), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropBackupPlanCopyActionResourceType.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropBackupPlanCopyActionResourceType), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "CopyActions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-backupruleresourcetype.html#cfn-backup-backupplan-backupruleresourcetype-copyactions"""
@@ -251,10 +251,10 @@ class BackupPlanBackupRuleResourceType(Property):
         metadata={AttrMeta.PROPERTY_NAME: "EnableContinuousBackup"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-backupruleresourcetype.html#cfn-backup-backupplan-backupruleresourcetype-enablecontinuousbackup"""
-    p_Lifecycle: typing.Union['BackupPlanLifecycleResourceType', dict] = attr.ib(
+    p_Lifecycle: typing.Union['PropBackupPlanLifecycleResourceType', dict] = attr.ib(
         default=None,
-        converter=BackupPlanLifecycleResourceType.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(BackupPlanLifecycleResourceType)),
+        converter=PropBackupPlanLifecycleResourceType.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropBackupPlanLifecycleResourceType)),
         metadata={AttrMeta.PROPERTY_NAME: "Lifecycle"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-backupruleresourcetype.html#cfn-backup-backupplan-backupruleresourcetype-lifecycle"""
@@ -278,7 +278,7 @@ class BackupPlanBackupRuleResourceType(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-backupruleresourcetype.html#cfn-backup-backupplan-backupruleresourcetype-startwindowminutes"""
 
 @attr.s
-class BackupPlanBackupPlanResourceType(Property):
+class PropBackupPlanBackupPlanResourceType(Property):
     """
     AWS Object Type = "AWS::Backup::BackupPlan.BackupPlanResourceType"
 
@@ -298,17 +298,17 @@ class BackupPlanBackupPlanResourceType(Property):
         metadata={AttrMeta.PROPERTY_NAME: "BackupPlanName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-backupplanresourcetype.html#cfn-backup-backupplan-backupplanresourcetype-backupplanname"""
-    rp_BackupPlanRule: typing.List[typing.Union['BackupPlanBackupRuleResourceType', dict]] = attr.ib(
+    rp_BackupPlanRule: typing.List[typing.Union['PropBackupPlanBackupRuleResourceType', dict]] = attr.ib(
         default=None,
-        converter=BackupPlanBackupRuleResourceType.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(BackupPlanBackupRuleResourceType), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropBackupPlanBackupRuleResourceType.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropBackupPlanBackupRuleResourceType), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "BackupPlanRule"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-backupplanresourcetype.html#cfn-backup-backupplan-backupplanresourcetype-backupplanrule"""
-    p_AdvancedBackupSettings: typing.List[typing.Union['BackupPlanAdvancedBackupSettingResourceType', dict]] = attr.ib(
+    p_AdvancedBackupSettings: typing.List[typing.Union['PropBackupPlanAdvancedBackupSettingResourceType', dict]] = attr.ib(
         default=None,
-        converter=BackupPlanAdvancedBackupSettingResourceType.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(BackupPlanAdvancedBackupSettingResourceType), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropBackupPlanAdvancedBackupSettingResourceType.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropBackupPlanAdvancedBackupSettingResourceType), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "AdvancedBackupSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-backupplanresourcetype.html#cfn-backup-backupplan-backupplanresourcetype-advancedbackupsettings"""
@@ -331,10 +331,10 @@ class BackupPlan(Resource):
     AWS_OBJECT_TYPE = "AWS::Backup::BackupPlan"
 
     
-    rp_BackupPlan: typing.Union['BackupPlanBackupPlanResourceType', dict] = attr.ib(
+    rp_BackupPlan: typing.Union['PropBackupPlanBackupPlanResourceType', dict] = attr.ib(
         default=None,
-        converter=BackupPlanBackupPlanResourceType.from_dict,
-        validator=attr.validators.instance_of(BackupPlanBackupPlanResourceType),
+        converter=PropBackupPlanBackupPlanResourceType.from_dict,
+        validator=attr.validators.instance_of(PropBackupPlanBackupPlanResourceType),
         metadata={AttrMeta.PROPERTY_NAME: "BackupPlan"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-backupplan.html#cfn-backup-backupplan-backupplan"""
@@ -404,10 +404,10 @@ class BackupVault(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "EncryptionKeyArn"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-backupvault.html#cfn-backup-backupvault-encryptionkeyarn"""
-    p_Notifications: typing.Union['BackupVaultNotificationObjectType', dict] = attr.ib(
+    p_Notifications: typing.Union['PropBackupVaultNotificationObjectType', dict] = attr.ib(
         default=None,
-        converter=BackupVaultNotificationObjectType.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(BackupVaultNotificationObjectType)),
+        converter=PropBackupVaultNotificationObjectType.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropBackupVaultNotificationObjectType)),
         metadata={AttrMeta.PROPERTY_NAME: "Notifications"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-backupvault.html#cfn-backup-backupvault-notifications"""
@@ -445,10 +445,10 @@ class BackupSelection(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "BackupPlanId"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-backupselection.html#cfn-backup-backupselection-backupplanid"""
-    rp_BackupSelection: typing.Union['BackupSelectionBackupSelectionResourceType', dict] = attr.ib(
+    rp_BackupSelection: typing.Union['PropBackupSelectionBackupSelectionResourceType', dict] = attr.ib(
         default=None,
-        converter=BackupSelectionBackupSelectionResourceType.from_dict,
-        validator=attr.validators.instance_of(BackupSelectionBackupSelectionResourceType),
+        converter=PropBackupSelectionBackupSelectionResourceType.from_dict,
+        validator=attr.validators.instance_of(PropBackupSelectionBackupSelectionResourceType),
         metadata={AttrMeta.PROPERTY_NAME: "BackupSelection"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-backupselection.html#cfn-backup-backupselection-backupselection"""

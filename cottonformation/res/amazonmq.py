@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class BrokerLogList(Property):
+class PropBrokerLogList(Property):
     """
     AWS Object Type = "AWS::AmazonMQ::Broker.LogList"
 
@@ -42,7 +42,7 @@ class BrokerLogList(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-loglist.html#cfn-amazonmq-broker-loglist-general"""
 
 @attr.s
-class BrokerUser(Property):
+class PropBrokerUser(Property):
     """
     AWS Object Type = "AWS::AmazonMQ::Broker.User"
 
@@ -83,7 +83,7 @@ class BrokerUser(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-user.html#cfn-amazonmq-broker-user-groups"""
 
 @attr.s
-class BrokerLdapServerMetadata(Property):
+class PropBrokerLdapServerMetadata(Property):
     """
     AWS Object Type = "AWS::AmazonMQ::Broker.LdapServerMetadata"
 
@@ -173,7 +173,7 @@ class BrokerLdapServerMetadata(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-ldapservermetadata.html#cfn-amazonmq-broker-ldapservermetadata-usersearchsubtree"""
 
 @attr.s
-class BrokerEncryptionOptions(Property):
+class PropBrokerEncryptionOptions(Property):
     """
     AWS Object Type = "AWS::AmazonMQ::Broker.EncryptionOptions"
 
@@ -200,7 +200,7 @@ class BrokerEncryptionOptions(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-encryptionoptions.html#cfn-amazonmq-broker-encryptionoptions-kmskeyid"""
 
 @attr.s
-class BrokerMaintenanceWindow(Property):
+class PropBrokerMaintenanceWindow(Property):
     """
     AWS Object Type = "AWS::AmazonMQ::Broker.MaintenanceWindow"
 
@@ -234,7 +234,7 @@ class BrokerMaintenanceWindow(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-maintenancewindow.html#cfn-amazonmq-broker-maintenancewindow-timezone"""
 
 @attr.s
-class BrokerTagsEntry(Property):
+class PropBrokerTagsEntry(Property):
     """
     AWS Object Type = "AWS::AmazonMQ::Broker.TagsEntry"
 
@@ -261,7 +261,7 @@ class BrokerTagsEntry(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-tagsentry.html#cfn-amazonmq-broker-tagsentry-value"""
 
 @attr.s
-class ConfigurationTagsEntry(Property):
+class PropConfigurationTagsEntry(Property):
     """
     AWS Object Type = "AWS::AmazonMQ::Configuration.TagsEntry"
 
@@ -288,7 +288,7 @@ class ConfigurationTagsEntry(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-configuration-tagsentry.html#cfn-amazonmq-configuration-tagsentry-value"""
 
 @attr.s
-class BrokerConfigurationId(Property):
+class PropBrokerConfigurationId(Property):
     """
     AWS Object Type = "AWS::AmazonMQ::Broker.ConfigurationId"
 
@@ -315,7 +315,7 @@ class BrokerConfigurationId(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amazonmq-broker-configurationid.html#cfn-amazonmq-broker-configurationid-revision"""
 
 @attr.s
-class ConfigurationAssociationConfigurationId(Property):
+class PropConfigurationAssociationConfigurationId(Property):
     """
     AWS Object Type = "AWS::AmazonMQ::ConfigurationAssociation.ConfigurationId"
 
@@ -365,10 +365,10 @@ class ConfigurationAssociation(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Broker"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-configurationassociation.html#cfn-amazonmq-configurationassociation-broker"""
-    rp_Configuration: typing.Union['ConfigurationAssociationConfigurationId', dict] = attr.ib(
+    rp_Configuration: typing.Union['PropConfigurationAssociationConfigurationId', dict] = attr.ib(
         default=None,
-        converter=ConfigurationAssociationConfigurationId.from_dict,
-        validator=attr.validators.instance_of(ConfigurationAssociationConfigurationId),
+        converter=PropConfigurationAssociationConfigurationId.from_dict,
+        validator=attr.validators.instance_of(PropConfigurationAssociationConfigurationId),
         metadata={AttrMeta.PROPERTY_NAME: "Configuration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-configurationassociation.html#cfn-amazonmq-configurationassociation-configuration"""
@@ -431,10 +431,10 @@ class Configuration(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Description"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-configuration.html#cfn-amazonmq-configuration-description"""
-    p_Tags: typing.List[typing.Union['ConfigurationTagsEntry', dict]] = attr.ib(
+    p_Tags: typing.List[typing.Union['PropConfigurationTagsEntry', dict]] = attr.ib(
         default=None,
-        converter=ConfigurationTagsEntry.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ConfigurationTagsEntry), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropConfigurationTagsEntry.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropConfigurationTagsEntry), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Tags"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-configuration.html#cfn-amazonmq-configuration-tags"""
@@ -529,10 +529,10 @@ class Broker(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "PubliclyAccessible"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-broker.html#cfn-amazonmq-broker-publiclyaccessible"""
-    rp_Users: typing.List[typing.Union['BrokerUser', dict]] = attr.ib(
+    rp_Users: typing.List[typing.Union['PropBrokerUser', dict]] = attr.ib(
         default=None,
-        converter=BrokerUser.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(BrokerUser), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropBrokerUser.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropBrokerUser), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "Users"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-broker.html#cfn-amazonmq-broker-users"""
@@ -542,38 +542,38 @@ class Broker(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "AuthenticationStrategy"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-broker.html#cfn-amazonmq-broker-authenticationstrategy"""
-    p_Configuration: typing.Union['BrokerConfigurationId', dict] = attr.ib(
+    p_Configuration: typing.Union['PropBrokerConfigurationId', dict] = attr.ib(
         default=None,
-        converter=BrokerConfigurationId.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(BrokerConfigurationId)),
+        converter=PropBrokerConfigurationId.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropBrokerConfigurationId)),
         metadata={AttrMeta.PROPERTY_NAME: "Configuration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-broker.html#cfn-amazonmq-broker-configuration"""
-    p_EncryptionOptions: typing.Union['BrokerEncryptionOptions', dict] = attr.ib(
+    p_EncryptionOptions: typing.Union['PropBrokerEncryptionOptions', dict] = attr.ib(
         default=None,
-        converter=BrokerEncryptionOptions.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(BrokerEncryptionOptions)),
+        converter=PropBrokerEncryptionOptions.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropBrokerEncryptionOptions)),
         metadata={AttrMeta.PROPERTY_NAME: "EncryptionOptions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-broker.html#cfn-amazonmq-broker-encryptionoptions"""
-    p_LdapServerMetadata: typing.Union['BrokerLdapServerMetadata', dict] = attr.ib(
+    p_LdapServerMetadata: typing.Union['PropBrokerLdapServerMetadata', dict] = attr.ib(
         default=None,
-        converter=BrokerLdapServerMetadata.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(BrokerLdapServerMetadata)),
+        converter=PropBrokerLdapServerMetadata.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropBrokerLdapServerMetadata)),
         metadata={AttrMeta.PROPERTY_NAME: "LdapServerMetadata"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-broker.html#cfn-amazonmq-broker-ldapservermetadata"""
-    p_Logs: typing.Union['BrokerLogList', dict] = attr.ib(
+    p_Logs: typing.Union['PropBrokerLogList', dict] = attr.ib(
         default=None,
-        converter=BrokerLogList.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(BrokerLogList)),
+        converter=PropBrokerLogList.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropBrokerLogList)),
         metadata={AttrMeta.PROPERTY_NAME: "Logs"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-broker.html#cfn-amazonmq-broker-logs"""
-    p_MaintenanceWindowStartTime: typing.Union['BrokerMaintenanceWindow', dict] = attr.ib(
+    p_MaintenanceWindowStartTime: typing.Union['PropBrokerMaintenanceWindow', dict] = attr.ib(
         default=None,
-        converter=BrokerMaintenanceWindow.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(BrokerMaintenanceWindow)),
+        converter=PropBrokerMaintenanceWindow.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropBrokerMaintenanceWindow)),
         metadata={AttrMeta.PROPERTY_NAME: "MaintenanceWindowStartTime"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-broker.html#cfn-amazonmq-broker-maintenancewindowstarttime"""
@@ -595,10 +595,10 @@ class Broker(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "SubnetIds"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-broker.html#cfn-amazonmq-broker-subnetids"""
-    p_Tags: typing.List[typing.Union['BrokerTagsEntry', dict]] = attr.ib(
+    p_Tags: typing.List[typing.Union['PropBrokerTagsEntry', dict]] = attr.ib(
         default=None,
-        converter=BrokerTagsEntry.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(BrokerTagsEntry), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropBrokerTagsEntry.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropBrokerTagsEntry), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Tags"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amazonmq-broker.html#cfn-amazonmq-broker-tags"""

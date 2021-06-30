@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class GroupInsightsConfiguration(Property):
+class PropGroupInsightsConfiguration(Property):
     """
     AWS Object Type = "AWS::XRay::Group.InsightsConfiguration"
 
@@ -42,7 +42,7 @@ class GroupInsightsConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-xray-group-insightsconfiguration.html#cfn-xray-group-insightsconfiguration-notificationsenabled"""
 
 @attr.s
-class SamplingRuleSamplingRuleUpdate(Property):
+class PropSamplingRuleSamplingRuleUpdate(Property):
     """
     AWS Object Type = "AWS::XRay::SamplingRule.SamplingRuleUpdate"
 
@@ -139,7 +139,7 @@ class SamplingRuleSamplingRuleUpdate(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-xray-samplingrule-samplingruleupdate.html#cfn-xray-samplingrule-samplingruleupdate-urlpath"""
 
 @attr.s
-class SamplingRuleSamplingRule(Property):
+class PropSamplingRuleSamplingRule(Property):
     """
     AWS Object Type = "AWS::XRay::SamplingRule.SamplingRule"
 
@@ -243,7 +243,7 @@ class SamplingRuleSamplingRule(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-xray-samplingrule-samplingrule.html#cfn-xray-samplingrule-samplingrule-version"""
 
 @attr.s
-class SamplingRuleSamplingRuleRecord(Property):
+class PropSamplingRuleSamplingRuleRecord(Property):
     """
     AWS Object Type = "AWS::XRay::SamplingRule.SamplingRuleRecord"
 
@@ -269,10 +269,10 @@ class SamplingRuleSamplingRuleRecord(Property):
         metadata={AttrMeta.PROPERTY_NAME: "ModifiedAt"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-xray-samplingrule-samplingrulerecord.html#cfn-xray-samplingrule-samplingrulerecord-modifiedat"""
-    p_SamplingRule: typing.Union['SamplingRuleSamplingRule', dict] = attr.ib(
+    p_SamplingRule: typing.Union['PropSamplingRuleSamplingRule', dict] = attr.ib(
         default=None,
-        converter=SamplingRuleSamplingRule.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(SamplingRuleSamplingRule)),
+        converter=PropSamplingRuleSamplingRule.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropSamplingRuleSamplingRule)),
         metadata={AttrMeta.PROPERTY_NAME: "SamplingRule"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-xray-samplingrule-samplingrulerecord.html#cfn-xray-samplingrule-samplingrulerecord-samplingrule"""
@@ -309,10 +309,10 @@ class Group(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "GroupName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-xray-group.html#cfn-xray-group-groupname"""
-    p_InsightsConfiguration: typing.Union['GroupInsightsConfiguration', dict] = attr.ib(
+    p_InsightsConfiguration: typing.Union['PropGroupInsightsConfiguration', dict] = attr.ib(
         default=None,
-        converter=GroupInsightsConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(GroupInsightsConfiguration)),
+        converter=PropGroupInsightsConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropGroupInsightsConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "InsightsConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-xray-group.html#cfn-xray-group-insightsconfiguration"""
@@ -354,24 +354,24 @@ class SamplingRule(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "RuleName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-xray-samplingrule.html#cfn-xray-samplingrule-rulename"""
-    p_SamplingRule: typing.Union['SamplingRuleSamplingRule', dict] = attr.ib(
+    p_SamplingRule: typing.Union['PropSamplingRuleSamplingRule', dict] = attr.ib(
         default=None,
-        converter=SamplingRuleSamplingRule.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(SamplingRuleSamplingRule)),
+        converter=PropSamplingRuleSamplingRule.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropSamplingRuleSamplingRule)),
         metadata={AttrMeta.PROPERTY_NAME: "SamplingRule"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-xray-samplingrule.html#cfn-xray-samplingrule-samplingrule"""
-    p_SamplingRuleRecord: typing.Union['SamplingRuleSamplingRuleRecord', dict] = attr.ib(
+    p_SamplingRuleRecord: typing.Union['PropSamplingRuleSamplingRuleRecord', dict] = attr.ib(
         default=None,
-        converter=SamplingRuleSamplingRuleRecord.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(SamplingRuleSamplingRuleRecord)),
+        converter=PropSamplingRuleSamplingRuleRecord.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropSamplingRuleSamplingRuleRecord)),
         metadata={AttrMeta.PROPERTY_NAME: "SamplingRuleRecord"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-xray-samplingrule.html#cfn-xray-samplingrule-samplingrulerecord"""
-    p_SamplingRuleUpdate: typing.Union['SamplingRuleSamplingRuleUpdate', dict] = attr.ib(
+    p_SamplingRuleUpdate: typing.Union['PropSamplingRuleSamplingRuleUpdate', dict] = attr.ib(
         default=None,
-        converter=SamplingRuleSamplingRuleUpdate.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(SamplingRuleSamplingRuleUpdate)),
+        converter=PropSamplingRuleSamplingRuleUpdate.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropSamplingRuleSamplingRuleUpdate)),
         metadata={AttrMeta.PROPERTY_NAME: "SamplingRuleUpdate"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-xray-samplingrule.html#cfn-xray-samplingrule-samplingruleupdate"""

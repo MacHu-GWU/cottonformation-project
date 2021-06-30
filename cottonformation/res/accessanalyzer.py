@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class AnalyzerFilter(Property):
+class PropAnalyzerFilter(Property):
     """
     AWS Object Type = "AWS::AccessAnalyzer::Analyzer.Filter"
 
@@ -63,7 +63,7 @@ class AnalyzerFilter(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-accessanalyzer-analyzer-filter.html#cfn-accessanalyzer-analyzer-filter-neq"""
 
 @attr.s
-class AnalyzerArchiveRule(Property):
+class PropAnalyzerArchiveRule(Property):
     """
     AWS Object Type = "AWS::AccessAnalyzer::Analyzer.ArchiveRule"
 
@@ -76,10 +76,10 @@ class AnalyzerArchiveRule(Property):
     """
     AWS_OBJECT_TYPE = "AWS::AccessAnalyzer::Analyzer.ArchiveRule"
     
-    rp_Filter: typing.List[typing.Union['AnalyzerFilter', dict]] = attr.ib(
+    rp_Filter: typing.List[typing.Union['PropAnalyzerFilter', dict]] = attr.ib(
         default=None,
-        converter=AnalyzerFilter.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(AnalyzerFilter), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropAnalyzerFilter.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropAnalyzerFilter), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "Filter"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-accessanalyzer-analyzer-archiverule.html#cfn-accessanalyzer-analyzer-archiverule-filter"""
@@ -122,10 +122,10 @@ class Analyzer(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "AnalyzerName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-accessanalyzer-analyzer.html#cfn-accessanalyzer-analyzer-analyzername"""
-    p_ArchiveRules: typing.List[typing.Union['AnalyzerArchiveRule', dict]] = attr.ib(
+    p_ArchiveRules: typing.List[typing.Union['PropAnalyzerArchiveRule', dict]] = attr.ib(
         default=None,
-        converter=AnalyzerArchiveRule.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(AnalyzerArchiveRule), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropAnalyzerArchiveRule.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropAnalyzerArchiveRule), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "ArchiveRules"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-accessanalyzer-analyzer.html#cfn-accessanalyzer-analyzer-archiverules"""

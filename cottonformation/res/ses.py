@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class ReceiptRuleBounceAction(Property):
+class PropReceiptRuleBounceAction(Property):
     """
     AWS Object Type = "AWS::SES::ReceiptRule.BounceAction"
 
@@ -63,7 +63,7 @@ class ReceiptRuleBounceAction(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-bounceaction.html#cfn-ses-receiptrule-bounceaction-topicarn"""
 
 @attr.s
-class ConfigurationSetEventDestinationDimensionConfiguration(Property):
+class PropConfigurationSetEventDestinationDimensionConfiguration(Property):
     """
     AWS Object Type = "AWS::SES::ConfigurationSetEventDestination.DimensionConfiguration"
 
@@ -97,7 +97,7 @@ class ConfigurationSetEventDestinationDimensionConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationseteventdestination-dimensionconfiguration.html#cfn-ses-configurationseteventdestination-dimensionconfiguration-dimensionvaluesource"""
 
 @attr.s
-class ReceiptRuleStopAction(Property):
+class PropReceiptRuleStopAction(Property):
     """
     AWS Object Type = "AWS::SES::ReceiptRule.StopAction"
 
@@ -124,7 +124,7 @@ class ReceiptRuleStopAction(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-stopaction.html#cfn-ses-receiptrule-stopaction-topicarn"""
 
 @attr.s
-class ReceiptRuleSNSAction(Property):
+class PropReceiptRuleSNSAction(Property):
     """
     AWS Object Type = "AWS::SES::ReceiptRule.SNSAction"
 
@@ -151,7 +151,7 @@ class ReceiptRuleSNSAction(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-snsaction.html#cfn-ses-receiptrule-snsaction-topicarn"""
 
 @attr.s
-class ConfigurationSetEventDestinationKinesisFirehoseDestination(Property):
+class PropConfigurationSetEventDestinationKinesisFirehoseDestination(Property):
     """
     AWS Object Type = "AWS::SES::ConfigurationSetEventDestination.KinesisFirehoseDestination"
 
@@ -178,7 +178,7 @@ class ConfigurationSetEventDestinationKinesisFirehoseDestination(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationseteventdestination-kinesisfirehosedestination.html#cfn-ses-configurationseteventdestination-kinesisfirehosedestination-iamrolearn"""
 
 @attr.s
-class ReceiptFilterIpFilter(Property):
+class PropReceiptFilterIpFilter(Property):
     """
     AWS Object Type = "AWS::SES::ReceiptFilter.IpFilter"
 
@@ -205,7 +205,7 @@ class ReceiptFilterIpFilter(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptfilter-ipfilter.html#cfn-ses-receiptfilter-ipfilter-policy"""
 
 @attr.s
-class TemplateTemplate(Property):
+class PropTemplateTemplate(Property):
     """
     AWS Object Type = "AWS::SES::Template.Template"
 
@@ -246,7 +246,7 @@ class TemplateTemplate(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-template-template.html#cfn-ses-template-template-textpart"""
 
 @attr.s
-class ContactListTopic(Property):
+class PropContactListTopic(Property):
     """
     AWS Object Type = "AWS::SES::ContactList.Topic"
 
@@ -287,7 +287,7 @@ class ContactListTopic(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-contactlist-topic.html#cfn-ses-contactlist-topic-description"""
 
 @attr.s
-class ReceiptRuleS3Action(Property):
+class PropReceiptRuleS3Action(Property):
     """
     AWS Object Type = "AWS::SES::ReceiptRule.S3Action"
 
@@ -328,7 +328,7 @@ class ReceiptRuleS3Action(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-s3action.html#cfn-ses-receiptrule-s3action-topicarn"""
 
 @attr.s
-class ReceiptRuleWorkmailAction(Property):
+class PropReceiptRuleWorkmailAction(Property):
     """
     AWS Object Type = "AWS::SES::ReceiptRule.WorkmailAction"
 
@@ -355,7 +355,7 @@ class ReceiptRuleWorkmailAction(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-workmailaction.html#cfn-ses-receiptrule-workmailaction-topicarn"""
 
 @attr.s
-class ConfigurationSetEventDestinationCloudWatchDestination(Property):
+class PropConfigurationSetEventDestinationCloudWatchDestination(Property):
     """
     AWS Object Type = "AWS::SES::ConfigurationSetEventDestination.CloudWatchDestination"
 
@@ -367,16 +367,16 @@ class ConfigurationSetEventDestinationCloudWatchDestination(Property):
     """
     AWS_OBJECT_TYPE = "AWS::SES::ConfigurationSetEventDestination.CloudWatchDestination"
     
-    p_DimensionConfigurations: typing.List[typing.Union['ConfigurationSetEventDestinationDimensionConfiguration', dict]] = attr.ib(
+    p_DimensionConfigurations: typing.List[typing.Union['PropConfigurationSetEventDestinationDimensionConfiguration', dict]] = attr.ib(
         default=None,
-        converter=ConfigurationSetEventDestinationDimensionConfiguration.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ConfigurationSetEventDestinationDimensionConfiguration), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropConfigurationSetEventDestinationDimensionConfiguration.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropConfigurationSetEventDestinationDimensionConfiguration), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "DimensionConfigurations"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationseteventdestination-cloudwatchdestination.html#cfn-ses-configurationseteventdestination-cloudwatchdestination-dimensionconfigurations"""
 
 @attr.s
-class ReceiptRuleLambdaAction(Property):
+class PropReceiptRuleLambdaAction(Property):
     """
     AWS Object Type = "AWS::SES::ReceiptRule.LambdaAction"
 
@@ -410,7 +410,7 @@ class ReceiptRuleLambdaAction(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-lambdaaction.html#cfn-ses-receiptrule-lambdaaction-topicarn"""
 
 @attr.s
-class ReceiptRuleAddHeaderAction(Property):
+class PropReceiptRuleAddHeaderAction(Property):
     """
     AWS Object Type = "AWS::SES::ReceiptRule.AddHeaderAction"
 
@@ -437,7 +437,7 @@ class ReceiptRuleAddHeaderAction(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-addheaderaction.html#cfn-ses-receiptrule-addheaderaction-headervalue"""
 
 @attr.s
-class ReceiptRuleAction(Property):
+class PropReceiptRuleAction(Property):
     """
     AWS Object Type = "AWS::SES::ReceiptRule.Action"
 
@@ -455,58 +455,58 @@ class ReceiptRuleAction(Property):
     """
     AWS_OBJECT_TYPE = "AWS::SES::ReceiptRule.Action"
     
-    p_AddHeaderAction: typing.Union['ReceiptRuleAddHeaderAction', dict] = attr.ib(
+    p_AddHeaderAction: typing.Union['PropReceiptRuleAddHeaderAction', dict] = attr.ib(
         default=None,
-        converter=ReceiptRuleAddHeaderAction.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ReceiptRuleAddHeaderAction)),
+        converter=PropReceiptRuleAddHeaderAction.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropReceiptRuleAddHeaderAction)),
         metadata={AttrMeta.PROPERTY_NAME: "AddHeaderAction"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-action.html#cfn-ses-receiptrule-action-addheaderaction"""
-    p_BounceAction: typing.Union['ReceiptRuleBounceAction', dict] = attr.ib(
+    p_BounceAction: typing.Union['PropReceiptRuleBounceAction', dict] = attr.ib(
         default=None,
-        converter=ReceiptRuleBounceAction.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ReceiptRuleBounceAction)),
+        converter=PropReceiptRuleBounceAction.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropReceiptRuleBounceAction)),
         metadata={AttrMeta.PROPERTY_NAME: "BounceAction"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-action.html#cfn-ses-receiptrule-action-bounceaction"""
-    p_LambdaAction: typing.Union['ReceiptRuleLambdaAction', dict] = attr.ib(
+    p_LambdaAction: typing.Union['PropReceiptRuleLambdaAction', dict] = attr.ib(
         default=None,
-        converter=ReceiptRuleLambdaAction.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ReceiptRuleLambdaAction)),
+        converter=PropReceiptRuleLambdaAction.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropReceiptRuleLambdaAction)),
         metadata={AttrMeta.PROPERTY_NAME: "LambdaAction"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-action.html#cfn-ses-receiptrule-action-lambdaaction"""
-    p_S3Action: typing.Union['ReceiptRuleS3Action', dict] = attr.ib(
+    p_S3Action: typing.Union['PropReceiptRuleS3Action', dict] = attr.ib(
         default=None,
-        converter=ReceiptRuleS3Action.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ReceiptRuleS3Action)),
+        converter=PropReceiptRuleS3Action.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropReceiptRuleS3Action)),
         metadata={AttrMeta.PROPERTY_NAME: "S3Action"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-action.html#cfn-ses-receiptrule-action-s3action"""
-    p_SNSAction: typing.Union['ReceiptRuleSNSAction', dict] = attr.ib(
+    p_SNSAction: typing.Union['PropReceiptRuleSNSAction', dict] = attr.ib(
         default=None,
-        converter=ReceiptRuleSNSAction.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ReceiptRuleSNSAction)),
+        converter=PropReceiptRuleSNSAction.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropReceiptRuleSNSAction)),
         metadata={AttrMeta.PROPERTY_NAME: "SNSAction"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-action.html#cfn-ses-receiptrule-action-snsaction"""
-    p_StopAction: typing.Union['ReceiptRuleStopAction', dict] = attr.ib(
+    p_StopAction: typing.Union['PropReceiptRuleStopAction', dict] = attr.ib(
         default=None,
-        converter=ReceiptRuleStopAction.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ReceiptRuleStopAction)),
+        converter=PropReceiptRuleStopAction.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropReceiptRuleStopAction)),
         metadata={AttrMeta.PROPERTY_NAME: "StopAction"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-action.html#cfn-ses-receiptrule-action-stopaction"""
-    p_WorkmailAction: typing.Union['ReceiptRuleWorkmailAction', dict] = attr.ib(
+    p_WorkmailAction: typing.Union['PropReceiptRuleWorkmailAction', dict] = attr.ib(
         default=None,
-        converter=ReceiptRuleWorkmailAction.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ReceiptRuleWorkmailAction)),
+        converter=PropReceiptRuleWorkmailAction.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropReceiptRuleWorkmailAction)),
         metadata={AttrMeta.PROPERTY_NAME: "WorkmailAction"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-action.html#cfn-ses-receiptrule-action-workmailaction"""
 
 @attr.s
-class ReceiptFilterFilter(Property):
+class PropReceiptFilterFilter(Property):
     """
     AWS Object Type = "AWS::SES::ReceiptFilter.Filter"
 
@@ -519,10 +519,10 @@ class ReceiptFilterFilter(Property):
     """
     AWS_OBJECT_TYPE = "AWS::SES::ReceiptFilter.Filter"
     
-    rp_IpFilter: typing.Union['ReceiptFilterIpFilter', dict] = attr.ib(
+    rp_IpFilter: typing.Union['PropReceiptFilterIpFilter', dict] = attr.ib(
         default=None,
-        converter=ReceiptFilterIpFilter.from_dict,
-        validator=attr.validators.instance_of(ReceiptFilterIpFilter),
+        converter=PropReceiptFilterIpFilter.from_dict,
+        validator=attr.validators.instance_of(PropReceiptFilterIpFilter),
         metadata={AttrMeta.PROPERTY_NAME: "IpFilter"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptfilter-filter.html#cfn-ses-receiptfilter-filter-ipfilter"""
@@ -534,7 +534,7 @@ class ReceiptFilterFilter(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptfilter-filter.html#cfn-ses-receiptfilter-filter-name"""
 
 @attr.s
-class ConfigurationSetEventDestinationEventDestination(Property):
+class PropConfigurationSetEventDestinationEventDestination(Property):
     """
     AWS Object Type = "AWS::SES::ConfigurationSetEventDestination.EventDestination"
 
@@ -556,10 +556,10 @@ class ConfigurationSetEventDestinationEventDestination(Property):
         metadata={AttrMeta.PROPERTY_NAME: "MatchingEventTypes"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationseteventdestination-eventdestination.html#cfn-ses-configurationseteventdestination-eventdestination-matchingeventtypes"""
-    p_CloudWatchDestination: typing.Union['ConfigurationSetEventDestinationCloudWatchDestination', dict] = attr.ib(
+    p_CloudWatchDestination: typing.Union['PropConfigurationSetEventDestinationCloudWatchDestination', dict] = attr.ib(
         default=None,
-        converter=ConfigurationSetEventDestinationCloudWatchDestination.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ConfigurationSetEventDestinationCloudWatchDestination)),
+        converter=PropConfigurationSetEventDestinationCloudWatchDestination.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropConfigurationSetEventDestinationCloudWatchDestination)),
         metadata={AttrMeta.PROPERTY_NAME: "CloudWatchDestination"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationseteventdestination-eventdestination.html#cfn-ses-configurationseteventdestination-eventdestination-cloudwatchdestination"""
@@ -569,10 +569,10 @@ class ConfigurationSetEventDestinationEventDestination(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Enabled"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationseteventdestination-eventdestination.html#cfn-ses-configurationseteventdestination-eventdestination-enabled"""
-    p_KinesisFirehoseDestination: typing.Union['ConfigurationSetEventDestinationKinesisFirehoseDestination', dict] = attr.ib(
+    p_KinesisFirehoseDestination: typing.Union['PropConfigurationSetEventDestinationKinesisFirehoseDestination', dict] = attr.ib(
         default=None,
-        converter=ConfigurationSetEventDestinationKinesisFirehoseDestination.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ConfigurationSetEventDestinationKinesisFirehoseDestination)),
+        converter=PropConfigurationSetEventDestinationKinesisFirehoseDestination.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropConfigurationSetEventDestinationKinesisFirehoseDestination)),
         metadata={AttrMeta.PROPERTY_NAME: "KinesisFirehoseDestination"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationseteventdestination-eventdestination.html#cfn-ses-configurationseteventdestination-eventdestination-kinesisfirehosedestination"""
@@ -584,7 +584,7 @@ class ConfigurationSetEventDestinationEventDestination(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-configurationseteventdestination-eventdestination.html#cfn-ses-configurationseteventdestination-eventdestination-name"""
 
 @attr.s
-class ReceiptRuleRule(Property):
+class PropReceiptRuleRule(Property):
     """
     AWS Object Type = "AWS::SES::ReceiptRule.Rule"
 
@@ -601,10 +601,10 @@ class ReceiptRuleRule(Property):
     """
     AWS_OBJECT_TYPE = "AWS::SES::ReceiptRule.Rule"
     
-    p_Actions: typing.List[typing.Union['ReceiptRuleAction', dict]] = attr.ib(
+    p_Actions: typing.List[typing.Union['PropReceiptRuleAction', dict]] = attr.ib(
         default=None,
-        converter=ReceiptRuleAction.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ReceiptRuleAction), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropReceiptRuleAction.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropReceiptRuleAction), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Actions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ses-receiptrule-rule.html#cfn-ses-receiptrule-rule-actions"""
@@ -671,10 +671,10 @@ class ContactList(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Description"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-contactlist.html#cfn-ses-contactlist-description"""
-    p_Topics: typing.List[typing.Union['ContactListTopic', dict]] = attr.ib(
+    p_Topics: typing.List[typing.Union['PropContactListTopic', dict]] = attr.ib(
         default=None,
-        converter=ContactListTopic.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ContactListTopic), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropContactListTopic.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropContactListTopic), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Topics"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-contactlist.html#cfn-ses-contactlist-topics"""
@@ -702,10 +702,10 @@ class ReceiptFilter(Resource):
     AWS_OBJECT_TYPE = "AWS::SES::ReceiptFilter"
 
     
-    rp_Filter: typing.Union['ReceiptFilterFilter', dict] = attr.ib(
+    rp_Filter: typing.Union['PropReceiptFilterFilter', dict] = attr.ib(
         default=None,
-        converter=ReceiptFilterFilter.from_dict,
-        validator=attr.validators.instance_of(ReceiptFilterFilter),
+        converter=PropReceiptFilterFilter.from_dict,
+        validator=attr.validators.instance_of(PropReceiptFilterFilter),
         metadata={AttrMeta.PROPERTY_NAME: "Filter"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-receiptfilter.html#cfn-ses-receiptfilter-filter"""
@@ -733,10 +733,10 @@ class ConfigurationSetEventDestination(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "ConfigurationSetName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-configurationseteventdestination.html#cfn-ses-configurationseteventdestination-configurationsetname"""
-    rp_EventDestination: typing.Union['ConfigurationSetEventDestinationEventDestination', dict] = attr.ib(
+    rp_EventDestination: typing.Union['PropConfigurationSetEventDestinationEventDestination', dict] = attr.ib(
         default=None,
-        converter=ConfigurationSetEventDestinationEventDestination.from_dict,
-        validator=attr.validators.instance_of(ConfigurationSetEventDestinationEventDestination),
+        converter=PropConfigurationSetEventDestinationEventDestination.from_dict,
+        validator=attr.validators.instance_of(PropConfigurationSetEventDestinationEventDestination),
         metadata={AttrMeta.PROPERTY_NAME: "EventDestination"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-configurationseteventdestination.html#cfn-ses-configurationseteventdestination-eventdestination"""
@@ -757,10 +757,10 @@ class Template(Resource):
     AWS_OBJECT_TYPE = "AWS::SES::Template"
 
     
-    p_Template: typing.Union['TemplateTemplate', dict] = attr.ib(
+    p_Template: typing.Union['PropTemplateTemplate', dict] = attr.ib(
         default=None,
-        converter=TemplateTemplate.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(TemplateTemplate)),
+        converter=PropTemplateTemplate.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropTemplateTemplate)),
         metadata={AttrMeta.PROPERTY_NAME: "Template"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-template.html#cfn-ses-template-template"""
@@ -806,10 +806,10 @@ class ReceiptRule(Resource):
     AWS_OBJECT_TYPE = "AWS::SES::ReceiptRule"
 
     
-    rp_Rule: typing.Union['ReceiptRuleRule', dict] = attr.ib(
+    rp_Rule: typing.Union['PropReceiptRuleRule', dict] = attr.ib(
         default=None,
-        converter=ReceiptRuleRule.from_dict,
-        validator=attr.validators.instance_of(ReceiptRuleRule),
+        converter=PropReceiptRuleRule.from_dict,
+        validator=attr.validators.instance_of(PropReceiptRuleRule),
         metadata={AttrMeta.PROPERTY_NAME: "Rule"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-receiptrule.html#cfn-ses-receiptrule-rule"""

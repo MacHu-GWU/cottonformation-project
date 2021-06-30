@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class DistributionCookies(Property):
+class PropDistributionCookies(Property):
     """
     AWS Object Type = "AWS::CloudFront::Distribution.Cookies"
 
@@ -42,7 +42,7 @@ class DistributionCookies(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-cookies.html#cfn-cloudfront-distribution-cookies-whitelistednames"""
 
 @attr.s
-class CachePolicyHeadersConfig(Property):
+class PropCachePolicyHeadersConfig(Property):
     """
     AWS Object Type = "AWS::CloudFront::CachePolicy.HeadersConfig"
 
@@ -69,7 +69,7 @@ class CachePolicyHeadersConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-cachepolicy-headersconfig.html#cfn-cloudfront-cachepolicy-headersconfig-headers"""
 
 @attr.s
-class KeyGroupKeyGroupConfig(Property):
+class PropKeyGroupKeyGroupConfig(Property):
     """
     AWS Object Type = "AWS::CloudFront::KeyGroup.KeyGroupConfig"
 
@@ -103,7 +103,7 @@ class KeyGroupKeyGroupConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-keygroup-keygroupconfig.html#cfn-cloudfront-keygroup-keygroupconfig-comment"""
 
 @attr.s
-class StreamingDistributionS3Origin(Property):
+class PropStreamingDistributionS3Origin(Property):
     """
     AWS Object Type = "AWS::CloudFront::StreamingDistribution.S3Origin"
 
@@ -130,7 +130,7 @@ class StreamingDistributionS3Origin(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-s3origin.html#cfn-cloudfront-streamingdistribution-s3origin-originaccessidentity"""
 
 @attr.s
-class DistributionLegacyS3Origin(Property):
+class PropDistributionLegacyS3Origin(Property):
     """
     AWS Object Type = "AWS::CloudFront::Distribution.LegacyS3Origin"
 
@@ -157,7 +157,7 @@ class DistributionLegacyS3Origin(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-legacys3origin.html#cfn-cloudfront-distribution-legacys3origin-originaccessidentity"""
 
 @attr.s
-class DistributionOriginCustomHeader(Property):
+class PropDistributionOriginCustomHeader(Property):
     """
     AWS Object Type = "AWS::CloudFront::Distribution.OriginCustomHeader"
 
@@ -184,7 +184,7 @@ class DistributionOriginCustomHeader(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origincustomheader.html#cfn-cloudfront-distribution-origincustomheader-headervalue"""
 
 @attr.s
-class DistributionCustomOriginConfig(Property):
+class PropDistributionCustomOriginConfig(Property):
     """
     AWS Object Type = "AWS::CloudFront::Distribution.CustomOriginConfig"
 
@@ -239,7 +239,7 @@ class DistributionCustomOriginConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-customoriginconfig.html#cfn-cloudfront-distribution-customoriginconfig-originsslprotocols"""
 
 @attr.s
-class CloudFrontOriginAccessIdentityCloudFrontOriginAccessIdentityConfig(Property):
+class PropCloudFrontOriginAccessIdentityCloudFrontOriginAccessIdentityConfig(Property):
     """
     AWS Object Type = "AWS::CloudFront::CloudFrontOriginAccessIdentity.CloudFrontOriginAccessIdentityConfig"
 
@@ -259,7 +259,7 @@ class CloudFrontOriginAccessIdentityCloudFrontOriginAccessIdentityConfig(Propert
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-cloudfrontoriginaccessidentity-cloudfrontoriginaccessidentityconfig.html#cfn-cloudfront-cloudfrontoriginaccessidentity-cloudfrontoriginaccessidentityconfig-comment"""
 
 @attr.s
-class DistributionGeoRestriction(Property):
+class PropDistributionGeoRestriction(Property):
     """
     AWS Object Type = "AWS::CloudFront::Distribution.GeoRestriction"
 
@@ -286,7 +286,7 @@ class DistributionGeoRestriction(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-georestriction.html#cfn-cloudfront-distribution-georestriction-locations"""
 
 @attr.s
-class DistributionViewerCertificate(Property):
+class PropDistributionViewerCertificate(Property):
     """
     AWS Object Type = "AWS::CloudFront::Distribution.ViewerCertificate"
 
@@ -334,7 +334,7 @@ class DistributionViewerCertificate(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-viewercertificate.html#cfn-cloudfront-distribution-viewercertificate-sslsupportmethod"""
 
 @attr.s
-class DistributionCustomErrorResponse(Property):
+class PropDistributionCustomErrorResponse(Property):
     """
     AWS Object Type = "AWS::CloudFront::Distribution.CustomErrorResponse"
 
@@ -375,7 +375,7 @@ class DistributionCustomErrorResponse(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-customerrorresponse.html#cfn-cloudfront-distribution-customerrorresponse-responsepagepath"""
 
 @attr.s
-class StreamingDistributionLogging(Property):
+class PropStreamingDistributionLogging(Property):
     """
     AWS Object Type = "AWS::CloudFront::StreamingDistribution.Logging"
 
@@ -409,7 +409,7 @@ class StreamingDistributionLogging(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-logging.html#cfn-cloudfront-streamingdistribution-logging-prefix"""
 
 @attr.s
-class DistributionLambdaFunctionAssociation(Property):
+class PropDistributionLambdaFunctionAssociation(Property):
     """
     AWS Object Type = "AWS::CloudFront::Distribution.LambdaFunctionAssociation"
 
@@ -443,7 +443,7 @@ class DistributionLambdaFunctionAssociation(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-lambdafunctionassociation.html#cfn-cloudfront-distribution-lambdafunctionassociation-lambdafunctionarn"""
 
 @attr.s
-class OriginRequestPolicyCookiesConfig(Property):
+class PropOriginRequestPolicyCookiesConfig(Property):
     """
     AWS Object Type = "AWS::CloudFront::OriginRequestPolicy.CookiesConfig"
 
@@ -470,7 +470,7 @@ class OriginRequestPolicyCookiesConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-originrequestpolicy-cookiesconfig.html#cfn-cloudfront-originrequestpolicy-cookiesconfig-cookies"""
 
 @attr.s
-class DistributionOriginGroupMember(Property):
+class PropDistributionOriginGroupMember(Property):
     """
     AWS Object Type = "AWS::CloudFront::Distribution.OriginGroupMember"
 
@@ -490,7 +490,7 @@ class DistributionOriginGroupMember(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origingroupmember.html#cfn-cloudfront-distribution-origingroupmember-originid"""
 
 @attr.s
-class StreamingDistributionTrustedSigners(Property):
+class PropStreamingDistributionTrustedSigners(Property):
     """
     AWS Object Type = "AWS::CloudFront::StreamingDistribution.TrustedSigners"
 
@@ -517,7 +517,7 @@ class StreamingDistributionTrustedSigners(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-trustedsigners.html#cfn-cloudfront-streamingdistribution-trustedsigners-awsaccountnumbers"""
 
 @attr.s
-class DistributionLegacyCustomOrigin(Property):
+class PropDistributionLegacyCustomOrigin(Property):
     """
     AWS Object Type = "AWS::CloudFront::Distribution.LegacyCustomOrigin"
 
@@ -565,7 +565,7 @@ class DistributionLegacyCustomOrigin(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-legacycustomorigin.html#cfn-cloudfront-distribution-legacycustomorigin-httpsport"""
 
 @attr.s
-class DistributionRestrictions(Property):
+class PropDistributionRestrictions(Property):
     """
     AWS Object Type = "AWS::CloudFront::Distribution.Restrictions"
 
@@ -577,16 +577,16 @@ class DistributionRestrictions(Property):
     """
     AWS_OBJECT_TYPE = "AWS::CloudFront::Distribution.Restrictions"
     
-    rp_GeoRestriction: typing.Union['DistributionGeoRestriction', dict] = attr.ib(
+    rp_GeoRestriction: typing.Union['PropDistributionGeoRestriction', dict] = attr.ib(
         default=None,
-        converter=DistributionGeoRestriction.from_dict,
-        validator=attr.validators.instance_of(DistributionGeoRestriction),
+        converter=PropDistributionGeoRestriction.from_dict,
+        validator=attr.validators.instance_of(PropDistributionGeoRestriction),
         metadata={AttrMeta.PROPERTY_NAME: "GeoRestriction"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-restrictions.html#cfn-cloudfront-distribution-restrictions-georestriction"""
 
 @attr.s
-class PublicKeyPublicKeyConfig(Property):
+class PropPublicKeyPublicKeyConfig(Property):
     """
     AWS Object Type = "AWS::CloudFront::PublicKey.PublicKeyConfig"
 
@@ -627,7 +627,7 @@ class PublicKeyPublicKeyConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-publickey-publickeyconfig.html#cfn-cloudfront-publickey-publickeyconfig-comment"""
 
 @attr.s
-class DistributionStatusCodes(Property):
+class PropDistributionStatusCodes(Property):
     """
     AWS Object Type = "AWS::CloudFront::Distribution.StatusCodes"
 
@@ -654,7 +654,7 @@ class DistributionStatusCodes(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-statuscodes.html#cfn-cloudfront-distribution-statuscodes-quantity"""
 
 @attr.s
-class FunctionFunctionConfig(Property):
+class PropFunctionFunctionConfig(Property):
     """
     AWS Object Type = "AWS::CloudFront::Function.FunctionConfig"
 
@@ -681,7 +681,7 @@ class FunctionFunctionConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-function-functionconfig.html#cfn-cloudfront-function-functionconfig-runtime"""
 
 @attr.s
-class OriginRequestPolicyQueryStringsConfig(Property):
+class PropOriginRequestPolicyQueryStringsConfig(Property):
     """
     AWS Object Type = "AWS::CloudFront::OriginRequestPolicy.QueryStringsConfig"
 
@@ -708,7 +708,7 @@ class OriginRequestPolicyQueryStringsConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-originrequestpolicy-querystringsconfig.html#cfn-cloudfront-originrequestpolicy-querystringsconfig-querystrings"""
 
 @attr.s
-class DistributionOriginGroupFailoverCriteria(Property):
+class PropDistributionOriginGroupFailoverCriteria(Property):
     """
     AWS Object Type = "AWS::CloudFront::Distribution.OriginGroupFailoverCriteria"
 
@@ -720,16 +720,16 @@ class DistributionOriginGroupFailoverCriteria(Property):
     """
     AWS_OBJECT_TYPE = "AWS::CloudFront::Distribution.OriginGroupFailoverCriteria"
     
-    rp_StatusCodes: typing.Union['DistributionStatusCodes', dict] = attr.ib(
+    rp_StatusCodes: typing.Union['PropDistributionStatusCodes', dict] = attr.ib(
         default=None,
-        converter=DistributionStatusCodes.from_dict,
-        validator=attr.validators.instance_of(DistributionStatusCodes),
+        converter=PropDistributionStatusCodes.from_dict,
+        validator=attr.validators.instance_of(PropDistributionStatusCodes),
         metadata={AttrMeta.PROPERTY_NAME: "StatusCodes"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origingroupfailovercriteria.html#cfn-cloudfront-distribution-origingroupfailovercriteria-statuscodes"""
 
 @attr.s
-class DistributionForwardedValues(Property):
+class PropDistributionForwardedValues(Property):
     """
     AWS Object Type = "AWS::CloudFront::Distribution.ForwardedValues"
 
@@ -750,10 +750,10 @@ class DistributionForwardedValues(Property):
         metadata={AttrMeta.PROPERTY_NAME: "QueryString"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-forwardedvalues.html#cfn-cloudfront-distribution-forwardedvalues-querystring"""
-    p_Cookies: typing.Union['DistributionCookies', dict] = attr.ib(
+    p_Cookies: typing.Union['PropDistributionCookies', dict] = attr.ib(
         default=None,
-        converter=DistributionCookies.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DistributionCookies)),
+        converter=PropDistributionCookies.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDistributionCookies)),
         metadata={AttrMeta.PROPERTY_NAME: "Cookies"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-forwardedvalues.html#cfn-cloudfront-distribution-forwardedvalues-cookies"""
@@ -771,7 +771,7 @@ class DistributionForwardedValues(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-forwardedvalues.html#cfn-cloudfront-distribution-forwardedvalues-querystringcachekeys"""
 
 @attr.s
-class FunctionFunctionMetadata(Property):
+class PropFunctionFunctionMetadata(Property):
     """
     AWS Object Type = "AWS::CloudFront::Function.FunctionMetadata"
 
@@ -791,7 +791,7 @@ class FunctionFunctionMetadata(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-function-functionmetadata.html#cfn-cloudfront-function-functionmetadata-functionarn"""
 
 @attr.s
-class DistributionOriginShield(Property):
+class PropDistributionOriginShield(Property):
     """
     AWS Object Type = "AWS::CloudFront::Distribution.OriginShield"
 
@@ -818,7 +818,7 @@ class DistributionOriginShield(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-originshield.html#cfn-cloudfront-distribution-originshield-originshieldregion"""
 
 @attr.s
-class DistributionS3OriginConfig(Property):
+class PropDistributionS3OriginConfig(Property):
     """
     AWS Object Type = "AWS::CloudFront::Distribution.S3OriginConfig"
 
@@ -838,7 +838,7 @@ class DistributionS3OriginConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-s3originconfig.html#cfn-cloudfront-distribution-s3originconfig-originaccessidentity"""
 
 @attr.s
-class RealtimeLogConfigKinesisStreamConfig(Property):
+class PropRealtimeLogConfigKinesisStreamConfig(Property):
     """
     AWS Object Type = "AWS::CloudFront::RealtimeLogConfig.KinesisStreamConfig"
 
@@ -865,7 +865,7 @@ class RealtimeLogConfigKinesisStreamConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-realtimelogconfig-kinesisstreamconfig.html#cfn-cloudfront-realtimelogconfig-kinesisstreamconfig-streamarn"""
 
 @attr.s
-class CachePolicyQueryStringsConfig(Property):
+class PropCachePolicyQueryStringsConfig(Property):
     """
     AWS Object Type = "AWS::CloudFront::CachePolicy.QueryStringsConfig"
 
@@ -892,7 +892,7 @@ class CachePolicyQueryStringsConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-cachepolicy-querystringsconfig.html#cfn-cloudfront-cachepolicy-querystringsconfig-querystrings"""
 
 @attr.s
-class DistributionLogging(Property):
+class PropDistributionLogging(Property):
     """
     AWS Object Type = "AWS::CloudFront::Distribution.Logging"
 
@@ -926,7 +926,7 @@ class DistributionLogging(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-logging.html#cfn-cloudfront-distribution-logging-prefix"""
 
 @attr.s
-class OriginRequestPolicyHeadersConfig(Property):
+class PropOriginRequestPolicyHeadersConfig(Property):
     """
     AWS Object Type = "AWS::CloudFront::OriginRequestPolicy.HeadersConfig"
 
@@ -953,7 +953,7 @@ class OriginRequestPolicyHeadersConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-originrequestpolicy-headersconfig.html#cfn-cloudfront-originrequestpolicy-headersconfig-headers"""
 
 @attr.s
-class DistributionFunctionAssociation(Property):
+class PropDistributionFunctionAssociation(Property):
     """
     AWS Object Type = "AWS::CloudFront::Distribution.FunctionAssociation"
 
@@ -980,7 +980,7 @@ class DistributionFunctionAssociation(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-functionassociation.html#cfn-cloudfront-distribution-functionassociation-functionarn"""
 
 @attr.s
-class CachePolicyCookiesConfig(Property):
+class PropCachePolicyCookiesConfig(Property):
     """
     AWS Object Type = "AWS::CloudFront::CachePolicy.CookiesConfig"
 
@@ -1007,7 +1007,7 @@ class CachePolicyCookiesConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-cachepolicy-cookiesconfig.html#cfn-cloudfront-cachepolicy-cookiesconfig-cookies"""
 
 @attr.s
-class OriginRequestPolicyOriginRequestPolicyConfig(Property):
+class PropOriginRequestPolicyOriginRequestPolicyConfig(Property):
     """
     AWS Object Type = "AWS::CloudFront::OriginRequestPolicy.OriginRequestPolicyConfig"
 
@@ -1023,17 +1023,17 @@ class OriginRequestPolicyOriginRequestPolicyConfig(Property):
     """
     AWS_OBJECT_TYPE = "AWS::CloudFront::OriginRequestPolicy.OriginRequestPolicyConfig"
     
-    rp_CookiesConfig: typing.Union['OriginRequestPolicyCookiesConfig', dict] = attr.ib(
+    rp_CookiesConfig: typing.Union['PropOriginRequestPolicyCookiesConfig', dict] = attr.ib(
         default=None,
-        converter=OriginRequestPolicyCookiesConfig.from_dict,
-        validator=attr.validators.instance_of(OriginRequestPolicyCookiesConfig),
+        converter=PropOriginRequestPolicyCookiesConfig.from_dict,
+        validator=attr.validators.instance_of(PropOriginRequestPolicyCookiesConfig),
         metadata={AttrMeta.PROPERTY_NAME: "CookiesConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-originrequestpolicy-originrequestpolicyconfig.html#cfn-cloudfront-originrequestpolicy-originrequestpolicyconfig-cookiesconfig"""
-    rp_HeadersConfig: typing.Union['OriginRequestPolicyHeadersConfig', dict] = attr.ib(
+    rp_HeadersConfig: typing.Union['PropOriginRequestPolicyHeadersConfig', dict] = attr.ib(
         default=None,
-        converter=OriginRequestPolicyHeadersConfig.from_dict,
-        validator=attr.validators.instance_of(OriginRequestPolicyHeadersConfig),
+        converter=PropOriginRequestPolicyHeadersConfig.from_dict,
+        validator=attr.validators.instance_of(PropOriginRequestPolicyHeadersConfig),
         metadata={AttrMeta.PROPERTY_NAME: "HeadersConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-originrequestpolicy-originrequestpolicyconfig.html#cfn-cloudfront-originrequestpolicy-originrequestpolicyconfig-headersconfig"""
@@ -1043,10 +1043,10 @@ class OriginRequestPolicyOriginRequestPolicyConfig(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Name"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-originrequestpolicy-originrequestpolicyconfig.html#cfn-cloudfront-originrequestpolicy-originrequestpolicyconfig-name"""
-    rp_QueryStringsConfig: typing.Union['OriginRequestPolicyQueryStringsConfig', dict] = attr.ib(
+    rp_QueryStringsConfig: typing.Union['PropOriginRequestPolicyQueryStringsConfig', dict] = attr.ib(
         default=None,
-        converter=OriginRequestPolicyQueryStringsConfig.from_dict,
-        validator=attr.validators.instance_of(OriginRequestPolicyQueryStringsConfig),
+        converter=PropOriginRequestPolicyQueryStringsConfig.from_dict,
+        validator=attr.validators.instance_of(PropOriginRequestPolicyQueryStringsConfig),
         metadata={AttrMeta.PROPERTY_NAME: "QueryStringsConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-originrequestpolicy-originrequestpolicyconfig.html#cfn-cloudfront-originrequestpolicy-originrequestpolicyconfig-querystringsconfig"""
@@ -1058,7 +1058,7 @@ class OriginRequestPolicyOriginRequestPolicyConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-originrequestpolicy-originrequestpolicyconfig.html#cfn-cloudfront-originrequestpolicy-originrequestpolicyconfig-comment"""
 
 @attr.s
-class DistributionOriginGroupMembers(Property):
+class PropDistributionOriginGroupMembers(Property):
     """
     AWS Object Type = "AWS::CloudFront::Distribution.OriginGroupMembers"
 
@@ -1071,10 +1071,10 @@ class DistributionOriginGroupMembers(Property):
     """
     AWS_OBJECT_TYPE = "AWS::CloudFront::Distribution.OriginGroupMembers"
     
-    rp_Items: typing.List[typing.Union['DistributionOriginGroupMember', dict]] = attr.ib(
+    rp_Items: typing.List[typing.Union['PropDistributionOriginGroupMember', dict]] = attr.ib(
         default=None,
-        converter=DistributionOriginGroupMember.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(DistributionOriginGroupMember), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropDistributionOriginGroupMember.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDistributionOriginGroupMember), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "Items"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origingroupmembers.html#cfn-cloudfront-distribution-origingroupmembers-items"""
@@ -1086,7 +1086,7 @@ class DistributionOriginGroupMembers(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origingroupmembers.html#cfn-cloudfront-distribution-origingroupmembers-quantity"""
 
 @attr.s
-class CachePolicyParametersInCacheKeyAndForwardedToOrigin(Property):
+class PropCachePolicyParametersInCacheKeyAndForwardedToOrigin(Property):
     """
     AWS Object Type = "AWS::CloudFront::CachePolicy.ParametersInCacheKeyAndForwardedToOrigin"
 
@@ -1102,10 +1102,10 @@ class CachePolicyParametersInCacheKeyAndForwardedToOrigin(Property):
     """
     AWS_OBJECT_TYPE = "AWS::CloudFront::CachePolicy.ParametersInCacheKeyAndForwardedToOrigin"
     
-    rp_CookiesConfig: typing.Union['CachePolicyCookiesConfig', dict] = attr.ib(
+    rp_CookiesConfig: typing.Union['PropCachePolicyCookiesConfig', dict] = attr.ib(
         default=None,
-        converter=CachePolicyCookiesConfig.from_dict,
-        validator=attr.validators.instance_of(CachePolicyCookiesConfig),
+        converter=PropCachePolicyCookiesConfig.from_dict,
+        validator=attr.validators.instance_of(PropCachePolicyCookiesConfig),
         metadata={AttrMeta.PROPERTY_NAME: "CookiesConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-cachepolicy-parametersincachekeyandforwardedtoorigin.html#cfn-cloudfront-cachepolicy-parametersincachekeyandforwardedtoorigin-cookiesconfig"""
@@ -1115,17 +1115,17 @@ class CachePolicyParametersInCacheKeyAndForwardedToOrigin(Property):
         metadata={AttrMeta.PROPERTY_NAME: "EnableAcceptEncodingGzip"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-cachepolicy-parametersincachekeyandforwardedtoorigin.html#cfn-cloudfront-cachepolicy-parametersincachekeyandforwardedtoorigin-enableacceptencodinggzip"""
-    rp_HeadersConfig: typing.Union['CachePolicyHeadersConfig', dict] = attr.ib(
+    rp_HeadersConfig: typing.Union['PropCachePolicyHeadersConfig', dict] = attr.ib(
         default=None,
-        converter=CachePolicyHeadersConfig.from_dict,
-        validator=attr.validators.instance_of(CachePolicyHeadersConfig),
+        converter=PropCachePolicyHeadersConfig.from_dict,
+        validator=attr.validators.instance_of(PropCachePolicyHeadersConfig),
         metadata={AttrMeta.PROPERTY_NAME: "HeadersConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-cachepolicy-parametersincachekeyandforwardedtoorigin.html#cfn-cloudfront-cachepolicy-parametersincachekeyandforwardedtoorigin-headersconfig"""
-    rp_QueryStringsConfig: typing.Union['CachePolicyQueryStringsConfig', dict] = attr.ib(
+    rp_QueryStringsConfig: typing.Union['PropCachePolicyQueryStringsConfig', dict] = attr.ib(
         default=None,
-        converter=CachePolicyQueryStringsConfig.from_dict,
-        validator=attr.validators.instance_of(CachePolicyQueryStringsConfig),
+        converter=PropCachePolicyQueryStringsConfig.from_dict,
+        validator=attr.validators.instance_of(PropCachePolicyQueryStringsConfig),
         metadata={AttrMeta.PROPERTY_NAME: "QueryStringsConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-cachepolicy-parametersincachekeyandforwardedtoorigin.html#cfn-cloudfront-cachepolicy-parametersincachekeyandforwardedtoorigin-querystringsconfig"""
@@ -1137,7 +1137,7 @@ class CachePolicyParametersInCacheKeyAndForwardedToOrigin(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-cachepolicy-parametersincachekeyandforwardedtoorigin.html#cfn-cloudfront-cachepolicy-parametersincachekeyandforwardedtoorigin-enableacceptencodingbrotli"""
 
 @attr.s
-class RealtimeLogConfigEndPoint(Property):
+class PropRealtimeLogConfigEndPoint(Property):
     """
     AWS Object Type = "AWS::CloudFront::RealtimeLogConfig.EndPoint"
 
@@ -1150,10 +1150,10 @@ class RealtimeLogConfigEndPoint(Property):
     """
     AWS_OBJECT_TYPE = "AWS::CloudFront::RealtimeLogConfig.EndPoint"
     
-    rp_KinesisStreamConfig: typing.Union['RealtimeLogConfigKinesisStreamConfig', dict] = attr.ib(
+    rp_KinesisStreamConfig: typing.Union['PropRealtimeLogConfigKinesisStreamConfig', dict] = attr.ib(
         default=None,
-        converter=RealtimeLogConfigKinesisStreamConfig.from_dict,
-        validator=attr.validators.instance_of(RealtimeLogConfigKinesisStreamConfig),
+        converter=PropRealtimeLogConfigKinesisStreamConfig.from_dict,
+        validator=attr.validators.instance_of(PropRealtimeLogConfigKinesisStreamConfig),
         metadata={AttrMeta.PROPERTY_NAME: "KinesisStreamConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-realtimelogconfig-endpoint.html#cfn-cloudfront-realtimelogconfig-endpoint-kinesisstreamconfig"""
@@ -1165,7 +1165,7 @@ class RealtimeLogConfigEndPoint(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-realtimelogconfig-endpoint.html#cfn-cloudfront-realtimelogconfig-endpoint-streamtype"""
 
 @attr.s
-class StreamingDistributionStreamingDistributionConfig(Property):
+class PropStreamingDistributionStreamingDistributionConfig(Property):
     """
     AWS Object Type = "AWS::CloudFront::StreamingDistribution.StreamingDistributionConfig"
 
@@ -1195,17 +1195,17 @@ class StreamingDistributionStreamingDistributionConfig(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Enabled"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-streamingdistributionconfig.html#cfn-cloudfront-streamingdistribution-streamingdistributionconfig-enabled"""
-    rp_S3Origin: typing.Union['StreamingDistributionS3Origin', dict] = attr.ib(
+    rp_S3Origin: typing.Union['PropStreamingDistributionS3Origin', dict] = attr.ib(
         default=None,
-        converter=StreamingDistributionS3Origin.from_dict,
-        validator=attr.validators.instance_of(StreamingDistributionS3Origin),
+        converter=PropStreamingDistributionS3Origin.from_dict,
+        validator=attr.validators.instance_of(PropStreamingDistributionS3Origin),
         metadata={AttrMeta.PROPERTY_NAME: "S3Origin"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-streamingdistributionconfig.html#cfn-cloudfront-streamingdistribution-streamingdistributionconfig-s3origin"""
-    rp_TrustedSigners: typing.Union['StreamingDistributionTrustedSigners', dict] = attr.ib(
+    rp_TrustedSigners: typing.Union['PropStreamingDistributionTrustedSigners', dict] = attr.ib(
         default=None,
-        converter=StreamingDistributionTrustedSigners.from_dict,
-        validator=attr.validators.instance_of(StreamingDistributionTrustedSigners),
+        converter=PropStreamingDistributionTrustedSigners.from_dict,
+        validator=attr.validators.instance_of(PropStreamingDistributionTrustedSigners),
         metadata={AttrMeta.PROPERTY_NAME: "TrustedSigners"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-streamingdistributionconfig.html#cfn-cloudfront-streamingdistribution-streamingdistributionconfig-trustedsigners"""
@@ -1215,10 +1215,10 @@ class StreamingDistributionStreamingDistributionConfig(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Aliases"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-streamingdistributionconfig.html#cfn-cloudfront-streamingdistribution-streamingdistributionconfig-aliases"""
-    p_Logging: typing.Union['StreamingDistributionLogging', dict] = attr.ib(
+    p_Logging: typing.Union['PropStreamingDistributionLogging', dict] = attr.ib(
         default=None,
-        converter=StreamingDistributionLogging.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(StreamingDistributionLogging)),
+        converter=PropStreamingDistributionLogging.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropStreamingDistributionLogging)),
         metadata={AttrMeta.PROPERTY_NAME: "Logging"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-streamingdistributionconfig.html#cfn-cloudfront-streamingdistribution-streamingdistributionconfig-logging"""
@@ -1230,7 +1230,7 @@ class StreamingDistributionStreamingDistributionConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-streamingdistributionconfig.html#cfn-cloudfront-streamingdistribution-streamingdistributionconfig-priceclass"""
 
 @attr.s
-class DistributionCacheBehavior(Property):
+class PropDistributionCacheBehavior(Property):
     """
     AWS Object Type = "AWS::CloudFront::Distribution.CacheBehavior"
 
@@ -1314,24 +1314,24 @@ class DistributionCacheBehavior(Property):
         metadata={AttrMeta.PROPERTY_NAME: "FieldLevelEncryptionId"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-cachebehavior.html#cfn-cloudfront-distribution-cachebehavior-fieldlevelencryptionid"""
-    p_ForwardedValues: typing.Union['DistributionForwardedValues', dict] = attr.ib(
+    p_ForwardedValues: typing.Union['PropDistributionForwardedValues', dict] = attr.ib(
         default=None,
-        converter=DistributionForwardedValues.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DistributionForwardedValues)),
+        converter=PropDistributionForwardedValues.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDistributionForwardedValues)),
         metadata={AttrMeta.PROPERTY_NAME: "ForwardedValues"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-cachebehavior.html#cfn-cloudfront-distribution-cachebehavior-forwardedvalues"""
-    p_FunctionAssociations: typing.List[typing.Union['DistributionFunctionAssociation', dict]] = attr.ib(
+    p_FunctionAssociations: typing.List[typing.Union['PropDistributionFunctionAssociation', dict]] = attr.ib(
         default=None,
-        converter=DistributionFunctionAssociation.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(DistributionFunctionAssociation), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropDistributionFunctionAssociation.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDistributionFunctionAssociation), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "FunctionAssociations"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-cachebehavior.html#cfn-cloudfront-distribution-cachebehavior-functionassociations"""
-    p_LambdaFunctionAssociations: typing.List[typing.Union['DistributionLambdaFunctionAssociation', dict]] = attr.ib(
+    p_LambdaFunctionAssociations: typing.List[typing.Union['PropDistributionLambdaFunctionAssociation', dict]] = attr.ib(
         default=None,
-        converter=DistributionLambdaFunctionAssociation.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(DistributionLambdaFunctionAssociation), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropDistributionLambdaFunctionAssociation.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDistributionLambdaFunctionAssociation), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "LambdaFunctionAssociations"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-cachebehavior.html#cfn-cloudfront-distribution-cachebehavior-lambdafunctionassociations"""
@@ -1379,7 +1379,7 @@ class DistributionCacheBehavior(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-cachebehavior.html#cfn-cloudfront-distribution-cachebehavior-trustedsigners"""
 
 @attr.s
-class DistributionDefaultCacheBehavior(Property):
+class PropDistributionDefaultCacheBehavior(Property):
     """
     AWS Object Type = "AWS::CloudFront::Distribution.DefaultCacheBehavior"
 
@@ -1456,24 +1456,24 @@ class DistributionDefaultCacheBehavior(Property):
         metadata={AttrMeta.PROPERTY_NAME: "FieldLevelEncryptionId"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-defaultcachebehavior.html#cfn-cloudfront-distribution-defaultcachebehavior-fieldlevelencryptionid"""
-    p_ForwardedValues: typing.Union['DistributionForwardedValues', dict] = attr.ib(
+    p_ForwardedValues: typing.Union['PropDistributionForwardedValues', dict] = attr.ib(
         default=None,
-        converter=DistributionForwardedValues.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DistributionForwardedValues)),
+        converter=PropDistributionForwardedValues.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDistributionForwardedValues)),
         metadata={AttrMeta.PROPERTY_NAME: "ForwardedValues"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-defaultcachebehavior.html#cfn-cloudfront-distribution-defaultcachebehavior-forwardedvalues"""
-    p_FunctionAssociations: typing.List[typing.Union['DistributionFunctionAssociation', dict]] = attr.ib(
+    p_FunctionAssociations: typing.List[typing.Union['PropDistributionFunctionAssociation', dict]] = attr.ib(
         default=None,
-        converter=DistributionFunctionAssociation.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(DistributionFunctionAssociation), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropDistributionFunctionAssociation.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDistributionFunctionAssociation), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "FunctionAssociations"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-defaultcachebehavior.html#cfn-cloudfront-distribution-defaultcachebehavior-functionassociations"""
-    p_LambdaFunctionAssociations: typing.List[typing.Union['DistributionLambdaFunctionAssociation', dict]] = attr.ib(
+    p_LambdaFunctionAssociations: typing.List[typing.Union['PropDistributionLambdaFunctionAssociation', dict]] = attr.ib(
         default=None,
-        converter=DistributionLambdaFunctionAssociation.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(DistributionLambdaFunctionAssociation), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropDistributionLambdaFunctionAssociation.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDistributionLambdaFunctionAssociation), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "LambdaFunctionAssociations"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-defaultcachebehavior.html#cfn-cloudfront-distribution-defaultcachebehavior-lambdafunctionassociations"""
@@ -1521,7 +1521,7 @@ class DistributionDefaultCacheBehavior(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-defaultcachebehavior.html#cfn-cloudfront-distribution-defaultcachebehavior-trustedsigners"""
 
 @attr.s
-class DistributionOrigin(Property):
+class PropDistributionOrigin(Property):
     """
     AWS Object Type = "AWS::CloudFront::Distribution.Origin"
 
@@ -1565,17 +1565,17 @@ class DistributionOrigin(Property):
         metadata={AttrMeta.PROPERTY_NAME: "ConnectionTimeout"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origin.html#cfn-cloudfront-distribution-origin-connectiontimeout"""
-    p_CustomOriginConfig: typing.Union['DistributionCustomOriginConfig', dict] = attr.ib(
+    p_CustomOriginConfig: typing.Union['PropDistributionCustomOriginConfig', dict] = attr.ib(
         default=None,
-        converter=DistributionCustomOriginConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DistributionCustomOriginConfig)),
+        converter=PropDistributionCustomOriginConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDistributionCustomOriginConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "CustomOriginConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origin.html#cfn-cloudfront-distribution-origin-customoriginconfig"""
-    p_OriginCustomHeaders: typing.List[typing.Union['DistributionOriginCustomHeader', dict]] = attr.ib(
+    p_OriginCustomHeaders: typing.List[typing.Union['PropDistributionOriginCustomHeader', dict]] = attr.ib(
         default=None,
-        converter=DistributionOriginCustomHeader.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(DistributionOriginCustomHeader), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropDistributionOriginCustomHeader.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDistributionOriginCustomHeader), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "OriginCustomHeaders"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origin.html#cfn-cloudfront-distribution-origin-origincustomheaders"""
@@ -1585,23 +1585,23 @@ class DistributionOrigin(Property):
         metadata={AttrMeta.PROPERTY_NAME: "OriginPath"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origin.html#cfn-cloudfront-distribution-origin-originpath"""
-    p_OriginShield: typing.Union['DistributionOriginShield', dict] = attr.ib(
+    p_OriginShield: typing.Union['PropDistributionOriginShield', dict] = attr.ib(
         default=None,
-        converter=DistributionOriginShield.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DistributionOriginShield)),
+        converter=PropDistributionOriginShield.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDistributionOriginShield)),
         metadata={AttrMeta.PROPERTY_NAME: "OriginShield"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origin.html#cfn-cloudfront-distribution-origin-originshield"""
-    p_S3OriginConfig: typing.Union['DistributionS3OriginConfig', dict] = attr.ib(
+    p_S3OriginConfig: typing.Union['PropDistributionS3OriginConfig', dict] = attr.ib(
         default=None,
-        converter=DistributionS3OriginConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DistributionS3OriginConfig)),
+        converter=PropDistributionS3OriginConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDistributionS3OriginConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "S3OriginConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origin.html#cfn-cloudfront-distribution-origin-s3originconfig"""
 
 @attr.s
-class CachePolicyCachePolicyConfig(Property):
+class PropCachePolicyCachePolicyConfig(Property):
     """
     AWS Object Type = "AWS::CloudFront::CachePolicy.CachePolicyConfig"
 
@@ -1642,10 +1642,10 @@ class CachePolicyCachePolicyConfig(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Name"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-cachepolicy-cachepolicyconfig.html#cfn-cloudfront-cachepolicy-cachepolicyconfig-name"""
-    rp_ParametersInCacheKeyAndForwardedToOrigin: typing.Union['CachePolicyParametersInCacheKeyAndForwardedToOrigin', dict] = attr.ib(
+    rp_ParametersInCacheKeyAndForwardedToOrigin: typing.Union['PropCachePolicyParametersInCacheKeyAndForwardedToOrigin', dict] = attr.ib(
         default=None,
-        converter=CachePolicyParametersInCacheKeyAndForwardedToOrigin.from_dict,
-        validator=attr.validators.instance_of(CachePolicyParametersInCacheKeyAndForwardedToOrigin),
+        converter=PropCachePolicyParametersInCacheKeyAndForwardedToOrigin.from_dict,
+        validator=attr.validators.instance_of(PropCachePolicyParametersInCacheKeyAndForwardedToOrigin),
         metadata={AttrMeta.PROPERTY_NAME: "ParametersInCacheKeyAndForwardedToOrigin"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-cachepolicy-cachepolicyconfig.html#cfn-cloudfront-cachepolicy-cachepolicyconfig-parametersincachekeyandforwardedtoorigin"""
@@ -1657,7 +1657,7 @@ class CachePolicyCachePolicyConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-cachepolicy-cachepolicyconfig.html#cfn-cloudfront-cachepolicy-cachepolicyconfig-comment"""
 
 @attr.s
-class DistributionOriginGroup(Property):
+class PropDistributionOriginGroup(Property):
     """
     AWS Object Type = "AWS::CloudFront::Distribution.OriginGroup"
 
@@ -1671,10 +1671,10 @@ class DistributionOriginGroup(Property):
     """
     AWS_OBJECT_TYPE = "AWS::CloudFront::Distribution.OriginGroup"
     
-    rp_FailoverCriteria: typing.Union['DistributionOriginGroupFailoverCriteria', dict] = attr.ib(
+    rp_FailoverCriteria: typing.Union['PropDistributionOriginGroupFailoverCriteria', dict] = attr.ib(
         default=None,
-        converter=DistributionOriginGroupFailoverCriteria.from_dict,
-        validator=attr.validators.instance_of(DistributionOriginGroupFailoverCriteria),
+        converter=PropDistributionOriginGroupFailoverCriteria.from_dict,
+        validator=attr.validators.instance_of(PropDistributionOriginGroupFailoverCriteria),
         metadata={AttrMeta.PROPERTY_NAME: "FailoverCriteria"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origingroup.html#cfn-cloudfront-distribution-origingroup-failovercriteria"""
@@ -1684,16 +1684,16 @@ class DistributionOriginGroup(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Id"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origingroup.html#cfn-cloudfront-distribution-origingroup-id"""
-    rp_Members: typing.Union['DistributionOriginGroupMembers', dict] = attr.ib(
+    rp_Members: typing.Union['PropDistributionOriginGroupMembers', dict] = attr.ib(
         default=None,
-        converter=DistributionOriginGroupMembers.from_dict,
-        validator=attr.validators.instance_of(DistributionOriginGroupMembers),
+        converter=PropDistributionOriginGroupMembers.from_dict,
+        validator=attr.validators.instance_of(PropDistributionOriginGroupMembers),
         metadata={AttrMeta.PROPERTY_NAME: "Members"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origingroup.html#cfn-cloudfront-distribution-origingroup-members"""
 
 @attr.s
-class DistributionOriginGroups(Property):
+class PropDistributionOriginGroups(Property):
     """
     AWS Object Type = "AWS::CloudFront::Distribution.OriginGroups"
 
@@ -1712,16 +1712,16 @@ class DistributionOriginGroups(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Quantity"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origingroups.html#cfn-cloudfront-distribution-origingroups-quantity"""
-    p_Items: typing.List[typing.Union['DistributionOriginGroup', dict]] = attr.ib(
+    p_Items: typing.List[typing.Union['PropDistributionOriginGroup', dict]] = attr.ib(
         default=None,
-        converter=DistributionOriginGroup.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(DistributionOriginGroup), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropDistributionOriginGroup.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDistributionOriginGroup), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Items"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origingroups.html#cfn-cloudfront-distribution-origingroups-items"""
 
 @attr.s
-class DistributionDistributionConfig(Property):
+class PropDistributionDistributionConfig(Property):
     """
     AWS Object Type = "AWS::CloudFront::Distribution.DistributionConfig"
 
@@ -1769,10 +1769,10 @@ class DistributionDistributionConfig(Property):
         metadata={AttrMeta.PROPERTY_NAME: "CNAMEs"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-cnames"""
-    p_CacheBehaviors: typing.List[typing.Union['DistributionCacheBehavior', dict]] = attr.ib(
+    p_CacheBehaviors: typing.List[typing.Union['PropDistributionCacheBehavior', dict]] = attr.ib(
         default=None,
-        converter=DistributionCacheBehavior.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(DistributionCacheBehavior), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropDistributionCacheBehavior.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDistributionCacheBehavior), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "CacheBehaviors"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-cachebehaviors"""
@@ -1782,24 +1782,24 @@ class DistributionDistributionConfig(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Comment"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-comment"""
-    p_CustomErrorResponses: typing.List[typing.Union['DistributionCustomErrorResponse', dict]] = attr.ib(
+    p_CustomErrorResponses: typing.List[typing.Union['PropDistributionCustomErrorResponse', dict]] = attr.ib(
         default=None,
-        converter=DistributionCustomErrorResponse.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(DistributionCustomErrorResponse), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropDistributionCustomErrorResponse.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDistributionCustomErrorResponse), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "CustomErrorResponses"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-customerrorresponses"""
-    p_CustomOrigin: typing.Union['DistributionLegacyCustomOrigin', dict] = attr.ib(
+    p_CustomOrigin: typing.Union['PropDistributionLegacyCustomOrigin', dict] = attr.ib(
         default=None,
-        converter=DistributionLegacyCustomOrigin.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DistributionLegacyCustomOrigin)),
+        converter=PropDistributionLegacyCustomOrigin.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDistributionLegacyCustomOrigin)),
         metadata={AttrMeta.PROPERTY_NAME: "CustomOrigin"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-customorigin"""
-    p_DefaultCacheBehavior: typing.Union['DistributionDefaultCacheBehavior', dict] = attr.ib(
+    p_DefaultCacheBehavior: typing.Union['PropDistributionDefaultCacheBehavior', dict] = attr.ib(
         default=None,
-        converter=DistributionDefaultCacheBehavior.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DistributionDefaultCacheBehavior)),
+        converter=PropDistributionDefaultCacheBehavior.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDistributionDefaultCacheBehavior)),
         metadata={AttrMeta.PROPERTY_NAME: "DefaultCacheBehavior"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-defaultcachebehavior"""
@@ -1821,24 +1821,24 @@ class DistributionDistributionConfig(Property):
         metadata={AttrMeta.PROPERTY_NAME: "IPV6Enabled"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-ipv6enabled"""
-    p_Logging: typing.Union['DistributionLogging', dict] = attr.ib(
+    p_Logging: typing.Union['PropDistributionLogging', dict] = attr.ib(
         default=None,
-        converter=DistributionLogging.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DistributionLogging)),
+        converter=PropDistributionLogging.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDistributionLogging)),
         metadata={AttrMeta.PROPERTY_NAME: "Logging"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-logging"""
-    p_OriginGroups: typing.Union['DistributionOriginGroups', dict] = attr.ib(
+    p_OriginGroups: typing.Union['PropDistributionOriginGroups', dict] = attr.ib(
         default=None,
-        converter=DistributionOriginGroups.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DistributionOriginGroups)),
+        converter=PropDistributionOriginGroups.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDistributionOriginGroups)),
         metadata={AttrMeta.PROPERTY_NAME: "OriginGroups"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-origingroups"""
-    p_Origins: typing.List[typing.Union['DistributionOrigin', dict]] = attr.ib(
+    p_Origins: typing.List[typing.Union['PropDistributionOrigin', dict]] = attr.ib(
         default=None,
-        converter=DistributionOrigin.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(DistributionOrigin), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropDistributionOrigin.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDistributionOrigin), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Origins"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-origins"""
@@ -1848,24 +1848,24 @@ class DistributionDistributionConfig(Property):
         metadata={AttrMeta.PROPERTY_NAME: "PriceClass"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-priceclass"""
-    p_Restrictions: typing.Union['DistributionRestrictions', dict] = attr.ib(
+    p_Restrictions: typing.Union['PropDistributionRestrictions', dict] = attr.ib(
         default=None,
-        converter=DistributionRestrictions.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DistributionRestrictions)),
+        converter=PropDistributionRestrictions.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDistributionRestrictions)),
         metadata={AttrMeta.PROPERTY_NAME: "Restrictions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-restrictions"""
-    p_S3Origin: typing.Union['DistributionLegacyS3Origin', dict] = attr.ib(
+    p_S3Origin: typing.Union['PropDistributionLegacyS3Origin', dict] = attr.ib(
         default=None,
-        converter=DistributionLegacyS3Origin.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DistributionLegacyS3Origin)),
+        converter=PropDistributionLegacyS3Origin.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDistributionLegacyS3Origin)),
         metadata={AttrMeta.PROPERTY_NAME: "S3Origin"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-s3origin"""
-    p_ViewerCertificate: typing.Union['DistributionViewerCertificate', dict] = attr.ib(
+    p_ViewerCertificate: typing.Union['PropDistributionViewerCertificate', dict] = attr.ib(
         default=None,
-        converter=DistributionViewerCertificate.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DistributionViewerCertificate)),
+        converter=PropDistributionViewerCertificate.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDistributionViewerCertificate)),
         metadata={AttrMeta.PROPERTY_NAME: "ViewerCertificate"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-viewercertificate"""
@@ -1893,10 +1893,10 @@ class KeyGroup(Resource):
     AWS_OBJECT_TYPE = "AWS::CloudFront::KeyGroup"
 
     
-    rp_KeyGroupConfig: typing.Union['KeyGroupKeyGroupConfig', dict] = attr.ib(
+    rp_KeyGroupConfig: typing.Union['PropKeyGroupKeyGroupConfig', dict] = attr.ib(
         default=None,
-        converter=KeyGroupKeyGroupConfig.from_dict,
-        validator=attr.validators.instance_of(KeyGroupKeyGroupConfig),
+        converter=PropKeyGroupKeyGroupConfig.from_dict,
+        validator=attr.validators.instance_of(PropKeyGroupKeyGroupConfig),
         metadata={AttrMeta.PROPERTY_NAME: "KeyGroupConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-keygroup.html#cfn-cloudfront-keygroup-keygroupconfig"""
@@ -1928,10 +1928,10 @@ class StreamingDistribution(Resource):
     AWS_OBJECT_TYPE = "AWS::CloudFront::StreamingDistribution"
 
     
-    rp_StreamingDistributionConfig: typing.Union['StreamingDistributionStreamingDistributionConfig', dict] = attr.ib(
+    rp_StreamingDistributionConfig: typing.Union['PropStreamingDistributionStreamingDistributionConfig', dict] = attr.ib(
         default=None,
-        converter=StreamingDistributionStreamingDistributionConfig.from_dict,
-        validator=attr.validators.instance_of(StreamingDistributionStreamingDistributionConfig),
+        converter=PropStreamingDistributionStreamingDistributionConfig.from_dict,
+        validator=attr.validators.instance_of(PropStreamingDistributionStreamingDistributionConfig),
         metadata={AttrMeta.PROPERTY_NAME: "StreamingDistributionConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-streamingdistribution.html#cfn-cloudfront-streamingdistribution-streamingdistributionconfig"""
@@ -1964,10 +1964,10 @@ class CachePolicy(Resource):
     AWS_OBJECT_TYPE = "AWS::CloudFront::CachePolicy"
 
     
-    rp_CachePolicyConfig: typing.Union['CachePolicyCachePolicyConfig', dict] = attr.ib(
+    rp_CachePolicyConfig: typing.Union['PropCachePolicyCachePolicyConfig', dict] = attr.ib(
         default=None,
-        converter=CachePolicyCachePolicyConfig.from_dict,
-        validator=attr.validators.instance_of(CachePolicyCachePolicyConfig),
+        converter=PropCachePolicyCachePolicyConfig.from_dict,
+        validator=attr.validators.instance_of(PropCachePolicyCachePolicyConfig),
         metadata={AttrMeta.PROPERTY_NAME: "CachePolicyConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-cachepolicy.html#cfn-cloudfront-cachepolicy-cachepolicyconfig"""
@@ -1999,10 +1999,10 @@ class Distribution(Resource):
     AWS_OBJECT_TYPE = "AWS::CloudFront::Distribution"
 
     
-    rp_DistributionConfig: typing.Union['DistributionDistributionConfig', dict] = attr.ib(
+    rp_DistributionConfig: typing.Union['PropDistributionDistributionConfig', dict] = attr.ib(
         default=None,
-        converter=DistributionDistributionConfig.from_dict,
-        validator=attr.validators.instance_of(DistributionDistributionConfig),
+        converter=PropDistributionDistributionConfig.from_dict,
+        validator=attr.validators.instance_of(PropDistributionDistributionConfig),
         metadata={AttrMeta.PROPERTY_NAME: "DistributionConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-distribution.html#cfn-cloudfront-distribution-distributionconfig"""
@@ -2040,10 +2040,10 @@ class CloudFrontOriginAccessIdentity(Resource):
     AWS_OBJECT_TYPE = "AWS::CloudFront::CloudFrontOriginAccessIdentity"
 
     
-    rp_CloudFrontOriginAccessIdentityConfig: typing.Union['CloudFrontOriginAccessIdentityCloudFrontOriginAccessIdentityConfig', dict] = attr.ib(
+    rp_CloudFrontOriginAccessIdentityConfig: typing.Union['PropCloudFrontOriginAccessIdentityCloudFrontOriginAccessIdentityConfig', dict] = attr.ib(
         default=None,
-        converter=CloudFrontOriginAccessIdentityCloudFrontOriginAccessIdentityConfig.from_dict,
-        validator=attr.validators.instance_of(CloudFrontOriginAccessIdentityCloudFrontOriginAccessIdentityConfig),
+        converter=PropCloudFrontOriginAccessIdentityCloudFrontOriginAccessIdentityConfig.from_dict,
+        validator=attr.validators.instance_of(PropCloudFrontOriginAccessIdentityCloudFrontOriginAccessIdentityConfig),
         metadata={AttrMeta.PROPERTY_NAME: "CloudFrontOriginAccessIdentityConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-cloudfrontoriginaccessidentity.html#cfn-cloudfront-cloudfrontoriginaccessidentity-cloudfrontoriginaccessidentityconfig"""
@@ -2077,10 +2077,10 @@ class RealtimeLogConfig(Resource):
     AWS_OBJECT_TYPE = "AWS::CloudFront::RealtimeLogConfig"
 
     
-    rp_EndPoints: typing.List[typing.Union['RealtimeLogConfigEndPoint', dict]] = attr.ib(
+    rp_EndPoints: typing.List[typing.Union['PropRealtimeLogConfigEndPoint', dict]] = attr.ib(
         default=None,
-        converter=RealtimeLogConfigEndPoint.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(RealtimeLogConfigEndPoint), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropRealtimeLogConfigEndPoint.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropRealtimeLogConfigEndPoint), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "EndPoints"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-realtimelogconfig.html#cfn-cloudfront-realtimelogconfig-endpoints"""
@@ -2124,10 +2124,10 @@ class OriginRequestPolicy(Resource):
     AWS_OBJECT_TYPE = "AWS::CloudFront::OriginRequestPolicy"
 
     
-    rp_OriginRequestPolicyConfig: typing.Union['OriginRequestPolicyOriginRequestPolicyConfig', dict] = attr.ib(
+    rp_OriginRequestPolicyConfig: typing.Union['PropOriginRequestPolicyOriginRequestPolicyConfig', dict] = attr.ib(
         default=None,
-        converter=OriginRequestPolicyOriginRequestPolicyConfig.from_dict,
-        validator=attr.validators.instance_of(OriginRequestPolicyOriginRequestPolicyConfig),
+        converter=PropOriginRequestPolicyOriginRequestPolicyConfig.from_dict,
+        validator=attr.validators.instance_of(PropOriginRequestPolicyOriginRequestPolicyConfig),
         metadata={AttrMeta.PROPERTY_NAME: "OriginRequestPolicyConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-originrequestpolicy.html#cfn-cloudfront-originrequestpolicy-originrequestpolicyconfig"""
@@ -2158,10 +2158,10 @@ class PublicKey(Resource):
     AWS_OBJECT_TYPE = "AWS::CloudFront::PublicKey"
 
     
-    rp_PublicKeyConfig: typing.Union['PublicKeyPublicKeyConfig', dict] = attr.ib(
+    rp_PublicKeyConfig: typing.Union['PropPublicKeyPublicKeyConfig', dict] = attr.ib(
         default=None,
-        converter=PublicKeyPublicKeyConfig.from_dict,
-        validator=attr.validators.instance_of(PublicKeyPublicKeyConfig),
+        converter=PropPublicKeyPublicKeyConfig.from_dict,
+        validator=attr.validators.instance_of(PropPublicKeyPublicKeyConfig),
         metadata={AttrMeta.PROPERTY_NAME: "PublicKeyConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-publickey.html#cfn-cloudfront-publickey-publickeyconfig"""
@@ -2214,17 +2214,17 @@ class Function(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "FunctionCode"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-function.html#cfn-cloudfront-function-functioncode"""
-    p_FunctionConfig: typing.Union['FunctionFunctionConfig', dict] = attr.ib(
+    p_FunctionConfig: typing.Union['PropFunctionFunctionConfig', dict] = attr.ib(
         default=None,
-        converter=FunctionFunctionConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(FunctionFunctionConfig)),
+        converter=PropFunctionFunctionConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropFunctionFunctionConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "FunctionConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-function.html#cfn-cloudfront-function-functionconfig"""
-    p_FunctionMetadata: typing.Union['FunctionFunctionMetadata', dict] = attr.ib(
+    p_FunctionMetadata: typing.Union['PropFunctionFunctionMetadata', dict] = attr.ib(
         default=None,
-        converter=FunctionFunctionMetadata.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(FunctionFunctionMetadata)),
+        converter=PropFunctionFunctionMetadata.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropFunctionFunctionMetadata)),
         metadata={AttrMeta.PROPERTY_NAME: "FunctionMetadata"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-function.html#cfn-cloudfront-function-functionmetadata"""

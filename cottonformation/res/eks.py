@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class ClusterProvider(Property):
+class PropClusterProvider(Property):
     """
     AWS Object Type = "AWS::EKS::Cluster.Provider"
 
@@ -35,7 +35,7 @@ class ClusterProvider(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-cluster-provider.html#cfn-eks-cluster-provider-keyarn"""
 
 @attr.s
-class FargateProfileLabel(Property):
+class PropFargateProfileLabel(Property):
     """
     AWS Object Type = "AWS::EKS::FargateProfile.Label"
 
@@ -62,7 +62,7 @@ class FargateProfileLabel(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-fargateprofile-label.html#cfn-eks-fargateprofile-label-value"""
 
 @attr.s
-class NodegroupTaint(Property):
+class PropNodegroupTaint(Property):
     """
     AWS Object Type = "AWS::EKS::Nodegroup.Taint"
 
@@ -96,7 +96,7 @@ class NodegroupTaint(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-nodegroup-taint.html#cfn-eks-nodegroup-taint-value"""
 
 @attr.s
-class ClusterEncryptionConfig(Property):
+class PropClusterEncryptionConfig(Property):
     """
     AWS Object Type = "AWS::EKS::Cluster.EncryptionConfig"
 
@@ -109,10 +109,10 @@ class ClusterEncryptionConfig(Property):
     """
     AWS_OBJECT_TYPE = "AWS::EKS::Cluster.EncryptionConfig"
     
-    p_Provider: typing.Union['ClusterProvider', dict] = attr.ib(
+    p_Provider: typing.Union['PropClusterProvider', dict] = attr.ib(
         default=None,
-        converter=ClusterProvider.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ClusterProvider)),
+        converter=PropClusterProvider.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropClusterProvider)),
         metadata={AttrMeta.PROPERTY_NAME: "Provider"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-cluster-encryptionconfig.html#cfn-eks-cluster-encryptionconfig-provider"""
@@ -124,7 +124,7 @@ class ClusterEncryptionConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-cluster-encryptionconfig.html#cfn-eks-cluster-encryptionconfig-resources"""
 
 @attr.s
-class ClusterKubernetesNetworkConfig(Property):
+class PropClusterKubernetesNetworkConfig(Property):
     """
     AWS Object Type = "AWS::EKS::Cluster.KubernetesNetworkConfig"
 
@@ -144,7 +144,7 @@ class ClusterKubernetesNetworkConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-cluster-kubernetesnetworkconfig.html#cfn-eks-cluster-kubernetesnetworkconfig-serviceipv4cidr"""
 
 @attr.s
-class NodegroupLaunchTemplateSpecification(Property):
+class PropNodegroupLaunchTemplateSpecification(Property):
     """
     AWS Object Type = "AWS::EKS::Nodegroup.LaunchTemplateSpecification"
 
@@ -178,7 +178,7 @@ class NodegroupLaunchTemplateSpecification(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-nodegroup-launchtemplatespecification.html#cfn-eks-nodegroup-launchtemplatespecification-version"""
 
 @attr.s
-class FargateProfileSelector(Property):
+class PropFargateProfileSelector(Property):
     """
     AWS Object Type = "AWS::EKS::FargateProfile.Selector"
 
@@ -197,16 +197,16 @@ class FargateProfileSelector(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Namespace"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-fargateprofile-selector.html#cfn-eks-fargateprofile-selector-namespace"""
-    p_Labels: typing.List[typing.Union['FargateProfileLabel', dict]] = attr.ib(
+    p_Labels: typing.List[typing.Union['PropFargateProfileLabel', dict]] = attr.ib(
         default=None,
-        converter=FargateProfileLabel.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(FargateProfileLabel), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropFargateProfileLabel.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropFargateProfileLabel), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Labels"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-fargateprofile-selector.html#cfn-eks-fargateprofile-selector-labels"""
 
 @attr.s
-class NodegroupUpdateConfig(Property):
+class PropNodegroupUpdateConfig(Property):
     """
     AWS Object Type = "AWS::EKS::Nodegroup.UpdateConfig"
 
@@ -233,7 +233,7 @@ class NodegroupUpdateConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-nodegroup-updateconfig.html#cfn-eks-nodegroup-updateconfig-maxunavailablepercentage"""
 
 @attr.s
-class NodegroupScalingConfig(Property):
+class PropNodegroupScalingConfig(Property):
     """
     AWS Object Type = "AWS::EKS::Nodegroup.ScalingConfig"
 
@@ -267,7 +267,7 @@ class NodegroupScalingConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-nodegroup-scalingconfig.html#cfn-eks-nodegroup-scalingconfig-minsize"""
 
 @attr.s
-class NodegroupRemoteAccess(Property):
+class PropNodegroupRemoteAccess(Property):
     """
     AWS Object Type = "AWS::EKS::Nodegroup.RemoteAccess"
 
@@ -294,7 +294,7 @@ class NodegroupRemoteAccess(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eks-nodegroup-remoteaccess.html#cfn-eks-nodegroup-remoteaccess-sourcesecuritygroups"""
 
 @attr.s
-class ClusterResourcesVpcConfig(Property):
+class PropClusterResourcesVpcConfig(Property):
     """
     AWS Object Type = "AWS::EKS::Cluster.ResourcesVpcConfig"
 
@@ -408,10 +408,10 @@ class Nodegroup(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Labels"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-nodegroup.html#cfn-eks-nodegroup-labels"""
-    p_LaunchTemplate: typing.Union['NodegroupLaunchTemplateSpecification', dict] = attr.ib(
+    p_LaunchTemplate: typing.Union['PropNodegroupLaunchTemplateSpecification', dict] = attr.ib(
         default=None,
-        converter=NodegroupLaunchTemplateSpecification.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(NodegroupLaunchTemplateSpecification)),
+        converter=PropNodegroupLaunchTemplateSpecification.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropNodegroupLaunchTemplateSpecification)),
         metadata={AttrMeta.PROPERTY_NAME: "LaunchTemplate"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-nodegroup.html#cfn-eks-nodegroup-launchtemplate"""
@@ -427,31 +427,31 @@ class Nodegroup(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "ReleaseVersion"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-nodegroup.html#cfn-eks-nodegroup-releaseversion"""
-    p_RemoteAccess: typing.Union['NodegroupRemoteAccess', dict] = attr.ib(
+    p_RemoteAccess: typing.Union['PropNodegroupRemoteAccess', dict] = attr.ib(
         default=None,
-        converter=NodegroupRemoteAccess.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(NodegroupRemoteAccess)),
+        converter=PropNodegroupRemoteAccess.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropNodegroupRemoteAccess)),
         metadata={AttrMeta.PROPERTY_NAME: "RemoteAccess"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-nodegroup.html#cfn-eks-nodegroup-remoteaccess"""
-    p_ScalingConfig: typing.Union['NodegroupScalingConfig', dict] = attr.ib(
+    p_ScalingConfig: typing.Union['PropNodegroupScalingConfig', dict] = attr.ib(
         default=None,
-        converter=NodegroupScalingConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(NodegroupScalingConfig)),
+        converter=PropNodegroupScalingConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropNodegroupScalingConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "ScalingConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-nodegroup.html#cfn-eks-nodegroup-scalingconfig"""
-    p_Taints: typing.List[typing.Union['NodegroupTaint', dict]] = attr.ib(
+    p_Taints: typing.List[typing.Union['PropNodegroupTaint', dict]] = attr.ib(
         default=None,
-        converter=NodegroupTaint.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(NodegroupTaint), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropNodegroupTaint.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropNodegroupTaint), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Taints"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-nodegroup.html#cfn-eks-nodegroup-taints"""
-    p_UpdateConfig: typing.Union['NodegroupUpdateConfig', dict] = attr.ib(
+    p_UpdateConfig: typing.Union['PropNodegroupUpdateConfig', dict] = attr.ib(
         default=None,
-        converter=NodegroupUpdateConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(NodegroupUpdateConfig)),
+        converter=PropNodegroupUpdateConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropNodegroupUpdateConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "UpdateConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-nodegroup.html#cfn-eks-nodegroup-updateconfig"""
@@ -504,10 +504,10 @@ class Cluster(Resource):
     AWS_OBJECT_TYPE = "AWS::EKS::Cluster"
 
     
-    rp_ResourcesVpcConfig: typing.Union['ClusterResourcesVpcConfig', dict] = attr.ib(
+    rp_ResourcesVpcConfig: typing.Union['PropClusterResourcesVpcConfig', dict] = attr.ib(
         default=None,
-        converter=ClusterResourcesVpcConfig.from_dict,
-        validator=attr.validators.instance_of(ClusterResourcesVpcConfig),
+        converter=PropClusterResourcesVpcConfig.from_dict,
+        validator=attr.validators.instance_of(PropClusterResourcesVpcConfig),
         metadata={AttrMeta.PROPERTY_NAME: "ResourcesVpcConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-cluster.html#cfn-eks-cluster-resourcesvpcconfig"""
@@ -517,17 +517,17 @@ class Cluster(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "RoleArn"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-cluster.html#cfn-eks-cluster-rolearn"""
-    p_EncryptionConfig: typing.List[typing.Union['ClusterEncryptionConfig', dict]] = attr.ib(
+    p_EncryptionConfig: typing.List[typing.Union['PropClusterEncryptionConfig', dict]] = attr.ib(
         default=None,
-        converter=ClusterEncryptionConfig.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ClusterEncryptionConfig), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropClusterEncryptionConfig.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropClusterEncryptionConfig), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "EncryptionConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-cluster.html#cfn-eks-cluster-encryptionconfig"""
-    p_KubernetesNetworkConfig: typing.Union['ClusterKubernetesNetworkConfig', dict] = attr.ib(
+    p_KubernetesNetworkConfig: typing.Union['PropClusterKubernetesNetworkConfig', dict] = attr.ib(
         default=None,
-        converter=ClusterKubernetesNetworkConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ClusterKubernetesNetworkConfig)),
+        converter=PropClusterKubernetesNetworkConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropClusterKubernetesNetworkConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "KubernetesNetworkConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-cluster.html#cfn-eks-cluster-kubernetesnetworkconfig"""
@@ -671,10 +671,10 @@ class FargateProfile(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "PodExecutionRoleArn"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-fargateprofile.html#cfn-eks-fargateprofile-podexecutionrolearn"""
-    rp_Selectors: typing.List[typing.Union['FargateProfileSelector', dict]] = attr.ib(
+    rp_Selectors: typing.List[typing.Union['PropFargateProfileSelector', dict]] = attr.ib(
         default=None,
-        converter=FargateProfileSelector.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(FargateProfileSelector), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropFargateProfileSelector.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropFargateProfileSelector), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "Selectors"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-fargateprofile.html#cfn-eks-fargateprofile-selectors"""

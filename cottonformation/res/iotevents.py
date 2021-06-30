@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class DetectorModelSetTimer(Property):
+class PropDetectorModelSetTimer(Property):
     """
     AWS Object Type = "AWS::IoTEvents::DetectorModel.SetTimer"
 
@@ -49,7 +49,7 @@ class DetectorModelSetTimer(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-settimer.html#cfn-iotevents-detectormodel-settimer-seconds"""
 
 @attr.s
-class DetectorModelResetTimer(Property):
+class PropDetectorModelResetTimer(Property):
     """
     AWS Object Type = "AWS::IoTEvents::DetectorModel.ResetTimer"
 
@@ -69,7 +69,7 @@ class DetectorModelResetTimer(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-resettimer.html#cfn-iotevents-detectormodel-resettimer-timername"""
 
 @attr.s
-class DetectorModelClearTimer(Property):
+class PropDetectorModelClearTimer(Property):
     """
     AWS Object Type = "AWS::IoTEvents::DetectorModel.ClearTimer"
 
@@ -89,7 +89,7 @@ class DetectorModelClearTimer(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-cleartimer.html#cfn-iotevents-detectormodel-cleartimer-timername"""
 
 @attr.s
-class InputAttribute(Property):
+class PropInputAttribute(Property):
     """
     AWS Object Type = "AWS::IoTEvents::Input.Attribute"
 
@@ -109,7 +109,7 @@ class InputAttribute(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-input-attribute.html#cfn-iotevents-input-attribute-jsonpath"""
 
 @attr.s
-class DetectorModelAssetPropertyTimestamp(Property):
+class PropDetectorModelAssetPropertyTimestamp(Property):
     """
     AWS Object Type = "AWS::IoTEvents::DetectorModel.AssetPropertyTimestamp"
 
@@ -136,7 +136,7 @@ class DetectorModelAssetPropertyTimestamp(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-assetpropertytimestamp.html#cfn-iotevents-detectormodel-assetpropertytimestamp-offsetinnanos"""
 
 @attr.s
-class DetectorModelAssetPropertyVariant(Property):
+class PropDetectorModelAssetPropertyVariant(Property):
     """
     AWS Object Type = "AWS::IoTEvents::DetectorModel.AssetPropertyVariant"
 
@@ -177,7 +177,7 @@ class DetectorModelAssetPropertyVariant(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-assetpropertyvariant.html#cfn-iotevents-detectormodel-assetpropertyvariant-stringvalue"""
 
 @attr.s
-class DetectorModelSetVariable(Property):
+class PropDetectorModelSetVariable(Property):
     """
     AWS Object Type = "AWS::IoTEvents::DetectorModel.SetVariable"
 
@@ -204,7 +204,7 @@ class DetectorModelSetVariable(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-setvariable.html#cfn-iotevents-detectormodel-setvariable-variablename"""
 
 @attr.s
-class DetectorModelPayload(Property):
+class PropDetectorModelPayload(Property):
     """
     AWS Object Type = "AWS::IoTEvents::DetectorModel.Payload"
 
@@ -231,7 +231,7 @@ class DetectorModelPayload(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-payload.html#cfn-iotevents-detectormodel-payload-type"""
 
 @attr.s
-class DetectorModelAssetPropertyValue(Property):
+class PropDetectorModelAssetPropertyValue(Property):
     """
     AWS Object Type = "AWS::IoTEvents::DetectorModel.AssetPropertyValue"
 
@@ -245,10 +245,10 @@ class DetectorModelAssetPropertyValue(Property):
     """
     AWS_OBJECT_TYPE = "AWS::IoTEvents::DetectorModel.AssetPropertyValue"
     
-    rp_Value: typing.Union['DetectorModelAssetPropertyVariant', dict] = attr.ib(
+    rp_Value: typing.Union['PropDetectorModelAssetPropertyVariant', dict] = attr.ib(
         default=None,
-        converter=DetectorModelAssetPropertyVariant.from_dict,
-        validator=attr.validators.instance_of(DetectorModelAssetPropertyVariant),
+        converter=PropDetectorModelAssetPropertyVariant.from_dict,
+        validator=attr.validators.instance_of(PropDetectorModelAssetPropertyVariant),
         metadata={AttrMeta.PROPERTY_NAME: "Value"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-assetpropertyvalue.html#cfn-iotevents-detectormodel-assetpropertyvalue-value"""
@@ -258,16 +258,16 @@ class DetectorModelAssetPropertyValue(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Quality"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-assetpropertyvalue.html#cfn-iotevents-detectormodel-assetpropertyvalue-quality"""
-    p_Timestamp: typing.Union['DetectorModelAssetPropertyTimestamp', dict] = attr.ib(
+    p_Timestamp: typing.Union['PropDetectorModelAssetPropertyTimestamp', dict] = attr.ib(
         default=None,
-        converter=DetectorModelAssetPropertyTimestamp.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DetectorModelAssetPropertyTimestamp)),
+        converter=PropDetectorModelAssetPropertyTimestamp.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDetectorModelAssetPropertyTimestamp)),
         metadata={AttrMeta.PROPERTY_NAME: "Timestamp"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-assetpropertyvalue.html#cfn-iotevents-detectormodel-assetpropertyvalue-timestamp"""
 
 @attr.s
-class InputInputDefinition(Property):
+class PropInputInputDefinition(Property):
     """
     AWS Object Type = "AWS::IoTEvents::Input.InputDefinition"
 
@@ -279,16 +279,16 @@ class InputInputDefinition(Property):
     """
     AWS_OBJECT_TYPE = "AWS::IoTEvents::Input.InputDefinition"
     
-    rp_Attributes: typing.List[typing.Union['InputAttribute', dict]] = attr.ib(
+    rp_Attributes: typing.List[typing.Union['PropInputAttribute', dict]] = attr.ib(
         default=None,
-        converter=InputAttribute.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(InputAttribute), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropInputAttribute.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropInputAttribute), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "Attributes"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-input-inputdefinition.html#cfn-iotevents-input-inputdefinition-attributes"""
 
 @attr.s
-class DetectorModelLambda(Property):
+class PropDetectorModelLambda(Property):
     """
     AWS Object Type = "AWS::IoTEvents::DetectorModel.Lambda"
 
@@ -307,16 +307,16 @@ class DetectorModelLambda(Property):
         metadata={AttrMeta.PROPERTY_NAME: "FunctionArn"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-lambda.html#cfn-iotevents-detectormodel-lambda-functionarn"""
-    p_Payload: typing.Union['DetectorModelPayload', dict] = attr.ib(
+    p_Payload: typing.Union['PropDetectorModelPayload', dict] = attr.ib(
         default=None,
-        converter=DetectorModelPayload.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DetectorModelPayload)),
+        converter=PropDetectorModelPayload.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDetectorModelPayload)),
         metadata={AttrMeta.PROPERTY_NAME: "Payload"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-lambda.html#cfn-iotevents-detectormodel-lambda-payload"""
 
 @attr.s
-class DetectorModelIotEvents(Property):
+class PropDetectorModelIotEvents(Property):
     """
     AWS Object Type = "AWS::IoTEvents::DetectorModel.IotEvents"
 
@@ -335,16 +335,16 @@ class DetectorModelIotEvents(Property):
         metadata={AttrMeta.PROPERTY_NAME: "InputName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-iotevents.html#cfn-iotevents-detectormodel-iotevents-inputname"""
-    p_Payload: typing.Union['DetectorModelPayload', dict] = attr.ib(
+    p_Payload: typing.Union['PropDetectorModelPayload', dict] = attr.ib(
         default=None,
-        converter=DetectorModelPayload.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DetectorModelPayload)),
+        converter=PropDetectorModelPayload.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDetectorModelPayload)),
         metadata={AttrMeta.PROPERTY_NAME: "Payload"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-iotevents.html#cfn-iotevents-detectormodel-iotevents-payload"""
 
 @attr.s
-class DetectorModelIotSiteWise(Property):
+class PropDetectorModelIotSiteWise(Property):
     """
     AWS Object Type = "AWS::IoTEvents::DetectorModel.IotSiteWise"
 
@@ -360,10 +360,10 @@ class DetectorModelIotSiteWise(Property):
     """
     AWS_OBJECT_TYPE = "AWS::IoTEvents::DetectorModel.IotSiteWise"
     
-    rp_PropertyValue: typing.Union['DetectorModelAssetPropertyValue', dict] = attr.ib(
+    rp_PropertyValue: typing.Union['PropDetectorModelAssetPropertyValue', dict] = attr.ib(
         default=None,
-        converter=DetectorModelAssetPropertyValue.from_dict,
-        validator=attr.validators.instance_of(DetectorModelAssetPropertyValue),
+        converter=PropDetectorModelAssetPropertyValue.from_dict,
+        validator=attr.validators.instance_of(PropDetectorModelAssetPropertyValue),
         metadata={AttrMeta.PROPERTY_NAME: "PropertyValue"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-iotsitewise.html#cfn-iotevents-detectormodel-iotsitewise-propertyvalue"""
@@ -393,7 +393,7 @@ class DetectorModelIotSiteWise(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-iotsitewise.html#cfn-iotevents-detectormodel-iotsitewise-propertyid"""
 
 @attr.s
-class DetectorModelDynamoDB(Property):
+class PropDetectorModelDynamoDB(Property):
     """
     AWS Object Type = "AWS::IoTEvents::DetectorModel.DynamoDB"
 
@@ -444,10 +444,10 @@ class DetectorModelDynamoDB(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Operation"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-dynamodb.html#cfn-iotevents-detectormodel-dynamodb-operation"""
-    p_Payload: typing.Union['DetectorModelPayload', dict] = attr.ib(
+    p_Payload: typing.Union['PropDetectorModelPayload', dict] = attr.ib(
         default=None,
-        converter=DetectorModelPayload.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DetectorModelPayload)),
+        converter=PropDetectorModelPayload.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDetectorModelPayload)),
         metadata={AttrMeta.PROPERTY_NAME: "Payload"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-dynamodb.html#cfn-iotevents-detectormodel-dynamodb-payload"""
@@ -477,7 +477,7 @@ class DetectorModelDynamoDB(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-dynamodb.html#cfn-iotevents-detectormodel-dynamodb-rangekeyvalue"""
 
 @attr.s
-class DetectorModelFirehose(Property):
+class PropDetectorModelFirehose(Property):
     """
     AWS Object Type = "AWS::IoTEvents::DetectorModel.Firehose"
 
@@ -497,10 +497,10 @@ class DetectorModelFirehose(Property):
         metadata={AttrMeta.PROPERTY_NAME: "DeliveryStreamName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-firehose.html#cfn-iotevents-detectormodel-firehose-deliverystreamname"""
-    p_Payload: typing.Union['DetectorModelPayload', dict] = attr.ib(
+    p_Payload: typing.Union['PropDetectorModelPayload', dict] = attr.ib(
         default=None,
-        converter=DetectorModelPayload.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DetectorModelPayload)),
+        converter=PropDetectorModelPayload.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDetectorModelPayload)),
         metadata={AttrMeta.PROPERTY_NAME: "Payload"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-firehose.html#cfn-iotevents-detectormodel-firehose-payload"""
@@ -512,7 +512,7 @@ class DetectorModelFirehose(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-firehose.html#cfn-iotevents-detectormodel-firehose-separator"""
 
 @attr.s
-class DetectorModelSns(Property):
+class PropDetectorModelSns(Property):
     """
     AWS Object Type = "AWS::IoTEvents::DetectorModel.Sns"
 
@@ -531,16 +531,16 @@ class DetectorModelSns(Property):
         metadata={AttrMeta.PROPERTY_NAME: "TargetArn"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-sns.html#cfn-iotevents-detectormodel-sns-targetarn"""
-    p_Payload: typing.Union['DetectorModelPayload', dict] = attr.ib(
+    p_Payload: typing.Union['PropDetectorModelPayload', dict] = attr.ib(
         default=None,
-        converter=DetectorModelPayload.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DetectorModelPayload)),
+        converter=PropDetectorModelPayload.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDetectorModelPayload)),
         metadata={AttrMeta.PROPERTY_NAME: "Payload"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-sns.html#cfn-iotevents-detectormodel-sns-payload"""
 
 @attr.s
-class DetectorModelSqs(Property):
+class PropDetectorModelSqs(Property):
     """
     AWS Object Type = "AWS::IoTEvents::DetectorModel.Sqs"
 
@@ -560,10 +560,10 @@ class DetectorModelSqs(Property):
         metadata={AttrMeta.PROPERTY_NAME: "QueueUrl"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-sqs.html#cfn-iotevents-detectormodel-sqs-queueurl"""
-    p_Payload: typing.Union['DetectorModelPayload', dict] = attr.ib(
+    p_Payload: typing.Union['PropDetectorModelPayload', dict] = attr.ib(
         default=None,
-        converter=DetectorModelPayload.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DetectorModelPayload)),
+        converter=PropDetectorModelPayload.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDetectorModelPayload)),
         metadata={AttrMeta.PROPERTY_NAME: "Payload"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-sqs.html#cfn-iotevents-detectormodel-sqs-payload"""
@@ -575,7 +575,7 @@ class DetectorModelSqs(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-sqs.html#cfn-iotevents-detectormodel-sqs-usebase64"""
 
 @attr.s
-class DetectorModelIotTopicPublish(Property):
+class PropDetectorModelIotTopicPublish(Property):
     """
     AWS Object Type = "AWS::IoTEvents::DetectorModel.IotTopicPublish"
 
@@ -594,16 +594,16 @@ class DetectorModelIotTopicPublish(Property):
         metadata={AttrMeta.PROPERTY_NAME: "MqttTopic"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-iottopicpublish.html#cfn-iotevents-detectormodel-iottopicpublish-mqtttopic"""
-    p_Payload: typing.Union['DetectorModelPayload', dict] = attr.ib(
+    p_Payload: typing.Union['PropDetectorModelPayload', dict] = attr.ib(
         default=None,
-        converter=DetectorModelPayload.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DetectorModelPayload)),
+        converter=PropDetectorModelPayload.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDetectorModelPayload)),
         metadata={AttrMeta.PROPERTY_NAME: "Payload"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-iottopicpublish.html#cfn-iotevents-detectormodel-iottopicpublish-payload"""
 
 @attr.s
-class DetectorModelDynamoDBv2(Property):
+class PropDetectorModelDynamoDBv2(Property):
     """
     AWS Object Type = "AWS::IoTEvents::DetectorModel.DynamoDBv2"
 
@@ -622,16 +622,16 @@ class DetectorModelDynamoDBv2(Property):
         metadata={AttrMeta.PROPERTY_NAME: "TableName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-dynamodbv2.html#cfn-iotevents-detectormodel-dynamodbv2-tablename"""
-    p_Payload: typing.Union['DetectorModelPayload', dict] = attr.ib(
+    p_Payload: typing.Union['PropDetectorModelPayload', dict] = attr.ib(
         default=None,
-        converter=DetectorModelPayload.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DetectorModelPayload)),
+        converter=PropDetectorModelPayload.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDetectorModelPayload)),
         metadata={AttrMeta.PROPERTY_NAME: "Payload"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-dynamodbv2.html#cfn-iotevents-detectormodel-dynamodbv2-payload"""
 
 @attr.s
-class DetectorModelAction(Property):
+class PropDetectorModelAction(Property):
     """
     AWS Object Type = "AWS::IoTEvents::DetectorModel.Action"
 
@@ -655,100 +655,100 @@ class DetectorModelAction(Property):
     """
     AWS_OBJECT_TYPE = "AWS::IoTEvents::DetectorModel.Action"
     
-    p_ClearTimer: typing.Union['DetectorModelClearTimer', dict] = attr.ib(
+    p_ClearTimer: typing.Union['PropDetectorModelClearTimer', dict] = attr.ib(
         default=None,
-        converter=DetectorModelClearTimer.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DetectorModelClearTimer)),
+        converter=PropDetectorModelClearTimer.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDetectorModelClearTimer)),
         metadata={AttrMeta.PROPERTY_NAME: "ClearTimer"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-action.html#cfn-iotevents-detectormodel-action-cleartimer"""
-    p_DynamoDB: typing.Union['DetectorModelDynamoDB', dict] = attr.ib(
+    p_DynamoDB: typing.Union['PropDetectorModelDynamoDB', dict] = attr.ib(
         default=None,
-        converter=DetectorModelDynamoDB.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DetectorModelDynamoDB)),
+        converter=PropDetectorModelDynamoDB.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDetectorModelDynamoDB)),
         metadata={AttrMeta.PROPERTY_NAME: "DynamoDB"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-action.html#cfn-iotevents-detectormodel-action-dynamodb"""
-    p_DynamoDBv2: typing.Union['DetectorModelDynamoDBv2', dict] = attr.ib(
+    p_DynamoDBv2: typing.Union['PropDetectorModelDynamoDBv2', dict] = attr.ib(
         default=None,
-        converter=DetectorModelDynamoDBv2.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DetectorModelDynamoDBv2)),
+        converter=PropDetectorModelDynamoDBv2.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDetectorModelDynamoDBv2)),
         metadata={AttrMeta.PROPERTY_NAME: "DynamoDBv2"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-action.html#cfn-iotevents-detectormodel-action-dynamodbv2"""
-    p_Firehose: typing.Union['DetectorModelFirehose', dict] = attr.ib(
+    p_Firehose: typing.Union['PropDetectorModelFirehose', dict] = attr.ib(
         default=None,
-        converter=DetectorModelFirehose.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DetectorModelFirehose)),
+        converter=PropDetectorModelFirehose.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDetectorModelFirehose)),
         metadata={AttrMeta.PROPERTY_NAME: "Firehose"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-action.html#cfn-iotevents-detectormodel-action-firehose"""
-    p_IotEvents: typing.Union['DetectorModelIotEvents', dict] = attr.ib(
+    p_IotEvents: typing.Union['PropDetectorModelIotEvents', dict] = attr.ib(
         default=None,
-        converter=DetectorModelIotEvents.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DetectorModelIotEvents)),
+        converter=PropDetectorModelIotEvents.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDetectorModelIotEvents)),
         metadata={AttrMeta.PROPERTY_NAME: "IotEvents"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-action.html#cfn-iotevents-detectormodel-action-iotevents"""
-    p_IotSiteWise: typing.Union['DetectorModelIotSiteWise', dict] = attr.ib(
+    p_IotSiteWise: typing.Union['PropDetectorModelIotSiteWise', dict] = attr.ib(
         default=None,
-        converter=DetectorModelIotSiteWise.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DetectorModelIotSiteWise)),
+        converter=PropDetectorModelIotSiteWise.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDetectorModelIotSiteWise)),
         metadata={AttrMeta.PROPERTY_NAME: "IotSiteWise"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-action.html#cfn-iotevents-detectormodel-action-iotsitewise"""
-    p_IotTopicPublish: typing.Union['DetectorModelIotTopicPublish', dict] = attr.ib(
+    p_IotTopicPublish: typing.Union['PropDetectorModelIotTopicPublish', dict] = attr.ib(
         default=None,
-        converter=DetectorModelIotTopicPublish.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DetectorModelIotTopicPublish)),
+        converter=PropDetectorModelIotTopicPublish.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDetectorModelIotTopicPublish)),
         metadata={AttrMeta.PROPERTY_NAME: "IotTopicPublish"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-action.html#cfn-iotevents-detectormodel-action-iottopicpublish"""
-    p_Lambda: typing.Union['DetectorModelLambda', dict] = attr.ib(
+    p_Lambda: typing.Union['PropDetectorModelLambda', dict] = attr.ib(
         default=None,
-        converter=DetectorModelLambda.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DetectorModelLambda)),
+        converter=PropDetectorModelLambda.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDetectorModelLambda)),
         metadata={AttrMeta.PROPERTY_NAME: "Lambda"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-action.html#cfn-iotevents-detectormodel-action-lambda"""
-    p_ResetTimer: typing.Union['DetectorModelResetTimer', dict] = attr.ib(
+    p_ResetTimer: typing.Union['PropDetectorModelResetTimer', dict] = attr.ib(
         default=None,
-        converter=DetectorModelResetTimer.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DetectorModelResetTimer)),
+        converter=PropDetectorModelResetTimer.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDetectorModelResetTimer)),
         metadata={AttrMeta.PROPERTY_NAME: "ResetTimer"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-action.html#cfn-iotevents-detectormodel-action-resettimer"""
-    p_SetTimer: typing.Union['DetectorModelSetTimer', dict] = attr.ib(
+    p_SetTimer: typing.Union['PropDetectorModelSetTimer', dict] = attr.ib(
         default=None,
-        converter=DetectorModelSetTimer.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DetectorModelSetTimer)),
+        converter=PropDetectorModelSetTimer.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDetectorModelSetTimer)),
         metadata={AttrMeta.PROPERTY_NAME: "SetTimer"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-action.html#cfn-iotevents-detectormodel-action-settimer"""
-    p_SetVariable: typing.Union['DetectorModelSetVariable', dict] = attr.ib(
+    p_SetVariable: typing.Union['PropDetectorModelSetVariable', dict] = attr.ib(
         default=None,
-        converter=DetectorModelSetVariable.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DetectorModelSetVariable)),
+        converter=PropDetectorModelSetVariable.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDetectorModelSetVariable)),
         metadata={AttrMeta.PROPERTY_NAME: "SetVariable"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-action.html#cfn-iotevents-detectormodel-action-setvariable"""
-    p_Sns: typing.Union['DetectorModelSns', dict] = attr.ib(
+    p_Sns: typing.Union['PropDetectorModelSns', dict] = attr.ib(
         default=None,
-        converter=DetectorModelSns.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DetectorModelSns)),
+        converter=PropDetectorModelSns.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDetectorModelSns)),
         metadata={AttrMeta.PROPERTY_NAME: "Sns"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-action.html#cfn-iotevents-detectormodel-action-sns"""
-    p_Sqs: typing.Union['DetectorModelSqs', dict] = attr.ib(
+    p_Sqs: typing.Union['PropDetectorModelSqs', dict] = attr.ib(
         default=None,
-        converter=DetectorModelSqs.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DetectorModelSqs)),
+        converter=PropDetectorModelSqs.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDetectorModelSqs)),
         metadata={AttrMeta.PROPERTY_NAME: "Sqs"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-action.html#cfn-iotevents-detectormodel-action-sqs"""
 
 @attr.s
-class DetectorModelTransitionEvent(Property):
+class PropDetectorModelTransitionEvent(Property):
     """
     AWS Object Type = "AWS::IoTEvents::DetectorModel.TransitionEvent"
 
@@ -781,16 +781,16 @@ class DetectorModelTransitionEvent(Property):
         metadata={AttrMeta.PROPERTY_NAME: "NextState"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-transitionevent.html#cfn-iotevents-detectormodel-transitionevent-nextstate"""
-    p_Actions: typing.List[typing.Union['DetectorModelAction', dict]] = attr.ib(
+    p_Actions: typing.List[typing.Union['PropDetectorModelAction', dict]] = attr.ib(
         default=None,
-        converter=DetectorModelAction.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(DetectorModelAction), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropDetectorModelAction.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDetectorModelAction), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Actions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-transitionevent.html#cfn-iotevents-detectormodel-transitionevent-actions"""
 
 @attr.s
-class DetectorModelEvent(Property):
+class PropDetectorModelEvent(Property):
     """
     AWS Object Type = "AWS::IoTEvents::DetectorModel.Event"
 
@@ -810,10 +810,10 @@ class DetectorModelEvent(Property):
         metadata={AttrMeta.PROPERTY_NAME: "EventName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-event.html#cfn-iotevents-detectormodel-event-eventname"""
-    p_Actions: typing.List[typing.Union['DetectorModelAction', dict]] = attr.ib(
+    p_Actions: typing.List[typing.Union['PropDetectorModelAction', dict]] = attr.ib(
         default=None,
-        converter=DetectorModelAction.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(DetectorModelAction), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropDetectorModelAction.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDetectorModelAction), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Actions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-event.html#cfn-iotevents-detectormodel-event-actions"""
@@ -825,7 +825,7 @@ class DetectorModelEvent(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-event.html#cfn-iotevents-detectormodel-event-condition"""
 
 @attr.s
-class DetectorModelOnExit(Property):
+class PropDetectorModelOnExit(Property):
     """
     AWS Object Type = "AWS::IoTEvents::DetectorModel.OnExit"
 
@@ -837,16 +837,16 @@ class DetectorModelOnExit(Property):
     """
     AWS_OBJECT_TYPE = "AWS::IoTEvents::DetectorModel.OnExit"
     
-    p_Events: typing.List[typing.Union['DetectorModelEvent', dict]] = attr.ib(
+    p_Events: typing.List[typing.Union['PropDetectorModelEvent', dict]] = attr.ib(
         default=None,
-        converter=DetectorModelEvent.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(DetectorModelEvent), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropDetectorModelEvent.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDetectorModelEvent), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Events"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-onexit.html#cfn-iotevents-detectormodel-onexit-events"""
 
 @attr.s
-class DetectorModelOnInput(Property):
+class PropDetectorModelOnInput(Property):
     """
     AWS Object Type = "AWS::IoTEvents::DetectorModel.OnInput"
 
@@ -859,23 +859,23 @@ class DetectorModelOnInput(Property):
     """
     AWS_OBJECT_TYPE = "AWS::IoTEvents::DetectorModel.OnInput"
     
-    p_Events: typing.List[typing.Union['DetectorModelEvent', dict]] = attr.ib(
+    p_Events: typing.List[typing.Union['PropDetectorModelEvent', dict]] = attr.ib(
         default=None,
-        converter=DetectorModelEvent.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(DetectorModelEvent), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropDetectorModelEvent.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDetectorModelEvent), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Events"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-oninput.html#cfn-iotevents-detectormodel-oninput-events"""
-    p_TransitionEvents: typing.List[typing.Union['DetectorModelTransitionEvent', dict]] = attr.ib(
+    p_TransitionEvents: typing.List[typing.Union['PropDetectorModelTransitionEvent', dict]] = attr.ib(
         default=None,
-        converter=DetectorModelTransitionEvent.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(DetectorModelTransitionEvent), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropDetectorModelTransitionEvent.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDetectorModelTransitionEvent), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "TransitionEvents"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-oninput.html#cfn-iotevents-detectormodel-oninput-transitionevents"""
 
 @attr.s
-class DetectorModelOnEnter(Property):
+class PropDetectorModelOnEnter(Property):
     """
     AWS Object Type = "AWS::IoTEvents::DetectorModel.OnEnter"
 
@@ -887,16 +887,16 @@ class DetectorModelOnEnter(Property):
     """
     AWS_OBJECT_TYPE = "AWS::IoTEvents::DetectorModel.OnEnter"
     
-    p_Events: typing.List[typing.Union['DetectorModelEvent', dict]] = attr.ib(
+    p_Events: typing.List[typing.Union['PropDetectorModelEvent', dict]] = attr.ib(
         default=None,
-        converter=DetectorModelEvent.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(DetectorModelEvent), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropDetectorModelEvent.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDetectorModelEvent), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Events"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-onenter.html#cfn-iotevents-detectormodel-onenter-events"""
 
 @attr.s
-class DetectorModelState(Property):
+class PropDetectorModelState(Property):
     """
     AWS Object Type = "AWS::IoTEvents::DetectorModel.State"
 
@@ -917,30 +917,30 @@ class DetectorModelState(Property):
         metadata={AttrMeta.PROPERTY_NAME: "StateName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-state.html#cfn-iotevents-detectormodel-state-statename"""
-    p_OnEnter: typing.Union['DetectorModelOnEnter', dict] = attr.ib(
+    p_OnEnter: typing.Union['PropDetectorModelOnEnter', dict] = attr.ib(
         default=None,
-        converter=DetectorModelOnEnter.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DetectorModelOnEnter)),
+        converter=PropDetectorModelOnEnter.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDetectorModelOnEnter)),
         metadata={AttrMeta.PROPERTY_NAME: "OnEnter"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-state.html#cfn-iotevents-detectormodel-state-onenter"""
-    p_OnExit: typing.Union['DetectorModelOnExit', dict] = attr.ib(
+    p_OnExit: typing.Union['PropDetectorModelOnExit', dict] = attr.ib(
         default=None,
-        converter=DetectorModelOnExit.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DetectorModelOnExit)),
+        converter=PropDetectorModelOnExit.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDetectorModelOnExit)),
         metadata={AttrMeta.PROPERTY_NAME: "OnExit"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-state.html#cfn-iotevents-detectormodel-state-onexit"""
-    p_OnInput: typing.Union['DetectorModelOnInput', dict] = attr.ib(
+    p_OnInput: typing.Union['PropDetectorModelOnInput', dict] = attr.ib(
         default=None,
-        converter=DetectorModelOnInput.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DetectorModelOnInput)),
+        converter=PropDetectorModelOnInput.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDetectorModelOnInput)),
         metadata={AttrMeta.PROPERTY_NAME: "OnInput"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-state.html#cfn-iotevents-detectormodel-state-oninput"""
 
 @attr.s
-class DetectorModelDetectorModelDefinition(Property):
+class PropDetectorModelDetectorModelDefinition(Property):
     """
     AWS Object Type = "AWS::IoTEvents::DetectorModel.DetectorModelDefinition"
 
@@ -959,10 +959,10 @@ class DetectorModelDetectorModelDefinition(Property):
         metadata={AttrMeta.PROPERTY_NAME: "InitialStateName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-detectormodeldefinition.html#cfn-iotevents-detectormodel-detectormodeldefinition-initialstatename"""
-    rp_States: typing.List[typing.Union['DetectorModelState', dict]] = attr.ib(
+    rp_States: typing.List[typing.Union['PropDetectorModelState', dict]] = attr.ib(
         default=None,
-        converter=DetectorModelState.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(DetectorModelState), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropDetectorModelState.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDetectorModelState), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "States"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotevents-detectormodel-detectormodeldefinition.html#cfn-iotevents-detectormodel-detectormodeldefinition-states"""
@@ -987,10 +987,10 @@ class Input(Resource):
     AWS_OBJECT_TYPE = "AWS::IoTEvents::Input"
 
     
-    rp_InputDefinition: typing.Union['InputInputDefinition', dict] = attr.ib(
+    rp_InputDefinition: typing.Union['PropInputInputDefinition', dict] = attr.ib(
         default=None,
-        converter=InputInputDefinition.from_dict,
-        validator=attr.validators.instance_of(InputInputDefinition),
+        converter=PropInputInputDefinition.from_dict,
+        validator=attr.validators.instance_of(PropInputInputDefinition),
         metadata={AttrMeta.PROPERTY_NAME: "InputDefinition"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotevents-input.html#cfn-iotevents-input-inputdefinition"""
@@ -1036,10 +1036,10 @@ class DetectorModel(Resource):
     AWS_OBJECT_TYPE = "AWS::IoTEvents::DetectorModel"
 
     
-    rp_DetectorModelDefinition: typing.Union['DetectorModelDetectorModelDefinition', dict] = attr.ib(
+    rp_DetectorModelDefinition: typing.Union['PropDetectorModelDetectorModelDefinition', dict] = attr.ib(
         default=None,
-        converter=DetectorModelDetectorModelDefinition.from_dict,
-        validator=attr.validators.instance_of(DetectorModelDetectorModelDefinition),
+        converter=PropDetectorModelDetectorModelDefinition.from_dict,
+        validator=attr.validators.instance_of(PropDetectorModelDetectorModelDefinition),
         metadata={AttrMeta.PROPERTY_NAME: "DetectorModelDefinition"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotevents-detectormodel.html#cfn-iotevents-detectormodel-detectormodeldefinition"""

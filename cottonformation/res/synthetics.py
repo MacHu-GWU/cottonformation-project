@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class CanaryVPCConfig(Property):
+class PropCanaryVPCConfig(Property):
     """
     AWS Object Type = "AWS::Synthetics::Canary.VPCConfig"
 
@@ -49,7 +49,7 @@ class CanaryVPCConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-vpcconfig.html#cfn-synthetics-canary-vpcconfig-vpcid"""
 
 @attr.s
-class CanarySchedule(Property):
+class PropCanarySchedule(Property):
     """
     AWS Object Type = "AWS::Synthetics::Canary.Schedule"
 
@@ -76,7 +76,7 @@ class CanarySchedule(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-schedule.html#cfn-synthetics-canary-schedule-durationinseconds"""
 
 @attr.s
-class CanaryCode(Property):
+class PropCanaryCode(Property):
     """
     AWS Object Type = "AWS::Synthetics::Canary.Code"
 
@@ -124,7 +124,7 @@ class CanaryCode(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-code.html#cfn-synthetics-canary-code-script"""
 
 @attr.s
-class CanaryRunConfig(Property):
+class PropCanaryRunConfig(Property):
     """
     AWS Object Type = "AWS::Synthetics::Canary.RunConfig"
 
@@ -198,10 +198,10 @@ class Canary(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "ArtifactS3Location"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html#cfn-synthetics-canary-artifacts3location"""
-    rp_Code: typing.Union['CanaryCode', dict] = attr.ib(
+    rp_Code: typing.Union['PropCanaryCode', dict] = attr.ib(
         default=None,
-        converter=CanaryCode.from_dict,
-        validator=attr.validators.instance_of(CanaryCode),
+        converter=PropCanaryCode.from_dict,
+        validator=attr.validators.instance_of(PropCanaryCode),
         metadata={AttrMeta.PROPERTY_NAME: "Code"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html#cfn-synthetics-canary-code"""
@@ -223,10 +223,10 @@ class Canary(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "RuntimeVersion"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html#cfn-synthetics-canary-runtimeversion"""
-    rp_Schedule: typing.Union['CanarySchedule', dict] = attr.ib(
+    rp_Schedule: typing.Union['PropCanarySchedule', dict] = attr.ib(
         default=None,
-        converter=CanarySchedule.from_dict,
-        validator=attr.validators.instance_of(CanarySchedule),
+        converter=PropCanarySchedule.from_dict,
+        validator=attr.validators.instance_of(PropCanarySchedule),
         metadata={AttrMeta.PROPERTY_NAME: "Schedule"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html#cfn-synthetics-canary-schedule"""
@@ -242,10 +242,10 @@ class Canary(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "FailureRetentionPeriod"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html#cfn-synthetics-canary-failureretentionperiod"""
-    p_RunConfig: typing.Union['CanaryRunConfig', dict] = attr.ib(
+    p_RunConfig: typing.Union['PropCanaryRunConfig', dict] = attr.ib(
         default=None,
-        converter=CanaryRunConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(CanaryRunConfig)),
+        converter=PropCanaryRunConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropCanaryRunConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "RunConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html#cfn-synthetics-canary-runconfig"""
@@ -255,10 +255,10 @@ class Canary(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "SuccessRetentionPeriod"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html#cfn-synthetics-canary-successretentionperiod"""
-    p_VPCConfig: typing.Union['CanaryVPCConfig', dict] = attr.ib(
+    p_VPCConfig: typing.Union['PropCanaryVPCConfig', dict] = attr.ib(
         default=None,
-        converter=CanaryVPCConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(CanaryVPCConfig)),
+        converter=PropCanaryVPCConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropCanaryVPCConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "VPCConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html#cfn-synthetics-canary-vpcconfig"""

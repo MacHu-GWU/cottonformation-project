@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class EventIntegrationMetadata(Property):
+class PropEventIntegrationMetadata(Property):
     """
     AWS Object Type = "AWS::AppIntegrations::EventIntegration.Metadata"
 
@@ -42,7 +42,7 @@ class EventIntegrationMetadata(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appintegrations-eventintegration-metadata.html#cfn-appintegrations-eventintegration-metadata-value"""
 
 @attr.s
-class EventIntegrationEventFilter(Property):
+class PropEventIntegrationEventFilter(Property):
     """
     AWS Object Type = "AWS::AppIntegrations::EventIntegration.EventFilter"
 
@@ -62,7 +62,7 @@ class EventIntegrationEventFilter(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appintegrations-eventintegration-eventfilter.html#cfn-appintegrations-eventintegration-eventfilter-source"""
 
 @attr.s
-class EventIntegrationEventIntegrationAssociation(Property):
+class PropEventIntegrationEventIntegrationAssociation(Property):
     """
     AWS Object Type = "AWS::AppIntegrations::EventIntegration.EventIntegrationAssociation"
 
@@ -78,10 +78,10 @@ class EventIntegrationEventIntegrationAssociation(Property):
     """
     AWS_OBJECT_TYPE = "AWS::AppIntegrations::EventIntegration.EventIntegrationAssociation"
     
-    p_ClientAssociationMetadata: typing.List[typing.Union['EventIntegrationMetadata', dict]] = attr.ib(
+    p_ClientAssociationMetadata: typing.List[typing.Union['PropEventIntegrationMetadata', dict]] = attr.ib(
         default=None,
-        converter=EventIntegrationMetadata.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(EventIntegrationMetadata), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropEventIntegrationMetadata.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropEventIntegrationMetadata), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "ClientAssociationMetadata"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appintegrations-eventintegration-eventintegrationassociation.html#cfn-appintegrations-eventintegration-eventintegrationassociation-clientassociationmetadata"""
@@ -137,10 +137,10 @@ class EventIntegration(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "EventBridgeBus"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appintegrations-eventintegration.html#cfn-appintegrations-eventintegration-eventbridgebus"""
-    rp_EventFilter: typing.Union['EventIntegrationEventFilter', dict] = attr.ib(
+    rp_EventFilter: typing.Union['PropEventIntegrationEventFilter', dict] = attr.ib(
         default=None,
-        converter=EventIntegrationEventFilter.from_dict,
-        validator=attr.validators.instance_of(EventIntegrationEventFilter),
+        converter=PropEventIntegrationEventFilter.from_dict,
+        validator=attr.validators.instance_of(PropEventIntegrationEventFilter),
         metadata={AttrMeta.PROPERTY_NAME: "EventFilter"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appintegrations-eventintegration.html#cfn-appintegrations-eventintegration-eventfilter"""

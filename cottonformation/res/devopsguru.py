@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class NotificationChannelSnsChannelConfig(Property):
+class PropNotificationChannelSnsChannelConfig(Property):
     """
     AWS Object Type = "AWS::DevOpsGuru::NotificationChannel.SnsChannelConfig"
 
@@ -35,7 +35,7 @@ class NotificationChannelSnsChannelConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsguru-notificationchannel-snschannelconfig.html#cfn-devopsguru-notificationchannel-snschannelconfig-topicarn"""
 
 @attr.s
-class ResourceCollectionCloudFormationCollectionFilter(Property):
+class PropResourceCollectionCloudFormationCollectionFilter(Property):
     """
     AWS Object Type = "AWS::DevOpsGuru::ResourceCollection.CloudFormationCollectionFilter"
 
@@ -55,7 +55,7 @@ class ResourceCollectionCloudFormationCollectionFilter(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsguru-resourcecollection-cloudformationcollectionfilter.html#cfn-devopsguru-resourcecollection-cloudformationcollectionfilter-stacknames"""
 
 @attr.s
-class NotificationChannelNotificationChannelConfig(Property):
+class PropNotificationChannelNotificationChannelConfig(Property):
     """
     AWS Object Type = "AWS::DevOpsGuru::NotificationChannel.NotificationChannelConfig"
 
@@ -67,16 +67,16 @@ class NotificationChannelNotificationChannelConfig(Property):
     """
     AWS_OBJECT_TYPE = "AWS::DevOpsGuru::NotificationChannel.NotificationChannelConfig"
     
-    p_Sns: typing.Union['NotificationChannelSnsChannelConfig', dict] = attr.ib(
+    p_Sns: typing.Union['PropNotificationChannelSnsChannelConfig', dict] = attr.ib(
         default=None,
-        converter=NotificationChannelSnsChannelConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(NotificationChannelSnsChannelConfig)),
+        converter=PropNotificationChannelSnsChannelConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropNotificationChannelSnsChannelConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "Sns"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsguru-notificationchannel-notificationchannelconfig.html#cfn-devopsguru-notificationchannel-notificationchannelconfig-sns"""
 
 @attr.s
-class ResourceCollectionResourceCollectionFilter(Property):
+class PropResourceCollectionResourceCollectionFilter(Property):
     """
     AWS Object Type = "AWS::DevOpsGuru::ResourceCollection.ResourceCollectionFilter"
 
@@ -88,10 +88,10 @@ class ResourceCollectionResourceCollectionFilter(Property):
     """
     AWS_OBJECT_TYPE = "AWS::DevOpsGuru::ResourceCollection.ResourceCollectionFilter"
     
-    p_CloudFormation: typing.Union['ResourceCollectionCloudFormationCollectionFilter', dict] = attr.ib(
+    p_CloudFormation: typing.Union['PropResourceCollectionCloudFormationCollectionFilter', dict] = attr.ib(
         default=None,
-        converter=ResourceCollectionCloudFormationCollectionFilter.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ResourceCollectionCloudFormationCollectionFilter)),
+        converter=PropResourceCollectionCloudFormationCollectionFilter.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropResourceCollectionCloudFormationCollectionFilter)),
         metadata={AttrMeta.PROPERTY_NAME: "CloudFormation"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsguru-resourcecollection-resourcecollectionfilter.html#cfn-devopsguru-resourcecollection-resourcecollectionfilter-cloudformation"""
@@ -113,10 +113,10 @@ class NotificationChannel(Resource):
     AWS_OBJECT_TYPE = "AWS::DevOpsGuru::NotificationChannel"
 
     
-    rp_Config: typing.Union['NotificationChannelNotificationChannelConfig', dict] = attr.ib(
+    rp_Config: typing.Union['PropNotificationChannelNotificationChannelConfig', dict] = attr.ib(
         default=None,
-        converter=NotificationChannelNotificationChannelConfig.from_dict,
-        validator=attr.validators.instance_of(NotificationChannelNotificationChannelConfig),
+        converter=PropNotificationChannelNotificationChannelConfig.from_dict,
+        validator=attr.validators.instance_of(PropNotificationChannelNotificationChannelConfig),
         metadata={AttrMeta.PROPERTY_NAME: "Config"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-devopsguru-notificationchannel.html#cfn-devopsguru-notificationchannel-config"""
@@ -142,10 +142,10 @@ class ResourceCollection(Resource):
     AWS_OBJECT_TYPE = "AWS::DevOpsGuru::ResourceCollection"
 
     
-    rp_ResourceCollectionFilter: typing.Union['ResourceCollectionResourceCollectionFilter', dict] = attr.ib(
+    rp_ResourceCollectionFilter: typing.Union['PropResourceCollectionResourceCollectionFilter', dict] = attr.ib(
         default=None,
-        converter=ResourceCollectionResourceCollectionFilter.from_dict,
-        validator=attr.validators.instance_of(ResourceCollectionResourceCollectionFilter),
+        converter=PropResourceCollectionResourceCollectionFilter.from_dict,
+        validator=attr.validators.instance_of(PropResourceCollectionResourceCollectionFilter),
         metadata={AttrMeta.PROPERTY_NAME: "ResourceCollectionFilter"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-devopsguru-resourcecollection.html#cfn-devopsguru-resourcecollection-resourcecollectionfilter"""

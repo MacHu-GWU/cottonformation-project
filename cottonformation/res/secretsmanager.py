@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class RotationScheduleRotationRules(Property):
+class PropRotationScheduleRotationRules(Property):
     """
     AWS Object Type = "AWS::SecretsManager::RotationSchedule.RotationRules"
 
@@ -35,7 +35,7 @@ class RotationScheduleRotationRules(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-secretsmanager-rotationschedule-rotationrules.html#cfn-secretsmanager-rotationschedule-rotationrules-automaticallyafterdays"""
 
 @attr.s
-class SecretReplicaRegion(Property):
+class PropSecretReplicaRegion(Property):
     """
     AWS Object Type = "AWS::SecretsManager::Secret.ReplicaRegion"
 
@@ -62,7 +62,7 @@ class SecretReplicaRegion(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-secretsmanager-secret-replicaregion.html#cfn-secretsmanager-secret-replicaregion-kmskeyid"""
 
 @attr.s
-class RotationScheduleHostedRotationLambda(Property):
+class PropRotationScheduleHostedRotationLambda(Property):
     """
     AWS Object Type = "AWS::SecretsManager::RotationSchedule.HostedRotationLambda"
 
@@ -124,7 +124,7 @@ class RotationScheduleHostedRotationLambda(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-secretsmanager-rotationschedule-hostedrotationlambda.html#cfn-secretsmanager-rotationschedule-hostedrotationlambda-vpcsubnetids"""
 
 @attr.s
-class SecretGenerateSecretString(Property):
+class PropSecretGenerateSecretString(Property):
     """
     AWS Object Type = "AWS::SecretsManager::Secret.GenerateSecretString"
 
@@ -232,10 +232,10 @@ class RotationSchedule(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "SecretId"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-rotationschedule.html#cfn-secretsmanager-rotationschedule-secretid"""
-    p_HostedRotationLambda: typing.Union['RotationScheduleHostedRotationLambda', dict] = attr.ib(
+    p_HostedRotationLambda: typing.Union['PropRotationScheduleHostedRotationLambda', dict] = attr.ib(
         default=None,
-        converter=RotationScheduleHostedRotationLambda.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(RotationScheduleHostedRotationLambda)),
+        converter=PropRotationScheduleHostedRotationLambda.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropRotationScheduleHostedRotationLambda)),
         metadata={AttrMeta.PROPERTY_NAME: "HostedRotationLambda"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-rotationschedule.html#cfn-secretsmanager-rotationschedule-hostedrotationlambda"""
@@ -245,10 +245,10 @@ class RotationSchedule(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "RotationLambdaARN"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-rotationschedule.html#cfn-secretsmanager-rotationschedule-rotationlambdaarn"""
-    p_RotationRules: typing.Union['RotationScheduleRotationRules', dict] = attr.ib(
+    p_RotationRules: typing.Union['PropRotationScheduleRotationRules', dict] = attr.ib(
         default=None,
-        converter=RotationScheduleRotationRules.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(RotationScheduleRotationRules)),
+        converter=PropRotationScheduleRotationRules.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropRotationScheduleRotationRules)),
         metadata={AttrMeta.PROPERTY_NAME: "RotationRules"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-rotationschedule.html#cfn-secretsmanager-rotationschedule-rotationrules"""
@@ -318,10 +318,10 @@ class Secret(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Description"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-secret.html#cfn-secretsmanager-secret-description"""
-    p_GenerateSecretString: typing.Union['SecretGenerateSecretString', dict] = attr.ib(
+    p_GenerateSecretString: typing.Union['PropSecretGenerateSecretString', dict] = attr.ib(
         default=None,
-        converter=SecretGenerateSecretString.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(SecretGenerateSecretString)),
+        converter=PropSecretGenerateSecretString.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropSecretGenerateSecretString)),
         metadata={AttrMeta.PROPERTY_NAME: "GenerateSecretString"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-secret.html#cfn-secretsmanager-secret-generatesecretstring"""
@@ -337,10 +337,10 @@ class Secret(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Name"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-secret.html#cfn-secretsmanager-secret-name"""
-    p_ReplicaRegions: typing.List[typing.Union['SecretReplicaRegion', dict]] = attr.ib(
+    p_ReplicaRegions: typing.List[typing.Union['PropSecretReplicaRegion', dict]] = attr.ib(
         default=None,
-        converter=SecretReplicaRegion.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(SecretReplicaRegion), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropSecretReplicaRegion.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropSecretReplicaRegion), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "ReplicaRegions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-secretsmanager-secret.html#cfn-secretsmanager-secret-replicaregions"""

@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class DeploymentMethodSetting(Property):
+class PropDeploymentMethodSetting(Property):
     """
     AWS Object Type = "AWS::ApiGateway::Deployment.MethodSetting"
 
@@ -98,7 +98,7 @@ class DeploymentMethodSetting(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription-methodsetting.html#cfn-apigateway-deployment-stagedescription-methodsetting-throttlingratelimit"""
 
 @attr.s
-class ApiKeyStageKey(Property):
+class PropApiKeyStageKey(Property):
     """
     AWS Object Type = "AWS::ApiGateway::ApiKey.StageKey"
 
@@ -125,7 +125,7 @@ class ApiKeyStageKey(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-apikey-stagekey.html#cfn-apigateway-apikey-stagekey-stagename"""
 
 @attr.s
-class DocumentationPartLocation(Property):
+class PropDocumentationPartLocation(Property):
     """
     AWS Object Type = "AWS::ApiGateway::DocumentationPart.Location"
 
@@ -173,7 +173,7 @@ class DocumentationPartLocation(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-documentationpart-location.html#cfn-apigateway-documentationpart-location-type"""
 
 @attr.s
-class DeploymentAccessLogSetting(Property):
+class PropDeploymentAccessLogSetting(Property):
     """
     AWS Object Type = "AWS::ApiGateway::Deployment.AccessLogSetting"
 
@@ -200,7 +200,7 @@ class DeploymentAccessLogSetting(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-accesslogsetting.html#cfn-apigateway-deployment-accesslogsetting-format"""
 
 @attr.s
-class MethodMethodResponse(Property):
+class PropMethodMethodResponse(Property):
     """
     AWS Object Type = "AWS::ApiGateway::Method.MethodResponse"
 
@@ -234,7 +234,7 @@ class MethodMethodResponse(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-method-methodresponse.html#cfn-apigateway-method-methodresponse-responseparameters"""
 
 @attr.s
-class DomainNameMutualTlsAuthentication(Property):
+class PropDomainNameMutualTlsAuthentication(Property):
     """
     AWS Object Type = "AWS::ApiGateway::DomainName.MutualTlsAuthentication"
 
@@ -261,7 +261,7 @@ class DomainNameMutualTlsAuthentication(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-domainname-mutualtlsauthentication.html#cfn-apigateway-domainname-mutualtlsauthentication-truststoreversion"""
 
 @attr.s
-class RestApiS3Location(Property):
+class PropRestApiS3Location(Property):
     """
     AWS Object Type = "AWS::ApiGateway::RestApi.S3Location"
 
@@ -302,7 +302,7 @@ class RestApiS3Location(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-restapi-s3location.html#cfn-apigateway-restapi-s3location-version"""
 
 @attr.s
-class RestApiEndpointConfiguration(Property):
+class PropRestApiEndpointConfiguration(Property):
     """
     AWS Object Type = "AWS::ApiGateway::RestApi.EndpointConfiguration"
 
@@ -329,7 +329,7 @@ class RestApiEndpointConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-restapi-endpointconfiguration.html#cfn-apigateway-restapi-endpointconfiguration-vpcendpointids"""
 
 @attr.s
-class DeploymentDeploymentCanarySettings(Property):
+class PropDeploymentDeploymentCanarySettings(Property):
     """
     AWS Object Type = "AWS::ApiGateway::Deployment.DeploymentCanarySettings"
 
@@ -363,7 +363,7 @@ class DeploymentDeploymentCanarySettings(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-deploymentcanarysettings.html#cfn-apigateway-deployment-deploymentcanarysettings-usestagecache"""
 
 @attr.s
-class StageCanarySetting(Property):
+class PropStageCanarySetting(Property):
     """
     AWS Object Type = "AWS::ApiGateway::Stage.CanarySetting"
 
@@ -404,7 +404,7 @@ class StageCanarySetting(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-stage-canarysetting.html#cfn-apigateway-stage-canarysetting-usestagecache"""
 
 @attr.s
-class DeploymentCanarySetting(Property):
+class PropDeploymentCanarySetting(Property):
     """
     AWS Object Type = "AWS::ApiGateway::Deployment.CanarySetting"
 
@@ -438,7 +438,7 @@ class DeploymentCanarySetting(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-canarysetting.html#cfn-apigateway-deployment-canarysetting-usestagecache"""
 
 @attr.s
-class StageAccessLogSetting(Property):
+class PropStageAccessLogSetting(Property):
     """
     AWS Object Type = "AWS::ApiGateway::Stage.AccessLogSetting"
 
@@ -465,7 +465,7 @@ class StageAccessLogSetting(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-stage-accesslogsetting.html#cfn-apigateway-stage-accesslogsetting-format"""
 
 @attr.s
-class MethodIntegrationResponse(Property):
+class PropMethodIntegrationResponse(Property):
     """
     AWS Object Type = "AWS::ApiGateway::Method.IntegrationResponse"
 
@@ -513,7 +513,7 @@ class MethodIntegrationResponse(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-method-integration-integrationresponse.html#cfn-apigateway-method-integration-integrationresponse-selectionpattern"""
 
 @attr.s
-class StageMethodSetting(Property):
+class PropStageMethodSetting(Property):
     """
     AWS Object Type = "AWS::ApiGateway::Stage.MethodSetting"
 
@@ -596,7 +596,7 @@ class StageMethodSetting(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-stage-methodsetting.html#cfn-apigateway-stage-methodsetting-throttlingratelimit"""
 
 @attr.s
-class DomainNameEndpointConfiguration(Property):
+class PropDomainNameEndpointConfiguration(Property):
     """
     AWS Object Type = "AWS::ApiGateway::DomainName.EndpointConfiguration"
 
@@ -616,7 +616,7 @@ class DomainNameEndpointConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-domainname-endpointconfiguration.html#cfn-apigateway-domainname-endpointconfiguration-types"""
 
 @attr.s
-class UsagePlanThrottleSettings(Property):
+class PropUsagePlanThrottleSettings(Property):
     """
     AWS Object Type = "AWS::ApiGateway::UsagePlan.ThrottleSettings"
 
@@ -643,7 +643,7 @@ class UsagePlanThrottleSettings(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-usageplan-throttlesettings.html#cfn-apigateway-usageplan-throttlesettings-ratelimit"""
 
 @attr.s
-class UsagePlanQuotaSettings(Property):
+class PropUsagePlanQuotaSettings(Property):
     """
     AWS Object Type = "AWS::ApiGateway::UsagePlan.QuotaSettings"
 
@@ -677,7 +677,7 @@ class UsagePlanQuotaSettings(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-usageplan-quotasettings.html#cfn-apigateway-usageplan-quotasettings-period"""
 
 @attr.s
-class UsagePlanApiStage(Property):
+class PropUsagePlanApiStage(Property):
     """
     AWS Object Type = "AWS::ApiGateway::UsagePlan.ApiStage"
 
@@ -703,16 +703,16 @@ class UsagePlanApiStage(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Stage"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-usageplan-apistage.html#cfn-apigateway-usageplan-apistage-stage"""
-    p_Throttle: typing.Union['UsagePlanThrottleSettings', dict] = attr.ib(
+    p_Throttle: typing.Union['PropUsagePlanThrottleSettings', dict] = attr.ib(
         default=None,
-        converter=UsagePlanThrottleSettings.from_list,
-        validator=attr.validators.optional(attr.validators.instance_of(UsagePlanThrottleSettings)),
+        converter=PropUsagePlanThrottleSettings.from_list,
+        validator=attr.validators.optional(attr.validators.instance_of(PropUsagePlanThrottleSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "Throttle"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-usageplan-apistage.html#cfn-apigateway-usageplan-apistage-throttle"""
 
 @attr.s
-class MethodIntegration(Property):
+class PropMethodIntegration(Property):
     """
     AWS Object Type = "AWS::ApiGateway::Method.Integration"
 
@@ -779,10 +779,10 @@ class MethodIntegration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "IntegrationHttpMethod"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-method-integration.html#cfn-apigateway-method-integration-integrationhttpmethod"""
-    p_IntegrationResponses: typing.List[typing.Union['MethodIntegrationResponse', dict]] = attr.ib(
+    p_IntegrationResponses: typing.List[typing.Union['PropMethodIntegrationResponse', dict]] = attr.ib(
         default=None,
-        converter=MethodIntegrationResponse.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(MethodIntegrationResponse), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropMethodIntegrationResponse.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropMethodIntegrationResponse), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "IntegrationResponses"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-method-integration.html#cfn-apigateway-method-integration-integrationresponses"""
@@ -824,7 +824,7 @@ class MethodIntegration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apitgateway-method-integration.html#cfn-apigateway-method-integration-uri"""
 
 @attr.s
-class DeploymentStageDescription(Property):
+class PropDeploymentStageDescription(Property):
     """
     AWS Object Type = "AWS::ApiGateway::Deployment.StageDescription"
 
@@ -854,10 +854,10 @@ class DeploymentStageDescription(Property):
     """
     AWS_OBJECT_TYPE = "AWS::ApiGateway::Deployment.StageDescription"
     
-    p_AccessLogSetting: typing.Union['DeploymentAccessLogSetting', dict] = attr.ib(
+    p_AccessLogSetting: typing.Union['PropDeploymentAccessLogSetting', dict] = attr.ib(
         default=None,
-        converter=DeploymentAccessLogSetting.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DeploymentAccessLogSetting)),
+        converter=PropDeploymentAccessLogSetting.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDeploymentAccessLogSetting)),
         metadata={AttrMeta.PROPERTY_NAME: "AccessLogSetting"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-accesslogsetting"""
@@ -891,10 +891,10 @@ class DeploymentStageDescription(Property):
         metadata={AttrMeta.PROPERTY_NAME: "CachingEnabled"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-cachingenabled"""
-    p_CanarySetting: typing.Union['DeploymentCanarySetting', dict] = attr.ib(
+    p_CanarySetting: typing.Union['PropDeploymentCanarySetting', dict] = attr.ib(
         default=None,
-        converter=DeploymentCanarySetting.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DeploymentCanarySetting)),
+        converter=PropDeploymentCanarySetting.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDeploymentCanarySetting)),
         metadata={AttrMeta.PROPERTY_NAME: "CanarySetting"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-canarysetting"""
@@ -928,10 +928,10 @@ class DeploymentStageDescription(Property):
         metadata={AttrMeta.PROPERTY_NAME: "LoggingLevel"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-logginglevel"""
-    p_MethodSettings: typing.List[typing.Union['DeploymentMethodSetting', dict]] = attr.ib(
+    p_MethodSettings: typing.List[typing.Union['PropDeploymentMethodSetting', dict]] = attr.ib(
         default=None,
-        converter=DeploymentMethodSetting.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(DeploymentMethodSetting), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropDeploymentMethodSetting.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDeploymentMethodSetting), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "MethodSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigateway-deployment-stagedescription.html#cfn-apigateway-deployment-stagedescription-methodsettings"""
@@ -1000,10 +1000,10 @@ class Deployment(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "RestApiId"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-deployment.html#cfn-apigateway-deployment-restapiid"""
-    p_DeploymentCanarySettings: typing.Union['DeploymentDeploymentCanarySettings', dict] = attr.ib(
+    p_DeploymentCanarySettings: typing.Union['PropDeploymentDeploymentCanarySettings', dict] = attr.ib(
         default=None,
-        converter=DeploymentDeploymentCanarySettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DeploymentDeploymentCanarySettings)),
+        converter=PropDeploymentDeploymentCanarySettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDeploymentDeploymentCanarySettings)),
         metadata={AttrMeta.PROPERTY_NAME: "DeploymentCanarySettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-deployment.html#cfn-apigateway-deployment-deploymentcanarysettings"""
@@ -1013,10 +1013,10 @@ class Deployment(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Description"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-deployment.html#cfn-apigateway-deployment-description"""
-    p_StageDescription: typing.Union['DeploymentStageDescription', dict] = attr.ib(
+    p_StageDescription: typing.Union['PropDeploymentStageDescription', dict] = attr.ib(
         default=None,
-        converter=DeploymentStageDescription.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DeploymentStageDescription)),
+        converter=PropDeploymentStageDescription.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDeploymentStageDescription)),
         metadata={AttrMeta.PROPERTY_NAME: "StageDescription"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-deployment.html#cfn-apigateway-deployment-stagedescription"""
@@ -1147,17 +1147,17 @@ class DomainName(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "DomainName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainname.html#cfn-apigateway-domainname-domainname"""
-    p_EndpointConfiguration: typing.Union['DomainNameEndpointConfiguration', dict] = attr.ib(
+    p_EndpointConfiguration: typing.Union['PropDomainNameEndpointConfiguration', dict] = attr.ib(
         default=None,
-        converter=DomainNameEndpointConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DomainNameEndpointConfiguration)),
+        converter=PropDomainNameEndpointConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDomainNameEndpointConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "EndpointConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainname.html#cfn-apigateway-domainname-endpointconfiguration"""
-    p_MutualTlsAuthentication: typing.Union['DomainNameMutualTlsAuthentication', dict] = attr.ib(
+    p_MutualTlsAuthentication: typing.Union['PropDomainNameMutualTlsAuthentication', dict] = attr.ib(
         default=None,
-        converter=DomainNameMutualTlsAuthentication.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DomainNameMutualTlsAuthentication)),
+        converter=PropDomainNameMutualTlsAuthentication.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDomainNameMutualTlsAuthentication)),
         metadata={AttrMeta.PROPERTY_NAME: "MutualTlsAuthentication"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainname.html#cfn-apigateway-domainname-mutualtlsauthentication"""
@@ -1219,10 +1219,10 @@ class DocumentationPart(Resource):
     AWS_OBJECT_TYPE = "AWS::ApiGateway::DocumentationPart"
 
     
-    rp_Location: typing.Union['DocumentationPartLocation', dict] = attr.ib(
+    rp_Location: typing.Union['PropDocumentationPartLocation', dict] = attr.ib(
         default=None,
-        converter=DocumentationPartLocation.from_dict,
-        validator=attr.validators.instance_of(DocumentationPartLocation),
+        converter=PropDocumentationPartLocation.from_dict,
+        validator=attr.validators.instance_of(PropDocumentationPartLocation),
         metadata={AttrMeta.PROPERTY_NAME: "Location"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-documentationpart.html#cfn-apigateway-documentationpart-location"""
@@ -1311,10 +1311,10 @@ class UsagePlan(Resource):
     AWS_OBJECT_TYPE = "AWS::ApiGateway::UsagePlan"
 
     
-    p_ApiStages: typing.List[typing.Union['UsagePlanApiStage', dict]] = attr.ib(
+    p_ApiStages: typing.List[typing.Union['PropUsagePlanApiStage', dict]] = attr.ib(
         default=None,
-        converter=UsagePlanApiStage.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(UsagePlanApiStage), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropUsagePlanApiStage.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropUsagePlanApiStage), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "ApiStages"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html#cfn-apigateway-usageplan-apistages"""
@@ -1324,17 +1324,17 @@ class UsagePlan(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Description"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html#cfn-apigateway-usageplan-description"""
-    p_Quota: typing.Union['UsagePlanQuotaSettings', dict] = attr.ib(
+    p_Quota: typing.Union['PropUsagePlanQuotaSettings', dict] = attr.ib(
         default=None,
-        converter=UsagePlanQuotaSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(UsagePlanQuotaSettings)),
+        converter=PropUsagePlanQuotaSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropUsagePlanQuotaSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "Quota"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html#cfn-apigateway-usageplan-quota"""
-    p_Throttle: typing.Union['UsagePlanThrottleSettings', dict] = attr.ib(
+    p_Throttle: typing.Union['PropUsagePlanThrottleSettings', dict] = attr.ib(
         default=None,
-        converter=UsagePlanThrottleSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(UsagePlanThrottleSettings)),
+        converter=PropUsagePlanThrottleSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropUsagePlanThrottleSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "Throttle"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-usageplan.html#cfn-apigateway-usageplan-throttle"""
@@ -1431,10 +1431,10 @@ class Stage(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "RestApiId"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-restapiid"""
-    p_AccessLogSetting: typing.Union['StageAccessLogSetting', dict] = attr.ib(
+    p_AccessLogSetting: typing.Union['PropStageAccessLogSetting', dict] = attr.ib(
         default=None,
-        converter=StageAccessLogSetting.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(StageAccessLogSetting)),
+        converter=PropStageAccessLogSetting.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropStageAccessLogSetting)),
         metadata={AttrMeta.PROPERTY_NAME: "AccessLogSetting"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-accesslogsetting"""
@@ -1450,10 +1450,10 @@ class Stage(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "CacheClusterSize"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-cacheclustersize"""
-    p_CanarySetting: typing.Union['StageCanarySetting', dict] = attr.ib(
+    p_CanarySetting: typing.Union['PropStageCanarySetting', dict] = attr.ib(
         default=None,
-        converter=StageCanarySetting.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(StageCanarySetting)),
+        converter=PropStageCanarySetting.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropStageCanarySetting)),
         metadata={AttrMeta.PROPERTY_NAME: "CanarySetting"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-canarysetting"""
@@ -1481,10 +1481,10 @@ class Stage(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "DocumentationVersion"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-documentationversion"""
-    p_MethodSettings: typing.List[typing.Union['StageMethodSetting', dict]] = attr.ib(
+    p_MethodSettings: typing.List[typing.Union['PropStageMethodSetting', dict]] = attr.ib(
         default=None,
-        converter=StageMethodSetting.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(StageMethodSetting), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropStageMethodSetting.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropStageMethodSetting), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "MethodSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-stage.html#cfn-apigateway-stage-methodsettings"""
@@ -1777,10 +1777,10 @@ class ApiKey(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Name"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-apikey.html#cfn-apigateway-apikey-name"""
-    p_StageKeys: typing.List[typing.Union['ApiKeyStageKey', dict]] = attr.ib(
+    p_StageKeys: typing.List[typing.Union['PropApiKeyStageKey', dict]] = attr.ib(
         default=None,
-        converter=ApiKeyStageKey.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ApiKeyStageKey), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropApiKeyStageKey.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropApiKeyStageKey), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "StageKeys"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-apikey.html#cfn-apigateway-apikey-stagekeys"""
@@ -1910,10 +1910,10 @@ class RestApi(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Body"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-body"""
-    p_BodyS3Location: typing.Union['RestApiS3Location', dict] = attr.ib(
+    p_BodyS3Location: typing.Union['PropRestApiS3Location', dict] = attr.ib(
         default=None,
-        converter=RestApiS3Location.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(RestApiS3Location)),
+        converter=PropRestApiS3Location.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropRestApiS3Location)),
         metadata={AttrMeta.PROPERTY_NAME: "BodyS3Location"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-bodys3location"""
@@ -1935,10 +1935,10 @@ class RestApi(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "DisableExecuteApiEndpoint"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-disableexecuteapiendpoint"""
-    p_EndpointConfiguration: typing.Union['RestApiEndpointConfiguration', dict] = attr.ib(
+    p_EndpointConfiguration: typing.Union['PropRestApiEndpointConfiguration', dict] = attr.ib(
         default=None,
-        converter=RestApiEndpointConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(RestApiEndpointConfiguration)),
+        converter=PropRestApiEndpointConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropRestApiEndpointConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "EndpointConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#cfn-apigateway-restapi-endpointconfiguration"""
@@ -2092,17 +2092,17 @@ class Method(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "AuthorizerId"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-authorizerid"""
-    p_Integration: typing.Union['MethodIntegration', dict] = attr.ib(
+    p_Integration: typing.Union['PropMethodIntegration', dict] = attr.ib(
         default=None,
-        converter=MethodIntegration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(MethodIntegration)),
+        converter=PropMethodIntegration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropMethodIntegration)),
         metadata={AttrMeta.PROPERTY_NAME: "Integration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-integration"""
-    p_MethodResponses: typing.List[typing.Union['MethodMethodResponse', dict]] = attr.ib(
+    p_MethodResponses: typing.List[typing.Union['PropMethodMethodResponse', dict]] = attr.ib(
         default=None,
-        converter=MethodMethodResponse.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(MethodMethodResponse), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropMethodMethodResponse.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropMethodMethodResponse), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "MethodResponses"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-method.html#cfn-apigateway-method-methodresponses"""

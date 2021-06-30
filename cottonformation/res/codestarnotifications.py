@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class NotificationRuleTarget(Property):
+class PropNotificationRuleTarget(Property):
     """
     AWS Object Type = "AWS::CodeStarNotifications::NotificationRule.Target"
 
@@ -88,10 +88,10 @@ class NotificationRule(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Resource"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codestarnotifications-notificationrule.html#cfn-codestarnotifications-notificationrule-resource"""
-    rp_Targets: typing.List[typing.Union['NotificationRuleTarget', dict]] = attr.ib(
+    rp_Targets: typing.List[typing.Union['PropNotificationRuleTarget', dict]] = attr.ib(
         default=None,
-        converter=NotificationRuleTarget.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(NotificationRuleTarget), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropNotificationRuleTarget.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropNotificationRuleTarget), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "Targets"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codestarnotifications-notificationrule.html#cfn-codestarnotifications-notificationrule-targets"""

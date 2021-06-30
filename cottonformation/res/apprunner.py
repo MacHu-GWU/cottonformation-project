@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class ServiceInstanceConfiguration(Property):
+class PropServiceInstanceConfiguration(Property):
     """
     AWS Object Type = "AWS::AppRunner::Service.InstanceConfiguration"
 
@@ -49,7 +49,7 @@ class ServiceInstanceConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apprunner-service-instanceconfiguration.html#cfn-apprunner-service-instanceconfiguration-memory"""
 
 @attr.s
-class ServiceAuthenticationConfiguration(Property):
+class PropServiceAuthenticationConfiguration(Property):
     """
     AWS Object Type = "AWS::AppRunner::Service.AuthenticationConfiguration"
 
@@ -76,7 +76,7 @@ class ServiceAuthenticationConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apprunner-service-authenticationconfiguration.html#cfn-apprunner-service-authenticationconfiguration-connectionarn"""
 
 @attr.s
-class ServiceKeyValuePair(Property):
+class PropServiceKeyValuePair(Property):
     """
     AWS Object Type = "AWS::AppRunner::Service.KeyValuePair"
 
@@ -103,7 +103,7 @@ class ServiceKeyValuePair(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apprunner-service-keyvaluepair.html#cfn-apprunner-service-keyvaluepair-value"""
 
 @attr.s
-class ServiceEncryptionConfiguration(Property):
+class PropServiceEncryptionConfiguration(Property):
     """
     AWS Object Type = "AWS::AppRunner::Service.EncryptionConfiguration"
 
@@ -123,7 +123,7 @@ class ServiceEncryptionConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apprunner-service-encryptionconfiguration.html#cfn-apprunner-service-encryptionconfiguration-kmskey"""
 
 @attr.s
-class ServiceHealthCheckConfiguration(Property):
+class PropServiceHealthCheckConfiguration(Property):
     """
     AWS Object Type = "AWS::AppRunner::Service.HealthCheckConfiguration"
 
@@ -178,7 +178,7 @@ class ServiceHealthCheckConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apprunner-service-healthcheckconfiguration.html#cfn-apprunner-service-healthcheckconfiguration-unhealthythreshold"""
 
 @attr.s
-class ServiceCodeConfigurationValues(Property):
+class PropServiceCodeConfigurationValues(Property):
     """
     AWS Object Type = "AWS::AppRunner::Service.CodeConfigurationValues"
 
@@ -212,10 +212,10 @@ class ServiceCodeConfigurationValues(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Port"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apprunner-service-codeconfigurationvalues.html#cfn-apprunner-service-codeconfigurationvalues-port"""
-    p_RuntimeEnvironmentVariables: typing.List[typing.Union['ServiceKeyValuePair', dict]] = attr.ib(
+    p_RuntimeEnvironmentVariables: typing.List[typing.Union['PropServiceKeyValuePair', dict]] = attr.ib(
         default=None,
-        converter=ServiceKeyValuePair.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ServiceKeyValuePair), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropServiceKeyValuePair.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropServiceKeyValuePair), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "RuntimeEnvironmentVariables"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apprunner-service-codeconfigurationvalues.html#cfn-apprunner-service-codeconfigurationvalues-runtimeenvironmentvariables"""
@@ -227,7 +227,7 @@ class ServiceCodeConfigurationValues(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apprunner-service-codeconfigurationvalues.html#cfn-apprunner-service-codeconfigurationvalues-startcommand"""
 
 @attr.s
-class ServiceSourceCodeVersion(Property):
+class PropServiceSourceCodeVersion(Property):
     """
     AWS Object Type = "AWS::AppRunner::Service.SourceCodeVersion"
 
@@ -254,7 +254,7 @@ class ServiceSourceCodeVersion(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apprunner-service-sourcecodeversion.html#cfn-apprunner-service-sourcecodeversion-value"""
 
 @attr.s
-class ServiceCodeConfiguration(Property):
+class PropServiceCodeConfiguration(Property):
     """
     AWS Object Type = "AWS::AppRunner::Service.CodeConfiguration"
 
@@ -273,16 +273,16 @@ class ServiceCodeConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "ConfigurationSource"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apprunner-service-codeconfiguration.html#cfn-apprunner-service-codeconfiguration-configurationsource"""
-    p_CodeConfigurationValues: typing.Union['ServiceCodeConfigurationValues', dict] = attr.ib(
+    p_CodeConfigurationValues: typing.Union['PropServiceCodeConfigurationValues', dict] = attr.ib(
         default=None,
-        converter=ServiceCodeConfigurationValues.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ServiceCodeConfigurationValues)),
+        converter=PropServiceCodeConfigurationValues.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropServiceCodeConfigurationValues)),
         metadata={AttrMeta.PROPERTY_NAME: "CodeConfigurationValues"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apprunner-service-codeconfiguration.html#cfn-apprunner-service-codeconfiguration-codeconfigurationvalues"""
 
 @attr.s
-class ServiceImageConfiguration(Property):
+class PropServiceImageConfiguration(Property):
     """
     AWS Object Type = "AWS::AppRunner::Service.ImageConfiguration"
 
@@ -302,10 +302,10 @@ class ServiceImageConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Port"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apprunner-service-imageconfiguration.html#cfn-apprunner-service-imageconfiguration-port"""
-    p_RuntimeEnvironmentVariables: typing.List[typing.Union['ServiceKeyValuePair', dict]] = attr.ib(
+    p_RuntimeEnvironmentVariables: typing.List[typing.Union['PropServiceKeyValuePair', dict]] = attr.ib(
         default=None,
-        converter=ServiceKeyValuePair.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ServiceKeyValuePair), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropServiceKeyValuePair.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropServiceKeyValuePair), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "RuntimeEnvironmentVariables"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apprunner-service-imageconfiguration.html#cfn-apprunner-service-imageconfiguration-runtimeenvironmentvariables"""
@@ -317,7 +317,7 @@ class ServiceImageConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apprunner-service-imageconfiguration.html#cfn-apprunner-service-imageconfiguration-startcommand"""
 
 @attr.s
-class ServiceImageRepository(Property):
+class PropServiceImageRepository(Property):
     """
     AWS Object Type = "AWS::AppRunner::Service.ImageRepository"
 
@@ -343,16 +343,16 @@ class ServiceImageRepository(Property):
         metadata={AttrMeta.PROPERTY_NAME: "ImageRepositoryType"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apprunner-service-imagerepository.html#cfn-apprunner-service-imagerepository-imagerepositorytype"""
-    p_ImageConfiguration: typing.Union['ServiceImageConfiguration', dict] = attr.ib(
+    p_ImageConfiguration: typing.Union['PropServiceImageConfiguration', dict] = attr.ib(
         default=None,
-        converter=ServiceImageConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ServiceImageConfiguration)),
+        converter=PropServiceImageConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropServiceImageConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "ImageConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apprunner-service-imagerepository.html#cfn-apprunner-service-imagerepository-imageconfiguration"""
 
 @attr.s
-class ServiceCodeRepository(Property):
+class PropServiceCodeRepository(Property):
     """
     AWS Object Type = "AWS::AppRunner::Service.CodeRepository"
 
@@ -372,23 +372,23 @@ class ServiceCodeRepository(Property):
         metadata={AttrMeta.PROPERTY_NAME: "RepositoryUrl"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apprunner-service-coderepository.html#cfn-apprunner-service-coderepository-repositoryurl"""
-    rp_SourceCodeVersion: typing.Union['ServiceSourceCodeVersion', dict] = attr.ib(
+    rp_SourceCodeVersion: typing.Union['PropServiceSourceCodeVersion', dict] = attr.ib(
         default=None,
-        converter=ServiceSourceCodeVersion.from_dict,
-        validator=attr.validators.instance_of(ServiceSourceCodeVersion),
+        converter=PropServiceSourceCodeVersion.from_dict,
+        validator=attr.validators.instance_of(PropServiceSourceCodeVersion),
         metadata={AttrMeta.PROPERTY_NAME: "SourceCodeVersion"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apprunner-service-coderepository.html#cfn-apprunner-service-coderepository-sourcecodeversion"""
-    p_CodeConfiguration: typing.Union['ServiceCodeConfiguration', dict] = attr.ib(
+    p_CodeConfiguration: typing.Union['PropServiceCodeConfiguration', dict] = attr.ib(
         default=None,
-        converter=ServiceCodeConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ServiceCodeConfiguration)),
+        converter=PropServiceCodeConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropServiceCodeConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "CodeConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apprunner-service-coderepository.html#cfn-apprunner-service-coderepository-codeconfiguration"""
 
 @attr.s
-class ServiceSourceConfiguration(Property):
+class PropServiceSourceConfiguration(Property):
     """
     AWS Object Type = "AWS::AppRunner::Service.SourceConfiguration"
 
@@ -403,10 +403,10 @@ class ServiceSourceConfiguration(Property):
     """
     AWS_OBJECT_TYPE = "AWS::AppRunner::Service.SourceConfiguration"
     
-    p_AuthenticationConfiguration: typing.Union['ServiceAuthenticationConfiguration', dict] = attr.ib(
+    p_AuthenticationConfiguration: typing.Union['PropServiceAuthenticationConfiguration', dict] = attr.ib(
         default=None,
-        converter=ServiceAuthenticationConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ServiceAuthenticationConfiguration)),
+        converter=PropServiceAuthenticationConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropServiceAuthenticationConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "AuthenticationConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apprunner-service-sourceconfiguration.html#cfn-apprunner-service-sourceconfiguration-authenticationconfiguration"""
@@ -416,17 +416,17 @@ class ServiceSourceConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "AutoDeploymentsEnabled"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apprunner-service-sourceconfiguration.html#cfn-apprunner-service-sourceconfiguration-autodeploymentsenabled"""
-    p_CodeRepository: typing.Union['ServiceCodeRepository', dict] = attr.ib(
+    p_CodeRepository: typing.Union['PropServiceCodeRepository', dict] = attr.ib(
         default=None,
-        converter=ServiceCodeRepository.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ServiceCodeRepository)),
+        converter=PropServiceCodeRepository.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropServiceCodeRepository)),
         metadata={AttrMeta.PROPERTY_NAME: "CodeRepository"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apprunner-service-sourceconfiguration.html#cfn-apprunner-service-sourceconfiguration-coderepository"""
-    p_ImageRepository: typing.Union['ServiceImageRepository', dict] = attr.ib(
+    p_ImageRepository: typing.Union['PropServiceImageRepository', dict] = attr.ib(
         default=None,
-        converter=ServiceImageRepository.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ServiceImageRepository)),
+        converter=PropServiceImageRepository.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropServiceImageRepository)),
         metadata={AttrMeta.PROPERTY_NAME: "ImageRepository"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apprunner-service-sourceconfiguration.html#cfn-apprunner-service-sourceconfiguration-imagerepository"""
@@ -454,10 +454,10 @@ class Service(Resource):
     AWS_OBJECT_TYPE = "AWS::AppRunner::Service"
 
     
-    rp_SourceConfiguration: typing.Union['ServiceSourceConfiguration', dict] = attr.ib(
+    rp_SourceConfiguration: typing.Union['PropServiceSourceConfiguration', dict] = attr.ib(
         default=None,
-        converter=ServiceSourceConfiguration.from_dict,
-        validator=attr.validators.instance_of(ServiceSourceConfiguration),
+        converter=PropServiceSourceConfiguration.from_dict,
+        validator=attr.validators.instance_of(PropServiceSourceConfiguration),
         metadata={AttrMeta.PROPERTY_NAME: "SourceConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apprunner-service.html#cfn-apprunner-service-sourceconfiguration"""
@@ -467,24 +467,24 @@ class Service(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "AutoScalingConfigurationArn"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apprunner-service.html#cfn-apprunner-service-autoscalingconfigurationarn"""
-    p_EncryptionConfiguration: typing.Union['ServiceEncryptionConfiguration', dict] = attr.ib(
+    p_EncryptionConfiguration: typing.Union['PropServiceEncryptionConfiguration', dict] = attr.ib(
         default=None,
-        converter=ServiceEncryptionConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ServiceEncryptionConfiguration)),
+        converter=PropServiceEncryptionConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropServiceEncryptionConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "EncryptionConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apprunner-service.html#cfn-apprunner-service-encryptionconfiguration"""
-    p_HealthCheckConfiguration: typing.Union['ServiceHealthCheckConfiguration', dict] = attr.ib(
+    p_HealthCheckConfiguration: typing.Union['PropServiceHealthCheckConfiguration', dict] = attr.ib(
         default=None,
-        converter=ServiceHealthCheckConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ServiceHealthCheckConfiguration)),
+        converter=PropServiceHealthCheckConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropServiceHealthCheckConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "HealthCheckConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apprunner-service.html#cfn-apprunner-service-healthcheckconfiguration"""
-    p_InstanceConfiguration: typing.Union['ServiceInstanceConfiguration', dict] = attr.ib(
+    p_InstanceConfiguration: typing.Union['PropServiceInstanceConfiguration', dict] = attr.ib(
         default=None,
-        converter=ServiceInstanceConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ServiceInstanceConfiguration)),
+        converter=PropServiceInstanceConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropServiceInstanceConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "InstanceConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apprunner-service.html#cfn-apprunner-service-instanceconfiguration"""

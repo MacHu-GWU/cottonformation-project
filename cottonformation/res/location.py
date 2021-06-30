@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class PlaceIndexDataSourceConfiguration(Property):
+class PropPlaceIndexDataSourceConfiguration(Property):
     """
     AWS Object Type = "AWS::Location::PlaceIndex.DataSourceConfiguration"
 
@@ -35,7 +35,7 @@ class PlaceIndexDataSourceConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-location-placeindex-datasourceconfiguration.html#cfn-location-placeindex-datasourceconfiguration-intendeduse"""
 
 @attr.s
-class MapMapConfiguration(Property):
+class PropMapMapConfiguration(Property):
     """
     AWS Object Type = "AWS::Location::Map.MapConfiguration"
 
@@ -140,10 +140,10 @@ class Map(Resource):
     AWS_OBJECT_TYPE = "AWS::Location::Map"
 
     
-    rp_Configuration: typing.Union['MapMapConfiguration', dict] = attr.ib(
+    rp_Configuration: typing.Union['PropMapMapConfiguration', dict] = attr.ib(
         default=None,
-        converter=MapMapConfiguration.from_dict,
-        validator=attr.validators.instance_of(MapMapConfiguration),
+        converter=PropMapMapConfiguration.from_dict,
+        validator=attr.validators.instance_of(PropMapMapConfiguration),
         metadata={AttrMeta.PROPERTY_NAME: "Configuration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-location-map.html#cfn-location-map-configuration"""
@@ -379,10 +379,10 @@ class PlaceIndex(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "PricingPlan"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-location-placeindex.html#cfn-location-placeindex-pricingplan"""
-    p_DataSourceConfiguration: typing.Union['PlaceIndexDataSourceConfiguration', dict] = attr.ib(
+    p_DataSourceConfiguration: typing.Union['PropPlaceIndexDataSourceConfiguration', dict] = attr.ib(
         default=None,
-        converter=PlaceIndexDataSourceConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PlaceIndexDataSourceConfiguration)),
+        converter=PropPlaceIndexDataSourceConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropPlaceIndexDataSourceConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "DataSourceConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-location-placeindex.html#cfn-location-placeindex-datasourceconfiguration"""

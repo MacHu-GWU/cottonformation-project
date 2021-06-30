@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class MicrosoftADVpcSettings(Property):
+class PropMicrosoftADVpcSettings(Property):
     """
     AWS Object Type = "AWS::DirectoryService::MicrosoftAD.VpcSettings"
 
@@ -42,7 +42,7 @@ class MicrosoftADVpcSettings(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-directoryservice-microsoftad-vpcsettings.html#cfn-directoryservice-microsoftad-vpcsettings-vpcid"""
 
 @attr.s
-class SimpleADVpcSettings(Property):
+class PropSimpleADVpcSettings(Property):
     """
     AWS Object Type = "AWS::DirectoryService::SimpleAD.VpcSettings"
 
@@ -103,10 +103,10 @@ class MicrosoftAD(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Password"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-microsoftad.html#cfn-directoryservice-microsoftad-password"""
-    rp_VpcSettings: typing.Union['MicrosoftADVpcSettings', dict] = attr.ib(
+    rp_VpcSettings: typing.Union['PropMicrosoftADVpcSettings', dict] = attr.ib(
         default=None,
-        converter=MicrosoftADVpcSettings.from_dict,
-        validator=attr.validators.instance_of(MicrosoftADVpcSettings),
+        converter=PropMicrosoftADVpcSettings.from_dict,
+        validator=attr.validators.instance_of(PropMicrosoftADVpcSettings),
         metadata={AttrMeta.PROPERTY_NAME: "VpcSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-microsoftad.html#cfn-directoryservice-microsoftad-vpcsettings"""
@@ -186,10 +186,10 @@ class SimpleAD(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Size"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-simplead.html#cfn-directoryservice-simplead-size"""
-    rp_VpcSettings: typing.Union['SimpleADVpcSettings', dict] = attr.ib(
+    rp_VpcSettings: typing.Union['PropSimpleADVpcSettings', dict] = attr.ib(
         default=None,
-        converter=SimpleADVpcSettings.from_dict,
-        validator=attr.validators.instance_of(SimpleADVpcSettings),
+        converter=PropSimpleADVpcSettings.from_dict,
+        validator=attr.validators.instance_of(PropSimpleADVpcSettings),
         metadata={AttrMeta.PROPERTY_NAME: "VpcSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-simplead.html#cfn-directoryservice-simplead-vpcsettings"""

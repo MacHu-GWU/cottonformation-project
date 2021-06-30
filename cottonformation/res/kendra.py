@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class DataSourceConfluenceAttachmentToIndexFieldMapping(Property):
+class PropDataSourceConfluenceAttachmentToIndexFieldMapping(Property):
     """
     AWS Object Type = "AWS::Kendra::DataSource.ConfluenceAttachmentToIndexFieldMapping"
 
@@ -49,7 +49,7 @@ class DataSourceConfluenceAttachmentToIndexFieldMapping(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluenceattachmenttoindexfieldmapping.html#cfn-kendra-datasource-confluenceattachmenttoindexfieldmapping-datefieldformat"""
 
 @attr.s
-class IndexServerSideEncryptionConfiguration(Property):
+class PropIndexServerSideEncryptionConfiguration(Property):
     """
     AWS Object Type = "AWS::Kendra::Index.ServerSideEncryptionConfiguration"
 
@@ -69,7 +69,7 @@ class IndexServerSideEncryptionConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-index-serversideencryptionconfiguration.html#cfn-kendra-index-serversideencryptionconfiguration-kmskeyid"""
 
 @attr.s
-class IndexJsonTokenTypeConfiguration(Property):
+class PropIndexJsonTokenTypeConfiguration(Property):
     """
     AWS Object Type = "AWS::Kendra::Index.JsonTokenTypeConfiguration"
 
@@ -96,7 +96,7 @@ class IndexJsonTokenTypeConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-index-jsontokentypeconfiguration.html#cfn-kendra-index-jsontokentypeconfiguration-usernameattributefield"""
 
 @attr.s
-class IndexValueImportanceItem(Property):
+class PropIndexValueImportanceItem(Property):
     """
     AWS Object Type = "AWS::Kendra::Index.ValueImportanceItem"
 
@@ -123,7 +123,7 @@ class IndexValueImportanceItem(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-index-valueimportanceitem.html#cfn-kendra-index-valueimportanceitem-value"""
 
 @attr.s
-class FaqS3Path(Property):
+class PropFaqS3Path(Property):
     """
     AWS Object Type = "AWS::Kendra::Faq.S3Path"
 
@@ -150,7 +150,7 @@ class FaqS3Path(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-faq-s3path.html#cfn-kendra-faq-s3path-key"""
 
 @attr.s
-class DataSourceS3Path(Property):
+class PropDataSourceS3Path(Property):
     """
     AWS Object Type = "AWS::Kendra::DataSource.S3Path"
 
@@ -177,7 +177,7 @@ class DataSourceS3Path(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-s3path.html#cfn-kendra-datasource-s3path-key"""
 
 @attr.s
-class DataSourceConfluencePageToIndexFieldMapping(Property):
+class PropDataSourceConfluencePageToIndexFieldMapping(Property):
     """
     AWS Object Type = "AWS::Kendra::DataSource.ConfluencePageToIndexFieldMapping"
 
@@ -211,7 +211,7 @@ class DataSourceConfluencePageToIndexFieldMapping(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluencepagetoindexfieldmapping.html#cfn-kendra-datasource-confluencepagetoindexfieldmapping-datefieldformat"""
 
 @attr.s
-class DataSourceSqlConfiguration(Property):
+class PropDataSourceSqlConfiguration(Property):
     """
     AWS Object Type = "AWS::Kendra::DataSource.SqlConfiguration"
 
@@ -231,7 +231,7 @@ class DataSourceSqlConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-sqlconfiguration.html#cfn-kendra-datasource-sqlconfiguration-queryidentifiersenclosingoption"""
 
 @attr.s
-class DataSourceConfluencePageConfiguration(Property):
+class PropDataSourceConfluencePageConfiguration(Property):
     """
     AWS Object Type = "AWS::Kendra::DataSource.ConfluencePageConfiguration"
 
@@ -243,16 +243,16 @@ class DataSourceConfluencePageConfiguration(Property):
     """
     AWS_OBJECT_TYPE = "AWS::Kendra::DataSource.ConfluencePageConfiguration"
     
-    p_PageFieldMappings: typing.List[typing.Union['DataSourceConfluencePageToIndexFieldMapping', dict]] = attr.ib(
+    p_PageFieldMappings: typing.List[typing.Union['PropDataSourceConfluencePageToIndexFieldMapping', dict]] = attr.ib(
         default=None,
-        converter=DataSourceConfluencePageToIndexFieldMapping.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(DataSourceConfluencePageToIndexFieldMapping), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropDataSourceConfluencePageToIndexFieldMapping.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDataSourceConfluencePageToIndexFieldMapping), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "PageFieldMappings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluencepageconfiguration.html#cfn-kendra-datasource-confluencepageconfiguration-pagefieldmappings"""
 
 @attr.s
-class IndexSearch(Property):
+class PropIndexSearch(Property):
     """
     AWS Object Type = "AWS::Kendra::Index.Search"
 
@@ -293,7 +293,7 @@ class IndexSearch(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-index-search.html#cfn-kendra-index-search-sortable"""
 
 @attr.s
-class DataSourceConnectionConfiguration(Property):
+class PropDataSourceConnectionConfiguration(Property):
     """
     AWS Object Type = "AWS::Kendra::DataSource.ConnectionConfiguration"
 
@@ -341,7 +341,7 @@ class DataSourceConnectionConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-connectionconfiguration.html#cfn-kendra-datasource-connectionconfiguration-tablename"""
 
 @attr.s
-class DataSourceConfluenceBlogToIndexFieldMapping(Property):
+class PropDataSourceConfluenceBlogToIndexFieldMapping(Property):
     """
     AWS Object Type = "AWS::Kendra::DataSource.ConfluenceBlogToIndexFieldMapping"
 
@@ -375,7 +375,7 @@ class DataSourceConfluenceBlogToIndexFieldMapping(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluenceblogtoindexfieldmapping.html#cfn-kendra-datasource-confluenceblogtoindexfieldmapping-datefieldformat"""
 
 @attr.s
-class DataSourceOneDriveUsers(Property):
+class PropDataSourceOneDriveUsers(Property):
     """
     AWS Object Type = "AWS::Kendra::DataSource.OneDriveUsers"
 
@@ -394,16 +394,16 @@ class DataSourceOneDriveUsers(Property):
         metadata={AttrMeta.PROPERTY_NAME: "OneDriveUserList"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-onedriveusers.html#cfn-kendra-datasource-onedriveusers-onedriveuserlist"""
-    p_OneDriveUserS3Path: typing.Union['DataSourceS3Path', dict] = attr.ib(
+    p_OneDriveUserS3Path: typing.Union['PropDataSourceS3Path', dict] = attr.ib(
         default=None,
-        converter=DataSourceS3Path.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DataSourceS3Path)),
+        converter=PropDataSourceS3Path.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataSourceS3Path)),
         metadata={AttrMeta.PROPERTY_NAME: "OneDriveUserS3Path"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-onedriveusers.html#cfn-kendra-datasource-onedriveusers-onedriveusers3path"""
 
 @attr.s
-class DataSourceAclConfiguration(Property):
+class PropDataSourceAclConfiguration(Property):
     """
     AWS Object Type = "AWS::Kendra::DataSource.AclConfiguration"
 
@@ -423,7 +423,7 @@ class DataSourceAclConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-aclconfiguration.html#cfn-kendra-datasource-aclconfiguration-allowedgroupscolumnname"""
 
 @attr.s
-class DataSourceConfluenceAttachmentConfiguration(Property):
+class PropDataSourceConfluenceAttachmentConfiguration(Property):
     """
     AWS Object Type = "AWS::Kendra::DataSource.ConfluenceAttachmentConfiguration"
 
@@ -436,10 +436,10 @@ class DataSourceConfluenceAttachmentConfiguration(Property):
     """
     AWS_OBJECT_TYPE = "AWS::Kendra::DataSource.ConfluenceAttachmentConfiguration"
     
-    p_AttachmentFieldMappings: typing.List[typing.Union['DataSourceConfluenceAttachmentToIndexFieldMapping', dict]] = attr.ib(
+    p_AttachmentFieldMappings: typing.List[typing.Union['PropDataSourceConfluenceAttachmentToIndexFieldMapping', dict]] = attr.ib(
         default=None,
-        converter=DataSourceConfluenceAttachmentToIndexFieldMapping.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(DataSourceConfluenceAttachmentToIndexFieldMapping), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropDataSourceConfluenceAttachmentToIndexFieldMapping.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDataSourceConfluenceAttachmentToIndexFieldMapping), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "AttachmentFieldMappings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluenceattachmentconfiguration.html#cfn-kendra-datasource-confluenceattachmentconfiguration-attachmentfieldmappings"""
@@ -451,7 +451,7 @@ class DataSourceConfluenceAttachmentConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluenceattachmentconfiguration.html#cfn-kendra-datasource-confluenceattachmentconfiguration-crawlattachments"""
 
 @attr.s
-class IndexRelevance(Property):
+class PropIndexRelevance(Property):
     """
     AWS Object Type = "AWS::Kendra::Index.Relevance"
 
@@ -491,16 +491,16 @@ class IndexRelevance(Property):
         metadata={AttrMeta.PROPERTY_NAME: "RankOrder"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-index-relevance.html#cfn-kendra-index-relevance-rankorder"""
-    p_ValueImportanceItems: typing.List[typing.Union['IndexValueImportanceItem', dict]] = attr.ib(
+    p_ValueImportanceItems: typing.List[typing.Union['PropIndexValueImportanceItem', dict]] = attr.ib(
         default=None,
-        converter=IndexValueImportanceItem.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(IndexValueImportanceItem), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropIndexValueImportanceItem.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropIndexValueImportanceItem), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "ValueImportanceItems"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-index-relevance.html#cfn-kendra-index-relevance-valueimportanceitems"""
 
 @attr.s
-class IndexJwtTokenTypeConfiguration(Property):
+class PropIndexJwtTokenTypeConfiguration(Property):
     """
     AWS Object Type = "AWS::Kendra::Index.JwtTokenTypeConfiguration"
 
@@ -562,7 +562,7 @@ class IndexJwtTokenTypeConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-index-jwttokentypeconfiguration.html#cfn-kendra-index-jwttokentypeconfiguration-usernameattributefield"""
 
 @attr.s
-class DataSourceDataSourceVpcConfiguration(Property):
+class PropDataSourceDataSourceVpcConfiguration(Property):
     """
     AWS Object Type = "AWS::Kendra::DataSource.DataSourceVpcConfiguration"
 
@@ -589,7 +589,7 @@ class DataSourceDataSourceVpcConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-datasourcevpcconfiguration.html#cfn-kendra-datasource-datasourcevpcconfiguration-subnetids"""
 
 @attr.s
-class IndexCapacityUnitsConfiguration(Property):
+class PropIndexCapacityUnitsConfiguration(Property):
     """
     AWS Object Type = "AWS::Kendra::Index.CapacityUnitsConfiguration"
 
@@ -616,7 +616,7 @@ class IndexCapacityUnitsConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-index-capacityunitsconfiguration.html#cfn-kendra-index-capacityunitsconfiguration-storagecapacityunits"""
 
 @attr.s
-class DataSourceAccessControlListConfiguration(Property):
+class PropDataSourceAccessControlListConfiguration(Property):
     """
     AWS Object Type = "AWS::Kendra::DataSource.AccessControlListConfiguration"
 
@@ -636,7 +636,7 @@ class DataSourceAccessControlListConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-accesscontrollistconfiguration.html#cfn-kendra-datasource-accesscontrollistconfiguration-keypath"""
 
 @attr.s
-class DataSourceDataSourceToIndexFieldMapping(Property):
+class PropDataSourceDataSourceToIndexFieldMapping(Property):
     """
     AWS Object Type = "AWS::Kendra::DataSource.DataSourceToIndexFieldMapping"
 
@@ -670,7 +670,7 @@ class DataSourceDataSourceToIndexFieldMapping(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-datasourcetoindexfieldmapping.html#cfn-kendra-datasource-datasourcetoindexfieldmapping-datefieldformat"""
 
 @attr.s
-class DataSourceConfluenceSpaceToIndexFieldMapping(Property):
+class PropDataSourceConfluenceSpaceToIndexFieldMapping(Property):
     """
     AWS Object Type = "AWS::Kendra::DataSource.ConfluenceSpaceToIndexFieldMapping"
 
@@ -704,7 +704,7 @@ class DataSourceConfluenceSpaceToIndexFieldMapping(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluencespacetoindexfieldmapping.html#cfn-kendra-datasource-confluencespacetoindexfieldmapping-datefieldformat"""
 
 @attr.s
-class DataSourceOneDriveConfiguration(Property):
+class PropDataSourceOneDriveConfiguration(Property):
     """
     AWS Object Type = "AWS::Kendra::DataSource.OneDriveConfiguration"
 
@@ -722,10 +722,10 @@ class DataSourceOneDriveConfiguration(Property):
     """
     AWS_OBJECT_TYPE = "AWS::Kendra::DataSource.OneDriveConfiguration"
     
-    rp_OneDriveUsers: typing.Union['DataSourceOneDriveUsers', dict] = attr.ib(
+    rp_OneDriveUsers: typing.Union['PropDataSourceOneDriveUsers', dict] = attr.ib(
         default=None,
-        converter=DataSourceOneDriveUsers.from_dict,
-        validator=attr.validators.instance_of(DataSourceOneDriveUsers),
+        converter=PropDataSourceOneDriveUsers.from_dict,
+        validator=attr.validators.instance_of(PropDataSourceOneDriveUsers),
         metadata={AttrMeta.PROPERTY_NAME: "OneDriveUsers"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-onedriveconfiguration.html#cfn-kendra-datasource-onedriveconfiguration-onedriveusers"""
@@ -753,10 +753,10 @@ class DataSourceOneDriveConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "ExclusionPatterns"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-onedriveconfiguration.html#cfn-kendra-datasource-onedriveconfiguration-exclusionpatterns"""
-    p_FieldMappings: typing.List[typing.Union['DataSourceDataSourceToIndexFieldMapping', dict]] = attr.ib(
+    p_FieldMappings: typing.List[typing.Union['PropDataSourceDataSourceToIndexFieldMapping', dict]] = attr.ib(
         default=None,
-        converter=DataSourceDataSourceToIndexFieldMapping.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(DataSourceDataSourceToIndexFieldMapping), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropDataSourceDataSourceToIndexFieldMapping.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDataSourceDataSourceToIndexFieldMapping), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "FieldMappings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-onedriveconfiguration.html#cfn-kendra-datasource-onedriveconfiguration-fieldmappings"""
@@ -768,7 +768,7 @@ class DataSourceOneDriveConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-onedriveconfiguration.html#cfn-kendra-datasource-onedriveconfiguration-inclusionpatterns"""
 
 @attr.s
-class DataSourceSharePointConfiguration(Property):
+class PropDataSourceSharePointConfiguration(Property):
     """
     AWS Object Type = "AWS::Kendra::DataSource.SharePointConfiguration"
 
@@ -832,10 +832,10 @@ class DataSourceSharePointConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "ExclusionPatterns"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-sharepointconfiguration.html#cfn-kendra-datasource-sharepointconfiguration-exclusionpatterns"""
-    p_FieldMappings: typing.List[typing.Union['DataSourceDataSourceToIndexFieldMapping', dict]] = attr.ib(
+    p_FieldMappings: typing.List[typing.Union['PropDataSourceDataSourceToIndexFieldMapping', dict]] = attr.ib(
         default=None,
-        converter=DataSourceDataSourceToIndexFieldMapping.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(DataSourceDataSourceToIndexFieldMapping), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropDataSourceDataSourceToIndexFieldMapping.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDataSourceDataSourceToIndexFieldMapping), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "FieldMappings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-sharepointconfiguration.html#cfn-kendra-datasource-sharepointconfiguration-fieldmappings"""
@@ -851,16 +851,16 @@ class DataSourceSharePointConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "UseChangeLog"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-sharepointconfiguration.html#cfn-kendra-datasource-sharepointconfiguration-usechangelog"""
-    p_VpcConfiguration: typing.Union['DataSourceDataSourceVpcConfiguration', dict] = attr.ib(
+    p_VpcConfiguration: typing.Union['PropDataSourceDataSourceVpcConfiguration', dict] = attr.ib(
         default=None,
-        converter=DataSourceDataSourceVpcConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DataSourceDataSourceVpcConfiguration)),
+        converter=PropDataSourceDataSourceVpcConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataSourceDataSourceVpcConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "VpcConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-sharepointconfiguration.html#cfn-kendra-datasource-sharepointconfiguration-vpcconfiguration"""
 
 @attr.s
-class DataSourceDocumentsMetadataConfiguration(Property):
+class PropDataSourceDocumentsMetadataConfiguration(Property):
     """
     AWS Object Type = "AWS::Kendra::DataSource.DocumentsMetadataConfiguration"
 
@@ -880,7 +880,7 @@ class DataSourceDocumentsMetadataConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-documentsmetadataconfiguration.html#cfn-kendra-datasource-documentsmetadataconfiguration-s3prefix"""
 
 @attr.s
-class DataSourceSalesforceStandardObjectConfiguration(Property):
+class PropDataSourceSalesforceStandardObjectConfiguration(Property):
     """
     AWS Object Type = "AWS::Kendra::DataSource.SalesforceStandardObjectConfiguration"
 
@@ -913,16 +913,16 @@ class DataSourceSalesforceStandardObjectConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "DocumentTitleFieldName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-salesforcestandardobjectconfiguration.html#cfn-kendra-datasource-salesforcestandardobjectconfiguration-documenttitlefieldname"""
-    p_FieldMappings: typing.List[typing.Union['DataSourceDataSourceToIndexFieldMapping', dict]] = attr.ib(
+    p_FieldMappings: typing.List[typing.Union['PropDataSourceDataSourceToIndexFieldMapping', dict]] = attr.ib(
         default=None,
-        converter=DataSourceDataSourceToIndexFieldMapping.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(DataSourceDataSourceToIndexFieldMapping), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropDataSourceDataSourceToIndexFieldMapping.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDataSourceDataSourceToIndexFieldMapping), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "FieldMappings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-salesforcestandardobjectconfiguration.html#cfn-kendra-datasource-salesforcestandardobjectconfiguration-fieldmappings"""
 
 @attr.s
-class DataSourceSalesforceChatterFeedConfiguration(Property):
+class PropDataSourceSalesforceChatterFeedConfiguration(Property):
     """
     AWS Object Type = "AWS::Kendra::DataSource.SalesforceChatterFeedConfiguration"
 
@@ -949,10 +949,10 @@ class DataSourceSalesforceChatterFeedConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "DocumentTitleFieldName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-salesforcechatterfeedconfiguration.html#cfn-kendra-datasource-salesforcechatterfeedconfiguration-documenttitlefieldname"""
-    p_FieldMappings: typing.List[typing.Union['DataSourceDataSourceToIndexFieldMapping', dict]] = attr.ib(
+    p_FieldMappings: typing.List[typing.Union['PropDataSourceDataSourceToIndexFieldMapping', dict]] = attr.ib(
         default=None,
-        converter=DataSourceDataSourceToIndexFieldMapping.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(DataSourceDataSourceToIndexFieldMapping), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropDataSourceDataSourceToIndexFieldMapping.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDataSourceDataSourceToIndexFieldMapping), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "FieldMappings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-salesforcechatterfeedconfiguration.html#cfn-kendra-datasource-salesforcechatterfeedconfiguration-fieldmappings"""
@@ -964,7 +964,7 @@ class DataSourceSalesforceChatterFeedConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-salesforcechatterfeedconfiguration.html#cfn-kendra-datasource-salesforcechatterfeedconfiguration-includefiltertypes"""
 
 @attr.s
-class DataSourceColumnConfiguration(Property):
+class PropDataSourceColumnConfiguration(Property):
     """
     AWS Object Type = "AWS::Kendra::DataSource.ColumnConfiguration"
 
@@ -1004,16 +1004,16 @@ class DataSourceColumnConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "DocumentTitleColumnName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-columnconfiguration.html#cfn-kendra-datasource-columnconfiguration-documenttitlecolumnname"""
-    p_FieldMappings: typing.List[typing.Union['DataSourceDataSourceToIndexFieldMapping', dict]] = attr.ib(
+    p_FieldMappings: typing.List[typing.Union['PropDataSourceDataSourceToIndexFieldMapping', dict]] = attr.ib(
         default=None,
-        converter=DataSourceDataSourceToIndexFieldMapping.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(DataSourceDataSourceToIndexFieldMapping), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropDataSourceDataSourceToIndexFieldMapping.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDataSourceDataSourceToIndexFieldMapping), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "FieldMappings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-columnconfiguration.html#cfn-kendra-datasource-columnconfiguration-fieldmappings"""
 
 @attr.s
-class DataSourceServiceNowKnowledgeArticleConfiguration(Property):
+class PropDataSourceServiceNowKnowledgeArticleConfiguration(Property):
     """
     AWS Object Type = "AWS::Kendra::DataSource.ServiceNowKnowledgeArticleConfiguration"
 
@@ -1054,10 +1054,10 @@ class DataSourceServiceNowKnowledgeArticleConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "ExcludeAttachmentFilePatterns"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-servicenowknowledgearticleconfiguration.html#cfn-kendra-datasource-servicenowknowledgearticleconfiguration-excludeattachmentfilepatterns"""
-    p_FieldMappings: typing.List[typing.Union['DataSourceDataSourceToIndexFieldMapping', dict]] = attr.ib(
+    p_FieldMappings: typing.List[typing.Union['PropDataSourceDataSourceToIndexFieldMapping', dict]] = attr.ib(
         default=None,
-        converter=DataSourceDataSourceToIndexFieldMapping.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(DataSourceDataSourceToIndexFieldMapping), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropDataSourceDataSourceToIndexFieldMapping.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDataSourceDataSourceToIndexFieldMapping), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "FieldMappings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-servicenowknowledgearticleconfiguration.html#cfn-kendra-datasource-servicenowknowledgearticleconfiguration-fieldmappings"""
@@ -1069,7 +1069,7 @@ class DataSourceServiceNowKnowledgeArticleConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-servicenowknowledgearticleconfiguration.html#cfn-kendra-datasource-servicenowknowledgearticleconfiguration-includeattachmentfilepatterns"""
 
 @attr.s
-class DataSourceConfluenceSpaceConfiguration(Property):
+class PropDataSourceConfluenceSpaceConfiguration(Property):
     """
     AWS Object Type = "AWS::Kendra::DataSource.ConfluenceSpaceConfiguration"
 
@@ -1109,16 +1109,16 @@ class DataSourceConfluenceSpaceConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "IncludeSpaces"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluencespaceconfiguration.html#cfn-kendra-datasource-confluencespaceconfiguration-includespaces"""
-    p_SpaceFieldMappings: typing.List[typing.Union['DataSourceConfluenceSpaceToIndexFieldMapping', dict]] = attr.ib(
+    p_SpaceFieldMappings: typing.List[typing.Union['PropDataSourceConfluenceSpaceToIndexFieldMapping', dict]] = attr.ib(
         default=None,
-        converter=DataSourceConfluenceSpaceToIndexFieldMapping.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(DataSourceConfluenceSpaceToIndexFieldMapping), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropDataSourceConfluenceSpaceToIndexFieldMapping.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDataSourceConfluenceSpaceToIndexFieldMapping), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "SpaceFieldMappings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluencespaceconfiguration.html#cfn-kendra-datasource-confluencespaceconfiguration-spacefieldmappings"""
 
 @attr.s
-class DataSourceGoogleDriveConfiguration(Property):
+class PropDataSourceGoogleDriveConfiguration(Property):
     """
     AWS Object Type = "AWS::Kendra::DataSource.GoogleDriveConfiguration"
 
@@ -1166,10 +1166,10 @@ class DataSourceGoogleDriveConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "ExclusionPatterns"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-googledriveconfiguration.html#cfn-kendra-datasource-googledriveconfiguration-exclusionpatterns"""
-    p_FieldMappings: typing.List[typing.Union['DataSourceDataSourceToIndexFieldMapping', dict]] = attr.ib(
+    p_FieldMappings: typing.List[typing.Union['PropDataSourceDataSourceToIndexFieldMapping', dict]] = attr.ib(
         default=None,
-        converter=DataSourceDataSourceToIndexFieldMapping.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(DataSourceDataSourceToIndexFieldMapping), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropDataSourceDataSourceToIndexFieldMapping.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDataSourceDataSourceToIndexFieldMapping), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "FieldMappings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-googledriveconfiguration.html#cfn-kendra-datasource-googledriveconfiguration-fieldmappings"""
@@ -1181,7 +1181,7 @@ class DataSourceGoogleDriveConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-googledriveconfiguration.html#cfn-kendra-datasource-googledriveconfiguration-inclusionpatterns"""
 
 @attr.s
-class IndexDocumentMetadataConfiguration(Property):
+class PropIndexDocumentMetadataConfiguration(Property):
     """
     AWS Object Type = "AWS::Kendra::Index.DocumentMetadataConfiguration"
 
@@ -1208,23 +1208,23 @@ class IndexDocumentMetadataConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Type"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-index-documentmetadataconfiguration.html#cfn-kendra-index-documentmetadataconfiguration-type"""
-    p_Relevance: typing.Union['IndexRelevance', dict] = attr.ib(
+    p_Relevance: typing.Union['PropIndexRelevance', dict] = attr.ib(
         default=None,
-        converter=IndexRelevance.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(IndexRelevance)),
+        converter=PropIndexRelevance.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropIndexRelevance)),
         metadata={AttrMeta.PROPERTY_NAME: "Relevance"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-index-documentmetadataconfiguration.html#cfn-kendra-index-documentmetadataconfiguration-relevance"""
-    p_Search: typing.Union['IndexSearch', dict] = attr.ib(
+    p_Search: typing.Union['PropIndexSearch', dict] = attr.ib(
         default=None,
-        converter=IndexSearch.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(IndexSearch)),
+        converter=PropIndexSearch.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropIndexSearch)),
         metadata={AttrMeta.PROPERTY_NAME: "Search"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-index-documentmetadataconfiguration.html#cfn-kendra-index-documentmetadataconfiguration-search"""
 
 @attr.s
-class DataSourceDatabaseConfiguration(Property):
+class PropDataSourceDatabaseConfiguration(Property):
     """
     AWS Object Type = "AWS::Kendra::DataSource.DatabaseConfiguration"
 
@@ -1241,17 +1241,17 @@ class DataSourceDatabaseConfiguration(Property):
     """
     AWS_OBJECT_TYPE = "AWS::Kendra::DataSource.DatabaseConfiguration"
     
-    rp_ColumnConfiguration: typing.Union['DataSourceColumnConfiguration', dict] = attr.ib(
+    rp_ColumnConfiguration: typing.Union['PropDataSourceColumnConfiguration', dict] = attr.ib(
         default=None,
-        converter=DataSourceColumnConfiguration.from_dict,
-        validator=attr.validators.instance_of(DataSourceColumnConfiguration),
+        converter=PropDataSourceColumnConfiguration.from_dict,
+        validator=attr.validators.instance_of(PropDataSourceColumnConfiguration),
         metadata={AttrMeta.PROPERTY_NAME: "ColumnConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-databaseconfiguration.html#cfn-kendra-datasource-databaseconfiguration-columnconfiguration"""
-    rp_ConnectionConfiguration: typing.Union['DataSourceConnectionConfiguration', dict] = attr.ib(
+    rp_ConnectionConfiguration: typing.Union['PropDataSourceConnectionConfiguration', dict] = attr.ib(
         default=None,
-        converter=DataSourceConnectionConfiguration.from_dict,
-        validator=attr.validators.instance_of(DataSourceConnectionConfiguration),
+        converter=PropDataSourceConnectionConfiguration.from_dict,
+        validator=attr.validators.instance_of(PropDataSourceConnectionConfiguration),
         metadata={AttrMeta.PROPERTY_NAME: "ConnectionConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-databaseconfiguration.html#cfn-kendra-datasource-databaseconfiguration-connectionconfiguration"""
@@ -1261,30 +1261,30 @@ class DataSourceDatabaseConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "DatabaseEngineType"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-databaseconfiguration.html#cfn-kendra-datasource-databaseconfiguration-databaseenginetype"""
-    p_AclConfiguration: typing.Union['DataSourceAclConfiguration', dict] = attr.ib(
+    p_AclConfiguration: typing.Union['PropDataSourceAclConfiguration', dict] = attr.ib(
         default=None,
-        converter=DataSourceAclConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DataSourceAclConfiguration)),
+        converter=PropDataSourceAclConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataSourceAclConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "AclConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-databaseconfiguration.html#cfn-kendra-datasource-databaseconfiguration-aclconfiguration"""
-    p_SqlConfiguration: typing.Union['DataSourceSqlConfiguration', dict] = attr.ib(
+    p_SqlConfiguration: typing.Union['PropDataSourceSqlConfiguration', dict] = attr.ib(
         default=None,
-        converter=DataSourceSqlConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DataSourceSqlConfiguration)),
+        converter=PropDataSourceSqlConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataSourceSqlConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "SqlConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-databaseconfiguration.html#cfn-kendra-datasource-databaseconfiguration-sqlconfiguration"""
-    p_VpcConfiguration: typing.Union['DataSourceDataSourceVpcConfiguration', dict] = attr.ib(
+    p_VpcConfiguration: typing.Union['PropDataSourceDataSourceVpcConfiguration', dict] = attr.ib(
         default=None,
-        converter=DataSourceDataSourceVpcConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DataSourceDataSourceVpcConfiguration)),
+        converter=PropDataSourceDataSourceVpcConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataSourceDataSourceVpcConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "VpcConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-databaseconfiguration.html#cfn-kendra-datasource-databaseconfiguration-vpcconfiguration"""
 
 @attr.s
-class IndexUserTokenConfiguration(Property):
+class PropIndexUserTokenConfiguration(Property):
     """
     AWS Object Type = "AWS::Kendra::Index.UserTokenConfiguration"
 
@@ -1297,23 +1297,23 @@ class IndexUserTokenConfiguration(Property):
     """
     AWS_OBJECT_TYPE = "AWS::Kendra::Index.UserTokenConfiguration"
     
-    p_JsonTokenTypeConfiguration: typing.Union['IndexJsonTokenTypeConfiguration', dict] = attr.ib(
+    p_JsonTokenTypeConfiguration: typing.Union['PropIndexJsonTokenTypeConfiguration', dict] = attr.ib(
         default=None,
-        converter=IndexJsonTokenTypeConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(IndexJsonTokenTypeConfiguration)),
+        converter=PropIndexJsonTokenTypeConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropIndexJsonTokenTypeConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "JsonTokenTypeConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-index-usertokenconfiguration.html#cfn-kendra-index-usertokenconfiguration-jsontokentypeconfiguration"""
-    p_JwtTokenTypeConfiguration: typing.Union['IndexJwtTokenTypeConfiguration', dict] = attr.ib(
+    p_JwtTokenTypeConfiguration: typing.Union['PropIndexJwtTokenTypeConfiguration', dict] = attr.ib(
         default=None,
-        converter=IndexJwtTokenTypeConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(IndexJwtTokenTypeConfiguration)),
+        converter=PropIndexJwtTokenTypeConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropIndexJwtTokenTypeConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "JwtTokenTypeConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-index-usertokenconfiguration.html#cfn-kendra-index-usertokenconfiguration-jwttokentypeconfiguration"""
 
 @attr.s
-class DataSourceS3DataSourceConfiguration(Property):
+class PropDataSourceS3DataSourceConfiguration(Property):
     """
     AWS Object Type = "AWS::Kendra::DataSource.S3DataSourceConfiguration"
 
@@ -1336,17 +1336,17 @@ class DataSourceS3DataSourceConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "BucketName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-s3datasourceconfiguration.html#cfn-kendra-datasource-s3datasourceconfiguration-bucketname"""
-    p_AccessControlListConfiguration: typing.Union['DataSourceAccessControlListConfiguration', dict] = attr.ib(
+    p_AccessControlListConfiguration: typing.Union['PropDataSourceAccessControlListConfiguration', dict] = attr.ib(
         default=None,
-        converter=DataSourceAccessControlListConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DataSourceAccessControlListConfiguration)),
+        converter=PropDataSourceAccessControlListConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataSourceAccessControlListConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "AccessControlListConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-s3datasourceconfiguration.html#cfn-kendra-datasource-s3datasourceconfiguration-accesscontrollistconfiguration"""
-    p_DocumentsMetadataConfiguration: typing.Union['DataSourceDocumentsMetadataConfiguration', dict] = attr.ib(
+    p_DocumentsMetadataConfiguration: typing.Union['PropDataSourceDocumentsMetadataConfiguration', dict] = attr.ib(
         default=None,
-        converter=DataSourceDocumentsMetadataConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DataSourceDocumentsMetadataConfiguration)),
+        converter=PropDataSourceDocumentsMetadataConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataSourceDocumentsMetadataConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "DocumentsMetadataConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-s3datasourceconfiguration.html#cfn-kendra-datasource-s3datasourceconfiguration-documentsmetadataconfiguration"""
@@ -1370,7 +1370,7 @@ class DataSourceS3DataSourceConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-s3datasourceconfiguration.html#cfn-kendra-datasource-s3datasourceconfiguration-inclusionprefixes"""
 
 @attr.s
-class DataSourceConfluenceBlogConfiguration(Property):
+class PropDataSourceConfluenceBlogConfiguration(Property):
     """
     AWS Object Type = "AWS::Kendra::DataSource.ConfluenceBlogConfiguration"
 
@@ -1382,16 +1382,16 @@ class DataSourceConfluenceBlogConfiguration(Property):
     """
     AWS_OBJECT_TYPE = "AWS::Kendra::DataSource.ConfluenceBlogConfiguration"
     
-    p_BlogFieldMappings: typing.List[typing.Union['DataSourceConfluenceBlogToIndexFieldMapping', dict]] = attr.ib(
+    p_BlogFieldMappings: typing.List[typing.Union['PropDataSourceConfluenceBlogToIndexFieldMapping', dict]] = attr.ib(
         default=None,
-        converter=DataSourceConfluenceBlogToIndexFieldMapping.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(DataSourceConfluenceBlogToIndexFieldMapping), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropDataSourceConfluenceBlogToIndexFieldMapping.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDataSourceConfluenceBlogToIndexFieldMapping), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "BlogFieldMappings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluenceblogconfiguration.html#cfn-kendra-datasource-confluenceblogconfiguration-blogfieldmappings"""
 
 @attr.s
-class DataSourceServiceNowServiceCatalogConfiguration(Property):
+class PropDataSourceServiceNowServiceCatalogConfiguration(Property):
     """
     AWS Object Type = "AWS::Kendra::DataSource.ServiceNowServiceCatalogConfiguration"
 
@@ -1432,10 +1432,10 @@ class DataSourceServiceNowServiceCatalogConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "ExcludeAttachmentFilePatterns"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-servicenowservicecatalogconfiguration.html#cfn-kendra-datasource-servicenowservicecatalogconfiguration-excludeattachmentfilepatterns"""
-    p_FieldMappings: typing.List[typing.Union['DataSourceDataSourceToIndexFieldMapping', dict]] = attr.ib(
+    p_FieldMappings: typing.List[typing.Union['PropDataSourceDataSourceToIndexFieldMapping', dict]] = attr.ib(
         default=None,
-        converter=DataSourceDataSourceToIndexFieldMapping.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(DataSourceDataSourceToIndexFieldMapping), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropDataSourceDataSourceToIndexFieldMapping.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDataSourceDataSourceToIndexFieldMapping), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "FieldMappings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-servicenowservicecatalogconfiguration.html#cfn-kendra-datasource-servicenowservicecatalogconfiguration-fieldmappings"""
@@ -1447,7 +1447,7 @@ class DataSourceServiceNowServiceCatalogConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-servicenowservicecatalogconfiguration.html#cfn-kendra-datasource-servicenowservicecatalogconfiguration-includeattachmentfilepatterns"""
 
 @attr.s
-class DataSourceSalesforceStandardObjectAttachmentConfiguration(Property):
+class PropDataSourceSalesforceStandardObjectAttachmentConfiguration(Property):
     """
     AWS Object Type = "AWS::Kendra::DataSource.SalesforceStandardObjectAttachmentConfiguration"
 
@@ -1466,16 +1466,16 @@ class DataSourceSalesforceStandardObjectAttachmentConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "DocumentTitleFieldName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-salesforcestandardobjectattachmentconfiguration.html#cfn-kendra-datasource-salesforcestandardobjectattachmentconfiguration-documenttitlefieldname"""
-    p_FieldMappings: typing.List[typing.Union['DataSourceDataSourceToIndexFieldMapping', dict]] = attr.ib(
+    p_FieldMappings: typing.List[typing.Union['PropDataSourceDataSourceToIndexFieldMapping', dict]] = attr.ib(
         default=None,
-        converter=DataSourceDataSourceToIndexFieldMapping.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(DataSourceDataSourceToIndexFieldMapping), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropDataSourceDataSourceToIndexFieldMapping.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDataSourceDataSourceToIndexFieldMapping), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "FieldMappings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-salesforcestandardobjectattachmentconfiguration.html#cfn-kendra-datasource-salesforcestandardobjectattachmentconfiguration-fieldmappings"""
 
 @attr.s
-class DataSourceSalesforceCustomKnowledgeArticleTypeConfiguration(Property):
+class PropDataSourceSalesforceCustomKnowledgeArticleTypeConfiguration(Property):
     """
     AWS Object Type = "AWS::Kendra::DataSource.SalesforceCustomKnowledgeArticleTypeConfiguration"
 
@@ -1508,16 +1508,16 @@ class DataSourceSalesforceCustomKnowledgeArticleTypeConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "DocumentTitleFieldName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-salesforcecustomknowledgearticletypeconfiguration.html#cfn-kendra-datasource-salesforcecustomknowledgearticletypeconfiguration-documenttitlefieldname"""
-    p_FieldMappings: typing.List[typing.Union['DataSourceDataSourceToIndexFieldMapping', dict]] = attr.ib(
+    p_FieldMappings: typing.List[typing.Union['PropDataSourceDataSourceToIndexFieldMapping', dict]] = attr.ib(
         default=None,
-        converter=DataSourceDataSourceToIndexFieldMapping.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(DataSourceDataSourceToIndexFieldMapping), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropDataSourceDataSourceToIndexFieldMapping.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDataSourceDataSourceToIndexFieldMapping), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "FieldMappings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-salesforcecustomknowledgearticletypeconfiguration.html#cfn-kendra-datasource-salesforcecustomknowledgearticletypeconfiguration-fieldmappings"""
 
 @attr.s
-class DataSourceSalesforceStandardKnowledgeArticleTypeConfiguration(Property):
+class PropDataSourceSalesforceStandardKnowledgeArticleTypeConfiguration(Property):
     """
     AWS Object Type = "AWS::Kendra::DataSource.SalesforceStandardKnowledgeArticleTypeConfiguration"
 
@@ -1543,16 +1543,16 @@ class DataSourceSalesforceStandardKnowledgeArticleTypeConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "DocumentTitleFieldName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-salesforcestandardknowledgearticletypeconfiguration.html#cfn-kendra-datasource-salesforcestandardknowledgearticletypeconfiguration-documenttitlefieldname"""
-    p_FieldMappings: typing.List[typing.Union['DataSourceDataSourceToIndexFieldMapping', dict]] = attr.ib(
+    p_FieldMappings: typing.List[typing.Union['PropDataSourceDataSourceToIndexFieldMapping', dict]] = attr.ib(
         default=None,
-        converter=DataSourceDataSourceToIndexFieldMapping.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(DataSourceDataSourceToIndexFieldMapping), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropDataSourceDataSourceToIndexFieldMapping.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDataSourceDataSourceToIndexFieldMapping), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "FieldMappings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-salesforcestandardknowledgearticletypeconfiguration.html#cfn-kendra-datasource-salesforcestandardknowledgearticletypeconfiguration-fieldmappings"""
 
 @attr.s
-class DataSourceSalesforceKnowledgeArticleConfiguration(Property):
+class PropDataSourceSalesforceKnowledgeArticleConfiguration(Property):
     """
     AWS Object Type = "AWS::Kendra::DataSource.SalesforceKnowledgeArticleConfiguration"
 
@@ -1572,23 +1572,23 @@ class DataSourceSalesforceKnowledgeArticleConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "IncludedStates"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-salesforceknowledgearticleconfiguration.html#cfn-kendra-datasource-salesforceknowledgearticleconfiguration-includedstates"""
-    p_CustomKnowledgeArticleTypeConfigurations: typing.List[typing.Union['DataSourceSalesforceCustomKnowledgeArticleTypeConfiguration', dict]] = attr.ib(
+    p_CustomKnowledgeArticleTypeConfigurations: typing.List[typing.Union['PropDataSourceSalesforceCustomKnowledgeArticleTypeConfiguration', dict]] = attr.ib(
         default=None,
-        converter=DataSourceSalesforceCustomKnowledgeArticleTypeConfiguration.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(DataSourceSalesforceCustomKnowledgeArticleTypeConfiguration), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropDataSourceSalesforceCustomKnowledgeArticleTypeConfiguration.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDataSourceSalesforceCustomKnowledgeArticleTypeConfiguration), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "CustomKnowledgeArticleTypeConfigurations"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-salesforceknowledgearticleconfiguration.html#cfn-kendra-datasource-salesforceknowledgearticleconfiguration-customknowledgearticletypeconfigurations"""
-    p_StandardKnowledgeArticleTypeConfiguration: typing.Union['DataSourceSalesforceStandardKnowledgeArticleTypeConfiguration', dict] = attr.ib(
+    p_StandardKnowledgeArticleTypeConfiguration: typing.Union['PropDataSourceSalesforceStandardKnowledgeArticleTypeConfiguration', dict] = attr.ib(
         default=None,
-        converter=DataSourceSalesforceStandardKnowledgeArticleTypeConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DataSourceSalesforceStandardKnowledgeArticleTypeConfiguration)),
+        converter=PropDataSourceSalesforceStandardKnowledgeArticleTypeConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataSourceSalesforceStandardKnowledgeArticleTypeConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "StandardKnowledgeArticleTypeConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-salesforceknowledgearticleconfiguration.html#cfn-kendra-datasource-salesforceknowledgearticleconfiguration-standardknowledgearticletypeconfiguration"""
 
 @attr.s
-class DataSourceSalesforceConfiguration(Property):
+class PropDataSourceSalesforceConfiguration(Property):
     """
     AWS Object Type = "AWS::Kendra::DataSource.SalesforceConfiguration"
 
@@ -1620,10 +1620,10 @@ class DataSourceSalesforceConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "ServerUrl"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-salesforceconfiguration.html#cfn-kendra-datasource-salesforceconfiguration-serverurl"""
-    p_ChatterFeedConfiguration: typing.Union['DataSourceSalesforceChatterFeedConfiguration', dict] = attr.ib(
+    p_ChatterFeedConfiguration: typing.Union['PropDataSourceSalesforceChatterFeedConfiguration', dict] = attr.ib(
         default=None,
-        converter=DataSourceSalesforceChatterFeedConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DataSourceSalesforceChatterFeedConfiguration)),
+        converter=PropDataSourceSalesforceChatterFeedConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataSourceSalesforceChatterFeedConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "ChatterFeedConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-salesforceconfiguration.html#cfn-kendra-datasource-salesforceconfiguration-chatterfeedconfiguration"""
@@ -1645,30 +1645,30 @@ class DataSourceSalesforceConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "IncludeAttachmentFilePatterns"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-salesforceconfiguration.html#cfn-kendra-datasource-salesforceconfiguration-includeattachmentfilepatterns"""
-    p_KnowledgeArticleConfiguration: typing.Union['DataSourceSalesforceKnowledgeArticleConfiguration', dict] = attr.ib(
+    p_KnowledgeArticleConfiguration: typing.Union['PropDataSourceSalesforceKnowledgeArticleConfiguration', dict] = attr.ib(
         default=None,
-        converter=DataSourceSalesforceKnowledgeArticleConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DataSourceSalesforceKnowledgeArticleConfiguration)),
+        converter=PropDataSourceSalesforceKnowledgeArticleConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataSourceSalesforceKnowledgeArticleConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "KnowledgeArticleConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-salesforceconfiguration.html#cfn-kendra-datasource-salesforceconfiguration-knowledgearticleconfiguration"""
-    p_StandardObjectAttachmentConfiguration: typing.Union['DataSourceSalesforceStandardObjectAttachmentConfiguration', dict] = attr.ib(
+    p_StandardObjectAttachmentConfiguration: typing.Union['PropDataSourceSalesforceStandardObjectAttachmentConfiguration', dict] = attr.ib(
         default=None,
-        converter=DataSourceSalesforceStandardObjectAttachmentConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DataSourceSalesforceStandardObjectAttachmentConfiguration)),
+        converter=PropDataSourceSalesforceStandardObjectAttachmentConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataSourceSalesforceStandardObjectAttachmentConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "StandardObjectAttachmentConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-salesforceconfiguration.html#cfn-kendra-datasource-salesforceconfiguration-standardobjectattachmentconfiguration"""
-    p_StandardObjectConfigurations: typing.List[typing.Union['DataSourceSalesforceStandardObjectConfiguration', dict]] = attr.ib(
+    p_StandardObjectConfigurations: typing.List[typing.Union['PropDataSourceSalesforceStandardObjectConfiguration', dict]] = attr.ib(
         default=None,
-        converter=DataSourceSalesforceStandardObjectConfiguration.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(DataSourceSalesforceStandardObjectConfiguration), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropDataSourceSalesforceStandardObjectConfiguration.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDataSourceSalesforceStandardObjectConfiguration), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "StandardObjectConfigurations"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-salesforceconfiguration.html#cfn-kendra-datasource-salesforceconfiguration-standardobjectconfigurations"""
 
 @attr.s
-class DataSourceServiceNowConfiguration(Property):
+class PropDataSourceServiceNowConfiguration(Property):
     """
     AWS Object Type = "AWS::Kendra::DataSource.ServiceNowConfiguration"
 
@@ -1702,23 +1702,23 @@ class DataSourceServiceNowConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "ServiceNowBuildVersion"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-servicenowconfiguration.html#cfn-kendra-datasource-servicenowconfiguration-servicenowbuildversion"""
-    p_KnowledgeArticleConfiguration: typing.Union['DataSourceServiceNowKnowledgeArticleConfiguration', dict] = attr.ib(
+    p_KnowledgeArticleConfiguration: typing.Union['PropDataSourceServiceNowKnowledgeArticleConfiguration', dict] = attr.ib(
         default=None,
-        converter=DataSourceServiceNowKnowledgeArticleConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DataSourceServiceNowKnowledgeArticleConfiguration)),
+        converter=PropDataSourceServiceNowKnowledgeArticleConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataSourceServiceNowKnowledgeArticleConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "KnowledgeArticleConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-servicenowconfiguration.html#cfn-kendra-datasource-servicenowconfiguration-knowledgearticleconfiguration"""
-    p_ServiceCatalogConfiguration: typing.Union['DataSourceServiceNowServiceCatalogConfiguration', dict] = attr.ib(
+    p_ServiceCatalogConfiguration: typing.Union['PropDataSourceServiceNowServiceCatalogConfiguration', dict] = attr.ib(
         default=None,
-        converter=DataSourceServiceNowServiceCatalogConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DataSourceServiceNowServiceCatalogConfiguration)),
+        converter=PropDataSourceServiceNowServiceCatalogConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataSourceServiceNowServiceCatalogConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "ServiceCatalogConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-servicenowconfiguration.html#cfn-kendra-datasource-servicenowconfiguration-servicecatalogconfiguration"""
 
 @attr.s
-class DataSourceConfluenceConfiguration(Property):
+class PropDataSourceConfluenceConfiguration(Property):
     """
     AWS Object Type = "AWS::Kendra::DataSource.ConfluenceConfiguration"
 
@@ -1757,17 +1757,17 @@ class DataSourceConfluenceConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Version"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluenceconfiguration.html#cfn-kendra-datasource-confluenceconfiguration-version"""
-    p_AttachmentConfiguration: typing.Union['DataSourceConfluenceAttachmentConfiguration', dict] = attr.ib(
+    p_AttachmentConfiguration: typing.Union['PropDataSourceConfluenceAttachmentConfiguration', dict] = attr.ib(
         default=None,
-        converter=DataSourceConfluenceAttachmentConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DataSourceConfluenceAttachmentConfiguration)),
+        converter=PropDataSourceConfluenceAttachmentConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataSourceConfluenceAttachmentConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "AttachmentConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluenceconfiguration.html#cfn-kendra-datasource-confluenceconfiguration-attachmentconfiguration"""
-    p_BlogConfiguration: typing.Union['DataSourceConfluenceBlogConfiguration', dict] = attr.ib(
+    p_BlogConfiguration: typing.Union['PropDataSourceConfluenceBlogConfiguration', dict] = attr.ib(
         default=None,
-        converter=DataSourceConfluenceBlogConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DataSourceConfluenceBlogConfiguration)),
+        converter=PropDataSourceConfluenceBlogConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataSourceConfluenceBlogConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "BlogConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluenceconfiguration.html#cfn-kendra-datasource-confluenceconfiguration-blogconfiguration"""
@@ -1783,30 +1783,30 @@ class DataSourceConfluenceConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "InclusionPatterns"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluenceconfiguration.html#cfn-kendra-datasource-confluenceconfiguration-inclusionpatterns"""
-    p_PageConfiguration: typing.Union['DataSourceConfluencePageConfiguration', dict] = attr.ib(
+    p_PageConfiguration: typing.Union['PropDataSourceConfluencePageConfiguration', dict] = attr.ib(
         default=None,
-        converter=DataSourceConfluencePageConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DataSourceConfluencePageConfiguration)),
+        converter=PropDataSourceConfluencePageConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataSourceConfluencePageConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "PageConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluenceconfiguration.html#cfn-kendra-datasource-confluenceconfiguration-pageconfiguration"""
-    p_SpaceConfiguration: typing.Union['DataSourceConfluenceSpaceConfiguration', dict] = attr.ib(
+    p_SpaceConfiguration: typing.Union['PropDataSourceConfluenceSpaceConfiguration', dict] = attr.ib(
         default=None,
-        converter=DataSourceConfluenceSpaceConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DataSourceConfluenceSpaceConfiguration)),
+        converter=PropDataSourceConfluenceSpaceConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataSourceConfluenceSpaceConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "SpaceConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluenceconfiguration.html#cfn-kendra-datasource-confluenceconfiguration-spaceconfiguration"""
-    p_VpcConfiguration: typing.Union['DataSourceDataSourceVpcConfiguration', dict] = attr.ib(
+    p_VpcConfiguration: typing.Union['PropDataSourceDataSourceVpcConfiguration', dict] = attr.ib(
         default=None,
-        converter=DataSourceDataSourceVpcConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DataSourceDataSourceVpcConfiguration)),
+        converter=PropDataSourceDataSourceVpcConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataSourceDataSourceVpcConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "VpcConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluenceconfiguration.html#cfn-kendra-datasource-confluenceconfiguration-vpcconfiguration"""
 
 @attr.s
-class DataSourceDataSourceConfiguration(Property):
+class PropDataSourceDataSourceConfiguration(Property):
     """
     AWS Object Type = "AWS::Kendra::DataSource.DataSourceConfiguration"
 
@@ -1825,59 +1825,59 @@ class DataSourceDataSourceConfiguration(Property):
     """
     AWS_OBJECT_TYPE = "AWS::Kendra::DataSource.DataSourceConfiguration"
     
-    p_ConfluenceConfiguration: typing.Union['DataSourceConfluenceConfiguration', dict] = attr.ib(
+    p_ConfluenceConfiguration: typing.Union['PropDataSourceConfluenceConfiguration', dict] = attr.ib(
         default=None,
-        converter=DataSourceConfluenceConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DataSourceConfluenceConfiguration)),
+        converter=PropDataSourceConfluenceConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataSourceConfluenceConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "ConfluenceConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-datasourceconfiguration.html#cfn-kendra-datasource-datasourceconfiguration-confluenceconfiguration"""
-    p_DatabaseConfiguration: typing.Union['DataSourceDatabaseConfiguration', dict] = attr.ib(
+    p_DatabaseConfiguration: typing.Union['PropDataSourceDatabaseConfiguration', dict] = attr.ib(
         default=None,
-        converter=DataSourceDatabaseConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DataSourceDatabaseConfiguration)),
+        converter=PropDataSourceDatabaseConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataSourceDatabaseConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "DatabaseConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-datasourceconfiguration.html#cfn-kendra-datasource-datasourceconfiguration-databaseconfiguration"""
-    p_GoogleDriveConfiguration: typing.Union['DataSourceGoogleDriveConfiguration', dict] = attr.ib(
+    p_GoogleDriveConfiguration: typing.Union['PropDataSourceGoogleDriveConfiguration', dict] = attr.ib(
         default=None,
-        converter=DataSourceGoogleDriveConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DataSourceGoogleDriveConfiguration)),
+        converter=PropDataSourceGoogleDriveConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataSourceGoogleDriveConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "GoogleDriveConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-datasourceconfiguration.html#cfn-kendra-datasource-datasourceconfiguration-googledriveconfiguration"""
-    p_OneDriveConfiguration: typing.Union['DataSourceOneDriveConfiguration', dict] = attr.ib(
+    p_OneDriveConfiguration: typing.Union['PropDataSourceOneDriveConfiguration', dict] = attr.ib(
         default=None,
-        converter=DataSourceOneDriveConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DataSourceOneDriveConfiguration)),
+        converter=PropDataSourceOneDriveConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataSourceOneDriveConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "OneDriveConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-datasourceconfiguration.html#cfn-kendra-datasource-datasourceconfiguration-onedriveconfiguration"""
-    p_S3Configuration: typing.Union['DataSourceS3DataSourceConfiguration', dict] = attr.ib(
+    p_S3Configuration: typing.Union['PropDataSourceS3DataSourceConfiguration', dict] = attr.ib(
         default=None,
-        converter=DataSourceS3DataSourceConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DataSourceS3DataSourceConfiguration)),
+        converter=PropDataSourceS3DataSourceConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataSourceS3DataSourceConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "S3Configuration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-datasourceconfiguration.html#cfn-kendra-datasource-datasourceconfiguration-s3configuration"""
-    p_SalesforceConfiguration: typing.Union['DataSourceSalesforceConfiguration', dict] = attr.ib(
+    p_SalesforceConfiguration: typing.Union['PropDataSourceSalesforceConfiguration', dict] = attr.ib(
         default=None,
-        converter=DataSourceSalesforceConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DataSourceSalesforceConfiguration)),
+        converter=PropDataSourceSalesforceConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataSourceSalesforceConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "SalesforceConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-datasourceconfiguration.html#cfn-kendra-datasource-datasourceconfiguration-salesforceconfiguration"""
-    p_ServiceNowConfiguration: typing.Union['DataSourceServiceNowConfiguration', dict] = attr.ib(
+    p_ServiceNowConfiguration: typing.Union['PropDataSourceServiceNowConfiguration', dict] = attr.ib(
         default=None,
-        converter=DataSourceServiceNowConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DataSourceServiceNowConfiguration)),
+        converter=PropDataSourceServiceNowConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataSourceServiceNowConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "ServiceNowConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-datasourceconfiguration.html#cfn-kendra-datasource-datasourceconfiguration-servicenowconfiguration"""
-    p_SharePointConfiguration: typing.Union['DataSourceSharePointConfiguration', dict] = attr.ib(
+    p_SharePointConfiguration: typing.Union['PropDataSourceSharePointConfiguration', dict] = attr.ib(
         default=None,
-        converter=DataSourceSharePointConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DataSourceSharePointConfiguration)),
+        converter=PropDataSourceSharePointConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataSourceSharePointConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "SharePointConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-datasourceconfiguration.html#cfn-kendra-datasource-datasourceconfiguration-sharepointconfiguration"""
@@ -1924,10 +1924,10 @@ class DataSource(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Type"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kendra-datasource.html#cfn-kendra-datasource-type"""
-    p_DataSourceConfiguration: typing.Union['DataSourceDataSourceConfiguration', dict] = attr.ib(
+    p_DataSourceConfiguration: typing.Union['PropDataSourceDataSourceConfiguration', dict] = attr.ib(
         default=None,
-        converter=DataSourceDataSourceConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DataSourceDataSourceConfiguration)),
+        converter=PropDataSourceDataSourceConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataSourceDataSourceConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "DataSourceConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kendra-datasource.html#cfn-kendra-datasource-datasourceconfiguration"""
@@ -2007,10 +2007,10 @@ class Faq(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "RoleArn"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kendra-faq.html#cfn-kendra-faq-rolearn"""
-    rp_S3Path: typing.Union['FaqS3Path', dict] = attr.ib(
+    rp_S3Path: typing.Union['PropFaqS3Path', dict] = attr.ib(
         default=None,
-        converter=FaqS3Path.from_dict,
-        validator=attr.validators.instance_of(FaqS3Path),
+        converter=PropFaqS3Path.from_dict,
+        validator=attr.validators.instance_of(PropFaqS3Path),
         metadata={AttrMeta.PROPERTY_NAME: "S3Path"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kendra-faq.html#cfn-kendra-faq-s3path"""
@@ -2087,10 +2087,10 @@ class Index(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "RoleArn"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kendra-index.html#cfn-kendra-index-rolearn"""
-    p_CapacityUnits: typing.Union['IndexCapacityUnitsConfiguration', dict] = attr.ib(
+    p_CapacityUnits: typing.Union['PropIndexCapacityUnitsConfiguration', dict] = attr.ib(
         default=None,
-        converter=IndexCapacityUnitsConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(IndexCapacityUnitsConfiguration)),
+        converter=PropIndexCapacityUnitsConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropIndexCapacityUnitsConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "CapacityUnits"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kendra-index.html#cfn-kendra-index-capacityunits"""
@@ -2100,17 +2100,17 @@ class Index(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Description"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kendra-index.html#cfn-kendra-index-description"""
-    p_DocumentMetadataConfigurations: typing.List[typing.Union['IndexDocumentMetadataConfiguration', dict]] = attr.ib(
+    p_DocumentMetadataConfigurations: typing.List[typing.Union['PropIndexDocumentMetadataConfiguration', dict]] = attr.ib(
         default=None,
-        converter=IndexDocumentMetadataConfiguration.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(IndexDocumentMetadataConfiguration), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropIndexDocumentMetadataConfiguration.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropIndexDocumentMetadataConfiguration), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "DocumentMetadataConfigurations"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kendra-index.html#cfn-kendra-index-documentmetadataconfigurations"""
-    p_ServerSideEncryptionConfiguration: typing.Union['IndexServerSideEncryptionConfiguration', dict] = attr.ib(
+    p_ServerSideEncryptionConfiguration: typing.Union['PropIndexServerSideEncryptionConfiguration', dict] = attr.ib(
         default=None,
-        converter=IndexServerSideEncryptionConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(IndexServerSideEncryptionConfiguration)),
+        converter=PropIndexServerSideEncryptionConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropIndexServerSideEncryptionConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "ServerSideEncryptionConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kendra-index.html#cfn-kendra-index-serversideencryptionconfiguration"""
@@ -2120,10 +2120,10 @@ class Index(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "UserContextPolicy"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kendra-index.html#cfn-kendra-index-usercontextpolicy"""
-    p_UserTokenConfigurations: typing.List[typing.Union['IndexUserTokenConfiguration', dict]] = attr.ib(
+    p_UserTokenConfigurations: typing.List[typing.Union['PropIndexUserTokenConfiguration', dict]] = attr.ib(
         default=None,
-        converter=IndexUserTokenConfiguration.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(IndexUserTokenConfiguration), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropIndexUserTokenConfiguration.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropIndexUserTokenConfiguration), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "UserTokenConfigurations"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kendra-index.html#cfn-kendra-index-usertokenconfigurations"""

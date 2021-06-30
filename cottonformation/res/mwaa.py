@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class EnvironmentNetworkConfiguration(Property):
+class PropEnvironmentNetworkConfiguration(Property):
     """
     AWS Object Type = "AWS::MWAA::Environment.NetworkConfiguration"
 
@@ -42,7 +42,7 @@ class EnvironmentNetworkConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mwaa-environment-networkconfiguration.html#cfn-mwaa-environment-networkconfiguration-subnetids"""
 
 @attr.s
-class EnvironmentModuleLoggingConfiguration(Property):
+class PropEnvironmentModuleLoggingConfiguration(Property):
     """
     AWS Object Type = "AWS::MWAA::Environment.ModuleLoggingConfiguration"
 
@@ -76,7 +76,7 @@ class EnvironmentModuleLoggingConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mwaa-environment-moduleloggingconfiguration.html#cfn-mwaa-environment-moduleloggingconfiguration-loglevel"""
 
 @attr.s
-class EnvironmentTagMap(Property):
+class PropEnvironmentTagMap(Property):
     """
     AWS Object Type = "AWS::MWAA::Environment.TagMap"
 
@@ -89,7 +89,7 @@ class EnvironmentTagMap(Property):
     
 
 @attr.s
-class EnvironmentLoggingConfiguration(Property):
+class PropEnvironmentLoggingConfiguration(Property):
     """
     AWS Object Type = "AWS::MWAA::Environment.LoggingConfiguration"
 
@@ -105,38 +105,38 @@ class EnvironmentLoggingConfiguration(Property):
     """
     AWS_OBJECT_TYPE = "AWS::MWAA::Environment.LoggingConfiguration"
     
-    p_DagProcessingLogs: typing.Union['EnvironmentModuleLoggingConfiguration', dict] = attr.ib(
+    p_DagProcessingLogs: typing.Union['PropEnvironmentModuleLoggingConfiguration', dict] = attr.ib(
         default=None,
-        converter=EnvironmentModuleLoggingConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(EnvironmentModuleLoggingConfiguration)),
+        converter=PropEnvironmentModuleLoggingConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropEnvironmentModuleLoggingConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "DagProcessingLogs"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mwaa-environment-loggingconfiguration.html#cfn-mwaa-environment-loggingconfiguration-dagprocessinglogs"""
-    p_SchedulerLogs: typing.Union['EnvironmentModuleLoggingConfiguration', dict] = attr.ib(
+    p_SchedulerLogs: typing.Union['PropEnvironmentModuleLoggingConfiguration', dict] = attr.ib(
         default=None,
-        converter=EnvironmentModuleLoggingConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(EnvironmentModuleLoggingConfiguration)),
+        converter=PropEnvironmentModuleLoggingConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropEnvironmentModuleLoggingConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "SchedulerLogs"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mwaa-environment-loggingconfiguration.html#cfn-mwaa-environment-loggingconfiguration-schedulerlogs"""
-    p_TaskLogs: typing.Union['EnvironmentModuleLoggingConfiguration', dict] = attr.ib(
+    p_TaskLogs: typing.Union['PropEnvironmentModuleLoggingConfiguration', dict] = attr.ib(
         default=None,
-        converter=EnvironmentModuleLoggingConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(EnvironmentModuleLoggingConfiguration)),
+        converter=PropEnvironmentModuleLoggingConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropEnvironmentModuleLoggingConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "TaskLogs"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mwaa-environment-loggingconfiguration.html#cfn-mwaa-environment-loggingconfiguration-tasklogs"""
-    p_WebserverLogs: typing.Union['EnvironmentModuleLoggingConfiguration', dict] = attr.ib(
+    p_WebserverLogs: typing.Union['PropEnvironmentModuleLoggingConfiguration', dict] = attr.ib(
         default=None,
-        converter=EnvironmentModuleLoggingConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(EnvironmentModuleLoggingConfiguration)),
+        converter=PropEnvironmentModuleLoggingConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropEnvironmentModuleLoggingConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "WebserverLogs"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mwaa-environment-loggingconfiguration.html#cfn-mwaa-environment-loggingconfiguration-webserverlogs"""
-    p_WorkerLogs: typing.Union['EnvironmentModuleLoggingConfiguration', dict] = attr.ib(
+    p_WorkerLogs: typing.Union['PropEnvironmentModuleLoggingConfiguration', dict] = attr.ib(
         default=None,
-        converter=EnvironmentModuleLoggingConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(EnvironmentModuleLoggingConfiguration)),
+        converter=PropEnvironmentModuleLoggingConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropEnvironmentModuleLoggingConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "WorkerLogs"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mwaa-environment-loggingconfiguration.html#cfn-mwaa-environment-loggingconfiguration-workerlogs"""
@@ -219,10 +219,10 @@ class Environment(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "KmsKey"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mwaa-environment.html#cfn-mwaa-environment-kmskey"""
-    p_LoggingConfiguration: typing.Union['EnvironmentLoggingConfiguration', dict] = attr.ib(
+    p_LoggingConfiguration: typing.Union['PropEnvironmentLoggingConfiguration', dict] = attr.ib(
         default=None,
-        converter=EnvironmentLoggingConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(EnvironmentLoggingConfiguration)),
+        converter=PropEnvironmentLoggingConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropEnvironmentLoggingConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "LoggingConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mwaa-environment.html#cfn-mwaa-environment-loggingconfiguration"""
@@ -238,10 +238,10 @@ class Environment(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "MinWorkers"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mwaa-environment.html#cfn-mwaa-environment-minworkers"""
-    p_NetworkConfiguration: typing.Union['EnvironmentNetworkConfiguration', dict] = attr.ib(
+    p_NetworkConfiguration: typing.Union['PropEnvironmentNetworkConfiguration', dict] = attr.ib(
         default=None,
-        converter=EnvironmentNetworkConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(EnvironmentNetworkConfiguration)),
+        converter=PropEnvironmentNetworkConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropEnvironmentNetworkConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "NetworkConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mwaa-environment.html#cfn-mwaa-environment-networkconfiguration"""
@@ -293,10 +293,10 @@ class Environment(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "WeeklyMaintenanceWindowStart"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mwaa-environment.html#cfn-mwaa-environment-weeklymaintenancewindowstart"""
-    p_Tags: typing.Union['EnvironmentTagMap', dict] = attr.ib(
+    p_Tags: typing.Union['PropEnvironmentTagMap', dict] = attr.ib(
         default=None,
-        converter=EnvironmentTagMap.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(EnvironmentTagMap)),
+        converter=PropEnvironmentTagMap.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropEnvironmentTagMap)),
         metadata={AttrMeta.PROPERTY_NAME: "Tags"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mwaa-environment.html#cfn-mwaa-environment-tags"""

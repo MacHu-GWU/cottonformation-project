@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class GameServerGroupTargetTrackingConfiguration(Property):
+class PropGameServerGroupTargetTrackingConfiguration(Property):
     """
     AWS Object Type = "AWS::GameLift::GameServerGroup.TargetTrackingConfiguration"
 
@@ -35,7 +35,7 @@ class GameServerGroupTargetTrackingConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-gameservergroup-targettrackingconfiguration.html#cfn-gamelift-gameservergroup-targettrackingconfiguration-targetvalue"""
 
 @attr.s
-class FleetLocationCapacity(Property):
+class PropFleetLocationCapacity(Property):
     """
     AWS Object Type = "AWS::GameLift::Fleet.LocationCapacity"
 
@@ -69,7 +69,7 @@ class FleetLocationCapacity(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-fleet-locationcapacity.html#cfn-gamelift-fleet-locationcapacity-minsize"""
 
 @attr.s
-class BuildS3Location(Property):
+class PropBuildS3Location(Property):
     """
     AWS Object Type = "AWS::GameLift::Build.S3Location"
 
@@ -110,7 +110,7 @@ class BuildS3Location(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-build-storagelocation.html#cfn-gamelift-build-object-verison"""
 
 @attr.s
-class AliasRoutingStrategy(Property):
+class PropAliasRoutingStrategy(Property):
     """
     AWS Object Type = "AWS::GameLift::Alias.RoutingStrategy"
 
@@ -144,7 +144,7 @@ class AliasRoutingStrategy(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-alias-routingstrategy.html#cfn-gamelift-alias-routingstrategy-message"""
 
 @attr.s
-class GameServerGroupLaunchTemplate(Property):
+class PropGameServerGroupLaunchTemplate(Property):
     """
     AWS Object Type = "AWS::GameLift::GameServerGroup.LaunchTemplate"
 
@@ -178,7 +178,7 @@ class GameServerGroupLaunchTemplate(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-gameservergroup-launchtemplate.html#cfn-gamelift-gameservergroup-launchtemplate-version"""
 
 @attr.s
-class FleetCertificateConfiguration(Property):
+class PropFleetCertificateConfiguration(Property):
     """
     AWS Object Type = "AWS::GameLift::Fleet.CertificateConfiguration"
 
@@ -198,7 +198,7 @@ class FleetCertificateConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-fleet-certificateconfiguration.html#cfn-gamelift-fleet-certificateconfiguration-certificatetype"""
 
 @attr.s
-class ScriptS3Location(Property):
+class PropScriptS3Location(Property):
     """
     AWS Object Type = "AWS::GameLift::Script.S3Location"
 
@@ -239,7 +239,7 @@ class ScriptS3Location(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-script-s3location.html#cfn-gamelift-script-s3location-objectversion"""
 
 @attr.s
-class GameServerGroupAutoScalingPolicy(Property):
+class PropGameServerGroupAutoScalingPolicy(Property):
     """
     AWS Object Type = "AWS::GameLift::GameServerGroup.AutoScalingPolicy"
 
@@ -252,10 +252,10 @@ class GameServerGroupAutoScalingPolicy(Property):
     """
     AWS_OBJECT_TYPE = "AWS::GameLift::GameServerGroup.AutoScalingPolicy"
     
-    rp_TargetTrackingConfiguration: typing.Union['GameServerGroupTargetTrackingConfiguration', dict] = attr.ib(
+    rp_TargetTrackingConfiguration: typing.Union['PropGameServerGroupTargetTrackingConfiguration', dict] = attr.ib(
         default=None,
-        converter=GameServerGroupTargetTrackingConfiguration.from_dict,
-        validator=attr.validators.instance_of(GameServerGroupTargetTrackingConfiguration),
+        converter=PropGameServerGroupTargetTrackingConfiguration.from_dict,
+        validator=attr.validators.instance_of(PropGameServerGroupTargetTrackingConfiguration),
         metadata={AttrMeta.PROPERTY_NAME: "TargetTrackingConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-gameservergroup-autoscalingpolicy.html#cfn-gamelift-gameservergroup-autoscalingpolicy-targettrackingconfiguration"""
@@ -267,7 +267,7 @@ class GameServerGroupAutoScalingPolicy(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-gameservergroup-autoscalingpolicy.html#cfn-gamelift-gameservergroup-autoscalingpolicy-estimatedinstancewarmup"""
 
 @attr.s
-class GameSessionQueuePlayerLatencyPolicy(Property):
+class PropGameSessionQueuePlayerLatencyPolicy(Property):
     """
     AWS Object Type = "AWS::GameLift::GameSessionQueue.PlayerLatencyPolicy"
 
@@ -294,7 +294,7 @@ class GameSessionQueuePlayerLatencyPolicy(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-gamesessionqueue-playerlatencypolicy.html#cfn-gamelift-gamesessionqueue-playerlatencypolicy-policydurationseconds"""
 
 @attr.s
-class GameSessionQueueDestination(Property):
+class PropGameSessionQueueDestination(Property):
     """
     AWS Object Type = "AWS::GameLift::GameSessionQueue.Destination"
 
@@ -314,7 +314,7 @@ class GameSessionQueueDestination(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-gamesessionqueue-destination.html#cfn-gamelift-gamesessionqueue-destination-destinationarn"""
 
 @attr.s
-class FleetLocationConfiguration(Property):
+class PropFleetLocationConfiguration(Property):
     """
     AWS Object Type = "AWS::GameLift::Fleet.LocationConfiguration"
 
@@ -333,16 +333,16 @@ class FleetLocationConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Location"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-fleet-locationconfiguration.html#cfn-gamelift-fleet-locationconfiguration-location"""
-    p_LocationCapacity: typing.Union['FleetLocationCapacity', dict] = attr.ib(
+    p_LocationCapacity: typing.Union['PropFleetLocationCapacity', dict] = attr.ib(
         default=None,
-        converter=FleetLocationCapacity.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(FleetLocationCapacity)),
+        converter=PropFleetLocationCapacity.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropFleetLocationCapacity)),
         metadata={AttrMeta.PROPERTY_NAME: "LocationCapacity"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-fleet-locationconfiguration.html#cfn-gamelift-fleet-locationconfiguration-locationcapacity"""
 
 @attr.s
-class FleetIpPermission(Property):
+class PropFleetIpPermission(Property):
     """
     AWS Object Type = "AWS::GameLift::Fleet.IpPermission"
 
@@ -383,7 +383,7 @@ class FleetIpPermission(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-fleet-ippermission.html#cfn-gamelift-fleet-ippermission-toport"""
 
 @attr.s
-class GameSessionQueueFilterConfiguration(Property):
+class PropGameSessionQueueFilterConfiguration(Property):
     """
     AWS Object Type = "AWS::GameLift::GameSessionQueue.FilterConfiguration"
 
@@ -403,7 +403,7 @@ class GameSessionQueueFilterConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-gamesessionqueue-filterconfiguration.html#cfn-gamelift-gamesessionqueue-filterconfiguration-allowedlocations"""
 
 @attr.s
-class FleetServerProcess(Property):
+class PropFleetServerProcess(Property):
     """
     AWS Object Type = "AWS::GameLift::Fleet.ServerProcess"
 
@@ -437,7 +437,7 @@ class FleetServerProcess(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-fleet-serverprocess.html#cfn-gamelift-fleet-serverprocess-parameters"""
 
 @attr.s
-class FleetResourceCreationLimitPolicy(Property):
+class PropFleetResourceCreationLimitPolicy(Property):
     """
     AWS Object Type = "AWS::GameLift::Fleet.ResourceCreationLimitPolicy"
 
@@ -464,7 +464,7 @@ class FleetResourceCreationLimitPolicy(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-fleet-resourcecreationlimitpolicy.html#cfn-gamelift-fleet-resourcecreationlimitpolicy-policyperiodinminutes"""
 
 @attr.s
-class GameServerGroupInstanceDefinition(Property):
+class PropGameServerGroupInstanceDefinition(Property):
     """
     AWS Object Type = "AWS::GameLift::GameServerGroup.InstanceDefinition"
 
@@ -491,7 +491,7 @@ class GameServerGroupInstanceDefinition(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-gameservergroup-instancedefinition.html#cfn-gamelift-gameservergroup-instancedefinition-weightedcapacity"""
 
 @attr.s
-class FleetRuntimeConfiguration(Property):
+class PropFleetRuntimeConfiguration(Property):
     """
     AWS Object Type = "AWS::GameLift::Fleet.RuntimeConfiguration"
 
@@ -517,16 +517,16 @@ class FleetRuntimeConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "MaxConcurrentGameSessionActivations"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-fleet-runtimeconfiguration.html#cfn-gamelift-fleet-runtimeconfiguration-maxconcurrentgamesessionactivations"""
-    p_ServerProcesses: typing.List[typing.Union['FleetServerProcess', dict]] = attr.ib(
+    p_ServerProcesses: typing.List[typing.Union['PropFleetServerProcess', dict]] = attr.ib(
         default=None,
-        converter=FleetServerProcess.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(FleetServerProcess), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropFleetServerProcess.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropFleetServerProcess), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "ServerProcesses"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-fleet-runtimeconfiguration.html#cfn-gamelift-fleet-runtimeconfiguration-serverprocesses"""
 
 @attr.s
-class GameSessionQueuePriorityConfiguration(Property):
+class PropGameSessionQueuePriorityConfiguration(Property):
     """
     AWS Object Type = "AWS::GameLift::GameSessionQueue.PriorityConfiguration"
 
@@ -553,7 +553,7 @@ class GameSessionQueuePriorityConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-gamesessionqueue-priorityconfiguration.html#cfn-gamelift-gamesessionqueue-priorityconfiguration-priorityorder"""
 
 @attr.s
-class MatchmakingConfigurationGameProperty(Property):
+class PropMatchmakingConfigurationGameProperty(Property):
     """
     AWS Object Type = "AWS::GameLift::MatchmakingConfiguration.GameProperty"
 
@@ -620,10 +620,10 @@ class Fleet(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "BuildId"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-buildid"""
-    p_CertificateConfiguration: typing.Union['FleetCertificateConfiguration', dict] = attr.ib(
+    p_CertificateConfiguration: typing.Union['PropFleetCertificateConfiguration', dict] = attr.ib(
         default=None,
-        converter=FleetCertificateConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(FleetCertificateConfiguration)),
+        converter=PropFleetCertificateConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropFleetCertificateConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "CertificateConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-certificateconfiguration"""
@@ -639,10 +639,10 @@ class Fleet(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "DesiredEC2Instances"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-desiredec2instances"""
-    p_EC2InboundPermissions: typing.List[typing.Union['FleetIpPermission', dict]] = attr.ib(
+    p_EC2InboundPermissions: typing.List[typing.Union['PropFleetIpPermission', dict]] = attr.ib(
         default=None,
-        converter=FleetIpPermission.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(FleetIpPermission), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropFleetIpPermission.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropFleetIpPermission), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "EC2InboundPermissions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-ec2inboundpermissions"""
@@ -664,10 +664,10 @@ class Fleet(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "InstanceRoleARN"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-instancerolearn"""
-    p_Locations: typing.List[typing.Union['FleetLocationConfiguration', dict]] = attr.ib(
+    p_Locations: typing.List[typing.Union['PropFleetLocationConfiguration', dict]] = attr.ib(
         default=None,
-        converter=FleetLocationConfiguration.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(FleetLocationConfiguration), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropFleetLocationConfiguration.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropFleetLocationConfiguration), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Locations"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-locations"""
@@ -713,17 +713,17 @@ class Fleet(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "PeerVpcId"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-peervpcid"""
-    p_ResourceCreationLimitPolicy: typing.Union['FleetResourceCreationLimitPolicy', dict] = attr.ib(
+    p_ResourceCreationLimitPolicy: typing.Union['PropFleetResourceCreationLimitPolicy', dict] = attr.ib(
         default=None,
-        converter=FleetResourceCreationLimitPolicy.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(FleetResourceCreationLimitPolicy)),
+        converter=PropFleetResourceCreationLimitPolicy.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropFleetResourceCreationLimitPolicy)),
         metadata={AttrMeta.PROPERTY_NAME: "ResourceCreationLimitPolicy"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-resourcecreationlimitpolicy"""
-    p_RuntimeConfiguration: typing.Union['FleetRuntimeConfiguration', dict] = attr.ib(
+    p_RuntimeConfiguration: typing.Union['PropFleetRuntimeConfiguration', dict] = attr.ib(
         default=None,
-        converter=FleetRuntimeConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(FleetRuntimeConfiguration)),
+        converter=PropFleetRuntimeConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropFleetRuntimeConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "RuntimeConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-runtimeconfiguration"""
@@ -828,10 +828,10 @@ class MatchmakingConfiguration(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "FlexMatchMode"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-matchmakingconfiguration.html#cfn-gamelift-matchmakingconfiguration-flexmatchmode"""
-    p_GameProperties: typing.List[typing.Union['MatchmakingConfigurationGameProperty', dict]] = attr.ib(
+    p_GameProperties: typing.List[typing.Union['PropMatchmakingConfigurationGameProperty', dict]] = attr.ib(
         default=None,
-        converter=MatchmakingConfigurationGameProperty.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(MatchmakingConfigurationGameProperty), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropMatchmakingConfigurationGameProperty.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropMatchmakingConfigurationGameProperty), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "GameProperties"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-matchmakingconfiguration.html#cfn-gamelift-matchmakingconfiguration-gameproperties"""
@@ -888,10 +888,10 @@ class Alias(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Name"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-alias.html#cfn-gamelift-alias-name"""
-    rp_RoutingStrategy: typing.Union['AliasRoutingStrategy', dict] = attr.ib(
+    rp_RoutingStrategy: typing.Union['PropAliasRoutingStrategy', dict] = attr.ib(
         default=None,
-        converter=AliasRoutingStrategy.from_dict,
-        validator=attr.validators.instance_of(AliasRoutingStrategy),
+        converter=PropAliasRoutingStrategy.from_dict,
+        validator=attr.validators.instance_of(PropAliasRoutingStrategy),
         metadata={AttrMeta.PROPERTY_NAME: "RoutingStrategy"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-alias.html#cfn-gamelift-alias-routingstrategy"""
@@ -938,10 +938,10 @@ class Build(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "OperatingSystem"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-build.html#cfn-gamelift-build-operatingsystem"""
-    p_StorageLocation: typing.Union['BuildS3Location', dict] = attr.ib(
+    p_StorageLocation: typing.Union['PropBuildS3Location', dict] = attr.ib(
         default=None,
-        converter=BuildS3Location.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(BuildS3Location)),
+        converter=PropBuildS3Location.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropBuildS3Location)),
         metadata={AttrMeta.PROPERTY_NAME: "StorageLocation"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-build.html#cfn-gamelift-build-storagelocation"""
@@ -1027,17 +1027,17 @@ class GameSessionQueue(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "CustomEventData"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-gamesessionqueue.html#cfn-gamelift-gamesessionqueue-customeventdata"""
-    p_Destinations: typing.List[typing.Union['GameSessionQueueDestination', dict]] = attr.ib(
+    p_Destinations: typing.List[typing.Union['PropGameSessionQueueDestination', dict]] = attr.ib(
         default=None,
-        converter=GameSessionQueueDestination.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(GameSessionQueueDestination), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropGameSessionQueueDestination.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropGameSessionQueueDestination), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Destinations"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-gamesessionqueue.html#cfn-gamelift-gamesessionqueue-destinations"""
-    p_FilterConfiguration: typing.Union['GameSessionQueueFilterConfiguration', dict] = attr.ib(
+    p_FilterConfiguration: typing.Union['PropGameSessionQueueFilterConfiguration', dict] = attr.ib(
         default=None,
-        converter=GameSessionQueueFilterConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(GameSessionQueueFilterConfiguration)),
+        converter=PropGameSessionQueueFilterConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropGameSessionQueueFilterConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "FilterConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-gamesessionqueue.html#cfn-gamelift-gamesessionqueue-filterconfiguration"""
@@ -1047,17 +1047,17 @@ class GameSessionQueue(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "NotificationTarget"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-gamesessionqueue.html#cfn-gamelift-gamesessionqueue-notificationtarget"""
-    p_PlayerLatencyPolicies: typing.List[typing.Union['GameSessionQueuePlayerLatencyPolicy', dict]] = attr.ib(
+    p_PlayerLatencyPolicies: typing.List[typing.Union['PropGameSessionQueuePlayerLatencyPolicy', dict]] = attr.ib(
         default=None,
-        converter=GameSessionQueuePlayerLatencyPolicy.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(GameSessionQueuePlayerLatencyPolicy), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropGameSessionQueuePlayerLatencyPolicy.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropGameSessionQueuePlayerLatencyPolicy), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "PlayerLatencyPolicies"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-gamesessionqueue.html#cfn-gamelift-gamesessionqueue-playerlatencypolicies"""
-    p_PriorityConfiguration: typing.Union['GameSessionQueuePriorityConfiguration', dict] = attr.ib(
+    p_PriorityConfiguration: typing.Union['PropGameSessionQueuePriorityConfiguration', dict] = attr.ib(
         default=None,
-        converter=GameSessionQueuePriorityConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(GameSessionQueuePriorityConfiguration)),
+        converter=PropGameSessionQueuePriorityConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropGameSessionQueuePriorityConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "PriorityConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-gamesessionqueue.html#cfn-gamelift-gamesessionqueue-priorityconfiguration"""
@@ -1096,10 +1096,10 @@ class Script(Resource):
     AWS_OBJECT_TYPE = "AWS::GameLift::Script"
 
     
-    rp_StorageLocation: typing.Union['ScriptS3Location', dict] = attr.ib(
+    rp_StorageLocation: typing.Union['PropScriptS3Location', dict] = attr.ib(
         default=None,
-        converter=ScriptS3Location.from_dict,
-        validator=attr.validators.instance_of(ScriptS3Location),
+        converter=PropScriptS3Location.from_dict,
+        validator=attr.validators.instance_of(PropScriptS3Location),
         metadata={AttrMeta.PROPERTY_NAME: "StorageLocation"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-script.html#cfn-gamelift-script-storagelocation"""
@@ -1159,17 +1159,17 @@ class GameServerGroup(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "GameServerGroupName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-gameservergroup.html#cfn-gamelift-gameservergroup-gameservergroupname"""
-    rp_InstanceDefinitions: typing.List[typing.Union['GameServerGroupInstanceDefinition', dict]] = attr.ib(
+    rp_InstanceDefinitions: typing.List[typing.Union['PropGameServerGroupInstanceDefinition', dict]] = attr.ib(
         default=None,
-        converter=GameServerGroupInstanceDefinition.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(GameServerGroupInstanceDefinition), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropGameServerGroupInstanceDefinition.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropGameServerGroupInstanceDefinition), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "InstanceDefinitions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-gameservergroup.html#cfn-gamelift-gameservergroup-instancedefinitions"""
-    rp_LaunchTemplate: typing.Union['GameServerGroupLaunchTemplate', dict] = attr.ib(
+    rp_LaunchTemplate: typing.Union['PropGameServerGroupLaunchTemplate', dict] = attr.ib(
         default=None,
-        converter=GameServerGroupLaunchTemplate.from_dict,
-        validator=attr.validators.instance_of(GameServerGroupLaunchTemplate),
+        converter=PropGameServerGroupLaunchTemplate.from_dict,
+        validator=attr.validators.instance_of(PropGameServerGroupLaunchTemplate),
         metadata={AttrMeta.PROPERTY_NAME: "LaunchTemplate"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-gameservergroup.html#cfn-gamelift-gameservergroup-launchtemplate"""
@@ -1179,10 +1179,10 @@ class GameServerGroup(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "RoleArn"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-gameservergroup.html#cfn-gamelift-gameservergroup-rolearn"""
-    p_AutoScalingPolicy: typing.Union['GameServerGroupAutoScalingPolicy', dict] = attr.ib(
+    p_AutoScalingPolicy: typing.Union['PropGameServerGroupAutoScalingPolicy', dict] = attr.ib(
         default=None,
-        converter=GameServerGroupAutoScalingPolicy.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(GameServerGroupAutoScalingPolicy)),
+        converter=PropGameServerGroupAutoScalingPolicy.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropGameServerGroupAutoScalingPolicy)),
         metadata={AttrMeta.PROPERTY_NAME: "AutoScalingPolicy"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-gameservergroup.html#cfn-gamelift-gameservergroup-autoscalingpolicy"""

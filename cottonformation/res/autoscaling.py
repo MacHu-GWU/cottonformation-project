@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class LaunchConfigurationMetadataOptions(Property):
+class PropLaunchConfigurationMetadataOptions(Property):
     """
     AWS Object Type = "AWS::AutoScaling::LaunchConfiguration.MetadataOptions"
 
@@ -49,7 +49,7 @@ class LaunchConfigurationMetadataOptions(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-launchconfig-metadataoptions.html#cfn-autoscaling-launchconfig-metadataoptions-httptokens"""
 
 @attr.s
-class ScalingPolicyMetricDimension(Property):
+class PropScalingPolicyMetricDimension(Property):
     """
     AWS Object Type = "AWS::AutoScaling::ScalingPolicy.MetricDimension"
 
@@ -76,7 +76,7 @@ class ScalingPolicyMetricDimension(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-metricdimension.html#cfn-autoscaling-scalingpolicy-metricdimension-value"""
 
 @attr.s
-class AutoScalingGroupMetricsCollection(Property):
+class PropAutoScalingGroupMetricsCollection(Property):
     """
     AWS Object Type = "AWS::AutoScaling::AutoScalingGroup.MetricsCollection"
 
@@ -103,7 +103,7 @@ class AutoScalingGroupMetricsCollection(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-metricscollection.html#cfn-as-metricscollection-metrics"""
 
 @attr.s
-class AutoScalingGroupInstancesDistribution(Property):
+class PropAutoScalingGroupInstancesDistribution(Property):
     """
     AWS Object Type = "AWS::AutoScaling::AutoScalingGroup.InstancesDistribution"
 
@@ -158,7 +158,7 @@ class AutoScalingGroupInstancesDistribution(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-as-mixedinstancespolicy-instancesdistribution.html#cfn-autoscaling-autoscalinggroup-instancesdistribution-spotmaxprice"""
 
 @attr.s
-class AutoScalingGroupLifecycleHookSpecification(Property):
+class PropAutoScalingGroupLifecycleHookSpecification(Property):
     """
     AWS Object Type = "AWS::AutoScaling::AutoScalingGroup.LifecycleHookSpecification"
 
@@ -220,7 +220,7 @@ class AutoScalingGroupLifecycleHookSpecification(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-lifecyclehookspecification.html#cfn-autoscaling-autoscalinggroup-lifecyclehookspecification-rolearn"""
 
 @attr.s
-class AutoScalingGroupLaunchTemplateSpecification(Property):
+class PropAutoScalingGroupLaunchTemplateSpecification(Property):
     """
     AWS Object Type = "AWS::AutoScaling::AutoScalingGroup.LaunchTemplateSpecification"
 
@@ -254,7 +254,7 @@ class AutoScalingGroupLaunchTemplateSpecification(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-autoscalinggroup-launchtemplatespecification.html#cfn-autoscaling-autoscalinggroup-launchtemplatespecification-launchtemplatename"""
 
 @attr.s
-class ScalingPolicyStepAdjustment(Property):
+class PropScalingPolicyStepAdjustment(Property):
     """
     AWS Object Type = "AWS::AutoScaling::ScalingPolicy.StepAdjustment"
 
@@ -288,7 +288,7 @@ class ScalingPolicyStepAdjustment(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-stepadjustments.html#cfn-autoscaling-scalingpolicy-stepadjustment-metricintervalupperbound"""
 
 @attr.s
-class AutoScalingGroupNotificationConfiguration(Property):
+class PropAutoScalingGroupNotificationConfiguration(Property):
     """
     AWS Object Type = "AWS::AutoScaling::AutoScalingGroup.NotificationConfiguration"
 
@@ -315,7 +315,7 @@ class AutoScalingGroupNotificationConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-notificationconfigurations.html#cfn-as-group-notificationconfigurations-notificationtypes"""
 
 @attr.s
-class ScalingPolicyPredefinedMetricSpecification(Property):
+class PropScalingPolicyPredefinedMetricSpecification(Property):
     """
     AWS Object Type = "AWS::AutoScaling::ScalingPolicy.PredefinedMetricSpecification"
 
@@ -342,7 +342,7 @@ class ScalingPolicyPredefinedMetricSpecification(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-predefinedmetricspecification.html#cfn-autoscaling-scalingpolicy-predefinedmetricspecification-resourcelabel"""
 
 @attr.s
-class LaunchConfigurationBlockDevice(Property):
+class PropLaunchConfigurationBlockDevice(Property):
     """
     AWS Object Type = "AWS::AutoScaling::LaunchConfiguration.BlockDevice"
 
@@ -404,7 +404,7 @@ class LaunchConfigurationBlockDevice(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig-blockdev-template.html#cfn-as-launchconfig-blockdev-template-volumetype"""
 
 @attr.s
-class AutoScalingGroupTagProperty(Property):
+class PropAutoScalingGroupTagProperty(Property):
     """
     AWS Object Type = "AWS::AutoScaling::AutoScalingGroup.TagProperty"
 
@@ -438,7 +438,7 @@ class AutoScalingGroupTagProperty(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-tags.html#cfn-as-tags-Value"""
 
 @attr.s
-class LaunchConfigurationBlockDeviceMapping(Property):
+class PropLaunchConfigurationBlockDeviceMapping(Property):
     """
     AWS Object Type = "AWS::AutoScaling::LaunchConfiguration.BlockDeviceMapping"
 
@@ -459,10 +459,10 @@ class LaunchConfigurationBlockDeviceMapping(Property):
         metadata={AttrMeta.PROPERTY_NAME: "DeviceName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig-blockdev-mapping.html#cfn-as-launchconfig-blockdev-mapping-devicename"""
-    p_Ebs: typing.Union['LaunchConfigurationBlockDevice', dict] = attr.ib(
+    p_Ebs: typing.Union['PropLaunchConfigurationBlockDevice', dict] = attr.ib(
         default=None,
-        converter=LaunchConfigurationBlockDevice.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(LaunchConfigurationBlockDevice)),
+        converter=PropLaunchConfigurationBlockDevice.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropLaunchConfigurationBlockDevice)),
         metadata={AttrMeta.PROPERTY_NAME: "Ebs"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig-blockdev-mapping.html#cfn-as-launchconfig-blockdev-mapping-ebs"""
@@ -480,7 +480,7 @@ class LaunchConfigurationBlockDeviceMapping(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig-blockdev-mapping.html#cfn-as-launchconfig-blockdev-mapping-virtualname"""
 
 @attr.s
-class AutoScalingGroupLaunchTemplateOverrides(Property):
+class PropAutoScalingGroupLaunchTemplateOverrides(Property):
     """
     AWS Object Type = "AWS::AutoScaling::AutoScalingGroup.LaunchTemplateOverrides"
 
@@ -500,10 +500,10 @@ class AutoScalingGroupLaunchTemplateOverrides(Property):
         metadata={AttrMeta.PROPERTY_NAME: "InstanceType"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-as-mixedinstancespolicy-launchtemplateoverrides.html#cfn-autoscaling-autoscalinggroup-launchtemplateoverrides-instancetype"""
-    p_LaunchTemplateSpecification: typing.Union['AutoScalingGroupLaunchTemplateSpecification', dict] = attr.ib(
+    p_LaunchTemplateSpecification: typing.Union['PropAutoScalingGroupLaunchTemplateSpecification', dict] = attr.ib(
         default=None,
-        converter=AutoScalingGroupLaunchTemplateSpecification.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(AutoScalingGroupLaunchTemplateSpecification)),
+        converter=PropAutoScalingGroupLaunchTemplateSpecification.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropAutoScalingGroupLaunchTemplateSpecification)),
         metadata={AttrMeta.PROPERTY_NAME: "LaunchTemplateSpecification"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-as-mixedinstancespolicy-launchtemplateoverrides.html#cfn-autoscaling-autoscalinggroup-launchtemplateoverrides-launchtemplatespecification"""
@@ -515,7 +515,7 @@ class AutoScalingGroupLaunchTemplateOverrides(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-as-mixedinstancespolicy-launchtemplateoverrides.html#cfn-autoscaling-autoscalinggroup-launchtemplateoverrides-weightedcapacity"""
 
 @attr.s
-class ScalingPolicyCustomizedMetricSpecification(Property):
+class PropScalingPolicyCustomizedMetricSpecification(Property):
     """
     AWS Object Type = "AWS::AutoScaling::ScalingPolicy.CustomizedMetricSpecification"
 
@@ -549,10 +549,10 @@ class ScalingPolicyCustomizedMetricSpecification(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Statistic"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-customizedmetricspecification.html#cfn-autoscaling-scalingpolicy-customizedmetricspecification-statistic"""
-    p_Dimensions: typing.List[typing.Union['ScalingPolicyMetricDimension', dict]] = attr.ib(
+    p_Dimensions: typing.List[typing.Union['PropScalingPolicyMetricDimension', dict]] = attr.ib(
         default=None,
-        converter=ScalingPolicyMetricDimension.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ScalingPolicyMetricDimension), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropScalingPolicyMetricDimension.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropScalingPolicyMetricDimension), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Dimensions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-customizedmetricspecification.html#cfn-autoscaling-scalingpolicy-customizedmetricspecification-dimensions"""
@@ -564,7 +564,7 @@ class ScalingPolicyCustomizedMetricSpecification(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-customizedmetricspecification.html#cfn-autoscaling-scalingpolicy-customizedmetricspecification-unit"""
 
 @attr.s
-class ScalingPolicyTargetTrackingConfiguration(Property):
+class PropScalingPolicyTargetTrackingConfiguration(Property):
     """
     AWS Object Type = "AWS::AutoScaling::ScalingPolicy.TargetTrackingConfiguration"
 
@@ -585,10 +585,10 @@ class ScalingPolicyTargetTrackingConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "TargetValue"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-targettrackingconfiguration.html#cfn-autoscaling-scalingpolicy-targettrackingconfiguration-targetvalue"""
-    p_CustomizedMetricSpecification: typing.Union['ScalingPolicyCustomizedMetricSpecification', dict] = attr.ib(
+    p_CustomizedMetricSpecification: typing.Union['PropScalingPolicyCustomizedMetricSpecification', dict] = attr.ib(
         default=None,
-        converter=ScalingPolicyCustomizedMetricSpecification.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ScalingPolicyCustomizedMetricSpecification)),
+        converter=PropScalingPolicyCustomizedMetricSpecification.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropScalingPolicyCustomizedMetricSpecification)),
         metadata={AttrMeta.PROPERTY_NAME: "CustomizedMetricSpecification"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-targettrackingconfiguration.html#cfn-autoscaling-scalingpolicy-targettrackingconfiguration-customizedmetricspecification"""
@@ -598,16 +598,16 @@ class ScalingPolicyTargetTrackingConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "DisableScaleIn"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-targettrackingconfiguration.html#cfn-autoscaling-scalingpolicy-targettrackingconfiguration-disablescalein"""
-    p_PredefinedMetricSpecification: typing.Union['ScalingPolicyPredefinedMetricSpecification', dict] = attr.ib(
+    p_PredefinedMetricSpecification: typing.Union['PropScalingPolicyPredefinedMetricSpecification', dict] = attr.ib(
         default=None,
-        converter=ScalingPolicyPredefinedMetricSpecification.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ScalingPolicyPredefinedMetricSpecification)),
+        converter=PropScalingPolicyPredefinedMetricSpecification.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropScalingPolicyPredefinedMetricSpecification)),
         metadata={AttrMeta.PROPERTY_NAME: "PredefinedMetricSpecification"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-autoscaling-scalingpolicy-targettrackingconfiguration.html#cfn-autoscaling-scalingpolicy-targettrackingconfiguration-predefinedmetricspecification"""
 
 @attr.s
-class AutoScalingGroupLaunchTemplate(Property):
+class PropAutoScalingGroupLaunchTemplate(Property):
     """
     AWS Object Type = "AWS::AutoScaling::AutoScalingGroup.LaunchTemplate"
 
@@ -620,23 +620,23 @@ class AutoScalingGroupLaunchTemplate(Property):
     """
     AWS_OBJECT_TYPE = "AWS::AutoScaling::AutoScalingGroup.LaunchTemplate"
     
-    rp_LaunchTemplateSpecification: typing.Union['AutoScalingGroupLaunchTemplateSpecification', dict] = attr.ib(
+    rp_LaunchTemplateSpecification: typing.Union['PropAutoScalingGroupLaunchTemplateSpecification', dict] = attr.ib(
         default=None,
-        converter=AutoScalingGroupLaunchTemplateSpecification.from_dict,
-        validator=attr.validators.instance_of(AutoScalingGroupLaunchTemplateSpecification),
+        converter=PropAutoScalingGroupLaunchTemplateSpecification.from_dict,
+        validator=attr.validators.instance_of(PropAutoScalingGroupLaunchTemplateSpecification),
         metadata={AttrMeta.PROPERTY_NAME: "LaunchTemplateSpecification"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-as-mixedinstancespolicy-launchtemplate.html#cfn-as-group-launchtemplate"""
-    p_Overrides: typing.List[typing.Union['AutoScalingGroupLaunchTemplateOverrides', dict]] = attr.ib(
+    p_Overrides: typing.List[typing.Union['PropAutoScalingGroupLaunchTemplateOverrides', dict]] = attr.ib(
         default=None,
-        converter=AutoScalingGroupLaunchTemplateOverrides.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(AutoScalingGroupLaunchTemplateOverrides), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropAutoScalingGroupLaunchTemplateOverrides.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropAutoScalingGroupLaunchTemplateOverrides), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Overrides"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-as-mixedinstancespolicy-launchtemplate.html#cfn-as-mixedinstancespolicy-overrides"""
 
 @attr.s
-class AutoScalingGroupMixedInstancesPolicy(Property):
+class PropAutoScalingGroupMixedInstancesPolicy(Property):
     """
     AWS Object Type = "AWS::AutoScaling::AutoScalingGroup.MixedInstancesPolicy"
 
@@ -649,17 +649,17 @@ class AutoScalingGroupMixedInstancesPolicy(Property):
     """
     AWS_OBJECT_TYPE = "AWS::AutoScaling::AutoScalingGroup.MixedInstancesPolicy"
     
-    rp_LaunchTemplate: typing.Union['AutoScalingGroupLaunchTemplate', dict] = attr.ib(
+    rp_LaunchTemplate: typing.Union['PropAutoScalingGroupLaunchTemplate', dict] = attr.ib(
         default=None,
-        converter=AutoScalingGroupLaunchTemplate.from_dict,
-        validator=attr.validators.instance_of(AutoScalingGroupLaunchTemplate),
+        converter=PropAutoScalingGroupLaunchTemplate.from_dict,
+        validator=attr.validators.instance_of(PropAutoScalingGroupLaunchTemplate),
         metadata={AttrMeta.PROPERTY_NAME: "LaunchTemplate"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-as-group-mixedinstancespolicy.html#cfn-as-mixedinstancespolicy-launchtemplate"""
-    p_InstancesDistribution: typing.Union['AutoScalingGroupInstancesDistribution', dict] = attr.ib(
+    p_InstancesDistribution: typing.Union['PropAutoScalingGroupInstancesDistribution', dict] = attr.ib(
         default=None,
-        converter=AutoScalingGroupInstancesDistribution.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(AutoScalingGroupInstancesDistribution)),
+        converter=PropAutoScalingGroupInstancesDistribution.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropAutoScalingGroupInstancesDistribution)),
         metadata={AttrMeta.PROPERTY_NAME: "InstancesDistribution"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-as-group-mixedinstancespolicy.html#cfn-as-mixedinstancespolicy-instancesdistribution"""
@@ -717,10 +717,10 @@ class LaunchConfiguration(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "AssociatePublicIpAddress"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig.html#cf-as-launchconfig-associatepubip"""
-    p_BlockDeviceMappings: typing.List[typing.Union['LaunchConfigurationBlockDeviceMapping', dict]] = attr.ib(
+    p_BlockDeviceMappings: typing.List[typing.Union['PropLaunchConfigurationBlockDeviceMapping', dict]] = attr.ib(
         default=None,
-        converter=LaunchConfigurationBlockDeviceMapping.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(LaunchConfigurationBlockDeviceMapping), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropLaunchConfigurationBlockDeviceMapping.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropLaunchConfigurationBlockDeviceMapping), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "BlockDeviceMappings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig.html#cfn-as-launchconfig-blockdevicemappings"""
@@ -778,10 +778,10 @@ class LaunchConfiguration(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "LaunchConfigurationName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig.html#cfn-autoscaling-launchconfig-launchconfigurationname"""
-    p_MetadataOptions: typing.Union['LaunchConfigurationMetadataOptions', dict] = attr.ib(
+    p_MetadataOptions: typing.Union['PropLaunchConfigurationMetadataOptions', dict] = attr.ib(
         default=None,
-        converter=LaunchConfigurationMetadataOptions.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(LaunchConfigurationMetadataOptions)),
+        converter=PropLaunchConfigurationMetadataOptions.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropLaunchConfigurationMetadataOptions)),
         metadata={AttrMeta.PROPERTY_NAME: "MetadataOptions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-launchconfig.html#cfn-autoscaling-launchconfig-metadataoptions"""
@@ -889,17 +889,17 @@ class ScalingPolicy(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "ScalingAdjustment"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-policy.html#cfn-as-scalingpolicy-scalingadjustment"""
-    p_StepAdjustments: typing.List[typing.Union['ScalingPolicyStepAdjustment', dict]] = attr.ib(
+    p_StepAdjustments: typing.List[typing.Union['PropScalingPolicyStepAdjustment', dict]] = attr.ib(
         default=None,
-        converter=ScalingPolicyStepAdjustment.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ScalingPolicyStepAdjustment), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropScalingPolicyStepAdjustment.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropScalingPolicyStepAdjustment), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "StepAdjustments"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-policy.html#cfn-as-scalingpolicy-stepadjustments"""
-    p_TargetTrackingConfiguration: typing.Union['ScalingPolicyTargetTrackingConfiguration', dict] = attr.ib(
+    p_TargetTrackingConfiguration: typing.Union['PropScalingPolicyTargetTrackingConfiguration', dict] = attr.ib(
         default=None,
-        converter=ScalingPolicyTargetTrackingConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ScalingPolicyTargetTrackingConfiguration)),
+        converter=PropScalingPolicyTargetTrackingConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropScalingPolicyTargetTrackingConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "TargetTrackingConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-policy.html#cfn-autoscaling-scalingpolicy-targettrackingconfiguration"""
@@ -1133,17 +1133,17 @@ class AutoScalingGroup(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "LaunchConfigurationName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#cfn-as-group-launchconfigurationname"""
-    p_LaunchTemplate: typing.Union['AutoScalingGroupLaunchTemplateSpecification', dict] = attr.ib(
+    p_LaunchTemplate: typing.Union['PropAutoScalingGroupLaunchTemplateSpecification', dict] = attr.ib(
         default=None,
-        converter=AutoScalingGroupLaunchTemplateSpecification.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(AutoScalingGroupLaunchTemplateSpecification)),
+        converter=PropAutoScalingGroupLaunchTemplateSpecification.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropAutoScalingGroupLaunchTemplateSpecification)),
         metadata={AttrMeta.PROPERTY_NAME: "LaunchTemplate"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#cfn-as-group-launchtemplate"""
-    p_LifecycleHookSpecificationList: typing.List[typing.Union['AutoScalingGroupLifecycleHookSpecification', dict]] = attr.ib(
+    p_LifecycleHookSpecificationList: typing.List[typing.Union['PropAutoScalingGroupLifecycleHookSpecification', dict]] = attr.ib(
         default=None,
-        converter=AutoScalingGroupLifecycleHookSpecification.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(AutoScalingGroupLifecycleHookSpecification), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropAutoScalingGroupLifecycleHookSpecification.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropAutoScalingGroupLifecycleHookSpecification), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "LifecycleHookSpecificationList"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#cfn-autoscaling-autoscalinggroup-lifecyclehookspecificationlist"""
@@ -1159,17 +1159,17 @@ class AutoScalingGroup(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "MaxInstanceLifetime"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#cfn-as-group-maxinstancelifetime"""
-    p_MetricsCollection: typing.List[typing.Union['AutoScalingGroupMetricsCollection', dict]] = attr.ib(
+    p_MetricsCollection: typing.List[typing.Union['PropAutoScalingGroupMetricsCollection', dict]] = attr.ib(
         default=None,
-        converter=AutoScalingGroupMetricsCollection.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(AutoScalingGroupMetricsCollection), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropAutoScalingGroupMetricsCollection.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropAutoScalingGroupMetricsCollection), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "MetricsCollection"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#cfn-as-group-metricscollection"""
-    p_MixedInstancesPolicy: typing.Union['AutoScalingGroupMixedInstancesPolicy', dict] = attr.ib(
+    p_MixedInstancesPolicy: typing.Union['PropAutoScalingGroupMixedInstancesPolicy', dict] = attr.ib(
         default=None,
-        converter=AutoScalingGroupMixedInstancesPolicy.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(AutoScalingGroupMixedInstancesPolicy)),
+        converter=PropAutoScalingGroupMixedInstancesPolicy.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropAutoScalingGroupMixedInstancesPolicy)),
         metadata={AttrMeta.PROPERTY_NAME: "MixedInstancesPolicy"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#cfn-as-group-mixedinstancespolicy"""
@@ -1179,10 +1179,10 @@ class AutoScalingGroup(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "NewInstancesProtectedFromScaleIn"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#cfn-as-group-newinstancesprotectedfromscalein"""
-    p_NotificationConfigurations: typing.List[typing.Union['AutoScalingGroupNotificationConfiguration', dict]] = attr.ib(
+    p_NotificationConfigurations: typing.List[typing.Union['PropAutoScalingGroupNotificationConfiguration', dict]] = attr.ib(
         default=None,
-        converter=AutoScalingGroupNotificationConfiguration.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(AutoScalingGroupNotificationConfiguration), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropAutoScalingGroupNotificationConfiguration.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropAutoScalingGroupNotificationConfiguration), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "NotificationConfigurations"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#cfn-as-group-notificationconfigurations"""
@@ -1216,10 +1216,10 @@ class AutoScalingGroup(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "VPCZoneIdentifier"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#cfn-as-group-vpczoneidentifier"""
-    p_Tags: typing.List[typing.Union['AutoScalingGroupTagProperty', dict]] = attr.ib(
+    p_Tags: typing.List[typing.Union['PropAutoScalingGroupTagProperty', dict]] = attr.ib(
         default=None,
-        converter=AutoScalingGroupTagProperty.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(AutoScalingGroupTagProperty), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropAutoScalingGroupTagProperty.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropAutoScalingGroupTagProperty), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Tags"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-as-group.html#cfn-as-group-tags"""

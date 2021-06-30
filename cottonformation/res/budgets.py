@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class BudgetsActionIamActionDefinition(Property):
+class PropBudgetsActionIamActionDefinition(Property):
     """
     AWS Object Type = "AWS::Budgets::BudgetsAction.IamActionDefinition"
 
@@ -56,7 +56,7 @@ class BudgetsActionIamActionDefinition(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budgetsaction-iamactiondefinition.html#cfn-budgets-budgetsaction-iamactiondefinition-users"""
 
 @attr.s
-class BudgetSubscriber(Property):
+class PropBudgetSubscriber(Property):
     """
     AWS Object Type = "AWS::Budgets::Budget.Subscriber"
 
@@ -83,7 +83,7 @@ class BudgetSubscriber(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-subscriber.html#cfn-budgets-budget-subscriber-subscriptiontype"""
 
 @attr.s
-class BudgetTimePeriod(Property):
+class PropBudgetTimePeriod(Property):
     """
     AWS Object Type = "AWS::Budgets::Budget.TimePeriod"
 
@@ -110,7 +110,7 @@ class BudgetTimePeriod(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-timeperiod.html#cfn-budgets-budget-timeperiod-start"""
 
 @attr.s
-class BudgetsActionScpActionDefinition(Property):
+class PropBudgetsActionScpActionDefinition(Property):
     """
     AWS Object Type = "AWS::Budgets::BudgetsAction.ScpActionDefinition"
 
@@ -137,7 +137,7 @@ class BudgetsActionScpActionDefinition(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budgetsaction-scpactiondefinition.html#cfn-budgets-budgetsaction-scpactiondefinition-targetids"""
 
 @attr.s
-class BudgetsActionSsmActionDefinition(Property):
+class PropBudgetsActionSsmActionDefinition(Property):
     """
     AWS Object Type = "AWS::Budgets::BudgetsAction.SsmActionDefinition"
 
@@ -171,7 +171,7 @@ class BudgetsActionSsmActionDefinition(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budgetsaction-ssmactiondefinition.html#cfn-budgets-budgetsaction-ssmactiondefinition-subtype"""
 
 @attr.s
-class BudgetsActionActionThreshold(Property):
+class PropBudgetsActionActionThreshold(Property):
     """
     AWS Object Type = "AWS::Budgets::BudgetsAction.ActionThreshold"
 
@@ -198,7 +198,7 @@ class BudgetsActionActionThreshold(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budgetsaction-actionthreshold.html#cfn-budgets-budgetsaction-actionthreshold-value"""
 
 @attr.s
-class BudgetCostTypes(Property):
+class PropBudgetCostTypes(Property):
     """
     AWS Object Type = "AWS::Budgets::Budget.CostTypes"
 
@@ -288,7 +288,7 @@ class BudgetCostTypes(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-costtypes.html#cfn-budgets-budget-costtypes-useblended"""
 
 @attr.s
-class BudgetNotification(Property):
+class PropBudgetNotification(Property):
     """
     AWS Object Type = "AWS::Budgets::Budget.Notification"
 
@@ -329,7 +329,7 @@ class BudgetNotification(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-notification.html#cfn-budgets-budget-notification-thresholdtype"""
 
 @attr.s
-class BudgetsActionSubscriber(Property):
+class PropBudgetsActionSubscriber(Property):
     """
     AWS Object Type = "AWS::Budgets::BudgetsAction.Subscriber"
 
@@ -356,7 +356,7 @@ class BudgetsActionSubscriber(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budgetsaction-subscriber.html#cfn-budgets-budgetsaction-subscriber-type"""
 
 @attr.s
-class BudgetSpend(Property):
+class PropBudgetSpend(Property):
     """
     AWS Object Type = "AWS::Budgets::Budget.Spend"
 
@@ -383,7 +383,7 @@ class BudgetSpend(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-spend.html#cfn-budgets-budget-spend-unit"""
 
 @attr.s
-class BudgetBudgetData(Property):
+class PropBudgetBudgetData(Property):
     """
     AWS Object Type = "AWS::Budgets::Budget.BudgetData"
 
@@ -414,10 +414,10 @@ class BudgetBudgetData(Property):
         metadata={AttrMeta.PROPERTY_NAME: "TimeUnit"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-budgetdata.html#cfn-budgets-budget-budgetdata-timeunit"""
-    p_BudgetLimit: typing.Union['BudgetSpend', dict] = attr.ib(
+    p_BudgetLimit: typing.Union['PropBudgetSpend', dict] = attr.ib(
         default=None,
-        converter=BudgetSpend.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(BudgetSpend)),
+        converter=PropBudgetSpend.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropBudgetSpend)),
         metadata={AttrMeta.PROPERTY_NAME: "BudgetLimit"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-budgetdata.html#cfn-budgets-budget-budgetdata-budgetlimit"""
@@ -433,10 +433,10 @@ class BudgetBudgetData(Property):
         metadata={AttrMeta.PROPERTY_NAME: "CostFilters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-budgetdata.html#cfn-budgets-budget-budgetdata-costfilters"""
-    p_CostTypes: typing.Union['BudgetCostTypes', dict] = attr.ib(
+    p_CostTypes: typing.Union['PropBudgetCostTypes', dict] = attr.ib(
         default=None,
-        converter=BudgetCostTypes.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(BudgetCostTypes)),
+        converter=PropBudgetCostTypes.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropBudgetCostTypes)),
         metadata={AttrMeta.PROPERTY_NAME: "CostTypes"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-budgetdata.html#cfn-budgets-budget-budgetdata-costtypes"""
@@ -446,16 +446,16 @@ class BudgetBudgetData(Property):
         metadata={AttrMeta.PROPERTY_NAME: "PlannedBudgetLimits"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-budgetdata.html#cfn-budgets-budget-budgetdata-plannedbudgetlimits"""
-    p_TimePeriod: typing.Union['BudgetTimePeriod', dict] = attr.ib(
+    p_TimePeriod: typing.Union['PropBudgetTimePeriod', dict] = attr.ib(
         default=None,
-        converter=BudgetTimePeriod.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(BudgetTimePeriod)),
+        converter=PropBudgetTimePeriod.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropBudgetTimePeriod)),
         metadata={AttrMeta.PROPERTY_NAME: "TimePeriod"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-budgetdata.html#cfn-budgets-budget-budgetdata-timeperiod"""
 
 @attr.s
-class BudgetsActionDefinition(Property):
+class PropBudgetsActionDefinition(Property):
     """
     AWS Object Type = "AWS::Budgets::BudgetsAction.Definition"
 
@@ -469,30 +469,30 @@ class BudgetsActionDefinition(Property):
     """
     AWS_OBJECT_TYPE = "AWS::Budgets::BudgetsAction.Definition"
     
-    p_IamActionDefinition: typing.Union['BudgetsActionIamActionDefinition', dict] = attr.ib(
+    p_IamActionDefinition: typing.Union['PropBudgetsActionIamActionDefinition', dict] = attr.ib(
         default=None,
-        converter=BudgetsActionIamActionDefinition.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(BudgetsActionIamActionDefinition)),
+        converter=PropBudgetsActionIamActionDefinition.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropBudgetsActionIamActionDefinition)),
         metadata={AttrMeta.PROPERTY_NAME: "IamActionDefinition"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budgetsaction-definition.html#cfn-budgets-budgetsaction-definition-iamactiondefinition"""
-    p_ScpActionDefinition: typing.Union['BudgetsActionScpActionDefinition', dict] = attr.ib(
+    p_ScpActionDefinition: typing.Union['PropBudgetsActionScpActionDefinition', dict] = attr.ib(
         default=None,
-        converter=BudgetsActionScpActionDefinition.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(BudgetsActionScpActionDefinition)),
+        converter=PropBudgetsActionScpActionDefinition.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropBudgetsActionScpActionDefinition)),
         metadata={AttrMeta.PROPERTY_NAME: "ScpActionDefinition"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budgetsaction-definition.html#cfn-budgets-budgetsaction-definition-scpactiondefinition"""
-    p_SsmActionDefinition: typing.Union['BudgetsActionSsmActionDefinition', dict] = attr.ib(
+    p_SsmActionDefinition: typing.Union['PropBudgetsActionSsmActionDefinition', dict] = attr.ib(
         default=None,
-        converter=BudgetsActionSsmActionDefinition.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(BudgetsActionSsmActionDefinition)),
+        converter=PropBudgetsActionSsmActionDefinition.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropBudgetsActionSsmActionDefinition)),
         metadata={AttrMeta.PROPERTY_NAME: "SsmActionDefinition"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budgetsaction-definition.html#cfn-budgets-budgetsaction-definition-ssmactiondefinition"""
 
 @attr.s
-class BudgetNotificationWithSubscribers(Property):
+class PropBudgetNotificationWithSubscribers(Property):
     """
     AWS Object Type = "AWS::Budgets::Budget.NotificationWithSubscribers"
 
@@ -505,17 +505,17 @@ class BudgetNotificationWithSubscribers(Property):
     """
     AWS_OBJECT_TYPE = "AWS::Budgets::Budget.NotificationWithSubscribers"
     
-    rp_Notification: typing.Union['BudgetNotification', dict] = attr.ib(
+    rp_Notification: typing.Union['PropBudgetNotification', dict] = attr.ib(
         default=None,
-        converter=BudgetNotification.from_dict,
-        validator=attr.validators.instance_of(BudgetNotification),
+        converter=PropBudgetNotification.from_dict,
+        validator=attr.validators.instance_of(PropBudgetNotification),
         metadata={AttrMeta.PROPERTY_NAME: "Notification"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-notificationwithsubscribers.html#cfn-budgets-budget-notificationwithsubscribers-notification"""
-    rp_Subscribers: typing.List[typing.Union['BudgetSubscriber', dict]] = attr.ib(
+    rp_Subscribers: typing.List[typing.Union['PropBudgetSubscriber', dict]] = attr.ib(
         default=None,
-        converter=BudgetSubscriber.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(BudgetSubscriber), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropBudgetSubscriber.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropBudgetSubscriber), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "Subscribers"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-budgets-budget-notificationwithsubscribers.html#cfn-budgets-budget-notificationwithsubscribers-subscribers"""
@@ -544,10 +544,10 @@ class BudgetsAction(Resource):
     AWS_OBJECT_TYPE = "AWS::Budgets::BudgetsAction"
 
     
-    rp_ActionThreshold: typing.Union['BudgetsActionActionThreshold', dict] = attr.ib(
+    rp_ActionThreshold: typing.Union['PropBudgetsActionActionThreshold', dict] = attr.ib(
         default=None,
-        converter=BudgetsActionActionThreshold.from_dict,
-        validator=attr.validators.instance_of(BudgetsActionActionThreshold),
+        converter=PropBudgetsActionActionThreshold.from_dict,
+        validator=attr.validators.instance_of(PropBudgetsActionActionThreshold),
         metadata={AttrMeta.PROPERTY_NAME: "ActionThreshold"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-budgets-budgetsaction.html#cfn-budgets-budgetsaction-actionthreshold"""
@@ -563,10 +563,10 @@ class BudgetsAction(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "BudgetName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-budgets-budgetsaction.html#cfn-budgets-budgetsaction-budgetname"""
-    rp_Definition: typing.Union['BudgetsActionDefinition', dict] = attr.ib(
+    rp_Definition: typing.Union['PropBudgetsActionDefinition', dict] = attr.ib(
         default=None,
-        converter=BudgetsActionDefinition.from_dict,
-        validator=attr.validators.instance_of(BudgetsActionDefinition),
+        converter=PropBudgetsActionDefinition.from_dict,
+        validator=attr.validators.instance_of(PropBudgetsActionDefinition),
         metadata={AttrMeta.PROPERTY_NAME: "Definition"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-budgets-budgetsaction.html#cfn-budgets-budgetsaction-definition"""
@@ -588,10 +588,10 @@ class BudgetsAction(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "ApprovalModel"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-budgets-budgetsaction.html#cfn-budgets-budgetsaction-approvalmodel"""
-    p_Subscribers: typing.List[typing.Union['BudgetsActionSubscriber', dict]] = attr.ib(
+    p_Subscribers: typing.List[typing.Union['PropBudgetsActionSubscriber', dict]] = attr.ib(
         default=None,
-        converter=BudgetsActionSubscriber.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(BudgetsActionSubscriber), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropBudgetsActionSubscriber.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropBudgetsActionSubscriber), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Subscribers"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-budgets-budgetsaction.html#cfn-budgets-budgetsaction-subscribers"""
@@ -618,17 +618,17 @@ class Budget(Resource):
     AWS_OBJECT_TYPE = "AWS::Budgets::Budget"
 
     
-    rp_Budget: typing.Union['BudgetBudgetData', dict] = attr.ib(
+    rp_Budget: typing.Union['PropBudgetBudgetData', dict] = attr.ib(
         default=None,
-        converter=BudgetBudgetData.from_dict,
-        validator=attr.validators.instance_of(BudgetBudgetData),
+        converter=PropBudgetBudgetData.from_dict,
+        validator=attr.validators.instance_of(PropBudgetBudgetData),
         metadata={AttrMeta.PROPERTY_NAME: "Budget"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-budgets-budget.html#cfn-budgets-budget-budget"""
-    p_NotificationsWithSubscribers: typing.List[typing.Union['BudgetNotificationWithSubscribers', dict]] = attr.ib(
+    p_NotificationsWithSubscribers: typing.List[typing.Union['PropBudgetNotificationWithSubscribers', dict]] = attr.ib(
         default=None,
-        converter=BudgetNotificationWithSubscribers.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(BudgetNotificationWithSubscribers), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropBudgetNotificationWithSubscribers.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropBudgetNotificationWithSubscribers), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "NotificationsWithSubscribers"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-budgets-budget.html#cfn-budgets-budget-notificationswithsubscribers"""

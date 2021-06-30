@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class ProfilingGroupChannel(Property):
+class PropProfilingGroupChannel(Property):
     """
     AWS Object Type = "AWS::CodeGuruProfiler::ProfilingGroup.Channel"
 
@@ -74,10 +74,10 @@ class ProfilingGroup(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "AgentPermissions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codeguruprofiler-profilinggroup.html#cfn-codeguruprofiler-profilinggroup-agentpermissions"""
-    p_AnomalyDetectionNotificationConfiguration: typing.List[typing.Union['ProfilingGroupChannel', dict]] = attr.ib(
+    p_AnomalyDetectionNotificationConfiguration: typing.List[typing.Union['PropProfilingGroupChannel', dict]] = attr.ib(
         default=None,
-        converter=ProfilingGroupChannel.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ProfilingGroupChannel), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropProfilingGroupChannel.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropProfilingGroupChannel), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "AnomalyDetectionNotificationConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codeguruprofiler-profilinggroup.html#cfn-codeguruprofiler-profilinggroup-anomalydetectionnotificationconfiguration"""

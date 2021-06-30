@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class AppEnvironmentVariable(Property):
+class PropAppEnvironmentVariable(Property):
     """
     AWS Object Type = "AWS::Amplify::App.EnvironmentVariable"
 
@@ -42,7 +42,7 @@ class AppEnvironmentVariable(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplify-app-environmentvariable.html#cfn-amplify-app-environmentvariable-value"""
 
 @attr.s
-class DomainSubDomainSetting(Property):
+class PropDomainSubDomainSetting(Property):
     """
     AWS Object Type = "AWS::Amplify::Domain.SubDomainSetting"
 
@@ -69,7 +69,7 @@ class DomainSubDomainSetting(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplify-domain-subdomainsetting.html#cfn-amplify-domain-subdomainsetting-prefix"""
 
 @attr.s
-class BranchBasicAuthConfig(Property):
+class PropBranchBasicAuthConfig(Property):
     """
     AWS Object Type = "AWS::Amplify::Branch.BasicAuthConfig"
 
@@ -103,7 +103,7 @@ class BranchBasicAuthConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplify-branch-basicauthconfig.html#cfn-amplify-branch-basicauthconfig-enablebasicauth"""
 
 @attr.s
-class AppBasicAuthConfig(Property):
+class PropAppBasicAuthConfig(Property):
     """
     AWS Object Type = "AWS::Amplify::App.BasicAuthConfig"
 
@@ -137,7 +137,7 @@ class AppBasicAuthConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplify-app-basicauthconfig.html#cfn-amplify-app-basicauthconfig-username"""
 
 @attr.s
-class BranchEnvironmentVariable(Property):
+class PropBranchEnvironmentVariable(Property):
     """
     AWS Object Type = "AWS::Amplify::Branch.EnvironmentVariable"
 
@@ -164,7 +164,7 @@ class BranchEnvironmentVariable(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplify-branch-environmentvariable.html#cfn-amplify-branch-environmentvariable-value"""
 
 @attr.s
-class AppCustomRule(Property):
+class PropAppCustomRule(Property):
     """
     AWS Object Type = "AWS::Amplify::App.CustomRule"
 
@@ -205,7 +205,7 @@ class AppCustomRule(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplify-app-customrule.html#cfn-amplify-app-customrule-status"""
 
 @attr.s
-class AppAutoBranchCreationConfig(Property):
+class PropAppAutoBranchCreationConfig(Property):
     """
     AWS Object Type = "AWS::Amplify::App.AutoBranchCreationConfig"
 
@@ -232,10 +232,10 @@ class AppAutoBranchCreationConfig(Property):
         metadata={AttrMeta.PROPERTY_NAME: "AutoBranchCreationPatterns"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplify-app-autobranchcreationconfig.html#cfn-amplify-app-autobranchcreationconfig-autobranchcreationpatterns"""
-    p_BasicAuthConfig: typing.Union['AppBasicAuthConfig', dict] = attr.ib(
+    p_BasicAuthConfig: typing.Union['PropAppBasicAuthConfig', dict] = attr.ib(
         default=None,
-        converter=AppBasicAuthConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(AppBasicAuthConfig)),
+        converter=PropAppBasicAuthConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropAppBasicAuthConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "BasicAuthConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplify-app-autobranchcreationconfig.html#cfn-amplify-app-autobranchcreationconfig-basicauthconfig"""
@@ -269,10 +269,10 @@ class AppAutoBranchCreationConfig(Property):
         metadata={AttrMeta.PROPERTY_NAME: "EnablePullRequestPreview"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplify-app-autobranchcreationconfig.html#cfn-amplify-app-autobranchcreationconfig-enablepullrequestpreview"""
-    p_EnvironmentVariables: typing.List[typing.Union['AppEnvironmentVariable', dict]] = attr.ib(
+    p_EnvironmentVariables: typing.List[typing.Union['PropAppEnvironmentVariable', dict]] = attr.ib(
         default=None,
-        converter=AppEnvironmentVariable.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(AppEnvironmentVariable), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropAppEnvironmentVariable.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropAppEnvironmentVariable), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "EnvironmentVariables"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-amplify-app-autobranchcreationconfig.html#cfn-amplify-app-autobranchcreationconfig-environmentvariables"""
@@ -331,17 +331,17 @@ class App(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "AccessToken"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-app.html#cfn-amplify-app-accesstoken"""
-    p_AutoBranchCreationConfig: typing.Union['AppAutoBranchCreationConfig', dict] = attr.ib(
+    p_AutoBranchCreationConfig: typing.Union['PropAppAutoBranchCreationConfig', dict] = attr.ib(
         default=None,
-        converter=AppAutoBranchCreationConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(AppAutoBranchCreationConfig)),
+        converter=PropAppAutoBranchCreationConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropAppAutoBranchCreationConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "AutoBranchCreationConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-app.html#cfn-amplify-app-autobranchcreationconfig"""
-    p_BasicAuthConfig: typing.Union['AppBasicAuthConfig', dict] = attr.ib(
+    p_BasicAuthConfig: typing.Union['PropAppBasicAuthConfig', dict] = attr.ib(
         default=None,
-        converter=AppBasicAuthConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(AppBasicAuthConfig)),
+        converter=PropAppBasicAuthConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropAppBasicAuthConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "BasicAuthConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-app.html#cfn-amplify-app-basicauthconfig"""
@@ -357,10 +357,10 @@ class App(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "CustomHeaders"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-app.html#cfn-amplify-app-customheaders"""
-    p_CustomRules: typing.List[typing.Union['AppCustomRule', dict]] = attr.ib(
+    p_CustomRules: typing.List[typing.Union['PropAppCustomRule', dict]] = attr.ib(
         default=None,
-        converter=AppCustomRule.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(AppCustomRule), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropAppCustomRule.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropAppCustomRule), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "CustomRules"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-app.html#cfn-amplify-app-customrules"""
@@ -376,10 +376,10 @@ class App(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "EnableBranchAutoDeletion"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-app.html#cfn-amplify-app-enablebranchautodeletion"""
-    p_EnvironmentVariables: typing.List[typing.Union['AppEnvironmentVariable', dict]] = attr.ib(
+    p_EnvironmentVariables: typing.List[typing.Union['PropAppEnvironmentVariable', dict]] = attr.ib(
         default=None,
-        converter=AppEnvironmentVariable.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(AppEnvironmentVariable), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropAppEnvironmentVariable.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropAppEnvironmentVariable), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "EnvironmentVariables"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-app.html#cfn-amplify-app-environmentvariables"""
@@ -468,10 +468,10 @@ class Branch(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "BranchName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-branch.html#cfn-amplify-branch-branchname"""
-    p_BasicAuthConfig: typing.Union['BranchBasicAuthConfig', dict] = attr.ib(
+    p_BasicAuthConfig: typing.Union['PropBranchBasicAuthConfig', dict] = attr.ib(
         default=None,
-        converter=BranchBasicAuthConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(BranchBasicAuthConfig)),
+        converter=PropBranchBasicAuthConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropBranchBasicAuthConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "BasicAuthConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-branch.html#cfn-amplify-branch-basicauthconfig"""
@@ -505,10 +505,10 @@ class Branch(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "EnablePullRequestPreview"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-branch.html#cfn-amplify-branch-enablepullrequestpreview"""
-    p_EnvironmentVariables: typing.List[typing.Union['BranchEnvironmentVariable', dict]] = attr.ib(
+    p_EnvironmentVariables: typing.List[typing.Union['PropBranchEnvironmentVariable', dict]] = attr.ib(
         default=None,
-        converter=BranchEnvironmentVariable.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(BranchEnvironmentVariable), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropBranchEnvironmentVariable.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropBranchEnvironmentVariable), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "EnvironmentVariables"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-branch.html#cfn-amplify-branch-environmentvariables"""
@@ -575,10 +575,10 @@ class Domain(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "DomainName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-domain.html#cfn-amplify-domain-domainname"""
-    rp_SubDomainSettings: typing.List[typing.Union['DomainSubDomainSetting', dict]] = attr.ib(
+    rp_SubDomainSettings: typing.List[typing.Union['PropDomainSubDomainSetting', dict]] = attr.ib(
         default=None,
-        converter=DomainSubDomainSetting.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(DomainSubDomainSetting), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropDomainSubDomainSetting.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDomainSubDomainSetting), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "SubDomainSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-domain.html#cfn-amplify-domain-subdomainsettings"""

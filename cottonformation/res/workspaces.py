@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class WorkspaceWorkspaceProperties(Property):
+class PropWorkspaceWorkspaceProperties(Property):
     """
     AWS Object Type = "AWS::WorkSpaces::Workspace.WorkspaceProperties"
 
@@ -63,7 +63,7 @@ class WorkspaceWorkspaceProperties(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-workspaces-workspace-workspaceproperties.html#cfn-workspaces-workspace-workspaceproperties-uservolumesizegib"""
 
 @attr.s
-class ConnectionAliasConnectionAliasAssociation(Property):
+class PropConnectionAliasConnectionAliasAssociation(Property):
     """
     AWS Object Type = "AWS::WorkSpaces::ConnectionAlias.ConnectionAliasAssociation"
 
@@ -163,10 +163,10 @@ class Workspace(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "VolumeEncryptionKey"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspace.html#cfn-workspaces-workspace-volumeencryptionkey"""
-    p_WorkspaceProperties: typing.Union['WorkspaceWorkspaceProperties', dict] = attr.ib(
+    p_WorkspaceProperties: typing.Union['PropWorkspaceWorkspaceProperties', dict] = attr.ib(
         default=None,
-        converter=WorkspaceWorkspaceProperties.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(WorkspaceWorkspaceProperties)),
+        converter=PropWorkspaceWorkspaceProperties.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropWorkspaceWorkspaceProperties)),
         metadata={AttrMeta.PROPERTY_NAME: "WorkspaceProperties"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspace.html#cfn-workspaces-workspace-workspaceproperties"""

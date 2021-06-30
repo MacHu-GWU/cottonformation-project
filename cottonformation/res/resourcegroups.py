@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class GroupTagFilter(Property):
+class PropGroupTagFilter(Property):
     """
     AWS Object Type = "AWS::ResourceGroups::Group.TagFilter"
 
@@ -42,7 +42,7 @@ class GroupTagFilter(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resourcegroups-group-tagfilter.html#cfn-resourcegroups-group-tagfilter-values"""
 
 @attr.s
-class GroupQuery(Property):
+class PropGroupQuery(Property):
     """
     AWS Object Type = "AWS::ResourceGroups::Group.Query"
 
@@ -68,16 +68,16 @@ class GroupQuery(Property):
         metadata={AttrMeta.PROPERTY_NAME: "StackIdentifier"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resourcegroups-group-query.html#cfn-resourcegroups-group-query-stackidentifier"""
-    p_TagFilters: typing.List[typing.Union['GroupTagFilter', dict]] = attr.ib(
+    p_TagFilters: typing.List[typing.Union['PropGroupTagFilter', dict]] = attr.ib(
         default=None,
-        converter=GroupTagFilter.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(GroupTagFilter), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropGroupTagFilter.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropGroupTagFilter), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "TagFilters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resourcegroups-group-query.html#cfn-resourcegroups-group-query-tagfilters"""
 
 @attr.s
-class GroupConfigurationParameter(Property):
+class PropGroupConfigurationParameter(Property):
     """
     AWS Object Type = "AWS::ResourceGroups::Group.ConfigurationParameter"
 
@@ -104,7 +104,7 @@ class GroupConfigurationParameter(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resourcegroups-group-configurationparameter.html#cfn-resourcegroups-group-configurationparameter-values"""
 
 @attr.s
-class GroupConfigurationItem(Property):
+class PropGroupConfigurationItem(Property):
     """
     AWS Object Type = "AWS::ResourceGroups::Group.ConfigurationItem"
 
@@ -117,10 +117,10 @@ class GroupConfigurationItem(Property):
     """
     AWS_OBJECT_TYPE = "AWS::ResourceGroups::Group.ConfigurationItem"
     
-    p_Parameters: typing.List[typing.Union['GroupConfigurationParameter', dict]] = attr.ib(
+    p_Parameters: typing.List[typing.Union['PropGroupConfigurationParameter', dict]] = attr.ib(
         default=None,
-        converter=GroupConfigurationParameter.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(GroupConfigurationParameter), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropGroupConfigurationParameter.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropGroupConfigurationParameter), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Parameters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resourcegroups-group-configurationitem.html#cfn-resourcegroups-group-configurationitem-parameters"""
@@ -132,7 +132,7 @@ class GroupConfigurationItem(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resourcegroups-group-configurationitem.html#cfn-resourcegroups-group-configurationitem-type"""
 
 @attr.s
-class GroupResourceQuery(Property):
+class PropGroupResourceQuery(Property):
     """
     AWS Object Type = "AWS::ResourceGroups::Group.ResourceQuery"
 
@@ -145,10 +145,10 @@ class GroupResourceQuery(Property):
     """
     AWS_OBJECT_TYPE = "AWS::ResourceGroups::Group.ResourceQuery"
     
-    p_Query: typing.Union['GroupQuery', dict] = attr.ib(
+    p_Query: typing.Union['PropGroupQuery', dict] = attr.ib(
         default=None,
-        converter=GroupQuery.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(GroupQuery)),
+        converter=PropGroupQuery.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropGroupQuery)),
         metadata={AttrMeta.PROPERTY_NAME: "Query"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-resourcegroups-group-resourcequery.html#cfn-resourcegroups-group-resourcequery-query"""
@@ -187,10 +187,10 @@ class Group(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Name"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-resourcegroups-group.html#cfn-resourcegroups-group-name"""
-    p_Configuration: typing.List[typing.Union['GroupConfigurationItem', dict]] = attr.ib(
+    p_Configuration: typing.List[typing.Union['PropGroupConfigurationItem', dict]] = attr.ib(
         default=None,
-        converter=GroupConfigurationItem.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(GroupConfigurationItem), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropGroupConfigurationItem.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropGroupConfigurationItem), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Configuration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-resourcegroups-group.html#cfn-resourcegroups-group-configuration"""
@@ -200,10 +200,10 @@ class Group(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Description"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-resourcegroups-group.html#cfn-resourcegroups-group-description"""
-    p_ResourceQuery: typing.Union['GroupResourceQuery', dict] = attr.ib(
+    p_ResourceQuery: typing.Union['PropGroupResourceQuery', dict] = attr.ib(
         default=None,
-        converter=GroupResourceQuery.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(GroupResourceQuery)),
+        converter=PropGroupResourceQuery.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropGroupResourceQuery)),
         metadata={AttrMeta.PROPERTY_NAME: "ResourceQuery"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-resourcegroups-group.html#cfn-resourcegroups-group-resourcequery"""

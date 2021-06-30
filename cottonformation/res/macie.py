@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class FindingsFilterFindingsFilterListItem(Property):
+class PropFindingsFilterFindingsFilterListItem(Property):
     """
     AWS Object Type = "AWS::Macie::FindingsFilter.FindingsFilterListItem"
 
@@ -42,7 +42,7 @@ class FindingsFilterFindingsFilterListItem(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-macie-findingsfilter-findingsfilterlistitem.html#cfn-macie-findingsfilter-findingsfilterlistitem-name"""
 
 @attr.s
-class FindingsFilterCriterion(Property):
+class PropFindingsFilterCriterion(Property):
     """
     AWS Object Type = "AWS::Macie::FindingsFilter.Criterion"
 
@@ -55,7 +55,7 @@ class FindingsFilterCriterion(Property):
     
 
 @attr.s
-class FindingsFilterFindingCriteria(Property):
+class PropFindingsFilterFindingCriteria(Property):
     """
     AWS Object Type = "AWS::Macie::FindingsFilter.FindingCriteria"
 
@@ -67,10 +67,10 @@ class FindingsFilterFindingCriteria(Property):
     """
     AWS_OBJECT_TYPE = "AWS::Macie::FindingsFilter.FindingCriteria"
     
-    p_Criterion: typing.Union['FindingsFilterCriterion', dict] = attr.ib(
+    p_Criterion: typing.Union['PropFindingsFilterCriterion', dict] = attr.ib(
         default=None,
-        converter=FindingsFilterCriterion.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(FindingsFilterCriterion)),
+        converter=PropFindingsFilterCriterion.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropFindingsFilterCriterion)),
         metadata={AttrMeta.PROPERTY_NAME: "Criterion"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-macie-findingsfilter-findingcriteria.html#cfn-macie-findingsfilter-findingcriteria-criterion"""
@@ -136,10 +136,10 @@ class FindingsFilter(Resource):
     AWS_OBJECT_TYPE = "AWS::Macie::FindingsFilter"
 
     
-    rp_FindingCriteria: typing.Union['FindingsFilterFindingCriteria', dict] = attr.ib(
+    rp_FindingCriteria: typing.Union['PropFindingsFilterFindingCriteria', dict] = attr.ib(
         default=None,
-        converter=FindingsFilterFindingCriteria.from_dict,
-        validator=attr.validators.instance_of(FindingsFilterFindingCriteria),
+        converter=PropFindingsFilterFindingCriteria.from_dict,
+        validator=attr.validators.instance_of(PropFindingsFilterFindingCriteria),
         metadata={AttrMeta.PROPERTY_NAME: "FindingCriteria"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-macie-findingsfilter.html#cfn-macie-findingsfilter-findingcriteria"""

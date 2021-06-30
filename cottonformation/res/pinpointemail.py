@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class ConfigurationSetEventDestinationDimensionConfiguration(Property):
+class PropConfigurationSetEventDestinationDimensionConfiguration(Property):
     """
     AWS Object Type = "AWS::PinpointEmail::ConfigurationSetEventDestination.DimensionConfiguration"
 
@@ -49,7 +49,7 @@ class ConfigurationSetEventDestinationDimensionConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-configurationseteventdestination-dimensionconfiguration.html#cfn-pinpointemail-configurationseteventdestination-dimensionconfiguration-dimensionvaluesource"""
 
 @attr.s
-class ConfigurationSetSendingOptions(Property):
+class PropConfigurationSetSendingOptions(Property):
     """
     AWS Object Type = "AWS::PinpointEmail::ConfigurationSet.SendingOptions"
 
@@ -69,7 +69,7 @@ class ConfigurationSetSendingOptions(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-configurationset-sendingoptions.html#cfn-pinpointemail-configurationset-sendingoptions-sendingenabled"""
 
 @attr.s
-class ConfigurationSetReputationOptions(Property):
+class PropConfigurationSetReputationOptions(Property):
     """
     AWS Object Type = "AWS::PinpointEmail::ConfigurationSet.ReputationOptions"
 
@@ -89,7 +89,7 @@ class ConfigurationSetReputationOptions(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-configurationset-reputationoptions.html#cfn-pinpointemail-configurationset-reputationoptions-reputationmetricsenabled"""
 
 @attr.s
-class ConfigurationSetTrackingOptions(Property):
+class PropConfigurationSetTrackingOptions(Property):
     """
     AWS Object Type = "AWS::PinpointEmail::ConfigurationSet.TrackingOptions"
 
@@ -109,7 +109,7 @@ class ConfigurationSetTrackingOptions(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-configurationset-trackingoptions.html#cfn-pinpointemail-configurationset-trackingoptions-customredirectdomain"""
 
 @attr.s
-class ConfigurationSetEventDestinationCloudWatchDestination(Property):
+class PropConfigurationSetEventDestinationCloudWatchDestination(Property):
     """
     AWS Object Type = "AWS::PinpointEmail::ConfigurationSetEventDestination.CloudWatchDestination"
 
@@ -121,16 +121,16 @@ class ConfigurationSetEventDestinationCloudWatchDestination(Property):
     """
     AWS_OBJECT_TYPE = "AWS::PinpointEmail::ConfigurationSetEventDestination.CloudWatchDestination"
     
-    p_DimensionConfigurations: typing.List[typing.Union['ConfigurationSetEventDestinationDimensionConfiguration', dict]] = attr.ib(
+    p_DimensionConfigurations: typing.List[typing.Union['PropConfigurationSetEventDestinationDimensionConfiguration', dict]] = attr.ib(
         default=None,
-        converter=ConfigurationSetEventDestinationDimensionConfiguration.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ConfigurationSetEventDestinationDimensionConfiguration), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropConfigurationSetEventDestinationDimensionConfiguration.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropConfigurationSetEventDestinationDimensionConfiguration), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "DimensionConfigurations"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-configurationseteventdestination-cloudwatchdestination.html#cfn-pinpointemail-configurationseteventdestination-cloudwatchdestination-dimensionconfigurations"""
 
 @attr.s
-class DedicatedIpPoolTags(Property):
+class PropDedicatedIpPoolTags(Property):
     """
     AWS Object Type = "AWS::PinpointEmail::DedicatedIpPool.Tags"
 
@@ -157,7 +157,7 @@ class DedicatedIpPoolTags(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-dedicatedippool-tags.html#cfn-pinpointemail-dedicatedippool-tags-value"""
 
 @attr.s
-class ConfigurationSetEventDestinationSnsDestination(Property):
+class PropConfigurationSetEventDestinationSnsDestination(Property):
     """
     AWS Object Type = "AWS::PinpointEmail::ConfigurationSetEventDestination.SnsDestination"
 
@@ -177,7 +177,7 @@ class ConfigurationSetEventDestinationSnsDestination(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-configurationseteventdestination-snsdestination.html#cfn-pinpointemail-configurationseteventdestination-snsdestination-topicarn"""
 
 @attr.s
-class ConfigurationSetTags(Property):
+class PropConfigurationSetTags(Property):
     """
     AWS Object Type = "AWS::PinpointEmail::ConfigurationSet.Tags"
 
@@ -204,7 +204,7 @@ class ConfigurationSetTags(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-configurationset-tags.html#cfn-pinpointemail-configurationset-tags-value"""
 
 @attr.s
-class ConfigurationSetEventDestinationPinpointDestination(Property):
+class PropConfigurationSetEventDestinationPinpointDestination(Property):
     """
     AWS Object Type = "AWS::PinpointEmail::ConfigurationSetEventDestination.PinpointDestination"
 
@@ -224,7 +224,7 @@ class ConfigurationSetEventDestinationPinpointDestination(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-configurationseteventdestination-pinpointdestination.html#cfn-pinpointemail-configurationseteventdestination-pinpointdestination-applicationarn"""
 
 @attr.s
-class ConfigurationSetDeliveryOptions(Property):
+class PropConfigurationSetDeliveryOptions(Property):
     """
     AWS Object Type = "AWS::PinpointEmail::ConfigurationSet.DeliveryOptions"
 
@@ -244,7 +244,7 @@ class ConfigurationSetDeliveryOptions(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-configurationset-deliveryoptions.html#cfn-pinpointemail-configurationset-deliveryoptions-sendingpoolname"""
 
 @attr.s
-class ConfigurationSetEventDestinationKinesisFirehoseDestination(Property):
+class PropConfigurationSetEventDestinationKinesisFirehoseDestination(Property):
     """
     AWS Object Type = "AWS::PinpointEmail::ConfigurationSetEventDestination.KinesisFirehoseDestination"
 
@@ -271,7 +271,7 @@ class ConfigurationSetEventDestinationKinesisFirehoseDestination(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-configurationseteventdestination-kinesisfirehosedestination.html#cfn-pinpointemail-configurationseteventdestination-kinesisfirehosedestination-iamrolearn"""
 
 @attr.s
-class IdentityTags(Property):
+class PropIdentityTags(Property):
     """
     AWS Object Type = "AWS::PinpointEmail::Identity.Tags"
 
@@ -298,7 +298,7 @@ class IdentityTags(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-identity-tags.html#cfn-pinpointemail-identity-tags-value"""
 
 @attr.s
-class ConfigurationSetEventDestinationEventDestination(Property):
+class PropConfigurationSetEventDestinationEventDestination(Property):
     """
     AWS Object Type = "AWS::PinpointEmail::ConfigurationSetEventDestination.EventDestination"
 
@@ -321,10 +321,10 @@ class ConfigurationSetEventDestinationEventDestination(Property):
         metadata={AttrMeta.PROPERTY_NAME: "MatchingEventTypes"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-configurationseteventdestination-eventdestination.html#cfn-pinpointemail-configurationseteventdestination-eventdestination-matchingeventtypes"""
-    p_CloudWatchDestination: typing.Union['ConfigurationSetEventDestinationCloudWatchDestination', dict] = attr.ib(
+    p_CloudWatchDestination: typing.Union['PropConfigurationSetEventDestinationCloudWatchDestination', dict] = attr.ib(
         default=None,
-        converter=ConfigurationSetEventDestinationCloudWatchDestination.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ConfigurationSetEventDestinationCloudWatchDestination)),
+        converter=PropConfigurationSetEventDestinationCloudWatchDestination.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropConfigurationSetEventDestinationCloudWatchDestination)),
         metadata={AttrMeta.PROPERTY_NAME: "CloudWatchDestination"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-configurationseteventdestination-eventdestination.html#cfn-pinpointemail-configurationseteventdestination-eventdestination-cloudwatchdestination"""
@@ -334,30 +334,30 @@ class ConfigurationSetEventDestinationEventDestination(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Enabled"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-configurationseteventdestination-eventdestination.html#cfn-pinpointemail-configurationseteventdestination-eventdestination-enabled"""
-    p_KinesisFirehoseDestination: typing.Union['ConfigurationSetEventDestinationKinesisFirehoseDestination', dict] = attr.ib(
+    p_KinesisFirehoseDestination: typing.Union['PropConfigurationSetEventDestinationKinesisFirehoseDestination', dict] = attr.ib(
         default=None,
-        converter=ConfigurationSetEventDestinationKinesisFirehoseDestination.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ConfigurationSetEventDestinationKinesisFirehoseDestination)),
+        converter=PropConfigurationSetEventDestinationKinesisFirehoseDestination.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropConfigurationSetEventDestinationKinesisFirehoseDestination)),
         metadata={AttrMeta.PROPERTY_NAME: "KinesisFirehoseDestination"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-configurationseteventdestination-eventdestination.html#cfn-pinpointemail-configurationseteventdestination-eventdestination-kinesisfirehosedestination"""
-    p_PinpointDestination: typing.Union['ConfigurationSetEventDestinationPinpointDestination', dict] = attr.ib(
+    p_PinpointDestination: typing.Union['PropConfigurationSetEventDestinationPinpointDestination', dict] = attr.ib(
         default=None,
-        converter=ConfigurationSetEventDestinationPinpointDestination.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ConfigurationSetEventDestinationPinpointDestination)),
+        converter=PropConfigurationSetEventDestinationPinpointDestination.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropConfigurationSetEventDestinationPinpointDestination)),
         metadata={AttrMeta.PROPERTY_NAME: "PinpointDestination"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-configurationseteventdestination-eventdestination.html#cfn-pinpointemail-configurationseteventdestination-eventdestination-pinpointdestination"""
-    p_SnsDestination: typing.Union['ConfigurationSetEventDestinationSnsDestination', dict] = attr.ib(
+    p_SnsDestination: typing.Union['PropConfigurationSetEventDestinationSnsDestination', dict] = attr.ib(
         default=None,
-        converter=ConfigurationSetEventDestinationSnsDestination.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ConfigurationSetEventDestinationSnsDestination)),
+        converter=PropConfigurationSetEventDestinationSnsDestination.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropConfigurationSetEventDestinationSnsDestination)),
         metadata={AttrMeta.PROPERTY_NAME: "SnsDestination"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpointemail-configurationseteventdestination-eventdestination.html#cfn-pinpointemail-configurationseteventdestination-eventdestination-snsdestination"""
 
 @attr.s
-class IdentityMailFromAttributes(Property):
+class PropIdentityMailFromAttributes(Property):
     """
     AWS Object Type = "AWS::PinpointEmail::Identity.MailFromAttributes"
 
@@ -414,10 +414,10 @@ class ConfigurationSetEventDestination(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "EventDestinationName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpointemail-configurationseteventdestination.html#cfn-pinpointemail-configurationseteventdestination-eventdestinationname"""
-    p_EventDestination: typing.Union['ConfigurationSetEventDestinationEventDestination', dict] = attr.ib(
+    p_EventDestination: typing.Union['PropConfigurationSetEventDestinationEventDestination', dict] = attr.ib(
         default=None,
-        converter=ConfigurationSetEventDestinationEventDestination.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ConfigurationSetEventDestinationEventDestination)),
+        converter=PropConfigurationSetEventDestinationEventDestination.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropConfigurationSetEventDestinationEventDestination)),
         metadata={AttrMeta.PROPERTY_NAME: "EventDestination"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpointemail-configurationseteventdestination.html#cfn-pinpointemail-configurationseteventdestination-eventdestination"""
@@ -445,10 +445,10 @@ class DedicatedIpPool(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "PoolName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpointemail-dedicatedippool.html#cfn-pinpointemail-dedicatedippool-poolname"""
-    p_Tags: typing.List[typing.Union['DedicatedIpPoolTags', dict]] = attr.ib(
+    p_Tags: typing.List[typing.Union['PropDedicatedIpPoolTags', dict]] = attr.ib(
         default=None,
-        converter=DedicatedIpPoolTags.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(DedicatedIpPoolTags), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropDedicatedIpPoolTags.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDedicatedIpPoolTags), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Tags"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpointemail-dedicatedippool.html#cfn-pinpointemail-dedicatedippool-tags"""
@@ -491,17 +491,17 @@ class Identity(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "FeedbackForwardingEnabled"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpointemail-identity.html#cfn-pinpointemail-identity-feedbackforwardingenabled"""
-    p_MailFromAttributes: typing.Union['IdentityMailFromAttributes', dict] = attr.ib(
+    p_MailFromAttributes: typing.Union['PropIdentityMailFromAttributes', dict] = attr.ib(
         default=None,
-        converter=IdentityMailFromAttributes.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(IdentityMailFromAttributes)),
+        converter=PropIdentityMailFromAttributes.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropIdentityMailFromAttributes)),
         metadata={AttrMeta.PROPERTY_NAME: "MailFromAttributes"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpointemail-identity.html#cfn-pinpointemail-identity-mailfromattributes"""
-    p_Tags: typing.List[typing.Union['IdentityTags', dict]] = attr.ib(
+    p_Tags: typing.List[typing.Union['PropIdentityTags', dict]] = attr.ib(
         default=None,
-        converter=IdentityTags.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(IdentityTags), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropIdentityTags.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropIdentityTags), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Tags"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpointemail-identity.html#cfn-pinpointemail-identity-tags"""
@@ -563,38 +563,38 @@ class ConfigurationSet(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Name"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpointemail-configurationset.html#cfn-pinpointemail-configurationset-name"""
-    p_DeliveryOptions: typing.Union['ConfigurationSetDeliveryOptions', dict] = attr.ib(
+    p_DeliveryOptions: typing.Union['PropConfigurationSetDeliveryOptions', dict] = attr.ib(
         default=None,
-        converter=ConfigurationSetDeliveryOptions.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ConfigurationSetDeliveryOptions)),
+        converter=PropConfigurationSetDeliveryOptions.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropConfigurationSetDeliveryOptions)),
         metadata={AttrMeta.PROPERTY_NAME: "DeliveryOptions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpointemail-configurationset.html#cfn-pinpointemail-configurationset-deliveryoptions"""
-    p_ReputationOptions: typing.Union['ConfigurationSetReputationOptions', dict] = attr.ib(
+    p_ReputationOptions: typing.Union['PropConfigurationSetReputationOptions', dict] = attr.ib(
         default=None,
-        converter=ConfigurationSetReputationOptions.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ConfigurationSetReputationOptions)),
+        converter=PropConfigurationSetReputationOptions.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropConfigurationSetReputationOptions)),
         metadata={AttrMeta.PROPERTY_NAME: "ReputationOptions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpointemail-configurationset.html#cfn-pinpointemail-configurationset-reputationoptions"""
-    p_SendingOptions: typing.Union['ConfigurationSetSendingOptions', dict] = attr.ib(
+    p_SendingOptions: typing.Union['PropConfigurationSetSendingOptions', dict] = attr.ib(
         default=None,
-        converter=ConfigurationSetSendingOptions.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ConfigurationSetSendingOptions)),
+        converter=PropConfigurationSetSendingOptions.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropConfigurationSetSendingOptions)),
         metadata={AttrMeta.PROPERTY_NAME: "SendingOptions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpointemail-configurationset.html#cfn-pinpointemail-configurationset-sendingoptions"""
-    p_TrackingOptions: typing.Union['ConfigurationSetTrackingOptions', dict] = attr.ib(
+    p_TrackingOptions: typing.Union['PropConfigurationSetTrackingOptions', dict] = attr.ib(
         default=None,
-        converter=ConfigurationSetTrackingOptions.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ConfigurationSetTrackingOptions)),
+        converter=PropConfigurationSetTrackingOptions.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropConfigurationSetTrackingOptions)),
         metadata={AttrMeta.PROPERTY_NAME: "TrackingOptions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpointemail-configurationset.html#cfn-pinpointemail-configurationset-trackingoptions"""
-    p_Tags: typing.List[typing.Union['ConfigurationSetTags', dict]] = attr.ib(
+    p_Tags: typing.List[typing.Union['PropConfigurationSetTags', dict]] = attr.ib(
         default=None,
-        converter=ConfigurationSetTags.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ConfigurationSetTags), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropConfigurationSetTags.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropConfigurationSetTags), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Tags"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpointemail-configurationset.html#cfn-pinpointemail-configurationset-tags"""

@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class FileSystemLustreConfiguration(Property):
+class PropFileSystemLustreConfiguration(Property):
     """
     AWS Object Type = "AWS::FSx::FileSystem.LustreConfiguration"
 
@@ -112,7 +112,7 @@ class FileSystemLustreConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-lustreconfiguration.html#cfn-fsx-filesystem-lustreconfiguration-weeklymaintenancestarttime"""
 
 @attr.s
-class FileSystemSelfManagedActiveDirectoryConfiguration(Property):
+class PropFileSystemSelfManagedActiveDirectoryConfiguration(Property):
     """
     AWS Object Type = "AWS::FSx::FileSystem.SelfManagedActiveDirectoryConfiguration"
 
@@ -167,7 +167,7 @@ class FileSystemSelfManagedActiveDirectoryConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-windowsconfiguration-selfmanagedactivedirectoryconfiguration.html#cfn-fsx-filesystem-windowsconfiguration-selfmanagedactivedirectoryconfiguration-username"""
 
 @attr.s
-class FileSystemWindowsConfiguration(Property):
+class PropFileSystemWindowsConfiguration(Property):
     """
     AWS Object Type = "AWS::FSx::FileSystem.WindowsConfiguration"
 
@@ -236,10 +236,10 @@ class FileSystemWindowsConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "PreferredSubnetId"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-windowsconfiguration.html#cfn-fsx-filesystem-windowsconfiguration-preferredsubnetid"""
-    p_SelfManagedActiveDirectoryConfiguration: typing.Union['FileSystemSelfManagedActiveDirectoryConfiguration', dict] = attr.ib(
+    p_SelfManagedActiveDirectoryConfiguration: typing.Union['PropFileSystemSelfManagedActiveDirectoryConfiguration', dict] = attr.ib(
         default=None,
-        converter=FileSystemSelfManagedActiveDirectoryConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(FileSystemSelfManagedActiveDirectoryConfiguration)),
+        converter=PropFileSystemSelfManagedActiveDirectoryConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropFileSystemSelfManagedActiveDirectoryConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "SelfManagedActiveDirectoryConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fsx-filesystem-windowsconfiguration.html#cfn-fsx-filesystem-windowsconfiguration-selfmanagedactivedirectoryconfiguration"""
@@ -300,10 +300,10 @@ class FileSystem(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "KmsKeyId"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fsx-filesystem.html#cfn-fsx-filesystem-kmskeyid"""
-    p_LustreConfiguration: typing.Union['FileSystemLustreConfiguration', dict] = attr.ib(
+    p_LustreConfiguration: typing.Union['PropFileSystemLustreConfiguration', dict] = attr.ib(
         default=None,
-        converter=FileSystemLustreConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(FileSystemLustreConfiguration)),
+        converter=PropFileSystemLustreConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropFileSystemLustreConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "LustreConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fsx-filesystem.html#cfn-fsx-filesystem-lustreconfiguration"""
@@ -325,10 +325,10 @@ class FileSystem(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "StorageType"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fsx-filesystem.html#cfn-fsx-filesystem-storagetype"""
-    p_WindowsConfiguration: typing.Union['FileSystemWindowsConfiguration', dict] = attr.ib(
+    p_WindowsConfiguration: typing.Union['PropFileSystemWindowsConfiguration', dict] = attr.ib(
         default=None,
-        converter=FileSystemWindowsConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(FileSystemWindowsConfiguration)),
+        converter=PropFileSystemWindowsConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropFileSystemWindowsConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "WindowsConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fsx-filesystem.html#cfn-fsx-filesystem-windowsconfiguration"""

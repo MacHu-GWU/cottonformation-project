@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class AccessPolicyProject(Property):
+class PropAccessPolicyProject(Property):
     """
     AWS Object Type = "AWS::IoTSiteWise::AccessPolicy.Project"
 
@@ -35,7 +35,7 @@ class AccessPolicyProject(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-accesspolicy-project.html#cfn-iotsitewise-accesspolicy-project-id"""
 
 @attr.s
-class GatewayGreengrass(Property):
+class PropGatewayGreengrass(Property):
     """
     AWS Object Type = "AWS::IoTSiteWise::Gateway.Greengrass"
 
@@ -55,7 +55,7 @@ class GatewayGreengrass(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-gateway-greengrass.html#cfn-iotsitewise-gateway-greengrass-grouparn"""
 
 @attr.s
-class AccessPolicyIamRole(Property):
+class PropAccessPolicyIamRole(Property):
     """
     AWS Object Type = "AWS::IoTSiteWise::AccessPolicy.IamRole"
 
@@ -75,7 +75,7 @@ class AccessPolicyIamRole(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-accesspolicy-iamrole.html#cfn-iotsitewise-accesspolicy-iamrole-arn"""
 
 @attr.s
-class AccessPolicyUser(Property):
+class PropAccessPolicyUser(Property):
     """
     AWS Object Type = "AWS::IoTSiteWise::AccessPolicy.User"
 
@@ -95,7 +95,7 @@ class AccessPolicyUser(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-accesspolicy-user.html#cfn-iotsitewise-accesspolicy-user-id"""
 
 @attr.s
-class AssetModelTumblingWindow(Property):
+class PropAssetModelTumblingWindow(Property):
     """
     AWS Object Type = "AWS::IoTSiteWise::AssetModel.TumblingWindow"
 
@@ -115,7 +115,7 @@ class AssetModelTumblingWindow(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-assetmodel-tumblingwindow.html#cfn-iotsitewise-assetmodel-tumblingwindow-interval"""
 
 @attr.s
-class AssetModelAttribute(Property):
+class PropAssetModelAttribute(Property):
     """
     AWS Object Type = "AWS::IoTSiteWise::AssetModel.Attribute"
 
@@ -135,7 +135,7 @@ class AssetModelAttribute(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-assetmodel-attribute.html#cfn-iotsitewise-assetmodel-attribute-defaultvalue"""
 
 @attr.s
-class AccessPolicyIamUser(Property):
+class PropAccessPolicyIamUser(Property):
     """
     AWS Object Type = "AWS::IoTSiteWise::AccessPolicy.IamUser"
 
@@ -155,7 +155,7 @@ class AccessPolicyIamUser(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-accesspolicy-iamuser.html#cfn-iotsitewise-accesspolicy-iamuser-arn"""
 
 @attr.s
-class GatewayGatewayCapabilitySummary(Property):
+class PropGatewayGatewayCapabilitySummary(Property):
     """
     AWS Object Type = "AWS::IoTSiteWise::Gateway.GatewayCapabilitySummary"
 
@@ -182,7 +182,7 @@ class GatewayGatewayCapabilitySummary(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-gateway-gatewaycapabilitysummary.html#cfn-iotsitewise-gateway-gatewaycapabilitysummary-capabilityconfiguration"""
 
 @attr.s
-class AssetModelVariableValue(Property):
+class PropAssetModelVariableValue(Property):
     """
     AWS Object Type = "AWS::IoTSiteWise::AssetModel.VariableValue"
 
@@ -209,7 +209,7 @@ class AssetModelVariableValue(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-assetmodel-variablevalue.html#cfn-iotsitewise-assetmodel-variablevalue-hierarchylogicalid"""
 
 @attr.s
-class AssetModelAssetModelHierarchy(Property):
+class PropAssetModelAssetModelHierarchy(Property):
     """
     AWS Object Type = "AWS::IoTSiteWise::AssetModel.AssetModelHierarchy"
 
@@ -243,7 +243,7 @@ class AssetModelAssetModelHierarchy(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-assetmodel-assetmodelhierarchy.html#cfn-iotsitewise-assetmodel-assetmodelhierarchy-name"""
 
 @attr.s
-class AccessPolicyPortal(Property):
+class PropAccessPolicyPortal(Property):
     """
     AWS Object Type = "AWS::IoTSiteWise::AccessPolicy.Portal"
 
@@ -263,7 +263,7 @@ class AccessPolicyPortal(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-accesspolicy-portal.html#cfn-iotsitewise-accesspolicy-portal-id"""
 
 @attr.s
-class GatewayGatewayPlatform(Property):
+class PropGatewayGatewayPlatform(Property):
     """
     AWS Object Type = "AWS::IoTSiteWise::Gateway.GatewayPlatform"
 
@@ -275,16 +275,16 @@ class GatewayGatewayPlatform(Property):
     """
     AWS_OBJECT_TYPE = "AWS::IoTSiteWise::Gateway.GatewayPlatform"
     
-    rp_Greengrass: typing.Union['GatewayGreengrass', dict] = attr.ib(
+    rp_Greengrass: typing.Union['PropGatewayGreengrass', dict] = attr.ib(
         default=None,
-        converter=GatewayGreengrass.from_dict,
-        validator=attr.validators.instance_of(GatewayGreengrass),
+        converter=PropGatewayGreengrass.from_dict,
+        validator=attr.validators.instance_of(PropGatewayGreengrass),
         metadata={AttrMeta.PROPERTY_NAME: "Greengrass"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-gateway-gatewayplatform.html#cfn-iotsitewise-gateway-gatewayplatform-greengrass"""
 
 @attr.s
-class AssetAssetHierarchy(Property):
+class PropAssetAssetHierarchy(Property):
     """
     AWS Object Type = "AWS::IoTSiteWise::Asset.AssetHierarchy"
 
@@ -311,7 +311,7 @@ class AssetAssetHierarchy(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-asset-assethierarchy.html#cfn-iotsitewise-asset-assethierarchy-logicalid"""
 
 @attr.s
-class AccessPolicyAccessPolicyIdentity(Property):
+class PropAccessPolicyAccessPolicyIdentity(Property):
     """
     AWS Object Type = "AWS::IoTSiteWise::AccessPolicy.AccessPolicyIdentity"
 
@@ -325,30 +325,30 @@ class AccessPolicyAccessPolicyIdentity(Property):
     """
     AWS_OBJECT_TYPE = "AWS::IoTSiteWise::AccessPolicy.AccessPolicyIdentity"
     
-    p_IamRole: typing.Union['AccessPolicyIamRole', dict] = attr.ib(
+    p_IamRole: typing.Union['PropAccessPolicyIamRole', dict] = attr.ib(
         default=None,
-        converter=AccessPolicyIamRole.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(AccessPolicyIamRole)),
+        converter=PropAccessPolicyIamRole.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropAccessPolicyIamRole)),
         metadata={AttrMeta.PROPERTY_NAME: "IamRole"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-accesspolicy-accesspolicyidentity.html#cfn-iotsitewise-accesspolicy-accesspolicyidentity-iamrole"""
-    p_IamUser: typing.Union['AccessPolicyIamUser', dict] = attr.ib(
+    p_IamUser: typing.Union['PropAccessPolicyIamUser', dict] = attr.ib(
         default=None,
-        converter=AccessPolicyIamUser.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(AccessPolicyIamUser)),
+        converter=PropAccessPolicyIamUser.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropAccessPolicyIamUser)),
         metadata={AttrMeta.PROPERTY_NAME: "IamUser"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-accesspolicy-accesspolicyidentity.html#cfn-iotsitewise-accesspolicy-accesspolicyidentity-iamuser"""
-    p_User: typing.Union['AccessPolicyUser', dict] = attr.ib(
+    p_User: typing.Union['PropAccessPolicyUser', dict] = attr.ib(
         default=None,
-        converter=AccessPolicyUser.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(AccessPolicyUser)),
+        converter=PropAccessPolicyUser.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropAccessPolicyUser)),
         metadata={AttrMeta.PROPERTY_NAME: "User"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-accesspolicy-accesspolicyidentity.html#cfn-iotsitewise-accesspolicy-accesspolicyidentity-user"""
 
 @attr.s
-class AssetAssetProperty(Property):
+class PropAssetAssetProperty(Property):
     """
     AWS Object Type = "AWS::IoTSiteWise::Asset.AssetProperty"
 
@@ -382,7 +382,7 @@ class AssetAssetProperty(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-asset-assetproperty.html#cfn-iotsitewise-asset-assetproperty-notificationstate"""
 
 @attr.s
-class AssetModelMetricWindow(Property):
+class PropAssetModelMetricWindow(Property):
     """
     AWS Object Type = "AWS::IoTSiteWise::AssetModel.MetricWindow"
 
@@ -394,16 +394,16 @@ class AssetModelMetricWindow(Property):
     """
     AWS_OBJECT_TYPE = "AWS::IoTSiteWise::AssetModel.MetricWindow"
     
-    p_Tumbling: typing.Union['AssetModelTumblingWindow', dict] = attr.ib(
+    p_Tumbling: typing.Union['PropAssetModelTumblingWindow', dict] = attr.ib(
         default=None,
-        converter=AssetModelTumblingWindow.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(AssetModelTumblingWindow)),
+        converter=PropAssetModelTumblingWindow.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropAssetModelTumblingWindow)),
         metadata={AttrMeta.PROPERTY_NAME: "Tumbling"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-assetmodel-metricwindow.html#cfn-iotsitewise-assetmodel-metricwindow-tumbling"""
 
 @attr.s
-class AccessPolicyAccessPolicyResource(Property):
+class PropAccessPolicyAccessPolicyResource(Property):
     """
     AWS Object Type = "AWS::IoTSiteWise::AccessPolicy.AccessPolicyResource"
 
@@ -416,23 +416,23 @@ class AccessPolicyAccessPolicyResource(Property):
     """
     AWS_OBJECT_TYPE = "AWS::IoTSiteWise::AccessPolicy.AccessPolicyResource"
     
-    p_Portal: typing.Union['AccessPolicyPortal', dict] = attr.ib(
+    p_Portal: typing.Union['PropAccessPolicyPortal', dict] = attr.ib(
         default=None,
-        converter=AccessPolicyPortal.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(AccessPolicyPortal)),
+        converter=PropAccessPolicyPortal.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropAccessPolicyPortal)),
         metadata={AttrMeta.PROPERTY_NAME: "Portal"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-accesspolicy-accesspolicyresource.html#cfn-iotsitewise-accesspolicy-accesspolicyresource-portal"""
-    p_Project: typing.Union['AccessPolicyProject', dict] = attr.ib(
+    p_Project: typing.Union['PropAccessPolicyProject', dict] = attr.ib(
         default=None,
-        converter=AccessPolicyProject.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(AccessPolicyProject)),
+        converter=PropAccessPolicyProject.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropAccessPolicyProject)),
         metadata={AttrMeta.PROPERTY_NAME: "Project"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-accesspolicy-accesspolicyresource.html#cfn-iotsitewise-accesspolicy-accesspolicyresource-project"""
 
 @attr.s
-class AssetModelExpressionVariable(Property):
+class PropAssetModelExpressionVariable(Property):
     """
     AWS Object Type = "AWS::IoTSiteWise::AssetModel.ExpressionVariable"
 
@@ -451,16 +451,16 @@ class AssetModelExpressionVariable(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Name"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-assetmodel-expressionvariable.html#cfn-iotsitewise-assetmodel-expressionvariable-name"""
-    rp_Value: typing.Union['AssetModelVariableValue', dict] = attr.ib(
+    rp_Value: typing.Union['PropAssetModelVariableValue', dict] = attr.ib(
         default=None,
-        converter=AssetModelVariableValue.from_dict,
-        validator=attr.validators.instance_of(AssetModelVariableValue),
+        converter=PropAssetModelVariableValue.from_dict,
+        validator=attr.validators.instance_of(PropAssetModelVariableValue),
         metadata={AttrMeta.PROPERTY_NAME: "Value"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-assetmodel-expressionvariable.html#cfn-iotsitewise-assetmodel-expressionvariable-value"""
 
 @attr.s
-class AssetModelTransform(Property):
+class PropAssetModelTransform(Property):
     """
     AWS Object Type = "AWS::IoTSiteWise::AssetModel.Transform"
 
@@ -479,16 +479,16 @@ class AssetModelTransform(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Expression"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-assetmodel-transform.html#cfn-iotsitewise-assetmodel-transform-expression"""
-    rp_Variables: typing.List[typing.Union['AssetModelExpressionVariable', dict]] = attr.ib(
+    rp_Variables: typing.List[typing.Union['PropAssetModelExpressionVariable', dict]] = attr.ib(
         default=None,
-        converter=AssetModelExpressionVariable.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(AssetModelExpressionVariable), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropAssetModelExpressionVariable.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropAssetModelExpressionVariable), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "Variables"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-assetmodel-transform.html#cfn-iotsitewise-assetmodel-transform-variables"""
 
 @attr.s
-class AssetModelMetric(Property):
+class PropAssetModelMetric(Property):
     """
     AWS Object Type = "AWS::IoTSiteWise::AssetModel.Metric"
 
@@ -508,23 +508,23 @@ class AssetModelMetric(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Expression"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-assetmodel-metric.html#cfn-iotsitewise-assetmodel-metric-expression"""
-    rp_Variables: typing.List[typing.Union['AssetModelExpressionVariable', dict]] = attr.ib(
+    rp_Variables: typing.List[typing.Union['PropAssetModelExpressionVariable', dict]] = attr.ib(
         default=None,
-        converter=AssetModelExpressionVariable.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(AssetModelExpressionVariable), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropAssetModelExpressionVariable.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropAssetModelExpressionVariable), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "Variables"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-assetmodel-metric.html#cfn-iotsitewise-assetmodel-metric-variables"""
-    rp_Window: typing.Union['AssetModelMetricWindow', dict] = attr.ib(
+    rp_Window: typing.Union['PropAssetModelMetricWindow', dict] = attr.ib(
         default=None,
-        converter=AssetModelMetricWindow.from_dict,
-        validator=attr.validators.instance_of(AssetModelMetricWindow),
+        converter=PropAssetModelMetricWindow.from_dict,
+        validator=attr.validators.instance_of(PropAssetModelMetricWindow),
         metadata={AttrMeta.PROPERTY_NAME: "Window"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-assetmodel-metric.html#cfn-iotsitewise-assetmodel-metric-window"""
 
 @attr.s
-class AssetModelPropertyType(Property):
+class PropAssetModelPropertyType(Property):
     """
     AWS Object Type = "AWS::IoTSiteWise::AssetModel.PropertyType"
 
@@ -545,30 +545,30 @@ class AssetModelPropertyType(Property):
         metadata={AttrMeta.PROPERTY_NAME: "TypeName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-assetmodel-propertytype.html#cfn-iotsitewise-assetmodel-propertytype-typename"""
-    p_Attribute: typing.Union['AssetModelAttribute', dict] = attr.ib(
+    p_Attribute: typing.Union['PropAssetModelAttribute', dict] = attr.ib(
         default=None,
-        converter=AssetModelAttribute.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(AssetModelAttribute)),
+        converter=PropAssetModelAttribute.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropAssetModelAttribute)),
         metadata={AttrMeta.PROPERTY_NAME: "Attribute"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-assetmodel-propertytype.html#cfn-iotsitewise-assetmodel-propertytype-attribute"""
-    p_Metric: typing.Union['AssetModelMetric', dict] = attr.ib(
+    p_Metric: typing.Union['PropAssetModelMetric', dict] = attr.ib(
         default=None,
-        converter=AssetModelMetric.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(AssetModelMetric)),
+        converter=PropAssetModelMetric.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropAssetModelMetric)),
         metadata={AttrMeta.PROPERTY_NAME: "Metric"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-assetmodel-propertytype.html#cfn-iotsitewise-assetmodel-propertytype-metric"""
-    p_Transform: typing.Union['AssetModelTransform', dict] = attr.ib(
+    p_Transform: typing.Union['PropAssetModelTransform', dict] = attr.ib(
         default=None,
-        converter=AssetModelTransform.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(AssetModelTransform)),
+        converter=PropAssetModelTransform.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropAssetModelTransform)),
         metadata={AttrMeta.PROPERTY_NAME: "Transform"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-assetmodel-propertytype.html#cfn-iotsitewise-assetmodel-propertytype-transform"""
 
 @attr.s
-class AssetModelAssetModelProperty(Property):
+class PropAssetModelAssetModelProperty(Property):
     """
     AWS Object Type = "AWS::IoTSiteWise::AssetModel.AssetModelProperty"
 
@@ -603,10 +603,10 @@ class AssetModelAssetModelProperty(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Name"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-assetmodel-assetmodelproperty.html#cfn-iotsitewise-assetmodel-assetmodelproperty-name"""
-    rp_Type: typing.Union['AssetModelPropertyType', dict] = attr.ib(
+    rp_Type: typing.Union['PropAssetModelPropertyType', dict] = attr.ib(
         default=None,
-        converter=AssetModelPropertyType.from_dict,
-        validator=attr.validators.instance_of(AssetModelPropertyType),
+        converter=PropAssetModelPropertyType.from_dict,
+        validator=attr.validators.instance_of(PropAssetModelPropertyType),
         metadata={AttrMeta.PROPERTY_NAME: "Type"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-assetmodel-assetmodelproperty.html#cfn-iotsitewise-assetmodel-assetmodelproperty-type"""
@@ -624,7 +624,7 @@ class AssetModelAssetModelProperty(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-assetmodel-assetmodelproperty.html#cfn-iotsitewise-assetmodel-assetmodelproperty-unit"""
 
 @attr.s
-class AssetModelAssetModelCompositeModel(Property):
+class PropAssetModelAssetModelCompositeModel(Property):
     """
     AWS Object Type = "AWS::IoTSiteWise::AssetModel.AssetModelCompositeModel"
 
@@ -651,10 +651,10 @@ class AssetModelAssetModelCompositeModel(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Type"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-assetmodel-assetmodelcompositemodel.html#cfn-iotsitewise-assetmodel-assetmodelcompositemodel-type"""
-    p_CompositeModelProperties: typing.List[typing.Union['AssetModelAssetModelProperty', dict]] = attr.ib(
+    p_CompositeModelProperties: typing.List[typing.Union['PropAssetModelAssetModelProperty', dict]] = attr.ib(
         default=None,
-        converter=AssetModelAssetModelProperty.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(AssetModelAssetModelProperty), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropAssetModelAssetModelProperty.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropAssetModelAssetModelProperty), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "CompositeModelProperties"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-assetmodel-assetmodelcompositemodel.html#cfn-iotsitewise-assetmodel-assetmodelcompositemodel-compositemodelproperties"""
@@ -693,10 +693,10 @@ class AssetModel(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "AssetModelName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-assetmodel.html#cfn-iotsitewise-assetmodel-assetmodelname"""
-    p_AssetModelCompositeModels: typing.List[typing.Union['AssetModelAssetModelCompositeModel', dict]] = attr.ib(
+    p_AssetModelCompositeModels: typing.List[typing.Union['PropAssetModelAssetModelCompositeModel', dict]] = attr.ib(
         default=None,
-        converter=AssetModelAssetModelCompositeModel.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(AssetModelAssetModelCompositeModel), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropAssetModelAssetModelCompositeModel.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropAssetModelAssetModelCompositeModel), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "AssetModelCompositeModels"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-assetmodel.html#cfn-iotsitewise-assetmodel-assetmodelcompositemodels"""
@@ -706,17 +706,17 @@ class AssetModel(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "AssetModelDescription"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-assetmodel.html#cfn-iotsitewise-assetmodel-assetmodeldescription"""
-    p_AssetModelHierarchies: typing.List[typing.Union['AssetModelAssetModelHierarchy', dict]] = attr.ib(
+    p_AssetModelHierarchies: typing.List[typing.Union['PropAssetModelAssetModelHierarchy', dict]] = attr.ib(
         default=None,
-        converter=AssetModelAssetModelHierarchy.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(AssetModelAssetModelHierarchy), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropAssetModelAssetModelHierarchy.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropAssetModelAssetModelHierarchy), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "AssetModelHierarchies"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-assetmodel.html#cfn-iotsitewise-assetmodel-assetmodelhierarchies"""
-    p_AssetModelProperties: typing.List[typing.Union['AssetModelAssetModelProperty', dict]] = attr.ib(
+    p_AssetModelProperties: typing.List[typing.Union['PropAssetModelAssetModelProperty', dict]] = attr.ib(
         default=None,
-        converter=AssetModelAssetModelProperty.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(AssetModelAssetModelProperty), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropAssetModelAssetModelProperty.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropAssetModelAssetModelProperty), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "AssetModelProperties"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-assetmodel.html#cfn-iotsitewise-assetmodel-assetmodelproperties"""
@@ -770,17 +770,17 @@ class Asset(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "AssetName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-asset.html#cfn-iotsitewise-asset-assetname"""
-    p_AssetHierarchies: typing.List[typing.Union['AssetAssetHierarchy', dict]] = attr.ib(
+    p_AssetHierarchies: typing.List[typing.Union['PropAssetAssetHierarchy', dict]] = attr.ib(
         default=None,
-        converter=AssetAssetHierarchy.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(AssetAssetHierarchy), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropAssetAssetHierarchy.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropAssetAssetHierarchy), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "AssetHierarchies"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-asset.html#cfn-iotsitewise-asset-assethierarchies"""
-    p_AssetProperties: typing.List[typing.Union['AssetAssetProperty', dict]] = attr.ib(
+    p_AssetProperties: typing.List[typing.Union['PropAssetAssetProperty', dict]] = attr.ib(
         default=None,
-        converter=AssetAssetProperty.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(AssetAssetProperty), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropAssetAssetProperty.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropAssetAssetProperty), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "AssetProperties"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-asset.html#cfn-iotsitewise-asset-assetproperties"""
@@ -961,10 +961,10 @@ class AccessPolicy(Resource):
     AWS_OBJECT_TYPE = "AWS::IoTSiteWise::AccessPolicy"
 
     
-    rp_AccessPolicyIdentity: typing.Union['AccessPolicyAccessPolicyIdentity', dict] = attr.ib(
+    rp_AccessPolicyIdentity: typing.Union['PropAccessPolicyAccessPolicyIdentity', dict] = attr.ib(
         default=None,
-        converter=AccessPolicyAccessPolicyIdentity.from_dict,
-        validator=attr.validators.instance_of(AccessPolicyAccessPolicyIdentity),
+        converter=PropAccessPolicyAccessPolicyIdentity.from_dict,
+        validator=attr.validators.instance_of(PropAccessPolicyAccessPolicyIdentity),
         metadata={AttrMeta.PROPERTY_NAME: "AccessPolicyIdentity"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-accesspolicy.html#cfn-iotsitewise-accesspolicy-accesspolicyidentity"""
@@ -974,10 +974,10 @@ class AccessPolicy(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "AccessPolicyPermission"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-accesspolicy.html#cfn-iotsitewise-accesspolicy-accesspolicypermission"""
-    rp_AccessPolicyResource: typing.Union['AccessPolicyAccessPolicyResource', dict] = attr.ib(
+    rp_AccessPolicyResource: typing.Union['PropAccessPolicyAccessPolicyResource', dict] = attr.ib(
         default=None,
-        converter=AccessPolicyAccessPolicyResource.from_dict,
-        validator=attr.validators.instance_of(AccessPolicyAccessPolicyResource),
+        converter=PropAccessPolicyAccessPolicyResource.from_dict,
+        validator=attr.validators.instance_of(PropAccessPolicyAccessPolicyResource),
         metadata={AttrMeta.PROPERTY_NAME: "AccessPolicyResource"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-accesspolicy.html#cfn-iotsitewise-accesspolicy-accesspolicyresource"""
@@ -1017,17 +1017,17 @@ class Gateway(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "GatewayName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-gateway.html#cfn-iotsitewise-gateway-gatewayname"""
-    rp_GatewayPlatform: typing.Union['GatewayGatewayPlatform', dict] = attr.ib(
+    rp_GatewayPlatform: typing.Union['PropGatewayGatewayPlatform', dict] = attr.ib(
         default=None,
-        converter=GatewayGatewayPlatform.from_dict,
-        validator=attr.validators.instance_of(GatewayGatewayPlatform),
+        converter=PropGatewayGatewayPlatform.from_dict,
+        validator=attr.validators.instance_of(PropGatewayGatewayPlatform),
         metadata={AttrMeta.PROPERTY_NAME: "GatewayPlatform"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-gateway.html#cfn-iotsitewise-gateway-gatewayplatform"""
-    p_GatewayCapabilitySummaries: typing.List[typing.Union['GatewayGatewayCapabilitySummary', dict]] = attr.ib(
+    p_GatewayCapabilitySummaries: typing.List[typing.Union['PropGatewayGatewayCapabilitySummary', dict]] = attr.ib(
         default=None,
-        converter=GatewayGatewayCapabilitySummary.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(GatewayGatewayCapabilitySummary), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropGatewayGatewayCapabilitySummary.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropGatewayGatewayCapabilitySummary), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "GatewayCapabilitySummaries"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-gateway.html#cfn-iotsitewise-gateway-gatewaycapabilitysummaries"""

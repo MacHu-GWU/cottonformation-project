@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class DBProxyTargetGroupConnectionPoolConfigurationInfoFormat(Property):
+class PropDBProxyTargetGroupConnectionPoolConfigurationInfoFormat(Property):
     """
     AWS Object Type = "AWS::RDS::DBProxyTargetGroup.ConnectionPoolConfigurationInfoFormat"
 
@@ -63,7 +63,7 @@ class DBProxyTargetGroupConnectionPoolConfigurationInfoFormat(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbproxytargetgroup-connectionpoolconfigurationinfoformat.html#cfn-rds-dbproxytargetgroup-connectionpoolconfigurationinfoformat-sessionpinningfilters"""
 
 @attr.s
-class DBInstanceDBInstanceRole(Property):
+class PropDBInstanceDBInstanceRole(Property):
     """
     AWS Object Type = "AWS::RDS::DBInstance.DBInstanceRole"
 
@@ -90,7 +90,7 @@ class DBInstanceDBInstanceRole(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbinstance-dbinstancerole.html#cfn-rds-dbinstance-dbinstancerole-rolearn"""
 
 @attr.s
-class DBClusterScalingConfiguration(Property):
+class PropDBClusterScalingConfiguration(Property):
     """
     AWS Object Type = "AWS::RDS::DBCluster.ScalingConfiguration"
 
@@ -131,7 +131,7 @@ class DBClusterScalingConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbcluster-scalingconfiguration.html#cfn-rds-dbcluster-scalingconfiguration-secondsuntilautopause"""
 
 @attr.s
-class DBInstanceProcessorFeature(Property):
+class PropDBInstanceProcessorFeature(Property):
     """
     AWS Object Type = "AWS::RDS::DBInstance.ProcessorFeature"
 
@@ -158,7 +158,7 @@ class DBInstanceProcessorFeature(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbinstance-processorfeature.html#cfn-rds-dbinstance-processorfeature-value"""
 
 @attr.s
-class DBSecurityGroupIngress(Property):
+class PropDBSecurityGroupIngress(Property):
     """
     AWS Object Type = "AWS::RDS::DBSecurityGroup.Ingress"
 
@@ -199,7 +199,7 @@ class DBSecurityGroupIngress(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-security-group-rule.html#cfn-rds-securitygroup-ec2securitygroupownerid"""
 
 @attr.s
-class DBProxyTagFormat(Property):
+class PropDBProxyTagFormat(Property):
     """
     AWS Object Type = "AWS::RDS::DBProxy.TagFormat"
 
@@ -226,7 +226,7 @@ class DBProxyTagFormat(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbproxy-tagformat.html#cfn-rds-dbproxy-tagformat-value"""
 
 @attr.s
-class DBProxyAuthFormat(Property):
+class PropDBProxyAuthFormat(Property):
     """
     AWS Object Type = "AWS::RDS::DBProxy.AuthFormat"
 
@@ -274,7 +274,7 @@ class DBProxyAuthFormat(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbproxy-authformat.html#cfn-rds-dbproxy-authformat-username"""
 
 @attr.s
-class DBProxyEndpointTagFormat(Property):
+class PropDBProxyEndpointTagFormat(Property):
     """
     AWS Object Type = "AWS::RDS::DBProxyEndpoint.TagFormat"
 
@@ -301,7 +301,7 @@ class DBProxyEndpointTagFormat(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbproxyendpoint-tagformat.html#cfn-rds-dbproxyendpoint-tagformat-value"""
 
 @attr.s
-class OptionGroupOptionSetting(Property):
+class PropOptionGroupOptionSetting(Property):
     """
     AWS Object Type = "AWS::RDS::OptionGroup.OptionSetting"
 
@@ -328,7 +328,7 @@ class OptionGroupOptionSetting(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-optiongroup-optionconfigurations-optionsettings.html#cfn-rds-optiongroup-optionconfigurations-optionsettings-value"""
 
 @attr.s
-class DBClusterDBClusterRole(Property):
+class PropDBClusterDBClusterRole(Property):
     """
     AWS Object Type = "AWS::RDS::DBCluster.DBClusterRole"
 
@@ -355,7 +355,7 @@ class DBClusterDBClusterRole(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbcluster-dbclusterrole.html#cfn-rds-dbcluster-dbclusterrole-featurename"""
 
 @attr.s
-class OptionGroupOptionConfiguration(Property):
+class PropOptionGroupOptionConfiguration(Property):
     """
     AWS Object Type = "AWS::RDS::OptionGroup.OptionConfiguration"
 
@@ -384,10 +384,10 @@ class OptionGroupOptionConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "DBSecurityGroupMemberships"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-optiongroup-optionconfigurations.html#cfn-rds-optiongroup-optionconfigurations-dbsecuritygroupmemberships"""
-    p_OptionSettings: typing.List[typing.Union['OptionGroupOptionSetting', dict]] = attr.ib(
+    p_OptionSettings: typing.List[typing.Union['PropOptionGroupOptionSetting', dict]] = attr.ib(
         default=None,
-        converter=OptionGroupOptionSetting.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(OptionGroupOptionSetting), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropOptionGroupOptionSetting.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropOptionGroupOptionSetting), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "OptionSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-optiongroup-optionconfigurations.html#cfn-rds-optiongroup-optionconfigurations-optionsettings"""
@@ -599,10 +599,10 @@ class DBInstance(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "AllowMajorVersionUpgrade"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-allowmajorversionupgrade"""
-    p_AssociatedRoles: typing.List[typing.Union['DBInstanceDBInstanceRole', dict]] = attr.ib(
+    p_AssociatedRoles: typing.List[typing.Union['PropDBInstanceDBInstanceRole', dict]] = attr.ib(
         default=None,
-        converter=DBInstanceDBInstanceRole.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(DBInstanceDBInstanceRole), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropDBInstanceDBInstanceRole.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDBInstanceDBInstanceRole), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "AssociatedRoles"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-associatedroles"""
@@ -828,10 +828,10 @@ class DBInstance(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "PreferredMaintenanceWindow"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-preferredmaintenancewindow"""
-    p_ProcessorFeatures: typing.List[typing.Union['DBInstanceProcessorFeature', dict]] = attr.ib(
+    p_ProcessorFeatures: typing.List[typing.Union['PropDBInstanceProcessorFeature', dict]] = attr.ib(
         default=None,
-        converter=DBInstanceProcessorFeature.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(DBInstanceProcessorFeature), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropDBInstanceProcessorFeature.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDBInstanceProcessorFeature), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "ProcessorFeatures"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-database-instance.html#cfn-rds-dbinstance-processorfeatures"""
@@ -926,10 +926,10 @@ class DBSecurityGroup(Resource):
     AWS_OBJECT_TYPE = "AWS::RDS::DBSecurityGroup"
 
     
-    rp_DBSecurityGroupIngress: typing.List[typing.Union['DBSecurityGroupIngress', dict]] = attr.ib(
+    rp_DBSecurityGroupIngress: typing.List[typing.Union['PropDBSecurityGroupIngress', dict]] = attr.ib(
         default=None,
-        converter=DBSecurityGroupIngress.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(DBSecurityGroupIngress), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropDBSecurityGroupIngress.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDBSecurityGroupIngress), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "DBSecurityGroupIngress"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-security-group.html#cfn-rds-dbsecuritygroup-dbsecuritygroupingress"""
@@ -1102,10 +1102,10 @@ class DBCluster(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Engine"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-engine"""
-    p_AssociatedRoles: typing.List[typing.Union['DBClusterDBClusterRole', dict]] = attr.ib(
+    p_AssociatedRoles: typing.List[typing.Union['PropDBClusterDBClusterRole', dict]] = attr.ib(
         default=None,
-        converter=DBClusterDBClusterRole.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(DBClusterDBClusterRole), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropDBClusterDBClusterRole.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDBClusterDBClusterRole), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "AssociatedRoles"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-associatedroles"""
@@ -1241,10 +1241,10 @@ class DBCluster(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "RestoreType"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-restoretype"""
-    p_ScalingConfiguration: typing.Union['DBClusterScalingConfiguration', dict] = attr.ib(
+    p_ScalingConfiguration: typing.Union['PropDBClusterScalingConfiguration', dict] = attr.ib(
         default=None,
-        converter=DBClusterScalingConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DBClusterScalingConfiguration)),
+        converter=PropDBClusterScalingConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDBClusterScalingConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "ScalingConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-scalingconfiguration"""
@@ -1339,10 +1339,10 @@ class OptionGroup(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "MajorEngineVersion"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-optiongroup.html#cfn-rds-optiongroup-majorengineversion"""
-    rp_OptionConfigurations: typing.List[typing.Union['OptionGroupOptionConfiguration', dict]] = attr.ib(
+    rp_OptionConfigurations: typing.List[typing.Union['PropOptionGroupOptionConfiguration', dict]] = attr.ib(
         default=None,
-        converter=OptionGroupOptionConfiguration.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(OptionGroupOptionConfiguration), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropOptionGroupOptionConfiguration.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropOptionGroupOptionConfiguration), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "OptionConfigurations"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-optiongroup.html#cfn-rds-optiongroup-optionconfigurations"""
@@ -1481,10 +1481,10 @@ class DBProxy(Resource):
     AWS_OBJECT_TYPE = "AWS::RDS::DBProxy"
 
     
-    rp_Auth: typing.List[typing.Union['DBProxyAuthFormat', dict]] = attr.ib(
+    rp_Auth: typing.List[typing.Union['PropDBProxyAuthFormat', dict]] = attr.ib(
         default=None,
-        converter=DBProxyAuthFormat.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(DBProxyAuthFormat), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropDBProxyAuthFormat.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDBProxyAuthFormat), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "Auth"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxy.html#cfn-rds-dbproxy-auth"""
@@ -1536,10 +1536,10 @@ class DBProxy(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "VpcSecurityGroupIds"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxy.html#cfn-rds-dbproxy-vpcsecuritygroupids"""
-    p_Tags: typing.List[typing.Union['DBProxyTagFormat', dict]] = attr.ib(
+    p_Tags: typing.List[typing.Union['PropDBProxyTagFormat', dict]] = attr.ib(
         default=None,
-        converter=DBProxyTagFormat.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(DBProxyTagFormat), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropDBProxyTagFormat.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDBProxyTagFormat), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Tags"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxy.html#cfn-rds-dbproxy-tags"""
@@ -1591,10 +1591,10 @@ class DBProxyTargetGroup(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "TargetGroupName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxytargetgroup.html#cfn-rds-dbproxytargetgroup-targetgroupname"""
-    p_ConnectionPoolConfigurationInfo: typing.Union['DBProxyTargetGroupConnectionPoolConfigurationInfoFormat', dict] = attr.ib(
+    p_ConnectionPoolConfigurationInfo: typing.Union['PropDBProxyTargetGroupConnectionPoolConfigurationInfoFormat', dict] = attr.ib(
         default=None,
-        converter=DBProxyTargetGroupConnectionPoolConfigurationInfoFormat.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DBProxyTargetGroupConnectionPoolConfigurationInfoFormat)),
+        converter=PropDBProxyTargetGroupConnectionPoolConfigurationInfoFormat.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDBProxyTargetGroupConnectionPoolConfigurationInfoFormat)),
         metadata={AttrMeta.PROPERTY_NAME: "ConnectionPoolConfigurationInfo"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxytargetgroup.html#cfn-rds-dbproxytargetgroup-connectionpoolconfigurationinfo"""
@@ -1667,10 +1667,10 @@ class DBProxyEndpoint(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "VpcSecurityGroupIds"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxyendpoint.html#cfn-rds-dbproxyendpoint-vpcsecuritygroupids"""
-    p_Tags: typing.List[typing.Union['DBProxyEndpointTagFormat', dict]] = attr.ib(
+    p_Tags: typing.List[typing.Union['PropDBProxyEndpointTagFormat', dict]] = attr.ib(
         default=None,
-        converter=DBProxyEndpointTagFormat.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(DBProxyEndpointTagFormat), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropDBProxyEndpointTagFormat.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDBProxyEndpointTagFormat), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Tags"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxyendpoint.html#cfn-rds-dbproxyendpoint-tags"""

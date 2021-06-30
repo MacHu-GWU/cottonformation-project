@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class EndpointKinesisSettings(Property):
+class PropEndpointKinesisSettings(Property):
     """
     AWS Object Type = "AWS::DMS::Endpoint.KinesisSettings"
 
@@ -49,7 +49,7 @@ class EndpointKinesisSettings(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-kinesissettings.html#cfn-dms-endpoint-kinesissettings-streamarn"""
 
 @attr.s
-class EndpointS3Settings(Property):
+class PropEndpointS3Settings(Property):
     """
     AWS Object Type = "AWS::DMS::Endpoint.S3Settings"
 
@@ -111,7 +111,7 @@ class EndpointS3Settings(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-s3settings.html#cfn-dms-endpoint-s3settings-serviceaccessrolearn"""
 
 @attr.s
-class EndpointPostgreSqlSettings(Property):
+class PropEndpointPostgreSqlSettings(Property):
     """
     AWS Object Type = "AWS::DMS::Endpoint.PostgreSqlSettings"
 
@@ -138,7 +138,7 @@ class EndpointPostgreSqlSettings(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-postgresqlsettings.html#cfn-dms-endpoint-postgresqlsettings-secretsmanagersecretid"""
 
 @attr.s
-class EndpointMicrosoftSqlServerSettings(Property):
+class PropEndpointMicrosoftSqlServerSettings(Property):
     """
     AWS Object Type = "AWS::DMS::Endpoint.MicrosoftSqlServerSettings"
 
@@ -165,7 +165,7 @@ class EndpointMicrosoftSqlServerSettings(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-microsoftsqlserversettings.html#cfn-dms-endpoint-microsoftsqlserversettings-secretsmanagersecretid"""
 
 @attr.s
-class EndpointMongoDbSettings(Property):
+class PropEndpointMongoDbSettings(Property):
     """
     AWS Object Type = "AWS::DMS::Endpoint.MongoDbSettings"
 
@@ -269,7 +269,7 @@ class EndpointMongoDbSettings(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-mongodbsettings.html#cfn-dms-endpoint-mongodbsettings-username"""
 
 @attr.s
-class EndpointKafkaSettings(Property):
+class PropEndpointKafkaSettings(Property):
     """
     AWS Object Type = "AWS::DMS::Endpoint.KafkaSettings"
 
@@ -296,7 +296,7 @@ class EndpointKafkaSettings(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-kafkasettings.html#cfn-dms-endpoint-kafkasettings-topic"""
 
 @attr.s
-class EndpointMySqlSettings(Property):
+class PropEndpointMySqlSettings(Property):
     """
     AWS Object Type = "AWS::DMS::Endpoint.MySqlSettings"
 
@@ -323,7 +323,7 @@ class EndpointMySqlSettings(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-mysqlsettings.html#cfn-dms-endpoint-mysqlsettings-secretsmanagersecretid"""
 
 @attr.s
-class EndpointNeptuneSettings(Property):
+class PropEndpointNeptuneSettings(Property):
     """
     AWS Object Type = "AWS::DMS::Endpoint.NeptuneSettings"
 
@@ -385,7 +385,7 @@ class EndpointNeptuneSettings(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-neptunesettings.html#cfn-dms-endpoint-neptunesettings-serviceaccessrolearn"""
 
 @attr.s
-class EndpointIbmDb2Settings(Property):
+class PropEndpointIbmDb2Settings(Property):
     """
     AWS Object Type = "AWS::DMS::Endpoint.IbmDb2Settings"
 
@@ -412,7 +412,7 @@ class EndpointIbmDb2Settings(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-ibmdb2settings.html#cfn-dms-endpoint-ibmdb2settings-secretsmanagersecretid"""
 
 @attr.s
-class EndpointElasticsearchSettings(Property):
+class PropEndpointElasticsearchSettings(Property):
     """
     AWS Object Type = "AWS::DMS::Endpoint.ElasticsearchSettings"
 
@@ -453,7 +453,7 @@ class EndpointElasticsearchSettings(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-elasticsearchsettings.html#cfn-dms-endpoint-elasticsearchsettings-serviceaccessrolearn"""
 
 @attr.s
-class EndpointOracleSettings(Property):
+class PropEndpointOracleSettings(Property):
     """
     AWS Object Type = "AWS::DMS::Endpoint.OracleSettings"
 
@@ -494,7 +494,7 @@ class EndpointOracleSettings(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-oraclesettings.html#cfn-dms-endpoint-oraclesettings-secretsmanagersecretid"""
 
 @attr.s
-class EndpointDynamoDbSettings(Property):
+class PropEndpointDynamoDbSettings(Property):
     """
     AWS Object Type = "AWS::DMS::Endpoint.DynamoDbSettings"
 
@@ -514,7 +514,7 @@ class EndpointDynamoDbSettings(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-dynamodbsettings.html#cfn-dms-endpoint-dynamodbsettings-serviceaccessrolearn"""
 
 @attr.s
-class EndpointDocDbSettings(Property):
+class PropEndpointDocDbSettings(Property):
     """
     AWS Object Type = "AWS::DMS::Endpoint.DocDbSettings"
 
@@ -541,7 +541,7 @@ class EndpointDocDbSettings(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-docdbsettings.html#cfn-dms-endpoint-docdbsettings-secretsmanagersecretid"""
 
 @attr.s
-class EndpointSybaseSettings(Property):
+class PropEndpointSybaseSettings(Property):
     """
     AWS Object Type = "AWS::DMS::Endpoint.SybaseSettings"
 
@@ -568,7 +568,7 @@ class EndpointSybaseSettings(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dms-endpoint-sybasesettings.html#cfn-dms-endpoint-sybasesettings-secretsmanagersecretid"""
 
 @attr.s
-class EndpointRedshiftSettings(Property):
+class PropEndpointRedshiftSettings(Property):
     """
     AWS Object Type = "AWS::DMS::Endpoint.RedshiftSettings"
 
@@ -811,24 +811,24 @@ class Endpoint(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "DatabaseName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-databasename"""
-    p_DocDbSettings: typing.Union['EndpointDocDbSettings', dict] = attr.ib(
+    p_DocDbSettings: typing.Union['PropEndpointDocDbSettings', dict] = attr.ib(
         default=None,
-        converter=EndpointDocDbSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(EndpointDocDbSettings)),
+        converter=PropEndpointDocDbSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropEndpointDocDbSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "DocDbSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-docdbsettings"""
-    p_DynamoDbSettings: typing.Union['EndpointDynamoDbSettings', dict] = attr.ib(
+    p_DynamoDbSettings: typing.Union['PropEndpointDynamoDbSettings', dict] = attr.ib(
         default=None,
-        converter=EndpointDynamoDbSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(EndpointDynamoDbSettings)),
+        converter=PropEndpointDynamoDbSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropEndpointDynamoDbSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "DynamoDbSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-dynamodbsettings"""
-    p_ElasticsearchSettings: typing.Union['EndpointElasticsearchSettings', dict] = attr.ib(
+    p_ElasticsearchSettings: typing.Union['PropEndpointElasticsearchSettings', dict] = attr.ib(
         default=None,
-        converter=EndpointElasticsearchSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(EndpointElasticsearchSettings)),
+        converter=PropEndpointElasticsearchSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropEndpointElasticsearchSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "ElasticsearchSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-elasticsearchsettings"""
@@ -844,24 +844,24 @@ class Endpoint(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "ExtraConnectionAttributes"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-extraconnectionattributes"""
-    p_IbmDb2Settings: typing.Union['EndpointIbmDb2Settings', dict] = attr.ib(
+    p_IbmDb2Settings: typing.Union['PropEndpointIbmDb2Settings', dict] = attr.ib(
         default=None,
-        converter=EndpointIbmDb2Settings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(EndpointIbmDb2Settings)),
+        converter=PropEndpointIbmDb2Settings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropEndpointIbmDb2Settings)),
         metadata={AttrMeta.PROPERTY_NAME: "IbmDb2Settings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-ibmdb2settings"""
-    p_KafkaSettings: typing.Union['EndpointKafkaSettings', dict] = attr.ib(
+    p_KafkaSettings: typing.Union['PropEndpointKafkaSettings', dict] = attr.ib(
         default=None,
-        converter=EndpointKafkaSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(EndpointKafkaSettings)),
+        converter=PropEndpointKafkaSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropEndpointKafkaSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "KafkaSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-kafkasettings"""
-    p_KinesisSettings: typing.Union['EndpointKinesisSettings', dict] = attr.ib(
+    p_KinesisSettings: typing.Union['PropEndpointKinesisSettings', dict] = attr.ib(
         default=None,
-        converter=EndpointKinesisSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(EndpointKinesisSettings)),
+        converter=PropEndpointKinesisSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropEndpointKinesisSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "KinesisSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-kinesissettings"""
@@ -871,38 +871,38 @@ class Endpoint(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "KmsKeyId"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-kmskeyid"""
-    p_MicrosoftSqlServerSettings: typing.Union['EndpointMicrosoftSqlServerSettings', dict] = attr.ib(
+    p_MicrosoftSqlServerSettings: typing.Union['PropEndpointMicrosoftSqlServerSettings', dict] = attr.ib(
         default=None,
-        converter=EndpointMicrosoftSqlServerSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(EndpointMicrosoftSqlServerSettings)),
+        converter=PropEndpointMicrosoftSqlServerSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropEndpointMicrosoftSqlServerSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "MicrosoftSqlServerSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-microsoftsqlserversettings"""
-    p_MongoDbSettings: typing.Union['EndpointMongoDbSettings', dict] = attr.ib(
+    p_MongoDbSettings: typing.Union['PropEndpointMongoDbSettings', dict] = attr.ib(
         default=None,
-        converter=EndpointMongoDbSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(EndpointMongoDbSettings)),
+        converter=PropEndpointMongoDbSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropEndpointMongoDbSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "MongoDbSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-mongodbsettings"""
-    p_MySqlSettings: typing.Union['EndpointMySqlSettings', dict] = attr.ib(
+    p_MySqlSettings: typing.Union['PropEndpointMySqlSettings', dict] = attr.ib(
         default=None,
-        converter=EndpointMySqlSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(EndpointMySqlSettings)),
+        converter=PropEndpointMySqlSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropEndpointMySqlSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "MySqlSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-mysqlsettings"""
-    p_NeptuneSettings: typing.Union['EndpointNeptuneSettings', dict] = attr.ib(
+    p_NeptuneSettings: typing.Union['PropEndpointNeptuneSettings', dict] = attr.ib(
         default=None,
-        converter=EndpointNeptuneSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(EndpointNeptuneSettings)),
+        converter=PropEndpointNeptuneSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropEndpointNeptuneSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "NeptuneSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-neptunesettings"""
-    p_OracleSettings: typing.Union['EndpointOracleSettings', dict] = attr.ib(
+    p_OracleSettings: typing.Union['PropEndpointOracleSettings', dict] = attr.ib(
         default=None,
-        converter=EndpointOracleSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(EndpointOracleSettings)),
+        converter=PropEndpointOracleSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropEndpointOracleSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "OracleSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-oraclesettings"""
@@ -918,17 +918,17 @@ class Endpoint(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Port"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-port"""
-    p_PostgreSqlSettings: typing.Union['EndpointPostgreSqlSettings', dict] = attr.ib(
+    p_PostgreSqlSettings: typing.Union['PropEndpointPostgreSqlSettings', dict] = attr.ib(
         default=None,
-        converter=EndpointPostgreSqlSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(EndpointPostgreSqlSettings)),
+        converter=PropEndpointPostgreSqlSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropEndpointPostgreSqlSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "PostgreSqlSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-postgresqlsettings"""
-    p_RedshiftSettings: typing.Union['EndpointRedshiftSettings', dict] = attr.ib(
+    p_RedshiftSettings: typing.Union['PropEndpointRedshiftSettings', dict] = attr.ib(
         default=None,
-        converter=EndpointRedshiftSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(EndpointRedshiftSettings)),
+        converter=PropEndpointRedshiftSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropEndpointRedshiftSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "RedshiftSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-redshiftsettings"""
@@ -938,10 +938,10 @@ class Endpoint(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "ResourceIdentifier"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-resourceidentifier"""
-    p_S3Settings: typing.Union['EndpointS3Settings', dict] = attr.ib(
+    p_S3Settings: typing.Union['PropEndpointS3Settings', dict] = attr.ib(
         default=None,
-        converter=EndpointS3Settings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(EndpointS3Settings)),
+        converter=PropEndpointS3Settings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropEndpointS3Settings)),
         metadata={AttrMeta.PROPERTY_NAME: "S3Settings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-s3settings"""
@@ -957,10 +957,10 @@ class Endpoint(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "SslMode"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-sslmode"""
-    p_SybaseSettings: typing.Union['EndpointSybaseSettings', dict] = attr.ib(
+    p_SybaseSettings: typing.Union['PropEndpointSybaseSettings', dict] = attr.ib(
         default=None,
-        converter=EndpointSybaseSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(EndpointSybaseSettings)),
+        converter=PropEndpointSybaseSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropEndpointSybaseSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "SybaseSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dms-endpoint.html#cfn-dms-endpoint-sybasesettings"""

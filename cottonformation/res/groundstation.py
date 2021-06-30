@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class ConfigS3RecordingConfig(Property):
+class PropConfigS3RecordingConfig(Property):
     """
     AWS Object Type = "AWS::GroundStation::Config.S3RecordingConfig"
 
@@ -49,7 +49,7 @@ class ConfigS3RecordingConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-config-s3recordingconfig.html#cfn-groundstation-config-s3recordingconfig-rolearn"""
 
 @attr.s
-class ConfigUplinkEchoConfig(Property):
+class PropConfigUplinkEchoConfig(Property):
     """
     AWS Object Type = "AWS::GroundStation::Config.UplinkEchoConfig"
 
@@ -76,7 +76,7 @@ class ConfigUplinkEchoConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-config-uplinkechoconfig.html#cfn-groundstation-config-uplinkechoconfig-enabled"""
 
 @attr.s
-class ConfigDataflowEndpointConfig(Property):
+class PropConfigDataflowEndpointConfig(Property):
     """
     AWS Object Type = "AWS::GroundStation::Config.DataflowEndpointConfig"
 
@@ -103,7 +103,7 @@ class ConfigDataflowEndpointConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-config-dataflowendpointconfig.html#cfn-groundstation-config-dataflowendpointconfig-dataflowendpointregion"""
 
 @attr.s
-class MissionProfileDataflowEdge(Property):
+class PropMissionProfileDataflowEdge(Property):
     """
     AWS Object Type = "AWS::GroundStation::MissionProfile.DataflowEdge"
 
@@ -130,7 +130,7 @@ class MissionProfileDataflowEdge(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-missionprofile-dataflowedge.html#cfn-groundstation-missionprofile-dataflowedge-source"""
 
 @attr.s
-class ConfigDemodulationConfig(Property):
+class PropConfigDemodulationConfig(Property):
     """
     AWS Object Type = "AWS::GroundStation::Config.DemodulationConfig"
 
@@ -150,7 +150,7 @@ class ConfigDemodulationConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-config-demodulationconfig.html#cfn-groundstation-config-demodulationconfig-unvalidatedjson"""
 
 @attr.s
-class DataflowEndpointGroupSecurityDetails(Property):
+class PropDataflowEndpointGroupSecurityDetails(Property):
     """
     AWS Object Type = "AWS::GroundStation::DataflowEndpointGroup.SecurityDetails"
 
@@ -184,7 +184,7 @@ class DataflowEndpointGroupSecurityDetails(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-dataflowendpointgroup-securitydetails.html#cfn-groundstation-dataflowendpointgroup-securitydetails-subnetids"""
 
 @attr.s
-class DataflowEndpointGroupSocketAddress(Property):
+class PropDataflowEndpointGroupSocketAddress(Property):
     """
     AWS Object Type = "AWS::GroundStation::DataflowEndpointGroup.SocketAddress"
 
@@ -211,7 +211,7 @@ class DataflowEndpointGroupSocketAddress(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-dataflowendpointgroup-socketaddress.html#cfn-groundstation-dataflowendpointgroup-socketaddress-port"""
 
 @attr.s
-class ConfigFrequency(Property):
+class PropConfigFrequency(Property):
     """
     AWS Object Type = "AWS::GroundStation::Config.Frequency"
 
@@ -238,7 +238,7 @@ class ConfigFrequency(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-config-frequency.html#cfn-groundstation-config-frequency-value"""
 
 @attr.s
-class ConfigFrequencyBandwidth(Property):
+class PropConfigFrequencyBandwidth(Property):
     """
     AWS Object Type = "AWS::GroundStation::Config.FrequencyBandwidth"
 
@@ -265,7 +265,7 @@ class ConfigFrequencyBandwidth(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-config-frequencybandwidth.html#cfn-groundstation-config-frequencybandwidth-value"""
 
 @attr.s
-class ConfigTrackingConfig(Property):
+class PropConfigTrackingConfig(Property):
     """
     AWS Object Type = "AWS::GroundStation::Config.TrackingConfig"
 
@@ -285,7 +285,7 @@ class ConfigTrackingConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-config-trackingconfig.html#cfn-groundstation-config-trackingconfig-autotrack"""
 
 @attr.s
-class ConfigDecodeConfig(Property):
+class PropConfigDecodeConfig(Property):
     """
     AWS Object Type = "AWS::GroundStation::Config.DecodeConfig"
 
@@ -305,7 +305,7 @@ class ConfigDecodeConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-config-decodeconfig.html#cfn-groundstation-config-decodeconfig-unvalidatedjson"""
 
 @attr.s
-class ConfigEirp(Property):
+class PropConfigEirp(Property):
     """
     AWS Object Type = "AWS::GroundStation::Config.Eirp"
 
@@ -332,7 +332,7 @@ class ConfigEirp(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-config-eirp.html#cfn-groundstation-config-eirp-value"""
 
 @attr.s
-class DataflowEndpointGroupDataflowEndpoint(Property):
+class PropDataflowEndpointGroupDataflowEndpoint(Property):
     """
     AWS Object Type = "AWS::GroundStation::DataflowEndpointGroup.DataflowEndpoint"
 
@@ -346,10 +346,10 @@ class DataflowEndpointGroupDataflowEndpoint(Property):
     """
     AWS_OBJECT_TYPE = "AWS::GroundStation::DataflowEndpointGroup.DataflowEndpoint"
     
-    p_Address: typing.Union['DataflowEndpointGroupSocketAddress', dict] = attr.ib(
+    p_Address: typing.Union['PropDataflowEndpointGroupSocketAddress', dict] = attr.ib(
         default=None,
-        converter=DataflowEndpointGroupSocketAddress.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DataflowEndpointGroupSocketAddress)),
+        converter=PropDataflowEndpointGroupSocketAddress.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataflowEndpointGroupSocketAddress)),
         metadata={AttrMeta.PROPERTY_NAME: "Address"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-dataflowendpointgroup-dataflowendpoint.html#cfn-groundstation-dataflowendpointgroup-dataflowendpoint-address"""
@@ -367,7 +367,7 @@ class DataflowEndpointGroupDataflowEndpoint(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-dataflowendpointgroup-dataflowendpoint.html#cfn-groundstation-dataflowendpointgroup-dataflowendpoint-name"""
 
 @attr.s
-class ConfigUplinkSpectrumConfig(Property):
+class PropConfigUplinkSpectrumConfig(Property):
     """
     AWS Object Type = "AWS::GroundStation::Config.UplinkSpectrumConfig"
 
@@ -380,10 +380,10 @@ class ConfigUplinkSpectrumConfig(Property):
     """
     AWS_OBJECT_TYPE = "AWS::GroundStation::Config.UplinkSpectrumConfig"
     
-    p_CenterFrequency: typing.Union['ConfigFrequency', dict] = attr.ib(
+    p_CenterFrequency: typing.Union['PropConfigFrequency', dict] = attr.ib(
         default=None,
-        converter=ConfigFrequency.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ConfigFrequency)),
+        converter=PropConfigFrequency.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropConfigFrequency)),
         metadata={AttrMeta.PROPERTY_NAME: "CenterFrequency"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-config-uplinkspectrumconfig.html#cfn-groundstation-config-uplinkspectrumconfig-centerfrequency"""
@@ -395,7 +395,7 @@ class ConfigUplinkSpectrumConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-config-uplinkspectrumconfig.html#cfn-groundstation-config-uplinkspectrumconfig-polarization"""
 
 @attr.s
-class ConfigSpectrumConfig(Property):
+class PropConfigSpectrumConfig(Property):
     """
     AWS Object Type = "AWS::GroundStation::Config.SpectrumConfig"
 
@@ -409,17 +409,17 @@ class ConfigSpectrumConfig(Property):
     """
     AWS_OBJECT_TYPE = "AWS::GroundStation::Config.SpectrumConfig"
     
-    p_Bandwidth: typing.Union['ConfigFrequencyBandwidth', dict] = attr.ib(
+    p_Bandwidth: typing.Union['PropConfigFrequencyBandwidth', dict] = attr.ib(
         default=None,
-        converter=ConfigFrequencyBandwidth.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ConfigFrequencyBandwidth)),
+        converter=PropConfigFrequencyBandwidth.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropConfigFrequencyBandwidth)),
         metadata={AttrMeta.PROPERTY_NAME: "Bandwidth"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-config-spectrumconfig.html#cfn-groundstation-config-spectrumconfig-bandwidth"""
-    p_CenterFrequency: typing.Union['ConfigFrequency', dict] = attr.ib(
+    p_CenterFrequency: typing.Union['PropConfigFrequency', dict] = attr.ib(
         default=None,
-        converter=ConfigFrequency.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ConfigFrequency)),
+        converter=PropConfigFrequency.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropConfigFrequency)),
         metadata={AttrMeta.PROPERTY_NAME: "CenterFrequency"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-config-spectrumconfig.html#cfn-groundstation-config-spectrumconfig-centerfrequency"""
@@ -431,7 +431,7 @@ class ConfigSpectrumConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-config-spectrumconfig.html#cfn-groundstation-config-spectrumconfig-polarization"""
 
 @attr.s
-class DataflowEndpointGroupEndpointDetails(Property):
+class PropDataflowEndpointGroupEndpointDetails(Property):
     """
     AWS Object Type = "AWS::GroundStation::DataflowEndpointGroup.EndpointDetails"
 
@@ -444,23 +444,23 @@ class DataflowEndpointGroupEndpointDetails(Property):
     """
     AWS_OBJECT_TYPE = "AWS::GroundStation::DataflowEndpointGroup.EndpointDetails"
     
-    p_Endpoint: typing.Union['DataflowEndpointGroupDataflowEndpoint', dict] = attr.ib(
+    p_Endpoint: typing.Union['PropDataflowEndpointGroupDataflowEndpoint', dict] = attr.ib(
         default=None,
-        converter=DataflowEndpointGroupDataflowEndpoint.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DataflowEndpointGroupDataflowEndpoint)),
+        converter=PropDataflowEndpointGroupDataflowEndpoint.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataflowEndpointGroupDataflowEndpoint)),
         metadata={AttrMeta.PROPERTY_NAME: "Endpoint"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-dataflowendpointgroup-endpointdetails.html#cfn-groundstation-dataflowendpointgroup-endpointdetails-endpoint"""
-    p_SecurityDetails: typing.Union['DataflowEndpointGroupSecurityDetails', dict] = attr.ib(
+    p_SecurityDetails: typing.Union['PropDataflowEndpointGroupSecurityDetails', dict] = attr.ib(
         default=None,
-        converter=DataflowEndpointGroupSecurityDetails.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DataflowEndpointGroupSecurityDetails)),
+        converter=PropDataflowEndpointGroupSecurityDetails.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataflowEndpointGroupSecurityDetails)),
         metadata={AttrMeta.PROPERTY_NAME: "SecurityDetails"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-dataflowendpointgroup-endpointdetails.html#cfn-groundstation-dataflowendpointgroup-endpointdetails-securitydetails"""
 
 @attr.s
-class ConfigAntennaUplinkConfig(Property):
+class PropConfigAntennaUplinkConfig(Property):
     """
     AWS Object Type = "AWS::GroundStation::Config.AntennaUplinkConfig"
 
@@ -474,17 +474,17 @@ class ConfigAntennaUplinkConfig(Property):
     """
     AWS_OBJECT_TYPE = "AWS::GroundStation::Config.AntennaUplinkConfig"
     
-    p_SpectrumConfig: typing.Union['ConfigUplinkSpectrumConfig', dict] = attr.ib(
+    p_SpectrumConfig: typing.Union['PropConfigUplinkSpectrumConfig', dict] = attr.ib(
         default=None,
-        converter=ConfigUplinkSpectrumConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ConfigUplinkSpectrumConfig)),
+        converter=PropConfigUplinkSpectrumConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropConfigUplinkSpectrumConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "SpectrumConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-config-antennauplinkconfig.html#cfn-groundstation-config-antennauplinkconfig-spectrumconfig"""
-    p_TargetEirp: typing.Union['ConfigEirp', dict] = attr.ib(
+    p_TargetEirp: typing.Union['PropConfigEirp', dict] = attr.ib(
         default=None,
-        converter=ConfigEirp.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ConfigEirp)),
+        converter=PropConfigEirp.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropConfigEirp)),
         metadata={AttrMeta.PROPERTY_NAME: "TargetEirp"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-config-antennauplinkconfig.html#cfn-groundstation-config-antennauplinkconfig-targeteirp"""
@@ -496,7 +496,7 @@ class ConfigAntennaUplinkConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-config-antennauplinkconfig.html#cfn-groundstation-config-antennauplinkconfig-transmitdisabled"""
 
 @attr.s
-class ConfigAntennaDownlinkConfig(Property):
+class PropConfigAntennaDownlinkConfig(Property):
     """
     AWS Object Type = "AWS::GroundStation::Config.AntennaDownlinkConfig"
 
@@ -508,16 +508,16 @@ class ConfigAntennaDownlinkConfig(Property):
     """
     AWS_OBJECT_TYPE = "AWS::GroundStation::Config.AntennaDownlinkConfig"
     
-    p_SpectrumConfig: typing.Union['ConfigSpectrumConfig', dict] = attr.ib(
+    p_SpectrumConfig: typing.Union['PropConfigSpectrumConfig', dict] = attr.ib(
         default=None,
-        converter=ConfigSpectrumConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ConfigSpectrumConfig)),
+        converter=PropConfigSpectrumConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropConfigSpectrumConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "SpectrumConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-config-antennadownlinkconfig.html#cfn-groundstation-config-antennadownlinkconfig-spectrumconfig"""
 
 @attr.s
-class ConfigAntennaDownlinkDemodDecodeConfig(Property):
+class PropConfigAntennaDownlinkDemodDecodeConfig(Property):
     """
     AWS Object Type = "AWS::GroundStation::Config.AntennaDownlinkDemodDecodeConfig"
 
@@ -531,30 +531,30 @@ class ConfigAntennaDownlinkDemodDecodeConfig(Property):
     """
     AWS_OBJECT_TYPE = "AWS::GroundStation::Config.AntennaDownlinkDemodDecodeConfig"
     
-    p_DecodeConfig: typing.Union['ConfigDecodeConfig', dict] = attr.ib(
+    p_DecodeConfig: typing.Union['PropConfigDecodeConfig', dict] = attr.ib(
         default=None,
-        converter=ConfigDecodeConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ConfigDecodeConfig)),
+        converter=PropConfigDecodeConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropConfigDecodeConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "DecodeConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-config-antennadownlinkdemoddecodeconfig.html#cfn-groundstation-config-antennadownlinkdemoddecodeconfig-decodeconfig"""
-    p_DemodulationConfig: typing.Union['ConfigDemodulationConfig', dict] = attr.ib(
+    p_DemodulationConfig: typing.Union['PropConfigDemodulationConfig', dict] = attr.ib(
         default=None,
-        converter=ConfigDemodulationConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ConfigDemodulationConfig)),
+        converter=PropConfigDemodulationConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropConfigDemodulationConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "DemodulationConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-config-antennadownlinkdemoddecodeconfig.html#cfn-groundstation-config-antennadownlinkdemoddecodeconfig-demodulationconfig"""
-    p_SpectrumConfig: typing.Union['ConfigSpectrumConfig', dict] = attr.ib(
+    p_SpectrumConfig: typing.Union['PropConfigSpectrumConfig', dict] = attr.ib(
         default=None,
-        converter=ConfigSpectrumConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ConfigSpectrumConfig)),
+        converter=PropConfigSpectrumConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropConfigSpectrumConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "SpectrumConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-config-antennadownlinkdemoddecodeconfig.html#cfn-groundstation-config-antennadownlinkdemoddecodeconfig-spectrumconfig"""
 
 @attr.s
-class ConfigConfigData(Property):
+class PropConfigConfigData(Property):
     """
     AWS Object Type = "AWS::GroundStation::Config.ConfigData"
 
@@ -572,52 +572,52 @@ class ConfigConfigData(Property):
     """
     AWS_OBJECT_TYPE = "AWS::GroundStation::Config.ConfigData"
     
-    p_AntennaDownlinkConfig: typing.Union['ConfigAntennaDownlinkConfig', dict] = attr.ib(
+    p_AntennaDownlinkConfig: typing.Union['PropConfigAntennaDownlinkConfig', dict] = attr.ib(
         default=None,
-        converter=ConfigAntennaDownlinkConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ConfigAntennaDownlinkConfig)),
+        converter=PropConfigAntennaDownlinkConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropConfigAntennaDownlinkConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "AntennaDownlinkConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-config-configdata.html#cfn-groundstation-config-configdata-antennadownlinkconfig"""
-    p_AntennaDownlinkDemodDecodeConfig: typing.Union['ConfigAntennaDownlinkDemodDecodeConfig', dict] = attr.ib(
+    p_AntennaDownlinkDemodDecodeConfig: typing.Union['PropConfigAntennaDownlinkDemodDecodeConfig', dict] = attr.ib(
         default=None,
-        converter=ConfigAntennaDownlinkDemodDecodeConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ConfigAntennaDownlinkDemodDecodeConfig)),
+        converter=PropConfigAntennaDownlinkDemodDecodeConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropConfigAntennaDownlinkDemodDecodeConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "AntennaDownlinkDemodDecodeConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-config-configdata.html#cfn-groundstation-config-configdata-antennadownlinkdemoddecodeconfig"""
-    p_AntennaUplinkConfig: typing.Union['ConfigAntennaUplinkConfig', dict] = attr.ib(
+    p_AntennaUplinkConfig: typing.Union['PropConfigAntennaUplinkConfig', dict] = attr.ib(
         default=None,
-        converter=ConfigAntennaUplinkConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ConfigAntennaUplinkConfig)),
+        converter=PropConfigAntennaUplinkConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropConfigAntennaUplinkConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "AntennaUplinkConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-config-configdata.html#cfn-groundstation-config-configdata-antennauplinkconfig"""
-    p_DataflowEndpointConfig: typing.Union['ConfigDataflowEndpointConfig', dict] = attr.ib(
+    p_DataflowEndpointConfig: typing.Union['PropConfigDataflowEndpointConfig', dict] = attr.ib(
         default=None,
-        converter=ConfigDataflowEndpointConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ConfigDataflowEndpointConfig)),
+        converter=PropConfigDataflowEndpointConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropConfigDataflowEndpointConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "DataflowEndpointConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-config-configdata.html#cfn-groundstation-config-configdata-dataflowendpointconfig"""
-    p_S3RecordingConfig: typing.Union['ConfigS3RecordingConfig', dict] = attr.ib(
+    p_S3RecordingConfig: typing.Union['PropConfigS3RecordingConfig', dict] = attr.ib(
         default=None,
-        converter=ConfigS3RecordingConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ConfigS3RecordingConfig)),
+        converter=PropConfigS3RecordingConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropConfigS3RecordingConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "S3RecordingConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-config-configdata.html#cfn-groundstation-config-configdata-s3recordingconfig"""
-    p_TrackingConfig: typing.Union['ConfigTrackingConfig', dict] = attr.ib(
+    p_TrackingConfig: typing.Union['PropConfigTrackingConfig', dict] = attr.ib(
         default=None,
-        converter=ConfigTrackingConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ConfigTrackingConfig)),
+        converter=PropConfigTrackingConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropConfigTrackingConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "TrackingConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-config-configdata.html#cfn-groundstation-config-configdata-trackingconfig"""
-    p_UplinkEchoConfig: typing.Union['ConfigUplinkEchoConfig', dict] = attr.ib(
+    p_UplinkEchoConfig: typing.Union['PropConfigUplinkEchoConfig', dict] = attr.ib(
         default=None,
-        converter=ConfigUplinkEchoConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ConfigUplinkEchoConfig)),
+        converter=PropConfigUplinkEchoConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropConfigUplinkEchoConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "UplinkEchoConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-groundstation-config-configdata.html#cfn-groundstation-config-configdata-uplinkechoconfig"""
@@ -641,10 +641,10 @@ class Config(Resource):
     AWS_OBJECT_TYPE = "AWS::GroundStation::Config"
 
     
-    rp_ConfigData: typing.Union['ConfigConfigData', dict] = attr.ib(
+    rp_ConfigData: typing.Union['PropConfigConfigData', dict] = attr.ib(
         default=None,
-        converter=ConfigConfigData.from_dict,
-        validator=attr.validators.instance_of(ConfigConfigData),
+        converter=PropConfigConfigData.from_dict,
+        validator=attr.validators.instance_of(PropConfigConfigData),
         metadata={AttrMeta.PROPERTY_NAME: "ConfigData"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-groundstation-config.html#cfn-groundstation-config-configdata"""
@@ -694,10 +694,10 @@ class DataflowEndpointGroup(Resource):
     AWS_OBJECT_TYPE = "AWS::GroundStation::DataflowEndpointGroup"
 
     
-    rp_EndpointDetails: typing.List[typing.Union['DataflowEndpointGroupEndpointDetails', dict]] = attr.ib(
+    rp_EndpointDetails: typing.List[typing.Union['PropDataflowEndpointGroupEndpointDetails', dict]] = attr.ib(
         default=None,
-        converter=DataflowEndpointGroupEndpointDetails.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(DataflowEndpointGroupEndpointDetails), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropDataflowEndpointGroupEndpointDetails.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDataflowEndpointGroupEndpointDetails), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "EndpointDetails"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-groundstation-dataflowendpointgroup.html#cfn-groundstation-dataflowendpointgroup-endpointdetails"""
@@ -741,10 +741,10 @@ class MissionProfile(Resource):
     AWS_OBJECT_TYPE = "AWS::GroundStation::MissionProfile"
 
     
-    rp_DataflowEdges: typing.List[typing.Union['MissionProfileDataflowEdge', dict]] = attr.ib(
+    rp_DataflowEdges: typing.List[typing.Union['PropMissionProfileDataflowEdge', dict]] = attr.ib(
         default=None,
-        converter=MissionProfileDataflowEdge.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(MissionProfileDataflowEdge), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropMissionProfileDataflowEdge.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropMissionProfileDataflowEdge), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "DataflowEdges"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-groundstation-missionprofile.html#cfn-groundstation-missionprofile-dataflowedges"""

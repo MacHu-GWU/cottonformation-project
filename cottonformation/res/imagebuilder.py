@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class ImagePipelineImageTestsConfiguration(Property):
+class PropImagePipelineImageTestsConfiguration(Property):
     """
     AWS Object Type = "AWS::ImageBuilder::ImagePipeline.ImageTestsConfiguration"
 
@@ -42,7 +42,7 @@ class ImagePipelineImageTestsConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-imagepipeline-imagetestsconfiguration.html#cfn-imagebuilder-imagepipeline-imagetestsconfiguration-timeoutminutes"""
 
 @attr.s
-class ContainerRecipeComponentConfiguration(Property):
+class PropContainerRecipeComponentConfiguration(Property):
     """
     AWS Object Type = "AWS::ImageBuilder::ContainerRecipe.ComponentConfiguration"
 
@@ -62,7 +62,7 @@ class ContainerRecipeComponentConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-containerrecipe-componentconfiguration.html#cfn-imagebuilder-containerrecipe-componentconfiguration-componentarn"""
 
 @attr.s
-class ImageRecipeComponentConfiguration(Property):
+class PropImageRecipeComponentConfiguration(Property):
     """
     AWS Object Type = "AWS::ImageBuilder::ImageRecipe.ComponentConfiguration"
 
@@ -82,7 +82,7 @@ class ImageRecipeComponentConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-imagerecipe-componentconfiguration.html#cfn-imagebuilder-imagerecipe-componentconfiguration-componentarn"""
 
 @attr.s
-class ContainerRecipeEbsInstanceBlockDeviceSpecification(Property):
+class PropContainerRecipeEbsInstanceBlockDeviceSpecification(Property):
     """
     AWS Object Type = "AWS::ImageBuilder::ContainerRecipe.EbsInstanceBlockDeviceSpecification"
 
@@ -144,7 +144,7 @@ class ContainerRecipeEbsInstanceBlockDeviceSpecification(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-containerrecipe-ebsinstanceblockdevicespecification.html#cfn-imagebuilder-containerrecipe-ebsinstanceblockdevicespecification-volumetype"""
 
 @attr.s
-class ImagePipelineSchedule(Property):
+class PropImagePipelineSchedule(Property):
     """
     AWS Object Type = "AWS::ImageBuilder::ImagePipeline.Schedule"
 
@@ -171,7 +171,7 @@ class ImagePipelineSchedule(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-imagepipeline-schedule.html#cfn-imagebuilder-imagepipeline-schedule-scheduleexpression"""
 
 @attr.s
-class ImageImageTestsConfiguration(Property):
+class PropImageImageTestsConfiguration(Property):
     """
     AWS Object Type = "AWS::ImageBuilder::Image.ImageTestsConfiguration"
 
@@ -198,7 +198,7 @@ class ImageImageTestsConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-image-imagetestsconfiguration.html#cfn-imagebuilder-image-imagetestsconfiguration-timeoutminutes"""
 
 @attr.s
-class InfrastructureConfigurationS3Logs(Property):
+class PropInfrastructureConfigurationS3Logs(Property):
     """
     AWS Object Type = "AWS::ImageBuilder::InfrastructureConfiguration.S3Logs"
 
@@ -225,7 +225,7 @@ class InfrastructureConfigurationS3Logs(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-infrastructureconfiguration-s3logs.html#cfn-imagebuilder-infrastructureconfiguration-s3logs-s3keyprefix"""
 
 @attr.s
-class ContainerRecipeInstanceBlockDeviceMapping(Property):
+class PropContainerRecipeInstanceBlockDeviceMapping(Property):
     """
     AWS Object Type = "AWS::ImageBuilder::ContainerRecipe.InstanceBlockDeviceMapping"
 
@@ -246,10 +246,10 @@ class ContainerRecipeInstanceBlockDeviceMapping(Property):
         metadata={AttrMeta.PROPERTY_NAME: "DeviceName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-containerrecipe-instanceblockdevicemapping.html#cfn-imagebuilder-containerrecipe-instanceblockdevicemapping-devicename"""
-    p_Ebs: typing.Union['ContainerRecipeEbsInstanceBlockDeviceSpecification', dict] = attr.ib(
+    p_Ebs: typing.Union['PropContainerRecipeEbsInstanceBlockDeviceSpecification', dict] = attr.ib(
         default=None,
-        converter=ContainerRecipeEbsInstanceBlockDeviceSpecification.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ContainerRecipeEbsInstanceBlockDeviceSpecification)),
+        converter=PropContainerRecipeEbsInstanceBlockDeviceSpecification.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropContainerRecipeEbsInstanceBlockDeviceSpecification)),
         metadata={AttrMeta.PROPERTY_NAME: "Ebs"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-containerrecipe-instanceblockdevicemapping.html#cfn-imagebuilder-containerrecipe-instanceblockdevicemapping-ebs"""
@@ -267,7 +267,7 @@ class ContainerRecipeInstanceBlockDeviceMapping(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-containerrecipe-instanceblockdevicemapping.html#cfn-imagebuilder-containerrecipe-instanceblockdevicemapping-virtualname"""
 
 @attr.s
-class DistributionConfigurationLaunchTemplateConfiguration(Property):
+class PropDistributionConfigurationLaunchTemplateConfiguration(Property):
     """
     AWS Object Type = "AWS::ImageBuilder::DistributionConfiguration.LaunchTemplateConfiguration"
 
@@ -301,7 +301,7 @@ class DistributionConfigurationLaunchTemplateConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-distributionconfiguration-launchtemplateconfiguration.html#cfn-imagebuilder-distributionconfiguration-launchtemplateconfiguration-setdefaultversion"""
 
 @attr.s
-class ContainerRecipeInstanceConfiguration(Property):
+class PropContainerRecipeInstanceConfiguration(Property):
     """
     AWS Object Type = "AWS::ImageBuilder::ContainerRecipe.InstanceConfiguration"
 
@@ -314,10 +314,10 @@ class ContainerRecipeInstanceConfiguration(Property):
     """
     AWS_OBJECT_TYPE = "AWS::ImageBuilder::ContainerRecipe.InstanceConfiguration"
     
-    p_BlockDeviceMappings: typing.List[typing.Union['ContainerRecipeInstanceBlockDeviceMapping', dict]] = attr.ib(
+    p_BlockDeviceMappings: typing.List[typing.Union['PropContainerRecipeInstanceBlockDeviceMapping', dict]] = attr.ib(
         default=None,
-        converter=ContainerRecipeInstanceBlockDeviceMapping.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ContainerRecipeInstanceBlockDeviceMapping), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropContainerRecipeInstanceBlockDeviceMapping.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropContainerRecipeInstanceBlockDeviceMapping), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "BlockDeviceMappings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-containerrecipe-instanceconfiguration.html#cfn-imagebuilder-containerrecipe-instanceconfiguration-blockdevicemappings"""
@@ -329,7 +329,7 @@ class ContainerRecipeInstanceConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-containerrecipe-instanceconfiguration.html#cfn-imagebuilder-containerrecipe-instanceconfiguration-image"""
 
 @attr.s
-class ContainerRecipeTargetContainerRepository(Property):
+class PropContainerRecipeTargetContainerRepository(Property):
     """
     AWS Object Type = "AWS::ImageBuilder::ContainerRecipe.TargetContainerRepository"
 
@@ -356,7 +356,7 @@ class ContainerRecipeTargetContainerRepository(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-containerrecipe-targetcontainerrepository.html#cfn-imagebuilder-containerrecipe-targetcontainerrepository-service"""
 
 @attr.s
-class ImageRecipeEbsInstanceBlockDeviceSpecification(Property):
+class PropImageRecipeEbsInstanceBlockDeviceSpecification(Property):
     """
     AWS Object Type = "AWS::ImageBuilder::ImageRecipe.EbsInstanceBlockDeviceSpecification"
 
@@ -418,7 +418,7 @@ class ImageRecipeEbsInstanceBlockDeviceSpecification(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-imagerecipe-ebsinstanceblockdevicespecification.html#cfn-imagebuilder-imagerecipe-ebsinstanceblockdevicespecification-volumetype"""
 
 @attr.s
-class ImageRecipeInstanceBlockDeviceMapping(Property):
+class PropImageRecipeInstanceBlockDeviceMapping(Property):
     """
     AWS Object Type = "AWS::ImageBuilder::ImageRecipe.InstanceBlockDeviceMapping"
 
@@ -439,10 +439,10 @@ class ImageRecipeInstanceBlockDeviceMapping(Property):
         metadata={AttrMeta.PROPERTY_NAME: "DeviceName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-imagerecipe-instanceblockdevicemapping.html#cfn-imagebuilder-imagerecipe-instanceblockdevicemapping-devicename"""
-    p_Ebs: typing.Union['ImageRecipeEbsInstanceBlockDeviceSpecification', dict] = attr.ib(
+    p_Ebs: typing.Union['PropImageRecipeEbsInstanceBlockDeviceSpecification', dict] = attr.ib(
         default=None,
-        converter=ImageRecipeEbsInstanceBlockDeviceSpecification.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ImageRecipeEbsInstanceBlockDeviceSpecification)),
+        converter=PropImageRecipeEbsInstanceBlockDeviceSpecification.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropImageRecipeEbsInstanceBlockDeviceSpecification)),
         metadata={AttrMeta.PROPERTY_NAME: "Ebs"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-imagerecipe-instanceblockdevicemapping.html#cfn-imagebuilder-imagerecipe-instanceblockdevicemapping-ebs"""
@@ -460,7 +460,7 @@ class ImageRecipeInstanceBlockDeviceMapping(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-imagerecipe-instanceblockdevicemapping.html#cfn-imagebuilder-imagerecipe-instanceblockdevicemapping-virtualname"""
 
 @attr.s
-class InfrastructureConfigurationLogging(Property):
+class PropInfrastructureConfigurationLogging(Property):
     """
     AWS Object Type = "AWS::ImageBuilder::InfrastructureConfiguration.Logging"
 
@@ -472,16 +472,16 @@ class InfrastructureConfigurationLogging(Property):
     """
     AWS_OBJECT_TYPE = "AWS::ImageBuilder::InfrastructureConfiguration.Logging"
     
-    p_S3Logs: typing.Union['InfrastructureConfigurationS3Logs', dict] = attr.ib(
+    p_S3Logs: typing.Union['PropInfrastructureConfigurationS3Logs', dict] = attr.ib(
         default=None,
-        converter=InfrastructureConfigurationS3Logs.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(InfrastructureConfigurationS3Logs)),
+        converter=PropInfrastructureConfigurationS3Logs.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropInfrastructureConfigurationS3Logs)),
         metadata={AttrMeta.PROPERTY_NAME: "S3Logs"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-infrastructureconfiguration-logging.html#cfn-imagebuilder-infrastructureconfiguration-logging-s3logs"""
 
 @attr.s
-class DistributionConfigurationDistribution(Property):
+class PropDistributionConfigurationDistribution(Property):
     """
     AWS Object Type = "AWS::ImageBuilder::DistributionConfiguration.Distribution"
 
@@ -515,10 +515,10 @@ class DistributionConfigurationDistribution(Property):
         metadata={AttrMeta.PROPERTY_NAME: "ContainerDistributionConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-distributionconfiguration-distribution.html#cfn-imagebuilder-distributionconfiguration-distribution-containerdistributionconfiguration"""
-    p_LaunchTemplateConfigurations: typing.List[typing.Union['DistributionConfigurationLaunchTemplateConfiguration', dict]] = attr.ib(
+    p_LaunchTemplateConfigurations: typing.List[typing.Union['PropDistributionConfigurationLaunchTemplateConfiguration', dict]] = attr.ib(
         default=None,
-        converter=DistributionConfigurationLaunchTemplateConfiguration.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(DistributionConfigurationLaunchTemplateConfiguration), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropDistributionConfigurationLaunchTemplateConfiguration.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDistributionConfigurationLaunchTemplateConfiguration), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "LaunchTemplateConfigurations"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-distributionconfiguration-distribution.html#cfn-imagebuilder-distributionconfiguration-distribution-launchtemplateconfigurations"""
@@ -693,10 +693,10 @@ class InfrastructureConfiguration(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "KeyPair"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-infrastructureconfiguration.html#cfn-imagebuilder-infrastructureconfiguration-keypair"""
-    p_Logging: typing.Union['InfrastructureConfigurationLogging', dict] = attr.ib(
+    p_Logging: typing.Union['PropInfrastructureConfigurationLogging', dict] = attr.ib(
         default=None,
-        converter=InfrastructureConfigurationLogging.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(InfrastructureConfigurationLogging)),
+        converter=PropInfrastructureConfigurationLogging.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropInfrastructureConfigurationLogging)),
         metadata={AttrMeta.PROPERTY_NAME: "Logging"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-infrastructureconfiguration.html#cfn-imagebuilder-infrastructureconfiguration-logging"""
@@ -815,17 +815,17 @@ class ImagePipeline(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "ImageRecipeArn"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-imagepipeline.html#cfn-imagebuilder-imagepipeline-imagerecipearn"""
-    p_ImageTestsConfiguration: typing.Union['ImagePipelineImageTestsConfiguration', dict] = attr.ib(
+    p_ImageTestsConfiguration: typing.Union['PropImagePipelineImageTestsConfiguration', dict] = attr.ib(
         default=None,
-        converter=ImagePipelineImageTestsConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ImagePipelineImageTestsConfiguration)),
+        converter=PropImagePipelineImageTestsConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropImagePipelineImageTestsConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "ImageTestsConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-imagepipeline.html#cfn-imagebuilder-imagepipeline-imagetestsconfiguration"""
-    p_Schedule: typing.Union['ImagePipelineSchedule', dict] = attr.ib(
+    p_Schedule: typing.Union['PropImagePipelineSchedule', dict] = attr.ib(
         default=None,
-        converter=ImagePipelineSchedule.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ImagePipelineSchedule)),
+        converter=PropImagePipelineSchedule.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropImagePipelineSchedule)),
         metadata={AttrMeta.PROPERTY_NAME: "Schedule"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-imagepipeline.html#cfn-imagebuilder-imagepipeline-schedule"""
@@ -871,10 +871,10 @@ class DistributionConfiguration(Resource):
     AWS_OBJECT_TYPE = "AWS::ImageBuilder::DistributionConfiguration"
 
     
-    rp_Distributions: typing.List[typing.Union['DistributionConfigurationDistribution', dict]] = attr.ib(
+    rp_Distributions: typing.List[typing.Union['PropDistributionConfigurationDistribution', dict]] = attr.ib(
         default=None,
-        converter=DistributionConfigurationDistribution.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(DistributionConfigurationDistribution), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropDistributionConfigurationDistribution.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDistributionConfigurationDistribution), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "Distributions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-distributionconfiguration.html#cfn-imagebuilder-distributionconfiguration-distributions"""
@@ -937,10 +937,10 @@ class ContainerRecipe(Resource):
     AWS_OBJECT_TYPE = "AWS::ImageBuilder::ContainerRecipe"
 
     
-    rp_Components: typing.List[typing.Union['ContainerRecipeComponentConfiguration', dict]] = attr.ib(
+    rp_Components: typing.List[typing.Union['PropContainerRecipeComponentConfiguration', dict]] = attr.ib(
         default=None,
-        converter=ContainerRecipeComponentConfiguration.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ContainerRecipeComponentConfiguration), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropContainerRecipeComponentConfiguration.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropContainerRecipeComponentConfiguration), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "Components"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-containerrecipe.html#cfn-imagebuilder-containerrecipe-components"""
@@ -962,10 +962,10 @@ class ContainerRecipe(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "ParentImage"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-containerrecipe.html#cfn-imagebuilder-containerrecipe-parentimage"""
-    rp_TargetRepository: typing.Union['ContainerRecipeTargetContainerRepository', dict] = attr.ib(
+    rp_TargetRepository: typing.Union['PropContainerRecipeTargetContainerRepository', dict] = attr.ib(
         default=None,
-        converter=ContainerRecipeTargetContainerRepository.from_dict,
-        validator=attr.validators.instance_of(ContainerRecipeTargetContainerRepository),
+        converter=PropContainerRecipeTargetContainerRepository.from_dict,
+        validator=attr.validators.instance_of(PropContainerRecipeTargetContainerRepository),
         metadata={AttrMeta.PROPERTY_NAME: "TargetRepository"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-containerrecipe.html#cfn-imagebuilder-containerrecipe-targetrepository"""
@@ -999,10 +999,10 @@ class ContainerRecipe(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "ImageOsVersionOverride"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-containerrecipe.html#cfn-imagebuilder-containerrecipe-imageosversionoverride"""
-    p_InstanceConfiguration: typing.Union['ContainerRecipeInstanceConfiguration', dict] = attr.ib(
+    p_InstanceConfiguration: typing.Union['PropContainerRecipeInstanceConfiguration', dict] = attr.ib(
         default=None,
-        converter=ContainerRecipeInstanceConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ContainerRecipeInstanceConfiguration)),
+        converter=PropContainerRecipeInstanceConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropContainerRecipeInstanceConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "InstanceConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-containerrecipe.html#cfn-imagebuilder-containerrecipe-instanceconfiguration"""
@@ -1064,10 +1064,10 @@ class ImageRecipe(Resource):
     AWS_OBJECT_TYPE = "AWS::ImageBuilder::ImageRecipe"
 
     
-    rp_Components: typing.List[typing.Union['ImageRecipeComponentConfiguration', dict]] = attr.ib(
+    rp_Components: typing.List[typing.Union['PropImageRecipeComponentConfiguration', dict]] = attr.ib(
         default=None,
-        converter=ImageRecipeComponentConfiguration.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ImageRecipeComponentConfiguration), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropImageRecipeComponentConfiguration.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropImageRecipeComponentConfiguration), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "Components"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-imagerecipe.html#cfn-imagebuilder-imagerecipe-components"""
@@ -1089,10 +1089,10 @@ class ImageRecipe(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Version"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-imagerecipe.html#cfn-imagebuilder-imagerecipe-version"""
-    p_BlockDeviceMappings: typing.List[typing.Union['ImageRecipeInstanceBlockDeviceMapping', dict]] = attr.ib(
+    p_BlockDeviceMappings: typing.List[typing.Union['PropImageRecipeInstanceBlockDeviceMapping', dict]] = attr.ib(
         default=None,
-        converter=ImageRecipeInstanceBlockDeviceMapping.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ImageRecipeInstanceBlockDeviceMapping), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropImageRecipeInstanceBlockDeviceMapping.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropImageRecipeInstanceBlockDeviceMapping), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "BlockDeviceMappings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-imagerecipe.html#cfn-imagebuilder-imagerecipe-blockdevicemappings"""
@@ -1177,10 +1177,10 @@ class Image(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "ImageRecipeArn"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-image.html#cfn-imagebuilder-image-imagerecipearn"""
-    p_ImageTestsConfiguration: typing.Union['ImageImageTestsConfiguration', dict] = attr.ib(
+    p_ImageTestsConfiguration: typing.Union['PropImageImageTestsConfiguration', dict] = attr.ib(
         default=None,
-        converter=ImageImageTestsConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ImageImageTestsConfiguration)),
+        converter=PropImageImageTestsConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropImageImageTestsConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "ImageTestsConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-image.html#cfn-imagebuilder-image-imagetestsconfiguration"""

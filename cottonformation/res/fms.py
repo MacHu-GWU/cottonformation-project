@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class PolicyPolicyTag(Property):
+class PropPolicyPolicyTag(Property):
     """
     AWS Object Type = "AWS::FMS::Policy.PolicyTag"
 
@@ -42,7 +42,7 @@ class PolicyPolicyTag(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fms-policy-policytag.html#cfn-fms-policy-policytag-value"""
 
 @attr.s
-class PolicyResourceTag(Property):
+class PropPolicyResourceTag(Property):
     """
     AWS Object Type = "AWS::FMS::Policy.ResourceTag"
 
@@ -69,7 +69,7 @@ class PolicyResourceTag(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fms-policy-resourcetag.html#cfn-fms-policy-resourcetag-value"""
 
 @attr.s
-class PolicyIEMap(Property):
+class PropPolicyIEMap(Property):
     """
     AWS Object Type = "AWS::FMS::Policy.IEMap"
 
@@ -188,24 +188,24 @@ class Policy(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "DeleteAllPolicyResources"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fms-policy.html#cfn-fms-policy-deleteallpolicyresources"""
-    p_ExcludeMap: typing.Union['PolicyIEMap', dict] = attr.ib(
+    p_ExcludeMap: typing.Union['PropPolicyIEMap', dict] = attr.ib(
         default=None,
-        converter=PolicyIEMap.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PolicyIEMap)),
+        converter=PropPolicyIEMap.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropPolicyIEMap)),
         metadata={AttrMeta.PROPERTY_NAME: "ExcludeMap"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fms-policy.html#cfn-fms-policy-excludemap"""
-    p_IncludeMap: typing.Union['PolicyIEMap', dict] = attr.ib(
+    p_IncludeMap: typing.Union['PropPolicyIEMap', dict] = attr.ib(
         default=None,
-        converter=PolicyIEMap.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PolicyIEMap)),
+        converter=PropPolicyIEMap.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropPolicyIEMap)),
         metadata={AttrMeta.PROPERTY_NAME: "IncludeMap"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fms-policy.html#cfn-fms-policy-includemap"""
-    p_ResourceTags: typing.List[typing.Union['PolicyResourceTag', dict]] = attr.ib(
+    p_ResourceTags: typing.List[typing.Union['PropPolicyResourceTag', dict]] = attr.ib(
         default=None,
-        converter=PolicyResourceTag.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PolicyResourceTag), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropPolicyResourceTag.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropPolicyResourceTag), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "ResourceTags"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fms-policy.html#cfn-fms-policy-resourcetags"""
@@ -215,10 +215,10 @@ class Policy(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "ResourceTypeList"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fms-policy.html#cfn-fms-policy-resourcetypelist"""
-    p_Tags: typing.List[typing.Union['PolicyPolicyTag', dict]] = attr.ib(
+    p_Tags: typing.List[typing.Union['PropPolicyPolicyTag', dict]] = attr.ib(
         default=None,
-        converter=PolicyPolicyTag.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PolicyPolicyTag), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropPolicyPolicyTag.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropPolicyPolicyTag), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Tags"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fms-policy.html#cfn-fms-policy-tags"""

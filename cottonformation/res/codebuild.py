@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class ProjectGitSubmodulesConfig(Property):
+class PropProjectGitSubmodulesConfig(Property):
     """
     AWS Object Type = "AWS::CodeBuild::Project.GitSubmodulesConfig"
 
@@ -35,7 +35,7 @@ class ProjectGitSubmodulesConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-gitsubmodulesconfig.html#cfn-codebuild-project-gitsubmodulesconfig-fetchsubmodules"""
 
 @attr.s
-class ProjectVpcConfig(Property):
+class PropProjectVpcConfig(Property):
     """
     AWS Object Type = "AWS::CodeBuild::Project.VpcConfig"
 
@@ -69,7 +69,7 @@ class ProjectVpcConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-vpcconfig.html#cfn-codebuild-project-vpcconfig-vpcid"""
 
 @attr.s
-class ProjectArtifacts(Property):
+class PropProjectArtifacts(Property):
     """
     AWS Object Type = "AWS::CodeBuild::Project.Artifacts"
 
@@ -145,7 +145,7 @@ class ProjectArtifacts(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-artifacts.html#cfn-codebuild-project-artifacts-path"""
 
 @attr.s
-class ProjectRegistryCredential(Property):
+class PropProjectRegistryCredential(Property):
     """
     AWS Object Type = "AWS::CodeBuild::Project.RegistryCredential"
 
@@ -172,7 +172,7 @@ class ProjectRegistryCredential(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-registrycredential.html#cfn-codebuild-project-registrycredential-credentialprovider"""
 
 @attr.s
-class ReportGroupS3ReportExportConfig(Property):
+class PropReportGroupS3ReportExportConfig(Property):
     """
     AWS Object Type = "AWS::CodeBuild::ReportGroup.S3ReportExportConfig"
 
@@ -227,7 +227,7 @@ class ReportGroupS3ReportExportConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-reportgroup-s3reportexportconfig.html#cfn-codebuild-reportgroup-s3reportexportconfig-path"""
 
 @attr.s
-class ProjectCloudWatchLogsConfig(Property):
+class PropProjectCloudWatchLogsConfig(Property):
     """
     AWS Object Type = "AWS::CodeBuild::Project.CloudWatchLogsConfig"
 
@@ -261,7 +261,7 @@ class ProjectCloudWatchLogsConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-cloudwatchlogsconfig.html#cfn-codebuild-project-cloudwatchlogsconfig-streamname"""
 
 @attr.s
-class ProjectProjectCache(Property):
+class PropProjectProjectCache(Property):
     """
     AWS Object Type = "AWS::CodeBuild::Project.ProjectCache"
 
@@ -295,7 +295,7 @@ class ProjectProjectCache(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-projectcache.html#cfn-codebuild-project-projectcache-modes"""
 
 @attr.s
-class ProjectFilterGroup(Property):
+class PropProjectFilterGroup(Property):
     """
     AWS Object Type = "AWS::CodeBuild::Project.FilterGroup"
 
@@ -308,7 +308,7 @@ class ProjectFilterGroup(Property):
     
 
 @attr.s
-class ProjectBatchRestrictions(Property):
+class PropProjectBatchRestrictions(Property):
     """
     AWS Object Type = "AWS::CodeBuild::Project.BatchRestrictions"
 
@@ -335,7 +335,7 @@ class ProjectBatchRestrictions(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-batchrestrictions.html#cfn-codebuild-project-batchrestrictions-maximumbuildsallowed"""
 
 @attr.s
-class ProjectProjectTriggers(Property):
+class PropProjectProjectTriggers(Property):
     """
     AWS Object Type = "AWS::CodeBuild::Project.ProjectTriggers"
 
@@ -355,10 +355,10 @@ class ProjectProjectTriggers(Property):
         metadata={AttrMeta.PROPERTY_NAME: "BuildType"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-projecttriggers.html#cfn-codebuild-project-projecttriggers-buildtype"""
-    p_FilterGroups: typing.List[typing.Union['ProjectFilterGroup', dict]] = attr.ib(
+    p_FilterGroups: typing.List[typing.Union['PropProjectFilterGroup', dict]] = attr.ib(
         default=None,
-        converter=ProjectFilterGroup.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ProjectFilterGroup), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropProjectFilterGroup.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropProjectFilterGroup), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "FilterGroups"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-projecttriggers.html#cfn-codebuild-project-projecttriggers-filtergroups"""
@@ -370,7 +370,7 @@ class ProjectProjectTriggers(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-projecttriggers.html#cfn-codebuild-project-projecttriggers-webhook"""
 
 @attr.s
-class ProjectProjectSourceVersion(Property):
+class PropProjectProjectSourceVersion(Property):
     """
     AWS Object Type = "AWS::CodeBuild::Project.ProjectSourceVersion"
 
@@ -397,7 +397,7 @@ class ProjectProjectSourceVersion(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-projectsourceversion.html#cfn-codebuild-project-projectsourceversion-sourceversion"""
 
 @attr.s
-class ProjectSourceAuth(Property):
+class PropProjectSourceAuth(Property):
     """
     AWS Object Type = "AWS::CodeBuild::Project.SourceAuth"
 
@@ -424,7 +424,7 @@ class ProjectSourceAuth(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-sourceauth.html#cfn-codebuild-project-sourceauth-resource"""
 
 @attr.s
-class ProjectProjectFileSystemLocation(Property):
+class PropProjectProjectFileSystemLocation(Property):
     """
     AWS Object Type = "AWS::CodeBuild::Project.ProjectFileSystemLocation"
 
@@ -472,7 +472,7 @@ class ProjectProjectFileSystemLocation(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-projectfilesystemlocation.html#cfn-codebuild-project-projectfilesystemlocation-mountoptions"""
 
 @attr.s
-class ProjectS3LogsConfig(Property):
+class PropProjectS3LogsConfig(Property):
     """
     AWS Object Type = "AWS::CodeBuild::Project.S3LogsConfig"
 
@@ -506,7 +506,7 @@ class ProjectS3LogsConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-s3logsconfig.html#cfn-codebuild-project-s3logsconfig-location"""
 
 @attr.s
-class ProjectWebhookFilter(Property):
+class PropProjectWebhookFilter(Property):
     """
     AWS Object Type = "AWS::CodeBuild::Project.WebhookFilter"
 
@@ -540,7 +540,7 @@ class ProjectWebhookFilter(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-webhookfilter.html#cfn-codebuild-project-webhookfilter-excludematchedpattern"""
 
 @attr.s
-class ProjectBuildStatusConfig(Property):
+class PropProjectBuildStatusConfig(Property):
     """
     AWS Object Type = "AWS::CodeBuild::Project.BuildStatusConfig"
 
@@ -567,7 +567,7 @@ class ProjectBuildStatusConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-buildstatusconfig.html#cfn-codebuild-project-buildstatusconfig-targeturl"""
 
 @attr.s
-class ProjectEnvironmentVariable(Property):
+class PropProjectEnvironmentVariable(Property):
     """
     AWS Object Type = "AWS::CodeBuild::Project.EnvironmentVariable"
 
@@ -601,7 +601,7 @@ class ProjectEnvironmentVariable(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-environmentvariable.html#cfn-codebuild-project-environmentvariable-type"""
 
 @attr.s
-class ProjectEnvironment(Property):
+class PropProjectEnvironment(Property):
     """
     AWS Object Type = "AWS::CodeBuild::Project.Environment"
 
@@ -644,10 +644,10 @@ class ProjectEnvironment(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Certificate"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-environment.html#cfn-codebuild-project-environment-certificate"""
-    p_EnvironmentVariables: typing.List[typing.Union['ProjectEnvironmentVariable', dict]] = attr.ib(
+    p_EnvironmentVariables: typing.List[typing.Union['PropProjectEnvironmentVariable', dict]] = attr.ib(
         default=None,
-        converter=ProjectEnvironmentVariable.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ProjectEnvironmentVariable), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropProjectEnvironmentVariable.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropProjectEnvironmentVariable), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "EnvironmentVariables"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-environment.html#cfn-codebuild-project-environment-environmentvariables"""
@@ -663,16 +663,16 @@ class ProjectEnvironment(Property):
         metadata={AttrMeta.PROPERTY_NAME: "PrivilegedMode"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-environment.html#cfn-codebuild-project-environment-privilegedmode"""
-    p_RegistryCredential: typing.Union['ProjectRegistryCredential', dict] = attr.ib(
+    p_RegistryCredential: typing.Union['PropProjectRegistryCredential', dict] = attr.ib(
         default=None,
-        converter=ProjectRegistryCredential.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ProjectRegistryCredential)),
+        converter=PropProjectRegistryCredential.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropProjectRegistryCredential)),
         metadata={AttrMeta.PROPERTY_NAME: "RegistryCredential"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-environment.html#cfn-codebuild-project-environment-registrycredential"""
 
 @attr.s
-class ReportGroupReportExportConfig(Property):
+class PropReportGroupReportExportConfig(Property):
     """
     AWS Object Type = "AWS::CodeBuild::ReportGroup.ReportExportConfig"
 
@@ -691,16 +691,16 @@ class ReportGroupReportExportConfig(Property):
         metadata={AttrMeta.PROPERTY_NAME: "ExportConfigType"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-reportgroup-reportexportconfig.html#cfn-codebuild-reportgroup-reportexportconfig-exportconfigtype"""
-    p_S3Destination: typing.Union['ReportGroupS3ReportExportConfig', dict] = attr.ib(
+    p_S3Destination: typing.Union['PropReportGroupS3ReportExportConfig', dict] = attr.ib(
         default=None,
-        converter=ReportGroupS3ReportExportConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ReportGroupS3ReportExportConfig)),
+        converter=PropReportGroupS3ReportExportConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropReportGroupS3ReportExportConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "S3Destination"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-reportgroup-reportexportconfig.html#cfn-codebuild-reportgroup-reportexportconfig-s3destination"""
 
 @attr.s
-class ProjectProjectBuildBatchConfig(Property):
+class PropProjectProjectBuildBatchConfig(Property):
     """
     AWS Object Type = "AWS::CodeBuild::Project.ProjectBuildBatchConfig"
 
@@ -721,10 +721,10 @@ class ProjectProjectBuildBatchConfig(Property):
         metadata={AttrMeta.PROPERTY_NAME: "CombineArtifacts"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-projectbuildbatchconfig.html#cfn-codebuild-project-projectbuildbatchconfig-combineartifacts"""
-    p_Restrictions: typing.Union['ProjectBatchRestrictions', dict] = attr.ib(
+    p_Restrictions: typing.Union['PropProjectBatchRestrictions', dict] = attr.ib(
         default=None,
-        converter=ProjectBatchRestrictions.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ProjectBatchRestrictions)),
+        converter=PropProjectBatchRestrictions.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropProjectBatchRestrictions)),
         metadata={AttrMeta.PROPERTY_NAME: "Restrictions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-projectbuildbatchconfig.html#cfn-codebuild-project-projectbuildbatchconfig-restrictions"""
@@ -742,7 +742,7 @@ class ProjectProjectBuildBatchConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-projectbuildbatchconfig.html#cfn-codebuild-project-projectbuildbatchconfig-timeoutinmins"""
 
 @attr.s
-class ProjectSource(Property):
+class PropProjectSource(Property):
     """
     AWS Object Type = "AWS::CodeBuild::Project.Source"
 
@@ -769,10 +769,10 @@ class ProjectSource(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Type"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-source.html#cfn-codebuild-project-source-type"""
-    p_Auth: typing.Union['ProjectSourceAuth', dict] = attr.ib(
+    p_Auth: typing.Union['PropProjectSourceAuth', dict] = attr.ib(
         default=None,
-        converter=ProjectSourceAuth.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ProjectSourceAuth)),
+        converter=PropProjectSourceAuth.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropProjectSourceAuth)),
         metadata={AttrMeta.PROPERTY_NAME: "Auth"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-source.html#cfn-codebuild-project-source-auth"""
@@ -782,10 +782,10 @@ class ProjectSource(Property):
         metadata={AttrMeta.PROPERTY_NAME: "BuildSpec"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-source.html#cfn-codebuild-project-source-buildspec"""
-    p_BuildStatusConfig: typing.Union['ProjectBuildStatusConfig', dict] = attr.ib(
+    p_BuildStatusConfig: typing.Union['PropProjectBuildStatusConfig', dict] = attr.ib(
         default=None,
-        converter=ProjectBuildStatusConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ProjectBuildStatusConfig)),
+        converter=PropProjectBuildStatusConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropProjectBuildStatusConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "BuildStatusConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-source.html#cfn-codebuild-project-source-buildstatusconfig"""
@@ -795,10 +795,10 @@ class ProjectSource(Property):
         metadata={AttrMeta.PROPERTY_NAME: "GitCloneDepth"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-source.html#cfn-codebuild-project-source-gitclonedepth"""
-    p_GitSubmodulesConfig: typing.Union['ProjectGitSubmodulesConfig', dict] = attr.ib(
+    p_GitSubmodulesConfig: typing.Union['PropProjectGitSubmodulesConfig', dict] = attr.ib(
         default=None,
-        converter=ProjectGitSubmodulesConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ProjectGitSubmodulesConfig)),
+        converter=PropProjectGitSubmodulesConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropProjectGitSubmodulesConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "GitSubmodulesConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-source.html#cfn-codebuild-project-source-gitsubmodulesconfig"""
@@ -828,7 +828,7 @@ class ProjectSource(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-source.html#cfn-codebuild-project-source-sourceidentifier"""
 
 @attr.s
-class ProjectLogsConfig(Property):
+class PropProjectLogsConfig(Property):
     """
     AWS Object Type = "AWS::CodeBuild::Project.LogsConfig"
 
@@ -841,17 +841,17 @@ class ProjectLogsConfig(Property):
     """
     AWS_OBJECT_TYPE = "AWS::CodeBuild::Project.LogsConfig"
     
-    p_CloudWatchLogs: typing.Union['ProjectCloudWatchLogsConfig', dict] = attr.ib(
+    p_CloudWatchLogs: typing.Union['PropProjectCloudWatchLogsConfig', dict] = attr.ib(
         default=None,
-        converter=ProjectCloudWatchLogsConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ProjectCloudWatchLogsConfig)),
+        converter=PropProjectCloudWatchLogsConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropProjectCloudWatchLogsConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "CloudWatchLogs"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-logsconfig.html#cfn-codebuild-project-logsconfig-cloudwatchlogs"""
-    p_S3Logs: typing.Union['ProjectS3LogsConfig', dict] = attr.ib(
+    p_S3Logs: typing.Union['PropProjectS3LogsConfig', dict] = attr.ib(
         default=None,
-        converter=ProjectS3LogsConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ProjectS3LogsConfig)),
+        converter=PropProjectS3LogsConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropProjectS3LogsConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "S3Logs"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codebuild-project-logsconfig.html#cfn-codebuild-project-logsconfig-s3logs"""
@@ -938,17 +938,17 @@ class Project(Resource):
     AWS_OBJECT_TYPE = "AWS::CodeBuild::Project"
 
     
-    rp_Artifacts: typing.Union['ProjectArtifacts', dict] = attr.ib(
+    rp_Artifacts: typing.Union['PropProjectArtifacts', dict] = attr.ib(
         default=None,
-        converter=ProjectArtifacts.from_dict,
-        validator=attr.validators.instance_of(ProjectArtifacts),
+        converter=PropProjectArtifacts.from_dict,
+        validator=attr.validators.instance_of(PropProjectArtifacts),
         metadata={AttrMeta.PROPERTY_NAME: "Artifacts"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-artifacts"""
-    rp_Environment: typing.Union['ProjectEnvironment', dict] = attr.ib(
+    rp_Environment: typing.Union['PropProjectEnvironment', dict] = attr.ib(
         default=None,
-        converter=ProjectEnvironment.from_dict,
-        validator=attr.validators.instance_of(ProjectEnvironment),
+        converter=PropProjectEnvironment.from_dict,
+        validator=attr.validators.instance_of(PropProjectEnvironment),
         metadata={AttrMeta.PROPERTY_NAME: "Environment"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-environment"""
@@ -958,10 +958,10 @@ class Project(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "ServiceRole"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-servicerole"""
-    rp_Source: typing.Union['ProjectSource', dict] = attr.ib(
+    rp_Source: typing.Union['PropProjectSource', dict] = attr.ib(
         default=None,
-        converter=ProjectSource.from_dict,
-        validator=attr.validators.instance_of(ProjectSource),
+        converter=PropProjectSource.from_dict,
+        validator=attr.validators.instance_of(PropProjectSource),
         metadata={AttrMeta.PROPERTY_NAME: "Source"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-source"""
@@ -971,17 +971,17 @@ class Project(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "BadgeEnabled"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-badgeenabled"""
-    p_BuildBatchConfig: typing.Union['ProjectProjectBuildBatchConfig', dict] = attr.ib(
+    p_BuildBatchConfig: typing.Union['PropProjectProjectBuildBatchConfig', dict] = attr.ib(
         default=None,
-        converter=ProjectProjectBuildBatchConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ProjectProjectBuildBatchConfig)),
+        converter=PropProjectProjectBuildBatchConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropProjectProjectBuildBatchConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "BuildBatchConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-buildbatchconfig"""
-    p_Cache: typing.Union['ProjectProjectCache', dict] = attr.ib(
+    p_Cache: typing.Union['PropProjectProjectCache', dict] = attr.ib(
         default=None,
-        converter=ProjectProjectCache.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ProjectProjectCache)),
+        converter=PropProjectProjectCache.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropProjectProjectCache)),
         metadata={AttrMeta.PROPERTY_NAME: "Cache"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-cache"""
@@ -1003,17 +1003,17 @@ class Project(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "EncryptionKey"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-encryptionkey"""
-    p_FileSystemLocations: typing.List[typing.Union['ProjectProjectFileSystemLocation', dict]] = attr.ib(
+    p_FileSystemLocations: typing.List[typing.Union['PropProjectProjectFileSystemLocation', dict]] = attr.ib(
         default=None,
-        converter=ProjectProjectFileSystemLocation.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ProjectProjectFileSystemLocation), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropProjectProjectFileSystemLocation.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropProjectProjectFileSystemLocation), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "FileSystemLocations"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-filesystemlocations"""
-    p_LogsConfig: typing.Union['ProjectLogsConfig', dict] = attr.ib(
+    p_LogsConfig: typing.Union['PropProjectLogsConfig', dict] = attr.ib(
         default=None,
-        converter=ProjectLogsConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ProjectLogsConfig)),
+        converter=PropProjectLogsConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropProjectLogsConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "LogsConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-logsconfig"""
@@ -1029,24 +1029,24 @@ class Project(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "QueuedTimeoutInMinutes"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-queuedtimeoutinminutes"""
-    p_SecondaryArtifacts: typing.List[typing.Union['ProjectArtifacts', dict]] = attr.ib(
+    p_SecondaryArtifacts: typing.List[typing.Union['PropProjectArtifacts', dict]] = attr.ib(
         default=None,
-        converter=ProjectArtifacts.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ProjectArtifacts), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropProjectArtifacts.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropProjectArtifacts), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "SecondaryArtifacts"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-secondaryartifacts"""
-    p_SecondarySourceVersions: typing.List[typing.Union['ProjectProjectSourceVersion', dict]] = attr.ib(
+    p_SecondarySourceVersions: typing.List[typing.Union['PropProjectProjectSourceVersion', dict]] = attr.ib(
         default=None,
-        converter=ProjectProjectSourceVersion.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ProjectProjectSourceVersion), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropProjectProjectSourceVersion.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropProjectProjectSourceVersion), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "SecondarySourceVersions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-secondarysourceversions"""
-    p_SecondarySources: typing.List[typing.Union['ProjectSource', dict]] = attr.ib(
+    p_SecondarySources: typing.List[typing.Union['PropProjectSource', dict]] = attr.ib(
         default=None,
-        converter=ProjectSource.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ProjectSource), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropProjectSource.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropProjectSource), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "SecondarySources"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-secondarysources"""
@@ -1062,17 +1062,17 @@ class Project(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "TimeoutInMinutes"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-timeoutinminutes"""
-    p_Triggers: typing.Union['ProjectProjectTriggers', dict] = attr.ib(
+    p_Triggers: typing.Union['PropProjectProjectTriggers', dict] = attr.ib(
         default=None,
-        converter=ProjectProjectTriggers.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ProjectProjectTriggers)),
+        converter=PropProjectProjectTriggers.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropProjectProjectTriggers)),
         metadata={AttrMeta.PROPERTY_NAME: "Triggers"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-triggers"""
-    p_VpcConfig: typing.Union['ProjectVpcConfig', dict] = attr.ib(
+    p_VpcConfig: typing.Union['PropProjectVpcConfig', dict] = attr.ib(
         default=None,
-        converter=ProjectVpcConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ProjectVpcConfig)),
+        converter=PropProjectVpcConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropProjectVpcConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "VpcConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-project.html#cfn-codebuild-project-vpcconfig"""
@@ -1109,10 +1109,10 @@ class ReportGroup(Resource):
     AWS_OBJECT_TYPE = "AWS::CodeBuild::ReportGroup"
 
     
-    rp_ExportConfig: typing.Union['ReportGroupReportExportConfig', dict] = attr.ib(
+    rp_ExportConfig: typing.Union['PropReportGroupReportExportConfig', dict] = attr.ib(
         default=None,
-        converter=ReportGroupReportExportConfig.from_dict,
-        validator=attr.validators.instance_of(ReportGroupReportExportConfig),
+        converter=PropReportGroupReportExportConfig.from_dict,
+        validator=attr.validators.instance_of(PropReportGroupReportExportConfig),
         metadata={AttrMeta.PROPERTY_NAME: "ExportConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codebuild-reportgroup.html#cfn-codebuild-reportgroup-exportconfig"""

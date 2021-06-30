@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class StreamKinesisConfiguration(Property):
+class PropStreamKinesisConfiguration(Property):
     """
     AWS Object Type = "AWS::QLDB::Stream.KinesisConfiguration"
 
@@ -70,10 +70,10 @@ class Stream(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "InclusiveStartTime"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-qldb-stream.html#cfn-qldb-stream-inclusivestarttime"""
-    rp_KinesisConfiguration: typing.Union['StreamKinesisConfiguration', dict] = attr.ib(
+    rp_KinesisConfiguration: typing.Union['PropStreamKinesisConfiguration', dict] = attr.ib(
         default=None,
-        converter=StreamKinesisConfiguration.from_dict,
-        validator=attr.validators.instance_of(StreamKinesisConfiguration),
+        converter=PropStreamKinesisConfiguration.from_dict,
+        validator=attr.validators.instance_of(PropStreamKinesisConfiguration),
         metadata={AttrMeta.PROPERTY_NAME: "KinesisConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-qldb-stream.html#cfn-qldb-stream-kinesisconfiguration"""

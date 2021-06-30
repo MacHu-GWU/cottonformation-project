@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class GraphQLApiTags(Property):
+class PropGraphQLApiTags(Property):
     """
     AWS Object Type = "AWS::AppSync::GraphQLApi.Tags"
 
@@ -28,7 +28,7 @@ class GraphQLApiTags(Property):
     
 
 @attr.s
-class ResolverLambdaConflictHandlerConfig(Property):
+class PropResolverLambdaConflictHandlerConfig(Property):
     """
     AWS Object Type = "AWS::AppSync::Resolver.LambdaConflictHandlerConfig"
 
@@ -48,7 +48,7 @@ class ResolverLambdaConflictHandlerConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-resolver-lambdaconflicthandlerconfig.html#cfn-appsync-resolver-lambdaconflicthandlerconfig-lambdaconflicthandlerarn"""
 
 @attr.s
-class ResolverPipelineConfig(Property):
+class PropResolverPipelineConfig(Property):
     """
     AWS Object Type = "AWS::AppSync::Resolver.PipelineConfig"
 
@@ -68,7 +68,7 @@ class ResolverPipelineConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-resolver-pipelineconfig.html#cfn-appsync-resolver-pipelineconfig-functions"""
 
 @attr.s
-class GraphQLApiOpenIDConnectConfig(Property):
+class PropGraphQLApiOpenIDConnectConfig(Property):
     """
     AWS Object Type = "AWS::AppSync::GraphQLApi.OpenIDConnectConfig"
 
@@ -109,7 +109,7 @@ class GraphQLApiOpenIDConnectConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-openidconnectconfig.html#cfn-appsync-graphqlapi-openidconnectconfig-issuer"""
 
 @attr.s
-class DataSourceLambdaConfig(Property):
+class PropDataSourceLambdaConfig(Property):
     """
     AWS Object Type = "AWS::AppSync::DataSource.LambdaConfig"
 
@@ -129,7 +129,7 @@ class DataSourceLambdaConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-lambdaconfig.html#cfn-appsync-datasource-lambdaconfig-lambdafunctionarn"""
 
 @attr.s
-class GraphQLApiCognitoUserPoolConfig(Property):
+class PropGraphQLApiCognitoUserPoolConfig(Property):
     """
     AWS Object Type = "AWS::AppSync::GraphQLApi.CognitoUserPoolConfig"
 
@@ -163,7 +163,7 @@ class GraphQLApiCognitoUserPoolConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-cognitouserpoolconfig.html#cfn-appsync-graphqlapi-cognitouserpoolconfig-userpoolid"""
 
 @attr.s
-class GraphQLApiAdditionalAuthenticationProviders(Property):
+class PropGraphQLApiAdditionalAuthenticationProviders(Property):
     """
     AWS Object Type = "AWS::AppSync::GraphQLApi.AdditionalAuthenticationProviders"
 
@@ -176,7 +176,7 @@ class GraphQLApiAdditionalAuthenticationProviders(Property):
     
 
 @attr.s
-class DataSourceAwsIamConfig(Property):
+class PropDataSourceAwsIamConfig(Property):
     """
     AWS Object Type = "AWS::AppSync::DataSource.AwsIamConfig"
 
@@ -203,7 +203,7 @@ class DataSourceAwsIamConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-awsiamconfig.html#cfn-appsync-datasource-awsiamconfig-signingservicename"""
 
 @attr.s
-class GraphQLApiUserPoolConfig(Property):
+class PropGraphQLApiUserPoolConfig(Property):
     """
     AWS Object Type = "AWS::AppSync::GraphQLApi.UserPoolConfig"
 
@@ -244,7 +244,7 @@ class GraphQLApiUserPoolConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-userpoolconfig.html#cfn-appsync-graphqlapi-userpoolconfig-userpoolid"""
 
 @attr.s
-class DataSourceAuthorizationConfig(Property):
+class PropDataSourceAuthorizationConfig(Property):
     """
     AWS Object Type = "AWS::AppSync::DataSource.AuthorizationConfig"
 
@@ -263,16 +263,16 @@ class DataSourceAuthorizationConfig(Property):
         metadata={AttrMeta.PROPERTY_NAME: "AuthorizationType"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-authorizationconfig.html#cfn-appsync-datasource-authorizationconfig-authorizationtype"""
-    p_AwsIamConfig: typing.Union['DataSourceAwsIamConfig', dict] = attr.ib(
+    p_AwsIamConfig: typing.Union['PropDataSourceAwsIamConfig', dict] = attr.ib(
         default=None,
-        converter=DataSourceAwsIamConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DataSourceAwsIamConfig)),
+        converter=PropDataSourceAwsIamConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataSourceAwsIamConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "AwsIamConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-authorizationconfig.html#cfn-appsync-datasource-authorizationconfig-awsiamconfig"""
 
 @attr.s
-class ResolverSyncConfig(Property):
+class PropResolverSyncConfig(Property):
     """
     AWS Object Type = "AWS::AppSync::Resolver.SyncConfig"
 
@@ -298,16 +298,16 @@ class ResolverSyncConfig(Property):
         metadata={AttrMeta.PROPERTY_NAME: "ConflictHandler"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-resolver-syncconfig.html#cfn-appsync-resolver-syncconfig-conflicthandler"""
-    p_LambdaConflictHandlerConfig: typing.Union['ResolverLambdaConflictHandlerConfig', dict] = attr.ib(
+    p_LambdaConflictHandlerConfig: typing.Union['PropResolverLambdaConflictHandlerConfig', dict] = attr.ib(
         default=None,
-        converter=ResolverLambdaConflictHandlerConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ResolverLambdaConflictHandlerConfig)),
+        converter=PropResolverLambdaConflictHandlerConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropResolverLambdaConflictHandlerConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "LambdaConflictHandlerConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-resolver-syncconfig.html#cfn-appsync-resolver-syncconfig-lambdaconflicthandlerconfig"""
 
 @attr.s
-class GraphQLApiLogConfig(Property):
+class PropGraphQLApiLogConfig(Property):
     """
     AWS Object Type = "AWS::AppSync::GraphQLApi.LogConfig"
 
@@ -341,7 +341,7 @@ class GraphQLApiLogConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-logconfig.html#cfn-appsync-graphqlapi-logconfig-fieldloglevel"""
 
 @attr.s
-class DataSourceRdsHttpEndpointConfig(Property):
+class PropDataSourceRdsHttpEndpointConfig(Property):
     """
     AWS Object Type = "AWS::AppSync::DataSource.RdsHttpEndpointConfig"
 
@@ -389,7 +389,7 @@ class DataSourceRdsHttpEndpointConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-rdshttpendpointconfig.html#cfn-appsync-datasource-rdshttpendpointconfig-schema"""
 
 @attr.s
-class ResolverCachingConfig(Property):
+class PropResolverCachingConfig(Property):
     """
     AWS Object Type = "AWS::AppSync::Resolver.CachingConfig"
 
@@ -416,7 +416,7 @@ class ResolverCachingConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-resolver-cachingconfig.html#cfn-appsync-resolver-cachingconfig-ttl"""
 
 @attr.s
-class GraphQLApiAdditionalAuthenticationProvider(Property):
+class PropGraphQLApiAdditionalAuthenticationProvider(Property):
     """
     AWS Object Type = "AWS::AppSync::GraphQLApi.AdditionalAuthenticationProvider"
 
@@ -436,23 +436,23 @@ class GraphQLApiAdditionalAuthenticationProvider(Property):
         metadata={AttrMeta.PROPERTY_NAME: "AuthenticationType"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-additionalauthenticationprovider.html#cfn-appsync-graphqlapi-additionalauthenticationprovider-authenticationtype"""
-    p_OpenIDConnectConfig: typing.Union['GraphQLApiOpenIDConnectConfig', dict] = attr.ib(
+    p_OpenIDConnectConfig: typing.Union['PropGraphQLApiOpenIDConnectConfig', dict] = attr.ib(
         default=None,
-        converter=GraphQLApiOpenIDConnectConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(GraphQLApiOpenIDConnectConfig)),
+        converter=PropGraphQLApiOpenIDConnectConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropGraphQLApiOpenIDConnectConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "OpenIDConnectConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-additionalauthenticationprovider.html#cfn-appsync-graphqlapi-additionalauthenticationprovider-openidconnectconfig"""
-    p_UserPoolConfig: typing.Union['GraphQLApiCognitoUserPoolConfig', dict] = attr.ib(
+    p_UserPoolConfig: typing.Union['PropGraphQLApiCognitoUserPoolConfig', dict] = attr.ib(
         default=None,
-        converter=GraphQLApiCognitoUserPoolConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(GraphQLApiCognitoUserPoolConfig)),
+        converter=PropGraphQLApiCognitoUserPoolConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropGraphQLApiCognitoUserPoolConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "UserPoolConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-additionalauthenticationprovider.html#cfn-appsync-graphqlapi-additionalauthenticationprovider-userpoolconfig"""
 
 @attr.s
-class FunctionConfigurationLambdaConflictHandlerConfig(Property):
+class PropFunctionConfigurationLambdaConflictHandlerConfig(Property):
     """
     AWS Object Type = "AWS::AppSync::FunctionConfiguration.LambdaConflictHandlerConfig"
 
@@ -472,7 +472,7 @@ class FunctionConfigurationLambdaConflictHandlerConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-functionconfiguration-lambdaconflicthandlerconfig.html#cfn-appsync-functionconfiguration-lambdaconflicthandlerconfig-lambdaconflicthandlerarn"""
 
 @attr.s
-class DataSourceElasticsearchConfig(Property):
+class PropDataSourceElasticsearchConfig(Property):
     """
     AWS Object Type = "AWS::AppSync::DataSource.ElasticsearchConfig"
 
@@ -499,7 +499,7 @@ class DataSourceElasticsearchConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-elasticsearchconfig.html#cfn-appsync-datasource-elasticsearchconfig-endpoint"""
 
 @attr.s
-class DataSourceDeltaSyncConfig(Property):
+class PropDataSourceDeltaSyncConfig(Property):
     """
     AWS Object Type = "AWS::AppSync::DataSource.DeltaSyncConfig"
 
@@ -533,7 +533,7 @@ class DataSourceDeltaSyncConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-deltasyncconfig.html#cfn-appsync-datasource-deltasyncconfig-deltasynctablettl"""
 
 @attr.s
-class DataSourceRelationalDatabaseConfig(Property):
+class PropDataSourceRelationalDatabaseConfig(Property):
     """
     AWS Object Type = "AWS::AppSync::DataSource.RelationalDatabaseConfig"
 
@@ -552,16 +552,16 @@ class DataSourceRelationalDatabaseConfig(Property):
         metadata={AttrMeta.PROPERTY_NAME: "RelationalDatabaseSourceType"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-relationaldatabaseconfig.html#cfn-appsync-datasource-relationaldatabaseconfig-relationaldatabasesourcetype"""
-    p_RdsHttpEndpointConfig: typing.Union['DataSourceRdsHttpEndpointConfig', dict] = attr.ib(
+    p_RdsHttpEndpointConfig: typing.Union['PropDataSourceRdsHttpEndpointConfig', dict] = attr.ib(
         default=None,
-        converter=DataSourceRdsHttpEndpointConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DataSourceRdsHttpEndpointConfig)),
+        converter=PropDataSourceRdsHttpEndpointConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataSourceRdsHttpEndpointConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "RdsHttpEndpointConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-relationaldatabaseconfig.html#cfn-appsync-datasource-relationaldatabaseconfig-rdshttpendpointconfig"""
 
 @attr.s
-class FunctionConfigurationSyncConfig(Property):
+class PropFunctionConfigurationSyncConfig(Property):
     """
     AWS Object Type = "AWS::AppSync::FunctionConfiguration.SyncConfig"
 
@@ -587,16 +587,16 @@ class FunctionConfigurationSyncConfig(Property):
         metadata={AttrMeta.PROPERTY_NAME: "ConflictHandler"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-functionconfiguration-syncconfig.html#cfn-appsync-functionconfiguration-syncconfig-conflicthandler"""
-    p_LambdaConflictHandlerConfig: typing.Union['FunctionConfigurationLambdaConflictHandlerConfig', dict] = attr.ib(
+    p_LambdaConflictHandlerConfig: typing.Union['PropFunctionConfigurationLambdaConflictHandlerConfig', dict] = attr.ib(
         default=None,
-        converter=FunctionConfigurationLambdaConflictHandlerConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(FunctionConfigurationLambdaConflictHandlerConfig)),
+        converter=PropFunctionConfigurationLambdaConflictHandlerConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropFunctionConfigurationLambdaConflictHandlerConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "LambdaConflictHandlerConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-functionconfiguration-syncconfig.html#cfn-appsync-functionconfiguration-syncconfig-lambdaconflicthandlerconfig"""
 
 @attr.s
-class DataSourceHttpConfig(Property):
+class PropDataSourceHttpConfig(Property):
     """
     AWS Object Type = "AWS::AppSync::DataSource.HttpConfig"
 
@@ -615,16 +615,16 @@ class DataSourceHttpConfig(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Endpoint"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-httpconfig.html#cfn-appsync-datasource-httpconfig-endpoint"""
-    p_AuthorizationConfig: typing.Union['DataSourceAuthorizationConfig', dict] = attr.ib(
+    p_AuthorizationConfig: typing.Union['PropDataSourceAuthorizationConfig', dict] = attr.ib(
         default=None,
-        converter=DataSourceAuthorizationConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DataSourceAuthorizationConfig)),
+        converter=PropDataSourceAuthorizationConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataSourceAuthorizationConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "AuthorizationConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-httpconfig.html#cfn-appsync-datasource-httpconfig-authorizationconfig"""
 
 @attr.s
-class DataSourceDynamoDBConfig(Property):
+class PropDataSourceDynamoDBConfig(Property):
     """
     AWS Object Type = "AWS::AppSync::DataSource.DynamoDBConfig"
 
@@ -652,10 +652,10 @@ class DataSourceDynamoDBConfig(Property):
         metadata={AttrMeta.PROPERTY_NAME: "TableName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-dynamodbconfig.html#cfn-appsync-datasource-dynamodbconfig-tablename"""
-    p_DeltaSyncConfig: typing.Union['DataSourceDeltaSyncConfig', dict] = attr.ib(
+    p_DeltaSyncConfig: typing.Union['PropDataSourceDeltaSyncConfig', dict] = attr.ib(
         default=None,
-        converter=DataSourceDeltaSyncConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DataSourceDeltaSyncConfig)),
+        converter=PropDataSourceDeltaSyncConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataSourceDeltaSyncConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "DeltaSyncConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-dynamodbconfig.html#cfn-appsync-datasource-dynamodbconfig-deltasyncconfig"""
@@ -718,10 +718,10 @@ class Resolver(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "TypeName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-typename"""
-    p_CachingConfig: typing.Union['ResolverCachingConfig', dict] = attr.ib(
+    p_CachingConfig: typing.Union['PropResolverCachingConfig', dict] = attr.ib(
         default=None,
-        converter=ResolverCachingConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ResolverCachingConfig)),
+        converter=PropResolverCachingConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropResolverCachingConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "CachingConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-cachingconfig"""
@@ -737,10 +737,10 @@ class Resolver(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Kind"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-kind"""
-    p_PipelineConfig: typing.Union['ResolverPipelineConfig', dict] = attr.ib(
+    p_PipelineConfig: typing.Union['PropResolverPipelineConfig', dict] = attr.ib(
         default=None,
-        converter=ResolverPipelineConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ResolverPipelineConfig)),
+        converter=PropResolverPipelineConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropResolverPipelineConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "PipelineConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-pipelineconfig"""
@@ -768,10 +768,10 @@ class Resolver(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "ResponseMappingTemplateS3Location"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-responsemappingtemplates3location"""
-    p_SyncConfig: typing.Union['ResolverSyncConfig', dict] = attr.ib(
+    p_SyncConfig: typing.Union['PropResolverSyncConfig', dict] = attr.ib(
         default=None,
-        converter=ResolverSyncConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ResolverSyncConfig)),
+        converter=PropResolverSyncConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropResolverSyncConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "SyncConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-syncconfig"""
@@ -863,31 +863,31 @@ class GraphQLApi(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Name"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlapi.html#cfn-appsync-graphqlapi-name"""
-    p_AdditionalAuthenticationProviders: typing.Union['GraphQLApiAdditionalAuthenticationProviders', dict] = attr.ib(
+    p_AdditionalAuthenticationProviders: typing.Union['PropGraphQLApiAdditionalAuthenticationProviders', dict] = attr.ib(
         default=None,
-        converter=GraphQLApiAdditionalAuthenticationProviders.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(GraphQLApiAdditionalAuthenticationProviders)),
+        converter=PropGraphQLApiAdditionalAuthenticationProviders.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropGraphQLApiAdditionalAuthenticationProviders)),
         metadata={AttrMeta.PROPERTY_NAME: "AdditionalAuthenticationProviders"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlapi.html#cfn-appsync-graphqlapi-additionalauthenticationproviders"""
-    p_LogConfig: typing.Union['GraphQLApiLogConfig', dict] = attr.ib(
+    p_LogConfig: typing.Union['PropGraphQLApiLogConfig', dict] = attr.ib(
         default=None,
-        converter=GraphQLApiLogConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(GraphQLApiLogConfig)),
+        converter=PropGraphQLApiLogConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropGraphQLApiLogConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "LogConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlapi.html#cfn-appsync-graphqlapi-logconfig"""
-    p_OpenIDConnectConfig: typing.Union['GraphQLApiOpenIDConnectConfig', dict] = attr.ib(
+    p_OpenIDConnectConfig: typing.Union['PropGraphQLApiOpenIDConnectConfig', dict] = attr.ib(
         default=None,
-        converter=GraphQLApiOpenIDConnectConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(GraphQLApiOpenIDConnectConfig)),
+        converter=PropGraphQLApiOpenIDConnectConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropGraphQLApiOpenIDConnectConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "OpenIDConnectConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlapi.html#cfn-appsync-graphqlapi-openidconnectconfig"""
-    p_UserPoolConfig: typing.Union['GraphQLApiUserPoolConfig', dict] = attr.ib(
+    p_UserPoolConfig: typing.Union['PropGraphQLApiUserPoolConfig', dict] = attr.ib(
         default=None,
-        converter=GraphQLApiUserPoolConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(GraphQLApiUserPoolConfig)),
+        converter=PropGraphQLApiUserPoolConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropGraphQLApiUserPoolConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "UserPoolConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlapi.html#cfn-appsync-graphqlapi-userpoolconfig"""
@@ -897,10 +897,10 @@ class GraphQLApi(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "XrayEnabled"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlapi.html#cfn-appsync-graphqlapi-xrayenabled"""
-    p_Tags: typing.Union['GraphQLApiTags', dict] = attr.ib(
+    p_Tags: typing.Union['PropGraphQLApiTags', dict] = attr.ib(
         default=None,
-        converter=GraphQLApiTags.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(GraphQLApiTags)),
+        converter=PropGraphQLApiTags.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropGraphQLApiTags)),
         metadata={AttrMeta.PROPERTY_NAME: "Tags"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlapi.html#cfn-appsync-graphqlapi-tags"""
@@ -1023,38 +1023,38 @@ class DataSource(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Description"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html#cfn-appsync-datasource-description"""
-    p_DynamoDBConfig: typing.Union['DataSourceDynamoDBConfig', dict] = attr.ib(
+    p_DynamoDBConfig: typing.Union['PropDataSourceDynamoDBConfig', dict] = attr.ib(
         default=None,
-        converter=DataSourceDynamoDBConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DataSourceDynamoDBConfig)),
+        converter=PropDataSourceDynamoDBConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataSourceDynamoDBConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "DynamoDBConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html#cfn-appsync-datasource-dynamodbconfig"""
-    p_ElasticsearchConfig: typing.Union['DataSourceElasticsearchConfig', dict] = attr.ib(
+    p_ElasticsearchConfig: typing.Union['PropDataSourceElasticsearchConfig', dict] = attr.ib(
         default=None,
-        converter=DataSourceElasticsearchConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DataSourceElasticsearchConfig)),
+        converter=PropDataSourceElasticsearchConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataSourceElasticsearchConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "ElasticsearchConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html#cfn-appsync-datasource-elasticsearchconfig"""
-    p_HttpConfig: typing.Union['DataSourceHttpConfig', dict] = attr.ib(
+    p_HttpConfig: typing.Union['PropDataSourceHttpConfig', dict] = attr.ib(
         default=None,
-        converter=DataSourceHttpConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DataSourceHttpConfig)),
+        converter=PropDataSourceHttpConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataSourceHttpConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "HttpConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html#cfn-appsync-datasource-httpconfig"""
-    p_LambdaConfig: typing.Union['DataSourceLambdaConfig', dict] = attr.ib(
+    p_LambdaConfig: typing.Union['PropDataSourceLambdaConfig', dict] = attr.ib(
         default=None,
-        converter=DataSourceLambdaConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DataSourceLambdaConfig)),
+        converter=PropDataSourceLambdaConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataSourceLambdaConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "LambdaConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html#cfn-appsync-datasource-lambdaconfig"""
-    p_RelationalDatabaseConfig: typing.Union['DataSourceRelationalDatabaseConfig', dict] = attr.ib(
+    p_RelationalDatabaseConfig: typing.Union['PropDataSourceRelationalDatabaseConfig', dict] = attr.ib(
         default=None,
-        converter=DataSourceRelationalDatabaseConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DataSourceRelationalDatabaseConfig)),
+        converter=PropDataSourceRelationalDatabaseConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataSourceRelationalDatabaseConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "RelationalDatabaseConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html#cfn-appsync-datasource-relationaldatabaseconfig"""
@@ -1154,10 +1154,10 @@ class FunctionConfiguration(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "ResponseMappingTemplateS3Location"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-functionconfiguration.html#cfn-appsync-functionconfiguration-responsemappingtemplates3location"""
-    p_SyncConfig: typing.Union['FunctionConfigurationSyncConfig', dict] = attr.ib(
+    p_SyncConfig: typing.Union['PropFunctionConfigurationSyncConfig', dict] = attr.ib(
         default=None,
-        converter=FunctionConfigurationSyncConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(FunctionConfigurationSyncConfig)),
+        converter=PropFunctionConfigurationSyncConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropFunctionConfigurationSyncConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "SyncConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-functionconfiguration.html#cfn-appsync-functionconfiguration-syncconfig"""

@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class ListenerRuleSourceIpConfig(Property):
+class PropListenerRuleSourceIpConfig(Property):
     """
     AWS Object Type = "AWS::ElasticLoadBalancingV2::ListenerRule.SourceIpConfig"
 
@@ -35,7 +35,7 @@ class ListenerRuleSourceIpConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-sourceipconfig.html#cfn-elasticloadbalancingv2-listenerrule-sourceipconfig-values"""
 
 @attr.s
-class ListenerRuleAuthenticateOidcConfig(Property):
+class PropListenerRuleAuthenticateOidcConfig(Property):
     """
     AWS Object Type = "AWS::ElasticLoadBalancingV2::ListenerRule.AuthenticateOidcConfig"
 
@@ -132,7 +132,7 @@ class ListenerRuleAuthenticateOidcConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-authenticateoidcconfig.html#cfn-elasticloadbalancingv2-listenerrule-authenticateoidcconfig-useexistingclientsecret"""
 
 @attr.s
-class ListenerRuleAuthenticateCognitoConfig(Property):
+class PropListenerRuleAuthenticateCognitoConfig(Property):
     """
     AWS Object Type = "AWS::ElasticLoadBalancingV2::ListenerRule.AuthenticateCognitoConfig"
 
@@ -201,7 +201,7 @@ class ListenerRuleAuthenticateCognitoConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-authenticatecognitoconfig.html#cfn-elasticloadbalancingv2-listenerrule-authenticatecognitoconfig-sessiontimeout"""
 
 @attr.s
-class ListenerRuleQueryStringKeyValue(Property):
+class PropListenerRuleQueryStringKeyValue(Property):
     """
     AWS Object Type = "AWS::ElasticLoadBalancingV2::ListenerRule.QueryStringKeyValue"
 
@@ -228,7 +228,7 @@ class ListenerRuleQueryStringKeyValue(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-querystringkeyvalue.html#cfn-elasticloadbalancingv2-listenerrule-querystringkeyvalue-value"""
 
 @attr.s
-class ListenerRuleQueryStringConfig(Property):
+class PropListenerRuleQueryStringConfig(Property):
     """
     AWS Object Type = "AWS::ElasticLoadBalancingV2::ListenerRule.QueryStringConfig"
 
@@ -240,16 +240,16 @@ class ListenerRuleQueryStringConfig(Property):
     """
     AWS_OBJECT_TYPE = "AWS::ElasticLoadBalancingV2::ListenerRule.QueryStringConfig"
     
-    p_Values: typing.List[typing.Union['ListenerRuleQueryStringKeyValue', dict]] = attr.ib(
+    p_Values: typing.List[typing.Union['PropListenerRuleQueryStringKeyValue', dict]] = attr.ib(
         default=None,
-        converter=ListenerRuleQueryStringKeyValue.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ListenerRuleQueryStringKeyValue), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropListenerRuleQueryStringKeyValue.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropListenerRuleQueryStringKeyValue), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Values"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-querystringconfig.html#cfn-elasticloadbalancingv2-listenerrule-querystringconfig-values"""
 
 @attr.s
-class ListenerRulePathPatternConfig(Property):
+class PropListenerRulePathPatternConfig(Property):
     """
     AWS Object Type = "AWS::ElasticLoadBalancingV2::ListenerRule.PathPatternConfig"
 
@@ -269,7 +269,7 @@ class ListenerRulePathPatternConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-pathpatternconfig.html#cfn-elasticloadbalancingv2-listenerrule-pathpatternconfig-values"""
 
 @attr.s
-class LoadBalancerLoadBalancerAttribute(Property):
+class PropLoadBalancerLoadBalancerAttribute(Property):
     """
     AWS Object Type = "AWS::ElasticLoadBalancingV2::LoadBalancer.LoadBalancerAttribute"
 
@@ -296,7 +296,7 @@ class LoadBalancerLoadBalancerAttribute(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-loadbalancer-loadbalancerattributes.html#cfn-elasticloadbalancingv2-loadbalancer-loadbalancerattributes-value"""
 
 @attr.s
-class TargetGroupTargetDescription(Property):
+class PropTargetGroupTargetDescription(Property):
     """
     AWS Object Type = "AWS::ElasticLoadBalancingV2::TargetGroup.TargetDescription"
 
@@ -330,7 +330,7 @@ class TargetGroupTargetDescription(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-targetgroup-targetdescription.html#cfn-elasticloadbalancingv2-targetgroup-targetdescription-port"""
 
 @attr.s
-class ListenerAuthenticateOidcConfig(Property):
+class PropListenerAuthenticateOidcConfig(Property):
     """
     AWS Object Type = "AWS::ElasticLoadBalancingV2::Listener.AuthenticateOidcConfig"
 
@@ -420,7 +420,7 @@ class ListenerAuthenticateOidcConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-authenticateoidcconfig.html#cfn-elasticloadbalancingv2-listener-authenticateoidcconfig-sessiontimeout"""
 
 @attr.s
-class ListenerCertificate(Property):
+class PropListenerCertificate(Property):
     """
     AWS Object Type = "AWS::ElasticLoadBalancingV2::Listener.Certificate"
 
@@ -440,7 +440,7 @@ class ListenerCertificate(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-certificate.html#cfn-elasticloadbalancingv2-listener-certificate-certificatearn"""
 
 @attr.s
-class ListenerRuleRedirectConfig(Property):
+class PropListenerRuleRedirectConfig(Property):
     """
     AWS Object Type = "AWS::ElasticLoadBalancingV2::ListenerRule.RedirectConfig"
 
@@ -495,7 +495,7 @@ class ListenerRuleRedirectConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-redirectconfig.html#cfn-elasticloadbalancingv2-listenerrule-redirectconfig-query"""
 
 @attr.s
-class LoadBalancerSubnetMapping(Property):
+class PropLoadBalancerSubnetMapping(Property):
     """
     AWS Object Type = "AWS::ElasticLoadBalancingV2::LoadBalancer.SubnetMapping"
 
@@ -536,7 +536,7 @@ class LoadBalancerSubnetMapping(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-loadbalancer-subnetmapping.html#cfn-elasticloadbalancingv2-loadbalancer-subnetmapping-privateipv4address"""
 
 @attr.s
-class ListenerRuleHostHeaderConfig(Property):
+class PropListenerRuleHostHeaderConfig(Property):
     """
     AWS Object Type = "AWS::ElasticLoadBalancingV2::ListenerRule.HostHeaderConfig"
 
@@ -556,7 +556,7 @@ class ListenerRuleHostHeaderConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-hostheaderconfig.html#cfn-elasticloadbalancingv2-listenerrule-hostheaderconfig-values"""
 
 @attr.s
-class ListenerTargetGroupStickinessConfig(Property):
+class PropListenerTargetGroupStickinessConfig(Property):
     """
     AWS Object Type = "AWS::ElasticLoadBalancingV2::Listener.TargetGroupStickinessConfig"
 
@@ -583,7 +583,7 @@ class ListenerTargetGroupStickinessConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-targetgroupstickinessconfig.html#cfn-elasticloadbalancingv2-listener-targetgroupstickinessconfig-enabled"""
 
 @attr.s
-class ListenerCertificateCertificate(Property):
+class PropListenerCertificateCertificate(Property):
     """
     AWS Object Type = "AWS::ElasticLoadBalancingV2::ListenerCertificate.Certificate"
 
@@ -603,7 +603,7 @@ class ListenerCertificateCertificate(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-certificates.html#cfn-elasticloadbalancingv2-listener-certificates-certificatearn"""
 
 @attr.s
-class TargetGroupTargetGroupAttribute(Property):
+class PropTargetGroupTargetGroupAttribute(Property):
     """
     AWS Object Type = "AWS::ElasticLoadBalancingV2::TargetGroup.TargetGroupAttribute"
 
@@ -630,7 +630,7 @@ class TargetGroupTargetGroupAttribute(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-targetgroup-targetgroupattribute.html#cfn-elasticloadbalancingv2-targetgroup-targetgroupattribute-value"""
 
 @attr.s
-class ListenerAuthenticateCognitoConfig(Property):
+class PropListenerAuthenticateCognitoConfig(Property):
     """
     AWS Object Type = "AWS::ElasticLoadBalancingV2::Listener.AuthenticateCognitoConfig"
 
@@ -699,7 +699,7 @@ class ListenerAuthenticateCognitoConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-authenticatecognitoconfig.html#cfn-elasticloadbalancingv2-listener-authenticatecognitoconfig-sessiontimeout"""
 
 @attr.s
-class ListenerRuleFixedResponseConfig(Property):
+class PropListenerRuleFixedResponseConfig(Property):
     """
     AWS Object Type = "AWS::ElasticLoadBalancingV2::ListenerRule.FixedResponseConfig"
 
@@ -733,7 +733,7 @@ class ListenerRuleFixedResponseConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-fixedresponseconfig.html#cfn-elasticloadbalancingv2-listenerrule-fixedresponseconfig-messagebody"""
 
 @attr.s
-class TargetGroupMatcher(Property):
+class PropTargetGroupMatcher(Property):
     """
     AWS Object Type = "AWS::ElasticLoadBalancingV2::TargetGroup.Matcher"
 
@@ -760,7 +760,7 @@ class TargetGroupMatcher(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-targetgroup-matcher.html#cfn-elasticloadbalancingv2-targetgroup-matcher-httpcode"""
 
 @attr.s
-class ListenerRuleHttpHeaderConfig(Property):
+class PropListenerRuleHttpHeaderConfig(Property):
     """
     AWS Object Type = "AWS::ElasticLoadBalancingV2::ListenerRule.HttpHeaderConfig"
 
@@ -787,7 +787,7 @@ class ListenerRuleHttpHeaderConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-httpheaderconfig.html#cfn-elasticloadbalancingv2-listenerrule-httpheaderconfig-values"""
 
 @attr.s
-class ListenerRuleTargetGroupTuple(Property):
+class PropListenerRuleTargetGroupTuple(Property):
     """
     AWS Object Type = "AWS::ElasticLoadBalancingV2::ListenerRule.TargetGroupTuple"
 
@@ -814,7 +814,7 @@ class ListenerRuleTargetGroupTuple(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-targetgrouptuple.html#cfn-elasticloadbalancingv2-listenerrule-targetgrouptuple-weight"""
 
 @attr.s
-class ListenerRedirectConfig(Property):
+class PropListenerRedirectConfig(Property):
     """
     AWS Object Type = "AWS::ElasticLoadBalancingV2::Listener.RedirectConfig"
 
@@ -869,7 +869,7 @@ class ListenerRedirectConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-redirectconfig.html#cfn-elasticloadbalancingv2-listener-redirectconfig-query"""
 
 @attr.s
-class ListenerRuleHttpRequestMethodConfig(Property):
+class PropListenerRuleHttpRequestMethodConfig(Property):
     """
     AWS Object Type = "AWS::ElasticLoadBalancingV2::ListenerRule.HttpRequestMethodConfig"
 
@@ -889,7 +889,7 @@ class ListenerRuleHttpRequestMethodConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-httprequestmethodconfig.html#cfn-elasticloadbalancingv2-listenerrule-httprequestmethodconfig-values"""
 
 @attr.s
-class ListenerFixedResponseConfig(Property):
+class PropListenerFixedResponseConfig(Property):
     """
     AWS Object Type = "AWS::ElasticLoadBalancingV2::Listener.FixedResponseConfig"
 
@@ -923,7 +923,7 @@ class ListenerFixedResponseConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-fixedresponseconfig.html#cfn-elasticloadbalancingv2-listener-fixedresponseconfig-messagebody"""
 
 @attr.s
-class ListenerRuleTargetGroupStickinessConfig(Property):
+class PropListenerRuleTargetGroupStickinessConfig(Property):
     """
     AWS Object Type = "AWS::ElasticLoadBalancingV2::ListenerRule.TargetGroupStickinessConfig"
 
@@ -950,7 +950,7 @@ class ListenerRuleTargetGroupStickinessConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-targetgroupstickinessconfig.html#cfn-elasticloadbalancingv2-listenerrule-targetgroupstickinessconfig-enabled"""
 
 @attr.s
-class ListenerTargetGroupTuple(Property):
+class PropListenerTargetGroupTuple(Property):
     """
     AWS Object Type = "AWS::ElasticLoadBalancingV2::Listener.TargetGroupTuple"
 
@@ -977,7 +977,7 @@ class ListenerTargetGroupTuple(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-targetgrouptuple.html#cfn-elasticloadbalancingv2-listener-targetgrouptuple-weight"""
 
 @attr.s
-class ListenerForwardConfig(Property):
+class PropListenerForwardConfig(Property):
     """
     AWS Object Type = "AWS::ElasticLoadBalancingV2::Listener.ForwardConfig"
 
@@ -990,23 +990,23 @@ class ListenerForwardConfig(Property):
     """
     AWS_OBJECT_TYPE = "AWS::ElasticLoadBalancingV2::Listener.ForwardConfig"
     
-    p_TargetGroupStickinessConfig: typing.Union['ListenerTargetGroupStickinessConfig', dict] = attr.ib(
+    p_TargetGroupStickinessConfig: typing.Union['PropListenerTargetGroupStickinessConfig', dict] = attr.ib(
         default=None,
-        converter=ListenerTargetGroupStickinessConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ListenerTargetGroupStickinessConfig)),
+        converter=PropListenerTargetGroupStickinessConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropListenerTargetGroupStickinessConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "TargetGroupStickinessConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-forwardconfig.html#cfn-elasticloadbalancingv2-listener-forwardconfig-targetgroupstickinessconfig"""
-    p_TargetGroups: typing.List[typing.Union['ListenerTargetGroupTuple', dict]] = attr.ib(
+    p_TargetGroups: typing.List[typing.Union['PropListenerTargetGroupTuple', dict]] = attr.ib(
         default=None,
-        converter=ListenerTargetGroupTuple.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ListenerTargetGroupTuple), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropListenerTargetGroupTuple.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropListenerTargetGroupTuple), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "TargetGroups"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-forwardconfig.html#cfn-elasticloadbalancingv2-listener-forwardconfig-targetgroups"""
 
 @attr.s
-class ListenerRuleRuleCondition(Property):
+class PropListenerRuleRuleCondition(Property):
     """
     AWS Object Type = "AWS::ElasticLoadBalancingV2::ListenerRule.RuleCondition"
 
@@ -1031,45 +1031,45 @@ class ListenerRuleRuleCondition(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Field"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-rulecondition.html#cfn-elasticloadbalancingv2-listenerrule-rulecondition-field"""
-    p_HostHeaderConfig: typing.Union['ListenerRuleHostHeaderConfig', dict] = attr.ib(
+    p_HostHeaderConfig: typing.Union['PropListenerRuleHostHeaderConfig', dict] = attr.ib(
         default=None,
-        converter=ListenerRuleHostHeaderConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ListenerRuleHostHeaderConfig)),
+        converter=PropListenerRuleHostHeaderConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropListenerRuleHostHeaderConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "HostHeaderConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-rulecondition.html#cfn-elasticloadbalancingv2-listenerrule-rulecondition-hostheaderconfig"""
-    p_HttpHeaderConfig: typing.Union['ListenerRuleHttpHeaderConfig', dict] = attr.ib(
+    p_HttpHeaderConfig: typing.Union['PropListenerRuleHttpHeaderConfig', dict] = attr.ib(
         default=None,
-        converter=ListenerRuleHttpHeaderConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ListenerRuleHttpHeaderConfig)),
+        converter=PropListenerRuleHttpHeaderConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropListenerRuleHttpHeaderConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "HttpHeaderConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-rulecondition.html#cfn-elasticloadbalancingv2-listenerrule-rulecondition-httpheaderconfig"""
-    p_HttpRequestMethodConfig: typing.Union['ListenerRuleHttpRequestMethodConfig', dict] = attr.ib(
+    p_HttpRequestMethodConfig: typing.Union['PropListenerRuleHttpRequestMethodConfig', dict] = attr.ib(
         default=None,
-        converter=ListenerRuleHttpRequestMethodConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ListenerRuleHttpRequestMethodConfig)),
+        converter=PropListenerRuleHttpRequestMethodConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropListenerRuleHttpRequestMethodConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "HttpRequestMethodConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-rulecondition.html#cfn-elasticloadbalancingv2-listenerrule-rulecondition-httprequestmethodconfig"""
-    p_PathPatternConfig: typing.Union['ListenerRulePathPatternConfig', dict] = attr.ib(
+    p_PathPatternConfig: typing.Union['PropListenerRulePathPatternConfig', dict] = attr.ib(
         default=None,
-        converter=ListenerRulePathPatternConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ListenerRulePathPatternConfig)),
+        converter=PropListenerRulePathPatternConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropListenerRulePathPatternConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "PathPatternConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-rulecondition.html#cfn-elasticloadbalancingv2-listenerrule-rulecondition-pathpatternconfig"""
-    p_QueryStringConfig: typing.Union['ListenerRuleQueryStringConfig', dict] = attr.ib(
+    p_QueryStringConfig: typing.Union['PropListenerRuleQueryStringConfig', dict] = attr.ib(
         default=None,
-        converter=ListenerRuleQueryStringConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ListenerRuleQueryStringConfig)),
+        converter=PropListenerRuleQueryStringConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropListenerRuleQueryStringConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "QueryStringConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-rulecondition.html#cfn-elasticloadbalancingv2-listenerrule-rulecondition-querystringconfig"""
-    p_SourceIpConfig: typing.Union['ListenerRuleSourceIpConfig', dict] = attr.ib(
+    p_SourceIpConfig: typing.Union['PropListenerRuleSourceIpConfig', dict] = attr.ib(
         default=None,
-        converter=ListenerRuleSourceIpConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ListenerRuleSourceIpConfig)),
+        converter=PropListenerRuleSourceIpConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropListenerRuleSourceIpConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "SourceIpConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-rulecondition.html#cfn-elasticloadbalancingv2-listenerrule-rulecondition-sourceipconfig"""
@@ -1081,7 +1081,7 @@ class ListenerRuleRuleCondition(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-rulecondition.html#cfn-elasticloadbalancingv2-listenerrule-rulecondition-values"""
 
 @attr.s
-class ListenerAction(Property):
+class PropListenerAction(Property):
     """
     AWS Object Type = "AWS::ElasticLoadBalancingV2::Listener.Action"
 
@@ -1106,31 +1106,31 @@ class ListenerAction(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Type"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-action.html#cfn-elasticloadbalancingv2-listener-action-type"""
-    p_AuthenticateCognitoConfig: typing.Union['ListenerAuthenticateCognitoConfig', dict] = attr.ib(
+    p_AuthenticateCognitoConfig: typing.Union['PropListenerAuthenticateCognitoConfig', dict] = attr.ib(
         default=None,
-        converter=ListenerAuthenticateCognitoConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ListenerAuthenticateCognitoConfig)),
+        converter=PropListenerAuthenticateCognitoConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropListenerAuthenticateCognitoConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "AuthenticateCognitoConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-action.html#cfn-elasticloadbalancingv2-listener-action-authenticatecognitoconfig"""
-    p_AuthenticateOidcConfig: typing.Union['ListenerAuthenticateOidcConfig', dict] = attr.ib(
+    p_AuthenticateOidcConfig: typing.Union['PropListenerAuthenticateOidcConfig', dict] = attr.ib(
         default=None,
-        converter=ListenerAuthenticateOidcConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ListenerAuthenticateOidcConfig)),
+        converter=PropListenerAuthenticateOidcConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropListenerAuthenticateOidcConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "AuthenticateOidcConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-action.html#cfn-elasticloadbalancingv2-listener-action-authenticateoidcconfig"""
-    p_FixedResponseConfig: typing.Union['ListenerFixedResponseConfig', dict] = attr.ib(
+    p_FixedResponseConfig: typing.Union['PropListenerFixedResponseConfig', dict] = attr.ib(
         default=None,
-        converter=ListenerFixedResponseConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ListenerFixedResponseConfig)),
+        converter=PropListenerFixedResponseConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropListenerFixedResponseConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "FixedResponseConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-action.html#cfn-elasticloadbalancingv2-listener-action-fixedresponseconfig"""
-    p_ForwardConfig: typing.Union['ListenerForwardConfig', dict] = attr.ib(
+    p_ForwardConfig: typing.Union['PropListenerForwardConfig', dict] = attr.ib(
         default=None,
-        converter=ListenerForwardConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ListenerForwardConfig)),
+        converter=PropListenerForwardConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropListenerForwardConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "ForwardConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-action.html#cfn-elasticloadbalancingv2-listener-action-forwardconfig"""
@@ -1140,10 +1140,10 @@ class ListenerAction(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Order"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-action.html#cfn-elasticloadbalancingv2-listener-action-order"""
-    p_RedirectConfig: typing.Union['ListenerRedirectConfig', dict] = attr.ib(
+    p_RedirectConfig: typing.Union['PropListenerRedirectConfig', dict] = attr.ib(
         default=None,
-        converter=ListenerRedirectConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ListenerRedirectConfig)),
+        converter=PropListenerRedirectConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropListenerRedirectConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "RedirectConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-action.html#cfn-elasticloadbalancingv2-listener-action-redirectconfig"""
@@ -1155,7 +1155,7 @@ class ListenerAction(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listener-action.html#cfn-elasticloadbalancingv2-listener-action-targetgrouparn"""
 
 @attr.s
-class ListenerRuleForwardConfig(Property):
+class PropListenerRuleForwardConfig(Property):
     """
     AWS Object Type = "AWS::ElasticLoadBalancingV2::ListenerRule.ForwardConfig"
 
@@ -1168,23 +1168,23 @@ class ListenerRuleForwardConfig(Property):
     """
     AWS_OBJECT_TYPE = "AWS::ElasticLoadBalancingV2::ListenerRule.ForwardConfig"
     
-    p_TargetGroupStickinessConfig: typing.Union['ListenerRuleTargetGroupStickinessConfig', dict] = attr.ib(
+    p_TargetGroupStickinessConfig: typing.Union['PropListenerRuleTargetGroupStickinessConfig', dict] = attr.ib(
         default=None,
-        converter=ListenerRuleTargetGroupStickinessConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ListenerRuleTargetGroupStickinessConfig)),
+        converter=PropListenerRuleTargetGroupStickinessConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropListenerRuleTargetGroupStickinessConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "TargetGroupStickinessConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-forwardconfig.html#cfn-elasticloadbalancingv2-listenerrule-forwardconfig-targetgroupstickinessconfig"""
-    p_TargetGroups: typing.List[typing.Union['ListenerRuleTargetGroupTuple', dict]] = attr.ib(
+    p_TargetGroups: typing.List[typing.Union['PropListenerRuleTargetGroupTuple', dict]] = attr.ib(
         default=None,
-        converter=ListenerRuleTargetGroupTuple.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ListenerRuleTargetGroupTuple), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropListenerRuleTargetGroupTuple.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropListenerRuleTargetGroupTuple), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "TargetGroups"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-forwardconfig.html#cfn-elasticloadbalancingv2-listenerrule-forwardconfig-targetgroups"""
 
 @attr.s
-class ListenerRuleAction(Property):
+class PropListenerRuleAction(Property):
     """
     AWS Object Type = "AWS::ElasticLoadBalancingV2::ListenerRule.Action"
 
@@ -1209,31 +1209,31 @@ class ListenerRuleAction(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Type"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-action.html#cfn-elasticloadbalancingv2-listenerrule-action-type"""
-    p_AuthenticateCognitoConfig: typing.Union['ListenerRuleAuthenticateCognitoConfig', dict] = attr.ib(
+    p_AuthenticateCognitoConfig: typing.Union['PropListenerRuleAuthenticateCognitoConfig', dict] = attr.ib(
         default=None,
-        converter=ListenerRuleAuthenticateCognitoConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ListenerRuleAuthenticateCognitoConfig)),
+        converter=PropListenerRuleAuthenticateCognitoConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropListenerRuleAuthenticateCognitoConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "AuthenticateCognitoConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-action.html#cfn-elasticloadbalancingv2-listenerrule-action-authenticatecognitoconfig"""
-    p_AuthenticateOidcConfig: typing.Union['ListenerRuleAuthenticateOidcConfig', dict] = attr.ib(
+    p_AuthenticateOidcConfig: typing.Union['PropListenerRuleAuthenticateOidcConfig', dict] = attr.ib(
         default=None,
-        converter=ListenerRuleAuthenticateOidcConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ListenerRuleAuthenticateOidcConfig)),
+        converter=PropListenerRuleAuthenticateOidcConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropListenerRuleAuthenticateOidcConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "AuthenticateOidcConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-action.html#cfn-elasticloadbalancingv2-listenerrule-action-authenticateoidcconfig"""
-    p_FixedResponseConfig: typing.Union['ListenerRuleFixedResponseConfig', dict] = attr.ib(
+    p_FixedResponseConfig: typing.Union['PropListenerRuleFixedResponseConfig', dict] = attr.ib(
         default=None,
-        converter=ListenerRuleFixedResponseConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ListenerRuleFixedResponseConfig)),
+        converter=PropListenerRuleFixedResponseConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropListenerRuleFixedResponseConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "FixedResponseConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-action.html#cfn-elasticloadbalancingv2-listenerrule-action-fixedresponseconfig"""
-    p_ForwardConfig: typing.Union['ListenerRuleForwardConfig', dict] = attr.ib(
+    p_ForwardConfig: typing.Union['PropListenerRuleForwardConfig', dict] = attr.ib(
         default=None,
-        converter=ListenerRuleForwardConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ListenerRuleForwardConfig)),
+        converter=PropListenerRuleForwardConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropListenerRuleForwardConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "ForwardConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-action.html#cfn-elasticloadbalancingv2-listenerrule-action-forwardconfig"""
@@ -1243,10 +1243,10 @@ class ListenerRuleAction(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Order"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-action.html#cfn-elasticloadbalancingv2-listenerrule-action-order"""
-    p_RedirectConfig: typing.Union['ListenerRuleRedirectConfig', dict] = attr.ib(
+    p_RedirectConfig: typing.Union['PropListenerRuleRedirectConfig', dict] = attr.ib(
         default=None,
-        converter=ListenerRuleRedirectConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ListenerRuleRedirectConfig)),
+        converter=PropListenerRuleRedirectConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropListenerRuleRedirectConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "RedirectConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticloadbalancingv2-listenerrule-action.html#cfn-elasticloadbalancingv2-listenerrule-action-redirectconfig"""
@@ -1288,10 +1288,10 @@ class LoadBalancer(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "IpAddressType"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-loadbalancer.html#cfn-elasticloadbalancingv2-loadbalancer-ipaddresstype"""
-    p_LoadBalancerAttributes: typing.List[typing.Union['LoadBalancerLoadBalancerAttribute', dict]] = attr.ib(
+    p_LoadBalancerAttributes: typing.List[typing.Union['PropLoadBalancerLoadBalancerAttribute', dict]] = attr.ib(
         default=None,
-        converter=LoadBalancerLoadBalancerAttribute.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(LoadBalancerLoadBalancerAttribute), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropLoadBalancerLoadBalancerAttribute.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropLoadBalancerLoadBalancerAttribute), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "LoadBalancerAttributes"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-loadbalancer.html#cfn-elasticloadbalancingv2-loadbalancer-loadbalancerattributes"""
@@ -1313,10 +1313,10 @@ class LoadBalancer(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "SecurityGroups"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-loadbalancer.html#cfn-elasticloadbalancingv2-loadbalancer-securitygroups"""
-    p_SubnetMappings: typing.List[typing.Union['LoadBalancerSubnetMapping', dict]] = attr.ib(
+    p_SubnetMappings: typing.List[typing.Union['PropLoadBalancerSubnetMapping', dict]] = attr.ib(
         default=None,
-        converter=LoadBalancerSubnetMapping.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(LoadBalancerSubnetMapping), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropLoadBalancerSubnetMapping.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropLoadBalancerSubnetMapping), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "SubnetMappings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-loadbalancer.html#cfn-elasticloadbalancingv2-loadbalancer-subnetmappings"""
@@ -1387,10 +1387,10 @@ class Listener(Resource):
     AWS_OBJECT_TYPE = "AWS::ElasticLoadBalancingV2::Listener"
 
     
-    rp_DefaultActions: typing.List[typing.Union['ListenerAction', dict]] = attr.ib(
+    rp_DefaultActions: typing.List[typing.Union['PropListenerAction', dict]] = attr.ib(
         default=None,
-        converter=ListenerAction.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ListenerAction), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropListenerAction.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropListenerAction), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "DefaultActions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listener.html#cfn-elasticloadbalancingv2-listener-defaultactions"""
@@ -1406,10 +1406,10 @@ class Listener(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "AlpnPolicy"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listener.html#cfn-elasticloadbalancingv2-listener-alpnpolicy"""
-    p_Certificates: typing.List[typing.Union['ListenerCertificate', dict]] = attr.ib(
+    p_Certificates: typing.List[typing.Union['PropListenerCertificate', dict]] = attr.ib(
         default=None,
-        converter=ListenerCertificate.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ListenerCertificate), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropListenerCertificate.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropListenerCertificate), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Certificates"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listener.html#cfn-elasticloadbalancingv2-listener-certificates"""
@@ -1456,17 +1456,17 @@ class ListenerRule(Resource):
     AWS_OBJECT_TYPE = "AWS::ElasticLoadBalancingV2::ListenerRule"
 
     
-    rp_Actions: typing.List[typing.Union['ListenerRuleAction', dict]] = attr.ib(
+    rp_Actions: typing.List[typing.Union['PropListenerRuleAction', dict]] = attr.ib(
         default=None,
-        converter=ListenerRuleAction.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ListenerRuleAction), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropListenerRuleAction.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropListenerRuleAction), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "Actions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listenerrule.html#cfn-elasticloadbalancingv2-listenerrule-actions"""
-    rp_Conditions: typing.List[typing.Union['ListenerRuleRuleCondition', dict]] = attr.ib(
+    rp_Conditions: typing.List[typing.Union['PropListenerRuleRuleCondition', dict]] = attr.ib(
         default=None,
-        converter=ListenerRuleRuleCondition.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ListenerRuleRuleCondition), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropListenerRuleRuleCondition.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropListenerRuleRuleCondition), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "Conditions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listenerrule.html#cfn-elasticloadbalancingv2-listenerrule-conditions"""
@@ -1510,10 +1510,10 @@ class ListenerCertificate(Resource):
     AWS_OBJECT_TYPE = "AWS::ElasticLoadBalancingV2::ListenerCertificate"
 
     
-    rp_Certificates: typing.List[typing.Union['ListenerCertificateCertificate', dict]] = attr.ib(
+    rp_Certificates: typing.List[typing.Union['PropListenerCertificateCertificate', dict]] = attr.ib(
         default=None,
-        converter=ListenerCertificateCertificate.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ListenerCertificateCertificate), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropListenerCertificateCertificate.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropListenerCertificateCertificate), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "Certificates"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listenercertificate.html#cfn-elasticloadbalancingv2-listenercertificate-certificates"""
@@ -1599,10 +1599,10 @@ class TargetGroup(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "HealthyThresholdCount"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-healthythresholdcount"""
-    p_Matcher: typing.Union['TargetGroupMatcher', dict] = attr.ib(
+    p_Matcher: typing.Union['PropTargetGroupMatcher', dict] = attr.ib(
         default=None,
-        converter=TargetGroupMatcher.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(TargetGroupMatcher)),
+        converter=PropTargetGroupMatcher.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropTargetGroupMatcher)),
         metadata={AttrMeta.PROPERTY_NAME: "Matcher"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-matcher"""
@@ -1630,10 +1630,10 @@ class TargetGroup(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "ProtocolVersion"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-protocolversion"""
-    p_TargetGroupAttributes: typing.List[typing.Union['TargetGroupTargetGroupAttribute', dict]] = attr.ib(
+    p_TargetGroupAttributes: typing.List[typing.Union['PropTargetGroupTargetGroupAttribute', dict]] = attr.ib(
         default=None,
-        converter=TargetGroupTargetGroupAttribute.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TargetGroupTargetGroupAttribute), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropTargetGroupTargetGroupAttribute.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropTargetGroupTargetGroupAttribute), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "TargetGroupAttributes"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-targetgroupattributes"""
@@ -1643,10 +1643,10 @@ class TargetGroup(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "TargetType"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-targettype"""
-    p_Targets: typing.List[typing.Union['TargetGroupTargetDescription', dict]] = attr.ib(
+    p_Targets: typing.List[typing.Union['PropTargetGroupTargetDescription', dict]] = attr.ib(
         default=None,
-        converter=TargetGroupTargetDescription.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TargetGroupTargetDescription), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropTargetGroupTargetDescription.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropTargetGroupTargetDescription), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Targets"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-targets"""

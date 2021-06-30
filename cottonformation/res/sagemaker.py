@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class MonitoringScheduleEnvironment(Property):
+class PropMonitoringScheduleEnvironment(Property):
     """
     AWS Object Type = "AWS::SageMaker::MonitoringSchedule.Environment"
 
@@ -28,7 +28,7 @@ class MonitoringScheduleEnvironment(Property):
     
 
 @attr.s
-class ModelBiasJobDefinitionClusterConfig(Property):
+class PropModelBiasJobDefinitionClusterConfig(Property):
     """
     AWS Object Type = "AWS::SageMaker::ModelBiasJobDefinition.ClusterConfig"
 
@@ -69,7 +69,7 @@ class ModelBiasJobDefinitionClusterConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-clusterconfig.html#cfn-sagemaker-modelbiasjobdefinition-clusterconfig-volumekmskeyid"""
 
 @attr.s
-class DataQualityJobDefinitionStatisticsResource(Property):
+class PropDataQualityJobDefinitionStatisticsResource(Property):
     """
     AWS Object Type = "AWS::SageMaker::DataQualityJobDefinition.StatisticsResource"
 
@@ -89,7 +89,7 @@ class DataQualityJobDefinitionStatisticsResource(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-statisticsresource.html#cfn-sagemaker-dataqualityjobdefinition-statisticsresource-s3uri"""
 
 @attr.s
-class EndpointAlarm(Property):
+class PropEndpointAlarm(Property):
     """
     AWS Object Type = "AWS::SageMaker::Endpoint.Alarm"
 
@@ -109,7 +109,7 @@ class EndpointAlarm(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpoint-alarm.html#cfn-sagemaker-endpoint-alarm-alarmname"""
 
 @attr.s
-class EndpointAutoRollbackConfig(Property):
+class PropEndpointAutoRollbackConfig(Property):
     """
     AWS Object Type = "AWS::SageMaker::Endpoint.AutoRollbackConfig"
 
@@ -121,16 +121,16 @@ class EndpointAutoRollbackConfig(Property):
     """
     AWS_OBJECT_TYPE = "AWS::SageMaker::Endpoint.AutoRollbackConfig"
     
-    rp_Alarms: typing.List[typing.Union['EndpointAlarm', dict]] = attr.ib(
+    rp_Alarms: typing.List[typing.Union['PropEndpointAlarm', dict]] = attr.ib(
         default=None,
-        converter=EndpointAlarm.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(EndpointAlarm), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropEndpointAlarm.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropEndpointAlarm), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "Alarms"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpoint-autorollbackconfig.html#cfn-sagemaker-endpoint-autorollbackconfig-alarms"""
 
 @attr.s
-class ModelMultiModelConfig(Property):
+class PropModelMultiModelConfig(Property):
     """
     AWS Object Type = "AWS::SageMaker::Model.MultiModelConfig"
 
@@ -150,7 +150,7 @@ class ModelMultiModelConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-model-containerdefinition-multimodelconfig.html#cfn-sagemaker-model-containerdefinition-multimodelconfig-modelcachesetting"""
 
 @attr.s
-class ModelBiasJobDefinitionS3Output(Property):
+class PropModelBiasJobDefinitionS3Output(Property):
     """
     AWS Object Type = "AWS::SageMaker::ModelBiasJobDefinition.S3Output"
 
@@ -184,7 +184,7 @@ class ModelBiasJobDefinitionS3Output(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-s3output.html#cfn-sagemaker-modelbiasjobdefinition-s3output-s3uploadmode"""
 
 @attr.s
-class DeviceFleetEdgeOutputConfig(Property):
+class PropDeviceFleetEdgeOutputConfig(Property):
     """
     AWS Object Type = "AWS::SageMaker::DeviceFleet.EdgeOutputConfig"
 
@@ -211,7 +211,7 @@ class DeviceFleetEdgeOutputConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-devicefleet-edgeoutputconfig.html#cfn-sagemaker-devicefleet-edgeoutputconfig-kmskeyid"""
 
 @attr.s
-class ModelVpcConfig(Property):
+class PropModelVpcConfig(Property):
     """
     AWS Object Type = "AWS::SageMaker::Model.VpcConfig"
 
@@ -238,7 +238,7 @@ class ModelVpcConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-model-vpcconfig.html#cfn-sagemaker-model-vpcconfig-subnets"""
 
 @attr.s
-class ModelBiasJobDefinitionMonitoringResources(Property):
+class PropModelBiasJobDefinitionMonitoringResources(Property):
     """
     AWS Object Type = "AWS::SageMaker::ModelBiasJobDefinition.MonitoringResources"
 
@@ -250,16 +250,16 @@ class ModelBiasJobDefinitionMonitoringResources(Property):
     """
     AWS_OBJECT_TYPE = "AWS::SageMaker::ModelBiasJobDefinition.MonitoringResources"
     
-    rp_ClusterConfig: typing.Union['ModelBiasJobDefinitionClusterConfig', dict] = attr.ib(
+    rp_ClusterConfig: typing.Union['PropModelBiasJobDefinitionClusterConfig', dict] = attr.ib(
         default=None,
-        converter=ModelBiasJobDefinitionClusterConfig.from_dict,
-        validator=attr.validators.instance_of(ModelBiasJobDefinitionClusterConfig),
+        converter=PropModelBiasJobDefinitionClusterConfig.from_dict,
+        validator=attr.validators.instance_of(PropModelBiasJobDefinitionClusterConfig),
         metadata={AttrMeta.PROPERTY_NAME: "ClusterConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-monitoringresources.html#cfn-sagemaker-modelbiasjobdefinition-monitoringresources-clusterconfig"""
 
 @attr.s
-class AppImageConfigFileSystemConfig(Property):
+class PropAppImageConfigFileSystemConfig(Property):
     """
     AWS Object Type = "AWS::SageMaker::AppImageConfig.FileSystemConfig"
 
@@ -293,7 +293,7 @@ class AppImageConfigFileSystemConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-appimageconfig-filesystemconfig.html#cfn-sagemaker-appimageconfig-filesystemconfig-mountpath"""
 
 @attr.s
-class DataQualityJobDefinitionConstraintsResource(Property):
+class PropDataQualityJobDefinitionConstraintsResource(Property):
     """
     AWS Object Type = "AWS::SageMaker::DataQualityJobDefinition.ConstraintsResource"
 
@@ -313,7 +313,7 @@ class DataQualityJobDefinitionConstraintsResource(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-constraintsresource.html#cfn-sagemaker-dataqualityjobdefinition-constraintsresource-s3uri"""
 
 @attr.s
-class DomainCustomImage(Property):
+class PropDomainCustomImage(Property):
     """
     AWS Object Type = "AWS::SageMaker::Domain.CustomImage"
 
@@ -347,7 +347,7 @@ class DomainCustomImage(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-customimage.html#cfn-sagemaker-domain-customimage-imageversionnumber"""
 
 @attr.s
-class MonitoringScheduleConstraintsResource(Property):
+class PropMonitoringScheduleConstraintsResource(Property):
     """
     AWS Object Type = "AWS::SageMaker::MonitoringSchedule.ConstraintsResource"
 
@@ -367,7 +367,7 @@ class MonitoringScheduleConstraintsResource(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-constraintsresource.html#cfn-sagemaker-monitoringschedule-constraintsresource-s3uri"""
 
 @attr.s
-class MonitoringScheduleMonitoringExecutionSummary(Property):
+class PropMonitoringScheduleMonitoringExecutionSummary(Property):
     """
     AWS Object Type = "AWS::SageMaker::MonitoringSchedule.MonitoringExecutionSummary"
 
@@ -436,7 +436,7 @@ class MonitoringScheduleMonitoringExecutionSummary(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-monitoringexecutionsummary.html#cfn-sagemaker-monitoringschedule-monitoringexecutionsummary-processingjobarn"""
 
 @attr.s
-class EndpointConfigCaptureOption(Property):
+class PropEndpointConfigCaptureOption(Property):
     """
     AWS Object Type = "AWS::SageMaker::EndpointConfig.CaptureOption"
 
@@ -456,7 +456,7 @@ class EndpointConfigCaptureOption(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-captureoption.html#cfn-sagemaker-endpointconfig-captureoption-capturemode"""
 
 @attr.s
-class ModelExplainabilityJobDefinitionClusterConfig(Property):
+class PropModelExplainabilityJobDefinitionClusterConfig(Property):
     """
     AWS Object Type = "AWS::SageMaker::ModelExplainabilityJobDefinition.ClusterConfig"
 
@@ -497,7 +497,7 @@ class ModelExplainabilityJobDefinitionClusterConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-clusterconfig.html#cfn-sagemaker-modelexplainabilityjobdefinition-clusterconfig-volumekmskeyid"""
 
 @attr.s
-class EndpointConfigProductionVariant(Property):
+class PropEndpointConfigProductionVariant(Property):
     """
     AWS Object Type = "AWS::SageMaker::EndpointConfig.ProductionVariant"
 
@@ -552,7 +552,7 @@ class EndpointConfigProductionVariant(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-productionvariant.html#cfn-sagemaker-endpointconfig-productionvariant-acceleratortype"""
 
 @attr.s
-class DeviceDevice(Property):
+class PropDeviceDevice(Property):
     """
     AWS Object Type = "AWS::SageMaker::Device.Device"
 
@@ -586,7 +586,7 @@ class DeviceDevice(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-device-device.html#cfn-sagemaker-device-device-iotthingname"""
 
 @attr.s
-class UserProfileResourceSpec(Property):
+class PropUserProfileResourceSpec(Property):
     """
     AWS Object Type = "AWS::SageMaker::UserProfile.ResourceSpec"
 
@@ -620,7 +620,7 @@ class UserProfileResourceSpec(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-userprofile-resourcespec.html#cfn-sagemaker-userprofile-resourcespec-sagemakerimageversionarn"""
 
 @attr.s
-class ModelExplainabilityJobDefinitionConstraintsResource(Property):
+class PropModelExplainabilityJobDefinitionConstraintsResource(Property):
     """
     AWS Object Type = "AWS::SageMaker::ModelExplainabilityJobDefinition.ConstraintsResource"
 
@@ -640,7 +640,7 @@ class ModelExplainabilityJobDefinitionConstraintsResource(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-constraintsresource.html#cfn-sagemaker-modelexplainabilityjobdefinition-constraintsresource-s3uri"""
 
 @attr.s
-class WorkteamNotificationConfiguration(Property):
+class PropWorkteamNotificationConfiguration(Property):
     """
     AWS Object Type = "AWS::SageMaker::Workteam.NotificationConfiguration"
 
@@ -660,7 +660,7 @@ class WorkteamNotificationConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-workteam-notificationconfiguration.html#cfn-sagemaker-workteam-notificationconfiguration-notificationtopicarn"""
 
 @attr.s
-class ModelExplainabilityJobDefinitionStoppingCondition(Property):
+class PropModelExplainabilityJobDefinitionStoppingCondition(Property):
     """
     AWS Object Type = "AWS::SageMaker::ModelExplainabilityJobDefinition.StoppingCondition"
 
@@ -680,7 +680,7 @@ class ModelExplainabilityJobDefinitionStoppingCondition(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-stoppingcondition.html#cfn-sagemaker-modelexplainabilityjobdefinition-stoppingcondition-maxruntimeinseconds"""
 
 @attr.s
-class ModelQualityJobDefinitionEndpointInput(Property):
+class PropModelQualityJobDefinitionEndpointInput(Property):
     """
     AWS Object Type = "AWS::SageMaker::ModelQualityJobDefinition.EndpointInput"
 
@@ -756,7 +756,7 @@ class ModelQualityJobDefinitionEndpointInput(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-endpointinput.html#cfn-sagemaker-modelqualityjobdefinition-endpointinput-starttimeoffset"""
 
 @attr.s
-class ModelExplainabilityJobDefinitionEnvironment(Property):
+class PropModelExplainabilityJobDefinitionEnvironment(Property):
     """
     AWS Object Type = "AWS::SageMaker::ModelExplainabilityJobDefinition.Environment"
 
@@ -769,7 +769,7 @@ class ModelExplainabilityJobDefinitionEnvironment(Property):
     
 
 @attr.s
-class MonitoringScheduleStatisticsResource(Property):
+class PropMonitoringScheduleStatisticsResource(Property):
     """
     AWS Object Type = "AWS::SageMaker::MonitoringSchedule.StatisticsResource"
 
@@ -789,7 +789,7 @@ class MonitoringScheduleStatisticsResource(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-statisticsresource.html#cfn-sagemaker-monitoringschedule-statisticsresource-s3uri"""
 
 @attr.s
-class MonitoringScheduleVpcConfig(Property):
+class PropMonitoringScheduleVpcConfig(Property):
     """
     AWS Object Type = "AWS::SageMaker::MonitoringSchedule.VpcConfig"
 
@@ -816,7 +816,7 @@ class MonitoringScheduleVpcConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-vpcconfig.html#cfn-sagemaker-monitoringschedule-vpcconfig-subnets"""
 
 @attr.s
-class NotebookInstanceLifecycleConfigNotebookInstanceLifecycleHook(Property):
+class PropNotebookInstanceLifecycleConfigNotebookInstanceLifecycleHook(Property):
     """
     AWS Object Type = "AWS::SageMaker::NotebookInstanceLifecycleConfig.NotebookInstanceLifecycleHook"
 
@@ -836,7 +836,7 @@ class NotebookInstanceLifecycleConfigNotebookInstanceLifecycleHook(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-notebookinstancelifecycleconfig-notebookinstancelifecyclehook.html#cfn-sagemaker-notebookinstancelifecycleconfig-notebookinstancelifecyclehook-content"""
 
 @attr.s
-class MonitoringScheduleClusterConfig(Property):
+class PropMonitoringScheduleClusterConfig(Property):
     """
     AWS Object Type = "AWS::SageMaker::MonitoringSchedule.ClusterConfig"
 
@@ -877,7 +877,7 @@ class MonitoringScheduleClusterConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-clusterconfig.html#cfn-sagemaker-monitoringschedule-clusterconfig-volumekmskeyid"""
 
 @attr.s
-class MonitoringScheduleMonitoringAppSpecification(Property):
+class PropMonitoringScheduleMonitoringAppSpecification(Property):
     """
     AWS Object Type = "AWS::SageMaker::MonitoringSchedule.MonitoringAppSpecification"
 
@@ -925,7 +925,7 @@ class MonitoringScheduleMonitoringAppSpecification(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-monitoringappspecification.html#cfn-sagemaker-monitoringschedule-monitoringappspecification-recordpreprocessorsourceuri"""
 
 @attr.s
-class ModelBiasJobDefinitionMonitoringGroundTruthS3Input(Property):
+class PropModelBiasJobDefinitionMonitoringGroundTruthS3Input(Property):
     """
     AWS Object Type = "AWS::SageMaker::ModelBiasJobDefinition.MonitoringGroundTruthS3Input"
 
@@ -945,7 +945,7 @@ class ModelBiasJobDefinitionMonitoringGroundTruthS3Input(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-monitoringgroundtruths3input.html#cfn-sagemaker-modelbiasjobdefinition-monitoringgroundtruths3input-s3uri"""
 
 @attr.s
-class ModelExplainabilityJobDefinitionS3Output(Property):
+class PropModelExplainabilityJobDefinitionS3Output(Property):
     """
     AWS Object Type = "AWS::SageMaker::ModelExplainabilityJobDefinition.S3Output"
 
@@ -979,7 +979,7 @@ class ModelExplainabilityJobDefinitionS3Output(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-s3output.html#cfn-sagemaker-modelexplainabilityjobdefinition-s3output-s3uploadmode"""
 
 @attr.s
-class DataQualityJobDefinitionEnvironment(Property):
+class PropDataQualityJobDefinitionEnvironment(Property):
     """
     AWS Object Type = "AWS::SageMaker::DataQualityJobDefinition.Environment"
 
@@ -992,7 +992,7 @@ class DataQualityJobDefinitionEnvironment(Property):
     
 
 @attr.s
-class EndpointCapacitySize(Property):
+class PropEndpointCapacitySize(Property):
     """
     AWS Object Type = "AWS::SageMaker::Endpoint.CapacitySize"
 
@@ -1019,7 +1019,7 @@ class EndpointCapacitySize(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpoint-capacitysize.html#cfn-sagemaker-endpoint-capacitysize-value"""
 
 @attr.s
-class WorkteamCognitoMemberDefinition(Property):
+class PropWorkteamCognitoMemberDefinition(Property):
     """
     AWS Object Type = "AWS::SageMaker::Workteam.CognitoMemberDefinition"
 
@@ -1053,7 +1053,7 @@ class WorkteamCognitoMemberDefinition(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-workteam-cognitomemberdefinition.html#cfn-sagemaker-workteam-cognitomemberdefinition-cognitouserpool"""
 
 @attr.s
-class DomainResourceSpec(Property):
+class PropDomainResourceSpec(Property):
     """
     AWS Object Type = "AWS::SageMaker::Domain.ResourceSpec"
 
@@ -1087,7 +1087,7 @@ class DomainResourceSpec(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-resourcespec.html#cfn-sagemaker-domain-resourcespec-sagemakerimageversionarn"""
 
 @attr.s
-class ModelBiasJobDefinitionConstraintsResource(Property):
+class PropModelBiasJobDefinitionConstraintsResource(Property):
     """
     AWS Object Type = "AWS::SageMaker::ModelBiasJobDefinition.ConstraintsResource"
 
@@ -1107,7 +1107,7 @@ class ModelBiasJobDefinitionConstraintsResource(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-constraintsresource.html#cfn-sagemaker-modelbiasjobdefinition-constraintsresource-s3uri"""
 
 @attr.s
-class MonitoringScheduleBaselineConfig(Property):
+class PropMonitoringScheduleBaselineConfig(Property):
     """
     AWS Object Type = "AWS::SageMaker::MonitoringSchedule.BaselineConfig"
 
@@ -1120,23 +1120,23 @@ class MonitoringScheduleBaselineConfig(Property):
     """
     AWS_OBJECT_TYPE = "AWS::SageMaker::MonitoringSchedule.BaselineConfig"
     
-    p_ConstraintsResource: typing.Union['MonitoringScheduleConstraintsResource', dict] = attr.ib(
+    p_ConstraintsResource: typing.Union['PropMonitoringScheduleConstraintsResource', dict] = attr.ib(
         default=None,
-        converter=MonitoringScheduleConstraintsResource.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(MonitoringScheduleConstraintsResource)),
+        converter=PropMonitoringScheduleConstraintsResource.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropMonitoringScheduleConstraintsResource)),
         metadata={AttrMeta.PROPERTY_NAME: "ConstraintsResource"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-baselineconfig.html#cfn-sagemaker-monitoringschedule-baselineconfig-constraintsresource"""
-    p_StatisticsResource: typing.Union['MonitoringScheduleStatisticsResource', dict] = attr.ib(
+    p_StatisticsResource: typing.Union['PropMonitoringScheduleStatisticsResource', dict] = attr.ib(
         default=None,
-        converter=MonitoringScheduleStatisticsResource.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(MonitoringScheduleStatisticsResource)),
+        converter=PropMonitoringScheduleStatisticsResource.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropMonitoringScheduleStatisticsResource)),
         metadata={AttrMeta.PROPERTY_NAME: "StatisticsResource"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-baselineconfig.html#cfn-sagemaker-monitoringschedule-baselineconfig-statisticsresource"""
 
 @attr.s
-class DomainKernelGatewayAppSettings(Property):
+class PropDomainKernelGatewayAppSettings(Property):
     """
     AWS Object Type = "AWS::SageMaker::Domain.KernelGatewayAppSettings"
 
@@ -1149,23 +1149,23 @@ class DomainKernelGatewayAppSettings(Property):
     """
     AWS_OBJECT_TYPE = "AWS::SageMaker::Domain.KernelGatewayAppSettings"
     
-    p_CustomImages: typing.List[typing.Union['DomainCustomImage', dict]] = attr.ib(
+    p_CustomImages: typing.List[typing.Union['PropDomainCustomImage', dict]] = attr.ib(
         default=None,
-        converter=DomainCustomImage.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(DomainCustomImage), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropDomainCustomImage.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDomainCustomImage), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "CustomImages"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-kernelgatewayappsettings.html#cfn-sagemaker-domain-kernelgatewayappsettings-customimages"""
-    p_DefaultResourceSpec: typing.Union['DomainResourceSpec', dict] = attr.ib(
+    p_DefaultResourceSpec: typing.Union['PropDomainResourceSpec', dict] = attr.ib(
         default=None,
-        converter=DomainResourceSpec.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DomainResourceSpec)),
+        converter=PropDomainResourceSpec.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDomainResourceSpec)),
         metadata={AttrMeta.PROPERTY_NAME: "DefaultResourceSpec"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-kernelgatewayappsettings.html#cfn-sagemaker-domain-kernelgatewayappsettings-defaultresourcespec"""
 
 @attr.s
-class CodeRepositoryGitConfig(Property):
+class PropCodeRepositoryGitConfig(Property):
     """
     AWS Object Type = "AWS::SageMaker::CodeRepository.GitConfig"
 
@@ -1199,7 +1199,7 @@ class CodeRepositoryGitConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-coderepository-gitconfig.html#cfn-sagemaker-coderepository-gitconfig-secretarn"""
 
 @attr.s
-class ModelBiasJobDefinitionStoppingCondition(Property):
+class PropModelBiasJobDefinitionStoppingCondition(Property):
     """
     AWS Object Type = "AWS::SageMaker::ModelBiasJobDefinition.StoppingCondition"
 
@@ -1219,7 +1219,7 @@ class ModelBiasJobDefinitionStoppingCondition(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-stoppingcondition.html#cfn-sagemaker-modelbiasjobdefinition-stoppingcondition-maxruntimeinseconds"""
 
 @attr.s
-class DataQualityJobDefinitionDataQualityAppSpecification(Property):
+class PropDataQualityJobDefinitionDataQualityAppSpecification(Property):
     """
     AWS Object Type = "AWS::SageMaker::DataQualityJobDefinition.DataQualityAppSpecification"
 
@@ -1254,10 +1254,10 @@ class DataQualityJobDefinitionDataQualityAppSpecification(Property):
         metadata={AttrMeta.PROPERTY_NAME: "ContainerEntrypoint"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-dataqualityappspecification.html#cfn-sagemaker-dataqualityjobdefinition-dataqualityappspecification-containerentrypoint"""
-    p_Environment: typing.Union['DataQualityJobDefinitionEnvironment', dict] = attr.ib(
+    p_Environment: typing.Union['PropDataQualityJobDefinitionEnvironment', dict] = attr.ib(
         default=None,
-        converter=DataQualityJobDefinitionEnvironment.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DataQualityJobDefinitionEnvironment)),
+        converter=PropDataQualityJobDefinitionEnvironment.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataQualityJobDefinitionEnvironment)),
         metadata={AttrMeta.PROPERTY_NAME: "Environment"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-dataqualityappspecification.html#cfn-sagemaker-dataqualityjobdefinition-dataqualityappspecification-environment"""
@@ -1275,7 +1275,7 @@ class DataQualityJobDefinitionDataQualityAppSpecification(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-dataqualityappspecification.html#cfn-sagemaker-dataqualityjobdefinition-dataqualityappspecification-recordpreprocessorsourceuri"""
 
 @attr.s
-class ModelBiasJobDefinitionEnvironment(Property):
+class PropModelBiasJobDefinitionEnvironment(Property):
     """
     AWS Object Type = "AWS::SageMaker::ModelBiasJobDefinition.Environment"
 
@@ -1288,7 +1288,7 @@ class ModelBiasJobDefinitionEnvironment(Property):
     
 
 @attr.s
-class EndpointVariantProperty(Property):
+class PropEndpointVariantProperty(Property):
     """
     AWS Object Type = "AWS::SageMaker::Endpoint.VariantProperty"
 
@@ -1308,7 +1308,7 @@ class EndpointVariantProperty(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpoint-variantproperty.html#cfn-sagemaker-endpoint-variantproperty-variantpropertytype"""
 
 @attr.s
-class EndpointConfigCaptureContentTypeHeader(Property):
+class PropEndpointConfigCaptureContentTypeHeader(Property):
     """
     AWS Object Type = "AWS::SageMaker::EndpointConfig.CaptureContentTypeHeader"
 
@@ -1335,7 +1335,7 @@ class EndpointConfigCaptureContentTypeHeader(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-datacaptureconfig-capturecontenttypeheader.html#cfn-sagemaker-endpointconfig-datacaptureconfig-capturecontenttypeheader-jsoncontenttypes"""
 
 @attr.s
-class ModelQualityJobDefinitionVpcConfig(Property):
+class PropModelQualityJobDefinitionVpcConfig(Property):
     """
     AWS Object Type = "AWS::SageMaker::ModelQualityJobDefinition.VpcConfig"
 
@@ -1362,7 +1362,7 @@ class ModelQualityJobDefinitionVpcConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-vpcconfig.html#cfn-sagemaker-modelqualityjobdefinition-vpcconfig-subnets"""
 
 @attr.s
-class UserProfileCustomImage(Property):
+class PropUserProfileCustomImage(Property):
     """
     AWS Object Type = "AWS::SageMaker::UserProfile.CustomImage"
 
@@ -1396,7 +1396,7 @@ class UserProfileCustomImage(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-userprofile-customimage.html#cfn-sagemaker-userprofile-customimage-imageversionnumber"""
 
 @attr.s
-class UserProfileSharingSettings(Property):
+class PropUserProfileSharingSettings(Property):
     """
     AWS Object Type = "AWS::SageMaker::UserProfile.SharingSettings"
 
@@ -1430,7 +1430,7 @@ class UserProfileSharingSettings(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-userprofile-sharingsettings.html#cfn-sagemaker-userprofile-sharingsettings-s3outputpath"""
 
 @attr.s
-class MonitoringScheduleScheduleConfig(Property):
+class PropMonitoringScheduleScheduleConfig(Property):
     """
     AWS Object Type = "AWS::SageMaker::MonitoringSchedule.ScheduleConfig"
 
@@ -1450,7 +1450,7 @@ class MonitoringScheduleScheduleConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-scheduleconfig.html#cfn-sagemaker-monitoringschedule-scheduleconfig-scheduleexpression"""
 
 @attr.s
-class ModelQualityJobDefinitionEnvironment(Property):
+class PropModelQualityJobDefinitionEnvironment(Property):
     """
     AWS Object Type = "AWS::SageMaker::ModelQualityJobDefinition.Environment"
 
@@ -1463,7 +1463,7 @@ class ModelQualityJobDefinitionEnvironment(Property):
     
 
 @attr.s
-class DataQualityJobDefinitionClusterConfig(Property):
+class PropDataQualityJobDefinitionClusterConfig(Property):
     """
     AWS Object Type = "AWS::SageMaker::DataQualityJobDefinition.ClusterConfig"
 
@@ -1504,7 +1504,7 @@ class DataQualityJobDefinitionClusterConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-clusterconfig.html#cfn-sagemaker-dataqualityjobdefinition-clusterconfig-volumekmskeyid"""
 
 @attr.s
-class DataQualityJobDefinitionVpcConfig(Property):
+class PropDataQualityJobDefinitionVpcConfig(Property):
     """
     AWS Object Type = "AWS::SageMaker::DataQualityJobDefinition.VpcConfig"
 
@@ -1531,7 +1531,7 @@ class DataQualityJobDefinitionVpcConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-vpcconfig.html#cfn-sagemaker-dataqualityjobdefinition-vpcconfig-subnets"""
 
 @attr.s
-class DataQualityJobDefinitionS3Output(Property):
+class PropDataQualityJobDefinitionS3Output(Property):
     """
     AWS Object Type = "AWS::SageMaker::DataQualityJobDefinition.S3Output"
 
@@ -1565,7 +1565,7 @@ class DataQualityJobDefinitionS3Output(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-s3output.html#cfn-sagemaker-dataqualityjobdefinition-s3output-s3uploadmode"""
 
 @attr.s
-class WorkteamMemberDefinition(Property):
+class PropWorkteamMemberDefinition(Property):
     """
     AWS Object Type = "AWS::SageMaker::Workteam.MemberDefinition"
 
@@ -1577,16 +1577,16 @@ class WorkteamMemberDefinition(Property):
     """
     AWS_OBJECT_TYPE = "AWS::SageMaker::Workteam.MemberDefinition"
     
-    rp_CognitoMemberDefinition: typing.Union['WorkteamCognitoMemberDefinition', dict] = attr.ib(
+    rp_CognitoMemberDefinition: typing.Union['PropWorkteamCognitoMemberDefinition', dict] = attr.ib(
         default=None,
-        converter=WorkteamCognitoMemberDefinition.from_dict,
-        validator=attr.validators.instance_of(WorkteamCognitoMemberDefinition),
+        converter=PropWorkteamCognitoMemberDefinition.from_dict,
+        validator=attr.validators.instance_of(PropWorkteamCognitoMemberDefinition),
         metadata={AttrMeta.PROPERTY_NAME: "CognitoMemberDefinition"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-workteam-memberdefinition.html#cfn-sagemaker-workteam-memberdefinition-cognitomemberdefinition"""
 
 @attr.s
-class ModelBiasJobDefinitionVpcConfig(Property):
+class PropModelBiasJobDefinitionVpcConfig(Property):
     """
     AWS Object Type = "AWS::SageMaker::ModelBiasJobDefinition.VpcConfig"
 
@@ -1613,7 +1613,7 @@ class ModelBiasJobDefinitionVpcConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-vpcconfig.html#cfn-sagemaker-modelbiasjobdefinition-vpcconfig-subnets"""
 
 @attr.s
-class AppImageConfigKernelSpec(Property):
+class PropAppImageConfigKernelSpec(Property):
     """
     AWS Object Type = "AWS::SageMaker::AppImageConfig.KernelSpec"
 
@@ -1640,7 +1640,7 @@ class AppImageConfigKernelSpec(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-appimageconfig-kernelspec.html#cfn-sagemaker-appimageconfig-kernelspec-displayname"""
 
 @attr.s
-class ModelExplainabilityJobDefinitionModelExplainabilityBaselineConfig(Property):
+class PropModelExplainabilityJobDefinitionModelExplainabilityBaselineConfig(Property):
     """
     AWS Object Type = "AWS::SageMaker::ModelExplainabilityJobDefinition.ModelExplainabilityBaselineConfig"
 
@@ -1659,16 +1659,16 @@ class ModelExplainabilityJobDefinitionModelExplainabilityBaselineConfig(Property
         metadata={AttrMeta.PROPERTY_NAME: "BaseliningJobName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-modelexplainabilitybaselineconfig.html#cfn-sagemaker-modelexplainabilityjobdefinition-modelexplainabilitybaselineconfig-baseliningjobname"""
-    p_ConstraintsResource: typing.Union['ModelExplainabilityJobDefinitionConstraintsResource', dict] = attr.ib(
+    p_ConstraintsResource: typing.Union['PropModelExplainabilityJobDefinitionConstraintsResource', dict] = attr.ib(
         default=None,
-        converter=ModelExplainabilityJobDefinitionConstraintsResource.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ModelExplainabilityJobDefinitionConstraintsResource)),
+        converter=PropModelExplainabilityJobDefinitionConstraintsResource.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropModelExplainabilityJobDefinitionConstraintsResource)),
         metadata={AttrMeta.PROPERTY_NAME: "ConstraintsResource"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-modelexplainabilitybaselineconfig.html#cfn-sagemaker-modelexplainabilityjobdefinition-modelexplainabilitybaselineconfig-constraintsresource"""
 
 @attr.s
-class ModelExplainabilityJobDefinitionMonitoringOutput(Property):
+class PropModelExplainabilityJobDefinitionMonitoringOutput(Property):
     """
     AWS Object Type = "AWS::SageMaker::ModelExplainabilityJobDefinition.MonitoringOutput"
 
@@ -1680,16 +1680,16 @@ class ModelExplainabilityJobDefinitionMonitoringOutput(Property):
     """
     AWS_OBJECT_TYPE = "AWS::SageMaker::ModelExplainabilityJobDefinition.MonitoringOutput"
     
-    rp_S3Output: typing.Union['ModelExplainabilityJobDefinitionS3Output', dict] = attr.ib(
+    rp_S3Output: typing.Union['PropModelExplainabilityJobDefinitionS3Output', dict] = attr.ib(
         default=None,
-        converter=ModelExplainabilityJobDefinitionS3Output.from_dict,
-        validator=attr.validators.instance_of(ModelExplainabilityJobDefinitionS3Output),
+        converter=PropModelExplainabilityJobDefinitionS3Output.from_dict,
+        validator=attr.validators.instance_of(PropModelExplainabilityJobDefinitionS3Output),
         metadata={AttrMeta.PROPERTY_NAME: "S3Output"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-monitoringoutput.html#cfn-sagemaker-modelexplainabilityjobdefinition-monitoringoutput-s3output"""
 
 @attr.s
-class DataQualityJobDefinitionStoppingCondition(Property):
+class PropDataQualityJobDefinitionStoppingCondition(Property):
     """
     AWS Object Type = "AWS::SageMaker::DataQualityJobDefinition.StoppingCondition"
 
@@ -1709,7 +1709,7 @@ class DataQualityJobDefinitionStoppingCondition(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-stoppingcondition.html#cfn-sagemaker-dataqualityjobdefinition-stoppingcondition-maxruntimeinseconds"""
 
 @attr.s
-class ModelBiasJobDefinitionNetworkConfig(Property):
+class PropModelBiasJobDefinitionNetworkConfig(Property):
     """
     AWS Object Type = "AWS::SageMaker::ModelBiasJobDefinition.NetworkConfig"
 
@@ -1735,16 +1735,16 @@ class ModelBiasJobDefinitionNetworkConfig(Property):
         metadata={AttrMeta.PROPERTY_NAME: "EnableNetworkIsolation"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-networkconfig.html#cfn-sagemaker-modelbiasjobdefinition-networkconfig-enablenetworkisolation"""
-    p_VpcConfig: typing.Union['ModelBiasJobDefinitionVpcConfig', dict] = attr.ib(
+    p_VpcConfig: typing.Union['PropModelBiasJobDefinitionVpcConfig', dict] = attr.ib(
         default=None,
-        converter=ModelBiasJobDefinitionVpcConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ModelBiasJobDefinitionVpcConfig)),
+        converter=PropModelBiasJobDefinitionVpcConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropModelBiasJobDefinitionVpcConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "VpcConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-networkconfig.html#cfn-sagemaker-modelbiasjobdefinition-networkconfig-vpcconfig"""
 
 @attr.s
-class MonitoringScheduleEndpointInput(Property):
+class PropMonitoringScheduleEndpointInput(Property):
     """
     AWS Object Type = "AWS::SageMaker::MonitoringSchedule.EndpointInput"
 
@@ -1785,7 +1785,7 @@ class MonitoringScheduleEndpointInput(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-endpointinput.html#cfn-sagemaker-monitoringschedule-endpointinput-s3inputmode"""
 
 @attr.s
-class ModelBiasJobDefinitionEndpointInput(Property):
+class PropModelBiasJobDefinitionEndpointInput(Property):
     """
     AWS Object Type = "AWS::SageMaker::ModelBiasJobDefinition.EndpointInput"
 
@@ -1868,7 +1868,7 @@ class ModelBiasJobDefinitionEndpointInput(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-endpointinput.html#cfn-sagemaker-modelbiasjobdefinition-endpointinput-starttimeoffset"""
 
 @attr.s
-class MonitoringScheduleNetworkConfig(Property):
+class PropMonitoringScheduleNetworkConfig(Property):
     """
     AWS Object Type = "AWS::SageMaker::MonitoringSchedule.NetworkConfig"
 
@@ -1894,16 +1894,16 @@ class MonitoringScheduleNetworkConfig(Property):
         metadata={AttrMeta.PROPERTY_NAME: "EnableNetworkIsolation"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-networkconfig.html#cfn-sagemaker-monitoringschedule-networkconfig-enablenetworkisolation"""
-    p_VpcConfig: typing.Union['MonitoringScheduleVpcConfig', dict] = attr.ib(
+    p_VpcConfig: typing.Union['PropMonitoringScheduleVpcConfig', dict] = attr.ib(
         default=None,
-        converter=MonitoringScheduleVpcConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(MonitoringScheduleVpcConfig)),
+        converter=PropMonitoringScheduleVpcConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropMonitoringScheduleVpcConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "VpcConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-networkconfig.html#cfn-sagemaker-monitoringschedule-networkconfig-vpcconfig"""
 
 @attr.s
-class ModelQualityJobDefinitionModelQualityAppSpecification(Property):
+class PropModelQualityJobDefinitionModelQualityAppSpecification(Property):
     """
     AWS Object Type = "AWS::SageMaker::ModelQualityJobDefinition.ModelQualityAppSpecification"
 
@@ -1945,10 +1945,10 @@ class ModelQualityJobDefinitionModelQualityAppSpecification(Property):
         metadata={AttrMeta.PROPERTY_NAME: "ContainerEntrypoint"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-modelqualityappspecification.html#cfn-sagemaker-modelqualityjobdefinition-modelqualityappspecification-containerentrypoint"""
-    p_Environment: typing.Union['ModelQualityJobDefinitionEnvironment', dict] = attr.ib(
+    p_Environment: typing.Union['PropModelQualityJobDefinitionEnvironment', dict] = attr.ib(
         default=None,
-        converter=ModelQualityJobDefinitionEnvironment.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ModelQualityJobDefinitionEnvironment)),
+        converter=PropModelQualityJobDefinitionEnvironment.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropModelQualityJobDefinitionEnvironment)),
         metadata={AttrMeta.PROPERTY_NAME: "Environment"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-modelqualityappspecification.html#cfn-sagemaker-modelqualityjobdefinition-modelqualityappspecification-environment"""
@@ -1966,7 +1966,7 @@ class ModelQualityJobDefinitionModelQualityAppSpecification(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-modelqualityappspecification.html#cfn-sagemaker-modelqualityjobdefinition-modelqualityappspecification-recordpreprocessorsourceuri"""
 
 @attr.s
-class MonitoringScheduleS3Output(Property):
+class PropMonitoringScheduleS3Output(Property):
     """
     AWS Object Type = "AWS::SageMaker::MonitoringSchedule.S3Output"
 
@@ -2000,7 +2000,7 @@ class MonitoringScheduleS3Output(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-s3output.html#cfn-sagemaker-monitoringschedule-s3output-s3uploadmode"""
 
 @attr.s
-class AppResourceSpec(Property):
+class PropAppResourceSpec(Property):
     """
     AWS Object Type = "AWS::SageMaker::App.ResourceSpec"
 
@@ -2034,7 +2034,7 @@ class AppResourceSpec(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-app-resourcespec.html#cfn-sagemaker-app-resourcespec-sagemakerimageversionarn"""
 
 @attr.s
-class ModelQualityJobDefinitionClusterConfig(Property):
+class PropModelQualityJobDefinitionClusterConfig(Property):
     """
     AWS Object Type = "AWS::SageMaker::ModelQualityJobDefinition.ClusterConfig"
 
@@ -2075,7 +2075,7 @@ class ModelQualityJobDefinitionClusterConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-clusterconfig.html#cfn-sagemaker-modelqualityjobdefinition-clusterconfig-volumekmskeyid"""
 
 @attr.s
-class ModelImageConfig(Property):
+class PropModelImageConfig(Property):
     """
     AWS Object Type = "AWS::SageMaker::Model.ImageConfig"
 
@@ -2095,7 +2095,7 @@ class ModelImageConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-model-containerdefinition-imageconfig.html#cfn-sagemaker-model-containerdefinition-imageconfig-repositoryaccessmode"""
 
 @attr.s
-class ModelQualityJobDefinitionConstraintsResource(Property):
+class PropModelQualityJobDefinitionConstraintsResource(Property):
     """
     AWS Object Type = "AWS::SageMaker::ModelQualityJobDefinition.ConstraintsResource"
 
@@ -2115,7 +2115,7 @@ class ModelQualityJobDefinitionConstraintsResource(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-constraintsresource.html#cfn-sagemaker-modelqualityjobdefinition-constraintsresource-s3uri"""
 
 @attr.s
-class ModelQualityJobDefinitionS3Output(Property):
+class PropModelQualityJobDefinitionS3Output(Property):
     """
     AWS Object Type = "AWS::SageMaker::ModelQualityJobDefinition.S3Output"
 
@@ -2149,7 +2149,7 @@ class ModelQualityJobDefinitionS3Output(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-s3output.html#cfn-sagemaker-modelqualityjobdefinition-s3output-s3uploadmode"""
 
 @attr.s
-class ModelQualityJobDefinitionMonitoringGroundTruthS3Input(Property):
+class PropModelQualityJobDefinitionMonitoringGroundTruthS3Input(Property):
     """
     AWS Object Type = "AWS::SageMaker::ModelQualityJobDefinition.MonitoringGroundTruthS3Input"
 
@@ -2169,7 +2169,7 @@ class ModelQualityJobDefinitionMonitoringGroundTruthS3Input(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-monitoringgroundtruths3input.html#cfn-sagemaker-modelqualityjobdefinition-monitoringgroundtruths3input-s3uri"""
 
 @attr.s
-class ModelExplainabilityJobDefinitionMonitoringResources(Property):
+class PropModelExplainabilityJobDefinitionMonitoringResources(Property):
     """
     AWS Object Type = "AWS::SageMaker::ModelExplainabilityJobDefinition.MonitoringResources"
 
@@ -2181,16 +2181,16 @@ class ModelExplainabilityJobDefinitionMonitoringResources(Property):
     """
     AWS_OBJECT_TYPE = "AWS::SageMaker::ModelExplainabilityJobDefinition.MonitoringResources"
     
-    rp_ClusterConfig: typing.Union['ModelExplainabilityJobDefinitionClusterConfig', dict] = attr.ib(
+    rp_ClusterConfig: typing.Union['PropModelExplainabilityJobDefinitionClusterConfig', dict] = attr.ib(
         default=None,
-        converter=ModelExplainabilityJobDefinitionClusterConfig.from_dict,
-        validator=attr.validators.instance_of(ModelExplainabilityJobDefinitionClusterConfig),
+        converter=PropModelExplainabilityJobDefinitionClusterConfig.from_dict,
+        validator=attr.validators.instance_of(PropModelExplainabilityJobDefinitionClusterConfig),
         metadata={AttrMeta.PROPERTY_NAME: "ClusterConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-monitoringresources.html#cfn-sagemaker-modelexplainabilityjobdefinition-monitoringresources-clusterconfig"""
 
 @attr.s
-class ModelQualityJobDefinitionModelQualityBaselineConfig(Property):
+class PropModelQualityJobDefinitionModelQualityBaselineConfig(Property):
     """
     AWS Object Type = "AWS::SageMaker::ModelQualityJobDefinition.ModelQualityBaselineConfig"
 
@@ -2209,16 +2209,16 @@ class ModelQualityJobDefinitionModelQualityBaselineConfig(Property):
         metadata={AttrMeta.PROPERTY_NAME: "BaseliningJobName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-modelqualitybaselineconfig.html#cfn-sagemaker-modelqualityjobdefinition-modelqualitybaselineconfig-baseliningjobname"""
-    p_ConstraintsResource: typing.Union['ModelQualityJobDefinitionConstraintsResource', dict] = attr.ib(
+    p_ConstraintsResource: typing.Union['PropModelQualityJobDefinitionConstraintsResource', dict] = attr.ib(
         default=None,
-        converter=ModelQualityJobDefinitionConstraintsResource.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ModelQualityJobDefinitionConstraintsResource)),
+        converter=PropModelQualityJobDefinitionConstraintsResource.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropModelQualityJobDefinitionConstraintsResource)),
         metadata={AttrMeta.PROPERTY_NAME: "ConstraintsResource"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-modelqualitybaselineconfig.html#cfn-sagemaker-modelqualityjobdefinition-modelqualitybaselineconfig-constraintsresource"""
 
 @attr.s
-class MonitoringScheduleMonitoringResources(Property):
+class PropMonitoringScheduleMonitoringResources(Property):
     """
     AWS Object Type = "AWS::SageMaker::MonitoringSchedule.MonitoringResources"
 
@@ -2230,16 +2230,16 @@ class MonitoringScheduleMonitoringResources(Property):
     """
     AWS_OBJECT_TYPE = "AWS::SageMaker::MonitoringSchedule.MonitoringResources"
     
-    rp_ClusterConfig: typing.Union['MonitoringScheduleClusterConfig', dict] = attr.ib(
+    rp_ClusterConfig: typing.Union['PropMonitoringScheduleClusterConfig', dict] = attr.ib(
         default=None,
-        converter=MonitoringScheduleClusterConfig.from_dict,
-        validator=attr.validators.instance_of(MonitoringScheduleClusterConfig),
+        converter=PropMonitoringScheduleClusterConfig.from_dict,
+        validator=attr.validators.instance_of(PropMonitoringScheduleClusterConfig),
         metadata={AttrMeta.PROPERTY_NAME: "ClusterConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-monitoringresources.html#cfn-sagemaker-monitoringschedule-monitoringresources-clusterconfig"""
 
 @attr.s
-class EndpointConfigDataCaptureConfig(Property):
+class PropEndpointConfigDataCaptureConfig(Property):
     """
     AWS Object Type = "AWS::SageMaker::EndpointConfig.DataCaptureConfig"
 
@@ -2256,10 +2256,10 @@ class EndpointConfigDataCaptureConfig(Property):
     """
     AWS_OBJECT_TYPE = "AWS::SageMaker::EndpointConfig.DataCaptureConfig"
     
-    rp_CaptureOptions: typing.List[typing.Union['EndpointConfigCaptureOption', dict]] = attr.ib(
+    rp_CaptureOptions: typing.List[typing.Union['PropEndpointConfigCaptureOption', dict]] = attr.ib(
         default=None,
-        converter=EndpointConfigCaptureOption.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(EndpointConfigCaptureOption), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropEndpointConfigCaptureOption.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropEndpointConfigCaptureOption), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "CaptureOptions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-datacaptureconfig.html#cfn-sagemaker-endpointconfig-datacaptureconfig-captureoptions"""
@@ -2275,10 +2275,10 @@ class EndpointConfigDataCaptureConfig(Property):
         metadata={AttrMeta.PROPERTY_NAME: "InitialSamplingPercentage"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-datacaptureconfig.html#cfn-sagemaker-endpointconfig-datacaptureconfig-initialsamplingpercentage"""
-    p_CaptureContentTypeHeader: typing.Union['EndpointConfigCaptureContentTypeHeader', dict] = attr.ib(
+    p_CaptureContentTypeHeader: typing.Union['PropEndpointConfigCaptureContentTypeHeader', dict] = attr.ib(
         default=None,
-        converter=EndpointConfigCaptureContentTypeHeader.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(EndpointConfigCaptureContentTypeHeader)),
+        converter=PropEndpointConfigCaptureContentTypeHeader.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropEndpointConfigCaptureContentTypeHeader)),
         metadata={AttrMeta.PROPERTY_NAME: "CaptureContentTypeHeader"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-datacaptureconfig.html#cfn-sagemaker-endpointconfig-datacaptureconfig-capturecontenttypeheader"""
@@ -2296,7 +2296,7 @@ class EndpointConfigDataCaptureConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-datacaptureconfig.html#cfn-sagemaker-endpointconfig-datacaptureconfig-kmskeyid"""
 
 @attr.s
-class ModelExplainabilityJobDefinitionMonitoringOutputConfig(Property):
+class PropModelExplainabilityJobDefinitionMonitoringOutputConfig(Property):
     """
     AWS Object Type = "AWS::SageMaker::ModelExplainabilityJobDefinition.MonitoringOutputConfig"
 
@@ -2309,10 +2309,10 @@ class ModelExplainabilityJobDefinitionMonitoringOutputConfig(Property):
     """
     AWS_OBJECT_TYPE = "AWS::SageMaker::ModelExplainabilityJobDefinition.MonitoringOutputConfig"
     
-    rp_MonitoringOutputs: typing.List[typing.Union['ModelExplainabilityJobDefinitionMonitoringOutput', dict]] = attr.ib(
+    rp_MonitoringOutputs: typing.List[typing.Union['PropModelExplainabilityJobDefinitionMonitoringOutput', dict]] = attr.ib(
         default=None,
-        converter=ModelExplainabilityJobDefinitionMonitoringOutput.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ModelExplainabilityJobDefinitionMonitoringOutput), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropModelExplainabilityJobDefinitionMonitoringOutput.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropModelExplainabilityJobDefinitionMonitoringOutput), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "MonitoringOutputs"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-monitoringoutputconfig.html#cfn-sagemaker-modelexplainabilityjobdefinition-monitoringoutputconfig-monitoringoutputs"""
@@ -2324,7 +2324,7 @@ class ModelExplainabilityJobDefinitionMonitoringOutputConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-monitoringoutputconfig.html#cfn-sagemaker-modelexplainabilityjobdefinition-monitoringoutputconfig-kmskeyid"""
 
 @attr.s
-class ModelExplainabilityJobDefinitionVpcConfig(Property):
+class PropModelExplainabilityJobDefinitionVpcConfig(Property):
     """
     AWS Object Type = "AWS::SageMaker::ModelExplainabilityJobDefinition.VpcConfig"
 
@@ -2351,7 +2351,7 @@ class ModelExplainabilityJobDefinitionVpcConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-vpcconfig.html#cfn-sagemaker-modelexplainabilityjobdefinition-vpcconfig-subnets"""
 
 @attr.s
-class MonitoringScheduleStoppingCondition(Property):
+class PropMonitoringScheduleStoppingCondition(Property):
     """
     AWS Object Type = "AWS::SageMaker::MonitoringSchedule.StoppingCondition"
 
@@ -2371,7 +2371,7 @@ class MonitoringScheduleStoppingCondition(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-stoppingcondition.html#cfn-sagemaker-monitoringschedule-stoppingcondition-maxruntimeinseconds"""
 
 @attr.s
-class DataQualityJobDefinitionNetworkConfig(Property):
+class PropDataQualityJobDefinitionNetworkConfig(Property):
     """
     AWS Object Type = "AWS::SageMaker::DataQualityJobDefinition.NetworkConfig"
 
@@ -2397,16 +2397,16 @@ class DataQualityJobDefinitionNetworkConfig(Property):
         metadata={AttrMeta.PROPERTY_NAME: "EnableNetworkIsolation"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-networkconfig.html#cfn-sagemaker-dataqualityjobdefinition-networkconfig-enablenetworkisolation"""
-    p_VpcConfig: typing.Union['DataQualityJobDefinitionVpcConfig', dict] = attr.ib(
+    p_VpcConfig: typing.Union['PropDataQualityJobDefinitionVpcConfig', dict] = attr.ib(
         default=None,
-        converter=DataQualityJobDefinitionVpcConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DataQualityJobDefinitionVpcConfig)),
+        converter=PropDataQualityJobDefinitionVpcConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataQualityJobDefinitionVpcConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "VpcConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-networkconfig.html#cfn-sagemaker-dataqualityjobdefinition-networkconfig-vpcconfig"""
 
 @attr.s
-class MonitoringScheduleMonitoringInput(Property):
+class PropMonitoringScheduleMonitoringInput(Property):
     """
     AWS Object Type = "AWS::SageMaker::MonitoringSchedule.MonitoringInput"
 
@@ -2418,16 +2418,16 @@ class MonitoringScheduleMonitoringInput(Property):
     """
     AWS_OBJECT_TYPE = "AWS::SageMaker::MonitoringSchedule.MonitoringInput"
     
-    rp_EndpointInput: typing.Union['MonitoringScheduleEndpointInput', dict] = attr.ib(
+    rp_EndpointInput: typing.Union['PropMonitoringScheduleEndpointInput', dict] = attr.ib(
         default=None,
-        converter=MonitoringScheduleEndpointInput.from_dict,
-        validator=attr.validators.instance_of(MonitoringScheduleEndpointInput),
+        converter=PropMonitoringScheduleEndpointInput.from_dict,
+        validator=attr.validators.instance_of(PropMonitoringScheduleEndpointInput),
         metadata={AttrMeta.PROPERTY_NAME: "EndpointInput"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-monitoringinput.html#cfn-sagemaker-monitoringschedule-monitoringinput-endpointinput"""
 
 @attr.s
-class DataQualityJobDefinitionEndpointInput(Property):
+class PropDataQualityJobDefinitionEndpointInput(Property):
     """
     AWS Object Type = "AWS::SageMaker::DataQualityJobDefinition.EndpointInput"
 
@@ -2468,7 +2468,7 @@ class DataQualityJobDefinitionEndpointInput(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-endpointinput.html#cfn-sagemaker-dataqualityjobdefinition-endpointinput-s3inputmode"""
 
 @attr.s
-class ModelInferenceExecutionConfig(Property):
+class PropModelInferenceExecutionConfig(Property):
     """
     AWS Object Type = "AWS::SageMaker::Model.InferenceExecutionConfig"
 
@@ -2488,7 +2488,7 @@ class ModelInferenceExecutionConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-model-inferenceexecutionconfig.html#cfn-sagemaker-model-inferenceexecutionconfig-mode"""
 
 @attr.s
-class ModelQualityJobDefinitionStoppingCondition(Property):
+class PropModelQualityJobDefinitionStoppingCondition(Property):
     """
     AWS Object Type = "AWS::SageMaker::ModelQualityJobDefinition.StoppingCondition"
 
@@ -2508,7 +2508,7 @@ class ModelQualityJobDefinitionStoppingCondition(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-stoppingcondition.html#cfn-sagemaker-modelqualityjobdefinition-stoppingcondition-maxruntimeinseconds"""
 
 @attr.s
-class ModelExplainabilityJobDefinitionEndpointInput(Property):
+class PropModelExplainabilityJobDefinitionEndpointInput(Property):
     """
     AWS Object Type = "AWS::SageMaker::ModelExplainabilityJobDefinition.EndpointInput"
 
@@ -2570,7 +2570,7 @@ class ModelExplainabilityJobDefinitionEndpointInput(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-endpointinput.html#cfn-sagemaker-modelexplainabilityjobdefinition-endpointinput-s3inputmode"""
 
 @attr.s
-class ModelBiasJobDefinitionMonitoringOutput(Property):
+class PropModelBiasJobDefinitionMonitoringOutput(Property):
     """
     AWS Object Type = "AWS::SageMaker::ModelBiasJobDefinition.MonitoringOutput"
 
@@ -2582,16 +2582,16 @@ class ModelBiasJobDefinitionMonitoringOutput(Property):
     """
     AWS_OBJECT_TYPE = "AWS::SageMaker::ModelBiasJobDefinition.MonitoringOutput"
     
-    rp_S3Output: typing.Union['ModelBiasJobDefinitionS3Output', dict] = attr.ib(
+    rp_S3Output: typing.Union['PropModelBiasJobDefinitionS3Output', dict] = attr.ib(
         default=None,
-        converter=ModelBiasJobDefinitionS3Output.from_dict,
-        validator=attr.validators.instance_of(ModelBiasJobDefinitionS3Output),
+        converter=PropModelBiasJobDefinitionS3Output.from_dict,
+        validator=attr.validators.instance_of(PropModelBiasJobDefinitionS3Output),
         metadata={AttrMeta.PROPERTY_NAME: "S3Output"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-monitoringoutput.html#cfn-sagemaker-modelbiasjobdefinition-monitoringoutput-s3output"""
 
 @attr.s
-class DomainSharingSettings(Property):
+class PropDomainSharingSettings(Property):
     """
     AWS Object Type = "AWS::SageMaker::Domain.SharingSettings"
 
@@ -2625,7 +2625,7 @@ class DomainSharingSettings(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-sharingsettings.html#cfn-sagemaker-domain-sharingsettings-s3outputpath"""
 
 @attr.s
-class FeatureGroupFeatureDefinition(Property):
+class PropFeatureGroupFeatureDefinition(Property):
     """
     AWS Object Type = "AWS::SageMaker::FeatureGroup.FeatureDefinition"
 
@@ -2652,7 +2652,7 @@ class FeatureGroupFeatureDefinition(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-featuregroup-featuredefinition.html#cfn-sagemaker-featuregroup-featuredefinition-featuretype"""
 
 @attr.s
-class DataQualityJobDefinitionDataQualityBaselineConfig(Property):
+class PropDataQualityJobDefinitionDataQualityBaselineConfig(Property):
     """
     AWS Object Type = "AWS::SageMaker::DataQualityJobDefinition.DataQualityBaselineConfig"
 
@@ -2672,23 +2672,23 @@ class DataQualityJobDefinitionDataQualityBaselineConfig(Property):
         metadata={AttrMeta.PROPERTY_NAME: "BaseliningJobName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-dataqualitybaselineconfig.html#cfn-sagemaker-dataqualityjobdefinition-dataqualitybaselineconfig-baseliningjobname"""
-    p_ConstraintsResource: typing.Union['DataQualityJobDefinitionConstraintsResource', dict] = attr.ib(
+    p_ConstraintsResource: typing.Union['PropDataQualityJobDefinitionConstraintsResource', dict] = attr.ib(
         default=None,
-        converter=DataQualityJobDefinitionConstraintsResource.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DataQualityJobDefinitionConstraintsResource)),
+        converter=PropDataQualityJobDefinitionConstraintsResource.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataQualityJobDefinitionConstraintsResource)),
         metadata={AttrMeta.PROPERTY_NAME: "ConstraintsResource"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-dataqualitybaselineconfig.html#cfn-sagemaker-dataqualityjobdefinition-dataqualitybaselineconfig-constraintsresource"""
-    p_StatisticsResource: typing.Union['DataQualityJobDefinitionStatisticsResource', dict] = attr.ib(
+    p_StatisticsResource: typing.Union['PropDataQualityJobDefinitionStatisticsResource', dict] = attr.ib(
         default=None,
-        converter=DataQualityJobDefinitionStatisticsResource.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DataQualityJobDefinitionStatisticsResource)),
+        converter=PropDataQualityJobDefinitionStatisticsResource.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataQualityJobDefinitionStatisticsResource)),
         metadata={AttrMeta.PROPERTY_NAME: "StatisticsResource"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-dataqualitybaselineconfig.html#cfn-sagemaker-dataqualityjobdefinition-dataqualitybaselineconfig-statisticsresource"""
 
 @attr.s
-class AppImageConfigKernelGatewayImageConfig(Property):
+class PropAppImageConfigKernelGatewayImageConfig(Property):
     """
     AWS Object Type = "AWS::SageMaker::AppImageConfig.KernelGatewayImageConfig"
 
@@ -2701,23 +2701,23 @@ class AppImageConfigKernelGatewayImageConfig(Property):
     """
     AWS_OBJECT_TYPE = "AWS::SageMaker::AppImageConfig.KernelGatewayImageConfig"
     
-    rp_KernelSpecs: typing.List[typing.Union['AppImageConfigKernelSpec', dict]] = attr.ib(
+    rp_KernelSpecs: typing.List[typing.Union['PropAppImageConfigKernelSpec', dict]] = attr.ib(
         default=None,
-        converter=AppImageConfigKernelSpec.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(AppImageConfigKernelSpec), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropAppImageConfigKernelSpec.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropAppImageConfigKernelSpec), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "KernelSpecs"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-appimageconfig-kernelgatewayimageconfig.html#cfn-sagemaker-appimageconfig-kernelgatewayimageconfig-kernelspecs"""
-    p_FileSystemConfig: typing.Union['AppImageConfigFileSystemConfig', dict] = attr.ib(
+    p_FileSystemConfig: typing.Union['PropAppImageConfigFileSystemConfig', dict] = attr.ib(
         default=None,
-        converter=AppImageConfigFileSystemConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(AppImageConfigFileSystemConfig)),
+        converter=PropAppImageConfigFileSystemConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropAppImageConfigFileSystemConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "FileSystemConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-appimageconfig-kernelgatewayimageconfig.html#cfn-sagemaker-appimageconfig-kernelgatewayimageconfig-filesystemconfig"""
 
 @attr.s
-class DomainJupyterServerAppSettings(Property):
+class PropDomainJupyterServerAppSettings(Property):
     """
     AWS Object Type = "AWS::SageMaker::Domain.JupyterServerAppSettings"
 
@@ -2729,16 +2729,16 @@ class DomainJupyterServerAppSettings(Property):
     """
     AWS_OBJECT_TYPE = "AWS::SageMaker::Domain.JupyterServerAppSettings"
     
-    p_DefaultResourceSpec: typing.Union['DomainResourceSpec', dict] = attr.ib(
+    p_DefaultResourceSpec: typing.Union['PropDomainResourceSpec', dict] = attr.ib(
         default=None,
-        converter=DomainResourceSpec.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DomainResourceSpec)),
+        converter=PropDomainResourceSpec.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDomainResourceSpec)),
         metadata={AttrMeta.PROPERTY_NAME: "DefaultResourceSpec"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-jupyterserverappsettings.html#cfn-sagemaker-domain-jupyterserverappsettings-defaultresourcespec"""
 
 @attr.s
-class DomainUserSettings(Property):
+class PropDomainUserSettings(Property):
     """
     AWS Object Type = "AWS::SageMaker::Domain.UserSettings"
 
@@ -2760,17 +2760,17 @@ class DomainUserSettings(Property):
         metadata={AttrMeta.PROPERTY_NAME: "ExecutionRole"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-usersettings.html#cfn-sagemaker-domain-usersettings-executionrole"""
-    p_JupyterServerAppSettings: typing.Union['DomainJupyterServerAppSettings', dict] = attr.ib(
+    p_JupyterServerAppSettings: typing.Union['PropDomainJupyterServerAppSettings', dict] = attr.ib(
         default=None,
-        converter=DomainJupyterServerAppSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DomainJupyterServerAppSettings)),
+        converter=PropDomainJupyterServerAppSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDomainJupyterServerAppSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "JupyterServerAppSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-usersettings.html#cfn-sagemaker-domain-usersettings-jupyterserverappsettings"""
-    p_KernelGatewayAppSettings: typing.Union['DomainKernelGatewayAppSettings', dict] = attr.ib(
+    p_KernelGatewayAppSettings: typing.Union['PropDomainKernelGatewayAppSettings', dict] = attr.ib(
         default=None,
-        converter=DomainKernelGatewayAppSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DomainKernelGatewayAppSettings)),
+        converter=PropDomainKernelGatewayAppSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDomainKernelGatewayAppSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "KernelGatewayAppSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-usersettings.html#cfn-sagemaker-domain-usersettings-kernelgatewayappsettings"""
@@ -2780,16 +2780,16 @@ class DomainUserSettings(Property):
         metadata={AttrMeta.PROPERTY_NAME: "SecurityGroups"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-usersettings.html#cfn-sagemaker-domain-usersettings-securitygroups"""
-    p_SharingSettings: typing.Union['DomainSharingSettings', dict] = attr.ib(
+    p_SharingSettings: typing.Union['PropDomainSharingSettings', dict] = attr.ib(
         default=None,
-        converter=DomainSharingSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DomainSharingSettings)),
+        converter=PropDomainSharingSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDomainSharingSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "SharingSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-usersettings.html#cfn-sagemaker-domain-usersettings-sharingsettings"""
 
 @attr.s
-class ModelBiasJobDefinitionModelBiasBaselineConfig(Property):
+class PropModelBiasJobDefinitionModelBiasBaselineConfig(Property):
     """
     AWS Object Type = "AWS::SageMaker::ModelBiasJobDefinition.ModelBiasBaselineConfig"
 
@@ -2808,16 +2808,16 @@ class ModelBiasJobDefinitionModelBiasBaselineConfig(Property):
         metadata={AttrMeta.PROPERTY_NAME: "BaseliningJobName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-modelbiasbaselineconfig.html#cfn-sagemaker-modelbiasjobdefinition-modelbiasbaselineconfig-baseliningjobname"""
-    p_ConstraintsResource: typing.Union['ModelBiasJobDefinitionConstraintsResource', dict] = attr.ib(
+    p_ConstraintsResource: typing.Union['PropModelBiasJobDefinitionConstraintsResource', dict] = attr.ib(
         default=None,
-        converter=ModelBiasJobDefinitionConstraintsResource.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ModelBiasJobDefinitionConstraintsResource)),
+        converter=PropModelBiasJobDefinitionConstraintsResource.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropModelBiasJobDefinitionConstraintsResource)),
         metadata={AttrMeta.PROPERTY_NAME: "ConstraintsResource"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-modelbiasbaselineconfig.html#cfn-sagemaker-modelbiasjobdefinition-modelbiasbaselineconfig-constraintsresource"""
 
 @attr.s
-class ModelBiasJobDefinitionModelBiasJobInput(Property):
+class PropModelBiasJobDefinitionModelBiasJobInput(Property):
     """
     AWS Object Type = "AWS::SageMaker::ModelBiasJobDefinition.ModelBiasJobInput"
 
@@ -2830,23 +2830,23 @@ class ModelBiasJobDefinitionModelBiasJobInput(Property):
     """
     AWS_OBJECT_TYPE = "AWS::SageMaker::ModelBiasJobDefinition.ModelBiasJobInput"
     
-    rp_EndpointInput: typing.Union['ModelBiasJobDefinitionEndpointInput', dict] = attr.ib(
+    rp_EndpointInput: typing.Union['PropModelBiasJobDefinitionEndpointInput', dict] = attr.ib(
         default=None,
-        converter=ModelBiasJobDefinitionEndpointInput.from_dict,
-        validator=attr.validators.instance_of(ModelBiasJobDefinitionEndpointInput),
+        converter=PropModelBiasJobDefinitionEndpointInput.from_dict,
+        validator=attr.validators.instance_of(PropModelBiasJobDefinitionEndpointInput),
         metadata={AttrMeta.PROPERTY_NAME: "EndpointInput"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-modelbiasjobinput.html#cfn-sagemaker-modelbiasjobdefinition-modelbiasjobinput-endpointinput"""
-    rp_GroundTruthS3Input: typing.Union['ModelBiasJobDefinitionMonitoringGroundTruthS3Input', dict] = attr.ib(
+    rp_GroundTruthS3Input: typing.Union['PropModelBiasJobDefinitionMonitoringGroundTruthS3Input', dict] = attr.ib(
         default=None,
-        converter=ModelBiasJobDefinitionMonitoringGroundTruthS3Input.from_dict,
-        validator=attr.validators.instance_of(ModelBiasJobDefinitionMonitoringGroundTruthS3Input),
+        converter=PropModelBiasJobDefinitionMonitoringGroundTruthS3Input.from_dict,
+        validator=attr.validators.instance_of(PropModelBiasJobDefinitionMonitoringGroundTruthS3Input),
         metadata={AttrMeta.PROPERTY_NAME: "GroundTruthS3Input"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-modelbiasjobinput.html#cfn-sagemaker-modelbiasjobdefinition-modelbiasjobinput-groundtruths3input"""
 
 @attr.s
-class ModelExplainabilityJobDefinitionModelExplainabilityAppSpecification(Property):
+class PropModelExplainabilityJobDefinitionModelExplainabilityAppSpecification(Property):
     """
     AWS Object Type = "AWS::SageMaker::ModelExplainabilityJobDefinition.ModelExplainabilityAppSpecification"
 
@@ -2872,16 +2872,16 @@ class ModelExplainabilityJobDefinitionModelExplainabilityAppSpecification(Proper
         metadata={AttrMeta.PROPERTY_NAME: "ImageUri"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-modelexplainabilityappspecification.html#cfn-sagemaker-modelexplainabilityjobdefinition-modelexplainabilityappspecification-imageuri"""
-    p_Environment: typing.Union['ModelExplainabilityJobDefinitionEnvironment', dict] = attr.ib(
+    p_Environment: typing.Union['PropModelExplainabilityJobDefinitionEnvironment', dict] = attr.ib(
         default=None,
-        converter=ModelExplainabilityJobDefinitionEnvironment.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ModelExplainabilityJobDefinitionEnvironment)),
+        converter=PropModelExplainabilityJobDefinitionEnvironment.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropModelExplainabilityJobDefinitionEnvironment)),
         metadata={AttrMeta.PROPERTY_NAME: "Environment"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-modelexplainabilityappspecification.html#cfn-sagemaker-modelexplainabilityjobdefinition-modelexplainabilityappspecification-environment"""
 
 @attr.s
-class ModelExplainabilityJobDefinitionModelExplainabilityJobInput(Property):
+class PropModelExplainabilityJobDefinitionModelExplainabilityJobInput(Property):
     """
     AWS Object Type = "AWS::SageMaker::ModelExplainabilityJobDefinition.ModelExplainabilityJobInput"
 
@@ -2893,16 +2893,16 @@ class ModelExplainabilityJobDefinitionModelExplainabilityJobInput(Property):
     """
     AWS_OBJECT_TYPE = "AWS::SageMaker::ModelExplainabilityJobDefinition.ModelExplainabilityJobInput"
     
-    rp_EndpointInput: typing.Union['ModelExplainabilityJobDefinitionEndpointInput', dict] = attr.ib(
+    rp_EndpointInput: typing.Union['PropModelExplainabilityJobDefinitionEndpointInput', dict] = attr.ib(
         default=None,
-        converter=ModelExplainabilityJobDefinitionEndpointInput.from_dict,
-        validator=attr.validators.instance_of(ModelExplainabilityJobDefinitionEndpointInput),
+        converter=PropModelExplainabilityJobDefinitionEndpointInput.from_dict,
+        validator=attr.validators.instance_of(PropModelExplainabilityJobDefinitionEndpointInput),
         metadata={AttrMeta.PROPERTY_NAME: "EndpointInput"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-modelexplainabilityjobinput.html#cfn-sagemaker-modelexplainabilityjobdefinition-modelexplainabilityjobinput-endpointinput"""
 
 @attr.s
-class UserProfileJupyterServerAppSettings(Property):
+class PropUserProfileJupyterServerAppSettings(Property):
     """
     AWS Object Type = "AWS::SageMaker::UserProfile.JupyterServerAppSettings"
 
@@ -2914,16 +2914,16 @@ class UserProfileJupyterServerAppSettings(Property):
     """
     AWS_OBJECT_TYPE = "AWS::SageMaker::UserProfile.JupyterServerAppSettings"
     
-    p_DefaultResourceSpec: typing.Union['UserProfileResourceSpec', dict] = attr.ib(
+    p_DefaultResourceSpec: typing.Union['PropUserProfileResourceSpec', dict] = attr.ib(
         default=None,
-        converter=UserProfileResourceSpec.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(UserProfileResourceSpec)),
+        converter=PropUserProfileResourceSpec.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropUserProfileResourceSpec)),
         metadata={AttrMeta.PROPERTY_NAME: "DefaultResourceSpec"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-userprofile-jupyterserverappsettings.html#cfn-sagemaker-userprofile-jupyterserverappsettings-defaultresourcespec"""
 
 @attr.s
-class EndpointTrafficRoutingConfig(Property):
+class PropEndpointTrafficRoutingConfig(Property):
     """
     AWS Object Type = "AWS::SageMaker::Endpoint.TrafficRoutingConfig"
 
@@ -2943,10 +2943,10 @@ class EndpointTrafficRoutingConfig(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Type"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpoint-trafficroutingconfig.html#cfn-sagemaker-endpoint-trafficroutingconfig-type"""
-    p_CanarySize: typing.Union['EndpointCapacitySize', dict] = attr.ib(
+    p_CanarySize: typing.Union['PropEndpointCapacitySize', dict] = attr.ib(
         default=None,
-        converter=EndpointCapacitySize.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(EndpointCapacitySize)),
+        converter=PropEndpointCapacitySize.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropEndpointCapacitySize)),
         metadata={AttrMeta.PROPERTY_NAME: "CanarySize"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpoint-trafficroutingconfig.html#cfn-sagemaker-endpoint-trafficroutingconfig-canarysize"""
@@ -2958,7 +2958,7 @@ class EndpointTrafficRoutingConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpoint-trafficroutingconfig.html#cfn-sagemaker-endpoint-trafficroutingconfig-waitintervalinseconds"""
 
 @attr.s
-class ModelQualityJobDefinitionModelQualityJobInput(Property):
+class PropModelQualityJobDefinitionModelQualityJobInput(Property):
     """
     AWS Object Type = "AWS::SageMaker::ModelQualityJobDefinition.ModelQualityJobInput"
 
@@ -2971,23 +2971,23 @@ class ModelQualityJobDefinitionModelQualityJobInput(Property):
     """
     AWS_OBJECT_TYPE = "AWS::SageMaker::ModelQualityJobDefinition.ModelQualityJobInput"
     
-    rp_EndpointInput: typing.Union['ModelQualityJobDefinitionEndpointInput', dict] = attr.ib(
+    rp_EndpointInput: typing.Union['PropModelQualityJobDefinitionEndpointInput', dict] = attr.ib(
         default=None,
-        converter=ModelQualityJobDefinitionEndpointInput.from_dict,
-        validator=attr.validators.instance_of(ModelQualityJobDefinitionEndpointInput),
+        converter=PropModelQualityJobDefinitionEndpointInput.from_dict,
+        validator=attr.validators.instance_of(PropModelQualityJobDefinitionEndpointInput),
         metadata={AttrMeta.PROPERTY_NAME: "EndpointInput"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-modelqualityjobinput.html#cfn-sagemaker-modelqualityjobdefinition-modelqualityjobinput-endpointinput"""
-    rp_GroundTruthS3Input: typing.Union['ModelQualityJobDefinitionMonitoringGroundTruthS3Input', dict] = attr.ib(
+    rp_GroundTruthS3Input: typing.Union['PropModelQualityJobDefinitionMonitoringGroundTruthS3Input', dict] = attr.ib(
         default=None,
-        converter=ModelQualityJobDefinitionMonitoringGroundTruthS3Input.from_dict,
-        validator=attr.validators.instance_of(ModelQualityJobDefinitionMonitoringGroundTruthS3Input),
+        converter=PropModelQualityJobDefinitionMonitoringGroundTruthS3Input.from_dict,
+        validator=attr.validators.instance_of(PropModelQualityJobDefinitionMonitoringGroundTruthS3Input),
         metadata={AttrMeta.PROPERTY_NAME: "GroundTruthS3Input"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-modelqualityjobinput.html#cfn-sagemaker-modelqualityjobdefinition-modelqualityjobinput-groundtruths3input"""
 
 @attr.s
-class ModelQualityJobDefinitionMonitoringResources(Property):
+class PropModelQualityJobDefinitionMonitoringResources(Property):
     """
     AWS Object Type = "AWS::SageMaker::ModelQualityJobDefinition.MonitoringResources"
 
@@ -2999,16 +2999,16 @@ class ModelQualityJobDefinitionMonitoringResources(Property):
     """
     AWS_OBJECT_TYPE = "AWS::SageMaker::ModelQualityJobDefinition.MonitoringResources"
     
-    rp_ClusterConfig: typing.Union['ModelQualityJobDefinitionClusterConfig', dict] = attr.ib(
+    rp_ClusterConfig: typing.Union['PropModelQualityJobDefinitionClusterConfig', dict] = attr.ib(
         default=None,
-        converter=ModelQualityJobDefinitionClusterConfig.from_dict,
-        validator=attr.validators.instance_of(ModelQualityJobDefinitionClusterConfig),
+        converter=PropModelQualityJobDefinitionClusterConfig.from_dict,
+        validator=attr.validators.instance_of(PropModelQualityJobDefinitionClusterConfig),
         metadata={AttrMeta.PROPERTY_NAME: "ClusterConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-monitoringresources.html#cfn-sagemaker-modelqualityjobdefinition-monitoringresources-clusterconfig"""
 
 @attr.s
-class ModelBiasJobDefinitionModelBiasAppSpecification(Property):
+class PropModelBiasJobDefinitionModelBiasAppSpecification(Property):
     """
     AWS Object Type = "AWS::SageMaker::ModelBiasJobDefinition.ModelBiasAppSpecification"
 
@@ -3034,16 +3034,16 @@ class ModelBiasJobDefinitionModelBiasAppSpecification(Property):
         metadata={AttrMeta.PROPERTY_NAME: "ImageUri"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-modelbiasappspecification.html#cfn-sagemaker-modelbiasjobdefinition-modelbiasappspecification-imageuri"""
-    p_Environment: typing.Union['ModelBiasJobDefinitionEnvironment', dict] = attr.ib(
+    p_Environment: typing.Union['PropModelBiasJobDefinitionEnvironment', dict] = attr.ib(
         default=None,
-        converter=ModelBiasJobDefinitionEnvironment.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ModelBiasJobDefinitionEnvironment)),
+        converter=PropModelBiasJobDefinitionEnvironment.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropModelBiasJobDefinitionEnvironment)),
         metadata={AttrMeta.PROPERTY_NAME: "Environment"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-modelbiasappspecification.html#cfn-sagemaker-modelbiasjobdefinition-modelbiasappspecification-environment"""
 
 @attr.s
-class ModelQualityJobDefinitionNetworkConfig(Property):
+class PropModelQualityJobDefinitionNetworkConfig(Property):
     """
     AWS Object Type = "AWS::SageMaker::ModelQualityJobDefinition.NetworkConfig"
 
@@ -3069,16 +3069,16 @@ class ModelQualityJobDefinitionNetworkConfig(Property):
         metadata={AttrMeta.PROPERTY_NAME: "EnableNetworkIsolation"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-networkconfig.html#cfn-sagemaker-modelqualityjobdefinition-networkconfig-enablenetworkisolation"""
-    p_VpcConfig: typing.Union['ModelQualityJobDefinitionVpcConfig', dict] = attr.ib(
+    p_VpcConfig: typing.Union['PropModelQualityJobDefinitionVpcConfig', dict] = attr.ib(
         default=None,
-        converter=ModelQualityJobDefinitionVpcConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ModelQualityJobDefinitionVpcConfig)),
+        converter=PropModelQualityJobDefinitionVpcConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropModelQualityJobDefinitionVpcConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "VpcConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-networkconfig.html#cfn-sagemaker-modelqualityjobdefinition-networkconfig-vpcconfig"""
 
 @attr.s
-class ModelContainerDefinition(Property):
+class PropModelContainerDefinition(Property):
     """
     AWS Object Type = "AWS::SageMaker::Model.ContainerDefinition"
 
@@ -3115,10 +3115,10 @@ class ModelContainerDefinition(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Image"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-model-containerdefinition.html#cfn-sagemaker-model-containerdefinition-image"""
-    p_ImageConfig: typing.Union['ModelImageConfig', dict] = attr.ib(
+    p_ImageConfig: typing.Union['PropModelImageConfig', dict] = attr.ib(
         default=None,
-        converter=ModelImageConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ModelImageConfig)),
+        converter=PropModelImageConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropModelImageConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "ImageConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-model-containerdefinition.html#cfn-sagemaker-model-containerdefinition-imageconfig"""
@@ -3140,16 +3140,16 @@ class ModelContainerDefinition(Property):
         metadata={AttrMeta.PROPERTY_NAME: "ModelPackageName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-model-containerdefinition.html#cfn-sagemaker-model-containerdefinition-modelpackagename"""
-    p_MultiModelConfig: typing.Union['ModelMultiModelConfig', dict] = attr.ib(
+    p_MultiModelConfig: typing.Union['PropModelMultiModelConfig', dict] = attr.ib(
         default=None,
-        converter=ModelMultiModelConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ModelMultiModelConfig)),
+        converter=PropModelMultiModelConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropModelMultiModelConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "MultiModelConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-model-containerdefinition.html#cfn-sagemaker-model-containerdefinition-multimodelconfig"""
 
 @attr.s
-class UserProfileKernelGatewayAppSettings(Property):
+class PropUserProfileKernelGatewayAppSettings(Property):
     """
     AWS Object Type = "AWS::SageMaker::UserProfile.KernelGatewayAppSettings"
 
@@ -3162,23 +3162,23 @@ class UserProfileKernelGatewayAppSettings(Property):
     """
     AWS_OBJECT_TYPE = "AWS::SageMaker::UserProfile.KernelGatewayAppSettings"
     
-    p_CustomImages: typing.List[typing.Union['UserProfileCustomImage', dict]] = attr.ib(
+    p_CustomImages: typing.List[typing.Union['PropUserProfileCustomImage', dict]] = attr.ib(
         default=None,
-        converter=UserProfileCustomImage.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(UserProfileCustomImage), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropUserProfileCustomImage.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropUserProfileCustomImage), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "CustomImages"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-userprofile-kernelgatewayappsettings.html#cfn-sagemaker-userprofile-kernelgatewayappsettings-customimages"""
-    p_DefaultResourceSpec: typing.Union['UserProfileResourceSpec', dict] = attr.ib(
+    p_DefaultResourceSpec: typing.Union['PropUserProfileResourceSpec', dict] = attr.ib(
         default=None,
-        converter=UserProfileResourceSpec.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(UserProfileResourceSpec)),
+        converter=PropUserProfileResourceSpec.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropUserProfileResourceSpec)),
         metadata={AttrMeta.PROPERTY_NAME: "DefaultResourceSpec"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-userprofile-kernelgatewayappsettings.html#cfn-sagemaker-userprofile-kernelgatewayappsettings-defaultresourcespec"""
 
 @attr.s
-class DataQualityJobDefinitionDataQualityJobInput(Property):
+class PropDataQualityJobDefinitionDataQualityJobInput(Property):
     """
     AWS Object Type = "AWS::SageMaker::DataQualityJobDefinition.DataQualityJobInput"
 
@@ -3190,16 +3190,16 @@ class DataQualityJobDefinitionDataQualityJobInput(Property):
     """
     AWS_OBJECT_TYPE = "AWS::SageMaker::DataQualityJobDefinition.DataQualityJobInput"
     
-    rp_EndpointInput: typing.Union['DataQualityJobDefinitionEndpointInput', dict] = attr.ib(
+    rp_EndpointInput: typing.Union['PropDataQualityJobDefinitionEndpointInput', dict] = attr.ib(
         default=None,
-        converter=DataQualityJobDefinitionEndpointInput.from_dict,
-        validator=attr.validators.instance_of(DataQualityJobDefinitionEndpointInput),
+        converter=PropDataQualityJobDefinitionEndpointInput.from_dict,
+        validator=attr.validators.instance_of(PropDataQualityJobDefinitionEndpointInput),
         metadata={AttrMeta.PROPERTY_NAME: "EndpointInput"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-dataqualityjobinput.html#cfn-sagemaker-dataqualityjobdefinition-dataqualityjobinput-endpointinput"""
 
 @attr.s
-class ModelExplainabilityJobDefinitionNetworkConfig(Property):
+class PropModelExplainabilityJobDefinitionNetworkConfig(Property):
     """
     AWS Object Type = "AWS::SageMaker::ModelExplainabilityJobDefinition.NetworkConfig"
 
@@ -3225,16 +3225,16 @@ class ModelExplainabilityJobDefinitionNetworkConfig(Property):
         metadata={AttrMeta.PROPERTY_NAME: "EnableNetworkIsolation"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-networkconfig.html#cfn-sagemaker-modelexplainabilityjobdefinition-networkconfig-enablenetworkisolation"""
-    p_VpcConfig: typing.Union['ModelExplainabilityJobDefinitionVpcConfig', dict] = attr.ib(
+    p_VpcConfig: typing.Union['PropModelExplainabilityJobDefinitionVpcConfig', dict] = attr.ib(
         default=None,
-        converter=ModelExplainabilityJobDefinitionVpcConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ModelExplainabilityJobDefinitionVpcConfig)),
+        converter=PropModelExplainabilityJobDefinitionVpcConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropModelExplainabilityJobDefinitionVpcConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "VpcConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-networkconfig.html#cfn-sagemaker-modelexplainabilityjobdefinition-networkconfig-vpcconfig"""
 
 @attr.s
-class DataQualityJobDefinitionMonitoringResources(Property):
+class PropDataQualityJobDefinitionMonitoringResources(Property):
     """
     AWS Object Type = "AWS::SageMaker::DataQualityJobDefinition.MonitoringResources"
 
@@ -3246,16 +3246,16 @@ class DataQualityJobDefinitionMonitoringResources(Property):
     """
     AWS_OBJECT_TYPE = "AWS::SageMaker::DataQualityJobDefinition.MonitoringResources"
     
-    rp_ClusterConfig: typing.Union['DataQualityJobDefinitionClusterConfig', dict] = attr.ib(
+    rp_ClusterConfig: typing.Union['PropDataQualityJobDefinitionClusterConfig', dict] = attr.ib(
         default=None,
-        converter=DataQualityJobDefinitionClusterConfig.from_dict,
-        validator=attr.validators.instance_of(DataQualityJobDefinitionClusterConfig),
+        converter=PropDataQualityJobDefinitionClusterConfig.from_dict,
+        validator=attr.validators.instance_of(PropDataQualityJobDefinitionClusterConfig),
         metadata={AttrMeta.PROPERTY_NAME: "ClusterConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-monitoringresources.html#cfn-sagemaker-dataqualityjobdefinition-monitoringresources-clusterconfig"""
 
 @attr.s
-class DataQualityJobDefinitionMonitoringOutput(Property):
+class PropDataQualityJobDefinitionMonitoringOutput(Property):
     """
     AWS Object Type = "AWS::SageMaker::DataQualityJobDefinition.MonitoringOutput"
 
@@ -3267,16 +3267,16 @@ class DataQualityJobDefinitionMonitoringOutput(Property):
     """
     AWS_OBJECT_TYPE = "AWS::SageMaker::DataQualityJobDefinition.MonitoringOutput"
     
-    rp_S3Output: typing.Union['DataQualityJobDefinitionS3Output', dict] = attr.ib(
+    rp_S3Output: typing.Union['PropDataQualityJobDefinitionS3Output', dict] = attr.ib(
         default=None,
-        converter=DataQualityJobDefinitionS3Output.from_dict,
-        validator=attr.validators.instance_of(DataQualityJobDefinitionS3Output),
+        converter=PropDataQualityJobDefinitionS3Output.from_dict,
+        validator=attr.validators.instance_of(PropDataQualityJobDefinitionS3Output),
         metadata={AttrMeta.PROPERTY_NAME: "S3Output"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-monitoringoutput.html#cfn-sagemaker-dataqualityjobdefinition-monitoringoutput-s3output"""
 
 @attr.s
-class DataQualityJobDefinitionMonitoringOutputConfig(Property):
+class PropDataQualityJobDefinitionMonitoringOutputConfig(Property):
     """
     AWS Object Type = "AWS::SageMaker::DataQualityJobDefinition.MonitoringOutputConfig"
 
@@ -3289,10 +3289,10 @@ class DataQualityJobDefinitionMonitoringOutputConfig(Property):
     """
     AWS_OBJECT_TYPE = "AWS::SageMaker::DataQualityJobDefinition.MonitoringOutputConfig"
     
-    rp_MonitoringOutputs: typing.List[typing.Union['DataQualityJobDefinitionMonitoringOutput', dict]] = attr.ib(
+    rp_MonitoringOutputs: typing.List[typing.Union['PropDataQualityJobDefinitionMonitoringOutput', dict]] = attr.ib(
         default=None,
-        converter=DataQualityJobDefinitionMonitoringOutput.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(DataQualityJobDefinitionMonitoringOutput), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropDataQualityJobDefinitionMonitoringOutput.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDataQualityJobDefinitionMonitoringOutput), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "MonitoringOutputs"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-monitoringoutputconfig.html#cfn-sagemaker-dataqualityjobdefinition-monitoringoutputconfig-monitoringoutputs"""
@@ -3304,7 +3304,7 @@ class DataQualityJobDefinitionMonitoringOutputConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-monitoringoutputconfig.html#cfn-sagemaker-dataqualityjobdefinition-monitoringoutputconfig-kmskeyid"""
 
 @attr.s
-class MonitoringScheduleMonitoringOutput(Property):
+class PropMonitoringScheduleMonitoringOutput(Property):
     """
     AWS Object Type = "AWS::SageMaker::MonitoringSchedule.MonitoringOutput"
 
@@ -3316,16 +3316,16 @@ class MonitoringScheduleMonitoringOutput(Property):
     """
     AWS_OBJECT_TYPE = "AWS::SageMaker::MonitoringSchedule.MonitoringOutput"
     
-    rp_S3Output: typing.Union['MonitoringScheduleS3Output', dict] = attr.ib(
+    rp_S3Output: typing.Union['PropMonitoringScheduleS3Output', dict] = attr.ib(
         default=None,
-        converter=MonitoringScheduleS3Output.from_dict,
-        validator=attr.validators.instance_of(MonitoringScheduleS3Output),
+        converter=PropMonitoringScheduleS3Output.from_dict,
+        validator=attr.validators.instance_of(PropMonitoringScheduleS3Output),
         metadata={AttrMeta.PROPERTY_NAME: "S3Output"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-monitoringoutput.html#cfn-sagemaker-monitoringschedule-monitoringoutput-s3output"""
 
 @attr.s
-class ModelBiasJobDefinitionMonitoringOutputConfig(Property):
+class PropModelBiasJobDefinitionMonitoringOutputConfig(Property):
     """
     AWS Object Type = "AWS::SageMaker::ModelBiasJobDefinition.MonitoringOutputConfig"
 
@@ -3338,10 +3338,10 @@ class ModelBiasJobDefinitionMonitoringOutputConfig(Property):
     """
     AWS_OBJECT_TYPE = "AWS::SageMaker::ModelBiasJobDefinition.MonitoringOutputConfig"
     
-    rp_MonitoringOutputs: typing.List[typing.Union['ModelBiasJobDefinitionMonitoringOutput', dict]] = attr.ib(
+    rp_MonitoringOutputs: typing.List[typing.Union['PropModelBiasJobDefinitionMonitoringOutput', dict]] = attr.ib(
         default=None,
-        converter=ModelBiasJobDefinitionMonitoringOutput.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ModelBiasJobDefinitionMonitoringOutput), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropModelBiasJobDefinitionMonitoringOutput.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropModelBiasJobDefinitionMonitoringOutput), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "MonitoringOutputs"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-monitoringoutputconfig.html#cfn-sagemaker-modelbiasjobdefinition-monitoringoutputconfig-monitoringoutputs"""
@@ -3353,7 +3353,7 @@ class ModelBiasJobDefinitionMonitoringOutputConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-monitoringoutputconfig.html#cfn-sagemaker-modelbiasjobdefinition-monitoringoutputconfig-kmskeyid"""
 
 @attr.s
-class ModelQualityJobDefinitionMonitoringOutput(Property):
+class PropModelQualityJobDefinitionMonitoringOutput(Property):
     """
     AWS Object Type = "AWS::SageMaker::ModelQualityJobDefinition.MonitoringOutput"
 
@@ -3365,16 +3365,16 @@ class ModelQualityJobDefinitionMonitoringOutput(Property):
     """
     AWS_OBJECT_TYPE = "AWS::SageMaker::ModelQualityJobDefinition.MonitoringOutput"
     
-    rp_S3Output: typing.Union['ModelQualityJobDefinitionS3Output', dict] = attr.ib(
+    rp_S3Output: typing.Union['PropModelQualityJobDefinitionS3Output', dict] = attr.ib(
         default=None,
-        converter=ModelQualityJobDefinitionS3Output.from_dict,
-        validator=attr.validators.instance_of(ModelQualityJobDefinitionS3Output),
+        converter=PropModelQualityJobDefinitionS3Output.from_dict,
+        validator=attr.validators.instance_of(PropModelQualityJobDefinitionS3Output),
         metadata={AttrMeta.PROPERTY_NAME: "S3Output"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-monitoringoutput.html#cfn-sagemaker-modelqualityjobdefinition-monitoringoutput-s3output"""
 
 @attr.s
-class EndpointBlueGreenUpdatePolicy(Property):
+class PropEndpointBlueGreenUpdatePolicy(Property):
     """
     AWS Object Type = "AWS::SageMaker::Endpoint.BlueGreenUpdatePolicy"
 
@@ -3388,10 +3388,10 @@ class EndpointBlueGreenUpdatePolicy(Property):
     """
     AWS_OBJECT_TYPE = "AWS::SageMaker::Endpoint.BlueGreenUpdatePolicy"
     
-    rp_TrafficRoutingConfiguration: typing.Union['EndpointTrafficRoutingConfig', dict] = attr.ib(
+    rp_TrafficRoutingConfiguration: typing.Union['PropEndpointTrafficRoutingConfig', dict] = attr.ib(
         default=None,
-        converter=EndpointTrafficRoutingConfig.from_dict,
-        validator=attr.validators.instance_of(EndpointTrafficRoutingConfig),
+        converter=PropEndpointTrafficRoutingConfig.from_dict,
+        validator=attr.validators.instance_of(PropEndpointTrafficRoutingConfig),
         metadata={AttrMeta.PROPERTY_NAME: "TrafficRoutingConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpoint-bluegreenupdatepolicy.html#cfn-sagemaker-endpoint-bluegreenupdatepolicy-trafficroutingconfiguration"""
@@ -3409,7 +3409,7 @@ class EndpointBlueGreenUpdatePolicy(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpoint-bluegreenupdatepolicy.html#cfn-sagemaker-endpoint-bluegreenupdatepolicy-terminationwaitinseconds"""
 
 @attr.s
-class UserProfileUserSettings(Property):
+class PropUserProfileUserSettings(Property):
     """
     AWS Object Type = "AWS::SageMaker::UserProfile.UserSettings"
 
@@ -3431,17 +3431,17 @@ class UserProfileUserSettings(Property):
         metadata={AttrMeta.PROPERTY_NAME: "ExecutionRole"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-userprofile-usersettings.html#cfn-sagemaker-userprofile-usersettings-executionrole"""
-    p_JupyterServerAppSettings: typing.Union['UserProfileJupyterServerAppSettings', dict] = attr.ib(
+    p_JupyterServerAppSettings: typing.Union['PropUserProfileJupyterServerAppSettings', dict] = attr.ib(
         default=None,
-        converter=UserProfileJupyterServerAppSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(UserProfileJupyterServerAppSettings)),
+        converter=PropUserProfileJupyterServerAppSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropUserProfileJupyterServerAppSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "JupyterServerAppSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-userprofile-usersettings.html#cfn-sagemaker-userprofile-usersettings-jupyterserverappsettings"""
-    p_KernelGatewayAppSettings: typing.Union['UserProfileKernelGatewayAppSettings', dict] = attr.ib(
+    p_KernelGatewayAppSettings: typing.Union['PropUserProfileKernelGatewayAppSettings', dict] = attr.ib(
         default=None,
-        converter=UserProfileKernelGatewayAppSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(UserProfileKernelGatewayAppSettings)),
+        converter=PropUserProfileKernelGatewayAppSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropUserProfileKernelGatewayAppSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "KernelGatewayAppSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-userprofile-usersettings.html#cfn-sagemaker-userprofile-usersettings-kernelgatewayappsettings"""
@@ -3451,16 +3451,16 @@ class UserProfileUserSettings(Property):
         metadata={AttrMeta.PROPERTY_NAME: "SecurityGroups"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-userprofile-usersettings.html#cfn-sagemaker-userprofile-usersettings-securitygroups"""
-    p_SharingSettings: typing.Union['UserProfileSharingSettings', dict] = attr.ib(
+    p_SharingSettings: typing.Union['PropUserProfileSharingSettings', dict] = attr.ib(
         default=None,
-        converter=UserProfileSharingSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(UserProfileSharingSettings)),
+        converter=PropUserProfileSharingSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropUserProfileSharingSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "SharingSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-userprofile-usersettings.html#cfn-sagemaker-userprofile-usersettings-sharingsettings"""
 
 @attr.s
-class ModelQualityJobDefinitionMonitoringOutputConfig(Property):
+class PropModelQualityJobDefinitionMonitoringOutputConfig(Property):
     """
     AWS Object Type = "AWS::SageMaker::ModelQualityJobDefinition.MonitoringOutputConfig"
 
@@ -3473,10 +3473,10 @@ class ModelQualityJobDefinitionMonitoringOutputConfig(Property):
     """
     AWS_OBJECT_TYPE = "AWS::SageMaker::ModelQualityJobDefinition.MonitoringOutputConfig"
     
-    rp_MonitoringOutputs: typing.List[typing.Union['ModelQualityJobDefinitionMonitoringOutput', dict]] = attr.ib(
+    rp_MonitoringOutputs: typing.List[typing.Union['PropModelQualityJobDefinitionMonitoringOutput', dict]] = attr.ib(
         default=None,
-        converter=ModelQualityJobDefinitionMonitoringOutput.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ModelQualityJobDefinitionMonitoringOutput), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropModelQualityJobDefinitionMonitoringOutput.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropModelQualityJobDefinitionMonitoringOutput), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "MonitoringOutputs"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-monitoringoutputconfig.html#cfn-sagemaker-modelqualityjobdefinition-monitoringoutputconfig-monitoringoutputs"""
@@ -3488,7 +3488,7 @@ class ModelQualityJobDefinitionMonitoringOutputConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-monitoringoutputconfig.html#cfn-sagemaker-modelqualityjobdefinition-monitoringoutputconfig-kmskeyid"""
 
 @attr.s
-class MonitoringScheduleMonitoringOutputConfig(Property):
+class PropMonitoringScheduleMonitoringOutputConfig(Property):
     """
     AWS Object Type = "AWS::SageMaker::MonitoringSchedule.MonitoringOutputConfig"
 
@@ -3501,10 +3501,10 @@ class MonitoringScheduleMonitoringOutputConfig(Property):
     """
     AWS_OBJECT_TYPE = "AWS::SageMaker::MonitoringSchedule.MonitoringOutputConfig"
     
-    rp_MonitoringOutputs: typing.List[typing.Union['MonitoringScheduleMonitoringOutput', dict]] = attr.ib(
+    rp_MonitoringOutputs: typing.List[typing.Union['PropMonitoringScheduleMonitoringOutput', dict]] = attr.ib(
         default=None,
-        converter=MonitoringScheduleMonitoringOutput.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(MonitoringScheduleMonitoringOutput), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropMonitoringScheduleMonitoringOutput.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropMonitoringScheduleMonitoringOutput), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "MonitoringOutputs"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-monitoringoutputconfig.html#cfn-sagemaker-monitoringschedule-monitoringoutputconfig-monitoringoutputs"""
@@ -3516,7 +3516,7 @@ class MonitoringScheduleMonitoringOutputConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-monitoringoutputconfig.html#cfn-sagemaker-monitoringschedule-monitoringoutputconfig-kmskeyid"""
 
 @attr.s
-class EndpointDeploymentConfig(Property):
+class PropEndpointDeploymentConfig(Property):
     """
     AWS Object Type = "AWS::SageMaker::Endpoint.DeploymentConfig"
 
@@ -3529,23 +3529,23 @@ class EndpointDeploymentConfig(Property):
     """
     AWS_OBJECT_TYPE = "AWS::SageMaker::Endpoint.DeploymentConfig"
     
-    rp_BlueGreenUpdatePolicy: typing.Union['EndpointBlueGreenUpdatePolicy', dict] = attr.ib(
+    rp_BlueGreenUpdatePolicy: typing.Union['PropEndpointBlueGreenUpdatePolicy', dict] = attr.ib(
         default=None,
-        converter=EndpointBlueGreenUpdatePolicy.from_dict,
-        validator=attr.validators.instance_of(EndpointBlueGreenUpdatePolicy),
+        converter=PropEndpointBlueGreenUpdatePolicy.from_dict,
+        validator=attr.validators.instance_of(PropEndpointBlueGreenUpdatePolicy),
         metadata={AttrMeta.PROPERTY_NAME: "BlueGreenUpdatePolicy"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpoint-deploymentconfig.html#cfn-sagemaker-endpoint-deploymentconfig-bluegreenupdatepolicy"""
-    p_AutoRollbackConfiguration: typing.Union['EndpointAutoRollbackConfig', dict] = attr.ib(
+    p_AutoRollbackConfiguration: typing.Union['PropEndpointAutoRollbackConfig', dict] = attr.ib(
         default=None,
-        converter=EndpointAutoRollbackConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(EndpointAutoRollbackConfig)),
+        converter=PropEndpointAutoRollbackConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropEndpointAutoRollbackConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "AutoRollbackConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpoint-deploymentconfig.html#cfn-sagemaker-endpoint-deploymentconfig-autorollbackconfiguration"""
 
 @attr.s
-class MonitoringScheduleMonitoringJobDefinition(Property):
+class PropMonitoringScheduleMonitoringJobDefinition(Property):
     """
     AWS Object Type = "AWS::SageMaker::MonitoringSchedule.MonitoringJobDefinition"
 
@@ -3565,31 +3565,31 @@ class MonitoringScheduleMonitoringJobDefinition(Property):
     """
     AWS_OBJECT_TYPE = "AWS::SageMaker::MonitoringSchedule.MonitoringJobDefinition"
     
-    rp_MonitoringAppSpecification: typing.Union['MonitoringScheduleMonitoringAppSpecification', dict] = attr.ib(
+    rp_MonitoringAppSpecification: typing.Union['PropMonitoringScheduleMonitoringAppSpecification', dict] = attr.ib(
         default=None,
-        converter=MonitoringScheduleMonitoringAppSpecification.from_dict,
-        validator=attr.validators.instance_of(MonitoringScheduleMonitoringAppSpecification),
+        converter=PropMonitoringScheduleMonitoringAppSpecification.from_dict,
+        validator=attr.validators.instance_of(PropMonitoringScheduleMonitoringAppSpecification),
         metadata={AttrMeta.PROPERTY_NAME: "MonitoringAppSpecification"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-monitoringjobdefinition.html#cfn-sagemaker-monitoringschedule-monitoringjobdefinition-monitoringappspecification"""
-    rp_MonitoringInputs: typing.List[typing.Union['MonitoringScheduleMonitoringInput', dict]] = attr.ib(
+    rp_MonitoringInputs: typing.List[typing.Union['PropMonitoringScheduleMonitoringInput', dict]] = attr.ib(
         default=None,
-        converter=MonitoringScheduleMonitoringInput.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(MonitoringScheduleMonitoringInput), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropMonitoringScheduleMonitoringInput.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropMonitoringScheduleMonitoringInput), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "MonitoringInputs"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-monitoringjobdefinition.html#cfn-sagemaker-monitoringschedule-monitoringjobdefinition-monitoringinputs"""
-    rp_MonitoringOutputConfig: typing.Union['MonitoringScheduleMonitoringOutputConfig', dict] = attr.ib(
+    rp_MonitoringOutputConfig: typing.Union['PropMonitoringScheduleMonitoringOutputConfig', dict] = attr.ib(
         default=None,
-        converter=MonitoringScheduleMonitoringOutputConfig.from_dict,
-        validator=attr.validators.instance_of(MonitoringScheduleMonitoringOutputConfig),
+        converter=PropMonitoringScheduleMonitoringOutputConfig.from_dict,
+        validator=attr.validators.instance_of(PropMonitoringScheduleMonitoringOutputConfig),
         metadata={AttrMeta.PROPERTY_NAME: "MonitoringOutputConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-monitoringjobdefinition.html#cfn-sagemaker-monitoringschedule-monitoringjobdefinition-monitoringoutputconfig"""
-    rp_MonitoringResources: typing.Union['MonitoringScheduleMonitoringResources', dict] = attr.ib(
+    rp_MonitoringResources: typing.Union['PropMonitoringScheduleMonitoringResources', dict] = attr.ib(
         default=None,
-        converter=MonitoringScheduleMonitoringResources.from_dict,
-        validator=attr.validators.instance_of(MonitoringScheduleMonitoringResources),
+        converter=PropMonitoringScheduleMonitoringResources.from_dict,
+        validator=attr.validators.instance_of(PropMonitoringScheduleMonitoringResources),
         metadata={AttrMeta.PROPERTY_NAME: "MonitoringResources"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-monitoringjobdefinition.html#cfn-sagemaker-monitoringschedule-monitoringjobdefinition-monitoringresources"""
@@ -3599,37 +3599,37 @@ class MonitoringScheduleMonitoringJobDefinition(Property):
         metadata={AttrMeta.PROPERTY_NAME: "RoleArn"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-monitoringjobdefinition.html#cfn-sagemaker-monitoringschedule-monitoringjobdefinition-rolearn"""
-    p_BaselineConfig: typing.Union['MonitoringScheduleBaselineConfig', dict] = attr.ib(
+    p_BaselineConfig: typing.Union['PropMonitoringScheduleBaselineConfig', dict] = attr.ib(
         default=None,
-        converter=MonitoringScheduleBaselineConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(MonitoringScheduleBaselineConfig)),
+        converter=PropMonitoringScheduleBaselineConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropMonitoringScheduleBaselineConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "BaselineConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-monitoringjobdefinition.html#cfn-sagemaker-monitoringschedule-monitoringjobdefinition-baselineconfig"""
-    p_Environment: typing.Union['MonitoringScheduleEnvironment', dict] = attr.ib(
+    p_Environment: typing.Union['PropMonitoringScheduleEnvironment', dict] = attr.ib(
         default=None,
-        converter=MonitoringScheduleEnvironment.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(MonitoringScheduleEnvironment)),
+        converter=PropMonitoringScheduleEnvironment.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropMonitoringScheduleEnvironment)),
         metadata={AttrMeta.PROPERTY_NAME: "Environment"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-monitoringjobdefinition.html#cfn-sagemaker-monitoringschedule-monitoringjobdefinition-environment"""
-    p_NetworkConfig: typing.Union['MonitoringScheduleNetworkConfig', dict] = attr.ib(
+    p_NetworkConfig: typing.Union['PropMonitoringScheduleNetworkConfig', dict] = attr.ib(
         default=None,
-        converter=MonitoringScheduleNetworkConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(MonitoringScheduleNetworkConfig)),
+        converter=PropMonitoringScheduleNetworkConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropMonitoringScheduleNetworkConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "NetworkConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-monitoringjobdefinition.html#cfn-sagemaker-monitoringschedule-monitoringjobdefinition-networkconfig"""
-    p_StoppingCondition: typing.Union['MonitoringScheduleStoppingCondition', dict] = attr.ib(
+    p_StoppingCondition: typing.Union['PropMonitoringScheduleStoppingCondition', dict] = attr.ib(
         default=None,
-        converter=MonitoringScheduleStoppingCondition.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(MonitoringScheduleStoppingCondition)),
+        converter=PropMonitoringScheduleStoppingCondition.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropMonitoringScheduleStoppingCondition)),
         metadata={AttrMeta.PROPERTY_NAME: "StoppingCondition"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-monitoringjobdefinition.html#cfn-sagemaker-monitoringschedule-monitoringjobdefinition-stoppingcondition"""
 
 @attr.s
-class MonitoringScheduleMonitoringScheduleConfig(Property):
+class PropMonitoringScheduleMonitoringScheduleConfig(Property):
     """
     AWS Object Type = "AWS::SageMaker::MonitoringSchedule.MonitoringScheduleConfig"
 
@@ -3644,10 +3644,10 @@ class MonitoringScheduleMonitoringScheduleConfig(Property):
     """
     AWS_OBJECT_TYPE = "AWS::SageMaker::MonitoringSchedule.MonitoringScheduleConfig"
     
-    p_MonitoringJobDefinition: typing.Union['MonitoringScheduleMonitoringJobDefinition', dict] = attr.ib(
+    p_MonitoringJobDefinition: typing.Union['PropMonitoringScheduleMonitoringJobDefinition', dict] = attr.ib(
         default=None,
-        converter=MonitoringScheduleMonitoringJobDefinition.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(MonitoringScheduleMonitoringJobDefinition)),
+        converter=PropMonitoringScheduleMonitoringJobDefinition.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropMonitoringScheduleMonitoringJobDefinition)),
         metadata={AttrMeta.PROPERTY_NAME: "MonitoringJobDefinition"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-monitoringscheduleconfig.html#cfn-sagemaker-monitoringschedule-monitoringscheduleconfig-monitoringjobdefinition"""
@@ -3663,10 +3663,10 @@ class MonitoringScheduleMonitoringScheduleConfig(Property):
         metadata={AttrMeta.PROPERTY_NAME: "MonitoringType"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-monitoringscheduleconfig.html#cfn-sagemaker-monitoringschedule-monitoringscheduleconfig-monitoringtype"""
-    p_ScheduleConfig: typing.Union['MonitoringScheduleScheduleConfig', dict] = attr.ib(
+    p_ScheduleConfig: typing.Union['PropMonitoringScheduleScheduleConfig', dict] = attr.ib(
         default=None,
-        converter=MonitoringScheduleScheduleConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(MonitoringScheduleScheduleConfig)),
+        converter=PropMonitoringScheduleScheduleConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropMonitoringScheduleScheduleConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "ScheduleConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-monitoringscheduleconfig.html#cfn-sagemaker-monitoringschedule-monitoringscheduleconfig-scheduleconfig"""
@@ -3698,17 +3698,17 @@ class Workteam(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Description"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-workteam.html#cfn-sagemaker-workteam-description"""
-    p_MemberDefinitions: typing.List[typing.Union['WorkteamMemberDefinition', dict]] = attr.ib(
+    p_MemberDefinitions: typing.List[typing.Union['PropWorkteamMemberDefinition', dict]] = attr.ib(
         default=None,
-        converter=WorkteamMemberDefinition.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(WorkteamMemberDefinition), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropWorkteamMemberDefinition.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropWorkteamMemberDefinition), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "MemberDefinitions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-workteam.html#cfn-sagemaker-workteam-memberdefinitions"""
-    p_NotificationConfiguration: typing.Union['WorkteamNotificationConfiguration', dict] = attr.ib(
+    p_NotificationConfiguration: typing.Union['PropWorkteamNotificationConfiguration', dict] = attr.ib(
         default=None,
-        converter=WorkteamNotificationConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(WorkteamNotificationConfiguration)),
+        converter=PropWorkteamNotificationConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropWorkteamNotificationConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "NotificationConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-workteam.html#cfn-sagemaker-workteam-notificationconfiguration"""
@@ -3811,10 +3811,10 @@ class FeatureGroup(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "EventTimeFeatureName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-featuregroup.html#cfn-sagemaker-featuregroup-eventtimefeaturename"""
-    rp_FeatureDefinitions: typing.List[typing.Union['FeatureGroupFeatureDefinition', dict]] = attr.ib(
+    rp_FeatureDefinitions: typing.List[typing.Union['PropFeatureGroupFeatureDefinition', dict]] = attr.ib(
         default=None,
-        converter=FeatureGroupFeatureDefinition.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(FeatureGroupFeatureDefinition), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropFeatureGroupFeatureDefinition.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropFeatureGroupFeatureDefinition), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "FeatureDefinitions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-featuregroup.html#cfn-sagemaker-featuregroup-featuredefinitions"""
@@ -3887,31 +3887,31 @@ class DataQualityJobDefinition(Resource):
     AWS_OBJECT_TYPE = "AWS::SageMaker::DataQualityJobDefinition"
 
     
-    rp_DataQualityAppSpecification: typing.Union['DataQualityJobDefinitionDataQualityAppSpecification', dict] = attr.ib(
+    rp_DataQualityAppSpecification: typing.Union['PropDataQualityJobDefinitionDataQualityAppSpecification', dict] = attr.ib(
         default=None,
-        converter=DataQualityJobDefinitionDataQualityAppSpecification.from_dict,
-        validator=attr.validators.instance_of(DataQualityJobDefinitionDataQualityAppSpecification),
+        converter=PropDataQualityJobDefinitionDataQualityAppSpecification.from_dict,
+        validator=attr.validators.instance_of(PropDataQualityJobDefinitionDataQualityAppSpecification),
         metadata={AttrMeta.PROPERTY_NAME: "DataQualityAppSpecification"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-dataqualityjobdefinition.html#cfn-sagemaker-dataqualityjobdefinition-dataqualityappspecification"""
-    rp_DataQualityJobInput: typing.Union['DataQualityJobDefinitionDataQualityJobInput', dict] = attr.ib(
+    rp_DataQualityJobInput: typing.Union['PropDataQualityJobDefinitionDataQualityJobInput', dict] = attr.ib(
         default=None,
-        converter=DataQualityJobDefinitionDataQualityJobInput.from_dict,
-        validator=attr.validators.instance_of(DataQualityJobDefinitionDataQualityJobInput),
+        converter=PropDataQualityJobDefinitionDataQualityJobInput.from_dict,
+        validator=attr.validators.instance_of(PropDataQualityJobDefinitionDataQualityJobInput),
         metadata={AttrMeta.PROPERTY_NAME: "DataQualityJobInput"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-dataqualityjobdefinition.html#cfn-sagemaker-dataqualityjobdefinition-dataqualityjobinput"""
-    rp_DataQualityJobOutputConfig: typing.Union['DataQualityJobDefinitionMonitoringOutputConfig', dict] = attr.ib(
+    rp_DataQualityJobOutputConfig: typing.Union['PropDataQualityJobDefinitionMonitoringOutputConfig', dict] = attr.ib(
         default=None,
-        converter=DataQualityJobDefinitionMonitoringOutputConfig.from_dict,
-        validator=attr.validators.instance_of(DataQualityJobDefinitionMonitoringOutputConfig),
+        converter=PropDataQualityJobDefinitionMonitoringOutputConfig.from_dict,
+        validator=attr.validators.instance_of(PropDataQualityJobDefinitionMonitoringOutputConfig),
         metadata={AttrMeta.PROPERTY_NAME: "DataQualityJobOutputConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-dataqualityjobdefinition.html#cfn-sagemaker-dataqualityjobdefinition-dataqualityjoboutputconfig"""
-    rp_JobResources: typing.Union['DataQualityJobDefinitionMonitoringResources', dict] = attr.ib(
+    rp_JobResources: typing.Union['PropDataQualityJobDefinitionMonitoringResources', dict] = attr.ib(
         default=None,
-        converter=DataQualityJobDefinitionMonitoringResources.from_dict,
-        validator=attr.validators.instance_of(DataQualityJobDefinitionMonitoringResources),
+        converter=PropDataQualityJobDefinitionMonitoringResources.from_dict,
+        validator=attr.validators.instance_of(PropDataQualityJobDefinitionMonitoringResources),
         metadata={AttrMeta.PROPERTY_NAME: "JobResources"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-dataqualityjobdefinition.html#cfn-sagemaker-dataqualityjobdefinition-jobresources"""
@@ -3921,10 +3921,10 @@ class DataQualityJobDefinition(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "RoleArn"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-dataqualityjobdefinition.html#cfn-sagemaker-dataqualityjobdefinition-rolearn"""
-    p_DataQualityBaselineConfig: typing.Union['DataQualityJobDefinitionDataQualityBaselineConfig', dict] = attr.ib(
+    p_DataQualityBaselineConfig: typing.Union['PropDataQualityJobDefinitionDataQualityBaselineConfig', dict] = attr.ib(
         default=None,
-        converter=DataQualityJobDefinitionDataQualityBaselineConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DataQualityJobDefinitionDataQualityBaselineConfig)),
+        converter=PropDataQualityJobDefinitionDataQualityBaselineConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataQualityJobDefinitionDataQualityBaselineConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "DataQualityBaselineConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-dataqualityjobdefinition.html#cfn-sagemaker-dataqualityjobdefinition-dataqualitybaselineconfig"""
@@ -3934,17 +3934,17 @@ class DataQualityJobDefinition(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "JobDefinitionName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-dataqualityjobdefinition.html#cfn-sagemaker-dataqualityjobdefinition-jobdefinitionname"""
-    p_NetworkConfig: typing.Union['DataQualityJobDefinitionNetworkConfig', dict] = attr.ib(
+    p_NetworkConfig: typing.Union['PropDataQualityJobDefinitionNetworkConfig', dict] = attr.ib(
         default=None,
-        converter=DataQualityJobDefinitionNetworkConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DataQualityJobDefinitionNetworkConfig)),
+        converter=PropDataQualityJobDefinitionNetworkConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataQualityJobDefinitionNetworkConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "NetworkConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-dataqualityjobdefinition.html#cfn-sagemaker-dataqualityjobdefinition-networkconfig"""
-    p_StoppingCondition: typing.Union['DataQualityJobDefinitionStoppingCondition', dict] = attr.ib(
+    p_StoppingCondition: typing.Union['PropDataQualityJobDefinitionStoppingCondition', dict] = attr.ib(
         default=None,
-        converter=DataQualityJobDefinitionStoppingCondition.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DataQualityJobDefinitionStoppingCondition)),
+        converter=PropDataQualityJobDefinitionStoppingCondition.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataQualityJobDefinitionStoppingCondition)),
         metadata={AttrMeta.PROPERTY_NAME: "StoppingCondition"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-dataqualityjobdefinition.html#cfn-sagemaker-dataqualityjobdefinition-stoppingcondition"""
@@ -3990,17 +3990,17 @@ class NotebookInstanceLifecycleConfig(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "NotebookInstanceLifecycleConfigName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-notebookinstancelifecycleconfig.html#cfn-sagemaker-notebookinstancelifecycleconfig-notebookinstancelifecycleconfigname"""
-    p_OnCreate: typing.List[typing.Union['NotebookInstanceLifecycleConfigNotebookInstanceLifecycleHook', dict]] = attr.ib(
+    p_OnCreate: typing.List[typing.Union['PropNotebookInstanceLifecycleConfigNotebookInstanceLifecycleHook', dict]] = attr.ib(
         default=None,
-        converter=NotebookInstanceLifecycleConfigNotebookInstanceLifecycleHook.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(NotebookInstanceLifecycleConfigNotebookInstanceLifecycleHook), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropNotebookInstanceLifecycleConfigNotebookInstanceLifecycleHook.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropNotebookInstanceLifecycleConfigNotebookInstanceLifecycleHook), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "OnCreate"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-notebookinstancelifecycleconfig.html#cfn-sagemaker-notebookinstancelifecycleconfig-oncreate"""
-    p_OnStart: typing.List[typing.Union['NotebookInstanceLifecycleConfigNotebookInstanceLifecycleHook', dict]] = attr.ib(
+    p_OnStart: typing.List[typing.Union['PropNotebookInstanceLifecycleConfigNotebookInstanceLifecycleHook', dict]] = attr.ib(
         default=None,
-        converter=NotebookInstanceLifecycleConfigNotebookInstanceLifecycleHook.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(NotebookInstanceLifecycleConfigNotebookInstanceLifecycleHook), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropNotebookInstanceLifecycleConfigNotebookInstanceLifecycleHook.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropNotebookInstanceLifecycleConfigNotebookInstanceLifecycleHook), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "OnStart"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-notebookinstancelifecycleconfig.html#cfn-sagemaker-notebookinstancelifecycleconfig-onstart"""
@@ -4032,10 +4032,10 @@ class MonitoringSchedule(Resource):
     AWS_OBJECT_TYPE = "AWS::SageMaker::MonitoringSchedule"
 
     
-    rp_MonitoringScheduleConfig: typing.Union['MonitoringScheduleMonitoringScheduleConfig', dict] = attr.ib(
+    rp_MonitoringScheduleConfig: typing.Union['PropMonitoringScheduleMonitoringScheduleConfig', dict] = attr.ib(
         default=None,
-        converter=MonitoringScheduleMonitoringScheduleConfig.from_dict,
-        validator=attr.validators.instance_of(MonitoringScheduleMonitoringScheduleConfig),
+        converter=PropMonitoringScheduleMonitoringScheduleConfig.from_dict,
+        validator=attr.validators.instance_of(PropMonitoringScheduleMonitoringScheduleConfig),
         metadata={AttrMeta.PROPERTY_NAME: "MonitoringScheduleConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-monitoringschedule.html#cfn-sagemaker-monitoringschedule-monitoringscheduleconfig"""
@@ -4057,10 +4057,10 @@ class MonitoringSchedule(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "FailureReason"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-monitoringschedule.html#cfn-sagemaker-monitoringschedule-failurereason"""
-    p_LastMonitoringExecutionSummary: typing.Union['MonitoringScheduleMonitoringExecutionSummary', dict] = attr.ib(
+    p_LastMonitoringExecutionSummary: typing.Union['PropMonitoringScheduleMonitoringExecutionSummary', dict] = attr.ib(
         default=None,
-        converter=MonitoringScheduleMonitoringExecutionSummary.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(MonitoringScheduleMonitoringExecutionSummary)),
+        converter=PropMonitoringScheduleMonitoringExecutionSummary.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropMonitoringScheduleMonitoringExecutionSummary)),
         metadata={AttrMeta.PROPERTY_NAME: "LastMonitoringExecutionSummary"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-monitoringschedule.html#cfn-sagemaker-monitoringschedule-lastmonitoringexecutionsummary"""
@@ -4138,10 +4138,10 @@ class UserProfile(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "SingleSignOnUserValue"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-userprofile.html#cfn-sagemaker-userprofile-singlesignonuservalue"""
-    p_UserSettings: typing.Union['UserProfileUserSettings', dict] = attr.ib(
+    p_UserSettings: typing.Union['PropUserProfileUserSettings', dict] = attr.ib(
         default=None,
-        converter=UserProfileUserSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(UserProfileUserSettings)),
+        converter=PropUserProfileUserSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropUserProfileUserSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "UserSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-userprofile.html#cfn-sagemaker-userprofile-usersettings"""
@@ -4183,31 +4183,31 @@ class ModelExplainabilityJobDefinition(Resource):
     AWS_OBJECT_TYPE = "AWS::SageMaker::ModelExplainabilityJobDefinition"
 
     
-    rp_JobResources: typing.Union['ModelExplainabilityJobDefinitionMonitoringResources', dict] = attr.ib(
+    rp_JobResources: typing.Union['PropModelExplainabilityJobDefinitionMonitoringResources', dict] = attr.ib(
         default=None,
-        converter=ModelExplainabilityJobDefinitionMonitoringResources.from_dict,
-        validator=attr.validators.instance_of(ModelExplainabilityJobDefinitionMonitoringResources),
+        converter=PropModelExplainabilityJobDefinitionMonitoringResources.from_dict,
+        validator=attr.validators.instance_of(PropModelExplainabilityJobDefinitionMonitoringResources),
         metadata={AttrMeta.PROPERTY_NAME: "JobResources"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelexplainabilityjobdefinition.html#cfn-sagemaker-modelexplainabilityjobdefinition-jobresources"""
-    rp_ModelExplainabilityAppSpecification: typing.Union['ModelExplainabilityJobDefinitionModelExplainabilityAppSpecification', dict] = attr.ib(
+    rp_ModelExplainabilityAppSpecification: typing.Union['PropModelExplainabilityJobDefinitionModelExplainabilityAppSpecification', dict] = attr.ib(
         default=None,
-        converter=ModelExplainabilityJobDefinitionModelExplainabilityAppSpecification.from_dict,
-        validator=attr.validators.instance_of(ModelExplainabilityJobDefinitionModelExplainabilityAppSpecification),
+        converter=PropModelExplainabilityJobDefinitionModelExplainabilityAppSpecification.from_dict,
+        validator=attr.validators.instance_of(PropModelExplainabilityJobDefinitionModelExplainabilityAppSpecification),
         metadata={AttrMeta.PROPERTY_NAME: "ModelExplainabilityAppSpecification"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelexplainabilityjobdefinition.html#cfn-sagemaker-modelexplainabilityjobdefinition-modelexplainabilityappspecification"""
-    rp_ModelExplainabilityJobInput: typing.Union['ModelExplainabilityJobDefinitionModelExplainabilityJobInput', dict] = attr.ib(
+    rp_ModelExplainabilityJobInput: typing.Union['PropModelExplainabilityJobDefinitionModelExplainabilityJobInput', dict] = attr.ib(
         default=None,
-        converter=ModelExplainabilityJobDefinitionModelExplainabilityJobInput.from_dict,
-        validator=attr.validators.instance_of(ModelExplainabilityJobDefinitionModelExplainabilityJobInput),
+        converter=PropModelExplainabilityJobDefinitionModelExplainabilityJobInput.from_dict,
+        validator=attr.validators.instance_of(PropModelExplainabilityJobDefinitionModelExplainabilityJobInput),
         metadata={AttrMeta.PROPERTY_NAME: "ModelExplainabilityJobInput"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelexplainabilityjobdefinition.html#cfn-sagemaker-modelexplainabilityjobdefinition-modelexplainabilityjobinput"""
-    rp_ModelExplainabilityJobOutputConfig: typing.Union['ModelExplainabilityJobDefinitionMonitoringOutputConfig', dict] = attr.ib(
+    rp_ModelExplainabilityJobOutputConfig: typing.Union['PropModelExplainabilityJobDefinitionMonitoringOutputConfig', dict] = attr.ib(
         default=None,
-        converter=ModelExplainabilityJobDefinitionMonitoringOutputConfig.from_dict,
-        validator=attr.validators.instance_of(ModelExplainabilityJobDefinitionMonitoringOutputConfig),
+        converter=PropModelExplainabilityJobDefinitionMonitoringOutputConfig.from_dict,
+        validator=attr.validators.instance_of(PropModelExplainabilityJobDefinitionMonitoringOutputConfig),
         metadata={AttrMeta.PROPERTY_NAME: "ModelExplainabilityJobOutputConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelexplainabilityjobdefinition.html#cfn-sagemaker-modelexplainabilityjobdefinition-modelexplainabilityjoboutputconfig"""
@@ -4223,24 +4223,24 @@ class ModelExplainabilityJobDefinition(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "JobDefinitionName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelexplainabilityjobdefinition.html#cfn-sagemaker-modelexplainabilityjobdefinition-jobdefinitionname"""
-    p_ModelExplainabilityBaselineConfig: typing.Union['ModelExplainabilityJobDefinitionModelExplainabilityBaselineConfig', dict] = attr.ib(
+    p_ModelExplainabilityBaselineConfig: typing.Union['PropModelExplainabilityJobDefinitionModelExplainabilityBaselineConfig', dict] = attr.ib(
         default=None,
-        converter=ModelExplainabilityJobDefinitionModelExplainabilityBaselineConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ModelExplainabilityJobDefinitionModelExplainabilityBaselineConfig)),
+        converter=PropModelExplainabilityJobDefinitionModelExplainabilityBaselineConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropModelExplainabilityJobDefinitionModelExplainabilityBaselineConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "ModelExplainabilityBaselineConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelexplainabilityjobdefinition.html#cfn-sagemaker-modelexplainabilityjobdefinition-modelexplainabilitybaselineconfig"""
-    p_NetworkConfig: typing.Union['ModelExplainabilityJobDefinitionNetworkConfig', dict] = attr.ib(
+    p_NetworkConfig: typing.Union['PropModelExplainabilityJobDefinitionNetworkConfig', dict] = attr.ib(
         default=None,
-        converter=ModelExplainabilityJobDefinitionNetworkConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ModelExplainabilityJobDefinitionNetworkConfig)),
+        converter=PropModelExplainabilityJobDefinitionNetworkConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropModelExplainabilityJobDefinitionNetworkConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "NetworkConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelexplainabilityjobdefinition.html#cfn-sagemaker-modelexplainabilityjobdefinition-networkconfig"""
-    p_StoppingCondition: typing.Union['ModelExplainabilityJobDefinitionStoppingCondition', dict] = attr.ib(
+    p_StoppingCondition: typing.Union['PropModelExplainabilityJobDefinitionStoppingCondition', dict] = attr.ib(
         default=None,
-        converter=ModelExplainabilityJobDefinitionStoppingCondition.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ModelExplainabilityJobDefinitionStoppingCondition)),
+        converter=PropModelExplainabilityJobDefinitionStoppingCondition.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropModelExplainabilityJobDefinitionStoppingCondition)),
         metadata={AttrMeta.PROPERTY_NAME: "StoppingCondition"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelexplainabilityjobdefinition.html#cfn-sagemaker-modelexplainabilityjobdefinition-stoppingcondition"""
@@ -4342,17 +4342,17 @@ class EndpointConfig(Resource):
     AWS_OBJECT_TYPE = "AWS::SageMaker::EndpointConfig"
 
     
-    rp_ProductionVariants: typing.List[typing.Union['EndpointConfigProductionVariant', dict]] = attr.ib(
+    rp_ProductionVariants: typing.List[typing.Union['PropEndpointConfigProductionVariant', dict]] = attr.ib(
         default=None,
-        converter=EndpointConfigProductionVariant.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(EndpointConfigProductionVariant), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropEndpointConfigProductionVariant.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropEndpointConfigProductionVariant), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "ProductionVariants"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpointconfig.html#cfn-sagemaker-endpointconfig-productionvariants"""
-    p_DataCaptureConfig: typing.Union['EndpointConfigDataCaptureConfig', dict] = attr.ib(
+    p_DataCaptureConfig: typing.Union['PropEndpointConfigDataCaptureConfig', dict] = attr.ib(
         default=None,
-        converter=EndpointConfigDataCaptureConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(EndpointConfigDataCaptureConfig)),
+        converter=PropEndpointConfigDataCaptureConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropEndpointConfigDataCaptureConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "DataCaptureConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpointconfig.html#cfn-sagemaker-endpointconfig-datacaptureconfig"""
@@ -4408,10 +4408,10 @@ class Endpoint(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "EndpointConfigName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpoint.html#cfn-sagemaker-endpoint-endpointconfigname"""
-    p_DeploymentConfig: typing.Union['EndpointDeploymentConfig', dict] = attr.ib(
+    p_DeploymentConfig: typing.Union['PropEndpointDeploymentConfig', dict] = attr.ib(
         default=None,
-        converter=EndpointDeploymentConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(EndpointDeploymentConfig)),
+        converter=PropEndpointDeploymentConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropEndpointDeploymentConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "DeploymentConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpoint.html#cfn-sagemaker-endpoint-deploymentconfig"""
@@ -4421,10 +4421,10 @@ class Endpoint(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "EndpointName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpoint.html#cfn-sagemaker-endpoint-endpointname"""
-    p_ExcludeRetainedVariantProperties: typing.List[typing.Union['EndpointVariantProperty', dict]] = attr.ib(
+    p_ExcludeRetainedVariantProperties: typing.List[typing.Union['PropEndpointVariantProperty', dict]] = attr.ib(
         default=None,
-        converter=EndpointVariantProperty.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(EndpointVariantProperty), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropEndpointVariantProperty.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropEndpointVariantProperty), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "ExcludeRetainedVariantProperties"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpoint.html#cfn-sagemaker-endpoint-excluderetainedvariantproperties"""
@@ -4472,31 +4472,31 @@ class ModelBiasJobDefinition(Resource):
     AWS_OBJECT_TYPE = "AWS::SageMaker::ModelBiasJobDefinition"
 
     
-    rp_JobResources: typing.Union['ModelBiasJobDefinitionMonitoringResources', dict] = attr.ib(
+    rp_JobResources: typing.Union['PropModelBiasJobDefinitionMonitoringResources', dict] = attr.ib(
         default=None,
-        converter=ModelBiasJobDefinitionMonitoringResources.from_dict,
-        validator=attr.validators.instance_of(ModelBiasJobDefinitionMonitoringResources),
+        converter=PropModelBiasJobDefinitionMonitoringResources.from_dict,
+        validator=attr.validators.instance_of(PropModelBiasJobDefinitionMonitoringResources),
         metadata={AttrMeta.PROPERTY_NAME: "JobResources"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelbiasjobdefinition.html#cfn-sagemaker-modelbiasjobdefinition-jobresources"""
-    rp_ModelBiasAppSpecification: typing.Union['ModelBiasJobDefinitionModelBiasAppSpecification', dict] = attr.ib(
+    rp_ModelBiasAppSpecification: typing.Union['PropModelBiasJobDefinitionModelBiasAppSpecification', dict] = attr.ib(
         default=None,
-        converter=ModelBiasJobDefinitionModelBiasAppSpecification.from_dict,
-        validator=attr.validators.instance_of(ModelBiasJobDefinitionModelBiasAppSpecification),
+        converter=PropModelBiasJobDefinitionModelBiasAppSpecification.from_dict,
+        validator=attr.validators.instance_of(PropModelBiasJobDefinitionModelBiasAppSpecification),
         metadata={AttrMeta.PROPERTY_NAME: "ModelBiasAppSpecification"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelbiasjobdefinition.html#cfn-sagemaker-modelbiasjobdefinition-modelbiasappspecification"""
-    rp_ModelBiasJobInput: typing.Union['ModelBiasJobDefinitionModelBiasJobInput', dict] = attr.ib(
+    rp_ModelBiasJobInput: typing.Union['PropModelBiasJobDefinitionModelBiasJobInput', dict] = attr.ib(
         default=None,
-        converter=ModelBiasJobDefinitionModelBiasJobInput.from_dict,
-        validator=attr.validators.instance_of(ModelBiasJobDefinitionModelBiasJobInput),
+        converter=PropModelBiasJobDefinitionModelBiasJobInput.from_dict,
+        validator=attr.validators.instance_of(PropModelBiasJobDefinitionModelBiasJobInput),
         metadata={AttrMeta.PROPERTY_NAME: "ModelBiasJobInput"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelbiasjobdefinition.html#cfn-sagemaker-modelbiasjobdefinition-modelbiasjobinput"""
-    rp_ModelBiasJobOutputConfig: typing.Union['ModelBiasJobDefinitionMonitoringOutputConfig', dict] = attr.ib(
+    rp_ModelBiasJobOutputConfig: typing.Union['PropModelBiasJobDefinitionMonitoringOutputConfig', dict] = attr.ib(
         default=None,
-        converter=ModelBiasJobDefinitionMonitoringOutputConfig.from_dict,
-        validator=attr.validators.instance_of(ModelBiasJobDefinitionMonitoringOutputConfig),
+        converter=PropModelBiasJobDefinitionMonitoringOutputConfig.from_dict,
+        validator=attr.validators.instance_of(PropModelBiasJobDefinitionMonitoringOutputConfig),
         metadata={AttrMeta.PROPERTY_NAME: "ModelBiasJobOutputConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelbiasjobdefinition.html#cfn-sagemaker-modelbiasjobdefinition-modelbiasjoboutputconfig"""
@@ -4512,24 +4512,24 @@ class ModelBiasJobDefinition(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "JobDefinitionName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelbiasjobdefinition.html#cfn-sagemaker-modelbiasjobdefinition-jobdefinitionname"""
-    p_ModelBiasBaselineConfig: typing.Union['ModelBiasJobDefinitionModelBiasBaselineConfig', dict] = attr.ib(
+    p_ModelBiasBaselineConfig: typing.Union['PropModelBiasJobDefinitionModelBiasBaselineConfig', dict] = attr.ib(
         default=None,
-        converter=ModelBiasJobDefinitionModelBiasBaselineConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ModelBiasJobDefinitionModelBiasBaselineConfig)),
+        converter=PropModelBiasJobDefinitionModelBiasBaselineConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropModelBiasJobDefinitionModelBiasBaselineConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "ModelBiasBaselineConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelbiasjobdefinition.html#cfn-sagemaker-modelbiasjobdefinition-modelbiasbaselineconfig"""
-    p_NetworkConfig: typing.Union['ModelBiasJobDefinitionNetworkConfig', dict] = attr.ib(
+    p_NetworkConfig: typing.Union['PropModelBiasJobDefinitionNetworkConfig', dict] = attr.ib(
         default=None,
-        converter=ModelBiasJobDefinitionNetworkConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ModelBiasJobDefinitionNetworkConfig)),
+        converter=PropModelBiasJobDefinitionNetworkConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropModelBiasJobDefinitionNetworkConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "NetworkConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelbiasjobdefinition.html#cfn-sagemaker-modelbiasjobdefinition-networkconfig"""
-    p_StoppingCondition: typing.Union['ModelBiasJobDefinitionStoppingCondition', dict] = attr.ib(
+    p_StoppingCondition: typing.Union['PropModelBiasJobDefinitionStoppingCondition', dict] = attr.ib(
         default=None,
-        converter=ModelBiasJobDefinitionStoppingCondition.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ModelBiasJobDefinitionStoppingCondition)),
+        converter=PropModelBiasJobDefinitionStoppingCondition.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropModelBiasJobDefinitionStoppingCondition)),
         metadata={AttrMeta.PROPERTY_NAME: "StoppingCondition"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelbiasjobdefinition.html#cfn-sagemaker-modelbiasjobdefinition-stoppingcondition"""
@@ -4576,31 +4576,31 @@ class ModelQualityJobDefinition(Resource):
     AWS_OBJECT_TYPE = "AWS::SageMaker::ModelQualityJobDefinition"
 
     
-    rp_JobResources: typing.Union['ModelQualityJobDefinitionMonitoringResources', dict] = attr.ib(
+    rp_JobResources: typing.Union['PropModelQualityJobDefinitionMonitoringResources', dict] = attr.ib(
         default=None,
-        converter=ModelQualityJobDefinitionMonitoringResources.from_dict,
-        validator=attr.validators.instance_of(ModelQualityJobDefinitionMonitoringResources),
+        converter=PropModelQualityJobDefinitionMonitoringResources.from_dict,
+        validator=attr.validators.instance_of(PropModelQualityJobDefinitionMonitoringResources),
         metadata={AttrMeta.PROPERTY_NAME: "JobResources"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelqualityjobdefinition.html#cfn-sagemaker-modelqualityjobdefinition-jobresources"""
-    rp_ModelQualityAppSpecification: typing.Union['ModelQualityJobDefinitionModelQualityAppSpecification', dict] = attr.ib(
+    rp_ModelQualityAppSpecification: typing.Union['PropModelQualityJobDefinitionModelQualityAppSpecification', dict] = attr.ib(
         default=None,
-        converter=ModelQualityJobDefinitionModelQualityAppSpecification.from_dict,
-        validator=attr.validators.instance_of(ModelQualityJobDefinitionModelQualityAppSpecification),
+        converter=PropModelQualityJobDefinitionModelQualityAppSpecification.from_dict,
+        validator=attr.validators.instance_of(PropModelQualityJobDefinitionModelQualityAppSpecification),
         metadata={AttrMeta.PROPERTY_NAME: "ModelQualityAppSpecification"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelqualityjobdefinition.html#cfn-sagemaker-modelqualityjobdefinition-modelqualityappspecification"""
-    rp_ModelQualityJobInput: typing.Union['ModelQualityJobDefinitionModelQualityJobInput', dict] = attr.ib(
+    rp_ModelQualityJobInput: typing.Union['PropModelQualityJobDefinitionModelQualityJobInput', dict] = attr.ib(
         default=None,
-        converter=ModelQualityJobDefinitionModelQualityJobInput.from_dict,
-        validator=attr.validators.instance_of(ModelQualityJobDefinitionModelQualityJobInput),
+        converter=PropModelQualityJobDefinitionModelQualityJobInput.from_dict,
+        validator=attr.validators.instance_of(PropModelQualityJobDefinitionModelQualityJobInput),
         metadata={AttrMeta.PROPERTY_NAME: "ModelQualityJobInput"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelqualityjobdefinition.html#cfn-sagemaker-modelqualityjobdefinition-modelqualityjobinput"""
-    rp_ModelQualityJobOutputConfig: typing.Union['ModelQualityJobDefinitionMonitoringOutputConfig', dict] = attr.ib(
+    rp_ModelQualityJobOutputConfig: typing.Union['PropModelQualityJobDefinitionMonitoringOutputConfig', dict] = attr.ib(
         default=None,
-        converter=ModelQualityJobDefinitionMonitoringOutputConfig.from_dict,
-        validator=attr.validators.instance_of(ModelQualityJobDefinitionMonitoringOutputConfig),
+        converter=PropModelQualityJobDefinitionMonitoringOutputConfig.from_dict,
+        validator=attr.validators.instance_of(PropModelQualityJobDefinitionMonitoringOutputConfig),
         metadata={AttrMeta.PROPERTY_NAME: "ModelQualityJobOutputConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelqualityjobdefinition.html#cfn-sagemaker-modelqualityjobdefinition-modelqualityjoboutputconfig"""
@@ -4616,24 +4616,24 @@ class ModelQualityJobDefinition(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "JobDefinitionName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelqualityjobdefinition.html#cfn-sagemaker-modelqualityjobdefinition-jobdefinitionname"""
-    p_ModelQualityBaselineConfig: typing.Union['ModelQualityJobDefinitionModelQualityBaselineConfig', dict] = attr.ib(
+    p_ModelQualityBaselineConfig: typing.Union['PropModelQualityJobDefinitionModelQualityBaselineConfig', dict] = attr.ib(
         default=None,
-        converter=ModelQualityJobDefinitionModelQualityBaselineConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ModelQualityJobDefinitionModelQualityBaselineConfig)),
+        converter=PropModelQualityJobDefinitionModelQualityBaselineConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropModelQualityJobDefinitionModelQualityBaselineConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "ModelQualityBaselineConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelqualityjobdefinition.html#cfn-sagemaker-modelqualityjobdefinition-modelqualitybaselineconfig"""
-    p_NetworkConfig: typing.Union['ModelQualityJobDefinitionNetworkConfig', dict] = attr.ib(
+    p_NetworkConfig: typing.Union['PropModelQualityJobDefinitionNetworkConfig', dict] = attr.ib(
         default=None,
-        converter=ModelQualityJobDefinitionNetworkConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ModelQualityJobDefinitionNetworkConfig)),
+        converter=PropModelQualityJobDefinitionNetworkConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropModelQualityJobDefinitionNetworkConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "NetworkConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelqualityjobdefinition.html#cfn-sagemaker-modelqualityjobdefinition-networkconfig"""
-    p_StoppingCondition: typing.Union['ModelQualityJobDefinitionStoppingCondition', dict] = attr.ib(
+    p_StoppingCondition: typing.Union['PropModelQualityJobDefinitionStoppingCondition', dict] = attr.ib(
         default=None,
-        converter=ModelQualityJobDefinitionStoppingCondition.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ModelQualityJobDefinitionStoppingCondition)),
+        converter=PropModelQualityJobDefinitionStoppingCondition.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropModelQualityJobDefinitionStoppingCondition)),
         metadata={AttrMeta.PROPERTY_NAME: "StoppingCondition"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelqualityjobdefinition.html#cfn-sagemaker-modelqualityjobdefinition-stoppingcondition"""
@@ -4793,10 +4793,10 @@ class CodeRepository(Resource):
     AWS_OBJECT_TYPE = "AWS::SageMaker::CodeRepository"
 
     
-    rp_GitConfig: typing.Union['CodeRepositoryGitConfig', dict] = attr.ib(
+    rp_GitConfig: typing.Union['PropCodeRepositoryGitConfig', dict] = attr.ib(
         default=None,
-        converter=CodeRepositoryGitConfig.from_dict,
-        validator=attr.validators.instance_of(CodeRepositoryGitConfig),
+        converter=PropCodeRepositoryGitConfig.from_dict,
+        validator=attr.validators.instance_of(PropCodeRepositoryGitConfig),
         metadata={AttrMeta.PROPERTY_NAME: "GitConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-coderepository.html#cfn-sagemaker-coderepository-gitconfig"""
@@ -4843,10 +4843,10 @@ class AppImageConfig(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "AppImageConfigName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-appimageconfig.html#cfn-sagemaker-appimageconfig-appimageconfigname"""
-    p_KernelGatewayImageConfig: typing.Union['AppImageConfigKernelGatewayImageConfig', dict] = attr.ib(
+    p_KernelGatewayImageConfig: typing.Union['PropAppImageConfigKernelGatewayImageConfig', dict] = attr.ib(
         default=None,
-        converter=AppImageConfigKernelGatewayImageConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(AppImageConfigKernelGatewayImageConfig)),
+        converter=PropAppImageConfigKernelGatewayImageConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropAppImageConfigKernelGatewayImageConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "KernelGatewayImageConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-appimageconfig.html#cfn-sagemaker-appimageconfig-kernelgatewayimageconfig"""
@@ -4951,10 +4951,10 @@ class Model(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "ExecutionRoleArn"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-model.html#cfn-sagemaker-model-executionrolearn"""
-    p_Containers: typing.List[typing.Union['ModelContainerDefinition', dict]] = attr.ib(
+    p_Containers: typing.List[typing.Union['PropModelContainerDefinition', dict]] = attr.ib(
         default=None,
-        converter=ModelContainerDefinition.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ModelContainerDefinition), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropModelContainerDefinition.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropModelContainerDefinition), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Containers"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-model.html#cfn-sagemaker-model-containers"""
@@ -4964,10 +4964,10 @@ class Model(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "EnableNetworkIsolation"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-model.html#cfn-sagemaker-model-enablenetworkisolation"""
-    p_InferenceExecutionConfig: typing.Union['ModelInferenceExecutionConfig', dict] = attr.ib(
+    p_InferenceExecutionConfig: typing.Union['PropModelInferenceExecutionConfig', dict] = attr.ib(
         default=None,
-        converter=ModelInferenceExecutionConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ModelInferenceExecutionConfig)),
+        converter=PropModelInferenceExecutionConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropModelInferenceExecutionConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "InferenceExecutionConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-model.html#cfn-sagemaker-model-inferenceexecutionconfig"""
@@ -4977,17 +4977,17 @@ class Model(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "ModelName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-model.html#cfn-sagemaker-model-modelname"""
-    p_PrimaryContainer: typing.Union['ModelContainerDefinition', dict] = attr.ib(
+    p_PrimaryContainer: typing.Union['PropModelContainerDefinition', dict] = attr.ib(
         default=None,
-        converter=ModelContainerDefinition.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ModelContainerDefinition)),
+        converter=PropModelContainerDefinition.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropModelContainerDefinition)),
         metadata={AttrMeta.PROPERTY_NAME: "PrimaryContainer"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-model.html#cfn-sagemaker-model-primarycontainer"""
-    p_VpcConfig: typing.Union['ModelVpcConfig', dict] = attr.ib(
+    p_VpcConfig: typing.Union['PropModelVpcConfig', dict] = attr.ib(
         default=None,
-        converter=ModelVpcConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ModelVpcConfig)),
+        converter=PropModelVpcConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropModelVpcConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "VpcConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-model.html#cfn-sagemaker-model-vpcconfig"""
@@ -5030,10 +5030,10 @@ class DeviceFleet(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "DeviceFleetName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-devicefleet.html#cfn-sagemaker-devicefleet-devicefleetname"""
-    rp_OutputConfig: typing.Union['DeviceFleetEdgeOutputConfig', dict] = attr.ib(
+    rp_OutputConfig: typing.Union['PropDeviceFleetEdgeOutputConfig', dict] = attr.ib(
         default=None,
-        converter=DeviceFleetEdgeOutputConfig.from_dict,
-        validator=attr.validators.instance_of(DeviceFleetEdgeOutputConfig),
+        converter=PropDeviceFleetEdgeOutputConfig.from_dict,
+        validator=attr.validators.instance_of(PropDeviceFleetEdgeOutputConfig),
         metadata={AttrMeta.PROPERTY_NAME: "OutputConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-devicefleet.html#cfn-sagemaker-devicefleet-outputconfig"""
@@ -5102,10 +5102,10 @@ class App(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "UserProfileName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-app.html#cfn-sagemaker-app-userprofilename"""
-    p_ResourceSpec: typing.Union['AppResourceSpec', dict] = attr.ib(
+    p_ResourceSpec: typing.Union['PropAppResourceSpec', dict] = attr.ib(
         default=None,
-        converter=AppResourceSpec.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(AppResourceSpec)),
+        converter=PropAppResourceSpec.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropAppResourceSpec)),
         metadata={AttrMeta.PROPERTY_NAME: "ResourceSpec"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-app.html#cfn-sagemaker-app-resourcespec"""
@@ -5151,10 +5151,10 @@ class Domain(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "AuthMode"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-domain.html#cfn-sagemaker-domain-authmode"""
-    rp_DefaultUserSettings: typing.Union['DomainUserSettings', dict] = attr.ib(
+    rp_DefaultUserSettings: typing.Union['PropDomainUserSettings', dict] = attr.ib(
         default=None,
-        converter=DomainUserSettings.from_dict,
-        validator=attr.validators.instance_of(DomainUserSettings),
+        converter=PropDomainUserSettings.from_dict,
+        validator=attr.validators.instance_of(PropDomainUserSettings),
         metadata={AttrMeta.PROPERTY_NAME: "DefaultUserSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-domain.html#cfn-sagemaker-domain-defaultusersettings"""
@@ -5367,10 +5367,10 @@ class Device(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "DeviceFleetName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-device.html#cfn-sagemaker-device-devicefleetname"""
-    p_Device: typing.Union['DeviceDevice', dict] = attr.ib(
+    p_Device: typing.Union['PropDeviceDevice', dict] = attr.ib(
         default=None,
-        converter=DeviceDevice.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DeviceDevice)),
+        converter=PropDeviceDevice.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDeviceDevice)),
         metadata={AttrMeta.PROPERTY_NAME: "Device"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-device.html#cfn-sagemaker-device-device"""

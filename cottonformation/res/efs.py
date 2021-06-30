@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class AccessPointAccessPointTag(Property):
+class PropAccessPointAccessPointTag(Property):
     """
     AWS Object Type = "AWS::EFS::AccessPoint.AccessPointTag"
 
@@ -42,7 +42,7 @@ class AccessPointAccessPointTag(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-efs-accesspoint-accesspointtag.html#cfn-efs-accesspoint-accesspointtag-value"""
 
 @attr.s
-class FileSystemElasticFileSystemTag(Property):
+class PropFileSystemElasticFileSystemTag(Property):
     """
     AWS Object Type = "AWS::EFS::FileSystem.ElasticFileSystemTag"
 
@@ -69,7 +69,7 @@ class FileSystemElasticFileSystemTag(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-efs-filesystem-elasticfilesystemtag.html#cfn-efs-filesystem-elasticfilesystemtag-value"""
 
 @attr.s
-class FileSystemLifecyclePolicy(Property):
+class PropFileSystemLifecyclePolicy(Property):
     """
     AWS Object Type = "AWS::EFS::FileSystem.LifecyclePolicy"
 
@@ -89,7 +89,7 @@ class FileSystemLifecyclePolicy(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-efs-filesystem-lifecyclepolicy.html#cfn-efs-filesystem-lifecyclepolicy-transitiontoia"""
 
 @attr.s
-class FileSystemBackupPolicy(Property):
+class PropFileSystemBackupPolicy(Property):
     """
     AWS Object Type = "AWS::EFS::FileSystem.BackupPolicy"
 
@@ -109,7 +109,7 @@ class FileSystemBackupPolicy(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-efs-filesystem-backuppolicy.html#cfn-efs-filesystem-backuppolicy-status"""
 
 @attr.s
-class AccessPointCreationInfo(Property):
+class PropAccessPointCreationInfo(Property):
     """
     AWS Object Type = "AWS::EFS::AccessPoint.CreationInfo"
 
@@ -143,7 +143,7 @@ class AccessPointCreationInfo(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-efs-accesspoint-creationinfo.html#cfn-efs-accesspoint-creationinfo-permissions"""
 
 @attr.s
-class AccessPointPosixUser(Property):
+class PropAccessPointPosixUser(Property):
     """
     AWS Object Type = "AWS::EFS::AccessPoint.PosixUser"
 
@@ -177,7 +177,7 @@ class AccessPointPosixUser(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-efs-accesspoint-posixuser.html#cfn-efs-accesspoint-posixuser-secondarygids"""
 
 @attr.s
-class AccessPointRootDirectory(Property):
+class PropAccessPointRootDirectory(Property):
     """
     AWS Object Type = "AWS::EFS::AccessPoint.RootDirectory"
 
@@ -190,10 +190,10 @@ class AccessPointRootDirectory(Property):
     """
     AWS_OBJECT_TYPE = "AWS::EFS::AccessPoint.RootDirectory"
     
-    p_CreationInfo: typing.Union['AccessPointCreationInfo', dict] = attr.ib(
+    p_CreationInfo: typing.Union['PropAccessPointCreationInfo', dict] = attr.ib(
         default=None,
-        converter=AccessPointCreationInfo.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(AccessPointCreationInfo)),
+        converter=PropAccessPointCreationInfo.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropAccessPointCreationInfo)),
         metadata={AttrMeta.PROPERTY_NAME: "CreationInfo"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-efs-accesspoint-rootdirectory.html#cfn-efs-accesspoint-rootdirectory-creationinfo"""
@@ -286,10 +286,10 @@ class FileSystem(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "AvailabilityZoneName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-filesystem.html#cfn-efs-filesystem-availabilityzonename"""
-    p_BackupPolicy: typing.Union['FileSystemBackupPolicy', dict] = attr.ib(
+    p_BackupPolicy: typing.Union['PropFileSystemBackupPolicy', dict] = attr.ib(
         default=None,
-        converter=FileSystemBackupPolicy.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(FileSystemBackupPolicy)),
+        converter=PropFileSystemBackupPolicy.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropFileSystemBackupPolicy)),
         metadata={AttrMeta.PROPERTY_NAME: "BackupPolicy"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-filesystem.html#cfn-efs-filesystem-backuppolicy"""
@@ -311,10 +311,10 @@ class FileSystem(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "FileSystemPolicy"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-filesystem.html#cfn-efs-filesystem-filesystempolicy"""
-    p_FileSystemTags: typing.List[typing.Union['FileSystemElasticFileSystemTag', dict]] = attr.ib(
+    p_FileSystemTags: typing.List[typing.Union['PropFileSystemElasticFileSystemTag', dict]] = attr.ib(
         default=None,
-        converter=FileSystemElasticFileSystemTag.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(FileSystemElasticFileSystemTag), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropFileSystemElasticFileSystemTag.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropFileSystemElasticFileSystemTag), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "FileSystemTags"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-filesystem.html#cfn-efs-filesystem-filesystemtags"""
@@ -324,10 +324,10 @@ class FileSystem(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "KmsKeyId"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-filesystem.html#cfn-efs-filesystem-kmskeyid"""
-    p_LifecyclePolicies: typing.List[typing.Union['FileSystemLifecyclePolicy', dict]] = attr.ib(
+    p_LifecyclePolicies: typing.List[typing.Union['PropFileSystemLifecyclePolicy', dict]] = attr.ib(
         default=None,
-        converter=FileSystemLifecyclePolicy.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(FileSystemLifecyclePolicy), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropFileSystemLifecyclePolicy.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropFileSystemLifecyclePolicy), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "LifecyclePolicies"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-filesystem.html#cfn-efs-filesystem-lifecyclepolicies"""
@@ -386,10 +386,10 @@ class AccessPoint(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "FileSystemId"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-accesspoint.html#cfn-efs-accesspoint-filesystemid"""
-    p_AccessPointTags: typing.List[typing.Union['AccessPointAccessPointTag', dict]] = attr.ib(
+    p_AccessPointTags: typing.List[typing.Union['PropAccessPointAccessPointTag', dict]] = attr.ib(
         default=None,
-        converter=AccessPointAccessPointTag.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(AccessPointAccessPointTag), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropAccessPointAccessPointTag.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropAccessPointAccessPointTag), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "AccessPointTags"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-accesspoint.html#cfn-efs-accesspoint-accesspointtags"""
@@ -399,17 +399,17 @@ class AccessPoint(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "ClientToken"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-accesspoint.html#cfn-efs-accesspoint-clienttoken"""
-    p_PosixUser: typing.Union['AccessPointPosixUser', dict] = attr.ib(
+    p_PosixUser: typing.Union['PropAccessPointPosixUser', dict] = attr.ib(
         default=None,
-        converter=AccessPointPosixUser.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(AccessPointPosixUser)),
+        converter=PropAccessPointPosixUser.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropAccessPointPosixUser)),
         metadata={AttrMeta.PROPERTY_NAME: "PosixUser"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-accesspoint.html#cfn-efs-accesspoint-posixuser"""
-    p_RootDirectory: typing.Union['AccessPointRootDirectory', dict] = attr.ib(
+    p_RootDirectory: typing.Union['PropAccessPointRootDirectory', dict] = attr.ib(
         default=None,
-        converter=AccessPointRootDirectory.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(AccessPointRootDirectory)),
+        converter=PropAccessPointRootDirectory.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropAccessPointRootDirectory)),
         metadata={AttrMeta.PROPERTY_NAME: "RootDirectory"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-accesspoint.html#cfn-efs-accesspoint-rootdirectory"""

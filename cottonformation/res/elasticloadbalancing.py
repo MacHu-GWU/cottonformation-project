@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class LoadBalancerAccessLoggingPolicy(Property):
+class PropLoadBalancerAccessLoggingPolicy(Property):
     """
     AWS Object Type = "AWS::ElasticLoadBalancing::LoadBalancer.AccessLoggingPolicy"
 
@@ -56,7 +56,7 @@ class LoadBalancerAccessLoggingPolicy(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-accessloggingpolicy.html#cfn-elb-accessloggingpolicy-s3bucketprefix"""
 
 @attr.s
-class LoadBalancerHealthCheck(Property):
+class PropLoadBalancerHealthCheck(Property):
     """
     AWS Object Type = "AWS::ElasticLoadBalancing::LoadBalancer.HealthCheck"
 
@@ -104,7 +104,7 @@ class LoadBalancerHealthCheck(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-health-check.html#cfn-elb-healthcheck-unhealthythreshold"""
 
 @attr.s
-class LoadBalancerConnectionSettings(Property):
+class PropLoadBalancerConnectionSettings(Property):
     """
     AWS Object Type = "AWS::ElasticLoadBalancing::LoadBalancer.ConnectionSettings"
 
@@ -124,7 +124,7 @@ class LoadBalancerConnectionSettings(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-connectionsettings.html#cfn-elb-connectionsettings-idletimeout"""
 
 @attr.s
-class LoadBalancerConnectionDrainingPolicy(Property):
+class PropLoadBalancerConnectionDrainingPolicy(Property):
     """
     AWS Object Type = "AWS::ElasticLoadBalancing::LoadBalancer.ConnectionDrainingPolicy"
 
@@ -151,7 +151,7 @@ class LoadBalancerConnectionDrainingPolicy(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-connectiondrainingpolicy.html#cfn-elb-connectiondrainingpolicy-timeout"""
 
 @attr.s
-class LoadBalancerAppCookieStickinessPolicy(Property):
+class PropLoadBalancerAppCookieStickinessPolicy(Property):
     """
     AWS Object Type = "AWS::ElasticLoadBalancing::LoadBalancer.AppCookieStickinessPolicy"
 
@@ -178,7 +178,7 @@ class LoadBalancerAppCookieStickinessPolicy(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-AppCookieStickinessPolicy.html#cfn-elb-appcookiestickinesspolicy-policyname"""
 
 @attr.s
-class LoadBalancerLBCookieStickinessPolicy(Property):
+class PropLoadBalancerLBCookieStickinessPolicy(Property):
     """
     AWS Object Type = "AWS::ElasticLoadBalancing::LoadBalancer.LBCookieStickinessPolicy"
 
@@ -205,7 +205,7 @@ class LoadBalancerLBCookieStickinessPolicy(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-LBCookieStickinessPolicy.html#cfn-elb-lbcookiestickinesspolicy-policyname"""
 
 @attr.s
-class LoadBalancerListeners(Property):
+class PropLoadBalancerListeners(Property):
     """
     AWS Object Type = "AWS::ElasticLoadBalancing::LoadBalancer.Listeners"
 
@@ -260,7 +260,7 @@ class LoadBalancerListeners(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-listener.html#cfn-ec2-elb-listener-sslcertificateid"""
 
 @attr.s
-class LoadBalancerPolicies(Property):
+class PropLoadBalancerPolicies(Property):
     """
     AWS Object Type = "AWS::ElasticLoadBalancing::LoadBalancer.Policies"
 
@@ -339,24 +339,24 @@ class LoadBalancer(Resource):
     AWS_OBJECT_TYPE = "AWS::ElasticLoadBalancing::LoadBalancer"
 
     
-    rp_Listeners: typing.List[typing.Union['LoadBalancerListeners', dict]] = attr.ib(
+    rp_Listeners: typing.List[typing.Union['PropLoadBalancerListeners', dict]] = attr.ib(
         default=None,
-        converter=LoadBalancerListeners.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(LoadBalancerListeners), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropLoadBalancerListeners.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropLoadBalancerListeners), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "Listeners"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-listeners"""
-    p_AccessLoggingPolicy: typing.Union['LoadBalancerAccessLoggingPolicy', dict] = attr.ib(
+    p_AccessLoggingPolicy: typing.Union['PropLoadBalancerAccessLoggingPolicy', dict] = attr.ib(
         default=None,
-        converter=LoadBalancerAccessLoggingPolicy.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(LoadBalancerAccessLoggingPolicy)),
+        converter=PropLoadBalancerAccessLoggingPolicy.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropLoadBalancerAccessLoggingPolicy)),
         metadata={AttrMeta.PROPERTY_NAME: "AccessLoggingPolicy"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-accessloggingpolicy"""
-    p_AppCookieStickinessPolicy: typing.List[typing.Union['LoadBalancerAppCookieStickinessPolicy', dict]] = attr.ib(
+    p_AppCookieStickinessPolicy: typing.List[typing.Union['PropLoadBalancerAppCookieStickinessPolicy', dict]] = attr.ib(
         default=None,
-        converter=LoadBalancerAppCookieStickinessPolicy.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(LoadBalancerAppCookieStickinessPolicy), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropLoadBalancerAppCookieStickinessPolicy.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropLoadBalancerAppCookieStickinessPolicy), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "AppCookieStickinessPolicy"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-appcookiestickinesspolicy"""
@@ -366,17 +366,17 @@ class LoadBalancer(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "AvailabilityZones"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-availabilityzones"""
-    p_ConnectionDrainingPolicy: typing.Union['LoadBalancerConnectionDrainingPolicy', dict] = attr.ib(
+    p_ConnectionDrainingPolicy: typing.Union['PropLoadBalancerConnectionDrainingPolicy', dict] = attr.ib(
         default=None,
-        converter=LoadBalancerConnectionDrainingPolicy.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(LoadBalancerConnectionDrainingPolicy)),
+        converter=PropLoadBalancerConnectionDrainingPolicy.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropLoadBalancerConnectionDrainingPolicy)),
         metadata={AttrMeta.PROPERTY_NAME: "ConnectionDrainingPolicy"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-connectiondrainingpolicy"""
-    p_ConnectionSettings: typing.Union['LoadBalancerConnectionSettings', dict] = attr.ib(
+    p_ConnectionSettings: typing.Union['PropLoadBalancerConnectionSettings', dict] = attr.ib(
         default=None,
-        converter=LoadBalancerConnectionSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(LoadBalancerConnectionSettings)),
+        converter=PropLoadBalancerConnectionSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropLoadBalancerConnectionSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "ConnectionSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-connectionsettings"""
@@ -386,10 +386,10 @@ class LoadBalancer(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "CrossZone"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-crosszone"""
-    p_HealthCheck: typing.Union['LoadBalancerHealthCheck', dict] = attr.ib(
+    p_HealthCheck: typing.Union['PropLoadBalancerHealthCheck', dict] = attr.ib(
         default=None,
-        converter=LoadBalancerHealthCheck.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(LoadBalancerHealthCheck)),
+        converter=PropLoadBalancerHealthCheck.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropLoadBalancerHealthCheck)),
         metadata={AttrMeta.PROPERTY_NAME: "HealthCheck"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-healthcheck"""
@@ -399,10 +399,10 @@ class LoadBalancer(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Instances"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-instances"""
-    p_LBCookieStickinessPolicy: typing.List[typing.Union['LoadBalancerLBCookieStickinessPolicy', dict]] = attr.ib(
+    p_LBCookieStickinessPolicy: typing.List[typing.Union['PropLoadBalancerLBCookieStickinessPolicy', dict]] = attr.ib(
         default=None,
-        converter=LoadBalancerLBCookieStickinessPolicy.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(LoadBalancerLBCookieStickinessPolicy), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropLoadBalancerLBCookieStickinessPolicy.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropLoadBalancerLBCookieStickinessPolicy), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "LBCookieStickinessPolicy"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-lbcookiestickinesspolicy"""
@@ -412,10 +412,10 @@ class LoadBalancer(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "LoadBalancerName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-elbname"""
-    p_Policies: typing.List[typing.Union['LoadBalancerPolicies', dict]] = attr.ib(
+    p_Policies: typing.List[typing.Union['PropLoadBalancerPolicies', dict]] = attr.ib(
         default=None,
-        converter=LoadBalancerPolicies.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(LoadBalancerPolicies), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropLoadBalancerPolicies.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropLoadBalancerPolicies), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Policies"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-policies"""

@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class ClusterCapacityProviderAssociationsCapacityProviderStrategy(Property):
+class PropClusterCapacityProviderAssociationsCapacityProviderStrategy(Property):
     """
     AWS Object Type = "AWS::ECS::ClusterCapacityProviderAssociations.CapacityProviderStrategy"
 
@@ -49,7 +49,7 @@ class ClusterCapacityProviderAssociationsCapacityProviderStrategy(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-clustercapacityproviderassociations-capacityproviderstrategy.html#cfn-ecs-clustercapacityproviderassociations-capacityproviderstrategy-weight"""
 
 @attr.s
-class TaskDefinitionFirelensConfiguration(Property):
+class PropTaskDefinitionFirelensConfiguration(Property):
     """
     AWS Object Type = "AWS::ECS::TaskDefinition.FirelensConfiguration"
 
@@ -76,7 +76,7 @@ class TaskDefinitionFirelensConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-firelensconfiguration.html#cfn-ecs-taskdefinition-firelensconfiguration-type"""
 
 @attr.s
-class TaskDefinitionDevice(Property):
+class PropTaskDefinitionDevice(Property):
     """
     AWS Object Type = "AWS::ECS::TaskDefinition.Device"
 
@@ -110,7 +110,7 @@ class TaskDefinitionDevice(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-device.html#cfn-ecs-taskdefinition-device-permissions"""
 
 @attr.s
-class ServicePlacementStrategy(Property):
+class PropServicePlacementStrategy(Property):
     """
     AWS Object Type = "AWS::ECS::Service.PlacementStrategy"
 
@@ -137,7 +137,7 @@ class ServicePlacementStrategy(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-placementstrategy.html#cfn-ecs-service-placementstrategy-field"""
 
 @attr.s
-class ServiceDeploymentController(Property):
+class PropServiceDeploymentController(Property):
     """
     AWS Object Type = "AWS::ECS::Service.DeploymentController"
 
@@ -157,7 +157,7 @@ class ServiceDeploymentController(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-deploymentcontroller.html#cfn-ecs-service-deploymentcontroller-type"""
 
 @attr.s
-class TaskDefinitionSystemControl(Property):
+class PropTaskDefinitionSystemControl(Property):
     """
     AWS Object Type = "AWS::ECS::TaskDefinition.SystemControl"
 
@@ -184,7 +184,7 @@ class TaskDefinitionSystemControl(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-systemcontrol.html#cfn-ecs-taskdefinition-systemcontrol-value"""
 
 @attr.s
-class ClusterClusterSettings(Property):
+class PropClusterClusterSettings(Property):
     """
     AWS Object Type = "AWS::ECS::Cluster.ClusterSettings"
 
@@ -211,7 +211,7 @@ class ClusterClusterSettings(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-cluster-clustersettings.html#cfn-ecs-cluster-clustersettings-value"""
 
 @attr.s
-class ServicePlacementConstraint(Property):
+class PropServicePlacementConstraint(Property):
     """
     AWS Object Type = "AWS::ECS::Service.PlacementConstraint"
 
@@ -238,7 +238,7 @@ class ServicePlacementConstraint(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-placementconstraint.html#cfn-ecs-service-placementconstraint-expression"""
 
 @attr.s
-class TaskSetServiceRegistry(Property):
+class PropTaskSetServiceRegistry(Property):
     """
     AWS Object Type = "AWS::ECS::TaskSet.ServiceRegistry"
 
@@ -279,7 +279,7 @@ class TaskSetServiceRegistry(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskset-serviceregistry.html#cfn-ecs-taskset-serviceregistry-registryarn"""
 
 @attr.s
-class TaskDefinitionEphemeralStorage(Property):
+class PropTaskDefinitionEphemeralStorage(Property):
     """
     AWS Object Type = "AWS::ECS::TaskDefinition.EphemeralStorage"
 
@@ -299,7 +299,7 @@ class TaskDefinitionEphemeralStorage(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-ephemeralstorage.html#cfn-ecs-taskdefinition-ephemeralstorage-sizeingib"""
 
 @attr.s
-class TaskDefinitionResourceRequirement(Property):
+class PropTaskDefinitionResourceRequirement(Property):
     """
     AWS Object Type = "AWS::ECS::TaskDefinition.ResourceRequirement"
 
@@ -326,7 +326,7 @@ class TaskDefinitionResourceRequirement(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-resourcerequirement.html#cfn-ecs-taskdefinition-resourcerequirement-value"""
 
 @attr.s
-class TaskDefinitionDockerVolumeConfiguration(Property):
+class PropTaskDefinitionDockerVolumeConfiguration(Property):
     """
     AWS Object Type = "AWS::ECS::TaskDefinition.DockerVolumeConfiguration"
 
@@ -374,7 +374,7 @@ class TaskDefinitionDockerVolumeConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-dockervolumeconfiguration.html#cfn-ecs-taskdefinition-dockervolumeconfiguration-scope"""
 
 @attr.s
-class TaskDefinitionAuthorizationConfig(Property):
+class PropTaskDefinitionAuthorizationConfig(Property):
     """
     AWS Object Type = "AWS::ECS::TaskDefinition.AuthorizationConfig"
 
@@ -401,7 +401,7 @@ class TaskDefinitionAuthorizationConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-authorizationconfig.html#cfn-ecs-taskdefinition-authorizationconfig-iam"""
 
 @attr.s
-class TaskDefinitionMountPoint(Property):
+class PropTaskDefinitionMountPoint(Property):
     """
     AWS Object Type = "AWS::ECS::TaskDefinition.MountPoint"
 
@@ -435,7 +435,7 @@ class TaskDefinitionMountPoint(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions-mountpoints.html#cfn-ecs-taskdefinition-containerdefinition-mountpoints-sourcevolume"""
 
 @attr.s
-class TaskDefinitionKernelCapabilities(Property):
+class PropTaskDefinitionKernelCapabilities(Property):
     """
     AWS Object Type = "AWS::ECS::TaskDefinition.KernelCapabilities"
 
@@ -462,7 +462,7 @@ class TaskDefinitionKernelCapabilities(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-kernelcapabilities.html#cfn-ecs-taskdefinition-kernelcapabilities-drop"""
 
 @attr.s
-class TaskDefinitionPortMapping(Property):
+class PropTaskDefinitionPortMapping(Property):
     """
     AWS Object Type = "AWS::ECS::TaskDefinition.PortMapping"
 
@@ -496,7 +496,7 @@ class TaskDefinitionPortMapping(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions-portmappings.html#cfn-ecs-taskdefinition-containerdefinition-portmappings-sourcevolume"""
 
 @attr.s
-class TaskDefinitionUlimit(Property):
+class PropTaskDefinitionUlimit(Property):
     """
     AWS Object Type = "AWS::ECS::TaskDefinition.Ulimit"
 
@@ -530,7 +530,7 @@ class TaskDefinitionUlimit(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions-ulimit.html#cfn-ecs-taskdefinition-containerdefinition-ulimit-softlimit"""
 
 @attr.s
-class TaskDefinitionContainerDependency(Property):
+class PropTaskDefinitionContainerDependency(Property):
     """
     AWS Object Type = "AWS::ECS::TaskDefinition.ContainerDependency"
 
@@ -557,7 +557,7 @@ class TaskDefinitionContainerDependency(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdependency.html#cfn-ecs-taskdefinition-containerdependency-containername"""
 
 @attr.s
-class TaskDefinitionHostVolumeProperties(Property):
+class PropTaskDefinitionHostVolumeProperties(Property):
     """
     AWS Object Type = "AWS::ECS::TaskDefinition.HostVolumeProperties"
 
@@ -577,7 +577,7 @@ class TaskDefinitionHostVolumeProperties(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-volumes-host.html#cfn-ecs-taskdefinition-volumes-host-sourcepath"""
 
 @attr.s
-class TaskDefinitionRepositoryCredentials(Property):
+class PropTaskDefinitionRepositoryCredentials(Property):
     """
     AWS Object Type = "AWS::ECS::TaskDefinition.RepositoryCredentials"
 
@@ -597,7 +597,7 @@ class TaskDefinitionRepositoryCredentials(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-repositorycredentials.html#cfn-ecs-taskdefinition-repositorycredentials-credentialsparameter"""
 
 @attr.s
-class TaskSetLoadBalancer(Property):
+class PropTaskSetLoadBalancer(Property):
     """
     AWS Object Type = "AWS::ECS::TaskSet.LoadBalancer"
 
@@ -638,7 +638,7 @@ class TaskSetLoadBalancer(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskset-loadbalancer.html#cfn-ecs-taskset-loadbalancer-targetgrouparn"""
 
 @attr.s
-class ClusterExecuteCommandLogConfiguration(Property):
+class PropClusterExecuteCommandLogConfiguration(Property):
     """
     AWS Object Type = "AWS::ECS::Cluster.ExecuteCommandLogConfiguration"
 
@@ -686,7 +686,7 @@ class ClusterExecuteCommandLogConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-cluster-executecommandlogconfiguration.html#cfn-ecs-cluster-executecommandlogconfiguration-s3keyprefix"""
 
 @attr.s
-class ServiceLoadBalancer(Property):
+class PropServiceLoadBalancer(Property):
     """
     AWS Object Type = "AWS::ECS::Service.LoadBalancer"
 
@@ -727,7 +727,7 @@ class ServiceLoadBalancer(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-loadbalancer.html#cfn-ecs-service-loadbalancer-targetgrouparn"""
 
 @attr.s
-class TaskDefinitionInferenceAccelerator(Property):
+class PropTaskDefinitionInferenceAccelerator(Property):
     """
     AWS Object Type = "AWS::ECS::TaskDefinition.InferenceAccelerator"
 
@@ -754,7 +754,7 @@ class TaskDefinitionInferenceAccelerator(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-inferenceaccelerator.html#cfn-ecs-taskdefinition-inferenceaccelerator-devicetype"""
 
 @attr.s
-class TaskDefinitionSecret(Property):
+class PropTaskDefinitionSecret(Property):
     """
     AWS Object Type = "AWS::ECS::TaskDefinition.Secret"
 
@@ -781,7 +781,7 @@ class TaskDefinitionSecret(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-secret.html#cfn-ecs-taskdefinition-secret-valuefrom"""
 
 @attr.s
-class ClusterExecuteCommandConfiguration(Property):
+class PropClusterExecuteCommandConfiguration(Property):
     """
     AWS Object Type = "AWS::ECS::Cluster.ExecuteCommandConfiguration"
 
@@ -801,10 +801,10 @@ class ClusterExecuteCommandConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "KmsKeyId"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-cluster-executecommandconfiguration.html#cfn-ecs-cluster-executecommandconfiguration-kmskeyid"""
-    p_LogConfiguration: typing.Union['ClusterExecuteCommandLogConfiguration', dict] = attr.ib(
+    p_LogConfiguration: typing.Union['PropClusterExecuteCommandLogConfiguration', dict] = attr.ib(
         default=None,
-        converter=ClusterExecuteCommandLogConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ClusterExecuteCommandLogConfiguration)),
+        converter=PropClusterExecuteCommandLogConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropClusterExecuteCommandLogConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "LogConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-cluster-executecommandconfiguration.html#cfn-ecs-cluster-executecommandconfiguration-logconfiguration"""
@@ -816,7 +816,7 @@ class ClusterExecuteCommandConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-cluster-executecommandconfiguration.html#cfn-ecs-cluster-executecommandconfiguration-logging"""
 
 @attr.s
-class TaskSetAwsVpcConfiguration(Property):
+class PropTaskSetAwsVpcConfiguration(Property):
     """
     AWS Object Type = "AWS::ECS::TaskSet.AwsVpcConfiguration"
 
@@ -850,7 +850,7 @@ class TaskSetAwsVpcConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskset-awsvpcconfiguration.html#cfn-ecs-taskset-awsvpcconfiguration-securitygroups"""
 
 @attr.s
-class TaskDefinitionEnvironmentFile(Property):
+class PropTaskDefinitionEnvironmentFile(Property):
     """
     AWS Object Type = "AWS::ECS::TaskDefinition.EnvironmentFile"
 
@@ -877,7 +877,7 @@ class TaskDefinitionEnvironmentFile(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-environmentfile.html#cfn-ecs-taskdefinition-environmentfile-value"""
 
 @attr.s
-class TaskDefinitionVolumeFrom(Property):
+class PropTaskDefinitionVolumeFrom(Property):
     """
     AWS Object Type = "AWS::ECS::TaskDefinition.VolumeFrom"
 
@@ -904,7 +904,7 @@ class TaskDefinitionVolumeFrom(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions-volumesfrom.html#cfn-ecs-taskdefinition-containerdefinition-volumesfrom-sourcecontainer"""
 
 @attr.s
-class TaskDefinitionHostEntry(Property):
+class PropTaskDefinitionHostEntry(Property):
     """
     AWS Object Type = "AWS::ECS::TaskDefinition.HostEntry"
 
@@ -931,7 +931,7 @@ class TaskDefinitionHostEntry(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions-hostentry.html#cfn-ecs-taskdefinition-containerdefinition-hostentry-ipaddress"""
 
 @attr.s
-class TaskDefinitionTaskDefinitionPlacementConstraint(Property):
+class PropTaskDefinitionTaskDefinitionPlacementConstraint(Property):
     """
     AWS Object Type = "AWS::ECS::TaskDefinition.TaskDefinitionPlacementConstraint"
 
@@ -958,7 +958,7 @@ class TaskDefinitionTaskDefinitionPlacementConstraint(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-taskdefinitionplacementconstraint.html#cfn-ecs-taskdefinition-taskdefinitionplacementconstraint-expression"""
 
 @attr.s
-class CapacityProviderManagedScaling(Property):
+class PropCapacityProviderManagedScaling(Property):
     """
     AWS Object Type = "AWS::ECS::CapacityProvider.ManagedScaling"
 
@@ -1006,7 +1006,7 @@ class CapacityProviderManagedScaling(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-capacityprovider-managedscaling.html#cfn-ecs-capacityprovider-managedscaling-targetcapacity"""
 
 @attr.s
-class ServiceAwsVpcConfiguration(Property):
+class PropServiceAwsVpcConfiguration(Property):
     """
     AWS Object Type = "AWS::ECS::Service.AwsVpcConfiguration"
 
@@ -1040,7 +1040,7 @@ class ServiceAwsVpcConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-awsvpcconfiguration.html#cfn-ecs-service-awsvpcconfiguration-subnets"""
 
 @attr.s
-class ServiceNetworkConfiguration(Property):
+class PropServiceNetworkConfiguration(Property):
     """
     AWS Object Type = "AWS::ECS::Service.NetworkConfiguration"
 
@@ -1052,16 +1052,16 @@ class ServiceNetworkConfiguration(Property):
     """
     AWS_OBJECT_TYPE = "AWS::ECS::Service.NetworkConfiguration"
     
-    p_AwsvpcConfiguration: typing.Union['ServiceAwsVpcConfiguration', dict] = attr.ib(
+    p_AwsvpcConfiguration: typing.Union['PropServiceAwsVpcConfiguration', dict] = attr.ib(
         default=None,
-        converter=ServiceAwsVpcConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ServiceAwsVpcConfiguration)),
+        converter=PropServiceAwsVpcConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropServiceAwsVpcConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "AwsvpcConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-networkconfiguration.html#cfn-ecs-service-networkconfiguration-awsvpcconfiguration"""
 
 @attr.s
-class TaskDefinitionTmpfs(Property):
+class PropTaskDefinitionTmpfs(Property):
     """
     AWS Object Type = "AWS::ECS::TaskDefinition.Tmpfs"
 
@@ -1095,7 +1095,7 @@ class TaskDefinitionTmpfs(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-tmpfs.html#cfn-ecs-taskdefinition-tmpfs-mountoptions"""
 
 @attr.s
-class ServiceCapacityProviderStrategyItem(Property):
+class PropServiceCapacityProviderStrategyItem(Property):
     """
     AWS Object Type = "AWS::ECS::Service.CapacityProviderStrategyItem"
 
@@ -1129,7 +1129,7 @@ class ServiceCapacityProviderStrategyItem(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-capacityproviderstrategyitem.html#cfn-ecs-service-capacityproviderstrategyitem-weight"""
 
 @attr.s
-class ServiceDeploymentCircuitBreaker(Property):
+class PropServiceDeploymentCircuitBreaker(Property):
     """
     AWS Object Type = "AWS::ECS::Service.DeploymentCircuitBreaker"
 
@@ -1156,7 +1156,7 @@ class ServiceDeploymentCircuitBreaker(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-deploymentcircuitbreaker.html#cfn-ecs-service-deploymentcircuitbreaker-rollback"""
 
 @attr.s
-class TaskDefinitionKeyValuePair(Property):
+class PropTaskDefinitionKeyValuePair(Property):
     """
     AWS Object Type = "AWS::ECS::TaskDefinition.KeyValuePair"
 
@@ -1183,7 +1183,7 @@ class TaskDefinitionKeyValuePair(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions-environment.html#cfn-ecs-taskdefinition-containerdefinition-environment-value"""
 
 @attr.s
-class ClusterClusterConfiguration(Property):
+class PropClusterClusterConfiguration(Property):
     """
     AWS Object Type = "AWS::ECS::Cluster.ClusterConfiguration"
 
@@ -1195,16 +1195,16 @@ class ClusterClusterConfiguration(Property):
     """
     AWS_OBJECT_TYPE = "AWS::ECS::Cluster.ClusterConfiguration"
     
-    p_ExecuteCommandConfiguration: typing.Union['ClusterExecuteCommandConfiguration', dict] = attr.ib(
+    p_ExecuteCommandConfiguration: typing.Union['PropClusterExecuteCommandConfiguration', dict] = attr.ib(
         default=None,
-        converter=ClusterExecuteCommandConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ClusterExecuteCommandConfiguration)),
+        converter=PropClusterExecuteCommandConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropClusterExecuteCommandConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "ExecuteCommandConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-cluster-clusterconfiguration.html#cfn-ecs-cluster-clusterconfiguration-executecommandconfiguration"""
 
 @attr.s
-class ServiceServiceRegistry(Property):
+class PropServiceServiceRegistry(Property):
     """
     AWS Object Type = "AWS::ECS::Service.ServiceRegistry"
 
@@ -1245,7 +1245,7 @@ class ServiceServiceRegistry(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-serviceregistry.html#cfn-ecs-service-serviceregistry-registryarn"""
 
 @attr.s
-class TaskDefinitionHealthCheck(Property):
+class PropTaskDefinitionHealthCheck(Property):
     """
     AWS Object Type = "AWS::ECS::TaskDefinition.HealthCheck"
 
@@ -1293,7 +1293,7 @@ class TaskDefinitionHealthCheck(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-healthcheck.html#cfn-ecs-taskdefinition-healthcheck-timeout"""
 
 @attr.s
-class TaskDefinitionLinuxParameters(Property):
+class PropTaskDefinitionLinuxParameters(Property):
     """
     AWS Object Type = "AWS::ECS::TaskDefinition.LinuxParameters"
 
@@ -1311,17 +1311,17 @@ class TaskDefinitionLinuxParameters(Property):
     """
     AWS_OBJECT_TYPE = "AWS::ECS::TaskDefinition.LinuxParameters"
     
-    p_Capabilities: typing.Union['TaskDefinitionKernelCapabilities', dict] = attr.ib(
+    p_Capabilities: typing.Union['PropTaskDefinitionKernelCapabilities', dict] = attr.ib(
         default=None,
-        converter=TaskDefinitionKernelCapabilities.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(TaskDefinitionKernelCapabilities)),
+        converter=PropTaskDefinitionKernelCapabilities.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropTaskDefinitionKernelCapabilities)),
         metadata={AttrMeta.PROPERTY_NAME: "Capabilities"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-linuxparameters.html#cfn-ecs-taskdefinition-linuxparameters-capabilities"""
-    p_Devices: typing.List[typing.Union['TaskDefinitionDevice', dict]] = attr.ib(
+    p_Devices: typing.List[typing.Union['PropTaskDefinitionDevice', dict]] = attr.ib(
         default=None,
-        converter=TaskDefinitionDevice.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TaskDefinitionDevice), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropTaskDefinitionDevice.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropTaskDefinitionDevice), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Devices"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-linuxparameters.html#cfn-ecs-taskdefinition-linuxparameters-devices"""
@@ -1349,16 +1349,16 @@ class TaskDefinitionLinuxParameters(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Swappiness"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-linuxparameters.html#cfn-ecs-taskdefinition-linuxparameters-swappiness"""
-    p_Tmpfs: typing.List[typing.Union['TaskDefinitionTmpfs', dict]] = attr.ib(
+    p_Tmpfs: typing.List[typing.Union['PropTaskDefinitionTmpfs', dict]] = attr.ib(
         default=None,
-        converter=TaskDefinitionTmpfs.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TaskDefinitionTmpfs), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropTaskDefinitionTmpfs.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropTaskDefinitionTmpfs), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Tmpfs"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-linuxparameters.html#cfn-ecs-taskdefinition-linuxparameters-tmpfs"""
 
 @attr.s
-class TaskDefinitionProxyConfiguration(Property):
+class PropTaskDefinitionProxyConfiguration(Property):
     """
     AWS Object Type = "AWS::ECS::TaskDefinition.ProxyConfiguration"
 
@@ -1378,10 +1378,10 @@ class TaskDefinitionProxyConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "ContainerName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-proxyconfiguration.html#cfn-ecs-taskdefinition-proxyconfiguration-containername"""
-    p_ProxyConfigurationProperties: typing.List[typing.Union['TaskDefinitionKeyValuePair', dict]] = attr.ib(
+    p_ProxyConfigurationProperties: typing.List[typing.Union['PropTaskDefinitionKeyValuePair', dict]] = attr.ib(
         default=None,
-        converter=TaskDefinitionKeyValuePair.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TaskDefinitionKeyValuePair), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropTaskDefinitionKeyValuePair.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropTaskDefinitionKeyValuePair), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "ProxyConfigurationProperties"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-proxyconfiguration.html#cfn-ecs-taskdefinition-proxyconfiguration-proxyconfigurationproperties"""
@@ -1393,7 +1393,7 @@ class TaskDefinitionProxyConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-proxyconfiguration.html#cfn-ecs-taskdefinition-proxyconfiguration-type"""
 
 @attr.s
-class TaskSetScale(Property):
+class PropTaskSetScale(Property):
     """
     AWS Object Type = "AWS::ECS::TaskSet.Scale"
 
@@ -1420,7 +1420,7 @@ class TaskSetScale(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskset-scale.html#cfn-ecs-taskset-scale-value"""
 
 @attr.s
-class ClusterCapacityProviderStrategyItem(Property):
+class PropClusterCapacityProviderStrategyItem(Property):
     """
     AWS Object Type = "AWS::ECS::Cluster.CapacityProviderStrategyItem"
 
@@ -1454,7 +1454,7 @@ class ClusterCapacityProviderStrategyItem(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-cluster-capacityproviderstrategyitem.html#cfn-ecs-cluster-capacityproviderstrategyitem-weight"""
 
 @attr.s
-class TaskDefinitionLogConfiguration(Property):
+class PropTaskDefinitionLogConfiguration(Property):
     """
     AWS Object Type = "AWS::ECS::TaskDefinition.LogConfiguration"
 
@@ -1480,16 +1480,16 @@ class TaskDefinitionLogConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Options"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions-logconfiguration.html#cfn-ecs-taskdefinition-containerdefinition-logconfiguration-options"""
-    p_SecretOptions: typing.List[typing.Union['TaskDefinitionSecret', dict]] = attr.ib(
+    p_SecretOptions: typing.List[typing.Union['PropTaskDefinitionSecret', dict]] = attr.ib(
         default=None,
-        converter=TaskDefinitionSecret.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TaskDefinitionSecret), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropTaskDefinitionSecret.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropTaskDefinitionSecret), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "SecretOptions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions-logconfiguration.html#cfn-ecs-taskdefinition-logconfiguration-secretoptions"""
 
 @attr.s
-class TaskDefinitionEFSVolumeConfiguration(Property):
+class PropTaskDefinitionEFSVolumeConfiguration(Property):
     """
     AWS Object Type = "AWS::ECS::TaskDefinition.EFSVolumeConfiguration"
 
@@ -1511,10 +1511,10 @@ class TaskDefinitionEFSVolumeConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "FilesystemId"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-efsvolumeconfiguration.html#cfn-ecs-taskdefinition-efsvolumeconfiguration-filesystemid"""
-    p_AuthorizationConfig: typing.Union['TaskDefinitionAuthorizationConfig', dict] = attr.ib(
+    p_AuthorizationConfig: typing.Union['PropTaskDefinitionAuthorizationConfig', dict] = attr.ib(
         default=None,
-        converter=TaskDefinitionAuthorizationConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(TaskDefinitionAuthorizationConfig)),
+        converter=PropTaskDefinitionAuthorizationConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropTaskDefinitionAuthorizationConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "AuthorizationConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-efsvolumeconfiguration.html#cfn-ecs-taskdefinition-efsvolumeconfiguration-authorizationconfig"""
@@ -1538,7 +1538,7 @@ class TaskDefinitionEFSVolumeConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-efsvolumeconfiguration.html#cfn-ecs-taskdefinition-efsvolumeconfiguration-transitencryptionport"""
 
 @attr.s
-class TaskSetNetworkConfiguration(Property):
+class PropTaskSetNetworkConfiguration(Property):
     """
     AWS Object Type = "AWS::ECS::TaskSet.NetworkConfiguration"
 
@@ -1550,16 +1550,16 @@ class TaskSetNetworkConfiguration(Property):
     """
     AWS_OBJECT_TYPE = "AWS::ECS::TaskSet.NetworkConfiguration"
     
-    p_AwsVpcConfiguration: typing.Union['TaskSetAwsVpcConfiguration', dict] = attr.ib(
+    p_AwsVpcConfiguration: typing.Union['PropTaskSetAwsVpcConfiguration', dict] = attr.ib(
         default=None,
-        converter=TaskSetAwsVpcConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(TaskSetAwsVpcConfiguration)),
+        converter=PropTaskSetAwsVpcConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropTaskSetAwsVpcConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "AwsVpcConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskset-networkconfiguration.html#cfn-ecs-taskset-networkconfiguration-awsvpcconfiguration"""
 
 @attr.s
-class CapacityProviderAutoScalingGroupProvider(Property):
+class PropCapacityProviderAutoScalingGroupProvider(Property):
     """
     AWS Object Type = "AWS::ECS::CapacityProvider.AutoScalingGroupProvider"
 
@@ -1579,10 +1579,10 @@ class CapacityProviderAutoScalingGroupProvider(Property):
         metadata={AttrMeta.PROPERTY_NAME: "AutoScalingGroupArn"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-capacityprovider-autoscalinggroupprovider.html#cfn-ecs-capacityprovider-autoscalinggroupprovider-autoscalinggrouparn"""
-    p_ManagedScaling: typing.Union['CapacityProviderManagedScaling', dict] = attr.ib(
+    p_ManagedScaling: typing.Union['PropCapacityProviderManagedScaling', dict] = attr.ib(
         default=None,
-        converter=CapacityProviderManagedScaling.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(CapacityProviderManagedScaling)),
+        converter=PropCapacityProviderManagedScaling.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropCapacityProviderManagedScaling)),
         metadata={AttrMeta.PROPERTY_NAME: "ManagedScaling"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-capacityprovider-autoscalinggroupprovider.html#cfn-ecs-capacityprovider-autoscalinggroupprovider-managedscaling"""
@@ -1594,7 +1594,7 @@ class CapacityProviderAutoScalingGroupProvider(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-capacityprovider-autoscalinggroupprovider.html#cfn-ecs-capacityprovider-autoscalinggroupprovider-managedterminationprotection"""
 
 @attr.s
-class ServiceDeploymentConfiguration(Property):
+class PropServiceDeploymentConfiguration(Property):
     """
     AWS Object Type = "AWS::ECS::Service.DeploymentConfiguration"
 
@@ -1608,10 +1608,10 @@ class ServiceDeploymentConfiguration(Property):
     """
     AWS_OBJECT_TYPE = "AWS::ECS::Service.DeploymentConfiguration"
     
-    p_DeploymentCircuitBreaker: typing.Union['ServiceDeploymentCircuitBreaker', dict] = attr.ib(
+    p_DeploymentCircuitBreaker: typing.Union['PropServiceDeploymentCircuitBreaker', dict] = attr.ib(
         default=None,
-        converter=ServiceDeploymentCircuitBreaker.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ServiceDeploymentCircuitBreaker)),
+        converter=PropServiceDeploymentCircuitBreaker.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropServiceDeploymentCircuitBreaker)),
         metadata={AttrMeta.PROPERTY_NAME: "DeploymentCircuitBreaker"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-deploymentconfiguration.html#cfn-ecs-service-deploymentconfiguration-deploymentcircuitbreaker"""
@@ -1629,7 +1629,7 @@ class ServiceDeploymentConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-service-deploymentconfiguration.html#cfn-ecs-service-deploymentconfiguration-minimumhealthypercent"""
 
 @attr.s
-class TaskDefinitionVolume(Property):
+class PropTaskDefinitionVolume(Property):
     """
     AWS Object Type = "AWS::ECS::TaskDefinition.Volume"
 
@@ -1644,24 +1644,24 @@ class TaskDefinitionVolume(Property):
     """
     AWS_OBJECT_TYPE = "AWS::ECS::TaskDefinition.Volume"
     
-    p_DockerVolumeConfiguration: typing.Union['TaskDefinitionDockerVolumeConfiguration', dict] = attr.ib(
+    p_DockerVolumeConfiguration: typing.Union['PropTaskDefinitionDockerVolumeConfiguration', dict] = attr.ib(
         default=None,
-        converter=TaskDefinitionDockerVolumeConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(TaskDefinitionDockerVolumeConfiguration)),
+        converter=PropTaskDefinitionDockerVolumeConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropTaskDefinitionDockerVolumeConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "DockerVolumeConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-volumes.html#cfn-ecs-taskdefinition-volume-dockervolumeconfiguration"""
-    p_EFSVolumeConfiguration: typing.Union['TaskDefinitionEFSVolumeConfiguration', dict] = attr.ib(
+    p_EFSVolumeConfiguration: typing.Union['PropTaskDefinitionEFSVolumeConfiguration', dict] = attr.ib(
         default=None,
-        converter=TaskDefinitionEFSVolumeConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(TaskDefinitionEFSVolumeConfiguration)),
+        converter=PropTaskDefinitionEFSVolumeConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropTaskDefinitionEFSVolumeConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "EFSVolumeConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-volumes.html#cfn-ecs-taskdefinition-volume-efsvolumeconfiguration"""
-    p_Host: typing.Union['TaskDefinitionHostVolumeProperties', dict] = attr.ib(
+    p_Host: typing.Union['PropTaskDefinitionHostVolumeProperties', dict] = attr.ib(
         default=None,
-        converter=TaskDefinitionHostVolumeProperties.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(TaskDefinitionHostVolumeProperties)),
+        converter=PropTaskDefinitionHostVolumeProperties.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropTaskDefinitionHostVolumeProperties)),
         metadata={AttrMeta.PROPERTY_NAME: "Host"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-volumes.html#cfn-ecs-taskdefinition-volumes-host"""
@@ -1673,7 +1673,7 @@ class TaskDefinitionVolume(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-volumes.html#cfn-ecs-taskdefinition-volumes-name"""
 
 @attr.s
-class TaskDefinitionContainerDefinition(Property):
+class PropTaskDefinitionContainerDefinition(Property):
     """
     AWS Object Type = "AWS::ECS::TaskDefinition.ContainerDefinition"
 
@@ -1735,10 +1735,10 @@ class TaskDefinitionContainerDefinition(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Cpu"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions.html#cfn-ecs-taskdefinition-containerdefinition-cpu"""
-    p_DependsOn: typing.List[typing.Union['TaskDefinitionContainerDependency', dict]] = attr.ib(
+    p_DependsOn: typing.List[typing.Union['PropTaskDefinitionContainerDependency', dict]] = attr.ib(
         default=None,
-        converter=TaskDefinitionContainerDependency.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TaskDefinitionContainerDependency), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropTaskDefinitionContainerDependency.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropTaskDefinitionContainerDependency), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "DependsOn"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions.html#cfn-ecs-taskdefinition-containerdefinition-dependson"""
@@ -1778,17 +1778,17 @@ class TaskDefinitionContainerDefinition(Property):
         metadata={AttrMeta.PROPERTY_NAME: "EntryPoint"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions.html#cfn-ecs-taskdefinition-containerdefinition-entrypoint"""
-    p_Environment: typing.List[typing.Union['TaskDefinitionKeyValuePair', dict]] = attr.ib(
+    p_Environment: typing.List[typing.Union['PropTaskDefinitionKeyValuePair', dict]] = attr.ib(
         default=None,
-        converter=TaskDefinitionKeyValuePair.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TaskDefinitionKeyValuePair), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropTaskDefinitionKeyValuePair.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropTaskDefinitionKeyValuePair), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Environment"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions.html#cfn-ecs-taskdefinition-containerdefinition-environment"""
-    p_EnvironmentFiles: typing.List[typing.Union['TaskDefinitionEnvironmentFile', dict]] = attr.ib(
+    p_EnvironmentFiles: typing.List[typing.Union['PropTaskDefinitionEnvironmentFile', dict]] = attr.ib(
         default=None,
-        converter=TaskDefinitionEnvironmentFile.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TaskDefinitionEnvironmentFile), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropTaskDefinitionEnvironmentFile.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropTaskDefinitionEnvironmentFile), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "EnvironmentFiles"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions.html#cfn-ecs-taskdefinition-containerdefinition-environmentfiles"""
@@ -1798,24 +1798,24 @@ class TaskDefinitionContainerDefinition(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Essential"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions.html#cfn-ecs-taskdefinition-containerdefinition-essential"""
-    p_ExtraHosts: typing.List[typing.Union['TaskDefinitionHostEntry', dict]] = attr.ib(
+    p_ExtraHosts: typing.List[typing.Union['PropTaskDefinitionHostEntry', dict]] = attr.ib(
         default=None,
-        converter=TaskDefinitionHostEntry.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TaskDefinitionHostEntry), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropTaskDefinitionHostEntry.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropTaskDefinitionHostEntry), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "ExtraHosts"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions.html#cfn-ecs-taskdefinition-containerdefinition-extrahosts"""
-    p_FirelensConfiguration: typing.Union['TaskDefinitionFirelensConfiguration', dict] = attr.ib(
+    p_FirelensConfiguration: typing.Union['PropTaskDefinitionFirelensConfiguration', dict] = attr.ib(
         default=None,
-        converter=TaskDefinitionFirelensConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(TaskDefinitionFirelensConfiguration)),
+        converter=PropTaskDefinitionFirelensConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropTaskDefinitionFirelensConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "FirelensConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions.html#cfn-ecs-taskdefinition-containerdefinition-firelensconfiguration"""
-    p_HealthCheck: typing.Union['TaskDefinitionHealthCheck', dict] = attr.ib(
+    p_HealthCheck: typing.Union['PropTaskDefinitionHealthCheck', dict] = attr.ib(
         default=None,
-        converter=TaskDefinitionHealthCheck.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(TaskDefinitionHealthCheck)),
+        converter=PropTaskDefinitionHealthCheck.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropTaskDefinitionHealthCheck)),
         metadata={AttrMeta.PROPERTY_NAME: "HealthCheck"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions.html#cfn-ecs-taskdefinition-containerdefinition-healthcheck"""
@@ -1843,17 +1843,17 @@ class TaskDefinitionContainerDefinition(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Links"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions.html#cfn-ecs-taskdefinition-containerdefinition-links"""
-    p_LinuxParameters: typing.Union['TaskDefinitionLinuxParameters', dict] = attr.ib(
+    p_LinuxParameters: typing.Union['PropTaskDefinitionLinuxParameters', dict] = attr.ib(
         default=None,
-        converter=TaskDefinitionLinuxParameters.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(TaskDefinitionLinuxParameters)),
+        converter=PropTaskDefinitionLinuxParameters.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropTaskDefinitionLinuxParameters)),
         metadata={AttrMeta.PROPERTY_NAME: "LinuxParameters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions.html#cfn-ecs-taskdefinition-containerdefinition-linuxparameters"""
-    p_LogConfiguration: typing.Union['TaskDefinitionLogConfiguration', dict] = attr.ib(
+    p_LogConfiguration: typing.Union['PropTaskDefinitionLogConfiguration', dict] = attr.ib(
         default=None,
-        converter=TaskDefinitionLogConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(TaskDefinitionLogConfiguration)),
+        converter=PropTaskDefinitionLogConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropTaskDefinitionLogConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "LogConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions.html#cfn-ecs-taskdefinition-containerdefinition-logconfiguration"""
@@ -1869,10 +1869,10 @@ class TaskDefinitionContainerDefinition(Property):
         metadata={AttrMeta.PROPERTY_NAME: "MemoryReservation"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions.html#cfn-ecs-taskdefinition-containerdefinition-memoryreservation"""
-    p_MountPoints: typing.List[typing.Union['TaskDefinitionMountPoint', dict]] = attr.ib(
+    p_MountPoints: typing.List[typing.Union['PropTaskDefinitionMountPoint', dict]] = attr.ib(
         default=None,
-        converter=TaskDefinitionMountPoint.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TaskDefinitionMountPoint), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropTaskDefinitionMountPoint.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropTaskDefinitionMountPoint), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "MountPoints"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions.html#cfn-ecs-taskdefinition-containerdefinition-mountpoints"""
@@ -1882,10 +1882,10 @@ class TaskDefinitionContainerDefinition(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Name"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions.html#cfn-ecs-taskdefinition-containerdefinition-name"""
-    p_PortMappings: typing.List[typing.Union['TaskDefinitionPortMapping', dict]] = attr.ib(
+    p_PortMappings: typing.List[typing.Union['PropTaskDefinitionPortMapping', dict]] = attr.ib(
         default=None,
-        converter=TaskDefinitionPortMapping.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TaskDefinitionPortMapping), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropTaskDefinitionPortMapping.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropTaskDefinitionPortMapping), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "PortMappings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions.html#cfn-ecs-taskdefinition-containerdefinition-portmappings"""
@@ -1907,24 +1907,24 @@ class TaskDefinitionContainerDefinition(Property):
         metadata={AttrMeta.PROPERTY_NAME: "ReadonlyRootFilesystem"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions.html#cfn-ecs-taskdefinition-containerdefinition-readonlyrootfilesystem"""
-    p_RepositoryCredentials: typing.Union['TaskDefinitionRepositoryCredentials', dict] = attr.ib(
+    p_RepositoryCredentials: typing.Union['PropTaskDefinitionRepositoryCredentials', dict] = attr.ib(
         default=None,
-        converter=TaskDefinitionRepositoryCredentials.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(TaskDefinitionRepositoryCredentials)),
+        converter=PropTaskDefinitionRepositoryCredentials.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropTaskDefinitionRepositoryCredentials)),
         metadata={AttrMeta.PROPERTY_NAME: "RepositoryCredentials"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions.html#cfn-ecs-taskdefinition-containerdefinition-repositorycredentials"""
-    p_ResourceRequirements: typing.List[typing.Union['TaskDefinitionResourceRequirement', dict]] = attr.ib(
+    p_ResourceRequirements: typing.List[typing.Union['PropTaskDefinitionResourceRequirement', dict]] = attr.ib(
         default=None,
-        converter=TaskDefinitionResourceRequirement.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TaskDefinitionResourceRequirement), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropTaskDefinitionResourceRequirement.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropTaskDefinitionResourceRequirement), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "ResourceRequirements"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions.html#cfn-ecs-taskdefinition-containerdefinition-resourcerequirements"""
-    p_Secrets: typing.List[typing.Union['TaskDefinitionSecret', dict]] = attr.ib(
+    p_Secrets: typing.List[typing.Union['PropTaskDefinitionSecret', dict]] = attr.ib(
         default=None,
-        converter=TaskDefinitionSecret.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TaskDefinitionSecret), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropTaskDefinitionSecret.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropTaskDefinitionSecret), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Secrets"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions.html#cfn-ecs-taskdefinition-containerdefinition-secrets"""
@@ -1940,17 +1940,17 @@ class TaskDefinitionContainerDefinition(Property):
         metadata={AttrMeta.PROPERTY_NAME: "StopTimeout"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions.html#cfn-ecs-taskdefinition-containerdefinition-stoptimeout"""
-    p_SystemControls: typing.List[typing.Union['TaskDefinitionSystemControl', dict]] = attr.ib(
+    p_SystemControls: typing.List[typing.Union['PropTaskDefinitionSystemControl', dict]] = attr.ib(
         default=None,
-        converter=TaskDefinitionSystemControl.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TaskDefinitionSystemControl), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropTaskDefinitionSystemControl.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropTaskDefinitionSystemControl), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "SystemControls"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions.html#cfn-ecs-taskdefinition-containerdefinition-systemcontrols"""
-    p_Ulimits: typing.List[typing.Union['TaskDefinitionUlimit', dict]] = attr.ib(
+    p_Ulimits: typing.List[typing.Union['PropTaskDefinitionUlimit', dict]] = attr.ib(
         default=None,
-        converter=TaskDefinitionUlimit.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TaskDefinitionUlimit), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropTaskDefinitionUlimit.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropTaskDefinitionUlimit), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Ulimits"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions.html#cfn-ecs-taskdefinition-containerdefinition-ulimits"""
@@ -1960,10 +1960,10 @@ class TaskDefinitionContainerDefinition(Property):
         metadata={AttrMeta.PROPERTY_NAME: "User"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions.html#cfn-ecs-taskdefinition-containerdefinition-user"""
-    p_VolumesFrom: typing.List[typing.Union['TaskDefinitionVolumeFrom', dict]] = attr.ib(
+    p_VolumesFrom: typing.List[typing.Union['PropTaskDefinitionVolumeFrom', dict]] = attr.ib(
         default=None,
-        converter=TaskDefinitionVolumeFrom.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TaskDefinitionVolumeFrom), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropTaskDefinitionVolumeFrom.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropTaskDefinitionVolumeFrom), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "VolumesFrom"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecs-taskdefinition-containerdefinitions.html#cfn-ecs-taskdefinition-containerdefinition-volumesfrom"""
@@ -2008,24 +2008,24 @@ class Cluster(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "ClusterName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-cluster.html#cfn-ecs-cluster-clustername"""
-    p_ClusterSettings: typing.List[typing.Union['ClusterClusterSettings', dict]] = attr.ib(
+    p_ClusterSettings: typing.List[typing.Union['PropClusterClusterSettings', dict]] = attr.ib(
         default=None,
-        converter=ClusterClusterSettings.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ClusterClusterSettings), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropClusterClusterSettings.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropClusterClusterSettings), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "ClusterSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-cluster.html#cfn-ecs-cluster-clustersettings"""
-    p_Configuration: typing.Union['ClusterClusterConfiguration', dict] = attr.ib(
+    p_Configuration: typing.Union['PropClusterClusterConfiguration', dict] = attr.ib(
         default=None,
-        converter=ClusterClusterConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ClusterClusterConfiguration)),
+        converter=PropClusterClusterConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropClusterClusterConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "Configuration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-cluster.html#cfn-ecs-cluster-configuration"""
-    p_DefaultCapacityProviderStrategy: typing.List[typing.Union['ClusterCapacityProviderStrategyItem', dict]] = attr.ib(
+    p_DefaultCapacityProviderStrategy: typing.List[typing.Union['PropClusterCapacityProviderStrategyItem', dict]] = attr.ib(
         default=None,
-        converter=ClusterCapacityProviderStrategyItem.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ClusterCapacityProviderStrategyItem), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropClusterCapacityProviderStrategyItem.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropClusterCapacityProviderStrategyItem), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "DefaultCapacityProviderStrategy"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-cluster.html#cfn-ecs-cluster-defaultcapacityproviderstrategy"""
@@ -2060,10 +2060,10 @@ class CapacityProvider(Resource):
     AWS_OBJECT_TYPE = "AWS::ECS::CapacityProvider"
 
     
-    rp_AutoScalingGroupProvider: typing.Union['CapacityProviderAutoScalingGroupProvider', dict] = attr.ib(
+    rp_AutoScalingGroupProvider: typing.Union['PropCapacityProviderAutoScalingGroupProvider', dict] = attr.ib(
         default=None,
-        converter=CapacityProviderAutoScalingGroupProvider.from_dict,
-        validator=attr.validators.instance_of(CapacityProviderAutoScalingGroupProvider),
+        converter=PropCapacityProviderAutoScalingGroupProvider.from_dict,
+        validator=attr.validators.instance_of(PropCapacityProviderAutoScalingGroupProvider),
         metadata={AttrMeta.PROPERTY_NAME: "AutoScalingGroupProvider"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-capacityprovider.html#cfn-ecs-capacityprovider-autoscalinggroupprovider"""
@@ -2154,10 +2154,10 @@ class Service(Resource):
     AWS_OBJECT_TYPE = "AWS::ECS::Service"
 
     
-    p_CapacityProviderStrategy: typing.List[typing.Union['ServiceCapacityProviderStrategyItem', dict]] = attr.ib(
+    p_CapacityProviderStrategy: typing.List[typing.Union['PropServiceCapacityProviderStrategyItem', dict]] = attr.ib(
         default=None,
-        converter=ServiceCapacityProviderStrategyItem.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ServiceCapacityProviderStrategyItem), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropServiceCapacityProviderStrategyItem.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropServiceCapacityProviderStrategyItem), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "CapacityProviderStrategy"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-capacityproviderstrategy"""
@@ -2167,17 +2167,17 @@ class Service(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Cluster"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-cluster"""
-    p_DeploymentConfiguration: typing.Union['ServiceDeploymentConfiguration', dict] = attr.ib(
+    p_DeploymentConfiguration: typing.Union['PropServiceDeploymentConfiguration', dict] = attr.ib(
         default=None,
-        converter=ServiceDeploymentConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ServiceDeploymentConfiguration)),
+        converter=PropServiceDeploymentConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropServiceDeploymentConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "DeploymentConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-deploymentconfiguration"""
-    p_DeploymentController: typing.Union['ServiceDeploymentController', dict] = attr.ib(
+    p_DeploymentController: typing.Union['PropServiceDeploymentController', dict] = attr.ib(
         default=None,
-        converter=ServiceDeploymentController.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ServiceDeploymentController)),
+        converter=PropServiceDeploymentController.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropServiceDeploymentController)),
         metadata={AttrMeta.PROPERTY_NAME: "DeploymentController"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-deploymentcontroller"""
@@ -2211,31 +2211,31 @@ class Service(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "LaunchType"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-launchtype"""
-    p_LoadBalancers: typing.List[typing.Union['ServiceLoadBalancer', dict]] = attr.ib(
+    p_LoadBalancers: typing.List[typing.Union['PropServiceLoadBalancer', dict]] = attr.ib(
         default=None,
-        converter=ServiceLoadBalancer.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ServiceLoadBalancer), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropServiceLoadBalancer.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropServiceLoadBalancer), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "LoadBalancers"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-loadbalancers"""
-    p_NetworkConfiguration: typing.Union['ServiceNetworkConfiguration', dict] = attr.ib(
+    p_NetworkConfiguration: typing.Union['PropServiceNetworkConfiguration', dict] = attr.ib(
         default=None,
-        converter=ServiceNetworkConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ServiceNetworkConfiguration)),
+        converter=PropServiceNetworkConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropServiceNetworkConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "NetworkConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-networkconfiguration"""
-    p_PlacementConstraints: typing.List[typing.Union['ServicePlacementConstraint', dict]] = attr.ib(
+    p_PlacementConstraints: typing.List[typing.Union['PropServicePlacementConstraint', dict]] = attr.ib(
         default=None,
-        converter=ServicePlacementConstraint.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ServicePlacementConstraint), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropServicePlacementConstraint.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropServicePlacementConstraint), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "PlacementConstraints"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-placementconstraints"""
-    p_PlacementStrategies: typing.List[typing.Union['ServicePlacementStrategy', dict]] = attr.ib(
+    p_PlacementStrategies: typing.List[typing.Union['PropServicePlacementStrategy', dict]] = attr.ib(
         default=None,
-        converter=ServicePlacementStrategy.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ServicePlacementStrategy), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropServicePlacementStrategy.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropServicePlacementStrategy), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "PlacementStrategies"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-placementstrategies"""
@@ -2269,10 +2269,10 @@ class Service(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "ServiceName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-servicename"""
-    p_ServiceRegistries: typing.List[typing.Union['ServiceServiceRegistry', dict]] = attr.ib(
+    p_ServiceRegistries: typing.List[typing.Union['PropServiceServiceRegistry', dict]] = attr.ib(
         default=None,
-        converter=ServiceServiceRegistry.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ServiceServiceRegistry), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropServiceServiceRegistry.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropServiceServiceRegistry), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "ServiceRegistries"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-service.html#cfn-ecs-service-serviceregistries"""
@@ -2355,17 +2355,17 @@ class TaskSet(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "LaunchType"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskset.html#cfn-ecs-taskset-launchtype"""
-    p_LoadBalancers: typing.List[typing.Union['TaskSetLoadBalancer', dict]] = attr.ib(
+    p_LoadBalancers: typing.List[typing.Union['PropTaskSetLoadBalancer', dict]] = attr.ib(
         default=None,
-        converter=TaskSetLoadBalancer.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TaskSetLoadBalancer), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropTaskSetLoadBalancer.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropTaskSetLoadBalancer), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "LoadBalancers"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskset.html#cfn-ecs-taskset-loadbalancers"""
-    p_NetworkConfiguration: typing.Union['TaskSetNetworkConfiguration', dict] = attr.ib(
+    p_NetworkConfiguration: typing.Union['PropTaskSetNetworkConfiguration', dict] = attr.ib(
         default=None,
-        converter=TaskSetNetworkConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(TaskSetNetworkConfiguration)),
+        converter=PropTaskSetNetworkConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropTaskSetNetworkConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "NetworkConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskset.html#cfn-ecs-taskset-networkconfiguration"""
@@ -2375,17 +2375,17 @@ class TaskSet(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "PlatformVersion"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskset.html#cfn-ecs-taskset-platformversion"""
-    p_Scale: typing.Union['TaskSetScale', dict] = attr.ib(
+    p_Scale: typing.Union['PropTaskSetScale', dict] = attr.ib(
         default=None,
-        converter=TaskSetScale.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(TaskSetScale)),
+        converter=PropTaskSetScale.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropTaskSetScale)),
         metadata={AttrMeta.PROPERTY_NAME: "Scale"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskset.html#cfn-ecs-taskset-scale"""
-    p_ServiceRegistries: typing.List[typing.Union['TaskSetServiceRegistry', dict]] = attr.ib(
+    p_ServiceRegistries: typing.List[typing.Union['PropTaskSetServiceRegistry', dict]] = attr.ib(
         default=None,
-        converter=TaskSetServiceRegistry.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TaskSetServiceRegistry), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropTaskSetServiceRegistry.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropTaskSetServiceRegistry), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "ServiceRegistries"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskset.html#cfn-ecs-taskset-serviceregistries"""
@@ -2425,10 +2425,10 @@ class ClusterCapacityProviderAssociations(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Cluster"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-clustercapacityproviderassociations.html#cfn-ecs-clustercapacityproviderassociations-cluster"""
-    rp_DefaultCapacityProviderStrategy: typing.List[typing.Union['ClusterCapacityProviderAssociationsCapacityProviderStrategy', dict]] = attr.ib(
+    rp_DefaultCapacityProviderStrategy: typing.List[typing.Union['PropClusterCapacityProviderAssociationsCapacityProviderStrategy', dict]] = attr.ib(
         default=None,
-        converter=ClusterCapacityProviderAssociationsCapacityProviderStrategy.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ClusterCapacityProviderAssociationsCapacityProviderStrategy), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropClusterCapacityProviderAssociationsCapacityProviderStrategy.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropClusterCapacityProviderAssociationsCapacityProviderStrategy), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "DefaultCapacityProviderStrategy"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-clustercapacityproviderassociations.html#cfn-ecs-clustercapacityproviderassociations-defaultcapacityproviderstrategy"""
@@ -2464,10 +2464,10 @@ class TaskDefinition(Resource):
     AWS_OBJECT_TYPE = "AWS::ECS::TaskDefinition"
 
     
-    p_ContainerDefinitions: typing.List[typing.Union['TaskDefinitionContainerDefinition', dict]] = attr.ib(
+    p_ContainerDefinitions: typing.List[typing.Union['PropTaskDefinitionContainerDefinition', dict]] = attr.ib(
         default=None,
-        converter=TaskDefinitionContainerDefinition.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TaskDefinitionContainerDefinition), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropTaskDefinitionContainerDefinition.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropTaskDefinitionContainerDefinition), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "ContainerDefinitions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html#cfn-ecs-taskdefinition-containerdefinitions"""
@@ -2477,10 +2477,10 @@ class TaskDefinition(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Cpu"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html#cfn-ecs-taskdefinition-cpu"""
-    p_EphemeralStorage: typing.Union['TaskDefinitionEphemeralStorage', dict] = attr.ib(
+    p_EphemeralStorage: typing.Union['PropTaskDefinitionEphemeralStorage', dict] = attr.ib(
         default=None,
-        converter=TaskDefinitionEphemeralStorage.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(TaskDefinitionEphemeralStorage)),
+        converter=PropTaskDefinitionEphemeralStorage.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropTaskDefinitionEphemeralStorage)),
         metadata={AttrMeta.PROPERTY_NAME: "EphemeralStorage"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html#cfn-ecs-taskdefinition-ephemeralstorage"""
@@ -2496,10 +2496,10 @@ class TaskDefinition(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Family"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html#cfn-ecs-taskdefinition-family"""
-    p_InferenceAccelerators: typing.List[typing.Union['TaskDefinitionInferenceAccelerator', dict]] = attr.ib(
+    p_InferenceAccelerators: typing.List[typing.Union['PropTaskDefinitionInferenceAccelerator', dict]] = attr.ib(
         default=None,
-        converter=TaskDefinitionInferenceAccelerator.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TaskDefinitionInferenceAccelerator), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropTaskDefinitionInferenceAccelerator.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropTaskDefinitionInferenceAccelerator), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "InferenceAccelerators"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html#cfn-ecs-taskdefinition-inferenceaccelerators"""
@@ -2527,17 +2527,17 @@ class TaskDefinition(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "PidMode"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html#cfn-ecs-taskdefinition-pidmode"""
-    p_PlacementConstraints: typing.List[typing.Union['TaskDefinitionTaskDefinitionPlacementConstraint', dict]] = attr.ib(
+    p_PlacementConstraints: typing.List[typing.Union['PropTaskDefinitionTaskDefinitionPlacementConstraint', dict]] = attr.ib(
         default=None,
-        converter=TaskDefinitionTaskDefinitionPlacementConstraint.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TaskDefinitionTaskDefinitionPlacementConstraint), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropTaskDefinitionTaskDefinitionPlacementConstraint.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropTaskDefinitionTaskDefinitionPlacementConstraint), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "PlacementConstraints"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html#cfn-ecs-taskdefinition-placementconstraints"""
-    p_ProxyConfiguration: typing.Union['TaskDefinitionProxyConfiguration', dict] = attr.ib(
+    p_ProxyConfiguration: typing.Union['PropTaskDefinitionProxyConfiguration', dict] = attr.ib(
         default=None,
-        converter=TaskDefinitionProxyConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(TaskDefinitionProxyConfiguration)),
+        converter=PropTaskDefinitionProxyConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropTaskDefinitionProxyConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "ProxyConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html#cfn-ecs-taskdefinition-proxyconfiguration"""
@@ -2553,10 +2553,10 @@ class TaskDefinition(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "TaskRoleArn"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html#cfn-ecs-taskdefinition-taskrolearn"""
-    p_Volumes: typing.List[typing.Union['TaskDefinitionVolume', dict]] = attr.ib(
+    p_Volumes: typing.List[typing.Union['PropTaskDefinitionVolume', dict]] = attr.ib(
         default=None,
-        converter=TaskDefinitionVolume.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TaskDefinitionVolume), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropTaskDefinitionVolume.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropTaskDefinitionVolume), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Volumes"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecs-taskdefinition.html#cfn-ecs-taskdefinition-volumes"""

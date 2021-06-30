@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class ServerEngineAttribute(Property):
+class PropServerEngineAttribute(Property):
     """
     AWS Object Type = "AWS::OpsWorksCM::Server.EngineAttribute"
 
@@ -144,10 +144,10 @@ class Server(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Engine"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworkscm-server.html#cfn-opsworkscm-server-engine"""
-    p_EngineAttributes: typing.List[typing.Union['ServerEngineAttribute', dict]] = attr.ib(
+    p_EngineAttributes: typing.List[typing.Union['PropServerEngineAttribute', dict]] = attr.ib(
         default=None,
-        converter=ServerEngineAttribute.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ServerEngineAttribute), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropServerEngineAttribute.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropServerEngineAttribute), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "EngineAttributes"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworkscm-server.html#cfn-opsworkscm-server-engineattributes"""

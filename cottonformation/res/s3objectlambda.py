@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class AccessPointTransformationConfiguration(Property):
+class PropAccessPointTransformationConfiguration(Property):
     """
     AWS Object Type = "AWS::S3ObjectLambda::AccessPoint.TransformationConfiguration"
 
@@ -42,7 +42,7 @@ class AccessPointTransformationConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3objectlambda-accesspoint-transformationconfiguration.html#cfn-s3objectlambda-accesspoint-transformationconfiguration-contenttransformation"""
 
 @attr.s
-class AccessPointObjectLambdaConfiguration(Property):
+class PropAccessPointObjectLambdaConfiguration(Property):
     """
     AWS Object Type = "AWS::S3ObjectLambda::AccessPoint.ObjectLambdaConfiguration"
 
@@ -63,10 +63,10 @@ class AccessPointObjectLambdaConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "SupportingAccessPoint"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3objectlambda-accesspoint-objectlambdaconfiguration.html#cfn-s3objectlambda-accesspoint-objectlambdaconfiguration-supportingaccesspoint"""
-    rp_TransformationConfigurations: typing.List[typing.Union['AccessPointTransformationConfiguration', dict]] = attr.ib(
+    rp_TransformationConfigurations: typing.List[typing.Union['PropAccessPointTransformationConfiguration', dict]] = attr.ib(
         default=None,
-        converter=AccessPointTransformationConfiguration.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(AccessPointTransformationConfiguration), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropAccessPointTransformationConfiguration.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropAccessPointTransformationConfiguration), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "TransformationConfigurations"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3objectlambda-accesspoint-objectlambdaconfiguration.html#cfn-s3objectlambda-accesspoint-objectlambdaconfiguration-transformationconfigurations"""
@@ -107,10 +107,10 @@ class AccessPoint(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Name"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3objectlambda-accesspoint.html#cfn-s3objectlambda-accesspoint-name"""
-    p_ObjectLambdaConfiguration: typing.Union['AccessPointObjectLambdaConfiguration', dict] = attr.ib(
+    p_ObjectLambdaConfiguration: typing.Union['PropAccessPointObjectLambdaConfiguration', dict] = attr.ib(
         default=None,
-        converter=AccessPointObjectLambdaConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(AccessPointObjectLambdaConfiguration)),
+        converter=PropAccessPointObjectLambdaConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropAccessPointObjectLambdaConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "ObjectLambdaConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3objectlambda-accesspoint.html#cfn-s3objectlambda-accesspoint-objectlambdaconfiguration"""

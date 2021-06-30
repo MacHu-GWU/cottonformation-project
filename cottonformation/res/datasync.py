@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class TaskFilterRule(Property):
+class PropTaskFilterRule(Property):
     """
     AWS Object Type = "AWS::DataSync::Task.FilterRule"
 
@@ -42,7 +42,7 @@ class TaskFilterRule(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-task-filterrule.html#cfn-datasync-task-filterrule-value"""
 
 @attr.s
-class LocationS3S3Config(Property):
+class PropLocationS3S3Config(Property):
     """
     AWS Object Type = "AWS::DataSync::LocationS3.S3Config"
 
@@ -62,7 +62,7 @@ class LocationS3S3Config(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-locations3-s3config.html#cfn-datasync-locations3-s3config-bucketaccessrolearn"""
 
 @attr.s
-class LocationNFSOnPremConfig(Property):
+class PropLocationNFSOnPremConfig(Property):
     """
     AWS Object Type = "AWS::DataSync::LocationNFS.OnPremConfig"
 
@@ -82,7 +82,7 @@ class LocationNFSOnPremConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-locationnfs-onpremconfig.html#cfn-datasync-locationnfs-onpremconfig-agentarns"""
 
 @attr.s
-class LocationNFSMountOptions(Property):
+class PropLocationNFSMountOptions(Property):
     """
     AWS Object Type = "AWS::DataSync::LocationNFS.MountOptions"
 
@@ -102,7 +102,7 @@ class LocationNFSMountOptions(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-locationnfs-mountoptions.html#cfn-datasync-locationnfs-mountoptions-version"""
 
 @attr.s
-class LocationEFSEc2Config(Property):
+class PropLocationEFSEc2Config(Property):
     """
     AWS Object Type = "AWS::DataSync::LocationEFS.Ec2Config"
 
@@ -129,7 +129,7 @@ class LocationEFSEc2Config(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-locationefs-ec2config.html#cfn-datasync-locationefs-ec2config-subnetarn"""
 
 @attr.s
-class TaskOptions(Property):
+class PropTaskOptions(Property):
     """
     AWS Object Type = "AWS::DataSync::Task.Options"
 
@@ -233,7 +233,7 @@ class TaskOptions(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-task-options.html#cfn-datasync-task-options-verifymode"""
 
 @attr.s
-class TaskTaskSchedule(Property):
+class PropTaskTaskSchedule(Property):
     """
     AWS Object Type = "AWS::DataSync::Task.TaskSchedule"
 
@@ -253,7 +253,7 @@ class TaskTaskSchedule(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-datasync-task-taskschedule.html#cfn-datasync-task-taskschedule-scheduleexpression"""
 
 @attr.s
-class LocationSMBMountOptions(Property):
+class PropLocationSMBMountOptions(Property):
     """
     AWS Object Type = "AWS::DataSync::LocationSMB.MountOptions"
 
@@ -293,10 +293,10 @@ class LocationNFS(Resource):
     AWS_OBJECT_TYPE = "AWS::DataSync::LocationNFS"
 
     
-    rp_OnPremConfig: typing.Union['LocationNFSOnPremConfig', dict] = attr.ib(
+    rp_OnPremConfig: typing.Union['PropLocationNFSOnPremConfig', dict] = attr.ib(
         default=None,
-        converter=LocationNFSOnPremConfig.from_dict,
-        validator=attr.validators.instance_of(LocationNFSOnPremConfig),
+        converter=PropLocationNFSOnPremConfig.from_dict,
+        validator=attr.validators.instance_of(PropLocationNFSOnPremConfig),
         metadata={AttrMeta.PROPERTY_NAME: "OnPremConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationnfs.html#cfn-datasync-locationnfs-onpremconfig"""
@@ -312,10 +312,10 @@ class LocationNFS(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Subdirectory"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationnfs.html#cfn-datasync-locationnfs-subdirectory"""
-    p_MountOptions: typing.Union['LocationNFSMountOptions', dict] = attr.ib(
+    p_MountOptions: typing.Union['PropLocationNFSMountOptions', dict] = attr.ib(
         default=None,
-        converter=LocationNFSMountOptions.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(LocationNFSMountOptions)),
+        converter=PropLocationNFSMountOptions.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropLocationNFSMountOptions)),
         metadata={AttrMeta.PROPERTY_NAME: "MountOptions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationnfs.html#cfn-datasync-locationnfs-mountoptions"""
@@ -439,10 +439,10 @@ class LocationS3(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "S3BucketArn"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locations3.html#cfn-datasync-locations3-s3bucketarn"""
-    rp_S3Config: typing.Union['LocationS3S3Config', dict] = attr.ib(
+    rp_S3Config: typing.Union['PropLocationS3S3Config', dict] = attr.ib(
         default=None,
-        converter=LocationS3S3Config.from_dict,
-        validator=attr.validators.instance_of(LocationS3S3Config),
+        converter=PropLocationS3S3Config.from_dict,
+        validator=attr.validators.instance_of(PropLocationS3S3Config),
         metadata={AttrMeta.PROPERTY_NAME: "S3Config"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locations3.html#cfn-datasync-locations3-s3config"""
@@ -517,10 +517,10 @@ class Task(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "CloudWatchLogGroupArn"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-task.html#cfn-datasync-task-cloudwatchloggrouparn"""
-    p_Excludes: typing.List[typing.Union['TaskFilterRule', dict]] = attr.ib(
+    p_Excludes: typing.List[typing.Union['PropTaskFilterRule', dict]] = attr.ib(
         default=None,
-        converter=TaskFilterRule.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TaskFilterRule), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropTaskFilterRule.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropTaskFilterRule), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Excludes"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-task.html#cfn-datasync-task-excludes"""
@@ -530,17 +530,17 @@ class Task(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Name"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-task.html#cfn-datasync-task-name"""
-    p_Options: typing.Union['TaskOptions', dict] = attr.ib(
+    p_Options: typing.Union['PropTaskOptions', dict] = attr.ib(
         default=None,
-        converter=TaskOptions.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(TaskOptions)),
+        converter=PropTaskOptions.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropTaskOptions)),
         metadata={AttrMeta.PROPERTY_NAME: "Options"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-task.html#cfn-datasync-task-options"""
-    p_Schedule: typing.Union['TaskTaskSchedule', dict] = attr.ib(
+    p_Schedule: typing.Union['PropTaskTaskSchedule', dict] = attr.ib(
         default=None,
-        converter=TaskTaskSchedule.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(TaskTaskSchedule)),
+        converter=PropTaskTaskSchedule.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropTaskTaskSchedule)),
         metadata={AttrMeta.PROPERTY_NAME: "Schedule"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-task.html#cfn-datasync-task-schedule"""
@@ -760,10 +760,10 @@ class LocationEFS(Resource):
     AWS_OBJECT_TYPE = "AWS::DataSync::LocationEFS"
 
     
-    rp_Ec2Config: typing.Union['LocationEFSEc2Config', dict] = attr.ib(
+    rp_Ec2Config: typing.Union['PropLocationEFSEc2Config', dict] = attr.ib(
         default=None,
-        converter=LocationEFSEc2Config.from_dict,
-        validator=attr.validators.instance_of(LocationEFSEc2Config),
+        converter=PropLocationEFSEc2Config.from_dict,
+        validator=attr.validators.instance_of(PropLocationEFSEc2Config),
         metadata={AttrMeta.PROPERTY_NAME: "Ec2Config"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationefs.html#cfn-datasync-locationefs-ec2config"""
@@ -856,10 +856,10 @@ class LocationSMB(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Domain"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationsmb.html#cfn-datasync-locationsmb-domain"""
-    p_MountOptions: typing.Union['LocationSMBMountOptions', dict] = attr.ib(
+    p_MountOptions: typing.Union['PropLocationSMBMountOptions', dict] = attr.ib(
         default=None,
-        converter=LocationSMBMountOptions.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(LocationSMBMountOptions)),
+        converter=PropLocationSMBMountOptions.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropLocationSMBMountOptions)),
         metadata={AttrMeta.PROPERTY_NAME: "MountOptions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationsmb.html#cfn-datasync-locationsmb-mountoptions"""

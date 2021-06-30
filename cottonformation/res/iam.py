@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class RolePolicy(Property):
+class PropRolePolicy(Property):
     """
     AWS Object Type = "AWS::IAM::Role.Policy"
 
@@ -42,7 +42,7 @@ class RolePolicy(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html#cfn-iam-policies-policyname"""
 
 @attr.s
-class UserLoginProfile(Property):
+class PropUserLoginProfile(Property):
     """
     AWS Object Type = "AWS::IAM::User.LoginProfile"
 
@@ -69,7 +69,7 @@ class UserLoginProfile(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user-loginprofile.html#cfn-iam-user-loginprofile-passwordresetrequired"""
 
 @attr.s
-class UserPolicy(Property):
+class PropUserPolicy(Property):
     """
     AWS Object Type = "AWS::IAM::User.Policy"
 
@@ -96,7 +96,7 @@ class UserPolicy(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-policy.html#cfn-iam-policies-policyname"""
 
 @attr.s
-class GroupPolicy(Property):
+class PropGroupPolicy(Property):
     """
     AWS Object Type = "AWS::IAM::Group.Policy"
 
@@ -160,10 +160,10 @@ class Group(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Path"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html#cfn-iam-group-path"""
-    p_Policies: typing.List[typing.Union['GroupPolicy', dict]] = attr.ib(
+    p_Policies: typing.List[typing.Union['PropGroupPolicy', dict]] = attr.ib(
         default=None,
-        converter=GroupPolicy.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(GroupPolicy), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropGroupPolicy.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropGroupPolicy), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Policies"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-group.html#cfn-iam-group-policies"""
@@ -332,10 +332,10 @@ class User(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Groups"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html#cfn-iam-user-groups"""
-    p_LoginProfile: typing.Union['UserLoginProfile', dict] = attr.ib(
+    p_LoginProfile: typing.Union['PropUserLoginProfile', dict] = attr.ib(
         default=None,
-        converter=UserLoginProfile.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(UserLoginProfile)),
+        converter=PropUserLoginProfile.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropUserLoginProfile)),
         metadata={AttrMeta.PROPERTY_NAME: "LoginProfile"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html#cfn-iam-user-loginprofile"""
@@ -357,10 +357,10 @@ class User(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "PermissionsBoundary"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html#cfn-iam-user-permissionsboundary"""
-    p_Policies: typing.List[typing.Union['UserPolicy', dict]] = attr.ib(
+    p_Policies: typing.List[typing.Union['PropUserPolicy', dict]] = attr.ib(
         default=None,
-        converter=UserPolicy.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(UserPolicy), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropUserPolicy.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropUserPolicy), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Policies"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iam-user.html#cfn-iam-user-policies"""
@@ -543,10 +543,10 @@ class Role(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "PermissionsBoundary"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html#cfn-iam-role-permissionsboundary"""
-    p_Policies: typing.List[typing.Union['RolePolicy', dict]] = attr.ib(
+    p_Policies: typing.List[typing.Union['PropRolePolicy', dict]] = attr.ib(
         default=None,
-        converter=RolePolicy.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(RolePolicy), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropRolePolicy.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropRolePolicy), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Policies"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iam-role.html#cfn-iam-role-policies"""

@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class SkillOverrides(Property):
+class PropSkillOverrides(Property):
     """
     AWS Object Type = "Alexa::ASK::Skill.Overrides"
 
@@ -35,7 +35,7 @@ class SkillOverrides(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ask-skill-overrides.html#cfn-ask-skill-overrides-manifest"""
 
 @attr.s
-class SkillSkillPackage(Property):
+class PropSkillSkillPackage(Property):
     """
     AWS Object Type = "Alexa::ASK::Skill.SkillPackage"
 
@@ -63,10 +63,10 @@ class SkillSkillPackage(Property):
         metadata={AttrMeta.PROPERTY_NAME: "S3Key"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ask-skill-skillpackage.html#cfn-ask-skill-skillpackage-s3key"""
-    p_Overrides: typing.Union['SkillOverrides', dict] = attr.ib(
+    p_Overrides: typing.Union['PropSkillOverrides', dict] = attr.ib(
         default=None,
-        converter=SkillOverrides.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(SkillOverrides)),
+        converter=PropSkillOverrides.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropSkillOverrides)),
         metadata={AttrMeta.PROPERTY_NAME: "Overrides"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ask-skill-skillpackage.html#cfn-ask-skill-skillpackage-overrides"""
@@ -84,7 +84,7 @@ class SkillSkillPackage(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ask-skill-skillpackage.html#cfn-ask-skill-skillpackage-s3objectversion"""
 
 @attr.s
-class SkillAuthenticationConfiguration(Property):
+class PropSkillAuthenticationConfiguration(Property):
     """
     AWS Object Type = "Alexa::ASK::Skill.AuthenticationConfiguration"
 
@@ -136,17 +136,17 @@ class Skill(Resource):
     AWS_OBJECT_TYPE = "Alexa::ASK::Skill"
 
     
-    rp_AuthenticationConfiguration: typing.Union['SkillAuthenticationConfiguration', dict] = attr.ib(
+    rp_AuthenticationConfiguration: typing.Union['PropSkillAuthenticationConfiguration', dict] = attr.ib(
         default=None,
-        converter=SkillAuthenticationConfiguration.from_dict,
-        validator=attr.validators.instance_of(SkillAuthenticationConfiguration),
+        converter=PropSkillAuthenticationConfiguration.from_dict,
+        validator=attr.validators.instance_of(PropSkillAuthenticationConfiguration),
         metadata={AttrMeta.PROPERTY_NAME: "AuthenticationConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ask-skill.html#cfn-ask-skill-authenticationconfiguration"""
-    rp_SkillPackage: typing.Union['SkillSkillPackage', dict] = attr.ib(
+    rp_SkillPackage: typing.Union['PropSkillSkillPackage', dict] = attr.ib(
         default=None,
-        converter=SkillSkillPackage.from_dict,
-        validator=attr.validators.instance_of(SkillSkillPackage),
+        converter=PropSkillSkillPackage.from_dict,
+        validator=attr.validators.instance_of(PropSkillSkillPackage),
         metadata={AttrMeta.PROPERTY_NAME: "SkillPackage"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ask-skill.html#cfn-ask-skill-skillpackage"""

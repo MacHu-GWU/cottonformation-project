@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class ComponentVersionComponentPlatform(Property):
+class PropComponentVersionComponentPlatform(Property):
     """
     AWS Object Type = "AWS::GreengrassV2::ComponentVersion.ComponentPlatform"
 
@@ -42,7 +42,7 @@ class ComponentVersionComponentPlatform(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-componentplatform.html#cfn-greengrassv2-componentversion-componentplatform-name"""
 
 @attr.s
-class ComponentVersionLambdaVolumeMount(Property):
+class PropComponentVersionLambdaVolumeMount(Property):
     """
     AWS Object Type = "AWS::GreengrassV2::ComponentVersion.LambdaVolumeMount"
 
@@ -83,7 +83,7 @@ class ComponentVersionLambdaVolumeMount(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdavolumemount.html#cfn-greengrassv2-componentversion-lambdavolumemount-sourcepath"""
 
 @attr.s
-class ComponentVersionComponentDependencyRequirement(Property):
+class PropComponentVersionComponentDependencyRequirement(Property):
     """
     AWS Object Type = "AWS::GreengrassV2::ComponentVersion.ComponentDependencyRequirement"
 
@@ -110,7 +110,7 @@ class ComponentVersionComponentDependencyRequirement(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-componentdependencyrequirement.html#cfn-greengrassv2-componentversion-componentdependencyrequirement-versionrequirement"""
 
 @attr.s
-class ComponentVersionLambdaDeviceMount(Property):
+class PropComponentVersionLambdaDeviceMount(Property):
     """
     AWS Object Type = "AWS::GreengrassV2::ComponentVersion.LambdaDeviceMount"
 
@@ -144,7 +144,7 @@ class ComponentVersionLambdaDeviceMount(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdadevicemount.html#cfn-greengrassv2-componentversion-lambdadevicemount-permission"""
 
 @attr.s
-class ComponentVersionLambdaEventSource(Property):
+class PropComponentVersionLambdaEventSource(Property):
     """
     AWS Object Type = "AWS::GreengrassV2::ComponentVersion.LambdaEventSource"
 
@@ -171,7 +171,7 @@ class ComponentVersionLambdaEventSource(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdaeventsource.html#cfn-greengrassv2-componentversion-lambdaeventsource-type"""
 
 @attr.s
-class ComponentVersionLambdaContainerParams(Property):
+class PropComponentVersionLambdaContainerParams(Property):
     """
     AWS Object Type = "AWS::GreengrassV2::ComponentVersion.LambdaContainerParams"
 
@@ -186,10 +186,10 @@ class ComponentVersionLambdaContainerParams(Property):
     """
     AWS_OBJECT_TYPE = "AWS::GreengrassV2::ComponentVersion.LambdaContainerParams"
     
-    p_Devices: typing.List[typing.Union['ComponentVersionLambdaDeviceMount', dict]] = attr.ib(
+    p_Devices: typing.List[typing.Union['PropComponentVersionLambdaDeviceMount', dict]] = attr.ib(
         default=None,
-        converter=ComponentVersionLambdaDeviceMount.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ComponentVersionLambdaDeviceMount), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropComponentVersionLambdaDeviceMount.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropComponentVersionLambdaDeviceMount), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Devices"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdacontainerparams.html#cfn-greengrassv2-componentversion-lambdacontainerparams-devices"""
@@ -205,16 +205,16 @@ class ComponentVersionLambdaContainerParams(Property):
         metadata={AttrMeta.PROPERTY_NAME: "MountROSysfs"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdacontainerparams.html#cfn-greengrassv2-componentversion-lambdacontainerparams-mountrosysfs"""
-    p_Volumes: typing.List[typing.Union['ComponentVersionLambdaVolumeMount', dict]] = attr.ib(
+    p_Volumes: typing.List[typing.Union['PropComponentVersionLambdaVolumeMount', dict]] = attr.ib(
         default=None,
-        converter=ComponentVersionLambdaVolumeMount.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ComponentVersionLambdaVolumeMount), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropComponentVersionLambdaVolumeMount.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropComponentVersionLambdaVolumeMount), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Volumes"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdacontainerparams.html#cfn-greengrassv2-componentversion-lambdacontainerparams-volumes"""
 
 @attr.s
-class ComponentVersionLambdaLinuxProcessParams(Property):
+class PropComponentVersionLambdaLinuxProcessParams(Property):
     """
     AWS Object Type = "AWS::GreengrassV2::ComponentVersion.LambdaLinuxProcessParams"
 
@@ -227,10 +227,10 @@ class ComponentVersionLambdaLinuxProcessParams(Property):
     """
     AWS_OBJECT_TYPE = "AWS::GreengrassV2::ComponentVersion.LambdaLinuxProcessParams"
     
-    p_ContainerParams: typing.Union['ComponentVersionLambdaContainerParams', dict] = attr.ib(
+    p_ContainerParams: typing.Union['PropComponentVersionLambdaContainerParams', dict] = attr.ib(
         default=None,
-        converter=ComponentVersionLambdaContainerParams.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ComponentVersionLambdaContainerParams)),
+        converter=PropComponentVersionLambdaContainerParams.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropComponentVersionLambdaContainerParams)),
         metadata={AttrMeta.PROPERTY_NAME: "ContainerParams"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdalinuxprocessparams.html#cfn-greengrassv2-componentversion-lambdalinuxprocessparams-containerparams"""
@@ -242,7 +242,7 @@ class ComponentVersionLambdaLinuxProcessParams(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdalinuxprocessparams.html#cfn-greengrassv2-componentversion-lambdalinuxprocessparams-isolationmode"""
 
 @attr.s
-class ComponentVersionLambdaExecutionParameters(Property):
+class PropComponentVersionLambdaExecutionParameters(Property):
     """
     AWS Object Type = "AWS::GreengrassV2::ComponentVersion.LambdaExecutionParameters"
 
@@ -270,10 +270,10 @@ class ComponentVersionLambdaExecutionParameters(Property):
         metadata={AttrMeta.PROPERTY_NAME: "EnvironmentVariables"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdaexecutionparameters.html#cfn-greengrassv2-componentversion-lambdaexecutionparameters-environmentvariables"""
-    p_EventSources: typing.List[typing.Union['ComponentVersionLambdaEventSource', dict]] = attr.ib(
+    p_EventSources: typing.List[typing.Union['PropComponentVersionLambdaEventSource', dict]] = attr.ib(
         default=None,
-        converter=ComponentVersionLambdaEventSource.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ComponentVersionLambdaEventSource), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropComponentVersionLambdaEventSource.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropComponentVersionLambdaEventSource), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "EventSources"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdaexecutionparameters.html#cfn-greengrassv2-componentversion-lambdaexecutionparameters-eventsources"""
@@ -289,10 +289,10 @@ class ComponentVersionLambdaExecutionParameters(Property):
         metadata={AttrMeta.PROPERTY_NAME: "InputPayloadEncodingType"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdaexecutionparameters.html#cfn-greengrassv2-componentversion-lambdaexecutionparameters-inputpayloadencodingtype"""
-    p_LinuxProcessParams: typing.Union['ComponentVersionLambdaLinuxProcessParams', dict] = attr.ib(
+    p_LinuxProcessParams: typing.Union['PropComponentVersionLambdaLinuxProcessParams', dict] = attr.ib(
         default=None,
-        converter=ComponentVersionLambdaLinuxProcessParams.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ComponentVersionLambdaLinuxProcessParams)),
+        converter=PropComponentVersionLambdaLinuxProcessParams.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropComponentVersionLambdaLinuxProcessParams)),
         metadata={AttrMeta.PROPERTY_NAME: "LinuxProcessParams"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdaexecutionparameters.html#cfn-greengrassv2-componentversion-lambdaexecutionparameters-linuxprocessparams"""
@@ -334,7 +334,7 @@ class ComponentVersionLambdaExecutionParameters(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdaexecutionparameters.html#cfn-greengrassv2-componentversion-lambdaexecutionparameters-timeoutinseconds"""
 
 @attr.s
-class ComponentVersionLambdaFunctionRecipeSource(Property):
+class PropComponentVersionLambdaFunctionRecipeSource(Property):
     """
     AWS Object Type = "AWS::GreengrassV2::ComponentVersion.LambdaFunctionRecipeSource"
 
@@ -351,17 +351,17 @@ class ComponentVersionLambdaFunctionRecipeSource(Property):
     """
     AWS_OBJECT_TYPE = "AWS::GreengrassV2::ComponentVersion.LambdaFunctionRecipeSource"
     
-    p_ComponentDependencies: typing.Union['ComponentVersionComponentDependencyRequirement', dict] = attr.ib(
+    p_ComponentDependencies: typing.Union['PropComponentVersionComponentDependencyRequirement', dict] = attr.ib(
         default=None,
-        converter=ComponentVersionComponentDependencyRequirement.from_list,
-        validator=attr.validators.optional(attr.validators.instance_of(ComponentVersionComponentDependencyRequirement)),
+        converter=PropComponentVersionComponentDependencyRequirement.from_list,
+        validator=attr.validators.optional(attr.validators.instance_of(PropComponentVersionComponentDependencyRequirement)),
         metadata={AttrMeta.PROPERTY_NAME: "ComponentDependencies"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdafunctionrecipesource.html#cfn-greengrassv2-componentversion-lambdafunctionrecipesource-componentdependencies"""
-    p_ComponentLambdaParameters: typing.Union['ComponentVersionLambdaExecutionParameters', dict] = attr.ib(
+    p_ComponentLambdaParameters: typing.Union['PropComponentVersionLambdaExecutionParameters', dict] = attr.ib(
         default=None,
-        converter=ComponentVersionLambdaExecutionParameters.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ComponentVersionLambdaExecutionParameters)),
+        converter=PropComponentVersionLambdaExecutionParameters.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropComponentVersionLambdaExecutionParameters)),
         metadata={AttrMeta.PROPERTY_NAME: "ComponentLambdaParameters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdafunctionrecipesource.html#cfn-greengrassv2-componentversion-lambdafunctionrecipesource-componentlambdaparameters"""
@@ -371,10 +371,10 @@ class ComponentVersionLambdaFunctionRecipeSource(Property):
         metadata={AttrMeta.PROPERTY_NAME: "ComponentName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdafunctionrecipesource.html#cfn-greengrassv2-componentversion-lambdafunctionrecipesource-componentname"""
-    p_ComponentPlatforms: typing.List[typing.Union['ComponentVersionComponentPlatform', dict]] = attr.ib(
+    p_ComponentPlatforms: typing.List[typing.Union['PropComponentVersionComponentPlatform', dict]] = attr.ib(
         default=None,
-        converter=ComponentVersionComponentPlatform.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ComponentVersionComponentPlatform), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropComponentVersionComponentPlatform.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropComponentVersionComponentPlatform), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "ComponentPlatforms"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrassv2-componentversion-lambdafunctionrecipesource.html#cfn-greengrassv2-componentversion-lambdafunctionrecipesource-componentplatforms"""
@@ -416,10 +416,10 @@ class ComponentVersion(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "InlineRecipe"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrassv2-componentversion.html#cfn-greengrassv2-componentversion-inlinerecipe"""
-    p_LambdaFunction: typing.Union['ComponentVersionLambdaFunctionRecipeSource', dict] = attr.ib(
+    p_LambdaFunction: typing.Union['PropComponentVersionLambdaFunctionRecipeSource', dict] = attr.ib(
         default=None,
-        converter=ComponentVersionLambdaFunctionRecipeSource.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ComponentVersionLambdaFunctionRecipeSource)),
+        converter=PropComponentVersionLambdaFunctionRecipeSource.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropComponentVersionLambdaFunctionRecipeSource)),
         metadata={AttrMeta.PROPERTY_NAME: "LambdaFunction"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrassv2-componentversion.html#cfn-greengrassv2-componentversion-lambdafunction"""

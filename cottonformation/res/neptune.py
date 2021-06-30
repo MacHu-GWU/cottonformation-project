@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class DBClusterDBClusterRole(Property):
+class PropDBClusterDBClusterRole(Property):
     """
     AWS Object Type = "AWS::Neptune::DBCluster.DBClusterRole"
 
@@ -332,10 +332,10 @@ class DBCluster(Resource):
     AWS_OBJECT_TYPE = "AWS::Neptune::DBCluster"
 
     
-    p_AssociatedRoles: typing.List[typing.Union['DBClusterDBClusterRole', dict]] = attr.ib(
+    p_AssociatedRoles: typing.List[typing.Union['PropDBClusterDBClusterRole', dict]] = attr.ib(
         default=None,
-        converter=DBClusterDBClusterRole.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(DBClusterDBClusterRole), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropDBClusterDBClusterRole.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDBClusterDBClusterRole), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "AssociatedRoles"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-neptune-dbcluster.html#cfn-neptune-dbcluster-associatedroles"""

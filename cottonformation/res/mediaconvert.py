@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class JobTemplateHopDestination(Property):
+class PropJobTemplateHopDestination(Property):
     """
     AWS Object Type = "AWS::MediaConvert::JobTemplate.HopDestination"
 
@@ -49,7 +49,7 @@ class JobTemplateHopDestination(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconvert-jobtemplate-hopdestination.html#cfn-mediaconvert-jobtemplate-hopdestination-waitminutes"""
 
 @attr.s
-class JobTemplateAccelerationSettings(Property):
+class PropJobTemplateAccelerationSettings(Property):
     """
     AWS Object Type = "AWS::MediaConvert::JobTemplate.AccelerationSettings"
 
@@ -161,10 +161,10 @@ class JobTemplate(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "SettingsJson"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconvert-jobtemplate.html#cfn-mediaconvert-jobtemplate-settingsjson"""
-    p_AccelerationSettings: typing.Union['JobTemplateAccelerationSettings', dict] = attr.ib(
+    p_AccelerationSettings: typing.Union['PropJobTemplateAccelerationSettings', dict] = attr.ib(
         default=None,
-        converter=JobTemplateAccelerationSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(JobTemplateAccelerationSettings)),
+        converter=PropJobTemplateAccelerationSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropJobTemplateAccelerationSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "AccelerationSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconvert-jobtemplate.html#cfn-mediaconvert-jobtemplate-accelerationsettings"""
@@ -180,10 +180,10 @@ class JobTemplate(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Description"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconvert-jobtemplate.html#cfn-mediaconvert-jobtemplate-description"""
-    p_HopDestinations: typing.List[typing.Union['JobTemplateHopDestination', dict]] = attr.ib(
+    p_HopDestinations: typing.List[typing.Union['PropJobTemplateHopDestination', dict]] = attr.ib(
         default=None,
-        converter=JobTemplateHopDestination.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(JobTemplateHopDestination), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropJobTemplateHopDestination.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropJobTemplateHopDestination), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "HopDestinations"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconvert-jobtemplate.html#cfn-mediaconvert-jobtemplate-hopdestinations"""

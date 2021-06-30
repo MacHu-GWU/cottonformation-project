@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class ClusterComputeLimits(Property):
+class PropClusterComputeLimits(Property):
     """
     AWS Object Type = "AWS::EMR::Cluster.ComputeLimits"
 
@@ -63,7 +63,7 @@ class ClusterComputeLimits(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-computelimits.html#cfn-elasticmapreduce-cluster-computelimits-maximumondemandcapacityunits"""
 
 @attr.s
-class ClusterSpotProvisioningSpecification(Property):
+class PropClusterSpotProvisioningSpecification(Property):
     """
     AWS Object Type = "AWS::EMR::Cluster.SpotProvisioningSpecification"
 
@@ -104,7 +104,7 @@ class ClusterSpotProvisioningSpecification(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-spotprovisioningspecification.html#cfn-elasticmapreduce-cluster-spotprovisioningspecification-blockdurationminutes"""
 
 @attr.s
-class ClusterManagedScalingPolicy(Property):
+class PropClusterManagedScalingPolicy(Property):
     """
     AWS Object Type = "AWS::EMR::Cluster.ManagedScalingPolicy"
 
@@ -116,16 +116,16 @@ class ClusterManagedScalingPolicy(Property):
     """
     AWS_OBJECT_TYPE = "AWS::EMR::Cluster.ManagedScalingPolicy"
     
-    p_ComputeLimits: typing.Union['ClusterComputeLimits', dict] = attr.ib(
+    p_ComputeLimits: typing.Union['PropClusterComputeLimits', dict] = attr.ib(
         default=None,
-        converter=ClusterComputeLimits.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ClusterComputeLimits)),
+        converter=PropClusterComputeLimits.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropClusterComputeLimits)),
         metadata={AttrMeta.PROPERTY_NAME: "ComputeLimits"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-managedscalingpolicy.html#cfn-elasticmapreduce-cluster-managedscalingpolicy-computelimits"""
 
 @attr.s
-class ClusterKeyValue(Property):
+class PropClusterKeyValue(Property):
     """
     AWS Object Type = "AWS::EMR::Cluster.KeyValue"
 
@@ -152,7 +152,7 @@ class ClusterKeyValue(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-keyvalue.html#cfn-elasticmapreduce-cluster-keyvalue-value"""
 
 @attr.s
-class ClusterVolumeSpecification(Property):
+class PropClusterVolumeSpecification(Property):
     """
     AWS Object Type = "AWS::EMR::Cluster.VolumeSpecification"
 
@@ -186,7 +186,7 @@ class ClusterVolumeSpecification(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-volumespecification.html#cfn-elasticmapreduce-cluster-volumespecification-iops"""
 
 @attr.s
-class InstanceGroupConfigConfiguration(Property):
+class PropInstanceGroupConfigConfiguration(Property):
     """
     AWS Object Type = "AWS::EMR::InstanceGroupConfig.Configuration"
 
@@ -212,7 +212,7 @@ class InstanceGroupConfigConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "ConfigurationProperties"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-configuration.html#cfn-emr-cluster-configuration-configurationproperties"""
-    p_Configurations: typing.List[typing.Union['InstanceGroupConfigConfiguration', dict]] = attr.ib(
+    p_Configurations: typing.List[typing.Union['PropInstanceGroupConfigConfiguration', dict]] = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "Configurations"},
@@ -220,7 +220,7 @@ class InstanceGroupConfigConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-cluster-configuration.html#cfn-emr-cluster-configuration-configurations"""
 
 @attr.s
-class InstanceGroupConfigMetricDimension(Property):
+class PropInstanceGroupConfigMetricDimension(Property):
     """
     AWS Object Type = "AWS::EMR::InstanceGroupConfig.MetricDimension"
 
@@ -247,7 +247,7 @@ class InstanceGroupConfigMetricDimension(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancegroupconfig-metricdimension.html#cfn-elasticmapreduce-instancegroupconfig-metricdimension-value"""
 
 @attr.s
-class InstanceFleetConfigConfiguration(Property):
+class PropInstanceFleetConfigConfiguration(Property):
     """
     AWS Object Type = "AWS::EMR::InstanceFleetConfig.Configuration"
 
@@ -273,7 +273,7 @@ class InstanceFleetConfigConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "ConfigurationProperties"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-configuration.html#cfn-elasticmapreduce-instancefleetconfig-configuration-configurationproperties"""
-    p_Configurations: typing.List[typing.Union['InstanceFleetConfigConfiguration', dict]] = attr.ib(
+    p_Configurations: typing.List[typing.Union['PropInstanceFleetConfigConfiguration', dict]] = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "Configurations"},
@@ -281,7 +281,7 @@ class InstanceFleetConfigConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-configuration.html#cfn-elasticmapreduce-instancefleetconfig-configuration-configurations"""
 
 @attr.s
-class ClusterKerberosAttributes(Property):
+class PropClusterKerberosAttributes(Property):
     """
     AWS Object Type = "AWS::EMR::Cluster.KerberosAttributes"
 
@@ -329,7 +329,7 @@ class ClusterKerberosAttributes(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-kerberosattributes.html#cfn-elasticmapreduce-cluster-kerberosattributes-crossrealmtrustprincipalpassword"""
 
 @attr.s
-class InstanceGroupConfigSimpleScalingPolicyConfiguration(Property):
+class PropInstanceGroupConfigSimpleScalingPolicyConfiguration(Property):
     """
     AWS Object Type = "AWS::EMR::InstanceGroupConfig.SimpleScalingPolicyConfiguration"
 
@@ -363,7 +363,7 @@ class InstanceGroupConfigSimpleScalingPolicyConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancegroupconfig-simplescalingpolicyconfiguration.html#cfn-elasticmapreduce-instancegroupconfig-simplescalingpolicyconfiguration-cooldown"""
 
 @attr.s
-class ClusterApplication(Property):
+class PropClusterApplication(Property):
     """
     AWS Object Type = "AWS::EMR::Cluster.Application"
 
@@ -404,7 +404,7 @@ class ClusterApplication(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-application.html#cfn-elasticmapreduce-cluster-application-version"""
 
 @attr.s
-class ClusterConfiguration(Property):
+class PropClusterConfiguration(Property):
     """
     AWS Object Type = "AWS::EMR::Cluster.Configuration"
 
@@ -430,7 +430,7 @@ class ClusterConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "ConfigurationProperties"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-configuration.html#cfn-elasticmapreduce-cluster-configuration-configurationproperties"""
-    p_Configurations: typing.List[typing.Union['ClusterConfiguration', dict]] = attr.ib(
+    p_Configurations: typing.List[typing.Union['PropClusterConfiguration', dict]] = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "Configurations"},
@@ -438,7 +438,7 @@ class ClusterConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-configuration.html#cfn-elasticmapreduce-cluster-configuration-configurations"""
 
 @attr.s
-class ClusterScriptBootstrapActionConfig(Property):
+class PropClusterScriptBootstrapActionConfig(Property):
     """
     AWS Object Type = "AWS::EMR::Cluster.ScriptBootstrapActionConfig"
 
@@ -465,7 +465,7 @@ class ClusterScriptBootstrapActionConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-scriptbootstrapactionconfig.html#cfn-elasticmapreduce-cluster-scriptbootstrapactionconfig-args"""
 
 @attr.s
-class InstanceGroupConfigCloudWatchAlarmDefinition(Property):
+class PropInstanceGroupConfigCloudWatchAlarmDefinition(Property):
     """
     AWS Object Type = "AWS::EMR::InstanceGroupConfig.CloudWatchAlarmDefinition"
 
@@ -509,10 +509,10 @@ class InstanceGroupConfigCloudWatchAlarmDefinition(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Threshold"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancegroupconfig-cloudwatchalarmdefinition.html#cfn-elasticmapreduce-instancegroupconfig-cloudwatchalarmdefinition-threshold"""
-    p_Dimensions: typing.List[typing.Union['InstanceGroupConfigMetricDimension', dict]] = attr.ib(
+    p_Dimensions: typing.List[typing.Union['PropInstanceGroupConfigMetricDimension', dict]] = attr.ib(
         default=None,
-        converter=InstanceGroupConfigMetricDimension.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(InstanceGroupConfigMetricDimension), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropInstanceGroupConfigMetricDimension.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropInstanceGroupConfigMetricDimension), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Dimensions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancegroupconfig-cloudwatchalarmdefinition.html#cfn-elasticmapreduce-instancegroupconfig-cloudwatchalarmdefinition-dimensions"""
@@ -542,7 +542,7 @@ class InstanceGroupConfigCloudWatchAlarmDefinition(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancegroupconfig-cloudwatchalarmdefinition.html#cfn-elasticmapreduce-instancegroupconfig-cloudwatchalarmdefinition-unit"""
 
 @attr.s
-class ClusterMetricDimension(Property):
+class PropClusterMetricDimension(Property):
     """
     AWS Object Type = "AWS::EMR::Cluster.MetricDimension"
 
@@ -569,7 +569,7 @@ class ClusterMetricDimension(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-metricdimension.html#cfn-elasticmapreduce-cluster-metricdimension-value"""
 
 @attr.s
-class ClusterOnDemandProvisioningSpecification(Property):
+class PropClusterOnDemandProvisioningSpecification(Property):
     """
     AWS Object Type = "AWS::EMR::Cluster.OnDemandProvisioningSpecification"
 
@@ -589,7 +589,7 @@ class ClusterOnDemandProvisioningSpecification(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-ondemandprovisioningspecification.html#cfn-elasticmapreduce-cluster-ondemandprovisioningspecification-allocationstrategy"""
 
 @attr.s
-class InstanceFleetConfigSpotProvisioningSpecification(Property):
+class PropInstanceFleetConfigSpotProvisioningSpecification(Property):
     """
     AWS Object Type = "AWS::EMR::InstanceFleetConfig.SpotProvisioningSpecification"
 
@@ -630,7 +630,7 @@ class InstanceFleetConfigSpotProvisioningSpecification(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-spotprovisioningspecification.html#cfn-elasticmapreduce-instancefleetconfig-spotprovisioningspecification-blockdurationminutes"""
 
 @attr.s
-class StepKeyValue(Property):
+class PropStepKeyValue(Property):
     """
     AWS Object Type = "AWS::EMR::Step.KeyValue"
 
@@ -657,7 +657,7 @@ class StepKeyValue(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-step-keyvalue.html#cfn-elasticmapreduce-step-keyvalue-value"""
 
 @attr.s
-class InstanceGroupConfigScalingAction(Property):
+class PropInstanceGroupConfigScalingAction(Property):
     """
     AWS Object Type = "AWS::EMR::InstanceGroupConfig.ScalingAction"
 
@@ -670,10 +670,10 @@ class InstanceGroupConfigScalingAction(Property):
     """
     AWS_OBJECT_TYPE = "AWS::EMR::InstanceGroupConfig.ScalingAction"
     
-    rp_SimpleScalingPolicyConfiguration: typing.Union['InstanceGroupConfigSimpleScalingPolicyConfiguration', dict] = attr.ib(
+    rp_SimpleScalingPolicyConfiguration: typing.Union['PropInstanceGroupConfigSimpleScalingPolicyConfiguration', dict] = attr.ib(
         default=None,
-        converter=InstanceGroupConfigSimpleScalingPolicyConfiguration.from_dict,
-        validator=attr.validators.instance_of(InstanceGroupConfigSimpleScalingPolicyConfiguration),
+        converter=PropInstanceGroupConfigSimpleScalingPolicyConfiguration.from_dict,
+        validator=attr.validators.instance_of(PropInstanceGroupConfigSimpleScalingPolicyConfiguration),
         metadata={AttrMeta.PROPERTY_NAME: "SimpleScalingPolicyConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancegroupconfig-scalingaction.html#cfn-elasticmapreduce-instancegroupconfig-scalingaction-simplescalingpolicyconfiguration"""
@@ -685,7 +685,7 @@ class InstanceGroupConfigScalingAction(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancegroupconfig-scalingaction.html#cfn-elasticmapreduce-instancegroupconfig-scalingaction-market"""
 
 @attr.s
-class InstanceGroupConfigScalingTrigger(Property):
+class PropInstanceGroupConfigScalingTrigger(Property):
     """
     AWS Object Type = "AWS::EMR::InstanceGroupConfig.ScalingTrigger"
 
@@ -697,16 +697,16 @@ class InstanceGroupConfigScalingTrigger(Property):
     """
     AWS_OBJECT_TYPE = "AWS::EMR::InstanceGroupConfig.ScalingTrigger"
     
-    rp_CloudWatchAlarmDefinition: typing.Union['InstanceGroupConfigCloudWatchAlarmDefinition', dict] = attr.ib(
+    rp_CloudWatchAlarmDefinition: typing.Union['PropInstanceGroupConfigCloudWatchAlarmDefinition', dict] = attr.ib(
         default=None,
-        converter=InstanceGroupConfigCloudWatchAlarmDefinition.from_dict,
-        validator=attr.validators.instance_of(InstanceGroupConfigCloudWatchAlarmDefinition),
+        converter=PropInstanceGroupConfigCloudWatchAlarmDefinition.from_dict,
+        validator=attr.validators.instance_of(PropInstanceGroupConfigCloudWatchAlarmDefinition),
         metadata={AttrMeta.PROPERTY_NAME: "CloudWatchAlarmDefinition"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancegroupconfig-scalingtrigger.html#cfn-elasticmapreduce-instancegroupconfig-scalingtrigger-cloudwatchalarmdefinition"""
 
 @attr.s
-class InstanceFleetConfigOnDemandProvisioningSpecification(Property):
+class PropInstanceFleetConfigOnDemandProvisioningSpecification(Property):
     """
     AWS Object Type = "AWS::EMR::InstanceFleetConfig.OnDemandProvisioningSpecification"
 
@@ -726,7 +726,7 @@ class InstanceFleetConfigOnDemandProvisioningSpecification(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-ondemandprovisioningspecification.html#cfn-elasticmapreduce-instancefleetconfig-ondemandprovisioningspecification-allocationstrategy"""
 
 @attr.s
-class InstanceGroupConfigVolumeSpecification(Property):
+class PropInstanceGroupConfigVolumeSpecification(Property):
     """
     AWS Object Type = "AWS::EMR::InstanceGroupConfig.VolumeSpecification"
 
@@ -760,7 +760,7 @@ class InstanceGroupConfigVolumeSpecification(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-ebsconfiguration-ebsblockdeviceconfig-volumespecification.html#cfn-emr-ebsconfiguration-ebsblockdeviceconfig-volumespecification-iops"""
 
 @attr.s
-class InstanceFleetConfigVolumeSpecification(Property):
+class PropInstanceFleetConfigVolumeSpecification(Property):
     """
     AWS Object Type = "AWS::EMR::InstanceFleetConfig.VolumeSpecification"
 
@@ -794,7 +794,7 @@ class InstanceFleetConfigVolumeSpecification(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-volumespecification.html#cfn-elasticmapreduce-instancefleetconfig-volumespecification-iops"""
 
 @attr.s
-class ClusterScalingConstraints(Property):
+class PropClusterScalingConstraints(Property):
     """
     AWS Object Type = "AWS::EMR::Cluster.ScalingConstraints"
 
@@ -821,7 +821,7 @@ class ClusterScalingConstraints(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-scalingconstraints.html#cfn-elasticmapreduce-cluster-scalingconstraints-mincapacity"""
 
 @attr.s
-class ClusterSimpleScalingPolicyConfiguration(Property):
+class PropClusterSimpleScalingPolicyConfiguration(Property):
     """
     AWS Object Type = "AWS::EMR::Cluster.SimpleScalingPolicyConfiguration"
 
@@ -855,7 +855,7 @@ class ClusterSimpleScalingPolicyConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-simplescalingpolicyconfiguration.html#cfn-elasticmapreduce-cluster-simplescalingpolicyconfiguration-cooldown"""
 
 @attr.s
-class ClusterPlacementType(Property):
+class PropClusterPlacementType(Property):
     """
     AWS Object Type = "AWS::EMR::Cluster.PlacementType"
 
@@ -875,7 +875,7 @@ class ClusterPlacementType(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-placementtype.html#cfn-elasticmapreduce-cluster-placementtype-availabilityzone"""
 
 @attr.s
-class InstanceGroupConfigScalingConstraints(Property):
+class PropInstanceGroupConfigScalingConstraints(Property):
     """
     AWS Object Type = "AWS::EMR::InstanceGroupConfig.ScalingConstraints"
 
@@ -902,7 +902,7 @@ class InstanceGroupConfigScalingConstraints(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancegroupconfig-scalingconstraints.html#cfn-elasticmapreduce-instancegroupconfig-scalingconstraints-mincapacity"""
 
 @attr.s
-class InstanceFleetConfigInstanceFleetProvisioningSpecifications(Property):
+class PropInstanceFleetConfigInstanceFleetProvisioningSpecifications(Property):
     """
     AWS Object Type = "AWS::EMR::InstanceFleetConfig.InstanceFleetProvisioningSpecifications"
 
@@ -915,23 +915,23 @@ class InstanceFleetConfigInstanceFleetProvisioningSpecifications(Property):
     """
     AWS_OBJECT_TYPE = "AWS::EMR::InstanceFleetConfig.InstanceFleetProvisioningSpecifications"
     
-    p_OnDemandSpecification: typing.Union['InstanceFleetConfigOnDemandProvisioningSpecification', dict] = attr.ib(
+    p_OnDemandSpecification: typing.Union['PropInstanceFleetConfigOnDemandProvisioningSpecification', dict] = attr.ib(
         default=None,
-        converter=InstanceFleetConfigOnDemandProvisioningSpecification.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(InstanceFleetConfigOnDemandProvisioningSpecification)),
+        converter=PropInstanceFleetConfigOnDemandProvisioningSpecification.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropInstanceFleetConfigOnDemandProvisioningSpecification)),
         metadata={AttrMeta.PROPERTY_NAME: "OnDemandSpecification"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-instancefleetprovisioningspecifications.html#cfn-elasticmapreduce-instancefleetconfig-instancefleetprovisioningspecifications-ondemandspecification"""
-    p_SpotSpecification: typing.Union['InstanceFleetConfigSpotProvisioningSpecification', dict] = attr.ib(
+    p_SpotSpecification: typing.Union['PropInstanceFleetConfigSpotProvisioningSpecification', dict] = attr.ib(
         default=None,
-        converter=InstanceFleetConfigSpotProvisioningSpecification.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(InstanceFleetConfigSpotProvisioningSpecification)),
+        converter=PropInstanceFleetConfigSpotProvisioningSpecification.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropInstanceFleetConfigSpotProvisioningSpecification)),
         metadata={AttrMeta.PROPERTY_NAME: "SpotSpecification"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-instancefleetprovisioningspecifications.html#cfn-elasticmapreduce-instancefleetconfig-instancefleetprovisioningspecifications-spotspecification"""
 
 @attr.s
-class InstanceFleetConfigEbsBlockDeviceConfig(Property):
+class PropInstanceFleetConfigEbsBlockDeviceConfig(Property):
     """
     AWS Object Type = "AWS::EMR::InstanceFleetConfig.EbsBlockDeviceConfig"
 
@@ -944,10 +944,10 @@ class InstanceFleetConfigEbsBlockDeviceConfig(Property):
     """
     AWS_OBJECT_TYPE = "AWS::EMR::InstanceFleetConfig.EbsBlockDeviceConfig"
     
-    rp_VolumeSpecification: typing.Union['InstanceFleetConfigVolumeSpecification', dict] = attr.ib(
+    rp_VolumeSpecification: typing.Union['PropInstanceFleetConfigVolumeSpecification', dict] = attr.ib(
         default=None,
-        converter=InstanceFleetConfigVolumeSpecification.from_dict,
-        validator=attr.validators.instance_of(InstanceFleetConfigVolumeSpecification),
+        converter=PropInstanceFleetConfigVolumeSpecification.from_dict,
+        validator=attr.validators.instance_of(PropInstanceFleetConfigVolumeSpecification),
         metadata={AttrMeta.PROPERTY_NAME: "VolumeSpecification"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-ebsblockdeviceconfig.html#cfn-elasticmapreduce-instancefleetconfig-ebsblockdeviceconfig-volumespecification"""
@@ -959,7 +959,7 @@ class InstanceFleetConfigEbsBlockDeviceConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-ebsblockdeviceconfig.html#cfn-elasticmapreduce-instancefleetconfig-ebsblockdeviceconfig-volumesperinstance"""
 
 @attr.s
-class ClusterHadoopJarStepConfig(Property):
+class PropClusterHadoopJarStepConfig(Property):
     """
     AWS Object Type = "AWS::EMR::Cluster.HadoopJarStepConfig"
 
@@ -992,16 +992,16 @@ class ClusterHadoopJarStepConfig(Property):
         metadata={AttrMeta.PROPERTY_NAME: "MainClass"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-hadoopjarstepconfig.html#cfn-elasticmapreduce-cluster-hadoopjarstepconfig-mainclass"""
-    p_StepProperties: typing.List[typing.Union['ClusterKeyValue', dict]] = attr.ib(
+    p_StepProperties: typing.List[typing.Union['PropClusterKeyValue', dict]] = attr.ib(
         default=None,
-        converter=ClusterKeyValue.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ClusterKeyValue), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropClusterKeyValue.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropClusterKeyValue), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "StepProperties"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-hadoopjarstepconfig.html#cfn-elasticmapreduce-cluster-hadoopjarstepconfig-stepproperties"""
 
 @attr.s
-class StepHadoopJarStepConfig(Property):
+class PropStepHadoopJarStepConfig(Property):
     """
     AWS Object Type = "AWS::EMR::Step.HadoopJarStepConfig"
 
@@ -1034,16 +1034,16 @@ class StepHadoopJarStepConfig(Property):
         metadata={AttrMeta.PROPERTY_NAME: "MainClass"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-step-hadoopjarstepconfig.html#cfn-elasticmapreduce-step-hadoopjarstepconfig-mainclass"""
-    p_StepProperties: typing.List[typing.Union['StepKeyValue', dict]] = attr.ib(
+    p_StepProperties: typing.List[typing.Union['PropStepKeyValue', dict]] = attr.ib(
         default=None,
-        converter=StepKeyValue.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(StepKeyValue), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropStepKeyValue.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropStepKeyValue), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "StepProperties"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-step-hadoopjarstepconfig.html#cfn-elasticmapreduce-step-hadoopjarstepconfig-stepproperties"""
 
 @attr.s
-class ClusterBootstrapActionConfig(Property):
+class PropClusterBootstrapActionConfig(Property):
     """
     AWS Object Type = "AWS::EMR::Cluster.BootstrapActionConfig"
 
@@ -1062,16 +1062,16 @@ class ClusterBootstrapActionConfig(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Name"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-bootstrapactionconfig.html#cfn-elasticmapreduce-cluster-bootstrapactionconfig-name"""
-    rp_ScriptBootstrapAction: typing.Union['ClusterScriptBootstrapActionConfig', dict] = attr.ib(
+    rp_ScriptBootstrapAction: typing.Union['PropClusterScriptBootstrapActionConfig', dict] = attr.ib(
         default=None,
-        converter=ClusterScriptBootstrapActionConfig.from_dict,
-        validator=attr.validators.instance_of(ClusterScriptBootstrapActionConfig),
+        converter=PropClusterScriptBootstrapActionConfig.from_dict,
+        validator=attr.validators.instance_of(PropClusterScriptBootstrapActionConfig),
         metadata={AttrMeta.PROPERTY_NAME: "ScriptBootstrapAction"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-bootstrapactionconfig.html#cfn-elasticmapreduce-cluster-bootstrapactionconfig-scriptbootstrapaction"""
 
 @attr.s
-class ClusterStepConfig(Property):
+class PropClusterStepConfig(Property):
     """
     AWS Object Type = "AWS::EMR::Cluster.StepConfig"
 
@@ -1085,10 +1085,10 @@ class ClusterStepConfig(Property):
     """
     AWS_OBJECT_TYPE = "AWS::EMR::Cluster.StepConfig"
     
-    rp_HadoopJarStep: typing.Union['ClusterHadoopJarStepConfig', dict] = attr.ib(
+    rp_HadoopJarStep: typing.Union['PropClusterHadoopJarStepConfig', dict] = attr.ib(
         default=None,
-        converter=ClusterHadoopJarStepConfig.from_dict,
-        validator=attr.validators.instance_of(ClusterHadoopJarStepConfig),
+        converter=PropClusterHadoopJarStepConfig.from_dict,
+        validator=attr.validators.instance_of(PropClusterHadoopJarStepConfig),
         metadata={AttrMeta.PROPERTY_NAME: "HadoopJarStep"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-stepconfig.html#cfn-elasticmapreduce-cluster-stepconfig-hadoopjarstep"""
@@ -1106,7 +1106,7 @@ class ClusterStepConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-stepconfig.html#cfn-elasticmapreduce-cluster-stepconfig-actiononfailure"""
 
 @attr.s
-class ClusterEbsBlockDeviceConfig(Property):
+class PropClusterEbsBlockDeviceConfig(Property):
     """
     AWS Object Type = "AWS::EMR::Cluster.EbsBlockDeviceConfig"
 
@@ -1119,10 +1119,10 @@ class ClusterEbsBlockDeviceConfig(Property):
     """
     AWS_OBJECT_TYPE = "AWS::EMR::Cluster.EbsBlockDeviceConfig"
     
-    rp_VolumeSpecification: typing.Union['ClusterVolumeSpecification', dict] = attr.ib(
+    rp_VolumeSpecification: typing.Union['PropClusterVolumeSpecification', dict] = attr.ib(
         default=None,
-        converter=ClusterVolumeSpecification.from_dict,
-        validator=attr.validators.instance_of(ClusterVolumeSpecification),
+        converter=PropClusterVolumeSpecification.from_dict,
+        validator=attr.validators.instance_of(PropClusterVolumeSpecification),
         metadata={AttrMeta.PROPERTY_NAME: "VolumeSpecification"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-ebsblockdeviceconfig.html#cfn-elasticmapreduce-cluster-ebsblockdeviceconfig-volumespecification"""
@@ -1134,7 +1134,7 @@ class ClusterEbsBlockDeviceConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-ebsblockdeviceconfig.html#cfn-elasticmapreduce-cluster-ebsblockdeviceconfig-volumesperinstance"""
 
 @attr.s
-class ClusterCloudWatchAlarmDefinition(Property):
+class PropClusterCloudWatchAlarmDefinition(Property):
     """
     AWS Object Type = "AWS::EMR::Cluster.CloudWatchAlarmDefinition"
 
@@ -1178,10 +1178,10 @@ class ClusterCloudWatchAlarmDefinition(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Threshold"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-cloudwatchalarmdefinition.html#cfn-elasticmapreduce-cluster-cloudwatchalarmdefinition-threshold"""
-    p_Dimensions: typing.List[typing.Union['ClusterMetricDimension', dict]] = attr.ib(
+    p_Dimensions: typing.List[typing.Union['PropClusterMetricDimension', dict]] = attr.ib(
         default=None,
-        converter=ClusterMetricDimension.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ClusterMetricDimension), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropClusterMetricDimension.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropClusterMetricDimension), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Dimensions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-cloudwatchalarmdefinition.html#cfn-elasticmapreduce-cluster-cloudwatchalarmdefinition-dimensions"""
@@ -1211,7 +1211,7 @@ class ClusterCloudWatchAlarmDefinition(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-cloudwatchalarmdefinition.html#cfn-elasticmapreduce-cluster-cloudwatchalarmdefinition-unit"""
 
 @attr.s
-class ClusterInstanceFleetProvisioningSpecifications(Property):
+class PropClusterInstanceFleetProvisioningSpecifications(Property):
     """
     AWS Object Type = "AWS::EMR::Cluster.InstanceFleetProvisioningSpecifications"
 
@@ -1224,23 +1224,23 @@ class ClusterInstanceFleetProvisioningSpecifications(Property):
     """
     AWS_OBJECT_TYPE = "AWS::EMR::Cluster.InstanceFleetProvisioningSpecifications"
     
-    p_OnDemandSpecification: typing.Union['ClusterOnDemandProvisioningSpecification', dict] = attr.ib(
+    p_OnDemandSpecification: typing.Union['PropClusterOnDemandProvisioningSpecification', dict] = attr.ib(
         default=None,
-        converter=ClusterOnDemandProvisioningSpecification.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ClusterOnDemandProvisioningSpecification)),
+        converter=PropClusterOnDemandProvisioningSpecification.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropClusterOnDemandProvisioningSpecification)),
         metadata={AttrMeta.PROPERTY_NAME: "OnDemandSpecification"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-instancefleetprovisioningspecifications.html#cfn-elasticmapreduce-cluster-instancefleetprovisioningspecifications-ondemandspecification"""
-    p_SpotSpecification: typing.Union['ClusterSpotProvisioningSpecification', dict] = attr.ib(
+    p_SpotSpecification: typing.Union['PropClusterSpotProvisioningSpecification', dict] = attr.ib(
         default=None,
-        converter=ClusterSpotProvisioningSpecification.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ClusterSpotProvisioningSpecification)),
+        converter=PropClusterSpotProvisioningSpecification.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropClusterSpotProvisioningSpecification)),
         metadata={AttrMeta.PROPERTY_NAME: "SpotSpecification"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-instancefleetprovisioningspecifications.html#cfn-elasticmapreduce-cluster-instancefleetprovisioningspecifications-spotspecification"""
 
 @attr.s
-class InstanceGroupConfigScalingRule(Property):
+class PropInstanceGroupConfigScalingRule(Property):
     """
     AWS Object Type = "AWS::EMR::InstanceGroupConfig.ScalingRule"
 
@@ -1255,10 +1255,10 @@ class InstanceGroupConfigScalingRule(Property):
     """
     AWS_OBJECT_TYPE = "AWS::EMR::InstanceGroupConfig.ScalingRule"
     
-    rp_Action: typing.Union['InstanceGroupConfigScalingAction', dict] = attr.ib(
+    rp_Action: typing.Union['PropInstanceGroupConfigScalingAction', dict] = attr.ib(
         default=None,
-        converter=InstanceGroupConfigScalingAction.from_dict,
-        validator=attr.validators.instance_of(InstanceGroupConfigScalingAction),
+        converter=PropInstanceGroupConfigScalingAction.from_dict,
+        validator=attr.validators.instance_of(PropInstanceGroupConfigScalingAction),
         metadata={AttrMeta.PROPERTY_NAME: "Action"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancegroupconfig-scalingrule.html#cfn-elasticmapreduce-instancegroupconfig-scalingrule-action"""
@@ -1268,10 +1268,10 @@ class InstanceGroupConfigScalingRule(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Name"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancegroupconfig-scalingrule.html#cfn-elasticmapreduce-instancegroupconfig-scalingrule-name"""
-    rp_Trigger: typing.Union['InstanceGroupConfigScalingTrigger', dict] = attr.ib(
+    rp_Trigger: typing.Union['PropInstanceGroupConfigScalingTrigger', dict] = attr.ib(
         default=None,
-        converter=InstanceGroupConfigScalingTrigger.from_dict,
-        validator=attr.validators.instance_of(InstanceGroupConfigScalingTrigger),
+        converter=PropInstanceGroupConfigScalingTrigger.from_dict,
+        validator=attr.validators.instance_of(PropInstanceGroupConfigScalingTrigger),
         metadata={AttrMeta.PROPERTY_NAME: "Trigger"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancegroupconfig-scalingrule.html#cfn-elasticmapreduce-instancegroupconfig-scalingrule-trigger"""
@@ -1283,7 +1283,7 @@ class InstanceGroupConfigScalingRule(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancegroupconfig-scalingrule.html#cfn-elasticmapreduce-instancegroupconfig-scalingrule-description"""
 
 @attr.s
-class ClusterEbsConfiguration(Property):
+class PropClusterEbsConfiguration(Property):
     """
     AWS Object Type = "AWS::EMR::Cluster.EbsConfiguration"
 
@@ -1296,10 +1296,10 @@ class ClusterEbsConfiguration(Property):
     """
     AWS_OBJECT_TYPE = "AWS::EMR::Cluster.EbsConfiguration"
     
-    p_EbsBlockDeviceConfigs: typing.List[typing.Union['ClusterEbsBlockDeviceConfig', dict]] = attr.ib(
+    p_EbsBlockDeviceConfigs: typing.List[typing.Union['PropClusterEbsBlockDeviceConfig', dict]] = attr.ib(
         default=None,
-        converter=ClusterEbsBlockDeviceConfig.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ClusterEbsBlockDeviceConfig), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropClusterEbsBlockDeviceConfig.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropClusterEbsBlockDeviceConfig), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "EbsBlockDeviceConfigs"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-ebsconfiguration.html#cfn-elasticmapreduce-cluster-ebsconfiguration-ebsblockdeviceconfigs"""
@@ -1311,7 +1311,7 @@ class ClusterEbsConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-ebsconfiguration.html#cfn-elasticmapreduce-cluster-ebsconfiguration-ebsoptimized"""
 
 @attr.s
-class ClusterInstanceTypeConfig(Property):
+class PropClusterInstanceTypeConfig(Property):
     """
     AWS Object Type = "AWS::EMR::Cluster.InstanceTypeConfig"
 
@@ -1346,17 +1346,17 @@ class ClusterInstanceTypeConfig(Property):
         metadata={AttrMeta.PROPERTY_NAME: "BidPriceAsPercentageOfOnDemandPrice"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-instancetypeconfig.html#cfn-elasticmapreduce-cluster-instancetypeconfig-bidpriceaspercentageofondemandprice"""
-    p_Configurations: typing.List[typing.Union['ClusterConfiguration', dict]] = attr.ib(
+    p_Configurations: typing.List[typing.Union['PropClusterConfiguration', dict]] = attr.ib(
         default=None,
-        converter=ClusterConfiguration.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ClusterConfiguration), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropClusterConfiguration.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropClusterConfiguration), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Configurations"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-instancetypeconfig.html#cfn-elasticmapreduce-cluster-instancetypeconfig-configurations"""
-    p_EbsConfiguration: typing.Union['ClusterEbsConfiguration', dict] = attr.ib(
+    p_EbsConfiguration: typing.Union['PropClusterEbsConfiguration', dict] = attr.ib(
         default=None,
-        converter=ClusterEbsConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ClusterEbsConfiguration)),
+        converter=PropClusterEbsConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropClusterEbsConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "EbsConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-instancetypeconfig.html#cfn-elasticmapreduce-cluster-instancetypeconfig-ebsconfiguration"""
@@ -1368,7 +1368,7 @@ class ClusterInstanceTypeConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-instancetypeconfig.html#cfn-elasticmapreduce-cluster-instancetypeconfig-weightedcapacity"""
 
 @attr.s
-class ClusterScalingTrigger(Property):
+class PropClusterScalingTrigger(Property):
     """
     AWS Object Type = "AWS::EMR::Cluster.ScalingTrigger"
 
@@ -1380,16 +1380,16 @@ class ClusterScalingTrigger(Property):
     """
     AWS_OBJECT_TYPE = "AWS::EMR::Cluster.ScalingTrigger"
     
-    rp_CloudWatchAlarmDefinition: typing.Union['ClusterCloudWatchAlarmDefinition', dict] = attr.ib(
+    rp_CloudWatchAlarmDefinition: typing.Union['PropClusterCloudWatchAlarmDefinition', dict] = attr.ib(
         default=None,
-        converter=ClusterCloudWatchAlarmDefinition.from_dict,
-        validator=attr.validators.instance_of(ClusterCloudWatchAlarmDefinition),
+        converter=PropClusterCloudWatchAlarmDefinition.from_dict,
+        validator=attr.validators.instance_of(PropClusterCloudWatchAlarmDefinition),
         metadata={AttrMeta.PROPERTY_NAME: "CloudWatchAlarmDefinition"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-scalingtrigger.html#cfn-elasticmapreduce-cluster-scalingtrigger-cloudwatchalarmdefinition"""
 
 @attr.s
-class InstanceGroupConfigEbsBlockDeviceConfig(Property):
+class PropInstanceGroupConfigEbsBlockDeviceConfig(Property):
     """
     AWS Object Type = "AWS::EMR::InstanceGroupConfig.EbsBlockDeviceConfig"
 
@@ -1402,10 +1402,10 @@ class InstanceGroupConfigEbsBlockDeviceConfig(Property):
     """
     AWS_OBJECT_TYPE = "AWS::EMR::InstanceGroupConfig.EbsBlockDeviceConfig"
     
-    rp_VolumeSpecification: typing.Union['InstanceGroupConfigVolumeSpecification', dict] = attr.ib(
+    rp_VolumeSpecification: typing.Union['PropInstanceGroupConfigVolumeSpecification', dict] = attr.ib(
         default=None,
-        converter=InstanceGroupConfigVolumeSpecification.from_dict,
-        validator=attr.validators.instance_of(InstanceGroupConfigVolumeSpecification),
+        converter=PropInstanceGroupConfigVolumeSpecification.from_dict,
+        validator=attr.validators.instance_of(PropInstanceGroupConfigVolumeSpecification),
         metadata={AttrMeta.PROPERTY_NAME: "VolumeSpecification"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-ebsconfiguration-ebsblockdeviceconfig.html#cfn-emr-ebsconfiguration-ebsblockdeviceconfig-volumespecification"""
@@ -1417,7 +1417,7 @@ class InstanceGroupConfigEbsBlockDeviceConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-ebsconfiguration-ebsblockdeviceconfig.html#cfn-emr-ebsconfiguration-ebsblockdeviceconfig-volumesperinstance"""
 
 @attr.s
-class ClusterInstanceFleetConfig(Property):
+class PropClusterInstanceFleetConfig(Property):
     """
     AWS Object Type = "AWS::EMR::Cluster.InstanceFleetConfig"
 
@@ -1433,17 +1433,17 @@ class ClusterInstanceFleetConfig(Property):
     """
     AWS_OBJECT_TYPE = "AWS::EMR::Cluster.InstanceFleetConfig"
     
-    p_InstanceTypeConfigs: typing.List[typing.Union['ClusterInstanceTypeConfig', dict]] = attr.ib(
+    p_InstanceTypeConfigs: typing.List[typing.Union['PropClusterInstanceTypeConfig', dict]] = attr.ib(
         default=None,
-        converter=ClusterInstanceTypeConfig.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ClusterInstanceTypeConfig), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropClusterInstanceTypeConfig.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropClusterInstanceTypeConfig), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "InstanceTypeConfigs"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-instancefleetconfig.html#cfn-elasticmapreduce-cluster-instancefleetconfig-instancetypeconfigs"""
-    p_LaunchSpecifications: typing.Union['ClusterInstanceFleetProvisioningSpecifications', dict] = attr.ib(
+    p_LaunchSpecifications: typing.Union['PropClusterInstanceFleetProvisioningSpecifications', dict] = attr.ib(
         default=None,
-        converter=ClusterInstanceFleetProvisioningSpecifications.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ClusterInstanceFleetProvisioningSpecifications)),
+        converter=PropClusterInstanceFleetProvisioningSpecifications.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropClusterInstanceFleetProvisioningSpecifications)),
         metadata={AttrMeta.PROPERTY_NAME: "LaunchSpecifications"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-instancefleetconfig.html#cfn-elasticmapreduce-cluster-instancefleetconfig-launchspecifications"""
@@ -1467,7 +1467,7 @@ class ClusterInstanceFleetConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-instancefleetconfig.html#cfn-elasticmapreduce-cluster-instancefleetconfig-targetspotcapacity"""
 
 @attr.s
-class InstanceFleetConfigEbsConfiguration(Property):
+class PropInstanceFleetConfigEbsConfiguration(Property):
     """
     AWS Object Type = "AWS::EMR::InstanceFleetConfig.EbsConfiguration"
 
@@ -1480,10 +1480,10 @@ class InstanceFleetConfigEbsConfiguration(Property):
     """
     AWS_OBJECT_TYPE = "AWS::EMR::InstanceFleetConfig.EbsConfiguration"
     
-    p_EbsBlockDeviceConfigs: typing.List[typing.Union['InstanceFleetConfigEbsBlockDeviceConfig', dict]] = attr.ib(
+    p_EbsBlockDeviceConfigs: typing.List[typing.Union['PropInstanceFleetConfigEbsBlockDeviceConfig', dict]] = attr.ib(
         default=None,
-        converter=InstanceFleetConfigEbsBlockDeviceConfig.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(InstanceFleetConfigEbsBlockDeviceConfig), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropInstanceFleetConfigEbsBlockDeviceConfig.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropInstanceFleetConfigEbsBlockDeviceConfig), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "EbsBlockDeviceConfigs"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-ebsconfiguration.html#cfn-elasticmapreduce-instancefleetconfig-ebsconfiguration-ebsblockdeviceconfigs"""
@@ -1495,7 +1495,7 @@ class InstanceFleetConfigEbsConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-ebsconfiguration.html#cfn-elasticmapreduce-instancefleetconfig-ebsconfiguration-ebsoptimized"""
 
 @attr.s
-class InstanceGroupConfigEbsConfiguration(Property):
+class PropInstanceGroupConfigEbsConfiguration(Property):
     """
     AWS Object Type = "AWS::EMR::InstanceGroupConfig.EbsConfiguration"
 
@@ -1508,10 +1508,10 @@ class InstanceGroupConfigEbsConfiguration(Property):
     """
     AWS_OBJECT_TYPE = "AWS::EMR::InstanceGroupConfig.EbsConfiguration"
     
-    p_EbsBlockDeviceConfigs: typing.List[typing.Union['InstanceGroupConfigEbsBlockDeviceConfig', dict]] = attr.ib(
+    p_EbsBlockDeviceConfigs: typing.List[typing.Union['PropInstanceGroupConfigEbsBlockDeviceConfig', dict]] = attr.ib(
         default=None,
-        converter=InstanceGroupConfigEbsBlockDeviceConfig.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(InstanceGroupConfigEbsBlockDeviceConfig), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropInstanceGroupConfigEbsBlockDeviceConfig.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropInstanceGroupConfigEbsBlockDeviceConfig), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "EbsBlockDeviceConfigs"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-ebsconfiguration.html#cfn-emr-ebsconfiguration-ebsblockdeviceconfigs"""
@@ -1523,7 +1523,7 @@ class InstanceGroupConfigEbsConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emr-ebsconfiguration.html#cfn-emr-ebsconfiguration-ebsoptimized"""
 
 @attr.s
-class ClusterScalingAction(Property):
+class PropClusterScalingAction(Property):
     """
     AWS Object Type = "AWS::EMR::Cluster.ScalingAction"
 
@@ -1536,10 +1536,10 @@ class ClusterScalingAction(Property):
     """
     AWS_OBJECT_TYPE = "AWS::EMR::Cluster.ScalingAction"
     
-    rp_SimpleScalingPolicyConfiguration: typing.Union['ClusterSimpleScalingPolicyConfiguration', dict] = attr.ib(
+    rp_SimpleScalingPolicyConfiguration: typing.Union['PropClusterSimpleScalingPolicyConfiguration', dict] = attr.ib(
         default=None,
-        converter=ClusterSimpleScalingPolicyConfiguration.from_dict,
-        validator=attr.validators.instance_of(ClusterSimpleScalingPolicyConfiguration),
+        converter=PropClusterSimpleScalingPolicyConfiguration.from_dict,
+        validator=attr.validators.instance_of(PropClusterSimpleScalingPolicyConfiguration),
         metadata={AttrMeta.PROPERTY_NAME: "SimpleScalingPolicyConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-scalingaction.html#cfn-elasticmapreduce-cluster-scalingaction-simplescalingpolicyconfiguration"""
@@ -1551,7 +1551,7 @@ class ClusterScalingAction(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-scalingaction.html#cfn-elasticmapreduce-cluster-scalingaction-market"""
 
 @attr.s
-class ClusterScalingRule(Property):
+class PropClusterScalingRule(Property):
     """
     AWS Object Type = "AWS::EMR::Cluster.ScalingRule"
 
@@ -1566,10 +1566,10 @@ class ClusterScalingRule(Property):
     """
     AWS_OBJECT_TYPE = "AWS::EMR::Cluster.ScalingRule"
     
-    rp_Action: typing.Union['ClusterScalingAction', dict] = attr.ib(
+    rp_Action: typing.Union['PropClusterScalingAction', dict] = attr.ib(
         default=None,
-        converter=ClusterScalingAction.from_dict,
-        validator=attr.validators.instance_of(ClusterScalingAction),
+        converter=PropClusterScalingAction.from_dict,
+        validator=attr.validators.instance_of(PropClusterScalingAction),
         metadata={AttrMeta.PROPERTY_NAME: "Action"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-scalingrule.html#cfn-elasticmapreduce-cluster-scalingrule-action"""
@@ -1579,10 +1579,10 @@ class ClusterScalingRule(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Name"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-scalingrule.html#cfn-elasticmapreduce-cluster-scalingrule-name"""
-    rp_Trigger: typing.Union['ClusterScalingTrigger', dict] = attr.ib(
+    rp_Trigger: typing.Union['PropClusterScalingTrigger', dict] = attr.ib(
         default=None,
-        converter=ClusterScalingTrigger.from_dict,
-        validator=attr.validators.instance_of(ClusterScalingTrigger),
+        converter=PropClusterScalingTrigger.from_dict,
+        validator=attr.validators.instance_of(PropClusterScalingTrigger),
         metadata={AttrMeta.PROPERTY_NAME: "Trigger"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-scalingrule.html#cfn-elasticmapreduce-cluster-scalingrule-trigger"""
@@ -1594,7 +1594,7 @@ class ClusterScalingRule(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-scalingrule.html#cfn-elasticmapreduce-cluster-scalingrule-description"""
 
 @attr.s
-class ClusterAutoScalingPolicy(Property):
+class PropClusterAutoScalingPolicy(Property):
     """
     AWS Object Type = "AWS::EMR::Cluster.AutoScalingPolicy"
 
@@ -1607,23 +1607,23 @@ class ClusterAutoScalingPolicy(Property):
     """
     AWS_OBJECT_TYPE = "AWS::EMR::Cluster.AutoScalingPolicy"
     
-    rp_Constraints: typing.Union['ClusterScalingConstraints', dict] = attr.ib(
+    rp_Constraints: typing.Union['PropClusterScalingConstraints', dict] = attr.ib(
         default=None,
-        converter=ClusterScalingConstraints.from_dict,
-        validator=attr.validators.instance_of(ClusterScalingConstraints),
+        converter=PropClusterScalingConstraints.from_dict,
+        validator=attr.validators.instance_of(PropClusterScalingConstraints),
         metadata={AttrMeta.PROPERTY_NAME: "Constraints"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-autoscalingpolicy.html#cfn-elasticmapreduce-cluster-autoscalingpolicy-constraints"""
-    rp_Rules: typing.List[typing.Union['ClusterScalingRule', dict]] = attr.ib(
+    rp_Rules: typing.List[typing.Union['PropClusterScalingRule', dict]] = attr.ib(
         default=None,
-        converter=ClusterScalingRule.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ClusterScalingRule), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropClusterScalingRule.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropClusterScalingRule), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "Rules"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-autoscalingpolicy.html#cfn-elasticmapreduce-cluster-autoscalingpolicy-rules"""
 
 @attr.s
-class InstanceGroupConfigAutoScalingPolicy(Property):
+class PropInstanceGroupConfigAutoScalingPolicy(Property):
     """
     AWS Object Type = "AWS::EMR::InstanceGroupConfig.AutoScalingPolicy"
 
@@ -1636,23 +1636,23 @@ class InstanceGroupConfigAutoScalingPolicy(Property):
     """
     AWS_OBJECT_TYPE = "AWS::EMR::InstanceGroupConfig.AutoScalingPolicy"
     
-    rp_Constraints: typing.Union['InstanceGroupConfigScalingConstraints', dict] = attr.ib(
+    rp_Constraints: typing.Union['PropInstanceGroupConfigScalingConstraints', dict] = attr.ib(
         default=None,
-        converter=InstanceGroupConfigScalingConstraints.from_dict,
-        validator=attr.validators.instance_of(InstanceGroupConfigScalingConstraints),
+        converter=PropInstanceGroupConfigScalingConstraints.from_dict,
+        validator=attr.validators.instance_of(PropInstanceGroupConfigScalingConstraints),
         metadata={AttrMeta.PROPERTY_NAME: "Constraints"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancegroupconfig-autoscalingpolicy.html#cfn-elasticmapreduce-instancegroupconfig-autoscalingpolicy-constraints"""
-    rp_Rules: typing.List[typing.Union['InstanceGroupConfigScalingRule', dict]] = attr.ib(
+    rp_Rules: typing.List[typing.Union['PropInstanceGroupConfigScalingRule', dict]] = attr.ib(
         default=None,
-        converter=InstanceGroupConfigScalingRule.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(InstanceGroupConfigScalingRule), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropInstanceGroupConfigScalingRule.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropInstanceGroupConfigScalingRule), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "Rules"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancegroupconfig-autoscalingpolicy.html#cfn-elasticmapreduce-instancegroupconfig-autoscalingpolicy-rules"""
 
 @attr.s
-class ClusterInstanceGroupConfig(Property):
+class PropClusterInstanceGroupConfig(Property):
     """
     AWS Object Type = "AWS::EMR::Cluster.InstanceGroupConfig"
 
@@ -1683,10 +1683,10 @@ class ClusterInstanceGroupConfig(Property):
         metadata={AttrMeta.PROPERTY_NAME: "InstanceType"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-instancegroupconfig.html#cfn-elasticmapreduce-cluster-instancegroupconfig-instancetype"""
-    p_AutoScalingPolicy: typing.Union['ClusterAutoScalingPolicy', dict] = attr.ib(
+    p_AutoScalingPolicy: typing.Union['PropClusterAutoScalingPolicy', dict] = attr.ib(
         default=None,
-        converter=ClusterAutoScalingPolicy.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ClusterAutoScalingPolicy)),
+        converter=PropClusterAutoScalingPolicy.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropClusterAutoScalingPolicy)),
         metadata={AttrMeta.PROPERTY_NAME: "AutoScalingPolicy"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-instancegroupconfig.html#cfn-elasticmapreduce-cluster-instancegroupconfig-autoscalingpolicy"""
@@ -1696,17 +1696,17 @@ class ClusterInstanceGroupConfig(Property):
         metadata={AttrMeta.PROPERTY_NAME: "BidPrice"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-instancegroupconfig.html#cfn-elasticmapreduce-cluster-instancegroupconfig-bidprice"""
-    p_Configurations: typing.List[typing.Union['ClusterConfiguration', dict]] = attr.ib(
+    p_Configurations: typing.List[typing.Union['PropClusterConfiguration', dict]] = attr.ib(
         default=None,
-        converter=ClusterConfiguration.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ClusterConfiguration), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropClusterConfiguration.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropClusterConfiguration), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Configurations"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-instancegroupconfig.html#cfn-elasticmapreduce-cluster-instancegroupconfig-configurations"""
-    p_EbsConfiguration: typing.Union['ClusterEbsConfiguration', dict] = attr.ib(
+    p_EbsConfiguration: typing.Union['PropClusterEbsConfiguration', dict] = attr.ib(
         default=None,
-        converter=ClusterEbsConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ClusterEbsConfiguration)),
+        converter=PropClusterEbsConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropClusterEbsConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "EbsConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-instancegroupconfig.html#cfn-elasticmapreduce-cluster-instancegroupconfig-ebsconfiguration"""
@@ -1724,7 +1724,7 @@ class ClusterInstanceGroupConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-instancegroupconfig.html#cfn-elasticmapreduce-cluster-instancegroupconfig-name"""
 
 @attr.s
-class InstanceFleetConfigInstanceTypeConfig(Property):
+class PropInstanceFleetConfigInstanceTypeConfig(Property):
     """
     AWS Object Type = "AWS::EMR::InstanceFleetConfig.InstanceTypeConfig"
 
@@ -1759,17 +1759,17 @@ class InstanceFleetConfigInstanceTypeConfig(Property):
         metadata={AttrMeta.PROPERTY_NAME: "BidPriceAsPercentageOfOnDemandPrice"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-instancetypeconfig.html#cfn-elasticmapreduce-instancefleetconfig-instancetypeconfig-bidpriceaspercentageofondemandprice"""
-    p_Configurations: typing.List[typing.Union['InstanceFleetConfigConfiguration', dict]] = attr.ib(
+    p_Configurations: typing.List[typing.Union['PropInstanceFleetConfigConfiguration', dict]] = attr.ib(
         default=None,
-        converter=InstanceFleetConfigConfiguration.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(InstanceFleetConfigConfiguration), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropInstanceFleetConfigConfiguration.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropInstanceFleetConfigConfiguration), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Configurations"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-instancetypeconfig.html#cfn-elasticmapreduce-instancefleetconfig-instancetypeconfig-configurations"""
-    p_EbsConfiguration: typing.Union['InstanceFleetConfigEbsConfiguration', dict] = attr.ib(
+    p_EbsConfiguration: typing.Union['PropInstanceFleetConfigEbsConfiguration', dict] = attr.ib(
         default=None,
-        converter=InstanceFleetConfigEbsConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(InstanceFleetConfigEbsConfiguration)),
+        converter=PropInstanceFleetConfigEbsConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropInstanceFleetConfigEbsConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "EbsConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-instancetypeconfig.html#cfn-elasticmapreduce-instancefleetconfig-instancetypeconfig-ebsconfiguration"""
@@ -1781,7 +1781,7 @@ class InstanceFleetConfigInstanceTypeConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-instancefleetconfig-instancetypeconfig.html#cfn-elasticmapreduce-instancefleetconfig-instancetypeconfig-weightedcapacity"""
 
 @attr.s
-class ClusterJobFlowInstancesConfig(Property):
+class PropClusterJobFlowInstancesConfig(Property):
     """
     AWS Object Type = "AWS::EMR::Cluster.JobFlowInstancesConfig"
 
@@ -1820,17 +1820,17 @@ class ClusterJobFlowInstancesConfig(Property):
         metadata={AttrMeta.PROPERTY_NAME: "AdditionalSlaveSecurityGroups"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-jobflowinstancesconfig.html#cfn-elasticmapreduce-cluster-jobflowinstancesconfig-additionalslavesecuritygroups"""
-    p_CoreInstanceFleet: typing.Union['ClusterInstanceFleetConfig', dict] = attr.ib(
+    p_CoreInstanceFleet: typing.Union['PropClusterInstanceFleetConfig', dict] = attr.ib(
         default=None,
-        converter=ClusterInstanceFleetConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ClusterInstanceFleetConfig)),
+        converter=PropClusterInstanceFleetConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropClusterInstanceFleetConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "CoreInstanceFleet"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-jobflowinstancesconfig.html#cfn-elasticmapreduce-cluster-jobflowinstancesconfig-coreinstancefleet"""
-    p_CoreInstanceGroup: typing.Union['ClusterInstanceGroupConfig', dict] = attr.ib(
+    p_CoreInstanceGroup: typing.Union['PropClusterInstanceGroupConfig', dict] = attr.ib(
         default=None,
-        converter=ClusterInstanceGroupConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ClusterInstanceGroupConfig)),
+        converter=PropClusterInstanceGroupConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropClusterInstanceGroupConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "CoreInstanceGroup"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-jobflowinstancesconfig.html#cfn-elasticmapreduce-cluster-jobflowinstancesconfig-coreinstancegroup"""
@@ -1876,24 +1876,24 @@ class ClusterJobFlowInstancesConfig(Property):
         metadata={AttrMeta.PROPERTY_NAME: "KeepJobFlowAliveWhenNoSteps"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-jobflowinstancesconfig.html#cfn-elasticmapreduce-cluster-jobflowinstancesconfig-keepjobflowalivewhennosteps"""
-    p_MasterInstanceFleet: typing.Union['ClusterInstanceFleetConfig', dict] = attr.ib(
+    p_MasterInstanceFleet: typing.Union['PropClusterInstanceFleetConfig', dict] = attr.ib(
         default=None,
-        converter=ClusterInstanceFleetConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ClusterInstanceFleetConfig)),
+        converter=PropClusterInstanceFleetConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropClusterInstanceFleetConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "MasterInstanceFleet"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-jobflowinstancesconfig.html#cfn-elasticmapreduce-cluster-jobflowinstancesconfig-masterinstancefleet"""
-    p_MasterInstanceGroup: typing.Union['ClusterInstanceGroupConfig', dict] = attr.ib(
+    p_MasterInstanceGroup: typing.Union['PropClusterInstanceGroupConfig', dict] = attr.ib(
         default=None,
-        converter=ClusterInstanceGroupConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ClusterInstanceGroupConfig)),
+        converter=PropClusterInstanceGroupConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropClusterInstanceGroupConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "MasterInstanceGroup"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-jobflowinstancesconfig.html#cfn-elasticmapreduce-cluster-jobflowinstancesconfig-masterinstancegroup"""
-    p_Placement: typing.Union['ClusterPlacementType', dict] = attr.ib(
+    p_Placement: typing.Union['PropClusterPlacementType', dict] = attr.ib(
         default=None,
-        converter=ClusterPlacementType.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ClusterPlacementType)),
+        converter=PropClusterPlacementType.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropClusterPlacementType)),
         metadata={AttrMeta.PROPERTY_NAME: "Placement"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticmapreduce-cluster-jobflowinstancesconfig.html#cfn-elasticmapreduce-cluster-jobflowinstancesconfig-placement"""
@@ -1945,17 +1945,17 @@ class InstanceFleetConfig(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "InstanceFleetType"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-instancefleetconfig.html#cfn-elasticmapreduce-instancefleetconfig-instancefleettype"""
-    p_InstanceTypeConfigs: typing.List[typing.Union['InstanceFleetConfigInstanceTypeConfig', dict]] = attr.ib(
+    p_InstanceTypeConfigs: typing.List[typing.Union['PropInstanceFleetConfigInstanceTypeConfig', dict]] = attr.ib(
         default=None,
-        converter=InstanceFleetConfigInstanceTypeConfig.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(InstanceFleetConfigInstanceTypeConfig), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropInstanceFleetConfigInstanceTypeConfig.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropInstanceFleetConfigInstanceTypeConfig), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "InstanceTypeConfigs"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-instancefleetconfig.html#cfn-elasticmapreduce-instancefleetconfig-instancetypeconfigs"""
-    p_LaunchSpecifications: typing.Union['InstanceFleetConfigInstanceFleetProvisioningSpecifications', dict] = attr.ib(
+    p_LaunchSpecifications: typing.Union['PropInstanceFleetConfigInstanceFleetProvisioningSpecifications', dict] = attr.ib(
         default=None,
-        converter=InstanceFleetConfigInstanceFleetProvisioningSpecifications.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(InstanceFleetConfigInstanceFleetProvisioningSpecifications)),
+        converter=PropInstanceFleetConfigInstanceFleetProvisioningSpecifications.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropInstanceFleetConfigInstanceFleetProvisioningSpecifications)),
         metadata={AttrMeta.PROPERTY_NAME: "LaunchSpecifications"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-instancefleetconfig.html#cfn-elasticmapreduce-instancefleetconfig-launchspecifications"""
@@ -2027,10 +2027,10 @@ class InstanceGroupConfig(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "JobFlowId"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-emr-instancegroupconfig-jobflowid"""
-    p_AutoScalingPolicy: typing.Union['InstanceGroupConfigAutoScalingPolicy', dict] = attr.ib(
+    p_AutoScalingPolicy: typing.Union['PropInstanceGroupConfigAutoScalingPolicy', dict] = attr.ib(
         default=None,
-        converter=InstanceGroupConfigAutoScalingPolicy.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(InstanceGroupConfigAutoScalingPolicy)),
+        converter=PropInstanceGroupConfigAutoScalingPolicy.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropInstanceGroupConfigAutoScalingPolicy)),
         metadata={AttrMeta.PROPERTY_NAME: "AutoScalingPolicy"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-elasticmapreduce-instancegroupconfig-autoscalingpolicy"""
@@ -2040,17 +2040,17 @@ class InstanceGroupConfig(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "BidPrice"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-emr-instancegroupconfig-bidprice"""
-    p_Configurations: typing.List[typing.Union['InstanceGroupConfigConfiguration', dict]] = attr.ib(
+    p_Configurations: typing.List[typing.Union['PropInstanceGroupConfigConfiguration', dict]] = attr.ib(
         default=None,
-        converter=InstanceGroupConfigConfiguration.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(InstanceGroupConfigConfiguration), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropInstanceGroupConfigConfiguration.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropInstanceGroupConfigConfiguration), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Configurations"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-emr-instancegroupconfig-configurations"""
-    p_EbsConfiguration: typing.Union['InstanceGroupConfigEbsConfiguration', dict] = attr.ib(
+    p_EbsConfiguration: typing.Union['PropInstanceGroupConfigEbsConfiguration', dict] = attr.ib(
         default=None,
-        converter=InstanceGroupConfigEbsConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(InstanceGroupConfigEbsConfiguration)),
+        converter=PropInstanceGroupConfigEbsConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropInstanceGroupConfigEbsConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "EbsConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-instancegroupconfig.html#cfn-emr-instancegroupconfig-ebsconfiguration"""
@@ -2092,10 +2092,10 @@ class Step(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "ActionOnFailure"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-step.html#cfn-elasticmapreduce-step-actiononfailure"""
-    rp_HadoopJarStep: typing.Union['StepHadoopJarStepConfig', dict] = attr.ib(
+    rp_HadoopJarStep: typing.Union['PropStepHadoopJarStepConfig', dict] = attr.ib(
         default=None,
-        converter=StepHadoopJarStepConfig.from_dict,
-        validator=attr.validators.instance_of(StepHadoopJarStepConfig),
+        converter=PropStepHadoopJarStepConfig.from_dict,
+        validator=attr.validators.instance_of(PropStepHadoopJarStepConfig),
         metadata={AttrMeta.PROPERTY_NAME: "HadoopJarStep"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emr-step.html#cfn-elasticmapreduce-step-hadoopjarstep"""
@@ -2288,10 +2288,10 @@ class Cluster(Resource):
     AWS_OBJECT_TYPE = "AWS::EMR::Cluster"
 
     
-    rp_Instances: typing.Union['ClusterJobFlowInstancesConfig', dict] = attr.ib(
+    rp_Instances: typing.Union['PropClusterJobFlowInstancesConfig', dict] = attr.ib(
         default=None,
-        converter=ClusterJobFlowInstancesConfig.from_dict,
-        validator=attr.validators.instance_of(ClusterJobFlowInstancesConfig),
+        converter=PropClusterJobFlowInstancesConfig.from_dict,
+        validator=attr.validators.instance_of(PropClusterJobFlowInstancesConfig),
         metadata={AttrMeta.PROPERTY_NAME: "Instances"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-instances"""
@@ -2319,10 +2319,10 @@ class Cluster(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "AdditionalInfo"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-additionalinfo"""
-    p_Applications: typing.List[typing.Union['ClusterApplication', dict]] = attr.ib(
+    p_Applications: typing.List[typing.Union['PropClusterApplication', dict]] = attr.ib(
         default=None,
-        converter=ClusterApplication.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ClusterApplication), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropClusterApplication.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropClusterApplication), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Applications"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-applications"""
@@ -2332,17 +2332,17 @@ class Cluster(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "AutoScalingRole"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-autoscalingrole"""
-    p_BootstrapActions: typing.List[typing.Union['ClusterBootstrapActionConfig', dict]] = attr.ib(
+    p_BootstrapActions: typing.List[typing.Union['PropClusterBootstrapActionConfig', dict]] = attr.ib(
         default=None,
-        converter=ClusterBootstrapActionConfig.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ClusterBootstrapActionConfig), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropClusterBootstrapActionConfig.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropClusterBootstrapActionConfig), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "BootstrapActions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-bootstrapactions"""
-    p_Configurations: typing.List[typing.Union['ClusterConfiguration', dict]] = attr.ib(
+    p_Configurations: typing.List[typing.Union['PropClusterConfiguration', dict]] = attr.ib(
         default=None,
-        converter=ClusterConfiguration.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ClusterConfiguration), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropClusterConfiguration.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropClusterConfiguration), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Configurations"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-configurations"""
@@ -2358,10 +2358,10 @@ class Cluster(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "EbsRootVolumeSize"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-ebsrootvolumesize"""
-    p_KerberosAttributes: typing.Union['ClusterKerberosAttributes', dict] = attr.ib(
+    p_KerberosAttributes: typing.Union['PropClusterKerberosAttributes', dict] = attr.ib(
         default=None,
-        converter=ClusterKerberosAttributes.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ClusterKerberosAttributes)),
+        converter=PropClusterKerberosAttributes.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropClusterKerberosAttributes)),
         metadata={AttrMeta.PROPERTY_NAME: "KerberosAttributes"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-kerberosattributes"""
@@ -2377,10 +2377,10 @@ class Cluster(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "LogUri"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-loguri"""
-    p_ManagedScalingPolicy: typing.Union['ClusterManagedScalingPolicy', dict] = attr.ib(
+    p_ManagedScalingPolicy: typing.Union['PropClusterManagedScalingPolicy', dict] = attr.ib(
         default=None,
-        converter=ClusterManagedScalingPolicy.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ClusterManagedScalingPolicy)),
+        converter=PropClusterManagedScalingPolicy.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropClusterManagedScalingPolicy)),
         metadata={AttrMeta.PROPERTY_NAME: "ManagedScalingPolicy"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-managedscalingpolicy"""
@@ -2408,10 +2408,10 @@ class Cluster(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "StepConcurrencyLevel"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-stepconcurrencylevel"""
-    p_Steps: typing.List[typing.Union['ClusterStepConfig', dict]] = attr.ib(
+    p_Steps: typing.List[typing.Union['PropClusterStepConfig', dict]] = attr.ib(
         default=None,
-        converter=ClusterStepConfig.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ClusterStepConfig), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropClusterStepConfig.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropClusterStepConfig), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Steps"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticmapreduce-cluster.html#cfn-elasticmapreduce-cluster-steps"""

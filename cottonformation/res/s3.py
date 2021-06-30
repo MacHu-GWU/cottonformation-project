@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class AccessPointPublicAccessBlockConfiguration(Property):
+class PropAccessPointPublicAccessBlockConfiguration(Property):
     """
     AWS Object Type = "AWS::S3::AccessPoint.PublicAccessBlockConfiguration"
 
@@ -56,7 +56,7 @@ class AccessPointPublicAccessBlockConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-accesspoint-publicaccessblockconfiguration.html#cfn-s3-accesspoint-publicaccessblockconfiguration-restrictpublicbuckets"""
 
 @attr.s
-class BucketReplicaModifications(Property):
+class PropBucketReplicaModifications(Property):
     """
     AWS Object Type = "AWS::S3::Bucket.ReplicaModifications"
 
@@ -76,7 +76,7 @@ class BucketReplicaModifications(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-replicamodifications.html#cfn-s3-bucket-replicamodifications-status"""
 
 @attr.s
-class BucketCorsRule(Property):
+class PropBucketCorsRule(Property):
     """
     AWS Object Type = "AWS::S3::Bucket.CorsRule"
 
@@ -131,7 +131,7 @@ class BucketCorsRule(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-cors-corsrule.html#cfn-s3-bucket-cors-corsrule-maxage"""
 
 @attr.s
-class BucketDestination(Property):
+class PropBucketDestination(Property):
     """
     AWS Object Type = "AWS::S3::Bucket.Destination"
 
@@ -172,7 +172,7 @@ class BucketDestination(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-destination.html#cfn-s3-bucket-destination-prefix"""
 
 @attr.s
-class BucketOwnershipControlsRule(Property):
+class PropBucketOwnershipControlsRule(Property):
     """
     AWS Object Type = "AWS::S3::Bucket.OwnershipControlsRule"
 
@@ -192,7 +192,7 @@ class BucketOwnershipControlsRule(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-ownershipcontrolsrule.html#cfn-s3-bucket-ownershipcontrolsrule-objectownership"""
 
 @attr.s
-class BucketAccessControlTranslation(Property):
+class PropBucketAccessControlTranslation(Property):
     """
     AWS Object Type = "AWS::S3::Bucket.AccessControlTranslation"
 
@@ -212,7 +212,7 @@ class BucketAccessControlTranslation(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-accesscontroltranslation.html#cfn-s3-bucket-accesscontroltranslation-owner"""
 
 @attr.s
-class BucketVersioningConfiguration(Property):
+class PropBucketVersioningConfiguration(Property):
     """
     AWS Object Type = "AWS::S3::Bucket.VersioningConfiguration"
 
@@ -232,7 +232,7 @@ class BucketVersioningConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-versioningconfig.html#cfn-s3-bucket-versioningconfig-status"""
 
 @attr.s
-class BucketServerSideEncryptionByDefault(Property):
+class PropBucketServerSideEncryptionByDefault(Property):
     """
     AWS Object Type = "AWS::S3::Bucket.ServerSideEncryptionByDefault"
 
@@ -259,7 +259,7 @@ class BucketServerSideEncryptionByDefault(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-serversideencryptionbydefault.html#cfn-s3-bucket-serversideencryptionbydefault-kmsmasterkeyid"""
 
 @attr.s
-class StorageLensSelectionCriteria(Property):
+class PropStorageLensSelectionCriteria(Property):
     """
     AWS Object Type = "AWS::S3::StorageLens.SelectionCriteria"
 
@@ -293,7 +293,7 @@ class StorageLensSelectionCriteria(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-selectioncriteria.html#cfn-s3-storagelens-selectioncriteria-minstoragebytespercentage"""
 
 @attr.s
-class BucketTiering(Property):
+class PropBucketTiering(Property):
     """
     AWS Object Type = "AWS::S3::Bucket.Tiering"
 
@@ -320,7 +320,7 @@ class BucketTiering(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-tiering.html#cfn-s3-bucket-tiering-days"""
 
 @attr.s
-class BucketSseKmsEncryptedObjects(Property):
+class PropBucketSseKmsEncryptedObjects(Property):
     """
     AWS Object Type = "AWS::S3::Bucket.SseKmsEncryptedObjects"
 
@@ -340,7 +340,7 @@ class BucketSseKmsEncryptedObjects(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-ssekmsencryptedobjects.html#cfn-s3-bucket-ssekmsencryptedobjects-status"""
 
 @attr.s
-class StorageLensActivityMetrics(Property):
+class PropStorageLensActivityMetrics(Property):
     """
     AWS Object Type = "AWS::S3::StorageLens.ActivityMetrics"
 
@@ -360,7 +360,7 @@ class StorageLensActivityMetrics(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-activitymetrics.html#cfn-s3-storagelens-activitymetrics-isenabled"""
 
 @attr.s
-class StorageLensBucketsAndRegions(Property):
+class PropStorageLensBucketsAndRegions(Property):
     """
     AWS Object Type = "AWS::S3::StorageLens.BucketsAndRegions"
 
@@ -387,7 +387,7 @@ class StorageLensBucketsAndRegions(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-bucketsandregions.html#cfn-s3-storagelens-bucketsandregions-regions"""
 
 @attr.s
-class BucketAccelerateConfiguration(Property):
+class PropBucketAccelerateConfiguration(Property):
     """
     AWS Object Type = "AWS::S3::Bucket.AccelerateConfiguration"
 
@@ -407,7 +407,7 @@ class BucketAccelerateConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-accelerateconfiguration.html#cfn-s3-bucket-accelerateconfiguration-accelerationstatus"""
 
 @attr.s
-class BucketAbortIncompleteMultipartUpload(Property):
+class PropBucketAbortIncompleteMultipartUpload(Property):
     """
     AWS Object Type = "AWS::S3::Bucket.AbortIncompleteMultipartUpload"
 
@@ -427,7 +427,7 @@ class BucketAbortIncompleteMultipartUpload(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-abortincompletemultipartupload.html#cfn-s3-bucket-abortincompletemultipartupload-daysafterinitiation"""
 
 @attr.s
-class BucketDeleteMarkerReplication(Property):
+class PropBucketDeleteMarkerReplication(Property):
     """
     AWS Object Type = "AWS::S3::Bucket.DeleteMarkerReplication"
 
@@ -447,7 +447,7 @@ class BucketDeleteMarkerReplication(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-deletemarkerreplication.html#cfn-s3-bucket-deletemarkerreplication-status"""
 
 @attr.s
-class StorageLensAwsOrg(Property):
+class PropStorageLensAwsOrg(Property):
     """
     AWS Object Type = "AWS::S3::StorageLens.AwsOrg"
 
@@ -467,7 +467,7 @@ class StorageLensAwsOrg(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-awsorg.html#cfn-s3-storagelens-awsorg-arn"""
 
 @attr.s
-class BucketPublicAccessBlockConfiguration(Property):
+class PropBucketPublicAccessBlockConfiguration(Property):
     """
     AWS Object Type = "AWS::S3::Bucket.PublicAccessBlockConfiguration"
 
@@ -508,7 +508,7 @@ class BucketPublicAccessBlockConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-publicaccessblockconfiguration.html#cfn-s3-bucket-publicaccessblockconfiguration-restrictpublicbuckets"""
 
 @attr.s
-class BucketSourceSelectionCriteria(Property):
+class PropBucketSourceSelectionCriteria(Property):
     """
     AWS Object Type = "AWS::S3::Bucket.SourceSelectionCriteria"
 
@@ -521,23 +521,23 @@ class BucketSourceSelectionCriteria(Property):
     """
     AWS_OBJECT_TYPE = "AWS::S3::Bucket.SourceSelectionCriteria"
     
-    p_ReplicaModifications: typing.Union['BucketReplicaModifications', dict] = attr.ib(
+    p_ReplicaModifications: typing.Union['PropBucketReplicaModifications', dict] = attr.ib(
         default=None,
-        converter=BucketReplicaModifications.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(BucketReplicaModifications)),
+        converter=PropBucketReplicaModifications.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropBucketReplicaModifications)),
         metadata={AttrMeta.PROPERTY_NAME: "ReplicaModifications"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-sourceselectioncriteria.html#cfn-s3-bucket-sourceselectioncriteria-replicamodifications"""
-    p_SseKmsEncryptedObjects: typing.Union['BucketSseKmsEncryptedObjects', dict] = attr.ib(
+    p_SseKmsEncryptedObjects: typing.Union['PropBucketSseKmsEncryptedObjects', dict] = attr.ib(
         default=None,
-        converter=BucketSseKmsEncryptedObjects.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(BucketSseKmsEncryptedObjects)),
+        converter=PropBucketSseKmsEncryptedObjects.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropBucketSseKmsEncryptedObjects)),
         metadata={AttrMeta.PROPERTY_NAME: "SseKmsEncryptedObjects"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-sourceselectioncriteria.html#cfn-s3-bucket-sourceselectioncriteria-ssekmsencryptedobjects"""
 
 @attr.s
-class AccessPointVpcConfiguration(Property):
+class PropAccessPointVpcConfiguration(Property):
     """
     AWS Object Type = "AWS::S3::AccessPoint.VpcConfiguration"
 
@@ -557,7 +557,7 @@ class AccessPointVpcConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-accesspoint-vpcconfiguration.html#cfn-s3-accesspoint-vpcconfiguration-vpcid"""
 
 @attr.s
-class BucketRedirectRule(Property):
+class PropBucketRedirectRule(Property):
     """
     AWS Object Type = "AWS::S3::Bucket.RedirectRule"
 
@@ -605,7 +605,7 @@ class BucketRedirectRule(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-websiteconfiguration-routingrules-redirectrule.html#cfn-s3-websiteconfiguration-redirectrule-replacekeywith"""
 
 @attr.s
-class BucketDataExport(Property):
+class PropBucketDataExport(Property):
     """
     AWS Object Type = "AWS::S3::Bucket.DataExport"
 
@@ -618,10 +618,10 @@ class BucketDataExport(Property):
     """
     AWS_OBJECT_TYPE = "AWS::S3::Bucket.DataExport"
     
-    rp_Destination: typing.Union['BucketDestination', dict] = attr.ib(
+    rp_Destination: typing.Union['PropBucketDestination', dict] = attr.ib(
         default=None,
-        converter=BucketDestination.from_dict,
-        validator=attr.validators.instance_of(BucketDestination),
+        converter=PropBucketDestination.from_dict,
+        validator=attr.validators.instance_of(PropBucketDestination),
         metadata={AttrMeta.PROPERTY_NAME: "Destination"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-dataexport.html#cfn-s3-bucket-dataexport-destination"""
@@ -633,7 +633,7 @@ class BucketDataExport(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-dataexport.html#cfn-s3-bucket-dataexport-outputschemaversion"""
 
 @attr.s
-class BucketReplicationTimeValue(Property):
+class PropBucketReplicationTimeValue(Property):
     """
     AWS Object Type = "AWS::S3::Bucket.ReplicationTimeValue"
 
@@ -653,7 +653,7 @@ class BucketReplicationTimeValue(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-replicationtimevalue.html#cfn-s3-bucket-replicationtimevalue-minutes"""
 
 @attr.s
-class BucketFilterRule(Property):
+class PropBucketFilterRule(Property):
     """
     AWS Object Type = "AWS::S3::Bucket.FilterRule"
 
@@ -680,7 +680,7 @@ class BucketFilterRule(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfiguration-config-filter-s3key-rules.html#cfn-s3-bucket-notificationconfiguraiton-config-filter-s3key-rules-value"""
 
 @attr.s
-class BucketMetrics(Property):
+class PropBucketMetrics(Property):
     """
     AWS Object Type = "AWS::S3::Bucket.Metrics"
 
@@ -699,16 +699,16 @@ class BucketMetrics(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Status"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-metrics.html#cfn-s3-bucket-metrics-status"""
-    p_EventThreshold: typing.Union['BucketReplicationTimeValue', dict] = attr.ib(
+    p_EventThreshold: typing.Union['PropBucketReplicationTimeValue', dict] = attr.ib(
         default=None,
-        converter=BucketReplicationTimeValue.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(BucketReplicationTimeValue)),
+        converter=PropBucketReplicationTimeValue.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropBucketReplicationTimeValue)),
         metadata={AttrMeta.PROPERTY_NAME: "EventThreshold"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-metrics.html#cfn-s3-bucket-metrics-eventthreshold"""
 
 @attr.s
-class BucketRoutingRuleCondition(Property):
+class PropBucketRoutingRuleCondition(Property):
     """
     AWS Object Type = "AWS::S3::Bucket.RoutingRuleCondition"
 
@@ -735,7 +735,7 @@ class BucketRoutingRuleCondition(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-websiteconfiguration-routingrules-routingrulecondition.html#cfn-s3-websiteconfiguration-routingrules-routingrulecondition-keyprefixequals"""
 
 @attr.s
-class BucketRedirectAllRequestsTo(Property):
+class PropBucketRedirectAllRequestsTo(Property):
     """
     AWS Object Type = "AWS::S3::Bucket.RedirectAllRequestsTo"
 
@@ -762,7 +762,7 @@ class BucketRedirectAllRequestsTo(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-websiteconfiguration-redirectallrequeststo.html#cfn-s3-websiteconfiguration-redirectallrequeststo-protocol"""
 
 @attr.s
-class BucketS3KeyFilter(Property):
+class PropBucketS3KeyFilter(Property):
     """
     AWS Object Type = "AWS::S3::Bucket.S3KeyFilter"
 
@@ -774,16 +774,16 @@ class BucketS3KeyFilter(Property):
     """
     AWS_OBJECT_TYPE = "AWS::S3::Bucket.S3KeyFilter"
     
-    rp_Rules: typing.List[typing.Union['BucketFilterRule', dict]] = attr.ib(
+    rp_Rules: typing.List[typing.Union['PropBucketFilterRule', dict]] = attr.ib(
         default=None,
-        converter=BucketFilterRule.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(BucketFilterRule), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropBucketFilterRule.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropBucketFilterRule), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "Rules"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfiguration-config-filter-s3key.html#cfn-s3-bucket-notificationconfiguraiton-config-filter-s3key-rules"""
 
 @attr.s
-class BucketInventoryConfiguration(Property):
+class PropBucketInventoryConfiguration(Property):
     """
     AWS Object Type = "AWS::S3::Bucket.InventoryConfiguration"
 
@@ -801,10 +801,10 @@ class BucketInventoryConfiguration(Property):
     """
     AWS_OBJECT_TYPE = "AWS::S3::Bucket.InventoryConfiguration"
     
-    rp_Destination: typing.Union['BucketDestination', dict] = attr.ib(
+    rp_Destination: typing.Union['PropBucketDestination', dict] = attr.ib(
         default=None,
-        converter=BucketDestination.from_dict,
-        validator=attr.validators.instance_of(BucketDestination),
+        converter=PropBucketDestination.from_dict,
+        validator=attr.validators.instance_of(PropBucketDestination),
         metadata={AttrMeta.PROPERTY_NAME: "Destination"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-inventoryconfiguration.html#cfn-s3-bucket-inventoryconfiguration-destination"""
@@ -846,7 +846,7 @@ class BucketInventoryConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-inventoryconfiguration.html#cfn-s3-bucket-inventoryconfiguration-prefix"""
 
 @attr.s
-class BucketCorsConfiguration(Property):
+class PropBucketCorsConfiguration(Property):
     """
     AWS Object Type = "AWS::S3::Bucket.CorsConfiguration"
 
@@ -858,16 +858,16 @@ class BucketCorsConfiguration(Property):
     """
     AWS_OBJECT_TYPE = "AWS::S3::Bucket.CorsConfiguration"
     
-    rp_CorsRules: typing.List[typing.Union['BucketCorsRule', dict]] = attr.ib(
+    rp_CorsRules: typing.List[typing.Union['PropBucketCorsRule', dict]] = attr.ib(
         default=None,
-        converter=BucketCorsRule.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(BucketCorsRule), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropBucketCorsRule.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropBucketCorsRule), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "CorsRules"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-cors.html#cfn-s3-bucket-cors-corsrule"""
 
 @attr.s
-class BucketNoncurrentVersionTransition(Property):
+class PropBucketNoncurrentVersionTransition(Property):
     """
     AWS Object Type = "AWS::S3::Bucket.NoncurrentVersionTransition"
 
@@ -894,7 +894,7 @@ class BucketNoncurrentVersionTransition(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule-noncurrentversiontransition.html#cfn-s3-bucket-lifecycleconfig-rule-noncurrentversiontransition-transitionindays"""
 
 @attr.s
-class StorageLensEncryption(Property):
+class PropStorageLensEncryption(Property):
     """
     AWS Object Type = "AWS::S3::StorageLens.Encryption"
 
@@ -907,7 +907,7 @@ class StorageLensEncryption(Property):
     
 
 @attr.s
-class BucketDefaultRetention(Property):
+class PropBucketDefaultRetention(Property):
     """
     AWS Object Type = "AWS::S3::Bucket.DefaultRetention"
 
@@ -941,7 +941,7 @@ class BucketDefaultRetention(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-defaultretention.html#cfn-s3-bucket-defaultretention-years"""
 
 @attr.s
-class BucketNotificationFilter(Property):
+class PropBucketNotificationFilter(Property):
     """
     AWS Object Type = "AWS::S3::Bucket.NotificationFilter"
 
@@ -953,16 +953,16 @@ class BucketNotificationFilter(Property):
     """
     AWS_OBJECT_TYPE = "AWS::S3::Bucket.NotificationFilter"
     
-    rp_S3Key: typing.Union['BucketS3KeyFilter', dict] = attr.ib(
+    rp_S3Key: typing.Union['PropBucketS3KeyFilter', dict] = attr.ib(
         default=None,
-        converter=BucketS3KeyFilter.from_dict,
-        validator=attr.validators.instance_of(BucketS3KeyFilter),
+        converter=PropBucketS3KeyFilter.from_dict,
+        validator=attr.validators.instance_of(PropBucketS3KeyFilter),
         metadata={AttrMeta.PROPERTY_NAME: "S3Key"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfiguration-config-filter.html#cfn-s3-bucket-notificationconfiguraiton-config-filter-s3key"""
 
 @attr.s
-class BucketLambdaConfiguration(Property):
+class PropBucketLambdaConfiguration(Property):
     """
     AWS Object Type = "AWS::S3::Bucket.LambdaConfiguration"
 
@@ -988,16 +988,16 @@ class BucketLambdaConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Function"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfig-lambdaconfig.html#cfn-s3-bucket-notificationconfig-lambdaconfig-function"""
-    p_Filter: typing.Union['BucketNotificationFilter', dict] = attr.ib(
+    p_Filter: typing.Union['PropBucketNotificationFilter', dict] = attr.ib(
         default=None,
-        converter=BucketNotificationFilter.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(BucketNotificationFilter)),
+        converter=PropBucketNotificationFilter.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropBucketNotificationFilter)),
         metadata={AttrMeta.PROPERTY_NAME: "Filter"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfig-lambdaconfig.html#cfn-s3-bucket-notificationconfig-lambdaconfig-filter"""
 
 @attr.s
-class BucketServerSideEncryptionRule(Property):
+class PropBucketServerSideEncryptionRule(Property):
     """
     AWS Object Type = "AWS::S3::Bucket.ServerSideEncryptionRule"
 
@@ -1016,16 +1016,16 @@ class BucketServerSideEncryptionRule(Property):
         metadata={AttrMeta.PROPERTY_NAME: "BucketKeyEnabled"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-serversideencryptionrule.html#cfn-s3-bucket-serversideencryptionrule-bucketkeyenabled"""
-    p_ServerSideEncryptionByDefault: typing.Union['BucketServerSideEncryptionByDefault', dict] = attr.ib(
+    p_ServerSideEncryptionByDefault: typing.Union['PropBucketServerSideEncryptionByDefault', dict] = attr.ib(
         default=None,
-        converter=BucketServerSideEncryptionByDefault.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(BucketServerSideEncryptionByDefault)),
+        converter=PropBucketServerSideEncryptionByDefault.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropBucketServerSideEncryptionByDefault)),
         metadata={AttrMeta.PROPERTY_NAME: "ServerSideEncryptionByDefault"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-serversideencryptionrule.html#cfn-s3-bucket-serversideencryptionrule-serversideencryptionbydefault"""
 
 @attr.s
-class BucketLoggingConfiguration(Property):
+class PropBucketLoggingConfiguration(Property):
     """
     AWS Object Type = "AWS::S3::Bucket.LoggingConfiguration"
 
@@ -1052,7 +1052,7 @@ class BucketLoggingConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-loggingconfig.html#cfn-s3-bucket-loggingconfig-logfileprefix"""
 
 @attr.s
-class BucketRoutingRule(Property):
+class PropBucketRoutingRule(Property):
     """
     AWS Object Type = "AWS::S3::Bucket.RoutingRule"
 
@@ -1065,23 +1065,23 @@ class BucketRoutingRule(Property):
     """
     AWS_OBJECT_TYPE = "AWS::S3::Bucket.RoutingRule"
     
-    rp_RedirectRule: typing.Union['BucketRedirectRule', dict] = attr.ib(
+    rp_RedirectRule: typing.Union['PropBucketRedirectRule', dict] = attr.ib(
         default=None,
-        converter=BucketRedirectRule.from_dict,
-        validator=attr.validators.instance_of(BucketRedirectRule),
+        converter=PropBucketRedirectRule.from_dict,
+        validator=attr.validators.instance_of(PropBucketRedirectRule),
         metadata={AttrMeta.PROPERTY_NAME: "RedirectRule"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-websiteconfiguration-routingrules.html#cfn-s3-websiteconfiguration-routingrules-redirectrule"""
-    p_RoutingRuleCondition: typing.Union['BucketRoutingRuleCondition', dict] = attr.ib(
+    p_RoutingRuleCondition: typing.Union['PropBucketRoutingRuleCondition', dict] = attr.ib(
         default=None,
-        converter=BucketRoutingRuleCondition.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(BucketRoutingRuleCondition)),
+        converter=PropBucketRoutingRuleCondition.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropBucketRoutingRuleCondition)),
         metadata={AttrMeta.PROPERTY_NAME: "RoutingRuleCondition"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-websiteconfiguration-routingrules.html#cfn-s3-websiteconfiguration-routingrules-routingrulecondition"""
 
 @attr.s
-class StorageLensS3BucketDestination(Property):
+class PropStorageLensS3BucketDestination(Property):
     """
     AWS Object Type = "AWS::S3::StorageLens.S3BucketDestination"
 
@@ -1122,10 +1122,10 @@ class StorageLensS3BucketDestination(Property):
         metadata={AttrMeta.PROPERTY_NAME: "OutputSchemaVersion"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-s3bucketdestination.html#cfn-s3-storagelens-s3bucketdestination-outputschemaversion"""
-    p_Encryption: typing.Union['StorageLensEncryption', dict] = attr.ib(
+    p_Encryption: typing.Union['PropStorageLensEncryption', dict] = attr.ib(
         default=None,
-        converter=StorageLensEncryption.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(StorageLensEncryption)),
+        converter=PropStorageLensEncryption.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropStorageLensEncryption)),
         metadata={AttrMeta.PROPERTY_NAME: "Encryption"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-s3bucketdestination.html#cfn-s3-storagelens-s3bucketdestination-encryption"""
@@ -1137,7 +1137,7 @@ class StorageLensS3BucketDestination(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-s3bucketdestination.html#cfn-s3-storagelens-s3bucketdestination-prefix"""
 
 @attr.s
-class BucketEncryptionConfiguration(Property):
+class PropBucketEncryptionConfiguration(Property):
     """
     AWS Object Type = "AWS::S3::Bucket.EncryptionConfiguration"
 
@@ -1157,7 +1157,7 @@ class BucketEncryptionConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-encryptionconfiguration.html#cfn-s3-bucket-encryptionconfiguration-replicakmskeyid"""
 
 @attr.s
-class BucketWebsiteConfiguration(Property):
+class PropBucketWebsiteConfiguration(Property):
     """
     AWS Object Type = "AWS::S3::Bucket.WebsiteConfiguration"
 
@@ -1184,23 +1184,23 @@ class BucketWebsiteConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "IndexDocument"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-websiteconfiguration.html#cfn-s3-websiteconfiguration-indexdocument"""
-    p_RedirectAllRequestsTo: typing.Union['BucketRedirectAllRequestsTo', dict] = attr.ib(
+    p_RedirectAllRequestsTo: typing.Union['PropBucketRedirectAllRequestsTo', dict] = attr.ib(
         default=None,
-        converter=BucketRedirectAllRequestsTo.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(BucketRedirectAllRequestsTo)),
+        converter=PropBucketRedirectAllRequestsTo.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropBucketRedirectAllRequestsTo)),
         metadata={AttrMeta.PROPERTY_NAME: "RedirectAllRequestsTo"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-websiteconfiguration.html#cfn-s3-websiteconfiguration-redirectallrequeststo"""
-    p_RoutingRules: typing.List[typing.Union['BucketRoutingRule', dict]] = attr.ib(
+    p_RoutingRules: typing.List[typing.Union['PropBucketRoutingRule', dict]] = attr.ib(
         default=None,
-        converter=BucketRoutingRule.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(BucketRoutingRule), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropBucketRoutingRule.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropBucketRoutingRule), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "RoutingRules"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-websiteconfiguration.html#cfn-s3-websiteconfiguration-routingrules"""
 
 @attr.s
-class BucketTopicConfiguration(Property):
+class PropBucketTopicConfiguration(Property):
     """
     AWS Object Type = "AWS::S3::Bucket.TopicConfiguration"
 
@@ -1226,16 +1226,16 @@ class BucketTopicConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Topic"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfig-topicconfig.html#cfn-s3-bucket-notificationconfig-topicconfig-topic"""
-    p_Filter: typing.Union['BucketNotificationFilter', dict] = attr.ib(
+    p_Filter: typing.Union['PropBucketNotificationFilter', dict] = attr.ib(
         default=None,
-        converter=BucketNotificationFilter.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(BucketNotificationFilter)),
+        converter=PropBucketNotificationFilter.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropBucketNotificationFilter)),
         metadata={AttrMeta.PROPERTY_NAME: "Filter"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfig-topicconfig.html#cfn-s3-bucket-notificationconfig-topicconfig-filter"""
 
 @attr.s
-class BucketTagFilter(Property):
+class PropBucketTagFilter(Property):
     """
     AWS Object Type = "AWS::S3::Bucket.TagFilter"
 
@@ -1262,7 +1262,7 @@ class BucketTagFilter(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-tagfilter.html#cfn-s3-bucket-tagfilter-value"""
 
 @attr.s
-class BucketTransition(Property):
+class PropBucketTransition(Property):
     """
     AWS Object Type = "AWS::S3::Bucket.Transition"
 
@@ -1296,7 +1296,7 @@ class BucketTransition(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule-transition.html#cfn-s3-bucket-lifecycleconfig-rule-transition-transitionindays"""
 
 @attr.s
-class StorageLensPrefixLevelStorageMetrics(Property):
+class PropStorageLensPrefixLevelStorageMetrics(Property):
     """
     AWS Object Type = "AWS::S3::StorageLens.PrefixLevelStorageMetrics"
 
@@ -1315,16 +1315,16 @@ class StorageLensPrefixLevelStorageMetrics(Property):
         metadata={AttrMeta.PROPERTY_NAME: "IsEnabled"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-prefixlevelstoragemetrics.html#cfn-s3-storagelens-prefixlevelstoragemetrics-isenabled"""
-    p_SelectionCriteria: typing.Union['StorageLensSelectionCriteria', dict] = attr.ib(
+    p_SelectionCriteria: typing.Union['PropStorageLensSelectionCriteria', dict] = attr.ib(
         default=None,
-        converter=StorageLensSelectionCriteria.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(StorageLensSelectionCriteria)),
+        converter=PropStorageLensSelectionCriteria.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropStorageLensSelectionCriteria)),
         metadata={AttrMeta.PROPERTY_NAME: "SelectionCriteria"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-prefixlevelstoragemetrics.html#cfn-s3-storagelens-prefixlevelstoragemetrics-selectioncriteria"""
 
 @attr.s
-class BucketOwnershipControls(Property):
+class PropBucketOwnershipControls(Property):
     """
     AWS Object Type = "AWS::S3::Bucket.OwnershipControls"
 
@@ -1336,16 +1336,16 @@ class BucketOwnershipControls(Property):
     """
     AWS_OBJECT_TYPE = "AWS::S3::Bucket.OwnershipControls"
     
-    rp_Rules: typing.List[typing.Union['BucketOwnershipControlsRule', dict]] = attr.ib(
+    rp_Rules: typing.List[typing.Union['PropBucketOwnershipControlsRule', dict]] = attr.ib(
         default=None,
-        converter=BucketOwnershipControlsRule.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(BucketOwnershipControlsRule), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropBucketOwnershipControlsRule.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropBucketOwnershipControlsRule), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "Rules"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-ownershipcontrols.html#cfn-s3-bucket-ownershipcontrols-rules"""
 
 @attr.s
-class BucketReplicationTime(Property):
+class PropBucketReplicationTime(Property):
     """
     AWS Object Type = "AWS::S3::Bucket.ReplicationTime"
 
@@ -1364,16 +1364,16 @@ class BucketReplicationTime(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Status"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-replicationtime.html#cfn-s3-bucket-replicationtime-status"""
-    rp_Time: typing.Union['BucketReplicationTimeValue', dict] = attr.ib(
+    rp_Time: typing.Union['PropBucketReplicationTimeValue', dict] = attr.ib(
         default=None,
-        converter=BucketReplicationTimeValue.from_dict,
-        validator=attr.validators.instance_of(BucketReplicationTimeValue),
+        converter=PropBucketReplicationTimeValue.from_dict,
+        validator=attr.validators.instance_of(PropBucketReplicationTimeValue),
         metadata={AttrMeta.PROPERTY_NAME: "Time"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-replicationtime.html#cfn-s3-bucket-replicationtime-time"""
 
 @attr.s
-class BucketQueueConfiguration(Property):
+class PropBucketQueueConfiguration(Property):
     """
     AWS Object Type = "AWS::S3::Bucket.QueueConfiguration"
 
@@ -1399,16 +1399,16 @@ class BucketQueueConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Queue"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfig-queueconfig.html#cfn-s3-bucket-notificationconfig-queueconfig-queue"""
-    p_Filter: typing.Union['BucketNotificationFilter', dict] = attr.ib(
+    p_Filter: typing.Union['PropBucketNotificationFilter', dict] = attr.ib(
         default=None,
-        converter=BucketNotificationFilter.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(BucketNotificationFilter)),
+        converter=PropBucketNotificationFilter.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropBucketNotificationFilter)),
         metadata={AttrMeta.PROPERTY_NAME: "Filter"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfig-queueconfig.html#cfn-s3-bucket-notificationconfig-queueconfig-filter"""
 
 @attr.s
-class StorageLensDataExport(Property):
+class PropStorageLensDataExport(Property):
     """
     AWS Object Type = "AWS::S3::StorageLens.DataExport"
 
@@ -1420,16 +1420,16 @@ class StorageLensDataExport(Property):
     """
     AWS_OBJECT_TYPE = "AWS::S3::StorageLens.DataExport"
     
-    rp_S3BucketDestination: typing.Union['StorageLensS3BucketDestination', dict] = attr.ib(
+    rp_S3BucketDestination: typing.Union['PropStorageLensS3BucketDestination', dict] = attr.ib(
         default=None,
-        converter=StorageLensS3BucketDestination.from_dict,
-        validator=attr.validators.instance_of(StorageLensS3BucketDestination),
+        converter=PropStorageLensS3BucketDestination.from_dict,
+        validator=attr.validators.instance_of(PropStorageLensS3BucketDestination),
         metadata={AttrMeta.PROPERTY_NAME: "S3BucketDestination"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-dataexport.html#cfn-s3-storagelens-dataexport-s3bucketdestination"""
 
 @attr.s
-class BucketIntelligentTieringConfiguration(Property):
+class PropBucketIntelligentTieringConfiguration(Property):
     """
     AWS Object Type = "AWS::S3::Bucket.IntelligentTieringConfiguration"
 
@@ -1457,10 +1457,10 @@ class BucketIntelligentTieringConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Status"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-intelligenttieringconfiguration.html#cfn-s3-bucket-intelligenttieringconfiguration-status"""
-    rp_Tierings: typing.List[typing.Union['BucketTiering', dict]] = attr.ib(
+    rp_Tierings: typing.List[typing.Union['PropBucketTiering', dict]] = attr.ib(
         default=None,
-        converter=BucketTiering.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(BucketTiering), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropBucketTiering.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropBucketTiering), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "Tierings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-intelligenttieringconfiguration.html#cfn-s3-bucket-intelligenttieringconfiguration-tierings"""
@@ -1470,16 +1470,16 @@ class BucketIntelligentTieringConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Prefix"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-intelligenttieringconfiguration.html#cfn-s3-bucket-intelligenttieringconfiguration-prefix"""
-    p_TagFilters: typing.List[typing.Union['BucketTagFilter', dict]] = attr.ib(
+    p_TagFilters: typing.List[typing.Union['PropBucketTagFilter', dict]] = attr.ib(
         default=None,
-        converter=BucketTagFilter.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(BucketTagFilter), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropBucketTagFilter.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropBucketTagFilter), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "TagFilters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-intelligenttieringconfiguration.html#cfn-s3-bucket-intelligenttieringconfiguration-tagfilters"""
 
 @attr.s
-class StorageLensPrefixLevel(Property):
+class PropStorageLensPrefixLevel(Property):
     """
     AWS Object Type = "AWS::S3::StorageLens.PrefixLevel"
 
@@ -1491,16 +1491,16 @@ class StorageLensPrefixLevel(Property):
     """
     AWS_OBJECT_TYPE = "AWS::S3::StorageLens.PrefixLevel"
     
-    rp_StorageMetrics: typing.Union['StorageLensPrefixLevelStorageMetrics', dict] = attr.ib(
+    rp_StorageMetrics: typing.Union['PropStorageLensPrefixLevelStorageMetrics', dict] = attr.ib(
         default=None,
-        converter=StorageLensPrefixLevelStorageMetrics.from_dict,
-        validator=attr.validators.instance_of(StorageLensPrefixLevelStorageMetrics),
+        converter=PropStorageLensPrefixLevelStorageMetrics.from_dict,
+        validator=attr.validators.instance_of(PropStorageLensPrefixLevelStorageMetrics),
         metadata={AttrMeta.PROPERTY_NAME: "StorageMetrics"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-prefixlevel.html#cfn-s3-storagelens-prefixlevel-storagemetrics"""
 
 @attr.s
-class BucketStorageClassAnalysis(Property):
+class PropBucketStorageClassAnalysis(Property):
     """
     AWS Object Type = "AWS::S3::Bucket.StorageClassAnalysis"
 
@@ -1512,16 +1512,16 @@ class BucketStorageClassAnalysis(Property):
     """
     AWS_OBJECT_TYPE = "AWS::S3::Bucket.StorageClassAnalysis"
     
-    p_DataExport: typing.Union['BucketDataExport', dict] = attr.ib(
+    p_DataExport: typing.Union['PropBucketDataExport', dict] = attr.ib(
         default=None,
-        converter=BucketDataExport.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(BucketDataExport)),
+        converter=PropBucketDataExport.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropBucketDataExport)),
         metadata={AttrMeta.PROPERTY_NAME: "DataExport"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-storageclassanalysis.html#cfn-s3-bucket-storageclassanalysis-dataexport"""
 
 @attr.s
-class BucketObjectLockRule(Property):
+class PropBucketObjectLockRule(Property):
     """
     AWS Object Type = "AWS::S3::Bucket.ObjectLockRule"
 
@@ -1533,16 +1533,16 @@ class BucketObjectLockRule(Property):
     """
     AWS_OBJECT_TYPE = "AWS::S3::Bucket.ObjectLockRule"
     
-    p_DefaultRetention: typing.Union['BucketDefaultRetention', dict] = attr.ib(
+    p_DefaultRetention: typing.Union['PropBucketDefaultRetention', dict] = attr.ib(
         default=None,
-        converter=BucketDefaultRetention.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(BucketDefaultRetention)),
+        converter=PropBucketDefaultRetention.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropBucketDefaultRetention)),
         metadata={AttrMeta.PROPERTY_NAME: "DefaultRetention"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-objectlockrule.html#cfn-s3-bucket-objectlockrule-defaultretention"""
 
 @attr.s
-class BucketRule(Property):
+class PropBucketRule(Property):
     """
     AWS Object Type = "AWS::S3::Bucket.Rule"
 
@@ -1572,10 +1572,10 @@ class BucketRule(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Status"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule.html#cfn-s3-bucket-lifecycleconfig-rule-status"""
-    p_AbortIncompleteMultipartUpload: typing.Union['BucketAbortIncompleteMultipartUpload', dict] = attr.ib(
+    p_AbortIncompleteMultipartUpload: typing.Union['PropBucketAbortIncompleteMultipartUpload', dict] = attr.ib(
         default=None,
-        converter=BucketAbortIncompleteMultipartUpload.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(BucketAbortIncompleteMultipartUpload)),
+        converter=PropBucketAbortIncompleteMultipartUpload.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropBucketAbortIncompleteMultipartUpload)),
         metadata={AttrMeta.PROPERTY_NAME: "AbortIncompleteMultipartUpload"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule.html#cfn-s3-bucket-rule-abortincompletemultipartupload"""
@@ -1609,17 +1609,17 @@ class BucketRule(Property):
         metadata={AttrMeta.PROPERTY_NAME: "NoncurrentVersionExpirationInDays"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule.html#cfn-s3-bucket-lifecycleconfig-rule-noncurrentversionexpirationindays"""
-    p_NoncurrentVersionTransition: typing.Union['BucketNoncurrentVersionTransition', dict] = attr.ib(
+    p_NoncurrentVersionTransition: typing.Union['PropBucketNoncurrentVersionTransition', dict] = attr.ib(
         default=None,
-        converter=BucketNoncurrentVersionTransition.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(BucketNoncurrentVersionTransition)),
+        converter=PropBucketNoncurrentVersionTransition.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropBucketNoncurrentVersionTransition)),
         metadata={AttrMeta.PROPERTY_NAME: "NoncurrentVersionTransition"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule.html#cfn-s3-bucket-lifecycleconfig-rule-noncurrentversiontransition"""
-    p_NoncurrentVersionTransitions: typing.List[typing.Union['BucketNoncurrentVersionTransition', dict]] = attr.ib(
+    p_NoncurrentVersionTransitions: typing.List[typing.Union['PropBucketNoncurrentVersionTransition', dict]] = attr.ib(
         default=None,
-        converter=BucketNoncurrentVersionTransition.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(BucketNoncurrentVersionTransition), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropBucketNoncurrentVersionTransition.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropBucketNoncurrentVersionTransition), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "NoncurrentVersionTransitions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule.html#cfn-s3-bucket-lifecycleconfig-rule-noncurrentversiontransitions"""
@@ -1629,30 +1629,30 @@ class BucketRule(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Prefix"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule.html#cfn-s3-bucket-lifecycleconfig-rule-prefix"""
-    p_TagFilters: typing.List[typing.Union['BucketTagFilter', dict]] = attr.ib(
+    p_TagFilters: typing.List[typing.Union['PropBucketTagFilter', dict]] = attr.ib(
         default=None,
-        converter=BucketTagFilter.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(BucketTagFilter), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropBucketTagFilter.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropBucketTagFilter), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "TagFilters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule.html#cfn-s3-bucket-rule-tagfilters"""
-    p_Transition: typing.Union['BucketTransition', dict] = attr.ib(
+    p_Transition: typing.Union['PropBucketTransition', dict] = attr.ib(
         default=None,
-        converter=BucketTransition.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(BucketTransition)),
+        converter=PropBucketTransition.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropBucketTransition)),
         metadata={AttrMeta.PROPERTY_NAME: "Transition"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule.html#cfn-s3-bucket-lifecycleconfig-rule-transition"""
-    p_Transitions: typing.List[typing.Union['BucketTransition', dict]] = attr.ib(
+    p_Transitions: typing.List[typing.Union['PropBucketTransition', dict]] = attr.ib(
         default=None,
-        converter=BucketTransition.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(BucketTransition), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropBucketTransition.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropBucketTransition), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Transitions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule.html#cfn-s3-bucket-lifecycleconfig-rule-transitions"""
 
 @attr.s
-class BucketMetricsConfiguration(Property):
+class PropBucketMetricsConfiguration(Property):
     """
     AWS Object Type = "AWS::S3::Bucket.MetricsConfiguration"
 
@@ -1678,16 +1678,16 @@ class BucketMetricsConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Prefix"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-metricsconfiguration.html#cfn-s3-bucket-metricsconfiguration-prefix"""
-    p_TagFilters: typing.List[typing.Union['BucketTagFilter', dict]] = attr.ib(
+    p_TagFilters: typing.List[typing.Union['PropBucketTagFilter', dict]] = attr.ib(
         default=None,
-        converter=BucketTagFilter.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(BucketTagFilter), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropBucketTagFilter.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropBucketTagFilter), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "TagFilters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-metricsconfiguration.html#cfn-s3-bucket-metricsconfiguration-tagfilters"""
 
 @attr.s
-class BucketReplicationRuleAndOperator(Property):
+class PropBucketReplicationRuleAndOperator(Property):
     """
     AWS Object Type = "AWS::S3::Bucket.ReplicationRuleAndOperator"
 
@@ -1706,16 +1706,16 @@ class BucketReplicationRuleAndOperator(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Prefix"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-replicationruleandoperator.html#cfn-s3-bucket-replicationruleandoperator-prefix"""
-    p_TagFilters: typing.List[typing.Union['BucketTagFilter', dict]] = attr.ib(
+    p_TagFilters: typing.List[typing.Union['PropBucketTagFilter', dict]] = attr.ib(
         default=None,
-        converter=BucketTagFilter.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(BucketTagFilter), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropBucketTagFilter.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropBucketTagFilter), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "TagFilters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-replicationruleandoperator.html#cfn-s3-bucket-replicationruleandoperator-tagfilters"""
 
 @attr.s
-class BucketBucketEncryption(Property):
+class PropBucketBucketEncryption(Property):
     """
     AWS Object Type = "AWS::S3::Bucket.BucketEncryption"
 
@@ -1727,16 +1727,16 @@ class BucketBucketEncryption(Property):
     """
     AWS_OBJECT_TYPE = "AWS::S3::Bucket.BucketEncryption"
     
-    rp_ServerSideEncryptionConfiguration: typing.List[typing.Union['BucketServerSideEncryptionRule', dict]] = attr.ib(
+    rp_ServerSideEncryptionConfiguration: typing.List[typing.Union['PropBucketServerSideEncryptionRule', dict]] = attr.ib(
         default=None,
-        converter=BucketServerSideEncryptionRule.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(BucketServerSideEncryptionRule), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropBucketServerSideEncryptionRule.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropBucketServerSideEncryptionRule), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "ServerSideEncryptionConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-bucketencryption.html#cfn-s3-bucket-bucketencryption-serversideencryptionconfiguration"""
 
 @attr.s
-class BucketLifecycleConfiguration(Property):
+class PropBucketLifecycleConfiguration(Property):
     """
     AWS Object Type = "AWS::S3::Bucket.LifecycleConfiguration"
 
@@ -1748,16 +1748,16 @@ class BucketLifecycleConfiguration(Property):
     """
     AWS_OBJECT_TYPE = "AWS::S3::Bucket.LifecycleConfiguration"
     
-    rp_Rules: typing.List[typing.Union['BucketRule', dict]] = attr.ib(
+    rp_Rules: typing.List[typing.Union['PropBucketRule', dict]] = attr.ib(
         default=None,
-        converter=BucketRule.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(BucketRule), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropBucketRule.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropBucketRule), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "Rules"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig.html#cfn-s3-bucket-lifecycleconfig-rules"""
 
 @attr.s
-class BucketNotificationConfiguration(Property):
+class PropBucketNotificationConfiguration(Property):
     """
     AWS Object Type = "AWS::S3::Bucket.NotificationConfiguration"
 
@@ -1771,30 +1771,30 @@ class BucketNotificationConfiguration(Property):
     """
     AWS_OBJECT_TYPE = "AWS::S3::Bucket.NotificationConfiguration"
     
-    p_LambdaConfigurations: typing.List[typing.Union['BucketLambdaConfiguration', dict]] = attr.ib(
+    p_LambdaConfigurations: typing.List[typing.Union['PropBucketLambdaConfiguration', dict]] = attr.ib(
         default=None,
-        converter=BucketLambdaConfiguration.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(BucketLambdaConfiguration), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropBucketLambdaConfiguration.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropBucketLambdaConfiguration), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "LambdaConfigurations"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfig.html#cfn-s3-bucket-notificationconfig-lambdaconfig"""
-    p_QueueConfigurations: typing.List[typing.Union['BucketQueueConfiguration', dict]] = attr.ib(
+    p_QueueConfigurations: typing.List[typing.Union['PropBucketQueueConfiguration', dict]] = attr.ib(
         default=None,
-        converter=BucketQueueConfiguration.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(BucketQueueConfiguration), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropBucketQueueConfiguration.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropBucketQueueConfiguration), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "QueueConfigurations"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfig.html#cfn-s3-bucket-notificationconfig-queueconfig"""
-    p_TopicConfigurations: typing.List[typing.Union['BucketTopicConfiguration', dict]] = attr.ib(
+    p_TopicConfigurations: typing.List[typing.Union['PropBucketTopicConfiguration', dict]] = attr.ib(
         default=None,
-        converter=BucketTopicConfiguration.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(BucketTopicConfiguration), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropBucketTopicConfiguration.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropBucketTopicConfiguration), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "TopicConfigurations"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfig.html#cfn-s3-bucket-notificationconfig-topicconfig"""
 
 @attr.s
-class BucketReplicationDestination(Property):
+class PropBucketReplicationDestination(Property):
     """
     AWS Object Type = "AWS::S3::Bucket.ReplicationDestination"
 
@@ -1818,10 +1818,10 @@ class BucketReplicationDestination(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Bucket"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-replicationconfiguration-rules-destination.html#cfn-s3-bucket-replicationconfiguration-rules-destination-bucket"""
-    p_AccessControlTranslation: typing.Union['BucketAccessControlTranslation', dict] = attr.ib(
+    p_AccessControlTranslation: typing.Union['PropBucketAccessControlTranslation', dict] = attr.ib(
         default=None,
-        converter=BucketAccessControlTranslation.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(BucketAccessControlTranslation)),
+        converter=PropBucketAccessControlTranslation.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropBucketAccessControlTranslation)),
         metadata={AttrMeta.PROPERTY_NAME: "AccessControlTranslation"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-replicationconfiguration-rules-destination.html#cfn-s3-bucket-replicationdestination-accesscontroltranslation"""
@@ -1831,24 +1831,24 @@ class BucketReplicationDestination(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Account"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-replicationconfiguration-rules-destination.html#cfn-s3-bucket-replicationdestination-account"""
-    p_EncryptionConfiguration: typing.Union['BucketEncryptionConfiguration', dict] = attr.ib(
+    p_EncryptionConfiguration: typing.Union['PropBucketEncryptionConfiguration', dict] = attr.ib(
         default=None,
-        converter=BucketEncryptionConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(BucketEncryptionConfiguration)),
+        converter=PropBucketEncryptionConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropBucketEncryptionConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "EncryptionConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-replicationconfiguration-rules-destination.html#cfn-s3-bucket-replicationdestination-encryptionconfiguration"""
-    p_Metrics: typing.Union['BucketMetrics', dict] = attr.ib(
+    p_Metrics: typing.Union['PropBucketMetrics', dict] = attr.ib(
         default=None,
-        converter=BucketMetrics.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(BucketMetrics)),
+        converter=PropBucketMetrics.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropBucketMetrics)),
         metadata={AttrMeta.PROPERTY_NAME: "Metrics"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-replicationconfiguration-rules-destination.html#cfn-s3-bucket-replicationdestination-metrics"""
-    p_ReplicationTime: typing.Union['BucketReplicationTime', dict] = attr.ib(
+    p_ReplicationTime: typing.Union['PropBucketReplicationTime', dict] = attr.ib(
         default=None,
-        converter=BucketReplicationTime.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(BucketReplicationTime)),
+        converter=PropBucketReplicationTime.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropBucketReplicationTime)),
         metadata={AttrMeta.PROPERTY_NAME: "ReplicationTime"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-replicationconfiguration-rules-destination.html#cfn-s3-bucket-replicationdestination-replicationtime"""
@@ -1860,7 +1860,7 @@ class BucketReplicationDestination(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-replicationconfiguration-rules-destination.html#cfn-s3-bucket-replicationconfiguration-rules-destination-storageclass"""
 
 @attr.s
-class BucketAnalyticsConfiguration(Property):
+class PropBucketAnalyticsConfiguration(Property):
     """
     AWS Object Type = "AWS::S3::Bucket.AnalyticsConfiguration"
 
@@ -1881,10 +1881,10 @@ class BucketAnalyticsConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Id"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-analyticsconfiguration.html#cfn-s3-bucket-analyticsconfiguration-id"""
-    rp_StorageClassAnalysis: typing.Union['BucketStorageClassAnalysis', dict] = attr.ib(
+    rp_StorageClassAnalysis: typing.Union['PropBucketStorageClassAnalysis', dict] = attr.ib(
         default=None,
-        converter=BucketStorageClassAnalysis.from_dict,
-        validator=attr.validators.instance_of(BucketStorageClassAnalysis),
+        converter=PropBucketStorageClassAnalysis.from_dict,
+        validator=attr.validators.instance_of(PropBucketStorageClassAnalysis),
         metadata={AttrMeta.PROPERTY_NAME: "StorageClassAnalysis"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-analyticsconfiguration.html#cfn-s3-bucket-analyticsconfiguration-storageclassanalysis"""
@@ -1894,16 +1894,16 @@ class BucketAnalyticsConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Prefix"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-analyticsconfiguration.html#cfn-s3-bucket-analyticsconfiguration-prefix"""
-    p_TagFilters: typing.List[typing.Union['BucketTagFilter', dict]] = attr.ib(
+    p_TagFilters: typing.List[typing.Union['PropBucketTagFilter', dict]] = attr.ib(
         default=None,
-        converter=BucketTagFilter.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(BucketTagFilter), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropBucketTagFilter.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropBucketTagFilter), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "TagFilters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-analyticsconfiguration.html#cfn-s3-bucket-analyticsconfiguration-tagfilters"""
 
 @attr.s
-class BucketReplicationRuleFilter(Property):
+class PropBucketReplicationRuleFilter(Property):
     """
     AWS Object Type = "AWS::S3::Bucket.ReplicationRuleFilter"
 
@@ -1917,10 +1917,10 @@ class BucketReplicationRuleFilter(Property):
     """
     AWS_OBJECT_TYPE = "AWS::S3::Bucket.ReplicationRuleFilter"
     
-    p_And: typing.Union['BucketReplicationRuleAndOperator', dict] = attr.ib(
+    p_And: typing.Union['PropBucketReplicationRuleAndOperator', dict] = attr.ib(
         default=None,
-        converter=BucketReplicationRuleAndOperator.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(BucketReplicationRuleAndOperator)),
+        converter=PropBucketReplicationRuleAndOperator.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropBucketReplicationRuleAndOperator)),
         metadata={AttrMeta.PROPERTY_NAME: "And"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-replicationrulefilter.html#cfn-s3-bucket-replicationrulefilter-and"""
@@ -1930,16 +1930,16 @@ class BucketReplicationRuleFilter(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Prefix"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-replicationrulefilter.html#cfn-s3-bucket-replicationrulefilter-prefix"""
-    p_TagFilter: typing.Union['BucketTagFilter', dict] = attr.ib(
+    p_TagFilter: typing.Union['PropBucketTagFilter', dict] = attr.ib(
         default=None,
-        converter=BucketTagFilter.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(BucketTagFilter)),
+        converter=PropBucketTagFilter.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropBucketTagFilter)),
         metadata={AttrMeta.PROPERTY_NAME: "TagFilter"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-replicationrulefilter.html#cfn-s3-bucket-replicationrulefilter-tagfilter"""
 
 @attr.s
-class BucketObjectLockConfiguration(Property):
+class PropBucketObjectLockConfiguration(Property):
     """
     AWS Object Type = "AWS::S3::Bucket.ObjectLockConfiguration"
 
@@ -1958,16 +1958,16 @@ class BucketObjectLockConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "ObjectLockEnabled"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-objectlockconfiguration.html#cfn-s3-bucket-objectlockconfiguration-objectlockenabled"""
-    p_Rule: typing.Union['BucketObjectLockRule', dict] = attr.ib(
+    p_Rule: typing.Union['PropBucketObjectLockRule', dict] = attr.ib(
         default=None,
-        converter=BucketObjectLockRule.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(BucketObjectLockRule)),
+        converter=PropBucketObjectLockRule.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropBucketObjectLockRule)),
         metadata={AttrMeta.PROPERTY_NAME: "Rule"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-objectlockconfiguration.html#cfn-s3-bucket-objectlockconfiguration-rule"""
 
 @attr.s
-class StorageLensBucketLevel(Property):
+class PropStorageLensBucketLevel(Property):
     """
     AWS Object Type = "AWS::S3::StorageLens.BucketLevel"
 
@@ -1980,23 +1980,23 @@ class StorageLensBucketLevel(Property):
     """
     AWS_OBJECT_TYPE = "AWS::S3::StorageLens.BucketLevel"
     
-    p_ActivityMetrics: typing.Union['StorageLensActivityMetrics', dict] = attr.ib(
+    p_ActivityMetrics: typing.Union['PropStorageLensActivityMetrics', dict] = attr.ib(
         default=None,
-        converter=StorageLensActivityMetrics.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(StorageLensActivityMetrics)),
+        converter=PropStorageLensActivityMetrics.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropStorageLensActivityMetrics)),
         metadata={AttrMeta.PROPERTY_NAME: "ActivityMetrics"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-bucketlevel.html#cfn-s3-storagelens-bucketlevel-activitymetrics"""
-    p_PrefixLevel: typing.Union['StorageLensPrefixLevel', dict] = attr.ib(
+    p_PrefixLevel: typing.Union['PropStorageLensPrefixLevel', dict] = attr.ib(
         default=None,
-        converter=StorageLensPrefixLevel.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(StorageLensPrefixLevel)),
+        converter=PropStorageLensPrefixLevel.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropStorageLensPrefixLevel)),
         metadata={AttrMeta.PROPERTY_NAME: "PrefixLevel"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-bucketlevel.html#cfn-s3-storagelens-bucketlevel-prefixlevel"""
 
 @attr.s
-class BucketReplicationRule(Property):
+class PropBucketReplicationRule(Property):
     """
     AWS Object Type = "AWS::S3::Bucket.ReplicationRule"
 
@@ -2015,10 +2015,10 @@ class BucketReplicationRule(Property):
     """
     AWS_OBJECT_TYPE = "AWS::S3::Bucket.ReplicationRule"
     
-    rp_Destination: typing.Union['BucketReplicationDestination', dict] = attr.ib(
+    rp_Destination: typing.Union['PropBucketReplicationDestination', dict] = attr.ib(
         default=None,
-        converter=BucketReplicationDestination.from_dict,
-        validator=attr.validators.instance_of(BucketReplicationDestination),
+        converter=PropBucketReplicationDestination.from_dict,
+        validator=attr.validators.instance_of(PropBucketReplicationDestination),
         metadata={AttrMeta.PROPERTY_NAME: "Destination"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-replicationconfiguration-rules.html#cfn-s3-bucket-replicationconfiguration-rules-destination"""
@@ -2028,17 +2028,17 @@ class BucketReplicationRule(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Status"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-replicationconfiguration-rules.html#cfn-s3-bucket-replicationconfiguration-rules-status"""
-    p_DeleteMarkerReplication: typing.Union['BucketDeleteMarkerReplication', dict] = attr.ib(
+    p_DeleteMarkerReplication: typing.Union['PropBucketDeleteMarkerReplication', dict] = attr.ib(
         default=None,
-        converter=BucketDeleteMarkerReplication.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(BucketDeleteMarkerReplication)),
+        converter=PropBucketDeleteMarkerReplication.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropBucketDeleteMarkerReplication)),
         metadata={AttrMeta.PROPERTY_NAME: "DeleteMarkerReplication"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-replicationconfiguration-rules.html#cfn-s3-bucket-replicationrule-deletemarkerreplication"""
-    p_Filter: typing.Union['BucketReplicationRuleFilter', dict] = attr.ib(
+    p_Filter: typing.Union['PropBucketReplicationRuleFilter', dict] = attr.ib(
         default=None,
-        converter=BucketReplicationRuleFilter.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(BucketReplicationRuleFilter)),
+        converter=PropBucketReplicationRuleFilter.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropBucketReplicationRuleFilter)),
         metadata={AttrMeta.PROPERTY_NAME: "Filter"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-replicationconfiguration-rules.html#cfn-s3-bucket-replicationrule-filter"""
@@ -2060,16 +2060,16 @@ class BucketReplicationRule(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Priority"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-replicationconfiguration-rules.html#cfn-s3-bucket-replicationrule-priority"""
-    p_SourceSelectionCriteria: typing.Union['BucketSourceSelectionCriteria', dict] = attr.ib(
+    p_SourceSelectionCriteria: typing.Union['PropBucketSourceSelectionCriteria', dict] = attr.ib(
         default=None,
-        converter=BucketSourceSelectionCriteria.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(BucketSourceSelectionCriteria)),
+        converter=PropBucketSourceSelectionCriteria.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropBucketSourceSelectionCriteria)),
         metadata={AttrMeta.PROPERTY_NAME: "SourceSelectionCriteria"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-replicationconfiguration-rules.html#cfn-s3-bucket-replicationrule-sourceselectioncriteria"""
 
 @attr.s
-class BucketReplicationConfiguration(Property):
+class PropBucketReplicationConfiguration(Property):
     """
     AWS Object Type = "AWS::S3::Bucket.ReplicationConfiguration"
 
@@ -2088,16 +2088,16 @@ class BucketReplicationConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Role"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-replicationconfiguration.html#cfn-s3-bucket-replicationconfiguration-role"""
-    rp_Rules: typing.List[typing.Union['BucketReplicationRule', dict]] = attr.ib(
+    rp_Rules: typing.List[typing.Union['PropBucketReplicationRule', dict]] = attr.ib(
         default=None,
-        converter=BucketReplicationRule.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(BucketReplicationRule), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropBucketReplicationRule.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropBucketReplicationRule), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "Rules"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-replicationconfiguration.html#cfn-s3-bucket-replicationconfiguration-rules"""
 
 @attr.s
-class StorageLensAccountLevel(Property):
+class PropStorageLensAccountLevel(Property):
     """
     AWS Object Type = "AWS::S3::StorageLens.AccountLevel"
 
@@ -2110,23 +2110,23 @@ class StorageLensAccountLevel(Property):
     """
     AWS_OBJECT_TYPE = "AWS::S3::StorageLens.AccountLevel"
     
-    rp_BucketLevel: typing.Union['StorageLensBucketLevel', dict] = attr.ib(
+    rp_BucketLevel: typing.Union['PropStorageLensBucketLevel', dict] = attr.ib(
         default=None,
-        converter=StorageLensBucketLevel.from_dict,
-        validator=attr.validators.instance_of(StorageLensBucketLevel),
+        converter=PropStorageLensBucketLevel.from_dict,
+        validator=attr.validators.instance_of(PropStorageLensBucketLevel),
         metadata={AttrMeta.PROPERTY_NAME: "BucketLevel"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-accountlevel.html#cfn-s3-storagelens-accountlevel-bucketlevel"""
-    p_ActivityMetrics: typing.Union['StorageLensActivityMetrics', dict] = attr.ib(
+    p_ActivityMetrics: typing.Union['PropStorageLensActivityMetrics', dict] = attr.ib(
         default=None,
-        converter=StorageLensActivityMetrics.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(StorageLensActivityMetrics)),
+        converter=PropStorageLensActivityMetrics.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropStorageLensActivityMetrics)),
         metadata={AttrMeta.PROPERTY_NAME: "ActivityMetrics"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-accountlevel.html#cfn-s3-storagelens-accountlevel-activitymetrics"""
 
 @attr.s
-class StorageLensStorageLensConfiguration(Property):
+class PropStorageLensStorageLensConfiguration(Property):
     """
     AWS Object Type = "AWS::S3::StorageLens.StorageLensConfiguration"
 
@@ -2145,10 +2145,10 @@ class StorageLensStorageLensConfiguration(Property):
     """
     AWS_OBJECT_TYPE = "AWS::S3::StorageLens.StorageLensConfiguration"
     
-    rp_AccountLevel: typing.Union['StorageLensAccountLevel', dict] = attr.ib(
+    rp_AccountLevel: typing.Union['PropStorageLensAccountLevel', dict] = attr.ib(
         default=None,
-        converter=StorageLensAccountLevel.from_dict,
-        validator=attr.validators.instance_of(StorageLensAccountLevel),
+        converter=PropStorageLensAccountLevel.from_dict,
+        validator=attr.validators.instance_of(PropStorageLensAccountLevel),
         metadata={AttrMeta.PROPERTY_NAME: "AccountLevel"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-storagelensconfiguration.html#cfn-s3-storagelens-storagelensconfiguration-accountlevel"""
@@ -2164,31 +2164,31 @@ class StorageLensStorageLensConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "IsEnabled"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-storagelensconfiguration.html#cfn-s3-storagelens-storagelensconfiguration-isenabled"""
-    p_AwsOrg: typing.Union['StorageLensAwsOrg', dict] = attr.ib(
+    p_AwsOrg: typing.Union['PropStorageLensAwsOrg', dict] = attr.ib(
         default=None,
-        converter=StorageLensAwsOrg.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(StorageLensAwsOrg)),
+        converter=PropStorageLensAwsOrg.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropStorageLensAwsOrg)),
         metadata={AttrMeta.PROPERTY_NAME: "AwsOrg"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-storagelensconfiguration.html#cfn-s3-storagelens-storagelensconfiguration-awsorg"""
-    p_DataExport: typing.Union['StorageLensDataExport', dict] = attr.ib(
+    p_DataExport: typing.Union['PropStorageLensDataExport', dict] = attr.ib(
         default=None,
-        converter=StorageLensDataExport.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(StorageLensDataExport)),
+        converter=PropStorageLensDataExport.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropStorageLensDataExport)),
         metadata={AttrMeta.PROPERTY_NAME: "DataExport"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-storagelensconfiguration.html#cfn-s3-storagelens-storagelensconfiguration-dataexport"""
-    p_Exclude: typing.Union['StorageLensBucketsAndRegions', dict] = attr.ib(
+    p_Exclude: typing.Union['PropStorageLensBucketsAndRegions', dict] = attr.ib(
         default=None,
-        converter=StorageLensBucketsAndRegions.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(StorageLensBucketsAndRegions)),
+        converter=PropStorageLensBucketsAndRegions.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropStorageLensBucketsAndRegions)),
         metadata={AttrMeta.PROPERTY_NAME: "Exclude"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-storagelensconfiguration.html#cfn-s3-storagelens-storagelensconfiguration-exclude"""
-    p_Include: typing.Union['StorageLensBucketsAndRegions', dict] = attr.ib(
+    p_Include: typing.Union['PropStorageLensBucketsAndRegions', dict] = attr.ib(
         default=None,
-        converter=StorageLensBucketsAndRegions.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(StorageLensBucketsAndRegions)),
+        converter=PropStorageLensBucketsAndRegions.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropStorageLensBucketsAndRegions)),
         metadata={AttrMeta.PROPERTY_NAME: "Include"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-storagelensconfiguration.html#cfn-s3-storagelens-storagelensconfiguration-include"""
@@ -2238,17 +2238,17 @@ class AccessPoint(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Policy"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3-accesspoint.html#cfn-s3-accesspoint-policy"""
-    p_PublicAccessBlockConfiguration: typing.Union['AccessPointPublicAccessBlockConfiguration', dict] = attr.ib(
+    p_PublicAccessBlockConfiguration: typing.Union['PropAccessPointPublicAccessBlockConfiguration', dict] = attr.ib(
         default=None,
-        converter=AccessPointPublicAccessBlockConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(AccessPointPublicAccessBlockConfiguration)),
+        converter=PropAccessPointPublicAccessBlockConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropAccessPointPublicAccessBlockConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "PublicAccessBlockConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3-accesspoint.html#cfn-s3-accesspoint-publicaccessblockconfiguration"""
-    p_VpcConfiguration: typing.Union['AccessPointVpcConfiguration', dict] = attr.ib(
+    p_VpcConfiguration: typing.Union['PropAccessPointVpcConfiguration', dict] = attr.ib(
         default=None,
-        converter=AccessPointVpcConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(AccessPointVpcConfiguration)),
+        converter=PropAccessPointVpcConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropAccessPointVpcConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "VpcConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3-accesspoint.html#cfn-s3-accesspoint-vpcconfiguration"""
@@ -2275,10 +2275,10 @@ class StorageLens(Resource):
     AWS_OBJECT_TYPE = "AWS::S3::StorageLens"
 
     
-    rp_StorageLensConfiguration: typing.Union['StorageLensStorageLensConfiguration', dict] = attr.ib(
+    rp_StorageLensConfiguration: typing.Union['PropStorageLensStorageLensConfiguration', dict] = attr.ib(
         default=None,
-        converter=StorageLensStorageLensConfiguration.from_dict,
-        validator=attr.validators.instance_of(StorageLensStorageLensConfiguration),
+        converter=PropStorageLensStorageLensConfiguration.from_dict,
+        validator=attr.validators.instance_of(PropStorageLensStorageLensConfiguration),
         metadata={AttrMeta.PROPERTY_NAME: "StorageLensConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3-storagelens.html#cfn-s3-storagelens-storagelensconfiguration"""
@@ -2329,10 +2329,11 @@ class Bucket(Resource):
     """
     AWS_OBJECT_TYPE = "AWS::S3::Bucket"
 
-    p_AccelerateConfiguration: typing.Union['BucketAccelerateConfiguration', dict] = attr.ib(
+    
+    p_AccelerateConfiguration: typing.Union['PropBucketAccelerateConfiguration', dict] = attr.ib(
         default=None,
-        converter=BucketAccelerateConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(BucketAccelerateConfiguration)),
+        converter=PropBucketAccelerateConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropBucketAccelerateConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "AccelerateConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-accelerateconfiguration"""
@@ -2342,17 +2343,17 @@ class Bucket(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "AccessControl"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-accesscontrol"""
-    p_AnalyticsConfigurations: typing.List[typing.Union['BucketAnalyticsConfiguration', dict]] = attr.ib(
+    p_AnalyticsConfigurations: typing.List[typing.Union['PropBucketAnalyticsConfiguration', dict]] = attr.ib(
         default=None,
-        converter=BucketAnalyticsConfiguration.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(BucketAnalyticsConfiguration), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropBucketAnalyticsConfiguration.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropBucketAnalyticsConfiguration), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "AnalyticsConfigurations"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-analyticsconfigurations"""
-    p_BucketEncryption: typing.Union['BucketBucketEncryption', dict] = attr.ib(
+    p_BucketEncryption: typing.Union['PropBucketBucketEncryption', dict] = attr.ib(
         default=None,
-        converter=BucketBucketEncryption.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(BucketBucketEncryption)),
+        converter=PropBucketBucketEncryption.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropBucketBucketEncryption)),
         metadata={AttrMeta.PROPERTY_NAME: "BucketEncryption"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-bucketencryption"""
@@ -2362,59 +2363,59 @@ class Bucket(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "BucketName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-name"""
-    p_CorsConfiguration: typing.Union['BucketCorsConfiguration', dict] = attr.ib(
+    p_CorsConfiguration: typing.Union['PropBucketCorsConfiguration', dict] = attr.ib(
         default=None,
-        converter=BucketCorsConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(BucketCorsConfiguration)),
+        converter=PropBucketCorsConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropBucketCorsConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "CorsConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-crossoriginconfig"""
-    p_IntelligentTieringConfigurations: typing.List[typing.Union['BucketIntelligentTieringConfiguration', dict]] = attr.ib(
+    p_IntelligentTieringConfigurations: typing.List[typing.Union['PropBucketIntelligentTieringConfiguration', dict]] = attr.ib(
         default=None,
-        converter=BucketIntelligentTieringConfiguration.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(BucketIntelligentTieringConfiguration), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropBucketIntelligentTieringConfiguration.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropBucketIntelligentTieringConfiguration), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "IntelligentTieringConfigurations"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-intelligenttieringconfigurations"""
-    p_InventoryConfigurations: typing.List[typing.Union['BucketInventoryConfiguration', dict]] = attr.ib(
+    p_InventoryConfigurations: typing.List[typing.Union['PropBucketInventoryConfiguration', dict]] = attr.ib(
         default=None,
-        converter=BucketInventoryConfiguration.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(BucketInventoryConfiguration), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropBucketInventoryConfiguration.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropBucketInventoryConfiguration), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "InventoryConfigurations"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-inventoryconfigurations"""
-    p_LifecycleConfiguration: typing.Union['BucketLifecycleConfiguration', dict] = attr.ib(
+    p_LifecycleConfiguration: typing.Union['PropBucketLifecycleConfiguration', dict] = attr.ib(
         default=None,
-        converter=BucketLifecycleConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(BucketLifecycleConfiguration)),
+        converter=PropBucketLifecycleConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropBucketLifecycleConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "LifecycleConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-lifecycleconfig"""
-    p_LoggingConfiguration: typing.Union['BucketLoggingConfiguration', dict] = attr.ib(
+    p_LoggingConfiguration: typing.Union['PropBucketLoggingConfiguration', dict] = attr.ib(
         default=None,
-        converter=BucketLoggingConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(BucketLoggingConfiguration)),
+        converter=PropBucketLoggingConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropBucketLoggingConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "LoggingConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-loggingconfig"""
-    p_MetricsConfigurations: typing.List[typing.Union['BucketMetricsConfiguration', dict]] = attr.ib(
+    p_MetricsConfigurations: typing.List[typing.Union['PropBucketMetricsConfiguration', dict]] = attr.ib(
         default=None,
-        converter=BucketMetricsConfiguration.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(BucketMetricsConfiguration), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropBucketMetricsConfiguration.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropBucketMetricsConfiguration), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "MetricsConfigurations"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-metricsconfigurations"""
-    p_NotificationConfiguration: typing.Union['BucketNotificationConfiguration', dict] = attr.ib(
+    p_NotificationConfiguration: typing.Union['PropBucketNotificationConfiguration', dict] = attr.ib(
         default=None,
-        converter=BucketNotificationConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(BucketNotificationConfiguration)),
+        converter=PropBucketNotificationConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropBucketNotificationConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "NotificationConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-notification"""
-    p_ObjectLockConfiguration: typing.Union['BucketObjectLockConfiguration', dict] = attr.ib(
+    p_ObjectLockConfiguration: typing.Union['PropBucketObjectLockConfiguration', dict] = attr.ib(
         default=None,
-        converter=BucketObjectLockConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(BucketObjectLockConfiguration)),
+        converter=PropBucketObjectLockConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropBucketObjectLockConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "ObjectLockConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-objectlockconfiguration"""
@@ -2424,38 +2425,38 @@ class Bucket(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "ObjectLockEnabled"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-objectlockenabled"""
-    p_OwnershipControls: typing.Union['BucketOwnershipControls', dict] = attr.ib(
+    p_OwnershipControls: typing.Union['PropBucketOwnershipControls', dict] = attr.ib(
         default=None,
-        converter=BucketOwnershipControls.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(BucketOwnershipControls)),
+        converter=PropBucketOwnershipControls.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropBucketOwnershipControls)),
         metadata={AttrMeta.PROPERTY_NAME: "OwnershipControls"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-ownershipcontrols"""
-    p_PublicAccessBlockConfiguration: typing.Union['BucketPublicAccessBlockConfiguration', dict] = attr.ib(
+    p_PublicAccessBlockConfiguration: typing.Union['PropBucketPublicAccessBlockConfiguration', dict] = attr.ib(
         default=None,
-        converter=BucketPublicAccessBlockConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(BucketPublicAccessBlockConfiguration)),
+        converter=PropBucketPublicAccessBlockConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropBucketPublicAccessBlockConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "PublicAccessBlockConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-publicaccessblockconfiguration"""
-    p_ReplicationConfiguration: typing.Union['BucketReplicationConfiguration', dict] = attr.ib(
+    p_ReplicationConfiguration: typing.Union['PropBucketReplicationConfiguration', dict] = attr.ib(
         default=None,
-        converter=BucketReplicationConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(BucketReplicationConfiguration)),
+        converter=PropBucketReplicationConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropBucketReplicationConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "ReplicationConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-replicationconfiguration"""
-    p_VersioningConfiguration: typing.Union['BucketVersioningConfiguration', dict] = attr.ib(
+    p_VersioningConfiguration: typing.Union['PropBucketVersioningConfiguration', dict] = attr.ib(
         default=None,
-        converter=BucketVersioningConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(BucketVersioningConfiguration)),
+        converter=PropBucketVersioningConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropBucketVersioningConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "VersioningConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-versioning"""
-    p_WebsiteConfiguration: typing.Union['BucketWebsiteConfiguration', dict] = attr.ib(
+    p_WebsiteConfiguration: typing.Union['PropBucketWebsiteConfiguration', dict] = attr.ib(
         default=None,
-        converter=BucketWebsiteConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(BucketWebsiteConfiguration)),
+        converter=PropBucketWebsiteConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropBucketWebsiteConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "WebsiteConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket.html#cfn-s3-bucket-websiteconfiguration"""

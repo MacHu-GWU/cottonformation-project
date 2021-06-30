@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class SigningProfileSignatureValidityPeriod(Property):
+class PropSigningProfileSignatureValidityPeriod(Property):
     """
     AWS Object Type = "AWS::Signer::SigningProfile.SignatureValidityPeriod"
 
@@ -66,10 +66,10 @@ class SigningProfile(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "PlatformId"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-signer-signingprofile.html#cfn-signer-signingprofile-platformid"""
-    p_SignatureValidityPeriod: typing.Union['SigningProfileSignatureValidityPeriod', dict] = attr.ib(
+    p_SignatureValidityPeriod: typing.Union['PropSigningProfileSignatureValidityPeriod', dict] = attr.ib(
         default=None,
-        converter=SigningProfileSignatureValidityPeriod.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(SigningProfileSignatureValidityPeriod)),
+        converter=PropSigningProfileSignatureValidityPeriod.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropSigningProfileSignatureValidityPeriod)),
         metadata={AttrMeta.PROPERTY_NAME: "SignatureValidityPeriod"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-signer-signingprofile.html#cfn-signer-signingprofile-signaturevalidityperiod"""

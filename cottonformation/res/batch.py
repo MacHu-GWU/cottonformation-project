@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class JobDefinitionAuthorizationConfig(Property):
+class PropJobDefinitionAuthorizationConfig(Property):
     """
     AWS Object Type = "AWS::Batch::JobDefinition.AuthorizationConfig"
 
@@ -42,7 +42,7 @@ class JobDefinitionAuthorizationConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-authorizationconfig.html#cfn-batch-jobdefinition-authorizationconfig-iam"""
 
 @attr.s
-class JobDefinitionResourceRequirement(Property):
+class PropJobDefinitionResourceRequirement(Property):
     """
     AWS Object Type = "AWS::Batch::JobDefinition.ResourceRequirement"
 
@@ -69,7 +69,7 @@ class JobDefinitionResourceRequirement(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-resourcerequirement.html#cfn-batch-jobdefinition-resourcerequirement-value"""
 
 @attr.s
-class JobDefinitionEnvironment(Property):
+class PropJobDefinitionEnvironment(Property):
     """
     AWS Object Type = "AWS::Batch::JobDefinition.Environment"
 
@@ -96,7 +96,7 @@ class JobDefinitionEnvironment(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-environment.html#cfn-batch-jobdefinition-environment-value"""
 
 @attr.s
-class JobDefinitionVolumesHost(Property):
+class PropJobDefinitionVolumesHost(Property):
     """
     AWS Object Type = "AWS::Batch::JobDefinition.VolumesHost"
 
@@ -116,7 +116,7 @@ class JobDefinitionVolumesHost(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-volumeshost.html#cfn-batch-jobdefinition-volumeshost-sourcepath"""
 
 @attr.s
-class JobQueueComputeEnvironmentOrder(Property):
+class PropJobQueueComputeEnvironmentOrder(Property):
     """
     AWS Object Type = "AWS::Batch::JobQueue.ComputeEnvironmentOrder"
 
@@ -143,7 +143,7 @@ class JobQueueComputeEnvironmentOrder(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobqueue-computeenvironmentorder.html#cfn-batch-jobqueue-computeenvironmentorder-order"""
 
 @attr.s
-class JobDefinitionSecret(Property):
+class PropJobDefinitionSecret(Property):
     """
     AWS Object Type = "AWS::Batch::JobDefinition.Secret"
 
@@ -170,7 +170,7 @@ class JobDefinitionSecret(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-secret.html#cfn-batch-jobdefinition-secret-valuefrom"""
 
 @attr.s
-class JobDefinitionNetworkConfiguration(Property):
+class PropJobDefinitionNetworkConfiguration(Property):
     """
     AWS Object Type = "AWS::Batch::JobDefinition.NetworkConfiguration"
 
@@ -190,7 +190,7 @@ class JobDefinitionNetworkConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties-networkconfiguration.html#cfn-batch-jobdefinition-containerproperties-networkconfiguration-assignpublicip"""
 
 @attr.s
-class JobDefinitionLogConfiguration(Property):
+class PropJobDefinitionLogConfiguration(Property):
     """
     AWS Object Type = "AWS::Batch::JobDefinition.LogConfiguration"
 
@@ -216,16 +216,16 @@ class JobDefinitionLogConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Options"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties-logconfiguration.html#cfn-batch-jobdefinition-containerproperties-logconfiguration-options"""
-    p_SecretOptions: typing.List[typing.Union['JobDefinitionSecret', dict]] = attr.ib(
+    p_SecretOptions: typing.List[typing.Union['PropJobDefinitionSecret', dict]] = attr.ib(
         default=None,
-        converter=JobDefinitionSecret.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(JobDefinitionSecret), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropJobDefinitionSecret.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropJobDefinitionSecret), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "SecretOptions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties-logconfiguration.html#cfn-batch-jobdefinition-containerproperties-logconfiguration-secretoptions"""
 
 @attr.s
-class ComputeEnvironmentLaunchTemplateSpecification(Property):
+class PropComputeEnvironmentLaunchTemplateSpecification(Property):
     """
     AWS Object Type = "AWS::Batch::ComputeEnvironment.LaunchTemplateSpecification"
 
@@ -259,7 +259,7 @@ class ComputeEnvironmentLaunchTemplateSpecification(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-launchtemplatespecification.html#cfn-batch-computeenvironment-launchtemplatespecification-version"""
 
 @attr.s
-class JobDefinitionMountPoints(Property):
+class PropJobDefinitionMountPoints(Property):
     """
     AWS Object Type = "AWS::Batch::JobDefinition.MountPoints"
 
@@ -293,7 +293,7 @@ class JobDefinitionMountPoints(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-mountpoints.html#cfn-batch-jobdefinition-mountpoints-sourcevolume"""
 
 @attr.s
-class JobDefinitionEvaluateOnExit(Property):
+class PropJobDefinitionEvaluateOnExit(Property):
     """
     AWS Object Type = "AWS::Batch::JobDefinition.EvaluateOnExit"
 
@@ -334,7 +334,7 @@ class JobDefinitionEvaluateOnExit(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-evaluateonexit.html#cfn-batch-jobdefinition-evaluateonexit-onstatusreason"""
 
 @attr.s
-class JobDefinitionUlimit(Property):
+class PropJobDefinitionUlimit(Property):
     """
     AWS Object Type = "AWS::Batch::JobDefinition.Ulimit"
 
@@ -368,7 +368,7 @@ class JobDefinitionUlimit(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-ulimit.html#cfn-batch-jobdefinition-ulimit-softlimit"""
 
 @attr.s
-class JobDefinitionFargatePlatformConfiguration(Property):
+class PropJobDefinitionFargatePlatformConfiguration(Property):
     """
     AWS Object Type = "AWS::Batch::JobDefinition.FargatePlatformConfiguration"
 
@@ -388,7 +388,7 @@ class JobDefinitionFargatePlatformConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties-fargateplatformconfiguration.html#cfn-batch-jobdefinition-containerproperties-fargateplatformconfiguration-platformversion"""
 
 @attr.s
-class JobDefinitionTimeout(Property):
+class PropJobDefinitionTimeout(Property):
     """
     AWS Object Type = "AWS::Batch::JobDefinition.Timeout"
 
@@ -408,7 +408,7 @@ class JobDefinitionTimeout(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-timeout.html#cfn-batch-jobdefinition-timeout-attemptdurationseconds"""
 
 @attr.s
-class JobDefinitionTmpfs(Property):
+class PropJobDefinitionTmpfs(Property):
     """
     AWS Object Type = "AWS::Batch::JobDefinition.Tmpfs"
 
@@ -442,7 +442,7 @@ class JobDefinitionTmpfs(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-tmpfs.html#cfn-batch-jobdefinition-tmpfs-mountoptions"""
 
 @attr.s
-class JobDefinitionEfsVolumeConfiguration(Property):
+class PropJobDefinitionEfsVolumeConfiguration(Property):
     """
     AWS Object Type = "AWS::Batch::JobDefinition.EfsVolumeConfiguration"
 
@@ -464,10 +464,10 @@ class JobDefinitionEfsVolumeConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "FileSystemId"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-efsvolumeconfiguration.html#cfn-batch-jobdefinition-efsvolumeconfiguration-filesystemid"""
-    p_AuthorizationConfig: typing.Union['JobDefinitionAuthorizationConfig', dict] = attr.ib(
+    p_AuthorizationConfig: typing.Union['PropJobDefinitionAuthorizationConfig', dict] = attr.ib(
         default=None,
-        converter=JobDefinitionAuthorizationConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(JobDefinitionAuthorizationConfig)),
+        converter=PropJobDefinitionAuthorizationConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropJobDefinitionAuthorizationConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "AuthorizationConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-efsvolumeconfiguration.html#cfn-batch-jobdefinition-efsvolumeconfiguration-authorizationconfig"""
@@ -491,7 +491,7 @@ class JobDefinitionEfsVolumeConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-efsvolumeconfiguration.html#cfn-batch-jobdefinition-efsvolumeconfiguration-transitencryptionport"""
 
 @attr.s
-class JobDefinitionDevice(Property):
+class PropJobDefinitionDevice(Property):
     """
     AWS Object Type = "AWS::Batch::JobDefinition.Device"
 
@@ -525,7 +525,7 @@ class JobDefinitionDevice(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-device.html#cfn-batch-jobdefinition-device-permissions"""
 
 @attr.s
-class ComputeEnvironmentEc2ConfigurationObject(Property):
+class PropComputeEnvironmentEc2ConfigurationObject(Property):
     """
     AWS Object Type = "AWS::Batch::ComputeEnvironment.Ec2ConfigurationObject"
 
@@ -552,7 +552,7 @@ class ComputeEnvironmentEc2ConfigurationObject(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-ec2configurationobject.html#cfn-batch-computeenvironment-ec2configurationobject-imageidoverride"""
 
 @attr.s
-class JobDefinitionVolumes(Property):
+class PropJobDefinitionVolumes(Property):
     """
     AWS Object Type = "AWS::Batch::JobDefinition.Volumes"
 
@@ -566,17 +566,17 @@ class JobDefinitionVolumes(Property):
     """
     AWS_OBJECT_TYPE = "AWS::Batch::JobDefinition.Volumes"
     
-    p_EfsVolumeConfiguration: typing.Union['JobDefinitionEfsVolumeConfiguration', dict] = attr.ib(
+    p_EfsVolumeConfiguration: typing.Union['PropJobDefinitionEfsVolumeConfiguration', dict] = attr.ib(
         default=None,
-        converter=JobDefinitionEfsVolumeConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(JobDefinitionEfsVolumeConfiguration)),
+        converter=PropJobDefinitionEfsVolumeConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropJobDefinitionEfsVolumeConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "EfsVolumeConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-volumes.html#cfn-batch-jobdefinition-volumes-efsvolumeconfiguration"""
-    p_Host: typing.Union['JobDefinitionVolumesHost', dict] = attr.ib(
+    p_Host: typing.Union['PropJobDefinitionVolumesHost', dict] = attr.ib(
         default=None,
-        converter=JobDefinitionVolumesHost.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(JobDefinitionVolumesHost)),
+        converter=PropJobDefinitionVolumesHost.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropJobDefinitionVolumesHost)),
         metadata={AttrMeta.PROPERTY_NAME: "Host"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-volumes.html#cfn-batch-jobdefinition-volumes-host"""
@@ -588,7 +588,7 @@ class JobDefinitionVolumes(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-volumes.html#cfn-batch-jobdefinition-volumes-name"""
 
 @attr.s
-class ComputeEnvironmentComputeResources(Property):
+class PropComputeEnvironmentComputeResources(Property):
     """
     AWS Object Type = "AWS::Batch::ComputeEnvironment.ComputeResources"
 
@@ -652,10 +652,10 @@ class ComputeEnvironmentComputeResources(Property):
         metadata={AttrMeta.PROPERTY_NAME: "DesiredvCpus"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-computeresources.html#cfn-batch-computeenvironment-computeresources-desiredvcpus"""
-    p_Ec2Configuration: typing.List[typing.Union['ComputeEnvironmentEc2ConfigurationObject', dict]] = attr.ib(
+    p_Ec2Configuration: typing.List[typing.Union['PropComputeEnvironmentEc2ConfigurationObject', dict]] = attr.ib(
         default=None,
-        converter=ComputeEnvironmentEc2ConfigurationObject.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ComputeEnvironmentEc2ConfigurationObject), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropComputeEnvironmentEc2ConfigurationObject.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropComputeEnvironmentEc2ConfigurationObject), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Ec2Configuration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-computeresources.html#cfn-batch-computeenvironment-computeresources-ec2configuration"""
@@ -683,10 +683,10 @@ class ComputeEnvironmentComputeResources(Property):
         metadata={AttrMeta.PROPERTY_NAME: "InstanceTypes"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-computeresources.html#cfn-batch-computeenvironment-computeresources-instancetypes"""
-    p_LaunchTemplate: typing.Union['ComputeEnvironmentLaunchTemplateSpecification', dict] = attr.ib(
+    p_LaunchTemplate: typing.Union['PropComputeEnvironmentLaunchTemplateSpecification', dict] = attr.ib(
         default=None,
-        converter=ComputeEnvironmentLaunchTemplateSpecification.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ComputeEnvironmentLaunchTemplateSpecification)),
+        converter=PropComputeEnvironmentLaunchTemplateSpecification.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropComputeEnvironmentLaunchTemplateSpecification)),
         metadata={AttrMeta.PROPERTY_NAME: "LaunchTemplate"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-computeresources.html#cfn-batch-computeenvironment-computeresources-launchtemplate"""
@@ -722,7 +722,7 @@ class ComputeEnvironmentComputeResources(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-computeenvironment-computeresources.html#cfn-batch-computeenvironment-computeresources-tags"""
 
 @attr.s
-class JobDefinitionRetryStrategy(Property):
+class PropJobDefinitionRetryStrategy(Property):
     """
     AWS Object Type = "AWS::Batch::JobDefinition.RetryStrategy"
 
@@ -741,16 +741,16 @@ class JobDefinitionRetryStrategy(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Attempts"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-retrystrategy.html#cfn-batch-jobdefinition-retrystrategy-attempts"""
-    p_EvaluateOnExit: typing.List[typing.Union['JobDefinitionEvaluateOnExit', dict]] = attr.ib(
+    p_EvaluateOnExit: typing.List[typing.Union['PropJobDefinitionEvaluateOnExit', dict]] = attr.ib(
         default=None,
-        converter=JobDefinitionEvaluateOnExit.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(JobDefinitionEvaluateOnExit), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropJobDefinitionEvaluateOnExit.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropJobDefinitionEvaluateOnExit), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "EvaluateOnExit"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-retrystrategy.html#cfn-batch-jobdefinition-retrystrategy-evaluateonexit"""
 
 @attr.s
-class JobDefinitionLinuxParameters(Property):
+class PropJobDefinitionLinuxParameters(Property):
     """
     AWS Object Type = "AWS::Batch::JobDefinition.LinuxParameters"
 
@@ -767,10 +767,10 @@ class JobDefinitionLinuxParameters(Property):
     """
     AWS_OBJECT_TYPE = "AWS::Batch::JobDefinition.LinuxParameters"
     
-    p_Devices: typing.List[typing.Union['JobDefinitionDevice', dict]] = attr.ib(
+    p_Devices: typing.List[typing.Union['PropJobDefinitionDevice', dict]] = attr.ib(
         default=None,
-        converter=JobDefinitionDevice.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(JobDefinitionDevice), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropJobDefinitionDevice.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropJobDefinitionDevice), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Devices"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties-linuxparameters.html#cfn-batch-jobdefinition-containerproperties-linuxparameters-devices"""
@@ -798,16 +798,16 @@ class JobDefinitionLinuxParameters(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Swappiness"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties-linuxparameters.html#cfn-batch-jobdefinition-containerproperties-linuxparameters-swappiness"""
-    p_Tmpfs: typing.List[typing.Union['JobDefinitionTmpfs', dict]] = attr.ib(
+    p_Tmpfs: typing.List[typing.Union['PropJobDefinitionTmpfs', dict]] = attr.ib(
         default=None,
-        converter=JobDefinitionTmpfs.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(JobDefinitionTmpfs), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropJobDefinitionTmpfs.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropJobDefinitionTmpfs), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Tmpfs"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties-linuxparameters.html#cfn-batch-jobdefinition-containerproperties-linuxparameters-tmpfs"""
 
 @attr.s
-class JobDefinitionContainerProperties(Property):
+class PropJobDefinitionContainerProperties(Property):
     """
     AWS Object Type = "AWS::Batch::JobDefinition.ContainerProperties"
 
@@ -850,10 +850,10 @@ class JobDefinitionContainerProperties(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Command"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties.html#cfn-batch-jobdefinition-containerproperties-command"""
-    p_Environment: typing.List[typing.Union['JobDefinitionEnvironment', dict]] = attr.ib(
+    p_Environment: typing.List[typing.Union['PropJobDefinitionEnvironment', dict]] = attr.ib(
         default=None,
-        converter=JobDefinitionEnvironment.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(JobDefinitionEnvironment), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropJobDefinitionEnvironment.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropJobDefinitionEnvironment), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Environment"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties.html#cfn-batch-jobdefinition-containerproperties-environment"""
@@ -863,10 +863,10 @@ class JobDefinitionContainerProperties(Property):
         metadata={AttrMeta.PROPERTY_NAME: "ExecutionRoleArn"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties.html#cfn-batch-jobdefinition-containerproperties-executionrolearn"""
-    p_FargatePlatformConfiguration: typing.Union['JobDefinitionFargatePlatformConfiguration', dict] = attr.ib(
+    p_FargatePlatformConfiguration: typing.Union['PropJobDefinitionFargatePlatformConfiguration', dict] = attr.ib(
         default=None,
-        converter=JobDefinitionFargatePlatformConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(JobDefinitionFargatePlatformConfiguration)),
+        converter=PropJobDefinitionFargatePlatformConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropJobDefinitionFargatePlatformConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "FargatePlatformConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties.html#cfn-batch-jobdefinition-containerproperties-fargateplatformconfiguration"""
@@ -882,17 +882,17 @@ class JobDefinitionContainerProperties(Property):
         metadata={AttrMeta.PROPERTY_NAME: "JobRoleArn"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties.html#cfn-batch-jobdefinition-containerproperties-jobrolearn"""
-    p_LinuxParameters: typing.Union['JobDefinitionLinuxParameters', dict] = attr.ib(
+    p_LinuxParameters: typing.Union['PropJobDefinitionLinuxParameters', dict] = attr.ib(
         default=None,
-        converter=JobDefinitionLinuxParameters.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(JobDefinitionLinuxParameters)),
+        converter=PropJobDefinitionLinuxParameters.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropJobDefinitionLinuxParameters)),
         metadata={AttrMeta.PROPERTY_NAME: "LinuxParameters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties.html#cfn-batch-jobdefinition-containerproperties-linuxparameters"""
-    p_LogConfiguration: typing.Union['JobDefinitionLogConfiguration', dict] = attr.ib(
+    p_LogConfiguration: typing.Union['PropJobDefinitionLogConfiguration', dict] = attr.ib(
         default=None,
-        converter=JobDefinitionLogConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(JobDefinitionLogConfiguration)),
+        converter=PropJobDefinitionLogConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropJobDefinitionLogConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "LogConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties.html#cfn-batch-jobdefinition-containerproperties-logconfiguration"""
@@ -902,17 +902,17 @@ class JobDefinitionContainerProperties(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Memory"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties.html#cfn-batch-jobdefinition-containerproperties-memory"""
-    p_MountPoints: typing.List[typing.Union['JobDefinitionMountPoints', dict]] = attr.ib(
+    p_MountPoints: typing.List[typing.Union['PropJobDefinitionMountPoints', dict]] = attr.ib(
         default=None,
-        converter=JobDefinitionMountPoints.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(JobDefinitionMountPoints), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropJobDefinitionMountPoints.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropJobDefinitionMountPoints), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "MountPoints"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties.html#cfn-batch-jobdefinition-containerproperties-mountpoints"""
-    p_NetworkConfiguration: typing.Union['JobDefinitionNetworkConfiguration', dict] = attr.ib(
+    p_NetworkConfiguration: typing.Union['PropJobDefinitionNetworkConfiguration', dict] = attr.ib(
         default=None,
-        converter=JobDefinitionNetworkConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(JobDefinitionNetworkConfiguration)),
+        converter=PropJobDefinitionNetworkConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropJobDefinitionNetworkConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "NetworkConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties.html#cfn-batch-jobdefinition-containerproperties-networkconfiguration"""
@@ -928,24 +928,24 @@ class JobDefinitionContainerProperties(Property):
         metadata={AttrMeta.PROPERTY_NAME: "ReadonlyRootFilesystem"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties.html#cfn-batch-jobdefinition-containerproperties-readonlyrootfilesystem"""
-    p_ResourceRequirements: typing.List[typing.Union['JobDefinitionResourceRequirement', dict]] = attr.ib(
+    p_ResourceRequirements: typing.List[typing.Union['PropJobDefinitionResourceRequirement', dict]] = attr.ib(
         default=None,
-        converter=JobDefinitionResourceRequirement.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(JobDefinitionResourceRequirement), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropJobDefinitionResourceRequirement.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropJobDefinitionResourceRequirement), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "ResourceRequirements"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties.html#cfn-batch-jobdefinition-containerproperties-resourcerequirements"""
-    p_Secrets: typing.List[typing.Union['JobDefinitionSecret', dict]] = attr.ib(
+    p_Secrets: typing.List[typing.Union['PropJobDefinitionSecret', dict]] = attr.ib(
         default=None,
-        converter=JobDefinitionSecret.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(JobDefinitionSecret), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropJobDefinitionSecret.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropJobDefinitionSecret), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Secrets"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties.html#cfn-batch-jobdefinition-containerproperties-secrets"""
-    p_Ulimits: typing.List[typing.Union['JobDefinitionUlimit', dict]] = attr.ib(
+    p_Ulimits: typing.List[typing.Union['PropJobDefinitionUlimit', dict]] = attr.ib(
         default=None,
-        converter=JobDefinitionUlimit.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(JobDefinitionUlimit), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropJobDefinitionUlimit.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropJobDefinitionUlimit), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Ulimits"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties.html#cfn-batch-jobdefinition-containerproperties-ulimits"""
@@ -961,16 +961,16 @@ class JobDefinitionContainerProperties(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Vcpus"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties.html#cfn-batch-jobdefinition-containerproperties-vcpus"""
-    p_Volumes: typing.List[typing.Union['JobDefinitionVolumes', dict]] = attr.ib(
+    p_Volumes: typing.List[typing.Union['PropJobDefinitionVolumes', dict]] = attr.ib(
         default=None,
-        converter=JobDefinitionVolumes.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(JobDefinitionVolumes), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropJobDefinitionVolumes.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropJobDefinitionVolumes), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Volumes"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-containerproperties.html#cfn-batch-jobdefinition-containerproperties-volumes"""
 
 @attr.s
-class JobDefinitionNodeRangeProperty(Property):
+class PropJobDefinitionNodeRangeProperty(Property):
     """
     AWS Object Type = "AWS::Batch::JobDefinition.NodeRangeProperty"
 
@@ -989,16 +989,16 @@ class JobDefinitionNodeRangeProperty(Property):
         metadata={AttrMeta.PROPERTY_NAME: "TargetNodes"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-noderangeproperty.html#cfn-batch-jobdefinition-noderangeproperty-targetnodes"""
-    p_Container: typing.Union['JobDefinitionContainerProperties', dict] = attr.ib(
+    p_Container: typing.Union['PropJobDefinitionContainerProperties', dict] = attr.ib(
         default=None,
-        converter=JobDefinitionContainerProperties.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(JobDefinitionContainerProperties)),
+        converter=PropJobDefinitionContainerProperties.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropJobDefinitionContainerProperties)),
         metadata={AttrMeta.PROPERTY_NAME: "Container"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-noderangeproperty.html#cfn-batch-jobdefinition-noderangeproperty-container"""
 
 @attr.s
-class JobDefinitionNodeProperties(Property):
+class PropJobDefinitionNodeProperties(Property):
     """
     AWS Object Type = "AWS::Batch::JobDefinition.NodeProperties"
 
@@ -1018,10 +1018,10 @@ class JobDefinitionNodeProperties(Property):
         metadata={AttrMeta.PROPERTY_NAME: "MainNode"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-nodeproperties.html#cfn-batch-jobdefinition-nodeproperties-mainnode"""
-    rp_NodeRangeProperties: typing.List[typing.Union['JobDefinitionNodeRangeProperty', dict]] = attr.ib(
+    rp_NodeRangeProperties: typing.List[typing.Union['PropJobDefinitionNodeRangeProperty', dict]] = attr.ib(
         default=None,
-        converter=JobDefinitionNodeRangeProperty.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(JobDefinitionNodeRangeProperty), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropJobDefinitionNodeRangeProperty.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropJobDefinitionNodeRangeProperty), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "NodeRangeProperties"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-batch-jobdefinition-nodeproperties.html#cfn-batch-jobdefinition-nodeproperties-noderangeproperties"""
@@ -1064,10 +1064,10 @@ class JobDefinition(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Type"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-jobdefinition.html#cfn-batch-jobdefinition-type"""
-    p_ContainerProperties: typing.Union['JobDefinitionContainerProperties', dict] = attr.ib(
+    p_ContainerProperties: typing.Union['PropJobDefinitionContainerProperties', dict] = attr.ib(
         default=None,
-        converter=JobDefinitionContainerProperties.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(JobDefinitionContainerProperties)),
+        converter=PropJobDefinitionContainerProperties.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropJobDefinitionContainerProperties)),
         metadata={AttrMeta.PROPERTY_NAME: "ContainerProperties"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-jobdefinition.html#cfn-batch-jobdefinition-containerproperties"""
@@ -1077,10 +1077,10 @@ class JobDefinition(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "JobDefinitionName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-jobdefinition.html#cfn-batch-jobdefinition-jobdefinitionname"""
-    p_NodeProperties: typing.Union['JobDefinitionNodeProperties', dict] = attr.ib(
+    p_NodeProperties: typing.Union['PropJobDefinitionNodeProperties', dict] = attr.ib(
         default=None,
-        converter=JobDefinitionNodeProperties.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(JobDefinitionNodeProperties)),
+        converter=PropJobDefinitionNodeProperties.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropJobDefinitionNodeProperties)),
         metadata={AttrMeta.PROPERTY_NAME: "NodeProperties"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-jobdefinition.html#cfn-batch-jobdefinition-nodeproperties"""
@@ -1102,17 +1102,17 @@ class JobDefinition(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "PropagateTags"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-jobdefinition.html#cfn-batch-jobdefinition-propagatetags"""
-    p_RetryStrategy: typing.Union['JobDefinitionRetryStrategy', dict] = attr.ib(
+    p_RetryStrategy: typing.Union['PropJobDefinitionRetryStrategy', dict] = attr.ib(
         default=None,
-        converter=JobDefinitionRetryStrategy.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(JobDefinitionRetryStrategy)),
+        converter=PropJobDefinitionRetryStrategy.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropJobDefinitionRetryStrategy)),
         metadata={AttrMeta.PROPERTY_NAME: "RetryStrategy"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-jobdefinition.html#cfn-batch-jobdefinition-retrystrategy"""
-    p_Timeout: typing.Union['JobDefinitionTimeout', dict] = attr.ib(
+    p_Timeout: typing.Union['PropJobDefinitionTimeout', dict] = attr.ib(
         default=None,
-        converter=JobDefinitionTimeout.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(JobDefinitionTimeout)),
+        converter=PropJobDefinitionTimeout.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropJobDefinitionTimeout)),
         metadata={AttrMeta.PROPERTY_NAME: "Timeout"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-jobdefinition.html#cfn-batch-jobdefinition-timeout"""
@@ -1143,10 +1143,10 @@ class JobQueue(Resource):
     AWS_OBJECT_TYPE = "AWS::Batch::JobQueue"
 
     
-    rp_ComputeEnvironmentOrder: typing.List[typing.Union['JobQueueComputeEnvironmentOrder', dict]] = attr.ib(
+    rp_ComputeEnvironmentOrder: typing.List[typing.Union['PropJobQueueComputeEnvironmentOrder', dict]] = attr.ib(
         default=None,
-        converter=JobQueueComputeEnvironmentOrder.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(JobQueueComputeEnvironmentOrder), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropJobQueueComputeEnvironmentOrder.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropJobQueueComputeEnvironmentOrder), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "ComputeEnvironmentOrder"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-jobqueue.html#cfn-batch-jobqueue-computeenvironmentorder"""
@@ -1208,10 +1208,10 @@ class ComputeEnvironment(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "ComputeEnvironmentName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-computeenvironment.html#cfn-batch-computeenvironment-computeenvironmentname"""
-    p_ComputeResources: typing.Union['ComputeEnvironmentComputeResources', dict] = attr.ib(
+    p_ComputeResources: typing.Union['PropComputeEnvironmentComputeResources', dict] = attr.ib(
         default=None,
-        converter=ComputeEnvironmentComputeResources.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ComputeEnvironmentComputeResources)),
+        converter=PropComputeEnvironmentComputeResources.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropComputeEnvironmentComputeResources)),
         metadata={AttrMeta.PROPERTY_NAME: "ComputeResources"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-batch-computeenvironment.html#cfn-batch-computeenvironment-computeresources"""

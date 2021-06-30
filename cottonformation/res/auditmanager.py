@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class AssessmentDelegation(Property):
+class PropAssessmentDelegation(Property):
     """
     AWS Object Type = "AWS::AuditManager::Assessment.Delegation"
 
@@ -105,7 +105,7 @@ class AssessmentDelegation(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-auditmanager-assessment-delegation.html#cfn-auditmanager-assessment-delegation-status"""
 
 @attr.s
-class AssessmentAWSAccount(Property):
+class PropAssessmentAWSAccount(Property):
     """
     AWS Object Type = "AWS::AuditManager::Assessment.AWSAccount"
 
@@ -139,7 +139,7 @@ class AssessmentAWSAccount(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-auditmanager-assessment-awsaccount.html#cfn-auditmanager-assessment-awsaccount-name"""
 
 @attr.s
-class AssessmentRole(Property):
+class PropAssessmentRole(Property):
     """
     AWS Object Type = "AWS::AuditManager::Assessment.Role"
 
@@ -166,7 +166,7 @@ class AssessmentRole(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-auditmanager-assessment-role.html#cfn-auditmanager-assessment-role-roletype"""
 
 @attr.s
-class AssessmentAssessmentReportsDestination(Property):
+class PropAssessmentAssessmentReportsDestination(Property):
     """
     AWS Object Type = "AWS::AuditManager::Assessment.AssessmentReportsDestination"
 
@@ -193,7 +193,7 @@ class AssessmentAssessmentReportsDestination(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-auditmanager-assessment-assessmentreportsdestination.html#cfn-auditmanager-assessment-assessmentreportsdestination-destinationtype"""
 
 @attr.s
-class AssessmentAWSService(Property):
+class PropAssessmentAWSService(Property):
     """
     AWS Object Type = "AWS::AuditManager::Assessment.AWSService"
 
@@ -213,7 +213,7 @@ class AssessmentAWSService(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-auditmanager-assessment-awsservice.html#cfn-auditmanager-assessment-awsservice-servicename"""
 
 @attr.s
-class AssessmentScope(Property):
+class PropAssessmentScope(Property):
     """
     AWS Object Type = "AWS::AuditManager::Assessment.Scope"
 
@@ -226,17 +226,17 @@ class AssessmentScope(Property):
     """
     AWS_OBJECT_TYPE = "AWS::AuditManager::Assessment.Scope"
     
-    p_AwsAccounts: typing.List[typing.Union['AssessmentAWSAccount', dict]] = attr.ib(
+    p_AwsAccounts: typing.List[typing.Union['PropAssessmentAWSAccount', dict]] = attr.ib(
         default=None,
-        converter=AssessmentAWSAccount.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(AssessmentAWSAccount), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropAssessmentAWSAccount.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropAssessmentAWSAccount), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "AwsAccounts"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-auditmanager-assessment-scope.html#cfn-auditmanager-assessment-scope-awsaccounts"""
-    p_AwsServices: typing.List[typing.Union['AssessmentAWSService', dict]] = attr.ib(
+    p_AwsServices: typing.List[typing.Union['PropAssessmentAWSService', dict]] = attr.ib(
         default=None,
-        converter=AssessmentAWSService.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(AssessmentAWSService), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropAssessmentAWSService.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropAssessmentAWSService), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "AwsServices"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-auditmanager-assessment-scope.html#cfn-auditmanager-assessment-scope-awsservices"""
@@ -266,17 +266,17 @@ class Assessment(Resource):
     AWS_OBJECT_TYPE = "AWS::AuditManager::Assessment"
 
     
-    p_AssessmentReportsDestination: typing.Union['AssessmentAssessmentReportsDestination', dict] = attr.ib(
+    p_AssessmentReportsDestination: typing.Union['PropAssessmentAssessmentReportsDestination', dict] = attr.ib(
         default=None,
-        converter=AssessmentAssessmentReportsDestination.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(AssessmentAssessmentReportsDestination)),
+        converter=PropAssessmentAssessmentReportsDestination.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropAssessmentAssessmentReportsDestination)),
         metadata={AttrMeta.PROPERTY_NAME: "AssessmentReportsDestination"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-auditmanager-assessment.html#cfn-auditmanager-assessment-assessmentreportsdestination"""
-    p_AwsAccount: typing.Union['AssessmentAWSAccount', dict] = attr.ib(
+    p_AwsAccount: typing.Union['PropAssessmentAWSAccount', dict] = attr.ib(
         default=None,
-        converter=AssessmentAWSAccount.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(AssessmentAWSAccount)),
+        converter=PropAssessmentAWSAccount.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropAssessmentAWSAccount)),
         metadata={AttrMeta.PROPERTY_NAME: "AwsAccount"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-auditmanager-assessment.html#cfn-auditmanager-assessment-awsaccount"""
@@ -298,17 +298,17 @@ class Assessment(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Name"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-auditmanager-assessment.html#cfn-auditmanager-assessment-name"""
-    p_Roles: typing.List[typing.Union['AssessmentRole', dict]] = attr.ib(
+    p_Roles: typing.List[typing.Union['PropAssessmentRole', dict]] = attr.ib(
         default=None,
-        converter=AssessmentRole.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(AssessmentRole), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropAssessmentRole.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropAssessmentRole), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Roles"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-auditmanager-assessment.html#cfn-auditmanager-assessment-roles"""
-    p_Scope: typing.Union['AssessmentScope', dict] = attr.ib(
+    p_Scope: typing.Union['PropAssessmentScope', dict] = attr.ib(
         default=None,
-        converter=AssessmentScope.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(AssessmentScope)),
+        converter=PropAssessmentScope.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropAssessmentScope)),
         metadata={AttrMeta.PROPERTY_NAME: "Scope"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-auditmanager-assessment.html#cfn-auditmanager-assessment-scope"""

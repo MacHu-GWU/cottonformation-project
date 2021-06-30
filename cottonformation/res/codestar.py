@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class GitHubRepositoryS3(Property):
+class PropGitHubRepositoryS3(Property):
     """
     AWS Object Type = "AWS::CodeStar::GitHubRepository.S3"
 
@@ -49,7 +49,7 @@ class GitHubRepositoryS3(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codestar-githubrepository-s3.html#cfn-codestar-githubrepository-s3-objectversion"""
 
 @attr.s
-class GitHubRepositoryCode(Property):
+class PropGitHubRepositoryCode(Property):
     """
     AWS Object Type = "AWS::CodeStar::GitHubRepository.Code"
 
@@ -61,10 +61,10 @@ class GitHubRepositoryCode(Property):
     """
     AWS_OBJECT_TYPE = "AWS::CodeStar::GitHubRepository.Code"
     
-    rp_S3: typing.Union['GitHubRepositoryS3', dict] = attr.ib(
+    rp_S3: typing.Union['PropGitHubRepositoryS3', dict] = attr.ib(
         default=None,
-        converter=GitHubRepositoryS3.from_dict,
-        validator=attr.validators.instance_of(GitHubRepositoryS3),
+        converter=PropGitHubRepositoryS3.from_dict,
+        validator=attr.validators.instance_of(PropGitHubRepositoryS3),
         metadata={AttrMeta.PROPERTY_NAME: "S3"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codestar-githubrepository-code.html#cfn-codestar-githubrepository-code-s3"""
@@ -105,10 +105,10 @@ class GitHubRepository(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "RepositoryOwner"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codestar-githubrepository.html#cfn-codestar-githubrepository-repositoryowner"""
-    p_Code: typing.Union['GitHubRepositoryCode', dict] = attr.ib(
+    p_Code: typing.Union['PropGitHubRepositoryCode', dict] = attr.ib(
         default=None,
-        converter=GitHubRepositoryCode.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(GitHubRepositoryCode)),
+        converter=PropGitHubRepositoryCode.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropGitHubRepositoryCode)),
         metadata={AttrMeta.PROPERTY_NAME: "Code"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codestar-githubrepository.html#cfn-codestar-githubrepository-code"""

@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class AccountExpiryEventsConfiguration(Property):
+class PropAccountExpiryEventsConfiguration(Property):
     """
     AWS Object Type = "AWS::CertificateManager::Account.ExpiryEventsConfiguration"
 
@@ -35,7 +35,7 @@ class AccountExpiryEventsConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-certificatemanager-account-expiryeventsconfiguration.html#cfn-certificatemanager-account-expiryeventsconfiguration-daysbeforeexpiry"""
 
 @attr.s
-class CertificateDomainValidationOption(Property):
+class PropCertificateDomainValidationOption(Property):
     """
     AWS Object Type = "AWS::CertificateManager::Certificate.DomainValidationOption"
 
@@ -109,10 +109,10 @@ class Certificate(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "CertificateTransparencyLoggingPreference"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-certificatemanager-certificate.html#cfn-certificatemanager-certificate-certificatetransparencyloggingpreference"""
-    p_DomainValidationOptions: typing.List[typing.Union['CertificateDomainValidationOption', dict]] = attr.ib(
+    p_DomainValidationOptions: typing.List[typing.Union['PropCertificateDomainValidationOption', dict]] = attr.ib(
         default=None,
-        converter=CertificateDomainValidationOption.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(CertificateDomainValidationOption), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropCertificateDomainValidationOption.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropCertificateDomainValidationOption), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "DomainValidationOptions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-certificatemanager-certificate.html#cfn-certificatemanager-certificate-domainvalidationoptions"""
@@ -152,10 +152,10 @@ class Account(Resource):
     AWS_OBJECT_TYPE = "AWS::CertificateManager::Account"
 
     
-    rp_ExpiryEventsConfiguration: typing.Union['AccountExpiryEventsConfiguration', dict] = attr.ib(
+    rp_ExpiryEventsConfiguration: typing.Union['PropAccountExpiryEventsConfiguration', dict] = attr.ib(
         default=None,
-        converter=AccountExpiryEventsConfiguration.from_dict,
-        validator=attr.validators.instance_of(AccountExpiryEventsConfiguration),
+        converter=PropAccountExpiryEventsConfiguration.from_dict,
+        validator=attr.validators.instance_of(PropAccountExpiryEventsConfiguration),
         metadata={AttrMeta.PROPERTY_NAME: "ExpiryEventsConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-certificatemanager-account.html#cfn-certificatemanager-account-expiryeventsconfiguration"""

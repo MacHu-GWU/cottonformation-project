@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class ContainerMetricPolicyRule(Property):
+class PropContainerMetricPolicyRule(Property):
     """
     AWS Object Type = "AWS::MediaStore::Container.MetricPolicyRule"
 
@@ -42,7 +42,7 @@ class ContainerMetricPolicyRule(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediastore-container-metricpolicyrule.html#cfn-mediastore-container-metricpolicyrule-objectgroupname"""
 
 @attr.s
-class ContainerCorsRule(Property):
+class PropContainerCorsRule(Property):
     """
     AWS Object Type = "AWS::MediaStore::Container.CorsRule"
 
@@ -90,7 +90,7 @@ class ContainerCorsRule(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediastore-container-corsrule.html#cfn-mediastore-container-corsrule-maxageseconds"""
 
 @attr.s
-class ContainerMetricPolicy(Property):
+class PropContainerMetricPolicy(Property):
     """
     AWS Object Type = "AWS::MediaStore::Container.MetricPolicy"
 
@@ -109,10 +109,10 @@ class ContainerMetricPolicy(Property):
         metadata={AttrMeta.PROPERTY_NAME: "ContainerLevelMetrics"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediastore-container-metricpolicy.html#cfn-mediastore-container-metricpolicy-containerlevelmetrics"""
-    p_MetricPolicyRules: typing.List[typing.Union['ContainerMetricPolicyRule', dict]] = attr.ib(
+    p_MetricPolicyRules: typing.List[typing.Union['PropContainerMetricPolicyRule', dict]] = attr.ib(
         default=None,
-        converter=ContainerMetricPolicyRule.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ContainerMetricPolicyRule), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropContainerMetricPolicyRule.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropContainerMetricPolicyRule), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "MetricPolicyRules"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediastore-container-metricpolicy.html#cfn-mediastore-container-metricpolicy-metricpolicyrules"""
@@ -152,10 +152,10 @@ class Container(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "AccessLoggingEnabled"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediastore-container.html#cfn-mediastore-container-accessloggingenabled"""
-    p_CorsPolicy: typing.List[typing.Union['ContainerCorsRule', dict]] = attr.ib(
+    p_CorsPolicy: typing.List[typing.Union['PropContainerCorsRule', dict]] = attr.ib(
         default=None,
-        converter=ContainerCorsRule.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ContainerCorsRule), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropContainerCorsRule.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropContainerCorsRule), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "CorsPolicy"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediastore-container.html#cfn-mediastore-container-corspolicy"""
@@ -165,10 +165,10 @@ class Container(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "LifecyclePolicy"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediastore-container.html#cfn-mediastore-container-lifecyclepolicy"""
-    p_MetricPolicy: typing.Union['ContainerMetricPolicy', dict] = attr.ib(
+    p_MetricPolicy: typing.Union['PropContainerMetricPolicy', dict] = attr.ib(
         default=None,
-        converter=ContainerMetricPolicy.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ContainerMetricPolicy)),
+        converter=PropContainerMetricPolicy.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropContainerMetricPolicy)),
         metadata={AttrMeta.PROPERTY_NAME: "MetricPolicy"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediastore-container.html#cfn-mediastore-container-metricpolicy"""

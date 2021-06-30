@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class DetectorCFNS3LogsConfiguration(Property):
+class PropDetectorCFNS3LogsConfiguration(Property):
     """
     AWS Object Type = "AWS::GuardDuty::Detector.CFNS3LogsConfiguration"
 
@@ -35,7 +35,7 @@ class DetectorCFNS3LogsConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-detector-cfns3logsconfiguration.html#cfn-guardduty-detector-cfns3logsconfiguration-enable"""
 
 @attr.s
-class FilterCondition(Property):
+class PropFilterCondition(Property):
     """
     AWS Object Type = "AWS::GuardDuty::Filter.Condition"
 
@@ -83,7 +83,7 @@ class FilterCondition(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-filter-condition.html#cfn-guardduty-filter-condition-neq"""
 
 @attr.s
-class FilterFindingCriteria(Property):
+class PropFilterFindingCriteria(Property):
     """
     AWS Object Type = "AWS::GuardDuty::Filter.FindingCriteria"
 
@@ -102,16 +102,16 @@ class FilterFindingCriteria(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Criterion"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-filter-findingcriteria.html#cfn-guardduty-filter-findingcriteria-criterion"""
-    p_ItemType: typing.Union['FilterCondition', dict] = attr.ib(
+    p_ItemType: typing.Union['PropFilterCondition', dict] = attr.ib(
         default=None,
-        converter=FilterCondition.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(FilterCondition)),
+        converter=PropFilterCondition.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropFilterCondition)),
         metadata={AttrMeta.PROPERTY_NAME: "ItemType"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-filter-findingcriteria.html#cfn-guardduty-filter-findingcriteria-itemtype"""
 
 @attr.s
-class DetectorCFNDataSourceConfigurations(Property):
+class PropDetectorCFNDataSourceConfigurations(Property):
     """
     AWS Object Type = "AWS::GuardDuty::Detector.CFNDataSourceConfigurations"
 
@@ -123,10 +123,10 @@ class DetectorCFNDataSourceConfigurations(Property):
     """
     AWS_OBJECT_TYPE = "AWS::GuardDuty::Detector.CFNDataSourceConfigurations"
     
-    p_S3Logs: typing.Union['DetectorCFNS3LogsConfiguration', dict] = attr.ib(
+    p_S3Logs: typing.Union['PropDetectorCFNS3LogsConfiguration', dict] = attr.ib(
         default=None,
-        converter=DetectorCFNS3LogsConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DetectorCFNS3LogsConfiguration)),
+        converter=PropDetectorCFNS3LogsConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDetectorCFNS3LogsConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "S3Logs"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-detector-cfndatasourceconfigurations.html#cfn-guardduty-detector-cfndatasourceconfigurations-s3logs"""
@@ -171,10 +171,10 @@ class Filter(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "DetectorId"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-filter.html#cfn-guardduty-filter-detectorid"""
-    rp_FindingCriteria: typing.Union['FilterFindingCriteria', dict] = attr.ib(
+    rp_FindingCriteria: typing.Union['PropFilterFindingCriteria', dict] = attr.ib(
         default=None,
-        converter=FilterFindingCriteria.from_dict,
-        validator=attr.validators.instance_of(FilterFindingCriteria),
+        converter=PropFilterFindingCriteria.from_dict,
+        validator=attr.validators.instance_of(PropFilterFindingCriteria),
         metadata={AttrMeta.PROPERTY_NAME: "FindingCriteria"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-filter.html#cfn-guardduty-filter-findingcriteria"""
@@ -324,10 +324,10 @@ class Detector(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Enable"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-detector.html#cfn-guardduty-detector-enable"""
-    p_DataSources: typing.Union['DetectorCFNDataSourceConfigurations', dict] = attr.ib(
+    p_DataSources: typing.Union['PropDetectorCFNDataSourceConfigurations', dict] = attr.ib(
         default=None,
-        converter=DetectorCFNDataSourceConfigurations.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DetectorCFNDataSourceConfigurations)),
+        converter=PropDetectorCFNDataSourceConfigurations.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDetectorCFNDataSourceConfigurations)),
         metadata={AttrMeta.PROPERTY_NAME: "DataSources"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-guardduty-detector.html#cfn-guardduty-detector-datasources"""

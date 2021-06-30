@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class DetectorLabel(Property):
+class PropDetectorLabel(Property):
     """
     AWS Object Type = "AWS::FraudDetector::Detector.Label"
 
@@ -78,7 +78,7 @@ class DetectorLabel(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-frauddetector-detector-label.html#cfn-frauddetector-detector-label-tags"""
 
 @attr.s
-class DetectorEntityType(Property):
+class PropDetectorEntityType(Property):
     """
     AWS Object Type = "AWS::FraudDetector::Detector.EntityType"
 
@@ -141,7 +141,7 @@ class DetectorEntityType(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-frauddetector-detector-entitytype.html#cfn-frauddetector-detector-entitytype-tags"""
 
 @attr.s
-class DetectorModel(Property):
+class PropDetectorModel(Property):
     """
     AWS Object Type = "AWS::FraudDetector::Detector.Model"
 
@@ -161,7 +161,7 @@ class DetectorModel(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-frauddetector-detector-model.html#cfn-frauddetector-detector-model-arn"""
 
 @attr.s
-class DetectorOutcome(Property):
+class PropDetectorOutcome(Property):
     """
     AWS Object Type = "AWS::FraudDetector::Detector.Outcome"
 
@@ -224,7 +224,7 @@ class DetectorOutcome(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-frauddetector-detector-outcome.html#cfn-frauddetector-detector-outcome-tags"""
 
 @attr.s
-class EventTypeEntityType(Property):
+class PropEventTypeEntityType(Property):
     """
     AWS Object Type = "AWS::FraudDetector::EventType.EntityType"
 
@@ -287,7 +287,7 @@ class EventTypeEntityType(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-frauddetector-eventtype-entitytype.html#cfn-frauddetector-eventtype-entitytype-tags"""
 
 @attr.s
-class DetectorEventVariable(Property):
+class PropDetectorEventVariable(Property):
     """
     AWS Object Type = "AWS::FraudDetector::Detector.EventVariable"
 
@@ -378,7 +378,7 @@ class DetectorEventVariable(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-frauddetector-detector-eventvariable.html#cfn-frauddetector-detector-eventvariable-tags"""
 
 @attr.s
-class EventTypeEventVariable(Property):
+class PropEventTypeEventVariable(Property):
     """
     AWS Object Type = "AWS::FraudDetector::EventType.EventVariable"
 
@@ -469,7 +469,7 @@ class EventTypeEventVariable(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-frauddetector-eventtype-eventvariable.html#cfn-frauddetector-eventtype-eventvariable-tags"""
 
 @attr.s
-class EventTypeLabel(Property):
+class PropEventTypeLabel(Property):
     """
     AWS Object Type = "AWS::FraudDetector::EventType.Label"
 
@@ -532,7 +532,7 @@ class EventTypeLabel(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-frauddetector-eventtype-label.html#cfn-frauddetector-eventtype-label-tags"""
 
 @attr.s
-class DetectorRule(Property):
+class PropDetectorRule(Property):
     """
     AWS Object Type = "AWS::FraudDetector::Detector.Rule"
 
@@ -596,10 +596,10 @@ class DetectorRule(Property):
         metadata={AttrMeta.PROPERTY_NAME: "LastUpdatedTime"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-frauddetector-detector-rule.html#cfn-frauddetector-detector-rule-lastupdatedtime"""
-    p_Outcomes: typing.List[typing.Union['DetectorOutcome', dict]] = attr.ib(
+    p_Outcomes: typing.List[typing.Union['PropDetectorOutcome', dict]] = attr.ib(
         default=None,
-        converter=DetectorOutcome.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(DetectorOutcome), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropDetectorOutcome.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDetectorOutcome), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Outcomes"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-frauddetector-detector-rule.html#cfn-frauddetector-detector-rule-outcomes"""
@@ -624,7 +624,7 @@ class DetectorRule(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-frauddetector-detector-rule.html#cfn-frauddetector-detector-rule-tags"""
 
 @attr.s
-class DetectorEventType(Property):
+class PropDetectorEventType(Property):
     """
     AWS Object Type = "AWS::FraudDetector::Detector.EventType"
 
@@ -663,17 +663,17 @@ class DetectorEventType(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Description"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-frauddetector-detector-eventtype.html#cfn-frauddetector-detector-eventtype-description"""
-    p_EntityTypes: typing.List[typing.Union['DetectorEntityType', dict]] = attr.ib(
+    p_EntityTypes: typing.List[typing.Union['PropDetectorEntityType', dict]] = attr.ib(
         default=None,
-        converter=DetectorEntityType.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(DetectorEntityType), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropDetectorEntityType.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDetectorEntityType), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "EntityTypes"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-frauddetector-detector-eventtype.html#cfn-frauddetector-detector-eventtype-entitytypes"""
-    p_EventVariables: typing.List[typing.Union['DetectorEventVariable', dict]] = attr.ib(
+    p_EventVariables: typing.List[typing.Union['PropDetectorEventVariable', dict]] = attr.ib(
         default=None,
-        converter=DetectorEventVariable.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(DetectorEventVariable), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropDetectorEventVariable.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDetectorEventVariable), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "EventVariables"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-frauddetector-detector-eventtype.html#cfn-frauddetector-detector-eventtype-eventvariables"""
@@ -683,10 +683,10 @@ class DetectorEventType(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Inline"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-frauddetector-detector-eventtype.html#cfn-frauddetector-detector-eventtype-inline"""
-    p_Labels: typing.List[typing.Union['DetectorLabel', dict]] = attr.ib(
+    p_Labels: typing.List[typing.Union['PropDetectorLabel', dict]] = attr.ib(
         default=None,
-        converter=DetectorLabel.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(DetectorLabel), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropDetectorLabel.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDetectorLabel), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Labels"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-frauddetector-detector-eventtype.html#cfn-frauddetector-detector-eventtype-labels"""
@@ -838,24 +838,24 @@ class EventType(Resource):
     AWS_OBJECT_TYPE = "AWS::FraudDetector::EventType"
 
     
-    rp_EntityTypes: typing.List[typing.Union['EventTypeEntityType', dict]] = attr.ib(
+    rp_EntityTypes: typing.List[typing.Union['PropEventTypeEntityType', dict]] = attr.ib(
         default=None,
-        converter=EventTypeEntityType.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(EventTypeEntityType), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropEventTypeEntityType.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropEventTypeEntityType), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "EntityTypes"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-frauddetector-eventtype.html#cfn-frauddetector-eventtype-entitytypes"""
-    rp_EventVariables: typing.List[typing.Union['EventTypeEventVariable', dict]] = attr.ib(
+    rp_EventVariables: typing.List[typing.Union['PropEventTypeEventVariable', dict]] = attr.ib(
         default=None,
-        converter=EventTypeEventVariable.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(EventTypeEventVariable), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropEventTypeEventVariable.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropEventTypeEventVariable), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "EventVariables"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-frauddetector-eventtype.html#cfn-frauddetector-eventtype-eventvariables"""
-    rp_Labels: typing.List[typing.Union['EventTypeLabel', dict]] = attr.ib(
+    rp_Labels: typing.List[typing.Union['PropEventTypeLabel', dict]] = attr.ib(
         default=None,
-        converter=EventTypeLabel.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(EventTypeLabel), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropEventTypeLabel.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropEventTypeLabel), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "Labels"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-frauddetector-eventtype.html#cfn-frauddetector-eventtype-labels"""
@@ -923,24 +923,24 @@ class Detector(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "DetectorId"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-frauddetector-detector.html#cfn-frauddetector-detector-detectorid"""
-    rp_EventType: typing.Union['DetectorEventType', dict] = attr.ib(
+    rp_EventType: typing.Union['PropDetectorEventType', dict] = attr.ib(
         default=None,
-        converter=DetectorEventType.from_dict,
-        validator=attr.validators.instance_of(DetectorEventType),
+        converter=PropDetectorEventType.from_dict,
+        validator=attr.validators.instance_of(PropDetectorEventType),
         metadata={AttrMeta.PROPERTY_NAME: "EventType"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-frauddetector-detector.html#cfn-frauddetector-detector-eventtype"""
-    rp_Rules: typing.List[typing.Union['DetectorRule', dict]] = attr.ib(
+    rp_Rules: typing.List[typing.Union['PropDetectorRule', dict]] = attr.ib(
         default=None,
-        converter=DetectorRule.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(DetectorRule), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropDetectorRule.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDetectorRule), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "Rules"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-frauddetector-detector.html#cfn-frauddetector-detector-rules"""
-    p_AssociatedModels: typing.List[typing.Union['DetectorModel', dict]] = attr.ib(
+    p_AssociatedModels: typing.List[typing.Union['PropDetectorModel', dict]] = attr.ib(
         default=None,
-        converter=DetectorModel.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(DetectorModel), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropDetectorModel.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDetectorModel), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "AssociatedModels"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-frauddetector-detector.html#cfn-frauddetector-detector-associatedmodels"""

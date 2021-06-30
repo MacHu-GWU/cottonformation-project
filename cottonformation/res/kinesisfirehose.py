@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class DeliveryStreamHiveJsonSerDe(Property):
+class PropDeliveryStreamHiveJsonSerDe(Property):
     """
     AWS Object Type = "AWS::KinesisFirehose::DeliveryStream.HiveJsonSerDe"
 
@@ -35,7 +35,7 @@ class DeliveryStreamHiveJsonSerDe(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-hivejsonserde.html#cfn-kinesisfirehose-deliverystream-hivejsonserde-timestampformats"""
 
 @attr.s
-class DeliveryStreamSchemaConfiguration(Property):
+class PropDeliveryStreamSchemaConfiguration(Property):
     """
     AWS Object Type = "AWS::KinesisFirehose::DeliveryStream.SchemaConfiguration"
 
@@ -90,7 +90,7 @@ class DeliveryStreamSchemaConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-schemaconfiguration.html#cfn-kinesisfirehose-deliverystream-schemaconfiguration-versionid"""
 
 @attr.s
-class DeliveryStreamSplunkRetryOptions(Property):
+class PropDeliveryStreamSplunkRetryOptions(Property):
     """
     AWS Object Type = "AWS::KinesisFirehose::DeliveryStream.SplunkRetryOptions"
 
@@ -110,7 +110,7 @@ class DeliveryStreamSplunkRetryOptions(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-splunkretryoptions.html#cfn-kinesisfirehose-deliverystream-splunkretryoptions-durationinseconds"""
 
 @attr.s
-class DeliveryStreamHttpEndpointConfiguration(Property):
+class PropDeliveryStreamHttpEndpointConfiguration(Property):
     """
     AWS Object Type = "AWS::KinesisFirehose::DeliveryStream.HttpEndpointConfiguration"
 
@@ -144,7 +144,7 @@ class DeliveryStreamHttpEndpointConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-httpendpointconfiguration.html#cfn-kinesisfirehose-deliverystream-httpendpointconfiguration-name"""
 
 @attr.s
-class DeliveryStreamCopyCommand(Property):
+class PropDeliveryStreamCopyCommand(Property):
     """
     AWS Object Type = "AWS::KinesisFirehose::DeliveryStream.CopyCommand"
 
@@ -178,7 +178,7 @@ class DeliveryStreamCopyCommand(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-copycommand.html#cfn-kinesisfirehose-deliverystream-copycommand-datatablecolumns"""
 
 @attr.s
-class DeliveryStreamOpenXJsonSerDe(Property):
+class PropDeliveryStreamOpenXJsonSerDe(Property):
     """
     AWS Object Type = "AWS::KinesisFirehose::DeliveryStream.OpenXJsonSerDe"
 
@@ -212,7 +212,7 @@ class DeliveryStreamOpenXJsonSerDe(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-openxjsonserde.html#cfn-kinesisfirehose-deliverystream-openxjsonserde-convertdotsinjsonkeystounderscores"""
 
 @attr.s
-class DeliveryStreamOrcSerDe(Property):
+class PropDeliveryStreamOrcSerDe(Property):
     """
     AWS Object Type = "AWS::KinesisFirehose::DeliveryStream.OrcSerDe"
 
@@ -295,7 +295,7 @@ class DeliveryStreamOrcSerDe(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-orcserde.html#cfn-kinesisfirehose-deliverystream-orcserde-stripesizebytes"""
 
 @attr.s
-class DeliveryStreamElasticsearchBufferingHints(Property):
+class PropDeliveryStreamElasticsearchBufferingHints(Property):
     """
     AWS Object Type = "AWS::KinesisFirehose::DeliveryStream.ElasticsearchBufferingHints"
 
@@ -322,7 +322,7 @@ class DeliveryStreamElasticsearchBufferingHints(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-elasticsearchbufferinghints.html#cfn-kinesisfirehose-deliverystream-elasticsearchbufferinghints-sizeinmbs"""
 
 @attr.s
-class DeliveryStreamCloudWatchLoggingOptions(Property):
+class PropDeliveryStreamCloudWatchLoggingOptions(Property):
     """
     AWS Object Type = "AWS::KinesisFirehose::DeliveryStream.CloudWatchLoggingOptions"
 
@@ -356,7 +356,7 @@ class DeliveryStreamCloudWatchLoggingOptions(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-cloudwatchloggingoptions.html#cfn-kinesisfirehose-deliverystream-cloudwatchloggingoptions-logstreamname"""
 
 @attr.s
-class DeliveryStreamBufferingHints(Property):
+class PropDeliveryStreamBufferingHints(Property):
     """
     AWS Object Type = "AWS::KinesisFirehose::DeliveryStream.BufferingHints"
 
@@ -383,7 +383,7 @@ class DeliveryStreamBufferingHints(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-bufferinghints.html#cfn-kinesisfirehose-deliverystream-bufferinghints-sizeinmbs"""
 
 @attr.s
-class DeliveryStreamProcessorParameter(Property):
+class PropDeliveryStreamProcessorParameter(Property):
     """
     AWS Object Type = "AWS::KinesisFirehose::DeliveryStream.ProcessorParameter"
 
@@ -410,7 +410,7 @@ class DeliveryStreamProcessorParameter(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-processorparameter.html#cfn-kinesisfirehose-deliverystream-processorparameter-parametervalue"""
 
 @attr.s
-class DeliveryStreamDeliveryStreamEncryptionConfigurationInput(Property):
+class PropDeliveryStreamDeliveryStreamEncryptionConfigurationInput(Property):
     """
     AWS Object Type = "AWS::KinesisFirehose::DeliveryStream.DeliveryStreamEncryptionConfigurationInput"
 
@@ -437,7 +437,7 @@ class DeliveryStreamDeliveryStreamEncryptionConfigurationInput(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-deliverystreamencryptionconfigurationinput.html#cfn-kinesisfirehose-deliverystream-deliverystreamencryptionconfigurationinput-keyarn"""
 
 @attr.s
-class DeliveryStreamElasticsearchRetryOptions(Property):
+class PropDeliveryStreamElasticsearchRetryOptions(Property):
     """
     AWS Object Type = "AWS::KinesisFirehose::DeliveryStream.ElasticsearchRetryOptions"
 
@@ -457,7 +457,7 @@ class DeliveryStreamElasticsearchRetryOptions(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-elasticsearchretryoptions.html#cfn-kinesisfirehose-deliverystream-elasticsearchretryoptions-durationinseconds"""
 
 @attr.s
-class DeliveryStreamKMSEncryptionConfig(Property):
+class PropDeliveryStreamKMSEncryptionConfig(Property):
     """
     AWS Object Type = "AWS::KinesisFirehose::DeliveryStream.KMSEncryptionConfig"
 
@@ -477,7 +477,7 @@ class DeliveryStreamKMSEncryptionConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-kmsencryptionconfig.html#cfn-kinesisfirehose-deliverystream-kmsencryptionconfig-awskmskeyarn"""
 
 @attr.s
-class DeliveryStreamDeserializer(Property):
+class PropDeliveryStreamDeserializer(Property):
     """
     AWS Object Type = "AWS::KinesisFirehose::DeliveryStream.Deserializer"
 
@@ -490,23 +490,23 @@ class DeliveryStreamDeserializer(Property):
     """
     AWS_OBJECT_TYPE = "AWS::KinesisFirehose::DeliveryStream.Deserializer"
     
-    p_HiveJsonSerDe: typing.Union['DeliveryStreamHiveJsonSerDe', dict] = attr.ib(
+    p_HiveJsonSerDe: typing.Union['PropDeliveryStreamHiveJsonSerDe', dict] = attr.ib(
         default=None,
-        converter=DeliveryStreamHiveJsonSerDe.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DeliveryStreamHiveJsonSerDe)),
+        converter=PropDeliveryStreamHiveJsonSerDe.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDeliveryStreamHiveJsonSerDe)),
         metadata={AttrMeta.PROPERTY_NAME: "HiveJsonSerDe"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-deserializer.html#cfn-kinesisfirehose-deliverystream-deserializer-hivejsonserde"""
-    p_OpenXJsonSerDe: typing.Union['DeliveryStreamOpenXJsonSerDe', dict] = attr.ib(
+    p_OpenXJsonSerDe: typing.Union['PropDeliveryStreamOpenXJsonSerDe', dict] = attr.ib(
         default=None,
-        converter=DeliveryStreamOpenXJsonSerDe.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DeliveryStreamOpenXJsonSerDe)),
+        converter=PropDeliveryStreamOpenXJsonSerDe.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDeliveryStreamOpenXJsonSerDe)),
         metadata={AttrMeta.PROPERTY_NAME: "OpenXJsonSerDe"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-deserializer.html#cfn-kinesisfirehose-deliverystream-deserializer-openxjsonserde"""
 
 @attr.s
-class DeliveryStreamKinesisStreamSourceConfiguration(Property):
+class PropDeliveryStreamKinesisStreamSourceConfiguration(Property):
     """
     AWS Object Type = "AWS::KinesisFirehose::DeliveryStream.KinesisStreamSourceConfiguration"
 
@@ -533,7 +533,7 @@ class DeliveryStreamKinesisStreamSourceConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-kinesisstreamsourceconfiguration.html#cfn-kinesisfirehose-deliverystream-kinesisstreamsourceconfiguration-rolearn"""
 
 @attr.s
-class DeliveryStreamRedshiftRetryOptions(Property):
+class PropDeliveryStreamRedshiftRetryOptions(Property):
     """
     AWS Object Type = "AWS::KinesisFirehose::DeliveryStream.RedshiftRetryOptions"
 
@@ -553,7 +553,7 @@ class DeliveryStreamRedshiftRetryOptions(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-redshiftretryoptions.html#cfn-kinesisfirehose-deliverystream-redshiftretryoptions-durationinseconds"""
 
 @attr.s
-class DeliveryStreamRetryOptions(Property):
+class PropDeliveryStreamRetryOptions(Property):
     """
     AWS Object Type = "AWS::KinesisFirehose::DeliveryStream.RetryOptions"
 
@@ -573,7 +573,7 @@ class DeliveryStreamRetryOptions(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-retryoptions.html#cfn-kinesisfirehose-deliverystream-retryoptions-durationinseconds"""
 
 @attr.s
-class DeliveryStreamParquetSerDe(Property):
+class PropDeliveryStreamParquetSerDe(Property):
     """
     AWS Object Type = "AWS::KinesisFirehose::DeliveryStream.ParquetSerDe"
 
@@ -628,7 +628,7 @@ class DeliveryStreamParquetSerDe(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-parquetserde.html#cfn-kinesisfirehose-deliverystream-parquetserde-writerversion"""
 
 @attr.s
-class DeliveryStreamVpcConfiguration(Property):
+class PropDeliveryStreamVpcConfiguration(Property):
     """
     AWS Object Type = "AWS::KinesisFirehose::DeliveryStream.VpcConfiguration"
 
@@ -662,7 +662,7 @@ class DeliveryStreamVpcConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-vpcconfiguration.html#cfn-kinesisfirehose-deliverystream-vpcconfiguration-subnetids"""
 
 @attr.s
-class DeliveryStreamHttpEndpointCommonAttribute(Property):
+class PropDeliveryStreamHttpEndpointCommonAttribute(Property):
     """
     AWS Object Type = "AWS::KinesisFirehose::DeliveryStream.HttpEndpointCommonAttribute"
 
@@ -689,7 +689,7 @@ class DeliveryStreamHttpEndpointCommonAttribute(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-httpendpointcommonattribute.html#cfn-kinesisfirehose-deliverystream-httpendpointcommonattribute-attributevalue"""
 
 @attr.s
-class DeliveryStreamEncryptionConfiguration(Property):
+class PropDeliveryStreamEncryptionConfiguration(Property):
     """
     AWS Object Type = "AWS::KinesisFirehose::DeliveryStream.EncryptionConfiguration"
 
@@ -702,10 +702,10 @@ class DeliveryStreamEncryptionConfiguration(Property):
     """
     AWS_OBJECT_TYPE = "AWS::KinesisFirehose::DeliveryStream.EncryptionConfiguration"
     
-    p_KMSEncryptionConfig: typing.Union['DeliveryStreamKMSEncryptionConfig', dict] = attr.ib(
+    p_KMSEncryptionConfig: typing.Union['PropDeliveryStreamKMSEncryptionConfig', dict] = attr.ib(
         default=None,
-        converter=DeliveryStreamKMSEncryptionConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DeliveryStreamKMSEncryptionConfig)),
+        converter=PropDeliveryStreamKMSEncryptionConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDeliveryStreamKMSEncryptionConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "KMSEncryptionConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-encryptionconfiguration.html#cfn-kinesisfirehose-deliverystream-encryptionconfiguration-kmsencryptionconfig"""
@@ -717,7 +717,7 @@ class DeliveryStreamEncryptionConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-encryptionconfiguration.html#cfn-kinesisfirehose-deliverystream-encryptionconfiguration-noencryptionconfig"""
 
 @attr.s
-class DeliveryStreamInputFormatConfiguration(Property):
+class PropDeliveryStreamInputFormatConfiguration(Property):
     """
     AWS Object Type = "AWS::KinesisFirehose::DeliveryStream.InputFormatConfiguration"
 
@@ -729,16 +729,16 @@ class DeliveryStreamInputFormatConfiguration(Property):
     """
     AWS_OBJECT_TYPE = "AWS::KinesisFirehose::DeliveryStream.InputFormatConfiguration"
     
-    p_Deserializer: typing.Union['DeliveryStreamDeserializer', dict] = attr.ib(
+    p_Deserializer: typing.Union['PropDeliveryStreamDeserializer', dict] = attr.ib(
         default=None,
-        converter=DeliveryStreamDeserializer.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DeliveryStreamDeserializer)),
+        converter=PropDeliveryStreamDeserializer.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDeliveryStreamDeserializer)),
         metadata={AttrMeta.PROPERTY_NAME: "Deserializer"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-inputformatconfiguration.html#cfn-kinesisfirehose-deliverystream-inputformatconfiguration-deserializer"""
 
 @attr.s
-class DeliveryStreamProcessor(Property):
+class PropDeliveryStreamProcessor(Property):
     """
     AWS Object Type = "AWS::KinesisFirehose::DeliveryStream.Processor"
 
@@ -757,16 +757,16 @@ class DeliveryStreamProcessor(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Type"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-processor.html#cfn-kinesisfirehose-deliverystream-processor-type"""
-    p_Parameters: typing.List[typing.Union['DeliveryStreamProcessorParameter', dict]] = attr.ib(
+    p_Parameters: typing.List[typing.Union['PropDeliveryStreamProcessorParameter', dict]] = attr.ib(
         default=None,
-        converter=DeliveryStreamProcessorParameter.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(DeliveryStreamProcessorParameter), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropDeliveryStreamProcessorParameter.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDeliveryStreamProcessorParameter), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Parameters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-processor.html#cfn-kinesisfirehose-deliverystream-processor-parameters"""
 
 @attr.s
-class DeliveryStreamHttpEndpointRequestConfiguration(Property):
+class PropDeliveryStreamHttpEndpointRequestConfiguration(Property):
     """
     AWS Object Type = "AWS::KinesisFirehose::DeliveryStream.HttpEndpointRequestConfiguration"
 
@@ -779,10 +779,10 @@ class DeliveryStreamHttpEndpointRequestConfiguration(Property):
     """
     AWS_OBJECT_TYPE = "AWS::KinesisFirehose::DeliveryStream.HttpEndpointRequestConfiguration"
     
-    p_CommonAttributes: typing.List[typing.Union['DeliveryStreamHttpEndpointCommonAttribute', dict]] = attr.ib(
+    p_CommonAttributes: typing.List[typing.Union['PropDeliveryStreamHttpEndpointCommonAttribute', dict]] = attr.ib(
         default=None,
-        converter=DeliveryStreamHttpEndpointCommonAttribute.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(DeliveryStreamHttpEndpointCommonAttribute), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropDeliveryStreamHttpEndpointCommonAttribute.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDeliveryStreamHttpEndpointCommonAttribute), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "CommonAttributes"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-httpendpointrequestconfiguration.html#cfn-kinesisfirehose-deliverystream-httpendpointrequestconfiguration-commonattributes"""
@@ -794,7 +794,7 @@ class DeliveryStreamHttpEndpointRequestConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-httpendpointrequestconfiguration.html#cfn-kinesisfirehose-deliverystream-httpendpointrequestconfiguration-contentencoding"""
 
 @attr.s
-class DeliveryStreamSerializer(Property):
+class PropDeliveryStreamSerializer(Property):
     """
     AWS Object Type = "AWS::KinesisFirehose::DeliveryStream.Serializer"
 
@@ -807,23 +807,23 @@ class DeliveryStreamSerializer(Property):
     """
     AWS_OBJECT_TYPE = "AWS::KinesisFirehose::DeliveryStream.Serializer"
     
-    p_OrcSerDe: typing.Union['DeliveryStreamOrcSerDe', dict] = attr.ib(
+    p_OrcSerDe: typing.Union['PropDeliveryStreamOrcSerDe', dict] = attr.ib(
         default=None,
-        converter=DeliveryStreamOrcSerDe.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DeliveryStreamOrcSerDe)),
+        converter=PropDeliveryStreamOrcSerDe.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDeliveryStreamOrcSerDe)),
         metadata={AttrMeta.PROPERTY_NAME: "OrcSerDe"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-serializer.html#cfn-kinesisfirehose-deliverystream-serializer-orcserde"""
-    p_ParquetSerDe: typing.Union['DeliveryStreamParquetSerDe', dict] = attr.ib(
+    p_ParquetSerDe: typing.Union['PropDeliveryStreamParquetSerDe', dict] = attr.ib(
         default=None,
-        converter=DeliveryStreamParquetSerDe.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DeliveryStreamParquetSerDe)),
+        converter=PropDeliveryStreamParquetSerDe.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDeliveryStreamParquetSerDe)),
         metadata={AttrMeta.PROPERTY_NAME: "ParquetSerDe"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-serializer.html#cfn-kinesisfirehose-deliverystream-serializer-parquetserde"""
 
 @attr.s
-class DeliveryStreamProcessingConfiguration(Property):
+class PropDeliveryStreamProcessingConfiguration(Property):
     """
     AWS Object Type = "AWS::KinesisFirehose::DeliveryStream.ProcessingConfiguration"
 
@@ -842,16 +842,16 @@ class DeliveryStreamProcessingConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Enabled"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-processingconfiguration.html#cfn-kinesisfirehose-deliverystream-processingconfiguration-enabled"""
-    p_Processors: typing.List[typing.Union['DeliveryStreamProcessor', dict]] = attr.ib(
+    p_Processors: typing.List[typing.Union['PropDeliveryStreamProcessor', dict]] = attr.ib(
         default=None,
-        converter=DeliveryStreamProcessor.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(DeliveryStreamProcessor), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropDeliveryStreamProcessor.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDeliveryStreamProcessor), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Processors"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-processingconfiguration.html#cfn-kinesisfirehose-deliverystream-processingconfiguration-processors"""
 
 @attr.s
-class DeliveryStreamOutputFormatConfiguration(Property):
+class PropDeliveryStreamOutputFormatConfiguration(Property):
     """
     AWS Object Type = "AWS::KinesisFirehose::DeliveryStream.OutputFormatConfiguration"
 
@@ -863,16 +863,16 @@ class DeliveryStreamOutputFormatConfiguration(Property):
     """
     AWS_OBJECT_TYPE = "AWS::KinesisFirehose::DeliveryStream.OutputFormatConfiguration"
     
-    p_Serializer: typing.Union['DeliveryStreamSerializer', dict] = attr.ib(
+    p_Serializer: typing.Union['PropDeliveryStreamSerializer', dict] = attr.ib(
         default=None,
-        converter=DeliveryStreamSerializer.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DeliveryStreamSerializer)),
+        converter=PropDeliveryStreamSerializer.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDeliveryStreamSerializer)),
         metadata={AttrMeta.PROPERTY_NAME: "Serializer"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-outputformatconfiguration.html#cfn-kinesisfirehose-deliverystream-outputformatconfiguration-serializer"""
 
 @attr.s
-class DeliveryStreamS3DestinationConfiguration(Property):
+class PropDeliveryStreamS3DestinationConfiguration(Property):
     """
     AWS Object Type = "AWS::KinesisFirehose::DeliveryStream.S3DestinationConfiguration"
 
@@ -903,17 +903,17 @@ class DeliveryStreamS3DestinationConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "RoleARN"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-s3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-s3destinationconfiguration-rolearn"""
-    p_BufferingHints: typing.Union['DeliveryStreamBufferingHints', dict] = attr.ib(
+    p_BufferingHints: typing.Union['PropDeliveryStreamBufferingHints', dict] = attr.ib(
         default=None,
-        converter=DeliveryStreamBufferingHints.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DeliveryStreamBufferingHints)),
+        converter=PropDeliveryStreamBufferingHints.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDeliveryStreamBufferingHints)),
         metadata={AttrMeta.PROPERTY_NAME: "BufferingHints"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-s3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-s3destinationconfiguration-bufferinghints"""
-    p_CloudWatchLoggingOptions: typing.Union['DeliveryStreamCloudWatchLoggingOptions', dict] = attr.ib(
+    p_CloudWatchLoggingOptions: typing.Union['PropDeliveryStreamCloudWatchLoggingOptions', dict] = attr.ib(
         default=None,
-        converter=DeliveryStreamCloudWatchLoggingOptions.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DeliveryStreamCloudWatchLoggingOptions)),
+        converter=PropDeliveryStreamCloudWatchLoggingOptions.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDeliveryStreamCloudWatchLoggingOptions)),
         metadata={AttrMeta.PROPERTY_NAME: "CloudWatchLoggingOptions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-s3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-s3destinationconfiguration-cloudwatchloggingoptions"""
@@ -923,10 +923,10 @@ class DeliveryStreamS3DestinationConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "CompressionFormat"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-s3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-s3destinationconfiguration-compressionformat"""
-    p_EncryptionConfiguration: typing.Union['DeliveryStreamEncryptionConfiguration', dict] = attr.ib(
+    p_EncryptionConfiguration: typing.Union['PropDeliveryStreamEncryptionConfiguration', dict] = attr.ib(
         default=None,
-        converter=DeliveryStreamEncryptionConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DeliveryStreamEncryptionConfiguration)),
+        converter=PropDeliveryStreamEncryptionConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDeliveryStreamEncryptionConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "EncryptionConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-s3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-s3destinationconfiguration-encryptionconfiguration"""
@@ -944,7 +944,7 @@ class DeliveryStreamS3DestinationConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-s3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-s3destinationconfiguration-prefix"""
 
 @attr.s
-class DeliveryStreamRedshiftDestinationConfiguration(Property):
+class PropDeliveryStreamRedshiftDestinationConfiguration(Property):
     """
     AWS Object Type = "AWS::KinesisFirehose::DeliveryStream.RedshiftDestinationConfiguration"
 
@@ -972,10 +972,10 @@ class DeliveryStreamRedshiftDestinationConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "ClusterJDBCURL"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-redshiftdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-redshiftdestinationconfiguration-clusterjdbcurl"""
-    rp_CopyCommand: typing.Union['DeliveryStreamCopyCommand', dict] = attr.ib(
+    rp_CopyCommand: typing.Union['PropDeliveryStreamCopyCommand', dict] = attr.ib(
         default=None,
-        converter=DeliveryStreamCopyCommand.from_dict,
-        validator=attr.validators.instance_of(DeliveryStreamCopyCommand),
+        converter=PropDeliveryStreamCopyCommand.from_dict,
+        validator=attr.validators.instance_of(PropDeliveryStreamCopyCommand),
         metadata={AttrMeta.PROPERTY_NAME: "CopyCommand"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-redshiftdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-redshiftdestinationconfiguration-copycommand"""
@@ -991,10 +991,10 @@ class DeliveryStreamRedshiftDestinationConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "RoleARN"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-redshiftdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-redshiftdestinationconfiguration-rolearn"""
-    rp_S3Configuration: typing.Union['DeliveryStreamS3DestinationConfiguration', dict] = attr.ib(
+    rp_S3Configuration: typing.Union['PropDeliveryStreamS3DestinationConfiguration', dict] = attr.ib(
         default=None,
-        converter=DeliveryStreamS3DestinationConfiguration.from_dict,
-        validator=attr.validators.instance_of(DeliveryStreamS3DestinationConfiguration),
+        converter=PropDeliveryStreamS3DestinationConfiguration.from_dict,
+        validator=attr.validators.instance_of(PropDeliveryStreamS3DestinationConfiguration),
         metadata={AttrMeta.PROPERTY_NAME: "S3Configuration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-redshiftdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-redshiftdestinationconfiguration-s3configuration"""
@@ -1004,31 +1004,31 @@ class DeliveryStreamRedshiftDestinationConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Username"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-redshiftdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-redshiftdestinationconfiguration-username"""
-    p_CloudWatchLoggingOptions: typing.Union['DeliveryStreamCloudWatchLoggingOptions', dict] = attr.ib(
+    p_CloudWatchLoggingOptions: typing.Union['PropDeliveryStreamCloudWatchLoggingOptions', dict] = attr.ib(
         default=None,
-        converter=DeliveryStreamCloudWatchLoggingOptions.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DeliveryStreamCloudWatchLoggingOptions)),
+        converter=PropDeliveryStreamCloudWatchLoggingOptions.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDeliveryStreamCloudWatchLoggingOptions)),
         metadata={AttrMeta.PROPERTY_NAME: "CloudWatchLoggingOptions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-redshiftdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-redshiftdestinationconfiguration-cloudwatchloggingoptions"""
-    p_ProcessingConfiguration: typing.Union['DeliveryStreamProcessingConfiguration', dict] = attr.ib(
+    p_ProcessingConfiguration: typing.Union['PropDeliveryStreamProcessingConfiguration', dict] = attr.ib(
         default=None,
-        converter=DeliveryStreamProcessingConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DeliveryStreamProcessingConfiguration)),
+        converter=PropDeliveryStreamProcessingConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDeliveryStreamProcessingConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "ProcessingConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-redshiftdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-redshiftdestinationconfiguration-processingconfiguration"""
-    p_RetryOptions: typing.Union['DeliveryStreamRedshiftRetryOptions', dict] = attr.ib(
+    p_RetryOptions: typing.Union['PropDeliveryStreamRedshiftRetryOptions', dict] = attr.ib(
         default=None,
-        converter=DeliveryStreamRedshiftRetryOptions.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DeliveryStreamRedshiftRetryOptions)),
+        converter=PropDeliveryStreamRedshiftRetryOptions.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDeliveryStreamRedshiftRetryOptions)),
         metadata={AttrMeta.PROPERTY_NAME: "RetryOptions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-redshiftdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-redshiftdestinationconfiguration-retryoptions"""
-    p_S3BackupConfiguration: typing.Union['DeliveryStreamS3DestinationConfiguration', dict] = attr.ib(
+    p_S3BackupConfiguration: typing.Union['PropDeliveryStreamS3DestinationConfiguration', dict] = attr.ib(
         default=None,
-        converter=DeliveryStreamS3DestinationConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DeliveryStreamS3DestinationConfiguration)),
+        converter=PropDeliveryStreamS3DestinationConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDeliveryStreamS3DestinationConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "S3BackupConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-redshiftdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-redshiftdestinationconfiguration-s3backupconfiguration"""
@@ -1040,7 +1040,7 @@ class DeliveryStreamRedshiftDestinationConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-redshiftdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-redshiftdestinationconfiguration-s3backupmode"""
 
 @attr.s
-class DeliveryStreamHttpEndpointDestinationConfiguration(Property):
+class PropDeliveryStreamHttpEndpointDestinationConfiguration(Property):
     """
     AWS Object Type = "AWS::KinesisFirehose::DeliveryStream.HttpEndpointDestinationConfiguration"
 
@@ -1060,52 +1060,52 @@ class DeliveryStreamHttpEndpointDestinationConfiguration(Property):
     """
     AWS_OBJECT_TYPE = "AWS::KinesisFirehose::DeliveryStream.HttpEndpointDestinationConfiguration"
     
-    rp_EndpointConfiguration: typing.Union['DeliveryStreamHttpEndpointConfiguration', dict] = attr.ib(
+    rp_EndpointConfiguration: typing.Union['PropDeliveryStreamHttpEndpointConfiguration', dict] = attr.ib(
         default=None,
-        converter=DeliveryStreamHttpEndpointConfiguration.from_dict,
-        validator=attr.validators.instance_of(DeliveryStreamHttpEndpointConfiguration),
+        converter=PropDeliveryStreamHttpEndpointConfiguration.from_dict,
+        validator=attr.validators.instance_of(PropDeliveryStreamHttpEndpointConfiguration),
         metadata={AttrMeta.PROPERTY_NAME: "EndpointConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-httpendpointdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-httpendpointdestinationconfiguration-endpointconfiguration"""
-    rp_S3Configuration: typing.Union['DeliveryStreamS3DestinationConfiguration', dict] = attr.ib(
+    rp_S3Configuration: typing.Union['PropDeliveryStreamS3DestinationConfiguration', dict] = attr.ib(
         default=None,
-        converter=DeliveryStreamS3DestinationConfiguration.from_dict,
-        validator=attr.validators.instance_of(DeliveryStreamS3DestinationConfiguration),
+        converter=PropDeliveryStreamS3DestinationConfiguration.from_dict,
+        validator=attr.validators.instance_of(PropDeliveryStreamS3DestinationConfiguration),
         metadata={AttrMeta.PROPERTY_NAME: "S3Configuration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-httpendpointdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-httpendpointdestinationconfiguration-s3configuration"""
-    p_BufferingHints: typing.Union['DeliveryStreamBufferingHints', dict] = attr.ib(
+    p_BufferingHints: typing.Union['PropDeliveryStreamBufferingHints', dict] = attr.ib(
         default=None,
-        converter=DeliveryStreamBufferingHints.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DeliveryStreamBufferingHints)),
+        converter=PropDeliveryStreamBufferingHints.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDeliveryStreamBufferingHints)),
         metadata={AttrMeta.PROPERTY_NAME: "BufferingHints"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-httpendpointdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-httpendpointdestinationconfiguration-bufferinghints"""
-    p_CloudWatchLoggingOptions: typing.Union['DeliveryStreamCloudWatchLoggingOptions', dict] = attr.ib(
+    p_CloudWatchLoggingOptions: typing.Union['PropDeliveryStreamCloudWatchLoggingOptions', dict] = attr.ib(
         default=None,
-        converter=DeliveryStreamCloudWatchLoggingOptions.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DeliveryStreamCloudWatchLoggingOptions)),
+        converter=PropDeliveryStreamCloudWatchLoggingOptions.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDeliveryStreamCloudWatchLoggingOptions)),
         metadata={AttrMeta.PROPERTY_NAME: "CloudWatchLoggingOptions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-httpendpointdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-httpendpointdestinationconfiguration-cloudwatchloggingoptions"""
-    p_ProcessingConfiguration: typing.Union['DeliveryStreamProcessingConfiguration', dict] = attr.ib(
+    p_ProcessingConfiguration: typing.Union['PropDeliveryStreamProcessingConfiguration', dict] = attr.ib(
         default=None,
-        converter=DeliveryStreamProcessingConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DeliveryStreamProcessingConfiguration)),
+        converter=PropDeliveryStreamProcessingConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDeliveryStreamProcessingConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "ProcessingConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-httpendpointdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-httpendpointdestinationconfiguration-processingconfiguration"""
-    p_RequestConfiguration: typing.Union['DeliveryStreamHttpEndpointRequestConfiguration', dict] = attr.ib(
+    p_RequestConfiguration: typing.Union['PropDeliveryStreamHttpEndpointRequestConfiguration', dict] = attr.ib(
         default=None,
-        converter=DeliveryStreamHttpEndpointRequestConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DeliveryStreamHttpEndpointRequestConfiguration)),
+        converter=PropDeliveryStreamHttpEndpointRequestConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDeliveryStreamHttpEndpointRequestConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "RequestConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-httpendpointdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-httpendpointdestinationconfiguration-requestconfiguration"""
-    p_RetryOptions: typing.Union['DeliveryStreamRetryOptions', dict] = attr.ib(
+    p_RetryOptions: typing.Union['PropDeliveryStreamRetryOptions', dict] = attr.ib(
         default=None,
-        converter=DeliveryStreamRetryOptions.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DeliveryStreamRetryOptions)),
+        converter=PropDeliveryStreamRetryOptions.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDeliveryStreamRetryOptions)),
         metadata={AttrMeta.PROPERTY_NAME: "RetryOptions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-httpendpointdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-httpendpointdestinationconfiguration-retryoptions"""
@@ -1123,7 +1123,7 @@ class DeliveryStreamHttpEndpointDestinationConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-httpendpointdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-httpendpointdestinationconfiguration-s3backupmode"""
 
 @attr.s
-class DeliveryStreamDataFormatConversionConfiguration(Property):
+class PropDeliveryStreamDataFormatConversionConfiguration(Property):
     """
     AWS Object Type = "AWS::KinesisFirehose::DeliveryStream.DataFormatConversionConfiguration"
 
@@ -1144,30 +1144,30 @@ class DeliveryStreamDataFormatConversionConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Enabled"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-dataformatconversionconfiguration.html#cfn-kinesisfirehose-deliverystream-dataformatconversionconfiguration-enabled"""
-    p_InputFormatConfiguration: typing.Union['DeliveryStreamInputFormatConfiguration', dict] = attr.ib(
+    p_InputFormatConfiguration: typing.Union['PropDeliveryStreamInputFormatConfiguration', dict] = attr.ib(
         default=None,
-        converter=DeliveryStreamInputFormatConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DeliveryStreamInputFormatConfiguration)),
+        converter=PropDeliveryStreamInputFormatConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDeliveryStreamInputFormatConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "InputFormatConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-dataformatconversionconfiguration.html#cfn-kinesisfirehose-deliverystream-dataformatconversionconfiguration-inputformatconfiguration"""
-    p_OutputFormatConfiguration: typing.Union['DeliveryStreamOutputFormatConfiguration', dict] = attr.ib(
+    p_OutputFormatConfiguration: typing.Union['PropDeliveryStreamOutputFormatConfiguration', dict] = attr.ib(
         default=None,
-        converter=DeliveryStreamOutputFormatConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DeliveryStreamOutputFormatConfiguration)),
+        converter=PropDeliveryStreamOutputFormatConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDeliveryStreamOutputFormatConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "OutputFormatConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-dataformatconversionconfiguration.html#cfn-kinesisfirehose-deliverystream-dataformatconversionconfiguration-outputformatconfiguration"""
-    p_SchemaConfiguration: typing.Union['DeliveryStreamSchemaConfiguration', dict] = attr.ib(
+    p_SchemaConfiguration: typing.Union['PropDeliveryStreamSchemaConfiguration', dict] = attr.ib(
         default=None,
-        converter=DeliveryStreamSchemaConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DeliveryStreamSchemaConfiguration)),
+        converter=PropDeliveryStreamSchemaConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDeliveryStreamSchemaConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "SchemaConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-dataformatconversionconfiguration.html#cfn-kinesisfirehose-deliverystream-dataformatconversionconfiguration-schemaconfiguration"""
 
 @attr.s
-class DeliveryStreamSplunkDestinationConfiguration(Property):
+class PropDeliveryStreamSplunkDestinationConfiguration(Property):
     """
     AWS Object Type = "AWS::KinesisFirehose::DeliveryStream.SplunkDestinationConfiguration"
 
@@ -1205,17 +1205,17 @@ class DeliveryStreamSplunkDestinationConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "HECToken"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-splunkdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-splunkdestinationconfiguration-hectoken"""
-    rp_S3Configuration: typing.Union['DeliveryStreamS3DestinationConfiguration', dict] = attr.ib(
+    rp_S3Configuration: typing.Union['PropDeliveryStreamS3DestinationConfiguration', dict] = attr.ib(
         default=None,
-        converter=DeliveryStreamS3DestinationConfiguration.from_dict,
-        validator=attr.validators.instance_of(DeliveryStreamS3DestinationConfiguration),
+        converter=PropDeliveryStreamS3DestinationConfiguration.from_dict,
+        validator=attr.validators.instance_of(PropDeliveryStreamS3DestinationConfiguration),
         metadata={AttrMeta.PROPERTY_NAME: "S3Configuration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-splunkdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-splunkdestinationconfiguration-s3configuration"""
-    p_CloudWatchLoggingOptions: typing.Union['DeliveryStreamCloudWatchLoggingOptions', dict] = attr.ib(
+    p_CloudWatchLoggingOptions: typing.Union['PropDeliveryStreamCloudWatchLoggingOptions', dict] = attr.ib(
         default=None,
-        converter=DeliveryStreamCloudWatchLoggingOptions.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DeliveryStreamCloudWatchLoggingOptions)),
+        converter=PropDeliveryStreamCloudWatchLoggingOptions.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDeliveryStreamCloudWatchLoggingOptions)),
         metadata={AttrMeta.PROPERTY_NAME: "CloudWatchLoggingOptions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-splunkdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-splunkdestinationconfiguration-cloudwatchloggingoptions"""
@@ -1225,17 +1225,17 @@ class DeliveryStreamSplunkDestinationConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "HECAcknowledgmentTimeoutInSeconds"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-splunkdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-splunkdestinationconfiguration-hecacknowledgmenttimeoutinseconds"""
-    p_ProcessingConfiguration: typing.Union['DeliveryStreamProcessingConfiguration', dict] = attr.ib(
+    p_ProcessingConfiguration: typing.Union['PropDeliveryStreamProcessingConfiguration', dict] = attr.ib(
         default=None,
-        converter=DeliveryStreamProcessingConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DeliveryStreamProcessingConfiguration)),
+        converter=PropDeliveryStreamProcessingConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDeliveryStreamProcessingConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "ProcessingConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-splunkdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-splunkdestinationconfiguration-processingconfiguration"""
-    p_RetryOptions: typing.Union['DeliveryStreamSplunkRetryOptions', dict] = attr.ib(
+    p_RetryOptions: typing.Union['PropDeliveryStreamSplunkRetryOptions', dict] = attr.ib(
         default=None,
-        converter=DeliveryStreamSplunkRetryOptions.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DeliveryStreamSplunkRetryOptions)),
+        converter=PropDeliveryStreamSplunkRetryOptions.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDeliveryStreamSplunkRetryOptions)),
         metadata={AttrMeta.PROPERTY_NAME: "RetryOptions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-splunkdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-splunkdestinationconfiguration-retryoptions"""
@@ -1247,7 +1247,7 @@ class DeliveryStreamSplunkDestinationConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-splunkdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-splunkdestinationconfiguration-s3backupmode"""
 
 @attr.s
-class DeliveryStreamElasticsearchDestinationConfiguration(Property):
+class PropDeliveryStreamElasticsearchDestinationConfiguration(Property):
     """
     AWS Object Type = "AWS::KinesisFirehose::DeliveryStream.ElasticsearchDestinationConfiguration"
 
@@ -1283,24 +1283,24 @@ class DeliveryStreamElasticsearchDestinationConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "RoleARN"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration-rolearn"""
-    rp_S3Configuration: typing.Union['DeliveryStreamS3DestinationConfiguration', dict] = attr.ib(
+    rp_S3Configuration: typing.Union['PropDeliveryStreamS3DestinationConfiguration', dict] = attr.ib(
         default=None,
-        converter=DeliveryStreamS3DestinationConfiguration.from_dict,
-        validator=attr.validators.instance_of(DeliveryStreamS3DestinationConfiguration),
+        converter=PropDeliveryStreamS3DestinationConfiguration.from_dict,
+        validator=attr.validators.instance_of(PropDeliveryStreamS3DestinationConfiguration),
         metadata={AttrMeta.PROPERTY_NAME: "S3Configuration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration-s3configuration"""
-    p_BufferingHints: typing.Union['DeliveryStreamElasticsearchBufferingHints', dict] = attr.ib(
+    p_BufferingHints: typing.Union['PropDeliveryStreamElasticsearchBufferingHints', dict] = attr.ib(
         default=None,
-        converter=DeliveryStreamElasticsearchBufferingHints.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DeliveryStreamElasticsearchBufferingHints)),
+        converter=PropDeliveryStreamElasticsearchBufferingHints.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDeliveryStreamElasticsearchBufferingHints)),
         metadata={AttrMeta.PROPERTY_NAME: "BufferingHints"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration-bufferinghints"""
-    p_CloudWatchLoggingOptions: typing.Union['DeliveryStreamCloudWatchLoggingOptions', dict] = attr.ib(
+    p_CloudWatchLoggingOptions: typing.Union['PropDeliveryStreamCloudWatchLoggingOptions', dict] = attr.ib(
         default=None,
-        converter=DeliveryStreamCloudWatchLoggingOptions.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DeliveryStreamCloudWatchLoggingOptions)),
+        converter=PropDeliveryStreamCloudWatchLoggingOptions.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDeliveryStreamCloudWatchLoggingOptions)),
         metadata={AttrMeta.PROPERTY_NAME: "CloudWatchLoggingOptions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration-cloudwatchloggingoptions"""
@@ -1322,17 +1322,17 @@ class DeliveryStreamElasticsearchDestinationConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "IndexRotationPeriod"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration-indexrotationperiod"""
-    p_ProcessingConfiguration: typing.Union['DeliveryStreamProcessingConfiguration', dict] = attr.ib(
+    p_ProcessingConfiguration: typing.Union['PropDeliveryStreamProcessingConfiguration', dict] = attr.ib(
         default=None,
-        converter=DeliveryStreamProcessingConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DeliveryStreamProcessingConfiguration)),
+        converter=PropDeliveryStreamProcessingConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDeliveryStreamProcessingConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "ProcessingConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration-processingconfiguration"""
-    p_RetryOptions: typing.Union['DeliveryStreamElasticsearchRetryOptions', dict] = attr.ib(
+    p_RetryOptions: typing.Union['PropDeliveryStreamElasticsearchRetryOptions', dict] = attr.ib(
         default=None,
-        converter=DeliveryStreamElasticsearchRetryOptions.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DeliveryStreamElasticsearchRetryOptions)),
+        converter=PropDeliveryStreamElasticsearchRetryOptions.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDeliveryStreamElasticsearchRetryOptions)),
         metadata={AttrMeta.PROPERTY_NAME: "RetryOptions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration-retryoptions"""
@@ -1348,16 +1348,16 @@ class DeliveryStreamElasticsearchDestinationConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "TypeName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration-typename"""
-    p_VpcConfiguration: typing.Union['DeliveryStreamVpcConfiguration', dict] = attr.ib(
+    p_VpcConfiguration: typing.Union['PropDeliveryStreamVpcConfiguration', dict] = attr.ib(
         default=None,
-        converter=DeliveryStreamVpcConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DeliveryStreamVpcConfiguration)),
+        converter=PropDeliveryStreamVpcConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDeliveryStreamVpcConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "VpcConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration-vpcconfiguration"""
 
 @attr.s
-class DeliveryStreamExtendedS3DestinationConfiguration(Property):
+class PropDeliveryStreamExtendedS3DestinationConfiguration(Property):
     """
     AWS Object Type = "AWS::KinesisFirehose::DeliveryStream.ExtendedS3DestinationConfiguration"
 
@@ -1392,17 +1392,17 @@ class DeliveryStreamExtendedS3DestinationConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "RoleARN"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-extendeds3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-extendeds3destinationconfiguration-rolearn"""
-    p_BufferingHints: typing.Union['DeliveryStreamBufferingHints', dict] = attr.ib(
+    p_BufferingHints: typing.Union['PropDeliveryStreamBufferingHints', dict] = attr.ib(
         default=None,
-        converter=DeliveryStreamBufferingHints.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DeliveryStreamBufferingHints)),
+        converter=PropDeliveryStreamBufferingHints.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDeliveryStreamBufferingHints)),
         metadata={AttrMeta.PROPERTY_NAME: "BufferingHints"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-extendeds3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-extendeds3destinationconfiguration-bufferinghints"""
-    p_CloudWatchLoggingOptions: typing.Union['DeliveryStreamCloudWatchLoggingOptions', dict] = attr.ib(
+    p_CloudWatchLoggingOptions: typing.Union['PropDeliveryStreamCloudWatchLoggingOptions', dict] = attr.ib(
         default=None,
-        converter=DeliveryStreamCloudWatchLoggingOptions.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DeliveryStreamCloudWatchLoggingOptions)),
+        converter=PropDeliveryStreamCloudWatchLoggingOptions.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDeliveryStreamCloudWatchLoggingOptions)),
         metadata={AttrMeta.PROPERTY_NAME: "CloudWatchLoggingOptions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-extendeds3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-extendeds3destinationconfiguration-cloudwatchloggingoptions"""
@@ -1412,17 +1412,17 @@ class DeliveryStreamExtendedS3DestinationConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "CompressionFormat"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-extendeds3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-extendeds3destinationconfiguration-compressionformat"""
-    p_DataFormatConversionConfiguration: typing.Union['DeliveryStreamDataFormatConversionConfiguration', dict] = attr.ib(
+    p_DataFormatConversionConfiguration: typing.Union['PropDeliveryStreamDataFormatConversionConfiguration', dict] = attr.ib(
         default=None,
-        converter=DeliveryStreamDataFormatConversionConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DeliveryStreamDataFormatConversionConfiguration)),
+        converter=PropDeliveryStreamDataFormatConversionConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDeliveryStreamDataFormatConversionConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "DataFormatConversionConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-extendeds3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-extendeds3destinationconfiguration-dataformatconversionconfiguration"""
-    p_EncryptionConfiguration: typing.Union['DeliveryStreamEncryptionConfiguration', dict] = attr.ib(
+    p_EncryptionConfiguration: typing.Union['PropDeliveryStreamEncryptionConfiguration', dict] = attr.ib(
         default=None,
-        converter=DeliveryStreamEncryptionConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DeliveryStreamEncryptionConfiguration)),
+        converter=PropDeliveryStreamEncryptionConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDeliveryStreamEncryptionConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "EncryptionConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-extendeds3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-extendeds3destinationconfiguration-encryptionconfiguration"""
@@ -1438,17 +1438,17 @@ class DeliveryStreamExtendedS3DestinationConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Prefix"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-extendeds3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-extendeds3destinationconfiguration-prefix"""
-    p_ProcessingConfiguration: typing.Union['DeliveryStreamProcessingConfiguration', dict] = attr.ib(
+    p_ProcessingConfiguration: typing.Union['PropDeliveryStreamProcessingConfiguration', dict] = attr.ib(
         default=None,
-        converter=DeliveryStreamProcessingConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DeliveryStreamProcessingConfiguration)),
+        converter=PropDeliveryStreamProcessingConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDeliveryStreamProcessingConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "ProcessingConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-extendeds3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-extendeds3destinationconfiguration-processingconfiguration"""
-    p_S3BackupConfiguration: typing.Union['DeliveryStreamS3DestinationConfiguration', dict] = attr.ib(
+    p_S3BackupConfiguration: typing.Union['PropDeliveryStreamS3DestinationConfiguration', dict] = attr.ib(
         default=None,
-        converter=DeliveryStreamS3DestinationConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DeliveryStreamS3DestinationConfiguration)),
+        converter=PropDeliveryStreamS3DestinationConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDeliveryStreamS3DestinationConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "S3BackupConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-extendeds3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-extendeds3destinationconfiguration-s3backupconfiguration"""
@@ -1486,10 +1486,10 @@ class DeliveryStream(Resource):
     AWS_OBJECT_TYPE = "AWS::KinesisFirehose::DeliveryStream"
 
     
-    p_DeliveryStreamEncryptionConfigurationInput: typing.Union['DeliveryStreamDeliveryStreamEncryptionConfigurationInput', dict] = attr.ib(
+    p_DeliveryStreamEncryptionConfigurationInput: typing.Union['PropDeliveryStreamDeliveryStreamEncryptionConfigurationInput', dict] = attr.ib(
         default=None,
-        converter=DeliveryStreamDeliveryStreamEncryptionConfigurationInput.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DeliveryStreamDeliveryStreamEncryptionConfigurationInput)),
+        converter=PropDeliveryStreamDeliveryStreamEncryptionConfigurationInput.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDeliveryStreamDeliveryStreamEncryptionConfigurationInput)),
         metadata={AttrMeta.PROPERTY_NAME: "DeliveryStreamEncryptionConfigurationInput"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisfirehose-deliverystream.html#cfn-kinesisfirehose-deliverystream-deliverystreamencryptionconfigurationinput"""
@@ -1505,52 +1505,52 @@ class DeliveryStream(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "DeliveryStreamType"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisfirehose-deliverystream.html#cfn-kinesisfirehose-deliverystream-deliverystreamtype"""
-    p_ElasticsearchDestinationConfiguration: typing.Union['DeliveryStreamElasticsearchDestinationConfiguration', dict] = attr.ib(
+    p_ElasticsearchDestinationConfiguration: typing.Union['PropDeliveryStreamElasticsearchDestinationConfiguration', dict] = attr.ib(
         default=None,
-        converter=DeliveryStreamElasticsearchDestinationConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DeliveryStreamElasticsearchDestinationConfiguration)),
+        converter=PropDeliveryStreamElasticsearchDestinationConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDeliveryStreamElasticsearchDestinationConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "ElasticsearchDestinationConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisfirehose-deliverystream.html#cfn-kinesisfirehose-deliverystream-elasticsearchdestinationconfiguration"""
-    p_ExtendedS3DestinationConfiguration: typing.Union['DeliveryStreamExtendedS3DestinationConfiguration', dict] = attr.ib(
+    p_ExtendedS3DestinationConfiguration: typing.Union['PropDeliveryStreamExtendedS3DestinationConfiguration', dict] = attr.ib(
         default=None,
-        converter=DeliveryStreamExtendedS3DestinationConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DeliveryStreamExtendedS3DestinationConfiguration)),
+        converter=PropDeliveryStreamExtendedS3DestinationConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDeliveryStreamExtendedS3DestinationConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "ExtendedS3DestinationConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisfirehose-deliverystream.html#cfn-kinesisfirehose-deliverystream-extendeds3destinationconfiguration"""
-    p_HttpEndpointDestinationConfiguration: typing.Union['DeliveryStreamHttpEndpointDestinationConfiguration', dict] = attr.ib(
+    p_HttpEndpointDestinationConfiguration: typing.Union['PropDeliveryStreamHttpEndpointDestinationConfiguration', dict] = attr.ib(
         default=None,
-        converter=DeliveryStreamHttpEndpointDestinationConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DeliveryStreamHttpEndpointDestinationConfiguration)),
+        converter=PropDeliveryStreamHttpEndpointDestinationConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDeliveryStreamHttpEndpointDestinationConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "HttpEndpointDestinationConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisfirehose-deliverystream.html#cfn-kinesisfirehose-deliverystream-httpendpointdestinationconfiguration"""
-    p_KinesisStreamSourceConfiguration: typing.Union['DeliveryStreamKinesisStreamSourceConfiguration', dict] = attr.ib(
+    p_KinesisStreamSourceConfiguration: typing.Union['PropDeliveryStreamKinesisStreamSourceConfiguration', dict] = attr.ib(
         default=None,
-        converter=DeliveryStreamKinesisStreamSourceConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DeliveryStreamKinesisStreamSourceConfiguration)),
+        converter=PropDeliveryStreamKinesisStreamSourceConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDeliveryStreamKinesisStreamSourceConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "KinesisStreamSourceConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisfirehose-deliverystream.html#cfn-kinesisfirehose-deliverystream-kinesisstreamsourceconfiguration"""
-    p_RedshiftDestinationConfiguration: typing.Union['DeliveryStreamRedshiftDestinationConfiguration', dict] = attr.ib(
+    p_RedshiftDestinationConfiguration: typing.Union['PropDeliveryStreamRedshiftDestinationConfiguration', dict] = attr.ib(
         default=None,
-        converter=DeliveryStreamRedshiftDestinationConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DeliveryStreamRedshiftDestinationConfiguration)),
+        converter=PropDeliveryStreamRedshiftDestinationConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDeliveryStreamRedshiftDestinationConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "RedshiftDestinationConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisfirehose-deliverystream.html#cfn-kinesisfirehose-deliverystream-redshiftdestinationconfiguration"""
-    p_S3DestinationConfiguration: typing.Union['DeliveryStreamS3DestinationConfiguration', dict] = attr.ib(
+    p_S3DestinationConfiguration: typing.Union['PropDeliveryStreamS3DestinationConfiguration', dict] = attr.ib(
         default=None,
-        converter=DeliveryStreamS3DestinationConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DeliveryStreamS3DestinationConfiguration)),
+        converter=PropDeliveryStreamS3DestinationConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDeliveryStreamS3DestinationConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "S3DestinationConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisfirehose-deliverystream.html#cfn-kinesisfirehose-deliverystream-s3destinationconfiguration"""
-    p_SplunkDestinationConfiguration: typing.Union['DeliveryStreamSplunkDestinationConfiguration', dict] = attr.ib(
+    p_SplunkDestinationConfiguration: typing.Union['PropDeliveryStreamSplunkDestinationConfiguration', dict] = attr.ib(
         default=None,
-        converter=DeliveryStreamSplunkDestinationConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DeliveryStreamSplunkDestinationConfiguration)),
+        converter=PropDeliveryStreamSplunkDestinationConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDeliveryStreamSplunkDestinationConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "SplunkDestinationConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisfirehose-deliverystream.html#cfn-kinesisfirehose-deliverystream-splunkdestinationconfiguration"""

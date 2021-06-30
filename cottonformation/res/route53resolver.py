@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class FirewallRuleGroupFirewallRule(Property):
+class PropFirewallRuleGroupFirewallRule(Property):
     """
     AWS Object Type = "AWS::Route53Resolver::FirewallRuleGroup.FirewallRule"
 
@@ -77,7 +77,7 @@ class FirewallRuleGroupFirewallRule(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53resolver-firewallrulegroup-firewallrule.html#cfn-route53resolver-firewallrulegroup-firewallrule-blockresponse"""
 
 @attr.s
-class ResolverRuleTargetAddress(Property):
+class PropResolverRuleTargetAddress(Property):
     """
     AWS Object Type = "AWS::Route53Resolver::ResolverRule.TargetAddress"
 
@@ -104,7 +104,7 @@ class ResolverRuleTargetAddress(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53resolver-resolverrule-targetaddress.html#cfn-route53resolver-resolverrule-targetaddress-port"""
 
 @attr.s
-class ResolverEndpointIpAddressRequest(Property):
+class PropResolverEndpointIpAddressRequest(Property):
     """
     AWS Object Type = "AWS::Route53Resolver::ResolverEndpoint.IpAddressRequest"
 
@@ -528,10 +528,10 @@ class ResolverRule(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "ResolverEndpointId"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverrule.html#cfn-route53resolver-resolverrule-resolverendpointid"""
-    p_TargetIps: typing.List[typing.Union['ResolverRuleTargetAddress', dict]] = attr.ib(
+    p_TargetIps: typing.List[typing.Union['PropResolverRuleTargetAddress', dict]] = attr.ib(
         default=None,
-        converter=ResolverRuleTargetAddress.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ResolverRuleTargetAddress), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropResolverRuleTargetAddress.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropResolverRuleTargetAddress), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "TargetIps"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverrule.html#cfn-route53resolver-resolverrule-targetips"""
@@ -591,10 +591,10 @@ class FirewallRuleGroup(Resource):
     AWS_OBJECT_TYPE = "AWS::Route53Resolver::FirewallRuleGroup"
 
     
-    p_FirewallRules: typing.List[typing.Union['FirewallRuleGroupFirewallRule', dict]] = attr.ib(
+    p_FirewallRules: typing.List[typing.Union['PropFirewallRuleGroupFirewallRule', dict]] = attr.ib(
         default=None,
-        converter=FirewallRuleGroupFirewallRule.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(FirewallRuleGroupFirewallRule), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropFirewallRuleGroupFirewallRule.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropFirewallRuleGroupFirewallRule), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "FirewallRules"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-firewallrulegroup.html#cfn-route53resolver-firewallrulegroup-firewallrules"""
@@ -745,10 +745,10 @@ class ResolverEndpoint(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Direction"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverendpoint.html#cfn-route53resolver-resolverendpoint-direction"""
-    rp_IpAddresses: typing.List[typing.Union['ResolverEndpointIpAddressRequest', dict]] = attr.ib(
+    rp_IpAddresses: typing.List[typing.Union['PropResolverEndpointIpAddressRequest', dict]] = attr.ib(
         default=None,
-        converter=ResolverEndpointIpAddressRequest.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ResolverEndpointIpAddressRequest), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropResolverEndpointIpAddressRequest.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropResolverEndpointIpAddressRequest), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "IpAddresses"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverendpoint.html#cfn-route53resolver-resolverendpoint-ipaddresses"""

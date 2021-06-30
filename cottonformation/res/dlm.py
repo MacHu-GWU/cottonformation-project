@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class LifecyclePolicyFastRestoreRule(Property):
+class PropLifecyclePolicyFastRestoreRule(Property):
     """
     AWS Object Type = "AWS::DLM::LifecyclePolicy.FastRestoreRule"
 
@@ -56,7 +56,7 @@ class LifecyclePolicyFastRestoreRule(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-fastrestorerule.html#cfn-dlm-lifecyclepolicy-fastrestorerule-intervalunit"""
 
 @attr.s
-class LifecyclePolicyEventParameters(Property):
+class PropLifecyclePolicyEventParameters(Property):
     """
     AWS Object Type = "AWS::DLM::LifecyclePolicy.EventParameters"
 
@@ -90,7 +90,7 @@ class LifecyclePolicyEventParameters(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-eventparameters.html#cfn-dlm-lifecyclepolicy-eventparameters-descriptionregex"""
 
 @attr.s
-class LifecyclePolicyCreateRule(Property):
+class PropLifecyclePolicyCreateRule(Property):
     """
     AWS Object Type = "AWS::DLM::LifecyclePolicy.CreateRule"
 
@@ -138,7 +138,7 @@ class LifecyclePolicyCreateRule(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-createrule.html#cfn-dlm-lifecyclepolicy-createrule-times"""
 
 @attr.s
-class LifecyclePolicyRetainRule(Property):
+class PropLifecyclePolicyRetainRule(Property):
     """
     AWS Object Type = "AWS::DLM::LifecyclePolicy.RetainRule"
 
@@ -172,7 +172,7 @@ class LifecyclePolicyRetainRule(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-retainrule.html#cfn-dlm-lifecyclepolicy-retainrule-intervalunit"""
 
 @attr.s
-class LifecyclePolicyParameters(Property):
+class PropLifecyclePolicyParameters(Property):
     """
     AWS Object Type = "AWS::DLM::LifecyclePolicy.Parameters"
 
@@ -199,7 +199,7 @@ class LifecyclePolicyParameters(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-parameters.html#cfn-dlm-lifecyclepolicy-parameters-noreboot"""
 
 @attr.s
-class LifecyclePolicyEncryptionConfiguration(Property):
+class PropLifecyclePolicyEncryptionConfiguration(Property):
     """
     AWS Object Type = "AWS::DLM::LifecyclePolicy.EncryptionConfiguration"
 
@@ -226,7 +226,7 @@ class LifecyclePolicyEncryptionConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-encryptionconfiguration.html#cfn-dlm-lifecyclepolicy-encryptionconfiguration-cmkarn"""
 
 @attr.s
-class LifecyclePolicyCrossRegionCopyRetainRule(Property):
+class PropLifecyclePolicyCrossRegionCopyRetainRule(Property):
     """
     AWS Object Type = "AWS::DLM::LifecyclePolicy.CrossRegionCopyRetainRule"
 
@@ -253,7 +253,7 @@ class LifecyclePolicyCrossRegionCopyRetainRule(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-crossregioncopyretainrule.html#cfn-dlm-lifecyclepolicy-crossregioncopyretainrule-intervalunit"""
 
 @attr.s
-class LifecyclePolicyCrossRegionCopyRule(Property):
+class PropLifecyclePolicyCrossRegionCopyRule(Property):
     """
     AWS Object Type = "AWS::DLM::LifecyclePolicy.CrossRegionCopyRule"
 
@@ -288,10 +288,10 @@ class LifecyclePolicyCrossRegionCopyRule(Property):
         metadata={AttrMeta.PROPERTY_NAME: "CopyTags"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-crossregioncopyrule.html#cfn-dlm-lifecyclepolicy-crossregioncopyrule-copytags"""
-    p_RetainRule: typing.Union['LifecyclePolicyCrossRegionCopyRetainRule', dict] = attr.ib(
+    p_RetainRule: typing.Union['PropLifecyclePolicyCrossRegionCopyRetainRule', dict] = attr.ib(
         default=None,
-        converter=LifecyclePolicyCrossRegionCopyRetainRule.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(LifecyclePolicyCrossRegionCopyRetainRule)),
+        converter=PropLifecyclePolicyCrossRegionCopyRetainRule.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropLifecyclePolicyCrossRegionCopyRetainRule)),
         metadata={AttrMeta.PROPERTY_NAME: "RetainRule"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-crossregioncopyrule.html#cfn-dlm-lifecyclepolicy-crossregioncopyrule-retainrule"""
@@ -309,7 +309,7 @@ class LifecyclePolicyCrossRegionCopyRule(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-crossregioncopyrule.html#cfn-dlm-lifecyclepolicy-crossregioncopyrule-targetregion"""
 
 @attr.s
-class LifecyclePolicyCrossRegionCopyAction(Property):
+class PropLifecyclePolicyCrossRegionCopyAction(Property):
     """
     AWS Object Type = "AWS::DLM::LifecyclePolicy.CrossRegionCopyAction"
 
@@ -323,10 +323,10 @@ class LifecyclePolicyCrossRegionCopyAction(Property):
     """
     AWS_OBJECT_TYPE = "AWS::DLM::LifecyclePolicy.CrossRegionCopyAction"
     
-    rp_EncryptionConfiguration: typing.Union['LifecyclePolicyEncryptionConfiguration', dict] = attr.ib(
+    rp_EncryptionConfiguration: typing.Union['PropLifecyclePolicyEncryptionConfiguration', dict] = attr.ib(
         default=None,
-        converter=LifecyclePolicyEncryptionConfiguration.from_dict,
-        validator=attr.validators.instance_of(LifecyclePolicyEncryptionConfiguration),
+        converter=PropLifecyclePolicyEncryptionConfiguration.from_dict,
+        validator=attr.validators.instance_of(PropLifecyclePolicyEncryptionConfiguration),
         metadata={AttrMeta.PROPERTY_NAME: "EncryptionConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-crossregioncopyaction.html#cfn-dlm-lifecyclepolicy-crossregioncopyaction-encryptionconfiguration"""
@@ -336,16 +336,16 @@ class LifecyclePolicyCrossRegionCopyAction(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Target"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-crossregioncopyaction.html#cfn-dlm-lifecyclepolicy-crossregioncopyaction-target"""
-    p_RetainRule: typing.Union['LifecyclePolicyCrossRegionCopyRetainRule', dict] = attr.ib(
+    p_RetainRule: typing.Union['PropLifecyclePolicyCrossRegionCopyRetainRule', dict] = attr.ib(
         default=None,
-        converter=LifecyclePolicyCrossRegionCopyRetainRule.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(LifecyclePolicyCrossRegionCopyRetainRule)),
+        converter=PropLifecyclePolicyCrossRegionCopyRetainRule.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropLifecyclePolicyCrossRegionCopyRetainRule)),
         metadata={AttrMeta.PROPERTY_NAME: "RetainRule"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-crossregioncopyaction.html#cfn-dlm-lifecyclepolicy-crossregioncopyaction-retainrule"""
 
 @attr.s
-class LifecyclePolicyShareRule(Property):
+class PropLifecyclePolicyShareRule(Property):
     """
     AWS Object Type = "AWS::DLM::LifecyclePolicy.ShareRule"
 
@@ -379,7 +379,7 @@ class LifecyclePolicyShareRule(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-sharerule.html#cfn-dlm-lifecyclepolicy-sharerule-unshareintervalunit"""
 
 @attr.s
-class LifecyclePolicyEventSource(Property):
+class PropLifecyclePolicyEventSource(Property):
     """
     AWS Object Type = "AWS::DLM::LifecyclePolicy.EventSource"
 
@@ -398,16 +398,16 @@ class LifecyclePolicyEventSource(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Type"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-eventsource.html#cfn-dlm-lifecyclepolicy-eventsource-type"""
-    p_Parameters: typing.Union['LifecyclePolicyEventParameters', dict] = attr.ib(
+    p_Parameters: typing.Union['PropLifecyclePolicyEventParameters', dict] = attr.ib(
         default=None,
-        converter=LifecyclePolicyEventParameters.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(LifecyclePolicyEventParameters)),
+        converter=PropLifecyclePolicyEventParameters.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropLifecyclePolicyEventParameters)),
         metadata={AttrMeta.PROPERTY_NAME: "Parameters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-eventsource.html#cfn-dlm-lifecyclepolicy-eventsource-parameters"""
 
 @attr.s
-class LifecyclePolicyAction(Property):
+class PropLifecyclePolicyAction(Property):
     """
     AWS Object Type = "AWS::DLM::LifecyclePolicy.Action"
 
@@ -420,10 +420,10 @@ class LifecyclePolicyAction(Property):
     """
     AWS_OBJECT_TYPE = "AWS::DLM::LifecyclePolicy.Action"
     
-    rp_CrossRegionCopy: typing.List[typing.Union['LifecyclePolicyCrossRegionCopyAction', dict]] = attr.ib(
+    rp_CrossRegionCopy: typing.List[typing.Union['PropLifecyclePolicyCrossRegionCopyAction', dict]] = attr.ib(
         default=None,
-        converter=LifecyclePolicyCrossRegionCopyAction.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(LifecyclePolicyCrossRegionCopyAction), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropLifecyclePolicyCrossRegionCopyAction.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropLifecyclePolicyCrossRegionCopyAction), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "CrossRegionCopy"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-action.html#cfn-dlm-lifecyclepolicy-action-crossregioncopy"""
@@ -435,7 +435,7 @@ class LifecyclePolicyAction(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-action.html#cfn-dlm-lifecyclepolicy-action-name"""
 
 @attr.s
-class LifecyclePolicySchedule(Property):
+class PropLifecyclePolicySchedule(Property):
     """
     AWS Object Type = "AWS::DLM::LifecyclePolicy.Schedule"
 
@@ -461,24 +461,24 @@ class LifecyclePolicySchedule(Property):
         metadata={AttrMeta.PROPERTY_NAME: "CopyTags"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-schedule.html#cfn-dlm-lifecyclepolicy-schedule-copytags"""
-    p_CreateRule: typing.Union['LifecyclePolicyCreateRule', dict] = attr.ib(
+    p_CreateRule: typing.Union['PropLifecyclePolicyCreateRule', dict] = attr.ib(
         default=None,
-        converter=LifecyclePolicyCreateRule.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(LifecyclePolicyCreateRule)),
+        converter=PropLifecyclePolicyCreateRule.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropLifecyclePolicyCreateRule)),
         metadata={AttrMeta.PROPERTY_NAME: "CreateRule"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-schedule.html#cfn-dlm-lifecyclepolicy-schedule-createrule"""
-    p_CrossRegionCopyRules: typing.List[typing.Union['LifecyclePolicyCrossRegionCopyRule', dict]] = attr.ib(
+    p_CrossRegionCopyRules: typing.List[typing.Union['PropLifecyclePolicyCrossRegionCopyRule', dict]] = attr.ib(
         default=None,
-        converter=LifecyclePolicyCrossRegionCopyRule.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(LifecyclePolicyCrossRegionCopyRule), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropLifecyclePolicyCrossRegionCopyRule.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropLifecyclePolicyCrossRegionCopyRule), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "CrossRegionCopyRules"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-schedule.html#cfn-dlm-lifecyclepolicy-schedule-crossregioncopyrules"""
-    p_FastRestoreRule: typing.Union['LifecyclePolicyFastRestoreRule', dict] = attr.ib(
+    p_FastRestoreRule: typing.Union['PropLifecyclePolicyFastRestoreRule', dict] = attr.ib(
         default=None,
-        converter=LifecyclePolicyFastRestoreRule.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(LifecyclePolicyFastRestoreRule)),
+        converter=PropLifecyclePolicyFastRestoreRule.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropLifecyclePolicyFastRestoreRule)),
         metadata={AttrMeta.PROPERTY_NAME: "FastRestoreRule"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-schedule.html#cfn-dlm-lifecyclepolicy-schedule-fastrestorerule"""
@@ -488,17 +488,17 @@ class LifecyclePolicySchedule(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Name"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-schedule.html#cfn-dlm-lifecyclepolicy-schedule-name"""
-    p_RetainRule: typing.Union['LifecyclePolicyRetainRule', dict] = attr.ib(
+    p_RetainRule: typing.Union['PropLifecyclePolicyRetainRule', dict] = attr.ib(
         default=None,
-        converter=LifecyclePolicyRetainRule.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(LifecyclePolicyRetainRule)),
+        converter=PropLifecyclePolicyRetainRule.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropLifecyclePolicyRetainRule)),
         metadata={AttrMeta.PROPERTY_NAME: "RetainRule"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-schedule.html#cfn-dlm-lifecyclepolicy-schedule-retainrule"""
-    p_ShareRules: typing.List[typing.Union['LifecyclePolicyShareRule', dict]] = attr.ib(
+    p_ShareRules: typing.List[typing.Union['PropLifecyclePolicyShareRule', dict]] = attr.ib(
         default=None,
-        converter=LifecyclePolicyShareRule.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(LifecyclePolicyShareRule), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropLifecyclePolicyShareRule.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropLifecyclePolicyShareRule), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "ShareRules"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-schedule.html#cfn-dlm-lifecyclepolicy-schedule-sharerules"""
@@ -518,7 +518,7 @@ class LifecyclePolicySchedule(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-schedule.html#cfn-dlm-lifecyclepolicy-schedule-variabletags"""
 
 @attr.s
-class LifecyclePolicyPolicyDetails(Property):
+class PropLifecyclePolicyPolicyDetails(Property):
     """
     AWS Object Type = "AWS::DLM::LifecyclePolicy.PolicyDetails"
 
@@ -537,24 +537,24 @@ class LifecyclePolicyPolicyDetails(Property):
     """
     AWS_OBJECT_TYPE = "AWS::DLM::LifecyclePolicy.PolicyDetails"
     
-    p_Actions: typing.List[typing.Union['LifecyclePolicyAction', dict]] = attr.ib(
+    p_Actions: typing.List[typing.Union['PropLifecyclePolicyAction', dict]] = attr.ib(
         default=None,
-        converter=LifecyclePolicyAction.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(LifecyclePolicyAction), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropLifecyclePolicyAction.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropLifecyclePolicyAction), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Actions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-policydetails.html#cfn-dlm-lifecyclepolicy-policydetails-actions"""
-    p_EventSource: typing.Union['LifecyclePolicyEventSource', dict] = attr.ib(
+    p_EventSource: typing.Union['PropLifecyclePolicyEventSource', dict] = attr.ib(
         default=None,
-        converter=LifecyclePolicyEventSource.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(LifecyclePolicyEventSource)),
+        converter=PropLifecyclePolicyEventSource.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropLifecyclePolicyEventSource)),
         metadata={AttrMeta.PROPERTY_NAME: "EventSource"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-policydetails.html#cfn-dlm-lifecyclepolicy-policydetails-eventsource"""
-    p_Parameters: typing.Union['LifecyclePolicyParameters', dict] = attr.ib(
+    p_Parameters: typing.Union['PropLifecyclePolicyParameters', dict] = attr.ib(
         default=None,
-        converter=LifecyclePolicyParameters.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(LifecyclePolicyParameters)),
+        converter=PropLifecyclePolicyParameters.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropLifecyclePolicyParameters)),
         metadata={AttrMeta.PROPERTY_NAME: "Parameters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-policydetails.html#cfn-dlm-lifecyclepolicy-policydetails-parameters"""
@@ -576,10 +576,10 @@ class LifecyclePolicyPolicyDetails(Property):
         metadata={AttrMeta.PROPERTY_NAME: "ResourceTypes"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-policydetails.html#cfn-dlm-lifecyclepolicy-policydetails-resourcetypes"""
-    p_Schedules: typing.List[typing.Union['LifecyclePolicySchedule', dict]] = attr.ib(
+    p_Schedules: typing.List[typing.Union['PropLifecyclePolicySchedule', dict]] = attr.ib(
         default=None,
-        converter=LifecyclePolicySchedule.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(LifecyclePolicySchedule), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropLifecyclePolicySchedule.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropLifecyclePolicySchedule), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Schedules"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dlm-lifecyclepolicy-policydetails.html#cfn-dlm-lifecyclepolicy-policydetails-schedules"""
@@ -624,10 +624,10 @@ class LifecyclePolicy(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "ExecutionRoleArn"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dlm-lifecyclepolicy.html#cfn-dlm-lifecyclepolicy-executionrolearn"""
-    p_PolicyDetails: typing.Union['LifecyclePolicyPolicyDetails', dict] = attr.ib(
+    p_PolicyDetails: typing.Union['PropLifecyclePolicyPolicyDetails', dict] = attr.ib(
         default=None,
-        converter=LifecyclePolicyPolicyDetails.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(LifecyclePolicyPolicyDetails)),
+        converter=PropLifecyclePolicyPolicyDetails.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropLifecyclePolicyPolicyDetails)),
         metadata={AttrMeta.PROPERTY_NAME: "PolicyDetails"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dlm-lifecyclepolicy.html#cfn-dlm-lifecyclepolicy-policydetails"""

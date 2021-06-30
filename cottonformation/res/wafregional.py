@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class RulePredicate(Property):
+class PropRulePredicate(Property):
     """
     AWS Object Type = "AWS::WAFRegional::Rule.Predicate"
 
@@ -49,7 +49,7 @@ class RulePredicate(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-rule-predicate.html#cfn-wafregional-rule-predicate-type"""
 
 @attr.s
-class ByteMatchSetFieldToMatch(Property):
+class PropByteMatchSetFieldToMatch(Property):
     """
     AWS Object Type = "AWS::WAFRegional::ByteMatchSet.FieldToMatch"
 
@@ -76,7 +76,7 @@ class ByteMatchSetFieldToMatch(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-bytematchset-fieldtomatch.html#cfn-wafregional-bytematchset-fieldtomatch-data"""
 
 @attr.s
-class SizeConstraintSetFieldToMatch(Property):
+class PropSizeConstraintSetFieldToMatch(Property):
     """
     AWS Object Type = "AWS::WAFRegional::SizeConstraintSet.FieldToMatch"
 
@@ -103,7 +103,7 @@ class SizeConstraintSetFieldToMatch(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-sizeconstraintset-fieldtomatch.html#cfn-wafregional-sizeconstraintset-fieldtomatch-data"""
 
 @attr.s
-class GeoMatchSetGeoMatchConstraint(Property):
+class PropGeoMatchSetGeoMatchConstraint(Property):
     """
     AWS Object Type = "AWS::WAFRegional::GeoMatchSet.GeoMatchConstraint"
 
@@ -130,7 +130,7 @@ class GeoMatchSetGeoMatchConstraint(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-geomatchset-geomatchconstraint.html#cfn-wafregional-geomatchset-geomatchconstraint-value"""
 
 @attr.s
-class SqlInjectionMatchSetFieldToMatch(Property):
+class PropSqlInjectionMatchSetFieldToMatch(Property):
     """
     AWS Object Type = "AWS::WAFRegional::SqlInjectionMatchSet.FieldToMatch"
 
@@ -157,7 +157,7 @@ class SqlInjectionMatchSetFieldToMatch(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-sqlinjectionmatchset-fieldtomatch.html#cfn-wafregional-sqlinjectionmatchset-fieldtomatch-data"""
 
 @attr.s
-class WebACLAction(Property):
+class PropWebACLAction(Property):
     """
     AWS Object Type = "AWS::WAFRegional::WebACL.Action"
 
@@ -177,7 +177,7 @@ class WebACLAction(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-webacl-action.html#cfn-wafregional-webacl-action-type"""
 
 @attr.s
-class SqlInjectionMatchSetSqlInjectionMatchTuple(Property):
+class PropSqlInjectionMatchSetSqlInjectionMatchTuple(Property):
     """
     AWS Object Type = "AWS::WAFRegional::SqlInjectionMatchSet.SqlInjectionMatchTuple"
 
@@ -190,10 +190,10 @@ class SqlInjectionMatchSetSqlInjectionMatchTuple(Property):
     """
     AWS_OBJECT_TYPE = "AWS::WAFRegional::SqlInjectionMatchSet.SqlInjectionMatchTuple"
     
-    rp_FieldToMatch: typing.Union['SqlInjectionMatchSetFieldToMatch', dict] = attr.ib(
+    rp_FieldToMatch: typing.Union['PropSqlInjectionMatchSetFieldToMatch', dict] = attr.ib(
         default=None,
-        converter=SqlInjectionMatchSetFieldToMatch.from_dict,
-        validator=attr.validators.instance_of(SqlInjectionMatchSetFieldToMatch),
+        converter=PropSqlInjectionMatchSetFieldToMatch.from_dict,
+        validator=attr.validators.instance_of(PropSqlInjectionMatchSetFieldToMatch),
         metadata={AttrMeta.PROPERTY_NAME: "FieldToMatch"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-sqlinjectionmatchset-sqlinjectionmatchtuple.html#cfn-wafregional-sqlinjectionmatchset-sqlinjectionmatchtuple-fieldtomatch"""
@@ -205,7 +205,7 @@ class SqlInjectionMatchSetSqlInjectionMatchTuple(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-sqlinjectionmatchset-sqlinjectionmatchtuple.html#cfn-wafregional-sqlinjectionmatchset-sqlinjectionmatchtuple-texttransformation"""
 
 @attr.s
-class WebACLRule(Property):
+class PropWebACLRule(Property):
     """
     AWS Object Type = "AWS::WAFRegional::WebACL.Rule"
 
@@ -219,10 +219,10 @@ class WebACLRule(Property):
     """
     AWS_OBJECT_TYPE = "AWS::WAFRegional::WebACL.Rule"
     
-    rp_Action: typing.Union['WebACLAction', dict] = attr.ib(
+    rp_Action: typing.Union['PropWebACLAction', dict] = attr.ib(
         default=None,
-        converter=WebACLAction.from_dict,
-        validator=attr.validators.instance_of(WebACLAction),
+        converter=PropWebACLAction.from_dict,
+        validator=attr.validators.instance_of(PropWebACLAction),
         metadata={AttrMeta.PROPERTY_NAME: "Action"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-webacl-rule.html#cfn-wafregional-webacl-rule-action"""
@@ -240,7 +240,7 @@ class WebACLRule(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-webacl-rule.html#cfn-wafregional-webacl-rule-ruleid"""
 
 @attr.s
-class IPSetIPSetDescriptor(Property):
+class PropIPSetIPSetDescriptor(Property):
     """
     AWS Object Type = "AWS::WAFRegional::IPSet.IPSetDescriptor"
 
@@ -267,7 +267,7 @@ class IPSetIPSetDescriptor(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-ipset-ipsetdescriptor.html#cfn-wafregional-ipset-ipsetdescriptor-value"""
 
 @attr.s
-class XssMatchSetFieldToMatch(Property):
+class PropXssMatchSetFieldToMatch(Property):
     """
     AWS Object Type = "AWS::WAFRegional::XssMatchSet.FieldToMatch"
 
@@ -294,7 +294,7 @@ class XssMatchSetFieldToMatch(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-xssmatchset-fieldtomatch.html#cfn-wafregional-xssmatchset-fieldtomatch-data"""
 
 @attr.s
-class RateBasedRulePredicate(Property):
+class PropRateBasedRulePredicate(Property):
     """
     AWS Object Type = "AWS::WAFRegional::RateBasedRule.Predicate"
 
@@ -328,7 +328,7 @@ class RateBasedRulePredicate(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-ratebasedrule-predicate.html#cfn-wafregional-ratebasedrule-predicate-type"""
 
 @attr.s
-class ByteMatchSetByteMatchTuple(Property):
+class PropByteMatchSetByteMatchTuple(Property):
     """
     AWS Object Type = "AWS::WAFRegional::ByteMatchSet.ByteMatchTuple"
 
@@ -344,10 +344,10 @@ class ByteMatchSetByteMatchTuple(Property):
     """
     AWS_OBJECT_TYPE = "AWS::WAFRegional::ByteMatchSet.ByteMatchTuple"
     
-    rp_FieldToMatch: typing.Union['ByteMatchSetFieldToMatch', dict] = attr.ib(
+    rp_FieldToMatch: typing.Union['PropByteMatchSetFieldToMatch', dict] = attr.ib(
         default=None,
-        converter=ByteMatchSetFieldToMatch.from_dict,
-        validator=attr.validators.instance_of(ByteMatchSetFieldToMatch),
+        converter=PropByteMatchSetFieldToMatch.from_dict,
+        validator=attr.validators.instance_of(PropByteMatchSetFieldToMatch),
         metadata={AttrMeta.PROPERTY_NAME: "FieldToMatch"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-bytematchset-bytematchtuple.html#cfn-wafregional-bytematchset-bytematchtuple-fieldtomatch"""
@@ -377,7 +377,7 @@ class ByteMatchSetByteMatchTuple(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-bytematchset-bytematchtuple.html#cfn-wafregional-bytematchset-bytematchtuple-targetstringbase64"""
 
 @attr.s
-class SizeConstraintSetSizeConstraint(Property):
+class PropSizeConstraintSetSizeConstraint(Property):
     """
     AWS Object Type = "AWS::WAFRegional::SizeConstraintSet.SizeConstraint"
 
@@ -398,10 +398,10 @@ class SizeConstraintSetSizeConstraint(Property):
         metadata={AttrMeta.PROPERTY_NAME: "ComparisonOperator"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-sizeconstraintset-sizeconstraint.html#cfn-wafregional-sizeconstraintset-sizeconstraint-comparisonoperator"""
-    rp_FieldToMatch: typing.Union['SizeConstraintSetFieldToMatch', dict] = attr.ib(
+    rp_FieldToMatch: typing.Union['PropSizeConstraintSetFieldToMatch', dict] = attr.ib(
         default=None,
-        converter=SizeConstraintSetFieldToMatch.from_dict,
-        validator=attr.validators.instance_of(SizeConstraintSetFieldToMatch),
+        converter=PropSizeConstraintSetFieldToMatch.from_dict,
+        validator=attr.validators.instance_of(PropSizeConstraintSetFieldToMatch),
         metadata={AttrMeta.PROPERTY_NAME: "FieldToMatch"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-sizeconstraintset-sizeconstraint.html#cfn-wafregional-sizeconstraintset-sizeconstraint-fieldtomatch"""
@@ -419,7 +419,7 @@ class SizeConstraintSetSizeConstraint(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-sizeconstraintset-sizeconstraint.html#cfn-wafregional-sizeconstraintset-sizeconstraint-texttransformation"""
 
 @attr.s
-class XssMatchSetXssMatchTuple(Property):
+class PropXssMatchSetXssMatchTuple(Property):
     """
     AWS Object Type = "AWS::WAFRegional::XssMatchSet.XssMatchTuple"
 
@@ -432,10 +432,10 @@ class XssMatchSetXssMatchTuple(Property):
     """
     AWS_OBJECT_TYPE = "AWS::WAFRegional::XssMatchSet.XssMatchTuple"
     
-    rp_FieldToMatch: typing.Union['XssMatchSetFieldToMatch', dict] = attr.ib(
+    rp_FieldToMatch: typing.Union['PropXssMatchSetFieldToMatch', dict] = attr.ib(
         default=None,
-        converter=XssMatchSetFieldToMatch.from_dict,
-        validator=attr.validators.instance_of(XssMatchSetFieldToMatch),
+        converter=PropXssMatchSetFieldToMatch.from_dict,
+        validator=attr.validators.instance_of(PropXssMatchSetFieldToMatch),
         metadata={AttrMeta.PROPERTY_NAME: "FieldToMatch"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafregional-xssmatchset-xssmatchtuple.html#cfn-wafregional-xssmatchset-xssmatchtuple-fieldtomatch"""
@@ -491,10 +491,10 @@ class RateBasedRule(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "RateLimit"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-ratebasedrule.html#cfn-wafregional-ratebasedrule-ratelimit"""
-    p_MatchPredicates: typing.List[typing.Union['RateBasedRulePredicate', dict]] = attr.ib(
+    p_MatchPredicates: typing.List[typing.Union['PropRateBasedRulePredicate', dict]] = attr.ib(
         default=None,
-        converter=RateBasedRulePredicate.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(RateBasedRulePredicate), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropRateBasedRulePredicate.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropRateBasedRulePredicate), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "MatchPredicates"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-ratebasedrule.html#cfn-wafregional-ratebasedrule-matchpredicates"""
@@ -522,10 +522,10 @@ class SqlInjectionMatchSet(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Name"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-sqlinjectionmatchset.html#cfn-wafregional-sqlinjectionmatchset-name"""
-    p_SqlInjectionMatchTuples: typing.List[typing.Union['SqlInjectionMatchSetSqlInjectionMatchTuple', dict]] = attr.ib(
+    p_SqlInjectionMatchTuples: typing.List[typing.Union['PropSqlInjectionMatchSetSqlInjectionMatchTuple', dict]] = attr.ib(
         default=None,
-        converter=SqlInjectionMatchSetSqlInjectionMatchTuple.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(SqlInjectionMatchSetSqlInjectionMatchTuple), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropSqlInjectionMatchSetSqlInjectionMatchTuple.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropSqlInjectionMatchSetSqlInjectionMatchTuple), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "SqlInjectionMatchTuples"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-sqlinjectionmatchset.html#cfn-wafregional-sqlinjectionmatchset-sqlinjectionmatchtuples"""
@@ -553,10 +553,10 @@ class GeoMatchSet(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Name"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-geomatchset.html#cfn-wafregional-geomatchset-name"""
-    p_GeoMatchConstraints: typing.List[typing.Union['GeoMatchSetGeoMatchConstraint', dict]] = attr.ib(
+    p_GeoMatchConstraints: typing.List[typing.Union['PropGeoMatchSetGeoMatchConstraint', dict]] = attr.ib(
         default=None,
-        converter=GeoMatchSetGeoMatchConstraint.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(GeoMatchSetGeoMatchConstraint), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropGeoMatchSetGeoMatchConstraint.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropGeoMatchSetGeoMatchConstraint), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "GeoMatchConstraints"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-geomatchset.html#cfn-wafregional-geomatchset-geomatchconstraints"""
@@ -640,10 +640,10 @@ class WebACL(Resource):
     AWS_OBJECT_TYPE = "AWS::WAFRegional::WebACL"
 
     
-    rp_DefaultAction: typing.Union['WebACLAction', dict] = attr.ib(
+    rp_DefaultAction: typing.Union['PropWebACLAction', dict] = attr.ib(
         default=None,
-        converter=WebACLAction.from_dict,
-        validator=attr.validators.instance_of(WebACLAction),
+        converter=PropWebACLAction.from_dict,
+        validator=attr.validators.instance_of(PropWebACLAction),
         metadata={AttrMeta.PROPERTY_NAME: "DefaultAction"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-webacl.html#cfn-wafregional-webacl-defaultaction"""
@@ -659,10 +659,10 @@ class WebACL(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Name"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-webacl.html#cfn-wafregional-webacl-name"""
-    p_Rules: typing.List[typing.Union['WebACLRule', dict]] = attr.ib(
+    p_Rules: typing.List[typing.Union['PropWebACLRule', dict]] = attr.ib(
         default=None,
-        converter=WebACLRule.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(WebACLRule), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropWebACLRule.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropWebACLRule), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Rules"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-webacl.html#cfn-wafregional-webacl-rules"""
@@ -690,10 +690,10 @@ class IPSet(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Name"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-ipset.html#cfn-wafregional-ipset-name"""
-    p_IPSetDescriptors: typing.List[typing.Union['IPSetIPSetDescriptor', dict]] = attr.ib(
+    p_IPSetDescriptors: typing.List[typing.Union['PropIPSetIPSetDescriptor', dict]] = attr.ib(
         default=None,
-        converter=IPSetIPSetDescriptor.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(IPSetIPSetDescriptor), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropIPSetIPSetDescriptor.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropIPSetIPSetDescriptor), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "IPSetDescriptors"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-ipset.html#cfn-wafregional-ipset-ipsetdescriptors"""
@@ -721,10 +721,10 @@ class SizeConstraintSet(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Name"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-sizeconstraintset.html#cfn-wafregional-sizeconstraintset-name"""
-    p_SizeConstraints: typing.List[typing.Union['SizeConstraintSetSizeConstraint', dict]] = attr.ib(
+    p_SizeConstraints: typing.List[typing.Union['PropSizeConstraintSetSizeConstraint', dict]] = attr.ib(
         default=None,
-        converter=SizeConstraintSetSizeConstraint.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(SizeConstraintSetSizeConstraint), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropSizeConstraintSetSizeConstraint.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropSizeConstraintSetSizeConstraint), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "SizeConstraints"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-sizeconstraintset.html#cfn-wafregional-sizeconstraintset-sizeconstraints"""
@@ -752,10 +752,10 @@ class XssMatchSet(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Name"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-xssmatchset.html#cfn-wafregional-xssmatchset-name"""
-    p_XssMatchTuples: typing.List[typing.Union['XssMatchSetXssMatchTuple', dict]] = attr.ib(
+    p_XssMatchTuples: typing.List[typing.Union['PropXssMatchSetXssMatchTuple', dict]] = attr.ib(
         default=None,
-        converter=XssMatchSetXssMatchTuple.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(XssMatchSetXssMatchTuple), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropXssMatchSetXssMatchTuple.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropXssMatchSetXssMatchTuple), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "XssMatchTuples"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-xssmatchset.html#cfn-wafregional-xssmatchset-xssmatchtuples"""
@@ -783,10 +783,10 @@ class ByteMatchSet(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Name"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-bytematchset.html#cfn-wafregional-bytematchset-name"""
-    p_ByteMatchTuples: typing.List[typing.Union['ByteMatchSetByteMatchTuple', dict]] = attr.ib(
+    p_ByteMatchTuples: typing.List[typing.Union['PropByteMatchSetByteMatchTuple', dict]] = attr.ib(
         default=None,
-        converter=ByteMatchSetByteMatchTuple.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ByteMatchSetByteMatchTuple), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropByteMatchSetByteMatchTuple.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropByteMatchSetByteMatchTuple), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "ByteMatchTuples"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-bytematchset.html#cfn-wafregional-bytematchset-bytematchtuples"""
@@ -821,10 +821,10 @@ class Rule(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Name"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-rule.html#cfn-wafregional-rule-name"""
-    p_Predicates: typing.List[typing.Union['RulePredicate', dict]] = attr.ib(
+    p_Predicates: typing.List[typing.Union['PropRulePredicate', dict]] = attr.ib(
         default=None,
-        converter=RulePredicate.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(RulePredicate), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropRulePredicate.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropRulePredicate), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Predicates"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafregional-rule.html#cfn-wafregional-rule-predicates"""

@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class RuleBatchRetryStrategy(Property):
+class PropRuleBatchRetryStrategy(Property):
     """
     AWS Object Type = "AWS::Events::Rule.BatchRetryStrategy"
 
@@ -35,7 +35,7 @@ class RuleBatchRetryStrategy(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-batchretrystrategy.html#cfn-events-rule-batchretrystrategy-attempts"""
 
 @attr.s
-class RuleHttpParameters(Property):
+class PropRuleHttpParameters(Property):
     """
     AWS Object Type = "AWS::Events::Rule.HttpParameters"
 
@@ -69,7 +69,7 @@ class RuleHttpParameters(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-httpparameters.html#cfn-events-rule-httpparameters-querystringparameters"""
 
 @attr.s
-class EventBusPolicyCondition(Property):
+class PropEventBusPolicyCondition(Property):
     """
     AWS Object Type = "AWS::Events::EventBusPolicy.Condition"
 
@@ -103,7 +103,7 @@ class EventBusPolicyCondition(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-eventbuspolicy-condition.html#cfn-events-eventbuspolicy-condition-value"""
 
 @attr.s
-class RuleBatchArrayProperties(Property):
+class PropRuleBatchArrayProperties(Property):
     """
     AWS Object Type = "AWS::Events::Rule.BatchArrayProperties"
 
@@ -123,7 +123,7 @@ class RuleBatchArrayProperties(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-batcharrayproperties.html#cfn-events-rule-batcharrayproperties-size"""
 
 @attr.s
-class RuleBatchParameters(Property):
+class PropRuleBatchParameters(Property):
     """
     AWS Object Type = "AWS::Events::Rule.BatchParameters"
 
@@ -150,23 +150,23 @@ class RuleBatchParameters(Property):
         metadata={AttrMeta.PROPERTY_NAME: "JobName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-batchparameters.html#cfn-events-rule-batchparameters-jobname"""
-    p_ArrayProperties: typing.Union['RuleBatchArrayProperties', dict] = attr.ib(
+    p_ArrayProperties: typing.Union['PropRuleBatchArrayProperties', dict] = attr.ib(
         default=None,
-        converter=RuleBatchArrayProperties.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(RuleBatchArrayProperties)),
+        converter=PropRuleBatchArrayProperties.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropRuleBatchArrayProperties)),
         metadata={AttrMeta.PROPERTY_NAME: "ArrayProperties"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-batchparameters.html#cfn-events-rule-batchparameters-arrayproperties"""
-    p_RetryStrategy: typing.Union['RuleBatchRetryStrategy', dict] = attr.ib(
+    p_RetryStrategy: typing.Union['PropRuleBatchRetryStrategy', dict] = attr.ib(
         default=None,
-        converter=RuleBatchRetryStrategy.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(RuleBatchRetryStrategy)),
+        converter=PropRuleBatchRetryStrategy.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropRuleBatchRetryStrategy)),
         metadata={AttrMeta.PROPERTY_NAME: "RetryStrategy"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-batchparameters.html#cfn-events-rule-batchparameters-retrystrategy"""
 
 @attr.s
-class RuleDeadLetterConfig(Property):
+class PropRuleDeadLetterConfig(Property):
     """
     AWS Object Type = "AWS::Events::Rule.DeadLetterConfig"
 
@@ -186,7 +186,7 @@ class RuleDeadLetterConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-deadletterconfig.html#cfn-events-rule-deadletterconfig-arn"""
 
 @attr.s
-class RuleRunCommandTarget(Property):
+class PropRuleRunCommandTarget(Property):
     """
     AWS Object Type = "AWS::Events::Rule.RunCommandTarget"
 
@@ -213,7 +213,7 @@ class RuleRunCommandTarget(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-runcommandtarget.html#cfn-events-rule-runcommandtarget-values"""
 
 @attr.s
-class RuleInputTransformer(Property):
+class PropRuleInputTransformer(Property):
     """
     AWS Object Type = "AWS::Events::Rule.InputTransformer"
 
@@ -240,7 +240,7 @@ class RuleInputTransformer(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-inputtransformer.html#cfn-events-rule-inputtransformer-inputpathsmap"""
 
 @attr.s
-class RuleSqsParameters(Property):
+class PropRuleSqsParameters(Property):
     """
     AWS Object Type = "AWS::Events::Rule.SqsParameters"
 
@@ -260,7 +260,7 @@ class RuleSqsParameters(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-sqsparameters.html#cfn-events-rule-sqsparameters-messagegroupid"""
 
 @attr.s
-class RuleRetryPolicy(Property):
+class PropRuleRetryPolicy(Property):
     """
     AWS Object Type = "AWS::Events::Rule.RetryPolicy"
 
@@ -287,7 +287,7 @@ class RuleRetryPolicy(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-retrypolicy.html#cfn-events-rule-retrypolicy-maximumretryattempts"""
 
 @attr.s
-class RuleKinesisParameters(Property):
+class PropRuleKinesisParameters(Property):
     """
     AWS Object Type = "AWS::Events::Rule.KinesisParameters"
 
@@ -307,7 +307,7 @@ class RuleKinesisParameters(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-kinesisparameters.html#cfn-events-rule-kinesisparameters-partitionkeypath"""
 
 @attr.s
-class RuleRedshiftDataParameters(Property):
+class PropRuleRedshiftDataParameters(Property):
     """
     AWS Object Type = "AWS::Events::Rule.RedshiftDataParameters"
 
@@ -362,7 +362,7 @@ class RuleRedshiftDataParameters(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-redshiftdataparameters.html#cfn-events-rule-redshiftdataparameters-withevent"""
 
 @attr.s
-class RuleAwsVpcConfiguration(Property):
+class PropRuleAwsVpcConfiguration(Property):
     """
     AWS Object Type = "AWS::Events::Rule.AwsVpcConfiguration"
 
@@ -396,7 +396,7 @@ class RuleAwsVpcConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-awsvpcconfiguration.html#cfn-events-rule-awsvpcconfiguration-securitygroups"""
 
 @attr.s
-class RuleRunCommandParameters(Property):
+class PropRuleRunCommandParameters(Property):
     """
     AWS Object Type = "AWS::Events::Rule.RunCommandParameters"
 
@@ -408,16 +408,16 @@ class RuleRunCommandParameters(Property):
     """
     AWS_OBJECT_TYPE = "AWS::Events::Rule.RunCommandParameters"
     
-    rp_RunCommandTargets: typing.List[typing.Union['RuleRunCommandTarget', dict]] = attr.ib(
+    rp_RunCommandTargets: typing.List[typing.Union['PropRuleRunCommandTarget', dict]] = attr.ib(
         default=None,
-        converter=RuleRunCommandTarget.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(RuleRunCommandTarget), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropRuleRunCommandTarget.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropRuleRunCommandTarget), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "RunCommandTargets"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-runcommandparameters.html#cfn-events-rule-runcommandparameters-runcommandtargets"""
 
 @attr.s
-class RuleNetworkConfiguration(Property):
+class PropRuleNetworkConfiguration(Property):
     """
     AWS Object Type = "AWS::Events::Rule.NetworkConfiguration"
 
@@ -429,16 +429,16 @@ class RuleNetworkConfiguration(Property):
     """
     AWS_OBJECT_TYPE = "AWS::Events::Rule.NetworkConfiguration"
     
-    p_AwsVpcConfiguration: typing.Union['RuleAwsVpcConfiguration', dict] = attr.ib(
+    p_AwsVpcConfiguration: typing.Union['PropRuleAwsVpcConfiguration', dict] = attr.ib(
         default=None,
-        converter=RuleAwsVpcConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(RuleAwsVpcConfiguration)),
+        converter=PropRuleAwsVpcConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropRuleAwsVpcConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "AwsVpcConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-networkconfiguration.html#cfn-events-rule-networkconfiguration-awsvpcconfiguration"""
 
 @attr.s
-class RuleEcsParameters(Property):
+class PropRuleEcsParameters(Property):
     """
     AWS Object Type = "AWS::Events::Rule.EcsParameters"
 
@@ -473,10 +473,10 @@ class RuleEcsParameters(Property):
         metadata={AttrMeta.PROPERTY_NAME: "LaunchType"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-ecsparameters.html#cfn-events-rule-ecsparameters-launchtype"""
-    p_NetworkConfiguration: typing.Union['RuleNetworkConfiguration', dict] = attr.ib(
+    p_NetworkConfiguration: typing.Union['PropRuleNetworkConfiguration', dict] = attr.ib(
         default=None,
-        converter=RuleNetworkConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(RuleNetworkConfiguration)),
+        converter=PropRuleNetworkConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropRuleNetworkConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "NetworkConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-ecsparameters.html#cfn-events-rule-ecsparameters-networkconfiguration"""
@@ -494,7 +494,7 @@ class RuleEcsParameters(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-ecsparameters.html#cfn-events-rule-ecsparameters-taskcount"""
 
 @attr.s
-class RuleTarget(Property):
+class PropRuleTarget(Property):
     """
     AWS Object Type = "AWS::Events::Rule.Target"
 
@@ -532,31 +532,31 @@ class RuleTarget(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Id"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html#cfn-events-rule-target-id"""
-    p_BatchParameters: typing.Union['RuleBatchParameters', dict] = attr.ib(
+    p_BatchParameters: typing.Union['PropRuleBatchParameters', dict] = attr.ib(
         default=None,
-        converter=RuleBatchParameters.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(RuleBatchParameters)),
+        converter=PropRuleBatchParameters.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropRuleBatchParameters)),
         metadata={AttrMeta.PROPERTY_NAME: "BatchParameters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html#cfn-events-rule-target-batchparameters"""
-    p_DeadLetterConfig: typing.Union['RuleDeadLetterConfig', dict] = attr.ib(
+    p_DeadLetterConfig: typing.Union['PropRuleDeadLetterConfig', dict] = attr.ib(
         default=None,
-        converter=RuleDeadLetterConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(RuleDeadLetterConfig)),
+        converter=PropRuleDeadLetterConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropRuleDeadLetterConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "DeadLetterConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html#cfn-events-rule-target-deadletterconfig"""
-    p_EcsParameters: typing.Union['RuleEcsParameters', dict] = attr.ib(
+    p_EcsParameters: typing.Union['PropRuleEcsParameters', dict] = attr.ib(
         default=None,
-        converter=RuleEcsParameters.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(RuleEcsParameters)),
+        converter=PropRuleEcsParameters.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropRuleEcsParameters)),
         metadata={AttrMeta.PROPERTY_NAME: "EcsParameters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html#cfn-events-rule-target-ecsparameters"""
-    p_HttpParameters: typing.Union['RuleHttpParameters', dict] = attr.ib(
+    p_HttpParameters: typing.Union['PropRuleHttpParameters', dict] = attr.ib(
         default=None,
-        converter=RuleHttpParameters.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(RuleHttpParameters)),
+        converter=PropRuleHttpParameters.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropRuleHttpParameters)),
         metadata={AttrMeta.PROPERTY_NAME: "HttpParameters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html#cfn-events-rule-target-httpparameters"""
@@ -572,31 +572,31 @@ class RuleTarget(Property):
         metadata={AttrMeta.PROPERTY_NAME: "InputPath"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html#cfn-events-rule-target-inputpath"""
-    p_InputTransformer: typing.Union['RuleInputTransformer', dict] = attr.ib(
+    p_InputTransformer: typing.Union['PropRuleInputTransformer', dict] = attr.ib(
         default=None,
-        converter=RuleInputTransformer.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(RuleInputTransformer)),
+        converter=PropRuleInputTransformer.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropRuleInputTransformer)),
         metadata={AttrMeta.PROPERTY_NAME: "InputTransformer"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html#cfn-events-rule-target-inputtransformer"""
-    p_KinesisParameters: typing.Union['RuleKinesisParameters', dict] = attr.ib(
+    p_KinesisParameters: typing.Union['PropRuleKinesisParameters', dict] = attr.ib(
         default=None,
-        converter=RuleKinesisParameters.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(RuleKinesisParameters)),
+        converter=PropRuleKinesisParameters.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropRuleKinesisParameters)),
         metadata={AttrMeta.PROPERTY_NAME: "KinesisParameters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html#cfn-events-rule-target-kinesisparameters"""
-    p_RedshiftDataParameters: typing.Union['RuleRedshiftDataParameters', dict] = attr.ib(
+    p_RedshiftDataParameters: typing.Union['PropRuleRedshiftDataParameters', dict] = attr.ib(
         default=None,
-        converter=RuleRedshiftDataParameters.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(RuleRedshiftDataParameters)),
+        converter=PropRuleRedshiftDataParameters.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropRuleRedshiftDataParameters)),
         metadata={AttrMeta.PROPERTY_NAME: "RedshiftDataParameters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html#cfn-events-rule-target-redshiftdataparameters"""
-    p_RetryPolicy: typing.Union['RuleRetryPolicy', dict] = attr.ib(
+    p_RetryPolicy: typing.Union['PropRuleRetryPolicy', dict] = attr.ib(
         default=None,
-        converter=RuleRetryPolicy.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(RuleRetryPolicy)),
+        converter=PropRuleRetryPolicy.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropRuleRetryPolicy)),
         metadata={AttrMeta.PROPERTY_NAME: "RetryPolicy"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html#cfn-events-rule-target-retrypolicy"""
@@ -606,17 +606,17 @@ class RuleTarget(Property):
         metadata={AttrMeta.PROPERTY_NAME: "RoleArn"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html#cfn-events-rule-target-rolearn"""
-    p_RunCommandParameters: typing.Union['RuleRunCommandParameters', dict] = attr.ib(
+    p_RunCommandParameters: typing.Union['PropRuleRunCommandParameters', dict] = attr.ib(
         default=None,
-        converter=RuleRunCommandParameters.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(RuleRunCommandParameters)),
+        converter=PropRuleRunCommandParameters.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropRuleRunCommandParameters)),
         metadata={AttrMeta.PROPERTY_NAME: "RunCommandParameters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html#cfn-events-rule-target-runcommandparameters"""
-    p_SqsParameters: typing.Union['RuleSqsParameters', dict] = attr.ib(
+    p_SqsParameters: typing.Union['PropRuleSqsParameters', dict] = attr.ib(
         default=None,
-        converter=RuleSqsParameters.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(RuleSqsParameters)),
+        converter=PropRuleSqsParameters.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropRuleSqsParameters)),
         metadata={AttrMeta.PROPERTY_NAME: "SqsParameters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html#cfn-events-rule-target-sqsparameters"""
@@ -709,10 +709,10 @@ class EventBusPolicy(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Action"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-eventbuspolicy.html#cfn-events-eventbuspolicy-action"""
-    p_Condition: typing.Union['EventBusPolicyCondition', dict] = attr.ib(
+    p_Condition: typing.Union['PropEventBusPolicyCondition', dict] = attr.ib(
         default=None,
-        converter=EventBusPolicyCondition.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(EventBusPolicyCondition)),
+        converter=PropEventBusPolicyCondition.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropEventBusPolicyCondition)),
         metadata={AttrMeta.PROPERTY_NAME: "Condition"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-eventbuspolicy.html#cfn-events-eventbuspolicy-condition"""
@@ -863,10 +863,10 @@ class Rule(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "State"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-rule.html#cfn-events-rule-state"""
-    p_Targets: typing.List[typing.Union['RuleTarget', dict]] = attr.ib(
+    p_Targets: typing.List[typing.Union['PropRuleTarget', dict]] = attr.ib(
         default=None,
-        converter=RuleTarget.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(RuleTarget), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropRuleTarget.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropRuleTarget), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Targets"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-rule.html#cfn-events-rule-targets"""

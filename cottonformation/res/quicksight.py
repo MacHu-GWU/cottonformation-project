@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class DataSetJoinKeyProperties(Property):
+class PropDataSetJoinKeyProperties(Property):
     """
     AWS Object Type = "AWS::QuickSight::DataSet.JoinKeyProperties"
 
@@ -35,7 +35,7 @@ class DataSetJoinKeyProperties(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-joinkeyproperties.html#cfn-quicksight-dataset-joinkeyproperties-uniquekey"""
 
 @attr.s
-class DataSourceAuroraPostgreSqlParameters(Property):
+class PropDataSourceAuroraPostgreSqlParameters(Property):
     """
     AWS Object Type = "AWS::QuickSight::DataSource.AuroraPostgreSqlParameters"
 
@@ -69,7 +69,7 @@ class DataSourceAuroraPostgreSqlParameters(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-aurorapostgresqlparameters.html#cfn-quicksight-datasource-aurorapostgresqlparameters-port"""
 
 @attr.s
-class DataSetUploadSettings(Property):
+class PropDataSetUploadSettings(Property):
     """
     AWS Object Type = "AWS::QuickSight::DataSet.UploadSettings"
 
@@ -117,7 +117,7 @@ class DataSetUploadSettings(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-uploadsettings.html#cfn-quicksight-dataset-uploadsettings-textqualifier"""
 
 @attr.s
-class DashboardSheetControlsOption(Property):
+class PropDashboardSheetControlsOption(Property):
     """
     AWS Object Type = "AWS::QuickSight::Dashboard.SheetControlsOption"
 
@@ -137,7 +137,7 @@ class DashboardSheetControlsOption(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-sheetcontrolsoption.html#cfn-quicksight-dashboard-sheetcontrolsoption-visibilitystate"""
 
 @attr.s
-class AnalysisDecimalParameter(Property):
+class PropAnalysisDecimalParameter(Property):
     """
     AWS Object Type = "AWS::QuickSight::Analysis.DecimalParameter"
 
@@ -164,7 +164,7 @@ class AnalysisDecimalParameter(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-decimalparameter.html#cfn-quicksight-analysis-decimalparameter-values"""
 
 @attr.s
-class AnalysisResourcePermission(Property):
+class PropAnalysisResourcePermission(Property):
     """
     AWS Object Type = "AWS::QuickSight::Analysis.ResourcePermission"
 
@@ -191,7 +191,7 @@ class AnalysisResourcePermission(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-resourcepermission.html#cfn-quicksight-analysis-resourcepermission-principal"""
 
 @attr.s
-class ThemeFont(Property):
+class PropThemeFont(Property):
     """
     AWS Object Type = "AWS::QuickSight::Theme.Font"
 
@@ -211,7 +211,7 @@ class ThemeFont(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-font.html#cfn-quicksight-theme-font-fontfamily"""
 
 @attr.s
-class ThemeBorderStyle(Property):
+class PropThemeBorderStyle(Property):
     """
     AWS Object Type = "AWS::QuickSight::Theme.BorderStyle"
 
@@ -231,7 +231,7 @@ class ThemeBorderStyle(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-borderstyle.html#cfn-quicksight-theme-borderstyle-show"""
 
 @attr.s
-class DataSetProjectOperation(Property):
+class PropDataSetProjectOperation(Property):
     """
     AWS Object Type = "AWS::QuickSight::DataSet.ProjectOperation"
 
@@ -251,7 +251,7 @@ class DataSetProjectOperation(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-projectoperation.html#cfn-quicksight-dataset-projectoperation-projectedcolumns"""
 
 @attr.s
-class DataSetColumnLevelPermissionRule(Property):
+class PropDataSetColumnLevelPermissionRule(Property):
     """
     AWS Object Type = "AWS::QuickSight::DataSet.ColumnLevelPermissionRule"
 
@@ -278,7 +278,7 @@ class DataSetColumnLevelPermissionRule(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-columnlevelpermissionrule.html#cfn-quicksight-dataset-columnlevelpermissionrule-principals"""
 
 @attr.s
-class DashboardResourcePermission(Property):
+class PropDashboardResourcePermission(Property):
     """
     AWS Object Type = "AWS::QuickSight::Dashboard.ResourcePermission"
 
@@ -305,7 +305,7 @@ class DashboardResourcePermission(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-resourcepermission.html#cfn-quicksight-dashboard-resourcepermission-principal"""
 
 @attr.s
-class DataSourceSnowflakeParameters(Property):
+class PropDataSourceSnowflakeParameters(Property):
     """
     AWS Object Type = "AWS::QuickSight::DataSource.SnowflakeParameters"
 
@@ -339,7 +339,7 @@ class DataSourceSnowflakeParameters(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-snowflakeparameters.html#cfn-quicksight-datasource-snowflakeparameters-warehouse"""
 
 @attr.s
-class DataSourceSslProperties(Property):
+class PropDataSourceSslProperties(Property):
     """
     AWS Object Type = "AWS::QuickSight::DataSource.SslProperties"
 
@@ -359,7 +359,7 @@ class DataSourceSslProperties(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-sslproperties.html#cfn-quicksight-datasource-sslproperties-disablessl"""
 
 @attr.s
-class DataSetColumnDescription(Property):
+class PropDataSetColumnDescription(Property):
     """
     AWS Object Type = "AWS::QuickSight::DataSet.ColumnDescription"
 
@@ -379,7 +379,7 @@ class DataSetColumnDescription(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-columndescription.html#cfn-quicksight-dataset-columndescription-text"""
 
 @attr.s
-class AnalysisSheet(Property):
+class PropAnalysisSheet(Property):
     """
     AWS Object Type = "AWS::QuickSight::Analysis.Sheet"
 
@@ -406,7 +406,7 @@ class AnalysisSheet(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-sheet.html#cfn-quicksight-analysis-sheet-sheetid"""
 
 @attr.s
-class DataSetRenameColumnOperation(Property):
+class PropDataSetRenameColumnOperation(Property):
     """
     AWS Object Type = "AWS::QuickSight::DataSet.RenameColumnOperation"
 
@@ -433,7 +433,7 @@ class DataSetRenameColumnOperation(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-renamecolumnoperation.html#cfn-quicksight-dataset-renamecolumnoperation-newcolumnname"""
 
 @attr.s
-class TemplateResourcePermission(Property):
+class PropTemplateResourcePermission(Property):
     """
     AWS Object Type = "AWS::QuickSight::Template.ResourcePermission"
 
@@ -460,7 +460,7 @@ class TemplateResourcePermission(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-resourcepermission.html#cfn-quicksight-template-resourcepermission-principal"""
 
 @attr.s
-class DataSourcePrestoParameters(Property):
+class PropDataSourcePrestoParameters(Property):
     """
     AWS Object Type = "AWS::QuickSight::DataSource.PrestoParameters"
 
@@ -494,7 +494,7 @@ class DataSourcePrestoParameters(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-prestoparameters.html#cfn-quicksight-datasource-prestoparameters-port"""
 
 @attr.s
-class DataSetGeoSpatialColumnGroup(Property):
+class PropDataSetGeoSpatialColumnGroup(Property):
     """
     AWS Object Type = "AWS::QuickSight::DataSet.GeoSpatialColumnGroup"
 
@@ -528,7 +528,7 @@ class DataSetGeoSpatialColumnGroup(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-geospatialcolumngroup.html#cfn-quicksight-dataset-geospatialcolumngroup-countrycode"""
 
 @attr.s
-class DataSourceResourcePermission(Property):
+class PropDataSourceResourcePermission(Property):
     """
     AWS Object Type = "AWS::QuickSight::DataSource.ResourcePermission"
 
@@ -555,7 +555,7 @@ class DataSourceResourcePermission(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-resourcepermission.html#cfn-quicksight-datasource-resourcepermission-principal"""
 
 @attr.s
-class DataSetInputColumn(Property):
+class PropDataSetInputColumn(Property):
     """
     AWS Object Type = "AWS::QuickSight::DataSet.InputColumn"
 
@@ -582,7 +582,7 @@ class DataSetInputColumn(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-inputcolumn.html#cfn-quicksight-dataset-inputcolumn-type"""
 
 @attr.s
-class AnalysisDataSetReference(Property):
+class PropAnalysisDataSetReference(Property):
     """
     AWS Object Type = "AWS::QuickSight::Analysis.DataSetReference"
 
@@ -609,7 +609,7 @@ class AnalysisDataSetReference(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-datasetreference.html#cfn-quicksight-analysis-datasetreference-datasetplaceholder"""
 
 @attr.s
-class DataSourceSparkParameters(Property):
+class PropDataSourceSparkParameters(Property):
     """
     AWS Object Type = "AWS::QuickSight::DataSource.SparkParameters"
 
@@ -636,7 +636,7 @@ class DataSourceSparkParameters(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-sparkparameters.html#cfn-quicksight-datasource-sparkparameters-port"""
 
 @attr.s
-class DataSourceAuroraParameters(Property):
+class PropDataSourceAuroraParameters(Property):
     """
     AWS Object Type = "AWS::QuickSight::DataSource.AuroraParameters"
 
@@ -670,7 +670,7 @@ class DataSourceAuroraParameters(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-auroraparameters.html#cfn-quicksight-datasource-auroraparameters-port"""
 
 @attr.s
-class DataSetRowLevelPermissionDataSet(Property):
+class PropDataSetRowLevelPermissionDataSet(Property):
     """
     AWS Object Type = "AWS::QuickSight::DataSet.RowLevelPermissionDataSet"
 
@@ -704,7 +704,7 @@ class DataSetRowLevelPermissionDataSet(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-rowlevelpermissiondataset.html#cfn-quicksight-dataset-rowlevelpermissiondataset-namespace"""
 
 @attr.s
-class DataSourceMariaDbParameters(Property):
+class PropDataSourceMariaDbParameters(Property):
     """
     AWS Object Type = "AWS::QuickSight::DataSource.MariaDbParameters"
 
@@ -738,7 +738,7 @@ class DataSourceMariaDbParameters(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-mariadbparameters.html#cfn-quicksight-datasource-mariadbparameters-port"""
 
 @attr.s
-class DashboardDataSetReference(Property):
+class PropDashboardDataSetReference(Property):
     """
     AWS Object Type = "AWS::QuickSight::Dashboard.DataSetReference"
 
@@ -765,7 +765,7 @@ class DashboardDataSetReference(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-datasetreference.html#cfn-quicksight-dashboard-datasetreference-datasetplaceholder"""
 
 @attr.s
-class ThemeTileStyle(Property):
+class PropThemeTileStyle(Property):
     """
     AWS Object Type = "AWS::QuickSight::Theme.TileStyle"
 
@@ -777,16 +777,16 @@ class ThemeTileStyle(Property):
     """
     AWS_OBJECT_TYPE = "AWS::QuickSight::Theme.TileStyle"
     
-    p_Border: typing.Union['ThemeBorderStyle', dict] = attr.ib(
+    p_Border: typing.Union['PropThemeBorderStyle', dict] = attr.ib(
         default=None,
-        converter=ThemeBorderStyle.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ThemeBorderStyle)),
+        converter=PropThemeBorderStyle.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropThemeBorderStyle)),
         metadata={AttrMeta.PROPERTY_NAME: "Border"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-tilestyle.html#cfn-quicksight-theme-tilestyle-border"""
 
 @attr.s
-class DashboardStringParameter(Property):
+class PropDashboardStringParameter(Property):
     """
     AWS Object Type = "AWS::QuickSight::Dashboard.StringParameter"
 
@@ -813,7 +813,7 @@ class DashboardStringParameter(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-stringparameter.html#cfn-quicksight-dashboard-stringparameter-values"""
 
 @attr.s
-class AnalysisDateTimeParameter(Property):
+class PropAnalysisDateTimeParameter(Property):
     """
     AWS Object Type = "AWS::QuickSight::Analysis.DateTimeParameter"
 
@@ -840,7 +840,7 @@ class AnalysisDateTimeParameter(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-datetimeparameter.html#cfn-quicksight-analysis-datetimeparameter-values"""
 
 @attr.s
-class DashboardIntegerParameter(Property):
+class PropDashboardIntegerParameter(Property):
     """
     AWS Object Type = "AWS::QuickSight::Dashboard.IntegerParameter"
 
@@ -867,7 +867,7 @@ class DashboardIntegerParameter(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-integerparameter.html#cfn-quicksight-dashboard-integerparameter-values"""
 
 @attr.s
-class DataSourceTeradataParameters(Property):
+class PropDataSourceTeradataParameters(Property):
     """
     AWS Object Type = "AWS::QuickSight::DataSource.TeradataParameters"
 
@@ -901,7 +901,7 @@ class DataSourceTeradataParameters(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-teradataparameters.html#cfn-quicksight-datasource-teradataparameters-port"""
 
 @attr.s
-class ThemeResourcePermission(Property):
+class PropThemeResourcePermission(Property):
     """
     AWS Object Type = "AWS::QuickSight::Theme.ResourcePermission"
 
@@ -928,7 +928,7 @@ class ThemeResourcePermission(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-resourcepermission.html#cfn-quicksight-theme-resourcepermission-principal"""
 
 @attr.s
-class TemplateTemplateSourceTemplate(Property):
+class PropTemplateTemplateSourceTemplate(Property):
     """
     AWS Object Type = "AWS::QuickSight::Template.TemplateSourceTemplate"
 
@@ -948,7 +948,7 @@ class TemplateTemplateSourceTemplate(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-templatesourcetemplate.html#cfn-quicksight-template-templatesourcetemplate-arn"""
 
 @attr.s
-class ThemeMarginStyle(Property):
+class PropThemeMarginStyle(Property):
     """
     AWS Object Type = "AWS::QuickSight::Theme.MarginStyle"
 
@@ -968,7 +968,7 @@ class ThemeMarginStyle(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-marginstyle.html#cfn-quicksight-theme-marginstyle-show"""
 
 @attr.s
-class DashboardExportToCSVOption(Property):
+class PropDashboardExportToCSVOption(Property):
     """
     AWS Object Type = "AWS::QuickSight::Dashboard.ExportToCSVOption"
 
@@ -988,7 +988,7 @@ class DashboardExportToCSVOption(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-exporttocsvoption.html#cfn-quicksight-dashboard-exporttocsvoption-availabilitystatus"""
 
 @attr.s
-class DataSourceAthenaParameters(Property):
+class PropDataSourceAthenaParameters(Property):
     """
     AWS Object Type = "AWS::QuickSight::DataSource.AthenaParameters"
 
@@ -1008,7 +1008,7 @@ class DataSourceAthenaParameters(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-athenaparameters.html#cfn-quicksight-datasource-athenaparameters-workgroup"""
 
 @attr.s
-class ThemeGutterStyle(Property):
+class PropThemeGutterStyle(Property):
     """
     AWS Object Type = "AWS::QuickSight::Theme.GutterStyle"
 
@@ -1028,7 +1028,7 @@ class ThemeGutterStyle(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-gutterstyle.html#cfn-quicksight-theme-gutterstyle-show"""
 
 @attr.s
-class DataSourceManifestFileLocation(Property):
+class PropDataSourceManifestFileLocation(Property):
     """
     AWS Object Type = "AWS::QuickSight::DataSource.ManifestFileLocation"
 
@@ -1055,7 +1055,7 @@ class DataSourceManifestFileLocation(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-manifestfilelocation.html#cfn-quicksight-datasource-manifestfilelocation-key"""
 
 @attr.s
-class DataSetFilterOperation(Property):
+class PropDataSetFilterOperation(Property):
     """
     AWS Object Type = "AWS::QuickSight::DataSet.FilterOperation"
 
@@ -1075,7 +1075,7 @@ class DataSetFilterOperation(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-filteroperation.html#cfn-quicksight-dataset-filteroperation-conditionexpression"""
 
 @attr.s
-class ThemeDataColorPalette(Property):
+class PropThemeDataColorPalette(Property):
     """
     AWS Object Type = "AWS::QuickSight::Theme.DataColorPalette"
 
@@ -1109,7 +1109,7 @@ class ThemeDataColorPalette(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-datacolorpalette.html#cfn-quicksight-theme-datacolorpalette-minmaxgradient"""
 
 @attr.s
-class DataSetCustomSql(Property):
+class PropDataSetCustomSql(Property):
     """
     AWS Object Type = "AWS::QuickSight::DataSet.CustomSql"
 
@@ -1124,10 +1124,10 @@ class DataSetCustomSql(Property):
     """
     AWS_OBJECT_TYPE = "AWS::QuickSight::DataSet.CustomSql"
     
-    rp_Columns: typing.List[typing.Union['DataSetInputColumn', dict]] = attr.ib(
+    rp_Columns: typing.List[typing.Union['PropDataSetInputColumn', dict]] = attr.ib(
         default=None,
-        converter=DataSetInputColumn.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(DataSetInputColumn), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropDataSetInputColumn.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDataSetInputColumn), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "Columns"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-customsql.html#cfn-quicksight-dataset-customsql-columns"""
@@ -1151,7 +1151,7 @@ class DataSetCustomSql(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-customsql.html#cfn-quicksight-dataset-customsql-sqlquery"""
 
 @attr.s
-class TemplateDataSetReference(Property):
+class PropTemplateDataSetReference(Property):
     """
     AWS Object Type = "AWS::QuickSight::Template.DataSetReference"
 
@@ -1178,7 +1178,7 @@ class TemplateDataSetReference(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-datasetreference.html#cfn-quicksight-template-datasetreference-datasetplaceholder"""
 
 @attr.s
-class DataSourceMySqlParameters(Property):
+class PropDataSourceMySqlParameters(Property):
     """
     AWS Object Type = "AWS::QuickSight::DataSource.MySqlParameters"
 
@@ -1212,7 +1212,7 @@ class DataSourceMySqlParameters(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-mysqlparameters.html#cfn-quicksight-datasource-mysqlparameters-port"""
 
 @attr.s
-class AnalysisIntegerParameter(Property):
+class PropAnalysisIntegerParameter(Property):
     """
     AWS Object Type = "AWS::QuickSight::Analysis.IntegerParameter"
 
@@ -1239,7 +1239,7 @@ class AnalysisIntegerParameter(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-integerparameter.html#cfn-quicksight-analysis-integerparameter-values"""
 
 @attr.s
-class DataSourceOracleParameters(Property):
+class PropDataSourceOracleParameters(Property):
     """
     AWS Object Type = "AWS::QuickSight::DataSource.OracleParameters"
 
@@ -1273,7 +1273,7 @@ class DataSourceOracleParameters(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-oracleparameters.html#cfn-quicksight-datasource-oracleparameters-port"""
 
 @attr.s
-class DashboardDecimalParameter(Property):
+class PropDashboardDecimalParameter(Property):
     """
     AWS Object Type = "AWS::QuickSight::Dashboard.DecimalParameter"
 
@@ -1300,7 +1300,7 @@ class DashboardDecimalParameter(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-decimalparameter.html#cfn-quicksight-dashboard-decimalparameter-values"""
 
 @attr.s
-class DataSourceAmazonElasticsearchParameters(Property):
+class PropDataSourceAmazonElasticsearchParameters(Property):
     """
     AWS Object Type = "AWS::QuickSight::DataSource.AmazonElasticsearchParameters"
 
@@ -1320,7 +1320,7 @@ class DataSourceAmazonElasticsearchParameters(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-amazonelasticsearchparameters.html#cfn-quicksight-datasource-amazonelasticsearchparameters-domain"""
 
 @attr.s
-class AnalysisStringParameter(Property):
+class PropAnalysisStringParameter(Property):
     """
     AWS Object Type = "AWS::QuickSight::Analysis.StringParameter"
 
@@ -1347,7 +1347,7 @@ class AnalysisStringParameter(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-stringparameter.html#cfn-quicksight-analysis-stringparameter-values"""
 
 @attr.s
-class DataSetResourcePermission(Property):
+class PropDataSetResourcePermission(Property):
     """
     AWS Object Type = "AWS::QuickSight::DataSet.ResourcePermission"
 
@@ -1374,7 +1374,7 @@ class DataSetResourcePermission(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-resourcepermission.html#cfn-quicksight-dataset-resourcepermission-principal"""
 
 @attr.s
-class DataSetFieldFolder(Property):
+class PropDataSetFieldFolder(Property):
     """
     AWS Object Type = "AWS::QuickSight::DataSet.FieldFolder"
 
@@ -1401,7 +1401,7 @@ class DataSetFieldFolder(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-fieldfolder.html#cfn-quicksight-dataset-fieldfolder-description"""
 
 @attr.s
-class DataSetS3Source(Property):
+class PropDataSetS3Source(Property):
     """
     AWS Object Type = "AWS::QuickSight::DataSet.S3Source"
 
@@ -1421,23 +1421,23 @@ class DataSetS3Source(Property):
         metadata={AttrMeta.PROPERTY_NAME: "DataSourceArn"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-s3source.html#cfn-quicksight-dataset-s3source-datasourcearn"""
-    rp_InputColumns: typing.List[typing.Union['DataSetInputColumn', dict]] = attr.ib(
+    rp_InputColumns: typing.List[typing.Union['PropDataSetInputColumn', dict]] = attr.ib(
         default=None,
-        converter=DataSetInputColumn.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(DataSetInputColumn), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropDataSetInputColumn.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDataSetInputColumn), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "InputColumns"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-s3source.html#cfn-quicksight-dataset-s3source-inputcolumns"""
-    p_UploadSettings: typing.Union['DataSetUploadSettings', dict] = attr.ib(
+    p_UploadSettings: typing.Union['PropDataSetUploadSettings', dict] = attr.ib(
         default=None,
-        converter=DataSetUploadSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DataSetUploadSettings)),
+        converter=PropDataSetUploadSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataSetUploadSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "UploadSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-s3source.html#cfn-quicksight-dataset-s3source-uploadsettings"""
 
 @attr.s
-class DataSourceDataSourceErrorInfo(Property):
+class PropDataSourceDataSourceErrorInfo(Property):
     """
     AWS Object Type = "AWS::QuickSight::DataSource.DataSourceErrorInfo"
 
@@ -1464,7 +1464,7 @@ class DataSourceDataSourceErrorInfo(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-datasourceerrorinfo.html#cfn-quicksight-datasource-datasourceerrorinfo-type"""
 
 @attr.s
-class DataSourceVpcConnectionProperties(Property):
+class PropDataSourceVpcConnectionProperties(Property):
     """
     AWS Object Type = "AWS::QuickSight::DataSource.VpcConnectionProperties"
 
@@ -1484,7 +1484,7 @@ class DataSourceVpcConnectionProperties(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-vpcconnectionproperties.html#cfn-quicksight-datasource-vpcconnectionproperties-vpcconnectionarn"""
 
 @attr.s
-class DataSourceRedshiftParameters(Property):
+class PropDataSourceRedshiftParameters(Property):
     """
     AWS Object Type = "AWS::QuickSight::DataSource.RedshiftParameters"
 
@@ -1525,7 +1525,7 @@ class DataSourceRedshiftParameters(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-redshiftparameters.html#cfn-quicksight-datasource-redshiftparameters-port"""
 
 @attr.s
-class AnalysisAnalysisError(Property):
+class PropAnalysisAnalysisError(Property):
     """
     AWS Object Type = "AWS::QuickSight::Analysis.AnalysisError"
 
@@ -1552,7 +1552,7 @@ class AnalysisAnalysisError(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-analysiserror.html#cfn-quicksight-analysis-analysiserror-type"""
 
 @attr.s
-class DashboardDateTimeParameter(Property):
+class PropDashboardDateTimeParameter(Property):
     """
     AWS Object Type = "AWS::QuickSight::Dashboard.DateTimeParameter"
 
@@ -1579,7 +1579,7 @@ class DashboardDateTimeParameter(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-datetimeparameter.html#cfn-quicksight-dashboard-datetimeparameter-values"""
 
 @attr.s
-class ThemeUIColorPalette(Property):
+class PropThemeUIColorPalette(Property):
     """
     AWS Object Type = "AWS::QuickSight::Theme.UIColorPalette"
 
@@ -1704,7 +1704,7 @@ class ThemeUIColorPalette(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-uicolorpalette.html#cfn-quicksight-theme-uicolorpalette-warningforeground"""
 
 @attr.s
-class DataSetJoinInstruction(Property):
+class PropDataSetJoinInstruction(Property):
     """
     AWS Object Type = "AWS::QuickSight::DataSet.JoinInstruction"
 
@@ -1745,23 +1745,23 @@ class DataSetJoinInstruction(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Type"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-joininstruction.html#cfn-quicksight-dataset-joininstruction-type"""
-    p_LeftJoinKeyProperties: typing.Union['DataSetJoinKeyProperties', dict] = attr.ib(
+    p_LeftJoinKeyProperties: typing.Union['PropDataSetJoinKeyProperties', dict] = attr.ib(
         default=None,
-        converter=DataSetJoinKeyProperties.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DataSetJoinKeyProperties)),
+        converter=PropDataSetJoinKeyProperties.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataSetJoinKeyProperties)),
         metadata={AttrMeta.PROPERTY_NAME: "LeftJoinKeyProperties"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-joininstruction.html#cfn-quicksight-dataset-joininstruction-leftjoinkeyproperties"""
-    p_RightJoinKeyProperties: typing.Union['DataSetJoinKeyProperties', dict] = attr.ib(
+    p_RightJoinKeyProperties: typing.Union['PropDataSetJoinKeyProperties', dict] = attr.ib(
         default=None,
-        converter=DataSetJoinKeyProperties.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DataSetJoinKeyProperties)),
+        converter=PropDataSetJoinKeyProperties.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataSetJoinKeyProperties)),
         metadata={AttrMeta.PROPERTY_NAME: "RightJoinKeyProperties"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-joininstruction.html#cfn-quicksight-dataset-joininstruction-rightjoinkeyproperties"""
 
 @attr.s
-class DataSetOutputColumn(Property):
+class PropDataSetOutputColumn(Property):
     """
     AWS Object Type = "AWS::QuickSight::DataSet.OutputColumn"
 
@@ -1795,7 +1795,7 @@ class DataSetOutputColumn(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-outputcolumn.html#cfn-quicksight-dataset-outputcolumn-type"""
 
 @attr.s
-class DataSetColumnTag(Property):
+class PropDataSetColumnTag(Property):
     """
     AWS Object Type = "AWS::QuickSight::DataSet.ColumnTag"
 
@@ -1808,10 +1808,10 @@ class DataSetColumnTag(Property):
     """
     AWS_OBJECT_TYPE = "AWS::QuickSight::DataSet.ColumnTag"
     
-    p_ColumnDescription: typing.Union['DataSetColumnDescription', dict] = attr.ib(
+    p_ColumnDescription: typing.Union['PropDataSetColumnDescription', dict] = attr.ib(
         default=None,
-        converter=DataSetColumnDescription.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DataSetColumnDescription)),
+        converter=PropDataSetColumnDescription.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataSetColumnDescription)),
         metadata={AttrMeta.PROPERTY_NAME: "ColumnDescription"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-columntag.html#cfn-quicksight-dataset-columntag-columndescription"""
@@ -1823,7 +1823,7 @@ class DataSetColumnTag(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-columntag.html#cfn-quicksight-dataset-columntag-columngeographicrole"""
 
 @attr.s
-class DataSetTagColumnOperation(Property):
+class PropDataSetTagColumnOperation(Property):
     """
     AWS Object Type = "AWS::QuickSight::DataSet.TagColumnOperation"
 
@@ -1842,16 +1842,16 @@ class DataSetTagColumnOperation(Property):
         metadata={AttrMeta.PROPERTY_NAME: "ColumnName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-tagcolumnoperation.html#cfn-quicksight-dataset-tagcolumnoperation-columnname"""
-    rp_Tags: typing.List[typing.Union['DataSetColumnTag', dict]] = attr.ib(
+    rp_Tags: typing.List[typing.Union['PropDataSetColumnTag', dict]] = attr.ib(
         default=None,
-        converter=DataSetColumnTag.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(DataSetColumnTag), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropDataSetColumnTag.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDataSetColumnTag), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "Tags"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-tagcolumnoperation.html#cfn-quicksight-dataset-tagcolumnoperation-tags"""
 
 @attr.s
-class ThemeTileLayoutStyle(Property):
+class PropThemeTileLayoutStyle(Property):
     """
     AWS Object Type = "AWS::QuickSight::Theme.TileLayoutStyle"
 
@@ -1864,23 +1864,23 @@ class ThemeTileLayoutStyle(Property):
     """
     AWS_OBJECT_TYPE = "AWS::QuickSight::Theme.TileLayoutStyle"
     
-    p_Gutter: typing.Union['ThemeGutterStyle', dict] = attr.ib(
+    p_Gutter: typing.Union['PropThemeGutterStyle', dict] = attr.ib(
         default=None,
-        converter=ThemeGutterStyle.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ThemeGutterStyle)),
+        converter=PropThemeGutterStyle.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropThemeGutterStyle)),
         metadata={AttrMeta.PROPERTY_NAME: "Gutter"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-tilelayoutstyle.html#cfn-quicksight-theme-tilelayoutstyle-gutter"""
-    p_Margin: typing.Union['ThemeMarginStyle', dict] = attr.ib(
+    p_Margin: typing.Union['PropThemeMarginStyle', dict] = attr.ib(
         default=None,
-        converter=ThemeMarginStyle.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ThemeMarginStyle)),
+        converter=PropThemeMarginStyle.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropThemeMarginStyle)),
         metadata={AttrMeta.PROPERTY_NAME: "Margin"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-tilelayoutstyle.html#cfn-quicksight-theme-tilelayoutstyle-margin"""
 
 @attr.s
-class DataSourcePostgreSqlParameters(Property):
+class PropDataSourcePostgreSqlParameters(Property):
     """
     AWS Object Type = "AWS::QuickSight::DataSource.PostgreSqlParameters"
 
@@ -1914,7 +1914,7 @@ class DataSourcePostgreSqlParameters(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-postgresqlparameters.html#cfn-quicksight-datasource-postgresqlparameters-port"""
 
 @attr.s
-class DataSourceRdsParameters(Property):
+class PropDataSourceRdsParameters(Property):
     """
     AWS Object Type = "AWS::QuickSight::DataSource.RdsParameters"
 
@@ -1941,7 +1941,7 @@ class DataSourceRdsParameters(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-rdsparameters.html#cfn-quicksight-datasource-rdsparameters-instanceid"""
 
 @attr.s
-class DashboardAdHocFilteringOption(Property):
+class PropDashboardAdHocFilteringOption(Property):
     """
     AWS Object Type = "AWS::QuickSight::Dashboard.AdHocFilteringOption"
 
@@ -1961,7 +1961,7 @@ class DashboardAdHocFilteringOption(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-adhocfilteringoption.html#cfn-quicksight-dashboard-adhocfilteringoption-availabilitystatus"""
 
 @attr.s
-class ThemeTypography(Property):
+class PropThemeTypography(Property):
     """
     AWS Object Type = "AWS::QuickSight::Theme.Typography"
 
@@ -1973,16 +1973,16 @@ class ThemeTypography(Property):
     """
     AWS_OBJECT_TYPE = "AWS::QuickSight::Theme.Typography"
     
-    p_FontFamilies: typing.List[typing.Union['ThemeFont', dict]] = attr.ib(
+    p_FontFamilies: typing.List[typing.Union['PropThemeFont', dict]] = attr.ib(
         default=None,
-        converter=ThemeFont.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ThemeFont), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropThemeFont.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropThemeFont), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "FontFamilies"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-typography.html#cfn-quicksight-theme-typography-fontfamilies"""
 
 @attr.s
-class DataSetIngestionWaitPolicy(Property):
+class PropDataSetIngestionWaitPolicy(Property):
     """
     AWS Object Type = "AWS::QuickSight::DataSet.IngestionWaitPolicy"
 
@@ -2009,7 +2009,7 @@ class DataSetIngestionWaitPolicy(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-ingestionwaitpolicy.html#cfn-quicksight-dataset-ingestionwaitpolicy-waitforspiceingestion"""
 
 @attr.s
-class DataSetCalculatedColumn(Property):
+class PropDataSetCalculatedColumn(Property):
     """
     AWS Object Type = "AWS::QuickSight::DataSet.CalculatedColumn"
 
@@ -2043,7 +2043,7 @@ class DataSetCalculatedColumn(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-calculatedcolumn.html#cfn-quicksight-dataset-calculatedcolumn-expression"""
 
 @attr.s
-class DataSetCastColumnTypeOperation(Property):
+class PropDataSetCastColumnTypeOperation(Property):
     """
     AWS Object Type = "AWS::QuickSight::DataSet.CastColumnTypeOperation"
 
@@ -2077,7 +2077,7 @@ class DataSetCastColumnTypeOperation(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-castcolumntypeoperation.html#cfn-quicksight-dataset-castcolumntypeoperation-format"""
 
 @attr.s
-class DataSetLogicalTableSource(Property):
+class PropDataSetLogicalTableSource(Property):
     """
     AWS Object Type = "AWS::QuickSight::DataSet.LogicalTableSource"
 
@@ -2090,10 +2090,10 @@ class DataSetLogicalTableSource(Property):
     """
     AWS_OBJECT_TYPE = "AWS::QuickSight::DataSet.LogicalTableSource"
     
-    p_JoinInstruction: typing.Union['DataSetJoinInstruction', dict] = attr.ib(
+    p_JoinInstruction: typing.Union['PropDataSetJoinInstruction', dict] = attr.ib(
         default=None,
-        converter=DataSetJoinInstruction.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DataSetJoinInstruction)),
+        converter=PropDataSetJoinInstruction.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataSetJoinInstruction)),
         metadata={AttrMeta.PROPERTY_NAME: "JoinInstruction"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-logicaltablesource.html#cfn-quicksight-dataset-logicaltablesource-joininstruction"""
@@ -2105,7 +2105,7 @@ class DataSetLogicalTableSource(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-logicaltablesource.html#cfn-quicksight-dataset-logicaltablesource-physicaltableid"""
 
 @attr.s
-class DataSourceSqlServerParameters(Property):
+class PropDataSourceSqlServerParameters(Property):
     """
     AWS Object Type = "AWS::QuickSight::DataSource.SqlServerParameters"
 
@@ -2139,7 +2139,7 @@ class DataSourceSqlServerParameters(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-sqlserverparameters.html#cfn-quicksight-datasource-sqlserverparameters-port"""
 
 @attr.s
-class TemplateTemplateSourceAnalysis(Property):
+class PropTemplateTemplateSourceAnalysis(Property):
     """
     AWS Object Type = "AWS::QuickSight::Template.TemplateSourceAnalysis"
 
@@ -2158,16 +2158,16 @@ class TemplateTemplateSourceAnalysis(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Arn"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-templatesourceanalysis.html#cfn-quicksight-template-templatesourceanalysis-arn"""
-    rp_DataSetReferences: typing.List[typing.Union['TemplateDataSetReference', dict]] = attr.ib(
+    rp_DataSetReferences: typing.List[typing.Union['PropTemplateDataSetReference', dict]] = attr.ib(
         default=None,
-        converter=TemplateDataSetReference.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TemplateDataSetReference), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropTemplateDataSetReference.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropTemplateDataSetReference), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "DataSetReferences"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-templatesourceanalysis.html#cfn-quicksight-template-templatesourceanalysis-datasetreferences"""
 
 @attr.s
-class DataSetCreateColumnsOperation(Property):
+class PropDataSetCreateColumnsOperation(Property):
     """
     AWS Object Type = "AWS::QuickSight::DataSet.CreateColumnsOperation"
 
@@ -2179,16 +2179,16 @@ class DataSetCreateColumnsOperation(Property):
     """
     AWS_OBJECT_TYPE = "AWS::QuickSight::DataSet.CreateColumnsOperation"
     
-    rp_Columns: typing.List[typing.Union['DataSetCalculatedColumn', dict]] = attr.ib(
+    rp_Columns: typing.List[typing.Union['PropDataSetCalculatedColumn', dict]] = attr.ib(
         default=None,
-        converter=DataSetCalculatedColumn.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(DataSetCalculatedColumn), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropDataSetCalculatedColumn.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDataSetCalculatedColumn), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "Columns"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-createcolumnsoperation.html#cfn-quicksight-dataset-createcolumnsoperation-columns"""
 
 @attr.s
-class AnalysisAnalysisSourceTemplate(Property):
+class PropAnalysisAnalysisSourceTemplate(Property):
     """
     AWS Object Type = "AWS::QuickSight::Analysis.AnalysisSourceTemplate"
 
@@ -2207,16 +2207,16 @@ class AnalysisAnalysisSourceTemplate(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Arn"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-analysissourcetemplate.html#cfn-quicksight-analysis-analysissourcetemplate-arn"""
-    rp_DataSetReferences: typing.List[typing.Union['AnalysisDataSetReference', dict]] = attr.ib(
+    rp_DataSetReferences: typing.List[typing.Union['PropAnalysisDataSetReference', dict]] = attr.ib(
         default=None,
-        converter=AnalysisDataSetReference.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(AnalysisDataSetReference), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropAnalysisDataSetReference.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropAnalysisDataSetReference), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "DataSetReferences"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-analysissourcetemplate.html#cfn-quicksight-analysis-analysissourcetemplate-datasetreferences"""
 
 @attr.s
-class DataSourceS3Parameters(Property):
+class PropDataSourceS3Parameters(Property):
     """
     AWS Object Type = "AWS::QuickSight::DataSource.S3Parameters"
 
@@ -2228,16 +2228,16 @@ class DataSourceS3Parameters(Property):
     """
     AWS_OBJECT_TYPE = "AWS::QuickSight::DataSource.S3Parameters"
     
-    rp_ManifestFileLocation: typing.Union['DataSourceManifestFileLocation', dict] = attr.ib(
+    rp_ManifestFileLocation: typing.Union['PropDataSourceManifestFileLocation', dict] = attr.ib(
         default=None,
-        converter=DataSourceManifestFileLocation.from_dict,
-        validator=attr.validators.instance_of(DataSourceManifestFileLocation),
+        converter=PropDataSourceManifestFileLocation.from_dict,
+        validator=attr.validators.instance_of(PropDataSourceManifestFileLocation),
         metadata={AttrMeta.PROPERTY_NAME: "ManifestFileLocation"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-s3parameters.html#cfn-quicksight-datasource-s3parameters-manifestfilelocation"""
 
 @attr.s
-class AnalysisAnalysisSourceEntity(Property):
+class PropAnalysisAnalysisSourceEntity(Property):
     """
     AWS Object Type = "AWS::QuickSight::Analysis.AnalysisSourceEntity"
 
@@ -2249,16 +2249,16 @@ class AnalysisAnalysisSourceEntity(Property):
     """
     AWS_OBJECT_TYPE = "AWS::QuickSight::Analysis.AnalysisSourceEntity"
     
-    p_SourceTemplate: typing.Union['AnalysisAnalysisSourceTemplate', dict] = attr.ib(
+    p_SourceTemplate: typing.Union['PropAnalysisAnalysisSourceTemplate', dict] = attr.ib(
         default=None,
-        converter=AnalysisAnalysisSourceTemplate.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(AnalysisAnalysisSourceTemplate)),
+        converter=PropAnalysisAnalysisSourceTemplate.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropAnalysisAnalysisSourceTemplate)),
         metadata={AttrMeta.PROPERTY_NAME: "SourceTemplate"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-analysissourceentity.html#cfn-quicksight-analysis-analysissourceentity-sourcetemplate"""
 
 @attr.s
-class DashboardParameters(Property):
+class PropDashboardParameters(Property):
     """
     AWS Object Type = "AWS::QuickSight::Dashboard.Parameters"
 
@@ -2273,37 +2273,37 @@ class DashboardParameters(Property):
     """
     AWS_OBJECT_TYPE = "AWS::QuickSight::Dashboard.Parameters"
     
-    p_DateTimeParameters: typing.List[typing.Union['DashboardDateTimeParameter', dict]] = attr.ib(
+    p_DateTimeParameters: typing.List[typing.Union['PropDashboardDateTimeParameter', dict]] = attr.ib(
         default=None,
-        converter=DashboardDateTimeParameter.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(DashboardDateTimeParameter), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropDashboardDateTimeParameter.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDashboardDateTimeParameter), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "DateTimeParameters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-parameters.html#cfn-quicksight-dashboard-parameters-datetimeparameters"""
-    p_DecimalParameters: typing.List[typing.Union['DashboardDecimalParameter', dict]] = attr.ib(
+    p_DecimalParameters: typing.List[typing.Union['PropDashboardDecimalParameter', dict]] = attr.ib(
         default=None,
-        converter=DashboardDecimalParameter.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(DashboardDecimalParameter), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropDashboardDecimalParameter.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDashboardDecimalParameter), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "DecimalParameters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-parameters.html#cfn-quicksight-dashboard-parameters-decimalparameters"""
-    p_IntegerParameters: typing.List[typing.Union['DashboardIntegerParameter', dict]] = attr.ib(
+    p_IntegerParameters: typing.List[typing.Union['PropDashboardIntegerParameter', dict]] = attr.ib(
         default=None,
-        converter=DashboardIntegerParameter.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(DashboardIntegerParameter), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropDashboardIntegerParameter.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDashboardIntegerParameter), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "IntegerParameters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-parameters.html#cfn-quicksight-dashboard-parameters-integerparameters"""
-    p_StringParameters: typing.List[typing.Union['DashboardStringParameter', dict]] = attr.ib(
+    p_StringParameters: typing.List[typing.Union['PropDashboardStringParameter', dict]] = attr.ib(
         default=None,
-        converter=DashboardStringParameter.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(DashboardStringParameter), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropDashboardStringParameter.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDashboardStringParameter), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "StringParameters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-parameters.html#cfn-quicksight-dashboard-parameters-stringparameters"""
 
 @attr.s
-class DataSetColumnGroup(Property):
+class PropDataSetColumnGroup(Property):
     """
     AWS Object Type = "AWS::QuickSight::DataSet.ColumnGroup"
 
@@ -2315,16 +2315,16 @@ class DataSetColumnGroup(Property):
     """
     AWS_OBJECT_TYPE = "AWS::QuickSight::DataSet.ColumnGroup"
     
-    p_GeoSpatialColumnGroup: typing.Union['DataSetGeoSpatialColumnGroup', dict] = attr.ib(
+    p_GeoSpatialColumnGroup: typing.Union['PropDataSetGeoSpatialColumnGroup', dict] = attr.ib(
         default=None,
-        converter=DataSetGeoSpatialColumnGroup.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DataSetGeoSpatialColumnGroup)),
+        converter=PropDataSetGeoSpatialColumnGroup.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataSetGeoSpatialColumnGroup)),
         metadata={AttrMeta.PROPERTY_NAME: "GeoSpatialColumnGroup"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-columngroup.html#cfn-quicksight-dataset-columngroup-geospatialcolumngroup"""
 
 @attr.s
-class DashboardDashboardSourceTemplate(Property):
+class PropDashboardDashboardSourceTemplate(Property):
     """
     AWS Object Type = "AWS::QuickSight::Dashboard.DashboardSourceTemplate"
 
@@ -2343,16 +2343,16 @@ class DashboardDashboardSourceTemplate(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Arn"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-dashboardsourcetemplate.html#cfn-quicksight-dashboard-dashboardsourcetemplate-arn"""
-    rp_DataSetReferences: typing.List[typing.Union['DashboardDataSetReference', dict]] = attr.ib(
+    rp_DataSetReferences: typing.List[typing.Union['PropDashboardDataSetReference', dict]] = attr.ib(
         default=None,
-        converter=DashboardDataSetReference.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(DashboardDataSetReference), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropDashboardDataSetReference.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDashboardDataSetReference), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "DataSetReferences"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-dashboardsourcetemplate.html#cfn-quicksight-dashboard-dashboardsourcetemplate-datasetreferences"""
 
 @attr.s
-class DataSetRelationalTable(Property):
+class PropDataSetRelationalTable(Property):
     """
     AWS Object Type = "AWS::QuickSight::DataSet.RelationalTable"
 
@@ -2374,10 +2374,10 @@ class DataSetRelationalTable(Property):
         metadata={AttrMeta.PROPERTY_NAME: "DataSourceArn"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-relationaltable.html#cfn-quicksight-dataset-relationaltable-datasourcearn"""
-    rp_InputColumns: typing.List[typing.Union['DataSetInputColumn', dict]] = attr.ib(
+    rp_InputColumns: typing.List[typing.Union['PropDataSetInputColumn', dict]] = attr.ib(
         default=None,
-        converter=DataSetInputColumn.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(DataSetInputColumn), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropDataSetInputColumn.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDataSetInputColumn), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "InputColumns"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-relationaltable.html#cfn-quicksight-dataset-relationaltable-inputcolumns"""
@@ -2401,7 +2401,7 @@ class DataSetRelationalTable(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-relationaltable.html#cfn-quicksight-dataset-relationaltable-schema"""
 
 @attr.s
-class DashboardDashboardPublishOptions(Property):
+class PropDashboardDashboardPublishOptions(Property):
     """
     AWS Object Type = "AWS::QuickSight::Dashboard.DashboardPublishOptions"
 
@@ -2415,30 +2415,30 @@ class DashboardDashboardPublishOptions(Property):
     """
     AWS_OBJECT_TYPE = "AWS::QuickSight::Dashboard.DashboardPublishOptions"
     
-    p_AdHocFilteringOption: typing.Union['DashboardAdHocFilteringOption', dict] = attr.ib(
+    p_AdHocFilteringOption: typing.Union['PropDashboardAdHocFilteringOption', dict] = attr.ib(
         default=None,
-        converter=DashboardAdHocFilteringOption.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DashboardAdHocFilteringOption)),
+        converter=PropDashboardAdHocFilteringOption.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDashboardAdHocFilteringOption)),
         metadata={AttrMeta.PROPERTY_NAME: "AdHocFilteringOption"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-dashboardpublishoptions.html#cfn-quicksight-dashboard-dashboardpublishoptions-adhocfilteringoption"""
-    p_ExportToCSVOption: typing.Union['DashboardExportToCSVOption', dict] = attr.ib(
+    p_ExportToCSVOption: typing.Union['PropDashboardExportToCSVOption', dict] = attr.ib(
         default=None,
-        converter=DashboardExportToCSVOption.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DashboardExportToCSVOption)),
+        converter=PropDashboardExportToCSVOption.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDashboardExportToCSVOption)),
         metadata={AttrMeta.PROPERTY_NAME: "ExportToCSVOption"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-dashboardpublishoptions.html#cfn-quicksight-dashboard-dashboardpublishoptions-exporttocsvoption"""
-    p_SheetControlsOption: typing.Union['DashboardSheetControlsOption', dict] = attr.ib(
+    p_SheetControlsOption: typing.Union['PropDashboardSheetControlsOption', dict] = attr.ib(
         default=None,
-        converter=DashboardSheetControlsOption.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DashboardSheetControlsOption)),
+        converter=PropDashboardSheetControlsOption.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDashboardSheetControlsOption)),
         metadata={AttrMeta.PROPERTY_NAME: "SheetControlsOption"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-dashboardpublishoptions.html#cfn-quicksight-dashboard-dashboardpublishoptions-sheetcontrolsoption"""
 
 @attr.s
-class AnalysisParameters(Property):
+class PropAnalysisParameters(Property):
     """
     AWS Object Type = "AWS::QuickSight::Analysis.Parameters"
 
@@ -2453,37 +2453,37 @@ class AnalysisParameters(Property):
     """
     AWS_OBJECT_TYPE = "AWS::QuickSight::Analysis.Parameters"
     
-    p_DateTimeParameters: typing.List[typing.Union['AnalysisDateTimeParameter', dict]] = attr.ib(
+    p_DateTimeParameters: typing.List[typing.Union['PropAnalysisDateTimeParameter', dict]] = attr.ib(
         default=None,
-        converter=AnalysisDateTimeParameter.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(AnalysisDateTimeParameter), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropAnalysisDateTimeParameter.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropAnalysisDateTimeParameter), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "DateTimeParameters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-parameters.html#cfn-quicksight-analysis-parameters-datetimeparameters"""
-    p_DecimalParameters: typing.List[typing.Union['AnalysisDecimalParameter', dict]] = attr.ib(
+    p_DecimalParameters: typing.List[typing.Union['PropAnalysisDecimalParameter', dict]] = attr.ib(
         default=None,
-        converter=AnalysisDecimalParameter.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(AnalysisDecimalParameter), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropAnalysisDecimalParameter.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropAnalysisDecimalParameter), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "DecimalParameters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-parameters.html#cfn-quicksight-analysis-parameters-decimalparameters"""
-    p_IntegerParameters: typing.List[typing.Union['AnalysisIntegerParameter', dict]] = attr.ib(
+    p_IntegerParameters: typing.List[typing.Union['PropAnalysisIntegerParameter', dict]] = attr.ib(
         default=None,
-        converter=AnalysisIntegerParameter.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(AnalysisIntegerParameter), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropAnalysisIntegerParameter.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropAnalysisIntegerParameter), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "IntegerParameters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-parameters.html#cfn-quicksight-analysis-parameters-integerparameters"""
-    p_StringParameters: typing.List[typing.Union['AnalysisStringParameter', dict]] = attr.ib(
+    p_StringParameters: typing.List[typing.Union['PropAnalysisStringParameter', dict]] = attr.ib(
         default=None,
-        converter=AnalysisStringParameter.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(AnalysisStringParameter), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropAnalysisStringParameter.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropAnalysisStringParameter), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "StringParameters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-analysis-parameters.html#cfn-quicksight-analysis-parameters-stringparameters"""
 
 @attr.s
-class TemplateTemplateSourceEntity(Property):
+class PropTemplateTemplateSourceEntity(Property):
     """
     AWS Object Type = "AWS::QuickSight::Template.TemplateSourceEntity"
 
@@ -2496,23 +2496,23 @@ class TemplateTemplateSourceEntity(Property):
     """
     AWS_OBJECT_TYPE = "AWS::QuickSight::Template.TemplateSourceEntity"
     
-    p_SourceAnalysis: typing.Union['TemplateTemplateSourceAnalysis', dict] = attr.ib(
+    p_SourceAnalysis: typing.Union['PropTemplateTemplateSourceAnalysis', dict] = attr.ib(
         default=None,
-        converter=TemplateTemplateSourceAnalysis.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(TemplateTemplateSourceAnalysis)),
+        converter=PropTemplateTemplateSourceAnalysis.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropTemplateTemplateSourceAnalysis)),
         metadata={AttrMeta.PROPERTY_NAME: "SourceAnalysis"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-templatesourceentity.html#cfn-quicksight-template-templatesourceentity-sourceanalysis"""
-    p_SourceTemplate: typing.Union['TemplateTemplateSourceTemplate', dict] = attr.ib(
+    p_SourceTemplate: typing.Union['PropTemplateTemplateSourceTemplate', dict] = attr.ib(
         default=None,
-        converter=TemplateTemplateSourceTemplate.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(TemplateTemplateSourceTemplate)),
+        converter=PropTemplateTemplateSourceTemplate.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropTemplateTemplateSourceTemplate)),
         metadata={AttrMeta.PROPERTY_NAME: "SourceTemplate"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-templatesourceentity.html#cfn-quicksight-template-templatesourceentity-sourcetemplate"""
 
 @attr.s
-class DataSetTransformOperation(Property):
+class PropDataSetTransformOperation(Property):
     """
     AWS Object Type = "AWS::QuickSight::DataSet.TransformOperation"
 
@@ -2529,51 +2529,51 @@ class DataSetTransformOperation(Property):
     """
     AWS_OBJECT_TYPE = "AWS::QuickSight::DataSet.TransformOperation"
     
-    p_CastColumnTypeOperation: typing.Union['DataSetCastColumnTypeOperation', dict] = attr.ib(
+    p_CastColumnTypeOperation: typing.Union['PropDataSetCastColumnTypeOperation', dict] = attr.ib(
         default=None,
-        converter=DataSetCastColumnTypeOperation.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DataSetCastColumnTypeOperation)),
+        converter=PropDataSetCastColumnTypeOperation.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataSetCastColumnTypeOperation)),
         metadata={AttrMeta.PROPERTY_NAME: "CastColumnTypeOperation"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-transformoperation.html#cfn-quicksight-dataset-transformoperation-castcolumntypeoperation"""
-    p_CreateColumnsOperation: typing.Union['DataSetCreateColumnsOperation', dict] = attr.ib(
+    p_CreateColumnsOperation: typing.Union['PropDataSetCreateColumnsOperation', dict] = attr.ib(
         default=None,
-        converter=DataSetCreateColumnsOperation.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DataSetCreateColumnsOperation)),
+        converter=PropDataSetCreateColumnsOperation.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataSetCreateColumnsOperation)),
         metadata={AttrMeta.PROPERTY_NAME: "CreateColumnsOperation"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-transformoperation.html#cfn-quicksight-dataset-transformoperation-createcolumnsoperation"""
-    p_FilterOperation: typing.Union['DataSetFilterOperation', dict] = attr.ib(
+    p_FilterOperation: typing.Union['PropDataSetFilterOperation', dict] = attr.ib(
         default=None,
-        converter=DataSetFilterOperation.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DataSetFilterOperation)),
+        converter=PropDataSetFilterOperation.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataSetFilterOperation)),
         metadata={AttrMeta.PROPERTY_NAME: "FilterOperation"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-transformoperation.html#cfn-quicksight-dataset-transformoperation-filteroperation"""
-    p_ProjectOperation: typing.Union['DataSetProjectOperation', dict] = attr.ib(
+    p_ProjectOperation: typing.Union['PropDataSetProjectOperation', dict] = attr.ib(
         default=None,
-        converter=DataSetProjectOperation.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DataSetProjectOperation)),
+        converter=PropDataSetProjectOperation.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataSetProjectOperation)),
         metadata={AttrMeta.PROPERTY_NAME: "ProjectOperation"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-transformoperation.html#cfn-quicksight-dataset-transformoperation-projectoperation"""
-    p_RenameColumnOperation: typing.Union['DataSetRenameColumnOperation', dict] = attr.ib(
+    p_RenameColumnOperation: typing.Union['PropDataSetRenameColumnOperation', dict] = attr.ib(
         default=None,
-        converter=DataSetRenameColumnOperation.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DataSetRenameColumnOperation)),
+        converter=PropDataSetRenameColumnOperation.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataSetRenameColumnOperation)),
         metadata={AttrMeta.PROPERTY_NAME: "RenameColumnOperation"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-transformoperation.html#cfn-quicksight-dataset-transformoperation-renamecolumnoperation"""
-    p_TagColumnOperation: typing.Union['DataSetTagColumnOperation', dict] = attr.ib(
+    p_TagColumnOperation: typing.Union['PropDataSetTagColumnOperation', dict] = attr.ib(
         default=None,
-        converter=DataSetTagColumnOperation.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DataSetTagColumnOperation)),
+        converter=PropDataSetTagColumnOperation.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataSetTagColumnOperation)),
         metadata={AttrMeta.PROPERTY_NAME: "TagColumnOperation"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-transformoperation.html#cfn-quicksight-dataset-transformoperation-tagcolumnoperation"""
 
 @attr.s
-class ThemeSheetStyle(Property):
+class PropThemeSheetStyle(Property):
     """
     AWS Object Type = "AWS::QuickSight::Theme.SheetStyle"
 
@@ -2586,23 +2586,23 @@ class ThemeSheetStyle(Property):
     """
     AWS_OBJECT_TYPE = "AWS::QuickSight::Theme.SheetStyle"
     
-    p_Tile: typing.Union['ThemeTileStyle', dict] = attr.ib(
+    p_Tile: typing.Union['PropThemeTileStyle', dict] = attr.ib(
         default=None,
-        converter=ThemeTileStyle.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ThemeTileStyle)),
+        converter=PropThemeTileStyle.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropThemeTileStyle)),
         metadata={AttrMeta.PROPERTY_NAME: "Tile"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-sheetstyle.html#cfn-quicksight-theme-sheetstyle-tile"""
-    p_TileLayout: typing.Union['ThemeTileLayoutStyle', dict] = attr.ib(
+    p_TileLayout: typing.Union['PropThemeTileLayoutStyle', dict] = attr.ib(
         default=None,
-        converter=ThemeTileLayoutStyle.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ThemeTileLayoutStyle)),
+        converter=PropThemeTileLayoutStyle.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropThemeTileLayoutStyle)),
         metadata={AttrMeta.PROPERTY_NAME: "TileLayout"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-sheetstyle.html#cfn-quicksight-theme-sheetstyle-tilelayout"""
 
 @attr.s
-class DataSourceDataSourceParameters(Property):
+class PropDataSourceDataSourceParameters(Property):
     """
     AWS Object Type = "AWS::QuickSight::DataSource.DataSourceParameters"
 
@@ -2629,121 +2629,121 @@ class DataSourceDataSourceParameters(Property):
     """
     AWS_OBJECT_TYPE = "AWS::QuickSight::DataSource.DataSourceParameters"
     
-    p_AmazonElasticsearchParameters: typing.Union['DataSourceAmazonElasticsearchParameters', dict] = attr.ib(
+    p_AmazonElasticsearchParameters: typing.Union['PropDataSourceAmazonElasticsearchParameters', dict] = attr.ib(
         default=None,
-        converter=DataSourceAmazonElasticsearchParameters.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DataSourceAmazonElasticsearchParameters)),
+        converter=PropDataSourceAmazonElasticsearchParameters.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataSourceAmazonElasticsearchParameters)),
         metadata={AttrMeta.PROPERTY_NAME: "AmazonElasticsearchParameters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-datasourceparameters.html#cfn-quicksight-datasource-datasourceparameters-amazonelasticsearchparameters"""
-    p_AthenaParameters: typing.Union['DataSourceAthenaParameters', dict] = attr.ib(
+    p_AthenaParameters: typing.Union['PropDataSourceAthenaParameters', dict] = attr.ib(
         default=None,
-        converter=DataSourceAthenaParameters.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DataSourceAthenaParameters)),
+        converter=PropDataSourceAthenaParameters.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataSourceAthenaParameters)),
         metadata={AttrMeta.PROPERTY_NAME: "AthenaParameters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-datasourceparameters.html#cfn-quicksight-datasource-datasourceparameters-athenaparameters"""
-    p_AuroraParameters: typing.Union['DataSourceAuroraParameters', dict] = attr.ib(
+    p_AuroraParameters: typing.Union['PropDataSourceAuroraParameters', dict] = attr.ib(
         default=None,
-        converter=DataSourceAuroraParameters.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DataSourceAuroraParameters)),
+        converter=PropDataSourceAuroraParameters.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataSourceAuroraParameters)),
         metadata={AttrMeta.PROPERTY_NAME: "AuroraParameters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-datasourceparameters.html#cfn-quicksight-datasource-datasourceparameters-auroraparameters"""
-    p_AuroraPostgreSqlParameters: typing.Union['DataSourceAuroraPostgreSqlParameters', dict] = attr.ib(
+    p_AuroraPostgreSqlParameters: typing.Union['PropDataSourceAuroraPostgreSqlParameters', dict] = attr.ib(
         default=None,
-        converter=DataSourceAuroraPostgreSqlParameters.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DataSourceAuroraPostgreSqlParameters)),
+        converter=PropDataSourceAuroraPostgreSqlParameters.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataSourceAuroraPostgreSqlParameters)),
         metadata={AttrMeta.PROPERTY_NAME: "AuroraPostgreSqlParameters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-datasourceparameters.html#cfn-quicksight-datasource-datasourceparameters-aurorapostgresqlparameters"""
-    p_MariaDbParameters: typing.Union['DataSourceMariaDbParameters', dict] = attr.ib(
+    p_MariaDbParameters: typing.Union['PropDataSourceMariaDbParameters', dict] = attr.ib(
         default=None,
-        converter=DataSourceMariaDbParameters.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DataSourceMariaDbParameters)),
+        converter=PropDataSourceMariaDbParameters.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataSourceMariaDbParameters)),
         metadata={AttrMeta.PROPERTY_NAME: "MariaDbParameters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-datasourceparameters.html#cfn-quicksight-datasource-datasourceparameters-mariadbparameters"""
-    p_MySqlParameters: typing.Union['DataSourceMySqlParameters', dict] = attr.ib(
+    p_MySqlParameters: typing.Union['PropDataSourceMySqlParameters', dict] = attr.ib(
         default=None,
-        converter=DataSourceMySqlParameters.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DataSourceMySqlParameters)),
+        converter=PropDataSourceMySqlParameters.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataSourceMySqlParameters)),
         metadata={AttrMeta.PROPERTY_NAME: "MySqlParameters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-datasourceparameters.html#cfn-quicksight-datasource-datasourceparameters-mysqlparameters"""
-    p_OracleParameters: typing.Union['DataSourceOracleParameters', dict] = attr.ib(
+    p_OracleParameters: typing.Union['PropDataSourceOracleParameters', dict] = attr.ib(
         default=None,
-        converter=DataSourceOracleParameters.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DataSourceOracleParameters)),
+        converter=PropDataSourceOracleParameters.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataSourceOracleParameters)),
         metadata={AttrMeta.PROPERTY_NAME: "OracleParameters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-datasourceparameters.html#cfn-quicksight-datasource-datasourceparameters-oracleparameters"""
-    p_PostgreSqlParameters: typing.Union['DataSourcePostgreSqlParameters', dict] = attr.ib(
+    p_PostgreSqlParameters: typing.Union['PropDataSourcePostgreSqlParameters', dict] = attr.ib(
         default=None,
-        converter=DataSourcePostgreSqlParameters.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DataSourcePostgreSqlParameters)),
+        converter=PropDataSourcePostgreSqlParameters.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataSourcePostgreSqlParameters)),
         metadata={AttrMeta.PROPERTY_NAME: "PostgreSqlParameters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-datasourceparameters.html#cfn-quicksight-datasource-datasourceparameters-postgresqlparameters"""
-    p_PrestoParameters: typing.Union['DataSourcePrestoParameters', dict] = attr.ib(
+    p_PrestoParameters: typing.Union['PropDataSourcePrestoParameters', dict] = attr.ib(
         default=None,
-        converter=DataSourcePrestoParameters.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DataSourcePrestoParameters)),
+        converter=PropDataSourcePrestoParameters.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataSourcePrestoParameters)),
         metadata={AttrMeta.PROPERTY_NAME: "PrestoParameters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-datasourceparameters.html#cfn-quicksight-datasource-datasourceparameters-prestoparameters"""
-    p_RdsParameters: typing.Union['DataSourceRdsParameters', dict] = attr.ib(
+    p_RdsParameters: typing.Union['PropDataSourceRdsParameters', dict] = attr.ib(
         default=None,
-        converter=DataSourceRdsParameters.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DataSourceRdsParameters)),
+        converter=PropDataSourceRdsParameters.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataSourceRdsParameters)),
         metadata={AttrMeta.PROPERTY_NAME: "RdsParameters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-datasourceparameters.html#cfn-quicksight-datasource-datasourceparameters-rdsparameters"""
-    p_RedshiftParameters: typing.Union['DataSourceRedshiftParameters', dict] = attr.ib(
+    p_RedshiftParameters: typing.Union['PropDataSourceRedshiftParameters', dict] = attr.ib(
         default=None,
-        converter=DataSourceRedshiftParameters.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DataSourceRedshiftParameters)),
+        converter=PropDataSourceRedshiftParameters.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataSourceRedshiftParameters)),
         metadata={AttrMeta.PROPERTY_NAME: "RedshiftParameters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-datasourceparameters.html#cfn-quicksight-datasource-datasourceparameters-redshiftparameters"""
-    p_S3Parameters: typing.Union['DataSourceS3Parameters', dict] = attr.ib(
+    p_S3Parameters: typing.Union['PropDataSourceS3Parameters', dict] = attr.ib(
         default=None,
-        converter=DataSourceS3Parameters.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DataSourceS3Parameters)),
+        converter=PropDataSourceS3Parameters.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataSourceS3Parameters)),
         metadata={AttrMeta.PROPERTY_NAME: "S3Parameters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-datasourceparameters.html#cfn-quicksight-datasource-datasourceparameters-s3parameters"""
-    p_SnowflakeParameters: typing.Union['DataSourceSnowflakeParameters', dict] = attr.ib(
+    p_SnowflakeParameters: typing.Union['PropDataSourceSnowflakeParameters', dict] = attr.ib(
         default=None,
-        converter=DataSourceSnowflakeParameters.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DataSourceSnowflakeParameters)),
+        converter=PropDataSourceSnowflakeParameters.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataSourceSnowflakeParameters)),
         metadata={AttrMeta.PROPERTY_NAME: "SnowflakeParameters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-datasourceparameters.html#cfn-quicksight-datasource-datasourceparameters-snowflakeparameters"""
-    p_SparkParameters: typing.Union['DataSourceSparkParameters', dict] = attr.ib(
+    p_SparkParameters: typing.Union['PropDataSourceSparkParameters', dict] = attr.ib(
         default=None,
-        converter=DataSourceSparkParameters.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DataSourceSparkParameters)),
+        converter=PropDataSourceSparkParameters.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataSourceSparkParameters)),
         metadata={AttrMeta.PROPERTY_NAME: "SparkParameters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-datasourceparameters.html#cfn-quicksight-datasource-datasourceparameters-sparkparameters"""
-    p_SqlServerParameters: typing.Union['DataSourceSqlServerParameters', dict] = attr.ib(
+    p_SqlServerParameters: typing.Union['PropDataSourceSqlServerParameters', dict] = attr.ib(
         default=None,
-        converter=DataSourceSqlServerParameters.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DataSourceSqlServerParameters)),
+        converter=PropDataSourceSqlServerParameters.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataSourceSqlServerParameters)),
         metadata={AttrMeta.PROPERTY_NAME: "SqlServerParameters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-datasourceparameters.html#cfn-quicksight-datasource-datasourceparameters-sqlserverparameters"""
-    p_TeradataParameters: typing.Union['DataSourceTeradataParameters', dict] = attr.ib(
+    p_TeradataParameters: typing.Union['PropDataSourceTeradataParameters', dict] = attr.ib(
         default=None,
-        converter=DataSourceTeradataParameters.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DataSourceTeradataParameters)),
+        converter=PropDataSourceTeradataParameters.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataSourceTeradataParameters)),
         metadata={AttrMeta.PROPERTY_NAME: "TeradataParameters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-datasourceparameters.html#cfn-quicksight-datasource-datasourceparameters-teradataparameters"""
 
 @attr.s
-class DataSourceCredentialPair(Property):
+class PropDataSourceCredentialPair(Property):
     """
     AWS Object Type = "AWS::QuickSight::DataSource.CredentialPair"
 
@@ -2769,16 +2769,16 @@ class DataSourceCredentialPair(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Username"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-credentialpair.html#cfn-quicksight-datasource-credentialpair-username"""
-    p_AlternateDataSourceParameters: typing.List[typing.Union['DataSourceDataSourceParameters', dict]] = attr.ib(
+    p_AlternateDataSourceParameters: typing.List[typing.Union['PropDataSourceDataSourceParameters', dict]] = attr.ib(
         default=None,
-        converter=DataSourceDataSourceParameters.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(DataSourceDataSourceParameters), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropDataSourceDataSourceParameters.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDataSourceDataSourceParameters), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "AlternateDataSourceParameters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-credentialpair.html#cfn-quicksight-datasource-credentialpair-alternatedatasourceparameters"""
 
 @attr.s
-class DataSetPhysicalTable(Property):
+class PropDataSetPhysicalTable(Property):
     """
     AWS Object Type = "AWS::QuickSight::DataSet.PhysicalTable"
 
@@ -2792,30 +2792,30 @@ class DataSetPhysicalTable(Property):
     """
     AWS_OBJECT_TYPE = "AWS::QuickSight::DataSet.PhysicalTable"
     
-    p_CustomSql: typing.Union['DataSetCustomSql', dict] = attr.ib(
+    p_CustomSql: typing.Union['PropDataSetCustomSql', dict] = attr.ib(
         default=None,
-        converter=DataSetCustomSql.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DataSetCustomSql)),
+        converter=PropDataSetCustomSql.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataSetCustomSql)),
         metadata={AttrMeta.PROPERTY_NAME: "CustomSql"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-physicaltable.html#cfn-quicksight-dataset-physicaltable-customsql"""
-    p_RelationalTable: typing.Union['DataSetRelationalTable', dict] = attr.ib(
+    p_RelationalTable: typing.Union['PropDataSetRelationalTable', dict] = attr.ib(
         default=None,
-        converter=DataSetRelationalTable.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DataSetRelationalTable)),
+        converter=PropDataSetRelationalTable.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataSetRelationalTable)),
         metadata={AttrMeta.PROPERTY_NAME: "RelationalTable"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-physicaltable.html#cfn-quicksight-dataset-physicaltable-relationaltable"""
-    p_S3Source: typing.Union['DataSetS3Source', dict] = attr.ib(
+    p_S3Source: typing.Union['PropDataSetS3Source', dict] = attr.ib(
         default=None,
-        converter=DataSetS3Source.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DataSetS3Source)),
+        converter=PropDataSetS3Source.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataSetS3Source)),
         metadata={AttrMeta.PROPERTY_NAME: "S3Source"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-physicaltable.html#cfn-quicksight-dataset-physicaltable-s3source"""
 
 @attr.s
-class DashboardDashboardSourceEntity(Property):
+class PropDashboardDashboardSourceEntity(Property):
     """
     AWS Object Type = "AWS::QuickSight::Dashboard.DashboardSourceEntity"
 
@@ -2827,16 +2827,16 @@ class DashboardDashboardSourceEntity(Property):
     """
     AWS_OBJECT_TYPE = "AWS::QuickSight::Dashboard.DashboardSourceEntity"
     
-    p_SourceTemplate: typing.Union['DashboardDashboardSourceTemplate', dict] = attr.ib(
+    p_SourceTemplate: typing.Union['PropDashboardDashboardSourceTemplate', dict] = attr.ib(
         default=None,
-        converter=DashboardDashboardSourceTemplate.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DashboardDashboardSourceTemplate)),
+        converter=PropDashboardDashboardSourceTemplate.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDashboardDashboardSourceTemplate)),
         metadata={AttrMeta.PROPERTY_NAME: "SourceTemplate"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-dashboardsourceentity.html#cfn-quicksight-dashboard-dashboardsourceentity-sourcetemplate"""
 
 @attr.s
-class ThemeThemeConfiguration(Property):
+class PropThemeThemeConfiguration(Property):
     """
     AWS Object Type = "AWS::QuickSight::Theme.ThemeConfiguration"
 
@@ -2851,37 +2851,37 @@ class ThemeThemeConfiguration(Property):
     """
     AWS_OBJECT_TYPE = "AWS::QuickSight::Theme.ThemeConfiguration"
     
-    p_DataColorPalette: typing.Union['ThemeDataColorPalette', dict] = attr.ib(
+    p_DataColorPalette: typing.Union['PropThemeDataColorPalette', dict] = attr.ib(
         default=None,
-        converter=ThemeDataColorPalette.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ThemeDataColorPalette)),
+        converter=PropThemeDataColorPalette.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropThemeDataColorPalette)),
         metadata={AttrMeta.PROPERTY_NAME: "DataColorPalette"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-themeconfiguration.html#cfn-quicksight-theme-themeconfiguration-datacolorpalette"""
-    p_Sheet: typing.Union['ThemeSheetStyle', dict] = attr.ib(
+    p_Sheet: typing.Union['PropThemeSheetStyle', dict] = attr.ib(
         default=None,
-        converter=ThemeSheetStyle.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ThemeSheetStyle)),
+        converter=PropThemeSheetStyle.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropThemeSheetStyle)),
         metadata={AttrMeta.PROPERTY_NAME: "Sheet"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-themeconfiguration.html#cfn-quicksight-theme-themeconfiguration-sheet"""
-    p_Typography: typing.Union['ThemeTypography', dict] = attr.ib(
+    p_Typography: typing.Union['PropThemeTypography', dict] = attr.ib(
         default=None,
-        converter=ThemeTypography.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ThemeTypography)),
+        converter=PropThemeTypography.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropThemeTypography)),
         metadata={AttrMeta.PROPERTY_NAME: "Typography"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-themeconfiguration.html#cfn-quicksight-theme-themeconfiguration-typography"""
-    p_UIColorPalette: typing.Union['ThemeUIColorPalette', dict] = attr.ib(
+    p_UIColorPalette: typing.Union['PropThemeUIColorPalette', dict] = attr.ib(
         default=None,
-        converter=ThemeUIColorPalette.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ThemeUIColorPalette)),
+        converter=PropThemeUIColorPalette.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropThemeUIColorPalette)),
         metadata={AttrMeta.PROPERTY_NAME: "UIColorPalette"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-themeconfiguration.html#cfn-quicksight-theme-themeconfiguration-uicolorpalette"""
 
 @attr.s
-class DataSetLogicalTable(Property):
+class PropDataSetLogicalTable(Property):
     """
     AWS Object Type = "AWS::QuickSight::DataSet.LogicalTable"
 
@@ -2901,23 +2901,23 @@ class DataSetLogicalTable(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Alias"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-logicaltable.html#cfn-quicksight-dataset-logicaltable-alias"""
-    rp_Source: typing.Union['DataSetLogicalTableSource', dict] = attr.ib(
+    rp_Source: typing.Union['PropDataSetLogicalTableSource', dict] = attr.ib(
         default=None,
-        converter=DataSetLogicalTableSource.from_dict,
-        validator=attr.validators.instance_of(DataSetLogicalTableSource),
+        converter=PropDataSetLogicalTableSource.from_dict,
+        validator=attr.validators.instance_of(PropDataSetLogicalTableSource),
         metadata={AttrMeta.PROPERTY_NAME: "Source"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-logicaltable.html#cfn-quicksight-dataset-logicaltable-source"""
-    p_DataTransforms: typing.List[typing.Union['DataSetTransformOperation', dict]] = attr.ib(
+    p_DataTransforms: typing.List[typing.Union['PropDataSetTransformOperation', dict]] = attr.ib(
         default=None,
-        converter=DataSetTransformOperation.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(DataSetTransformOperation), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropDataSetTransformOperation.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDataSetTransformOperation), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "DataTransforms"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-logicaltable.html#cfn-quicksight-dataset-logicaltable-datatransforms"""
 
 @attr.s
-class DataSourceDataSourceCredentials(Property):
+class PropDataSourceDataSourceCredentials(Property):
     """
     AWS Object Type = "AWS::QuickSight::DataSource.DataSourceCredentials"
 
@@ -2936,10 +2936,10 @@ class DataSourceDataSourceCredentials(Property):
         metadata={AttrMeta.PROPERTY_NAME: "CopySourceArn"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-datasourcecredentials.html#cfn-quicksight-datasource-datasourcecredentials-copysourcearn"""
-    p_CredentialPair: typing.Union['DataSourceCredentialPair', dict] = attr.ib(
+    p_CredentialPair: typing.Union['PropDataSourceCredentialPair', dict] = attr.ib(
         default=None,
-        converter=DataSourceCredentialPair.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DataSourceCredentialPair)),
+        converter=PropDataSourceCredentialPair.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataSourceCredentialPair)),
         metadata={AttrMeta.PROPERTY_NAME: "CredentialPair"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-datasourcecredentials.html#cfn-quicksight-datasource-datasourcecredentials-credentialpair"""
@@ -2982,10 +2982,10 @@ class Dashboard(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "DashboardId"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-dashboard.html#cfn-quicksight-dashboard-dashboardid"""
-    p_DashboardPublishOptions: typing.Union['DashboardDashboardPublishOptions', dict] = attr.ib(
+    p_DashboardPublishOptions: typing.Union['PropDashboardDashboardPublishOptions', dict] = attr.ib(
         default=None,
-        converter=DashboardDashboardPublishOptions.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DashboardDashboardPublishOptions)),
+        converter=PropDashboardDashboardPublishOptions.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDashboardDashboardPublishOptions)),
         metadata={AttrMeta.PROPERTY_NAME: "DashboardPublishOptions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-dashboard.html#cfn-quicksight-dashboard-dashboardpublishoptions"""
@@ -2995,24 +2995,24 @@ class Dashboard(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Name"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-dashboard.html#cfn-quicksight-dashboard-name"""
-    p_Parameters: typing.Union['DashboardParameters', dict] = attr.ib(
+    p_Parameters: typing.Union['PropDashboardParameters', dict] = attr.ib(
         default=None,
-        converter=DashboardParameters.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DashboardParameters)),
+        converter=PropDashboardParameters.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDashboardParameters)),
         metadata={AttrMeta.PROPERTY_NAME: "Parameters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-dashboard.html#cfn-quicksight-dashboard-parameters"""
-    p_Permissions: typing.List[typing.Union['DashboardResourcePermission', dict]] = attr.ib(
+    p_Permissions: typing.List[typing.Union['PropDashboardResourcePermission', dict]] = attr.ib(
         default=None,
-        converter=DashboardResourcePermission.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(DashboardResourcePermission), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropDashboardResourcePermission.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDashboardResourcePermission), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Permissions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-dashboard.html#cfn-quicksight-dashboard-permissions"""
-    p_SourceEntity: typing.Union['DashboardDashboardSourceEntity', dict] = attr.ib(
+    p_SourceEntity: typing.Union['PropDashboardDashboardSourceEntity', dict] = attr.ib(
         default=None,
-        converter=DashboardDashboardSourceEntity.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DashboardDashboardSourceEntity)),
+        converter=PropDashboardDashboardSourceEntity.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDashboardDashboardSourceEntity)),
         metadata={AttrMeta.PROPERTY_NAME: "SourceEntity"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-dashboard.html#cfn-quicksight-dashboard-sourceentity"""
@@ -3092,10 +3092,10 @@ class Analysis(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "AwsAccountId"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-analysis.html#cfn-quicksight-analysis-awsaccountid"""
-    p_Errors: typing.List[typing.Union['AnalysisAnalysisError', dict]] = attr.ib(
+    p_Errors: typing.List[typing.Union['PropAnalysisAnalysisError', dict]] = attr.ib(
         default=None,
-        converter=AnalysisAnalysisError.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(AnalysisAnalysisError), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropAnalysisAnalysisError.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropAnalysisAnalysisError), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Errors"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-analysis.html#cfn-quicksight-analysis-errors"""
@@ -3105,24 +3105,24 @@ class Analysis(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Name"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-analysis.html#cfn-quicksight-analysis-name"""
-    p_Parameters: typing.Union['AnalysisParameters', dict] = attr.ib(
+    p_Parameters: typing.Union['PropAnalysisParameters', dict] = attr.ib(
         default=None,
-        converter=AnalysisParameters.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(AnalysisParameters)),
+        converter=PropAnalysisParameters.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropAnalysisParameters)),
         metadata={AttrMeta.PROPERTY_NAME: "Parameters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-analysis.html#cfn-quicksight-analysis-parameters"""
-    p_Permissions: typing.List[typing.Union['AnalysisResourcePermission', dict]] = attr.ib(
+    p_Permissions: typing.List[typing.Union['PropAnalysisResourcePermission', dict]] = attr.ib(
         default=None,
-        converter=AnalysisResourcePermission.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(AnalysisResourcePermission), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropAnalysisResourcePermission.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropAnalysisResourcePermission), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Permissions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-analysis.html#cfn-quicksight-analysis-permissions"""
-    p_SourceEntity: typing.Union['AnalysisAnalysisSourceEntity', dict] = attr.ib(
+    p_SourceEntity: typing.Union['PropAnalysisAnalysisSourceEntity', dict] = attr.ib(
         default=None,
-        converter=AnalysisAnalysisSourceEntity.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(AnalysisAnalysisSourceEntity)),
+        converter=PropAnalysisAnalysisSourceEntity.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropAnalysisAnalysisSourceEntity)),
         metadata={AttrMeta.PROPERTY_NAME: "SourceEntity"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-analysis.html#cfn-quicksight-analysis-sourceentity"""
@@ -3210,17 +3210,17 @@ class Template(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Name"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-template.html#cfn-quicksight-template-name"""
-    p_Permissions: typing.List[typing.Union['TemplateResourcePermission', dict]] = attr.ib(
+    p_Permissions: typing.List[typing.Union['PropTemplateResourcePermission', dict]] = attr.ib(
         default=None,
-        converter=TemplateResourcePermission.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TemplateResourcePermission), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropTemplateResourcePermission.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropTemplateResourcePermission), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Permissions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-template.html#cfn-quicksight-template-permissions"""
-    p_SourceEntity: typing.Union['TemplateTemplateSourceEntity', dict] = attr.ib(
+    p_SourceEntity: typing.Union['PropTemplateTemplateSourceEntity', dict] = attr.ib(
         default=None,
-        converter=TemplateTemplateSourceEntity.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(TemplateTemplateSourceEntity)),
+        converter=PropTemplateTemplateSourceEntity.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropTemplateTemplateSourceEntity)),
         metadata={AttrMeta.PROPERTY_NAME: "SourceEntity"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-template.html#cfn-quicksight-template-sourceentity"""
@@ -3280,10 +3280,10 @@ class DataSource(Resource):
     AWS_OBJECT_TYPE = "AWS::QuickSight::DataSource"
 
     
-    p_AlternateDataSourceParameters: typing.List[typing.Union['DataSourceDataSourceParameters', dict]] = attr.ib(
+    p_AlternateDataSourceParameters: typing.List[typing.Union['PropDataSourceDataSourceParameters', dict]] = attr.ib(
         default=None,
-        converter=DataSourceDataSourceParameters.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(DataSourceDataSourceParameters), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropDataSourceDataSourceParameters.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDataSourceDataSourceParameters), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "AlternateDataSourceParameters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-datasource.html#cfn-quicksight-datasource-alternatedatasourceparameters"""
@@ -3293,10 +3293,10 @@ class DataSource(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "AwsAccountId"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-datasource.html#cfn-quicksight-datasource-awsaccountid"""
-    p_Credentials: typing.Union['DataSourceDataSourceCredentials', dict] = attr.ib(
+    p_Credentials: typing.Union['PropDataSourceDataSourceCredentials', dict] = attr.ib(
         default=None,
-        converter=DataSourceDataSourceCredentials.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DataSourceDataSourceCredentials)),
+        converter=PropDataSourceDataSourceCredentials.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataSourceDataSourceCredentials)),
         metadata={AttrMeta.PROPERTY_NAME: "Credentials"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-datasource.html#cfn-quicksight-datasource-credentials"""
@@ -3306,17 +3306,17 @@ class DataSource(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "DataSourceId"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-datasource.html#cfn-quicksight-datasource-datasourceid"""
-    p_DataSourceParameters: typing.Union['DataSourceDataSourceParameters', dict] = attr.ib(
+    p_DataSourceParameters: typing.Union['PropDataSourceDataSourceParameters', dict] = attr.ib(
         default=None,
-        converter=DataSourceDataSourceParameters.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DataSourceDataSourceParameters)),
+        converter=PropDataSourceDataSourceParameters.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataSourceDataSourceParameters)),
         metadata={AttrMeta.PROPERTY_NAME: "DataSourceParameters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-datasource.html#cfn-quicksight-datasource-datasourceparameters"""
-    p_ErrorInfo: typing.Union['DataSourceDataSourceErrorInfo', dict] = attr.ib(
+    p_ErrorInfo: typing.Union['PropDataSourceDataSourceErrorInfo', dict] = attr.ib(
         default=None,
-        converter=DataSourceDataSourceErrorInfo.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DataSourceDataSourceErrorInfo)),
+        converter=PropDataSourceDataSourceErrorInfo.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataSourceDataSourceErrorInfo)),
         metadata={AttrMeta.PROPERTY_NAME: "ErrorInfo"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-datasource.html#cfn-quicksight-datasource-errorinfo"""
@@ -3326,17 +3326,17 @@ class DataSource(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Name"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-datasource.html#cfn-quicksight-datasource-name"""
-    p_Permissions: typing.List[typing.Union['DataSourceResourcePermission', dict]] = attr.ib(
+    p_Permissions: typing.List[typing.Union['PropDataSourceResourcePermission', dict]] = attr.ib(
         default=None,
-        converter=DataSourceResourcePermission.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(DataSourceResourcePermission), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropDataSourceResourcePermission.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDataSourceResourcePermission), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Permissions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-datasource.html#cfn-quicksight-datasource-permissions"""
-    p_SslProperties: typing.Union['DataSourceSslProperties', dict] = attr.ib(
+    p_SslProperties: typing.Union['PropDataSourceSslProperties', dict] = attr.ib(
         default=None,
-        converter=DataSourceSslProperties.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DataSourceSslProperties)),
+        converter=PropDataSourceSslProperties.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataSourceSslProperties)),
         metadata={AttrMeta.PROPERTY_NAME: "SslProperties"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-datasource.html#cfn-quicksight-datasource-sslproperties"""
@@ -3346,10 +3346,10 @@ class DataSource(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Type"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-datasource.html#cfn-quicksight-datasource-type"""
-    p_VpcConnectionProperties: typing.Union['DataSourceVpcConnectionProperties', dict] = attr.ib(
+    p_VpcConnectionProperties: typing.Union['PropDataSourceVpcConnectionProperties', dict] = attr.ib(
         default=None,
-        converter=DataSourceVpcConnectionProperties.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DataSourceVpcConnectionProperties)),
+        converter=PropDataSourceVpcConnectionProperties.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataSourceVpcConnectionProperties)),
         metadata={AttrMeta.PROPERTY_NAME: "VpcConnectionProperties"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-datasource.html#cfn-quicksight-datasource-vpcconnectionproperties"""
@@ -3415,17 +3415,17 @@ class DataSet(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "AwsAccountId"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-dataset.html#cfn-quicksight-dataset-awsaccountid"""
-    p_ColumnGroups: typing.List[typing.Union['DataSetColumnGroup', dict]] = attr.ib(
+    p_ColumnGroups: typing.List[typing.Union['PropDataSetColumnGroup', dict]] = attr.ib(
         default=None,
-        converter=DataSetColumnGroup.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(DataSetColumnGroup), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropDataSetColumnGroup.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDataSetColumnGroup), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "ColumnGroups"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-dataset.html#cfn-quicksight-dataset-columngroups"""
-    p_ColumnLevelPermissionRules: typing.List[typing.Union['DataSetColumnLevelPermissionRule', dict]] = attr.ib(
+    p_ColumnLevelPermissionRules: typing.List[typing.Union['PropDataSetColumnLevelPermissionRule', dict]] = attr.ib(
         default=None,
-        converter=DataSetColumnLevelPermissionRule.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(DataSetColumnLevelPermissionRule), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropDataSetColumnLevelPermissionRule.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDataSetColumnLevelPermissionRule), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "ColumnLevelPermissionRules"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-dataset.html#cfn-quicksight-dataset-columnlevelpermissionrules"""
@@ -3435,10 +3435,10 @@ class DataSet(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "DataSetId"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-dataset.html#cfn-quicksight-dataset-datasetid"""
-    p_FieldFolders: typing.Union['DataSetFieldFolder', dict] = attr.ib(
+    p_FieldFolders: typing.Union['PropDataSetFieldFolder', dict] = attr.ib(
         default=None,
-        converter=DataSetFieldFolder.from_list,
-        validator=attr.validators.optional(attr.validators.instance_of(DataSetFieldFolder)),
+        converter=PropDataSetFieldFolder.from_list,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataSetFieldFolder)),
         metadata={AttrMeta.PROPERTY_NAME: "FieldFolders"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-dataset.html#cfn-quicksight-dataset-fieldfolders"""
@@ -3448,17 +3448,17 @@ class DataSet(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "ImportMode"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-dataset.html#cfn-quicksight-dataset-importmode"""
-    p_IngestionWaitPolicy: typing.Union['DataSetIngestionWaitPolicy', dict] = attr.ib(
+    p_IngestionWaitPolicy: typing.Union['PropDataSetIngestionWaitPolicy', dict] = attr.ib(
         default=None,
-        converter=DataSetIngestionWaitPolicy.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DataSetIngestionWaitPolicy)),
+        converter=PropDataSetIngestionWaitPolicy.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataSetIngestionWaitPolicy)),
         metadata={AttrMeta.PROPERTY_NAME: "IngestionWaitPolicy"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-dataset.html#cfn-quicksight-dataset-ingestionwaitpolicy"""
-    p_LogicalTableMap: typing.Union['DataSetLogicalTable', dict] = attr.ib(
+    p_LogicalTableMap: typing.Union['PropDataSetLogicalTable', dict] = attr.ib(
         default=None,
-        converter=DataSetLogicalTable.from_list,
-        validator=attr.validators.optional(attr.validators.instance_of(DataSetLogicalTable)),
+        converter=PropDataSetLogicalTable.from_list,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataSetLogicalTable)),
         metadata={AttrMeta.PROPERTY_NAME: "LogicalTableMap"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-dataset.html#cfn-quicksight-dataset-logicaltablemap"""
@@ -3468,24 +3468,24 @@ class DataSet(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Name"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-dataset.html#cfn-quicksight-dataset-name"""
-    p_Permissions: typing.List[typing.Union['DataSetResourcePermission', dict]] = attr.ib(
+    p_Permissions: typing.List[typing.Union['PropDataSetResourcePermission', dict]] = attr.ib(
         default=None,
-        converter=DataSetResourcePermission.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(DataSetResourcePermission), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropDataSetResourcePermission.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDataSetResourcePermission), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Permissions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-dataset.html#cfn-quicksight-dataset-permissions"""
-    p_PhysicalTableMap: typing.Union['DataSetPhysicalTable', dict] = attr.ib(
+    p_PhysicalTableMap: typing.Union['PropDataSetPhysicalTable', dict] = attr.ib(
         default=None,
-        converter=DataSetPhysicalTable.from_list,
-        validator=attr.validators.optional(attr.validators.instance_of(DataSetPhysicalTable)),
+        converter=PropDataSetPhysicalTable.from_list,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataSetPhysicalTable)),
         metadata={AttrMeta.PROPERTY_NAME: "PhysicalTableMap"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-dataset.html#cfn-quicksight-dataset-physicaltablemap"""
-    p_RowLevelPermissionDataSet: typing.Union['DataSetRowLevelPermissionDataSet', dict] = attr.ib(
+    p_RowLevelPermissionDataSet: typing.Union['PropDataSetRowLevelPermissionDataSet', dict] = attr.ib(
         default=None,
-        converter=DataSetRowLevelPermissionDataSet.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DataSetRowLevelPermissionDataSet)),
+        converter=PropDataSetRowLevelPermissionDataSet.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataSetRowLevelPermissionDataSet)),
         metadata={AttrMeta.PROPERTY_NAME: "RowLevelPermissionDataSet"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-dataset.html#cfn-quicksight-dataset-rowlevelpermissiondataset"""
@@ -3563,10 +3563,10 @@ class Theme(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "BaseThemeId"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-theme.html#cfn-quicksight-theme-basethemeid"""
-    p_Configuration: typing.Union['ThemeThemeConfiguration', dict] = attr.ib(
+    p_Configuration: typing.Union['PropThemeThemeConfiguration', dict] = attr.ib(
         default=None,
-        converter=ThemeThemeConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ThemeThemeConfiguration)),
+        converter=PropThemeThemeConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropThemeThemeConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "Configuration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-theme.html#cfn-quicksight-theme-configuration"""
@@ -3576,10 +3576,10 @@ class Theme(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Name"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-theme.html#cfn-quicksight-theme-name"""
-    p_Permissions: typing.List[typing.Union['ThemeResourcePermission', dict]] = attr.ib(
+    p_Permissions: typing.List[typing.Union['PropThemeResourcePermission', dict]] = attr.ib(
         default=None,
-        converter=ThemeResourcePermission.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ThemeResourcePermission), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropThemeResourcePermission.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropThemeResourcePermission), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Permissions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-theme.html#cfn-quicksight-theme-permissions"""

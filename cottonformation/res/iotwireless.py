@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class WirelessDeviceSessionKeysAbpV11(Property):
+class PropWirelessDeviceSessionKeysAbpV11(Property):
     """
     AWS Object Type = "AWS::IoTWireless::WirelessDevice.SessionKeysAbpV11"
 
@@ -56,7 +56,7 @@ class WirelessDeviceSessionKeysAbpV11(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-wirelessdevice-sessionkeysabpv11.html#cfn-iotwireless-wirelessdevice-sessionkeysabpv11-snwksintkey"""
 
 @attr.s
-class DeviceProfileLoRaWANDeviceProfile(Property):
+class PropDeviceProfileLoRaWANDeviceProfile(Property):
     """
     AWS Object Type = "AWS::IoTWireless::DeviceProfile.LoRaWANDeviceProfile"
 
@@ -167,7 +167,7 @@ class DeviceProfileLoRaWANDeviceProfile(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-deviceprofile-lorawandeviceprofile.html#cfn-iotwireless-deviceprofile-lorawandeviceprofile-supportsjoin"""
 
 @attr.s
-class TaskDefinitionLoRaWANGatewayVersion(Property):
+class PropTaskDefinitionLoRaWANGatewayVersion(Property):
     """
     AWS Object Type = "AWS::IoTWireless::TaskDefinition.LoRaWANGatewayVersion"
 
@@ -201,7 +201,7 @@ class TaskDefinitionLoRaWANGatewayVersion(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-taskdefinition-lorawangatewayversion.html#cfn-iotwireless-taskdefinition-lorawangatewayversion-station"""
 
 @attr.s
-class PartnerAccountSidewalkAccountInfo(Property):
+class PropPartnerAccountSidewalkAccountInfo(Property):
     """
     AWS Object Type = "AWS::IoTWireless::PartnerAccount.SidewalkAccountInfo"
 
@@ -221,7 +221,7 @@ class PartnerAccountSidewalkAccountInfo(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-partneraccount-sidewalkaccountinfo.html#cfn-iotwireless-partneraccount-sidewalkaccountinfo-appserverprivatekey"""
 
 @attr.s
-class WirelessGatewayLoRaWANGateway(Property):
+class PropWirelessGatewayLoRaWANGateway(Property):
     """
     AWS Object Type = "AWS::IoTWireless::WirelessGateway.LoRaWANGateway"
 
@@ -248,7 +248,7 @@ class WirelessGatewayLoRaWANGateway(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-wirelessgateway-lorawangateway.html#cfn-iotwireless-wirelessgateway-lorawangateway-rfregion"""
 
 @attr.s
-class TaskDefinitionLoRaWANUpdateGatewayTaskCreate(Property):
+class PropTaskDefinitionLoRaWANUpdateGatewayTaskCreate(Property):
     """
     AWS Object Type = "AWS::IoTWireless::TaskDefinition.LoRaWANUpdateGatewayTaskCreate"
 
@@ -263,10 +263,10 @@ class TaskDefinitionLoRaWANUpdateGatewayTaskCreate(Property):
     """
     AWS_OBJECT_TYPE = "AWS::IoTWireless::TaskDefinition.LoRaWANUpdateGatewayTaskCreate"
     
-    p_CurrentVersion: typing.Union['TaskDefinitionLoRaWANGatewayVersion', dict] = attr.ib(
+    p_CurrentVersion: typing.Union['PropTaskDefinitionLoRaWANGatewayVersion', dict] = attr.ib(
         default=None,
-        converter=TaskDefinitionLoRaWANGatewayVersion.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(TaskDefinitionLoRaWANGatewayVersion)),
+        converter=PropTaskDefinitionLoRaWANGatewayVersion.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropTaskDefinitionLoRaWANGatewayVersion)),
         metadata={AttrMeta.PROPERTY_NAME: "CurrentVersion"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-taskdefinition-lorawanupdategatewaytaskcreate.html#cfn-iotwireless-taskdefinition-lorawanupdategatewaytaskcreate-currentversion"""
@@ -282,16 +282,16 @@ class TaskDefinitionLoRaWANUpdateGatewayTaskCreate(Property):
         metadata={AttrMeta.PROPERTY_NAME: "UpdateSignature"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-taskdefinition-lorawanupdategatewaytaskcreate.html#cfn-iotwireless-taskdefinition-lorawanupdategatewaytaskcreate-updatesignature"""
-    p_UpdateVersion: typing.Union['TaskDefinitionLoRaWANGatewayVersion', dict] = attr.ib(
+    p_UpdateVersion: typing.Union['PropTaskDefinitionLoRaWANGatewayVersion', dict] = attr.ib(
         default=None,
-        converter=TaskDefinitionLoRaWANGatewayVersion.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(TaskDefinitionLoRaWANGatewayVersion)),
+        converter=PropTaskDefinitionLoRaWANGatewayVersion.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropTaskDefinitionLoRaWANGatewayVersion)),
         metadata={AttrMeta.PROPERTY_NAME: "UpdateVersion"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-taskdefinition-lorawanupdategatewaytaskcreate.html#cfn-iotwireless-taskdefinition-lorawanupdategatewaytaskcreate-updateversion"""
 
 @attr.s
-class WirelessDeviceOtaaV11(Property):
+class PropWirelessDeviceOtaaV11(Property):
     """
     AWS Object Type = "AWS::IoTWireless::WirelessDevice.OtaaV11"
 
@@ -325,7 +325,7 @@ class WirelessDeviceOtaaV11(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-wirelessdevice-otaav11.html#cfn-iotwireless-wirelessdevice-otaav11-nwkkey"""
 
 @attr.s
-class WirelessDeviceSessionKeysAbpV10x(Property):
+class PropWirelessDeviceSessionKeysAbpV10x(Property):
     """
     AWS Object Type = "AWS::IoTWireless::WirelessDevice.SessionKeysAbpV10x"
 
@@ -352,7 +352,7 @@ class WirelessDeviceSessionKeysAbpV10x(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-wirelessdevice-sessionkeysabpv10x.html#cfn-iotwireless-wirelessdevice-sessionkeysabpv10x-nwkskey"""
 
 @attr.s
-class ServiceProfileLoRaWANServiceProfile(Property):
+class PropServiceProfileLoRaWANServiceProfile(Property):
     """
     AWS Object Type = "AWS::IoTWireless::ServiceProfile.LoRaWANServiceProfile"
 
@@ -498,7 +498,7 @@ class ServiceProfileLoRaWANServiceProfile(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-serviceprofile-lorawanserviceprofile.html#cfn-iotwireless-serviceprofile-lorawanserviceprofile-ulratepolicy"""
 
 @attr.s
-class WirelessDeviceOtaaV10x(Property):
+class PropWirelessDeviceOtaaV10x(Property):
     """
     AWS Object Type = "AWS::IoTWireless::WirelessDevice.OtaaV10x"
 
@@ -525,7 +525,7 @@ class WirelessDeviceOtaaV10x(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-wirelessdevice-otaav10x.html#cfn-iotwireless-wirelessdevice-otaav10x-appkey"""
 
 @attr.s
-class PartnerAccountSidewalkUpdateAccount(Property):
+class PropPartnerAccountSidewalkUpdateAccount(Property):
     """
     AWS Object Type = "AWS::IoTWireless::PartnerAccount.SidewalkUpdateAccount"
 
@@ -545,7 +545,7 @@ class PartnerAccountSidewalkUpdateAccount(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-partneraccount-sidewalkupdateaccount.html#cfn-iotwireless-partneraccount-sidewalkupdateaccount-appserverprivatekey"""
 
 @attr.s
-class WirelessDeviceAbpV11(Property):
+class PropWirelessDeviceAbpV11(Property):
     """
     AWS Object Type = "AWS::IoTWireless::WirelessDevice.AbpV11"
 
@@ -564,16 +564,16 @@ class WirelessDeviceAbpV11(Property):
         metadata={AttrMeta.PROPERTY_NAME: "DevAddr"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-wirelessdevice-abpv11.html#cfn-iotwireless-wirelessdevice-abpv11-devaddr"""
-    rp_SessionKeys: typing.Union['WirelessDeviceSessionKeysAbpV11', dict] = attr.ib(
+    rp_SessionKeys: typing.Union['PropWirelessDeviceSessionKeysAbpV11', dict] = attr.ib(
         default=None,
-        converter=WirelessDeviceSessionKeysAbpV11.from_dict,
-        validator=attr.validators.instance_of(WirelessDeviceSessionKeysAbpV11),
+        converter=PropWirelessDeviceSessionKeysAbpV11.from_dict,
+        validator=attr.validators.instance_of(PropWirelessDeviceSessionKeysAbpV11),
         metadata={AttrMeta.PROPERTY_NAME: "SessionKeys"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-wirelessdevice-abpv11.html#cfn-iotwireless-wirelessdevice-abpv11-sessionkeys"""
 
 @attr.s
-class TaskDefinitionUpdateWirelessGatewayTaskCreate(Property):
+class PropTaskDefinitionUpdateWirelessGatewayTaskCreate(Property):
     """
     AWS Object Type = "AWS::IoTWireless::TaskDefinition.UpdateWirelessGatewayTaskCreate"
 
@@ -587,10 +587,10 @@ class TaskDefinitionUpdateWirelessGatewayTaskCreate(Property):
     """
     AWS_OBJECT_TYPE = "AWS::IoTWireless::TaskDefinition.UpdateWirelessGatewayTaskCreate"
     
-    p_LoRaWAN: typing.Union['TaskDefinitionLoRaWANUpdateGatewayTaskCreate', dict] = attr.ib(
+    p_LoRaWAN: typing.Union['PropTaskDefinitionLoRaWANUpdateGatewayTaskCreate', dict] = attr.ib(
         default=None,
-        converter=TaskDefinitionLoRaWANUpdateGatewayTaskCreate.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(TaskDefinitionLoRaWANUpdateGatewayTaskCreate)),
+        converter=PropTaskDefinitionLoRaWANUpdateGatewayTaskCreate.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropTaskDefinitionLoRaWANUpdateGatewayTaskCreate)),
         metadata={AttrMeta.PROPERTY_NAME: "LoRaWAN"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-taskdefinition-updatewirelessgatewaytaskcreate.html#cfn-iotwireless-taskdefinition-updatewirelessgatewaytaskcreate-lorawan"""
@@ -608,7 +608,7 @@ class TaskDefinitionUpdateWirelessGatewayTaskCreate(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-taskdefinition-updatewirelessgatewaytaskcreate.html#cfn-iotwireless-taskdefinition-updatewirelessgatewaytaskcreate-updatedatasource"""
 
 @attr.s
-class TaskDefinitionLoRaWANUpdateGatewayTaskEntry(Property):
+class PropTaskDefinitionLoRaWANUpdateGatewayTaskEntry(Property):
     """
     AWS Object Type = "AWS::IoTWireless::TaskDefinition.LoRaWANUpdateGatewayTaskEntry"
 
@@ -621,23 +621,23 @@ class TaskDefinitionLoRaWANUpdateGatewayTaskEntry(Property):
     """
     AWS_OBJECT_TYPE = "AWS::IoTWireless::TaskDefinition.LoRaWANUpdateGatewayTaskEntry"
     
-    p_CurrentVersion: typing.Union['TaskDefinitionLoRaWANGatewayVersion', dict] = attr.ib(
+    p_CurrentVersion: typing.Union['PropTaskDefinitionLoRaWANGatewayVersion', dict] = attr.ib(
         default=None,
-        converter=TaskDefinitionLoRaWANGatewayVersion.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(TaskDefinitionLoRaWANGatewayVersion)),
+        converter=PropTaskDefinitionLoRaWANGatewayVersion.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropTaskDefinitionLoRaWANGatewayVersion)),
         metadata={AttrMeta.PROPERTY_NAME: "CurrentVersion"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-taskdefinition-lorawanupdategatewaytaskentry.html#cfn-iotwireless-taskdefinition-lorawanupdategatewaytaskentry-currentversion"""
-    p_UpdateVersion: typing.Union['TaskDefinitionLoRaWANGatewayVersion', dict] = attr.ib(
+    p_UpdateVersion: typing.Union['PropTaskDefinitionLoRaWANGatewayVersion', dict] = attr.ib(
         default=None,
-        converter=TaskDefinitionLoRaWANGatewayVersion.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(TaskDefinitionLoRaWANGatewayVersion)),
+        converter=PropTaskDefinitionLoRaWANGatewayVersion.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropTaskDefinitionLoRaWANGatewayVersion)),
         metadata={AttrMeta.PROPERTY_NAME: "UpdateVersion"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-taskdefinition-lorawanupdategatewaytaskentry.html#cfn-iotwireless-taskdefinition-lorawanupdategatewaytaskentry-updateversion"""
 
 @attr.s
-class WirelessDeviceAbpV10x(Property):
+class PropWirelessDeviceAbpV10x(Property):
     """
     AWS Object Type = "AWS::IoTWireless::WirelessDevice.AbpV10x"
 
@@ -656,16 +656,16 @@ class WirelessDeviceAbpV10x(Property):
         metadata={AttrMeta.PROPERTY_NAME: "DevAddr"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-wirelessdevice-abpv10x.html#cfn-iotwireless-wirelessdevice-abpv10x-devaddr"""
-    rp_SessionKeys: typing.Union['WirelessDeviceSessionKeysAbpV10x', dict] = attr.ib(
+    rp_SessionKeys: typing.Union['PropWirelessDeviceSessionKeysAbpV10x', dict] = attr.ib(
         default=None,
-        converter=WirelessDeviceSessionKeysAbpV10x.from_dict,
-        validator=attr.validators.instance_of(WirelessDeviceSessionKeysAbpV10x),
+        converter=PropWirelessDeviceSessionKeysAbpV10x.from_dict,
+        validator=attr.validators.instance_of(PropWirelessDeviceSessionKeysAbpV10x),
         metadata={AttrMeta.PROPERTY_NAME: "SessionKeys"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-wirelessdevice-abpv10x.html#cfn-iotwireless-wirelessdevice-abpv10x-sessionkeys"""
 
 @attr.s
-class WirelessDeviceLoRaWANDevice(Property):
+class PropWirelessDeviceLoRaWANDevice(Property):
     """
     AWS Object Type = "AWS::IoTWireless::WirelessDevice.LoRaWANDevice"
 
@@ -683,17 +683,17 @@ class WirelessDeviceLoRaWANDevice(Property):
     """
     AWS_OBJECT_TYPE = "AWS::IoTWireless::WirelessDevice.LoRaWANDevice"
     
-    p_AbpV10x: typing.Union['WirelessDeviceAbpV10x', dict] = attr.ib(
+    p_AbpV10x: typing.Union['PropWirelessDeviceAbpV10x', dict] = attr.ib(
         default=None,
-        converter=WirelessDeviceAbpV10x.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(WirelessDeviceAbpV10x)),
+        converter=PropWirelessDeviceAbpV10x.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropWirelessDeviceAbpV10x)),
         metadata={AttrMeta.PROPERTY_NAME: "AbpV10x"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-wirelessdevice-lorawandevice.html#cfn-iotwireless-wirelessdevice-lorawandevice-abpv10x"""
-    p_AbpV11: typing.Union['WirelessDeviceAbpV11', dict] = attr.ib(
+    p_AbpV11: typing.Union['PropWirelessDeviceAbpV11', dict] = attr.ib(
         default=None,
-        converter=WirelessDeviceAbpV11.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(WirelessDeviceAbpV11)),
+        converter=PropWirelessDeviceAbpV11.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropWirelessDeviceAbpV11)),
         metadata={AttrMeta.PROPERTY_NAME: "AbpV11"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-wirelessdevice-lorawandevice.html#cfn-iotwireless-wirelessdevice-lorawandevice-abpv11"""
@@ -709,17 +709,17 @@ class WirelessDeviceLoRaWANDevice(Property):
         metadata={AttrMeta.PROPERTY_NAME: "DeviceProfileId"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-wirelessdevice-lorawandevice.html#cfn-iotwireless-wirelessdevice-lorawandevice-deviceprofileid"""
-    p_OtaaV10x: typing.Union['WirelessDeviceOtaaV10x', dict] = attr.ib(
+    p_OtaaV10x: typing.Union['PropWirelessDeviceOtaaV10x', dict] = attr.ib(
         default=None,
-        converter=WirelessDeviceOtaaV10x.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(WirelessDeviceOtaaV10x)),
+        converter=PropWirelessDeviceOtaaV10x.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropWirelessDeviceOtaaV10x)),
         metadata={AttrMeta.PROPERTY_NAME: "OtaaV10x"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-wirelessdevice-lorawandevice.html#cfn-iotwireless-wirelessdevice-lorawandevice-otaav10x"""
-    p_OtaaV11: typing.Union['WirelessDeviceOtaaV11', dict] = attr.ib(
+    p_OtaaV11: typing.Union['PropWirelessDeviceOtaaV11', dict] = attr.ib(
         default=None,
-        converter=WirelessDeviceOtaaV11.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(WirelessDeviceOtaaV11)),
+        converter=PropWirelessDeviceOtaaV11.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropWirelessDeviceOtaaV11)),
         metadata={AttrMeta.PROPERTY_NAME: "OtaaV11"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-wirelessdevice-lorawandevice.html#cfn-iotwireless-wirelessdevice-lorawandevice-otaav11"""
@@ -749,10 +749,10 @@ class ServiceProfile(Resource):
     AWS_OBJECT_TYPE = "AWS::IoTWireless::ServiceProfile"
 
     
-    p_LoRaWAN: typing.Union['ServiceProfileLoRaWANServiceProfile', dict] = attr.ib(
+    p_LoRaWAN: typing.Union['PropServiceProfileLoRaWANServiceProfile', dict] = attr.ib(
         default=None,
-        converter=ServiceProfileLoRaWANServiceProfile.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ServiceProfileLoRaWANServiceProfile)),
+        converter=PropServiceProfileLoRaWANServiceProfile.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropServiceProfileLoRaWANServiceProfile)),
         metadata={AttrMeta.PROPERTY_NAME: "LoRaWAN"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-serviceprofile.html#cfn-iotwireless-serviceprofile-lorawan"""
@@ -917,10 +917,10 @@ class WirelessDevice(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "LastUplinkReceivedAt"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-wirelessdevice.html#cfn-iotwireless-wirelessdevice-lastuplinkreceivedat"""
-    p_LoRaWAN: typing.Union['WirelessDeviceLoRaWANDevice', dict] = attr.ib(
+    p_LoRaWAN: typing.Union['PropWirelessDeviceLoRaWANDevice', dict] = attr.ib(
         default=None,
-        converter=WirelessDeviceLoRaWANDevice.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(WirelessDeviceLoRaWANDevice)),
+        converter=PropWirelessDeviceLoRaWANDevice.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropWirelessDeviceLoRaWANDevice)),
         metadata={AttrMeta.PROPERTY_NAME: "LoRaWAN"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-wirelessdevice.html#cfn-iotwireless-wirelessdevice-lorawan"""
@@ -980,10 +980,10 @@ class WirelessGateway(Resource):
     AWS_OBJECT_TYPE = "AWS::IoTWireless::WirelessGateway"
 
     
-    rp_LoRaWAN: typing.Union['WirelessGatewayLoRaWANGateway', dict] = attr.ib(
+    rp_LoRaWAN: typing.Union['PropWirelessGatewayLoRaWANGateway', dict] = attr.ib(
         default=None,
-        converter=WirelessGatewayLoRaWANGateway.from_dict,
-        validator=attr.validators.instance_of(WirelessGatewayLoRaWANGateway),
+        converter=PropWirelessGatewayLoRaWANGateway.from_dict,
+        validator=attr.validators.instance_of(PropWirelessGatewayLoRaWANGateway),
         metadata={AttrMeta.PROPERTY_NAME: "LoRaWAN"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-wirelessgateway.html#cfn-iotwireless-wirelessgateway-lorawan"""
@@ -1116,10 +1116,10 @@ class DeviceProfile(Resource):
     AWS_OBJECT_TYPE = "AWS::IoTWireless::DeviceProfile"
 
     
-    p_LoRaWAN: typing.Union['DeviceProfileLoRaWANDeviceProfile', dict] = attr.ib(
+    p_LoRaWAN: typing.Union['PropDeviceProfileLoRaWANDeviceProfile', dict] = attr.ib(
         default=None,
-        converter=DeviceProfileLoRaWANDeviceProfile.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DeviceProfileLoRaWANDeviceProfile)),
+        converter=PropDeviceProfileLoRaWANDeviceProfile.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDeviceProfileLoRaWANDeviceProfile)),
         metadata={AttrMeta.PROPERTY_NAME: "LoRaWAN"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-deviceprofile.html#cfn-iotwireless-deviceprofile-lorawan"""
@@ -1193,17 +1193,17 @@ class PartnerAccount(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "PartnerType"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-partneraccount.html#cfn-iotwireless-partneraccount-partnertype"""
-    p_Sidewalk: typing.Union['PartnerAccountSidewalkAccountInfo', dict] = attr.ib(
+    p_Sidewalk: typing.Union['PropPartnerAccountSidewalkAccountInfo', dict] = attr.ib(
         default=None,
-        converter=PartnerAccountSidewalkAccountInfo.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PartnerAccountSidewalkAccountInfo)),
+        converter=PropPartnerAccountSidewalkAccountInfo.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropPartnerAccountSidewalkAccountInfo)),
         metadata={AttrMeta.PROPERTY_NAME: "Sidewalk"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-partneraccount.html#cfn-iotwireless-partneraccount-sidewalk"""
-    p_SidewalkUpdate: typing.Union['PartnerAccountSidewalkUpdateAccount', dict] = attr.ib(
+    p_SidewalkUpdate: typing.Union['PropPartnerAccountSidewalkUpdateAccount', dict] = attr.ib(
         default=None,
-        converter=PartnerAccountSidewalkUpdateAccount.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PartnerAccountSidewalkUpdateAccount)),
+        converter=PropPartnerAccountSidewalkUpdateAccount.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropPartnerAccountSidewalkUpdateAccount)),
         metadata={AttrMeta.PROPERTY_NAME: "SidewalkUpdate"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-partneraccount.html#cfn-iotwireless-partneraccount-sidewalkupdate"""
@@ -1247,10 +1247,10 @@ class TaskDefinition(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "AutoCreateTasks"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-taskdefinition.html#cfn-iotwireless-taskdefinition-autocreatetasks"""
-    p_LoRaWANUpdateGatewayTaskEntry: typing.Union['TaskDefinitionLoRaWANUpdateGatewayTaskEntry', dict] = attr.ib(
+    p_LoRaWANUpdateGatewayTaskEntry: typing.Union['PropTaskDefinitionLoRaWANUpdateGatewayTaskEntry', dict] = attr.ib(
         default=None,
-        converter=TaskDefinitionLoRaWANUpdateGatewayTaskEntry.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(TaskDefinitionLoRaWANUpdateGatewayTaskEntry)),
+        converter=PropTaskDefinitionLoRaWANUpdateGatewayTaskEntry.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropTaskDefinitionLoRaWANUpdateGatewayTaskEntry)),
         metadata={AttrMeta.PROPERTY_NAME: "LoRaWANUpdateGatewayTaskEntry"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-taskdefinition.html#cfn-iotwireless-taskdefinition-lorawanupdategatewaytaskentry"""
@@ -1266,10 +1266,10 @@ class TaskDefinition(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "TaskDefinitionType"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-taskdefinition.html#cfn-iotwireless-taskdefinition-taskdefinitiontype"""
-    p_Update: typing.Union['TaskDefinitionUpdateWirelessGatewayTaskCreate', dict] = attr.ib(
+    p_Update: typing.Union['PropTaskDefinitionUpdateWirelessGatewayTaskCreate', dict] = attr.ib(
         default=None,
-        converter=TaskDefinitionUpdateWirelessGatewayTaskCreate.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(TaskDefinitionUpdateWirelessGatewayTaskCreate)),
+        converter=PropTaskDefinitionUpdateWirelessGatewayTaskCreate.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropTaskDefinitionUpdateWirelessGatewayTaskCreate)),
         metadata={AttrMeta.PROPERTY_NAME: "Update"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-taskdefinition.html#cfn-iotwireless-taskdefinition-update"""

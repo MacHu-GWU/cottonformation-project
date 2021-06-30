@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class WorkGroupEncryptionConfiguration(Property):
+class PropWorkGroupEncryptionConfiguration(Property):
     """
     AWS Object Type = "AWS::Athena::WorkGroup.EncryptionConfiguration"
 
@@ -42,7 +42,7 @@ class WorkGroupEncryptionConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-encryptionconfiguration.html#cfn-athena-workgroup-encryptionconfiguration-kmskey"""
 
 @attr.s
-class WorkGroupEngineVersion(Property):
+class PropWorkGroupEngineVersion(Property):
     """
     AWS Object Type = "AWS::Athena::WorkGroup.EngineVersion"
 
@@ -69,7 +69,7 @@ class WorkGroupEngineVersion(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-engineversion.html#cfn-athena-workgroup-engineversion-selectedengineversion"""
 
 @attr.s
-class WorkGroupResultConfiguration(Property):
+class PropWorkGroupResultConfiguration(Property):
     """
     AWS Object Type = "AWS::Athena::WorkGroup.ResultConfiguration"
 
@@ -82,10 +82,10 @@ class WorkGroupResultConfiguration(Property):
     """
     AWS_OBJECT_TYPE = "AWS::Athena::WorkGroup.ResultConfiguration"
     
-    p_EncryptionConfiguration: typing.Union['WorkGroupEncryptionConfiguration', dict] = attr.ib(
+    p_EncryptionConfiguration: typing.Union['PropWorkGroupEncryptionConfiguration', dict] = attr.ib(
         default=None,
-        converter=WorkGroupEncryptionConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(WorkGroupEncryptionConfiguration)),
+        converter=PropWorkGroupEncryptionConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropWorkGroupEncryptionConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "EncryptionConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-resultconfiguration.html#cfn-athena-workgroup-resultconfiguration-encryptionconfiguration"""
@@ -97,7 +97,7 @@ class WorkGroupResultConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-resultconfiguration.html#cfn-athena-workgroup-resultconfiguration-outputlocation"""
 
 @attr.s
-class WorkGroupResultConfigurationUpdates(Property):
+class PropWorkGroupResultConfigurationUpdates(Property):
     """
     AWS Object Type = "AWS::Athena::WorkGroup.ResultConfigurationUpdates"
 
@@ -112,10 +112,10 @@ class WorkGroupResultConfigurationUpdates(Property):
     """
     AWS_OBJECT_TYPE = "AWS::Athena::WorkGroup.ResultConfigurationUpdates"
     
-    p_EncryptionConfiguration: typing.Union['WorkGroupEncryptionConfiguration', dict] = attr.ib(
+    p_EncryptionConfiguration: typing.Union['PropWorkGroupEncryptionConfiguration', dict] = attr.ib(
         default=None,
-        converter=WorkGroupEncryptionConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(WorkGroupEncryptionConfiguration)),
+        converter=PropWorkGroupEncryptionConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropWorkGroupEncryptionConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "EncryptionConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-resultconfigurationupdates.html#cfn-athena-workgroup-resultconfigurationupdates-encryptionconfiguration"""
@@ -139,7 +139,7 @@ class WorkGroupResultConfigurationUpdates(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-resultconfigurationupdates.html#cfn-athena-workgroup-resultconfigurationupdates-removeoutputlocation"""
 
 @attr.s
-class WorkGroupWorkGroupConfiguration(Property):
+class PropWorkGroupWorkGroupConfiguration(Property):
     """
     AWS Object Type = "AWS::Athena::WorkGroup.WorkGroupConfiguration"
 
@@ -168,10 +168,10 @@ class WorkGroupWorkGroupConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "EnforceWorkGroupConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-workgroupconfiguration.html#cfn-athena-workgroup-workgroupconfiguration-enforceworkgroupconfiguration"""
-    p_EngineVersion: typing.Union['WorkGroupEngineVersion', dict] = attr.ib(
+    p_EngineVersion: typing.Union['PropWorkGroupEngineVersion', dict] = attr.ib(
         default=None,
-        converter=WorkGroupEngineVersion.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(WorkGroupEngineVersion)),
+        converter=PropWorkGroupEngineVersion.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropWorkGroupEngineVersion)),
         metadata={AttrMeta.PROPERTY_NAME: "EngineVersion"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-workgroupconfiguration.html#cfn-athena-workgroup-workgroupconfiguration-engineversion"""
@@ -187,16 +187,16 @@ class WorkGroupWorkGroupConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "RequesterPaysEnabled"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-workgroupconfiguration.html#cfn-athena-workgroup-workgroupconfiguration-requesterpaysenabled"""
-    p_ResultConfiguration: typing.Union['WorkGroupResultConfiguration', dict] = attr.ib(
+    p_ResultConfiguration: typing.Union['PropWorkGroupResultConfiguration', dict] = attr.ib(
         default=None,
-        converter=WorkGroupResultConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(WorkGroupResultConfiguration)),
+        converter=PropWorkGroupResultConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropWorkGroupResultConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "ResultConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-workgroupconfiguration.html#cfn-athena-workgroup-workgroupconfiguration-resultconfiguration"""
 
 @attr.s
-class WorkGroupWorkGroupConfigurationUpdates(Property):
+class PropWorkGroupWorkGroupConfigurationUpdates(Property):
     """
     AWS Object Type = "AWS::Athena::WorkGroup.WorkGroupConfigurationUpdates"
 
@@ -226,10 +226,10 @@ class WorkGroupWorkGroupConfigurationUpdates(Property):
         metadata={AttrMeta.PROPERTY_NAME: "EnforceWorkGroupConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-workgroupconfigurationupdates.html#cfn-athena-workgroup-workgroupconfigurationupdates-enforceworkgroupconfiguration"""
-    p_EngineVersion: typing.Union['WorkGroupEngineVersion', dict] = attr.ib(
+    p_EngineVersion: typing.Union['PropWorkGroupEngineVersion', dict] = attr.ib(
         default=None,
-        converter=WorkGroupEngineVersion.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(WorkGroupEngineVersion)),
+        converter=PropWorkGroupEngineVersion.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropWorkGroupEngineVersion)),
         metadata={AttrMeta.PROPERTY_NAME: "EngineVersion"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-workgroupconfigurationupdates.html#cfn-athena-workgroup-workgroupconfigurationupdates-engineversion"""
@@ -251,10 +251,10 @@ class WorkGroupWorkGroupConfigurationUpdates(Property):
         metadata={AttrMeta.PROPERTY_NAME: "RequesterPaysEnabled"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-workgroupconfigurationupdates.html#cfn-athena-workgroup-workgroupconfigurationupdates-requesterpaysenabled"""
-    p_ResultConfigurationUpdates: typing.Union['WorkGroupResultConfigurationUpdates', dict] = attr.ib(
+    p_ResultConfigurationUpdates: typing.Union['PropWorkGroupResultConfigurationUpdates', dict] = attr.ib(
         default=None,
-        converter=WorkGroupResultConfigurationUpdates.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(WorkGroupResultConfigurationUpdates)),
+        converter=PropWorkGroupResultConfigurationUpdates.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropWorkGroupResultConfigurationUpdates)),
         metadata={AttrMeta.PROPERTY_NAME: "ResultConfigurationUpdates"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-athena-workgroup-workgroupconfigurationupdates.html#cfn-athena-workgroup-workgroupconfigurationupdates-resultconfigurationupdates"""
@@ -358,17 +358,17 @@ class WorkGroup(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "State"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-athena-workgroup.html#cfn-athena-workgroup-state"""
-    p_WorkGroupConfiguration: typing.Union['WorkGroupWorkGroupConfiguration', dict] = attr.ib(
+    p_WorkGroupConfiguration: typing.Union['PropWorkGroupWorkGroupConfiguration', dict] = attr.ib(
         default=None,
-        converter=WorkGroupWorkGroupConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(WorkGroupWorkGroupConfiguration)),
+        converter=PropWorkGroupWorkGroupConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropWorkGroupWorkGroupConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "WorkGroupConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-athena-workgroup.html#cfn-athena-workgroup-workgroupconfiguration"""
-    p_WorkGroupConfigurationUpdates: typing.Union['WorkGroupWorkGroupConfigurationUpdates', dict] = attr.ib(
+    p_WorkGroupConfigurationUpdates: typing.Union['PropWorkGroupWorkGroupConfigurationUpdates', dict] = attr.ib(
         default=None,
-        converter=WorkGroupWorkGroupConfigurationUpdates.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(WorkGroupWorkGroupConfigurationUpdates)),
+        converter=PropWorkGroupWorkGroupConfigurationUpdates.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropWorkGroupWorkGroupConfigurationUpdates)),
         metadata={AttrMeta.PROPERTY_NAME: "WorkGroupConfigurationUpdates"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-athena-workgroup.html#cfn-athena-workgroup-workgroupconfigurationupdates"""

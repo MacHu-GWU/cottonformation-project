@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class PermissionsDataLocationResource(Property):
+class PropPermissionsDataLocationResource(Property):
     """
     AWS Object Type = "AWS::LakeFormation::Permissions.DataLocationResource"
 
@@ -42,7 +42,7 @@ class PermissionsDataLocationResource(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-permissions-datalocationresource.html#cfn-lakeformation-permissions-datalocationresource-s3resource"""
 
 @attr.s
-class DataLakeSettingsDataLakePrincipal(Property):
+class PropDataLakeSettingsDataLakePrincipal(Property):
     """
     AWS Object Type = "AWS::LakeFormation::DataLakeSettings.DataLakePrincipal"
 
@@ -62,7 +62,7 @@ class DataLakeSettingsDataLakePrincipal(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-datalakesettings-datalakeprincipal.html#cfn-lakeformation-datalakesettings-datalakeprincipal-datalakeprincipalidentifier"""
 
 @attr.s
-class PermissionsColumnWildcard(Property):
+class PropPermissionsColumnWildcard(Property):
     """
     AWS Object Type = "AWS::LakeFormation::Permissions.ColumnWildcard"
 
@@ -82,7 +82,7 @@ class PermissionsColumnWildcard(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-permissions-columnwildcard.html#cfn-lakeformation-permissions-columnwildcard-excludedcolumnnames"""
 
 @attr.s
-class PermissionsDatabaseResource(Property):
+class PropPermissionsDatabaseResource(Property):
     """
     AWS Object Type = "AWS::LakeFormation::Permissions.DatabaseResource"
 
@@ -109,7 +109,7 @@ class PermissionsDatabaseResource(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-permissions-databaseresource.html#cfn-lakeformation-permissions-databaseresource-name"""
 
 @attr.s
-class PermissionsTableWildcard(Property):
+class PropPermissionsTableWildcard(Property):
     """
     AWS Object Type = "AWS::LakeFormation::Permissions.TableWildcard"
 
@@ -122,7 +122,7 @@ class PermissionsTableWildcard(Property):
     
 
 @attr.s
-class PermissionsDataLakePrincipal(Property):
+class PropPermissionsDataLakePrincipal(Property):
     """
     AWS Object Type = "AWS::LakeFormation::Permissions.DataLakePrincipal"
 
@@ -142,7 +142,7 @@ class PermissionsDataLakePrincipal(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-permissions-datalakeprincipal.html#cfn-lakeformation-permissions-datalakeprincipal-datalakeprincipalidentifier"""
 
 @attr.s
-class PermissionsTableResource(Property):
+class PropPermissionsTableResource(Property):
     """
     AWS Object Type = "AWS::LakeFormation::Permissions.TableResource"
 
@@ -175,16 +175,16 @@ class PermissionsTableResource(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Name"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-permissions-tableresource.html#cfn-lakeformation-permissions-tableresource-name"""
-    p_TableWildcard: typing.Union['PermissionsTableWildcard', dict] = attr.ib(
+    p_TableWildcard: typing.Union['PropPermissionsTableWildcard', dict] = attr.ib(
         default=None,
-        converter=PermissionsTableWildcard.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PermissionsTableWildcard)),
+        converter=PropPermissionsTableWildcard.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropPermissionsTableWildcard)),
         metadata={AttrMeta.PROPERTY_NAME: "TableWildcard"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-permissions-tableresource.html#cfn-lakeformation-permissions-tableresource-tablewildcard"""
 
 @attr.s
-class PermissionsTableWithColumnsResource(Property):
+class PropPermissionsTableWithColumnsResource(Property):
     """
     AWS Object Type = "AWS::LakeFormation::Permissions.TableWithColumnsResource"
 
@@ -212,10 +212,10 @@ class PermissionsTableWithColumnsResource(Property):
         metadata={AttrMeta.PROPERTY_NAME: "ColumnNames"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-permissions-tablewithcolumnsresource.html#cfn-lakeformation-permissions-tablewithcolumnsresource-columnnames"""
-    p_ColumnWildcard: typing.Union['PermissionsColumnWildcard', dict] = attr.ib(
+    p_ColumnWildcard: typing.Union['PropPermissionsColumnWildcard', dict] = attr.ib(
         default=None,
-        converter=PermissionsColumnWildcard.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PermissionsColumnWildcard)),
+        converter=PropPermissionsColumnWildcard.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropPermissionsColumnWildcard)),
         metadata={AttrMeta.PROPERTY_NAME: "ColumnWildcard"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-permissions-tablewithcolumnsresource.html#cfn-lakeformation-permissions-tablewithcolumnsresource-columnwildcard"""
@@ -233,7 +233,7 @@ class PermissionsTableWithColumnsResource(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-permissions-tablewithcolumnsresource.html#cfn-lakeformation-permissions-tablewithcolumnsresource-name"""
 
 @attr.s
-class DataLakeSettingsAdmins(Property):
+class PropDataLakeSettingsAdmins(Property):
     """
     AWS Object Type = "AWS::LakeFormation::DataLakeSettings.Admins"
 
@@ -246,7 +246,7 @@ class DataLakeSettingsAdmins(Property):
     
 
 @attr.s
-class PermissionsResource(Property):
+class PropPermissionsResource(Property):
     """
     AWS Object Type = "AWS::LakeFormation::Permissions.Resource"
 
@@ -261,31 +261,31 @@ class PermissionsResource(Property):
     """
     AWS_OBJECT_TYPE = "AWS::LakeFormation::Permissions.Resource"
     
-    p_DataLocationResource: typing.Union['PermissionsDataLocationResource', dict] = attr.ib(
+    p_DataLocationResource: typing.Union['PropPermissionsDataLocationResource', dict] = attr.ib(
         default=None,
-        converter=PermissionsDataLocationResource.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PermissionsDataLocationResource)),
+        converter=PropPermissionsDataLocationResource.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropPermissionsDataLocationResource)),
         metadata={AttrMeta.PROPERTY_NAME: "DataLocationResource"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-permissions-resource.html#cfn-lakeformation-permissions-resource-datalocationresource"""
-    p_DatabaseResource: typing.Union['PermissionsDatabaseResource', dict] = attr.ib(
+    p_DatabaseResource: typing.Union['PropPermissionsDatabaseResource', dict] = attr.ib(
         default=None,
-        converter=PermissionsDatabaseResource.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PermissionsDatabaseResource)),
+        converter=PropPermissionsDatabaseResource.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropPermissionsDatabaseResource)),
         metadata={AttrMeta.PROPERTY_NAME: "DatabaseResource"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-permissions-resource.html#cfn-lakeformation-permissions-resource-databaseresource"""
-    p_TableResource: typing.Union['PermissionsTableResource', dict] = attr.ib(
+    p_TableResource: typing.Union['PropPermissionsTableResource', dict] = attr.ib(
         default=None,
-        converter=PermissionsTableResource.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PermissionsTableResource)),
+        converter=PropPermissionsTableResource.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropPermissionsTableResource)),
         metadata={AttrMeta.PROPERTY_NAME: "TableResource"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-permissions-resource.html#cfn-lakeformation-permissions-resource-tableresource"""
-    p_TableWithColumnsResource: typing.Union['PermissionsTableWithColumnsResource', dict] = attr.ib(
+    p_TableWithColumnsResource: typing.Union['PropPermissionsTableWithColumnsResource', dict] = attr.ib(
         default=None,
-        converter=PermissionsTableWithColumnsResource.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PermissionsTableWithColumnsResource)),
+        converter=PropPermissionsTableWithColumnsResource.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropPermissionsTableWithColumnsResource)),
         metadata={AttrMeta.PROPERTY_NAME: "TableWithColumnsResource"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-permissions-resource.html#cfn-lakeformation-permissions-resource-tablewithcolumnsresource"""
@@ -347,17 +347,17 @@ class Permissions(Resource):
     AWS_OBJECT_TYPE = "AWS::LakeFormation::Permissions"
 
     
-    rp_DataLakePrincipal: typing.Union['PermissionsDataLakePrincipal', dict] = attr.ib(
+    rp_DataLakePrincipal: typing.Union['PropPermissionsDataLakePrincipal', dict] = attr.ib(
         default=None,
-        converter=PermissionsDataLakePrincipal.from_dict,
-        validator=attr.validators.instance_of(PermissionsDataLakePrincipal),
+        converter=PropPermissionsDataLakePrincipal.from_dict,
+        validator=attr.validators.instance_of(PropPermissionsDataLakePrincipal),
         metadata={AttrMeta.PROPERTY_NAME: "DataLakePrincipal"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lakeformation-permissions.html#cfn-lakeformation-permissions-datalakeprincipal"""
-    rp_Resource: typing.Union['PermissionsResource', dict] = attr.ib(
+    rp_Resource: typing.Union['PropPermissionsResource', dict] = attr.ib(
         default=None,
-        converter=PermissionsResource.from_dict,
-        validator=attr.validators.instance_of(PermissionsResource),
+        converter=PropPermissionsResource.from_dict,
+        validator=attr.validators.instance_of(PropPermissionsResource),
         metadata={AttrMeta.PROPERTY_NAME: "Resource"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lakeformation-permissions.html#cfn-lakeformation-permissions-resource"""
@@ -391,10 +391,10 @@ class DataLakeSettings(Resource):
     AWS_OBJECT_TYPE = "AWS::LakeFormation::DataLakeSettings"
 
     
-    p_Admins: typing.Union['DataLakeSettingsAdmins', dict] = attr.ib(
+    p_Admins: typing.Union['PropDataLakeSettingsAdmins', dict] = attr.ib(
         default=None,
-        converter=DataLakeSettingsAdmins.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DataLakeSettingsAdmins)),
+        converter=PropDataLakeSettingsAdmins.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataLakeSettingsAdmins)),
         metadata={AttrMeta.PROPERTY_NAME: "Admins"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lakeformation-datalakesettings.html#cfn-lakeformation-datalakesettings-admins"""

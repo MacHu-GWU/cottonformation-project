@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class EnvironmentFederationParameters(Property):
+class PropEnvironmentFederationParameters(Property):
     """
     AWS Object Type = "AWS::FinSpace::Environment.FederationParameters"
 
@@ -108,10 +108,10 @@ class Environment(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "FederationMode"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-finspace-environment.html#cfn-finspace-environment-federationmode"""
-    p_FederationParameters: typing.Union['EnvironmentFederationParameters', dict] = attr.ib(
+    p_FederationParameters: typing.Union['PropEnvironmentFederationParameters', dict] = attr.ib(
         default=None,
-        converter=EnvironmentFederationParameters.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(EnvironmentFederationParameters)),
+        converter=PropEnvironmentFederationParameters.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropEnvironmentFederationParameters)),
         metadata={AttrMeta.PROPERTY_NAME: "FederationParameters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-finspace-environment.html#cfn-finspace-environment-federationparameters"""

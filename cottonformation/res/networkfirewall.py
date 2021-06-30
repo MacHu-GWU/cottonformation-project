@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class RuleGroupTCPFlagField(Property):
+class PropRuleGroupTCPFlagField(Property):
     """
     AWS Object Type = "AWS::NetworkFirewall::RuleGroup.TCPFlagField"
 
@@ -42,7 +42,7 @@ class RuleGroupTCPFlagField(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-tcpflagfield.html#cfn-networkfirewall-rulegroup-tcpflagfield-masks"""
 
 @attr.s
-class LoggingConfigurationLogDestinationConfig(Property):
+class PropLoggingConfigurationLogDestinationConfig(Property):
     """
     AWS Object Type = "AWS::NetworkFirewall::LoggingConfiguration.LogDestinationConfig"
 
@@ -76,7 +76,7 @@ class LoggingConfigurationLogDestinationConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-loggingconfiguration-logdestinationconfig.html#cfn-networkfirewall-loggingconfiguration-logdestinationconfig-logtype"""
 
 @attr.s
-class RuleGroupHeader(Property):
+class PropRuleGroupHeader(Property):
     """
     AWS Object Type = "AWS::NetworkFirewall::RuleGroup.Header"
 
@@ -131,7 +131,7 @@ class RuleGroupHeader(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-header.html#cfn-networkfirewall-rulegroup-header-sourceport"""
 
 @attr.s
-class RuleGroupDimension(Property):
+class PropRuleGroupDimension(Property):
     """
     AWS Object Type = "AWS::NetworkFirewall::RuleGroup.Dimension"
 
@@ -151,7 +151,7 @@ class RuleGroupDimension(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-dimension.html#cfn-networkfirewall-rulegroup-dimension-value"""
 
 @attr.s
-class FirewallPolicyStatelessRuleGroupReference(Property):
+class PropFirewallPolicyStatelessRuleGroupReference(Property):
     """
     AWS Object Type = "AWS::NetworkFirewall::FirewallPolicy.StatelessRuleGroupReference"
 
@@ -178,7 +178,7 @@ class FirewallPolicyStatelessRuleGroupReference(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-firewallpolicy-statelessrulegroupreference.html#cfn-networkfirewall-firewallpolicy-statelessrulegroupreference-resourcearn"""
 
 @attr.s
-class FirewallPolicyStatefulRuleGroupReference(Property):
+class PropFirewallPolicyStatefulRuleGroupReference(Property):
     """
     AWS Object Type = "AWS::NetworkFirewall::FirewallPolicy.StatefulRuleGroupReference"
 
@@ -198,7 +198,7 @@ class FirewallPolicyStatefulRuleGroupReference(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-firewallpolicy-statefulrulegroupreference.html#cfn-networkfirewall-firewallpolicy-statefulrulegroupreference-resourcearn"""
 
 @attr.s
-class RuleGroupRuleOption(Property):
+class PropRuleGroupRuleOption(Property):
     """
     AWS Object Type = "AWS::NetworkFirewall::RuleGroup.RuleOption"
 
@@ -225,7 +225,7 @@ class RuleGroupRuleOption(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-ruleoption.html#cfn-networkfirewall-rulegroup-ruleoption-settings"""
 
 @attr.s
-class FirewallSubnetMapping(Property):
+class PropFirewallSubnetMapping(Property):
     """
     AWS Object Type = "AWS::NetworkFirewall::Firewall.SubnetMapping"
 
@@ -245,7 +245,7 @@ class FirewallSubnetMapping(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-firewall-subnetmapping.html#cfn-networkfirewall-firewall-subnetmapping-subnetid"""
 
 @attr.s
-class RuleGroupRulesSourceList(Property):
+class PropRuleGroupRulesSourceList(Property):
     """
     AWS Object Type = "AWS::NetworkFirewall::RuleGroup.RulesSourceList"
 
@@ -279,7 +279,7 @@ class RuleGroupRulesSourceList(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-rulessourcelist.html#cfn-networkfirewall-rulegroup-rulessourcelist-targets"""
 
 @attr.s
-class FirewallPolicyDimension(Property):
+class PropFirewallPolicyDimension(Property):
     """
     AWS Object Type = "AWS::NetworkFirewall::FirewallPolicy.Dimension"
 
@@ -299,7 +299,7 @@ class FirewallPolicyDimension(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-firewallpolicy-dimension.html#cfn-networkfirewall-firewallpolicy-dimension-value"""
 
 @attr.s
-class RuleGroupPortRange(Property):
+class PropRuleGroupPortRange(Property):
     """
     AWS Object Type = "AWS::NetworkFirewall::RuleGroup.PortRange"
 
@@ -326,7 +326,7 @@ class RuleGroupPortRange(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-portrange.html#cfn-networkfirewall-rulegroup-portrange-toport"""
 
 @attr.s
-class RuleGroupIPSet(Property):
+class PropRuleGroupIPSet(Property):
     """
     AWS Object Type = "AWS::NetworkFirewall::RuleGroup.IPSet"
 
@@ -346,7 +346,7 @@ class RuleGroupIPSet(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-ipset.html#cfn-networkfirewall-rulegroup-ipset-definition"""
 
 @attr.s
-class LoggingConfigurationLoggingConfiguration(Property):
+class PropLoggingConfigurationLoggingConfiguration(Property):
     """
     AWS Object Type = "AWS::NetworkFirewall::LoggingConfiguration.LoggingConfiguration"
 
@@ -358,16 +358,16 @@ class LoggingConfigurationLoggingConfiguration(Property):
     """
     AWS_OBJECT_TYPE = "AWS::NetworkFirewall::LoggingConfiguration.LoggingConfiguration"
     
-    rp_LogDestinationConfigs: typing.List[typing.Union['LoggingConfigurationLogDestinationConfig', dict]] = attr.ib(
+    rp_LogDestinationConfigs: typing.List[typing.Union['PropLoggingConfigurationLogDestinationConfig', dict]] = attr.ib(
         default=None,
-        converter=LoggingConfigurationLogDestinationConfig.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(LoggingConfigurationLogDestinationConfig), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropLoggingConfigurationLogDestinationConfig.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropLoggingConfigurationLogDestinationConfig), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "LogDestinationConfigs"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-loggingconfiguration-loggingconfiguration.html#cfn-networkfirewall-loggingconfiguration-loggingconfiguration-logdestinationconfigs"""
 
 @attr.s
-class RuleGroupPortSet(Property):
+class PropRuleGroupPortSet(Property):
     """
     AWS Object Type = "AWS::NetworkFirewall::RuleGroup.PortSet"
 
@@ -387,7 +387,7 @@ class RuleGroupPortSet(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-portset.html#cfn-networkfirewall-rulegroup-portset-definition"""
 
 @attr.s
-class RuleGroupRuleVariables(Property):
+class PropRuleGroupRuleVariables(Property):
     """
     AWS Object Type = "AWS::NetworkFirewall::RuleGroup.RuleVariables"
 
@@ -400,23 +400,23 @@ class RuleGroupRuleVariables(Property):
     """
     AWS_OBJECT_TYPE = "AWS::NetworkFirewall::RuleGroup.RuleVariables"
     
-    p_IPSets: typing.Union['RuleGroupIPSet', dict] = attr.ib(
+    p_IPSets: typing.Union['PropRuleGroupIPSet', dict] = attr.ib(
         default=None,
-        converter=RuleGroupIPSet.from_list,
-        validator=attr.validators.optional(attr.validators.instance_of(RuleGroupIPSet)),
+        converter=PropRuleGroupIPSet.from_list,
+        validator=attr.validators.optional(attr.validators.instance_of(PropRuleGroupIPSet)),
         metadata={AttrMeta.PROPERTY_NAME: "IPSets"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-rulevariables.html#cfn-networkfirewall-rulegroup-rulevariables-ipsets"""
-    p_PortSets: typing.Union['RuleGroupPortSet', dict] = attr.ib(
+    p_PortSets: typing.Union['PropRuleGroupPortSet', dict] = attr.ib(
         default=None,
-        converter=RuleGroupPortSet.from_list,
-        validator=attr.validators.optional(attr.validators.instance_of(RuleGroupPortSet)),
+        converter=PropRuleGroupPortSet.from_list,
+        validator=attr.validators.optional(attr.validators.instance_of(PropRuleGroupPortSet)),
         metadata={AttrMeta.PROPERTY_NAME: "PortSets"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-rulevariables.html#cfn-networkfirewall-rulegroup-rulevariables-portsets"""
 
 @attr.s
-class RuleGroupPublishMetricAction(Property):
+class PropRuleGroupPublishMetricAction(Property):
     """
     AWS Object Type = "AWS::NetworkFirewall::RuleGroup.PublishMetricAction"
 
@@ -428,16 +428,16 @@ class RuleGroupPublishMetricAction(Property):
     """
     AWS_OBJECT_TYPE = "AWS::NetworkFirewall::RuleGroup.PublishMetricAction"
     
-    rp_Dimensions: typing.List[typing.Union['RuleGroupDimension', dict]] = attr.ib(
+    rp_Dimensions: typing.List[typing.Union['PropRuleGroupDimension', dict]] = attr.ib(
         default=None,
-        converter=RuleGroupDimension.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(RuleGroupDimension), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropRuleGroupDimension.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropRuleGroupDimension), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "Dimensions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-publishmetricaction.html#cfn-networkfirewall-rulegroup-publishmetricaction-dimensions"""
 
 @attr.s
-class RuleGroupAddress(Property):
+class PropRuleGroupAddress(Property):
     """
     AWS Object Type = "AWS::NetworkFirewall::RuleGroup.Address"
 
@@ -457,7 +457,7 @@ class RuleGroupAddress(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-address.html#cfn-networkfirewall-rulegroup-address-addressdefinition"""
 
 @attr.s
-class RuleGroupStatefulRule(Property):
+class PropRuleGroupStatefulRule(Property):
     """
     AWS Object Type = "AWS::NetworkFirewall::RuleGroup.StatefulRule"
 
@@ -477,23 +477,23 @@ class RuleGroupStatefulRule(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Action"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-statefulrule.html#cfn-networkfirewall-rulegroup-statefulrule-action"""
-    rp_Header: typing.Union['RuleGroupHeader', dict] = attr.ib(
+    rp_Header: typing.Union['PropRuleGroupHeader', dict] = attr.ib(
         default=None,
-        converter=RuleGroupHeader.from_dict,
-        validator=attr.validators.instance_of(RuleGroupHeader),
+        converter=PropRuleGroupHeader.from_dict,
+        validator=attr.validators.instance_of(PropRuleGroupHeader),
         metadata={AttrMeta.PROPERTY_NAME: "Header"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-statefulrule.html#cfn-networkfirewall-rulegroup-statefulrule-header"""
-    rp_RuleOptions: typing.List[typing.Union['RuleGroupRuleOption', dict]] = attr.ib(
+    rp_RuleOptions: typing.List[typing.Union['PropRuleGroupRuleOption', dict]] = attr.ib(
         default=None,
-        converter=RuleGroupRuleOption.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(RuleGroupRuleOption), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropRuleGroupRuleOption.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropRuleGroupRuleOption), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "RuleOptions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-statefulrule.html#cfn-networkfirewall-rulegroup-statefulrule-ruleoptions"""
 
 @attr.s
-class RuleGroupActionDefinition(Property):
+class PropRuleGroupActionDefinition(Property):
     """
     AWS Object Type = "AWS::NetworkFirewall::RuleGroup.ActionDefinition"
 
@@ -505,16 +505,16 @@ class RuleGroupActionDefinition(Property):
     """
     AWS_OBJECT_TYPE = "AWS::NetworkFirewall::RuleGroup.ActionDefinition"
     
-    p_PublishMetricAction: typing.Union['RuleGroupPublishMetricAction', dict] = attr.ib(
+    p_PublishMetricAction: typing.Union['PropRuleGroupPublishMetricAction', dict] = attr.ib(
         default=None,
-        converter=RuleGroupPublishMetricAction.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(RuleGroupPublishMetricAction)),
+        converter=PropRuleGroupPublishMetricAction.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropRuleGroupPublishMetricAction)),
         metadata={AttrMeta.PROPERTY_NAME: "PublishMetricAction"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-actiondefinition.html#cfn-networkfirewall-rulegroup-actiondefinition-publishmetricaction"""
 
 @attr.s
-class FirewallPolicyPublishMetricAction(Property):
+class PropFirewallPolicyPublishMetricAction(Property):
     """
     AWS Object Type = "AWS::NetworkFirewall::FirewallPolicy.PublishMetricAction"
 
@@ -526,16 +526,16 @@ class FirewallPolicyPublishMetricAction(Property):
     """
     AWS_OBJECT_TYPE = "AWS::NetworkFirewall::FirewallPolicy.PublishMetricAction"
     
-    rp_Dimensions: typing.List[typing.Union['FirewallPolicyDimension', dict]] = attr.ib(
+    rp_Dimensions: typing.List[typing.Union['PropFirewallPolicyDimension', dict]] = attr.ib(
         default=None,
-        converter=FirewallPolicyDimension.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(FirewallPolicyDimension), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropFirewallPolicyDimension.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropFirewallPolicyDimension), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "Dimensions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-firewallpolicy-publishmetricaction.html#cfn-networkfirewall-firewallpolicy-publishmetricaction-dimensions"""
 
 @attr.s
-class FirewallPolicyActionDefinition(Property):
+class PropFirewallPolicyActionDefinition(Property):
     """
     AWS Object Type = "AWS::NetworkFirewall::FirewallPolicy.ActionDefinition"
 
@@ -547,16 +547,16 @@ class FirewallPolicyActionDefinition(Property):
     """
     AWS_OBJECT_TYPE = "AWS::NetworkFirewall::FirewallPolicy.ActionDefinition"
     
-    p_PublishMetricAction: typing.Union['FirewallPolicyPublishMetricAction', dict] = attr.ib(
+    p_PublishMetricAction: typing.Union['PropFirewallPolicyPublishMetricAction', dict] = attr.ib(
         default=None,
-        converter=FirewallPolicyPublishMetricAction.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(FirewallPolicyPublishMetricAction)),
+        converter=PropFirewallPolicyPublishMetricAction.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropFirewallPolicyPublishMetricAction)),
         metadata={AttrMeta.PROPERTY_NAME: "PublishMetricAction"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-firewallpolicy-actiondefinition.html#cfn-networkfirewall-firewallpolicy-actiondefinition-publishmetricaction"""
 
 @attr.s
-class RuleGroupCustomAction(Property):
+class PropRuleGroupCustomAction(Property):
     """
     AWS Object Type = "AWS::NetworkFirewall::RuleGroup.CustomAction"
 
@@ -569,10 +569,10 @@ class RuleGroupCustomAction(Property):
     """
     AWS_OBJECT_TYPE = "AWS::NetworkFirewall::RuleGroup.CustomAction"
     
-    rp_ActionDefinition: typing.Union['RuleGroupActionDefinition', dict] = attr.ib(
+    rp_ActionDefinition: typing.Union['PropRuleGroupActionDefinition', dict] = attr.ib(
         default=None,
-        converter=RuleGroupActionDefinition.from_dict,
-        validator=attr.validators.instance_of(RuleGroupActionDefinition),
+        converter=PropRuleGroupActionDefinition.from_dict,
+        validator=attr.validators.instance_of(PropRuleGroupActionDefinition),
         metadata={AttrMeta.PROPERTY_NAME: "ActionDefinition"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-customaction.html#cfn-networkfirewall-rulegroup-customaction-actiondefinition"""
@@ -584,7 +584,7 @@ class RuleGroupCustomAction(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-customaction.html#cfn-networkfirewall-rulegroup-customaction-actionname"""
 
 @attr.s
-class RuleGroupMatchAttributes(Property):
+class PropRuleGroupMatchAttributes(Property):
     """
     AWS Object Type = "AWS::NetworkFirewall::RuleGroup.MatchAttributes"
 
@@ -601,17 +601,17 @@ class RuleGroupMatchAttributes(Property):
     """
     AWS_OBJECT_TYPE = "AWS::NetworkFirewall::RuleGroup.MatchAttributes"
     
-    p_DestinationPorts: typing.List[typing.Union['RuleGroupPortRange', dict]] = attr.ib(
+    p_DestinationPorts: typing.List[typing.Union['PropRuleGroupPortRange', dict]] = attr.ib(
         default=None,
-        converter=RuleGroupPortRange.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(RuleGroupPortRange), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropRuleGroupPortRange.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropRuleGroupPortRange), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "DestinationPorts"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-matchattributes.html#cfn-networkfirewall-rulegroup-matchattributes-destinationports"""
-    p_Destinations: typing.List[typing.Union['RuleGroupAddress', dict]] = attr.ib(
+    p_Destinations: typing.List[typing.Union['PropRuleGroupAddress', dict]] = attr.ib(
         default=None,
-        converter=RuleGroupAddress.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(RuleGroupAddress), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropRuleGroupAddress.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropRuleGroupAddress), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Destinations"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-matchattributes.html#cfn-networkfirewall-rulegroup-matchattributes-destinations"""
@@ -621,30 +621,30 @@ class RuleGroupMatchAttributes(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Protocols"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-matchattributes.html#cfn-networkfirewall-rulegroup-matchattributes-protocols"""
-    p_SourcePorts: typing.List[typing.Union['RuleGroupPortRange', dict]] = attr.ib(
+    p_SourcePorts: typing.List[typing.Union['PropRuleGroupPortRange', dict]] = attr.ib(
         default=None,
-        converter=RuleGroupPortRange.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(RuleGroupPortRange), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropRuleGroupPortRange.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropRuleGroupPortRange), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "SourcePorts"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-matchattributes.html#cfn-networkfirewall-rulegroup-matchattributes-sourceports"""
-    p_Sources: typing.List[typing.Union['RuleGroupAddress', dict]] = attr.ib(
+    p_Sources: typing.List[typing.Union['PropRuleGroupAddress', dict]] = attr.ib(
         default=None,
-        converter=RuleGroupAddress.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(RuleGroupAddress), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropRuleGroupAddress.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropRuleGroupAddress), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Sources"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-matchattributes.html#cfn-networkfirewall-rulegroup-matchattributes-sources"""
-    p_TCPFlags: typing.List[typing.Union['RuleGroupTCPFlagField', dict]] = attr.ib(
+    p_TCPFlags: typing.List[typing.Union['PropRuleGroupTCPFlagField', dict]] = attr.ib(
         default=None,
-        converter=RuleGroupTCPFlagField.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(RuleGroupTCPFlagField), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropRuleGroupTCPFlagField.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropRuleGroupTCPFlagField), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "TCPFlags"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-matchattributes.html#cfn-networkfirewall-rulegroup-matchattributes-tcpflags"""
 
 @attr.s
-class FirewallPolicyCustomAction(Property):
+class PropFirewallPolicyCustomAction(Property):
     """
     AWS Object Type = "AWS::NetworkFirewall::FirewallPolicy.CustomAction"
 
@@ -657,10 +657,10 @@ class FirewallPolicyCustomAction(Property):
     """
     AWS_OBJECT_TYPE = "AWS::NetworkFirewall::FirewallPolicy.CustomAction"
     
-    rp_ActionDefinition: typing.Union['FirewallPolicyActionDefinition', dict] = attr.ib(
+    rp_ActionDefinition: typing.Union['PropFirewallPolicyActionDefinition', dict] = attr.ib(
         default=None,
-        converter=FirewallPolicyActionDefinition.from_dict,
-        validator=attr.validators.instance_of(FirewallPolicyActionDefinition),
+        converter=PropFirewallPolicyActionDefinition.from_dict,
+        validator=attr.validators.instance_of(PropFirewallPolicyActionDefinition),
         metadata={AttrMeta.PROPERTY_NAME: "ActionDefinition"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-firewallpolicy-customaction.html#cfn-networkfirewall-firewallpolicy-customaction-actiondefinition"""
@@ -672,7 +672,7 @@ class FirewallPolicyCustomAction(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-firewallpolicy-customaction.html#cfn-networkfirewall-firewallpolicy-customaction-actionname"""
 
 @attr.s
-class RuleGroupRuleDefinition(Property):
+class PropRuleGroupRuleDefinition(Property):
     """
     AWS Object Type = "AWS::NetworkFirewall::RuleGroup.RuleDefinition"
 
@@ -691,16 +691,16 @@ class RuleGroupRuleDefinition(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Actions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-ruledefinition.html#cfn-networkfirewall-rulegroup-ruledefinition-actions"""
-    rp_MatchAttributes: typing.Union['RuleGroupMatchAttributes', dict] = attr.ib(
+    rp_MatchAttributes: typing.Union['PropRuleGroupMatchAttributes', dict] = attr.ib(
         default=None,
-        converter=RuleGroupMatchAttributes.from_dict,
-        validator=attr.validators.instance_of(RuleGroupMatchAttributes),
+        converter=PropRuleGroupMatchAttributes.from_dict,
+        validator=attr.validators.instance_of(PropRuleGroupMatchAttributes),
         metadata={AttrMeta.PROPERTY_NAME: "MatchAttributes"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-ruledefinition.html#cfn-networkfirewall-rulegroup-ruledefinition-matchattributes"""
 
 @attr.s
-class RuleGroupStatelessRule(Property):
+class PropRuleGroupStatelessRule(Property):
     """
     AWS Object Type = "AWS::NetworkFirewall::RuleGroup.StatelessRule"
 
@@ -719,16 +719,16 @@ class RuleGroupStatelessRule(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Priority"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-statelessrule.html#cfn-networkfirewall-rulegroup-statelessrule-priority"""
-    rp_RuleDefinition: typing.Union['RuleGroupRuleDefinition', dict] = attr.ib(
+    rp_RuleDefinition: typing.Union['PropRuleGroupRuleDefinition', dict] = attr.ib(
         default=None,
-        converter=RuleGroupRuleDefinition.from_dict,
-        validator=attr.validators.instance_of(RuleGroupRuleDefinition),
+        converter=PropRuleGroupRuleDefinition.from_dict,
+        validator=attr.validators.instance_of(PropRuleGroupRuleDefinition),
         metadata={AttrMeta.PROPERTY_NAME: "RuleDefinition"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-statelessrule.html#cfn-networkfirewall-rulegroup-statelessrule-ruledefinition"""
 
 @attr.s
-class FirewallPolicyFirewallPolicy(Property):
+class PropFirewallPolicyFirewallPolicy(Property):
     """
     AWS Object Type = "AWS::NetworkFirewall::FirewallPolicy.FirewallPolicy"
 
@@ -756,30 +756,30 @@ class FirewallPolicyFirewallPolicy(Property):
         metadata={AttrMeta.PROPERTY_NAME: "StatelessFragmentDefaultActions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-firewallpolicy-firewallpolicy.html#cfn-networkfirewall-firewallpolicy-firewallpolicy-statelessfragmentdefaultactions"""
-    p_StatefulRuleGroupReferences: typing.List[typing.Union['FirewallPolicyStatefulRuleGroupReference', dict]] = attr.ib(
+    p_StatefulRuleGroupReferences: typing.List[typing.Union['PropFirewallPolicyStatefulRuleGroupReference', dict]] = attr.ib(
         default=None,
-        converter=FirewallPolicyStatefulRuleGroupReference.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(FirewallPolicyStatefulRuleGroupReference), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropFirewallPolicyStatefulRuleGroupReference.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropFirewallPolicyStatefulRuleGroupReference), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "StatefulRuleGroupReferences"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-firewallpolicy-firewallpolicy.html#cfn-networkfirewall-firewallpolicy-firewallpolicy-statefulrulegroupreferences"""
-    p_StatelessCustomActions: typing.List[typing.Union['FirewallPolicyCustomAction', dict]] = attr.ib(
+    p_StatelessCustomActions: typing.List[typing.Union['PropFirewallPolicyCustomAction', dict]] = attr.ib(
         default=None,
-        converter=FirewallPolicyCustomAction.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(FirewallPolicyCustomAction), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropFirewallPolicyCustomAction.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropFirewallPolicyCustomAction), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "StatelessCustomActions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-firewallpolicy-firewallpolicy.html#cfn-networkfirewall-firewallpolicy-firewallpolicy-statelesscustomactions"""
-    p_StatelessRuleGroupReferences: typing.List[typing.Union['FirewallPolicyStatelessRuleGroupReference', dict]] = attr.ib(
+    p_StatelessRuleGroupReferences: typing.List[typing.Union['PropFirewallPolicyStatelessRuleGroupReference', dict]] = attr.ib(
         default=None,
-        converter=FirewallPolicyStatelessRuleGroupReference.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(FirewallPolicyStatelessRuleGroupReference), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropFirewallPolicyStatelessRuleGroupReference.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropFirewallPolicyStatelessRuleGroupReference), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "StatelessRuleGroupReferences"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-firewallpolicy-firewallpolicy.html#cfn-networkfirewall-firewallpolicy-firewallpolicy-statelessrulegroupreferences"""
 
 @attr.s
-class RuleGroupStatelessRulesAndCustomActions(Property):
+class PropRuleGroupStatelessRulesAndCustomActions(Property):
     """
     AWS Object Type = "AWS::NetworkFirewall::RuleGroup.StatelessRulesAndCustomActions"
 
@@ -792,23 +792,23 @@ class RuleGroupStatelessRulesAndCustomActions(Property):
     """
     AWS_OBJECT_TYPE = "AWS::NetworkFirewall::RuleGroup.StatelessRulesAndCustomActions"
     
-    rp_StatelessRules: typing.List[typing.Union['RuleGroupStatelessRule', dict]] = attr.ib(
+    rp_StatelessRules: typing.List[typing.Union['PropRuleGroupStatelessRule', dict]] = attr.ib(
         default=None,
-        converter=RuleGroupStatelessRule.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(RuleGroupStatelessRule), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropRuleGroupStatelessRule.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropRuleGroupStatelessRule), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "StatelessRules"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-statelessrulesandcustomactions.html#cfn-networkfirewall-rulegroup-statelessrulesandcustomactions-statelessrules"""
-    p_CustomActions: typing.List[typing.Union['RuleGroupCustomAction', dict]] = attr.ib(
+    p_CustomActions: typing.List[typing.Union['PropRuleGroupCustomAction', dict]] = attr.ib(
         default=None,
-        converter=RuleGroupCustomAction.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(RuleGroupCustomAction), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropRuleGroupCustomAction.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropRuleGroupCustomAction), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "CustomActions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-statelessrulesandcustomactions.html#cfn-networkfirewall-rulegroup-statelessrulesandcustomactions-customactions"""
 
 @attr.s
-class RuleGroupRulesSource(Property):
+class PropRuleGroupRulesSource(Property):
     """
     AWS Object Type = "AWS::NetworkFirewall::RuleGroup.RulesSource"
 
@@ -823,10 +823,10 @@ class RuleGroupRulesSource(Property):
     """
     AWS_OBJECT_TYPE = "AWS::NetworkFirewall::RuleGroup.RulesSource"
     
-    p_RulesSourceList: typing.Union['RuleGroupRulesSourceList', dict] = attr.ib(
+    p_RulesSourceList: typing.Union['PropRuleGroupRulesSourceList', dict] = attr.ib(
         default=None,
-        converter=RuleGroupRulesSourceList.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(RuleGroupRulesSourceList)),
+        converter=PropRuleGroupRulesSourceList.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropRuleGroupRulesSourceList)),
         metadata={AttrMeta.PROPERTY_NAME: "RulesSourceList"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-rulessource.html#cfn-networkfirewall-rulegroup-rulessource-rulessourcelist"""
@@ -836,23 +836,23 @@ class RuleGroupRulesSource(Property):
         metadata={AttrMeta.PROPERTY_NAME: "RulesString"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-rulessource.html#cfn-networkfirewall-rulegroup-rulessource-rulesstring"""
-    p_StatefulRules: typing.List[typing.Union['RuleGroupStatefulRule', dict]] = attr.ib(
+    p_StatefulRules: typing.List[typing.Union['PropRuleGroupStatefulRule', dict]] = attr.ib(
         default=None,
-        converter=RuleGroupStatefulRule.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(RuleGroupStatefulRule), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropRuleGroupStatefulRule.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropRuleGroupStatefulRule), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "StatefulRules"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-rulessource.html#cfn-networkfirewall-rulegroup-rulessource-statefulrules"""
-    p_StatelessRulesAndCustomActions: typing.Union['RuleGroupStatelessRulesAndCustomActions', dict] = attr.ib(
+    p_StatelessRulesAndCustomActions: typing.Union['PropRuleGroupStatelessRulesAndCustomActions', dict] = attr.ib(
         default=None,
-        converter=RuleGroupStatelessRulesAndCustomActions.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(RuleGroupStatelessRulesAndCustomActions)),
+        converter=PropRuleGroupStatelessRulesAndCustomActions.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropRuleGroupStatelessRulesAndCustomActions)),
         metadata={AttrMeta.PROPERTY_NAME: "StatelessRulesAndCustomActions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-rulessource.html#cfn-networkfirewall-rulegroup-rulessource-statelessrulesandcustomactions"""
 
 @attr.s
-class RuleGroupRuleGroup(Property):
+class PropRuleGroupRuleGroup(Property):
     """
     AWS Object Type = "AWS::NetworkFirewall::RuleGroup.RuleGroup"
 
@@ -865,17 +865,17 @@ class RuleGroupRuleGroup(Property):
     """
     AWS_OBJECT_TYPE = "AWS::NetworkFirewall::RuleGroup.RuleGroup"
     
-    rp_RulesSource: typing.Union['RuleGroupRulesSource', dict] = attr.ib(
+    rp_RulesSource: typing.Union['PropRuleGroupRulesSource', dict] = attr.ib(
         default=None,
-        converter=RuleGroupRulesSource.from_dict,
-        validator=attr.validators.instance_of(RuleGroupRulesSource),
+        converter=PropRuleGroupRulesSource.from_dict,
+        validator=attr.validators.instance_of(PropRuleGroupRulesSource),
         metadata={AttrMeta.PROPERTY_NAME: "RulesSource"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-rulegroup.html#cfn-networkfirewall-rulegroup-rulegroup-rulessource"""
-    p_RuleVariables: typing.Union['RuleGroupRuleVariables', dict] = attr.ib(
+    p_RuleVariables: typing.Union['PropRuleGroupRuleVariables', dict] = attr.ib(
         default=None,
-        converter=RuleGroupRuleVariables.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(RuleGroupRuleVariables)),
+        converter=PropRuleGroupRuleVariables.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropRuleGroupRuleVariables)),
         metadata={AttrMeta.PROPERTY_NAME: "RuleVariables"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-rulegroup.html#cfn-networkfirewall-rulegroup-rulegroup-rulevariables"""
@@ -926,10 +926,10 @@ class RuleGroup(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Description"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkfirewall-rulegroup.html#cfn-networkfirewall-rulegroup-description"""
-    p_RuleGroup: typing.Union['RuleGroupRuleGroup', dict] = attr.ib(
+    p_RuleGroup: typing.Union['PropRuleGroupRuleGroup', dict] = attr.ib(
         default=None,
-        converter=RuleGroupRuleGroup.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(RuleGroupRuleGroup)),
+        converter=PropRuleGroupRuleGroup.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropRuleGroupRuleGroup)),
         metadata={AttrMeta.PROPERTY_NAME: "RuleGroup"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkfirewall-rulegroup.html#cfn-networkfirewall-rulegroup-rulegroup"""
@@ -970,10 +970,10 @@ class FirewallPolicy(Resource):
     AWS_OBJECT_TYPE = "AWS::NetworkFirewall::FirewallPolicy"
 
     
-    rp_FirewallPolicy: typing.Union['FirewallPolicyFirewallPolicy', dict] = attr.ib(
+    rp_FirewallPolicy: typing.Union['PropFirewallPolicyFirewallPolicy', dict] = attr.ib(
         default=None,
-        converter=FirewallPolicyFirewallPolicy.from_dict,
-        validator=attr.validators.instance_of(FirewallPolicyFirewallPolicy),
+        converter=PropFirewallPolicyFirewallPolicy.from_dict,
+        validator=attr.validators.instance_of(PropFirewallPolicyFirewallPolicy),
         metadata={AttrMeta.PROPERTY_NAME: "FirewallPolicy"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkfirewall-firewallpolicy.html#cfn-networkfirewall-firewallpolicy-firewallpolicy"""
@@ -1043,10 +1043,10 @@ class Firewall(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "FirewallPolicyArn"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkfirewall-firewall.html#cfn-networkfirewall-firewall-firewallpolicyarn"""
-    rp_SubnetMappings: typing.List[typing.Union['FirewallSubnetMapping', dict]] = attr.ib(
+    rp_SubnetMappings: typing.List[typing.Union['PropFirewallSubnetMapping', dict]] = attr.ib(
         default=None,
-        converter=FirewallSubnetMapping.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(FirewallSubnetMapping), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropFirewallSubnetMapping.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropFirewallSubnetMapping), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "SubnetMappings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkfirewall-firewall.html#cfn-networkfirewall-firewall-subnetmappings"""
@@ -1127,10 +1127,10 @@ class LoggingConfiguration(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "FirewallArn"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkfirewall-loggingconfiguration.html#cfn-networkfirewall-loggingconfiguration-firewallarn"""
-    rp_LoggingConfiguration: typing.Union['LoggingConfigurationLoggingConfiguration', dict] = attr.ib(
+    rp_LoggingConfiguration: typing.Union['PropLoggingConfigurationLoggingConfiguration', dict] = attr.ib(
         default=None,
-        converter=LoggingConfigurationLoggingConfiguration.from_dict,
-        validator=attr.validators.instance_of(LoggingConfigurationLoggingConfiguration),
+        converter=PropLoggingConfigurationLoggingConfiguration.from_dict,
+        validator=attr.validators.instance_of(PropLoggingConfigurationLoggingConfiguration),
         metadata={AttrMeta.PROPERTY_NAME: "LoggingConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkfirewall-loggingconfiguration.html#cfn-networkfirewall-loggingconfiguration-loggingconfiguration"""

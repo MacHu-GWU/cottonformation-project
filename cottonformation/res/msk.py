@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class ClusterS3(Property):
+class PropClusterS3(Property):
     """
     AWS Object Type = "AWS::MSK::Cluster.S3"
 
@@ -49,7 +49,7 @@ class ClusterS3(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-s3.html#cfn-msk-cluster-s3-prefix"""
 
 @attr.s
-class ClusterCloudWatchLogs(Property):
+class PropClusterCloudWatchLogs(Property):
     """
     AWS Object Type = "AWS::MSK::Cluster.CloudWatchLogs"
 
@@ -76,7 +76,7 @@ class ClusterCloudWatchLogs(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-cloudwatchlogs.html#cfn-msk-cluster-cloudwatchlogs-loggroup"""
 
 @attr.s
-class ClusterEncryptionAtRest(Property):
+class PropClusterEncryptionAtRest(Property):
     """
     AWS Object Type = "AWS::MSK::Cluster.EncryptionAtRest"
 
@@ -96,7 +96,7 @@ class ClusterEncryptionAtRest(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-encryptionatrest.html#cfn-msk-cluster-encryptionatrest-datavolumekmskeyid"""
 
 @attr.s
-class ClusterEncryptionInTransit(Property):
+class PropClusterEncryptionInTransit(Property):
     """
     AWS Object Type = "AWS::MSK::Cluster.EncryptionInTransit"
 
@@ -123,7 +123,7 @@ class ClusterEncryptionInTransit(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-encryptionintransit.html#cfn-msk-cluster-encryptionintransit-incluster"""
 
 @attr.s
-class ClusterEncryptionInfo(Property):
+class PropClusterEncryptionInfo(Property):
     """
     AWS Object Type = "AWS::MSK::Cluster.EncryptionInfo"
 
@@ -136,23 +136,23 @@ class ClusterEncryptionInfo(Property):
     """
     AWS_OBJECT_TYPE = "AWS::MSK::Cluster.EncryptionInfo"
     
-    p_EncryptionAtRest: typing.Union['ClusterEncryptionAtRest', dict] = attr.ib(
+    p_EncryptionAtRest: typing.Union['PropClusterEncryptionAtRest', dict] = attr.ib(
         default=None,
-        converter=ClusterEncryptionAtRest.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ClusterEncryptionAtRest)),
+        converter=PropClusterEncryptionAtRest.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropClusterEncryptionAtRest)),
         metadata={AttrMeta.PROPERTY_NAME: "EncryptionAtRest"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-encryptioninfo.html#cfn-msk-cluster-encryptioninfo-encryptionatrest"""
-    p_EncryptionInTransit: typing.Union['ClusterEncryptionInTransit', dict] = attr.ib(
+    p_EncryptionInTransit: typing.Union['PropClusterEncryptionInTransit', dict] = attr.ib(
         default=None,
-        converter=ClusterEncryptionInTransit.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ClusterEncryptionInTransit)),
+        converter=PropClusterEncryptionInTransit.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropClusterEncryptionInTransit)),
         metadata={AttrMeta.PROPERTY_NAME: "EncryptionInTransit"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-encryptioninfo.html#cfn-msk-cluster-encryptioninfo-encryptionintransit"""
 
 @attr.s
-class ClusterIam(Property):
+class PropClusterIam(Property):
     """
     AWS Object Type = "AWS::MSK::Cluster.Iam"
 
@@ -172,7 +172,7 @@ class ClusterIam(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-iam.html#cfn-msk-cluster-iam-enabled"""
 
 @attr.s
-class ClusterConfigurationInfo(Property):
+class PropClusterConfigurationInfo(Property):
     """
     AWS Object Type = "AWS::MSK::Cluster.ConfigurationInfo"
 
@@ -199,7 +199,7 @@ class ClusterConfigurationInfo(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-configurationinfo.html#cfn-msk-cluster-configurationinfo-revision"""
 
 @attr.s
-class ClusterScram(Property):
+class PropClusterScram(Property):
     """
     AWS Object Type = "AWS::MSK::Cluster.Scram"
 
@@ -219,7 +219,7 @@ class ClusterScram(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-scram.html#cfn-msk-cluster-scram-enabled"""
 
 @attr.s
-class ClusterJmxExporter(Property):
+class PropClusterJmxExporter(Property):
     """
     AWS Object Type = "AWS::MSK::Cluster.JmxExporter"
 
@@ -239,7 +239,7 @@ class ClusterJmxExporter(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-jmxexporter.html#cfn-msk-cluster-jmxexporter-enabledinbroker"""
 
 @attr.s
-class ClusterNodeExporter(Property):
+class PropClusterNodeExporter(Property):
     """
     AWS Object Type = "AWS::MSK::Cluster.NodeExporter"
 
@@ -259,7 +259,7 @@ class ClusterNodeExporter(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-nodeexporter.html#cfn-msk-cluster-nodeexporter-enabledinbroker"""
 
 @attr.s
-class ClusterEBSStorageInfo(Property):
+class PropClusterEBSStorageInfo(Property):
     """
     AWS Object Type = "AWS::MSK::Cluster.EBSStorageInfo"
 
@@ -279,7 +279,7 @@ class ClusterEBSStorageInfo(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-ebsstorageinfo.html#cfn-msk-cluster-ebsstorageinfo-volumesize"""
 
 @attr.s
-class ClusterFirehose(Property):
+class PropClusterFirehose(Property):
     """
     AWS Object Type = "AWS::MSK::Cluster.Firehose"
 
@@ -306,7 +306,7 @@ class ClusterFirehose(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-firehose.html#cfn-msk-cluster-firehose-deliverystream"""
 
 @attr.s
-class ClusterTls(Property):
+class PropClusterTls(Property):
     """
     AWS Object Type = "AWS::MSK::Cluster.Tls"
 
@@ -326,7 +326,7 @@ class ClusterTls(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-tls.html#cfn-msk-cluster-tls-certificateauthorityarnlist"""
 
 @attr.s
-class ClusterBrokerLogs(Property):
+class PropClusterBrokerLogs(Property):
     """
     AWS Object Type = "AWS::MSK::Cluster.BrokerLogs"
 
@@ -340,30 +340,30 @@ class ClusterBrokerLogs(Property):
     """
     AWS_OBJECT_TYPE = "AWS::MSK::Cluster.BrokerLogs"
     
-    p_CloudWatchLogs: typing.Union['ClusterCloudWatchLogs', dict] = attr.ib(
+    p_CloudWatchLogs: typing.Union['PropClusterCloudWatchLogs', dict] = attr.ib(
         default=None,
-        converter=ClusterCloudWatchLogs.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ClusterCloudWatchLogs)),
+        converter=PropClusterCloudWatchLogs.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropClusterCloudWatchLogs)),
         metadata={AttrMeta.PROPERTY_NAME: "CloudWatchLogs"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-brokerlogs.html#cfn-msk-cluster-brokerlogs-cloudwatchlogs"""
-    p_Firehose: typing.Union['ClusterFirehose', dict] = attr.ib(
+    p_Firehose: typing.Union['PropClusterFirehose', dict] = attr.ib(
         default=None,
-        converter=ClusterFirehose.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ClusterFirehose)),
+        converter=PropClusterFirehose.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropClusterFirehose)),
         metadata={AttrMeta.PROPERTY_NAME: "Firehose"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-brokerlogs.html#cfn-msk-cluster-brokerlogs-firehose"""
-    p_S3: typing.Union['ClusterS3', dict] = attr.ib(
+    p_S3: typing.Union['PropClusterS3', dict] = attr.ib(
         default=None,
-        converter=ClusterS3.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ClusterS3)),
+        converter=PropClusterS3.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropClusterS3)),
         metadata={AttrMeta.PROPERTY_NAME: "S3"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-brokerlogs.html#cfn-msk-cluster-brokerlogs-s3"""
 
 @attr.s
-class ClusterPrometheus(Property):
+class PropClusterPrometheus(Property):
     """
     AWS Object Type = "AWS::MSK::Cluster.Prometheus"
 
@@ -376,23 +376,23 @@ class ClusterPrometheus(Property):
     """
     AWS_OBJECT_TYPE = "AWS::MSK::Cluster.Prometheus"
     
-    p_JmxExporter: typing.Union['ClusterJmxExporter', dict] = attr.ib(
+    p_JmxExporter: typing.Union['PropClusterJmxExporter', dict] = attr.ib(
         default=None,
-        converter=ClusterJmxExporter.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ClusterJmxExporter)),
+        converter=PropClusterJmxExporter.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropClusterJmxExporter)),
         metadata={AttrMeta.PROPERTY_NAME: "JmxExporter"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-prometheus.html#cfn-msk-cluster-prometheus-jmxexporter"""
-    p_NodeExporter: typing.Union['ClusterNodeExporter', dict] = attr.ib(
+    p_NodeExporter: typing.Union['PropClusterNodeExporter', dict] = attr.ib(
         default=None,
-        converter=ClusterNodeExporter.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ClusterNodeExporter)),
+        converter=PropClusterNodeExporter.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropClusterNodeExporter)),
         metadata={AttrMeta.PROPERTY_NAME: "NodeExporter"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-prometheus.html#cfn-msk-cluster-prometheus-nodeexporter"""
 
 @attr.s
-class ClusterLoggingInfo(Property):
+class PropClusterLoggingInfo(Property):
     """
     AWS Object Type = "AWS::MSK::Cluster.LoggingInfo"
 
@@ -404,16 +404,16 @@ class ClusterLoggingInfo(Property):
     """
     AWS_OBJECT_TYPE = "AWS::MSK::Cluster.LoggingInfo"
     
-    rp_BrokerLogs: typing.Union['ClusterBrokerLogs', dict] = attr.ib(
+    rp_BrokerLogs: typing.Union['PropClusterBrokerLogs', dict] = attr.ib(
         default=None,
-        converter=ClusterBrokerLogs.from_dict,
-        validator=attr.validators.instance_of(ClusterBrokerLogs),
+        converter=PropClusterBrokerLogs.from_dict,
+        validator=attr.validators.instance_of(PropClusterBrokerLogs),
         metadata={AttrMeta.PROPERTY_NAME: "BrokerLogs"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-logginginfo.html#cfn-msk-cluster-logginginfo-brokerlogs"""
 
 @attr.s
-class ClusterSasl(Property):
+class PropClusterSasl(Property):
     """
     AWS Object Type = "AWS::MSK::Cluster.Sasl"
 
@@ -426,23 +426,23 @@ class ClusterSasl(Property):
     """
     AWS_OBJECT_TYPE = "AWS::MSK::Cluster.Sasl"
     
-    p_Iam: typing.Union['ClusterIam', dict] = attr.ib(
+    p_Iam: typing.Union['PropClusterIam', dict] = attr.ib(
         default=None,
-        converter=ClusterIam.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ClusterIam)),
+        converter=PropClusterIam.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropClusterIam)),
         metadata={AttrMeta.PROPERTY_NAME: "Iam"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-sasl.html#cfn-msk-cluster-sasl-iam"""
-    p_Scram: typing.Union['ClusterScram', dict] = attr.ib(
+    p_Scram: typing.Union['PropClusterScram', dict] = attr.ib(
         default=None,
-        converter=ClusterScram.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ClusterScram)),
+        converter=PropClusterScram.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropClusterScram)),
         metadata={AttrMeta.PROPERTY_NAME: "Scram"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-sasl.html#cfn-msk-cluster-sasl-scram"""
 
 @attr.s
-class ClusterStorageInfo(Property):
+class PropClusterStorageInfo(Property):
     """
     AWS Object Type = "AWS::MSK::Cluster.StorageInfo"
 
@@ -454,16 +454,16 @@ class ClusterStorageInfo(Property):
     """
     AWS_OBJECT_TYPE = "AWS::MSK::Cluster.StorageInfo"
     
-    p_EBSStorageInfo: typing.Union['ClusterEBSStorageInfo', dict] = attr.ib(
+    p_EBSStorageInfo: typing.Union['PropClusterEBSStorageInfo', dict] = attr.ib(
         default=None,
-        converter=ClusterEBSStorageInfo.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ClusterEBSStorageInfo)),
+        converter=PropClusterEBSStorageInfo.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropClusterEBSStorageInfo)),
         metadata={AttrMeta.PROPERTY_NAME: "EBSStorageInfo"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-storageinfo.html#cfn-msk-cluster-storageinfo-ebsstorageinfo"""
 
 @attr.s
-class ClusterClientAuthentication(Property):
+class PropClusterClientAuthentication(Property):
     """
     AWS Object Type = "AWS::MSK::Cluster.ClientAuthentication"
 
@@ -476,23 +476,23 @@ class ClusterClientAuthentication(Property):
     """
     AWS_OBJECT_TYPE = "AWS::MSK::Cluster.ClientAuthentication"
     
-    p_Sasl: typing.Union['ClusterSasl', dict] = attr.ib(
+    p_Sasl: typing.Union['PropClusterSasl', dict] = attr.ib(
         default=None,
-        converter=ClusterSasl.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ClusterSasl)),
+        converter=PropClusterSasl.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropClusterSasl)),
         metadata={AttrMeta.PROPERTY_NAME: "Sasl"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-clientauthentication.html#cfn-msk-cluster-clientauthentication-sasl"""
-    p_Tls: typing.Union['ClusterTls', dict] = attr.ib(
+    p_Tls: typing.Union['PropClusterTls', dict] = attr.ib(
         default=None,
-        converter=ClusterTls.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ClusterTls)),
+        converter=PropClusterTls.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropClusterTls)),
         metadata={AttrMeta.PROPERTY_NAME: "Tls"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-clientauthentication.html#cfn-msk-cluster-clientauthentication-tls"""
 
 @attr.s
-class ClusterOpenMonitoring(Property):
+class PropClusterOpenMonitoring(Property):
     """
     AWS Object Type = "AWS::MSK::Cluster.OpenMonitoring"
 
@@ -504,16 +504,16 @@ class ClusterOpenMonitoring(Property):
     """
     AWS_OBJECT_TYPE = "AWS::MSK::Cluster.OpenMonitoring"
     
-    rp_Prometheus: typing.Union['ClusterPrometheus', dict] = attr.ib(
+    rp_Prometheus: typing.Union['PropClusterPrometheus', dict] = attr.ib(
         default=None,
-        converter=ClusterPrometheus.from_dict,
-        validator=attr.validators.instance_of(ClusterPrometheus),
+        converter=PropClusterPrometheus.from_dict,
+        validator=attr.validators.instance_of(PropClusterPrometheus),
         metadata={AttrMeta.PROPERTY_NAME: "Prometheus"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-openmonitoring.html#cfn-msk-cluster-openmonitoring-prometheus"""
 
 @attr.s
-class ClusterBrokerNodeGroupInfo(Property):
+class PropClusterBrokerNodeGroupInfo(Property):
     """
     AWS Object Type = "AWS::MSK::Cluster.BrokerNodeGroupInfo"
 
@@ -553,10 +553,10 @@ class ClusterBrokerNodeGroupInfo(Property):
         metadata={AttrMeta.PROPERTY_NAME: "SecurityGroups"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-brokernodegroupinfo.html#cfn-msk-cluster-brokernodegroupinfo-securitygroups"""
-    p_StorageInfo: typing.Union['ClusterStorageInfo', dict] = attr.ib(
+    p_StorageInfo: typing.Union['PropClusterStorageInfo', dict] = attr.ib(
         default=None,
-        converter=ClusterStorageInfo.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ClusterStorageInfo)),
+        converter=PropClusterStorageInfo.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropClusterStorageInfo)),
         metadata={AttrMeta.PROPERTY_NAME: "StorageInfo"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-brokernodegroupinfo.html#cfn-msk-cluster-brokernodegroupinfo-storageinfo"""
@@ -588,10 +588,10 @@ class Cluster(Resource):
     AWS_OBJECT_TYPE = "AWS::MSK::Cluster"
 
     
-    rp_BrokerNodeGroupInfo: typing.Union['ClusterBrokerNodeGroupInfo', dict] = attr.ib(
+    rp_BrokerNodeGroupInfo: typing.Union['PropClusterBrokerNodeGroupInfo', dict] = attr.ib(
         default=None,
-        converter=ClusterBrokerNodeGroupInfo.from_dict,
-        validator=attr.validators.instance_of(ClusterBrokerNodeGroupInfo),
+        converter=PropClusterBrokerNodeGroupInfo.from_dict,
+        validator=attr.validators.instance_of(PropClusterBrokerNodeGroupInfo),
         metadata={AttrMeta.PROPERTY_NAME: "BrokerNodeGroupInfo"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html#cfn-msk-cluster-brokernodegroupinfo"""
@@ -613,24 +613,24 @@ class Cluster(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "NumberOfBrokerNodes"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html#cfn-msk-cluster-numberofbrokernodes"""
-    p_ClientAuthentication: typing.Union['ClusterClientAuthentication', dict] = attr.ib(
+    p_ClientAuthentication: typing.Union['PropClusterClientAuthentication', dict] = attr.ib(
         default=None,
-        converter=ClusterClientAuthentication.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ClusterClientAuthentication)),
+        converter=PropClusterClientAuthentication.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropClusterClientAuthentication)),
         metadata={AttrMeta.PROPERTY_NAME: "ClientAuthentication"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html#cfn-msk-cluster-clientauthentication"""
-    p_ConfigurationInfo: typing.Union['ClusterConfigurationInfo', dict] = attr.ib(
+    p_ConfigurationInfo: typing.Union['PropClusterConfigurationInfo', dict] = attr.ib(
         default=None,
-        converter=ClusterConfigurationInfo.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ClusterConfigurationInfo)),
+        converter=PropClusterConfigurationInfo.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropClusterConfigurationInfo)),
         metadata={AttrMeta.PROPERTY_NAME: "ConfigurationInfo"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html#cfn-msk-cluster-configurationinfo"""
-    p_EncryptionInfo: typing.Union['ClusterEncryptionInfo', dict] = attr.ib(
+    p_EncryptionInfo: typing.Union['PropClusterEncryptionInfo', dict] = attr.ib(
         default=None,
-        converter=ClusterEncryptionInfo.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ClusterEncryptionInfo)),
+        converter=PropClusterEncryptionInfo.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropClusterEncryptionInfo)),
         metadata={AttrMeta.PROPERTY_NAME: "EncryptionInfo"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html#cfn-msk-cluster-encryptioninfo"""
@@ -640,17 +640,17 @@ class Cluster(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "EnhancedMonitoring"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html#cfn-msk-cluster-enhancedmonitoring"""
-    p_LoggingInfo: typing.Union['ClusterLoggingInfo', dict] = attr.ib(
+    p_LoggingInfo: typing.Union['PropClusterLoggingInfo', dict] = attr.ib(
         default=None,
-        converter=ClusterLoggingInfo.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ClusterLoggingInfo)),
+        converter=PropClusterLoggingInfo.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropClusterLoggingInfo)),
         metadata={AttrMeta.PROPERTY_NAME: "LoggingInfo"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html#cfn-msk-cluster-logginginfo"""
-    p_OpenMonitoring: typing.Union['ClusterOpenMonitoring', dict] = attr.ib(
+    p_OpenMonitoring: typing.Union['PropClusterOpenMonitoring', dict] = attr.ib(
         default=None,
-        converter=ClusterOpenMonitoring.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ClusterOpenMonitoring)),
+        converter=PropClusterOpenMonitoring.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropClusterOpenMonitoring)),
         metadata={AttrMeta.PROPERTY_NAME: "OpenMonitoring"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html#cfn-msk-cluster-openmonitoring"""

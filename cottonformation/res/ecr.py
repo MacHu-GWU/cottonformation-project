@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class RepositoryLifecyclePolicy(Property):
+class PropRepositoryLifecyclePolicy(Property):
     """
     AWS Object Type = "AWS::ECR::Repository.LifecyclePolicy"
 
@@ -42,7 +42,7 @@ class RepositoryLifecyclePolicy(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-repository-lifecyclepolicy.html#cfn-ecr-repository-lifecyclepolicy-registryid"""
 
 @attr.s
-class ReplicationConfigurationReplicationDestination(Property):
+class PropReplicationConfigurationReplicationDestination(Property):
     """
     AWS Object Type = "AWS::ECR::ReplicationConfiguration.ReplicationDestination"
 
@@ -69,7 +69,7 @@ class ReplicationConfigurationReplicationDestination(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-replicationconfiguration-replicationdestination.html#cfn-ecr-replicationconfiguration-replicationdestination-registryid"""
 
 @attr.s
-class ReplicationConfigurationReplicationRule(Property):
+class PropReplicationConfigurationReplicationRule(Property):
     """
     AWS Object Type = "AWS::ECR::ReplicationConfiguration.ReplicationRule"
 
@@ -81,16 +81,16 @@ class ReplicationConfigurationReplicationRule(Property):
     """
     AWS_OBJECT_TYPE = "AWS::ECR::ReplicationConfiguration.ReplicationRule"
     
-    rp_Destinations: typing.List[typing.Union['ReplicationConfigurationReplicationDestination', dict]] = attr.ib(
+    rp_Destinations: typing.List[typing.Union['PropReplicationConfigurationReplicationDestination', dict]] = attr.ib(
         default=None,
-        converter=ReplicationConfigurationReplicationDestination.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ReplicationConfigurationReplicationDestination), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropReplicationConfigurationReplicationDestination.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropReplicationConfigurationReplicationDestination), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "Destinations"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-replicationconfiguration-replicationrule.html#cfn-ecr-replicationconfiguration-replicationrule-destinations"""
 
 @attr.s
-class RepositoryImageScanningConfiguration(Property):
+class PropRepositoryImageScanningConfiguration(Property):
     """
     AWS Object Type = "AWS::ECR::Repository.ImageScanningConfiguration"
 
@@ -110,7 +110,7 @@ class RepositoryImageScanningConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-repository-imagescanningconfiguration.html#cfn-ecr-repository-imagescanningconfiguration-scanonpush"""
 
 @attr.s
-class RepositoryEncryptionConfiguration(Property):
+class PropRepositoryEncryptionConfiguration(Property):
     """
     AWS Object Type = "AWS::ECR::Repository.EncryptionConfiguration"
 
@@ -137,7 +137,7 @@ class RepositoryEncryptionConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-repository-encryptionconfiguration.html#cfn-ecr-repository-encryptionconfiguration-kmskey"""
 
 @attr.s
-class ReplicationConfigurationReplicationConfiguration(Property):
+class PropReplicationConfigurationReplicationConfiguration(Property):
     """
     AWS Object Type = "AWS::ECR::ReplicationConfiguration.ReplicationConfiguration"
 
@@ -149,10 +149,10 @@ class ReplicationConfigurationReplicationConfiguration(Property):
     """
     AWS_OBJECT_TYPE = "AWS::ECR::ReplicationConfiguration.ReplicationConfiguration"
     
-    rp_Rules: typing.List[typing.Union['ReplicationConfigurationReplicationRule', dict]] = attr.ib(
+    rp_Rules: typing.List[typing.Union['PropReplicationConfigurationReplicationRule', dict]] = attr.ib(
         default=None,
-        converter=ReplicationConfigurationReplicationRule.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ReplicationConfigurationReplicationRule), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropReplicationConfigurationReplicationRule.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropReplicationConfigurationReplicationRule), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "Rules"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-replicationconfiguration-replicationconfiguration.html#cfn-ecr-replicationconfiguration-replicationconfiguration-rules"""
@@ -180,17 +180,17 @@ class Repository(Resource):
     AWS_OBJECT_TYPE = "AWS::ECR::Repository"
 
     
-    p_EncryptionConfiguration: typing.Union['RepositoryEncryptionConfiguration', dict] = attr.ib(
+    p_EncryptionConfiguration: typing.Union['PropRepositoryEncryptionConfiguration', dict] = attr.ib(
         default=None,
-        converter=RepositoryEncryptionConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(RepositoryEncryptionConfiguration)),
+        converter=PropRepositoryEncryptionConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropRepositoryEncryptionConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "EncryptionConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-encryptionconfiguration"""
-    p_ImageScanningConfiguration: typing.Union['RepositoryImageScanningConfiguration', dict] = attr.ib(
+    p_ImageScanningConfiguration: typing.Union['PropRepositoryImageScanningConfiguration', dict] = attr.ib(
         default=None,
-        converter=RepositoryImageScanningConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(RepositoryImageScanningConfiguration)),
+        converter=PropRepositoryImageScanningConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropRepositoryImageScanningConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "ImageScanningConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-imagescanningconfiguration"""
@@ -200,10 +200,10 @@ class Repository(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "ImageTagMutability"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-imagetagmutability"""
-    p_LifecyclePolicy: typing.Union['RepositoryLifecyclePolicy', dict] = attr.ib(
+    p_LifecyclePolicy: typing.Union['PropRepositoryLifecyclePolicy', dict] = attr.ib(
         default=None,
-        converter=RepositoryLifecyclePolicy.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(RepositoryLifecyclePolicy)),
+        converter=PropRepositoryLifecyclePolicy.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropRepositoryLifecyclePolicy)),
         metadata={AttrMeta.PROPERTY_NAME: "LifecyclePolicy"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#cfn-ecr-repository-lifecyclepolicy"""
@@ -253,10 +253,10 @@ class ReplicationConfiguration(Resource):
     AWS_OBJECT_TYPE = "AWS::ECR::ReplicationConfiguration"
 
     
-    rp_ReplicationConfiguration: typing.Union['ReplicationConfigurationReplicationConfiguration', dict] = attr.ib(
+    rp_ReplicationConfiguration: typing.Union['PropReplicationConfigurationReplicationConfiguration', dict] = attr.ib(
         default=None,
-        converter=ReplicationConfigurationReplicationConfiguration.from_dict,
-        validator=attr.validators.instance_of(ReplicationConfigurationReplicationConfiguration),
+        converter=PropReplicationConfigurationReplicationConfiguration.from_dict,
+        validator=attr.validators.instance_of(PropReplicationConfigurationReplicationConfiguration),
         metadata={AttrMeta.PROPERTY_NAME: "ReplicationConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-replicationconfiguration.html#cfn-ecr-replicationconfiguration-replicationconfiguration"""

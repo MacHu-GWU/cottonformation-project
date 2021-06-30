@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class ConfigurationAggregatorOrganizationAggregationSource(Property):
+class PropConfigurationAggregatorOrganizationAggregationSource(Property):
     """
     AWS Object Type = "AWS::Config::ConfigurationAggregator.OrganizationAggregationSource"
 
@@ -49,7 +49,7 @@ class ConfigurationAggregatorOrganizationAggregationSource(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configurationaggregator-organizationaggregationsource.html#cfn-config-configurationaggregator-organizationaggregationsource-awsregions"""
 
 @attr.s
-class DeliveryChannelConfigSnapshotDeliveryProperties(Property):
+class PropDeliveryChannelConfigSnapshotDeliveryProperties(Property):
     """
     AWS Object Type = "AWS::Config::DeliveryChannel.ConfigSnapshotDeliveryProperties"
 
@@ -69,7 +69,7 @@ class DeliveryChannelConfigSnapshotDeliveryProperties(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-deliverychannel-configsnapshotdeliveryproperties.html#cfn-config-deliverychannel-configsnapshotdeliveryproperties-deliveryfrequency"""
 
 @attr.s
-class ConfigurationRecorderRecordingGroup(Property):
+class PropConfigurationRecorderRecordingGroup(Property):
     """
     AWS Object Type = "AWS::Config::ConfigurationRecorder.RecordingGroup"
 
@@ -103,7 +103,7 @@ class ConfigurationRecorderRecordingGroup(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configurationrecorder-recordinggroup.html#cfn-config-configurationrecorder-recordinggroup-resourcetypes"""
 
 @attr.s
-class RemediationConfigurationResourceValue(Property):
+class PropRemediationConfigurationResourceValue(Property):
     """
     AWS Object Type = "AWS::Config::RemediationConfiguration.ResourceValue"
 
@@ -123,7 +123,7 @@ class RemediationConfigurationResourceValue(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-remediationconfiguration-resourcevalue.html#cfn-config-remediationconfiguration-resourcevalue-value"""
 
 @attr.s
-class ConformancePackConformancePackInputParameter(Property):
+class PropConformancePackConformancePackInputParameter(Property):
     """
     AWS Object Type = "AWS::Config::ConformancePack.ConformancePackInputParameter"
 
@@ -150,7 +150,7 @@ class ConformancePackConformancePackInputParameter(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-conformancepack-conformancepackinputparameter.html#cfn-config-conformancepack-conformancepackinputparameter-parametervalue"""
 
 @attr.s
-class ConfigurationAggregatorAccountAggregationSource(Property):
+class PropConfigurationAggregatorAccountAggregationSource(Property):
     """
     AWS Object Type = "AWS::Config::ConfigurationAggregator.AccountAggregationSource"
 
@@ -184,7 +184,7 @@ class ConfigurationAggregatorAccountAggregationSource(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configurationaggregator-accountaggregationsource.html#cfn-config-configurationaggregator-accountaggregationsource-awsregions"""
 
 @attr.s
-class OrganizationConformancePackConformancePackInputParameter(Property):
+class PropOrganizationConformancePackConformancePackInputParameter(Property):
     """
     AWS Object Type = "AWS::Config::OrganizationConformancePack.ConformancePackInputParameter"
 
@@ -211,7 +211,7 @@ class OrganizationConformancePackConformancePackInputParameter(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-organizationconformancepack-conformancepackinputparameter.html#cfn-config-organizationconformancepack-conformancepackinputparameter-parametervalue"""
 
 @attr.s
-class ConfigRuleScope(Property):
+class PropConfigRuleScope(Property):
     """
     AWS Object Type = "AWS::Config::ConfigRule.Scope"
 
@@ -252,7 +252,7 @@ class ConfigRuleScope(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configrule-scope.html#cfn-config-configrule-scope-tagvalue"""
 
 @attr.s
-class OrganizationConfigRuleOrganizationManagedRuleMetadata(Property):
+class PropOrganizationConfigRuleOrganizationManagedRuleMetadata(Property):
     """
     AWS Object Type = "AWS::Config::OrganizationConfigRule.OrganizationManagedRuleMetadata"
 
@@ -321,7 +321,7 @@ class OrganizationConfigRuleOrganizationManagedRuleMetadata(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-organizationconfigrule-organizationmanagedrulemetadata.html#cfn-config-organizationconfigrule-organizationmanagedrulemetadata-tagvaluescope"""
 
 @attr.s
-class RemediationConfigurationSsmControls(Property):
+class PropRemediationConfigurationSsmControls(Property):
     """
     AWS Object Type = "AWS::Config::RemediationConfiguration.SsmControls"
 
@@ -348,7 +348,7 @@ class RemediationConfigurationSsmControls(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-remediationconfiguration-ssmcontrols.html#cfn-config-remediationconfiguration-ssmcontrols-errorpercentage"""
 
 @attr.s
-class RemediationConfigurationStaticValue(Property):
+class PropRemediationConfigurationStaticValue(Property):
     """
     AWS Object Type = "AWS::Config::RemediationConfiguration.StaticValue"
 
@@ -368,7 +368,7 @@ class RemediationConfigurationStaticValue(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-remediationconfiguration-staticvalue.html#cfn-config-remediationconfiguration-staticvalue-values"""
 
 @attr.s
-class RemediationConfigurationExecutionControls(Property):
+class PropRemediationConfigurationExecutionControls(Property):
     """
     AWS Object Type = "AWS::Config::RemediationConfiguration.ExecutionControls"
 
@@ -380,16 +380,16 @@ class RemediationConfigurationExecutionControls(Property):
     """
     AWS_OBJECT_TYPE = "AWS::Config::RemediationConfiguration.ExecutionControls"
     
-    p_SsmControls: typing.Union['RemediationConfigurationSsmControls', dict] = attr.ib(
+    p_SsmControls: typing.Union['PropRemediationConfigurationSsmControls', dict] = attr.ib(
         default=None,
-        converter=RemediationConfigurationSsmControls.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(RemediationConfigurationSsmControls)),
+        converter=PropRemediationConfigurationSsmControls.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropRemediationConfigurationSsmControls)),
         metadata={AttrMeta.PROPERTY_NAME: "SsmControls"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-remediationconfiguration-executioncontrols.html#cfn-config-remediationconfiguration-executioncontrols-ssmcontrols"""
 
 @attr.s
-class ConfigRuleSourceDetail(Property):
+class PropConfigRuleSourceDetail(Property):
     """
     AWS Object Type = "AWS::Config::ConfigRule.SourceDetail"
 
@@ -423,7 +423,7 @@ class ConfigRuleSourceDetail(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configrule-source-sourcedetails.html#cfn-config-configrule-sourcedetail-maximumexecutionfrequency"""
 
 @attr.s
-class OrganizationConfigRuleOrganizationCustomRuleMetadata(Property):
+class PropOrganizationConfigRuleOrganizationCustomRuleMetadata(Property):
     """
     AWS Object Type = "AWS::Config::OrganizationConfigRule.OrganizationCustomRuleMetadata"
 
@@ -499,7 +499,7 @@ class OrganizationConfigRuleOrganizationCustomRuleMetadata(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-organizationconfigrule-organizationcustomrulemetadata.html#cfn-config-organizationconfigrule-organizationcustomrulemetadata-tagvaluescope"""
 
 @attr.s
-class RemediationConfigurationRemediationParameterValue(Property):
+class PropRemediationConfigurationRemediationParameterValue(Property):
     """
     AWS Object Type = "AWS::Config::RemediationConfiguration.RemediationParameterValue"
 
@@ -512,23 +512,23 @@ class RemediationConfigurationRemediationParameterValue(Property):
     """
     AWS_OBJECT_TYPE = "AWS::Config::RemediationConfiguration.RemediationParameterValue"
     
-    p_ResourceValue: typing.Union['RemediationConfigurationResourceValue', dict] = attr.ib(
+    p_ResourceValue: typing.Union['PropRemediationConfigurationResourceValue', dict] = attr.ib(
         default=None,
-        converter=RemediationConfigurationResourceValue.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(RemediationConfigurationResourceValue)),
+        converter=PropRemediationConfigurationResourceValue.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropRemediationConfigurationResourceValue)),
         metadata={AttrMeta.PROPERTY_NAME: "ResourceValue"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-remediationconfiguration-remediationparametervalue.html#cfn-config-remediationconfiguration-remediationparametervalue-resourcevalue"""
-    p_StaticValue: typing.Union['RemediationConfigurationStaticValue', dict] = attr.ib(
+    p_StaticValue: typing.Union['PropRemediationConfigurationStaticValue', dict] = attr.ib(
         default=None,
-        converter=RemediationConfigurationStaticValue.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(RemediationConfigurationStaticValue)),
+        converter=PropRemediationConfigurationStaticValue.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropRemediationConfigurationStaticValue)),
         metadata={AttrMeta.PROPERTY_NAME: "StaticValue"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-remediationconfiguration-remediationparametervalue.html#cfn-config-remediationconfiguration-remediationparametervalue-staticvalue"""
 
 @attr.s
-class ConfigRuleSource(Property):
+class PropConfigRuleSource(Property):
     """
     AWS Object Type = "AWS::Config::ConfigRule.Source"
 
@@ -554,10 +554,10 @@ class ConfigRuleSource(Property):
         metadata={AttrMeta.PROPERTY_NAME: "SourceIdentifier"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configrule-source.html#cfn-config-configrule-source-sourceidentifier"""
-    p_SourceDetails: typing.List[typing.Union['ConfigRuleSourceDetail', dict]] = attr.ib(
+    p_SourceDetails: typing.List[typing.Union['PropConfigRuleSourceDetail', dict]] = attr.ib(
         default=None,
-        converter=ConfigRuleSourceDetail.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ConfigRuleSourceDetail), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropConfigRuleSourceDetail.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropConfigRuleSourceDetail), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "SourceDetails"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configrule-source.html#cfn-config-configrule-source-sourcedetails"""
@@ -612,10 +612,10 @@ class RemediationConfiguration(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Automatic"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-remediationconfiguration.html#cfn-config-remediationconfiguration-automatic"""
-    p_ExecutionControls: typing.Union['RemediationConfigurationExecutionControls', dict] = attr.ib(
+    p_ExecutionControls: typing.Union['PropRemediationConfigurationExecutionControls', dict] = attr.ib(
         default=None,
-        converter=RemediationConfigurationExecutionControls.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(RemediationConfigurationExecutionControls)),
+        converter=PropRemediationConfigurationExecutionControls.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropRemediationConfigurationExecutionControls)),
         metadata={AttrMeta.PROPERTY_NAME: "ExecutionControls"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-remediationconfiguration.html#cfn-config-remediationconfiguration-executioncontrols"""
@@ -669,10 +669,10 @@ class ConfigurationAggregator(Resource):
     AWS_OBJECT_TYPE = "AWS::Config::ConfigurationAggregator"
 
     
-    p_AccountAggregationSources: typing.List[typing.Union['ConfigurationAggregatorAccountAggregationSource', dict]] = attr.ib(
+    p_AccountAggregationSources: typing.List[typing.Union['PropConfigurationAggregatorAccountAggregationSource', dict]] = attr.ib(
         default=None,
-        converter=ConfigurationAggregatorAccountAggregationSource.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ConfigurationAggregatorAccountAggregationSource), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropConfigurationAggregatorAccountAggregationSource.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropConfigurationAggregatorAccountAggregationSource), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "AccountAggregationSources"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-configurationaggregator.html#cfn-config-configurationaggregator-accountaggregationsources"""
@@ -682,10 +682,10 @@ class ConfigurationAggregator(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "ConfigurationAggregatorName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-configurationaggregator.html#cfn-config-configurationaggregator-configurationaggregatorname"""
-    p_OrganizationAggregationSource: typing.Union['ConfigurationAggregatorOrganizationAggregationSource', dict] = attr.ib(
+    p_OrganizationAggregationSource: typing.Union['PropConfigurationAggregatorOrganizationAggregationSource', dict] = attr.ib(
         default=None,
-        converter=ConfigurationAggregatorOrganizationAggregationSource.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ConfigurationAggregatorOrganizationAggregationSource)),
+        converter=PropConfigurationAggregatorOrganizationAggregationSource.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropConfigurationAggregatorOrganizationAggregationSource)),
         metadata={AttrMeta.PROPERTY_NAME: "OrganizationAggregationSource"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-configurationaggregator.html#cfn-config-configurationaggregator-organizationaggregationsource"""
@@ -770,10 +770,10 @@ class ConfigurationRecorder(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Name"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-configurationrecorder.html#cfn-config-configurationrecorder-name"""
-    p_RecordingGroup: typing.Union['ConfigurationRecorderRecordingGroup', dict] = attr.ib(
+    p_RecordingGroup: typing.Union['PropConfigurationRecorderRecordingGroup', dict] = attr.ib(
         default=None,
-        converter=ConfigurationRecorderRecordingGroup.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ConfigurationRecorderRecordingGroup)),
+        converter=PropConfigurationRecorderRecordingGroup.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropConfigurationRecorderRecordingGroup)),
         metadata={AttrMeta.PROPERTY_NAME: "RecordingGroup"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-configurationrecorder.html#cfn-config-configurationrecorder-recordinggroup"""
@@ -805,10 +805,10 @@ class DeliveryChannel(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "S3BucketName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-deliverychannel.html#cfn-config-deliverychannel-s3bucketname"""
-    p_ConfigSnapshotDeliveryProperties: typing.Union['DeliveryChannelConfigSnapshotDeliveryProperties', dict] = attr.ib(
+    p_ConfigSnapshotDeliveryProperties: typing.Union['PropDeliveryChannelConfigSnapshotDeliveryProperties', dict] = attr.ib(
         default=None,
-        converter=DeliveryChannelConfigSnapshotDeliveryProperties.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DeliveryChannelConfigSnapshotDeliveryProperties)),
+        converter=PropDeliveryChannelConfigSnapshotDeliveryProperties.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDeliveryChannelConfigSnapshotDeliveryProperties)),
         metadata={AttrMeta.PROPERTY_NAME: "ConfigSnapshotDeliveryProperties"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-deliverychannel.html#cfn-config-deliverychannel-configsnapshotdeliveryproperties"""
@@ -868,17 +868,17 @@ class OrganizationConfigRule(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "ExcludedAccounts"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-organizationconfigrule.html#cfn-config-organizationconfigrule-excludedaccounts"""
-    p_OrganizationCustomRuleMetadata: typing.Union['OrganizationConfigRuleOrganizationCustomRuleMetadata', dict] = attr.ib(
+    p_OrganizationCustomRuleMetadata: typing.Union['PropOrganizationConfigRuleOrganizationCustomRuleMetadata', dict] = attr.ib(
         default=None,
-        converter=OrganizationConfigRuleOrganizationCustomRuleMetadata.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(OrganizationConfigRuleOrganizationCustomRuleMetadata)),
+        converter=PropOrganizationConfigRuleOrganizationCustomRuleMetadata.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropOrganizationConfigRuleOrganizationCustomRuleMetadata)),
         metadata={AttrMeta.PROPERTY_NAME: "OrganizationCustomRuleMetadata"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-organizationconfigrule.html#cfn-config-organizationconfigrule-organizationcustomrulemetadata"""
-    p_OrganizationManagedRuleMetadata: typing.Union['OrganizationConfigRuleOrganizationManagedRuleMetadata', dict] = attr.ib(
+    p_OrganizationManagedRuleMetadata: typing.Union['PropOrganizationConfigRuleOrganizationManagedRuleMetadata', dict] = attr.ib(
         default=None,
-        converter=OrganizationConfigRuleOrganizationManagedRuleMetadata.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(OrganizationConfigRuleOrganizationManagedRuleMetadata)),
+        converter=PropOrganizationConfigRuleOrganizationManagedRuleMetadata.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropOrganizationConfigRuleOrganizationManagedRuleMetadata)),
         metadata={AttrMeta.PROPERTY_NAME: "OrganizationManagedRuleMetadata"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-organizationconfigrule.html#cfn-config-organizationconfigrule-organizationmanagedrulemetadata"""
@@ -911,10 +911,10 @@ class OrganizationConformancePack(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "OrganizationConformancePackName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-organizationconformancepack.html#cfn-config-organizationconformancepack-organizationconformancepackname"""
-    p_ConformancePackInputParameters: typing.List[typing.Union['OrganizationConformancePackConformancePackInputParameter', dict]] = attr.ib(
+    p_ConformancePackInputParameters: typing.List[typing.Union['PropOrganizationConformancePackConformancePackInputParameter', dict]] = attr.ib(
         default=None,
-        converter=OrganizationConformancePackConformancePackInputParameter.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(OrganizationConformancePackConformancePackInputParameter), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropOrganizationConformancePackConformancePackInputParameter.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropOrganizationConformancePackConformancePackInputParameter), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "ConformancePackInputParameters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-organizationconformancepack.html#cfn-config-organizationconformancepack-conformancepackinputparameters"""
@@ -970,10 +970,10 @@ class ConfigRule(Resource):
     AWS_OBJECT_TYPE = "AWS::Config::ConfigRule"
 
     
-    rp_Source: typing.Union['ConfigRuleSource', dict] = attr.ib(
+    rp_Source: typing.Union['PropConfigRuleSource', dict] = attr.ib(
         default=None,
-        converter=ConfigRuleSource.from_dict,
-        validator=attr.validators.instance_of(ConfigRuleSource),
+        converter=PropConfigRuleSource.from_dict,
+        validator=attr.validators.instance_of(PropConfigRuleSource),
         metadata={AttrMeta.PROPERTY_NAME: "Source"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-configrule.html#cfn-config-configrule-source"""
@@ -1001,10 +1001,10 @@ class ConfigRule(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "MaximumExecutionFrequency"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-configrule.html#cfn-config-configrule-maximumexecutionfrequency"""
-    p_Scope: typing.Union['ConfigRuleScope', dict] = attr.ib(
+    p_Scope: typing.Union['PropConfigRuleScope', dict] = attr.ib(
         default=None,
-        converter=ConfigRuleScope.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ConfigRuleScope)),
+        converter=PropConfigRuleScope.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropConfigRuleScope)),
         metadata={AttrMeta.PROPERTY_NAME: "Scope"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-configrule.html#cfn-config-configrule-scope"""
@@ -1051,10 +1051,10 @@ class ConformancePack(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "ConformancePackName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-conformancepack.html#cfn-config-conformancepack-conformancepackname"""
-    p_ConformancePackInputParameters: typing.List[typing.Union['ConformancePackConformancePackInputParameter', dict]] = attr.ib(
+    p_ConformancePackInputParameters: typing.List[typing.Union['PropConformancePackConformancePackInputParameter', dict]] = attr.ib(
         default=None,
-        converter=ConformancePackConformancePackInputParameter.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ConformancePackConformancePackInputParameter), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropConformancePackConformancePackInputParameter.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropConformancePackConformancePackInputParameter), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "ConformancePackInputParameters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-conformancepack.html#cfn-config-conformancepack-conformancepackinputparameters"""

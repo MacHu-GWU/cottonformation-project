@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class ExperimentTemplateExperimentTemplateStopCondition(Property):
+class PropExperimentTemplateExperimentTemplateStopCondition(Property):
     """
     AWS Object Type = "AWS::FIS::ExperimentTemplate.ExperimentTemplateStopCondition"
 
@@ -42,7 +42,7 @@ class ExperimentTemplateExperimentTemplateStopCondition(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fis-experimenttemplate-experimenttemplatestopcondition.html#cfn-fis-experimenttemplate-experimenttemplatestopcondition-value"""
 
 @attr.s
-class ExperimentTemplateExperimentTemplateAction(Property):
+class PropExperimentTemplateExperimentTemplateAction(Property):
     """
     AWS Object Type = "AWS::FIS::ExperimentTemplate.ExperimentTemplateAction"
 
@@ -90,7 +90,7 @@ class ExperimentTemplateExperimentTemplateAction(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fis-experimenttemplate-experimenttemplateaction.html#cfn-fis-experimenttemplate-experimenttemplateaction-targets"""
 
 @attr.s
-class ExperimentTemplateExperimentTemplateTargetFilter(Property):
+class PropExperimentTemplateExperimentTemplateTargetFilter(Property):
     """
     AWS Object Type = "AWS::FIS::ExperimentTemplate.ExperimentTemplateTargetFilter"
 
@@ -117,7 +117,7 @@ class ExperimentTemplateExperimentTemplateTargetFilter(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fis-experimenttemplate-experimenttemplatetargetfilter.html#cfn-fis-experimenttemplate-experimenttemplatetargetfilter-values"""
 
 @attr.s
-class ExperimentTemplateExperimentTemplateTarget(Property):
+class PropExperimentTemplateExperimentTemplateTarget(Property):
     """
     AWS Object Type = "AWS::FIS::ExperimentTemplate.ExperimentTemplateTarget"
 
@@ -145,10 +145,10 @@ class ExperimentTemplateExperimentTemplateTarget(Property):
         metadata={AttrMeta.PROPERTY_NAME: "SelectionMode"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fis-experimenttemplate-experimenttemplatetarget.html#cfn-fis-experimenttemplate-experimenttemplatetarget-selectionmode"""
-    p_Filters: typing.List[typing.Union['ExperimentTemplateExperimentTemplateTargetFilter', dict]] = attr.ib(
+    p_Filters: typing.List[typing.Union['PropExperimentTemplateExperimentTemplateTargetFilter', dict]] = attr.ib(
         default=None,
-        converter=ExperimentTemplateExperimentTemplateTargetFilter.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ExperimentTemplateExperimentTemplateTargetFilter), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropExperimentTemplateExperimentTemplateTargetFilter.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropExperimentTemplateExperimentTemplateTargetFilter), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Filters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fis-experimenttemplate-experimenttemplatetarget.html#cfn-fis-experimenttemplate-experimenttemplatetarget-filters"""
@@ -199,24 +199,24 @@ class ExperimentTemplate(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "RoleArn"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fis-experimenttemplate.html#cfn-fis-experimenttemplate-rolearn"""
-    rp_StopConditions: typing.List[typing.Union['ExperimentTemplateExperimentTemplateStopCondition', dict]] = attr.ib(
+    rp_StopConditions: typing.List[typing.Union['PropExperimentTemplateExperimentTemplateStopCondition', dict]] = attr.ib(
         default=None,
-        converter=ExperimentTemplateExperimentTemplateStopCondition.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ExperimentTemplateExperimentTemplateStopCondition), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropExperimentTemplateExperimentTemplateStopCondition.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropExperimentTemplateExperimentTemplateStopCondition), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "StopConditions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fis-experimenttemplate.html#cfn-fis-experimenttemplate-stopconditions"""
-    rp_Targets: typing.Union['ExperimentTemplateExperimentTemplateTarget', dict] = attr.ib(
+    rp_Targets: typing.Union['PropExperimentTemplateExperimentTemplateTarget', dict] = attr.ib(
         default=None,
-        converter=ExperimentTemplateExperimentTemplateTarget.from_list,
-        validator=attr.validators.instance_of(ExperimentTemplateExperimentTemplateTarget),
+        converter=PropExperimentTemplateExperimentTemplateTarget.from_list,
+        validator=attr.validators.instance_of(PropExperimentTemplateExperimentTemplateTarget),
         metadata={AttrMeta.PROPERTY_NAME: "Targets"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fis-experimenttemplate.html#cfn-fis-experimenttemplate-targets"""
-    p_Actions: typing.Union['ExperimentTemplateExperimentTemplateAction', dict] = attr.ib(
+    p_Actions: typing.Union['PropExperimentTemplateExperimentTemplateAction', dict] = attr.ib(
         default=None,
-        converter=ExperimentTemplateExperimentTemplateAction.from_list,
-        validator=attr.validators.optional(attr.validators.instance_of(ExperimentTemplateExperimentTemplateAction)),
+        converter=PropExperimentTemplateExperimentTemplateAction.from_list,
+        validator=attr.validators.optional(attr.validators.instance_of(PropExperimentTemplateExperimentTemplateAction)),
         metadata={AttrMeta.PROPERTY_NAME: "Actions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fis-experimenttemplate.html#cfn-fis-experimenttemplate-actions"""

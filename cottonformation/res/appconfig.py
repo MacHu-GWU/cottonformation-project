@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class DeploymentTags(Property):
+class PropDeploymentTags(Property):
     """
     AWS Object Type = "AWS::AppConfig::Deployment.Tags"
 
@@ -42,7 +42,7 @@ class DeploymentTags(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appconfig-deployment-tags.html#cfn-appconfig-deployment-tags-value"""
 
 @attr.s
-class DeploymentStrategyTags(Property):
+class PropDeploymentStrategyTags(Property):
     """
     AWS Object Type = "AWS::AppConfig::DeploymentStrategy.Tags"
 
@@ -69,7 +69,7 @@ class DeploymentStrategyTags(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appconfig-deploymentstrategy-tags.html#cfn-appconfig-deploymentstrategy-tags-value"""
 
 @attr.s
-class EnvironmentMonitors(Property):
+class PropEnvironmentMonitors(Property):
     """
     AWS Object Type = "AWS::AppConfig::Environment.Monitors"
 
@@ -96,7 +96,7 @@ class EnvironmentMonitors(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appconfig-environment-monitors.html#cfn-appconfig-environment-monitors-alarmrolearn"""
 
 @attr.s
-class EnvironmentTags(Property):
+class PropEnvironmentTags(Property):
     """
     AWS Object Type = "AWS::AppConfig::Environment.Tags"
 
@@ -123,7 +123,7 @@ class EnvironmentTags(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appconfig-environment-tags.html#cfn-appconfig-environment-tags-value"""
 
 @attr.s
-class ConfigurationProfileValidators(Property):
+class PropConfigurationProfileValidators(Property):
     """
     AWS Object Type = "AWS::AppConfig::ConfigurationProfile.Validators"
 
@@ -150,7 +150,7 @@ class ConfigurationProfileValidators(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appconfig-configurationprofile-validators.html#cfn-appconfig-configurationprofile-validators-type"""
 
 @attr.s
-class ApplicationTags(Property):
+class PropApplicationTags(Property):
     """
     AWS Object Type = "AWS::AppConfig::Application.Tags"
 
@@ -177,7 +177,7 @@ class ApplicationTags(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appconfig-application-tags.html#cfn-appconfig-application-tags-value"""
 
 @attr.s
-class ConfigurationProfileTags(Property):
+class PropConfigurationProfileTags(Property):
     """
     AWS Object Type = "AWS::AppConfig::ConfigurationProfile.Tags"
 
@@ -262,10 +262,10 @@ class Deployment(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Description"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-deployment.html#cfn-appconfig-deployment-description"""
-    p_Tags: typing.List[typing.Union['DeploymentTags', dict]] = attr.ib(
+    p_Tags: typing.List[typing.Union['PropDeploymentTags', dict]] = attr.ib(
         default=None,
-        converter=DeploymentTags.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(DeploymentTags), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropDeploymentTags.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDeploymentTags), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Tags"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-deployment.html#cfn-appconfig-deployment-tags"""
@@ -380,17 +380,17 @@ class ConfigurationProfile(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "RetrievalRoleArn"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-configurationprofile.html#cfn-appconfig-configurationprofile-retrievalrolearn"""
-    p_Validators: typing.List[typing.Union['ConfigurationProfileValidators', dict]] = attr.ib(
+    p_Validators: typing.List[typing.Union['PropConfigurationProfileValidators', dict]] = attr.ib(
         default=None,
-        converter=ConfigurationProfileValidators.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ConfigurationProfileValidators), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropConfigurationProfileValidators.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropConfigurationProfileValidators), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Validators"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-configurationprofile.html#cfn-appconfig-configurationprofile-validators"""
-    p_Tags: typing.List[typing.Union['ConfigurationProfileTags', dict]] = attr.ib(
+    p_Tags: typing.List[typing.Union['PropConfigurationProfileTags', dict]] = attr.ib(
         default=None,
-        converter=ConfigurationProfileTags.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ConfigurationProfileTags), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropConfigurationProfileTags.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropConfigurationProfileTags), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Tags"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-configurationprofile.html#cfn-appconfig-configurationprofile-tags"""
@@ -433,17 +433,17 @@ class Environment(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Description"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-environment.html#cfn-appconfig-environment-description"""
-    p_Monitors: typing.List[typing.Union['EnvironmentMonitors', dict]] = attr.ib(
+    p_Monitors: typing.List[typing.Union['PropEnvironmentMonitors', dict]] = attr.ib(
         default=None,
-        converter=EnvironmentMonitors.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(EnvironmentMonitors), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropEnvironmentMonitors.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropEnvironmentMonitors), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Monitors"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-environment.html#cfn-appconfig-environment-monitors"""
-    p_Tags: typing.List[typing.Union['EnvironmentTags', dict]] = attr.ib(
+    p_Tags: typing.List[typing.Union['PropEnvironmentTags', dict]] = attr.ib(
         default=None,
-        converter=EnvironmentTags.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(EnvironmentTags), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropEnvironmentTags.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropEnvironmentTags), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Tags"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-environment.html#cfn-appconfig-environment-tags"""
@@ -513,10 +513,10 @@ class DeploymentStrategy(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "GrowthType"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-deploymentstrategy.html#cfn-appconfig-deploymentstrategy-growthtype"""
-    p_Tags: typing.List[typing.Union['DeploymentStrategyTags', dict]] = attr.ib(
+    p_Tags: typing.List[typing.Union['PropDeploymentStrategyTags', dict]] = attr.ib(
         default=None,
-        converter=DeploymentStrategyTags.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(DeploymentStrategyTags), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropDeploymentStrategyTags.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDeploymentStrategyTags), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Tags"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-deploymentstrategy.html#cfn-appconfig-deploymentstrategy-tags"""
@@ -551,10 +551,10 @@ class Application(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Description"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-application.html#cfn-appconfig-application-description"""
-    p_Tags: typing.List[typing.Union['ApplicationTags', dict]] = attr.ib(
+    p_Tags: typing.List[typing.Union['PropApplicationTags', dict]] = attr.ib(
         default=None,
-        converter=ApplicationTags.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ApplicationTags), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropApplicationTags.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropApplicationTags), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Tags"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appconfig-application.html#cfn-appconfig-application-tags"""

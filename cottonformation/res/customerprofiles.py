@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class IntegrationScheduledTriggerProperties(Property):
+class PropIntegrationScheduledTriggerProperties(Property):
     """
     AWS Object Type = "AWS::CustomerProfiles::Integration.ScheduledTriggerProperties"
 
@@ -77,7 +77,7 @@ class IntegrationScheduledTriggerProperties(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-integration-scheduledtriggerproperties.html#cfn-customerprofiles-integration-scheduledtriggerproperties-timezone"""
 
 @attr.s
-class IntegrationS3SourceProperties(Property):
+class PropIntegrationS3SourceProperties(Property):
     """
     AWS Object Type = "AWS::CustomerProfiles::Integration.S3SourceProperties"
 
@@ -104,7 +104,7 @@ class IntegrationS3SourceProperties(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-integration-s3sourceproperties.html#cfn-customerprofiles-integration-s3sourceproperties-bucketprefix"""
 
 @attr.s
-class ObjectTypeObjectTypeField(Property):
+class PropObjectTypeObjectTypeField(Property):
     """
     AWS Object Type = "AWS::CustomerProfiles::ObjectType.ObjectTypeField"
 
@@ -138,7 +138,7 @@ class ObjectTypeObjectTypeField(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-objecttype-objecttypefield.html#cfn-customerprofiles-objecttype-objecttypefield-target"""
 
 @attr.s
-class IntegrationIncrementalPullConfig(Property):
+class PropIntegrationIncrementalPullConfig(Property):
     """
     AWS Object Type = "AWS::CustomerProfiles::Integration.IncrementalPullConfig"
 
@@ -158,7 +158,7 @@ class IntegrationIncrementalPullConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-integration-incrementalpullconfig.html#cfn-customerprofiles-integration-incrementalpullconfig-datetimetypefieldname"""
 
 @attr.s
-class IntegrationMarketoSourceProperties(Property):
+class PropIntegrationMarketoSourceProperties(Property):
     """
     AWS Object Type = "AWS::CustomerProfiles::Integration.MarketoSourceProperties"
 
@@ -178,7 +178,7 @@ class IntegrationMarketoSourceProperties(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-integration-marketosourceproperties.html#cfn-customerprofiles-integration-marketosourceproperties-object"""
 
 @attr.s
-class IntegrationTaskPropertiesMap(Property):
+class PropIntegrationTaskPropertiesMap(Property):
     """
     AWS Object Type = "AWS::CustomerProfiles::Integration.TaskPropertiesMap"
 
@@ -205,7 +205,7 @@ class IntegrationTaskPropertiesMap(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-integration-taskpropertiesmap.html#cfn-customerprofiles-integration-taskpropertiesmap-property"""
 
 @attr.s
-class IntegrationConnectorOperator(Property):
+class PropIntegrationConnectorOperator(Property):
     """
     AWS Object Type = "AWS::CustomerProfiles::Integration.ConnectorOperator"
 
@@ -253,7 +253,7 @@ class IntegrationConnectorOperator(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-integration-connectoroperator.html#cfn-customerprofiles-integration-connectoroperator-zendesk"""
 
 @attr.s
-class IntegrationZendeskSourceProperties(Property):
+class PropIntegrationZendeskSourceProperties(Property):
     """
     AWS Object Type = "AWS::CustomerProfiles::Integration.ZendeskSourceProperties"
 
@@ -273,7 +273,7 @@ class IntegrationZendeskSourceProperties(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-integration-zendesksourceproperties.html#cfn-customerprofiles-integration-zendesksourceproperties-object"""
 
 @attr.s
-class IntegrationServiceNowSourceProperties(Property):
+class PropIntegrationServiceNowSourceProperties(Property):
     """
     AWS Object Type = "AWS::CustomerProfiles::Integration.ServiceNowSourceProperties"
 
@@ -293,7 +293,7 @@ class IntegrationServiceNowSourceProperties(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-integration-servicenowsourceproperties.html#cfn-customerprofiles-integration-servicenowsourceproperties-object"""
 
 @attr.s
-class IntegrationSalesforceSourceProperties(Property):
+class PropIntegrationSalesforceSourceProperties(Property):
     """
     AWS Object Type = "AWS::CustomerProfiles::Integration.SalesforceSourceProperties"
 
@@ -327,7 +327,7 @@ class IntegrationSalesforceSourceProperties(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-integration-salesforcesourceproperties.html#cfn-customerprofiles-integration-salesforcesourceproperties-includedeletedrecords"""
 
 @attr.s
-class ObjectTypeObjectTypeKey(Property):
+class PropObjectTypeObjectTypeKey(Property):
     """
     AWS Object Type = "AWS::CustomerProfiles::ObjectType.ObjectTypeKey"
 
@@ -354,7 +354,7 @@ class ObjectTypeObjectTypeKey(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-objecttype-objecttypekey.html#cfn-customerprofiles-objecttype-objecttypekey-standardidentifiers"""
 
 @attr.s
-class IntegrationTask(Property):
+class PropIntegrationTask(Property):
     """
     AWS Object Type = "AWS::CustomerProfiles::Integration.Task"
 
@@ -382,10 +382,10 @@ class IntegrationTask(Property):
         metadata={AttrMeta.PROPERTY_NAME: "TaskType"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-integration-task.html#cfn-customerprofiles-integration-task-tasktype"""
-    p_ConnectorOperator: typing.Union['IntegrationConnectorOperator', dict] = attr.ib(
+    p_ConnectorOperator: typing.Union['PropIntegrationConnectorOperator', dict] = attr.ib(
         default=None,
-        converter=IntegrationConnectorOperator.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(IntegrationConnectorOperator)),
+        converter=PropIntegrationConnectorOperator.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropIntegrationConnectorOperator)),
         metadata={AttrMeta.PROPERTY_NAME: "ConnectorOperator"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-integration-task.html#cfn-customerprofiles-integration-task-connectoroperator"""
@@ -395,16 +395,16 @@ class IntegrationTask(Property):
         metadata={AttrMeta.PROPERTY_NAME: "DestinationField"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-integration-task.html#cfn-customerprofiles-integration-task-destinationfield"""
-    p_TaskProperties: typing.List[typing.Union['IntegrationTaskPropertiesMap', dict]] = attr.ib(
+    p_TaskProperties: typing.List[typing.Union['PropIntegrationTaskPropertiesMap', dict]] = attr.ib(
         default=None,
-        converter=IntegrationTaskPropertiesMap.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(IntegrationTaskPropertiesMap), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropIntegrationTaskPropertiesMap.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropIntegrationTaskPropertiesMap), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "TaskProperties"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-integration-task.html#cfn-customerprofiles-integration-task-taskproperties"""
 
 @attr.s
-class ObjectTypeKeyMap(Property):
+class PropObjectTypeKeyMap(Property):
     """
     AWS Object Type = "AWS::CustomerProfiles::ObjectType.KeyMap"
 
@@ -423,16 +423,16 @@ class ObjectTypeKeyMap(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Name"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-objecttype-keymap.html#cfn-customerprofiles-objecttype-keymap-name"""
-    p_ObjectTypeKeyList: typing.List[typing.Union['ObjectTypeObjectTypeKey', dict]] = attr.ib(
+    p_ObjectTypeKeyList: typing.List[typing.Union['PropObjectTypeObjectTypeKey', dict]] = attr.ib(
         default=None,
-        converter=ObjectTypeObjectTypeKey.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ObjectTypeObjectTypeKey), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropObjectTypeObjectTypeKey.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropObjectTypeObjectTypeKey), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "ObjectTypeKeyList"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-objecttype-keymap.html#cfn-customerprofiles-objecttype-keymap-objecttypekeylist"""
 
 @attr.s
-class IntegrationTriggerProperties(Property):
+class PropIntegrationTriggerProperties(Property):
     """
     AWS Object Type = "AWS::CustomerProfiles::Integration.TriggerProperties"
 
@@ -444,16 +444,16 @@ class IntegrationTriggerProperties(Property):
     """
     AWS_OBJECT_TYPE = "AWS::CustomerProfiles::Integration.TriggerProperties"
     
-    p_Scheduled: typing.Union['IntegrationScheduledTriggerProperties', dict] = attr.ib(
+    p_Scheduled: typing.Union['PropIntegrationScheduledTriggerProperties', dict] = attr.ib(
         default=None,
-        converter=IntegrationScheduledTriggerProperties.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(IntegrationScheduledTriggerProperties)),
+        converter=PropIntegrationScheduledTriggerProperties.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropIntegrationScheduledTriggerProperties)),
         metadata={AttrMeta.PROPERTY_NAME: "Scheduled"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-integration-triggerproperties.html#cfn-customerprofiles-integration-triggerproperties-scheduled"""
 
 @attr.s
-class ObjectTypeFieldMap(Property):
+class PropObjectTypeFieldMap(Property):
     """
     AWS Object Type = "AWS::CustomerProfiles::ObjectType.FieldMap"
 
@@ -472,16 +472,16 @@ class ObjectTypeFieldMap(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Name"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-objecttype-fieldmap.html#cfn-customerprofiles-objecttype-fieldmap-name"""
-    p_ObjectTypeField: typing.Union['ObjectTypeObjectTypeField', dict] = attr.ib(
+    p_ObjectTypeField: typing.Union['PropObjectTypeObjectTypeField', dict] = attr.ib(
         default=None,
-        converter=ObjectTypeObjectTypeField.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ObjectTypeObjectTypeField)),
+        converter=PropObjectTypeObjectTypeField.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropObjectTypeObjectTypeField)),
         metadata={AttrMeta.PROPERTY_NAME: "ObjectTypeField"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-objecttype-fieldmap.html#cfn-customerprofiles-objecttype-fieldmap-objecttypefield"""
 
 @attr.s
-class IntegrationSourceConnectorProperties(Property):
+class PropIntegrationSourceConnectorProperties(Property):
     """
     AWS Object Type = "AWS::CustomerProfiles::Integration.SourceConnectorProperties"
 
@@ -497,44 +497,44 @@ class IntegrationSourceConnectorProperties(Property):
     """
     AWS_OBJECT_TYPE = "AWS::CustomerProfiles::Integration.SourceConnectorProperties"
     
-    p_Marketo: typing.Union['IntegrationMarketoSourceProperties', dict] = attr.ib(
+    p_Marketo: typing.Union['PropIntegrationMarketoSourceProperties', dict] = attr.ib(
         default=None,
-        converter=IntegrationMarketoSourceProperties.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(IntegrationMarketoSourceProperties)),
+        converter=PropIntegrationMarketoSourceProperties.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropIntegrationMarketoSourceProperties)),
         metadata={AttrMeta.PROPERTY_NAME: "Marketo"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-integration-sourceconnectorproperties.html#cfn-customerprofiles-integration-sourceconnectorproperties-marketo"""
-    p_S3: typing.Union['IntegrationS3SourceProperties', dict] = attr.ib(
+    p_S3: typing.Union['PropIntegrationS3SourceProperties', dict] = attr.ib(
         default=None,
-        converter=IntegrationS3SourceProperties.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(IntegrationS3SourceProperties)),
+        converter=PropIntegrationS3SourceProperties.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropIntegrationS3SourceProperties)),
         metadata={AttrMeta.PROPERTY_NAME: "S3"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-integration-sourceconnectorproperties.html#cfn-customerprofiles-integration-sourceconnectorproperties-s3"""
-    p_Salesforce: typing.Union['IntegrationSalesforceSourceProperties', dict] = attr.ib(
+    p_Salesforce: typing.Union['PropIntegrationSalesforceSourceProperties', dict] = attr.ib(
         default=None,
-        converter=IntegrationSalesforceSourceProperties.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(IntegrationSalesforceSourceProperties)),
+        converter=PropIntegrationSalesforceSourceProperties.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropIntegrationSalesforceSourceProperties)),
         metadata={AttrMeta.PROPERTY_NAME: "Salesforce"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-integration-sourceconnectorproperties.html#cfn-customerprofiles-integration-sourceconnectorproperties-salesforce"""
-    p_ServiceNow: typing.Union['IntegrationServiceNowSourceProperties', dict] = attr.ib(
+    p_ServiceNow: typing.Union['PropIntegrationServiceNowSourceProperties', dict] = attr.ib(
         default=None,
-        converter=IntegrationServiceNowSourceProperties.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(IntegrationServiceNowSourceProperties)),
+        converter=PropIntegrationServiceNowSourceProperties.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropIntegrationServiceNowSourceProperties)),
         metadata={AttrMeta.PROPERTY_NAME: "ServiceNow"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-integration-sourceconnectorproperties.html#cfn-customerprofiles-integration-sourceconnectorproperties-servicenow"""
-    p_Zendesk: typing.Union['IntegrationZendeskSourceProperties', dict] = attr.ib(
+    p_Zendesk: typing.Union['PropIntegrationZendeskSourceProperties', dict] = attr.ib(
         default=None,
-        converter=IntegrationZendeskSourceProperties.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(IntegrationZendeskSourceProperties)),
+        converter=PropIntegrationZendeskSourceProperties.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropIntegrationZendeskSourceProperties)),
         metadata={AttrMeta.PROPERTY_NAME: "Zendesk"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-integration-sourceconnectorproperties.html#cfn-customerprofiles-integration-sourceconnectorproperties-zendesk"""
 
 @attr.s
-class IntegrationTriggerConfig(Property):
+class PropIntegrationTriggerConfig(Property):
     """
     AWS Object Type = "AWS::CustomerProfiles::Integration.TriggerConfig"
 
@@ -553,16 +553,16 @@ class IntegrationTriggerConfig(Property):
         metadata={AttrMeta.PROPERTY_NAME: "TriggerType"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-integration-triggerconfig.html#cfn-customerprofiles-integration-triggerconfig-triggertype"""
-    p_TriggerProperties: typing.Union['IntegrationTriggerProperties', dict] = attr.ib(
+    p_TriggerProperties: typing.Union['PropIntegrationTriggerProperties', dict] = attr.ib(
         default=None,
-        converter=IntegrationTriggerProperties.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(IntegrationTriggerProperties)),
+        converter=PropIntegrationTriggerProperties.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropIntegrationTriggerProperties)),
         metadata={AttrMeta.PROPERTY_NAME: "TriggerProperties"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-integration-triggerconfig.html#cfn-customerprofiles-integration-triggerconfig-triggerproperties"""
 
 @attr.s
-class IntegrationSourceFlowConfig(Property):
+class PropIntegrationSourceFlowConfig(Property):
     """
     AWS Object Type = "AWS::CustomerProfiles::Integration.SourceFlowConfig"
 
@@ -583,10 +583,10 @@ class IntegrationSourceFlowConfig(Property):
         metadata={AttrMeta.PROPERTY_NAME: "ConnectorType"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-integration-sourceflowconfig.html#cfn-customerprofiles-integration-sourceflowconfig-connectortype"""
-    rp_SourceConnectorProperties: typing.Union['IntegrationSourceConnectorProperties', dict] = attr.ib(
+    rp_SourceConnectorProperties: typing.Union['PropIntegrationSourceConnectorProperties', dict] = attr.ib(
         default=None,
-        converter=IntegrationSourceConnectorProperties.from_dict,
-        validator=attr.validators.instance_of(IntegrationSourceConnectorProperties),
+        converter=PropIntegrationSourceConnectorProperties.from_dict,
+        validator=attr.validators.instance_of(PropIntegrationSourceConnectorProperties),
         metadata={AttrMeta.PROPERTY_NAME: "SourceConnectorProperties"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-integration-sourceflowconfig.html#cfn-customerprofiles-integration-sourceflowconfig-sourceconnectorproperties"""
@@ -596,16 +596,16 @@ class IntegrationSourceFlowConfig(Property):
         metadata={AttrMeta.PROPERTY_NAME: "ConnectorProfileName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-integration-sourceflowconfig.html#cfn-customerprofiles-integration-sourceflowconfig-connectorprofilename"""
-    p_IncrementalPullConfig: typing.Union['IntegrationIncrementalPullConfig', dict] = attr.ib(
+    p_IncrementalPullConfig: typing.Union['PropIntegrationIncrementalPullConfig', dict] = attr.ib(
         default=None,
-        converter=IntegrationIncrementalPullConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(IntegrationIncrementalPullConfig)),
+        converter=PropIntegrationIncrementalPullConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropIntegrationIncrementalPullConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "IncrementalPullConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-integration-sourceflowconfig.html#cfn-customerprofiles-integration-sourceflowconfig-incrementalpullconfig"""
 
 @attr.s
-class IntegrationFlowDefinition(Property):
+class PropIntegrationFlowDefinition(Property):
     """
     AWS Object Type = "AWS::CustomerProfiles::Integration.FlowDefinition"
 
@@ -634,24 +634,24 @@ class IntegrationFlowDefinition(Property):
         metadata={AttrMeta.PROPERTY_NAME: "KmsArn"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-integration-flowdefinition.html#cfn-customerprofiles-integration-flowdefinition-kmsarn"""
-    rp_SourceFlowConfig: typing.Union['IntegrationSourceFlowConfig', dict] = attr.ib(
+    rp_SourceFlowConfig: typing.Union['PropIntegrationSourceFlowConfig', dict] = attr.ib(
         default=None,
-        converter=IntegrationSourceFlowConfig.from_dict,
-        validator=attr.validators.instance_of(IntegrationSourceFlowConfig),
+        converter=PropIntegrationSourceFlowConfig.from_dict,
+        validator=attr.validators.instance_of(PropIntegrationSourceFlowConfig),
         metadata={AttrMeta.PROPERTY_NAME: "SourceFlowConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-integration-flowdefinition.html#cfn-customerprofiles-integration-flowdefinition-sourceflowconfig"""
-    rp_Tasks: typing.List[typing.Union['IntegrationTask', dict]] = attr.ib(
+    rp_Tasks: typing.List[typing.Union['PropIntegrationTask', dict]] = attr.ib(
         default=None,
-        converter=IntegrationTask.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(IntegrationTask), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropIntegrationTask.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropIntegrationTask), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "Tasks"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-integration-flowdefinition.html#cfn-customerprofiles-integration-flowdefinition-tasks"""
-    rp_TriggerConfig: typing.Union['IntegrationTriggerConfig', dict] = attr.ib(
+    rp_TriggerConfig: typing.Union['PropIntegrationTriggerConfig', dict] = attr.ib(
         default=None,
-        converter=IntegrationTriggerConfig.from_dict,
-        validator=attr.validators.instance_of(IntegrationTriggerConfig),
+        converter=PropIntegrationTriggerConfig.from_dict,
+        validator=attr.validators.instance_of(PropIntegrationTriggerConfig),
         metadata={AttrMeta.PROPERTY_NAME: "TriggerConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-customerprofiles-integration-flowdefinition.html#cfn-customerprofiles-integration-flowdefinition-triggerconfig"""
@@ -757,10 +757,10 @@ class Integration(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "ObjectTypeName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-customerprofiles-integration.html#cfn-customerprofiles-integration-objecttypename"""
-    p_FlowDefinition: typing.Union['IntegrationFlowDefinition', dict] = attr.ib(
+    p_FlowDefinition: typing.Union['PropIntegrationFlowDefinition', dict] = attr.ib(
         default=None,
-        converter=IntegrationFlowDefinition.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(IntegrationFlowDefinition)),
+        converter=PropIntegrationFlowDefinition.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropIntegrationFlowDefinition)),
         metadata={AttrMeta.PROPERTY_NAME: "FlowDefinition"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-customerprofiles-integration.html#cfn-customerprofiles-integration-flowdefinition"""
@@ -843,17 +843,17 @@ class ObjectType(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "ExpirationDays"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-customerprofiles-objecttype.html#cfn-customerprofiles-objecttype-expirationdays"""
-    p_Fields: typing.List[typing.Union['ObjectTypeFieldMap', dict]] = attr.ib(
+    p_Fields: typing.List[typing.Union['PropObjectTypeFieldMap', dict]] = attr.ib(
         default=None,
-        converter=ObjectTypeFieldMap.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ObjectTypeFieldMap), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropObjectTypeFieldMap.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropObjectTypeFieldMap), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Fields"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-customerprofiles-objecttype.html#cfn-customerprofiles-objecttype-fields"""
-    p_Keys: typing.List[typing.Union['ObjectTypeKeyMap', dict]] = attr.ib(
+    p_Keys: typing.List[typing.Union['PropObjectTypeKeyMap', dict]] = attr.ib(
         default=None,
-        converter=ObjectTypeKeyMap.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ObjectTypeKeyMap), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropObjectTypeKeyMap.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropObjectTypeKeyMap), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Keys"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-customerprofiles-objecttype.html#cfn-customerprofiles-objecttype-keys"""

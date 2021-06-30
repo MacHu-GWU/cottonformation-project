@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class InstanceAccessControlAttributeConfigurationAccessControlAttributeValue(Property):
+class PropInstanceAccessControlAttributeConfigurationAccessControlAttributeValue(Property):
     """
     AWS Object Type = "AWS::SSO::InstanceAccessControlAttributeConfiguration.AccessControlAttributeValue"
 
@@ -35,7 +35,7 @@ class InstanceAccessControlAttributeConfigurationAccessControlAttributeValue(Pro
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sso-instanceaccesscontrolattributeconfiguration-accesscontrolattributevalue.html#cfn-sso-instanceaccesscontrolattributeconfiguration-accesscontrolattributevalue-source"""
 
 @attr.s
-class InstanceAccessControlAttributeConfigurationAccessControlAttribute(Property):
+class PropInstanceAccessControlAttributeConfigurationAccessControlAttribute(Property):
     """
     AWS Object Type = "AWS::SSO::InstanceAccessControlAttributeConfiguration.AccessControlAttribute"
 
@@ -54,10 +54,10 @@ class InstanceAccessControlAttributeConfigurationAccessControlAttribute(Property
         metadata={AttrMeta.PROPERTY_NAME: "Key"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sso-instanceaccesscontrolattributeconfiguration-accesscontrolattribute.html#cfn-sso-instanceaccesscontrolattributeconfiguration-accesscontrolattribute-key"""
-    rp_Value: typing.Union['InstanceAccessControlAttributeConfigurationAccessControlAttributeValue', dict] = attr.ib(
+    rp_Value: typing.Union['PropInstanceAccessControlAttributeConfigurationAccessControlAttributeValue', dict] = attr.ib(
         default=None,
-        converter=InstanceAccessControlAttributeConfigurationAccessControlAttributeValue.from_dict,
-        validator=attr.validators.instance_of(InstanceAccessControlAttributeConfigurationAccessControlAttributeValue),
+        converter=PropInstanceAccessControlAttributeConfigurationAccessControlAttributeValue.from_dict,
+        validator=attr.validators.instance_of(PropInstanceAccessControlAttributeConfigurationAccessControlAttributeValue),
         metadata={AttrMeta.PROPERTY_NAME: "Value"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sso-instanceaccesscontrolattributeconfiguration-accesscontrolattribute.html#cfn-sso-instanceaccesscontrolattributeconfiguration-accesscontrolattribute-value"""
@@ -222,10 +222,10 @@ class InstanceAccessControlAttributeConfiguration(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "InstanceArn"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sso-instanceaccesscontrolattributeconfiguration.html#cfn-sso-instanceaccesscontrolattributeconfiguration-instancearn"""
-    p_AccessControlAttributes: typing.List[typing.Union['InstanceAccessControlAttributeConfigurationAccessControlAttribute', dict]] = attr.ib(
+    p_AccessControlAttributes: typing.List[typing.Union['PropInstanceAccessControlAttributeConfigurationAccessControlAttribute', dict]] = attr.ib(
         default=None,
-        converter=InstanceAccessControlAttributeConfigurationAccessControlAttribute.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(InstanceAccessControlAttributeConfigurationAccessControlAttribute), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropInstanceAccessControlAttributeConfigurationAccessControlAttribute.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropInstanceAccessControlAttributeConfigurationAccessControlAttribute), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "AccessControlAttributes"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sso-instanceaccesscontrolattributeconfiguration.html#cfn-sso-instanceaccesscontrolattributeconfiguration-accesscontrolattributes"""

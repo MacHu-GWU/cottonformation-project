@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class OriginEndpointStreamSelection(Property):
+class PropOriginEndpointStreamSelection(Property):
     """
     AWS Object Type = "AWS::MediaPackage::OriginEndpoint.StreamSelection"
 
@@ -49,7 +49,7 @@ class OriginEndpointStreamSelection(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-streamselection.html#cfn-mediapackage-originendpoint-streamselection-streamorder"""
 
 @attr.s
-class PackagingGroupLogConfiguration(Property):
+class PropPackagingGroupLogConfiguration(Property):
     """
     AWS Object Type = "AWS::MediaPackage::PackagingGroup.LogConfiguration"
 
@@ -69,7 +69,7 @@ class PackagingGroupLogConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packaginggroup-logconfiguration.html#cfn-mediapackage-packaginggroup-logconfiguration-loggroupname"""
 
 @attr.s
-class OriginEndpointAuthorization(Property):
+class PropOriginEndpointAuthorization(Property):
     """
     AWS Object Type = "AWS::MediaPackage::OriginEndpoint.Authorization"
 
@@ -96,7 +96,7 @@ class OriginEndpointAuthorization(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-authorization.html#cfn-mediapackage-originendpoint-authorization-secretsrolearn"""
 
 @attr.s
-class PackagingConfigurationSpekeKeyProvider(Property):
+class PropPackagingConfigurationSpekeKeyProvider(Property):
     """
     AWS Object Type = "AWS::MediaPackage::PackagingConfiguration.SpekeKeyProvider"
 
@@ -130,7 +130,7 @@ class PackagingConfigurationSpekeKeyProvider(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-spekekeyprovider.html#cfn-mediapackage-packagingconfiguration-spekekeyprovider-url"""
 
 @attr.s
-class ChannelLogConfiguration(Property):
+class PropChannelLogConfiguration(Property):
     """
     AWS Object Type = "AWS::MediaPackage::Channel.LogConfiguration"
 
@@ -150,7 +150,7 @@ class ChannelLogConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-channel-logconfiguration.html#cfn-mediapackage-channel-logconfiguration-loggroupname"""
 
 @attr.s
-class PackagingConfigurationHlsEncryption(Property):
+class PropPackagingConfigurationHlsEncryption(Property):
     """
     AWS Object Type = "AWS::MediaPackage::PackagingConfiguration.HlsEncryption"
 
@@ -164,10 +164,10 @@ class PackagingConfigurationHlsEncryption(Property):
     """
     AWS_OBJECT_TYPE = "AWS::MediaPackage::PackagingConfiguration.HlsEncryption"
     
-    rp_SpekeKeyProvider: typing.Union['PackagingConfigurationSpekeKeyProvider', dict] = attr.ib(
+    rp_SpekeKeyProvider: typing.Union['PropPackagingConfigurationSpekeKeyProvider', dict] = attr.ib(
         default=None,
-        converter=PackagingConfigurationSpekeKeyProvider.from_dict,
-        validator=attr.validators.instance_of(PackagingConfigurationSpekeKeyProvider),
+        converter=PropPackagingConfigurationSpekeKeyProvider.from_dict,
+        validator=attr.validators.instance_of(PropPackagingConfigurationSpekeKeyProvider),
         metadata={AttrMeta.PROPERTY_NAME: "SpekeKeyProvider"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-hlsencryption.html#cfn-mediapackage-packagingconfiguration-hlsencryption-spekekeyprovider"""
@@ -185,7 +185,7 @@ class PackagingConfigurationHlsEncryption(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-hlsencryption.html#cfn-mediapackage-packagingconfiguration-hlsencryption-encryptionmethod"""
 
 @attr.s
-class PackagingGroupAuthorization(Property):
+class PropPackagingGroupAuthorization(Property):
     """
     AWS Object Type = "AWS::MediaPackage::PackagingGroup.Authorization"
 
@@ -212,7 +212,7 @@ class PackagingGroupAuthorization(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packaginggroup-authorization.html#cfn-mediapackage-packaginggroup-authorization-secretsrolearn"""
 
 @attr.s
-class OriginEndpointHlsManifest(Property):
+class PropOriginEndpointHlsManifest(Property):
     """
     AWS Object Type = "AWS::MediaPackage::OriginEndpoint.HlsManifest"
 
@@ -295,7 +295,7 @@ class OriginEndpointHlsManifest(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-hlsmanifest.html#cfn-mediapackage-originendpoint-hlsmanifest-url"""
 
 @attr.s
-class PackagingConfigurationCmafEncryption(Property):
+class PropPackagingConfigurationCmafEncryption(Property):
     """
     AWS Object Type = "AWS::MediaPackage::PackagingConfiguration.CmafEncryption"
 
@@ -307,16 +307,16 @@ class PackagingConfigurationCmafEncryption(Property):
     """
     AWS_OBJECT_TYPE = "AWS::MediaPackage::PackagingConfiguration.CmafEncryption"
     
-    rp_SpekeKeyProvider: typing.Union['PackagingConfigurationSpekeKeyProvider', dict] = attr.ib(
+    rp_SpekeKeyProvider: typing.Union['PropPackagingConfigurationSpekeKeyProvider', dict] = attr.ib(
         default=None,
-        converter=PackagingConfigurationSpekeKeyProvider.from_dict,
-        validator=attr.validators.instance_of(PackagingConfigurationSpekeKeyProvider),
+        converter=PropPackagingConfigurationSpekeKeyProvider.from_dict,
+        validator=attr.validators.instance_of(PropPackagingConfigurationSpekeKeyProvider),
         metadata={AttrMeta.PROPERTY_NAME: "SpekeKeyProvider"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-cmafencryption.html#cfn-mediapackage-packagingconfiguration-cmafencryption-spekekeyprovider"""
 
 @attr.s
-class PackagingConfigurationMssEncryption(Property):
+class PropPackagingConfigurationMssEncryption(Property):
     """
     AWS Object Type = "AWS::MediaPackage::PackagingConfiguration.MssEncryption"
 
@@ -328,16 +328,16 @@ class PackagingConfigurationMssEncryption(Property):
     """
     AWS_OBJECT_TYPE = "AWS::MediaPackage::PackagingConfiguration.MssEncryption"
     
-    rp_SpekeKeyProvider: typing.Union['PackagingConfigurationSpekeKeyProvider', dict] = attr.ib(
+    rp_SpekeKeyProvider: typing.Union['PropPackagingConfigurationSpekeKeyProvider', dict] = attr.ib(
         default=None,
-        converter=PackagingConfigurationSpekeKeyProvider.from_dict,
-        validator=attr.validators.instance_of(PackagingConfigurationSpekeKeyProvider),
+        converter=PropPackagingConfigurationSpekeKeyProvider.from_dict,
+        validator=attr.validators.instance_of(PropPackagingConfigurationSpekeKeyProvider),
         metadata={AttrMeta.PROPERTY_NAME: "SpekeKeyProvider"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-mssencryption.html#cfn-mediapackage-packagingconfiguration-mssencryption-spekekeyprovider"""
 
 @attr.s
-class PackagingConfigurationStreamSelection(Property):
+class PropPackagingConfigurationStreamSelection(Property):
     """
     AWS Object Type = "AWS::MediaPackage::PackagingConfiguration.StreamSelection"
 
@@ -371,7 +371,7 @@ class PackagingConfigurationStreamSelection(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-streamselection.html#cfn-mediapackage-packagingconfiguration-streamselection-streamorder"""
 
 @attr.s
-class AssetEgressEndpoint(Property):
+class PropAssetEgressEndpoint(Property):
     """
     AWS Object Type = "AWS::MediaPackage::Asset.EgressEndpoint"
 
@@ -398,7 +398,7 @@ class AssetEgressEndpoint(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-asset-egressendpoint.html#cfn-mediapackage-asset-egressendpoint-url"""
 
 @attr.s
-class OriginEndpointSpekeKeyProvider(Property):
+class PropOriginEndpointSpekeKeyProvider(Property):
     """
     AWS Object Type = "AWS::MediaPackage::OriginEndpoint.SpekeKeyProvider"
 
@@ -446,7 +446,7 @@ class OriginEndpointSpekeKeyProvider(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-spekekeyprovider.html#cfn-mediapackage-originendpoint-spekekeyprovider-certificatearn"""
 
 @attr.s
-class OriginEndpointCmafEncryption(Property):
+class PropOriginEndpointCmafEncryption(Property):
     """
     AWS Object Type = "AWS::MediaPackage::OriginEndpoint.CmafEncryption"
 
@@ -460,10 +460,10 @@ class OriginEndpointCmafEncryption(Property):
     """
     AWS_OBJECT_TYPE = "AWS::MediaPackage::OriginEndpoint.CmafEncryption"
     
-    rp_SpekeKeyProvider: typing.Union['OriginEndpointSpekeKeyProvider', dict] = attr.ib(
+    rp_SpekeKeyProvider: typing.Union['PropOriginEndpointSpekeKeyProvider', dict] = attr.ib(
         default=None,
-        converter=OriginEndpointSpekeKeyProvider.from_dict,
-        validator=attr.validators.instance_of(OriginEndpointSpekeKeyProvider),
+        converter=PropOriginEndpointSpekeKeyProvider.from_dict,
+        validator=attr.validators.instance_of(PropOriginEndpointSpekeKeyProvider),
         metadata={AttrMeta.PROPERTY_NAME: "SpekeKeyProvider"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-cmafencryption.html#cfn-mediapackage-originendpoint-cmafencryption-spekekeyprovider"""
@@ -481,7 +481,7 @@ class OriginEndpointCmafEncryption(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-cmafencryption.html#cfn-mediapackage-originendpoint-cmafencryption-keyrotationintervalseconds"""
 
 @attr.s
-class OriginEndpointHlsEncryption(Property):
+class PropOriginEndpointHlsEncryption(Property):
     """
     AWS Object Type = "AWS::MediaPackage::OriginEndpoint.HlsEncryption"
 
@@ -497,10 +497,10 @@ class OriginEndpointHlsEncryption(Property):
     """
     AWS_OBJECT_TYPE = "AWS::MediaPackage::OriginEndpoint.HlsEncryption"
     
-    rp_SpekeKeyProvider: typing.Union['OriginEndpointSpekeKeyProvider', dict] = attr.ib(
+    rp_SpekeKeyProvider: typing.Union['PropOriginEndpointSpekeKeyProvider', dict] = attr.ib(
         default=None,
-        converter=OriginEndpointSpekeKeyProvider.from_dict,
-        validator=attr.validators.instance_of(OriginEndpointSpekeKeyProvider),
+        converter=PropOriginEndpointSpekeKeyProvider.from_dict,
+        validator=attr.validators.instance_of(PropOriginEndpointSpekeKeyProvider),
         metadata={AttrMeta.PROPERTY_NAME: "SpekeKeyProvider"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-hlsencryption.html#cfn-mediapackage-originendpoint-hlsencryption-spekekeyprovider"""
@@ -530,7 +530,7 @@ class OriginEndpointHlsEncryption(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-hlsencryption.html#cfn-mediapackage-originendpoint-hlsencryption-repeatextxkey"""
 
 @attr.s
-class OriginEndpointHlsPackage(Property):
+class PropOriginEndpointHlsPackage(Property):
     """
     AWS Object Type = "AWS::MediaPackage::OriginEndpoint.HlsPackage"
 
@@ -570,10 +570,10 @@ class OriginEndpointHlsPackage(Property):
         metadata={AttrMeta.PROPERTY_NAME: "AdsOnDeliveryRestrictions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-hlspackage.html#cfn-mediapackage-originendpoint-hlspackage-adsondeliveryrestrictions"""
-    p_Encryption: typing.Union['OriginEndpointHlsEncryption', dict] = attr.ib(
+    p_Encryption: typing.Union['PropOriginEndpointHlsEncryption', dict] = attr.ib(
         default=None,
-        converter=OriginEndpointHlsEncryption.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(OriginEndpointHlsEncryption)),
+        converter=PropOriginEndpointHlsEncryption.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropOriginEndpointHlsEncryption)),
         metadata={AttrMeta.PROPERTY_NAME: "Encryption"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-hlspackage.html#cfn-mediapackage-originendpoint-hlspackage-encryption"""
@@ -607,10 +607,10 @@ class OriginEndpointHlsPackage(Property):
         metadata={AttrMeta.PROPERTY_NAME: "SegmentDurationSeconds"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-hlspackage.html#cfn-mediapackage-originendpoint-hlspackage-segmentdurationseconds"""
-    p_StreamSelection: typing.Union['OriginEndpointStreamSelection', dict] = attr.ib(
+    p_StreamSelection: typing.Union['PropOriginEndpointStreamSelection', dict] = attr.ib(
         default=None,
-        converter=OriginEndpointStreamSelection.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(OriginEndpointStreamSelection)),
+        converter=PropOriginEndpointStreamSelection.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropOriginEndpointStreamSelection)),
         metadata={AttrMeta.PROPERTY_NAME: "StreamSelection"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-hlspackage.html#cfn-mediapackage-originendpoint-hlspackage-streamselection"""
@@ -622,7 +622,7 @@ class OriginEndpointHlsPackage(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-hlspackage.html#cfn-mediapackage-originendpoint-hlspackage-useaudiorenditiongroup"""
 
 @attr.s
-class PackagingConfigurationHlsManifest(Property):
+class PropPackagingConfigurationHlsManifest(Property):
     """
     AWS Object Type = "AWS::MediaPackage::PackagingConfiguration.HlsManifest"
 
@@ -669,16 +669,16 @@ class PackagingConfigurationHlsManifest(Property):
         metadata={AttrMeta.PROPERTY_NAME: "RepeatExtXKey"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-hlsmanifest.html#cfn-mediapackage-packagingconfiguration-hlsmanifest-repeatextxkey"""
-    p_StreamSelection: typing.Union['PackagingConfigurationStreamSelection', dict] = attr.ib(
+    p_StreamSelection: typing.Union['PropPackagingConfigurationStreamSelection', dict] = attr.ib(
         default=None,
-        converter=PackagingConfigurationStreamSelection.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PackagingConfigurationStreamSelection)),
+        converter=PropPackagingConfigurationStreamSelection.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropPackagingConfigurationStreamSelection)),
         metadata={AttrMeta.PROPERTY_NAME: "StreamSelection"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-hlsmanifest.html#cfn-mediapackage-packagingconfiguration-hlsmanifest-streamselection"""
 
 @attr.s
-class OriginEndpointCmafPackage(Property):
+class PropOriginEndpointCmafPackage(Property):
     """
     AWS Object Type = "AWS::MediaPackage::OriginEndpoint.CmafPackage"
 
@@ -694,17 +694,17 @@ class OriginEndpointCmafPackage(Property):
     """
     AWS_OBJECT_TYPE = "AWS::MediaPackage::OriginEndpoint.CmafPackage"
     
-    p_Encryption: typing.Union['OriginEndpointCmafEncryption', dict] = attr.ib(
+    p_Encryption: typing.Union['PropOriginEndpointCmafEncryption', dict] = attr.ib(
         default=None,
-        converter=OriginEndpointCmafEncryption.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(OriginEndpointCmafEncryption)),
+        converter=PropOriginEndpointCmafEncryption.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropOriginEndpointCmafEncryption)),
         metadata={AttrMeta.PROPERTY_NAME: "Encryption"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-cmafpackage.html#cfn-mediapackage-originendpoint-cmafpackage-encryption"""
-    p_HlsManifests: typing.List[typing.Union['OriginEndpointHlsManifest', dict]] = attr.ib(
+    p_HlsManifests: typing.List[typing.Union['PropOriginEndpointHlsManifest', dict]] = attr.ib(
         default=None,
-        converter=OriginEndpointHlsManifest.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(OriginEndpointHlsManifest), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropOriginEndpointHlsManifest.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropOriginEndpointHlsManifest), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "HlsManifests"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-cmafpackage.html#cfn-mediapackage-originendpoint-cmafpackage-hlsmanifests"""
@@ -720,16 +720,16 @@ class OriginEndpointCmafPackage(Property):
         metadata={AttrMeta.PROPERTY_NAME: "SegmentPrefix"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-cmafpackage.html#cfn-mediapackage-originendpoint-cmafpackage-segmentprefix"""
-    p_StreamSelection: typing.Union['OriginEndpointStreamSelection', dict] = attr.ib(
+    p_StreamSelection: typing.Union['PropOriginEndpointStreamSelection', dict] = attr.ib(
         default=None,
-        converter=OriginEndpointStreamSelection.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(OriginEndpointStreamSelection)),
+        converter=PropOriginEndpointStreamSelection.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropOriginEndpointStreamSelection)),
         metadata={AttrMeta.PROPERTY_NAME: "StreamSelection"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-cmafpackage.html#cfn-mediapackage-originendpoint-cmafpackage-streamselection"""
 
 @attr.s
-class PackagingConfigurationDashEncryption(Property):
+class PropPackagingConfigurationDashEncryption(Property):
     """
     AWS Object Type = "AWS::MediaPackage::PackagingConfiguration.DashEncryption"
 
@@ -741,16 +741,16 @@ class PackagingConfigurationDashEncryption(Property):
     """
     AWS_OBJECT_TYPE = "AWS::MediaPackage::PackagingConfiguration.DashEncryption"
     
-    rp_SpekeKeyProvider: typing.Union['PackagingConfigurationSpekeKeyProvider', dict] = attr.ib(
+    rp_SpekeKeyProvider: typing.Union['PropPackagingConfigurationSpekeKeyProvider', dict] = attr.ib(
         default=None,
-        converter=PackagingConfigurationSpekeKeyProvider.from_dict,
-        validator=attr.validators.instance_of(PackagingConfigurationSpekeKeyProvider),
+        converter=PropPackagingConfigurationSpekeKeyProvider.from_dict,
+        validator=attr.validators.instance_of(PropPackagingConfigurationSpekeKeyProvider),
         metadata={AttrMeta.PROPERTY_NAME: "SpekeKeyProvider"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-dashencryption.html#cfn-mediapackage-packagingconfiguration-dashencryption-spekekeyprovider"""
 
 @attr.s
-class OriginEndpointMssEncryption(Property):
+class PropOriginEndpointMssEncryption(Property):
     """
     AWS Object Type = "AWS::MediaPackage::OriginEndpoint.MssEncryption"
 
@@ -762,16 +762,16 @@ class OriginEndpointMssEncryption(Property):
     """
     AWS_OBJECT_TYPE = "AWS::MediaPackage::OriginEndpoint.MssEncryption"
     
-    rp_SpekeKeyProvider: typing.Union['OriginEndpointSpekeKeyProvider', dict] = attr.ib(
+    rp_SpekeKeyProvider: typing.Union['PropOriginEndpointSpekeKeyProvider', dict] = attr.ib(
         default=None,
-        converter=OriginEndpointSpekeKeyProvider.from_dict,
-        validator=attr.validators.instance_of(OriginEndpointSpekeKeyProvider),
+        converter=PropOriginEndpointSpekeKeyProvider.from_dict,
+        validator=attr.validators.instance_of(PropOriginEndpointSpekeKeyProvider),
         metadata={AttrMeta.PROPERTY_NAME: "SpekeKeyProvider"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-mssencryption.html#cfn-mediapackage-originendpoint-mssencryption-spekekeyprovider"""
 
 @attr.s
-class PackagingConfigurationCmafPackage(Property):
+class PropPackagingConfigurationCmafPackage(Property):
     """
     AWS Object Type = "AWS::MediaPackage::PackagingConfiguration.CmafPackage"
 
@@ -786,17 +786,17 @@ class PackagingConfigurationCmafPackage(Property):
     """
     AWS_OBJECT_TYPE = "AWS::MediaPackage::PackagingConfiguration.CmafPackage"
     
-    rp_HlsManifests: typing.List[typing.Union['PackagingConfigurationHlsManifest', dict]] = attr.ib(
+    rp_HlsManifests: typing.List[typing.Union['PropPackagingConfigurationHlsManifest', dict]] = attr.ib(
         default=None,
-        converter=PackagingConfigurationHlsManifest.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PackagingConfigurationHlsManifest), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropPackagingConfigurationHlsManifest.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropPackagingConfigurationHlsManifest), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "HlsManifests"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-cmafpackage.html#cfn-mediapackage-packagingconfiguration-cmafpackage-hlsmanifests"""
-    p_Encryption: typing.Union['PackagingConfigurationCmafEncryption', dict] = attr.ib(
+    p_Encryption: typing.Union['PropPackagingConfigurationCmafEncryption', dict] = attr.ib(
         default=None,
-        converter=PackagingConfigurationCmafEncryption.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PackagingConfigurationCmafEncryption)),
+        converter=PropPackagingConfigurationCmafEncryption.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropPackagingConfigurationCmafEncryption)),
         metadata={AttrMeta.PROPERTY_NAME: "Encryption"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-cmafpackage.html#cfn-mediapackage-packagingconfiguration-cmafpackage-encryption"""
@@ -814,7 +814,7 @@ class PackagingConfigurationCmafPackage(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-cmafpackage.html#cfn-mediapackage-packagingconfiguration-cmafpackage-segmentdurationseconds"""
 
 @attr.s
-class PackagingConfigurationDashManifest(Property):
+class PropPackagingConfigurationDashManifest(Property):
     """
     AWS Object Type = "AWS::MediaPackage::PackagingConfiguration.DashManifest"
 
@@ -854,16 +854,16 @@ class PackagingConfigurationDashManifest(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Profile"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-dashmanifest.html#cfn-mediapackage-packagingconfiguration-dashmanifest-profile"""
-    p_StreamSelection: typing.Union['PackagingConfigurationStreamSelection', dict] = attr.ib(
+    p_StreamSelection: typing.Union['PropPackagingConfigurationStreamSelection', dict] = attr.ib(
         default=None,
-        converter=PackagingConfigurationStreamSelection.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PackagingConfigurationStreamSelection)),
+        converter=PropPackagingConfigurationStreamSelection.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropPackagingConfigurationStreamSelection)),
         metadata={AttrMeta.PROPERTY_NAME: "StreamSelection"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-dashmanifest.html#cfn-mediapackage-packagingconfiguration-dashmanifest-streamselection"""
 
 @attr.s
-class OriginEndpointDashEncryption(Property):
+class PropOriginEndpointDashEncryption(Property):
     """
     AWS Object Type = "AWS::MediaPackage::OriginEndpoint.DashEncryption"
 
@@ -876,10 +876,10 @@ class OriginEndpointDashEncryption(Property):
     """
     AWS_OBJECT_TYPE = "AWS::MediaPackage::OriginEndpoint.DashEncryption"
     
-    rp_SpekeKeyProvider: typing.Union['OriginEndpointSpekeKeyProvider', dict] = attr.ib(
+    rp_SpekeKeyProvider: typing.Union['PropOriginEndpointSpekeKeyProvider', dict] = attr.ib(
         default=None,
-        converter=OriginEndpointSpekeKeyProvider.from_dict,
-        validator=attr.validators.instance_of(OriginEndpointSpekeKeyProvider),
+        converter=PropOriginEndpointSpekeKeyProvider.from_dict,
+        validator=attr.validators.instance_of(PropOriginEndpointSpekeKeyProvider),
         metadata={AttrMeta.PROPERTY_NAME: "SpekeKeyProvider"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-dashencryption.html#cfn-mediapackage-originendpoint-dashencryption-spekekeyprovider"""
@@ -891,7 +891,7 @@ class OriginEndpointDashEncryption(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-dashencryption.html#cfn-mediapackage-originendpoint-dashencryption-keyrotationintervalseconds"""
 
 @attr.s
-class PackagingConfigurationMssManifest(Property):
+class PropPackagingConfigurationMssManifest(Property):
     """
     AWS Object Type = "AWS::MediaPackage::PackagingConfiguration.MssManifest"
 
@@ -910,16 +910,16 @@ class PackagingConfigurationMssManifest(Property):
         metadata={AttrMeta.PROPERTY_NAME: "ManifestName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-mssmanifest.html#cfn-mediapackage-packagingconfiguration-mssmanifest-manifestname"""
-    p_StreamSelection: typing.Union['PackagingConfigurationStreamSelection', dict] = attr.ib(
+    p_StreamSelection: typing.Union['PropPackagingConfigurationStreamSelection', dict] = attr.ib(
         default=None,
-        converter=PackagingConfigurationStreamSelection.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PackagingConfigurationStreamSelection)),
+        converter=PropPackagingConfigurationStreamSelection.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropPackagingConfigurationStreamSelection)),
         metadata={AttrMeta.PROPERTY_NAME: "StreamSelection"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-mssmanifest.html#cfn-mediapackage-packagingconfiguration-mssmanifest-streamselection"""
 
 @attr.s
-class PackagingConfigurationMssPackage(Property):
+class PropPackagingConfigurationMssPackage(Property):
     """
     AWS Object Type = "AWS::MediaPackage::PackagingConfiguration.MssPackage"
 
@@ -933,17 +933,17 @@ class PackagingConfigurationMssPackage(Property):
     """
     AWS_OBJECT_TYPE = "AWS::MediaPackage::PackagingConfiguration.MssPackage"
     
-    rp_MssManifests: typing.List[typing.Union['PackagingConfigurationMssManifest', dict]] = attr.ib(
+    rp_MssManifests: typing.List[typing.Union['PropPackagingConfigurationMssManifest', dict]] = attr.ib(
         default=None,
-        converter=PackagingConfigurationMssManifest.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PackagingConfigurationMssManifest), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropPackagingConfigurationMssManifest.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropPackagingConfigurationMssManifest), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "MssManifests"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-msspackage.html#cfn-mediapackage-packagingconfiguration-msspackage-mssmanifests"""
-    p_Encryption: typing.Union['PackagingConfigurationMssEncryption', dict] = attr.ib(
+    p_Encryption: typing.Union['PropPackagingConfigurationMssEncryption', dict] = attr.ib(
         default=None,
-        converter=PackagingConfigurationMssEncryption.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PackagingConfigurationMssEncryption)),
+        converter=PropPackagingConfigurationMssEncryption.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropPackagingConfigurationMssEncryption)),
         metadata={AttrMeta.PROPERTY_NAME: "Encryption"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-msspackage.html#cfn-mediapackage-packagingconfiguration-msspackage-encryption"""
@@ -955,7 +955,7 @@ class PackagingConfigurationMssPackage(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-msspackage.html#cfn-mediapackage-packagingconfiguration-msspackage-segmentdurationseconds"""
 
 @attr.s
-class OriginEndpointMssPackage(Property):
+class PropOriginEndpointMssPackage(Property):
     """
     AWS Object Type = "AWS::MediaPackage::OriginEndpoint.MssPackage"
 
@@ -970,10 +970,10 @@ class OriginEndpointMssPackage(Property):
     """
     AWS_OBJECT_TYPE = "AWS::MediaPackage::OriginEndpoint.MssPackage"
     
-    p_Encryption: typing.Union['OriginEndpointMssEncryption', dict] = attr.ib(
+    p_Encryption: typing.Union['PropOriginEndpointMssEncryption', dict] = attr.ib(
         default=None,
-        converter=OriginEndpointMssEncryption.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(OriginEndpointMssEncryption)),
+        converter=PropOriginEndpointMssEncryption.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropOriginEndpointMssEncryption)),
         metadata={AttrMeta.PROPERTY_NAME: "Encryption"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-msspackage.html#cfn-mediapackage-originendpoint-msspackage-encryption"""
@@ -989,16 +989,16 @@ class OriginEndpointMssPackage(Property):
         metadata={AttrMeta.PROPERTY_NAME: "SegmentDurationSeconds"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-msspackage.html#cfn-mediapackage-originendpoint-msspackage-segmentdurationseconds"""
-    p_StreamSelection: typing.Union['OriginEndpointStreamSelection', dict] = attr.ib(
+    p_StreamSelection: typing.Union['PropOriginEndpointStreamSelection', dict] = attr.ib(
         default=None,
-        converter=OriginEndpointStreamSelection.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(OriginEndpointStreamSelection)),
+        converter=PropOriginEndpointStreamSelection.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropOriginEndpointStreamSelection)),
         metadata={AttrMeta.PROPERTY_NAME: "StreamSelection"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-msspackage.html#cfn-mediapackage-originendpoint-msspackage-streamselection"""
 
 @attr.s
-class PackagingConfigurationHlsPackage(Property):
+class PropPackagingConfigurationHlsPackage(Property):
     """
     AWS Object Type = "AWS::MediaPackage::PackagingConfiguration.HlsPackage"
 
@@ -1013,17 +1013,17 @@ class PackagingConfigurationHlsPackage(Property):
     """
     AWS_OBJECT_TYPE = "AWS::MediaPackage::PackagingConfiguration.HlsPackage"
     
-    rp_HlsManifests: typing.List[typing.Union['PackagingConfigurationHlsManifest', dict]] = attr.ib(
+    rp_HlsManifests: typing.List[typing.Union['PropPackagingConfigurationHlsManifest', dict]] = attr.ib(
         default=None,
-        converter=PackagingConfigurationHlsManifest.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PackagingConfigurationHlsManifest), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropPackagingConfigurationHlsManifest.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropPackagingConfigurationHlsManifest), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "HlsManifests"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-hlspackage.html#cfn-mediapackage-packagingconfiguration-hlspackage-hlsmanifests"""
-    p_Encryption: typing.Union['PackagingConfigurationHlsEncryption', dict] = attr.ib(
+    p_Encryption: typing.Union['PropPackagingConfigurationHlsEncryption', dict] = attr.ib(
         default=None,
-        converter=PackagingConfigurationHlsEncryption.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PackagingConfigurationHlsEncryption)),
+        converter=PropPackagingConfigurationHlsEncryption.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropPackagingConfigurationHlsEncryption)),
         metadata={AttrMeta.PROPERTY_NAME: "Encryption"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-hlspackage.html#cfn-mediapackage-packagingconfiguration-hlspackage-encryption"""
@@ -1041,7 +1041,7 @@ class PackagingConfigurationHlsPackage(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-hlspackage.html#cfn-mediapackage-packagingconfiguration-hlspackage-useaudiorenditiongroup"""
 
 @attr.s
-class PackagingConfigurationDashPackage(Property):
+class PropPackagingConfigurationDashPackage(Property):
     """
     AWS Object Type = "AWS::MediaPackage::PackagingConfiguration.DashPackage"
 
@@ -1058,17 +1058,17 @@ class PackagingConfigurationDashPackage(Property):
     """
     AWS_OBJECT_TYPE = "AWS::MediaPackage::PackagingConfiguration.DashPackage"
     
-    rp_DashManifests: typing.List[typing.Union['PackagingConfigurationDashManifest', dict]] = attr.ib(
+    rp_DashManifests: typing.List[typing.Union['PropPackagingConfigurationDashManifest', dict]] = attr.ib(
         default=None,
-        converter=PackagingConfigurationDashManifest.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PackagingConfigurationDashManifest), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropPackagingConfigurationDashManifest.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropPackagingConfigurationDashManifest), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "DashManifests"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-dashpackage.html#cfn-mediapackage-packagingconfiguration-dashpackage-dashmanifests"""
-    p_Encryption: typing.Union['PackagingConfigurationDashEncryption', dict] = attr.ib(
+    p_Encryption: typing.Union['PropPackagingConfigurationDashEncryption', dict] = attr.ib(
         default=None,
-        converter=PackagingConfigurationDashEncryption.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PackagingConfigurationDashEncryption)),
+        converter=PropPackagingConfigurationDashEncryption.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropPackagingConfigurationDashEncryption)),
         metadata={AttrMeta.PROPERTY_NAME: "Encryption"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-dashpackage.html#cfn-mediapackage-packagingconfiguration-dashpackage-encryption"""
@@ -1098,7 +1098,7 @@ class PackagingConfigurationDashPackage(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-packagingconfiguration-dashpackage.html#cfn-mediapackage-packagingconfiguration-dashpackage-segmenttemplateformat"""
 
 @attr.s
-class OriginEndpointDashPackage(Property):
+class PropOriginEndpointDashPackage(Property):
     """
     AWS Object Type = "AWS::MediaPackage::OriginEndpoint.DashPackage"
 
@@ -1136,10 +1136,10 @@ class OriginEndpointDashPackage(Property):
         metadata={AttrMeta.PROPERTY_NAME: "AdsOnDeliveryRestrictions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-dashpackage.html#cfn-mediapackage-originendpoint-dashpackage-adsondeliveryrestrictions"""
-    p_Encryption: typing.Union['OriginEndpointDashEncryption', dict] = attr.ib(
+    p_Encryption: typing.Union['PropOriginEndpointDashEncryption', dict] = attr.ib(
         default=None,
-        converter=OriginEndpointDashEncryption.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(OriginEndpointDashEncryption)),
+        converter=PropOriginEndpointDashEncryption.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropOriginEndpointDashEncryption)),
         metadata={AttrMeta.PROPERTY_NAME: "Encryption"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-dashpackage.html#cfn-mediapackage-originendpoint-dashpackage-encryption"""
@@ -1191,10 +1191,10 @@ class OriginEndpointDashPackage(Property):
         metadata={AttrMeta.PROPERTY_NAME: "SegmentTemplateFormat"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-dashpackage.html#cfn-mediapackage-originendpoint-dashpackage-segmenttemplateformat"""
-    p_StreamSelection: typing.Union['OriginEndpointStreamSelection', dict] = attr.ib(
+    p_StreamSelection: typing.Union['PropOriginEndpointStreamSelection', dict] = attr.ib(
         default=None,
-        converter=OriginEndpointStreamSelection.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(OriginEndpointStreamSelection)),
+        converter=PropOriginEndpointStreamSelection.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropOriginEndpointStreamSelection)),
         metadata={AttrMeta.PROPERTY_NAME: "StreamSelection"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediapackage-originendpoint-dashpackage.html#cfn-mediapackage-originendpoint-dashpackage-streamselection"""
@@ -1264,10 +1264,10 @@ class Asset(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "SourceRoleArn"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-asset.html#cfn-mediapackage-asset-sourcerolearn"""
-    p_EgressEndpoints: typing.List[typing.Union['AssetEgressEndpoint', dict]] = attr.ib(
+    p_EgressEndpoints: typing.List[typing.Union['PropAssetEgressEndpoint', dict]] = attr.ib(
         default=None,
-        converter=AssetEgressEndpoint.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(AssetEgressEndpoint), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropAssetEgressEndpoint.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropAssetEgressEndpoint), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "EgressEndpoints"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-asset.html#cfn-mediapackage-asset-egressendpoints"""
@@ -1320,17 +1320,17 @@ class PackagingGroup(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Id"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-packaginggroup.html#cfn-mediapackage-packaginggroup-id"""
-    p_Authorization: typing.Union['PackagingGroupAuthorization', dict] = attr.ib(
+    p_Authorization: typing.Union['PropPackagingGroupAuthorization', dict] = attr.ib(
         default=None,
-        converter=PackagingGroupAuthorization.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PackagingGroupAuthorization)),
+        converter=PropPackagingGroupAuthorization.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropPackagingGroupAuthorization)),
         metadata={AttrMeta.PROPERTY_NAME: "Authorization"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-packaginggroup.html#cfn-mediapackage-packaginggroup-authorization"""
-    p_EgressAccessLogs: typing.Union['PackagingGroupLogConfiguration', dict] = attr.ib(
+    p_EgressAccessLogs: typing.Union['PropPackagingGroupLogConfiguration', dict] = attr.ib(
         default=None,
-        converter=PackagingGroupLogConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PackagingGroupLogConfiguration)),
+        converter=PropPackagingGroupLogConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropPackagingGroupLogConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "EgressAccessLogs"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-packaginggroup.html#cfn-mediapackage-packaginggroup-egressaccesslogs"""
@@ -1393,24 +1393,24 @@ class OriginEndpoint(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Id"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-originendpoint.html#cfn-mediapackage-originendpoint-id"""
-    p_Authorization: typing.Union['OriginEndpointAuthorization', dict] = attr.ib(
+    p_Authorization: typing.Union['PropOriginEndpointAuthorization', dict] = attr.ib(
         default=None,
-        converter=OriginEndpointAuthorization.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(OriginEndpointAuthorization)),
+        converter=PropOriginEndpointAuthorization.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropOriginEndpointAuthorization)),
         metadata={AttrMeta.PROPERTY_NAME: "Authorization"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-originendpoint.html#cfn-mediapackage-originendpoint-authorization"""
-    p_CmafPackage: typing.Union['OriginEndpointCmafPackage', dict] = attr.ib(
+    p_CmafPackage: typing.Union['PropOriginEndpointCmafPackage', dict] = attr.ib(
         default=None,
-        converter=OriginEndpointCmafPackage.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(OriginEndpointCmafPackage)),
+        converter=PropOriginEndpointCmafPackage.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropOriginEndpointCmafPackage)),
         metadata={AttrMeta.PROPERTY_NAME: "CmafPackage"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-originendpoint.html#cfn-mediapackage-originendpoint-cmafpackage"""
-    p_DashPackage: typing.Union['OriginEndpointDashPackage', dict] = attr.ib(
+    p_DashPackage: typing.Union['PropOriginEndpointDashPackage', dict] = attr.ib(
         default=None,
-        converter=OriginEndpointDashPackage.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(OriginEndpointDashPackage)),
+        converter=PropOriginEndpointDashPackage.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropOriginEndpointDashPackage)),
         metadata={AttrMeta.PROPERTY_NAME: "DashPackage"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-originendpoint.html#cfn-mediapackage-originendpoint-dashpackage"""
@@ -1420,10 +1420,10 @@ class OriginEndpoint(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Description"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-originendpoint.html#cfn-mediapackage-originendpoint-description"""
-    p_HlsPackage: typing.Union['OriginEndpointHlsPackage', dict] = attr.ib(
+    p_HlsPackage: typing.Union['PropOriginEndpointHlsPackage', dict] = attr.ib(
         default=None,
-        converter=OriginEndpointHlsPackage.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(OriginEndpointHlsPackage)),
+        converter=PropOriginEndpointHlsPackage.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropOriginEndpointHlsPackage)),
         metadata={AttrMeta.PROPERTY_NAME: "HlsPackage"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-originendpoint.html#cfn-mediapackage-originendpoint-hlspackage"""
@@ -1433,10 +1433,10 @@ class OriginEndpoint(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "ManifestName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-originendpoint.html#cfn-mediapackage-originendpoint-manifestname"""
-    p_MssPackage: typing.Union['OriginEndpointMssPackage', dict] = attr.ib(
+    p_MssPackage: typing.Union['PropOriginEndpointMssPackage', dict] = attr.ib(
         default=None,
-        converter=OriginEndpointMssPackage.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(OriginEndpointMssPackage)),
+        converter=PropOriginEndpointMssPackage.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropOriginEndpointMssPackage)),
         metadata={AttrMeta.PROPERTY_NAME: "MssPackage"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-originendpoint.html#cfn-mediapackage-originendpoint-msspackage"""
@@ -1514,17 +1514,17 @@ class Channel(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Description"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-channel.html#cfn-mediapackage-channel-description"""
-    p_EgressAccessLogs: typing.Union['ChannelLogConfiguration', dict] = attr.ib(
+    p_EgressAccessLogs: typing.Union['PropChannelLogConfiguration', dict] = attr.ib(
         default=None,
-        converter=ChannelLogConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelLogConfiguration)),
+        converter=PropChannelLogConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelLogConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "EgressAccessLogs"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-channel.html#cfn-mediapackage-channel-egressaccesslogs"""
-    p_IngressAccessLogs: typing.Union['ChannelLogConfiguration', dict] = attr.ib(
+    p_IngressAccessLogs: typing.Union['PropChannelLogConfiguration', dict] = attr.ib(
         default=None,
-        converter=ChannelLogConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelLogConfiguration)),
+        converter=PropChannelLogConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelLogConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "IngressAccessLogs"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-channel.html#cfn-mediapackage-channel-ingressaccesslogs"""
@@ -1575,31 +1575,31 @@ class PackagingConfiguration(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "PackagingGroupId"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-packagingconfiguration.html#cfn-mediapackage-packagingconfiguration-packaginggroupid"""
-    p_CmafPackage: typing.Union['PackagingConfigurationCmafPackage', dict] = attr.ib(
+    p_CmafPackage: typing.Union['PropPackagingConfigurationCmafPackage', dict] = attr.ib(
         default=None,
-        converter=PackagingConfigurationCmafPackage.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PackagingConfigurationCmafPackage)),
+        converter=PropPackagingConfigurationCmafPackage.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropPackagingConfigurationCmafPackage)),
         metadata={AttrMeta.PROPERTY_NAME: "CmafPackage"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-packagingconfiguration.html#cfn-mediapackage-packagingconfiguration-cmafpackage"""
-    p_DashPackage: typing.Union['PackagingConfigurationDashPackage', dict] = attr.ib(
+    p_DashPackage: typing.Union['PropPackagingConfigurationDashPackage', dict] = attr.ib(
         default=None,
-        converter=PackagingConfigurationDashPackage.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PackagingConfigurationDashPackage)),
+        converter=PropPackagingConfigurationDashPackage.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropPackagingConfigurationDashPackage)),
         metadata={AttrMeta.PROPERTY_NAME: "DashPackage"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-packagingconfiguration.html#cfn-mediapackage-packagingconfiguration-dashpackage"""
-    p_HlsPackage: typing.Union['PackagingConfigurationHlsPackage', dict] = attr.ib(
+    p_HlsPackage: typing.Union['PropPackagingConfigurationHlsPackage', dict] = attr.ib(
         default=None,
-        converter=PackagingConfigurationHlsPackage.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PackagingConfigurationHlsPackage)),
+        converter=PropPackagingConfigurationHlsPackage.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropPackagingConfigurationHlsPackage)),
         metadata={AttrMeta.PROPERTY_NAME: "HlsPackage"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-packagingconfiguration.html#cfn-mediapackage-packagingconfiguration-hlspackage"""
-    p_MssPackage: typing.Union['PackagingConfigurationMssPackage', dict] = attr.ib(
+    p_MssPackage: typing.Union['PropPackagingConfigurationMssPackage', dict] = attr.ib(
         default=None,
-        converter=PackagingConfigurationMssPackage.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PackagingConfigurationMssPackage)),
+        converter=PropPackagingConfigurationMssPackage.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropPackagingConfigurationMssPackage)),
         metadata={AttrMeta.PROPERTY_NAME: "MssPackage"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-packagingconfiguration.html#cfn-mediapackage-packagingconfiguration-msspackage"""

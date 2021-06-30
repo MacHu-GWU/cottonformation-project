@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class TableColumn(Property):
+class PropTableColumn(Property):
     """
     AWS Object Type = "AWS::Cassandra::Table.Column"
 
@@ -42,7 +42,7 @@ class TableColumn(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cassandra-table-column.html#cfn-cassandra-table-column-columntype"""
 
 @attr.s
-class TableClusteringKeyColumn(Property):
+class PropTableClusteringKeyColumn(Property):
     """
     AWS Object Type = "AWS::Cassandra::Table.ClusteringKeyColumn"
 
@@ -55,10 +55,10 @@ class TableClusteringKeyColumn(Property):
     """
     AWS_OBJECT_TYPE = "AWS::Cassandra::Table.ClusteringKeyColumn"
     
-    rp_Column: typing.Union['TableColumn', dict] = attr.ib(
+    rp_Column: typing.Union['PropTableColumn', dict] = attr.ib(
         default=None,
-        converter=TableColumn.from_dict,
-        validator=attr.validators.instance_of(TableColumn),
+        converter=PropTableColumn.from_dict,
+        validator=attr.validators.instance_of(PropTableColumn),
         metadata={AttrMeta.PROPERTY_NAME: "Column"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cassandra-table-clusteringkeycolumn.html#cfn-cassandra-table-clusteringkeycolumn-column"""
@@ -70,7 +70,7 @@ class TableClusteringKeyColumn(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cassandra-table-clusteringkeycolumn.html#cfn-cassandra-table-clusteringkeycolumn-orderby"""
 
 @attr.s
-class TableProvisionedThroughput(Property):
+class PropTableProvisionedThroughput(Property):
     """
     AWS Object Type = "AWS::Cassandra::Table.ProvisionedThroughput"
 
@@ -97,7 +97,7 @@ class TableProvisionedThroughput(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cassandra-table-provisionedthroughput.html#cfn-cassandra-table-provisionedthroughput-writecapacityunits"""
 
 @attr.s
-class TableBillingMode(Property):
+class PropTableBillingMode(Property):
     """
     AWS Object Type = "AWS::Cassandra::Table.BillingMode"
 
@@ -116,10 +116,10 @@ class TableBillingMode(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Mode"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cassandra-table-billingmode.html#cfn-cassandra-table-billingmode-mode"""
-    p_ProvisionedThroughput: typing.Union['TableProvisionedThroughput', dict] = attr.ib(
+    p_ProvisionedThroughput: typing.Union['PropTableProvisionedThroughput', dict] = attr.ib(
         default=None,
-        converter=TableProvisionedThroughput.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(TableProvisionedThroughput)),
+        converter=PropTableProvisionedThroughput.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropTableProvisionedThroughput)),
         metadata={AttrMeta.PROPERTY_NAME: "ProvisionedThroughput"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cassandra-table-billingmode.html#cfn-cassandra-table-billingmode-provisionedthroughput"""
@@ -154,24 +154,24 @@ class Table(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "KeyspaceName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cassandra-table.html#cfn-cassandra-table-keyspacename"""
-    rp_PartitionKeyColumns: typing.List[typing.Union['TableColumn', dict]] = attr.ib(
+    rp_PartitionKeyColumns: typing.List[typing.Union['PropTableColumn', dict]] = attr.ib(
         default=None,
-        converter=TableColumn.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TableColumn), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropTableColumn.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropTableColumn), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "PartitionKeyColumns"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cassandra-table.html#cfn-cassandra-table-partitionkeycolumns"""
-    p_BillingMode: typing.Union['TableBillingMode', dict] = attr.ib(
+    p_BillingMode: typing.Union['PropTableBillingMode', dict] = attr.ib(
         default=None,
-        converter=TableBillingMode.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(TableBillingMode)),
+        converter=PropTableBillingMode.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropTableBillingMode)),
         metadata={AttrMeta.PROPERTY_NAME: "BillingMode"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cassandra-table.html#cfn-cassandra-table-billingmode"""
-    p_ClusteringKeyColumns: typing.List[typing.Union['TableClusteringKeyColumn', dict]] = attr.ib(
+    p_ClusteringKeyColumns: typing.List[typing.Union['PropTableClusteringKeyColumn', dict]] = attr.ib(
         default=None,
-        converter=TableClusteringKeyColumn.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TableClusteringKeyColumn), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropTableClusteringKeyColumn.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropTableClusteringKeyColumn), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "ClusteringKeyColumns"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cassandra-table.html#cfn-cassandra-table-clusteringkeycolumns"""
@@ -181,10 +181,10 @@ class Table(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "PointInTimeRecoveryEnabled"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cassandra-table.html#cfn-cassandra-table-pointintimerecoveryenabled"""
-    p_RegularColumns: typing.List[typing.Union['TableColumn', dict]] = attr.ib(
+    p_RegularColumns: typing.List[typing.Union['PropTableColumn', dict]] = attr.ib(
         default=None,
-        converter=TableColumn.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TableColumn), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropTableColumn.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropTableColumn), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "RegularColumns"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cassandra-table.html#cfn-cassandra-table-regularcolumns"""

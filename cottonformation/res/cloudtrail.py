@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class TrailDataResource(Property):
+class PropTrailDataResource(Property):
     """
     AWS Object Type = "AWS::CloudTrail::Trail.DataResource"
 
@@ -42,7 +42,7 @@ class TrailDataResource(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudtrail-trail-dataresource.html#cfn-cloudtrail-trail-dataresource-values"""
 
 @attr.s
-class TrailEventSelector(Property):
+class PropTrailEventSelector(Property):
     """
     AWS Object Type = "AWS::CloudTrail::Trail.EventSelector"
 
@@ -56,10 +56,10 @@ class TrailEventSelector(Property):
     """
     AWS_OBJECT_TYPE = "AWS::CloudTrail::Trail.EventSelector"
     
-    p_DataResources: typing.List[typing.Union['TrailDataResource', dict]] = attr.ib(
+    p_DataResources: typing.List[typing.Union['PropTrailDataResource', dict]] = attr.ib(
         default=None,
-        converter=TrailDataResource.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TrailDataResource), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropTrailDataResource.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropTrailDataResource), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "DataResources"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudtrail-trail-eventselector.html#cfn-cloudtrail-trail-eventselector-dataresources"""
@@ -135,10 +135,10 @@ class Trail(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "EnableLogFileValidation"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html#cfn-cloudtrail-trail-enablelogfilevalidation"""
-    p_EventSelectors: typing.List[typing.Union['TrailEventSelector', dict]] = attr.ib(
+    p_EventSelectors: typing.List[typing.Union['PropTrailEventSelector', dict]] = attr.ib(
         default=None,
-        converter=TrailEventSelector.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TrailEventSelector), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropTrailEventSelector.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropTrailEventSelector), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "EventSelectors"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudtrail-trail.html#cfn-cloudtrail-trail-eventselectors"""

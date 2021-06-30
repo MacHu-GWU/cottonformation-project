@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class MetricStreamMetricStreamFilter(Property):
+class PropMetricStreamMetricStreamFilter(Property):
     """
     AWS Object Type = "AWS::CloudWatch::MetricStream.MetricStreamFilter"
 
@@ -35,7 +35,7 @@ class MetricStreamMetricStreamFilter(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-metricstream-metricstreamfilter.html#cfn-cloudwatch-metricstream-metricstreamfilter-namespace"""
 
 @attr.s
-class AnomalyDetectorRange(Property):
+class PropAnomalyDetectorRange(Property):
     """
     AWS Object Type = "AWS::CloudWatch::AnomalyDetector.Range"
 
@@ -62,7 +62,7 @@ class AnomalyDetectorRange(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-anomalydetector-range.html#cfn-cloudwatch-anomalydetector-range-starttime"""
 
 @attr.s
-class InsightRuleTags(Property):
+class PropInsightRuleTags(Property):
     """
     AWS Object Type = "AWS::CloudWatch::InsightRule.Tags"
 
@@ -75,7 +75,7 @@ class InsightRuleTags(Property):
     
 
 @attr.s
-class AnomalyDetectorDimension(Property):
+class PropAnomalyDetectorDimension(Property):
     """
     AWS Object Type = "AWS::CloudWatch::AnomalyDetector.Dimension"
 
@@ -102,7 +102,7 @@ class AnomalyDetectorDimension(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-anomalydetector-dimension.html#cfn-cloudwatch-anomalydetector-dimension-value"""
 
 @attr.s
-class AlarmDimension(Property):
+class PropAlarmDimension(Property):
     """
     AWS Object Type = "AWS::CloudWatch::Alarm.Dimension"
 
@@ -129,7 +129,7 @@ class AlarmDimension(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cw-dimension.html#cfn-cloudwatch-alarm-dimension-value"""
 
 @attr.s
-class AlarmMetric(Property):
+class PropAlarmMetric(Property):
     """
     AWS Object Type = "AWS::CloudWatch::Alarm.Metric"
 
@@ -143,10 +143,10 @@ class AlarmMetric(Property):
     """
     AWS_OBJECT_TYPE = "AWS::CloudWatch::Alarm.Metric"
     
-    p_Dimensions: typing.List[typing.Union['AlarmDimension', dict]] = attr.ib(
+    p_Dimensions: typing.List[typing.Union['PropAlarmDimension', dict]] = attr.ib(
         default=None,
-        converter=AlarmDimension.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(AlarmDimension), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropAlarmDimension.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropAlarmDimension), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Dimensions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-alarm-metric.html#cfn-cloudwatch-alarm-metric-dimensions"""
@@ -164,7 +164,7 @@ class AlarmMetric(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-alarm-metric.html#cfn-cloudwatch-alarm-metric-namespace"""
 
 @attr.s
-class AnomalyDetectorConfiguration(Property):
+class PropAnomalyDetectorConfiguration(Property):
     """
     AWS Object Type = "AWS::CloudWatch::AnomalyDetector.Configuration"
 
@@ -177,10 +177,10 @@ class AnomalyDetectorConfiguration(Property):
     """
     AWS_OBJECT_TYPE = "AWS::CloudWatch::AnomalyDetector.Configuration"
     
-    p_ExcludedTimeRanges: typing.List[typing.Union['AnomalyDetectorRange', dict]] = attr.ib(
+    p_ExcludedTimeRanges: typing.List[typing.Union['PropAnomalyDetectorRange', dict]] = attr.ib(
         default=None,
-        converter=AnomalyDetectorRange.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(AnomalyDetectorRange), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropAnomalyDetectorRange.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropAnomalyDetectorRange), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "ExcludedTimeRanges"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-anomalydetector-configuration.html#cfn-cloudwatch-anomalydetector-configuration-excludedtimeranges"""
@@ -192,7 +192,7 @@ class AnomalyDetectorConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-anomalydetector-configuration.html#cfn-cloudwatch-anomalydetector-configuration-metrictimezone"""
 
 @attr.s
-class AlarmMetricStat(Property):
+class PropAlarmMetricStat(Property):
     """
     AWS Object Type = "AWS::CloudWatch::Alarm.MetricStat"
 
@@ -207,10 +207,10 @@ class AlarmMetricStat(Property):
     """
     AWS_OBJECT_TYPE = "AWS::CloudWatch::Alarm.MetricStat"
     
-    rp_Metric: typing.Union['AlarmMetric', dict] = attr.ib(
+    rp_Metric: typing.Union['PropAlarmMetric', dict] = attr.ib(
         default=None,
-        converter=AlarmMetric.from_dict,
-        validator=attr.validators.instance_of(AlarmMetric),
+        converter=PropAlarmMetric.from_dict,
+        validator=attr.validators.instance_of(PropAlarmMetric),
         metadata={AttrMeta.PROPERTY_NAME: "Metric"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-alarm-metricstat.html#cfn-cloudwatch-alarm-metricstat-metric"""
@@ -234,7 +234,7 @@ class AlarmMetricStat(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-alarm-metricstat.html#cfn-cloudwatch-alarm-metricstat-unit"""
 
 @attr.s
-class AlarmMetricDataQuery(Property):
+class PropAlarmMetricDataQuery(Property):
     """
     AWS Object Type = "AWS::CloudWatch::Alarm.MetricDataQuery"
 
@@ -269,10 +269,10 @@ class AlarmMetricDataQuery(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Label"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-alarm-metricdataquery.html#cfn-cloudwatch-alarm-metricdataquery-label"""
-    p_MetricStat: typing.Union['AlarmMetricStat', dict] = attr.ib(
+    p_MetricStat: typing.Union['PropAlarmMetricStat', dict] = attr.ib(
         default=None,
-        converter=AlarmMetricStat.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(AlarmMetricStat)),
+        converter=PropAlarmMetricStat.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropAlarmMetricStat)),
         metadata={AttrMeta.PROPERTY_NAME: "MetricStat"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudwatch-alarm-metricdataquery.html#cfn-cloudwatch-alarm-metricdataquery-metricstat"""
@@ -358,17 +358,17 @@ class AnomalyDetector(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Stat"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-anomalydetector.html#cfn-cloudwatch-anomalydetector-stat"""
-    p_Configuration: typing.Union['AnomalyDetectorConfiguration', dict] = attr.ib(
+    p_Configuration: typing.Union['PropAnomalyDetectorConfiguration', dict] = attr.ib(
         default=None,
-        converter=AnomalyDetectorConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(AnomalyDetectorConfiguration)),
+        converter=PropAnomalyDetectorConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropAnomalyDetectorConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "Configuration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-anomalydetector.html#cfn-cloudwatch-anomalydetector-configuration"""
-    p_Dimensions: typing.List[typing.Union['AnomalyDetectorDimension', dict]] = attr.ib(
+    p_Dimensions: typing.List[typing.Union['PropAnomalyDetectorDimension', dict]] = attr.ib(
         default=None,
-        converter=AnomalyDetectorDimension.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(AnomalyDetectorDimension), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropAnomalyDetectorDimension.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropAnomalyDetectorDimension), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Dimensions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-anomalydetector.html#cfn-cloudwatch-anomalydetector-dimensions"""
@@ -480,10 +480,10 @@ class InsightRule(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "RuleState"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-insightrule.html#cfn-cloudwatch-insightrule-rulestate"""
-    p_Tags: typing.Union['InsightRuleTags', dict] = attr.ib(
+    p_Tags: typing.Union['PropInsightRuleTags', dict] = attr.ib(
         default=None,
-        converter=InsightRuleTags.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(InsightRuleTags)),
+        converter=PropInsightRuleTags.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropInsightRuleTags)),
         metadata={AttrMeta.PROPERTY_NAME: "Tags"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-insightrule.html#cfn-cloudwatch-insightrule-tags"""
@@ -538,17 +538,17 @@ class MetricStream(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "RoleArn"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-metricstream.html#cfn-cloudwatch-metricstream-rolearn"""
-    p_ExcludeFilters: typing.List[typing.Union['MetricStreamMetricStreamFilter', dict]] = attr.ib(
+    p_ExcludeFilters: typing.List[typing.Union['PropMetricStreamMetricStreamFilter', dict]] = attr.ib(
         default=None,
-        converter=MetricStreamMetricStreamFilter.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(MetricStreamMetricStreamFilter), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropMetricStreamMetricStreamFilter.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropMetricStreamMetricStreamFilter), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "ExcludeFilters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-metricstream.html#cfn-cloudwatch-metricstream-excludefilters"""
-    p_IncludeFilters: typing.List[typing.Union['MetricStreamMetricStreamFilter', dict]] = attr.ib(
+    p_IncludeFilters: typing.List[typing.Union['PropMetricStreamMetricStreamFilter', dict]] = attr.ib(
         default=None,
-        converter=MetricStreamMetricStreamFilter.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(MetricStreamMetricStreamFilter), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropMetricStreamMetricStreamFilter.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropMetricStreamMetricStreamFilter), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "IncludeFilters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudwatch-metricstream.html#cfn-cloudwatch-metricstream-includefilters"""
@@ -664,10 +664,10 @@ class Alarm(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "DatapointsToAlarm"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cw-alarm.html#cfn-cloudwatch-alarm-datapointstoalarm"""
-    p_Dimensions: typing.List[typing.Union['AlarmDimension', dict]] = attr.ib(
+    p_Dimensions: typing.List[typing.Union['PropAlarmDimension', dict]] = attr.ib(
         default=None,
-        converter=AlarmDimension.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(AlarmDimension), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropAlarmDimension.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropAlarmDimension), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Dimensions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cw-alarm.html#cfn-cloudwatch-alarms-dimension"""
@@ -695,10 +695,10 @@ class Alarm(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "MetricName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cw-alarm.html#cfn-cloudwatch-alarms-metricname"""
-    p_Metrics: typing.List[typing.Union['AlarmMetricDataQuery', dict]] = attr.ib(
+    p_Metrics: typing.List[typing.Union['PropAlarmMetricDataQuery', dict]] = attr.ib(
         default=None,
-        converter=AlarmMetricDataQuery.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(AlarmMetricDataQuery), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropAlarmMetricDataQuery.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropAlarmMetricDataQuery), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Metrics"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cw-alarm.html#cfn-cloudwatch-alarm-metrics"""

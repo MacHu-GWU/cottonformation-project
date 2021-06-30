@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class RecordingConfigurationS3DestinationConfiguration(Property):
+class PropRecordingConfigurationS3DestinationConfiguration(Property):
     """
     AWS Object Type = "AWS::IVS::RecordingConfiguration.S3DestinationConfiguration"
 
@@ -35,7 +35,7 @@ class RecordingConfigurationS3DestinationConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ivs-recordingconfiguration-s3destinationconfiguration.html#cfn-ivs-recordingconfiguration-s3destinationconfiguration-bucketname"""
 
 @attr.s
-class RecordingConfigurationDestinationConfiguration(Property):
+class PropRecordingConfigurationDestinationConfiguration(Property):
     """
     AWS Object Type = "AWS::IVS::RecordingConfiguration.DestinationConfiguration"
 
@@ -47,10 +47,10 @@ class RecordingConfigurationDestinationConfiguration(Property):
     """
     AWS_OBJECT_TYPE = "AWS::IVS::RecordingConfiguration.DestinationConfiguration"
     
-    rp_S3: typing.Union['RecordingConfigurationS3DestinationConfiguration', dict] = attr.ib(
+    rp_S3: typing.Union['PropRecordingConfigurationS3DestinationConfiguration', dict] = attr.ib(
         default=None,
-        converter=RecordingConfigurationS3DestinationConfiguration.from_dict,
-        validator=attr.validators.instance_of(RecordingConfigurationS3DestinationConfiguration),
+        converter=PropRecordingConfigurationS3DestinationConfiguration.from_dict,
+        validator=attr.validators.instance_of(PropRecordingConfigurationS3DestinationConfiguration),
         metadata={AttrMeta.PROPERTY_NAME: "S3"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ivs-recordingconfiguration-destinationconfiguration.html#cfn-ivs-recordingconfiguration-destinationconfiguration-s3"""
@@ -237,10 +237,10 @@ class RecordingConfiguration(Resource):
     AWS_OBJECT_TYPE = "AWS::IVS::RecordingConfiguration"
 
     
-    rp_DestinationConfiguration: typing.Union['RecordingConfigurationDestinationConfiguration', dict] = attr.ib(
+    rp_DestinationConfiguration: typing.Union['PropRecordingConfigurationDestinationConfiguration', dict] = attr.ib(
         default=None,
-        converter=RecordingConfigurationDestinationConfiguration.from_dict,
-        validator=attr.validators.instance_of(RecordingConfigurationDestinationConfiguration),
+        converter=PropRecordingConfigurationDestinationConfiguration.from_dict,
+        validator=attr.validators.instance_of(PropRecordingConfigurationDestinationConfiguration),
         metadata={AttrMeta.PROPERTY_NAME: "DestinationConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ivs-recordingconfiguration.html#cfn-ivs-recordingconfiguration-destinationconfiguration"""

@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class FlowEncryption(Property):
+class PropFlowEncryption(Property):
     """
     AWS Object Type = "AWS::MediaConnect::Flow.Encryption"
 
@@ -91,7 +91,7 @@ class FlowEncryption(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-encryption.html#cfn-mediaconnect-flow-encryption-url"""
 
 @attr.s
-class FlowOutputEncryption(Property):
+class PropFlowOutputEncryption(Property):
     """
     AWS Object Type = "AWS::MediaConnect::FlowOutput.Encryption"
 
@@ -132,7 +132,7 @@ class FlowOutputEncryption(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flowoutput-encryption.html#cfn-mediaconnect-flowoutput-encryption-keytype"""
 
 @attr.s
-class FlowSourceEncryption(Property):
+class PropFlowSourceEncryption(Property):
     """
     AWS Object Type = "AWS::MediaConnect::FlowSource.Encryption"
 
@@ -208,7 +208,7 @@ class FlowSourceEncryption(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flowsource-encryption.html#cfn-mediaconnect-flowsource-encryption-url"""
 
 @attr.s
-class FlowEntitlementEncryption(Property):
+class PropFlowEntitlementEncryption(Property):
     """
     AWS Object Type = "AWS::MediaConnect::FlowEntitlement.Encryption"
 
@@ -284,7 +284,7 @@ class FlowEntitlementEncryption(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flowentitlement-encryption.html#cfn-mediaconnect-flowentitlement-encryption-url"""
 
 @attr.s
-class FlowSource(Property):
+class PropFlowSource(Property):
     """
     AWS Object Type = "AWS::MediaConnect::Flow.Source"
 
@@ -308,10 +308,10 @@ class FlowSource(Property):
     """
     AWS_OBJECT_TYPE = "AWS::MediaConnect::Flow.Source"
     
-    p_Decryption: typing.Union['FlowEncryption', dict] = attr.ib(
+    p_Decryption: typing.Union['PropFlowEncryption', dict] = attr.ib(
         default=None,
-        converter=FlowEncryption.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(FlowEncryption)),
+        converter=PropFlowEncryption.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropFlowEncryption)),
         metadata={AttrMeta.PROPERTY_NAME: "Decryption"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-source.html#cfn-mediaconnect-flow-source-decryption"""
@@ -389,7 +389,7 @@ class FlowSource(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-source.html#cfn-mediaconnect-flow-source-whitelistcidr"""
 
 @attr.s
-class FlowFailoverConfig(Property):
+class PropFlowFailoverConfig(Property):
     """
     AWS Object Type = "AWS::MediaConnect::Flow.FailoverConfig"
 
@@ -416,7 +416,7 @@ class FlowFailoverConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-failoverconfig.html#cfn-mediaconnect-flow-failoverconfig-state"""
 
 @attr.s
-class FlowOutputVpcInterfaceAttachment(Property):
+class PropFlowOutputVpcInterfaceAttachment(Property):
     """
     AWS Object Type = "AWS::MediaConnect::FlowOutput.VpcInterfaceAttachment"
 
@@ -475,10 +475,10 @@ class FlowSource(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Name"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowsource.html#cfn-mediaconnect-flowsource-name"""
-    p_Decryption: typing.Union['FlowSourceEncryption', dict] = attr.ib(
+    p_Decryption: typing.Union['PropFlowSourceEncryption', dict] = attr.ib(
         default=None,
-        converter=FlowSourceEncryption.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(FlowSourceEncryption)),
+        converter=PropFlowSourceEncryption.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropFlowSourceEncryption)),
         metadata={AttrMeta.PROPERTY_NAME: "Decryption"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowsource.html#cfn-mediaconnect-flowsource-decryption"""
@@ -655,10 +655,10 @@ class FlowEntitlement(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "DataTransferSubscriberFeePercent"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowentitlement.html#cfn-mediaconnect-flowentitlement-datatransfersubscriberfeepercent"""
-    p_Encryption: typing.Union['FlowEntitlementEncryption', dict] = attr.ib(
+    p_Encryption: typing.Union['PropFlowEntitlementEncryption', dict] = attr.ib(
         default=None,
-        converter=FlowEntitlementEncryption.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(FlowEntitlementEncryption)),
+        converter=PropFlowEntitlementEncryption.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropFlowEntitlementEncryption)),
         metadata={AttrMeta.PROPERTY_NAME: "Encryption"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowentitlement.html#cfn-mediaconnect-flowentitlement-encryption"""
@@ -732,10 +732,10 @@ class FlowOutput(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Destination"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowoutput.html#cfn-mediaconnect-flowoutput-destination"""
-    p_Encryption: typing.Union['FlowOutputEncryption', dict] = attr.ib(
+    p_Encryption: typing.Union['PropFlowOutputEncryption', dict] = attr.ib(
         default=None,
-        converter=FlowOutputEncryption.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(FlowOutputEncryption)),
+        converter=PropFlowOutputEncryption.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropFlowOutputEncryption)),
         metadata={AttrMeta.PROPERTY_NAME: "Encryption"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowoutput.html#cfn-mediaconnect-flowoutput-encryption"""
@@ -775,10 +775,10 @@ class FlowOutput(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "StreamId"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowoutput.html#cfn-mediaconnect-flowoutput-streamid"""
-    p_VpcInterfaceAttachment: typing.Union['FlowOutputVpcInterfaceAttachment', dict] = attr.ib(
+    p_VpcInterfaceAttachment: typing.Union['PropFlowOutputVpcInterfaceAttachment', dict] = attr.ib(
         default=None,
-        converter=FlowOutputVpcInterfaceAttachment.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(FlowOutputVpcInterfaceAttachment)),
+        converter=PropFlowOutputVpcInterfaceAttachment.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropFlowOutputVpcInterfaceAttachment)),
         metadata={AttrMeta.PROPERTY_NAME: "VpcInterfaceAttachment"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowoutput.html#cfn-mediaconnect-flowoutput-vpcinterfaceattachment"""
@@ -813,10 +813,10 @@ class Flow(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Name"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flow.html#cfn-mediaconnect-flow-name"""
-    rp_Source: typing.Union['FlowSource', dict] = attr.ib(
+    rp_Source: typing.Union['PropFlowSource', dict] = attr.ib(
         default=None,
-        converter=FlowSource.from_dict,
-        validator=attr.validators.instance_of(FlowSource),
+        converter=PropFlowSource.from_dict,
+        validator=attr.validators.instance_of(PropFlowSource),
         metadata={AttrMeta.PROPERTY_NAME: "Source"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flow.html#cfn-mediaconnect-flow-source"""
@@ -826,10 +826,10 @@ class Flow(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "AvailabilityZone"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flow.html#cfn-mediaconnect-flow-availabilityzone"""
-    p_SourceFailoverConfig: typing.Union['FlowFailoverConfig', dict] = attr.ib(
+    p_SourceFailoverConfig: typing.Union['PropFlowFailoverConfig', dict] = attr.ib(
         default=None,
-        converter=FlowFailoverConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(FlowFailoverConfig)),
+        converter=PropFlowFailoverConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropFlowFailoverConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "SourceFailoverConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flow.html#cfn-mediaconnect-flow-sourcefailoverconfig"""

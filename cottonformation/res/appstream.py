@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class ImageBuilderVpcConfig(Property):
+class PropImageBuilderVpcConfig(Property):
     """
     AWS Object Type = "AWS::AppStream::ImageBuilder.VpcConfig"
 
@@ -42,7 +42,7 @@ class ImageBuilderVpcConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-imagebuilder-vpcconfig.html#cfn-appstream-imagebuilder-vpcconfig-subnetids"""
 
 @attr.s
-class FleetDomainJoinInfo(Property):
+class PropFleetDomainJoinInfo(Property):
     """
     AWS Object Type = "AWS::AppStream::Fleet.DomainJoinInfo"
 
@@ -69,7 +69,7 @@ class FleetDomainJoinInfo(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-fleet-domainjoininfo.html#cfn-appstream-fleet-domainjoininfo-organizationalunitdistinguishedname"""
 
 @attr.s
-class StackAccessEndpoint(Property):
+class PropStackAccessEndpoint(Property):
     """
     AWS Object Type = "AWS::AppStream::Stack.AccessEndpoint"
 
@@ -96,7 +96,7 @@ class StackAccessEndpoint(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-stack-accessendpoint.html#cfn-appstream-stack-accessendpoint-vpceid"""
 
 @attr.s
-class FleetVpcConfig(Property):
+class PropFleetVpcConfig(Property):
     """
     AWS Object Type = "AWS::AppStream::Fleet.VpcConfig"
 
@@ -123,7 +123,7 @@ class FleetVpcConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-fleet-vpcconfig.html#cfn-appstream-fleet-vpcconfig-subnetids"""
 
 @attr.s
-class StackUserSetting(Property):
+class PropStackUserSetting(Property):
     """
     AWS Object Type = "AWS::AppStream::Stack.UserSetting"
 
@@ -150,7 +150,7 @@ class StackUserSetting(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-stack-usersetting.html#cfn-appstream-stack-usersetting-permission"""
 
 @attr.s
-class ImageBuilderAccessEndpoint(Property):
+class PropImageBuilderAccessEndpoint(Property):
     """
     AWS Object Type = "AWS::AppStream::ImageBuilder.AccessEndpoint"
 
@@ -177,7 +177,7 @@ class ImageBuilderAccessEndpoint(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-imagebuilder-accessendpoint.html#cfn-appstream-imagebuilder-accessendpoint-vpceid"""
 
 @attr.s
-class StackApplicationSettings(Property):
+class PropStackApplicationSettings(Property):
     """
     AWS Object Type = "AWS::AppStream::Stack.ApplicationSettings"
 
@@ -204,7 +204,7 @@ class StackApplicationSettings(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-stack-applicationsettings.html#cfn-appstream-stack-applicationsettings-settingsgroup"""
 
 @attr.s
-class DirectoryConfigServiceAccountCredentials(Property):
+class PropDirectoryConfigServiceAccountCredentials(Property):
     """
     AWS Object Type = "AWS::AppStream::DirectoryConfig.ServiceAccountCredentials"
 
@@ -231,7 +231,7 @@ class DirectoryConfigServiceAccountCredentials(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-directoryconfig-serviceaccountcredentials.html#cfn-appstream-directoryconfig-serviceaccountcredentials-accountpassword"""
 
 @attr.s
-class FleetComputeCapacity(Property):
+class PropFleetComputeCapacity(Property):
     """
     AWS Object Type = "AWS::AppStream::Fleet.ComputeCapacity"
 
@@ -251,7 +251,7 @@ class FleetComputeCapacity(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-fleet-computecapacity.html#cfn-appstream-fleet-computecapacity-desiredinstances"""
 
 @attr.s
-class ImageBuilderDomainJoinInfo(Property):
+class PropImageBuilderDomainJoinInfo(Property):
     """
     AWS Object Type = "AWS::AppStream::ImageBuilder.DomainJoinInfo"
 
@@ -278,7 +278,7 @@ class ImageBuilderDomainJoinInfo(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appstream-imagebuilder-domainjoininfo.html#cfn-appstream-imagebuilder-domainjoininfo-organizationalunitdistinguishedname"""
 
 @attr.s
-class StackStorageConnector(Property):
+class PropStackStorageConnector(Property):
     """
     AWS Object Type = "AWS::AppStream::Stack.StorageConnector"
 
@@ -340,17 +340,17 @@ class Stack(Resource):
     AWS_OBJECT_TYPE = "AWS::AppStream::Stack"
 
     
-    p_AccessEndpoints: typing.List[typing.Union['StackAccessEndpoint', dict]] = attr.ib(
+    p_AccessEndpoints: typing.List[typing.Union['PropStackAccessEndpoint', dict]] = attr.ib(
         default=None,
-        converter=StackAccessEndpoint.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(StackAccessEndpoint), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropStackAccessEndpoint.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropStackAccessEndpoint), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "AccessEndpoints"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-stack.html#cfn-appstream-stack-accessendpoints"""
-    p_ApplicationSettings: typing.Union['StackApplicationSettings', dict] = attr.ib(
+    p_ApplicationSettings: typing.Union['PropStackApplicationSettings', dict] = attr.ib(
         default=None,
-        converter=StackApplicationSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(StackApplicationSettings)),
+        converter=PropStackApplicationSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropStackApplicationSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "ApplicationSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-stack.html#cfn-appstream-stack-applicationsettings"""
@@ -402,17 +402,17 @@ class Stack(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "RedirectURL"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-stack.html#cfn-appstream-stack-redirecturl"""
-    p_StorageConnectors: typing.List[typing.Union['StackStorageConnector', dict]] = attr.ib(
+    p_StorageConnectors: typing.List[typing.Union['PropStackStorageConnector', dict]] = attr.ib(
         default=None,
-        converter=StackStorageConnector.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(StackStorageConnector), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropStackStorageConnector.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropStackStorageConnector), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "StorageConnectors"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-stack.html#cfn-appstream-stack-storageconnectors"""
-    p_UserSettings: typing.List[typing.Union['StackUserSetting', dict]] = attr.ib(
+    p_UserSettings: typing.List[typing.Union['PropStackUserSetting', dict]] = attr.ib(
         default=None,
-        converter=StackUserSetting.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(StackUserSetting), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropStackUserSetting.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropStackUserSetting), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "UserSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-stack.html#cfn-appstream-stack-usersettings"""
@@ -507,10 +507,10 @@ class Fleet(Resource):
     AWS_OBJECT_TYPE = "AWS::AppStream::Fleet"
 
     
-    rp_ComputeCapacity: typing.Union['FleetComputeCapacity', dict] = attr.ib(
+    rp_ComputeCapacity: typing.Union['PropFleetComputeCapacity', dict] = attr.ib(
         default=None,
-        converter=FleetComputeCapacity.from_dict,
-        validator=attr.validators.instance_of(FleetComputeCapacity),
+        converter=PropFleetComputeCapacity.from_dict,
+        validator=attr.validators.instance_of(PropFleetComputeCapacity),
         metadata={AttrMeta.PROPERTY_NAME: "ComputeCapacity"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-fleet.html#cfn-appstream-fleet-computecapacity"""
@@ -544,10 +544,10 @@ class Fleet(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "DisplayName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-fleet.html#cfn-appstream-fleet-displayname"""
-    p_DomainJoinInfo: typing.Union['FleetDomainJoinInfo', dict] = attr.ib(
+    p_DomainJoinInfo: typing.Union['PropFleetDomainJoinInfo', dict] = attr.ib(
         default=None,
-        converter=FleetDomainJoinInfo.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(FleetDomainJoinInfo)),
+        converter=PropFleetDomainJoinInfo.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropFleetDomainJoinInfo)),
         metadata={AttrMeta.PROPERTY_NAME: "DomainJoinInfo"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-fleet.html#cfn-appstream-fleet-domainjoininfo"""
@@ -599,10 +599,10 @@ class Fleet(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "StreamView"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-fleet.html#cfn-appstream-fleet-streamview"""
-    p_VpcConfig: typing.Union['FleetVpcConfig', dict] = attr.ib(
+    p_VpcConfig: typing.Union['PropFleetVpcConfig', dict] = attr.ib(
         default=None,
-        converter=FleetVpcConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(FleetVpcConfig)),
+        converter=PropFleetVpcConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropFleetVpcConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "VpcConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-fleet.html#cfn-appstream-fleet-vpcconfig"""
@@ -654,10 +654,10 @@ class ImageBuilder(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Name"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-imagebuilder.html#cfn-appstream-imagebuilder-name"""
-    p_AccessEndpoints: typing.List[typing.Union['ImageBuilderAccessEndpoint', dict]] = attr.ib(
+    p_AccessEndpoints: typing.List[typing.Union['PropImageBuilderAccessEndpoint', dict]] = attr.ib(
         default=None,
-        converter=ImageBuilderAccessEndpoint.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ImageBuilderAccessEndpoint), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropImageBuilderAccessEndpoint.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropImageBuilderAccessEndpoint), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "AccessEndpoints"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-imagebuilder.html#cfn-appstream-imagebuilder-accessendpoints"""
@@ -679,10 +679,10 @@ class ImageBuilder(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "DisplayName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-imagebuilder.html#cfn-appstream-imagebuilder-displayname"""
-    p_DomainJoinInfo: typing.Union['ImageBuilderDomainJoinInfo', dict] = attr.ib(
+    p_DomainJoinInfo: typing.Union['PropImageBuilderDomainJoinInfo', dict] = attr.ib(
         default=None,
-        converter=ImageBuilderDomainJoinInfo.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ImageBuilderDomainJoinInfo)),
+        converter=PropImageBuilderDomainJoinInfo.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropImageBuilderDomainJoinInfo)),
         metadata={AttrMeta.PROPERTY_NAME: "DomainJoinInfo"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-imagebuilder.html#cfn-appstream-imagebuilder-domainjoininfo"""
@@ -710,10 +710,10 @@ class ImageBuilder(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "ImageName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-imagebuilder.html#cfn-appstream-imagebuilder-imagename"""
-    p_VpcConfig: typing.Union['ImageBuilderVpcConfig', dict] = attr.ib(
+    p_VpcConfig: typing.Union['PropImageBuilderVpcConfig', dict] = attr.ib(
         default=None,
-        converter=ImageBuilderVpcConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ImageBuilderVpcConfig)),
+        converter=PropImageBuilderVpcConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropImageBuilderVpcConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "VpcConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-imagebuilder.html#cfn-appstream-imagebuilder-vpcconfig"""
@@ -760,10 +760,10 @@ class DirectoryConfig(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "OrganizationalUnitDistinguishedNames"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-directoryconfig.html#cfn-appstream-directoryconfig-organizationalunitdistinguishednames"""
-    rp_ServiceAccountCredentials: typing.Union['DirectoryConfigServiceAccountCredentials', dict] = attr.ib(
+    rp_ServiceAccountCredentials: typing.Union['PropDirectoryConfigServiceAccountCredentials', dict] = attr.ib(
         default=None,
-        converter=DirectoryConfigServiceAccountCredentials.from_dict,
-        validator=attr.validators.instance_of(DirectoryConfigServiceAccountCredentials),
+        converter=PropDirectoryConfigServiceAccountCredentials.from_dict,
+        validator=attr.validators.instance_of(PropDirectoryConfigServiceAccountCredentials),
         metadata={AttrMeta.PROPERTY_NAME: "ServiceAccountCredentials"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appstream-directoryconfig.html#cfn-appstream-directoryconfig-serviceaccountcredentials"""

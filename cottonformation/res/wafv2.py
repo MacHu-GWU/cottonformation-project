@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class RuleGroupJsonMatchPattern(Property):
+class PropRuleGroupJsonMatchPattern(Property):
     """
     AWS Object Type = "AWS::WAFv2::RuleGroup.JsonMatchPattern"
 
@@ -42,7 +42,7 @@ class RuleGroupJsonMatchPattern(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-jsonmatchpattern.html#cfn-wafv2-rulegroup-jsonmatchpattern-includedpaths"""
 
 @attr.s
-class WebACLTextTransformation(Property):
+class PropWebACLTextTransformation(Property):
     """
     AWS Object Type = "AWS::WAFv2::WebACL.TextTransformation"
 
@@ -69,7 +69,7 @@ class WebACLTextTransformation(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-texttransformation.html#cfn-wafv2-webacl-texttransformation-type"""
 
 @attr.s
-class RuleGroupLabelMatchStatement(Property):
+class PropRuleGroupLabelMatchStatement(Property):
     """
     AWS Object Type = "AWS::WAFv2::RuleGroup.LabelMatchStatement"
 
@@ -96,7 +96,7 @@ class RuleGroupLabelMatchStatement(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-labelmatchstatement.html#cfn-wafv2-rulegroup-labelmatchstatement-scope"""
 
 @attr.s
-class WebACLForwardedIPConfiguration(Property):
+class PropWebACLForwardedIPConfiguration(Property):
     """
     AWS Object Type = "AWS::WAFv2::WebACL.ForwardedIPConfiguration"
 
@@ -123,7 +123,7 @@ class WebACLForwardedIPConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-forwardedipconfiguration.html#cfn-wafv2-webacl-forwardedipconfiguration-headername"""
 
 @attr.s
-class RuleGroupRuleAction(Property):
+class PropRuleGroupRuleAction(Property):
     """
     AWS Object Type = "AWS::WAFv2::RuleGroup.RuleAction"
 
@@ -157,7 +157,7 @@ class RuleGroupRuleAction(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-ruleaction.html#cfn-wafv2-rulegroup-ruleaction-count"""
 
 @attr.s
-class WebACLLabel(Property):
+class PropWebACLLabel(Property):
     """
     AWS Object Type = "AWS::WAFv2::WebACL.Label"
 
@@ -177,7 +177,7 @@ class WebACLLabel(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-label.html#cfn-wafv2-webacl-label-name"""
 
 @attr.s
-class WebACLCustomHTTPHeader(Property):
+class PropWebACLCustomHTTPHeader(Property):
     """
     AWS Object Type = "AWS::WAFv2::WebACL.CustomHTTPHeader"
 
@@ -204,7 +204,7 @@ class WebACLCustomHTTPHeader(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-customhttpheader.html#cfn-wafv2-webacl-customhttpheader-value"""
 
 @attr.s
-class RuleGroupLabelSummary(Property):
+class PropRuleGroupLabelSummary(Property):
     """
     AWS Object Type = "AWS::WAFv2::RuleGroup.LabelSummary"
 
@@ -224,7 +224,7 @@ class RuleGroupLabelSummary(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-labelsummary.html#cfn-wafv2-rulegroup-labelsummary-name"""
 
 @attr.s
-class WebACLIPSetForwardedIPConfiguration(Property):
+class PropWebACLIPSetForwardedIPConfiguration(Property):
     """
     AWS Object Type = "AWS::WAFv2::WebACL.IPSetForwardedIPConfiguration"
 
@@ -258,7 +258,7 @@ class WebACLIPSetForwardedIPConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-ipsetforwardedipconfiguration.html#cfn-wafv2-webacl-ipsetforwardedipconfiguration-position"""
 
 @attr.s
-class WebACLCustomResponseBody(Property):
+class PropWebACLCustomResponseBody(Property):
     """
     AWS Object Type = "AWS::WAFv2::WebACL.CustomResponseBody"
 
@@ -285,7 +285,7 @@ class WebACLCustomResponseBody(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-customresponsebody.html#cfn-wafv2-webacl-customresponsebody-contenttype"""
 
 @attr.s
-class WebACLLabelMatchStatement(Property):
+class PropWebACLLabelMatchStatement(Property):
     """
     AWS Object Type = "AWS::WAFv2::WebACL.LabelMatchStatement"
 
@@ -312,7 +312,7 @@ class WebACLLabelMatchStatement(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-labelmatchstatement.html#cfn-wafv2-webacl-labelmatchstatement-scope"""
 
 @attr.s
-class WebACLJsonMatchPattern(Property):
+class PropWebACLJsonMatchPattern(Property):
     """
     AWS Object Type = "AWS::WAFv2::WebACL.JsonMatchPattern"
 
@@ -339,7 +339,7 @@ class WebACLJsonMatchPattern(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-jsonmatchpattern.html#cfn-wafv2-webacl-jsonmatchpattern-includedpaths"""
 
 @attr.s
-class WebACLGeoMatchStatement(Property):
+class PropWebACLGeoMatchStatement(Property):
     """
     AWS Object Type = "AWS::WAFv2::WebACL.GeoMatchStatement"
 
@@ -358,16 +358,16 @@ class WebACLGeoMatchStatement(Property):
         metadata={AttrMeta.PROPERTY_NAME: "CountryCodes"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-geomatchstatement.html#cfn-wafv2-webacl-geomatchstatement-countrycodes"""
-    p_ForwardedIPConfig: typing.Union['WebACLForwardedIPConfiguration', dict] = attr.ib(
+    p_ForwardedIPConfig: typing.Union['PropWebACLForwardedIPConfiguration', dict] = attr.ib(
         default=None,
-        converter=WebACLForwardedIPConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(WebACLForwardedIPConfiguration)),
+        converter=PropWebACLForwardedIPConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropWebACLForwardedIPConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "ForwardedIPConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-geomatchstatement.html#cfn-wafv2-webacl-geomatchstatement-forwardedipconfig"""
 
 @attr.s
-class RuleGroupVisibilityConfig(Property):
+class PropRuleGroupVisibilityConfig(Property):
     """
     AWS Object Type = "AWS::WAFv2::RuleGroup.VisibilityConfig"
 
@@ -401,7 +401,7 @@ class RuleGroupVisibilityConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-visibilityconfig.html#cfn-wafv2-rulegroup-visibilityconfig-sampledrequestsenabled"""
 
 @attr.s
-class RuleGroupIPSetForwardedIPConfiguration(Property):
+class PropRuleGroupIPSetForwardedIPConfiguration(Property):
     """
     AWS Object Type = "AWS::WAFv2::RuleGroup.IPSetForwardedIPConfiguration"
 
@@ -435,7 +435,7 @@ class RuleGroupIPSetForwardedIPConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-ipsetforwardedipconfiguration.html#cfn-wafv2-rulegroup-ipsetforwardedipconfiguration-position"""
 
 @attr.s
-class WebACLJsonBody(Property):
+class PropWebACLJsonBody(Property):
     """
     AWS Object Type = "AWS::WAFv2::WebACL.JsonBody"
 
@@ -449,10 +449,10 @@ class WebACLJsonBody(Property):
     """
     AWS_OBJECT_TYPE = "AWS::WAFv2::WebACL.JsonBody"
     
-    rp_MatchPattern: typing.Union['WebACLJsonMatchPattern', dict] = attr.ib(
+    rp_MatchPattern: typing.Union['PropWebACLJsonMatchPattern', dict] = attr.ib(
         default=None,
-        converter=WebACLJsonMatchPattern.from_dict,
-        validator=attr.validators.instance_of(WebACLJsonMatchPattern),
+        converter=PropWebACLJsonMatchPattern.from_dict,
+        validator=attr.validators.instance_of(PropWebACLJsonMatchPattern),
         metadata={AttrMeta.PROPERTY_NAME: "MatchPattern"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-jsonbody.html#cfn-wafv2-webacl-jsonbody-matchpattern"""
@@ -470,7 +470,7 @@ class WebACLJsonBody(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-jsonbody.html#cfn-wafv2-webacl-jsonbody-invalidfallbackbehavior"""
 
 @attr.s
-class RuleGroupTextTransformation(Property):
+class PropRuleGroupTextTransformation(Property):
     """
     AWS Object Type = "AWS::WAFv2::RuleGroup.TextTransformation"
 
@@ -497,7 +497,7 @@ class RuleGroupTextTransformation(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-texttransformation.html#cfn-wafv2-rulegroup-texttransformation-type"""
 
 @attr.s
-class WebACLOverrideAction(Property):
+class PropWebACLOverrideAction(Property):
     """
     AWS Object Type = "AWS::WAFv2::WebACL.OverrideAction"
 
@@ -524,7 +524,7 @@ class WebACLOverrideAction(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-overrideaction.html#cfn-wafv2-webacl-overrideaction-none"""
 
 @attr.s
-class RuleGroupJsonBody(Property):
+class PropRuleGroupJsonBody(Property):
     """
     AWS Object Type = "AWS::WAFv2::RuleGroup.JsonBody"
 
@@ -538,10 +538,10 @@ class RuleGroupJsonBody(Property):
     """
     AWS_OBJECT_TYPE = "AWS::WAFv2::RuleGroup.JsonBody"
     
-    rp_MatchPattern: typing.Union['RuleGroupJsonMatchPattern', dict] = attr.ib(
+    rp_MatchPattern: typing.Union['PropRuleGroupJsonMatchPattern', dict] = attr.ib(
         default=None,
-        converter=RuleGroupJsonMatchPattern.from_dict,
-        validator=attr.validators.instance_of(RuleGroupJsonMatchPattern),
+        converter=PropRuleGroupJsonMatchPattern.from_dict,
+        validator=attr.validators.instance_of(PropRuleGroupJsonMatchPattern),
         metadata={AttrMeta.PROPERTY_NAME: "MatchPattern"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-jsonbody.html#cfn-wafv2-rulegroup-jsonbody-matchpattern"""
@@ -559,7 +559,7 @@ class RuleGroupJsonBody(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-jsonbody.html#cfn-wafv2-rulegroup-jsonbody-invalidfallbackbehavior"""
 
 @attr.s
-class RuleGroupCustomResponseBody(Property):
+class PropRuleGroupCustomResponseBody(Property):
     """
     AWS Object Type = "AWS::WAFv2::RuleGroup.CustomResponseBody"
 
@@ -586,7 +586,7 @@ class RuleGroupCustomResponseBody(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-customresponsebody.html#cfn-wafv2-rulegroup-customresponsebody-contenttype"""
 
 @attr.s
-class WebACLCustomResponse(Property):
+class PropWebACLCustomResponse(Property):
     """
     AWS Object Type = "AWS::WAFv2::WebACL.CustomResponse"
 
@@ -612,16 +612,16 @@ class WebACLCustomResponse(Property):
         metadata={AttrMeta.PROPERTY_NAME: "CustomResponseBodyKey"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-customresponse.html#cfn-wafv2-webacl-customresponse-customresponsebodykey"""
-    p_ResponseHeaders: typing.List[typing.Union['WebACLCustomHTTPHeader', dict]] = attr.ib(
+    p_ResponseHeaders: typing.List[typing.Union['PropWebACLCustomHTTPHeader', dict]] = attr.ib(
         default=None,
-        converter=WebACLCustomHTTPHeader.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(WebACLCustomHTTPHeader), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropWebACLCustomHTTPHeader.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropWebACLCustomHTTPHeader), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "ResponseHeaders"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-customresponse.html#cfn-wafv2-webacl-customresponse-responseheaders"""
 
 @attr.s
-class RuleGroupLabel(Property):
+class PropRuleGroupLabel(Property):
     """
     AWS Object Type = "AWS::WAFv2::RuleGroup.Label"
 
@@ -641,7 +641,7 @@ class RuleGroupLabel(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-label.html#cfn-wafv2-rulegroup-label-name"""
 
 @attr.s
-class WebACLExcludedRule(Property):
+class PropWebACLExcludedRule(Property):
     """
     AWS Object Type = "AWS::WAFv2::WebACL.ExcludedRule"
 
@@ -661,7 +661,7 @@ class WebACLExcludedRule(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-excludedrule.html#cfn-wafv2-webacl-excludedrule-name"""
 
 @attr.s
-class WebACLVisibilityConfig(Property):
+class PropWebACLVisibilityConfig(Property):
     """
     AWS Object Type = "AWS::WAFv2::WebACL.VisibilityConfig"
 
@@ -695,7 +695,7 @@ class WebACLVisibilityConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-visibilityconfig.html#cfn-wafv2-webacl-visibilityconfig-sampledrequestsenabled"""
 
 @attr.s
-class WebACLIPSetReferenceStatement(Property):
+class PropWebACLIPSetReferenceStatement(Property):
     """
     AWS Object Type = "AWS::WAFv2::WebACL.IPSetReferenceStatement"
 
@@ -714,16 +714,16 @@ class WebACLIPSetReferenceStatement(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Arn"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-ipsetreferencestatement.html#cfn-wafv2-webacl-ipsetreferencestatement-arn"""
-    p_IPSetForwardedIPConfig: typing.Union['WebACLIPSetForwardedIPConfiguration', dict] = attr.ib(
+    p_IPSetForwardedIPConfig: typing.Union['PropWebACLIPSetForwardedIPConfiguration', dict] = attr.ib(
         default=None,
-        converter=WebACLIPSetForwardedIPConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(WebACLIPSetForwardedIPConfiguration)),
+        converter=PropWebACLIPSetForwardedIPConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropWebACLIPSetForwardedIPConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "IPSetForwardedIPConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-ipsetreferencestatement.html#cfn-wafv2-webacl-ipsetreferencestatement-ipsetforwardedipconfig"""
 
 @attr.s
-class RuleGroupForwardedIPConfiguration(Property):
+class PropRuleGroupForwardedIPConfiguration(Property):
     """
     AWS Object Type = "AWS::WAFv2::RuleGroup.ForwardedIPConfiguration"
 
@@ -750,7 +750,7 @@ class RuleGroupForwardedIPConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-forwardedipconfiguration.html#cfn-wafv2-rulegroup-forwardedipconfiguration-headername"""
 
 @attr.s
-class WebACLCustomRequestHandling(Property):
+class PropWebACLCustomRequestHandling(Property):
     """
     AWS Object Type = "AWS::WAFv2::WebACL.CustomRequestHandling"
 
@@ -762,16 +762,16 @@ class WebACLCustomRequestHandling(Property):
     """
     AWS_OBJECT_TYPE = "AWS::WAFv2::WebACL.CustomRequestHandling"
     
-    rp_InsertHeaders: typing.List[typing.Union['WebACLCustomHTTPHeader', dict]] = attr.ib(
+    rp_InsertHeaders: typing.List[typing.Union['PropWebACLCustomHTTPHeader', dict]] = attr.ib(
         default=None,
-        converter=WebACLCustomHTTPHeader.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(WebACLCustomHTTPHeader), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropWebACLCustomHTTPHeader.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropWebACLCustomHTTPHeader), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "InsertHeaders"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-customrequesthandling.html#cfn-wafv2-webacl-customrequesthandling-insertheaders"""
 
 @attr.s
-class WebACLAllowAction(Property):
+class PropWebACLAllowAction(Property):
     """
     AWS Object Type = "AWS::WAFv2::WebACL.AllowAction"
 
@@ -783,16 +783,16 @@ class WebACLAllowAction(Property):
     """
     AWS_OBJECT_TYPE = "AWS::WAFv2::WebACL.AllowAction"
     
-    p_CustomRequestHandling: typing.Union['WebACLCustomRequestHandling', dict] = attr.ib(
+    p_CustomRequestHandling: typing.Union['PropWebACLCustomRequestHandling', dict] = attr.ib(
         default=None,
-        converter=WebACLCustomRequestHandling.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(WebACLCustomRequestHandling)),
+        converter=PropWebACLCustomRequestHandling.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropWebACLCustomRequestHandling)),
         metadata={AttrMeta.PROPERTY_NAME: "CustomRequestHandling"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-allowaction.html#cfn-wafv2-webacl-allowaction-customrequesthandling"""
 
 @attr.s
-class RuleGroupFieldToMatch(Property):
+class PropRuleGroupFieldToMatch(Property):
     """
     AWS Object Type = "AWS::WAFv2::RuleGroup.FieldToMatch"
 
@@ -823,10 +823,10 @@ class RuleGroupFieldToMatch(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Body"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-fieldtomatch.html#cfn-wafv2-rulegroup-fieldtomatch-body"""
-    p_JsonBody: typing.Union['RuleGroupJsonBody', dict] = attr.ib(
+    p_JsonBody: typing.Union['PropRuleGroupJsonBody', dict] = attr.ib(
         default=None,
-        converter=RuleGroupJsonBody.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(RuleGroupJsonBody)),
+        converter=PropRuleGroupJsonBody.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropRuleGroupJsonBody)),
         metadata={AttrMeta.PROPERTY_NAME: "JsonBody"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-fieldtomatch.html#cfn-wafv2-rulegroup-fieldtomatch-jsonbody"""
@@ -862,7 +862,7 @@ class RuleGroupFieldToMatch(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-fieldtomatch.html#cfn-wafv2-rulegroup-fieldtomatch-uripath"""
 
 @attr.s
-class WebACLBlockAction(Property):
+class PropWebACLBlockAction(Property):
     """
     AWS Object Type = "AWS::WAFv2::WebACL.BlockAction"
 
@@ -874,16 +874,16 @@ class WebACLBlockAction(Property):
     """
     AWS_OBJECT_TYPE = "AWS::WAFv2::WebACL.BlockAction"
     
-    p_CustomResponse: typing.Union['WebACLCustomResponse', dict] = attr.ib(
+    p_CustomResponse: typing.Union['PropWebACLCustomResponse', dict] = attr.ib(
         default=None,
-        converter=WebACLCustomResponse.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(WebACLCustomResponse)),
+        converter=PropWebACLCustomResponse.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropWebACLCustomResponse)),
         metadata={AttrMeta.PROPERTY_NAME: "CustomResponse"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-blockaction.html#cfn-wafv2-webacl-blockaction-customresponse"""
 
 @attr.s
-class RuleGroupIPSetReferenceStatement(Property):
+class PropRuleGroupIPSetReferenceStatement(Property):
     """
     AWS Object Type = "AWS::WAFv2::RuleGroup.IPSetReferenceStatement"
 
@@ -902,16 +902,16 @@ class RuleGroupIPSetReferenceStatement(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Arn"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-ipsetreferencestatement.html#cfn-wafv2-rulegroup-ipsetreferencestatement-arn"""
-    p_IPSetForwardedIPConfig: typing.Union['RuleGroupIPSetForwardedIPConfiguration', dict] = attr.ib(
+    p_IPSetForwardedIPConfig: typing.Union['PropRuleGroupIPSetForwardedIPConfiguration', dict] = attr.ib(
         default=None,
-        converter=RuleGroupIPSetForwardedIPConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(RuleGroupIPSetForwardedIPConfiguration)),
+        converter=PropRuleGroupIPSetForwardedIPConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropRuleGroupIPSetForwardedIPConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "IPSetForwardedIPConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-ipsetreferencestatement.html#cfn-wafv2-rulegroup-ipsetreferencestatement-ipsetforwardedipconfig"""
 
 @attr.s
-class WebACLRuleGroupReferenceStatement(Property):
+class PropWebACLRuleGroupReferenceStatement(Property):
     """
     AWS Object Type = "AWS::WAFv2::WebACL.RuleGroupReferenceStatement"
 
@@ -930,16 +930,16 @@ class WebACLRuleGroupReferenceStatement(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Arn"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-rulegroupreferencestatement.html#cfn-wafv2-webacl-rulegroupreferencestatement-arn"""
-    p_ExcludedRules: typing.List[typing.Union['WebACLExcludedRule', dict]] = attr.ib(
+    p_ExcludedRules: typing.List[typing.Union['PropWebACLExcludedRule', dict]] = attr.ib(
         default=None,
-        converter=WebACLExcludedRule.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(WebACLExcludedRule), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropWebACLExcludedRule.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropWebACLExcludedRule), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "ExcludedRules"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-rulegroupreferencestatement.html#cfn-wafv2-webacl-rulegroupreferencestatement-excludedrules"""
 
 @attr.s
-class WebACLCountAction(Property):
+class PropWebACLCountAction(Property):
     """
     AWS Object Type = "AWS::WAFv2::WebACL.CountAction"
 
@@ -951,16 +951,16 @@ class WebACLCountAction(Property):
     """
     AWS_OBJECT_TYPE = "AWS::WAFv2::WebACL.CountAction"
     
-    p_CustomRequestHandling: typing.Union['WebACLCustomRequestHandling', dict] = attr.ib(
+    p_CustomRequestHandling: typing.Union['PropWebACLCustomRequestHandling', dict] = attr.ib(
         default=None,
-        converter=WebACLCustomRequestHandling.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(WebACLCustomRequestHandling)),
+        converter=PropWebACLCustomRequestHandling.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropWebACLCustomRequestHandling)),
         metadata={AttrMeta.PROPERTY_NAME: "CustomRequestHandling"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-countaction.html#cfn-wafv2-webacl-countaction-customrequesthandling"""
 
 @attr.s
-class WebACLFieldToMatch(Property):
+class PropWebACLFieldToMatch(Property):
     """
     AWS Object Type = "AWS::WAFv2::WebACL.FieldToMatch"
 
@@ -991,10 +991,10 @@ class WebACLFieldToMatch(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Body"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-fieldtomatch.html#cfn-wafv2-webacl-fieldtomatch-body"""
-    p_JsonBody: typing.Union['WebACLJsonBody', dict] = attr.ib(
+    p_JsonBody: typing.Union['PropWebACLJsonBody', dict] = attr.ib(
         default=None,
-        converter=WebACLJsonBody.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(WebACLJsonBody)),
+        converter=PropWebACLJsonBody.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropWebACLJsonBody)),
         metadata={AttrMeta.PROPERTY_NAME: "JsonBody"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-fieldtomatch.html#cfn-wafv2-webacl-fieldtomatch-jsonbody"""
@@ -1030,7 +1030,7 @@ class WebACLFieldToMatch(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-fieldtomatch.html#cfn-wafv2-webacl-fieldtomatch-uripath"""
 
 @attr.s
-class WebACLSqliMatchStatement(Property):
+class PropWebACLSqliMatchStatement(Property):
     """
     AWS Object Type = "AWS::WAFv2::WebACL.SqliMatchStatement"
 
@@ -1043,23 +1043,23 @@ class WebACLSqliMatchStatement(Property):
     """
     AWS_OBJECT_TYPE = "AWS::WAFv2::WebACL.SqliMatchStatement"
     
-    rp_FieldToMatch: typing.Union['WebACLFieldToMatch', dict] = attr.ib(
+    rp_FieldToMatch: typing.Union['PropWebACLFieldToMatch', dict] = attr.ib(
         default=None,
-        converter=WebACLFieldToMatch.from_dict,
-        validator=attr.validators.instance_of(WebACLFieldToMatch),
+        converter=PropWebACLFieldToMatch.from_dict,
+        validator=attr.validators.instance_of(PropWebACLFieldToMatch),
         metadata={AttrMeta.PROPERTY_NAME: "FieldToMatch"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-sqlimatchstatement.html#cfn-wafv2-webacl-sqlimatchstatement-fieldtomatch"""
-    rp_TextTransformations: typing.List[typing.Union['WebACLTextTransformation', dict]] = attr.ib(
+    rp_TextTransformations: typing.List[typing.Union['PropWebACLTextTransformation', dict]] = attr.ib(
         default=None,
-        converter=WebACLTextTransformation.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(WebACLTextTransformation), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropWebACLTextTransformation.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropWebACLTextTransformation), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "TextTransformations"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-sqlimatchstatement.html#cfn-wafv2-webacl-sqlimatchstatement-texttransformations"""
 
 @attr.s
-class RuleGroupGeoMatchStatement(Property):
+class PropRuleGroupGeoMatchStatement(Property):
     """
     AWS Object Type = "AWS::WAFv2::RuleGroup.GeoMatchStatement"
 
@@ -1078,16 +1078,16 @@ class RuleGroupGeoMatchStatement(Property):
         metadata={AttrMeta.PROPERTY_NAME: "CountryCodes"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-geomatchstatement.html#cfn-wafv2-rulegroup-geomatchstatement-countrycodes"""
-    p_ForwardedIPConfig: typing.Union['RuleGroupForwardedIPConfiguration', dict] = attr.ib(
+    p_ForwardedIPConfig: typing.Union['PropRuleGroupForwardedIPConfiguration', dict] = attr.ib(
         default=None,
-        converter=RuleGroupForwardedIPConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(RuleGroupForwardedIPConfiguration)),
+        converter=PropRuleGroupForwardedIPConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropRuleGroupForwardedIPConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "ForwardedIPConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-geomatchstatement.html#cfn-wafv2-rulegroup-geomatchstatement-forwardedipconfig"""
 
 @attr.s
-class WebACLRuleAction(Property):
+class PropWebACLRuleAction(Property):
     """
     AWS Object Type = "AWS::WAFv2::WebACL.RuleAction"
 
@@ -1101,30 +1101,30 @@ class WebACLRuleAction(Property):
     """
     AWS_OBJECT_TYPE = "AWS::WAFv2::WebACL.RuleAction"
     
-    p_Allow: typing.Union['WebACLAllowAction', dict] = attr.ib(
+    p_Allow: typing.Union['PropWebACLAllowAction', dict] = attr.ib(
         default=None,
-        converter=WebACLAllowAction.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(WebACLAllowAction)),
+        converter=PropWebACLAllowAction.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropWebACLAllowAction)),
         metadata={AttrMeta.PROPERTY_NAME: "Allow"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-ruleaction.html#cfn-wafv2-webacl-ruleaction-allow"""
-    p_Block: typing.Union['WebACLBlockAction', dict] = attr.ib(
+    p_Block: typing.Union['PropWebACLBlockAction', dict] = attr.ib(
         default=None,
-        converter=WebACLBlockAction.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(WebACLBlockAction)),
+        converter=PropWebACLBlockAction.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropWebACLBlockAction)),
         metadata={AttrMeta.PROPERTY_NAME: "Block"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-ruleaction.html#cfn-wafv2-webacl-ruleaction-block"""
-    p_Count: typing.Union['WebACLCountAction', dict] = attr.ib(
+    p_Count: typing.Union['PropWebACLCountAction', dict] = attr.ib(
         default=None,
-        converter=WebACLCountAction.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(WebACLCountAction)),
+        converter=PropWebACLCountAction.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropWebACLCountAction)),
         metadata={AttrMeta.PROPERTY_NAME: "Count"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-ruleaction.html#cfn-wafv2-webacl-ruleaction-count"""
 
 @attr.s
-class RuleGroupByteMatchStatement(Property):
+class PropRuleGroupByteMatchStatement(Property):
     """
     AWS Object Type = "AWS::WAFv2::RuleGroup.ByteMatchStatement"
 
@@ -1140,10 +1140,10 @@ class RuleGroupByteMatchStatement(Property):
     """
     AWS_OBJECT_TYPE = "AWS::WAFv2::RuleGroup.ByteMatchStatement"
     
-    rp_FieldToMatch: typing.Union['RuleGroupFieldToMatch', dict] = attr.ib(
+    rp_FieldToMatch: typing.Union['PropRuleGroupFieldToMatch', dict] = attr.ib(
         default=None,
-        converter=RuleGroupFieldToMatch.from_dict,
-        validator=attr.validators.instance_of(RuleGroupFieldToMatch),
+        converter=PropRuleGroupFieldToMatch.from_dict,
+        validator=attr.validators.instance_of(PropRuleGroupFieldToMatch),
         metadata={AttrMeta.PROPERTY_NAME: "FieldToMatch"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-bytematchstatement.html#cfn-wafv2-rulegroup-bytematchstatement-fieldtomatch"""
@@ -1153,10 +1153,10 @@ class RuleGroupByteMatchStatement(Property):
         metadata={AttrMeta.PROPERTY_NAME: "PositionalConstraint"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-bytematchstatement.html#cfn-wafv2-rulegroup-bytematchstatement-positionalconstraint"""
-    rp_TextTransformations: typing.List[typing.Union['RuleGroupTextTransformation', dict]] = attr.ib(
+    rp_TextTransformations: typing.List[typing.Union['PropRuleGroupTextTransformation', dict]] = attr.ib(
         default=None,
-        converter=RuleGroupTextTransformation.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(RuleGroupTextTransformation), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropRuleGroupTextTransformation.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropRuleGroupTextTransformation), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "TextTransformations"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-bytematchstatement.html#cfn-wafv2-rulegroup-bytematchstatement-texttransformations"""
@@ -1174,7 +1174,7 @@ class RuleGroupByteMatchStatement(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-bytematchstatement.html#cfn-wafv2-rulegroup-bytematchstatement-searchstringbase64"""
 
 @attr.s
-class RuleGroupRegexPatternSetReferenceStatement(Property):
+class PropRuleGroupRegexPatternSetReferenceStatement(Property):
     """
     AWS Object Type = "AWS::WAFv2::RuleGroup.RegexPatternSetReferenceStatement"
 
@@ -1194,23 +1194,23 @@ class RuleGroupRegexPatternSetReferenceStatement(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Arn"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-regexpatternsetreferencestatement.html#cfn-wafv2-rulegroup-regexpatternsetreferencestatement-arn"""
-    rp_FieldToMatch: typing.Union['RuleGroupFieldToMatch', dict] = attr.ib(
+    rp_FieldToMatch: typing.Union['PropRuleGroupFieldToMatch', dict] = attr.ib(
         default=None,
-        converter=RuleGroupFieldToMatch.from_dict,
-        validator=attr.validators.instance_of(RuleGroupFieldToMatch),
+        converter=PropRuleGroupFieldToMatch.from_dict,
+        validator=attr.validators.instance_of(PropRuleGroupFieldToMatch),
         metadata={AttrMeta.PROPERTY_NAME: "FieldToMatch"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-regexpatternsetreferencestatement.html#cfn-wafv2-rulegroup-regexpatternsetreferencestatement-fieldtomatch"""
-    rp_TextTransformations: typing.List[typing.Union['RuleGroupTextTransformation', dict]] = attr.ib(
+    rp_TextTransformations: typing.List[typing.Union['PropRuleGroupTextTransformation', dict]] = attr.ib(
         default=None,
-        converter=RuleGroupTextTransformation.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(RuleGroupTextTransformation), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropRuleGroupTextTransformation.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropRuleGroupTextTransformation), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "TextTransformations"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-regexpatternsetreferencestatement.html#cfn-wafv2-rulegroup-regexpatternsetreferencestatement-texttransformations"""
 
 @attr.s
-class RuleGroupSqliMatchStatement(Property):
+class PropRuleGroupSqliMatchStatement(Property):
     """
     AWS Object Type = "AWS::WAFv2::RuleGroup.SqliMatchStatement"
 
@@ -1223,23 +1223,23 @@ class RuleGroupSqliMatchStatement(Property):
     """
     AWS_OBJECT_TYPE = "AWS::WAFv2::RuleGroup.SqliMatchStatement"
     
-    rp_FieldToMatch: typing.Union['RuleGroupFieldToMatch', dict] = attr.ib(
+    rp_FieldToMatch: typing.Union['PropRuleGroupFieldToMatch', dict] = attr.ib(
         default=None,
-        converter=RuleGroupFieldToMatch.from_dict,
-        validator=attr.validators.instance_of(RuleGroupFieldToMatch),
+        converter=PropRuleGroupFieldToMatch.from_dict,
+        validator=attr.validators.instance_of(PropRuleGroupFieldToMatch),
         metadata={AttrMeta.PROPERTY_NAME: "FieldToMatch"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-sqlimatchstatement.html#cfn-wafv2-rulegroup-sqlimatchstatement-fieldtomatch"""
-    rp_TextTransformations: typing.List[typing.Union['RuleGroupTextTransformation', dict]] = attr.ib(
+    rp_TextTransformations: typing.List[typing.Union['PropRuleGroupTextTransformation', dict]] = attr.ib(
         default=None,
-        converter=RuleGroupTextTransformation.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(RuleGroupTextTransformation), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropRuleGroupTextTransformation.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropRuleGroupTextTransformation), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "TextTransformations"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-sqlimatchstatement.html#cfn-wafv2-rulegroup-sqlimatchstatement-texttransformations"""
 
 @attr.s
-class RuleGroupSizeConstraintStatement(Property):
+class PropRuleGroupSizeConstraintStatement(Property):
     """
     AWS Object Type = "AWS::WAFv2::RuleGroup.SizeConstraintStatement"
 
@@ -1260,10 +1260,10 @@ class RuleGroupSizeConstraintStatement(Property):
         metadata={AttrMeta.PROPERTY_NAME: "ComparisonOperator"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-sizeconstraintstatement.html#cfn-wafv2-rulegroup-sizeconstraintstatement-comparisonoperator"""
-    rp_FieldToMatch: typing.Union['RuleGroupFieldToMatch', dict] = attr.ib(
+    rp_FieldToMatch: typing.Union['PropRuleGroupFieldToMatch', dict] = attr.ib(
         default=None,
-        converter=RuleGroupFieldToMatch.from_dict,
-        validator=attr.validators.instance_of(RuleGroupFieldToMatch),
+        converter=PropRuleGroupFieldToMatch.from_dict,
+        validator=attr.validators.instance_of(PropRuleGroupFieldToMatch),
         metadata={AttrMeta.PROPERTY_NAME: "FieldToMatch"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-sizeconstraintstatement.html#cfn-wafv2-rulegroup-sizeconstraintstatement-fieldtomatch"""
@@ -1273,16 +1273,16 @@ class RuleGroupSizeConstraintStatement(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Size"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-sizeconstraintstatement.html#cfn-wafv2-rulegroup-sizeconstraintstatement-size"""
-    rp_TextTransformations: typing.List[typing.Union['RuleGroupTextTransformation', dict]] = attr.ib(
+    rp_TextTransformations: typing.List[typing.Union['PropRuleGroupTextTransformation', dict]] = attr.ib(
         default=None,
-        converter=RuleGroupTextTransformation.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(RuleGroupTextTransformation), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropRuleGroupTextTransformation.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropRuleGroupTextTransformation), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "TextTransformations"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-sizeconstraintstatement.html#cfn-wafv2-rulegroup-sizeconstraintstatement-texttransformations"""
 
 @attr.s
-class RuleGroupXssMatchStatement(Property):
+class PropRuleGroupXssMatchStatement(Property):
     """
     AWS Object Type = "AWS::WAFv2::RuleGroup.XssMatchStatement"
 
@@ -1295,23 +1295,23 @@ class RuleGroupXssMatchStatement(Property):
     """
     AWS_OBJECT_TYPE = "AWS::WAFv2::RuleGroup.XssMatchStatement"
     
-    rp_FieldToMatch: typing.Union['RuleGroupFieldToMatch', dict] = attr.ib(
+    rp_FieldToMatch: typing.Union['PropRuleGroupFieldToMatch', dict] = attr.ib(
         default=None,
-        converter=RuleGroupFieldToMatch.from_dict,
-        validator=attr.validators.instance_of(RuleGroupFieldToMatch),
+        converter=PropRuleGroupFieldToMatch.from_dict,
+        validator=attr.validators.instance_of(PropRuleGroupFieldToMatch),
         metadata={AttrMeta.PROPERTY_NAME: "FieldToMatch"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-xssmatchstatement.html#cfn-wafv2-rulegroup-xssmatchstatement-fieldtomatch"""
-    rp_TextTransformations: typing.List[typing.Union['RuleGroupTextTransformation', dict]] = attr.ib(
+    rp_TextTransformations: typing.List[typing.Union['PropRuleGroupTextTransformation', dict]] = attr.ib(
         default=None,
-        converter=RuleGroupTextTransformation.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(RuleGroupTextTransformation), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropRuleGroupTextTransformation.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropRuleGroupTextTransformation), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "TextTransformations"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-xssmatchstatement.html#cfn-wafv2-rulegroup-xssmatchstatement-texttransformations"""
 
 @attr.s
-class WebACLDefaultAction(Property):
+class PropWebACLDefaultAction(Property):
     """
     AWS Object Type = "AWS::WAFv2::WebACL.DefaultAction"
 
@@ -1324,23 +1324,23 @@ class WebACLDefaultAction(Property):
     """
     AWS_OBJECT_TYPE = "AWS::WAFv2::WebACL.DefaultAction"
     
-    p_Allow: typing.Union['WebACLAllowAction', dict] = attr.ib(
+    p_Allow: typing.Union['PropWebACLAllowAction', dict] = attr.ib(
         default=None,
-        converter=WebACLAllowAction.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(WebACLAllowAction)),
+        converter=PropWebACLAllowAction.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropWebACLAllowAction)),
         metadata={AttrMeta.PROPERTY_NAME: "Allow"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-defaultaction.html#cfn-wafv2-webacl-defaultaction-allow"""
-    p_Block: typing.Union['WebACLBlockAction', dict] = attr.ib(
+    p_Block: typing.Union['PropWebACLBlockAction', dict] = attr.ib(
         default=None,
-        converter=WebACLBlockAction.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(WebACLBlockAction)),
+        converter=PropWebACLBlockAction.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropWebACLBlockAction)),
         metadata={AttrMeta.PROPERTY_NAME: "Block"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-defaultaction.html#cfn-wafv2-webacl-defaultaction-block"""
 
 @attr.s
-class WebACLXssMatchStatement(Property):
+class PropWebACLXssMatchStatement(Property):
     """
     AWS Object Type = "AWS::WAFv2::WebACL.XssMatchStatement"
 
@@ -1353,23 +1353,23 @@ class WebACLXssMatchStatement(Property):
     """
     AWS_OBJECT_TYPE = "AWS::WAFv2::WebACL.XssMatchStatement"
     
-    rp_FieldToMatch: typing.Union['WebACLFieldToMatch', dict] = attr.ib(
+    rp_FieldToMatch: typing.Union['PropWebACLFieldToMatch', dict] = attr.ib(
         default=None,
-        converter=WebACLFieldToMatch.from_dict,
-        validator=attr.validators.instance_of(WebACLFieldToMatch),
+        converter=PropWebACLFieldToMatch.from_dict,
+        validator=attr.validators.instance_of(PropWebACLFieldToMatch),
         metadata={AttrMeta.PROPERTY_NAME: "FieldToMatch"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-xssmatchstatement.html#cfn-wafv2-webacl-xssmatchstatement-fieldtomatch"""
-    rp_TextTransformations: typing.List[typing.Union['WebACLTextTransformation', dict]] = attr.ib(
+    rp_TextTransformations: typing.List[typing.Union['PropWebACLTextTransformation', dict]] = attr.ib(
         default=None,
-        converter=WebACLTextTransformation.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(WebACLTextTransformation), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropWebACLTextTransformation.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropWebACLTextTransformation), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "TextTransformations"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-xssmatchstatement.html#cfn-wafv2-webacl-xssmatchstatement-texttransformations"""
 
 @attr.s
-class WebACLByteMatchStatement(Property):
+class PropWebACLByteMatchStatement(Property):
     """
     AWS Object Type = "AWS::WAFv2::WebACL.ByteMatchStatement"
 
@@ -1385,10 +1385,10 @@ class WebACLByteMatchStatement(Property):
     """
     AWS_OBJECT_TYPE = "AWS::WAFv2::WebACL.ByteMatchStatement"
     
-    rp_FieldToMatch: typing.Union['WebACLFieldToMatch', dict] = attr.ib(
+    rp_FieldToMatch: typing.Union['PropWebACLFieldToMatch', dict] = attr.ib(
         default=None,
-        converter=WebACLFieldToMatch.from_dict,
-        validator=attr.validators.instance_of(WebACLFieldToMatch),
+        converter=PropWebACLFieldToMatch.from_dict,
+        validator=attr.validators.instance_of(PropWebACLFieldToMatch),
         metadata={AttrMeta.PROPERTY_NAME: "FieldToMatch"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-bytematchstatement.html#cfn-wafv2-webacl-bytematchstatement-fieldtomatch"""
@@ -1398,10 +1398,10 @@ class WebACLByteMatchStatement(Property):
         metadata={AttrMeta.PROPERTY_NAME: "PositionalConstraint"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-bytematchstatement.html#cfn-wafv2-webacl-bytematchstatement-positionalconstraint"""
-    rp_TextTransformations: typing.List[typing.Union['WebACLTextTransformation', dict]] = attr.ib(
+    rp_TextTransformations: typing.List[typing.Union['PropWebACLTextTransformation', dict]] = attr.ib(
         default=None,
-        converter=WebACLTextTransformation.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(WebACLTextTransformation), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropWebACLTextTransformation.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropWebACLTextTransformation), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "TextTransformations"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-bytematchstatement.html#cfn-wafv2-webacl-bytematchstatement-texttransformations"""
@@ -1419,7 +1419,7 @@ class WebACLByteMatchStatement(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-bytematchstatement.html#cfn-wafv2-webacl-bytematchstatement-searchstringbase64"""
 
 @attr.s
-class WebACLRegexPatternSetReferenceStatement(Property):
+class PropWebACLRegexPatternSetReferenceStatement(Property):
     """
     AWS Object Type = "AWS::WAFv2::WebACL.RegexPatternSetReferenceStatement"
 
@@ -1439,23 +1439,23 @@ class WebACLRegexPatternSetReferenceStatement(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Arn"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-regexpatternsetreferencestatement.html#cfn-wafv2-webacl-regexpatternsetreferencestatement-arn"""
-    rp_FieldToMatch: typing.Union['WebACLFieldToMatch', dict] = attr.ib(
+    rp_FieldToMatch: typing.Union['PropWebACLFieldToMatch', dict] = attr.ib(
         default=None,
-        converter=WebACLFieldToMatch.from_dict,
-        validator=attr.validators.instance_of(WebACLFieldToMatch),
+        converter=PropWebACLFieldToMatch.from_dict,
+        validator=attr.validators.instance_of(PropWebACLFieldToMatch),
         metadata={AttrMeta.PROPERTY_NAME: "FieldToMatch"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-regexpatternsetreferencestatement.html#cfn-wafv2-webacl-regexpatternsetreferencestatement-fieldtomatch"""
-    rp_TextTransformations: typing.List[typing.Union['WebACLTextTransformation', dict]] = attr.ib(
+    rp_TextTransformations: typing.List[typing.Union['PropWebACLTextTransformation', dict]] = attr.ib(
         default=None,
-        converter=WebACLTextTransformation.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(WebACLTextTransformation), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropWebACLTextTransformation.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropWebACLTextTransformation), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "TextTransformations"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-regexpatternsetreferencestatement.html#cfn-wafv2-webacl-regexpatternsetreferencestatement-texttransformations"""
 
 @attr.s
-class WebACLSizeConstraintStatement(Property):
+class PropWebACLSizeConstraintStatement(Property):
     """
     AWS Object Type = "AWS::WAFv2::WebACL.SizeConstraintStatement"
 
@@ -1476,10 +1476,10 @@ class WebACLSizeConstraintStatement(Property):
         metadata={AttrMeta.PROPERTY_NAME: "ComparisonOperator"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-sizeconstraintstatement.html#cfn-wafv2-webacl-sizeconstraintstatement-comparisonoperator"""
-    rp_FieldToMatch: typing.Union['WebACLFieldToMatch', dict] = attr.ib(
+    rp_FieldToMatch: typing.Union['PropWebACLFieldToMatch', dict] = attr.ib(
         default=None,
-        converter=WebACLFieldToMatch.from_dict,
-        validator=attr.validators.instance_of(WebACLFieldToMatch),
+        converter=PropWebACLFieldToMatch.from_dict,
+        validator=attr.validators.instance_of(PropWebACLFieldToMatch),
         metadata={AttrMeta.PROPERTY_NAME: "FieldToMatch"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-sizeconstraintstatement.html#cfn-wafv2-webacl-sizeconstraintstatement-fieldtomatch"""
@@ -1489,16 +1489,16 @@ class WebACLSizeConstraintStatement(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Size"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-sizeconstraintstatement.html#cfn-wafv2-webacl-sizeconstraintstatement-size"""
-    rp_TextTransformations: typing.List[typing.Union['WebACLTextTransformation', dict]] = attr.ib(
+    rp_TextTransformations: typing.List[typing.Union['PropWebACLTextTransformation', dict]] = attr.ib(
         default=None,
-        converter=WebACLTextTransformation.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(WebACLTextTransformation), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropWebACLTextTransformation.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropWebACLTextTransformation), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "TextTransformations"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-sizeconstraintstatement.html#cfn-wafv2-webacl-sizeconstraintstatement-texttransformations"""
 
 @attr.s
-class WebACLManagedRuleGroupStatement(Property):
+class PropWebACLManagedRuleGroupStatement(Property):
     """
     AWS Object Type = "AWS::WAFv2::WebACL.ManagedRuleGroupStatement"
 
@@ -1525,14 +1525,14 @@ class WebACLManagedRuleGroupStatement(Property):
         metadata={AttrMeta.PROPERTY_NAME: "VendorName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-managedrulegroupstatement.html#cfn-wafv2-webacl-managedrulegroupstatement-vendorname"""
-    p_ExcludedRules: typing.List[typing.Union['WebACLExcludedRule', dict]] = attr.ib(
+    p_ExcludedRules: typing.List[typing.Union['PropWebACLExcludedRule', dict]] = attr.ib(
         default=None,
-        converter=WebACLExcludedRule.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(WebACLExcludedRule), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropWebACLExcludedRule.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropWebACLExcludedRule), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "ExcludedRules"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-managedrulegroupstatement.html#cfn-wafv2-webacl-managedrulegroupstatement-excludedrules"""
-    p_ScopeDownStatement: typing.Union['WebACLStatement', dict] = attr.ib(
+    p_ScopeDownStatement: typing.Union['PropWebACLStatement', dict] = attr.ib(
         default=None,
         validator=None,
         metadata={AttrMeta.PROPERTY_NAME: "ScopeDownStatement"},
@@ -1540,7 +1540,7 @@ class WebACLManagedRuleGroupStatement(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-managedrulegroupstatement.html#cfn-wafv2-webacl-managedrulegroupstatement-scopedownstatement"""
 
 @attr.s
-class WebACLOrStatement(Property):
+class PropWebACLOrStatement(Property):
     """
     AWS Object Type = "AWS::WAFv2::WebACL.OrStatement"
 
@@ -1552,7 +1552,7 @@ class WebACLOrStatement(Property):
     """
     AWS_OBJECT_TYPE = "AWS::WAFv2::WebACL.OrStatement"
     
-    rp_Statements: typing.List[typing.Union['WebACLStatement', dict]] = attr.ib(
+    rp_Statements: typing.List[typing.Union['PropWebACLStatement', dict]] = attr.ib(
         default=None,
         validator=attr.validators.instance_of(list),
         metadata={AttrMeta.PROPERTY_NAME: "Statements"},
@@ -1560,7 +1560,7 @@ class WebACLOrStatement(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-orstatement.html#cfn-wafv2-webacl-orstatement-statements"""
 
 @attr.s
-class RuleGroupStatement(Property):
+class PropRuleGroupStatement(Property):
     """
     AWS Object Type = "AWS::WAFv2::RuleGroup.Statement"
 
@@ -1583,89 +1583,89 @@ class RuleGroupStatement(Property):
     """
     AWS_OBJECT_TYPE = "AWS::WAFv2::RuleGroup.Statement"
     
-    p_AndStatement: typing.Union['RuleGroupAndStatement', dict] = attr.ib(
+    p_AndStatement: typing.Union['PropRuleGroupAndStatement', dict] = attr.ib(
         default=None,
         validator=None,
         metadata={AttrMeta.PROPERTY_NAME: "AndStatement"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-statement.html#cfn-wafv2-rulegroup-statement-andstatement"""
-    p_ByteMatchStatement: typing.Union['RuleGroupByteMatchStatement', dict] = attr.ib(
+    p_ByteMatchStatement: typing.Union['PropRuleGroupByteMatchStatement', dict] = attr.ib(
         default=None,
-        converter=RuleGroupByteMatchStatement.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(RuleGroupByteMatchStatement)),
+        converter=PropRuleGroupByteMatchStatement.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropRuleGroupByteMatchStatement)),
         metadata={AttrMeta.PROPERTY_NAME: "ByteMatchStatement"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-statement.html#cfn-wafv2-rulegroup-statement-bytematchstatement"""
-    p_GeoMatchStatement: typing.Union['RuleGroupGeoMatchStatement', dict] = attr.ib(
+    p_GeoMatchStatement: typing.Union['PropRuleGroupGeoMatchStatement', dict] = attr.ib(
         default=None,
-        converter=RuleGroupGeoMatchStatement.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(RuleGroupGeoMatchStatement)),
+        converter=PropRuleGroupGeoMatchStatement.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropRuleGroupGeoMatchStatement)),
         metadata={AttrMeta.PROPERTY_NAME: "GeoMatchStatement"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-statement.html#cfn-wafv2-rulegroup-statement-geomatchstatement"""
-    p_IPSetReferenceStatement: typing.Union['RuleGroupIPSetReferenceStatement', dict] = attr.ib(
+    p_IPSetReferenceStatement: typing.Union['PropRuleGroupIPSetReferenceStatement', dict] = attr.ib(
         default=None,
-        converter=RuleGroupIPSetReferenceStatement.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(RuleGroupIPSetReferenceStatement)),
+        converter=PropRuleGroupIPSetReferenceStatement.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropRuleGroupIPSetReferenceStatement)),
         metadata={AttrMeta.PROPERTY_NAME: "IPSetReferenceStatement"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-statement.html#cfn-wafv2-rulegroup-statement-ipsetreferencestatement"""
-    p_LabelMatchStatement: typing.Union['RuleGroupLabelMatchStatement', dict] = attr.ib(
+    p_LabelMatchStatement: typing.Union['PropRuleGroupLabelMatchStatement', dict] = attr.ib(
         default=None,
-        converter=RuleGroupLabelMatchStatement.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(RuleGroupLabelMatchStatement)),
+        converter=PropRuleGroupLabelMatchStatement.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropRuleGroupLabelMatchStatement)),
         metadata={AttrMeta.PROPERTY_NAME: "LabelMatchStatement"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-statement.html#cfn-wafv2-rulegroup-statement-labelmatchstatement"""
-    p_NotStatement: typing.Union['RuleGroupNotStatement', dict] = attr.ib(
+    p_NotStatement: typing.Union['PropRuleGroupNotStatement', dict] = attr.ib(
         default=None,
         validator=None,
         metadata={AttrMeta.PROPERTY_NAME: "NotStatement"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-statement.html#cfn-wafv2-rulegroup-statement-notstatement"""
-    p_OrStatement: typing.Union['RuleGroupOrStatement', dict] = attr.ib(
+    p_OrStatement: typing.Union['PropRuleGroupOrStatement', dict] = attr.ib(
         default=None,
         validator=None,
         metadata={AttrMeta.PROPERTY_NAME: "OrStatement"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-statement.html#cfn-wafv2-rulegroup-statement-orstatement"""
-    p_RateBasedStatement: typing.Union['RuleGroupRateBasedStatement', dict] = attr.ib(
+    p_RateBasedStatement: typing.Union['PropRuleGroupRateBasedStatement', dict] = attr.ib(
         default=None,
         validator=None,
         metadata={AttrMeta.PROPERTY_NAME: "RateBasedStatement"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-statement.html#cfn-wafv2-rulegroup-statement-ratebasedstatement"""
-    p_RegexPatternSetReferenceStatement: typing.Union['RuleGroupRegexPatternSetReferenceStatement', dict] = attr.ib(
+    p_RegexPatternSetReferenceStatement: typing.Union['PropRuleGroupRegexPatternSetReferenceStatement', dict] = attr.ib(
         default=None,
-        converter=RuleGroupRegexPatternSetReferenceStatement.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(RuleGroupRegexPatternSetReferenceStatement)),
+        converter=PropRuleGroupRegexPatternSetReferenceStatement.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropRuleGroupRegexPatternSetReferenceStatement)),
         metadata={AttrMeta.PROPERTY_NAME: "RegexPatternSetReferenceStatement"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-statement.html#cfn-wafv2-rulegroup-statement-regexpatternsetreferencestatement"""
-    p_SizeConstraintStatement: typing.Union['RuleGroupSizeConstraintStatement', dict] = attr.ib(
+    p_SizeConstraintStatement: typing.Union['PropRuleGroupSizeConstraintStatement', dict] = attr.ib(
         default=None,
-        converter=RuleGroupSizeConstraintStatement.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(RuleGroupSizeConstraintStatement)),
+        converter=PropRuleGroupSizeConstraintStatement.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropRuleGroupSizeConstraintStatement)),
         metadata={AttrMeta.PROPERTY_NAME: "SizeConstraintStatement"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-statement.html#cfn-wafv2-rulegroup-statement-sizeconstraintstatement"""
-    p_SqliMatchStatement: typing.Union['RuleGroupSqliMatchStatement', dict] = attr.ib(
+    p_SqliMatchStatement: typing.Union['PropRuleGroupSqliMatchStatement', dict] = attr.ib(
         default=None,
-        converter=RuleGroupSqliMatchStatement.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(RuleGroupSqliMatchStatement)),
+        converter=PropRuleGroupSqliMatchStatement.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropRuleGroupSqliMatchStatement)),
         metadata={AttrMeta.PROPERTY_NAME: "SqliMatchStatement"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-statement.html#cfn-wafv2-rulegroup-statement-sqlimatchstatement"""
-    p_XssMatchStatement: typing.Union['RuleGroupXssMatchStatement', dict] = attr.ib(
+    p_XssMatchStatement: typing.Union['PropRuleGroupXssMatchStatement', dict] = attr.ib(
         default=None,
-        converter=RuleGroupXssMatchStatement.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(RuleGroupXssMatchStatement)),
+        converter=PropRuleGroupXssMatchStatement.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropRuleGroupXssMatchStatement)),
         metadata={AttrMeta.PROPERTY_NAME: "XssMatchStatement"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-statement.html#cfn-wafv2-rulegroup-statement-xssmatchstatement"""
 
 @attr.s
-class WebACLStatement(Property):
+class PropWebACLStatement(Property):
     """
     AWS Object Type = "AWS::WAFv2::WebACL.Statement"
 
@@ -1690,102 +1690,102 @@ class WebACLStatement(Property):
     """
     AWS_OBJECT_TYPE = "AWS::WAFv2::WebACL.Statement"
     
-    p_AndStatement: typing.Union['WebACLAndStatement', dict] = attr.ib(
+    p_AndStatement: typing.Union['PropWebACLAndStatement', dict] = attr.ib(
         default=None,
         validator=None,
         metadata={AttrMeta.PROPERTY_NAME: "AndStatement"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-statement.html#cfn-wafv2-webacl-statement-andstatement"""
-    p_ByteMatchStatement: typing.Union['WebACLByteMatchStatement', dict] = attr.ib(
+    p_ByteMatchStatement: typing.Union['PropWebACLByteMatchStatement', dict] = attr.ib(
         default=None,
-        converter=WebACLByteMatchStatement.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(WebACLByteMatchStatement)),
+        converter=PropWebACLByteMatchStatement.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropWebACLByteMatchStatement)),
         metadata={AttrMeta.PROPERTY_NAME: "ByteMatchStatement"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-statement.html#cfn-wafv2-webacl-statement-bytematchstatement"""
-    p_GeoMatchStatement: typing.Union['WebACLGeoMatchStatement', dict] = attr.ib(
+    p_GeoMatchStatement: typing.Union['PropWebACLGeoMatchStatement', dict] = attr.ib(
         default=None,
-        converter=WebACLGeoMatchStatement.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(WebACLGeoMatchStatement)),
+        converter=PropWebACLGeoMatchStatement.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropWebACLGeoMatchStatement)),
         metadata={AttrMeta.PROPERTY_NAME: "GeoMatchStatement"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-statement.html#cfn-wafv2-webacl-statement-geomatchstatement"""
-    p_IPSetReferenceStatement: typing.Union['WebACLIPSetReferenceStatement', dict] = attr.ib(
+    p_IPSetReferenceStatement: typing.Union['PropWebACLIPSetReferenceStatement', dict] = attr.ib(
         default=None,
-        converter=WebACLIPSetReferenceStatement.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(WebACLIPSetReferenceStatement)),
+        converter=PropWebACLIPSetReferenceStatement.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropWebACLIPSetReferenceStatement)),
         metadata={AttrMeta.PROPERTY_NAME: "IPSetReferenceStatement"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-statement.html#cfn-wafv2-webacl-statement-ipsetreferencestatement"""
-    p_LabelMatchStatement: typing.Union['WebACLLabelMatchStatement', dict] = attr.ib(
+    p_LabelMatchStatement: typing.Union['PropWebACLLabelMatchStatement', dict] = attr.ib(
         default=None,
-        converter=WebACLLabelMatchStatement.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(WebACLLabelMatchStatement)),
+        converter=PropWebACLLabelMatchStatement.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropWebACLLabelMatchStatement)),
         metadata={AttrMeta.PROPERTY_NAME: "LabelMatchStatement"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-statement.html#cfn-wafv2-webacl-statement-labelmatchstatement"""
-    p_ManagedRuleGroupStatement: typing.Union['WebACLManagedRuleGroupStatement', dict] = attr.ib(
+    p_ManagedRuleGroupStatement: typing.Union['PropWebACLManagedRuleGroupStatement', dict] = attr.ib(
         default=None,
         validator=None,
         metadata={AttrMeta.PROPERTY_NAME: "ManagedRuleGroupStatement"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-statement.html#cfn-wafv2-webacl-statement-managedrulegroupstatement"""
-    p_NotStatement: typing.Union['WebACLNotStatement', dict] = attr.ib(
+    p_NotStatement: typing.Union['PropWebACLNotStatement', dict] = attr.ib(
         default=None,
         validator=None,
         metadata={AttrMeta.PROPERTY_NAME: "NotStatement"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-statement.html#cfn-wafv2-webacl-statement-notstatement"""
-    p_OrStatement: typing.Union['WebACLOrStatement', dict] = attr.ib(
+    p_OrStatement: typing.Union['PropWebACLOrStatement', dict] = attr.ib(
         default=None,
         validator=None,
         metadata={AttrMeta.PROPERTY_NAME: "OrStatement"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-statement.html#cfn-wafv2-webacl-statement-orstatement"""
-    p_RateBasedStatement: typing.Union['WebACLRateBasedStatement', dict] = attr.ib(
+    p_RateBasedStatement: typing.Union['PropWebACLRateBasedStatement', dict] = attr.ib(
         default=None,
         validator=None,
         metadata={AttrMeta.PROPERTY_NAME: "RateBasedStatement"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-statement.html#cfn-wafv2-webacl-statement-ratebasedstatement"""
-    p_RegexPatternSetReferenceStatement: typing.Union['WebACLRegexPatternSetReferenceStatement', dict] = attr.ib(
+    p_RegexPatternSetReferenceStatement: typing.Union['PropWebACLRegexPatternSetReferenceStatement', dict] = attr.ib(
         default=None,
-        converter=WebACLRegexPatternSetReferenceStatement.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(WebACLRegexPatternSetReferenceStatement)),
+        converter=PropWebACLRegexPatternSetReferenceStatement.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropWebACLRegexPatternSetReferenceStatement)),
         metadata={AttrMeta.PROPERTY_NAME: "RegexPatternSetReferenceStatement"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-statement.html#cfn-wafv2-webacl-statement-regexpatternsetreferencestatement"""
-    p_RuleGroupReferenceStatement: typing.Union['WebACLRuleGroupReferenceStatement', dict] = attr.ib(
+    p_RuleGroupReferenceStatement: typing.Union['PropWebACLRuleGroupReferenceStatement', dict] = attr.ib(
         default=None,
-        converter=WebACLRuleGroupReferenceStatement.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(WebACLRuleGroupReferenceStatement)),
+        converter=PropWebACLRuleGroupReferenceStatement.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropWebACLRuleGroupReferenceStatement)),
         metadata={AttrMeta.PROPERTY_NAME: "RuleGroupReferenceStatement"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-statement.html#cfn-wafv2-webacl-statement-rulegroupreferencestatement"""
-    p_SizeConstraintStatement: typing.Union['WebACLSizeConstraintStatement', dict] = attr.ib(
+    p_SizeConstraintStatement: typing.Union['PropWebACLSizeConstraintStatement', dict] = attr.ib(
         default=None,
-        converter=WebACLSizeConstraintStatement.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(WebACLSizeConstraintStatement)),
+        converter=PropWebACLSizeConstraintStatement.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropWebACLSizeConstraintStatement)),
         metadata={AttrMeta.PROPERTY_NAME: "SizeConstraintStatement"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-statement.html#cfn-wafv2-webacl-statement-sizeconstraintstatement"""
-    p_SqliMatchStatement: typing.Union['WebACLSqliMatchStatement', dict] = attr.ib(
+    p_SqliMatchStatement: typing.Union['PropWebACLSqliMatchStatement', dict] = attr.ib(
         default=None,
-        converter=WebACLSqliMatchStatement.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(WebACLSqliMatchStatement)),
+        converter=PropWebACLSqliMatchStatement.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropWebACLSqliMatchStatement)),
         metadata={AttrMeta.PROPERTY_NAME: "SqliMatchStatement"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-statement.html#cfn-wafv2-webacl-statement-sqlimatchstatement"""
-    p_XssMatchStatement: typing.Union['WebACLXssMatchStatement', dict] = attr.ib(
+    p_XssMatchStatement: typing.Union['PropWebACLXssMatchStatement', dict] = attr.ib(
         default=None,
-        converter=WebACLXssMatchStatement.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(WebACLXssMatchStatement)),
+        converter=PropWebACLXssMatchStatement.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropWebACLXssMatchStatement)),
         metadata={AttrMeta.PROPERTY_NAME: "XssMatchStatement"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-statement.html#cfn-wafv2-webacl-statement-xssmatchstatement"""
 
 @attr.s
-class WebACLAndStatement(Property):
+class PropWebACLAndStatement(Property):
     """
     AWS Object Type = "AWS::WAFv2::WebACL.AndStatement"
 
@@ -1797,7 +1797,7 @@ class WebACLAndStatement(Property):
     """
     AWS_OBJECT_TYPE = "AWS::WAFv2::WebACL.AndStatement"
     
-    rp_Statements: typing.List[typing.Union['WebACLStatement', dict]] = attr.ib(
+    rp_Statements: typing.List[typing.Union['PropWebACLStatement', dict]] = attr.ib(
         default=None,
         validator=attr.validators.instance_of(list),
         metadata={AttrMeta.PROPERTY_NAME: "Statements"},
@@ -1805,7 +1805,7 @@ class WebACLAndStatement(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-andstatement.html#cfn-wafv2-webacl-andstatement-statements"""
 
 @attr.s
-class RuleGroupRateBasedStatement(Property):
+class PropRuleGroupRateBasedStatement(Property):
     """
     AWS Object Type = "AWS::WAFv2::RuleGroup.RateBasedStatement"
 
@@ -1832,14 +1832,14 @@ class RuleGroupRateBasedStatement(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Limit"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-ratebasedstatement.html#cfn-wafv2-rulegroup-ratebasedstatement-limit"""
-    p_ForwardedIPConfig: typing.Union['RuleGroupForwardedIPConfiguration', dict] = attr.ib(
+    p_ForwardedIPConfig: typing.Union['PropRuleGroupForwardedIPConfiguration', dict] = attr.ib(
         default=None,
-        converter=RuleGroupForwardedIPConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(RuleGroupForwardedIPConfiguration)),
+        converter=PropRuleGroupForwardedIPConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropRuleGroupForwardedIPConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "ForwardedIPConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-ratebasedstatement.html#cfn-wafv2-rulegroup-ratebasedstatement-forwardedipconfig"""
-    p_ScopeDownStatement: typing.Union['RuleGroupStatement', dict] = attr.ib(
+    p_ScopeDownStatement: typing.Union['PropRuleGroupStatement', dict] = attr.ib(
         default=None,
         validator=None,
         metadata={AttrMeta.PROPERTY_NAME: "ScopeDownStatement"},
@@ -1847,7 +1847,7 @@ class RuleGroupRateBasedStatement(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-ratebasedstatement.html#cfn-wafv2-rulegroup-ratebasedstatement-scopedownstatement"""
 
 @attr.s
-class RuleGroupAndStatement(Property):
+class PropRuleGroupAndStatement(Property):
     """
     AWS Object Type = "AWS::WAFv2::RuleGroup.AndStatement"
 
@@ -1859,7 +1859,7 @@ class RuleGroupAndStatement(Property):
     """
     AWS_OBJECT_TYPE = "AWS::WAFv2::RuleGroup.AndStatement"
     
-    rp_Statements: typing.List[typing.Union['RuleGroupStatement', dict]] = attr.ib(
+    rp_Statements: typing.List[typing.Union['PropRuleGroupStatement', dict]] = attr.ib(
         default=None,
         validator=attr.validators.instance_of(list),
         metadata={AttrMeta.PROPERTY_NAME: "Statements"},
@@ -1867,7 +1867,7 @@ class RuleGroupAndStatement(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-andstatement.html#cfn-wafv2-rulegroup-andstatement-statements"""
 
 @attr.s
-class WebACLNotStatement(Property):
+class PropWebACLNotStatement(Property):
     """
     AWS Object Type = "AWS::WAFv2::WebACL.NotStatement"
 
@@ -1879,7 +1879,7 @@ class WebACLNotStatement(Property):
     """
     AWS_OBJECT_TYPE = "AWS::WAFv2::WebACL.NotStatement"
     
-    rp_Statement: typing.Union['WebACLStatement', dict] = attr.ib(
+    rp_Statement: typing.Union['PropWebACLStatement', dict] = attr.ib(
         default=None,
         validator=None,
         metadata={AttrMeta.PROPERTY_NAME: "Statement"},
@@ -1887,7 +1887,7 @@ class WebACLNotStatement(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-notstatement.html#cfn-wafv2-webacl-notstatement-statement"""
 
 @attr.s
-class RuleGroupOrStatement(Property):
+class PropRuleGroupOrStatement(Property):
     """
     AWS Object Type = "AWS::WAFv2::RuleGroup.OrStatement"
 
@@ -1899,7 +1899,7 @@ class RuleGroupOrStatement(Property):
     """
     AWS_OBJECT_TYPE = "AWS::WAFv2::RuleGroup.OrStatement"
     
-    rp_Statements: typing.List[typing.Union['RuleGroupStatement', dict]] = attr.ib(
+    rp_Statements: typing.List[typing.Union['PropRuleGroupStatement', dict]] = attr.ib(
         default=None,
         validator=attr.validators.instance_of(list),
         metadata={AttrMeta.PROPERTY_NAME: "Statements"},
@@ -1907,7 +1907,7 @@ class RuleGroupOrStatement(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-orstatement.html#cfn-wafv2-rulegroup-orstatement-statements"""
 
 @attr.s
-class RuleGroupRule(Property):
+class PropRuleGroupRule(Property):
     """
     AWS Object Type = "AWS::WAFv2::RuleGroup.Rule"
 
@@ -1936,36 +1936,36 @@ class RuleGroupRule(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Priority"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-rule.html#cfn-wafv2-rulegroup-rule-priority"""
-    rp_Statement: typing.Union['RuleGroupStatement', dict] = attr.ib(
+    rp_Statement: typing.Union['PropRuleGroupStatement', dict] = attr.ib(
         default=None,
         validator=None,
         metadata={AttrMeta.PROPERTY_NAME: "Statement"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-rule.html#cfn-wafv2-rulegroup-rule-statement"""
-    rp_VisibilityConfig: typing.Union['RuleGroupVisibilityConfig', dict] = attr.ib(
+    rp_VisibilityConfig: typing.Union['PropRuleGroupVisibilityConfig', dict] = attr.ib(
         default=None,
-        converter=RuleGroupVisibilityConfig.from_dict,
-        validator=attr.validators.instance_of(RuleGroupVisibilityConfig),
+        converter=PropRuleGroupVisibilityConfig.from_dict,
+        validator=attr.validators.instance_of(PropRuleGroupVisibilityConfig),
         metadata={AttrMeta.PROPERTY_NAME: "VisibilityConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-rule.html#cfn-wafv2-rulegroup-rule-visibilityconfig"""
-    p_Action: typing.Union['RuleGroupRuleAction', dict] = attr.ib(
+    p_Action: typing.Union['PropRuleGroupRuleAction', dict] = attr.ib(
         default=None,
-        converter=RuleGroupRuleAction.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(RuleGroupRuleAction)),
+        converter=PropRuleGroupRuleAction.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropRuleGroupRuleAction)),
         metadata={AttrMeta.PROPERTY_NAME: "Action"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-rule.html#cfn-wafv2-rulegroup-rule-action"""
-    p_RuleLabels: typing.List[typing.Union['RuleGroupLabel', dict]] = attr.ib(
+    p_RuleLabels: typing.List[typing.Union['PropRuleGroupLabel', dict]] = attr.ib(
         default=None,
-        converter=RuleGroupLabel.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(RuleGroupLabel), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropRuleGroupLabel.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropRuleGroupLabel), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "RuleLabels"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-rule.html#cfn-wafv2-rulegroup-rule-rulelabels"""
 
 @attr.s
-class WebACLRule(Property):
+class PropWebACLRule(Property):
     """
     AWS Object Type = "AWS::WAFv2::WebACL.Rule"
 
@@ -1995,43 +1995,43 @@ class WebACLRule(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Priority"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-rule.html#cfn-wafv2-webacl-rule-priority"""
-    rp_Statement: typing.Union['WebACLStatement', dict] = attr.ib(
+    rp_Statement: typing.Union['PropWebACLStatement', dict] = attr.ib(
         default=None,
         validator=None,
         metadata={AttrMeta.PROPERTY_NAME: "Statement"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-rule.html#cfn-wafv2-webacl-rule-statement"""
-    rp_VisibilityConfig: typing.Union['WebACLVisibilityConfig', dict] = attr.ib(
+    rp_VisibilityConfig: typing.Union['PropWebACLVisibilityConfig', dict] = attr.ib(
         default=None,
-        converter=WebACLVisibilityConfig.from_dict,
-        validator=attr.validators.instance_of(WebACLVisibilityConfig),
+        converter=PropWebACLVisibilityConfig.from_dict,
+        validator=attr.validators.instance_of(PropWebACLVisibilityConfig),
         metadata={AttrMeta.PROPERTY_NAME: "VisibilityConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-rule.html#cfn-wafv2-webacl-rule-visibilityconfig"""
-    p_Action: typing.Union['WebACLRuleAction', dict] = attr.ib(
+    p_Action: typing.Union['PropWebACLRuleAction', dict] = attr.ib(
         default=None,
-        converter=WebACLRuleAction.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(WebACLRuleAction)),
+        converter=PropWebACLRuleAction.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropWebACLRuleAction)),
         metadata={AttrMeta.PROPERTY_NAME: "Action"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-rule.html#cfn-wafv2-webacl-rule-action"""
-    p_OverrideAction: typing.Union['WebACLOverrideAction', dict] = attr.ib(
+    p_OverrideAction: typing.Union['PropWebACLOverrideAction', dict] = attr.ib(
         default=None,
-        converter=WebACLOverrideAction.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(WebACLOverrideAction)),
+        converter=PropWebACLOverrideAction.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropWebACLOverrideAction)),
         metadata={AttrMeta.PROPERTY_NAME: "OverrideAction"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-rule.html#cfn-wafv2-webacl-rule-overrideaction"""
-    p_RuleLabels: typing.List[typing.Union['WebACLLabel', dict]] = attr.ib(
+    p_RuleLabels: typing.List[typing.Union['PropWebACLLabel', dict]] = attr.ib(
         default=None,
-        converter=WebACLLabel.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(WebACLLabel), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropWebACLLabel.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropWebACLLabel), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "RuleLabels"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-rule.html#cfn-wafv2-webacl-rule-rulelabels"""
 
 @attr.s
-class WebACLRateBasedStatement(Property):
+class PropWebACLRateBasedStatement(Property):
     """
     AWS Object Type = "AWS::WAFv2::WebACL.RateBasedStatement"
 
@@ -2058,14 +2058,14 @@ class WebACLRateBasedStatement(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Limit"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-ratebasedstatement.html#cfn-wafv2-webacl-ratebasedstatement-limit"""
-    p_ForwardedIPConfig: typing.Union['WebACLForwardedIPConfiguration', dict] = attr.ib(
+    p_ForwardedIPConfig: typing.Union['PropWebACLForwardedIPConfiguration', dict] = attr.ib(
         default=None,
-        converter=WebACLForwardedIPConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(WebACLForwardedIPConfiguration)),
+        converter=PropWebACLForwardedIPConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropWebACLForwardedIPConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "ForwardedIPConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-ratebasedstatement.html#cfn-wafv2-webacl-ratebasedstatement-forwardedipconfig"""
-    p_ScopeDownStatement: typing.Union['WebACLStatement', dict] = attr.ib(
+    p_ScopeDownStatement: typing.Union['PropWebACLStatement', dict] = attr.ib(
         default=None,
         validator=None,
         metadata={AttrMeta.PROPERTY_NAME: "ScopeDownStatement"},
@@ -2073,7 +2073,7 @@ class WebACLRateBasedStatement(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-ratebasedstatement.html#cfn-wafv2-webacl-ratebasedstatement-scopedownstatement"""
 
 @attr.s
-class RuleGroupNotStatement(Property):
+class PropRuleGroupNotStatement(Property):
     """
     AWS Object Type = "AWS::WAFv2::RuleGroup.NotStatement"
 
@@ -2085,7 +2085,7 @@ class RuleGroupNotStatement(Property):
     """
     AWS_OBJECT_TYPE = "AWS::WAFv2::RuleGroup.NotStatement"
     
-    rp_Statement: typing.Union['RuleGroupStatement', dict] = attr.ib(
+    rp_Statement: typing.Union['PropRuleGroupStatement', dict] = attr.ib(
         default=None,
         validator=None,
         metadata={AttrMeta.PROPERTY_NAME: "Statement"},
@@ -2289,17 +2289,17 @@ class RuleGroup(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Scope"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-rulegroup.html#cfn-wafv2-rulegroup-scope"""
-    rp_VisibilityConfig: typing.Union['RuleGroupVisibilityConfig', dict] = attr.ib(
+    rp_VisibilityConfig: typing.Union['PropRuleGroupVisibilityConfig', dict] = attr.ib(
         default=None,
-        converter=RuleGroupVisibilityConfig.from_dict,
-        validator=attr.validators.instance_of(RuleGroupVisibilityConfig),
+        converter=PropRuleGroupVisibilityConfig.from_dict,
+        validator=attr.validators.instance_of(PropRuleGroupVisibilityConfig),
         metadata={AttrMeta.PROPERTY_NAME: "VisibilityConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-rulegroup.html#cfn-wafv2-rulegroup-visibilityconfig"""
-    p_CustomResponseBodies: typing.Union['RuleGroupCustomResponseBody', dict] = attr.ib(
+    p_CustomResponseBodies: typing.Union['PropRuleGroupCustomResponseBody', dict] = attr.ib(
         default=None,
-        converter=RuleGroupCustomResponseBody.from_list,
-        validator=attr.validators.optional(attr.validators.instance_of(RuleGroupCustomResponseBody)),
+        converter=PropRuleGroupCustomResponseBody.from_list,
+        validator=attr.validators.optional(attr.validators.instance_of(PropRuleGroupCustomResponseBody)),
         metadata={AttrMeta.PROPERTY_NAME: "CustomResponseBodies"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-rulegroup.html#cfn-wafv2-rulegroup-customresponsebodies"""
@@ -2315,10 +2315,10 @@ class RuleGroup(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Name"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-rulegroup.html#cfn-wafv2-rulegroup-name"""
-    p_Rules: typing.List[typing.Union['RuleGroupRule', dict]] = attr.ib(
+    p_Rules: typing.List[typing.Union['PropRuleGroupRule', dict]] = attr.ib(
         default=None,
-        converter=RuleGroupRule.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(RuleGroupRule), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropRuleGroupRule.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropRuleGroupRule), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Rules"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-rulegroup.html#cfn-wafv2-rulegroup-rules"""
@@ -2378,10 +2378,10 @@ class WebACL(Resource):
     AWS_OBJECT_TYPE = "AWS::WAFv2::WebACL"
 
     
-    rp_DefaultAction: typing.Union['WebACLDefaultAction', dict] = attr.ib(
+    rp_DefaultAction: typing.Union['PropWebACLDefaultAction', dict] = attr.ib(
         default=None,
-        converter=WebACLDefaultAction.from_dict,
-        validator=attr.validators.instance_of(WebACLDefaultAction),
+        converter=PropWebACLDefaultAction.from_dict,
+        validator=attr.validators.instance_of(PropWebACLDefaultAction),
         metadata={AttrMeta.PROPERTY_NAME: "DefaultAction"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-webacl.html#cfn-wafv2-webacl-defaultaction"""
@@ -2391,17 +2391,17 @@ class WebACL(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Scope"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-webacl.html#cfn-wafv2-webacl-scope"""
-    rp_VisibilityConfig: typing.Union['WebACLVisibilityConfig', dict] = attr.ib(
+    rp_VisibilityConfig: typing.Union['PropWebACLVisibilityConfig', dict] = attr.ib(
         default=None,
-        converter=WebACLVisibilityConfig.from_dict,
-        validator=attr.validators.instance_of(WebACLVisibilityConfig),
+        converter=PropWebACLVisibilityConfig.from_dict,
+        validator=attr.validators.instance_of(PropWebACLVisibilityConfig),
         metadata={AttrMeta.PROPERTY_NAME: "VisibilityConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-webacl.html#cfn-wafv2-webacl-visibilityconfig"""
-    p_CustomResponseBodies: typing.Union['WebACLCustomResponseBody', dict] = attr.ib(
+    p_CustomResponseBodies: typing.Union['PropWebACLCustomResponseBody', dict] = attr.ib(
         default=None,
-        converter=WebACLCustomResponseBody.from_list,
-        validator=attr.validators.optional(attr.validators.instance_of(WebACLCustomResponseBody)),
+        converter=PropWebACLCustomResponseBody.from_list,
+        validator=attr.validators.optional(attr.validators.instance_of(PropWebACLCustomResponseBody)),
         metadata={AttrMeta.PROPERTY_NAME: "CustomResponseBodies"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-webacl.html#cfn-wafv2-webacl-customresponsebodies"""
@@ -2417,10 +2417,10 @@ class WebACL(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Name"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-webacl.html#cfn-wafv2-webacl-name"""
-    p_Rules: typing.List[typing.Union['WebACLRule', dict]] = attr.ib(
+    p_Rules: typing.List[typing.Union['PropWebACLRule', dict]] = attr.ib(
         default=None,
-        converter=WebACLRule.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(WebACLRule), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropWebACLRule.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropWebACLRule), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Rules"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-webacl.html#cfn-wafv2-webacl-rules"""

@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class AnomalySubscriptionSubscriber(Property):
+class PropAnomalySubscriptionSubscriber(Property):
     """
     AWS Object Type = "AWS::CE::AnomalySubscription.Subscriber"
 
@@ -204,10 +204,10 @@ class AnomalySubscription(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "MonitorArnList"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ce-anomalysubscription.html#cfn-ce-anomalysubscription-monitorarnlist"""
-    rp_Subscribers: typing.List[typing.Union['AnomalySubscriptionSubscriber', dict]] = attr.ib(
+    rp_Subscribers: typing.List[typing.Union['PropAnomalySubscriptionSubscriber', dict]] = attr.ib(
         default=None,
-        converter=AnomalySubscriptionSubscriber.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(AnomalySubscriptionSubscriber), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropAnomalySubscriptionSubscriber.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropAnomalySubscriptionSubscriber), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "Subscribers"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ce-anomalysubscription.html#cfn-ce-anomalysubscription-subscribers"""

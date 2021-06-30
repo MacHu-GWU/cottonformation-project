@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class NodeNodeConfiguration(Property):
+class PropNodeNodeConfiguration(Property):
     """
     AWS Object Type = "AWS::ManagedBlockchain::Node.NodeConfiguration"
 
@@ -42,7 +42,7 @@ class NodeNodeConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-managedblockchain-node-nodeconfiguration.html#cfn-managedblockchain-node-nodeconfiguration-instancetype"""
 
 @attr.s
-class MemberNetworkFabricConfiguration(Property):
+class PropMemberNetworkFabricConfiguration(Property):
     """
     AWS Object Type = "AWS::ManagedBlockchain::Member.NetworkFabricConfiguration"
 
@@ -62,7 +62,7 @@ class MemberNetworkFabricConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-managedblockchain-member-networkfabricconfiguration.html#cfn-managedblockchain-member-networkfabricconfiguration-edition"""
 
 @attr.s
-class MemberApprovalThresholdPolicy(Property):
+class PropMemberApprovalThresholdPolicy(Property):
     """
     AWS Object Type = "AWS::ManagedBlockchain::Member.ApprovalThresholdPolicy"
 
@@ -96,7 +96,7 @@ class MemberApprovalThresholdPolicy(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-managedblockchain-member-approvalthresholdpolicy.html#cfn-managedblockchain-member-approvalthresholdpolicy-thresholdpercentage"""
 
 @attr.s
-class MemberVotingPolicy(Property):
+class PropMemberVotingPolicy(Property):
     """
     AWS Object Type = "AWS::ManagedBlockchain::Member.VotingPolicy"
 
@@ -108,16 +108,16 @@ class MemberVotingPolicy(Property):
     """
     AWS_OBJECT_TYPE = "AWS::ManagedBlockchain::Member.VotingPolicy"
     
-    p_ApprovalThresholdPolicy: typing.Union['MemberApprovalThresholdPolicy', dict] = attr.ib(
+    p_ApprovalThresholdPolicy: typing.Union['PropMemberApprovalThresholdPolicy', dict] = attr.ib(
         default=None,
-        converter=MemberApprovalThresholdPolicy.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(MemberApprovalThresholdPolicy)),
+        converter=PropMemberApprovalThresholdPolicy.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropMemberApprovalThresholdPolicy)),
         metadata={AttrMeta.PROPERTY_NAME: "ApprovalThresholdPolicy"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-managedblockchain-member-votingpolicy.html#cfn-managedblockchain-member-votingpolicy-approvalthresholdpolicy"""
 
 @attr.s
-class MemberMemberFabricConfiguration(Property):
+class PropMemberMemberFabricConfiguration(Property):
     """
     AWS Object Type = "AWS::ManagedBlockchain::Member.MemberFabricConfiguration"
 
@@ -144,7 +144,7 @@ class MemberMemberFabricConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-managedblockchain-member-memberfabricconfiguration.html#cfn-managedblockchain-member-memberfabricconfiguration-adminusername"""
 
 @attr.s
-class MemberNetworkFrameworkConfiguration(Property):
+class PropMemberNetworkFrameworkConfiguration(Property):
     """
     AWS Object Type = "AWS::ManagedBlockchain::Member.NetworkFrameworkConfiguration"
 
@@ -156,16 +156,16 @@ class MemberNetworkFrameworkConfiguration(Property):
     """
     AWS_OBJECT_TYPE = "AWS::ManagedBlockchain::Member.NetworkFrameworkConfiguration"
     
-    p_NetworkFabricConfiguration: typing.Union['MemberNetworkFabricConfiguration', dict] = attr.ib(
+    p_NetworkFabricConfiguration: typing.Union['PropMemberNetworkFabricConfiguration', dict] = attr.ib(
         default=None,
-        converter=MemberNetworkFabricConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(MemberNetworkFabricConfiguration)),
+        converter=PropMemberNetworkFabricConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropMemberNetworkFabricConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "NetworkFabricConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-managedblockchain-member-networkframeworkconfiguration.html#cfn-managedblockchain-member-networkframeworkconfiguration-networkfabricconfiguration"""
 
 @attr.s
-class MemberNetworkConfiguration(Property):
+class PropMemberNetworkConfiguration(Property):
     """
     AWS Object Type = "AWS::ManagedBlockchain::Member.NetworkConfiguration"
 
@@ -200,10 +200,10 @@ class MemberNetworkConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Name"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-managedblockchain-member-networkconfiguration.html#cfn-managedblockchain-member-networkconfiguration-name"""
-    rp_VotingPolicy: typing.Union['MemberVotingPolicy', dict] = attr.ib(
+    rp_VotingPolicy: typing.Union['PropMemberVotingPolicy', dict] = attr.ib(
         default=None,
-        converter=MemberVotingPolicy.from_dict,
-        validator=attr.validators.instance_of(MemberVotingPolicy),
+        converter=PropMemberVotingPolicy.from_dict,
+        validator=attr.validators.instance_of(PropMemberVotingPolicy),
         metadata={AttrMeta.PROPERTY_NAME: "VotingPolicy"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-managedblockchain-member-networkconfiguration.html#cfn-managedblockchain-member-networkconfiguration-votingpolicy"""
@@ -213,16 +213,16 @@ class MemberNetworkConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Description"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-managedblockchain-member-networkconfiguration.html#cfn-managedblockchain-member-networkconfiguration-description"""
-    p_NetworkFrameworkConfiguration: typing.Union['MemberNetworkFrameworkConfiguration', dict] = attr.ib(
+    p_NetworkFrameworkConfiguration: typing.Union['PropMemberNetworkFrameworkConfiguration', dict] = attr.ib(
         default=None,
-        converter=MemberNetworkFrameworkConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(MemberNetworkFrameworkConfiguration)),
+        converter=PropMemberNetworkFrameworkConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropMemberNetworkFrameworkConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "NetworkFrameworkConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-managedblockchain-member-networkconfiguration.html#cfn-managedblockchain-member-networkconfiguration-networkframeworkconfiguration"""
 
 @attr.s
-class MemberMemberFrameworkConfiguration(Property):
+class PropMemberMemberFrameworkConfiguration(Property):
     """
     AWS Object Type = "AWS::ManagedBlockchain::Member.MemberFrameworkConfiguration"
 
@@ -234,16 +234,16 @@ class MemberMemberFrameworkConfiguration(Property):
     """
     AWS_OBJECT_TYPE = "AWS::ManagedBlockchain::Member.MemberFrameworkConfiguration"
     
-    p_MemberFabricConfiguration: typing.Union['MemberMemberFabricConfiguration', dict] = attr.ib(
+    p_MemberFabricConfiguration: typing.Union['PropMemberMemberFabricConfiguration', dict] = attr.ib(
         default=None,
-        converter=MemberMemberFabricConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(MemberMemberFabricConfiguration)),
+        converter=PropMemberMemberFabricConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropMemberMemberFabricConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "MemberFabricConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-managedblockchain-member-memberframeworkconfiguration.html#cfn-managedblockchain-member-memberframeworkconfiguration-memberfabricconfiguration"""
 
 @attr.s
-class MemberMemberConfiguration(Property):
+class PropMemberMemberConfiguration(Property):
     """
     AWS Object Type = "AWS::ManagedBlockchain::Member.MemberConfiguration"
 
@@ -269,10 +269,10 @@ class MemberMemberConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Description"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-managedblockchain-member-memberconfiguration.html#cfn-managedblockchain-member-memberconfiguration-description"""
-    p_MemberFrameworkConfiguration: typing.Union['MemberMemberFrameworkConfiguration', dict] = attr.ib(
+    p_MemberFrameworkConfiguration: typing.Union['PropMemberMemberFrameworkConfiguration', dict] = attr.ib(
         default=None,
-        converter=MemberMemberFrameworkConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(MemberMemberFrameworkConfiguration)),
+        converter=PropMemberMemberFrameworkConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropMemberMemberFrameworkConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "MemberFrameworkConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-managedblockchain-member-memberconfiguration.html#cfn-managedblockchain-member-memberconfiguration-memberframeworkconfiguration"""
@@ -297,10 +297,10 @@ class Member(Resource):
     AWS_OBJECT_TYPE = "AWS::ManagedBlockchain::Member"
 
     
-    rp_MemberConfiguration: typing.Union['MemberMemberConfiguration', dict] = attr.ib(
+    rp_MemberConfiguration: typing.Union['PropMemberMemberConfiguration', dict] = attr.ib(
         default=None,
-        converter=MemberMemberConfiguration.from_dict,
-        validator=attr.validators.instance_of(MemberMemberConfiguration),
+        converter=PropMemberMemberConfiguration.from_dict,
+        validator=attr.validators.instance_of(PropMemberMemberConfiguration),
         metadata={AttrMeta.PROPERTY_NAME: "MemberConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-managedblockchain-member.html#cfn-managedblockchain-member-memberconfiguration"""
@@ -310,10 +310,10 @@ class Member(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "InvitationId"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-managedblockchain-member.html#cfn-managedblockchain-member-invitationid"""
-    p_NetworkConfiguration: typing.Union['MemberNetworkConfiguration', dict] = attr.ib(
+    p_NetworkConfiguration: typing.Union['PropMemberNetworkConfiguration', dict] = attr.ib(
         default=None,
-        converter=MemberNetworkConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(MemberNetworkConfiguration)),
+        converter=PropMemberNetworkConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropMemberNetworkConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "NetworkConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-managedblockchain-member.html#cfn-managedblockchain-member-networkconfiguration"""
@@ -358,10 +358,10 @@ class Node(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "NetworkId"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-managedblockchain-node.html#cfn-managedblockchain-node-networkid"""
-    rp_NodeConfiguration: typing.Union['NodeNodeConfiguration', dict] = attr.ib(
+    rp_NodeConfiguration: typing.Union['PropNodeNodeConfiguration', dict] = attr.ib(
         default=None,
-        converter=NodeNodeConfiguration.from_dict,
-        validator=attr.validators.instance_of(NodeNodeConfiguration),
+        converter=PropNodeNodeConfiguration.from_dict,
+        validator=attr.validators.instance_of(PropNodeNodeConfiguration),
         metadata={AttrMeta.PROPERTY_NAME: "NodeConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-managedblockchain-node.html#cfn-managedblockchain-node-nodeconfiguration"""

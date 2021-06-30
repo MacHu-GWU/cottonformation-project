@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class JobS3Location(Property):
+class PropJobS3Location(Property):
     """
     AWS Object Type = "AWS::DataBrew::Job.S3Location"
 
@@ -42,7 +42,7 @@ class JobS3Location(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-s3location.html#cfn-databrew-job-s3location-key"""
 
 @attr.s
-class JobCsvOutputOptions(Property):
+class PropJobCsvOutputOptions(Property):
     """
     AWS Object Type = "AWS::DataBrew::Job.CsvOutputOptions"
 
@@ -62,7 +62,7 @@ class JobCsvOutputOptions(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-csvoutputoptions.html#cfn-databrew-job-csvoutputoptions-delimiter"""
 
 @attr.s
-class JobRecipe(Property):
+class PropJobRecipe(Property):
     """
     AWS Object Type = "AWS::DataBrew::Job.Recipe"
 
@@ -89,7 +89,7 @@ class JobRecipe(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-recipe.html#cfn-databrew-job-recipe-version"""
 
 @attr.s
-class JobOutputLocation(Property):
+class PropJobOutputLocation(Property):
     """
     AWS Object Type = "AWS::DataBrew::Job.OutputLocation"
 
@@ -116,7 +116,7 @@ class JobOutputLocation(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-outputlocation.html#cfn-databrew-job-outputlocation-key"""
 
 @attr.s
-class DatasetFilesLimit(Property):
+class PropDatasetFilesLimit(Property):
     """
     AWS Object Type = "AWS::DataBrew::Dataset.FilesLimit"
 
@@ -150,7 +150,7 @@ class DatasetFilesLimit(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-fileslimit.html#cfn-databrew-dataset-fileslimit-orderedby"""
 
 @attr.s
-class DatasetCsvOptions(Property):
+class PropDatasetCsvOptions(Property):
     """
     AWS Object Type = "AWS::DataBrew::Dataset.CsvOptions"
 
@@ -177,7 +177,7 @@ class DatasetCsvOptions(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-csvoptions.html#cfn-databrew-dataset-csvoptions-headerrow"""
 
 @attr.s
-class DatasetExcelOptions(Property):
+class PropDatasetExcelOptions(Property):
     """
     AWS Object Type = "AWS::DataBrew::Dataset.ExcelOptions"
 
@@ -211,7 +211,7 @@ class DatasetExcelOptions(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-exceloptions.html#cfn-databrew-dataset-exceloptions-sheetnames"""
 
 @attr.s
-class DatasetJsonOptions(Property):
+class PropDatasetJsonOptions(Property):
     """
     AWS Object Type = "AWS::DataBrew::Dataset.JsonOptions"
 
@@ -231,7 +231,7 @@ class DatasetJsonOptions(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-jsonoptions.html#cfn-databrew-dataset-jsonoptions-multiline"""
 
 @attr.s
-class RecipeS3Location(Property):
+class PropRecipeS3Location(Property):
     """
     AWS Object Type = "AWS::DataBrew::Recipe.S3Location"
 
@@ -258,7 +258,7 @@ class RecipeS3Location(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-s3location.html#cfn-databrew-recipe-s3location-key"""
 
 @attr.s
-class DatasetFilterValue(Property):
+class PropDatasetFilterValue(Property):
     """
     AWS Object Type = "AWS::DataBrew::Dataset.FilterValue"
 
@@ -285,7 +285,7 @@ class DatasetFilterValue(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-filtervalue.html#cfn-databrew-dataset-filtervalue-valuereference"""
 
 @attr.s
-class RecipeParameterMap(Property):
+class PropRecipeParameterMap(Property):
     """
     AWS Object Type = "AWS::DataBrew::Recipe.ParameterMap"
 
@@ -298,7 +298,7 @@ class RecipeParameterMap(Property):
     
 
 @attr.s
-class ProjectSample(Property):
+class PropProjectSample(Property):
     """
     AWS Object Type = "AWS::DataBrew::Project.Sample"
 
@@ -325,7 +325,7 @@ class ProjectSample(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-project-sample.html#cfn-databrew-project-sample-size"""
 
 @attr.s
-class JobJobSample(Property):
+class PropJobJobSample(Property):
     """
     AWS Object Type = "AWS::DataBrew::Job.JobSample"
 
@@ -352,7 +352,7 @@ class JobJobSample(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-jobsample.html#cfn-databrew-job-jobsample-size"""
 
 @attr.s
-class DatasetDatetimeOptions(Property):
+class PropDatasetDatetimeOptions(Property):
     """
     AWS Object Type = "AWS::DataBrew::Dataset.DatetimeOptions"
 
@@ -386,7 +386,7 @@ class DatasetDatetimeOptions(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-datetimeoptions.html#cfn-databrew-dataset-datetimeoptions-timezoneoffset"""
 
 @attr.s
-class RecipeConditionExpression(Property):
+class PropRecipeConditionExpression(Property):
     """
     AWS Object Type = "AWS::DataBrew::Recipe.ConditionExpression"
 
@@ -420,7 +420,7 @@ class RecipeConditionExpression(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-conditionexpression.html#cfn-databrew-recipe-conditionexpression-value"""
 
 @attr.s
-class RecipeDataCatalogInputDefinition(Property):
+class PropRecipeDataCatalogInputDefinition(Property):
     """
     AWS Object Type = "AWS::DataBrew::Recipe.DataCatalogInputDefinition"
 
@@ -453,16 +453,16 @@ class RecipeDataCatalogInputDefinition(Property):
         metadata={AttrMeta.PROPERTY_NAME: "TableName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-datacataloginputdefinition.html#cfn-databrew-recipe-datacataloginputdefinition-tablename"""
-    p_TempDirectory: typing.Union['RecipeS3Location', dict] = attr.ib(
+    p_TempDirectory: typing.Union['PropRecipeS3Location', dict] = attr.ib(
         default=None,
-        converter=RecipeS3Location.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(RecipeS3Location)),
+        converter=PropRecipeS3Location.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropRecipeS3Location)),
         metadata={AttrMeta.PROPERTY_NAME: "TempDirectory"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-datacataloginputdefinition.html#cfn-databrew-recipe-datacataloginputdefinition-tempdirectory"""
 
 @attr.s
-class DatasetS3Location(Property):
+class PropDatasetS3Location(Property):
     """
     AWS Object Type = "AWS::DataBrew::Dataset.S3Location"
 
@@ -489,7 +489,7 @@ class DatasetS3Location(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-s3location.html#cfn-databrew-dataset-s3location-key"""
 
 @attr.s
-class DatasetFilterExpression(Property):
+class PropDatasetFilterExpression(Property):
     """
     AWS Object Type = "AWS::DataBrew::Dataset.FilterExpression"
 
@@ -508,16 +508,16 @@ class DatasetFilterExpression(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Expression"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-filterexpression.html#cfn-databrew-dataset-filterexpression-expression"""
-    rp_ValuesMap: typing.List[typing.Union['DatasetFilterValue', dict]] = attr.ib(
+    rp_ValuesMap: typing.List[typing.Union['PropDatasetFilterValue', dict]] = attr.ib(
         default=None,
-        converter=DatasetFilterValue.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(DatasetFilterValue), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropDatasetFilterValue.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDatasetFilterValue), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "ValuesMap"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-filterexpression.html#cfn-databrew-dataset-filterexpression-valuesmap"""
 
 @attr.s
-class RecipeSecondaryInput(Property):
+class PropRecipeSecondaryInput(Property):
     """
     AWS Object Type = "AWS::DataBrew::Recipe.SecondaryInput"
 
@@ -530,23 +530,23 @@ class RecipeSecondaryInput(Property):
     """
     AWS_OBJECT_TYPE = "AWS::DataBrew::Recipe.SecondaryInput"
     
-    p_DataCatalogInputDefinition: typing.Union['RecipeDataCatalogInputDefinition', dict] = attr.ib(
+    p_DataCatalogInputDefinition: typing.Union['PropRecipeDataCatalogInputDefinition', dict] = attr.ib(
         default=None,
-        converter=RecipeDataCatalogInputDefinition.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(RecipeDataCatalogInputDefinition)),
+        converter=PropRecipeDataCatalogInputDefinition.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropRecipeDataCatalogInputDefinition)),
         metadata={AttrMeta.PROPERTY_NAME: "DataCatalogInputDefinition"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-secondaryinput.html#cfn-databrew-recipe-secondaryinput-datacataloginputdefinition"""
-    p_S3InputDefinition: typing.Union['RecipeS3Location', dict] = attr.ib(
+    p_S3InputDefinition: typing.Union['PropRecipeS3Location', dict] = attr.ib(
         default=None,
-        converter=RecipeS3Location.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(RecipeS3Location)),
+        converter=PropRecipeS3Location.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropRecipeS3Location)),
         metadata={AttrMeta.PROPERTY_NAME: "S3InputDefinition"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-secondaryinput.html#cfn-databrew-recipe-secondaryinput-s3inputdefinition"""
 
 @attr.s
-class RecipeAction(Property):
+class PropRecipeAction(Property):
     """
     AWS Object Type = "AWS::DataBrew::Recipe.Action"
 
@@ -565,16 +565,16 @@ class RecipeAction(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Operation"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-action.html#cfn-databrew-recipe-action-operation"""
-    p_Parameters: typing.Union['RecipeParameterMap', dict] = attr.ib(
+    p_Parameters: typing.Union['PropRecipeParameterMap', dict] = attr.ib(
         default=None,
-        converter=RecipeParameterMap.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(RecipeParameterMap)),
+        converter=PropRecipeParameterMap.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropRecipeParameterMap)),
         metadata={AttrMeta.PROPERTY_NAME: "Parameters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-action.html#cfn-databrew-recipe-action-parameters"""
 
 @attr.s
-class JobOutputFormatOptions(Property):
+class PropJobOutputFormatOptions(Property):
     """
     AWS Object Type = "AWS::DataBrew::Job.OutputFormatOptions"
 
@@ -586,16 +586,16 @@ class JobOutputFormatOptions(Property):
     """
     AWS_OBJECT_TYPE = "AWS::DataBrew::Job.OutputFormatOptions"
     
-    p_Csv: typing.Union['JobCsvOutputOptions', dict] = attr.ib(
+    p_Csv: typing.Union['PropJobCsvOutputOptions', dict] = attr.ib(
         default=None,
-        converter=JobCsvOutputOptions.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(JobCsvOutputOptions)),
+        converter=PropJobCsvOutputOptions.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropJobCsvOutputOptions)),
         metadata={AttrMeta.PROPERTY_NAME: "Csv"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-outputformatoptions.html#cfn-databrew-job-outputformatoptions-csv"""
 
 @attr.s
-class DatasetDatabaseInputDefinition(Property):
+class PropDatasetDatabaseInputDefinition(Property):
     """
     AWS Object Type = "AWS::DataBrew::Dataset.DatabaseInputDefinition"
 
@@ -621,16 +621,16 @@ class DatasetDatabaseInputDefinition(Property):
         metadata={AttrMeta.PROPERTY_NAME: "GlueConnectionName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-databaseinputdefinition.html#cfn-databrew-dataset-databaseinputdefinition-glueconnectionname"""
-    p_TempDirectory: typing.Union['DatasetS3Location', dict] = attr.ib(
+    p_TempDirectory: typing.Union['PropDatasetS3Location', dict] = attr.ib(
         default=None,
-        converter=DatasetS3Location.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DatasetS3Location)),
+        converter=PropDatasetS3Location.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDatasetS3Location)),
         metadata={AttrMeta.PROPERTY_NAME: "TempDirectory"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-databaseinputdefinition.html#cfn-databrew-dataset-databaseinputdefinition-tempdirectory"""
 
 @attr.s
-class JobOutput(Property):
+class PropJobOutput(Property):
     """
     AWS Object Type = "AWS::DataBrew::Job.Output"
 
@@ -647,10 +647,10 @@ class JobOutput(Property):
     """
     AWS_OBJECT_TYPE = "AWS::DataBrew::Job.Output"
     
-    rp_Location: typing.Union['JobS3Location', dict] = attr.ib(
+    rp_Location: typing.Union['PropJobS3Location', dict] = attr.ib(
         default=None,
-        converter=JobS3Location.from_dict,
-        validator=attr.validators.instance_of(JobS3Location),
+        converter=PropJobS3Location.from_dict,
+        validator=attr.validators.instance_of(PropJobS3Location),
         metadata={AttrMeta.PROPERTY_NAME: "Location"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-output.html#cfn-databrew-job-output-location"""
@@ -666,10 +666,10 @@ class JobOutput(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Format"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-output.html#cfn-databrew-job-output-format"""
-    p_FormatOptions: typing.Union['JobOutputFormatOptions', dict] = attr.ib(
+    p_FormatOptions: typing.Union['PropJobOutputFormatOptions', dict] = attr.ib(
         default=None,
-        converter=JobOutputFormatOptions.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(JobOutputFormatOptions)),
+        converter=PropJobOutputFormatOptions.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropJobOutputFormatOptions)),
         metadata={AttrMeta.PROPERTY_NAME: "FormatOptions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-output.html#cfn-databrew-job-output-formatoptions"""
@@ -687,7 +687,7 @@ class JobOutput(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-output.html#cfn-databrew-job-output-partitioncolumns"""
 
 @attr.s
-class DatasetDatasetParameter(Property):
+class PropDatasetDatasetParameter(Property):
     """
     AWS Object Type = "AWS::DataBrew::Dataset.DatasetParameter"
 
@@ -721,23 +721,23 @@ class DatasetDatasetParameter(Property):
         metadata={AttrMeta.PROPERTY_NAME: "CreateColumn"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-datasetparameter.html#cfn-databrew-dataset-datasetparameter-createcolumn"""
-    p_DatetimeOptions: typing.Union['DatasetDatetimeOptions', dict] = attr.ib(
+    p_DatetimeOptions: typing.Union['PropDatasetDatetimeOptions', dict] = attr.ib(
         default=None,
-        converter=DatasetDatetimeOptions.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DatasetDatetimeOptions)),
+        converter=PropDatasetDatetimeOptions.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDatasetDatetimeOptions)),
         metadata={AttrMeta.PROPERTY_NAME: "DatetimeOptions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-datasetparameter.html#cfn-databrew-dataset-datasetparameter-datetimeoptions"""
-    p_Filter: typing.Union['DatasetFilterExpression', dict] = attr.ib(
+    p_Filter: typing.Union['PropDatasetFilterExpression', dict] = attr.ib(
         default=None,
-        converter=DatasetFilterExpression.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DatasetFilterExpression)),
+        converter=PropDatasetFilterExpression.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDatasetFilterExpression)),
         metadata={AttrMeta.PROPERTY_NAME: "Filter"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-datasetparameter.html#cfn-databrew-dataset-datasetparameter-filter"""
 
 @attr.s
-class DatasetFormatOptions(Property):
+class PropDatasetFormatOptions(Property):
     """
     AWS Object Type = "AWS::DataBrew::Dataset.FormatOptions"
 
@@ -751,30 +751,30 @@ class DatasetFormatOptions(Property):
     """
     AWS_OBJECT_TYPE = "AWS::DataBrew::Dataset.FormatOptions"
     
-    p_Csv: typing.Union['DatasetCsvOptions', dict] = attr.ib(
+    p_Csv: typing.Union['PropDatasetCsvOptions', dict] = attr.ib(
         default=None,
-        converter=DatasetCsvOptions.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DatasetCsvOptions)),
+        converter=PropDatasetCsvOptions.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDatasetCsvOptions)),
         metadata={AttrMeta.PROPERTY_NAME: "Csv"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-formatoptions.html#cfn-databrew-dataset-formatoptions-csv"""
-    p_Excel: typing.Union['DatasetExcelOptions', dict] = attr.ib(
+    p_Excel: typing.Union['PropDatasetExcelOptions', dict] = attr.ib(
         default=None,
-        converter=DatasetExcelOptions.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DatasetExcelOptions)),
+        converter=PropDatasetExcelOptions.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDatasetExcelOptions)),
         metadata={AttrMeta.PROPERTY_NAME: "Excel"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-formatoptions.html#cfn-databrew-dataset-formatoptions-excel"""
-    p_Json: typing.Union['DatasetJsonOptions', dict] = attr.ib(
+    p_Json: typing.Union['PropDatasetJsonOptions', dict] = attr.ib(
         default=None,
-        converter=DatasetJsonOptions.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DatasetJsonOptions)),
+        converter=PropDatasetJsonOptions.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDatasetJsonOptions)),
         metadata={AttrMeta.PROPERTY_NAME: "Json"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-formatoptions.html#cfn-databrew-dataset-formatoptions-json"""
 
 @attr.s
-class RecipeRecipeParameters(Property):
+class PropRecipeRecipeParameters(Property):
     """
     AWS Object Type = "AWS::DataBrew::Recipe.RecipeParameters"
 
@@ -1294,10 +1294,10 @@ class RecipeRecipeParameters(Property):
         metadata={AttrMeta.PROPERTY_NAME: "SecondInput"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-secondinput"""
-    p_SecondaryInputs: typing.List[typing.Union['RecipeSecondaryInput', dict]] = attr.ib(
+    p_SecondaryInputs: typing.List[typing.Union['PropRecipeSecondaryInput', dict]] = attr.ib(
         default=None,
-        converter=RecipeSecondaryInput.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(RecipeSecondaryInput), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropRecipeSecondaryInput.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropRecipeSecondaryInput), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "SecondaryInputs"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-secondaryinputs"""
@@ -1495,7 +1495,7 @@ class RecipeRecipeParameters(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-viewframe"""
 
 @attr.s
-class DatasetDataCatalogInputDefinition(Property):
+class PropDatasetDataCatalogInputDefinition(Property):
     """
     AWS Object Type = "AWS::DataBrew::Dataset.DataCatalogInputDefinition"
 
@@ -1528,16 +1528,16 @@ class DatasetDataCatalogInputDefinition(Property):
         metadata={AttrMeta.PROPERTY_NAME: "TableName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-datacataloginputdefinition.html#cfn-databrew-dataset-datacataloginputdefinition-tablename"""
-    p_TempDirectory: typing.Union['DatasetS3Location', dict] = attr.ib(
+    p_TempDirectory: typing.Union['PropDatasetS3Location', dict] = attr.ib(
         default=None,
-        converter=DatasetS3Location.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DatasetS3Location)),
+        converter=PropDatasetS3Location.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDatasetS3Location)),
         metadata={AttrMeta.PROPERTY_NAME: "TempDirectory"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-datacataloginputdefinition.html#cfn-databrew-dataset-datacataloginputdefinition-tempdirectory"""
 
 @attr.s
-class RecipeRecipeStep(Property):
+class PropRecipeRecipeStep(Property):
     """
     AWS Object Type = "AWS::DataBrew::Recipe.RecipeStep"
 
@@ -1550,23 +1550,23 @@ class RecipeRecipeStep(Property):
     """
     AWS_OBJECT_TYPE = "AWS::DataBrew::Recipe.RecipeStep"
     
-    rp_Action: typing.Union['RecipeAction', dict] = attr.ib(
+    rp_Action: typing.Union['PropRecipeAction', dict] = attr.ib(
         default=None,
-        converter=RecipeAction.from_dict,
-        validator=attr.validators.instance_of(RecipeAction),
+        converter=PropRecipeAction.from_dict,
+        validator=attr.validators.instance_of(PropRecipeAction),
         metadata={AttrMeta.PROPERTY_NAME: "Action"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipestep.html#cfn-databrew-recipe-recipestep-action"""
-    p_ConditionExpressions: typing.List[typing.Union['RecipeConditionExpression', dict]] = attr.ib(
+    p_ConditionExpressions: typing.List[typing.Union['PropRecipeConditionExpression', dict]] = attr.ib(
         default=None,
-        converter=RecipeConditionExpression.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(RecipeConditionExpression), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropRecipeConditionExpression.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropRecipeConditionExpression), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "ConditionExpressions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipestep.html#cfn-databrew-recipe-recipestep-conditionexpressions"""
 
 @attr.s
-class DatasetPathParameter(Property):
+class PropDatasetPathParameter(Property):
     """
     AWS Object Type = "AWS::DataBrew::Dataset.PathParameter"
 
@@ -1579,10 +1579,10 @@ class DatasetPathParameter(Property):
     """
     AWS_OBJECT_TYPE = "AWS::DataBrew::Dataset.PathParameter"
     
-    rp_DatasetParameter: typing.Union['DatasetDatasetParameter', dict] = attr.ib(
+    rp_DatasetParameter: typing.Union['PropDatasetDatasetParameter', dict] = attr.ib(
         default=None,
-        converter=DatasetDatasetParameter.from_dict,
-        validator=attr.validators.instance_of(DatasetDatasetParameter),
+        converter=PropDatasetDatasetParameter.from_dict,
+        validator=attr.validators.instance_of(PropDatasetDatasetParameter),
         metadata={AttrMeta.PROPERTY_NAME: "DatasetParameter"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-pathparameter.html#cfn-databrew-dataset-pathparameter-datasetparameter"""
@@ -1594,7 +1594,7 @@ class DatasetPathParameter(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-pathparameter.html#cfn-databrew-dataset-pathparameter-pathparametername"""
 
 @attr.s
-class DatasetPathOptions(Property):
+class PropDatasetPathOptions(Property):
     """
     AWS Object Type = "AWS::DataBrew::Dataset.PathOptions"
 
@@ -1608,30 +1608,30 @@ class DatasetPathOptions(Property):
     """
     AWS_OBJECT_TYPE = "AWS::DataBrew::Dataset.PathOptions"
     
-    p_FilesLimit: typing.Union['DatasetFilesLimit', dict] = attr.ib(
+    p_FilesLimit: typing.Union['PropDatasetFilesLimit', dict] = attr.ib(
         default=None,
-        converter=DatasetFilesLimit.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DatasetFilesLimit)),
+        converter=PropDatasetFilesLimit.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDatasetFilesLimit)),
         metadata={AttrMeta.PROPERTY_NAME: "FilesLimit"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-pathoptions.html#cfn-databrew-dataset-pathoptions-fileslimit"""
-    p_LastModifiedDateCondition: typing.Union['DatasetFilterExpression', dict] = attr.ib(
+    p_LastModifiedDateCondition: typing.Union['PropDatasetFilterExpression', dict] = attr.ib(
         default=None,
-        converter=DatasetFilterExpression.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DatasetFilterExpression)),
+        converter=PropDatasetFilterExpression.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDatasetFilterExpression)),
         metadata={AttrMeta.PROPERTY_NAME: "LastModifiedDateCondition"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-pathoptions.html#cfn-databrew-dataset-pathoptions-lastmodifieddatecondition"""
-    p_Parameters: typing.List[typing.Union['DatasetPathParameter', dict]] = attr.ib(
+    p_Parameters: typing.List[typing.Union['PropDatasetPathParameter', dict]] = attr.ib(
         default=None,
-        converter=DatasetPathParameter.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(DatasetPathParameter), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropDatasetPathParameter.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDatasetPathParameter), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Parameters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-pathoptions.html#cfn-databrew-dataset-pathoptions-parameters"""
 
 @attr.s
-class DatasetInput(Property):
+class PropDatasetInput(Property):
     """
     AWS Object Type = "AWS::DataBrew::Dataset.Input"
 
@@ -1645,24 +1645,24 @@ class DatasetInput(Property):
     """
     AWS_OBJECT_TYPE = "AWS::DataBrew::Dataset.Input"
     
-    p_DataCatalogInputDefinition: typing.Union['DatasetDataCatalogInputDefinition', dict] = attr.ib(
+    p_DataCatalogInputDefinition: typing.Union['PropDatasetDataCatalogInputDefinition', dict] = attr.ib(
         default=None,
-        converter=DatasetDataCatalogInputDefinition.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DatasetDataCatalogInputDefinition)),
+        converter=PropDatasetDataCatalogInputDefinition.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDatasetDataCatalogInputDefinition)),
         metadata={AttrMeta.PROPERTY_NAME: "DataCatalogInputDefinition"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-input.html#cfn-databrew-dataset-input-datacataloginputdefinition"""
-    p_DatabaseInputDefinition: typing.Union['DatasetDatabaseInputDefinition', dict] = attr.ib(
+    p_DatabaseInputDefinition: typing.Union['PropDatasetDatabaseInputDefinition', dict] = attr.ib(
         default=None,
-        converter=DatasetDatabaseInputDefinition.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DatasetDatabaseInputDefinition)),
+        converter=PropDatasetDatabaseInputDefinition.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDatasetDatabaseInputDefinition)),
         metadata={AttrMeta.PROPERTY_NAME: "DatabaseInputDefinition"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-input.html#cfn-databrew-dataset-input-databaseinputdefinition"""
-    p_S3InputDefinition: typing.Union['DatasetS3Location', dict] = attr.ib(
+    p_S3InputDefinition: typing.Union['PropDatasetS3Location', dict] = attr.ib(
         default=None,
-        converter=DatasetS3Location.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DatasetS3Location)),
+        converter=PropDatasetS3Location.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDatasetS3Location)),
         metadata={AttrMeta.PROPERTY_NAME: "S3InputDefinition"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-input.html#cfn-databrew-dataset-input-s3inputdefinition"""
@@ -1689,10 +1689,10 @@ class Dataset(Resource):
     AWS_OBJECT_TYPE = "AWS::DataBrew::Dataset"
 
     
-    rp_Input: typing.Union['DatasetInput', dict] = attr.ib(
+    rp_Input: typing.Union['PropDatasetInput', dict] = attr.ib(
         default=None,
-        converter=DatasetInput.from_dict,
-        validator=attr.validators.instance_of(DatasetInput),
+        converter=PropDatasetInput.from_dict,
+        validator=attr.validators.instance_of(PropDatasetInput),
         metadata={AttrMeta.PROPERTY_NAME: "Input"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-dataset.html#cfn-databrew-dataset-input"""
@@ -1708,17 +1708,17 @@ class Dataset(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Format"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-dataset.html#cfn-databrew-dataset-format"""
-    p_FormatOptions: typing.Union['DatasetFormatOptions', dict] = attr.ib(
+    p_FormatOptions: typing.Union['PropDatasetFormatOptions', dict] = attr.ib(
         default=None,
-        converter=DatasetFormatOptions.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DatasetFormatOptions)),
+        converter=PropDatasetFormatOptions.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDatasetFormatOptions)),
         metadata={AttrMeta.PROPERTY_NAME: "FormatOptions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-dataset.html#cfn-databrew-dataset-formatoptions"""
-    p_PathOptions: typing.Union['DatasetPathOptions', dict] = attr.ib(
+    p_PathOptions: typing.Union['PropDatasetPathOptions', dict] = attr.ib(
         default=None,
-        converter=DatasetPathOptions.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DatasetPathOptions)),
+        converter=PropDatasetPathOptions.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDatasetPathOptions)),
         metadata={AttrMeta.PROPERTY_NAME: "PathOptions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-dataset.html#cfn-databrew-dataset-pathoptions"""
@@ -1755,10 +1755,10 @@ class Recipe(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Name"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-recipe.html#cfn-databrew-recipe-name"""
-    rp_Steps: typing.List[typing.Union['RecipeRecipeStep', dict]] = attr.ib(
+    rp_Steps: typing.List[typing.Union['PropRecipeRecipeStep', dict]] = attr.ib(
         default=None,
-        converter=RecipeRecipeStep.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(RecipeRecipeStep), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropRecipeRecipeStep.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropRecipeRecipeStep), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "Steps"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-recipe.html#cfn-databrew-recipe-steps"""
@@ -1821,10 +1821,10 @@ class Project(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "RoleArn"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-project.html#cfn-databrew-project-rolearn"""
-    p_Sample: typing.Union['ProjectSample', dict] = attr.ib(
+    p_Sample: typing.Union['PropProjectSample', dict] = attr.ib(
         default=None,
-        converter=ProjectSample.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ProjectSample)),
+        converter=PropProjectSample.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropProjectSample)),
         metadata={AttrMeta.PROPERTY_NAME: "Sample"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-project.html#cfn-databrew-project-sample"""
@@ -1903,10 +1903,10 @@ class Job(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "EncryptionMode"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-job.html#cfn-databrew-job-encryptionmode"""
-    p_JobSample: typing.Union['JobJobSample', dict] = attr.ib(
+    p_JobSample: typing.Union['PropJobJobSample', dict] = attr.ib(
         default=None,
-        converter=JobJobSample.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(JobJobSample)),
+        converter=PropJobJobSample.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropJobJobSample)),
         metadata={AttrMeta.PROPERTY_NAME: "JobSample"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-job.html#cfn-databrew-job-jobsample"""
@@ -1928,17 +1928,17 @@ class Job(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "MaxRetries"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-job.html#cfn-databrew-job-maxretries"""
-    p_OutputLocation: typing.Union['JobOutputLocation', dict] = attr.ib(
+    p_OutputLocation: typing.Union['PropJobOutputLocation', dict] = attr.ib(
         default=None,
-        converter=JobOutputLocation.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(JobOutputLocation)),
+        converter=PropJobOutputLocation.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropJobOutputLocation)),
         metadata={AttrMeta.PROPERTY_NAME: "OutputLocation"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-job.html#cfn-databrew-job-outputlocation"""
-    p_Outputs: typing.List[typing.Union['JobOutput', dict]] = attr.ib(
+    p_Outputs: typing.List[typing.Union['PropJobOutput', dict]] = attr.ib(
         default=None,
-        converter=JobOutput.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(JobOutput), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropJobOutput.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropJobOutput), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Outputs"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-job.html#cfn-databrew-job-outputs"""
@@ -1948,10 +1948,10 @@ class Job(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "ProjectName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-job.html#cfn-databrew-job-projectname"""
-    p_Recipe: typing.Union['JobRecipe', dict] = attr.ib(
+    p_Recipe: typing.Union['PropJobRecipe', dict] = attr.ib(
         default=None,
-        converter=JobRecipe.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(JobRecipe)),
+        converter=PropJobRecipe.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropJobRecipe)),
         metadata={AttrMeta.PROPERTY_NAME: "Recipe"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-job.html#cfn-databrew-job-recipe"""

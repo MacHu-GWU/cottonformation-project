@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class ContactContactTargetInfo(Property):
+class PropContactContactTargetInfo(Property):
     """
     AWS Object Type = "AWS::SSMContacts::Contact.ContactTargetInfo"
 
@@ -42,7 +42,7 @@ class ContactContactTargetInfo(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmcontacts-contact-contacttargetinfo.html#cfn-ssmcontacts-contact-contacttargetinfo-isessential"""
 
 @attr.s
-class ContactChannelTargetInfo(Property):
+class PropContactChannelTargetInfo(Property):
     """
     AWS Object Type = "AWS::SSMContacts::Contact.ChannelTargetInfo"
 
@@ -69,7 +69,7 @@ class ContactChannelTargetInfo(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmcontacts-contact-channeltargetinfo.html#cfn-ssmcontacts-contact-channeltargetinfo-retryintervalinminutes"""
 
 @attr.s
-class ContactTargets(Property):
+class PropContactTargets(Property):
     """
     AWS Object Type = "AWS::SSMContacts::Contact.Targets"
 
@@ -82,23 +82,23 @@ class ContactTargets(Property):
     """
     AWS_OBJECT_TYPE = "AWS::SSMContacts::Contact.Targets"
     
-    p_ChannelTargetInfo: typing.Union['ContactChannelTargetInfo', dict] = attr.ib(
+    p_ChannelTargetInfo: typing.Union['PropContactChannelTargetInfo', dict] = attr.ib(
         default=None,
-        converter=ContactChannelTargetInfo.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ContactChannelTargetInfo)),
+        converter=PropContactChannelTargetInfo.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropContactChannelTargetInfo)),
         metadata={AttrMeta.PROPERTY_NAME: "ChannelTargetInfo"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmcontacts-contact-targets.html#cfn-ssmcontacts-contact-targets-channeltargetinfo"""
-    p_ContactTargetInfo: typing.Union['ContactContactTargetInfo', dict] = attr.ib(
+    p_ContactTargetInfo: typing.Union['PropContactContactTargetInfo', dict] = attr.ib(
         default=None,
-        converter=ContactContactTargetInfo.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ContactContactTargetInfo)),
+        converter=PropContactContactTargetInfo.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropContactContactTargetInfo)),
         metadata={AttrMeta.PROPERTY_NAME: "ContactTargetInfo"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmcontacts-contact-targets.html#cfn-ssmcontacts-contact-targets-contacttargetinfo"""
 
 @attr.s
-class ContactStage(Property):
+class PropContactStage(Property):
     """
     AWS Object Type = "AWS::SSMContacts::Contact.Stage"
 
@@ -117,10 +117,10 @@ class ContactStage(Property):
         metadata={AttrMeta.PROPERTY_NAME: "DurationInMinutes"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmcontacts-contact-stage.html#cfn-ssmcontacts-contact-stage-durationinminutes"""
-    p_Targets: typing.List[typing.Union['ContactTargets', dict]] = attr.ib(
+    p_Targets: typing.List[typing.Union['PropContactTargets', dict]] = attr.ib(
         default=None,
-        converter=ContactTargets.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ContactTargets), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropContactTargets.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropContactTargets), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Targets"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmcontacts-contact-stage.html#cfn-ssmcontacts-contact-stage-targets"""
@@ -157,10 +157,10 @@ class Contact(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "DisplayName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssmcontacts-contact.html#cfn-ssmcontacts-contact-displayname"""
-    rp_Plan: typing.List[typing.Union['ContactStage', dict]] = attr.ib(
+    rp_Plan: typing.List[typing.Union['PropContactStage', dict]] = attr.ib(
         default=None,
-        converter=ContactStage.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ContactStage), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropContactStage.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropContactStage), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "Plan"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssmcontacts-contact.html#cfn-ssmcontacts-contact-plan"""

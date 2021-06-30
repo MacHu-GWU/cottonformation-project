@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class FlowTemplateDefinitionDocument(Property):
+class PropFlowTemplateDefinitionDocument(Property):
     """
     AWS Object Type = "AWS::IoTThingsGraph::FlowTemplate.DefinitionDocument"
 
@@ -59,10 +59,10 @@ class FlowTemplate(Resource):
     AWS_OBJECT_TYPE = "AWS::IoTThingsGraph::FlowTemplate"
 
     
-    rp_Definition: typing.Union['FlowTemplateDefinitionDocument', dict] = attr.ib(
+    rp_Definition: typing.Union['PropFlowTemplateDefinitionDocument', dict] = attr.ib(
         default=None,
-        converter=FlowTemplateDefinitionDocument.from_dict,
-        validator=attr.validators.instance_of(FlowTemplateDefinitionDocument),
+        converter=PropFlowTemplateDefinitionDocument.from_dict,
+        validator=attr.validators.instance_of(PropFlowTemplateDefinitionDocument),
         metadata={AttrMeta.PROPERTY_NAME: "Definition"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotthingsgraph-flowtemplate.html#cfn-iotthingsgraph-flowtemplate-definition"""

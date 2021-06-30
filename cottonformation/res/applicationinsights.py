@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class ApplicationLogPattern(Property):
+class PropApplicationLogPattern(Property):
     """
     AWS Object Type = "AWS::ApplicationInsights::Application.LogPattern"
 
@@ -49,7 +49,7 @@ class ApplicationLogPattern(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-logpattern.html#cfn-applicationinsights-application-logpattern-rank"""
 
 @attr.s
-class ApplicationLogPatternSet(Property):
+class PropApplicationLogPatternSet(Property):
     """
     AWS Object Type = "AWS::ApplicationInsights::Application.LogPatternSet"
 
@@ -62,10 +62,10 @@ class ApplicationLogPatternSet(Property):
     """
     AWS_OBJECT_TYPE = "AWS::ApplicationInsights::Application.LogPatternSet"
     
-    rp_LogPatterns: typing.List[typing.Union['ApplicationLogPattern', dict]] = attr.ib(
+    rp_LogPatterns: typing.List[typing.Union['PropApplicationLogPattern', dict]] = attr.ib(
         default=None,
-        converter=ApplicationLogPattern.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ApplicationLogPattern), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropApplicationLogPattern.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropApplicationLogPattern), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "LogPatterns"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-logpatternset.html#cfn-applicationinsights-application-logpatternset-logpatterns"""
@@ -77,7 +77,7 @@ class ApplicationLogPatternSet(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-logpatternset.html#cfn-applicationinsights-application-logpatternset-patternsetname"""
 
 @attr.s
-class ApplicationAlarm(Property):
+class PropApplicationAlarm(Property):
     """
     AWS Object Type = "AWS::ApplicationInsights::Application.Alarm"
 
@@ -104,7 +104,7 @@ class ApplicationAlarm(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-alarm.html#cfn-applicationinsights-application-alarm-severity"""
 
 @attr.s
-class ApplicationWindowsEvent(Property):
+class PropApplicationWindowsEvent(Property):
     """
     AWS Object Type = "AWS::ApplicationInsights::Application.WindowsEvent"
 
@@ -145,7 +145,7 @@ class ApplicationWindowsEvent(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-windowsevent.html#cfn-applicationinsights-application-windowsevent-patternset"""
 
 @attr.s
-class ApplicationCustomComponent(Property):
+class PropApplicationCustomComponent(Property):
     """
     AWS Object Type = "AWS::ApplicationInsights::Application.CustomComponent"
 
@@ -172,7 +172,7 @@ class ApplicationCustomComponent(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-customcomponent.html#cfn-applicationinsights-application-customcomponent-resourcelist"""
 
 @attr.s
-class ApplicationJMXPrometheusExporter(Property):
+class PropApplicationJMXPrometheusExporter(Property):
     """
     AWS Object Type = "AWS::ApplicationInsights::Application.JMXPrometheusExporter"
 
@@ -206,7 +206,7 @@ class ApplicationJMXPrometheusExporter(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-jmxprometheusexporter.html#cfn-applicationinsights-application-jmxprometheusexporter-prometheusport"""
 
 @attr.s
-class ApplicationAlarmMetric(Property):
+class PropApplicationAlarmMetric(Property):
     """
     AWS Object Type = "AWS::ApplicationInsights::Application.AlarmMetric"
 
@@ -226,7 +226,7 @@ class ApplicationAlarmMetric(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-alarmmetric.html#cfn-applicationinsights-application-alarmmetric-alarmmetricname"""
 
 @attr.s
-class ApplicationLog(Property):
+class PropApplicationLog(Property):
     """
     AWS Object Type = "AWS::ApplicationInsights::Application.Log"
 
@@ -274,7 +274,7 @@ class ApplicationLog(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-log.html#cfn-applicationinsights-application-log-patternset"""
 
 @attr.s
-class ApplicationSubComponentConfigurationDetails(Property):
+class PropApplicationSubComponentConfigurationDetails(Property):
     """
     AWS Object Type = "AWS::ApplicationInsights::Application.SubComponentConfigurationDetails"
 
@@ -288,30 +288,30 @@ class ApplicationSubComponentConfigurationDetails(Property):
     """
     AWS_OBJECT_TYPE = "AWS::ApplicationInsights::Application.SubComponentConfigurationDetails"
     
-    p_AlarmMetrics: typing.List[typing.Union['ApplicationAlarmMetric', dict]] = attr.ib(
+    p_AlarmMetrics: typing.List[typing.Union['PropApplicationAlarmMetric', dict]] = attr.ib(
         default=None,
-        converter=ApplicationAlarmMetric.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ApplicationAlarmMetric), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropApplicationAlarmMetric.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropApplicationAlarmMetric), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "AlarmMetrics"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-subcomponentconfigurationdetails.html#cfn-applicationinsights-application-subcomponentconfigurationdetails-alarmmetrics"""
-    p_Logs: typing.List[typing.Union['ApplicationLog', dict]] = attr.ib(
+    p_Logs: typing.List[typing.Union['PropApplicationLog', dict]] = attr.ib(
         default=None,
-        converter=ApplicationLog.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ApplicationLog), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropApplicationLog.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropApplicationLog), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Logs"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-subcomponentconfigurationdetails.html#cfn-applicationinsights-application-subcomponentconfigurationdetails-logs"""
-    p_WindowsEvents: typing.List[typing.Union['ApplicationWindowsEvent', dict]] = attr.ib(
+    p_WindowsEvents: typing.List[typing.Union['PropApplicationWindowsEvent', dict]] = attr.ib(
         default=None,
-        converter=ApplicationWindowsEvent.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ApplicationWindowsEvent), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropApplicationWindowsEvent.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropApplicationWindowsEvent), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "WindowsEvents"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-subcomponentconfigurationdetails.html#cfn-applicationinsights-application-subcomponentconfigurationdetails-windowsevents"""
 
 @attr.s
-class ApplicationConfigurationDetails(Property):
+class PropApplicationConfigurationDetails(Property):
     """
     AWS Object Type = "AWS::ApplicationInsights::Application.ConfigurationDetails"
 
@@ -327,44 +327,44 @@ class ApplicationConfigurationDetails(Property):
     """
     AWS_OBJECT_TYPE = "AWS::ApplicationInsights::Application.ConfigurationDetails"
     
-    p_AlarmMetrics: typing.List[typing.Union['ApplicationAlarmMetric', dict]] = attr.ib(
+    p_AlarmMetrics: typing.List[typing.Union['PropApplicationAlarmMetric', dict]] = attr.ib(
         default=None,
-        converter=ApplicationAlarmMetric.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ApplicationAlarmMetric), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropApplicationAlarmMetric.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropApplicationAlarmMetric), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "AlarmMetrics"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-configurationdetails.html#cfn-applicationinsights-application-configurationdetails-alarmmetrics"""
-    p_Alarms: typing.List[typing.Union['ApplicationAlarm', dict]] = attr.ib(
+    p_Alarms: typing.List[typing.Union['PropApplicationAlarm', dict]] = attr.ib(
         default=None,
-        converter=ApplicationAlarm.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ApplicationAlarm), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropApplicationAlarm.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropApplicationAlarm), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Alarms"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-configurationdetails.html#cfn-applicationinsights-application-configurationdetails-alarms"""
-    p_JMXPrometheusExporter: typing.Union['ApplicationJMXPrometheusExporter', dict] = attr.ib(
+    p_JMXPrometheusExporter: typing.Union['PropApplicationJMXPrometheusExporter', dict] = attr.ib(
         default=None,
-        converter=ApplicationJMXPrometheusExporter.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ApplicationJMXPrometheusExporter)),
+        converter=PropApplicationJMXPrometheusExporter.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropApplicationJMXPrometheusExporter)),
         metadata={AttrMeta.PROPERTY_NAME: "JMXPrometheusExporter"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-configurationdetails.html#cfn-applicationinsights-application-configurationdetails-jmxprometheusexporter"""
-    p_Logs: typing.List[typing.Union['ApplicationLog', dict]] = attr.ib(
+    p_Logs: typing.List[typing.Union['PropApplicationLog', dict]] = attr.ib(
         default=None,
-        converter=ApplicationLog.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ApplicationLog), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropApplicationLog.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropApplicationLog), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Logs"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-configurationdetails.html#cfn-applicationinsights-application-configurationdetails-logs"""
-    p_WindowsEvents: typing.List[typing.Union['ApplicationWindowsEvent', dict]] = attr.ib(
+    p_WindowsEvents: typing.List[typing.Union['PropApplicationWindowsEvent', dict]] = attr.ib(
         default=None,
-        converter=ApplicationWindowsEvent.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ApplicationWindowsEvent), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropApplicationWindowsEvent.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropApplicationWindowsEvent), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "WindowsEvents"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-configurationdetails.html#cfn-applicationinsights-application-configurationdetails-windowsevents"""
 
 @attr.s
-class ApplicationSubComponentTypeConfiguration(Property):
+class PropApplicationSubComponentTypeConfiguration(Property):
     """
     AWS Object Type = "AWS::ApplicationInsights::Application.SubComponentTypeConfiguration"
 
@@ -377,10 +377,10 @@ class ApplicationSubComponentTypeConfiguration(Property):
     """
     AWS_OBJECT_TYPE = "AWS::ApplicationInsights::Application.SubComponentTypeConfiguration"
     
-    rp_SubComponentConfigurationDetails: typing.Union['ApplicationSubComponentConfigurationDetails', dict] = attr.ib(
+    rp_SubComponentConfigurationDetails: typing.Union['PropApplicationSubComponentConfigurationDetails', dict] = attr.ib(
         default=None,
-        converter=ApplicationSubComponentConfigurationDetails.from_dict,
-        validator=attr.validators.instance_of(ApplicationSubComponentConfigurationDetails),
+        converter=PropApplicationSubComponentConfigurationDetails.from_dict,
+        validator=attr.validators.instance_of(PropApplicationSubComponentConfigurationDetails),
         metadata={AttrMeta.PROPERTY_NAME: "SubComponentConfigurationDetails"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-subcomponenttypeconfiguration.html#cfn-applicationinsights-application-subcomponenttypeconfiguration-subcomponentconfigurationdetails"""
@@ -392,7 +392,7 @@ class ApplicationSubComponentTypeConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-subcomponenttypeconfiguration.html#cfn-applicationinsights-application-subcomponenttypeconfiguration-subcomponenttype"""
 
 @attr.s
-class ApplicationComponentConfiguration(Property):
+class PropApplicationComponentConfiguration(Property):
     """
     AWS Object Type = "AWS::ApplicationInsights::Application.ComponentConfiguration"
 
@@ -405,23 +405,23 @@ class ApplicationComponentConfiguration(Property):
     """
     AWS_OBJECT_TYPE = "AWS::ApplicationInsights::Application.ComponentConfiguration"
     
-    p_ConfigurationDetails: typing.Union['ApplicationConfigurationDetails', dict] = attr.ib(
+    p_ConfigurationDetails: typing.Union['PropApplicationConfigurationDetails', dict] = attr.ib(
         default=None,
-        converter=ApplicationConfigurationDetails.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ApplicationConfigurationDetails)),
+        converter=PropApplicationConfigurationDetails.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropApplicationConfigurationDetails)),
         metadata={AttrMeta.PROPERTY_NAME: "ConfigurationDetails"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-componentconfiguration.html#cfn-applicationinsights-application-componentconfiguration-configurationdetails"""
-    p_SubComponentTypeConfigurations: typing.List[typing.Union['ApplicationSubComponentTypeConfiguration', dict]] = attr.ib(
+    p_SubComponentTypeConfigurations: typing.List[typing.Union['PropApplicationSubComponentTypeConfiguration', dict]] = attr.ib(
         default=None,
-        converter=ApplicationSubComponentTypeConfiguration.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ApplicationSubComponentTypeConfiguration), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropApplicationSubComponentTypeConfiguration.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropApplicationSubComponentTypeConfiguration), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "SubComponentTypeConfigurations"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-componentconfiguration.html#cfn-applicationinsights-application-componentconfiguration-subcomponenttypeconfigurations"""
 
 @attr.s
-class ApplicationComponentMonitoringSetting(Property):
+class PropApplicationComponentMonitoringSetting(Property):
     """
     AWS Object Type = "AWS::ApplicationInsights::Application.ComponentMonitoringSetting"
 
@@ -462,17 +462,17 @@ class ApplicationComponentMonitoringSetting(Property):
         metadata={AttrMeta.PROPERTY_NAME: "ComponentName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-componentmonitoringsetting.html#cfn-applicationinsights-application-componentmonitoringsetting-componentname"""
-    p_CustomComponentConfiguration: typing.Union['ApplicationComponentConfiguration', dict] = attr.ib(
+    p_CustomComponentConfiguration: typing.Union['PropApplicationComponentConfiguration', dict] = attr.ib(
         default=None,
-        converter=ApplicationComponentConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ApplicationComponentConfiguration)),
+        converter=PropApplicationComponentConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropApplicationComponentConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "CustomComponentConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-componentmonitoringsetting.html#cfn-applicationinsights-application-componentmonitoringsetting-customcomponentconfiguration"""
-    p_DefaultOverwriteComponentConfiguration: typing.Union['ApplicationComponentConfiguration', dict] = attr.ib(
+    p_DefaultOverwriteComponentConfiguration: typing.Union['PropApplicationComponentConfiguration', dict] = attr.ib(
         default=None,
-        converter=ApplicationComponentConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ApplicationComponentConfiguration)),
+        converter=PropApplicationComponentConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropApplicationComponentConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "DefaultOverwriteComponentConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-componentmonitoringsetting.html#cfn-applicationinsights-application-componentmonitoringsetting-defaultoverwritecomponentconfiguration"""
@@ -520,24 +520,24 @@ class Application(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "CWEMonitorEnabled"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationinsights-application.html#cfn-applicationinsights-application-cwemonitorenabled"""
-    p_ComponentMonitoringSettings: typing.List[typing.Union['ApplicationComponentMonitoringSetting', dict]] = attr.ib(
+    p_ComponentMonitoringSettings: typing.List[typing.Union['PropApplicationComponentMonitoringSetting', dict]] = attr.ib(
         default=None,
-        converter=ApplicationComponentMonitoringSetting.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ApplicationComponentMonitoringSetting), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropApplicationComponentMonitoringSetting.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropApplicationComponentMonitoringSetting), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "ComponentMonitoringSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationinsights-application.html#cfn-applicationinsights-application-componentmonitoringsettings"""
-    p_CustomComponents: typing.List[typing.Union['ApplicationCustomComponent', dict]] = attr.ib(
+    p_CustomComponents: typing.List[typing.Union['PropApplicationCustomComponent', dict]] = attr.ib(
         default=None,
-        converter=ApplicationCustomComponent.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ApplicationCustomComponent), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropApplicationCustomComponent.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropApplicationCustomComponent), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "CustomComponents"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationinsights-application.html#cfn-applicationinsights-application-customcomponents"""
-    p_LogPatternSets: typing.List[typing.Union['ApplicationLogPatternSet', dict]] = attr.ib(
+    p_LogPatternSets: typing.List[typing.Union['PropApplicationLogPatternSet', dict]] = attr.ib(
         default=None,
-        converter=ApplicationLogPatternSet.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ApplicationLogPatternSet), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropApplicationLogPatternSet.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropApplicationLogPatternSet), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "LogPatternSets"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationinsights-application.html#cfn-applicationinsights-application-logpatternsets"""

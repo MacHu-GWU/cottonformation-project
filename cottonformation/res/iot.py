@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class TopicRuleAssetPropertyVariant(Property):
+class PropTopicRuleAssetPropertyVariant(Property):
     """
     AWS Object Type = "AWS::IoT::TopicRule.AssetPropertyVariant"
 
@@ -56,7 +56,7 @@ class TopicRuleAssetPropertyVariant(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-assetpropertyvariant.html#cfn-iot-topicrule-assetpropertyvariant-stringvalue"""
 
 @attr.s
-class TopicRuleSigV4Authorization(Property):
+class PropTopicRuleSigV4Authorization(Property):
     """
     AWS Object Type = "AWS::IoT::TopicRule.SigV4Authorization"
 
@@ -90,7 +90,7 @@ class TopicRuleSigV4Authorization(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-sigv4authorization.html#cfn-iot-topicrule-sigv4authorization-signingregion"""
 
 @attr.s
-class TopicRuleSqsAction(Property):
+class PropTopicRuleSqsAction(Property):
     """
     AWS Object Type = "AWS::IoT::TopicRule.SqsAction"
 
@@ -124,7 +124,7 @@ class TopicRuleSqsAction(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-sqsaction.html#cfn-iot-topicrule-sqsaction-usebase64"""
 
 @attr.s
-class TopicRulePutItemInput(Property):
+class PropTopicRulePutItemInput(Property):
     """
     AWS Object Type = "AWS::IoT::TopicRule.PutItemInput"
 
@@ -144,7 +144,7 @@ class TopicRulePutItemInput(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-putiteminput.html#cfn-iot-topicrule-putiteminput-tablename"""
 
 @attr.s
-class MitigationActionAddThingsToThingGroupParams(Property):
+class PropMitigationActionAddThingsToThingGroupParams(Property):
     """
     AWS Object Type = "AWS::IoT::MitigationAction.AddThingsToThingGroupParams"
 
@@ -171,7 +171,7 @@ class MitigationActionAddThingsToThingGroupParams(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-mitigationaction-addthingstothinggroupparams.html#cfn-iot-mitigationaction-addthingstothinggroupparams-overridedynamicgroups"""
 
 @attr.s
-class TopicRuleSnsAction(Property):
+class PropTopicRuleSnsAction(Property):
     """
     AWS Object Type = "AWS::IoT::TopicRule.SnsAction"
 
@@ -205,7 +205,7 @@ class TopicRuleSnsAction(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-snsaction.html#cfn-iot-topicrule-snsaction-messageformat"""
 
 @attr.s
-class TopicRuleDestinationVpcDestinationProperties(Property):
+class PropTopicRuleDestinationVpcDestinationProperties(Property):
     """
     AWS Object Type = "AWS::IoT::TopicRuleDestination.VpcDestinationProperties"
 
@@ -246,7 +246,7 @@ class TopicRuleDestinationVpcDestinationProperties(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicruledestination-vpcdestinationproperties.html#cfn-iot-topicruledestination-vpcdestinationproperties-vpcid"""
 
 @attr.s
-class MitigationActionUpdateCACertificateParams(Property):
+class PropMitigationActionUpdateCACertificateParams(Property):
     """
     AWS Object Type = "AWS::IoT::MitigationAction.UpdateCACertificateParams"
 
@@ -266,7 +266,7 @@ class MitigationActionUpdateCACertificateParams(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-mitigationaction-updatecacertificateparams.html#cfn-iot-mitigationaction-updatecacertificateparams-action"""
 
 @attr.s
-class AccountAuditConfigurationAuditCheckConfiguration(Property):
+class PropAccountAuditConfigurationAuditCheckConfiguration(Property):
     """
     AWS Object Type = "AWS::IoT::AccountAuditConfiguration.AuditCheckConfiguration"
 
@@ -286,7 +286,7 @@ class AccountAuditConfigurationAuditCheckConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-accountauditconfiguration-auditcheckconfiguration.html#cfn-iot-accountauditconfiguration-auditcheckconfiguration-enabled"""
 
 @attr.s
-class TopicRuleLambdaAction(Property):
+class PropTopicRuleLambdaAction(Property):
     """
     AWS Object Type = "AWS::IoT::TopicRule.LambdaAction"
 
@@ -306,7 +306,7 @@ class TopicRuleLambdaAction(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-lambdaaction.html#cfn-iot-topicrule-lambdaaction-functionarn"""
 
 @attr.s
-class SecurityProfileMachineLearningDetectionConfig(Property):
+class PropSecurityProfileMachineLearningDetectionConfig(Property):
     """
     AWS Object Type = "AWS::IoT::SecurityProfile.MachineLearningDetectionConfig"
 
@@ -326,7 +326,7 @@ class SecurityProfileMachineLearningDetectionConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-securityprofile-machinelearningdetectionconfig.html#cfn-iot-securityprofile-machinelearningdetectionconfig-confidencelevel"""
 
 @attr.s
-class TopicRuleDynamoDBAction(Property):
+class PropTopicRuleDynamoDBAction(Property):
     """
     AWS Object Type = "AWS::IoT::TopicRule.DynamoDBAction"
 
@@ -402,7 +402,7 @@ class TopicRuleDynamoDBAction(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-dynamodbaction.html#cfn-iot-topicrule-dynamodbaction-rangekeyvalue"""
 
 @attr.s
-class SecurityProfileMetricDimension(Property):
+class PropSecurityProfileMetricDimension(Property):
     """
     AWS Object Type = "AWS::IoT::SecurityProfile.MetricDimension"
 
@@ -429,7 +429,7 @@ class SecurityProfileMetricDimension(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-securityprofile-metricdimension.html#cfn-iot-securityprofile-metricdimension-operator"""
 
 @attr.s
-class SecurityProfileMetricValue(Property):
+class PropSecurityProfileMetricValue(Property):
     """
     AWS Object Type = "AWS::IoT::SecurityProfile.MetricValue"
 
@@ -484,7 +484,7 @@ class SecurityProfileMetricValue(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-securityprofile-metricvalue.html#cfn-iot-securityprofile-metricvalue-strings"""
 
 @attr.s
-class TopicRuleIotAnalyticsAction(Property):
+class PropTopicRuleIotAnalyticsAction(Property):
     """
     AWS Object Type = "AWS::IoT::TopicRule.IotAnalyticsAction"
 
@@ -518,7 +518,7 @@ class TopicRuleIotAnalyticsAction(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-iotanalyticsaction.html#cfn-iot-topicrule-iotanalyticsaction-batchmode"""
 
 @attr.s
-class TopicRuleIotEventsAction(Property):
+class PropTopicRuleIotEventsAction(Property):
     """
     AWS Object Type = "AWS::IoT::TopicRule.IotEventsAction"
 
@@ -559,7 +559,7 @@ class TopicRuleIotEventsAction(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-ioteventsaction.html#cfn-iot-topicrule-ioteventsaction-messageid"""
 
 @attr.s
-class TopicRuleKafkaAction(Property):
+class PropTopicRuleKafkaAction(Property):
     """
     AWS Object Type = "AWS::IoT::TopicRule.KafkaAction"
 
@@ -607,7 +607,7 @@ class TopicRuleKafkaAction(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-kafkaaction.html#cfn-iot-topicrule-kafkaaction-partition"""
 
 @attr.s
-class SecurityProfileAlertTarget(Property):
+class PropSecurityProfileAlertTarget(Property):
     """
     AWS Object Type = "AWS::IoT::SecurityProfile.AlertTarget"
 
@@ -634,7 +634,7 @@ class SecurityProfileAlertTarget(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-securityprofile-alerttarget.html#cfn-iot-securityprofile-alerttarget-rolearn"""
 
 @attr.s
-class MitigationActionUpdateDeviceCertificateParams(Property):
+class PropMitigationActionUpdateDeviceCertificateParams(Property):
     """
     AWS Object Type = "AWS::IoT::MitigationAction.UpdateDeviceCertificateParams"
 
@@ -654,7 +654,7 @@ class MitigationActionUpdateDeviceCertificateParams(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-mitigationaction-updatedevicecertificateparams.html#cfn-iot-mitigationaction-updatedevicecertificateparams-action"""
 
 @attr.s
-class ProvisioningTemplateProvisioningHook(Property):
+class PropProvisioningTemplateProvisioningHook(Property):
     """
     AWS Object Type = "AWS::IoT::ProvisioningTemplate.ProvisioningHook"
 
@@ -681,7 +681,7 @@ class ProvisioningTemplateProvisioningHook(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-provisioningtemplate-provisioninghook.html#cfn-iot-provisioningtemplate-provisioninghook-targetarn"""
 
 @attr.s
-class TopicRuleDynamoDBv2Action(Property):
+class PropTopicRuleDynamoDBv2Action(Property):
     """
     AWS Object Type = "AWS::IoT::TopicRule.DynamoDBv2Action"
 
@@ -694,10 +694,10 @@ class TopicRuleDynamoDBv2Action(Property):
     """
     AWS_OBJECT_TYPE = "AWS::IoT::TopicRule.DynamoDBv2Action"
     
-    p_PutItem: typing.Union['TopicRulePutItemInput', dict] = attr.ib(
+    p_PutItem: typing.Union['PropTopicRulePutItemInput', dict] = attr.ib(
         default=None,
-        converter=TopicRulePutItemInput.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(TopicRulePutItemInput)),
+        converter=PropTopicRulePutItemInput.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropTopicRulePutItemInput)),
         metadata={AttrMeta.PROPERTY_NAME: "PutItem"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-dynamodbv2action.html#cfn-iot-topicrule-dynamodbv2action-putitem"""
@@ -709,7 +709,7 @@ class TopicRuleDynamoDBv2Action(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-dynamodbv2action.html#cfn-iot-topicrule-dynamodbv2action-rolearn"""
 
 @attr.s
-class ThingAttributePayload(Property):
+class PropThingAttributePayload(Property):
     """
     AWS Object Type = "AWS::IoT::Thing.AttributePayload"
 
@@ -729,7 +729,7 @@ class ThingAttributePayload(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-thing-attributepayload.html#cfn-iot-thing-attributepayload-attributes"""
 
 @attr.s
-class TopicRuleCloudwatchMetricAction(Property):
+class PropTopicRuleCloudwatchMetricAction(Property):
     """
     AWS Object Type = "AWS::IoT::TopicRule.CloudwatchMetricAction"
 
@@ -784,7 +784,7 @@ class TopicRuleCloudwatchMetricAction(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-cloudwatchmetricaction.html#cfn-iot-topicrule-cloudwatchmetricaction-metrictimestamp"""
 
 @attr.s
-class TopicRuleS3Action(Property):
+class PropTopicRuleS3Action(Property):
     """
     AWS Object Type = "AWS::IoT::TopicRule.S3Action"
 
@@ -825,7 +825,7 @@ class TopicRuleS3Action(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-s3action.html#cfn-iot-topicrule-s3action-cannedacl"""
 
 @attr.s
-class TopicRuleFirehoseAction(Property):
+class PropTopicRuleFirehoseAction(Property):
     """
     AWS Object Type = "AWS::IoT::TopicRule.FirehoseAction"
 
@@ -866,7 +866,7 @@ class TopicRuleFirehoseAction(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-firehoseaction.html#cfn-iot-topicrule-firehoseaction-separator"""
 
 @attr.s
-class TopicRuleDestinationHttpUrlDestinationSummary(Property):
+class PropTopicRuleDestinationHttpUrlDestinationSummary(Property):
     """
     AWS Object Type = "AWS::IoT::TopicRuleDestination.HttpUrlDestinationSummary"
 
@@ -886,7 +886,7 @@ class TopicRuleDestinationHttpUrlDestinationSummary(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicruledestination-httpurldestinationsummary.html#cfn-iot-topicruledestination-httpurldestinationsummary-confirmationurl"""
 
 @attr.s
-class TopicRuleAssetPropertyTimestamp(Property):
+class PropTopicRuleAssetPropertyTimestamp(Property):
     """
     AWS Object Type = "AWS::IoT::TopicRule.AssetPropertyTimestamp"
 
@@ -913,7 +913,7 @@ class TopicRuleAssetPropertyTimestamp(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-assetpropertytimestamp.html#cfn-iot-topicrule-assetpropertytimestamp-offsetinnanos"""
 
 @attr.s
-class TopicRuleAssetPropertyValue(Property):
+class PropTopicRuleAssetPropertyValue(Property):
     """
     AWS Object Type = "AWS::IoT::TopicRule.AssetPropertyValue"
 
@@ -927,17 +927,17 @@ class TopicRuleAssetPropertyValue(Property):
     """
     AWS_OBJECT_TYPE = "AWS::IoT::TopicRule.AssetPropertyValue"
     
-    rp_Timestamp: typing.Union['TopicRuleAssetPropertyTimestamp', dict] = attr.ib(
+    rp_Timestamp: typing.Union['PropTopicRuleAssetPropertyTimestamp', dict] = attr.ib(
         default=None,
-        converter=TopicRuleAssetPropertyTimestamp.from_dict,
-        validator=attr.validators.instance_of(TopicRuleAssetPropertyTimestamp),
+        converter=PropTopicRuleAssetPropertyTimestamp.from_dict,
+        validator=attr.validators.instance_of(PropTopicRuleAssetPropertyTimestamp),
         metadata={AttrMeta.PROPERTY_NAME: "Timestamp"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-assetpropertyvalue.html#cfn-iot-topicrule-assetpropertyvalue-timestamp"""
-    rp_Value: typing.Union['TopicRuleAssetPropertyVariant', dict] = attr.ib(
+    rp_Value: typing.Union['PropTopicRuleAssetPropertyVariant', dict] = attr.ib(
         default=None,
-        converter=TopicRuleAssetPropertyVariant.from_dict,
-        validator=attr.validators.instance_of(TopicRuleAssetPropertyVariant),
+        converter=PropTopicRuleAssetPropertyVariant.from_dict,
+        validator=attr.validators.instance_of(PropTopicRuleAssetPropertyVariant),
         metadata={AttrMeta.PROPERTY_NAME: "Value"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-assetpropertyvalue.html#cfn-iot-topicrule-assetpropertyvalue-value"""
@@ -949,7 +949,7 @@ class TopicRuleAssetPropertyValue(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-assetpropertyvalue.html#cfn-iot-topicrule-assetpropertyvalue-quality"""
 
 @attr.s
-class TopicRuleElasticsearchAction(Property):
+class PropTopicRuleElasticsearchAction(Property):
     """
     AWS Object Type = "AWS::IoT::TopicRule.ElasticsearchAction"
 
@@ -997,7 +997,7 @@ class TopicRuleElasticsearchAction(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-elasticsearchaction.html#cfn-iot-topicrule-elasticsearchaction-type"""
 
 @attr.s
-class DomainConfigurationAuthorizerConfig(Property):
+class PropDomainConfigurationAuthorizerConfig(Property):
     """
     AWS Object Type = "AWS::IoT::DomainConfiguration.AuthorizerConfig"
 
@@ -1024,7 +1024,7 @@ class DomainConfigurationAuthorizerConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-domainconfiguration-authorizerconfig.html#cfn-iot-domainconfiguration-authorizerconfig-defaultauthorizername"""
 
 @attr.s
-class TopicRuleKinesisAction(Property):
+class PropTopicRuleKinesisAction(Property):
     """
     AWS Object Type = "AWS::IoT::TopicRule.KinesisAction"
 
@@ -1058,7 +1058,7 @@ class TopicRuleKinesisAction(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-kinesisaction.html#cfn-iot-topicrule-kinesisaction-partitionkey"""
 
 @attr.s
-class MitigationActionReplaceDefaultPolicyVersionParams(Property):
+class PropMitigationActionReplaceDefaultPolicyVersionParams(Property):
     """
     AWS Object Type = "AWS::IoT::MitigationAction.ReplaceDefaultPolicyVersionParams"
 
@@ -1078,7 +1078,7 @@ class MitigationActionReplaceDefaultPolicyVersionParams(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-mitigationaction-replacedefaultpolicyversionparams.html#cfn-iot-mitigationaction-replacedefaultpolicyversionparams-templatename"""
 
 @attr.s
-class TopicRuleHttpAuthorization(Property):
+class PropTopicRuleHttpAuthorization(Property):
     """
     AWS Object Type = "AWS::IoT::TopicRule.HttpAuthorization"
 
@@ -1090,16 +1090,16 @@ class TopicRuleHttpAuthorization(Property):
     """
     AWS_OBJECT_TYPE = "AWS::IoT::TopicRule.HttpAuthorization"
     
-    p_Sigv4: typing.Union['TopicRuleSigV4Authorization', dict] = attr.ib(
+    p_Sigv4: typing.Union['PropTopicRuleSigV4Authorization', dict] = attr.ib(
         default=None,
-        converter=TopicRuleSigV4Authorization.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(TopicRuleSigV4Authorization)),
+        converter=PropTopicRuleSigV4Authorization.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropTopicRuleSigV4Authorization)),
         metadata={AttrMeta.PROPERTY_NAME: "Sigv4"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-httpauthorization.html#cfn-iot-topicrule-httpauthorization-sigv4"""
 
 @attr.s
-class TopicRuleHttpActionHeader(Property):
+class PropTopicRuleHttpActionHeader(Property):
     """
     AWS Object Type = "AWS::IoT::TopicRule.HttpActionHeader"
 
@@ -1126,7 +1126,7 @@ class TopicRuleHttpActionHeader(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-httpactionheader.html#cfn-iot-topicrule-httpactionheader-value"""
 
 @attr.s
-class TopicRuleRepublishAction(Property):
+class PropTopicRuleRepublishAction(Property):
     """
     AWS Object Type = "AWS::IoT::TopicRule.RepublishAction"
 
@@ -1160,7 +1160,7 @@ class TopicRuleRepublishAction(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-republishaction.html#cfn-iot-topicrule-republishaction-qos"""
 
 @attr.s
-class AccountAuditConfigurationAuditNotificationTarget(Property):
+class PropAccountAuditConfigurationAuditNotificationTarget(Property):
     """
     AWS Object Type = "AWS::IoT::AccountAuditConfiguration.AuditNotificationTarget"
 
@@ -1194,7 +1194,7 @@ class AccountAuditConfigurationAuditNotificationTarget(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-accountauditconfiguration-auditnotificationtarget.html#cfn-iot-accountauditconfiguration-auditnotificationtarget-targetarn"""
 
 @attr.s
-class MitigationActionEnableIoTLoggingParams(Property):
+class PropMitigationActionEnableIoTLoggingParams(Property):
     """
     AWS Object Type = "AWS::IoT::MitigationAction.EnableIoTLoggingParams"
 
@@ -1221,7 +1221,7 @@ class MitigationActionEnableIoTLoggingParams(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-mitigationaction-enableiotloggingparams.html#cfn-iot-mitigationaction-enableiotloggingparams-rolearnforlogging"""
 
 @attr.s
-class TopicRuleStepFunctionsAction(Property):
+class PropTopicRuleStepFunctionsAction(Property):
     """
     AWS Object Type = "AWS::IoT::TopicRule.StepFunctionsAction"
 
@@ -1255,7 +1255,7 @@ class TopicRuleStepFunctionsAction(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-stepfunctionsaction.html#cfn-iot-topicrule-stepfunctionsaction-executionnameprefix"""
 
 @attr.s
-class AccountAuditConfigurationAuditCheckConfigurations(Property):
+class PropAccountAuditConfigurationAuditCheckConfigurations(Property):
     """
     AWS Object Type = "AWS::IoT::AccountAuditConfiguration.AuditCheckConfigurations"
 
@@ -1280,107 +1280,107 @@ class AccountAuditConfigurationAuditCheckConfigurations(Property):
     """
     AWS_OBJECT_TYPE = "AWS::IoT::AccountAuditConfiguration.AuditCheckConfigurations"
     
-    p_AuthenticatedCognitoRoleOverlyPermissiveCheck: typing.Union['AccountAuditConfigurationAuditCheckConfiguration', dict] = attr.ib(
+    p_AuthenticatedCognitoRoleOverlyPermissiveCheck: typing.Union['PropAccountAuditConfigurationAuditCheckConfiguration', dict] = attr.ib(
         default=None,
-        converter=AccountAuditConfigurationAuditCheckConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(AccountAuditConfigurationAuditCheckConfiguration)),
+        converter=PropAccountAuditConfigurationAuditCheckConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropAccountAuditConfigurationAuditCheckConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "AuthenticatedCognitoRoleOverlyPermissiveCheck"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-accountauditconfiguration-auditcheckconfigurations.html#cfn-iot-accountauditconfiguration-auditcheckconfigurations-authenticatedcognitoroleoverlypermissivecheck"""
-    p_CaCertificateExpiringCheck: typing.Union['AccountAuditConfigurationAuditCheckConfiguration', dict] = attr.ib(
+    p_CaCertificateExpiringCheck: typing.Union['PropAccountAuditConfigurationAuditCheckConfiguration', dict] = attr.ib(
         default=None,
-        converter=AccountAuditConfigurationAuditCheckConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(AccountAuditConfigurationAuditCheckConfiguration)),
+        converter=PropAccountAuditConfigurationAuditCheckConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropAccountAuditConfigurationAuditCheckConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "CaCertificateExpiringCheck"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-accountauditconfiguration-auditcheckconfigurations.html#cfn-iot-accountauditconfiguration-auditcheckconfigurations-cacertificateexpiringcheck"""
-    p_CaCertificateKeyQualityCheck: typing.Union['AccountAuditConfigurationAuditCheckConfiguration', dict] = attr.ib(
+    p_CaCertificateKeyQualityCheck: typing.Union['PropAccountAuditConfigurationAuditCheckConfiguration', dict] = attr.ib(
         default=None,
-        converter=AccountAuditConfigurationAuditCheckConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(AccountAuditConfigurationAuditCheckConfiguration)),
+        converter=PropAccountAuditConfigurationAuditCheckConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropAccountAuditConfigurationAuditCheckConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "CaCertificateKeyQualityCheck"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-accountauditconfiguration-auditcheckconfigurations.html#cfn-iot-accountauditconfiguration-auditcheckconfigurations-cacertificatekeyqualitycheck"""
-    p_ConflictingClientIdsCheck: typing.Union['AccountAuditConfigurationAuditCheckConfiguration', dict] = attr.ib(
+    p_ConflictingClientIdsCheck: typing.Union['PropAccountAuditConfigurationAuditCheckConfiguration', dict] = attr.ib(
         default=None,
-        converter=AccountAuditConfigurationAuditCheckConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(AccountAuditConfigurationAuditCheckConfiguration)),
+        converter=PropAccountAuditConfigurationAuditCheckConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropAccountAuditConfigurationAuditCheckConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "ConflictingClientIdsCheck"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-accountauditconfiguration-auditcheckconfigurations.html#cfn-iot-accountauditconfiguration-auditcheckconfigurations-conflictingclientidscheck"""
-    p_DeviceCertificateExpiringCheck: typing.Union['AccountAuditConfigurationAuditCheckConfiguration', dict] = attr.ib(
+    p_DeviceCertificateExpiringCheck: typing.Union['PropAccountAuditConfigurationAuditCheckConfiguration', dict] = attr.ib(
         default=None,
-        converter=AccountAuditConfigurationAuditCheckConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(AccountAuditConfigurationAuditCheckConfiguration)),
+        converter=PropAccountAuditConfigurationAuditCheckConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropAccountAuditConfigurationAuditCheckConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "DeviceCertificateExpiringCheck"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-accountauditconfiguration-auditcheckconfigurations.html#cfn-iot-accountauditconfiguration-auditcheckconfigurations-devicecertificateexpiringcheck"""
-    p_DeviceCertificateKeyQualityCheck: typing.Union['AccountAuditConfigurationAuditCheckConfiguration', dict] = attr.ib(
+    p_DeviceCertificateKeyQualityCheck: typing.Union['PropAccountAuditConfigurationAuditCheckConfiguration', dict] = attr.ib(
         default=None,
-        converter=AccountAuditConfigurationAuditCheckConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(AccountAuditConfigurationAuditCheckConfiguration)),
+        converter=PropAccountAuditConfigurationAuditCheckConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropAccountAuditConfigurationAuditCheckConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "DeviceCertificateKeyQualityCheck"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-accountauditconfiguration-auditcheckconfigurations.html#cfn-iot-accountauditconfiguration-auditcheckconfigurations-devicecertificatekeyqualitycheck"""
-    p_DeviceCertificateSharedCheck: typing.Union['AccountAuditConfigurationAuditCheckConfiguration', dict] = attr.ib(
+    p_DeviceCertificateSharedCheck: typing.Union['PropAccountAuditConfigurationAuditCheckConfiguration', dict] = attr.ib(
         default=None,
-        converter=AccountAuditConfigurationAuditCheckConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(AccountAuditConfigurationAuditCheckConfiguration)),
+        converter=PropAccountAuditConfigurationAuditCheckConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropAccountAuditConfigurationAuditCheckConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "DeviceCertificateSharedCheck"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-accountauditconfiguration-auditcheckconfigurations.html#cfn-iot-accountauditconfiguration-auditcheckconfigurations-devicecertificatesharedcheck"""
-    p_IotPolicyOverlyPermissiveCheck: typing.Union['AccountAuditConfigurationAuditCheckConfiguration', dict] = attr.ib(
+    p_IotPolicyOverlyPermissiveCheck: typing.Union['PropAccountAuditConfigurationAuditCheckConfiguration', dict] = attr.ib(
         default=None,
-        converter=AccountAuditConfigurationAuditCheckConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(AccountAuditConfigurationAuditCheckConfiguration)),
+        converter=PropAccountAuditConfigurationAuditCheckConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropAccountAuditConfigurationAuditCheckConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "IotPolicyOverlyPermissiveCheck"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-accountauditconfiguration-auditcheckconfigurations.html#cfn-iot-accountauditconfiguration-auditcheckconfigurations-iotpolicyoverlypermissivecheck"""
-    p_IotRoleAliasAllowsAccessToUnusedServicesCheck: typing.Union['AccountAuditConfigurationAuditCheckConfiguration', dict] = attr.ib(
+    p_IotRoleAliasAllowsAccessToUnusedServicesCheck: typing.Union['PropAccountAuditConfigurationAuditCheckConfiguration', dict] = attr.ib(
         default=None,
-        converter=AccountAuditConfigurationAuditCheckConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(AccountAuditConfigurationAuditCheckConfiguration)),
+        converter=PropAccountAuditConfigurationAuditCheckConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropAccountAuditConfigurationAuditCheckConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "IotRoleAliasAllowsAccessToUnusedServicesCheck"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-accountauditconfiguration-auditcheckconfigurations.html#cfn-iot-accountauditconfiguration-auditcheckconfigurations-iotrolealiasallowsaccesstounusedservicescheck"""
-    p_IotRoleAliasOverlyPermissiveCheck: typing.Union['AccountAuditConfigurationAuditCheckConfiguration', dict] = attr.ib(
+    p_IotRoleAliasOverlyPermissiveCheck: typing.Union['PropAccountAuditConfigurationAuditCheckConfiguration', dict] = attr.ib(
         default=None,
-        converter=AccountAuditConfigurationAuditCheckConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(AccountAuditConfigurationAuditCheckConfiguration)),
+        converter=PropAccountAuditConfigurationAuditCheckConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropAccountAuditConfigurationAuditCheckConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "IotRoleAliasOverlyPermissiveCheck"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-accountauditconfiguration-auditcheckconfigurations.html#cfn-iot-accountauditconfiguration-auditcheckconfigurations-iotrolealiasoverlypermissivecheck"""
-    p_LoggingDisabledCheck: typing.Union['AccountAuditConfigurationAuditCheckConfiguration', dict] = attr.ib(
+    p_LoggingDisabledCheck: typing.Union['PropAccountAuditConfigurationAuditCheckConfiguration', dict] = attr.ib(
         default=None,
-        converter=AccountAuditConfigurationAuditCheckConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(AccountAuditConfigurationAuditCheckConfiguration)),
+        converter=PropAccountAuditConfigurationAuditCheckConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropAccountAuditConfigurationAuditCheckConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "LoggingDisabledCheck"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-accountauditconfiguration-auditcheckconfigurations.html#cfn-iot-accountauditconfiguration-auditcheckconfigurations-loggingdisabledcheck"""
-    p_RevokedCaCertificateStillActiveCheck: typing.Union['AccountAuditConfigurationAuditCheckConfiguration', dict] = attr.ib(
+    p_RevokedCaCertificateStillActiveCheck: typing.Union['PropAccountAuditConfigurationAuditCheckConfiguration', dict] = attr.ib(
         default=None,
-        converter=AccountAuditConfigurationAuditCheckConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(AccountAuditConfigurationAuditCheckConfiguration)),
+        converter=PropAccountAuditConfigurationAuditCheckConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropAccountAuditConfigurationAuditCheckConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "RevokedCaCertificateStillActiveCheck"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-accountauditconfiguration-auditcheckconfigurations.html#cfn-iot-accountauditconfiguration-auditcheckconfigurations-revokedcacertificatestillactivecheck"""
-    p_RevokedDeviceCertificateStillActiveCheck: typing.Union['AccountAuditConfigurationAuditCheckConfiguration', dict] = attr.ib(
+    p_RevokedDeviceCertificateStillActiveCheck: typing.Union['PropAccountAuditConfigurationAuditCheckConfiguration', dict] = attr.ib(
         default=None,
-        converter=AccountAuditConfigurationAuditCheckConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(AccountAuditConfigurationAuditCheckConfiguration)),
+        converter=PropAccountAuditConfigurationAuditCheckConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropAccountAuditConfigurationAuditCheckConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "RevokedDeviceCertificateStillActiveCheck"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-accountauditconfiguration-auditcheckconfigurations.html#cfn-iot-accountauditconfiguration-auditcheckconfigurations-revokeddevicecertificatestillactivecheck"""
-    p_UnauthenticatedCognitoRoleOverlyPermissiveCheck: typing.Union['AccountAuditConfigurationAuditCheckConfiguration', dict] = attr.ib(
+    p_UnauthenticatedCognitoRoleOverlyPermissiveCheck: typing.Union['PropAccountAuditConfigurationAuditCheckConfiguration', dict] = attr.ib(
         default=None,
-        converter=AccountAuditConfigurationAuditCheckConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(AccountAuditConfigurationAuditCheckConfiguration)),
+        converter=PropAccountAuditConfigurationAuditCheckConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropAccountAuditConfigurationAuditCheckConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "UnauthenticatedCognitoRoleOverlyPermissiveCheck"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-accountauditconfiguration-auditcheckconfigurations.html#cfn-iot-accountauditconfiguration-auditcheckconfigurations-unauthenticatedcognitoroleoverlypermissivecheck"""
 
 @attr.s
-class MitigationActionPublishFindingToSnsParams(Property):
+class PropMitigationActionPublishFindingToSnsParams(Property):
     """
     AWS Object Type = "AWS::IoT::MitigationAction.PublishFindingToSnsParams"
 
@@ -1400,7 +1400,7 @@ class MitigationActionPublishFindingToSnsParams(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-mitigationaction-publishfindingtosnsparams.html#cfn-iot-mitigationaction-publishfindingtosnsparams-topicarn"""
 
 @attr.s
-class TopicRuleCloudwatchAlarmAction(Property):
+class PropTopicRuleCloudwatchAlarmAction(Property):
     """
     AWS Object Type = "AWS::IoT::TopicRule.CloudwatchAlarmAction"
 
@@ -1441,7 +1441,7 @@ class TopicRuleCloudwatchAlarmAction(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-cloudwatchalarmaction.html#cfn-iot-topicrule-cloudwatchalarmaction-statevalue"""
 
 @attr.s
-class TopicRuleCloudwatchLogsAction(Property):
+class PropTopicRuleCloudwatchLogsAction(Property):
     """
     AWS Object Type = "AWS::IoT::TopicRule.CloudwatchLogsAction"
 
@@ -1468,7 +1468,7 @@ class TopicRuleCloudwatchLogsAction(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-cloudwatchlogsaction.html#cfn-iot-topicrule-cloudwatchlogsaction-rolearn"""
 
 @attr.s
-class DomainConfigurationServerCertificateSummary(Property):
+class PropDomainConfigurationServerCertificateSummary(Property):
     """
     AWS Object Type = "AWS::IoT::DomainConfiguration.ServerCertificateSummary"
 
@@ -1502,7 +1502,7 @@ class DomainConfigurationServerCertificateSummary(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-domainconfiguration-servercertificatesummary.html#cfn-iot-domainconfiguration-servercertificatesummary-servercertificatestatusdetail"""
 
 @attr.s
-class TopicRuleTimestreamDimension(Property):
+class PropTopicRuleTimestreamDimension(Property):
     """
     AWS Object Type = "AWS::IoT::TopicRule.TimestreamDimension"
 
@@ -1529,7 +1529,7 @@ class TopicRuleTimestreamDimension(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-timestreamdimension.html#cfn-iot-topicrule-timestreamdimension-value"""
 
 @attr.s
-class SecurityProfileStatisticalThreshold(Property):
+class PropSecurityProfileStatisticalThreshold(Property):
     """
     AWS Object Type = "AWS::IoT::SecurityProfile.StatisticalThreshold"
 
@@ -1549,7 +1549,7 @@ class SecurityProfileStatisticalThreshold(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-securityprofile-statisticalthreshold.html#cfn-iot-securityprofile-statisticalthreshold-statistic"""
 
 @attr.s
-class TopicRuleTimestreamTimestamp(Property):
+class PropTopicRuleTimestreamTimestamp(Property):
     """
     AWS Object Type = "AWS::IoT::TopicRule.TimestreamTimestamp"
 
@@ -1576,7 +1576,7 @@ class TopicRuleTimestreamTimestamp(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-timestreamtimestamp.html#cfn-iot-topicrule-timestreamtimestamp-value"""
 
 @attr.s
-class TopicRuleHttpAction(Property):
+class PropTopicRuleHttpAction(Property):
     """
     AWS Object Type = "AWS::IoT::TopicRule.HttpAction"
 
@@ -1597,10 +1597,10 @@ class TopicRuleHttpAction(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Url"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-httpaction.html#cfn-iot-topicrule-httpaction-url"""
-    p_Auth: typing.Union['TopicRuleHttpAuthorization', dict] = attr.ib(
+    p_Auth: typing.Union['PropTopicRuleHttpAuthorization', dict] = attr.ib(
         default=None,
-        converter=TopicRuleHttpAuthorization.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(TopicRuleHttpAuthorization)),
+        converter=PropTopicRuleHttpAuthorization.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropTopicRuleHttpAuthorization)),
         metadata={AttrMeta.PROPERTY_NAME: "Auth"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-httpaction.html#cfn-iot-topicrule-httpaction-auth"""
@@ -1610,16 +1610,16 @@ class TopicRuleHttpAction(Property):
         metadata={AttrMeta.PROPERTY_NAME: "ConfirmationUrl"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-httpaction.html#cfn-iot-topicrule-httpaction-confirmationurl"""
-    p_Headers: typing.List[typing.Union['TopicRuleHttpActionHeader', dict]] = attr.ib(
+    p_Headers: typing.List[typing.Union['PropTopicRuleHttpActionHeader', dict]] = attr.ib(
         default=None,
-        converter=TopicRuleHttpActionHeader.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TopicRuleHttpActionHeader), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropTopicRuleHttpActionHeader.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropTopicRuleHttpActionHeader), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Headers"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-httpaction.html#cfn-iot-topicrule-httpaction-headers"""
 
 @attr.s
-class TopicRulePutAssetPropertyValueEntry(Property):
+class PropTopicRulePutAssetPropertyValueEntry(Property):
     """
     AWS Object Type = "AWS::IoT::TopicRule.PutAssetPropertyValueEntry"
 
@@ -1635,10 +1635,10 @@ class TopicRulePutAssetPropertyValueEntry(Property):
     """
     AWS_OBJECT_TYPE = "AWS::IoT::TopicRule.PutAssetPropertyValueEntry"
     
-    rp_PropertyValues: typing.List[typing.Union['TopicRuleAssetPropertyValue', dict]] = attr.ib(
+    rp_PropertyValues: typing.List[typing.Union['PropTopicRuleAssetPropertyValue', dict]] = attr.ib(
         default=None,
-        converter=TopicRuleAssetPropertyValue.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TopicRuleAssetPropertyValue), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropTopicRuleAssetPropertyValue.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropTopicRuleAssetPropertyValue), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "PropertyValues"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-putassetpropertyvalueentry.html#cfn-iot-topicrule-putassetpropertyvalueentry-propertyvalues"""
@@ -1668,7 +1668,7 @@ class TopicRulePutAssetPropertyValueEntry(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-putassetpropertyvalueentry.html#cfn-iot-topicrule-putassetpropertyvalueentry-propertyid"""
 
 @attr.s
-class SecurityProfileMetricToRetain(Property):
+class PropSecurityProfileMetricToRetain(Property):
     """
     AWS Object Type = "AWS::IoT::SecurityProfile.MetricToRetain"
 
@@ -1687,16 +1687,16 @@ class SecurityProfileMetricToRetain(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Metric"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-securityprofile-metrictoretain.html#cfn-iot-securityprofile-metrictoretain-metric"""
-    p_MetricDimension: typing.Union['SecurityProfileMetricDimension', dict] = attr.ib(
+    p_MetricDimension: typing.Union['PropSecurityProfileMetricDimension', dict] = attr.ib(
         default=None,
-        converter=SecurityProfileMetricDimension.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(SecurityProfileMetricDimension)),
+        converter=PropSecurityProfileMetricDimension.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropSecurityProfileMetricDimension)),
         metadata={AttrMeta.PROPERTY_NAME: "MetricDimension"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-securityprofile-metrictoretain.html#cfn-iot-securityprofile-metrictoretain-metricdimension"""
 
 @attr.s
-class AccountAuditConfigurationAuditNotificationTargetConfigurations(Property):
+class PropAccountAuditConfigurationAuditNotificationTargetConfigurations(Property):
     """
     AWS Object Type = "AWS::IoT::AccountAuditConfiguration.AuditNotificationTargetConfigurations"
 
@@ -1708,16 +1708,16 @@ class AccountAuditConfigurationAuditNotificationTargetConfigurations(Property):
     """
     AWS_OBJECT_TYPE = "AWS::IoT::AccountAuditConfiguration.AuditNotificationTargetConfigurations"
     
-    p_Sns: typing.Union['AccountAuditConfigurationAuditNotificationTarget', dict] = attr.ib(
+    p_Sns: typing.Union['PropAccountAuditConfigurationAuditNotificationTarget', dict] = attr.ib(
         default=None,
-        converter=AccountAuditConfigurationAuditNotificationTarget.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(AccountAuditConfigurationAuditNotificationTarget)),
+        converter=PropAccountAuditConfigurationAuditNotificationTarget.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropAccountAuditConfigurationAuditNotificationTarget)),
         metadata={AttrMeta.PROPERTY_NAME: "Sns"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-accountauditconfiguration-auditnotificationtargetconfigurations.html#cfn-iot-accountauditconfiguration-auditnotificationtargetconfigurations-sns"""
 
 @attr.s
-class TopicRuleTimestreamAction(Property):
+class PropTopicRuleTimestreamAction(Property):
     """
     AWS Object Type = "AWS::IoT::TopicRule.TimestreamAction"
 
@@ -1739,10 +1739,10 @@ class TopicRuleTimestreamAction(Property):
         metadata={AttrMeta.PROPERTY_NAME: "DatabaseName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-timestreamaction.html#cfn-iot-topicrule-timestreamaction-databasename"""
-    rp_Dimensions: typing.List[typing.Union['TopicRuleTimestreamDimension', dict]] = attr.ib(
+    rp_Dimensions: typing.List[typing.Union['PropTopicRuleTimestreamDimension', dict]] = attr.ib(
         default=None,
-        converter=TopicRuleTimestreamDimension.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TopicRuleTimestreamDimension), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropTopicRuleTimestreamDimension.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropTopicRuleTimestreamDimension), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "Dimensions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-timestreamaction.html#cfn-iot-topicrule-timestreamaction-dimensions"""
@@ -1758,16 +1758,16 @@ class TopicRuleTimestreamAction(Property):
         metadata={AttrMeta.PROPERTY_NAME: "TableName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-timestreamaction.html#cfn-iot-topicrule-timestreamaction-tablename"""
-    p_Timestamp: typing.Union['TopicRuleTimestreamTimestamp', dict] = attr.ib(
+    p_Timestamp: typing.Union['PropTopicRuleTimestreamTimestamp', dict] = attr.ib(
         default=None,
-        converter=TopicRuleTimestreamTimestamp.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(TopicRuleTimestreamTimestamp)),
+        converter=PropTopicRuleTimestreamTimestamp.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropTopicRuleTimestreamTimestamp)),
         metadata={AttrMeta.PROPERTY_NAME: "Timestamp"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-timestreamaction.html#cfn-iot-topicrule-timestreamaction-timestamp"""
 
 @attr.s
-class TopicRuleIotSiteWiseAction(Property):
+class PropTopicRuleIotSiteWiseAction(Property):
     """
     AWS Object Type = "AWS::IoT::TopicRule.IotSiteWiseAction"
 
@@ -1780,10 +1780,10 @@ class TopicRuleIotSiteWiseAction(Property):
     """
     AWS_OBJECT_TYPE = "AWS::IoT::TopicRule.IotSiteWiseAction"
     
-    rp_PutAssetPropertyValueEntries: typing.List[typing.Union['TopicRulePutAssetPropertyValueEntry', dict]] = attr.ib(
+    rp_PutAssetPropertyValueEntries: typing.List[typing.Union['PropTopicRulePutAssetPropertyValueEntry', dict]] = attr.ib(
         default=None,
-        converter=TopicRulePutAssetPropertyValueEntry.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TopicRulePutAssetPropertyValueEntry), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropTopicRulePutAssetPropertyValueEntry.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropTopicRulePutAssetPropertyValueEntry), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "PutAssetPropertyValueEntries"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-iotsitewiseaction.html#cfn-iot-topicrule-iotsitewiseaction-putassetpropertyvalueentries"""
@@ -1795,7 +1795,7 @@ class TopicRuleIotSiteWiseAction(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-iotsitewiseaction.html#cfn-iot-topicrule-iotsitewiseaction-rolearn"""
 
 @attr.s
-class TopicRuleAction(Property):
+class PropTopicRuleAction(Property):
     """
     AWS Object Type = "AWS::IoT::TopicRule.Action"
 
@@ -1826,149 +1826,149 @@ class TopicRuleAction(Property):
     """
     AWS_OBJECT_TYPE = "AWS::IoT::TopicRule.Action"
     
-    p_CloudwatchAlarm: typing.Union['TopicRuleCloudwatchAlarmAction', dict] = attr.ib(
+    p_CloudwatchAlarm: typing.Union['PropTopicRuleCloudwatchAlarmAction', dict] = attr.ib(
         default=None,
-        converter=TopicRuleCloudwatchAlarmAction.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(TopicRuleCloudwatchAlarmAction)),
+        converter=PropTopicRuleCloudwatchAlarmAction.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropTopicRuleCloudwatchAlarmAction)),
         metadata={AttrMeta.PROPERTY_NAME: "CloudwatchAlarm"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-cloudwatchalarm"""
-    p_CloudwatchLogs: typing.Union['TopicRuleCloudwatchLogsAction', dict] = attr.ib(
+    p_CloudwatchLogs: typing.Union['PropTopicRuleCloudwatchLogsAction', dict] = attr.ib(
         default=None,
-        converter=TopicRuleCloudwatchLogsAction.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(TopicRuleCloudwatchLogsAction)),
+        converter=PropTopicRuleCloudwatchLogsAction.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropTopicRuleCloudwatchLogsAction)),
         metadata={AttrMeta.PROPERTY_NAME: "CloudwatchLogs"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-cloudwatchlogs"""
-    p_CloudwatchMetric: typing.Union['TopicRuleCloudwatchMetricAction', dict] = attr.ib(
+    p_CloudwatchMetric: typing.Union['PropTopicRuleCloudwatchMetricAction', dict] = attr.ib(
         default=None,
-        converter=TopicRuleCloudwatchMetricAction.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(TopicRuleCloudwatchMetricAction)),
+        converter=PropTopicRuleCloudwatchMetricAction.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropTopicRuleCloudwatchMetricAction)),
         metadata={AttrMeta.PROPERTY_NAME: "CloudwatchMetric"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-cloudwatchmetric"""
-    p_DynamoDB: typing.Union['TopicRuleDynamoDBAction', dict] = attr.ib(
+    p_DynamoDB: typing.Union['PropTopicRuleDynamoDBAction', dict] = attr.ib(
         default=None,
-        converter=TopicRuleDynamoDBAction.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(TopicRuleDynamoDBAction)),
+        converter=PropTopicRuleDynamoDBAction.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropTopicRuleDynamoDBAction)),
         metadata={AttrMeta.PROPERTY_NAME: "DynamoDB"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-dynamodb"""
-    p_DynamoDBv2: typing.Union['TopicRuleDynamoDBv2Action', dict] = attr.ib(
+    p_DynamoDBv2: typing.Union['PropTopicRuleDynamoDBv2Action', dict] = attr.ib(
         default=None,
-        converter=TopicRuleDynamoDBv2Action.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(TopicRuleDynamoDBv2Action)),
+        converter=PropTopicRuleDynamoDBv2Action.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropTopicRuleDynamoDBv2Action)),
         metadata={AttrMeta.PROPERTY_NAME: "DynamoDBv2"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-dynamodbv2"""
-    p_Elasticsearch: typing.Union['TopicRuleElasticsearchAction', dict] = attr.ib(
+    p_Elasticsearch: typing.Union['PropTopicRuleElasticsearchAction', dict] = attr.ib(
         default=None,
-        converter=TopicRuleElasticsearchAction.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(TopicRuleElasticsearchAction)),
+        converter=PropTopicRuleElasticsearchAction.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropTopicRuleElasticsearchAction)),
         metadata={AttrMeta.PROPERTY_NAME: "Elasticsearch"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-elasticsearch"""
-    p_Firehose: typing.Union['TopicRuleFirehoseAction', dict] = attr.ib(
+    p_Firehose: typing.Union['PropTopicRuleFirehoseAction', dict] = attr.ib(
         default=None,
-        converter=TopicRuleFirehoseAction.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(TopicRuleFirehoseAction)),
+        converter=PropTopicRuleFirehoseAction.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropTopicRuleFirehoseAction)),
         metadata={AttrMeta.PROPERTY_NAME: "Firehose"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-firehose"""
-    p_Http: typing.Union['TopicRuleHttpAction', dict] = attr.ib(
+    p_Http: typing.Union['PropTopicRuleHttpAction', dict] = attr.ib(
         default=None,
-        converter=TopicRuleHttpAction.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(TopicRuleHttpAction)),
+        converter=PropTopicRuleHttpAction.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropTopicRuleHttpAction)),
         metadata={AttrMeta.PROPERTY_NAME: "Http"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-http"""
-    p_IotAnalytics: typing.Union['TopicRuleIotAnalyticsAction', dict] = attr.ib(
+    p_IotAnalytics: typing.Union['PropTopicRuleIotAnalyticsAction', dict] = attr.ib(
         default=None,
-        converter=TopicRuleIotAnalyticsAction.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(TopicRuleIotAnalyticsAction)),
+        converter=PropTopicRuleIotAnalyticsAction.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropTopicRuleIotAnalyticsAction)),
         metadata={AttrMeta.PROPERTY_NAME: "IotAnalytics"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-iotanalytics"""
-    p_IotEvents: typing.Union['TopicRuleIotEventsAction', dict] = attr.ib(
+    p_IotEvents: typing.Union['PropTopicRuleIotEventsAction', dict] = attr.ib(
         default=None,
-        converter=TopicRuleIotEventsAction.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(TopicRuleIotEventsAction)),
+        converter=PropTopicRuleIotEventsAction.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropTopicRuleIotEventsAction)),
         metadata={AttrMeta.PROPERTY_NAME: "IotEvents"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-iotevents"""
-    p_IotSiteWise: typing.Union['TopicRuleIotSiteWiseAction', dict] = attr.ib(
+    p_IotSiteWise: typing.Union['PropTopicRuleIotSiteWiseAction', dict] = attr.ib(
         default=None,
-        converter=TopicRuleIotSiteWiseAction.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(TopicRuleIotSiteWiseAction)),
+        converter=PropTopicRuleIotSiteWiseAction.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropTopicRuleIotSiteWiseAction)),
         metadata={AttrMeta.PROPERTY_NAME: "IotSiteWise"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-iotsitewise"""
-    p_Kafka: typing.Union['TopicRuleKafkaAction', dict] = attr.ib(
+    p_Kafka: typing.Union['PropTopicRuleKafkaAction', dict] = attr.ib(
         default=None,
-        converter=TopicRuleKafkaAction.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(TopicRuleKafkaAction)),
+        converter=PropTopicRuleKafkaAction.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropTopicRuleKafkaAction)),
         metadata={AttrMeta.PROPERTY_NAME: "Kafka"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-kafka"""
-    p_Kinesis: typing.Union['TopicRuleKinesisAction', dict] = attr.ib(
+    p_Kinesis: typing.Union['PropTopicRuleKinesisAction', dict] = attr.ib(
         default=None,
-        converter=TopicRuleKinesisAction.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(TopicRuleKinesisAction)),
+        converter=PropTopicRuleKinesisAction.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropTopicRuleKinesisAction)),
         metadata={AttrMeta.PROPERTY_NAME: "Kinesis"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-kinesis"""
-    p_Lambda: typing.Union['TopicRuleLambdaAction', dict] = attr.ib(
+    p_Lambda: typing.Union['PropTopicRuleLambdaAction', dict] = attr.ib(
         default=None,
-        converter=TopicRuleLambdaAction.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(TopicRuleLambdaAction)),
+        converter=PropTopicRuleLambdaAction.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropTopicRuleLambdaAction)),
         metadata={AttrMeta.PROPERTY_NAME: "Lambda"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-lambda"""
-    p_Republish: typing.Union['TopicRuleRepublishAction', dict] = attr.ib(
+    p_Republish: typing.Union['PropTopicRuleRepublishAction', dict] = attr.ib(
         default=None,
-        converter=TopicRuleRepublishAction.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(TopicRuleRepublishAction)),
+        converter=PropTopicRuleRepublishAction.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropTopicRuleRepublishAction)),
         metadata={AttrMeta.PROPERTY_NAME: "Republish"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-republish"""
-    p_S3: typing.Union['TopicRuleS3Action', dict] = attr.ib(
+    p_S3: typing.Union['PropTopicRuleS3Action', dict] = attr.ib(
         default=None,
-        converter=TopicRuleS3Action.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(TopicRuleS3Action)),
+        converter=PropTopicRuleS3Action.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropTopicRuleS3Action)),
         metadata={AttrMeta.PROPERTY_NAME: "S3"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-s3"""
-    p_Sns: typing.Union['TopicRuleSnsAction', dict] = attr.ib(
+    p_Sns: typing.Union['PropTopicRuleSnsAction', dict] = attr.ib(
         default=None,
-        converter=TopicRuleSnsAction.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(TopicRuleSnsAction)),
+        converter=PropTopicRuleSnsAction.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropTopicRuleSnsAction)),
         metadata={AttrMeta.PROPERTY_NAME: "Sns"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-sns"""
-    p_Sqs: typing.Union['TopicRuleSqsAction', dict] = attr.ib(
+    p_Sqs: typing.Union['PropTopicRuleSqsAction', dict] = attr.ib(
         default=None,
-        converter=TopicRuleSqsAction.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(TopicRuleSqsAction)),
+        converter=PropTopicRuleSqsAction.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropTopicRuleSqsAction)),
         metadata={AttrMeta.PROPERTY_NAME: "Sqs"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-sqs"""
-    p_StepFunctions: typing.Union['TopicRuleStepFunctionsAction', dict] = attr.ib(
+    p_StepFunctions: typing.Union['PropTopicRuleStepFunctionsAction', dict] = attr.ib(
         default=None,
-        converter=TopicRuleStepFunctionsAction.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(TopicRuleStepFunctionsAction)),
+        converter=PropTopicRuleStepFunctionsAction.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropTopicRuleStepFunctionsAction)),
         metadata={AttrMeta.PROPERTY_NAME: "StepFunctions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-stepfunctions"""
-    p_Timestream: typing.Union['TopicRuleTimestreamAction', dict] = attr.ib(
+    p_Timestream: typing.Union['PropTopicRuleTimestreamAction', dict] = attr.ib(
         default=None,
-        converter=TopicRuleTimestreamAction.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(TopicRuleTimestreamAction)),
+        converter=PropTopicRuleTimestreamAction.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropTopicRuleTimestreamAction)),
         metadata={AttrMeta.PROPERTY_NAME: "Timestream"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-action.html#cfn-iot-topicrule-action-timestream"""
 
 @attr.s
-class SecurityProfileBehaviorCriteria(Property):
+class PropSecurityProfileBehaviorCriteria(Property):
     """
     AWS Object Type = "AWS::IoT::SecurityProfile.BehaviorCriteria"
 
@@ -2010,30 +2010,30 @@ class SecurityProfileBehaviorCriteria(Property):
         metadata={AttrMeta.PROPERTY_NAME: "DurationSeconds"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-securityprofile-behaviorcriteria.html#cfn-iot-securityprofile-behaviorcriteria-durationseconds"""
-    p_MlDetectionConfig: typing.Union['SecurityProfileMachineLearningDetectionConfig', dict] = attr.ib(
+    p_MlDetectionConfig: typing.Union['PropSecurityProfileMachineLearningDetectionConfig', dict] = attr.ib(
         default=None,
-        converter=SecurityProfileMachineLearningDetectionConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(SecurityProfileMachineLearningDetectionConfig)),
+        converter=PropSecurityProfileMachineLearningDetectionConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropSecurityProfileMachineLearningDetectionConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "MlDetectionConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-securityprofile-behaviorcriteria.html#cfn-iot-securityprofile-behaviorcriteria-mldetectionconfig"""
-    p_StatisticalThreshold: typing.Union['SecurityProfileStatisticalThreshold', dict] = attr.ib(
+    p_StatisticalThreshold: typing.Union['PropSecurityProfileStatisticalThreshold', dict] = attr.ib(
         default=None,
-        converter=SecurityProfileStatisticalThreshold.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(SecurityProfileStatisticalThreshold)),
+        converter=PropSecurityProfileStatisticalThreshold.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropSecurityProfileStatisticalThreshold)),
         metadata={AttrMeta.PROPERTY_NAME: "StatisticalThreshold"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-securityprofile-behaviorcriteria.html#cfn-iot-securityprofile-behaviorcriteria-statisticalthreshold"""
-    p_Value: typing.Union['SecurityProfileMetricValue', dict] = attr.ib(
+    p_Value: typing.Union['PropSecurityProfileMetricValue', dict] = attr.ib(
         default=None,
-        converter=SecurityProfileMetricValue.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(SecurityProfileMetricValue)),
+        converter=PropSecurityProfileMetricValue.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropSecurityProfileMetricValue)),
         metadata={AttrMeta.PROPERTY_NAME: "Value"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-securityprofile-behaviorcriteria.html#cfn-iot-securityprofile-behaviorcriteria-value"""
 
 @attr.s
-class TopicRuleTopicRulePayload(Property):
+class PropTopicRuleTopicRulePayload(Property):
     """
     AWS Object Type = "AWS::IoT::TopicRule.TopicRulePayload"
 
@@ -2050,10 +2050,10 @@ class TopicRuleTopicRulePayload(Property):
     """
     AWS_OBJECT_TYPE = "AWS::IoT::TopicRule.TopicRulePayload"
     
-    rp_Actions: typing.List[typing.Union['TopicRuleAction', dict]] = attr.ib(
+    rp_Actions: typing.List[typing.Union['PropTopicRuleAction', dict]] = attr.ib(
         default=None,
-        converter=TopicRuleAction.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TopicRuleAction), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropTopicRuleAction.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropTopicRuleAction), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "Actions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-topicrulepayload.html#cfn-iot-topicrule-topicrulepayload-actions"""
@@ -2075,10 +2075,10 @@ class TopicRuleTopicRulePayload(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Description"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-topicrulepayload.html#cfn-iot-topicrule-topicrulepayload-description"""
-    p_ErrorAction: typing.Union['TopicRuleAction', dict] = attr.ib(
+    p_ErrorAction: typing.Union['PropTopicRuleAction', dict] = attr.ib(
         default=None,
-        converter=TopicRuleAction.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(TopicRuleAction)),
+        converter=PropTopicRuleAction.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropTopicRuleAction)),
         metadata={AttrMeta.PROPERTY_NAME: "ErrorAction"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-topicrulepayload.html#cfn-iot-topicrule-topicrulepayload-erroraction"""
@@ -2090,7 +2090,7 @@ class TopicRuleTopicRulePayload(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-topicrulepayload.html#cfn-iot-topicrule-topicrulepayload-ruledisabled"""
 
 @attr.s
-class MitigationActionActionParams(Property):
+class PropMitigationActionActionParams(Property):
     """
     AWS Object Type = "AWS::IoT::MitigationAction.ActionParams"
 
@@ -2107,51 +2107,51 @@ class MitigationActionActionParams(Property):
     """
     AWS_OBJECT_TYPE = "AWS::IoT::MitigationAction.ActionParams"
     
-    p_AddThingsToThingGroupParams: typing.Union['MitigationActionAddThingsToThingGroupParams', dict] = attr.ib(
+    p_AddThingsToThingGroupParams: typing.Union['PropMitigationActionAddThingsToThingGroupParams', dict] = attr.ib(
         default=None,
-        converter=MitigationActionAddThingsToThingGroupParams.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(MitigationActionAddThingsToThingGroupParams)),
+        converter=PropMitigationActionAddThingsToThingGroupParams.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropMitigationActionAddThingsToThingGroupParams)),
         metadata={AttrMeta.PROPERTY_NAME: "AddThingsToThingGroupParams"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-mitigationaction-actionparams.html#cfn-iot-mitigationaction-actionparams-addthingstothinggroupparams"""
-    p_EnableIoTLoggingParams: typing.Union['MitigationActionEnableIoTLoggingParams', dict] = attr.ib(
+    p_EnableIoTLoggingParams: typing.Union['PropMitigationActionEnableIoTLoggingParams', dict] = attr.ib(
         default=None,
-        converter=MitigationActionEnableIoTLoggingParams.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(MitigationActionEnableIoTLoggingParams)),
+        converter=PropMitigationActionEnableIoTLoggingParams.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropMitigationActionEnableIoTLoggingParams)),
         metadata={AttrMeta.PROPERTY_NAME: "EnableIoTLoggingParams"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-mitigationaction-actionparams.html#cfn-iot-mitigationaction-actionparams-enableiotloggingparams"""
-    p_PublishFindingToSnsParams: typing.Union['MitigationActionPublishFindingToSnsParams', dict] = attr.ib(
+    p_PublishFindingToSnsParams: typing.Union['PropMitigationActionPublishFindingToSnsParams', dict] = attr.ib(
         default=None,
-        converter=MitigationActionPublishFindingToSnsParams.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(MitigationActionPublishFindingToSnsParams)),
+        converter=PropMitigationActionPublishFindingToSnsParams.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropMitigationActionPublishFindingToSnsParams)),
         metadata={AttrMeta.PROPERTY_NAME: "PublishFindingToSnsParams"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-mitigationaction-actionparams.html#cfn-iot-mitigationaction-actionparams-publishfindingtosnsparams"""
-    p_ReplaceDefaultPolicyVersionParams: typing.Union['MitigationActionReplaceDefaultPolicyVersionParams', dict] = attr.ib(
+    p_ReplaceDefaultPolicyVersionParams: typing.Union['PropMitigationActionReplaceDefaultPolicyVersionParams', dict] = attr.ib(
         default=None,
-        converter=MitigationActionReplaceDefaultPolicyVersionParams.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(MitigationActionReplaceDefaultPolicyVersionParams)),
+        converter=PropMitigationActionReplaceDefaultPolicyVersionParams.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropMitigationActionReplaceDefaultPolicyVersionParams)),
         metadata={AttrMeta.PROPERTY_NAME: "ReplaceDefaultPolicyVersionParams"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-mitigationaction-actionparams.html#cfn-iot-mitigationaction-actionparams-replacedefaultpolicyversionparams"""
-    p_UpdateCACertificateParams: typing.Union['MitigationActionUpdateCACertificateParams', dict] = attr.ib(
+    p_UpdateCACertificateParams: typing.Union['PropMitigationActionUpdateCACertificateParams', dict] = attr.ib(
         default=None,
-        converter=MitigationActionUpdateCACertificateParams.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(MitigationActionUpdateCACertificateParams)),
+        converter=PropMitigationActionUpdateCACertificateParams.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropMitigationActionUpdateCACertificateParams)),
         metadata={AttrMeta.PROPERTY_NAME: "UpdateCACertificateParams"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-mitigationaction-actionparams.html#cfn-iot-mitigationaction-actionparams-updatecacertificateparams"""
-    p_UpdateDeviceCertificateParams: typing.Union['MitigationActionUpdateDeviceCertificateParams', dict] = attr.ib(
+    p_UpdateDeviceCertificateParams: typing.Union['PropMitigationActionUpdateDeviceCertificateParams', dict] = attr.ib(
         default=None,
-        converter=MitigationActionUpdateDeviceCertificateParams.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(MitigationActionUpdateDeviceCertificateParams)),
+        converter=PropMitigationActionUpdateDeviceCertificateParams.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropMitigationActionUpdateDeviceCertificateParams)),
         metadata={AttrMeta.PROPERTY_NAME: "UpdateDeviceCertificateParams"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-mitigationaction-actionparams.html#cfn-iot-mitigationaction-actionparams-updatedevicecertificateparams"""
 
 @attr.s
-class SecurityProfileBehavior(Property):
+class PropSecurityProfileBehavior(Property):
     """
     AWS Object Type = "AWS::IoT::SecurityProfile.Behavior"
 
@@ -2173,10 +2173,10 @@ class SecurityProfileBehavior(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Name"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-securityprofile-behavior.html#cfn-iot-securityprofile-behavior-name"""
-    p_Criteria: typing.Union['SecurityProfileBehaviorCriteria', dict] = attr.ib(
+    p_Criteria: typing.Union['PropSecurityProfileBehaviorCriteria', dict] = attr.ib(
         default=None,
-        converter=SecurityProfileBehaviorCriteria.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(SecurityProfileBehaviorCriteria)),
+        converter=PropSecurityProfileBehaviorCriteria.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropSecurityProfileBehaviorCriteria)),
         metadata={AttrMeta.PROPERTY_NAME: "Criteria"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-securityprofile-behavior.html#cfn-iot-securityprofile-behavior-criteria"""
@@ -2186,10 +2186,10 @@ class SecurityProfileBehavior(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Metric"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-securityprofile-behavior.html#cfn-iot-securityprofile-behavior-metric"""
-    p_MetricDimension: typing.Union['SecurityProfileMetricDimension', dict] = attr.ib(
+    p_MetricDimension: typing.Union['PropSecurityProfileMetricDimension', dict] = attr.ib(
         default=None,
-        converter=SecurityProfileMetricDimension.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(SecurityProfileMetricDimension)),
+        converter=PropSecurityProfileMetricDimension.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropSecurityProfileMetricDimension)),
         metadata={AttrMeta.PROPERTY_NAME: "MetricDimension"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-securityprofile-behavior.html#cfn-iot-securityprofile-behavior-metricdimension"""
@@ -2270,10 +2270,10 @@ class MitigationAction(Resource):
     AWS_OBJECT_TYPE = "AWS::IoT::MitigationAction"
 
     
-    rp_ActionParams: typing.Union['MitigationActionActionParams', dict] = attr.ib(
+    rp_ActionParams: typing.Union['PropMitigationActionActionParams', dict] = attr.ib(
         default=None,
-        converter=MitigationActionActionParams.from_dict,
-        validator=attr.validators.instance_of(MitigationActionActionParams),
+        converter=PropMitigationActionActionParams.from_dict,
+        validator=attr.validators.instance_of(PropMitigationActionActionParams),
         metadata={AttrMeta.PROPERTY_NAME: "ActionParams"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-mitigationaction.html#cfn-iot-mitigationaction-actionparams"""
@@ -2329,24 +2329,24 @@ class SecurityProfile(Resource):
     AWS_OBJECT_TYPE = "AWS::IoT::SecurityProfile"
 
     
-    p_AdditionalMetricsToRetainV2: typing.List[typing.Union['SecurityProfileMetricToRetain', dict]] = attr.ib(
+    p_AdditionalMetricsToRetainV2: typing.List[typing.Union['PropSecurityProfileMetricToRetain', dict]] = attr.ib(
         default=None,
-        converter=SecurityProfileMetricToRetain.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(SecurityProfileMetricToRetain), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropSecurityProfileMetricToRetain.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropSecurityProfileMetricToRetain), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "AdditionalMetricsToRetainV2"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-securityprofile.html#cfn-iot-securityprofile-additionalmetricstoretainv2"""
-    p_AlertTargets: typing.Union['SecurityProfileAlertTarget', dict] = attr.ib(
+    p_AlertTargets: typing.Union['PropSecurityProfileAlertTarget', dict] = attr.ib(
         default=None,
-        converter=SecurityProfileAlertTarget.from_list,
-        validator=attr.validators.optional(attr.validators.instance_of(SecurityProfileAlertTarget)),
+        converter=PropSecurityProfileAlertTarget.from_list,
+        validator=attr.validators.optional(attr.validators.instance_of(PropSecurityProfileAlertTarget)),
         metadata={AttrMeta.PROPERTY_NAME: "AlertTargets"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-securityprofile.html#cfn-iot-securityprofile-alerttargets"""
-    p_Behaviors: typing.List[typing.Union['SecurityProfileBehavior', dict]] = attr.ib(
+    p_Behaviors: typing.List[typing.Union['PropSecurityProfileBehavior', dict]] = attr.ib(
         default=None,
-        converter=SecurityProfileBehavior.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(SecurityProfileBehavior), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropSecurityProfileBehavior.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropSecurityProfileBehavior), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Behaviors"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-securityprofile.html#cfn-iot-securityprofile-behaviors"""
@@ -2399,10 +2399,10 @@ class TopicRule(Resource):
     AWS_OBJECT_TYPE = "AWS::IoT::TopicRule"
 
     
-    rp_TopicRulePayload: typing.Union['TopicRuleTopicRulePayload', dict] = attr.ib(
+    rp_TopicRulePayload: typing.Union['PropTopicRuleTopicRulePayload', dict] = attr.ib(
         default=None,
-        converter=TopicRuleTopicRulePayload.from_dict,
-        validator=attr.validators.instance_of(TopicRuleTopicRulePayload),
+        converter=PropTopicRuleTopicRulePayload.from_dict,
+        validator=attr.validators.instance_of(PropTopicRuleTopicRulePayload),
         metadata={AttrMeta.PROPERTY_NAME: "TopicRulePayload"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-topicrule.html#cfn-iot-topicrule-topicrulepayload"""
@@ -2448,10 +2448,10 @@ class DomainConfiguration(Resource):
     AWS_OBJECT_TYPE = "AWS::IoT::DomainConfiguration"
 
     
-    p_AuthorizerConfig: typing.Union['DomainConfigurationAuthorizerConfig', dict] = attr.ib(
+    p_AuthorizerConfig: typing.Union['PropDomainConfigurationAuthorizerConfig', dict] = attr.ib(
         default=None,
-        converter=DomainConfigurationAuthorizerConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DomainConfigurationAuthorizerConfig)),
+        converter=PropDomainConfigurationAuthorizerConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDomainConfigurationAuthorizerConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "AuthorizerConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-domainconfiguration.html#cfn-iot-domainconfiguration-authorizerconfig"""
@@ -2539,10 +2539,10 @@ class AccountAuditConfiguration(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "AccountId"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-accountauditconfiguration.html#cfn-iot-accountauditconfiguration-accountid"""
-    rp_AuditCheckConfigurations: typing.Union['AccountAuditConfigurationAuditCheckConfigurations', dict] = attr.ib(
+    rp_AuditCheckConfigurations: typing.Union['PropAccountAuditConfigurationAuditCheckConfigurations', dict] = attr.ib(
         default=None,
-        converter=AccountAuditConfigurationAuditCheckConfigurations.from_dict,
-        validator=attr.validators.instance_of(AccountAuditConfigurationAuditCheckConfigurations),
+        converter=PropAccountAuditConfigurationAuditCheckConfigurations.from_dict,
+        validator=attr.validators.instance_of(PropAccountAuditConfigurationAuditCheckConfigurations),
         metadata={AttrMeta.PROPERTY_NAME: "AuditCheckConfigurations"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-accountauditconfiguration.html#cfn-iot-accountauditconfiguration-auditcheckconfigurations"""
@@ -2552,10 +2552,10 @@ class AccountAuditConfiguration(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "RoleArn"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-accountauditconfiguration.html#cfn-iot-accountauditconfiguration-rolearn"""
-    p_AuditNotificationTargetConfigurations: typing.Union['AccountAuditConfigurationAuditNotificationTargetConfigurations', dict] = attr.ib(
+    p_AuditNotificationTargetConfigurations: typing.Union['PropAccountAuditConfigurationAuditNotificationTargetConfigurations', dict] = attr.ib(
         default=None,
-        converter=AccountAuditConfigurationAuditNotificationTargetConfigurations.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(AccountAuditConfigurationAuditNotificationTargetConfigurations)),
+        converter=PropAccountAuditConfigurationAuditNotificationTargetConfigurations.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropAccountAuditConfigurationAuditNotificationTargetConfigurations)),
         metadata={AttrMeta.PROPERTY_NAME: "AuditNotificationTargetConfigurations"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-accountauditconfiguration.html#cfn-iot-accountauditconfiguration-auditnotificationtargetconfigurations"""
@@ -2727,10 +2727,10 @@ class ProvisioningTemplate(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Enabled"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-provisioningtemplate.html#cfn-iot-provisioningtemplate-enabled"""
-    p_PreProvisioningHook: typing.Union['ProvisioningTemplateProvisioningHook', dict] = attr.ib(
+    p_PreProvisioningHook: typing.Union['PropProvisioningTemplateProvisioningHook', dict] = attr.ib(
         default=None,
-        converter=ProvisioningTemplateProvisioningHook.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ProvisioningTemplateProvisioningHook)),
+        converter=PropProvisioningTemplateProvisioningHook.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropProvisioningTemplateProvisioningHook)),
         metadata={AttrMeta.PROPERTY_NAME: "PreProvisioningHook"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-provisioningtemplate.html#cfn-iot-provisioningtemplate-preprovisioninghook"""
@@ -2770,10 +2770,10 @@ class Thing(Resource):
     AWS_OBJECT_TYPE = "AWS::IoT::Thing"
 
     
-    p_AttributePayload: typing.Union['ThingAttributePayload', dict] = attr.ib(
+    p_AttributePayload: typing.Union['PropThingAttributePayload', dict] = attr.ib(
         default=None,
-        converter=ThingAttributePayload.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ThingAttributePayload)),
+        converter=PropThingAttributePayload.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropThingAttributePayload)),
         metadata={AttrMeta.PROPERTY_NAME: "AttributePayload"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-thing.html#cfn-iot-thing-attributepayload"""
@@ -2961,10 +2961,10 @@ class TopicRuleDestination(Resource):
     AWS_OBJECT_TYPE = "AWS::IoT::TopicRuleDestination"
 
     
-    p_HttpUrlProperties: typing.Union['TopicRuleDestinationHttpUrlDestinationSummary', dict] = attr.ib(
+    p_HttpUrlProperties: typing.Union['PropTopicRuleDestinationHttpUrlDestinationSummary', dict] = attr.ib(
         default=None,
-        converter=TopicRuleDestinationHttpUrlDestinationSummary.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(TopicRuleDestinationHttpUrlDestinationSummary)),
+        converter=PropTopicRuleDestinationHttpUrlDestinationSummary.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropTopicRuleDestinationHttpUrlDestinationSummary)),
         metadata={AttrMeta.PROPERTY_NAME: "HttpUrlProperties"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-topicruledestination.html#cfn-iot-topicruledestination-httpurlproperties"""
@@ -2974,10 +2974,10 @@ class TopicRuleDestination(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Status"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-topicruledestination.html#cfn-iot-topicruledestination-status"""
-    p_VpcProperties: typing.Union['TopicRuleDestinationVpcDestinationProperties', dict] = attr.ib(
+    p_VpcProperties: typing.Union['PropTopicRuleDestinationVpcDestinationProperties', dict] = attr.ib(
         default=None,
-        converter=TopicRuleDestinationVpcDestinationProperties.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(TopicRuleDestinationVpcDestinationProperties)),
+        converter=PropTopicRuleDestinationVpcDestinationProperties.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropTopicRuleDestinationVpcDestinationProperties)),
         metadata={AttrMeta.PROPERTY_NAME: "VpcProperties"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-topicruledestination.html#cfn-iot-topicruledestination-vpcproperties"""

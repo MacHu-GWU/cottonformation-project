@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class LayerShutdownEventConfiguration(Property):
+class PropLayerShutdownEventConfiguration(Property):
     """
     AWS Object Type = "AWS::OpsWorks::Layer.ShutdownEventConfiguration"
 
@@ -42,7 +42,7 @@ class LayerShutdownEventConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-lifecycleeventconfiguration-shutdowneventconfiguration.html#cfn-opsworks-layer-lifecycleconfiguration-shutdowneventconfiguration-executiontimeout"""
 
 @attr.s
-class AppDataSource(Property):
+class PropAppDataSource(Property):
     """
     AWS Object Type = "AWS::OpsWorks::App.DataSource"
 
@@ -76,7 +76,7 @@ class AppDataSource(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-app-datasource.html#cfn-opsworks-app-datasource-type"""
 
 @attr.s
-class LayerVolumeConfiguration(Property):
+class PropLayerVolumeConfiguration(Property):
     """
     AWS Object Type = "AWS::OpsWorks::Layer.VolumeConfiguration"
 
@@ -138,7 +138,7 @@ class LayerVolumeConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-volumeconfiguration.html#cfn-opsworks-layer-volconfig-volumetype"""
 
 @attr.s
-class StackStackConfigurationManager(Property):
+class PropStackStackConfigurationManager(Property):
     """
     AWS Object Type = "AWS::OpsWorks::Stack.StackConfigurationManager"
 
@@ -165,7 +165,7 @@ class StackStackConfigurationManager(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-stack-stackconfigmanager.html#cfn-opsworks-configmanager-version"""
 
 @attr.s
-class StackRdsDbInstance(Property):
+class PropStackRdsDbInstance(Property):
     """
     AWS Object Type = "AWS::OpsWorks::Stack.RdsDbInstance"
 
@@ -199,7 +199,7 @@ class StackRdsDbInstance(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-stack-rdsdbinstance.html#cfn-opsworks-stack-rdsdbinstance-rdsdbinstancearn"""
 
 @attr.s
-class StackSource(Property):
+class PropStackSource(Property):
     """
     AWS Object Type = "AWS::OpsWorks::Stack.Source"
 
@@ -254,7 +254,7 @@ class StackSource(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-stack-source.html#cfn-opsworks-custcookbooksource-username"""
 
 @attr.s
-class StackChefConfiguration(Property):
+class PropStackChefConfiguration(Property):
     """
     AWS Object Type = "AWS::OpsWorks::Stack.ChefConfiguration"
 
@@ -281,7 +281,7 @@ class StackChefConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-stack-chefconfiguration.html#cfn-opsworks-chefconfiguration-berkshelfversion"""
 
 @attr.s
-class AppSslConfiguration(Property):
+class PropAppSslConfiguration(Property):
     """
     AWS Object Type = "AWS::OpsWorks::App.SslConfiguration"
 
@@ -315,7 +315,7 @@ class AppSslConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-app-sslconfiguration.html#cfn-opsworks-app-sslconfig-privatekey"""
 
 @attr.s
-class LayerRecipes(Property):
+class PropLayerRecipes(Property):
     """
     AWS Object Type = "AWS::OpsWorks::Layer.Recipes"
 
@@ -363,7 +363,7 @@ class LayerRecipes(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-recipes.html#cfn-opsworks-layer-customrecipes-undeploy"""
 
 @attr.s
-class InstanceTimeBasedAutoScaling(Property):
+class PropInstanceTimeBasedAutoScaling(Property):
     """
     AWS Object Type = "AWS::OpsWorks::Instance.TimeBasedAutoScaling"
 
@@ -425,7 +425,7 @@ class InstanceTimeBasedAutoScaling(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-instance-timebasedautoscaling.html#cfn-opsworks-instance-timebasedautoscaling-wednesday"""
 
 @attr.s
-class AppEnvironmentVariable(Property):
+class PropAppEnvironmentVariable(Property):
     """
     AWS Object Type = "AWS::OpsWorks::App.EnvironmentVariable"
 
@@ -459,7 +459,7 @@ class AppEnvironmentVariable(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-app-environment.html#cfn-opsworks-app-environment-secure"""
 
 @attr.s
-class InstanceEbsBlockDevice(Property):
+class PropInstanceEbsBlockDevice(Property):
     """
     AWS Object Type = "AWS::OpsWorks::Instance.EbsBlockDevice"
 
@@ -507,7 +507,7 @@ class InstanceEbsBlockDevice(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-instance-ebsblockdevice.html#cfn-opsworks-instance-ebsblockdevice-volumetype"""
 
 @attr.s
-class LayerLifecycleEventConfiguration(Property):
+class PropLayerLifecycleEventConfiguration(Property):
     """
     AWS Object Type = "AWS::OpsWorks::Layer.LifecycleEventConfiguration"
 
@@ -519,16 +519,16 @@ class LayerLifecycleEventConfiguration(Property):
     """
     AWS_OBJECT_TYPE = "AWS::OpsWorks::Layer.LifecycleEventConfiguration"
     
-    p_ShutdownEventConfiguration: typing.Union['LayerShutdownEventConfiguration', dict] = attr.ib(
+    p_ShutdownEventConfiguration: typing.Union['PropLayerShutdownEventConfiguration', dict] = attr.ib(
         default=None,
-        converter=LayerShutdownEventConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(LayerShutdownEventConfiguration)),
+        converter=PropLayerShutdownEventConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropLayerShutdownEventConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "ShutdownEventConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-lifecycleeventconfiguration.html#cfn-opsworks-layer-lifecycleconfiguration-shutdowneventconfiguration"""
 
 @attr.s
-class LayerAutoScalingThresholds(Property):
+class PropLayerAutoScalingThresholds(Property):
     """
     AWS Object Type = "AWS::OpsWorks::Layer.AutoScalingThresholds"
 
@@ -583,7 +583,7 @@ class LayerAutoScalingThresholds(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-loadbasedautoscaling-autoscalingthresholds.html#cfn-opsworks-layer-loadbasedautoscaling-autoscalingthresholds-thresholdwaittime"""
 
 @attr.s
-class StackElasticIp(Property):
+class PropStackElasticIp(Property):
     """
     AWS Object Type = "AWS::OpsWorks::Stack.ElasticIp"
 
@@ -610,7 +610,7 @@ class StackElasticIp(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-stack-elasticip.html#cfn-opsworks-stack-elasticip-name"""
 
 @attr.s
-class AppSource(Property):
+class PropAppSource(Property):
     """
     AWS Object Type = "AWS::OpsWorks::App.Source"
 
@@ -665,7 +665,7 @@ class AppSource(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-stack-source.html#cfn-opsworks-custcookbooksource-username"""
 
 @attr.s
-class InstanceBlockDeviceMapping(Property):
+class PropInstanceBlockDeviceMapping(Property):
     """
     AWS Object Type = "AWS::OpsWorks::Instance.BlockDeviceMapping"
 
@@ -686,10 +686,10 @@ class InstanceBlockDeviceMapping(Property):
         metadata={AttrMeta.PROPERTY_NAME: "DeviceName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-instance-blockdevicemapping.html#cfn-opsworks-instance-blockdevicemapping-devicename"""
-    p_Ebs: typing.Union['InstanceEbsBlockDevice', dict] = attr.ib(
+    p_Ebs: typing.Union['PropInstanceEbsBlockDevice', dict] = attr.ib(
         default=None,
-        converter=InstanceEbsBlockDevice.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(InstanceEbsBlockDevice)),
+        converter=PropInstanceEbsBlockDevice.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropInstanceEbsBlockDevice)),
         metadata={AttrMeta.PROPERTY_NAME: "Ebs"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-instance-blockdevicemapping.html#cfn-opsworks-instance-blockdevicemapping-ebs"""
@@ -707,7 +707,7 @@ class InstanceBlockDeviceMapping(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-instance-blockdevicemapping.html#cfn-opsworks-instance-blockdevicemapping-virtualname"""
 
 @attr.s
-class LayerLoadBasedAutoScaling(Property):
+class PropLayerLoadBasedAutoScaling(Property):
     """
     AWS Object Type = "AWS::OpsWorks::Layer.LoadBasedAutoScaling"
 
@@ -721,10 +721,10 @@ class LayerLoadBasedAutoScaling(Property):
     """
     AWS_OBJECT_TYPE = "AWS::OpsWorks::Layer.LoadBasedAutoScaling"
     
-    p_DownScaling: typing.Union['LayerAutoScalingThresholds', dict] = attr.ib(
+    p_DownScaling: typing.Union['PropLayerAutoScalingThresholds', dict] = attr.ib(
         default=None,
-        converter=LayerAutoScalingThresholds.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(LayerAutoScalingThresholds)),
+        converter=PropLayerAutoScalingThresholds.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropLayerAutoScalingThresholds)),
         metadata={AttrMeta.PROPERTY_NAME: "DownScaling"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-loadbasedautoscaling.html#cfn-opsworks-layer-loadbasedautoscaling-downscaling"""
@@ -734,10 +734,10 @@ class LayerLoadBasedAutoScaling(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Enable"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-loadbasedautoscaling.html#cfn-opsworks-layer-loadbasedautoscaling-enable"""
-    p_UpScaling: typing.Union['LayerAutoScalingThresholds', dict] = attr.ib(
+    p_UpScaling: typing.Union['PropLayerAutoScalingThresholds', dict] = attr.ib(
         default=None,
-        converter=LayerAutoScalingThresholds.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(LayerAutoScalingThresholds)),
+        converter=PropLayerAutoScalingThresholds.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropLayerAutoScalingThresholds)),
         metadata={AttrMeta.PROPERTY_NAME: "UpScaling"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opsworks-layer-loadbasedautoscaling.html#cfn-opsworks-layer-loadbasedautoscaling-upscaling"""
@@ -788,10 +788,10 @@ class App(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Type"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-app.html#cfn-opsworks-app-type"""
-    p_AppSource: typing.Union['AppSource', dict] = attr.ib(
+    p_AppSource: typing.Union['PropAppSource', dict] = attr.ib(
         default=None,
-        converter=AppSource.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(AppSource)),
+        converter=PropAppSource.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropAppSource)),
         metadata={AttrMeta.PROPERTY_NAME: "AppSource"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-app.html#cfn-opsworks-app-appsource"""
@@ -801,10 +801,10 @@ class App(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Attributes"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-app.html#cfn-opsworks-app-attributes"""
-    p_DataSources: typing.List[typing.Union['AppDataSource', dict]] = attr.ib(
+    p_DataSources: typing.List[typing.Union['PropAppDataSource', dict]] = attr.ib(
         default=None,
-        converter=AppDataSource.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(AppDataSource), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropAppDataSource.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropAppDataSource), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "DataSources"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-app.html#cfn-opsworks-app-datasources"""
@@ -826,10 +826,10 @@ class App(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "EnableSsl"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-app.html#cfn-opsworks-app-enablessl"""
-    p_Environment: typing.List[typing.Union['AppEnvironmentVariable', dict]] = attr.ib(
+    p_Environment: typing.List[typing.Union['PropAppEnvironmentVariable', dict]] = attr.ib(
         default=None,
-        converter=AppEnvironmentVariable.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(AppEnvironmentVariable), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropAppEnvironmentVariable.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropAppEnvironmentVariable), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Environment"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-app.html#cfn-opsworks-app-environment"""
@@ -839,10 +839,10 @@ class App(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Shortname"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-app.html#cfn-opsworks-app-shortname"""
-    p_SslConfiguration: typing.Union['AppSslConfiguration', dict] = attr.ib(
+    p_SslConfiguration: typing.Union['PropAppSslConfiguration', dict] = attr.ib(
         default=None,
-        converter=AppSslConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(AppSslConfiguration)),
+        converter=PropAppSslConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropAppSslConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "SslConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-app.html#cfn-opsworks-app-sslconfiguration"""
@@ -961,10 +961,10 @@ class Instance(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "AvailabilityZone"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-instance.html#cfn-opsworks-instance-availabilityzone"""
-    p_BlockDeviceMappings: typing.List[typing.Union['InstanceBlockDeviceMapping', dict]] = attr.ib(
+    p_BlockDeviceMappings: typing.List[typing.Union['PropInstanceBlockDeviceMapping', dict]] = attr.ib(
         default=None,
-        converter=InstanceBlockDeviceMapping.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(InstanceBlockDeviceMapping), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropInstanceBlockDeviceMapping.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropInstanceBlockDeviceMapping), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "BlockDeviceMappings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-instance.html#cfn-opsworks-instance-blockdevicemappings"""
@@ -1022,10 +1022,10 @@ class Instance(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Tenancy"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-instance.html#cfn-opsworks-instance-tenancy"""
-    p_TimeBasedAutoScaling: typing.Union['InstanceTimeBasedAutoScaling', dict] = attr.ib(
+    p_TimeBasedAutoScaling: typing.Union['PropInstanceTimeBasedAutoScaling', dict] = attr.ib(
         default=None,
-        converter=InstanceTimeBasedAutoScaling.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(InstanceTimeBasedAutoScaling)),
+        converter=PropInstanceTimeBasedAutoScaling.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropInstanceTimeBasedAutoScaling)),
         metadata={AttrMeta.PROPERTY_NAME: "TimeBasedAutoScaling"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-instance.html#cfn-opsworks-instance-timebasedautoscaling"""
@@ -1254,10 +1254,10 @@ class Layer(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "CustomJson"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-customjson"""
-    p_CustomRecipes: typing.Union['LayerRecipes', dict] = attr.ib(
+    p_CustomRecipes: typing.Union['PropLayerRecipes', dict] = attr.ib(
         default=None,
-        converter=LayerRecipes.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(LayerRecipes)),
+        converter=PropLayerRecipes.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropLayerRecipes)),
         metadata={AttrMeta.PROPERTY_NAME: "CustomRecipes"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-customrecipes"""
@@ -1273,17 +1273,17 @@ class Layer(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "InstallUpdatesOnBoot"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-installupdatesonboot"""
-    p_LifecycleEventConfiguration: typing.Union['LayerLifecycleEventConfiguration', dict] = attr.ib(
+    p_LifecycleEventConfiguration: typing.Union['PropLayerLifecycleEventConfiguration', dict] = attr.ib(
         default=None,
-        converter=LayerLifecycleEventConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(LayerLifecycleEventConfiguration)),
+        converter=PropLayerLifecycleEventConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropLayerLifecycleEventConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "LifecycleEventConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-lifecycleeventconfiguration"""
-    p_LoadBasedAutoScaling: typing.Union['LayerLoadBasedAutoScaling', dict] = attr.ib(
+    p_LoadBasedAutoScaling: typing.Union['PropLayerLoadBasedAutoScaling', dict] = attr.ib(
         default=None,
-        converter=LayerLoadBasedAutoScaling.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(LayerLoadBasedAutoScaling)),
+        converter=PropLayerLoadBasedAutoScaling.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropLayerLoadBasedAutoScaling)),
         metadata={AttrMeta.PROPERTY_NAME: "LoadBasedAutoScaling"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-loadbasedautoscaling"""
@@ -1299,10 +1299,10 @@ class Layer(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "UseEbsOptimizedInstances"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-useebsoptimizedinstances"""
-    p_VolumeConfigurations: typing.List[typing.Union['LayerVolumeConfiguration', dict]] = attr.ib(
+    p_VolumeConfigurations: typing.List[typing.Union['PropLayerVolumeConfiguration', dict]] = attr.ib(
         default=None,
-        converter=LayerVolumeConfiguration.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(LayerVolumeConfiguration), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropLayerVolumeConfiguration.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropLayerVolumeConfiguration), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "VolumeConfigurations"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-layer.html#cfn-opsworks-layer-volumeconfigurations"""
@@ -1384,10 +1384,10 @@ class Stack(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Attributes"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html#cfn-opsworks-stack-attributes"""
-    p_ChefConfiguration: typing.Union['StackChefConfiguration', dict] = attr.ib(
+    p_ChefConfiguration: typing.Union['PropStackChefConfiguration', dict] = attr.ib(
         default=None,
-        converter=StackChefConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(StackChefConfiguration)),
+        converter=PropStackChefConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropStackChefConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "ChefConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html#cfn-opsworks-stack-chefconfiguration"""
@@ -1403,17 +1403,17 @@ class Stack(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "ClonePermissions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html#cfn-opsworks-stack-clonepermissions"""
-    p_ConfigurationManager: typing.Union['StackStackConfigurationManager', dict] = attr.ib(
+    p_ConfigurationManager: typing.Union['PropStackStackConfigurationManager', dict] = attr.ib(
         default=None,
-        converter=StackStackConfigurationManager.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(StackStackConfigurationManager)),
+        converter=PropStackStackConfigurationManager.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropStackStackConfigurationManager)),
         metadata={AttrMeta.PROPERTY_NAME: "ConfigurationManager"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html#cfn-opsworks-stack-configmanager"""
-    p_CustomCookbooksSource: typing.Union['StackSource', dict] = attr.ib(
+    p_CustomCookbooksSource: typing.Union['PropStackSource', dict] = attr.ib(
         default=None,
-        converter=StackSource.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(StackSource)),
+        converter=PropStackSource.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropStackSource)),
         metadata={AttrMeta.PROPERTY_NAME: "CustomCookbooksSource"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html#cfn-opsworks-stack-custcookbooksource"""
@@ -1459,10 +1459,10 @@ class Stack(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "EcsClusterArn"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html#cfn-opsworks-stack-ecsclusterarn"""
-    p_ElasticIps: typing.List[typing.Union['StackElasticIp', dict]] = attr.ib(
+    p_ElasticIps: typing.List[typing.Union['PropStackElasticIp', dict]] = attr.ib(
         default=None,
-        converter=StackElasticIp.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(StackElasticIp), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropStackElasticIp.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropStackElasticIp), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "ElasticIps"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html#cfn-opsworks-stack-elasticips"""
@@ -1472,10 +1472,10 @@ class Stack(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "HostnameTheme"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html#cfn-opsworks-stack-hostnametheme"""
-    p_RdsDbInstances: typing.List[typing.Union['StackRdsDbInstance', dict]] = attr.ib(
+    p_RdsDbInstances: typing.List[typing.Union['PropStackRdsDbInstance', dict]] = attr.ib(
         default=None,
-        converter=StackRdsDbInstance.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(StackRdsDbInstance), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropStackRdsDbInstance.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropStackRdsDbInstance), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "RdsDbInstances"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opsworks-stack.html#cfn-opsworks-stack-rdsdbinstances"""

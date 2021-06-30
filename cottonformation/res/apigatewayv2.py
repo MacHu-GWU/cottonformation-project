@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class ApiGatewayManagedOverridesAccessLogSettings(Property):
+class PropApiGatewayManagedOverridesAccessLogSettings(Property):
     """
     AWS Object Type = "AWS::ApiGatewayV2::ApiGatewayManagedOverrides.AccessLogSettings"
 
@@ -42,7 +42,7 @@ class ApiGatewayManagedOverridesAccessLogSettings(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-apigatewaymanagedoverrides-accesslogsettings.html#cfn-apigatewayv2-apigatewaymanagedoverrides-accesslogsettings-format"""
 
 @attr.s
-class ApiGatewayManagedOverridesRouteOverrides(Property):
+class PropApiGatewayManagedOverridesRouteOverrides(Property):
     """
     AWS Object Type = "AWS::ApiGatewayV2::ApiGatewayManagedOverrides.RouteOverrides"
 
@@ -90,7 +90,7 @@ class ApiGatewayManagedOverridesRouteOverrides(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-apigatewaymanagedoverrides-routeoverrides.html#cfn-apigatewayv2-apigatewaymanagedoverrides-routeoverrides-target"""
 
 @attr.s
-class RouteParameterConstraints(Property):
+class PropRouteParameterConstraints(Property):
     """
     AWS Object Type = "AWS::ApiGatewayV2::Route.ParameterConstraints"
 
@@ -110,7 +110,7 @@ class RouteParameterConstraints(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-route-parameterconstraints.html#cfn-apigatewayv2-route-parameterconstraints-required"""
 
 @attr.s
-class IntegrationTlsConfig(Property):
+class PropIntegrationTlsConfig(Property):
     """
     AWS Object Type = "AWS::ApiGatewayV2::Integration.TlsConfig"
 
@@ -130,7 +130,7 @@ class IntegrationTlsConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-integration-tlsconfig.html#cfn-apigatewayv2-integration-tlsconfig-servernametoverify"""
 
 @attr.s
-class StageAccessLogSettings(Property):
+class PropStageAccessLogSettings(Property):
     """
     AWS Object Type = "AWS::ApiGatewayV2::Stage.AccessLogSettings"
 
@@ -157,7 +157,7 @@ class StageAccessLogSettings(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-stage-accesslogsettings.html#cfn-apigatewayv2-stage-accesslogsettings-format"""
 
 @attr.s
-class DomainNameMutualTlsAuthentication(Property):
+class PropDomainNameMutualTlsAuthentication(Property):
     """
     AWS Object Type = "AWS::ApiGatewayV2::DomainName.MutualTlsAuthentication"
 
@@ -184,7 +184,7 @@ class DomainNameMutualTlsAuthentication(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-domainname-mutualtlsauthentication.html#cfn-apigatewayv2-domainname-mutualtlsauthentication-truststoreversion"""
 
 @attr.s
-class ApiGatewayManagedOverridesRouteSettings(Property):
+class PropApiGatewayManagedOverridesRouteSettings(Property):
     """
     AWS Object Type = "AWS::ApiGatewayV2::ApiGatewayManagedOverrides.RouteSettings"
 
@@ -232,7 +232,7 @@ class ApiGatewayManagedOverridesRouteSettings(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-apigatewaymanagedoverrides-routesettings.html#cfn-apigatewayv2-apigatewaymanagedoverrides-routesettings-throttlingratelimit"""
 
 @attr.s
-class IntegrationResponseParameter(Property):
+class PropIntegrationResponseParameter(Property):
     """
     AWS Object Type = "AWS::ApiGatewayV2::Integration.ResponseParameter"
 
@@ -259,7 +259,7 @@ class IntegrationResponseParameter(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-integration-responseparameter.html#cfn-apigatewayv2-integration-responseparameter-source"""
 
 @attr.s
-class ApiGatewayManagedOverridesIntegrationOverrides(Property):
+class PropApiGatewayManagedOverridesIntegrationOverrides(Property):
     """
     AWS Object Type = "AWS::ApiGatewayV2::ApiGatewayManagedOverrides.IntegrationOverrides"
 
@@ -300,7 +300,7 @@ class ApiGatewayManagedOverridesIntegrationOverrides(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-apigatewaymanagedoverrides-integrationoverrides.html#cfn-apigatewayv2-apigatewaymanagedoverrides-integrationoverrides-timeoutinmillis"""
 
 @attr.s
-class AuthorizerJWTConfiguration(Property):
+class PropAuthorizerJWTConfiguration(Property):
     """
     AWS Object Type = "AWS::ApiGatewayV2::Authorizer.JWTConfiguration"
 
@@ -327,7 +327,7 @@ class AuthorizerJWTConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-authorizer-jwtconfiguration.html#cfn-apigatewayv2-authorizer-jwtconfiguration-issuer"""
 
 @attr.s
-class DomainNameDomainNameConfiguration(Property):
+class PropDomainNameDomainNameConfiguration(Property):
     """
     AWS Object Type = "AWS::ApiGatewayV2::DomainName.DomainNameConfiguration"
 
@@ -368,7 +368,7 @@ class DomainNameDomainNameConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-domainname-domainnameconfiguration.html#cfn-apigatewayv2-domainname-domainnameconfiguration-securitypolicy"""
 
 @attr.s
-class RouteResponseParameterConstraints(Property):
+class PropRouteResponseParameterConstraints(Property):
     """
     AWS Object Type = "AWS::ApiGatewayV2::RouteResponse.ParameterConstraints"
 
@@ -388,7 +388,7 @@ class RouteResponseParameterConstraints(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-routeresponse-parameterconstraints.html#cfn-apigatewayv2-routeresponse-parameterconstraints-required"""
 
 @attr.s
-class ApiCors(Property):
+class PropApiCors(Property):
     """
     AWS Object Type = "AWS::ApiGatewayV2::Api.Cors"
 
@@ -443,7 +443,7 @@ class ApiCors(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-api-cors.html#cfn-apigatewayv2-api-cors-maxage"""
 
 @attr.s
-class ApiBodyS3Location(Property):
+class PropApiBodyS3Location(Property):
     """
     AWS Object Type = "AWS::ApiGatewayV2::Api.BodyS3Location"
 
@@ -484,7 +484,7 @@ class ApiBodyS3Location(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-api-bodys3location.html#cfn-apigatewayv2-api-bodys3location-version"""
 
 @attr.s
-class StageRouteSettings(Property):
+class PropStageRouteSettings(Property):
     """
     AWS Object Type = "AWS::ApiGatewayV2::Stage.RouteSettings"
 
@@ -532,7 +532,7 @@ class StageRouteSettings(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-stage-routesettings.html#cfn-apigatewayv2-stage-routesettings-throttlingratelimit"""
 
 @attr.s
-class IntegrationResponseParameterList(Property):
+class PropIntegrationResponseParameterList(Property):
     """
     AWS Object Type = "AWS::ApiGatewayV2::Integration.ResponseParameterList"
 
@@ -544,16 +544,16 @@ class IntegrationResponseParameterList(Property):
     """
     AWS_OBJECT_TYPE = "AWS::ApiGatewayV2::Integration.ResponseParameterList"
     
-    p_ResponseParameters: typing.List[typing.Union['IntegrationResponseParameter', dict]] = attr.ib(
+    p_ResponseParameters: typing.List[typing.Union['PropIntegrationResponseParameter', dict]] = attr.ib(
         default=None,
-        converter=IntegrationResponseParameter.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(IntegrationResponseParameter), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropIntegrationResponseParameter.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropIntegrationResponseParameter), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "ResponseParameters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-integration-responseparameterlist.html#cfn-apigatewayv2-integration-responseparameterlist-responseparameters"""
 
 @attr.s
-class ApiGatewayManagedOverridesStageOverrides(Property):
+class PropApiGatewayManagedOverridesStageOverrides(Property):
     """
     AWS Object Type = "AWS::ApiGatewayV2::ApiGatewayManagedOverrides.StageOverrides"
 
@@ -570,10 +570,10 @@ class ApiGatewayManagedOverridesStageOverrides(Property):
     """
     AWS_OBJECT_TYPE = "AWS::ApiGatewayV2::ApiGatewayManagedOverrides.StageOverrides"
     
-    p_AccessLogSettings: typing.Union['ApiGatewayManagedOverridesAccessLogSettings', dict] = attr.ib(
+    p_AccessLogSettings: typing.Union['PropApiGatewayManagedOverridesAccessLogSettings', dict] = attr.ib(
         default=None,
-        converter=ApiGatewayManagedOverridesAccessLogSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ApiGatewayManagedOverridesAccessLogSettings)),
+        converter=PropApiGatewayManagedOverridesAccessLogSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropApiGatewayManagedOverridesAccessLogSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "AccessLogSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-apigatewaymanagedoverrides-stageoverrides.html#cfn-apigatewayv2-apigatewaymanagedoverrides-stageoverrides-accesslogsettings"""
@@ -583,10 +583,10 @@ class ApiGatewayManagedOverridesStageOverrides(Property):
         metadata={AttrMeta.PROPERTY_NAME: "AutoDeploy"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-apigatewaymanagedoverrides-stageoverrides.html#cfn-apigatewayv2-apigatewaymanagedoverrides-stageoverrides-autodeploy"""
-    p_DefaultRouteSettings: typing.Union['ApiGatewayManagedOverridesRouteSettings', dict] = attr.ib(
+    p_DefaultRouteSettings: typing.Union['PropApiGatewayManagedOverridesRouteSettings', dict] = attr.ib(
         default=None,
-        converter=ApiGatewayManagedOverridesRouteSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ApiGatewayManagedOverridesRouteSettings)),
+        converter=PropApiGatewayManagedOverridesRouteSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropApiGatewayManagedOverridesRouteSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "DefaultRouteSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apigatewayv2-apigatewaymanagedoverrides-stageoverrides.html#cfn-apigatewayv2-apigatewaymanagedoverrides-stageoverrides-defaultroutesettings"""
@@ -735,24 +735,24 @@ class ApiGatewayManagedOverrides(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "ApiId"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-apigatewaymanagedoverrides.html#cfn-apigatewayv2-apigatewaymanagedoverrides-apiid"""
-    p_Integration: typing.Union['ApiGatewayManagedOverridesIntegrationOverrides', dict] = attr.ib(
+    p_Integration: typing.Union['PropApiGatewayManagedOverridesIntegrationOverrides', dict] = attr.ib(
         default=None,
-        converter=ApiGatewayManagedOverridesIntegrationOverrides.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ApiGatewayManagedOverridesIntegrationOverrides)),
+        converter=PropApiGatewayManagedOverridesIntegrationOverrides.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropApiGatewayManagedOverridesIntegrationOverrides)),
         metadata={AttrMeta.PROPERTY_NAME: "Integration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-apigatewaymanagedoverrides.html#cfn-apigatewayv2-apigatewaymanagedoverrides-integration"""
-    p_Route: typing.Union['ApiGatewayManagedOverridesRouteOverrides', dict] = attr.ib(
+    p_Route: typing.Union['PropApiGatewayManagedOverridesRouteOverrides', dict] = attr.ib(
         default=None,
-        converter=ApiGatewayManagedOverridesRouteOverrides.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ApiGatewayManagedOverridesRouteOverrides)),
+        converter=PropApiGatewayManagedOverridesRouteOverrides.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropApiGatewayManagedOverridesRouteOverrides)),
         metadata={AttrMeta.PROPERTY_NAME: "Route"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-apigatewaymanagedoverrides.html#cfn-apigatewayv2-apigatewaymanagedoverrides-route"""
-    p_Stage: typing.Union['ApiGatewayManagedOverridesStageOverrides', dict] = attr.ib(
+    p_Stage: typing.Union['PropApiGatewayManagedOverridesStageOverrides', dict] = attr.ib(
         default=None,
-        converter=ApiGatewayManagedOverridesStageOverrides.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ApiGatewayManagedOverridesStageOverrides)),
+        converter=PropApiGatewayManagedOverridesStageOverrides.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropApiGatewayManagedOverridesStageOverrides)),
         metadata={AttrMeta.PROPERTY_NAME: "Stage"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-apigatewaymanagedoverrides.html#cfn-apigatewayv2-apigatewaymanagedoverrides-stage"""
@@ -796,10 +796,10 @@ class Stage(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "StageName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-stage.html#cfn-apigatewayv2-stage-stagename"""
-    p_AccessLogSettings: typing.Union['StageAccessLogSettings', dict] = attr.ib(
+    p_AccessLogSettings: typing.Union['PropStageAccessLogSettings', dict] = attr.ib(
         default=None,
-        converter=StageAccessLogSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(StageAccessLogSettings)),
+        converter=PropStageAccessLogSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropStageAccessLogSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "AccessLogSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-stage.html#cfn-apigatewayv2-stage-accesslogsettings"""
@@ -821,10 +821,10 @@ class Stage(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "ClientCertificateId"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-stage.html#cfn-apigatewayv2-stage-clientcertificateid"""
-    p_DefaultRouteSettings: typing.Union['StageRouteSettings', dict] = attr.ib(
+    p_DefaultRouteSettings: typing.Union['PropStageRouteSettings', dict] = attr.ib(
         default=None,
-        converter=StageRouteSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(StageRouteSettings)),
+        converter=PropStageRouteSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropStageRouteSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "DefaultRouteSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-stage.html#cfn-apigatewayv2-stage-defaultroutesettings"""
@@ -909,17 +909,17 @@ class Api(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Body"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-api.html#cfn-apigatewayv2-api-body"""
-    p_BodyS3Location: typing.Union['ApiBodyS3Location', dict] = attr.ib(
+    p_BodyS3Location: typing.Union['PropApiBodyS3Location', dict] = attr.ib(
         default=None,
-        converter=ApiBodyS3Location.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ApiBodyS3Location)),
+        converter=PropApiBodyS3Location.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropApiBodyS3Location)),
         metadata={AttrMeta.PROPERTY_NAME: "BodyS3Location"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-api.html#cfn-apigatewayv2-api-bodys3location"""
-    p_CorsConfiguration: typing.Union['ApiCors', dict] = attr.ib(
+    p_CorsConfiguration: typing.Union['PropApiCors', dict] = attr.ib(
         default=None,
-        converter=ApiCors.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ApiCors)),
+        converter=PropApiCors.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropApiCors)),
         metadata={AttrMeta.PROPERTY_NAME: "CorsConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-api.html#cfn-apigatewayv2-api-corsconfiguration"""
@@ -1128,17 +1128,17 @@ class DomainName(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "DomainName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-domainname.html#cfn-apigatewayv2-domainname-domainname"""
-    p_DomainNameConfigurations: typing.List[typing.Union['DomainNameDomainNameConfiguration', dict]] = attr.ib(
+    p_DomainNameConfigurations: typing.List[typing.Union['PropDomainNameDomainNameConfiguration', dict]] = attr.ib(
         default=None,
-        converter=DomainNameDomainNameConfiguration.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(DomainNameDomainNameConfiguration), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropDomainNameDomainNameConfiguration.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDomainNameDomainNameConfiguration), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "DomainNameConfigurations"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-domainname.html#cfn-apigatewayv2-domainname-domainnameconfigurations"""
-    p_MutualTlsAuthentication: typing.Union['DomainNameMutualTlsAuthentication', dict] = attr.ib(
+    p_MutualTlsAuthentication: typing.Union['PropDomainNameMutualTlsAuthentication', dict] = attr.ib(
         default=None,
-        converter=DomainNameMutualTlsAuthentication.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DomainNameMutualTlsAuthentication)),
+        converter=PropDomainNameMutualTlsAuthentication.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDomainNameMutualTlsAuthentication)),
         metadata={AttrMeta.PROPERTY_NAME: "MutualTlsAuthentication"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-domainname.html#cfn-apigatewayv2-domainname-mutualtlsauthentication"""
@@ -1294,10 +1294,10 @@ class Integration(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "TimeoutInMillis"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-integration.html#cfn-apigatewayv2-integration-timeoutinmillis"""
-    p_TlsConfig: typing.Union['IntegrationTlsConfig', dict] = attr.ib(
+    p_TlsConfig: typing.Union['PropIntegrationTlsConfig', dict] = attr.ib(
         default=None,
-        converter=IntegrationTlsConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(IntegrationTlsConfig)),
+        converter=PropIntegrationTlsConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropIntegrationTlsConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "TlsConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-integration.html#cfn-apigatewayv2-integration-tlsconfig"""
@@ -1476,10 +1476,10 @@ class Authorizer(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "IdentityValidationExpression"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-authorizer.html#cfn-apigatewayv2-authorizer-identityvalidationexpression"""
-    p_JwtConfiguration: typing.Union['AuthorizerJWTConfiguration', dict] = attr.ib(
+    p_JwtConfiguration: typing.Union['PropAuthorizerJWTConfiguration', dict] = attr.ib(
         default=None,
-        converter=AuthorizerJWTConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(AuthorizerJWTConfiguration)),
+        converter=PropAuthorizerJWTConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropAuthorizerJWTConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "JwtConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigatewayv2-authorizer.html#cfn-apigatewayv2-authorizer-jwtconfiguration"""

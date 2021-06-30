@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class ClusterLoggingProperties(Property):
+class PropClusterLoggingProperties(Property):
     """
     AWS Object Type = "AWS::Redshift::Cluster.LoggingProperties"
 
@@ -42,7 +42,7 @@ class ClusterLoggingProperties(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-redshift-cluster-loggingproperties.html#cfn-redshift-cluster-loggingproperties-s3keyprefix"""
 
 @attr.s
-class ClusterParameterGroupParameter(Property):
+class PropClusterParameterGroupParameter(Property):
     """
     AWS Object Type = "AWS::Redshift::ClusterParameterGroup.Parameter"
 
@@ -234,10 +234,10 @@ class Cluster(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "KmsKeyId"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-kmskeyid"""
-    p_LoggingProperties: typing.Union['ClusterLoggingProperties', dict] = attr.ib(
+    p_LoggingProperties: typing.Union['PropClusterLoggingProperties', dict] = attr.ib(
         default=None,
-        converter=ClusterLoggingProperties.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ClusterLoggingProperties)),
+        converter=PropClusterLoggingProperties.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropClusterLoggingProperties)),
         metadata={AttrMeta.PROPERTY_NAME: "LoggingProperties"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-loggingproperties"""
@@ -333,10 +333,10 @@ class ClusterParameterGroup(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "ParameterGroupFamily"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clusterparametergroup.html#cfn-redshift-clusterparametergroup-parametergroupfamily"""
-    p_Parameters: typing.List[typing.Union['ClusterParameterGroupParameter', dict]] = attr.ib(
+    p_Parameters: typing.List[typing.Union['PropClusterParameterGroupParameter', dict]] = attr.ib(
         default=None,
-        converter=ClusterParameterGroupParameter.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ClusterParameterGroupParameter), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropClusterParameterGroupParameter.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropClusterParameterGroupParameter), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Parameters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clusterparametergroup.html#cfn-redshift-clusterparametergroup-parameters"""

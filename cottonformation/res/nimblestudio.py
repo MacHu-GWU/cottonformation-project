@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class StudioComponentLicenseServiceConfiguration(Property):
+class PropStudioComponentLicenseServiceConfiguration(Property):
     """
     AWS Object Type = "AWS::NimbleStudio::StudioComponent.LicenseServiceConfiguration"
 
@@ -35,7 +35,7 @@ class StudioComponentLicenseServiceConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-nimblestudio-studiocomponent-licenseserviceconfiguration.html#cfn-nimblestudio-studiocomponent-licenseserviceconfiguration-endpoint"""
 
 @attr.s
-class LaunchProfileStreamConfiguration(Property):
+class PropLaunchProfileStreamConfiguration(Property):
     """
     AWS Object Type = "AWS::NimbleStudio::LaunchProfile.StreamConfiguration"
 
@@ -76,7 +76,7 @@ class LaunchProfileStreamConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-nimblestudio-launchprofile-streamconfiguration.html#cfn-nimblestudio-launchprofile-streamconfiguration-maxsessionlengthinminutes"""
 
 @attr.s
-class StudioComponentScriptParameterKeyValue(Property):
+class PropStudioComponentScriptParameterKeyValue(Property):
     """
     AWS Object Type = "AWS::NimbleStudio::StudioComponent.ScriptParameterKeyValue"
 
@@ -103,7 +103,7 @@ class StudioComponentScriptParameterKeyValue(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-nimblestudio-studiocomponent-scriptparameterkeyvalue.html#cfn-nimblestudio-studiocomponent-scriptparameterkeyvalue-value"""
 
 @attr.s
-class StudioStudioEncryptionConfiguration(Property):
+class PropStudioStudioEncryptionConfiguration(Property):
     """
     AWS Object Type = "AWS::NimbleStudio::Studio.StudioEncryptionConfiguration"
 
@@ -130,7 +130,7 @@ class StudioStudioEncryptionConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-nimblestudio-studio-studioencryptionconfiguration.html#cfn-nimblestudio-studio-studioencryptionconfiguration-keyarn"""
 
 @attr.s
-class StudioComponentActiveDirectoryComputerAttribute(Property):
+class PropStudioComponentActiveDirectoryComputerAttribute(Property):
     """
     AWS Object Type = "AWS::NimbleStudio::StudioComponent.ActiveDirectoryComputerAttribute"
 
@@ -157,7 +157,7 @@ class StudioComponentActiveDirectoryComputerAttribute(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-nimblestudio-studiocomponent-activedirectorycomputerattribute.html#cfn-nimblestudio-studiocomponent-activedirectorycomputerattribute-value"""
 
 @attr.s
-class StudioComponentStudioComponentInitializationScript(Property):
+class PropStudioComponentStudioComponentInitializationScript(Property):
     """
     AWS Object Type = "AWS::NimbleStudio::StudioComponent.StudioComponentInitializationScript"
 
@@ -198,7 +198,7 @@ class StudioComponentStudioComponentInitializationScript(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-nimblestudio-studiocomponent-studiocomponentinitializationscript.html#cfn-nimblestudio-studiocomponent-studiocomponentinitializationscript-script"""
 
 @attr.s
-class StudioComponentComputeFarmConfiguration(Property):
+class PropStudioComponentComputeFarmConfiguration(Property):
     """
     AWS Object Type = "AWS::NimbleStudio::StudioComponent.ComputeFarmConfiguration"
 
@@ -225,7 +225,7 @@ class StudioComponentComputeFarmConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-nimblestudio-studiocomponent-computefarmconfiguration.html#cfn-nimblestudio-studiocomponent-computefarmconfiguration-endpoint"""
 
 @attr.s
-class StudioComponentSharedFileSystemConfiguration(Property):
+class PropStudioComponentSharedFileSystemConfiguration(Property):
     """
     AWS Object Type = "AWS::NimbleStudio::StudioComponent.SharedFileSystemConfiguration"
 
@@ -273,7 +273,7 @@ class StudioComponentSharedFileSystemConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-nimblestudio-studiocomponent-sharedfilesystemconfiguration.html#cfn-nimblestudio-studiocomponent-sharedfilesystemconfiguration-windowsmountdrive"""
 
 @attr.s
-class StudioComponentActiveDirectoryConfiguration(Property):
+class PropStudioComponentActiveDirectoryConfiguration(Property):
     """
     AWS Object Type = "AWS::NimbleStudio::StudioComponent.ActiveDirectoryConfiguration"
 
@@ -287,10 +287,10 @@ class StudioComponentActiveDirectoryConfiguration(Property):
     """
     AWS_OBJECT_TYPE = "AWS::NimbleStudio::StudioComponent.ActiveDirectoryConfiguration"
     
-    p_ComputerAttributes: typing.List[typing.Union['StudioComponentActiveDirectoryComputerAttribute', dict]] = attr.ib(
+    p_ComputerAttributes: typing.List[typing.Union['PropStudioComponentActiveDirectoryComputerAttribute', dict]] = attr.ib(
         default=None,
-        converter=StudioComponentActiveDirectoryComputerAttribute.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(StudioComponentActiveDirectoryComputerAttribute), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropStudioComponentActiveDirectoryComputerAttribute.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropStudioComponentActiveDirectoryComputerAttribute), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "ComputerAttributes"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-nimblestudio-studiocomponent-activedirectoryconfiguration.html#cfn-nimblestudio-studiocomponent-activedirectoryconfiguration-computerattributes"""
@@ -308,7 +308,7 @@ class StudioComponentActiveDirectoryConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-nimblestudio-studiocomponent-activedirectoryconfiguration.html#cfn-nimblestudio-studiocomponent-activedirectoryconfiguration-organizationalunitdistinguishedname"""
 
 @attr.s
-class StudioComponentStudioComponentConfiguration(Property):
+class PropStudioComponentStudioComponentConfiguration(Property):
     """
     AWS Object Type = "AWS::NimbleStudio::StudioComponent.StudioComponentConfiguration"
 
@@ -323,31 +323,31 @@ class StudioComponentStudioComponentConfiguration(Property):
     """
     AWS_OBJECT_TYPE = "AWS::NimbleStudio::StudioComponent.StudioComponentConfiguration"
     
-    p_ActiveDirectoryConfiguration: typing.Union['StudioComponentActiveDirectoryConfiguration', dict] = attr.ib(
+    p_ActiveDirectoryConfiguration: typing.Union['PropStudioComponentActiveDirectoryConfiguration', dict] = attr.ib(
         default=None,
-        converter=StudioComponentActiveDirectoryConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(StudioComponentActiveDirectoryConfiguration)),
+        converter=PropStudioComponentActiveDirectoryConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropStudioComponentActiveDirectoryConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "ActiveDirectoryConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-nimblestudio-studiocomponent-studiocomponentconfiguration.html#cfn-nimblestudio-studiocomponent-studiocomponentconfiguration-activedirectoryconfiguration"""
-    p_ComputeFarmConfiguration: typing.Union['StudioComponentComputeFarmConfiguration', dict] = attr.ib(
+    p_ComputeFarmConfiguration: typing.Union['PropStudioComponentComputeFarmConfiguration', dict] = attr.ib(
         default=None,
-        converter=StudioComponentComputeFarmConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(StudioComponentComputeFarmConfiguration)),
+        converter=PropStudioComponentComputeFarmConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropStudioComponentComputeFarmConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "ComputeFarmConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-nimblestudio-studiocomponent-studiocomponentconfiguration.html#cfn-nimblestudio-studiocomponent-studiocomponentconfiguration-computefarmconfiguration"""
-    p_LicenseServiceConfiguration: typing.Union['StudioComponentLicenseServiceConfiguration', dict] = attr.ib(
+    p_LicenseServiceConfiguration: typing.Union['PropStudioComponentLicenseServiceConfiguration', dict] = attr.ib(
         default=None,
-        converter=StudioComponentLicenseServiceConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(StudioComponentLicenseServiceConfiguration)),
+        converter=PropStudioComponentLicenseServiceConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropStudioComponentLicenseServiceConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "LicenseServiceConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-nimblestudio-studiocomponent-studiocomponentconfiguration.html#cfn-nimblestudio-studiocomponent-studiocomponentconfiguration-licenseserviceconfiguration"""
-    p_SharedFileSystemConfiguration: typing.Union['StudioComponentSharedFileSystemConfiguration', dict] = attr.ib(
+    p_SharedFileSystemConfiguration: typing.Union['PropStudioComponentSharedFileSystemConfiguration', dict] = attr.ib(
         default=None,
-        converter=StudioComponentSharedFileSystemConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(StudioComponentSharedFileSystemConfiguration)),
+        converter=PropStudioComponentSharedFileSystemConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropStudioComponentSharedFileSystemConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "SharedFileSystemConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-nimblestudio-studiocomponent-studiocomponentconfiguration.html#cfn-nimblestudio-studiocomponent-studiocomponentconfiguration-sharedfilesystemconfiguration"""
@@ -465,10 +465,10 @@ class LaunchProfile(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Name"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-nimblestudio-launchprofile.html#cfn-nimblestudio-launchprofile-name"""
-    rp_StreamConfiguration: typing.Union['LaunchProfileStreamConfiguration', dict] = attr.ib(
+    rp_StreamConfiguration: typing.Union['PropLaunchProfileStreamConfiguration', dict] = attr.ib(
         default=None,
-        converter=LaunchProfileStreamConfiguration.from_dict,
-        validator=attr.validators.instance_of(LaunchProfileStreamConfiguration),
+        converter=PropLaunchProfileStreamConfiguration.from_dict,
+        validator=attr.validators.instance_of(PropLaunchProfileStreamConfiguration),
         metadata={AttrMeta.PROPERTY_NAME: "StreamConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-nimblestudio-launchprofile.html#cfn-nimblestudio-launchprofile-streamconfiguration"""
@@ -545,10 +545,10 @@ class StudioComponent(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Type"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-nimblestudio-studiocomponent.html#cfn-nimblestudio-studiocomponent-type"""
-    p_Configuration: typing.Union['StudioComponentStudioComponentConfiguration', dict] = attr.ib(
+    p_Configuration: typing.Union['PropStudioComponentStudioComponentConfiguration', dict] = attr.ib(
         default=None,
-        converter=StudioComponentStudioComponentConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(StudioComponentStudioComponentConfiguration)),
+        converter=PropStudioComponentStudioComponentConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropStudioComponentStudioComponentConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "Configuration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-nimblestudio-studiocomponent.html#cfn-nimblestudio-studiocomponent-configuration"""
@@ -564,17 +564,17 @@ class StudioComponent(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Ec2SecurityGroupIds"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-nimblestudio-studiocomponent.html#cfn-nimblestudio-studiocomponent-ec2securitygroupids"""
-    p_InitializationScripts: typing.List[typing.Union['StudioComponentStudioComponentInitializationScript', dict]] = attr.ib(
+    p_InitializationScripts: typing.List[typing.Union['PropStudioComponentStudioComponentInitializationScript', dict]] = attr.ib(
         default=None,
-        converter=StudioComponentStudioComponentInitializationScript.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(StudioComponentStudioComponentInitializationScript), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropStudioComponentStudioComponentInitializationScript.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropStudioComponentStudioComponentInitializationScript), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "InitializationScripts"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-nimblestudio-studiocomponent.html#cfn-nimblestudio-studiocomponent-initializationscripts"""
-    p_ScriptParameters: typing.List[typing.Union['StudioComponentScriptParameterKeyValue', dict]] = attr.ib(
+    p_ScriptParameters: typing.List[typing.Union['PropStudioComponentScriptParameterKeyValue', dict]] = attr.ib(
         default=None,
-        converter=StudioComponentScriptParameterKeyValue.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(StudioComponentScriptParameterKeyValue), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropStudioComponentScriptParameterKeyValue.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropStudioComponentScriptParameterKeyValue), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "ScriptParameters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-nimblestudio-studiocomponent.html#cfn-nimblestudio-studiocomponent-scriptparameters"""
@@ -641,10 +641,10 @@ class Studio(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "UserRoleArn"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-nimblestudio-studio.html#cfn-nimblestudio-studio-userrolearn"""
-    p_StudioEncryptionConfiguration: typing.Union['StudioStudioEncryptionConfiguration', dict] = attr.ib(
+    p_StudioEncryptionConfiguration: typing.Union['PropStudioStudioEncryptionConfiguration', dict] = attr.ib(
         default=None,
-        converter=StudioStudioEncryptionConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(StudioStudioEncryptionConfiguration)),
+        converter=PropStudioStudioEncryptionConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropStudioStudioEncryptionConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "StudioEncryptionConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-nimblestudio-studio.html#cfn-nimblestudio-studio-studioencryptionconfiguration"""

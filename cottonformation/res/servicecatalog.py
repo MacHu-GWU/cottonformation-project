@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class CloudFormationProvisionedProductProvisioningParameter(Property):
+class PropCloudFormationProvisionedProductProvisioningParameter(Property):
     """
     AWS Object Type = "AWS::ServiceCatalog::CloudFormationProvisionedProduct.ProvisioningParameter"
 
@@ -42,7 +42,7 @@ class CloudFormationProvisionedProductProvisioningParameter(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicecatalog-cloudformationprovisionedproduct-provisioningparameter.html#cfn-servicecatalog-cloudformationprovisionedproduct-provisioningparameter-value"""
 
 @attr.s
-class CloudFormationProvisionedProductProvisioningPreferences(Property):
+class PropCloudFormationProvisionedProductProvisioningPreferences(Property):
     """
     AWS Object Type = "AWS::ServiceCatalog::CloudFormationProvisionedProduct.ProvisioningPreferences"
 
@@ -104,7 +104,7 @@ class CloudFormationProvisionedProductProvisioningPreferences(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicecatalog-cloudformationprovisionedproduct-provisioningpreferences.html#cfn-servicecatalog-cloudformationprovisionedproduct-provisioningpreferences-stacksetregions"""
 
 @attr.s
-class ServiceActionDefinitionParameter(Property):
+class PropServiceActionDefinitionParameter(Property):
     """
     AWS Object Type = "AWS::ServiceCatalog::ServiceAction.DefinitionParameter"
 
@@ -131,7 +131,7 @@ class ServiceActionDefinitionParameter(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicecatalog-serviceaction-definitionparameter.html#cfn-servicecatalog-serviceaction-definitionparameter-value"""
 
 @attr.s
-class CloudFormationProductProvisioningArtifactProperties(Property):
+class PropCloudFormationProductProvisioningArtifactProperties(Property):
     """
     AWS Object Type = "AWS::ServiceCatalog::CloudFormationProduct.ProvisioningArtifactProperties"
 
@@ -379,10 +379,10 @@ class CloudFormationProduct(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Owner"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-owner"""
-    rp_ProvisioningArtifactParameters: typing.List[typing.Union['CloudFormationProductProvisioningArtifactProperties', dict]] = attr.ib(
+    rp_ProvisioningArtifactParameters: typing.List[typing.Union['PropCloudFormationProductProvisioningArtifactProperties', dict]] = attr.ib(
         default=None,
-        converter=CloudFormationProductProvisioningArtifactProperties.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(CloudFormationProductProvisioningArtifactProperties), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropCloudFormationProductProvisioningArtifactProperties.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropCloudFormationProductProvisioningArtifactProperties), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "ProvisioningArtifactParameters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-provisioningartifactparameters"""
@@ -624,10 +624,10 @@ class ServiceAction(Resource):
     AWS_OBJECT_TYPE = "AWS::ServiceCatalog::ServiceAction"
 
     
-    rp_Definition: typing.List[typing.Union['ServiceActionDefinitionParameter', dict]] = attr.ib(
+    rp_Definition: typing.List[typing.Union['PropServiceActionDefinitionParameter', dict]] = attr.ib(
         default=None,
-        converter=ServiceActionDefinitionParameter.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ServiceActionDefinitionParameter), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropServiceActionDefinitionParameter.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropServiceActionDefinitionParameter), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "Definition"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-serviceaction.html#cfn-servicecatalog-serviceaction-definition"""
@@ -925,17 +925,17 @@ class CloudFormationProvisionedProduct(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "ProvisioningArtifactName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationprovisionedproduct.html#cfn-servicecatalog-cloudformationprovisionedproduct-provisioningartifactname"""
-    p_ProvisioningParameters: typing.List[typing.Union['CloudFormationProvisionedProductProvisioningParameter', dict]] = attr.ib(
+    p_ProvisioningParameters: typing.List[typing.Union['PropCloudFormationProvisionedProductProvisioningParameter', dict]] = attr.ib(
         default=None,
-        converter=CloudFormationProvisionedProductProvisioningParameter.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(CloudFormationProvisionedProductProvisioningParameter), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropCloudFormationProvisionedProductProvisioningParameter.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropCloudFormationProvisionedProductProvisioningParameter), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "ProvisioningParameters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationprovisionedproduct.html#cfn-servicecatalog-cloudformationprovisionedproduct-provisioningparameters"""
-    p_ProvisioningPreferences: typing.Union['CloudFormationProvisionedProductProvisioningPreferences', dict] = attr.ib(
+    p_ProvisioningPreferences: typing.Union['PropCloudFormationProvisionedProductProvisioningPreferences', dict] = attr.ib(
         default=None,
-        converter=CloudFormationProvisionedProductProvisioningPreferences.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(CloudFormationProvisionedProductProvisioningPreferences)),
+        converter=PropCloudFormationProvisionedProductProvisioningPreferences.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropCloudFormationProvisionedProductProvisioningPreferences)),
         metadata={AttrMeta.PROPERTY_NAME: "ProvisioningPreferences"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationprovisionedproduct.html#cfn-servicecatalog-cloudformationprovisionedproduct-provisioningpreferences"""

@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class UserPoolPasswordPolicy(Property):
+class PropUserPoolPasswordPolicy(Property):
     """
     AWS Object Type = "AWS::Cognito::UserPool.PasswordPolicy"
 
@@ -70,7 +70,7 @@ class UserPoolPasswordPolicy(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-passwordpolicy.html#cfn-cognito-userpool-passwordpolicy-temporarypasswordvaliditydays"""
 
 @attr.s
-class UserPoolRecoveryOption(Property):
+class PropUserPoolRecoveryOption(Property):
     """
     AWS Object Type = "AWS::Cognito::UserPool.RecoveryOption"
 
@@ -97,7 +97,7 @@ class UserPoolRecoveryOption(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-recoveryoption.html#cfn-cognito-userpool-recoveryoption-priority"""
 
 @attr.s
-class UserPoolResourceServerResourceServerScopeType(Property):
+class PropUserPoolResourceServerResourceServerScopeType(Property):
     """
     AWS Object Type = "AWS::Cognito::UserPoolResourceServer.ResourceServerScopeType"
 
@@ -124,7 +124,7 @@ class UserPoolResourceServerResourceServerScopeType(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpoolresourceserver-resourceserverscopetype.html#cfn-cognito-userpoolresourceserver-resourceserverscopetype-scopename"""
 
 @attr.s
-class UserPoolRiskConfigurationAttachmentRiskExceptionConfigurationType(Property):
+class PropUserPoolRiskConfigurationAttachmentRiskExceptionConfigurationType(Property):
     """
     AWS Object Type = "AWS::Cognito::UserPoolRiskConfigurationAttachment.RiskExceptionConfigurationType"
 
@@ -151,7 +151,7 @@ class UserPoolRiskConfigurationAttachmentRiskExceptionConfigurationType(Property
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpoolriskconfigurationattachment-riskexceptionconfigurationtype.html#cfn-cognito-userpoolriskconfigurationattachment-riskexceptionconfigurationtype-skippediprangelist"""
 
 @attr.s
-class UserPoolSmsConfiguration(Property):
+class PropUserPoolSmsConfiguration(Property):
     """
     AWS Object Type = "AWS::Cognito::UserPool.SmsConfiguration"
 
@@ -178,7 +178,7 @@ class UserPoolSmsConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-smsconfiguration.html#cfn-cognito-userpool-smsconfiguration-snscallerarn"""
 
 @attr.s
-class UserPoolRiskConfigurationAttachmentAccountTakeoverActionType(Property):
+class PropUserPoolRiskConfigurationAttachmentAccountTakeoverActionType(Property):
     """
     AWS Object Type = "AWS::Cognito::UserPoolRiskConfigurationAttachment.AccountTakeoverActionType"
 
@@ -205,7 +205,7 @@ class UserPoolRiskConfigurationAttachmentAccountTakeoverActionType(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpoolriskconfigurationattachment-accounttakeoveractiontype.html#cfn-cognito-userpoolriskconfigurationattachment-accounttakeoveractiontype-notify"""
 
 @attr.s
-class IdentityPoolRoleAttachmentMappingRule(Property):
+class PropIdentityPoolRoleAttachmentMappingRule(Property):
     """
     AWS Object Type = "AWS::Cognito::IdentityPoolRoleAttachment.MappingRule"
 
@@ -246,7 +246,7 @@ class IdentityPoolRoleAttachmentMappingRule(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypoolroleattachment-mappingrule.html#cfn-cognito-identitypoolroleattachment-mappingrule-value"""
 
 @attr.s
-class IdentityPoolCognitoStreams(Property):
+class PropIdentityPoolCognitoStreams(Property):
     """
     AWS Object Type = "AWS::Cognito::IdentityPool.CognitoStreams"
 
@@ -280,7 +280,7 @@ class IdentityPoolCognitoStreams(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypool-cognitostreams.html#cfn-cognito-identitypool-cognitostreams-streamingstatus"""
 
 @attr.s
-class UserPoolStringAttributeConstraints(Property):
+class PropUserPoolStringAttributeConstraints(Property):
     """
     AWS Object Type = "AWS::Cognito::UserPool.StringAttributeConstraints"
 
@@ -307,7 +307,7 @@ class UserPoolStringAttributeConstraints(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-stringattributeconstraints.html#cfn-cognito-userpool-stringattributeconstraints-minlength"""
 
 @attr.s
-class UserPoolVerificationMessageTemplate(Property):
+class PropUserPoolVerificationMessageTemplate(Property):
     """
     AWS Object Type = "AWS::Cognito::UserPool.VerificationMessageTemplate"
 
@@ -362,7 +362,7 @@ class UserPoolVerificationMessageTemplate(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-verificationmessagetemplate.html#cfn-cognito-userpool-verificationmessagetemplate-smsmessage"""
 
 @attr.s
-class UserPoolUserAttributeType(Property):
+class PropUserPoolUserAttributeType(Property):
     """
     AWS Object Type = "AWS::Cognito::UserPoolUser.AttributeType"
 
@@ -389,7 +389,7 @@ class UserPoolUserAttributeType(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpooluser-attributetype.html#cfn-cognito-userpooluser-attributetype-value"""
 
 @attr.s
-class UserPoolInviteMessageTemplate(Property):
+class PropUserPoolInviteMessageTemplate(Property):
     """
     AWS Object Type = "AWS::Cognito::UserPool.InviteMessageTemplate"
 
@@ -423,7 +423,7 @@ class UserPoolInviteMessageTemplate(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-invitemessagetemplate.html#cfn-cognito-userpool-invitemessagetemplate-smsmessage"""
 
 @attr.s
-class UserPoolClientTokenValidityUnits(Property):
+class PropUserPoolClientTokenValidityUnits(Property):
     """
     AWS Object Type = "AWS::Cognito::UserPoolClient.TokenValidityUnits"
 
@@ -457,7 +457,7 @@ class UserPoolClientTokenValidityUnits(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpoolclient-tokenvalidityunits.html#cfn-cognito-userpoolclient-tokenvalidityunits-refreshtoken"""
 
 @attr.s
-class UserPoolClientAnalyticsConfiguration(Property):
+class PropUserPoolClientAnalyticsConfiguration(Property):
     """
     AWS Object Type = "AWS::Cognito::UserPoolClient.AnalyticsConfiguration"
 
@@ -505,7 +505,7 @@ class UserPoolClientAnalyticsConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpoolclient-analyticsconfiguration.html#cfn-cognito-userpoolclient-analyticsconfiguration-userdatashared"""
 
 @attr.s
-class UserPoolEmailConfiguration(Property):
+class PropUserPoolEmailConfiguration(Property):
     """
     AWS Object Type = "AWS::Cognito::UserPool.EmailConfiguration"
 
@@ -553,7 +553,7 @@ class UserPoolEmailConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-emailconfiguration.html#cfn-cognito-userpool-emailconfiguration-sourcearn"""
 
 @attr.s
-class UserPoolNumberAttributeConstraints(Property):
+class PropUserPoolNumberAttributeConstraints(Property):
     """
     AWS Object Type = "AWS::Cognito::UserPool.NumberAttributeConstraints"
 
@@ -580,7 +580,7 @@ class UserPoolNumberAttributeConstraints(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-numberattributeconstraints.html#cfn-cognito-userpool-numberattributeconstraints-minvalue"""
 
 @attr.s
-class UserPoolCustomSMSSender(Property):
+class PropUserPoolCustomSMSSender(Property):
     """
     AWS Object Type = "AWS::Cognito::UserPool.CustomSMSSender"
 
@@ -607,7 +607,7 @@ class UserPoolCustomSMSSender(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-customsmssender.html#cfn-cognito-userpool-customsmssender-lambdaversion"""
 
 @attr.s
-class UserPoolRiskConfigurationAttachmentNotifyEmailType(Property):
+class PropUserPoolRiskConfigurationAttachmentNotifyEmailType(Property):
     """
     AWS Object Type = "AWS::Cognito::UserPoolRiskConfigurationAttachment.NotifyEmailType"
 
@@ -641,7 +641,7 @@ class UserPoolRiskConfigurationAttachmentNotifyEmailType(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpoolriskconfigurationattachment-notifyemailtype.html#cfn-cognito-userpoolriskconfigurationattachment-notifyemailtype-textbody"""
 
 @attr.s
-class UserPoolAccountRecoverySetting(Property):
+class PropUserPoolAccountRecoverySetting(Property):
     """
     AWS Object Type = "AWS::Cognito::UserPool.AccountRecoverySetting"
 
@@ -653,16 +653,16 @@ class UserPoolAccountRecoverySetting(Property):
     """
     AWS_OBJECT_TYPE = "AWS::Cognito::UserPool.AccountRecoverySetting"
     
-    p_RecoveryMechanisms: typing.List[typing.Union['UserPoolRecoveryOption', dict]] = attr.ib(
+    p_RecoveryMechanisms: typing.List[typing.Union['PropUserPoolRecoveryOption', dict]] = attr.ib(
         default=None,
-        converter=UserPoolRecoveryOption.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(UserPoolRecoveryOption), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropUserPoolRecoveryOption.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropUserPoolRecoveryOption), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "RecoveryMechanisms"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-accountrecoverysetting.html#cfn-cognito-userpool-accountrecoverysetting-recoverymechanisms"""
 
 @attr.s
-class UserPoolUserPoolAddOns(Property):
+class PropUserPoolUserPoolAddOns(Property):
     """
     AWS Object Type = "AWS::Cognito::UserPool.UserPoolAddOns"
 
@@ -682,7 +682,7 @@ class UserPoolUserPoolAddOns(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-userpooladdons.html#cfn-cognito-userpool-userpooladdons-advancedsecuritymode"""
 
 @attr.s
-class UserPoolRiskConfigurationAttachmentCompromisedCredentialsActionsType(Property):
+class PropUserPoolRiskConfigurationAttachmentCompromisedCredentialsActionsType(Property):
     """
     AWS Object Type = "AWS::Cognito::UserPoolRiskConfigurationAttachment.CompromisedCredentialsActionsType"
 
@@ -702,7 +702,7 @@ class UserPoolRiskConfigurationAttachmentCompromisedCredentialsActionsType(Prope
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpoolriskconfigurationattachment-compromisedcredentialsactionstype.html#cfn-cognito-userpoolriskconfigurationattachment-compromisedcredentialsactionstype-eventaction"""
 
 @attr.s
-class UserPoolRiskConfigurationAttachmentNotifyConfigurationType(Property):
+class PropUserPoolRiskConfigurationAttachmentNotifyConfigurationType(Property):
     """
     AWS Object Type = "AWS::Cognito::UserPoolRiskConfigurationAttachment.NotifyConfigurationType"
 
@@ -725,10 +725,10 @@ class UserPoolRiskConfigurationAttachmentNotifyConfigurationType(Property):
         metadata={AttrMeta.PROPERTY_NAME: "SourceArn"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpoolriskconfigurationattachment-notifyconfigurationtype.html#cfn-cognito-userpoolriskconfigurationattachment-notifyconfigurationtype-sourcearn"""
-    p_BlockEmail: typing.Union['UserPoolRiskConfigurationAttachmentNotifyEmailType', dict] = attr.ib(
+    p_BlockEmail: typing.Union['PropUserPoolRiskConfigurationAttachmentNotifyEmailType', dict] = attr.ib(
         default=None,
-        converter=UserPoolRiskConfigurationAttachmentNotifyEmailType.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(UserPoolRiskConfigurationAttachmentNotifyEmailType)),
+        converter=PropUserPoolRiskConfigurationAttachmentNotifyEmailType.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropUserPoolRiskConfigurationAttachmentNotifyEmailType)),
         metadata={AttrMeta.PROPERTY_NAME: "BlockEmail"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpoolriskconfigurationattachment-notifyconfigurationtype.html#cfn-cognito-userpoolriskconfigurationattachment-notifyconfigurationtype-blockemail"""
@@ -738,17 +738,17 @@ class UserPoolRiskConfigurationAttachmentNotifyConfigurationType(Property):
         metadata={AttrMeta.PROPERTY_NAME: "From"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpoolriskconfigurationattachment-notifyconfigurationtype.html#cfn-cognito-userpoolriskconfigurationattachment-notifyconfigurationtype-from"""
-    p_MfaEmail: typing.Union['UserPoolRiskConfigurationAttachmentNotifyEmailType', dict] = attr.ib(
+    p_MfaEmail: typing.Union['PropUserPoolRiskConfigurationAttachmentNotifyEmailType', dict] = attr.ib(
         default=None,
-        converter=UserPoolRiskConfigurationAttachmentNotifyEmailType.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(UserPoolRiskConfigurationAttachmentNotifyEmailType)),
+        converter=PropUserPoolRiskConfigurationAttachmentNotifyEmailType.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropUserPoolRiskConfigurationAttachmentNotifyEmailType)),
         metadata={AttrMeta.PROPERTY_NAME: "MfaEmail"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpoolriskconfigurationattachment-notifyconfigurationtype.html#cfn-cognito-userpoolriskconfigurationattachment-notifyconfigurationtype-mfaemail"""
-    p_NoActionEmail: typing.Union['UserPoolRiskConfigurationAttachmentNotifyEmailType', dict] = attr.ib(
+    p_NoActionEmail: typing.Union['PropUserPoolRiskConfigurationAttachmentNotifyEmailType', dict] = attr.ib(
         default=None,
-        converter=UserPoolRiskConfigurationAttachmentNotifyEmailType.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(UserPoolRiskConfigurationAttachmentNotifyEmailType)),
+        converter=PropUserPoolRiskConfigurationAttachmentNotifyEmailType.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropUserPoolRiskConfigurationAttachmentNotifyEmailType)),
         metadata={AttrMeta.PROPERTY_NAME: "NoActionEmail"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpoolriskconfigurationattachment-notifyconfigurationtype.html#cfn-cognito-userpoolriskconfigurationattachment-notifyconfigurationtype-noactionemail"""
@@ -760,7 +760,7 @@ class UserPoolRiskConfigurationAttachmentNotifyConfigurationType(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpoolriskconfigurationattachment-notifyconfigurationtype.html#cfn-cognito-userpoolriskconfigurationattachment-notifyconfigurationtype-replyto"""
 
 @attr.s
-class IdentityPoolPushSync(Property):
+class PropIdentityPoolPushSync(Property):
     """
     AWS Object Type = "AWS::Cognito::IdentityPool.PushSync"
 
@@ -787,7 +787,7 @@ class IdentityPoolPushSync(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypool-pushsync.html#cfn-cognito-identitypool-pushsync-rolearn"""
 
 @attr.s
-class IdentityPoolCognitoIdentityProvider(Property):
+class PropIdentityPoolCognitoIdentityProvider(Property):
     """
     AWS Object Type = "AWS::Cognito::IdentityPool.CognitoIdentityProvider"
 
@@ -821,7 +821,7 @@ class IdentityPoolCognitoIdentityProvider(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypool-cognitoidentityprovider.html#cfn-cognito-identitypool-cognitoidentityprovider-serversidetokencheck"""
 
 @attr.s
-class UserPoolPolicies(Property):
+class PropUserPoolPolicies(Property):
     """
     AWS Object Type = "AWS::Cognito::UserPool.Policies"
 
@@ -833,16 +833,16 @@ class UserPoolPolicies(Property):
     """
     AWS_OBJECT_TYPE = "AWS::Cognito::UserPool.Policies"
     
-    p_PasswordPolicy: typing.Union['UserPoolPasswordPolicy', dict] = attr.ib(
+    p_PasswordPolicy: typing.Union['PropUserPoolPasswordPolicy', dict] = attr.ib(
         default=None,
-        converter=UserPoolPasswordPolicy.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(UserPoolPasswordPolicy)),
+        converter=PropUserPoolPasswordPolicy.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropUserPoolPasswordPolicy)),
         metadata={AttrMeta.PROPERTY_NAME: "PasswordPolicy"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-policies.html#cfn-cognito-userpool-policies-passwordpolicy"""
 
 @attr.s
-class UserPoolCustomEmailSender(Property):
+class PropUserPoolCustomEmailSender(Property):
     """
     AWS Object Type = "AWS::Cognito::UserPool.CustomEmailSender"
 
@@ -869,7 +869,7 @@ class UserPoolCustomEmailSender(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-customemailsender.html#cfn-cognito-userpool-customemailsender-lambdaversion"""
 
 @attr.s
-class UserPoolDomainCustomDomainConfigType(Property):
+class PropUserPoolDomainCustomDomainConfigType(Property):
     """
     AWS Object Type = "AWS::Cognito::UserPoolDomain.CustomDomainConfigType"
 
@@ -889,7 +889,7 @@ class UserPoolDomainCustomDomainConfigType(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpooldomain-customdomainconfigtype.html#cfn-cognito-userpooldomain-customdomainconfigtype-certificatearn"""
 
 @attr.s
-class IdentityPoolRoleAttachmentRulesConfigurationType(Property):
+class PropIdentityPoolRoleAttachmentRulesConfigurationType(Property):
     """
     AWS Object Type = "AWS::Cognito::IdentityPoolRoleAttachment.RulesConfigurationType"
 
@@ -901,16 +901,16 @@ class IdentityPoolRoleAttachmentRulesConfigurationType(Property):
     """
     AWS_OBJECT_TYPE = "AWS::Cognito::IdentityPoolRoleAttachment.RulesConfigurationType"
     
-    rp_Rules: typing.List[typing.Union['IdentityPoolRoleAttachmentMappingRule', dict]] = attr.ib(
+    rp_Rules: typing.List[typing.Union['PropIdentityPoolRoleAttachmentMappingRule', dict]] = attr.ib(
         default=None,
-        converter=IdentityPoolRoleAttachmentMappingRule.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(IdentityPoolRoleAttachmentMappingRule), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropIdentityPoolRoleAttachmentMappingRule.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropIdentityPoolRoleAttachmentMappingRule), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "Rules"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypoolroleattachment-rulesconfigurationtype.html#cfn-cognito-identitypoolroleattachment-rulesconfigurationtype-rules"""
 
 @attr.s
-class UserPoolDeviceConfiguration(Property):
+class PropUserPoolDeviceConfiguration(Property):
     """
     AWS Object Type = "AWS::Cognito::UserPool.DeviceConfiguration"
 
@@ -937,7 +937,7 @@ class UserPoolDeviceConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-deviceconfiguration.html#cfn-cognito-userpool-deviceconfiguration-deviceonlyrememberedonuserprompt"""
 
 @attr.s
-class UserPoolUsernameConfiguration(Property):
+class PropUserPoolUsernameConfiguration(Property):
     """
     AWS Object Type = "AWS::Cognito::UserPool.UsernameConfiguration"
 
@@ -957,7 +957,7 @@ class UserPoolUsernameConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-usernameconfiguration.html#cfn-cognito-userpool-usernameconfiguration-casesensitive"""
 
 @attr.s
-class UserPoolRiskConfigurationAttachmentAccountTakeoverActionsType(Property):
+class PropUserPoolRiskConfigurationAttachmentAccountTakeoverActionsType(Property):
     """
     AWS Object Type = "AWS::Cognito::UserPoolRiskConfigurationAttachment.AccountTakeoverActionsType"
 
@@ -971,30 +971,30 @@ class UserPoolRiskConfigurationAttachmentAccountTakeoverActionsType(Property):
     """
     AWS_OBJECT_TYPE = "AWS::Cognito::UserPoolRiskConfigurationAttachment.AccountTakeoverActionsType"
     
-    p_HighAction: typing.Union['UserPoolRiskConfigurationAttachmentAccountTakeoverActionType', dict] = attr.ib(
+    p_HighAction: typing.Union['PropUserPoolRiskConfigurationAttachmentAccountTakeoverActionType', dict] = attr.ib(
         default=None,
-        converter=UserPoolRiskConfigurationAttachmentAccountTakeoverActionType.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(UserPoolRiskConfigurationAttachmentAccountTakeoverActionType)),
+        converter=PropUserPoolRiskConfigurationAttachmentAccountTakeoverActionType.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropUserPoolRiskConfigurationAttachmentAccountTakeoverActionType)),
         metadata={AttrMeta.PROPERTY_NAME: "HighAction"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpoolriskconfigurationattachment-accounttakeoveractionstype.html#cfn-cognito-userpoolriskconfigurationattachment-accounttakeoveractionstype-highaction"""
-    p_LowAction: typing.Union['UserPoolRiskConfigurationAttachmentAccountTakeoverActionType', dict] = attr.ib(
+    p_LowAction: typing.Union['PropUserPoolRiskConfigurationAttachmentAccountTakeoverActionType', dict] = attr.ib(
         default=None,
-        converter=UserPoolRiskConfigurationAttachmentAccountTakeoverActionType.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(UserPoolRiskConfigurationAttachmentAccountTakeoverActionType)),
+        converter=PropUserPoolRiskConfigurationAttachmentAccountTakeoverActionType.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropUserPoolRiskConfigurationAttachmentAccountTakeoverActionType)),
         metadata={AttrMeta.PROPERTY_NAME: "LowAction"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpoolriskconfigurationattachment-accounttakeoveractionstype.html#cfn-cognito-userpoolriskconfigurationattachment-accounttakeoveractionstype-lowaction"""
-    p_MediumAction: typing.Union['UserPoolRiskConfigurationAttachmentAccountTakeoverActionType', dict] = attr.ib(
+    p_MediumAction: typing.Union['PropUserPoolRiskConfigurationAttachmentAccountTakeoverActionType', dict] = attr.ib(
         default=None,
-        converter=UserPoolRiskConfigurationAttachmentAccountTakeoverActionType.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(UserPoolRiskConfigurationAttachmentAccountTakeoverActionType)),
+        converter=PropUserPoolRiskConfigurationAttachmentAccountTakeoverActionType.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropUserPoolRiskConfigurationAttachmentAccountTakeoverActionType)),
         metadata={AttrMeta.PROPERTY_NAME: "MediumAction"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpoolriskconfigurationattachment-accounttakeoveractionstype.html#cfn-cognito-userpoolriskconfigurationattachment-accounttakeoveractionstype-mediumaction"""
 
 @attr.s
-class UserPoolAdminCreateUserConfig(Property):
+class PropUserPoolAdminCreateUserConfig(Property):
     """
     AWS Object Type = "AWS::Cognito::UserPool.AdminCreateUserConfig"
 
@@ -1014,10 +1014,10 @@ class UserPoolAdminCreateUserConfig(Property):
         metadata={AttrMeta.PROPERTY_NAME: "AllowAdminCreateUserOnly"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-admincreateuserconfig.html#cfn-cognito-userpool-admincreateuserconfig-allowadmincreateuseronly"""
-    p_InviteMessageTemplate: typing.Union['UserPoolInviteMessageTemplate', dict] = attr.ib(
+    p_InviteMessageTemplate: typing.Union['PropUserPoolInviteMessageTemplate', dict] = attr.ib(
         default=None,
-        converter=UserPoolInviteMessageTemplate.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(UserPoolInviteMessageTemplate)),
+        converter=PropUserPoolInviteMessageTemplate.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropUserPoolInviteMessageTemplate)),
         metadata={AttrMeta.PROPERTY_NAME: "InviteMessageTemplate"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-admincreateuserconfig.html#cfn-cognito-userpool-admincreateuserconfig-invitemessagetemplate"""
@@ -1029,7 +1029,7 @@ class UserPoolAdminCreateUserConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-admincreateuserconfig.html#cfn-cognito-userpool-admincreateuserconfig-unusedaccountvaliditydays"""
 
 @attr.s
-class IdentityPoolRoleAttachmentRoleMapping(Property):
+class PropIdentityPoolRoleAttachmentRoleMapping(Property):
     """
     AWS Object Type = "AWS::Cognito::IdentityPoolRoleAttachment.RoleMapping"
 
@@ -1062,16 +1062,16 @@ class IdentityPoolRoleAttachmentRoleMapping(Property):
         metadata={AttrMeta.PROPERTY_NAME: "IdentityProvider"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypoolroleattachment-rolemapping.html#cfn-cognito-identitypoolroleattachment-rolemapping-identityprovider"""
-    p_RulesConfiguration: typing.Union['IdentityPoolRoleAttachmentRulesConfigurationType', dict] = attr.ib(
+    p_RulesConfiguration: typing.Union['PropIdentityPoolRoleAttachmentRulesConfigurationType', dict] = attr.ib(
         default=None,
-        converter=IdentityPoolRoleAttachmentRulesConfigurationType.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(IdentityPoolRoleAttachmentRulesConfigurationType)),
+        converter=PropIdentityPoolRoleAttachmentRulesConfigurationType.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropIdentityPoolRoleAttachmentRulesConfigurationType)),
         metadata={AttrMeta.PROPERTY_NAME: "RulesConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-identitypoolroleattachment-rolemapping.html#cfn-cognito-identitypoolroleattachment-rolemapping-rulesconfiguration"""
 
 @attr.s
-class UserPoolRiskConfigurationAttachmentCompromisedCredentialsRiskConfigurationType(Property):
+class PropUserPoolRiskConfigurationAttachmentCompromisedCredentialsRiskConfigurationType(Property):
     """
     AWS Object Type = "AWS::Cognito::UserPoolRiskConfigurationAttachment.CompromisedCredentialsRiskConfigurationType"
 
@@ -1084,10 +1084,10 @@ class UserPoolRiskConfigurationAttachmentCompromisedCredentialsRiskConfiguration
     """
     AWS_OBJECT_TYPE = "AWS::Cognito::UserPoolRiskConfigurationAttachment.CompromisedCredentialsRiskConfigurationType"
     
-    rp_Actions: typing.Union['UserPoolRiskConfigurationAttachmentCompromisedCredentialsActionsType', dict] = attr.ib(
+    rp_Actions: typing.Union['PropUserPoolRiskConfigurationAttachmentCompromisedCredentialsActionsType', dict] = attr.ib(
         default=None,
-        converter=UserPoolRiskConfigurationAttachmentCompromisedCredentialsActionsType.from_dict,
-        validator=attr.validators.instance_of(UserPoolRiskConfigurationAttachmentCompromisedCredentialsActionsType),
+        converter=PropUserPoolRiskConfigurationAttachmentCompromisedCredentialsActionsType.from_dict,
+        validator=attr.validators.instance_of(PropUserPoolRiskConfigurationAttachmentCompromisedCredentialsActionsType),
         metadata={AttrMeta.PROPERTY_NAME: "Actions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpoolriskconfigurationattachment-compromisedcredentialsriskconfigurationtype.html#cfn-cognito-userpoolriskconfigurationattachment-compromisedcredentialsriskconfigurationtype-actions"""
@@ -1099,7 +1099,7 @@ class UserPoolRiskConfigurationAttachmentCompromisedCredentialsRiskConfiguration
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpoolriskconfigurationattachment-compromisedcredentialsriskconfigurationtype.html#cfn-cognito-userpoolriskconfigurationattachment-compromisedcredentialsriskconfigurationtype-eventfilter"""
 
 @attr.s
-class UserPoolLambdaConfig(Property):
+class PropUserPoolLambdaConfig(Property):
     """
     AWS Object Type = "AWS::Cognito::UserPool.LambdaConfig"
 
@@ -1129,10 +1129,10 @@ class UserPoolLambdaConfig(Property):
         metadata={AttrMeta.PROPERTY_NAME: "CreateAuthChallenge"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-lambdaconfig.html#cfn-cognito-userpool-lambdaconfig-createauthchallenge"""
-    p_CustomEmailSender: typing.Union['UserPoolCustomEmailSender', dict] = attr.ib(
+    p_CustomEmailSender: typing.Union['PropUserPoolCustomEmailSender', dict] = attr.ib(
         default=None,
-        converter=UserPoolCustomEmailSender.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(UserPoolCustomEmailSender)),
+        converter=PropUserPoolCustomEmailSender.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropUserPoolCustomEmailSender)),
         metadata={AttrMeta.PROPERTY_NAME: "CustomEmailSender"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-lambdaconfig.html#cfn-cognito-userpool-lambdaconfig-customemailsender"""
@@ -1142,10 +1142,10 @@ class UserPoolLambdaConfig(Property):
         metadata={AttrMeta.PROPERTY_NAME: "CustomMessage"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-lambdaconfig.html#cfn-cognito-userpool-lambdaconfig-custommessage"""
-    p_CustomSMSSender: typing.Union['UserPoolCustomSMSSender', dict] = attr.ib(
+    p_CustomSMSSender: typing.Union['PropUserPoolCustomSMSSender', dict] = attr.ib(
         default=None,
-        converter=UserPoolCustomSMSSender.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(UserPoolCustomSMSSender)),
+        converter=PropUserPoolCustomSMSSender.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropUserPoolCustomSMSSender)),
         metadata={AttrMeta.PROPERTY_NAME: "CustomSMSSender"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-lambdaconfig.html#cfn-cognito-userpool-lambdaconfig-customsmssender"""
@@ -1205,7 +1205,7 @@ class UserPoolLambdaConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-lambdaconfig.html#cfn-cognito-userpool-lambdaconfig-verifyauthchallengeresponse"""
 
 @attr.s
-class UserPoolSchemaAttribute(Property):
+class PropUserPoolSchemaAttribute(Property):
     """
     AWS Object Type = "AWS::Cognito::UserPool.SchemaAttribute"
 
@@ -1247,10 +1247,10 @@ class UserPoolSchemaAttribute(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Name"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-schemaattribute.html#cfn-cognito-userpool-schemaattribute-name"""
-    p_NumberAttributeConstraints: typing.Union['UserPoolNumberAttributeConstraints', dict] = attr.ib(
+    p_NumberAttributeConstraints: typing.Union['PropUserPoolNumberAttributeConstraints', dict] = attr.ib(
         default=None,
-        converter=UserPoolNumberAttributeConstraints.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(UserPoolNumberAttributeConstraints)),
+        converter=PropUserPoolNumberAttributeConstraints.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropUserPoolNumberAttributeConstraints)),
         metadata={AttrMeta.PROPERTY_NAME: "NumberAttributeConstraints"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-schemaattribute.html#cfn-cognito-userpool-schemaattribute-numberattributeconstraints"""
@@ -1260,16 +1260,16 @@ class UserPoolSchemaAttribute(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Required"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-schemaattribute.html#cfn-cognito-userpool-schemaattribute-required"""
-    p_StringAttributeConstraints: typing.Union['UserPoolStringAttributeConstraints', dict] = attr.ib(
+    p_StringAttributeConstraints: typing.Union['PropUserPoolStringAttributeConstraints', dict] = attr.ib(
         default=None,
-        converter=UserPoolStringAttributeConstraints.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(UserPoolStringAttributeConstraints)),
+        converter=PropUserPoolStringAttributeConstraints.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropUserPoolStringAttributeConstraints)),
         metadata={AttrMeta.PROPERTY_NAME: "StringAttributeConstraints"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-schemaattribute.html#cfn-cognito-userpool-schemaattribute-stringattributeconstraints"""
 
 @attr.s
-class UserPoolRiskConfigurationAttachmentAccountTakeoverRiskConfigurationType(Property):
+class PropUserPoolRiskConfigurationAttachmentAccountTakeoverRiskConfigurationType(Property):
     """
     AWS Object Type = "AWS::Cognito::UserPoolRiskConfigurationAttachment.AccountTakeoverRiskConfigurationType"
 
@@ -1282,17 +1282,17 @@ class UserPoolRiskConfigurationAttachmentAccountTakeoverRiskConfigurationType(Pr
     """
     AWS_OBJECT_TYPE = "AWS::Cognito::UserPoolRiskConfigurationAttachment.AccountTakeoverRiskConfigurationType"
     
-    rp_Actions: typing.Union['UserPoolRiskConfigurationAttachmentAccountTakeoverActionsType', dict] = attr.ib(
+    rp_Actions: typing.Union['PropUserPoolRiskConfigurationAttachmentAccountTakeoverActionsType', dict] = attr.ib(
         default=None,
-        converter=UserPoolRiskConfigurationAttachmentAccountTakeoverActionsType.from_dict,
-        validator=attr.validators.instance_of(UserPoolRiskConfigurationAttachmentAccountTakeoverActionsType),
+        converter=PropUserPoolRiskConfigurationAttachmentAccountTakeoverActionsType.from_dict,
+        validator=attr.validators.instance_of(PropUserPoolRiskConfigurationAttachmentAccountTakeoverActionsType),
         metadata={AttrMeta.PROPERTY_NAME: "Actions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpoolriskconfigurationattachment-accounttakeoverriskconfigurationtype.html#cfn-cognito-userpoolriskconfigurationattachment-accounttakeoverriskconfigurationtype-actions"""
-    p_NotifyConfiguration: typing.Union['UserPoolRiskConfigurationAttachmentNotifyConfigurationType', dict] = attr.ib(
+    p_NotifyConfiguration: typing.Union['PropUserPoolRiskConfigurationAttachmentNotifyConfigurationType', dict] = attr.ib(
         default=None,
-        converter=UserPoolRiskConfigurationAttachmentNotifyConfigurationType.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(UserPoolRiskConfigurationAttachmentNotifyConfigurationType)),
+        converter=PropUserPoolRiskConfigurationAttachmentNotifyConfigurationType.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropUserPoolRiskConfigurationAttachmentNotifyConfigurationType)),
         metadata={AttrMeta.PROPERTY_NAME: "NotifyConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpoolriskconfigurationattachment-accounttakeoverriskconfigurationtype.html#cfn-cognito-userpoolriskconfigurationattachment-accounttakeoverriskconfigurationtype-notifyconfiguration"""
@@ -1330,24 +1330,24 @@ class UserPoolRiskConfigurationAttachment(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "UserPoolId"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolriskconfigurationattachment.html#cfn-cognito-userpoolriskconfigurationattachment-userpoolid"""
-    p_AccountTakeoverRiskConfiguration: typing.Union['UserPoolRiskConfigurationAttachmentAccountTakeoverRiskConfigurationType', dict] = attr.ib(
+    p_AccountTakeoverRiskConfiguration: typing.Union['PropUserPoolRiskConfigurationAttachmentAccountTakeoverRiskConfigurationType', dict] = attr.ib(
         default=None,
-        converter=UserPoolRiskConfigurationAttachmentAccountTakeoverRiskConfigurationType.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(UserPoolRiskConfigurationAttachmentAccountTakeoverRiskConfigurationType)),
+        converter=PropUserPoolRiskConfigurationAttachmentAccountTakeoverRiskConfigurationType.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropUserPoolRiskConfigurationAttachmentAccountTakeoverRiskConfigurationType)),
         metadata={AttrMeta.PROPERTY_NAME: "AccountTakeoverRiskConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolriskconfigurationattachment.html#cfn-cognito-userpoolriskconfigurationattachment-accounttakeoverriskconfiguration"""
-    p_CompromisedCredentialsRiskConfiguration: typing.Union['UserPoolRiskConfigurationAttachmentCompromisedCredentialsRiskConfigurationType', dict] = attr.ib(
+    p_CompromisedCredentialsRiskConfiguration: typing.Union['PropUserPoolRiskConfigurationAttachmentCompromisedCredentialsRiskConfigurationType', dict] = attr.ib(
         default=None,
-        converter=UserPoolRiskConfigurationAttachmentCompromisedCredentialsRiskConfigurationType.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(UserPoolRiskConfigurationAttachmentCompromisedCredentialsRiskConfigurationType)),
+        converter=PropUserPoolRiskConfigurationAttachmentCompromisedCredentialsRiskConfigurationType.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropUserPoolRiskConfigurationAttachmentCompromisedCredentialsRiskConfigurationType)),
         metadata={AttrMeta.PROPERTY_NAME: "CompromisedCredentialsRiskConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolriskconfigurationattachment.html#cfn-cognito-userpoolriskconfigurationattachment-compromisedcredentialsriskconfiguration"""
-    p_RiskExceptionConfiguration: typing.Union['UserPoolRiskConfigurationAttachmentRiskExceptionConfigurationType', dict] = attr.ib(
+    p_RiskExceptionConfiguration: typing.Union['PropUserPoolRiskConfigurationAttachmentRiskExceptionConfigurationType', dict] = attr.ib(
         default=None,
-        converter=UserPoolRiskConfigurationAttachmentRiskExceptionConfigurationType.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(UserPoolRiskConfigurationAttachmentRiskExceptionConfigurationType)),
+        converter=PropUserPoolRiskConfigurationAttachmentRiskExceptionConfigurationType.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropUserPoolRiskConfigurationAttachmentRiskExceptionConfigurationType)),
         metadata={AttrMeta.PROPERTY_NAME: "RiskExceptionConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolriskconfigurationattachment.html#cfn-cognito-userpoolriskconfigurationattachment-riskexceptionconfiguration"""
@@ -1505,17 +1505,17 @@ class IdentityPool(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "CognitoEvents"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html#cfn-cognito-identitypool-cognitoevents"""
-    p_CognitoIdentityProviders: typing.List[typing.Union['IdentityPoolCognitoIdentityProvider', dict]] = attr.ib(
+    p_CognitoIdentityProviders: typing.List[typing.Union['PropIdentityPoolCognitoIdentityProvider', dict]] = attr.ib(
         default=None,
-        converter=IdentityPoolCognitoIdentityProvider.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(IdentityPoolCognitoIdentityProvider), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropIdentityPoolCognitoIdentityProvider.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropIdentityPoolCognitoIdentityProvider), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "CognitoIdentityProviders"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html#cfn-cognito-identitypool-cognitoidentityproviders"""
-    p_CognitoStreams: typing.Union['IdentityPoolCognitoStreams', dict] = attr.ib(
+    p_CognitoStreams: typing.Union['PropIdentityPoolCognitoStreams', dict] = attr.ib(
         default=None,
-        converter=IdentityPoolCognitoStreams.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(IdentityPoolCognitoStreams)),
+        converter=PropIdentityPoolCognitoStreams.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropIdentityPoolCognitoStreams)),
         metadata={AttrMeta.PROPERTY_NAME: "CognitoStreams"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html#cfn-cognito-identitypool-cognitostreams"""
@@ -1537,10 +1537,10 @@ class IdentityPool(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "OpenIdConnectProviderARNs"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html#cfn-cognito-identitypool-openidconnectproviderarns"""
-    p_PushSync: typing.Union['IdentityPoolPushSync', dict] = attr.ib(
+    p_PushSync: typing.Union['PropIdentityPoolPushSync', dict] = attr.ib(
         default=None,
-        converter=IdentityPoolPushSync.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(IdentityPoolPushSync)),
+        converter=PropIdentityPoolPushSync.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropIdentityPoolPushSync)),
         metadata={AttrMeta.PROPERTY_NAME: "PushSync"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-identitypool.html#cfn-cognito-identitypool-pushsync"""
@@ -1599,10 +1599,10 @@ class UserPoolResourceServer(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "UserPoolId"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolresourceserver.html#cfn-cognito-userpoolresourceserver-userpoolid"""
-    p_Scopes: typing.List[typing.Union['UserPoolResourceServerResourceServerScopeType', dict]] = attr.ib(
+    p_Scopes: typing.List[typing.Union['PropUserPoolResourceServerResourceServerScopeType', dict]] = attr.ib(
         default=None,
-        converter=UserPoolResourceServerResourceServerScopeType.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(UserPoolResourceServerResourceServerScopeType), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropUserPoolResourceServerResourceServerScopeType.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropUserPoolResourceServerResourceServerScopeType), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Scopes"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolresourceserver.html#cfn-cognito-userpoolresourceserver-scopes"""
@@ -1644,17 +1644,17 @@ class UserPool(Resource):
     AWS_OBJECT_TYPE = "AWS::Cognito::UserPool"
 
     
-    p_AccountRecoverySetting: typing.Union['UserPoolAccountRecoverySetting', dict] = attr.ib(
+    p_AccountRecoverySetting: typing.Union['PropUserPoolAccountRecoverySetting', dict] = attr.ib(
         default=None,
-        converter=UserPoolAccountRecoverySetting.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(UserPoolAccountRecoverySetting)),
+        converter=PropUserPoolAccountRecoverySetting.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropUserPoolAccountRecoverySetting)),
         metadata={AttrMeta.PROPERTY_NAME: "AccountRecoverySetting"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-accountrecoverysetting"""
-    p_AdminCreateUserConfig: typing.Union['UserPoolAdminCreateUserConfig', dict] = attr.ib(
+    p_AdminCreateUserConfig: typing.Union['PropUserPoolAdminCreateUserConfig', dict] = attr.ib(
         default=None,
-        converter=UserPoolAdminCreateUserConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(UserPoolAdminCreateUserConfig)),
+        converter=PropUserPoolAdminCreateUserConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropUserPoolAdminCreateUserConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "AdminCreateUserConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-admincreateuserconfig"""
@@ -1670,17 +1670,17 @@ class UserPool(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "AutoVerifiedAttributes"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-autoverifiedattributes"""
-    p_DeviceConfiguration: typing.Union['UserPoolDeviceConfiguration', dict] = attr.ib(
+    p_DeviceConfiguration: typing.Union['PropUserPoolDeviceConfiguration', dict] = attr.ib(
         default=None,
-        converter=UserPoolDeviceConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(UserPoolDeviceConfiguration)),
+        converter=PropUserPoolDeviceConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropUserPoolDeviceConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "DeviceConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-deviceconfiguration"""
-    p_EmailConfiguration: typing.Union['UserPoolEmailConfiguration', dict] = attr.ib(
+    p_EmailConfiguration: typing.Union['PropUserPoolEmailConfiguration', dict] = attr.ib(
         default=None,
-        converter=UserPoolEmailConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(UserPoolEmailConfiguration)),
+        converter=PropUserPoolEmailConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropUserPoolEmailConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "EmailConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-emailconfiguration"""
@@ -1702,10 +1702,10 @@ class UserPool(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "EnabledMfas"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-enabledmfas"""
-    p_LambdaConfig: typing.Union['UserPoolLambdaConfig', dict] = attr.ib(
+    p_LambdaConfig: typing.Union['PropUserPoolLambdaConfig', dict] = attr.ib(
         default=None,
-        converter=UserPoolLambdaConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(UserPoolLambdaConfig)),
+        converter=PropUserPoolLambdaConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropUserPoolLambdaConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "LambdaConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-lambdaconfig"""
@@ -1715,17 +1715,17 @@ class UserPool(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "MfaConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-mfaconfiguration"""
-    p_Policies: typing.Union['UserPoolPolicies', dict] = attr.ib(
+    p_Policies: typing.Union['PropUserPoolPolicies', dict] = attr.ib(
         default=None,
-        converter=UserPoolPolicies.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(UserPoolPolicies)),
+        converter=PropUserPoolPolicies.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropUserPoolPolicies)),
         metadata={AttrMeta.PROPERTY_NAME: "Policies"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-policies"""
-    p_Schema: typing.List[typing.Union['UserPoolSchemaAttribute', dict]] = attr.ib(
+    p_Schema: typing.List[typing.Union['PropUserPoolSchemaAttribute', dict]] = attr.ib(
         default=None,
-        converter=UserPoolSchemaAttribute.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(UserPoolSchemaAttribute), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropUserPoolSchemaAttribute.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropUserPoolSchemaAttribute), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Schema"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-schema"""
@@ -1735,10 +1735,10 @@ class UserPool(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "SmsAuthenticationMessage"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-smsauthenticationmessage"""
-    p_SmsConfiguration: typing.Union['UserPoolSmsConfiguration', dict] = attr.ib(
+    p_SmsConfiguration: typing.Union['PropUserPoolSmsConfiguration', dict] = attr.ib(
         default=None,
-        converter=UserPoolSmsConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(UserPoolSmsConfiguration)),
+        converter=PropUserPoolSmsConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropUserPoolSmsConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "SmsConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-smsconfiguration"""
@@ -1748,10 +1748,10 @@ class UserPool(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "SmsVerificationMessage"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-smsverificationmessage"""
-    p_UserPoolAddOns: typing.Union['UserPoolUserPoolAddOns', dict] = attr.ib(
+    p_UserPoolAddOns: typing.Union['PropUserPoolUserPoolAddOns', dict] = attr.ib(
         default=None,
-        converter=UserPoolUserPoolAddOns.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(UserPoolUserPoolAddOns)),
+        converter=PropUserPoolUserPoolAddOns.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropUserPoolUserPoolAddOns)),
         metadata={AttrMeta.PROPERTY_NAME: "UserPoolAddOns"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-userpooladdons"""
@@ -1773,17 +1773,17 @@ class UserPool(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "UsernameAttributes"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-usernameattributes"""
-    p_UsernameConfiguration: typing.Union['UserPoolUsernameConfiguration', dict] = attr.ib(
+    p_UsernameConfiguration: typing.Union['PropUserPoolUsernameConfiguration', dict] = attr.ib(
         default=None,
-        converter=UserPoolUsernameConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(UserPoolUsernameConfiguration)),
+        converter=PropUserPoolUsernameConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropUserPoolUsernameConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "UsernameConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-usernameconfiguration"""
-    p_VerificationMessageTemplate: typing.Union['UserPoolVerificationMessageTemplate', dict] = attr.ib(
+    p_VerificationMessageTemplate: typing.Union['PropUserPoolVerificationMessageTemplate', dict] = attr.ib(
         default=None,
-        converter=UserPoolVerificationMessageTemplate.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(UserPoolVerificationMessageTemplate)),
+        converter=PropUserPoolVerificationMessageTemplate.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropUserPoolVerificationMessageTemplate)),
         metadata={AttrMeta.PROPERTY_NAME: "VerificationMessageTemplate"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpool.html#cfn-cognito-userpool-verificationmessagetemplate"""
@@ -1868,10 +1868,10 @@ class UserPoolClient(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "AllowedOAuthScopes"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-allowedoauthscopes"""
-    p_AnalyticsConfiguration: typing.Union['UserPoolClientAnalyticsConfiguration', dict] = attr.ib(
+    p_AnalyticsConfiguration: typing.Union['PropUserPoolClientAnalyticsConfiguration', dict] = attr.ib(
         default=None,
-        converter=UserPoolClientAnalyticsConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(UserPoolClientAnalyticsConfiguration)),
+        converter=PropUserPoolClientAnalyticsConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropUserPoolClientAnalyticsConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "AnalyticsConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-analyticsconfiguration"""
@@ -1947,10 +1947,10 @@ class UserPoolClient(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "SupportedIdentityProviders"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-supportedidentityproviders"""
-    p_TokenValidityUnits: typing.Union['UserPoolClientTokenValidityUnits', dict] = attr.ib(
+    p_TokenValidityUnits: typing.Union['PropUserPoolClientTokenValidityUnits', dict] = attr.ib(
         default=None,
-        converter=UserPoolClientTokenValidityUnits.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(UserPoolClientTokenValidityUnits)),
+        converter=PropUserPoolClientTokenValidityUnits.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropUserPoolClientTokenValidityUnits)),
         metadata={AttrMeta.PROPERTY_NAME: "TokenValidityUnits"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpoolclient.html#cfn-cognito-userpoolclient-tokenvalidityunits"""
@@ -2098,10 +2098,10 @@ class UserPoolUser(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "MessageAction"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpooluser.html#cfn-cognito-userpooluser-messageaction"""
-    p_UserAttributes: typing.List[typing.Union['UserPoolUserAttributeType', dict]] = attr.ib(
+    p_UserAttributes: typing.List[typing.Union['PropUserPoolUserAttributeType', dict]] = attr.ib(
         default=None,
-        converter=UserPoolUserAttributeType.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(UserPoolUserAttributeType), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropUserPoolUserAttributeType.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropUserPoolUserAttributeType), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "UserAttributes"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpooluser.html#cfn-cognito-userpooluser-userattributes"""
@@ -2111,10 +2111,10 @@ class UserPoolUser(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Username"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpooluser.html#cfn-cognito-userpooluser-username"""
-    p_ValidationData: typing.List[typing.Union['UserPoolUserAttributeType', dict]] = attr.ib(
+    p_ValidationData: typing.List[typing.Union['PropUserPoolUserAttributeType', dict]] = attr.ib(
         default=None,
-        converter=UserPoolUserAttributeType.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(UserPoolUserAttributeType), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropUserPoolUserAttributeType.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropUserPoolUserAttributeType), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "ValidationData"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpooluser.html#cfn-cognito-userpooluser-validationdata"""
@@ -2186,10 +2186,10 @@ class UserPoolDomain(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "UserPoolId"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpooldomain.html#cfn-cognito-userpooldomain-userpoolid"""
-    p_CustomDomainConfig: typing.Union['UserPoolDomainCustomDomainConfigType', dict] = attr.ib(
+    p_CustomDomainConfig: typing.Union['PropUserPoolDomainCustomDomainConfigType', dict] = attr.ib(
         default=None,
-        converter=UserPoolDomainCustomDomainConfigType.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(UserPoolDomainCustomDomainConfigType)),
+        converter=PropUserPoolDomainCustomDomainConfigType.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropUserPoolDomainCustomDomainConfigType)),
         metadata={AttrMeta.PROPERTY_NAME: "CustomDomainConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cognito-userpooldomain.html#cfn-cognito-userpooldomain-customdomainconfig"""

@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class WebhookWebhookFilterRule(Property):
+class PropWebhookWebhookFilterRule(Property):
     """
     AWS Object Type = "AWS::CodePipeline::Webhook.WebhookFilterRule"
 
@@ -42,7 +42,7 @@ class WebhookWebhookFilterRule(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-webhook-webhookfilterrule.html#cfn-codepipeline-webhook-webhookfilterrule-matchequals"""
 
 @attr.s
-class PipelineOutputArtifact(Property):
+class PropPipelineOutputArtifact(Property):
     """
     AWS Object Type = "AWS::CodePipeline::Pipeline.OutputArtifact"
 
@@ -62,7 +62,7 @@ class PipelineOutputArtifact(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions-outputartifacts.html#cfn-codepipeline-pipeline-stages-actions-outputartifacts-name"""
 
 @attr.s
-class PipelineStageTransition(Property):
+class PropPipelineStageTransition(Property):
     """
     AWS Object Type = "AWS::CodePipeline::Pipeline.StageTransition"
 
@@ -89,7 +89,7 @@ class PipelineStageTransition(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-disableinboundstagetransitions.html#cfn-codepipeline-pipeline-disableinboundstagetransitions-stagename"""
 
 @attr.s
-class PipelineInputArtifact(Property):
+class PropPipelineInputArtifact(Property):
     """
     AWS Object Type = "AWS::CodePipeline::Pipeline.InputArtifact"
 
@@ -109,7 +109,7 @@ class PipelineInputArtifact(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions-inputartifacts.html#cfn-codepipeline-pipeline-stages-actions-inputartifacts-name"""
 
 @attr.s
-class PipelineBlockerDeclaration(Property):
+class PropPipelineBlockerDeclaration(Property):
     """
     AWS Object Type = "AWS::CodePipeline::Pipeline.BlockerDeclaration"
 
@@ -136,7 +136,7 @@ class PipelineBlockerDeclaration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-blockers.html#cfn-codepipeline-pipeline-stages-blockers-type"""
 
 @attr.s
-class CustomActionTypeArtifactDetails(Property):
+class PropCustomActionTypeArtifactDetails(Property):
     """
     AWS Object Type = "AWS::CodePipeline::CustomActionType.ArtifactDetails"
 
@@ -163,7 +163,7 @@ class CustomActionTypeArtifactDetails(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-customactiontype-artifactdetails.html#cfn-codepipeline-customactiontype-artifactdetails-minimumcount"""
 
 @attr.s
-class CustomActionTypeConfigurationProperties(Property):
+class PropCustomActionTypeConfigurationProperties(Property):
     """
     AWS Object Type = "AWS::CodePipeline::CustomActionType.ConfigurationProperties"
 
@@ -225,7 +225,7 @@ class CustomActionTypeConfigurationProperties(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-customactiontype-configurationproperties.html#cfn-codepipeline-customactiontype-configurationproperties-type"""
 
 @attr.s
-class PipelineEncryptionKey(Property):
+class PropPipelineEncryptionKey(Property):
     """
     AWS Object Type = "AWS::CodePipeline::Pipeline.EncryptionKey"
 
@@ -252,7 +252,7 @@ class PipelineEncryptionKey(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-artifactstore-encryptionkey.html#cfn-codepipeline-pipeline-artifactstore-encryptionkey-type"""
 
 @attr.s
-class CustomActionTypeSettings(Property):
+class PropCustomActionTypeSettings(Property):
     """
     AWS Object Type = "AWS::CodePipeline::CustomActionType.Settings"
 
@@ -293,7 +293,7 @@ class CustomActionTypeSettings(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-customactiontype-settings.html#cfn-codepipeline-customactiontype-settings-thirdpartyconfigurationurl"""
 
 @attr.s
-class PipelineArtifactStore(Property):
+class PropPipelineArtifactStore(Property):
     """
     AWS Object Type = "AWS::CodePipeline::Pipeline.ArtifactStore"
 
@@ -319,16 +319,16 @@ class PipelineArtifactStore(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Type"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-artifactstore.html#cfn-codepipeline-pipeline-artifactstore-type"""
-    p_EncryptionKey: typing.Union['PipelineEncryptionKey', dict] = attr.ib(
+    p_EncryptionKey: typing.Union['PropPipelineEncryptionKey', dict] = attr.ib(
         default=None,
-        converter=PipelineEncryptionKey.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PipelineEncryptionKey)),
+        converter=PropPipelineEncryptionKey.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropPipelineEncryptionKey)),
         metadata={AttrMeta.PROPERTY_NAME: "EncryptionKey"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-artifactstore.html#cfn-codepipeline-pipeline-artifactstore-encryptionkey"""
 
 @attr.s
-class PipelineActionTypeId(Property):
+class PropPipelineActionTypeId(Property):
     """
     AWS Object Type = "AWS::CodePipeline::Pipeline.ActionTypeId"
 
@@ -369,7 +369,7 @@ class PipelineActionTypeId(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions-actiontypeid.html#cfn-codepipeline-pipeline-stages-actions-actiontypeid-version"""
 
 @attr.s
-class WebhookWebhookAuthConfiguration(Property):
+class PropWebhookWebhookAuthConfiguration(Property):
     """
     AWS Object Type = "AWS::CodePipeline::Webhook.WebhookAuthConfiguration"
 
@@ -396,7 +396,7 @@ class WebhookWebhookAuthConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-webhook-webhookauthconfiguration.html#cfn-codepipeline-webhook-webhookauthconfiguration-secrettoken"""
 
 @attr.s
-class PipelineArtifactStoreMap(Property):
+class PropPipelineArtifactStoreMap(Property):
     """
     AWS Object Type = "AWS::CodePipeline::Pipeline.ArtifactStoreMap"
 
@@ -409,10 +409,10 @@ class PipelineArtifactStoreMap(Property):
     """
     AWS_OBJECT_TYPE = "AWS::CodePipeline::Pipeline.ArtifactStoreMap"
     
-    rp_ArtifactStore: typing.Union['PipelineArtifactStore', dict] = attr.ib(
+    rp_ArtifactStore: typing.Union['PropPipelineArtifactStore', dict] = attr.ib(
         default=None,
-        converter=PipelineArtifactStore.from_dict,
-        validator=attr.validators.instance_of(PipelineArtifactStore),
+        converter=PropPipelineArtifactStore.from_dict,
+        validator=attr.validators.instance_of(PropPipelineArtifactStore),
         metadata={AttrMeta.PROPERTY_NAME: "ArtifactStore"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-artifactstoremap.html#cfn-codepipeline-pipeline-artifactstoremap-artifactstore"""
@@ -424,7 +424,7 @@ class PipelineArtifactStoreMap(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-artifactstoremap.html#cfn-codepipeline-pipeline-artifactstoremap-region"""
 
 @attr.s
-class PipelineActionDeclaration(Property):
+class PropPipelineActionDeclaration(Property):
     """
     AWS Object Type = "AWS::CodePipeline::Pipeline.ActionDeclaration"
 
@@ -444,10 +444,10 @@ class PipelineActionDeclaration(Property):
     """
     AWS_OBJECT_TYPE = "AWS::CodePipeline::Pipeline.ActionDeclaration"
     
-    rp_ActionTypeId: typing.Union['PipelineActionTypeId', dict] = attr.ib(
+    rp_ActionTypeId: typing.Union['PropPipelineActionTypeId', dict] = attr.ib(
         default=None,
-        converter=PipelineActionTypeId.from_dict,
-        validator=attr.validators.instance_of(PipelineActionTypeId),
+        converter=PropPipelineActionTypeId.from_dict,
+        validator=attr.validators.instance_of(PropPipelineActionTypeId),
         metadata={AttrMeta.PROPERTY_NAME: "ActionTypeId"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions.html#cfn-codepipeline-pipeline-stages-actions-actiontypeid"""
@@ -463,10 +463,10 @@ class PipelineActionDeclaration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Configuration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions.html#cfn-codepipeline-pipeline-stages-actions-configuration"""
-    p_InputArtifacts: typing.List[typing.Union['PipelineInputArtifact', dict]] = attr.ib(
+    p_InputArtifacts: typing.List[typing.Union['PropPipelineInputArtifact', dict]] = attr.ib(
         default=None,
-        converter=PipelineInputArtifact.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PipelineInputArtifact), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropPipelineInputArtifact.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropPipelineInputArtifact), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "InputArtifacts"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions.html#cfn-codepipeline-pipeline-stages-actions-inputartifacts"""
@@ -476,10 +476,10 @@ class PipelineActionDeclaration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Namespace"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions.html#cfn-codepipeline-pipeline-actiondeclaration-namespace"""
-    p_OutputArtifacts: typing.List[typing.Union['PipelineOutputArtifact', dict]] = attr.ib(
+    p_OutputArtifacts: typing.List[typing.Union['PropPipelineOutputArtifact', dict]] = attr.ib(
         default=None,
-        converter=PipelineOutputArtifact.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PipelineOutputArtifact), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropPipelineOutputArtifact.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropPipelineOutputArtifact), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "OutputArtifacts"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions.html#cfn-codepipeline-pipeline-stages-actions-outputartifacts"""
@@ -503,7 +503,7 @@ class PipelineActionDeclaration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions.html#cfn-codepipeline-pipeline-stages-actions-runorder"""
 
 @attr.s
-class PipelineStageDeclaration(Property):
+class PropPipelineStageDeclaration(Property):
     """
     AWS Object Type = "AWS::CodePipeline::Pipeline.StageDeclaration"
 
@@ -517,10 +517,10 @@ class PipelineStageDeclaration(Property):
     """
     AWS_OBJECT_TYPE = "AWS::CodePipeline::Pipeline.StageDeclaration"
     
-    rp_Actions: typing.List[typing.Union['PipelineActionDeclaration', dict]] = attr.ib(
+    rp_Actions: typing.List[typing.Union['PropPipelineActionDeclaration', dict]] = attr.ib(
         default=None,
-        converter=PipelineActionDeclaration.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PipelineActionDeclaration), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropPipelineActionDeclaration.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropPipelineActionDeclaration), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "Actions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages.html#cfn-codepipeline-pipeline-stages-actions"""
@@ -530,10 +530,10 @@ class PipelineStageDeclaration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Name"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages.html#cfn-codepipeline-pipeline-stages-name"""
-    p_Blockers: typing.List[typing.Union['PipelineBlockerDeclaration', dict]] = attr.ib(
+    p_Blockers: typing.List[typing.Union['PropPipelineBlockerDeclaration', dict]] = attr.ib(
         default=None,
-        converter=PipelineBlockerDeclaration.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PipelineBlockerDeclaration), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropPipelineBlockerDeclaration.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropPipelineBlockerDeclaration), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Blockers"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages.html#cfn-codepipeline-pipeline-stages-blockers"""
@@ -568,31 +568,31 @@ class Pipeline(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "RoleArn"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-pipeline.html#cfn-codepipeline-pipeline-rolearn"""
-    rp_Stages: typing.List[typing.Union['PipelineStageDeclaration', dict]] = attr.ib(
+    rp_Stages: typing.List[typing.Union['PropPipelineStageDeclaration', dict]] = attr.ib(
         default=None,
-        converter=PipelineStageDeclaration.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PipelineStageDeclaration), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropPipelineStageDeclaration.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropPipelineStageDeclaration), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "Stages"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-pipeline.html#cfn-codepipeline-pipeline-stages"""
-    p_ArtifactStore: typing.Union['PipelineArtifactStore', dict] = attr.ib(
+    p_ArtifactStore: typing.Union['PropPipelineArtifactStore', dict] = attr.ib(
         default=None,
-        converter=PipelineArtifactStore.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PipelineArtifactStore)),
+        converter=PropPipelineArtifactStore.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropPipelineArtifactStore)),
         metadata={AttrMeta.PROPERTY_NAME: "ArtifactStore"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-pipeline.html#cfn-codepipeline-pipeline-artifactstore"""
-    p_ArtifactStores: typing.List[typing.Union['PipelineArtifactStoreMap', dict]] = attr.ib(
+    p_ArtifactStores: typing.List[typing.Union['PropPipelineArtifactStoreMap', dict]] = attr.ib(
         default=None,
-        converter=PipelineArtifactStoreMap.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PipelineArtifactStoreMap), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropPipelineArtifactStoreMap.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropPipelineArtifactStoreMap), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "ArtifactStores"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-pipeline.html#cfn-codepipeline-pipeline-artifactstores"""
-    p_DisableInboundStageTransitions: typing.List[typing.Union['PipelineStageTransition', dict]] = attr.ib(
+    p_DisableInboundStageTransitions: typing.List[typing.Union['PropPipelineStageTransition', dict]] = attr.ib(
         default=None,
-        converter=PipelineStageTransition.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PipelineStageTransition), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropPipelineStageTransition.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropPipelineStageTransition), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "DisableInboundStageTransitions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-pipeline.html#cfn-codepipeline-pipeline-disableinboundstagetransitions"""
@@ -650,17 +650,17 @@ class CustomActionType(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Category"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-category"""
-    rp_InputArtifactDetails: typing.Union['CustomActionTypeArtifactDetails', dict] = attr.ib(
+    rp_InputArtifactDetails: typing.Union['PropCustomActionTypeArtifactDetails', dict] = attr.ib(
         default=None,
-        converter=CustomActionTypeArtifactDetails.from_dict,
-        validator=attr.validators.instance_of(CustomActionTypeArtifactDetails),
+        converter=PropCustomActionTypeArtifactDetails.from_dict,
+        validator=attr.validators.instance_of(PropCustomActionTypeArtifactDetails),
         metadata={AttrMeta.PROPERTY_NAME: "InputArtifactDetails"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-inputartifactdetails"""
-    rp_OutputArtifactDetails: typing.Union['CustomActionTypeArtifactDetails', dict] = attr.ib(
+    rp_OutputArtifactDetails: typing.Union['PropCustomActionTypeArtifactDetails', dict] = attr.ib(
         default=None,
-        converter=CustomActionTypeArtifactDetails.from_dict,
-        validator=attr.validators.instance_of(CustomActionTypeArtifactDetails),
+        converter=PropCustomActionTypeArtifactDetails.from_dict,
+        validator=attr.validators.instance_of(PropCustomActionTypeArtifactDetails),
         metadata={AttrMeta.PROPERTY_NAME: "OutputArtifactDetails"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-outputartifactdetails"""
@@ -676,17 +676,17 @@ class CustomActionType(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Version"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-version"""
-    p_ConfigurationProperties: typing.List[typing.Union['CustomActionTypeConfigurationProperties', dict]] = attr.ib(
+    p_ConfigurationProperties: typing.List[typing.Union['PropCustomActionTypeConfigurationProperties', dict]] = attr.ib(
         default=None,
-        converter=CustomActionTypeConfigurationProperties.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(CustomActionTypeConfigurationProperties), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropCustomActionTypeConfigurationProperties.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropCustomActionTypeConfigurationProperties), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "ConfigurationProperties"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-configurationproperties"""
-    p_Settings: typing.Union['CustomActionTypeSettings', dict] = attr.ib(
+    p_Settings: typing.Union['PropCustomActionTypeSettings', dict] = attr.ib(
         default=None,
-        converter=CustomActionTypeSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(CustomActionTypeSettings)),
+        converter=PropCustomActionTypeSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropCustomActionTypeSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "Settings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-settings"""
@@ -727,17 +727,17 @@ class Webhook(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Authentication"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-webhook.html#cfn-codepipeline-webhook-authentication"""
-    rp_AuthenticationConfiguration: typing.Union['WebhookWebhookAuthConfiguration', dict] = attr.ib(
+    rp_AuthenticationConfiguration: typing.Union['PropWebhookWebhookAuthConfiguration', dict] = attr.ib(
         default=None,
-        converter=WebhookWebhookAuthConfiguration.from_dict,
-        validator=attr.validators.instance_of(WebhookWebhookAuthConfiguration),
+        converter=PropWebhookWebhookAuthConfiguration.from_dict,
+        validator=attr.validators.instance_of(PropWebhookWebhookAuthConfiguration),
         metadata={AttrMeta.PROPERTY_NAME: "AuthenticationConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-webhook.html#cfn-codepipeline-webhook-authenticationconfiguration"""
-    rp_Filters: typing.List[typing.Union['WebhookWebhookFilterRule', dict]] = attr.ib(
+    rp_Filters: typing.List[typing.Union['PropWebhookWebhookFilterRule', dict]] = attr.ib(
         default=None,
-        converter=WebhookWebhookFilterRule.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(WebhookWebhookFilterRule), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropWebhookWebhookFilterRule.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropWebhookWebhookFilterRule), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "Filters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-webhook.html#cfn-codepipeline-webhook-filters"""

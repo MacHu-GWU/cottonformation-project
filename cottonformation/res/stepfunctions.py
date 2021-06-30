@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class ActivityTagsEntry(Property):
+class PropActivityTagsEntry(Property):
     """
     AWS Object Type = "AWS::StepFunctions::Activity.TagsEntry"
 
@@ -42,7 +42,7 @@ class ActivityTagsEntry(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stepfunctions-activity-tagsentry.html#cfn-stepfunctions-activity-tagsentry-value"""
 
 @attr.s
-class StateMachineDefinition(Property):
+class PropStateMachineDefinition(Property):
     """
     AWS Object Type = "AWS::StepFunctions::StateMachine.Definition"
 
@@ -55,7 +55,7 @@ class StateMachineDefinition(Property):
     
 
 @attr.s
-class StateMachineTagsEntry(Property):
+class PropStateMachineTagsEntry(Property):
     """
     AWS Object Type = "AWS::StepFunctions::StateMachine.TagsEntry"
 
@@ -82,7 +82,7 @@ class StateMachineTagsEntry(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stepfunctions-statemachine-tagsentry.html#cfn-stepfunctions-statemachine-tagsentry-value"""
 
 @attr.s
-class StateMachineS3Location(Property):
+class PropStateMachineS3Location(Property):
     """
     AWS Object Type = "AWS::StepFunctions::StateMachine.S3Location"
 
@@ -116,7 +116,7 @@ class StateMachineS3Location(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stepfunctions-statemachine-s3location.html#cfn-stepfunctions-statemachine-s3location-version"""
 
 @attr.s
-class StateMachineCloudWatchLogsLogGroup(Property):
+class PropStateMachineCloudWatchLogsLogGroup(Property):
     """
     AWS Object Type = "AWS::StepFunctions::StateMachine.CloudWatchLogsLogGroup"
 
@@ -136,7 +136,7 @@ class StateMachineCloudWatchLogsLogGroup(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stepfunctions-statemachine-cloudwatchlogsloggroup.html#cfn-stepfunctions-statemachine-cloudwatchlogsloggroup-loggrouparn"""
 
 @attr.s
-class StateMachineTracingConfiguration(Property):
+class PropStateMachineTracingConfiguration(Property):
     """
     AWS Object Type = "AWS::StepFunctions::StateMachine.TracingConfiguration"
 
@@ -156,7 +156,7 @@ class StateMachineTracingConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stepfunctions-statemachine-tracingconfiguration.html#cfn-stepfunctions-statemachine-tracingconfiguration-enabled"""
 
 @attr.s
-class StateMachineLogDestination(Property):
+class PropStateMachineLogDestination(Property):
     """
     AWS Object Type = "AWS::StepFunctions::StateMachine.LogDestination"
 
@@ -168,16 +168,16 @@ class StateMachineLogDestination(Property):
     """
     AWS_OBJECT_TYPE = "AWS::StepFunctions::StateMachine.LogDestination"
     
-    p_CloudWatchLogsLogGroup: typing.Union['StateMachineCloudWatchLogsLogGroup', dict] = attr.ib(
+    p_CloudWatchLogsLogGroup: typing.Union['PropStateMachineCloudWatchLogsLogGroup', dict] = attr.ib(
         default=None,
-        converter=StateMachineCloudWatchLogsLogGroup.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(StateMachineCloudWatchLogsLogGroup)),
+        converter=PropStateMachineCloudWatchLogsLogGroup.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropStateMachineCloudWatchLogsLogGroup)),
         metadata={AttrMeta.PROPERTY_NAME: "CloudWatchLogsLogGroup"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stepfunctions-statemachine-logdestination.html#cfn-stepfunctions-statemachine-logdestination-cloudwatchlogsloggroup"""
 
 @attr.s
-class StateMachineLoggingConfiguration(Property):
+class PropStateMachineLoggingConfiguration(Property):
     """
     AWS Object Type = "AWS::StepFunctions::StateMachine.LoggingConfiguration"
 
@@ -191,10 +191,10 @@ class StateMachineLoggingConfiguration(Property):
     """
     AWS_OBJECT_TYPE = "AWS::StepFunctions::StateMachine.LoggingConfiguration"
     
-    p_Destinations: typing.List[typing.Union['StateMachineLogDestination', dict]] = attr.ib(
+    p_Destinations: typing.List[typing.Union['PropStateMachineLogDestination', dict]] = attr.ib(
         default=None,
-        converter=StateMachineLogDestination.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(StateMachineLogDestination), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropStateMachineLogDestination.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropStateMachineLogDestination), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Destinations"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stepfunctions-statemachine-loggingconfiguration.html#cfn-stepfunctions-statemachine-loggingconfiguration-destinations"""
@@ -235,10 +235,10 @@ class Activity(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Name"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-activity.html#cfn-stepfunctions-activity-name"""
-    p_Tags: typing.List[typing.Union['ActivityTagsEntry', dict]] = attr.ib(
+    p_Tags: typing.List[typing.Union['PropActivityTagsEntry', dict]] = attr.ib(
         default=None,
-        converter=ActivityTagsEntry.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ActivityTagsEntry), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropActivityTagsEntry.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropActivityTagsEntry), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Tags"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-activity.html#cfn-stepfunctions-activity-tags"""
@@ -279,17 +279,17 @@ class StateMachine(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "RoleArn"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-statemachine.html#cfn-stepfunctions-statemachine-rolearn"""
-    p_Definition: typing.Union['StateMachineDefinition', dict] = attr.ib(
+    p_Definition: typing.Union['PropStateMachineDefinition', dict] = attr.ib(
         default=None,
-        converter=StateMachineDefinition.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(StateMachineDefinition)),
+        converter=PropStateMachineDefinition.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropStateMachineDefinition)),
         metadata={AttrMeta.PROPERTY_NAME: "Definition"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-statemachine.html#cfn-stepfunctions-statemachine-definition"""
-    p_DefinitionS3Location: typing.Union['StateMachineS3Location', dict] = attr.ib(
+    p_DefinitionS3Location: typing.Union['PropStateMachineS3Location', dict] = attr.ib(
         default=None,
-        converter=StateMachineS3Location.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(StateMachineS3Location)),
+        converter=PropStateMachineS3Location.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropStateMachineS3Location)),
         metadata={AttrMeta.PROPERTY_NAME: "DefinitionS3Location"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-statemachine.html#cfn-stepfunctions-statemachine-definitions3location"""
@@ -305,10 +305,10 @@ class StateMachine(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "DefinitionSubstitutions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-statemachine.html#cfn-stepfunctions-statemachine-definitionsubstitutions"""
-    p_LoggingConfiguration: typing.Union['StateMachineLoggingConfiguration', dict] = attr.ib(
+    p_LoggingConfiguration: typing.Union['PropStateMachineLoggingConfiguration', dict] = attr.ib(
         default=None,
-        converter=StateMachineLoggingConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(StateMachineLoggingConfiguration)),
+        converter=PropStateMachineLoggingConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropStateMachineLoggingConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "LoggingConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-statemachine.html#cfn-stepfunctions-statemachine-loggingconfiguration"""
@@ -324,17 +324,17 @@ class StateMachine(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "StateMachineType"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-statemachine.html#cfn-stepfunctions-statemachine-statemachinetype"""
-    p_TracingConfiguration: typing.Union['StateMachineTracingConfiguration', dict] = attr.ib(
+    p_TracingConfiguration: typing.Union['PropStateMachineTracingConfiguration', dict] = attr.ib(
         default=None,
-        converter=StateMachineTracingConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(StateMachineTracingConfiguration)),
+        converter=PropStateMachineTracingConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropStateMachineTracingConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "TracingConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-statemachine.html#cfn-stepfunctions-statemachine-tracingconfiguration"""
-    p_Tags: typing.List[typing.Union['StateMachineTagsEntry', dict]] = attr.ib(
+    p_Tags: typing.List[typing.Union['PropStateMachineTagsEntry', dict]] = attr.ib(
         default=None,
-        converter=StateMachineTagsEntry.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(StateMachineTagsEntry), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropStateMachineTagsEntry.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropStateMachineTagsEntry), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Tags"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-statemachine.html#cfn-stepfunctions-statemachine-tags"""

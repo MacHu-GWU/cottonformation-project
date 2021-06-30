@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class SchemaTagsEntry(Property):
+class PropSchemaTagsEntry(Property):
     """
     AWS Object Type = "AWS::EventSchemas::Schema.TagsEntry"
 
@@ -42,7 +42,7 @@ class SchemaTagsEntry(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eventschemas-schema-tagsentry.html#cfn-eventschemas-schema-tagsentry-value"""
 
 @attr.s
-class DiscovererTagsEntry(Property):
+class PropDiscovererTagsEntry(Property):
     """
     AWS Object Type = "AWS::EventSchemas::Discoverer.TagsEntry"
 
@@ -69,7 +69,7 @@ class DiscovererTagsEntry(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-eventschemas-discoverer-tagsentry.html#cfn-eventschemas-discoverer-tagsentry-value"""
 
 @attr.s
-class RegistryTagsEntry(Property):
+class PropRegistryTagsEntry(Property):
     """
     AWS Object Type = "AWS::EventSchemas::Registry.TagsEntry"
 
@@ -126,10 +126,10 @@ class Discoverer(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Description"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eventschemas-discoverer.html#cfn-eventschemas-discoverer-description"""
-    p_Tags: typing.List[typing.Union['DiscovererTagsEntry', dict]] = attr.ib(
+    p_Tags: typing.List[typing.Union['PropDiscovererTagsEntry', dict]] = attr.ib(
         default=None,
-        converter=DiscovererTagsEntry.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(DiscovererTagsEntry), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropDiscovererTagsEntry.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDiscovererTagsEntry), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Tags"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eventschemas-discoverer.html#cfn-eventschemas-discoverer-tags"""
@@ -237,10 +237,10 @@ class Schema(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "SchemaName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eventschemas-schema.html#cfn-eventschemas-schema-schemaname"""
-    p_Tags: typing.List[typing.Union['SchemaTagsEntry', dict]] = attr.ib(
+    p_Tags: typing.List[typing.Union['PropSchemaTagsEntry', dict]] = attr.ib(
         default=None,
-        converter=SchemaTagsEntry.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(SchemaTagsEntry), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropSchemaTagsEntry.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropSchemaTagsEntry), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Tags"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eventschemas-schema.html#cfn-eventschemas-schema-tags"""
@@ -290,10 +290,10 @@ class Registry(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "RegistryName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eventschemas-registry.html#cfn-eventschemas-registry-registryname"""
-    p_Tags: typing.List[typing.Union['RegistryTagsEntry', dict]] = attr.ib(
+    p_Tags: typing.List[typing.Union['PropRegistryTagsEntry', dict]] = attr.ib(
         default=None,
-        converter=RegistryTagsEntry.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(RegistryTagsEntry), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropRegistryTagsEntry.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropRegistryTagsEntry), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Tags"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eventschemas-registry.html#cfn-eventschemas-registry-tags"""

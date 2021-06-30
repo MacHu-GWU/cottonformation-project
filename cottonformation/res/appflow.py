@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class FlowIncrementalPullConfig(Property):
+class PropFlowIncrementalPullConfig(Property):
     """
     AWS Object Type = "AWS::AppFlow::Flow.IncrementalPullConfig"
 
@@ -35,7 +35,7 @@ class FlowIncrementalPullConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-incrementalpullconfig.html#cfn-appflow-flow-incrementalpullconfig-datetimetypefieldname"""
 
 @attr.s
-class ConnectorProfileInforNexusConnectorProfileProperties(Property):
+class PropConnectorProfileInforNexusConnectorProfileProperties(Property):
     """
     AWS Object Type = "AWS::AppFlow::ConnectorProfile.InforNexusConnectorProfileProperties"
 
@@ -55,7 +55,7 @@ class ConnectorProfileInforNexusConnectorProfileProperties(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-infornexusconnectorprofileproperties.html#cfn-appflow-connectorprofile-infornexusconnectorprofileproperties-instanceurl"""
 
 @attr.s
-class ConnectorProfileDynatraceConnectorProfileCredentials(Property):
+class PropConnectorProfileDynatraceConnectorProfileCredentials(Property):
     """
     AWS Object Type = "AWS::AppFlow::ConnectorProfile.DynatraceConnectorProfileCredentials"
 
@@ -75,7 +75,7 @@ class ConnectorProfileDynatraceConnectorProfileCredentials(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-dynatraceconnectorprofilecredentials.html#cfn-appflow-connectorprofile-dynatraceconnectorprofilecredentials-apitoken"""
 
 @attr.s
-class FlowPrefixConfig(Property):
+class PropFlowPrefixConfig(Property):
     """
     AWS Object Type = "AWS::AppFlow::Flow.PrefixConfig"
 
@@ -102,7 +102,7 @@ class FlowPrefixConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-prefixconfig.html#cfn-appflow-flow-prefixconfig-prefixtype"""
 
 @attr.s
-class ConnectorProfileRedshiftConnectorProfileCredentials(Property):
+class PropConnectorProfileRedshiftConnectorProfileCredentials(Property):
     """
     AWS Object Type = "AWS::AppFlow::ConnectorProfile.RedshiftConnectorProfileCredentials"
 
@@ -129,7 +129,7 @@ class ConnectorProfileRedshiftConnectorProfileCredentials(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-redshiftconnectorprofilecredentials.html#cfn-appflow-connectorprofile-redshiftconnectorprofilecredentials-username"""
 
 @attr.s
-class ConnectorProfileZendeskConnectorProfileProperties(Property):
+class PropConnectorProfileZendeskConnectorProfileProperties(Property):
     """
     AWS Object Type = "AWS::AppFlow::ConnectorProfile.ZendeskConnectorProfileProperties"
 
@@ -149,7 +149,7 @@ class ConnectorProfileZendeskConnectorProfileProperties(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-zendeskconnectorprofileproperties.html#cfn-appflow-connectorprofile-zendeskconnectorprofileproperties-instanceurl"""
 
 @attr.s
-class FlowDatadogSourceProperties(Property):
+class PropFlowDatadogSourceProperties(Property):
     """
     AWS Object Type = "AWS::AppFlow::Flow.DatadogSourceProperties"
 
@@ -169,7 +169,7 @@ class FlowDatadogSourceProperties(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-datadogsourceproperties.html#cfn-appflow-flow-datadogsourceproperties-object"""
 
 @attr.s
-class FlowAggregationConfig(Property):
+class PropFlowAggregationConfig(Property):
     """
     AWS Object Type = "AWS::AppFlow::Flow.AggregationConfig"
 
@@ -189,7 +189,7 @@ class FlowAggregationConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-aggregationconfig.html#cfn-appflow-flow-aggregationconfig-aggregationtype"""
 
 @attr.s
-class FlowScheduledTriggerProperties(Property):
+class PropFlowScheduledTriggerProperties(Property):
     """
     AWS Object Type = "AWS::AppFlow::Flow.ScheduledTriggerProperties"
 
@@ -237,7 +237,7 @@ class FlowScheduledTriggerProperties(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-scheduledtriggerproperties.html#cfn-appflow-flow-scheduledtriggerproperties-timezone"""
 
 @attr.s
-class FlowConnectorOperator(Property):
+class PropFlowConnectorOperator(Property):
     """
     AWS Object Type = "AWS::AppFlow::Flow.ConnectorOperator"
 
@@ -348,7 +348,7 @@ class FlowConnectorOperator(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-connectoroperator.html#cfn-appflow-flow-connectoroperator-zendesk"""
 
 @attr.s
-class FlowZendeskSourceProperties(Property):
+class PropFlowZendeskSourceProperties(Property):
     """
     AWS Object Type = "AWS::AppFlow::Flow.ZendeskSourceProperties"
 
@@ -368,7 +368,7 @@ class FlowZendeskSourceProperties(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-zendesksourceproperties.html#cfn-appflow-flow-zendesksourceproperties-object"""
 
 @attr.s
-class FlowErrorHandlingConfig(Property):
+class PropFlowErrorHandlingConfig(Property):
     """
     AWS Object Type = "AWS::AppFlow::Flow.ErrorHandlingConfig"
 
@@ -402,7 +402,7 @@ class FlowErrorHandlingConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-errorhandlingconfig.html#cfn-appflow-flow-errorhandlingconfig-failonfirsterror"""
 
 @attr.s
-class FlowS3SourceProperties(Property):
+class PropFlowS3SourceProperties(Property):
     """
     AWS Object Type = "AWS::AppFlow::Flow.S3SourceProperties"
 
@@ -429,7 +429,7 @@ class FlowS3SourceProperties(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-s3sourceproperties.html#cfn-appflow-flow-s3sourceproperties-bucketprefix"""
 
 @attr.s
-class ConnectorProfileDynatraceConnectorProfileProperties(Property):
+class PropConnectorProfileDynatraceConnectorProfileProperties(Property):
     """
     AWS Object Type = "AWS::AppFlow::ConnectorProfile.DynatraceConnectorProfileProperties"
 
@@ -449,7 +449,7 @@ class ConnectorProfileDynatraceConnectorProfileProperties(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-dynatraceconnectorprofileproperties.html#cfn-appflow-connectorprofile-dynatraceconnectorprofileproperties-instanceurl"""
 
 @attr.s
-class ConnectorProfileRedshiftConnectorProfileProperties(Property):
+class PropConnectorProfileRedshiftConnectorProfileProperties(Property):
     """
     AWS Object Type = "AWS::AppFlow::ConnectorProfile.RedshiftConnectorProfileProperties"
 
@@ -490,7 +490,7 @@ class ConnectorProfileRedshiftConnectorProfileProperties(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-redshiftconnectorprofileproperties.html#cfn-appflow-connectorprofile-redshiftconnectorprofileproperties-bucketprefix"""
 
 @attr.s
-class FlowSalesforceSourceProperties(Property):
+class PropFlowSalesforceSourceProperties(Property):
     """
     AWS Object Type = "AWS::AppFlow::Flow.SalesforceSourceProperties"
 
@@ -524,7 +524,7 @@ class FlowSalesforceSourceProperties(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-salesforcesourceproperties.html#cfn-appflow-flow-salesforcesourceproperties-includedeletedrecords"""
 
 @attr.s
-class FlowSingularSourceProperties(Property):
+class PropFlowSingularSourceProperties(Property):
     """
     AWS Object Type = "AWS::AppFlow::Flow.SingularSourceProperties"
 
@@ -544,7 +544,7 @@ class FlowSingularSourceProperties(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-singularsourceproperties.html#cfn-appflow-flow-singularsourceproperties-object"""
 
 @attr.s
-class FlowEventBridgeDestinationProperties(Property):
+class PropFlowEventBridgeDestinationProperties(Property):
     """
     AWS Object Type = "AWS::AppFlow::Flow.EventBridgeDestinationProperties"
 
@@ -563,16 +563,16 @@ class FlowEventBridgeDestinationProperties(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Object"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-eventbridgedestinationproperties.html#cfn-appflow-flow-eventbridgedestinationproperties-object"""
-    p_ErrorHandlingConfig: typing.Union['FlowErrorHandlingConfig', dict] = attr.ib(
+    p_ErrorHandlingConfig: typing.Union['PropFlowErrorHandlingConfig', dict] = attr.ib(
         default=None,
-        converter=FlowErrorHandlingConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(FlowErrorHandlingConfig)),
+        converter=PropFlowErrorHandlingConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropFlowErrorHandlingConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "ErrorHandlingConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-eventbridgedestinationproperties.html#cfn-appflow-flow-eventbridgedestinationproperties-errorhandlingconfig"""
 
 @attr.s
-class FlowMarketoSourceProperties(Property):
+class PropFlowMarketoSourceProperties(Property):
     """
     AWS Object Type = "AWS::AppFlow::Flow.MarketoSourceProperties"
 
@@ -592,7 +592,7 @@ class FlowMarketoSourceProperties(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-marketosourceproperties.html#cfn-appflow-flow-marketosourceproperties-object"""
 
 @attr.s
-class FlowSlackSourceProperties(Property):
+class PropFlowSlackSourceProperties(Property):
     """
     AWS Object Type = "AWS::AppFlow::Flow.SlackSourceProperties"
 
@@ -612,7 +612,7 @@ class FlowSlackSourceProperties(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-slacksourceproperties.html#cfn-appflow-flow-slacksourceproperties-object"""
 
 @attr.s
-class ConnectorProfileSingularConnectorProfileCredentials(Property):
+class PropConnectorProfileSingularConnectorProfileCredentials(Property):
     """
     AWS Object Type = "AWS::AppFlow::ConnectorProfile.SingularConnectorProfileCredentials"
 
@@ -632,7 +632,7 @@ class ConnectorProfileSingularConnectorProfileCredentials(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-singularconnectorprofilecredentials.html#cfn-appflow-connectorprofile-singularconnectorprofilecredentials-apikey"""
 
 @attr.s
-class ConnectorProfileServiceNowConnectorProfileCredentials(Property):
+class PropConnectorProfileServiceNowConnectorProfileCredentials(Property):
     """
     AWS Object Type = "AWS::AppFlow::ConnectorProfile.ServiceNowConnectorProfileCredentials"
 
@@ -659,7 +659,7 @@ class ConnectorProfileServiceNowConnectorProfileCredentials(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-servicenowconnectorprofilecredentials.html#cfn-appflow-connectorprofile-servicenowconnectorprofilecredentials-username"""
 
 @attr.s
-class FlowRedshiftDestinationProperties(Property):
+class PropFlowRedshiftDestinationProperties(Property):
     """
     AWS Object Type = "AWS::AppFlow::Flow.RedshiftDestinationProperties"
 
@@ -692,16 +692,16 @@ class FlowRedshiftDestinationProperties(Property):
         metadata={AttrMeta.PROPERTY_NAME: "BucketPrefix"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-redshiftdestinationproperties.html#cfn-appflow-flow-redshiftdestinationproperties-bucketprefix"""
-    p_ErrorHandlingConfig: typing.Union['FlowErrorHandlingConfig', dict] = attr.ib(
+    p_ErrorHandlingConfig: typing.Union['PropFlowErrorHandlingConfig', dict] = attr.ib(
         default=None,
-        converter=FlowErrorHandlingConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(FlowErrorHandlingConfig)),
+        converter=PropFlowErrorHandlingConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropFlowErrorHandlingConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "ErrorHandlingConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-redshiftdestinationproperties.html#cfn-appflow-flow-redshiftdestinationproperties-errorhandlingconfig"""
 
 @attr.s
-class FlowLookoutMetricsDestinationProperties(Property):
+class PropFlowLookoutMetricsDestinationProperties(Property):
     """
     AWS Object Type = "AWS::AppFlow::Flow.LookoutMetricsDestinationProperties"
 
@@ -721,7 +721,7 @@ class FlowLookoutMetricsDestinationProperties(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-lookoutmetricsdestinationproperties.html#cfn-appflow-flow-lookoutmetricsdestinationproperties-object"""
 
 @attr.s
-class ConnectorProfileSnowflakeConnectorProfileCredentials(Property):
+class PropConnectorProfileSnowflakeConnectorProfileCredentials(Property):
     """
     AWS Object Type = "AWS::AppFlow::ConnectorProfile.SnowflakeConnectorProfileCredentials"
 
@@ -748,7 +748,7 @@ class ConnectorProfileSnowflakeConnectorProfileCredentials(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-snowflakeconnectorprofilecredentials.html#cfn-appflow-connectorprofile-snowflakeconnectorprofilecredentials-username"""
 
 @attr.s
-class FlowUpsolverS3OutputFormatConfig(Property):
+class PropFlowUpsolverS3OutputFormatConfig(Property):
     """
     AWS Object Type = "AWS::AppFlow::Flow.UpsolverS3OutputFormatConfig"
 
@@ -762,17 +762,17 @@ class FlowUpsolverS3OutputFormatConfig(Property):
     """
     AWS_OBJECT_TYPE = "AWS::AppFlow::Flow.UpsolverS3OutputFormatConfig"
     
-    rp_PrefixConfig: typing.Union['FlowPrefixConfig', dict] = attr.ib(
+    rp_PrefixConfig: typing.Union['PropFlowPrefixConfig', dict] = attr.ib(
         default=None,
-        converter=FlowPrefixConfig.from_dict,
-        validator=attr.validators.instance_of(FlowPrefixConfig),
+        converter=PropFlowPrefixConfig.from_dict,
+        validator=attr.validators.instance_of(PropFlowPrefixConfig),
         metadata={AttrMeta.PROPERTY_NAME: "PrefixConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-upsolvers3outputformatconfig.html#cfn-appflow-flow-upsolvers3outputformatconfig-prefixconfig"""
-    p_AggregationConfig: typing.Union['FlowAggregationConfig', dict] = attr.ib(
+    p_AggregationConfig: typing.Union['PropFlowAggregationConfig', dict] = attr.ib(
         default=None,
-        converter=FlowAggregationConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(FlowAggregationConfig)),
+        converter=PropFlowAggregationConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropFlowAggregationConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "AggregationConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-upsolvers3outputformatconfig.html#cfn-appflow-flow-upsolvers3outputformatconfig-aggregationconfig"""
@@ -784,7 +784,7 @@ class FlowUpsolverS3OutputFormatConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-upsolvers3outputformatconfig.html#cfn-appflow-flow-upsolvers3outputformatconfig-filetype"""
 
 @attr.s
-class FlowUpsolverDestinationProperties(Property):
+class PropFlowUpsolverDestinationProperties(Property):
     """
     AWS Object Type = "AWS::AppFlow::Flow.UpsolverDestinationProperties"
 
@@ -804,10 +804,10 @@ class FlowUpsolverDestinationProperties(Property):
         metadata={AttrMeta.PROPERTY_NAME: "BucketName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-upsolverdestinationproperties.html#cfn-appflow-flow-upsolverdestinationproperties-bucketname"""
-    rp_S3OutputFormatConfig: typing.Union['FlowUpsolverS3OutputFormatConfig', dict] = attr.ib(
+    rp_S3OutputFormatConfig: typing.Union['PropFlowUpsolverS3OutputFormatConfig', dict] = attr.ib(
         default=None,
-        converter=FlowUpsolverS3OutputFormatConfig.from_dict,
-        validator=attr.validators.instance_of(FlowUpsolverS3OutputFormatConfig),
+        converter=PropFlowUpsolverS3OutputFormatConfig.from_dict,
+        validator=attr.validators.instance_of(PropFlowUpsolverS3OutputFormatConfig),
         metadata={AttrMeta.PROPERTY_NAME: "S3OutputFormatConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-upsolverdestinationproperties.html#cfn-appflow-flow-upsolverdestinationproperties-s3outputformatconfig"""
@@ -819,7 +819,7 @@ class FlowUpsolverDestinationProperties(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-upsolverdestinationproperties.html#cfn-appflow-flow-upsolverdestinationproperties-bucketprefix"""
 
 @attr.s
-class FlowServiceNowSourceProperties(Property):
+class PropFlowServiceNowSourceProperties(Property):
     """
     AWS Object Type = "AWS::AppFlow::Flow.ServiceNowSourceProperties"
 
@@ -839,7 +839,7 @@ class FlowServiceNowSourceProperties(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-servicenowsourceproperties.html#cfn-appflow-flow-servicenowsourceproperties-object"""
 
 @attr.s
-class FlowZendeskDestinationProperties(Property):
+class PropFlowZendeskDestinationProperties(Property):
     """
     AWS Object Type = "AWS::AppFlow::Flow.ZendeskDestinationProperties"
 
@@ -860,10 +860,10 @@ class FlowZendeskDestinationProperties(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Object"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-zendeskdestinationproperties.html#cfn-appflow-flow-zendeskdestinationproperties-object"""
-    p_ErrorHandlingConfig: typing.Union['FlowErrorHandlingConfig', dict] = attr.ib(
+    p_ErrorHandlingConfig: typing.Union['PropFlowErrorHandlingConfig', dict] = attr.ib(
         default=None,
-        converter=FlowErrorHandlingConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(FlowErrorHandlingConfig)),
+        converter=PropFlowErrorHandlingConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropFlowErrorHandlingConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "ErrorHandlingConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-zendeskdestinationproperties.html#cfn-appflow-flow-zendeskdestinationproperties-errorhandlingconfig"""
@@ -881,7 +881,7 @@ class FlowZendeskDestinationProperties(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-zendeskdestinationproperties.html#cfn-appflow-flow-zendeskdestinationproperties-writeoperationtype"""
 
 @attr.s
-class FlowInforNexusSourceProperties(Property):
+class PropFlowInforNexusSourceProperties(Property):
     """
     AWS Object Type = "AWS::AppFlow::Flow.InforNexusSourceProperties"
 
@@ -901,7 +901,7 @@ class FlowInforNexusSourceProperties(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-infornexussourceproperties.html#cfn-appflow-flow-infornexussourceproperties-object"""
 
 @attr.s
-class ConnectorProfileSnowflakeConnectorProfileProperties(Property):
+class PropConnectorProfileSnowflakeConnectorProfileProperties(Property):
     """
     AWS Object Type = "AWS::AppFlow::ConnectorProfile.SnowflakeConnectorProfileProperties"
 
@@ -963,7 +963,7 @@ class ConnectorProfileSnowflakeConnectorProfileProperties(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-snowflakeconnectorprofileproperties.html#cfn-appflow-connectorprofile-snowflakeconnectorprofileproperties-region"""
 
 @attr.s
-class ConnectorProfileSalesforceConnectorProfileProperties(Property):
+class PropConnectorProfileSalesforceConnectorProfileProperties(Property):
     """
     AWS Object Type = "AWS::AppFlow::ConnectorProfile.SalesforceConnectorProfileProperties"
 
@@ -990,7 +990,7 @@ class ConnectorProfileSalesforceConnectorProfileProperties(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-salesforceconnectorprofileproperties.html#cfn-appflow-connectorprofile-salesforceconnectorprofileproperties-issandboxenvironment"""
 
 @attr.s
-class FlowTrendmicroSourceProperties(Property):
+class PropFlowTrendmicroSourceProperties(Property):
     """
     AWS Object Type = "AWS::AppFlow::Flow.TrendmicroSourceProperties"
 
@@ -1010,7 +1010,7 @@ class FlowTrendmicroSourceProperties(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-trendmicrosourceproperties.html#cfn-appflow-flow-trendmicrosourceproperties-object"""
 
 @attr.s
-class ConnectorProfileAmplitudeConnectorProfileCredentials(Property):
+class PropConnectorProfileAmplitudeConnectorProfileCredentials(Property):
     """
     AWS Object Type = "AWS::AppFlow::ConnectorProfile.AmplitudeConnectorProfileCredentials"
 
@@ -1037,7 +1037,7 @@ class ConnectorProfileAmplitudeConnectorProfileCredentials(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-amplitudeconnectorprofilecredentials.html#cfn-appflow-connectorprofile-amplitudeconnectorprofilecredentials-secretkey"""
 
 @attr.s
-class ConnectorProfileConnectorOAuthRequest(Property):
+class PropConnectorProfileConnectorOAuthRequest(Property):
     """
     AWS Object Type = "AWS::AppFlow::ConnectorProfile.ConnectorOAuthRequest"
 
@@ -1064,7 +1064,7 @@ class ConnectorProfileConnectorOAuthRequest(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-connectoroauthrequest.html#cfn-appflow-connectorprofile-connectoroauthrequest-redirecturi"""
 
 @attr.s
-class ConnectorProfileDatadogConnectorProfileCredentials(Property):
+class PropConnectorProfileDatadogConnectorProfileCredentials(Property):
     """
     AWS Object Type = "AWS::AppFlow::ConnectorProfile.DatadogConnectorProfileCredentials"
 
@@ -1091,7 +1091,7 @@ class ConnectorProfileDatadogConnectorProfileCredentials(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-datadogconnectorprofilecredentials.html#cfn-appflow-connectorprofile-datadogconnectorprofilecredentials-applicationkey"""
 
 @attr.s
-class FlowSnowflakeDestinationProperties(Property):
+class PropFlowSnowflakeDestinationProperties(Property):
     """
     AWS Object Type = "AWS::AppFlow::Flow.SnowflakeDestinationProperties"
 
@@ -1124,16 +1124,16 @@ class FlowSnowflakeDestinationProperties(Property):
         metadata={AttrMeta.PROPERTY_NAME: "BucketPrefix"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-snowflakedestinationproperties.html#cfn-appflow-flow-snowflakedestinationproperties-bucketprefix"""
-    p_ErrorHandlingConfig: typing.Union['FlowErrorHandlingConfig', dict] = attr.ib(
+    p_ErrorHandlingConfig: typing.Union['PropFlowErrorHandlingConfig', dict] = attr.ib(
         default=None,
-        converter=FlowErrorHandlingConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(FlowErrorHandlingConfig)),
+        converter=PropFlowErrorHandlingConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropFlowErrorHandlingConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "ErrorHandlingConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-snowflakedestinationproperties.html#cfn-appflow-flow-snowflakedestinationproperties-errorhandlingconfig"""
 
 @attr.s
-class FlowGoogleAnalyticsSourceProperties(Property):
+class PropFlowGoogleAnalyticsSourceProperties(Property):
     """
     AWS Object Type = "AWS::AppFlow::Flow.GoogleAnalyticsSourceProperties"
 
@@ -1153,7 +1153,7 @@ class FlowGoogleAnalyticsSourceProperties(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-googleanalyticssourceproperties.html#cfn-appflow-flow-googleanalyticssourceproperties-object"""
 
 @attr.s
-class ConnectorProfileSlackConnectorProfileCredentials(Property):
+class PropConnectorProfileSlackConnectorProfileCredentials(Property):
     """
     AWS Object Type = "AWS::AppFlow::ConnectorProfile.SlackConnectorProfileCredentials"
 
@@ -1186,16 +1186,16 @@ class ConnectorProfileSlackConnectorProfileCredentials(Property):
         metadata={AttrMeta.PROPERTY_NAME: "AccessToken"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-slackconnectorprofilecredentials.html#cfn-appflow-connectorprofile-slackconnectorprofilecredentials-accesstoken"""
-    p_ConnectorOAuthRequest: typing.Union['ConnectorProfileConnectorOAuthRequest', dict] = attr.ib(
+    p_ConnectorOAuthRequest: typing.Union['PropConnectorProfileConnectorOAuthRequest', dict] = attr.ib(
         default=None,
-        converter=ConnectorProfileConnectorOAuthRequest.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ConnectorProfileConnectorOAuthRequest)),
+        converter=PropConnectorProfileConnectorOAuthRequest.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropConnectorProfileConnectorOAuthRequest)),
         metadata={AttrMeta.PROPERTY_NAME: "ConnectorOAuthRequest"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-slackconnectorprofilecredentials.html#cfn-appflow-connectorprofile-slackconnectorprofilecredentials-connectoroauthrequest"""
 
 @attr.s
-class FlowVeevaSourceProperties(Property):
+class PropFlowVeevaSourceProperties(Property):
     """
     AWS Object Type = "AWS::AppFlow::Flow.VeevaSourceProperties"
 
@@ -1215,7 +1215,7 @@ class FlowVeevaSourceProperties(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-veevasourceproperties.html#cfn-appflow-flow-veevasourceproperties-object"""
 
 @attr.s
-class ConnectorProfileTrendmicroConnectorProfileCredentials(Property):
+class PropConnectorProfileTrendmicroConnectorProfileCredentials(Property):
     """
     AWS Object Type = "AWS::AppFlow::ConnectorProfile.TrendmicroConnectorProfileCredentials"
 
@@ -1235,7 +1235,7 @@ class ConnectorProfileTrendmicroConnectorProfileCredentials(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-trendmicroconnectorprofilecredentials.html#cfn-appflow-connectorprofile-trendmicroconnectorprofilecredentials-apisecretkey"""
 
 @attr.s
-class FlowDynatraceSourceProperties(Property):
+class PropFlowDynatraceSourceProperties(Property):
     """
     AWS Object Type = "AWS::AppFlow::Flow.DynatraceSourceProperties"
 
@@ -1255,7 +1255,7 @@ class FlowDynatraceSourceProperties(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-dynatracesourceproperties.html#cfn-appflow-flow-dynatracesourceproperties-object"""
 
 @attr.s
-class ConnectorProfileVeevaConnectorProfileCredentials(Property):
+class PropConnectorProfileVeevaConnectorProfileCredentials(Property):
     """
     AWS Object Type = "AWS::AppFlow::ConnectorProfile.VeevaConnectorProfileCredentials"
 
@@ -1282,7 +1282,7 @@ class ConnectorProfileVeevaConnectorProfileCredentials(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-veevaconnectorprofilecredentials.html#cfn-appflow-connectorprofile-veevaconnectorprofilecredentials-username"""
 
 @attr.s
-class ConnectorProfileVeevaConnectorProfileProperties(Property):
+class PropConnectorProfileVeevaConnectorProfileProperties(Property):
     """
     AWS Object Type = "AWS::AppFlow::ConnectorProfile.VeevaConnectorProfileProperties"
 
@@ -1302,7 +1302,7 @@ class ConnectorProfileVeevaConnectorProfileProperties(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-veevaconnectorprofileproperties.html#cfn-appflow-connectorprofile-veevaconnectorprofileproperties-instanceurl"""
 
 @attr.s
-class FlowTaskPropertiesObject(Property):
+class PropFlowTaskPropertiesObject(Property):
     """
     AWS Object Type = "AWS::AppFlow::Flow.TaskPropertiesObject"
 
@@ -1329,7 +1329,7 @@ class FlowTaskPropertiesObject(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-taskpropertiesobject.html#cfn-appflow-flow-taskpropertiesobject-value"""
 
 @attr.s
-class ConnectorProfileSlackConnectorProfileProperties(Property):
+class PropConnectorProfileSlackConnectorProfileProperties(Property):
     """
     AWS Object Type = "AWS::AppFlow::ConnectorProfile.SlackConnectorProfileProperties"
 
@@ -1349,7 +1349,7 @@ class ConnectorProfileSlackConnectorProfileProperties(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-slackconnectorprofileproperties.html#cfn-appflow-connectorprofile-slackconnectorprofileproperties-instanceurl"""
 
 @attr.s
-class ConnectorProfileMarketoConnectorProfileProperties(Property):
+class PropConnectorProfileMarketoConnectorProfileProperties(Property):
     """
     AWS Object Type = "AWS::AppFlow::ConnectorProfile.MarketoConnectorProfileProperties"
 
@@ -1369,7 +1369,7 @@ class ConnectorProfileMarketoConnectorProfileProperties(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-marketoconnectorprofileproperties.html#cfn-appflow-connectorprofile-marketoconnectorprofileproperties-instanceurl"""
 
 @attr.s
-class ConnectorProfileInforNexusConnectorProfileCredentials(Property):
+class PropConnectorProfileInforNexusConnectorProfileCredentials(Property):
     """
     AWS Object Type = "AWS::AppFlow::ConnectorProfile.InforNexusConnectorProfileCredentials"
 
@@ -1410,7 +1410,7 @@ class ConnectorProfileInforNexusConnectorProfileCredentials(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-infornexusconnectorprofilecredentials.html#cfn-appflow-connectorprofile-infornexusconnectorprofilecredentials-userid"""
 
 @attr.s
-class FlowTriggerConfig(Property):
+class PropFlowTriggerConfig(Property):
     """
     AWS Object Type = "AWS::AppFlow::Flow.TriggerConfig"
 
@@ -1429,16 +1429,16 @@ class FlowTriggerConfig(Property):
         metadata={AttrMeta.PROPERTY_NAME: "TriggerType"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-triggerconfig.html#cfn-appflow-flow-triggerconfig-triggertype"""
-    p_TriggerProperties: typing.Union['FlowScheduledTriggerProperties', dict] = attr.ib(
+    p_TriggerProperties: typing.Union['PropFlowScheduledTriggerProperties', dict] = attr.ib(
         default=None,
-        converter=FlowScheduledTriggerProperties.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(FlowScheduledTriggerProperties)),
+        converter=PropFlowScheduledTriggerProperties.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropFlowScheduledTriggerProperties)),
         metadata={AttrMeta.PROPERTY_NAME: "TriggerProperties"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-triggerconfig.html#cfn-appflow-flow-triggerconfig-triggerproperties"""
 
 @attr.s
-class FlowAmplitudeSourceProperties(Property):
+class PropFlowAmplitudeSourceProperties(Property):
     """
     AWS Object Type = "AWS::AppFlow::Flow.AmplitudeSourceProperties"
 
@@ -1458,7 +1458,7 @@ class FlowAmplitudeSourceProperties(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-amplitudesourceproperties.html#cfn-appflow-flow-amplitudesourceproperties-object"""
 
 @attr.s
-class ConnectorProfileDatadogConnectorProfileProperties(Property):
+class PropConnectorProfileDatadogConnectorProfileProperties(Property):
     """
     AWS Object Type = "AWS::AppFlow::ConnectorProfile.DatadogConnectorProfileProperties"
 
@@ -1478,7 +1478,7 @@ class ConnectorProfileDatadogConnectorProfileProperties(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-datadogconnectorprofileproperties.html#cfn-appflow-connectorprofile-datadogconnectorprofileproperties-instanceurl"""
 
 @attr.s
-class ConnectorProfileServiceNowConnectorProfileProperties(Property):
+class PropConnectorProfileServiceNowConnectorProfileProperties(Property):
     """
     AWS Object Type = "AWS::AppFlow::ConnectorProfile.ServiceNowConnectorProfileProperties"
 
@@ -1498,7 +1498,7 @@ class ConnectorProfileServiceNowConnectorProfileProperties(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-servicenowconnectorprofileproperties.html#cfn-appflow-connectorprofile-servicenowconnectorprofileproperties-instanceurl"""
 
 @attr.s
-class ConnectorProfileConnectorProfileProperties(Property):
+class PropConnectorProfileConnectorProfileProperties(Property):
     """
     AWS Object Type = "AWS::AppFlow::ConnectorProfile.ConnectorProfileProperties"
 
@@ -1520,86 +1520,86 @@ class ConnectorProfileConnectorProfileProperties(Property):
     """
     AWS_OBJECT_TYPE = "AWS::AppFlow::ConnectorProfile.ConnectorProfileProperties"
     
-    p_Datadog: typing.Union['ConnectorProfileDatadogConnectorProfileProperties', dict] = attr.ib(
+    p_Datadog: typing.Union['PropConnectorProfileDatadogConnectorProfileProperties', dict] = attr.ib(
         default=None,
-        converter=ConnectorProfileDatadogConnectorProfileProperties.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ConnectorProfileDatadogConnectorProfileProperties)),
+        converter=PropConnectorProfileDatadogConnectorProfileProperties.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropConnectorProfileDatadogConnectorProfileProperties)),
         metadata={AttrMeta.PROPERTY_NAME: "Datadog"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-connectorprofileproperties.html#cfn-appflow-connectorprofile-connectorprofileproperties-datadog"""
-    p_Dynatrace: typing.Union['ConnectorProfileDynatraceConnectorProfileProperties', dict] = attr.ib(
+    p_Dynatrace: typing.Union['PropConnectorProfileDynatraceConnectorProfileProperties', dict] = attr.ib(
         default=None,
-        converter=ConnectorProfileDynatraceConnectorProfileProperties.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ConnectorProfileDynatraceConnectorProfileProperties)),
+        converter=PropConnectorProfileDynatraceConnectorProfileProperties.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropConnectorProfileDynatraceConnectorProfileProperties)),
         metadata={AttrMeta.PROPERTY_NAME: "Dynatrace"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-connectorprofileproperties.html#cfn-appflow-connectorprofile-connectorprofileproperties-dynatrace"""
-    p_InforNexus: typing.Union['ConnectorProfileInforNexusConnectorProfileProperties', dict] = attr.ib(
+    p_InforNexus: typing.Union['PropConnectorProfileInforNexusConnectorProfileProperties', dict] = attr.ib(
         default=None,
-        converter=ConnectorProfileInforNexusConnectorProfileProperties.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ConnectorProfileInforNexusConnectorProfileProperties)),
+        converter=PropConnectorProfileInforNexusConnectorProfileProperties.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropConnectorProfileInforNexusConnectorProfileProperties)),
         metadata={AttrMeta.PROPERTY_NAME: "InforNexus"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-connectorprofileproperties.html#cfn-appflow-connectorprofile-connectorprofileproperties-infornexus"""
-    p_Marketo: typing.Union['ConnectorProfileMarketoConnectorProfileProperties', dict] = attr.ib(
+    p_Marketo: typing.Union['PropConnectorProfileMarketoConnectorProfileProperties', dict] = attr.ib(
         default=None,
-        converter=ConnectorProfileMarketoConnectorProfileProperties.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ConnectorProfileMarketoConnectorProfileProperties)),
+        converter=PropConnectorProfileMarketoConnectorProfileProperties.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropConnectorProfileMarketoConnectorProfileProperties)),
         metadata={AttrMeta.PROPERTY_NAME: "Marketo"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-connectorprofileproperties.html#cfn-appflow-connectorprofile-connectorprofileproperties-marketo"""
-    p_Redshift: typing.Union['ConnectorProfileRedshiftConnectorProfileProperties', dict] = attr.ib(
+    p_Redshift: typing.Union['PropConnectorProfileRedshiftConnectorProfileProperties', dict] = attr.ib(
         default=None,
-        converter=ConnectorProfileRedshiftConnectorProfileProperties.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ConnectorProfileRedshiftConnectorProfileProperties)),
+        converter=PropConnectorProfileRedshiftConnectorProfileProperties.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropConnectorProfileRedshiftConnectorProfileProperties)),
         metadata={AttrMeta.PROPERTY_NAME: "Redshift"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-connectorprofileproperties.html#cfn-appflow-connectorprofile-connectorprofileproperties-redshift"""
-    p_Salesforce: typing.Union['ConnectorProfileSalesforceConnectorProfileProperties', dict] = attr.ib(
+    p_Salesforce: typing.Union['PropConnectorProfileSalesforceConnectorProfileProperties', dict] = attr.ib(
         default=None,
-        converter=ConnectorProfileSalesforceConnectorProfileProperties.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ConnectorProfileSalesforceConnectorProfileProperties)),
+        converter=PropConnectorProfileSalesforceConnectorProfileProperties.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropConnectorProfileSalesforceConnectorProfileProperties)),
         metadata={AttrMeta.PROPERTY_NAME: "Salesforce"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-connectorprofileproperties.html#cfn-appflow-connectorprofile-connectorprofileproperties-salesforce"""
-    p_ServiceNow: typing.Union['ConnectorProfileServiceNowConnectorProfileProperties', dict] = attr.ib(
+    p_ServiceNow: typing.Union['PropConnectorProfileServiceNowConnectorProfileProperties', dict] = attr.ib(
         default=None,
-        converter=ConnectorProfileServiceNowConnectorProfileProperties.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ConnectorProfileServiceNowConnectorProfileProperties)),
+        converter=PropConnectorProfileServiceNowConnectorProfileProperties.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropConnectorProfileServiceNowConnectorProfileProperties)),
         metadata={AttrMeta.PROPERTY_NAME: "ServiceNow"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-connectorprofileproperties.html#cfn-appflow-connectorprofile-connectorprofileproperties-servicenow"""
-    p_Slack: typing.Union['ConnectorProfileSlackConnectorProfileProperties', dict] = attr.ib(
+    p_Slack: typing.Union['PropConnectorProfileSlackConnectorProfileProperties', dict] = attr.ib(
         default=None,
-        converter=ConnectorProfileSlackConnectorProfileProperties.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ConnectorProfileSlackConnectorProfileProperties)),
+        converter=PropConnectorProfileSlackConnectorProfileProperties.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropConnectorProfileSlackConnectorProfileProperties)),
         metadata={AttrMeta.PROPERTY_NAME: "Slack"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-connectorprofileproperties.html#cfn-appflow-connectorprofile-connectorprofileproperties-slack"""
-    p_Snowflake: typing.Union['ConnectorProfileSnowflakeConnectorProfileProperties', dict] = attr.ib(
+    p_Snowflake: typing.Union['PropConnectorProfileSnowflakeConnectorProfileProperties', dict] = attr.ib(
         default=None,
-        converter=ConnectorProfileSnowflakeConnectorProfileProperties.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ConnectorProfileSnowflakeConnectorProfileProperties)),
+        converter=PropConnectorProfileSnowflakeConnectorProfileProperties.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropConnectorProfileSnowflakeConnectorProfileProperties)),
         metadata={AttrMeta.PROPERTY_NAME: "Snowflake"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-connectorprofileproperties.html#cfn-appflow-connectorprofile-connectorprofileproperties-snowflake"""
-    p_Veeva: typing.Union['ConnectorProfileVeevaConnectorProfileProperties', dict] = attr.ib(
+    p_Veeva: typing.Union['PropConnectorProfileVeevaConnectorProfileProperties', dict] = attr.ib(
         default=None,
-        converter=ConnectorProfileVeevaConnectorProfileProperties.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ConnectorProfileVeevaConnectorProfileProperties)),
+        converter=PropConnectorProfileVeevaConnectorProfileProperties.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropConnectorProfileVeevaConnectorProfileProperties)),
         metadata={AttrMeta.PROPERTY_NAME: "Veeva"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-connectorprofileproperties.html#cfn-appflow-connectorprofile-connectorprofileproperties-veeva"""
-    p_Zendesk: typing.Union['ConnectorProfileZendeskConnectorProfileProperties', dict] = attr.ib(
+    p_Zendesk: typing.Union['PropConnectorProfileZendeskConnectorProfileProperties', dict] = attr.ib(
         default=None,
-        converter=ConnectorProfileZendeskConnectorProfileProperties.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ConnectorProfileZendeskConnectorProfileProperties)),
+        converter=PropConnectorProfileZendeskConnectorProfileProperties.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropConnectorProfileZendeskConnectorProfileProperties)),
         metadata={AttrMeta.PROPERTY_NAME: "Zendesk"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-connectorprofileproperties.html#cfn-appflow-connectorprofile-connectorprofileproperties-zendesk"""
 
 @attr.s
-class ConnectorProfileMarketoConnectorProfileCredentials(Property):
+class PropConnectorProfileMarketoConnectorProfileCredentials(Property):
     """
     AWS Object Type = "AWS::AppFlow::ConnectorProfile.MarketoConnectorProfileCredentials"
 
@@ -1632,16 +1632,16 @@ class ConnectorProfileMarketoConnectorProfileCredentials(Property):
         metadata={AttrMeta.PROPERTY_NAME: "AccessToken"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-marketoconnectorprofilecredentials.html#cfn-appflow-connectorprofile-marketoconnectorprofilecredentials-accesstoken"""
-    p_ConnectorOAuthRequest: typing.Union['ConnectorProfileConnectorOAuthRequest', dict] = attr.ib(
+    p_ConnectorOAuthRequest: typing.Union['PropConnectorProfileConnectorOAuthRequest', dict] = attr.ib(
         default=None,
-        converter=ConnectorProfileConnectorOAuthRequest.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ConnectorProfileConnectorOAuthRequest)),
+        converter=PropConnectorProfileConnectorOAuthRequest.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropConnectorProfileConnectorOAuthRequest)),
         metadata={AttrMeta.PROPERTY_NAME: "ConnectorOAuthRequest"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-marketoconnectorprofilecredentials.html#cfn-appflow-connectorprofile-marketoconnectorprofilecredentials-connectoroauthrequest"""
 
 @attr.s
-class FlowS3OutputFormatConfig(Property):
+class PropFlowS3OutputFormatConfig(Property):
     """
     AWS Object Type = "AWS::AppFlow::Flow.S3OutputFormatConfig"
 
@@ -1655,10 +1655,10 @@ class FlowS3OutputFormatConfig(Property):
     """
     AWS_OBJECT_TYPE = "AWS::AppFlow::Flow.S3OutputFormatConfig"
     
-    p_AggregationConfig: typing.Union['FlowAggregationConfig', dict] = attr.ib(
+    p_AggregationConfig: typing.Union['PropFlowAggregationConfig', dict] = attr.ib(
         default=None,
-        converter=FlowAggregationConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(FlowAggregationConfig)),
+        converter=PropFlowAggregationConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropFlowAggregationConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "AggregationConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-s3outputformatconfig.html#cfn-appflow-flow-s3outputformatconfig-aggregationconfig"""
@@ -1668,16 +1668,16 @@ class FlowS3OutputFormatConfig(Property):
         metadata={AttrMeta.PROPERTY_NAME: "FileType"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-s3outputformatconfig.html#cfn-appflow-flow-s3outputformatconfig-filetype"""
-    p_PrefixConfig: typing.Union['FlowPrefixConfig', dict] = attr.ib(
+    p_PrefixConfig: typing.Union['PropFlowPrefixConfig', dict] = attr.ib(
         default=None,
-        converter=FlowPrefixConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(FlowPrefixConfig)),
+        converter=PropFlowPrefixConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropFlowPrefixConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "PrefixConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-s3outputformatconfig.html#cfn-appflow-flow-s3outputformatconfig-prefixconfig"""
 
 @attr.s
-class ConnectorProfileGoogleAnalyticsConnectorProfileCredentials(Property):
+class PropConnectorProfileGoogleAnalyticsConnectorProfileCredentials(Property):
     """
     AWS Object Type = "AWS::AppFlow::ConnectorProfile.GoogleAnalyticsConnectorProfileCredentials"
 
@@ -1711,10 +1711,10 @@ class ConnectorProfileGoogleAnalyticsConnectorProfileCredentials(Property):
         metadata={AttrMeta.PROPERTY_NAME: "AccessToken"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-googleanalyticsconnectorprofilecredentials.html#cfn-appflow-connectorprofile-googleanalyticsconnectorprofilecredentials-accesstoken"""
-    p_ConnectorOAuthRequest: typing.Union['ConnectorProfileConnectorOAuthRequest', dict] = attr.ib(
+    p_ConnectorOAuthRequest: typing.Union['PropConnectorProfileConnectorOAuthRequest', dict] = attr.ib(
         default=None,
-        converter=ConnectorProfileConnectorOAuthRequest.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ConnectorProfileConnectorOAuthRequest)),
+        converter=PropConnectorProfileConnectorOAuthRequest.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropConnectorProfileConnectorOAuthRequest)),
         metadata={AttrMeta.PROPERTY_NAME: "ConnectorOAuthRequest"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-googleanalyticsconnectorprofilecredentials.html#cfn-appflow-connectorprofile-googleanalyticsconnectorprofilecredentials-connectoroauthrequest"""
@@ -1726,7 +1726,7 @@ class ConnectorProfileGoogleAnalyticsConnectorProfileCredentials(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-googleanalyticsconnectorprofilecredentials.html#cfn-appflow-connectorprofile-googleanalyticsconnectorprofilecredentials-refreshtoken"""
 
 @attr.s
-class FlowSalesforceDestinationProperties(Property):
+class PropFlowSalesforceDestinationProperties(Property):
     """
     AWS Object Type = "AWS::AppFlow::Flow.SalesforceDestinationProperties"
 
@@ -1747,10 +1747,10 @@ class FlowSalesforceDestinationProperties(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Object"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-salesforcedestinationproperties.html#cfn-appflow-flow-salesforcedestinationproperties-object"""
-    p_ErrorHandlingConfig: typing.Union['FlowErrorHandlingConfig', dict] = attr.ib(
+    p_ErrorHandlingConfig: typing.Union['PropFlowErrorHandlingConfig', dict] = attr.ib(
         default=None,
-        converter=FlowErrorHandlingConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(FlowErrorHandlingConfig)),
+        converter=PropFlowErrorHandlingConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropFlowErrorHandlingConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "ErrorHandlingConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-salesforcedestinationproperties.html#cfn-appflow-flow-salesforcedestinationproperties-errorhandlingconfig"""
@@ -1768,7 +1768,7 @@ class FlowSalesforceDestinationProperties(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-salesforcedestinationproperties.html#cfn-appflow-flow-salesforcedestinationproperties-writeoperationtype"""
 
 @attr.s
-class ConnectorProfileSalesforceConnectorProfileCredentials(Property):
+class PropConnectorProfileSalesforceConnectorProfileCredentials(Property):
     """
     AWS Object Type = "AWS::AppFlow::ConnectorProfile.SalesforceConnectorProfileCredentials"
 
@@ -1795,10 +1795,10 @@ class ConnectorProfileSalesforceConnectorProfileCredentials(Property):
         metadata={AttrMeta.PROPERTY_NAME: "ClientCredentialsArn"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-salesforceconnectorprofilecredentials.html#cfn-appflow-connectorprofile-salesforceconnectorprofilecredentials-clientcredentialsarn"""
-    p_ConnectorOAuthRequest: typing.Union['ConnectorProfileConnectorOAuthRequest', dict] = attr.ib(
+    p_ConnectorOAuthRequest: typing.Union['PropConnectorProfileConnectorOAuthRequest', dict] = attr.ib(
         default=None,
-        converter=ConnectorProfileConnectorOAuthRequest.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ConnectorProfileConnectorOAuthRequest)),
+        converter=PropConnectorProfileConnectorOAuthRequest.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropConnectorProfileConnectorOAuthRequest)),
         metadata={AttrMeta.PROPERTY_NAME: "ConnectorOAuthRequest"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-salesforceconnectorprofilecredentials.html#cfn-appflow-connectorprofile-salesforceconnectorprofilecredentials-connectoroauthrequest"""
@@ -1810,7 +1810,7 @@ class ConnectorProfileSalesforceConnectorProfileCredentials(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-salesforceconnectorprofilecredentials.html#cfn-appflow-connectorprofile-salesforceconnectorprofilecredentials-refreshtoken"""
 
 @attr.s
-class ConnectorProfileZendeskConnectorProfileCredentials(Property):
+class PropConnectorProfileZendeskConnectorProfileCredentials(Property):
     """
     AWS Object Type = "AWS::AppFlow::ConnectorProfile.ZendeskConnectorProfileCredentials"
 
@@ -1843,16 +1843,16 @@ class ConnectorProfileZendeskConnectorProfileCredentials(Property):
         metadata={AttrMeta.PROPERTY_NAME: "AccessToken"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-zendeskconnectorprofilecredentials.html#cfn-appflow-connectorprofile-zendeskconnectorprofilecredentials-accesstoken"""
-    p_ConnectorOAuthRequest: typing.Union['ConnectorProfileConnectorOAuthRequest', dict] = attr.ib(
+    p_ConnectorOAuthRequest: typing.Union['PropConnectorProfileConnectorOAuthRequest', dict] = attr.ib(
         default=None,
-        converter=ConnectorProfileConnectorOAuthRequest.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ConnectorProfileConnectorOAuthRequest)),
+        converter=PropConnectorProfileConnectorOAuthRequest.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropConnectorProfileConnectorOAuthRequest)),
         metadata={AttrMeta.PROPERTY_NAME: "ConnectorOAuthRequest"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-zendeskconnectorprofilecredentials.html#cfn-appflow-connectorprofile-zendeskconnectorprofilecredentials-connectoroauthrequest"""
 
 @attr.s
-class FlowS3DestinationProperties(Property):
+class PropFlowS3DestinationProperties(Property):
     """
     AWS Object Type = "AWS::AppFlow::Flow.S3DestinationProperties"
 
@@ -1878,16 +1878,16 @@ class FlowS3DestinationProperties(Property):
         metadata={AttrMeta.PROPERTY_NAME: "BucketPrefix"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-s3destinationproperties.html#cfn-appflow-flow-s3destinationproperties-bucketprefix"""
-    p_S3OutputFormatConfig: typing.Union['FlowS3OutputFormatConfig', dict] = attr.ib(
+    p_S3OutputFormatConfig: typing.Union['PropFlowS3OutputFormatConfig', dict] = attr.ib(
         default=None,
-        converter=FlowS3OutputFormatConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(FlowS3OutputFormatConfig)),
+        converter=PropFlowS3OutputFormatConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropFlowS3OutputFormatConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "S3OutputFormatConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-s3destinationproperties.html#cfn-appflow-flow-s3destinationproperties-s3outputformatconfig"""
 
 @attr.s
-class FlowSourceConnectorProperties(Property):
+class PropFlowSourceConnectorProperties(Property):
     """
     AWS Object Type = "AWS::AppFlow::Flow.SourceConnectorProperties"
 
@@ -1912,107 +1912,107 @@ class FlowSourceConnectorProperties(Property):
     """
     AWS_OBJECT_TYPE = "AWS::AppFlow::Flow.SourceConnectorProperties"
     
-    p_Amplitude: typing.Union['FlowAmplitudeSourceProperties', dict] = attr.ib(
+    p_Amplitude: typing.Union['PropFlowAmplitudeSourceProperties', dict] = attr.ib(
         default=None,
-        converter=FlowAmplitudeSourceProperties.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(FlowAmplitudeSourceProperties)),
+        converter=PropFlowAmplitudeSourceProperties.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropFlowAmplitudeSourceProperties)),
         metadata={AttrMeta.PROPERTY_NAME: "Amplitude"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-sourceconnectorproperties.html#cfn-appflow-flow-sourceconnectorproperties-amplitude"""
-    p_Datadog: typing.Union['FlowDatadogSourceProperties', dict] = attr.ib(
+    p_Datadog: typing.Union['PropFlowDatadogSourceProperties', dict] = attr.ib(
         default=None,
-        converter=FlowDatadogSourceProperties.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(FlowDatadogSourceProperties)),
+        converter=PropFlowDatadogSourceProperties.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropFlowDatadogSourceProperties)),
         metadata={AttrMeta.PROPERTY_NAME: "Datadog"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-sourceconnectorproperties.html#cfn-appflow-flow-sourceconnectorproperties-datadog"""
-    p_Dynatrace: typing.Union['FlowDynatraceSourceProperties', dict] = attr.ib(
+    p_Dynatrace: typing.Union['PropFlowDynatraceSourceProperties', dict] = attr.ib(
         default=None,
-        converter=FlowDynatraceSourceProperties.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(FlowDynatraceSourceProperties)),
+        converter=PropFlowDynatraceSourceProperties.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropFlowDynatraceSourceProperties)),
         metadata={AttrMeta.PROPERTY_NAME: "Dynatrace"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-sourceconnectorproperties.html#cfn-appflow-flow-sourceconnectorproperties-dynatrace"""
-    p_GoogleAnalytics: typing.Union['FlowGoogleAnalyticsSourceProperties', dict] = attr.ib(
+    p_GoogleAnalytics: typing.Union['PropFlowGoogleAnalyticsSourceProperties', dict] = attr.ib(
         default=None,
-        converter=FlowGoogleAnalyticsSourceProperties.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(FlowGoogleAnalyticsSourceProperties)),
+        converter=PropFlowGoogleAnalyticsSourceProperties.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropFlowGoogleAnalyticsSourceProperties)),
         metadata={AttrMeta.PROPERTY_NAME: "GoogleAnalytics"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-sourceconnectorproperties.html#cfn-appflow-flow-sourceconnectorproperties-googleanalytics"""
-    p_InforNexus: typing.Union['FlowInforNexusSourceProperties', dict] = attr.ib(
+    p_InforNexus: typing.Union['PropFlowInforNexusSourceProperties', dict] = attr.ib(
         default=None,
-        converter=FlowInforNexusSourceProperties.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(FlowInforNexusSourceProperties)),
+        converter=PropFlowInforNexusSourceProperties.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropFlowInforNexusSourceProperties)),
         metadata={AttrMeta.PROPERTY_NAME: "InforNexus"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-sourceconnectorproperties.html#cfn-appflow-flow-sourceconnectorproperties-infornexus"""
-    p_Marketo: typing.Union['FlowMarketoSourceProperties', dict] = attr.ib(
+    p_Marketo: typing.Union['PropFlowMarketoSourceProperties', dict] = attr.ib(
         default=None,
-        converter=FlowMarketoSourceProperties.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(FlowMarketoSourceProperties)),
+        converter=PropFlowMarketoSourceProperties.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropFlowMarketoSourceProperties)),
         metadata={AttrMeta.PROPERTY_NAME: "Marketo"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-sourceconnectorproperties.html#cfn-appflow-flow-sourceconnectorproperties-marketo"""
-    p_S3: typing.Union['FlowS3SourceProperties', dict] = attr.ib(
+    p_S3: typing.Union['PropFlowS3SourceProperties', dict] = attr.ib(
         default=None,
-        converter=FlowS3SourceProperties.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(FlowS3SourceProperties)),
+        converter=PropFlowS3SourceProperties.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropFlowS3SourceProperties)),
         metadata={AttrMeta.PROPERTY_NAME: "S3"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-sourceconnectorproperties.html#cfn-appflow-flow-sourceconnectorproperties-s3"""
-    p_Salesforce: typing.Union['FlowSalesforceSourceProperties', dict] = attr.ib(
+    p_Salesforce: typing.Union['PropFlowSalesforceSourceProperties', dict] = attr.ib(
         default=None,
-        converter=FlowSalesforceSourceProperties.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(FlowSalesforceSourceProperties)),
+        converter=PropFlowSalesforceSourceProperties.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropFlowSalesforceSourceProperties)),
         metadata={AttrMeta.PROPERTY_NAME: "Salesforce"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-sourceconnectorproperties.html#cfn-appflow-flow-sourceconnectorproperties-salesforce"""
-    p_ServiceNow: typing.Union['FlowServiceNowSourceProperties', dict] = attr.ib(
+    p_ServiceNow: typing.Union['PropFlowServiceNowSourceProperties', dict] = attr.ib(
         default=None,
-        converter=FlowServiceNowSourceProperties.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(FlowServiceNowSourceProperties)),
+        converter=PropFlowServiceNowSourceProperties.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropFlowServiceNowSourceProperties)),
         metadata={AttrMeta.PROPERTY_NAME: "ServiceNow"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-sourceconnectorproperties.html#cfn-appflow-flow-sourceconnectorproperties-servicenow"""
-    p_Singular: typing.Union['FlowSingularSourceProperties', dict] = attr.ib(
+    p_Singular: typing.Union['PropFlowSingularSourceProperties', dict] = attr.ib(
         default=None,
-        converter=FlowSingularSourceProperties.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(FlowSingularSourceProperties)),
+        converter=PropFlowSingularSourceProperties.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropFlowSingularSourceProperties)),
         metadata={AttrMeta.PROPERTY_NAME: "Singular"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-sourceconnectorproperties.html#cfn-appflow-flow-sourceconnectorproperties-singular"""
-    p_Slack: typing.Union['FlowSlackSourceProperties', dict] = attr.ib(
+    p_Slack: typing.Union['PropFlowSlackSourceProperties', dict] = attr.ib(
         default=None,
-        converter=FlowSlackSourceProperties.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(FlowSlackSourceProperties)),
+        converter=PropFlowSlackSourceProperties.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropFlowSlackSourceProperties)),
         metadata={AttrMeta.PROPERTY_NAME: "Slack"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-sourceconnectorproperties.html#cfn-appflow-flow-sourceconnectorproperties-slack"""
-    p_Trendmicro: typing.Union['FlowTrendmicroSourceProperties', dict] = attr.ib(
+    p_Trendmicro: typing.Union['PropFlowTrendmicroSourceProperties', dict] = attr.ib(
         default=None,
-        converter=FlowTrendmicroSourceProperties.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(FlowTrendmicroSourceProperties)),
+        converter=PropFlowTrendmicroSourceProperties.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropFlowTrendmicroSourceProperties)),
         metadata={AttrMeta.PROPERTY_NAME: "Trendmicro"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-sourceconnectorproperties.html#cfn-appflow-flow-sourceconnectorproperties-trendmicro"""
-    p_Veeva: typing.Union['FlowVeevaSourceProperties', dict] = attr.ib(
+    p_Veeva: typing.Union['PropFlowVeevaSourceProperties', dict] = attr.ib(
         default=None,
-        converter=FlowVeevaSourceProperties.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(FlowVeevaSourceProperties)),
+        converter=PropFlowVeevaSourceProperties.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropFlowVeevaSourceProperties)),
         metadata={AttrMeta.PROPERTY_NAME: "Veeva"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-sourceconnectorproperties.html#cfn-appflow-flow-sourceconnectorproperties-veeva"""
-    p_Zendesk: typing.Union['FlowZendeskSourceProperties', dict] = attr.ib(
+    p_Zendesk: typing.Union['PropFlowZendeskSourceProperties', dict] = attr.ib(
         default=None,
-        converter=FlowZendeskSourceProperties.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(FlowZendeskSourceProperties)),
+        converter=PropFlowZendeskSourceProperties.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropFlowZendeskSourceProperties)),
         metadata={AttrMeta.PROPERTY_NAME: "Zendesk"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-sourceconnectorproperties.html#cfn-appflow-flow-sourceconnectorproperties-zendesk"""
 
 @attr.s
-class FlowTask(Property):
+class PropFlowTask(Property):
     """
     AWS Object Type = "AWS::AppFlow::Flow.Task"
 
@@ -2040,10 +2040,10 @@ class FlowTask(Property):
         metadata={AttrMeta.PROPERTY_NAME: "TaskType"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-task.html#cfn-appflow-flow-task-tasktype"""
-    p_ConnectorOperator: typing.Union['FlowConnectorOperator', dict] = attr.ib(
+    p_ConnectorOperator: typing.Union['PropFlowConnectorOperator', dict] = attr.ib(
         default=None,
-        converter=FlowConnectorOperator.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(FlowConnectorOperator)),
+        converter=PropFlowConnectorOperator.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropFlowConnectorOperator)),
         metadata={AttrMeta.PROPERTY_NAME: "ConnectorOperator"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-task.html#cfn-appflow-flow-task-connectoroperator"""
@@ -2053,16 +2053,16 @@ class FlowTask(Property):
         metadata={AttrMeta.PROPERTY_NAME: "DestinationField"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-task.html#cfn-appflow-flow-task-destinationfield"""
-    p_TaskProperties: typing.List[typing.Union['FlowTaskPropertiesObject', dict]] = attr.ib(
+    p_TaskProperties: typing.List[typing.Union['PropFlowTaskPropertiesObject', dict]] = attr.ib(
         default=None,
-        converter=FlowTaskPropertiesObject.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(FlowTaskPropertiesObject), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropFlowTaskPropertiesObject.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropFlowTaskPropertiesObject), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "TaskProperties"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-task.html#cfn-appflow-flow-task-taskproperties"""
 
 @attr.s
-class FlowDestinationConnectorProperties(Property):
+class PropFlowDestinationConnectorProperties(Property):
     """
     AWS Object Type = "AWS::AppFlow::Flow.DestinationConnectorProperties"
 
@@ -2081,65 +2081,65 @@ class FlowDestinationConnectorProperties(Property):
     """
     AWS_OBJECT_TYPE = "AWS::AppFlow::Flow.DestinationConnectorProperties"
     
-    p_EventBridge: typing.Union['FlowEventBridgeDestinationProperties', dict] = attr.ib(
+    p_EventBridge: typing.Union['PropFlowEventBridgeDestinationProperties', dict] = attr.ib(
         default=None,
-        converter=FlowEventBridgeDestinationProperties.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(FlowEventBridgeDestinationProperties)),
+        converter=PropFlowEventBridgeDestinationProperties.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropFlowEventBridgeDestinationProperties)),
         metadata={AttrMeta.PROPERTY_NAME: "EventBridge"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-destinationconnectorproperties.html#cfn-appflow-flow-destinationconnectorproperties-eventbridge"""
-    p_LookoutMetrics: typing.Union['FlowLookoutMetricsDestinationProperties', dict] = attr.ib(
+    p_LookoutMetrics: typing.Union['PropFlowLookoutMetricsDestinationProperties', dict] = attr.ib(
         default=None,
-        converter=FlowLookoutMetricsDestinationProperties.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(FlowLookoutMetricsDestinationProperties)),
+        converter=PropFlowLookoutMetricsDestinationProperties.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropFlowLookoutMetricsDestinationProperties)),
         metadata={AttrMeta.PROPERTY_NAME: "LookoutMetrics"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-destinationconnectorproperties.html#cfn-appflow-flow-destinationconnectorproperties-lookoutmetrics"""
-    p_Redshift: typing.Union['FlowRedshiftDestinationProperties', dict] = attr.ib(
+    p_Redshift: typing.Union['PropFlowRedshiftDestinationProperties', dict] = attr.ib(
         default=None,
-        converter=FlowRedshiftDestinationProperties.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(FlowRedshiftDestinationProperties)),
+        converter=PropFlowRedshiftDestinationProperties.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropFlowRedshiftDestinationProperties)),
         metadata={AttrMeta.PROPERTY_NAME: "Redshift"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-destinationconnectorproperties.html#cfn-appflow-flow-destinationconnectorproperties-redshift"""
-    p_S3: typing.Union['FlowS3DestinationProperties', dict] = attr.ib(
+    p_S3: typing.Union['PropFlowS3DestinationProperties', dict] = attr.ib(
         default=None,
-        converter=FlowS3DestinationProperties.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(FlowS3DestinationProperties)),
+        converter=PropFlowS3DestinationProperties.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropFlowS3DestinationProperties)),
         metadata={AttrMeta.PROPERTY_NAME: "S3"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-destinationconnectorproperties.html#cfn-appflow-flow-destinationconnectorproperties-s3"""
-    p_Salesforce: typing.Union['FlowSalesforceDestinationProperties', dict] = attr.ib(
+    p_Salesforce: typing.Union['PropFlowSalesforceDestinationProperties', dict] = attr.ib(
         default=None,
-        converter=FlowSalesforceDestinationProperties.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(FlowSalesforceDestinationProperties)),
+        converter=PropFlowSalesforceDestinationProperties.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropFlowSalesforceDestinationProperties)),
         metadata={AttrMeta.PROPERTY_NAME: "Salesforce"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-destinationconnectorproperties.html#cfn-appflow-flow-destinationconnectorproperties-salesforce"""
-    p_Snowflake: typing.Union['FlowSnowflakeDestinationProperties', dict] = attr.ib(
+    p_Snowflake: typing.Union['PropFlowSnowflakeDestinationProperties', dict] = attr.ib(
         default=None,
-        converter=FlowSnowflakeDestinationProperties.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(FlowSnowflakeDestinationProperties)),
+        converter=PropFlowSnowflakeDestinationProperties.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropFlowSnowflakeDestinationProperties)),
         metadata={AttrMeta.PROPERTY_NAME: "Snowflake"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-destinationconnectorproperties.html#cfn-appflow-flow-destinationconnectorproperties-snowflake"""
-    p_Upsolver: typing.Union['FlowUpsolverDestinationProperties', dict] = attr.ib(
+    p_Upsolver: typing.Union['PropFlowUpsolverDestinationProperties', dict] = attr.ib(
         default=None,
-        converter=FlowUpsolverDestinationProperties.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(FlowUpsolverDestinationProperties)),
+        converter=PropFlowUpsolverDestinationProperties.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropFlowUpsolverDestinationProperties)),
         metadata={AttrMeta.PROPERTY_NAME: "Upsolver"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-destinationconnectorproperties.html#cfn-appflow-flow-destinationconnectorproperties-upsolver"""
-    p_Zendesk: typing.Union['FlowZendeskDestinationProperties', dict] = attr.ib(
+    p_Zendesk: typing.Union['PropFlowZendeskDestinationProperties', dict] = attr.ib(
         default=None,
-        converter=FlowZendeskDestinationProperties.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(FlowZendeskDestinationProperties)),
+        converter=PropFlowZendeskDestinationProperties.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropFlowZendeskDestinationProperties)),
         metadata={AttrMeta.PROPERTY_NAME: "Zendesk"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-destinationconnectorproperties.html#cfn-appflow-flow-destinationconnectorproperties-zendesk"""
 
 @attr.s
-class ConnectorProfileConnectorProfileCredentials(Property):
+class PropConnectorProfileConnectorProfileCredentials(Property):
     """
     AWS Object Type = "AWS::AppFlow::ConnectorProfile.ConnectorProfileCredentials"
 
@@ -2165,114 +2165,114 @@ class ConnectorProfileConnectorProfileCredentials(Property):
     """
     AWS_OBJECT_TYPE = "AWS::AppFlow::ConnectorProfile.ConnectorProfileCredentials"
     
-    p_Amplitude: typing.Union['ConnectorProfileAmplitudeConnectorProfileCredentials', dict] = attr.ib(
+    p_Amplitude: typing.Union['PropConnectorProfileAmplitudeConnectorProfileCredentials', dict] = attr.ib(
         default=None,
-        converter=ConnectorProfileAmplitudeConnectorProfileCredentials.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ConnectorProfileAmplitudeConnectorProfileCredentials)),
+        converter=PropConnectorProfileAmplitudeConnectorProfileCredentials.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropConnectorProfileAmplitudeConnectorProfileCredentials)),
         metadata={AttrMeta.PROPERTY_NAME: "Amplitude"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-connectorprofilecredentials.html#cfn-appflow-connectorprofile-connectorprofilecredentials-amplitude"""
-    p_Datadog: typing.Union['ConnectorProfileDatadogConnectorProfileCredentials', dict] = attr.ib(
+    p_Datadog: typing.Union['PropConnectorProfileDatadogConnectorProfileCredentials', dict] = attr.ib(
         default=None,
-        converter=ConnectorProfileDatadogConnectorProfileCredentials.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ConnectorProfileDatadogConnectorProfileCredentials)),
+        converter=PropConnectorProfileDatadogConnectorProfileCredentials.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropConnectorProfileDatadogConnectorProfileCredentials)),
         metadata={AttrMeta.PROPERTY_NAME: "Datadog"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-connectorprofilecredentials.html#cfn-appflow-connectorprofile-connectorprofilecredentials-datadog"""
-    p_Dynatrace: typing.Union['ConnectorProfileDynatraceConnectorProfileCredentials', dict] = attr.ib(
+    p_Dynatrace: typing.Union['PropConnectorProfileDynatraceConnectorProfileCredentials', dict] = attr.ib(
         default=None,
-        converter=ConnectorProfileDynatraceConnectorProfileCredentials.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ConnectorProfileDynatraceConnectorProfileCredentials)),
+        converter=PropConnectorProfileDynatraceConnectorProfileCredentials.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropConnectorProfileDynatraceConnectorProfileCredentials)),
         metadata={AttrMeta.PROPERTY_NAME: "Dynatrace"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-connectorprofilecredentials.html#cfn-appflow-connectorprofile-connectorprofilecredentials-dynatrace"""
-    p_GoogleAnalytics: typing.Union['ConnectorProfileGoogleAnalyticsConnectorProfileCredentials', dict] = attr.ib(
+    p_GoogleAnalytics: typing.Union['PropConnectorProfileGoogleAnalyticsConnectorProfileCredentials', dict] = attr.ib(
         default=None,
-        converter=ConnectorProfileGoogleAnalyticsConnectorProfileCredentials.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ConnectorProfileGoogleAnalyticsConnectorProfileCredentials)),
+        converter=PropConnectorProfileGoogleAnalyticsConnectorProfileCredentials.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropConnectorProfileGoogleAnalyticsConnectorProfileCredentials)),
         metadata={AttrMeta.PROPERTY_NAME: "GoogleAnalytics"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-connectorprofilecredentials.html#cfn-appflow-connectorprofile-connectorprofilecredentials-googleanalytics"""
-    p_InforNexus: typing.Union['ConnectorProfileInforNexusConnectorProfileCredentials', dict] = attr.ib(
+    p_InforNexus: typing.Union['PropConnectorProfileInforNexusConnectorProfileCredentials', dict] = attr.ib(
         default=None,
-        converter=ConnectorProfileInforNexusConnectorProfileCredentials.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ConnectorProfileInforNexusConnectorProfileCredentials)),
+        converter=PropConnectorProfileInforNexusConnectorProfileCredentials.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropConnectorProfileInforNexusConnectorProfileCredentials)),
         metadata={AttrMeta.PROPERTY_NAME: "InforNexus"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-connectorprofilecredentials.html#cfn-appflow-connectorprofile-connectorprofilecredentials-infornexus"""
-    p_Marketo: typing.Union['ConnectorProfileMarketoConnectorProfileCredentials', dict] = attr.ib(
+    p_Marketo: typing.Union['PropConnectorProfileMarketoConnectorProfileCredentials', dict] = attr.ib(
         default=None,
-        converter=ConnectorProfileMarketoConnectorProfileCredentials.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ConnectorProfileMarketoConnectorProfileCredentials)),
+        converter=PropConnectorProfileMarketoConnectorProfileCredentials.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropConnectorProfileMarketoConnectorProfileCredentials)),
         metadata={AttrMeta.PROPERTY_NAME: "Marketo"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-connectorprofilecredentials.html#cfn-appflow-connectorprofile-connectorprofilecredentials-marketo"""
-    p_Redshift: typing.Union['ConnectorProfileRedshiftConnectorProfileCredentials', dict] = attr.ib(
+    p_Redshift: typing.Union['PropConnectorProfileRedshiftConnectorProfileCredentials', dict] = attr.ib(
         default=None,
-        converter=ConnectorProfileRedshiftConnectorProfileCredentials.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ConnectorProfileRedshiftConnectorProfileCredentials)),
+        converter=PropConnectorProfileRedshiftConnectorProfileCredentials.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropConnectorProfileRedshiftConnectorProfileCredentials)),
         metadata={AttrMeta.PROPERTY_NAME: "Redshift"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-connectorprofilecredentials.html#cfn-appflow-connectorprofile-connectorprofilecredentials-redshift"""
-    p_Salesforce: typing.Union['ConnectorProfileSalesforceConnectorProfileCredentials', dict] = attr.ib(
+    p_Salesforce: typing.Union['PropConnectorProfileSalesforceConnectorProfileCredentials', dict] = attr.ib(
         default=None,
-        converter=ConnectorProfileSalesforceConnectorProfileCredentials.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ConnectorProfileSalesforceConnectorProfileCredentials)),
+        converter=PropConnectorProfileSalesforceConnectorProfileCredentials.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropConnectorProfileSalesforceConnectorProfileCredentials)),
         metadata={AttrMeta.PROPERTY_NAME: "Salesforce"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-connectorprofilecredentials.html#cfn-appflow-connectorprofile-connectorprofilecredentials-salesforce"""
-    p_ServiceNow: typing.Union['ConnectorProfileServiceNowConnectorProfileCredentials', dict] = attr.ib(
+    p_ServiceNow: typing.Union['PropConnectorProfileServiceNowConnectorProfileCredentials', dict] = attr.ib(
         default=None,
-        converter=ConnectorProfileServiceNowConnectorProfileCredentials.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ConnectorProfileServiceNowConnectorProfileCredentials)),
+        converter=PropConnectorProfileServiceNowConnectorProfileCredentials.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropConnectorProfileServiceNowConnectorProfileCredentials)),
         metadata={AttrMeta.PROPERTY_NAME: "ServiceNow"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-connectorprofilecredentials.html#cfn-appflow-connectorprofile-connectorprofilecredentials-servicenow"""
-    p_Singular: typing.Union['ConnectorProfileSingularConnectorProfileCredentials', dict] = attr.ib(
+    p_Singular: typing.Union['PropConnectorProfileSingularConnectorProfileCredentials', dict] = attr.ib(
         default=None,
-        converter=ConnectorProfileSingularConnectorProfileCredentials.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ConnectorProfileSingularConnectorProfileCredentials)),
+        converter=PropConnectorProfileSingularConnectorProfileCredentials.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropConnectorProfileSingularConnectorProfileCredentials)),
         metadata={AttrMeta.PROPERTY_NAME: "Singular"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-connectorprofilecredentials.html#cfn-appflow-connectorprofile-connectorprofilecredentials-singular"""
-    p_Slack: typing.Union['ConnectorProfileSlackConnectorProfileCredentials', dict] = attr.ib(
+    p_Slack: typing.Union['PropConnectorProfileSlackConnectorProfileCredentials', dict] = attr.ib(
         default=None,
-        converter=ConnectorProfileSlackConnectorProfileCredentials.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ConnectorProfileSlackConnectorProfileCredentials)),
+        converter=PropConnectorProfileSlackConnectorProfileCredentials.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropConnectorProfileSlackConnectorProfileCredentials)),
         metadata={AttrMeta.PROPERTY_NAME: "Slack"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-connectorprofilecredentials.html#cfn-appflow-connectorprofile-connectorprofilecredentials-slack"""
-    p_Snowflake: typing.Union['ConnectorProfileSnowflakeConnectorProfileCredentials', dict] = attr.ib(
+    p_Snowflake: typing.Union['PropConnectorProfileSnowflakeConnectorProfileCredentials', dict] = attr.ib(
         default=None,
-        converter=ConnectorProfileSnowflakeConnectorProfileCredentials.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ConnectorProfileSnowflakeConnectorProfileCredentials)),
+        converter=PropConnectorProfileSnowflakeConnectorProfileCredentials.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropConnectorProfileSnowflakeConnectorProfileCredentials)),
         metadata={AttrMeta.PROPERTY_NAME: "Snowflake"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-connectorprofilecredentials.html#cfn-appflow-connectorprofile-connectorprofilecredentials-snowflake"""
-    p_Trendmicro: typing.Union['ConnectorProfileTrendmicroConnectorProfileCredentials', dict] = attr.ib(
+    p_Trendmicro: typing.Union['PropConnectorProfileTrendmicroConnectorProfileCredentials', dict] = attr.ib(
         default=None,
-        converter=ConnectorProfileTrendmicroConnectorProfileCredentials.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ConnectorProfileTrendmicroConnectorProfileCredentials)),
+        converter=PropConnectorProfileTrendmicroConnectorProfileCredentials.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropConnectorProfileTrendmicroConnectorProfileCredentials)),
         metadata={AttrMeta.PROPERTY_NAME: "Trendmicro"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-connectorprofilecredentials.html#cfn-appflow-connectorprofile-connectorprofilecredentials-trendmicro"""
-    p_Veeva: typing.Union['ConnectorProfileVeevaConnectorProfileCredentials', dict] = attr.ib(
+    p_Veeva: typing.Union['PropConnectorProfileVeevaConnectorProfileCredentials', dict] = attr.ib(
         default=None,
-        converter=ConnectorProfileVeevaConnectorProfileCredentials.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ConnectorProfileVeevaConnectorProfileCredentials)),
+        converter=PropConnectorProfileVeevaConnectorProfileCredentials.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropConnectorProfileVeevaConnectorProfileCredentials)),
         metadata={AttrMeta.PROPERTY_NAME: "Veeva"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-connectorprofilecredentials.html#cfn-appflow-connectorprofile-connectorprofilecredentials-veeva"""
-    p_Zendesk: typing.Union['ConnectorProfileZendeskConnectorProfileCredentials', dict] = attr.ib(
+    p_Zendesk: typing.Union['PropConnectorProfileZendeskConnectorProfileCredentials', dict] = attr.ib(
         default=None,
-        converter=ConnectorProfileZendeskConnectorProfileCredentials.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ConnectorProfileZendeskConnectorProfileCredentials)),
+        converter=PropConnectorProfileZendeskConnectorProfileCredentials.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropConnectorProfileZendeskConnectorProfileCredentials)),
         metadata={AttrMeta.PROPERTY_NAME: "Zendesk"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-connectorprofilecredentials.html#cfn-appflow-connectorprofile-connectorprofilecredentials-zendesk"""
 
 @attr.s
-class FlowSourceFlowConfig(Property):
+class PropFlowSourceFlowConfig(Property):
     """
     AWS Object Type = "AWS::AppFlow::Flow.SourceFlowConfig"
 
@@ -2293,10 +2293,10 @@ class FlowSourceFlowConfig(Property):
         metadata={AttrMeta.PROPERTY_NAME: "ConnectorType"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-sourceflowconfig.html#cfn-appflow-flow-sourceflowconfig-connectortype"""
-    rp_SourceConnectorProperties: typing.Union['FlowSourceConnectorProperties', dict] = attr.ib(
+    rp_SourceConnectorProperties: typing.Union['PropFlowSourceConnectorProperties', dict] = attr.ib(
         default=None,
-        converter=FlowSourceConnectorProperties.from_dict,
-        validator=attr.validators.instance_of(FlowSourceConnectorProperties),
+        converter=PropFlowSourceConnectorProperties.from_dict,
+        validator=attr.validators.instance_of(PropFlowSourceConnectorProperties),
         metadata={AttrMeta.PROPERTY_NAME: "SourceConnectorProperties"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-sourceflowconfig.html#cfn-appflow-flow-sourceflowconfig-sourceconnectorproperties"""
@@ -2306,16 +2306,16 @@ class FlowSourceFlowConfig(Property):
         metadata={AttrMeta.PROPERTY_NAME: "ConnectorProfileName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-sourceflowconfig.html#cfn-appflow-flow-sourceflowconfig-connectorprofilename"""
-    p_IncrementalPullConfig: typing.Union['FlowIncrementalPullConfig', dict] = attr.ib(
+    p_IncrementalPullConfig: typing.Union['PropFlowIncrementalPullConfig', dict] = attr.ib(
         default=None,
-        converter=FlowIncrementalPullConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(FlowIncrementalPullConfig)),
+        converter=PropFlowIncrementalPullConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropFlowIncrementalPullConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "IncrementalPullConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-sourceflowconfig.html#cfn-appflow-flow-sourceflowconfig-incrementalpullconfig"""
 
 @attr.s
-class ConnectorProfileConnectorProfileConfig(Property):
+class PropConnectorProfileConnectorProfileConfig(Property):
     """
     AWS Object Type = "AWS::AppFlow::ConnectorProfile.ConnectorProfileConfig"
 
@@ -2328,23 +2328,23 @@ class ConnectorProfileConnectorProfileConfig(Property):
     """
     AWS_OBJECT_TYPE = "AWS::AppFlow::ConnectorProfile.ConnectorProfileConfig"
     
-    rp_ConnectorProfileCredentials: typing.Union['ConnectorProfileConnectorProfileCredentials', dict] = attr.ib(
+    rp_ConnectorProfileCredentials: typing.Union['PropConnectorProfileConnectorProfileCredentials', dict] = attr.ib(
         default=None,
-        converter=ConnectorProfileConnectorProfileCredentials.from_dict,
-        validator=attr.validators.instance_of(ConnectorProfileConnectorProfileCredentials),
+        converter=PropConnectorProfileConnectorProfileCredentials.from_dict,
+        validator=attr.validators.instance_of(PropConnectorProfileConnectorProfileCredentials),
         metadata={AttrMeta.PROPERTY_NAME: "ConnectorProfileCredentials"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-connectorprofileconfig.html#cfn-appflow-connectorprofile-connectorprofileconfig-connectorprofilecredentials"""
-    p_ConnectorProfileProperties: typing.Union['ConnectorProfileConnectorProfileProperties', dict] = attr.ib(
+    p_ConnectorProfileProperties: typing.Union['PropConnectorProfileConnectorProfileProperties', dict] = attr.ib(
         default=None,
-        converter=ConnectorProfileConnectorProfileProperties.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ConnectorProfileConnectorProfileProperties)),
+        converter=PropConnectorProfileConnectorProfileProperties.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropConnectorProfileConnectorProfileProperties)),
         metadata={AttrMeta.PROPERTY_NAME: "ConnectorProfileProperties"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-connectorprofile-connectorprofileconfig.html#cfn-appflow-connectorprofile-connectorprofileconfig-connectorprofileproperties"""
 
 @attr.s
-class FlowDestinationFlowConfig(Property):
+class PropFlowDestinationFlowConfig(Property):
     """
     AWS Object Type = "AWS::AppFlow::Flow.DestinationFlowConfig"
 
@@ -2364,10 +2364,10 @@ class FlowDestinationFlowConfig(Property):
         metadata={AttrMeta.PROPERTY_NAME: "ConnectorType"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-destinationflowconfig.html#cfn-appflow-flow-destinationflowconfig-connectortype"""
-    rp_DestinationConnectorProperties: typing.Union['FlowDestinationConnectorProperties', dict] = attr.ib(
+    rp_DestinationConnectorProperties: typing.Union['PropFlowDestinationConnectorProperties', dict] = attr.ib(
         default=None,
-        converter=FlowDestinationConnectorProperties.from_dict,
-        validator=attr.validators.instance_of(FlowDestinationConnectorProperties),
+        converter=PropFlowDestinationConnectorProperties.from_dict,
+        validator=attr.validators.instance_of(PropFlowDestinationConnectorProperties),
         metadata={AttrMeta.PROPERTY_NAME: "DestinationConnectorProperties"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appflow-flow-destinationflowconfig.html#cfn-appflow-flow-destinationflowconfig-destinationconnectorproperties"""
@@ -2402,10 +2402,10 @@ class Flow(Resource):
     AWS_OBJECT_TYPE = "AWS::AppFlow::Flow"
 
     
-    rp_DestinationFlowConfigList: typing.List[typing.Union['FlowDestinationFlowConfig', dict]] = attr.ib(
+    rp_DestinationFlowConfigList: typing.List[typing.Union['PropFlowDestinationFlowConfig', dict]] = attr.ib(
         default=None,
-        converter=FlowDestinationFlowConfig.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(FlowDestinationFlowConfig), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropFlowDestinationFlowConfig.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropFlowDestinationFlowConfig), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "DestinationFlowConfigList"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appflow-flow.html#cfn-appflow-flow-destinationflowconfiglist"""
@@ -2415,24 +2415,24 @@ class Flow(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "FlowName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appflow-flow.html#cfn-appflow-flow-flowname"""
-    rp_SourceFlowConfig: typing.Union['FlowSourceFlowConfig', dict] = attr.ib(
+    rp_SourceFlowConfig: typing.Union['PropFlowSourceFlowConfig', dict] = attr.ib(
         default=None,
-        converter=FlowSourceFlowConfig.from_dict,
-        validator=attr.validators.instance_of(FlowSourceFlowConfig),
+        converter=PropFlowSourceFlowConfig.from_dict,
+        validator=attr.validators.instance_of(PropFlowSourceFlowConfig),
         metadata={AttrMeta.PROPERTY_NAME: "SourceFlowConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appflow-flow.html#cfn-appflow-flow-sourceflowconfig"""
-    rp_Tasks: typing.List[typing.Union['FlowTask', dict]] = attr.ib(
+    rp_Tasks: typing.List[typing.Union['PropFlowTask', dict]] = attr.ib(
         default=None,
-        converter=FlowTask.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(FlowTask), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropFlowTask.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropFlowTask), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "Tasks"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appflow-flow.html#cfn-appflow-flow-tasks"""
-    rp_TriggerConfig: typing.Union['FlowTriggerConfig', dict] = attr.ib(
+    rp_TriggerConfig: typing.Union['PropFlowTriggerConfig', dict] = attr.ib(
         default=None,
-        converter=FlowTriggerConfig.from_dict,
-        validator=attr.validators.instance_of(FlowTriggerConfig),
+        converter=PropFlowTriggerConfig.from_dict,
+        validator=attr.validators.instance_of(PropFlowTriggerConfig),
         metadata={AttrMeta.PROPERTY_NAME: "TriggerConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appflow-flow.html#cfn-appflow-flow-triggerconfig"""
@@ -2499,10 +2499,10 @@ class ConnectorProfile(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "ConnectorType"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appflow-connectorprofile.html#cfn-appflow-connectorprofile-connectortype"""
-    p_ConnectorProfileConfig: typing.Union['ConnectorProfileConnectorProfileConfig', dict] = attr.ib(
+    p_ConnectorProfileConfig: typing.Union['PropConnectorProfileConnectorProfileConfig', dict] = attr.ib(
         default=None,
-        converter=ConnectorProfileConnectorProfileConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ConnectorProfileConnectorProfileConfig)),
+        converter=PropConnectorProfileConnectorProfileConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropConnectorProfileConnectorProfileConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "ConnectorProfileConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appflow-connectorprofile.html#cfn-appflow-connectorprofile-connectorprofileconfig"""

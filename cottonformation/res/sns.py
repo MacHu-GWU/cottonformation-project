@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class TopicSubscription(Property):
+class PropTopicSubscription(Property):
     """
     AWS Object Type = "AWS::SNS::Topic.Subscription"
 
@@ -167,10 +167,10 @@ class Topic(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "KmsMasterKeyId"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-topic.html#cfn-sns-topic-kmsmasterkeyid"""
-    p_Subscription: typing.List[typing.Union['TopicSubscription', dict]] = attr.ib(
+    p_Subscription: typing.List[typing.Union['PropTopicSubscription', dict]] = attr.ib(
         default=None,
-        converter=TopicSubscription.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TopicSubscription), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropTopicSubscription.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropTopicSubscription), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Subscription"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sns-topic.html#cfn-sns-topic-subscription"""

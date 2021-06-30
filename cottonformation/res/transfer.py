@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class UserHomeDirectoryMapEntry(Property):
+class PropUserHomeDirectoryMapEntry(Property):
     """
     AWS Object Type = "AWS::Transfer::User.HomeDirectoryMapEntry"
 
@@ -42,7 +42,7 @@ class UserHomeDirectoryMapEntry(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-user-homedirectorymapentry.html#cfn-transfer-user-homedirectorymapentry-target"""
 
 @attr.s
-class ServerProtocolDetails(Property):
+class PropServerProtocolDetails(Property):
     """
     AWS Object Type = "AWS::Transfer::Server.ProtocolDetails"
 
@@ -62,7 +62,7 @@ class ServerProtocolDetails(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-server-protocoldetails.html#cfn-transfer-server-protocoldetails-passiveip"""
 
 @attr.s
-class UserSshPublicKey(Property):
+class PropUserSshPublicKey(Property):
     """
     AWS Object Type = "AWS::Transfer::User.SshPublicKey"
 
@@ -75,7 +75,7 @@ class UserSshPublicKey(Property):
     
 
 @attr.s
-class ServerIdentityProviderDetails(Property):
+class PropServerIdentityProviderDetails(Property):
     """
     AWS Object Type = "AWS::Transfer::Server.IdentityProviderDetails"
 
@@ -109,7 +109,7 @@ class ServerIdentityProviderDetails(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-server-identityproviderdetails.html#cfn-transfer-server-identityproviderdetails-url"""
 
 @attr.s
-class ServerEndpointDetails(Property):
+class PropServerEndpointDetails(Property):
     """
     AWS Object Type = "AWS::Transfer::Server.EndpointDetails"
 
@@ -157,7 +157,7 @@ class ServerEndpointDetails(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-server-endpointdetails.html#cfn-transfer-server-endpointdetails-vpcid"""
 
 @attr.s
-class UserPosixProfile(Property):
+class PropUserPosixProfile(Property):
     """
     AWS Object Type = "AWS::Transfer::User.PosixProfile"
 
@@ -191,7 +191,7 @@ class UserPosixProfile(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-user-posixprofile.html#cfn-transfer-user-posixprofile-secondarygids"""
 
 @attr.s
-class ServerProtocol(Property):
+class PropServerProtocol(Property):
     """
     AWS Object Type = "AWS::Transfer::Server.Protocol"
 
@@ -242,10 +242,10 @@ class Server(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Domain"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-server.html#cfn-transfer-server-domain"""
-    p_EndpointDetails: typing.Union['ServerEndpointDetails', dict] = attr.ib(
+    p_EndpointDetails: typing.Union['PropServerEndpointDetails', dict] = attr.ib(
         default=None,
-        converter=ServerEndpointDetails.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ServerEndpointDetails)),
+        converter=PropServerEndpointDetails.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropServerEndpointDetails)),
         metadata={AttrMeta.PROPERTY_NAME: "EndpointDetails"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-server.html#cfn-transfer-server-endpointdetails"""
@@ -255,10 +255,10 @@ class Server(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "EndpointType"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-server.html#cfn-transfer-server-endpointtype"""
-    p_IdentityProviderDetails: typing.Union['ServerIdentityProviderDetails', dict] = attr.ib(
+    p_IdentityProviderDetails: typing.Union['PropServerIdentityProviderDetails', dict] = attr.ib(
         default=None,
-        converter=ServerIdentityProviderDetails.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ServerIdentityProviderDetails)),
+        converter=PropServerIdentityProviderDetails.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropServerIdentityProviderDetails)),
         metadata={AttrMeta.PROPERTY_NAME: "IdentityProviderDetails"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-server.html#cfn-transfer-server-identityproviderdetails"""
@@ -274,17 +274,17 @@ class Server(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "LoggingRole"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-server.html#cfn-transfer-server-loggingrole"""
-    p_ProtocolDetails: typing.Union['ServerProtocolDetails', dict] = attr.ib(
+    p_ProtocolDetails: typing.Union['PropServerProtocolDetails', dict] = attr.ib(
         default=None,
-        converter=ServerProtocolDetails.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ServerProtocolDetails)),
+        converter=PropServerProtocolDetails.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropServerProtocolDetails)),
         metadata={AttrMeta.PROPERTY_NAME: "ProtocolDetails"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-server.html#cfn-transfer-server-protocoldetails"""
-    p_Protocols: typing.List[typing.Union['ServerProtocol', dict]] = attr.ib(
+    p_Protocols: typing.List[typing.Union['PropServerProtocol', dict]] = attr.ib(
         default=None,
-        converter=ServerProtocol.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ServerProtocol), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropServerProtocol.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropServerProtocol), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Protocols"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-server.html#cfn-transfer-server-protocols"""
@@ -361,10 +361,10 @@ class User(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "HomeDirectory"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-user.html#cfn-transfer-user-homedirectory"""
-    p_HomeDirectoryMappings: typing.List[typing.Union['UserHomeDirectoryMapEntry', dict]] = attr.ib(
+    p_HomeDirectoryMappings: typing.List[typing.Union['PropUserHomeDirectoryMapEntry', dict]] = attr.ib(
         default=None,
-        converter=UserHomeDirectoryMapEntry.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(UserHomeDirectoryMapEntry), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropUserHomeDirectoryMapEntry.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropUserHomeDirectoryMapEntry), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "HomeDirectoryMappings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-user.html#cfn-transfer-user-homedirectorymappings"""
@@ -380,17 +380,17 @@ class User(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Policy"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-user.html#cfn-transfer-user-policy"""
-    p_PosixProfile: typing.Union['UserPosixProfile', dict] = attr.ib(
+    p_PosixProfile: typing.Union['PropUserPosixProfile', dict] = attr.ib(
         default=None,
-        converter=UserPosixProfile.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(UserPosixProfile)),
+        converter=PropUserPosixProfile.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropUserPosixProfile)),
         metadata={AttrMeta.PROPERTY_NAME: "PosixProfile"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-user.html#cfn-transfer-user-posixprofile"""
-    p_SshPublicKeys: typing.List[typing.Union['UserSshPublicKey', dict]] = attr.ib(
+    p_SshPublicKeys: typing.List[typing.Union['PropUserSshPublicKey', dict]] = attr.ib(
         default=None,
-        converter=UserSshPublicKey.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(UserSshPublicKey), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropUserSshPublicKey.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropUserSshPublicKey), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "SshPublicKeys"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-user.html#cfn-transfer-user-sshpublickeys"""

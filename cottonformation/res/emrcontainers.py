@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class VirtualClusterEksInfo(Property):
+class PropVirtualClusterEksInfo(Property):
     """
     AWS Object Type = "AWS::EMRContainers::VirtualCluster.EksInfo"
 
@@ -35,7 +35,7 @@ class VirtualClusterEksInfo(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emrcontainers-virtualcluster-eksinfo.html#cfn-emrcontainers-virtualcluster-eksinfo-namespace"""
 
 @attr.s
-class VirtualClusterContainerInfo(Property):
+class PropVirtualClusterContainerInfo(Property):
     """
     AWS Object Type = "AWS::EMRContainers::VirtualCluster.ContainerInfo"
 
@@ -47,16 +47,16 @@ class VirtualClusterContainerInfo(Property):
     """
     AWS_OBJECT_TYPE = "AWS::EMRContainers::VirtualCluster.ContainerInfo"
     
-    rp_EksInfo: typing.Union['VirtualClusterEksInfo', dict] = attr.ib(
+    rp_EksInfo: typing.Union['PropVirtualClusterEksInfo', dict] = attr.ib(
         default=None,
-        converter=VirtualClusterEksInfo.from_dict,
-        validator=attr.validators.instance_of(VirtualClusterEksInfo),
+        converter=PropVirtualClusterEksInfo.from_dict,
+        validator=attr.validators.instance_of(PropVirtualClusterEksInfo),
         metadata={AttrMeta.PROPERTY_NAME: "EksInfo"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emrcontainers-virtualcluster-containerinfo.html#cfn-emrcontainers-virtualcluster-containerinfo-eksinfo"""
 
 @attr.s
-class VirtualClusterContainerProvider(Property):
+class PropVirtualClusterContainerProvider(Property):
     """
     AWS Object Type = "AWS::EMRContainers::VirtualCluster.ContainerProvider"
 
@@ -76,10 +76,10 @@ class VirtualClusterContainerProvider(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Id"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emrcontainers-virtualcluster-containerprovider.html#cfn-emrcontainers-virtualcluster-containerprovider-id"""
-    rp_Info: typing.Union['VirtualClusterContainerInfo', dict] = attr.ib(
+    rp_Info: typing.Union['PropVirtualClusterContainerInfo', dict] = attr.ib(
         default=None,
-        converter=VirtualClusterContainerInfo.from_dict,
-        validator=attr.validators.instance_of(VirtualClusterContainerInfo),
+        converter=PropVirtualClusterContainerInfo.from_dict,
+        validator=attr.validators.instance_of(PropVirtualClusterContainerInfo),
         metadata={AttrMeta.PROPERTY_NAME: "Info"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emrcontainers-virtualcluster-containerprovider.html#cfn-emrcontainers-virtualcluster-containerprovider-info"""
@@ -109,10 +109,10 @@ class VirtualCluster(Resource):
     AWS_OBJECT_TYPE = "AWS::EMRContainers::VirtualCluster"
 
     
-    rp_ContainerProvider: typing.Union['VirtualClusterContainerProvider', dict] = attr.ib(
+    rp_ContainerProvider: typing.Union['PropVirtualClusterContainerProvider', dict] = attr.ib(
         default=None,
-        converter=VirtualClusterContainerProvider.from_dict,
-        validator=attr.validators.instance_of(VirtualClusterContainerProvider),
+        converter=PropVirtualClusterContainerProvider.from_dict,
+        validator=attr.validators.instance_of(PropVirtualClusterContainerProvider),
         metadata={AttrMeta.PROPERTY_NAME: "ContainerProvider"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emrcontainers-virtualcluster.html#cfn-emrcontainers-virtualcluster-containerprovider"""

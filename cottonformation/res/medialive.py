@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class ChannelHlsInputSettings(Property):
+class PropChannelHlsInputSettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.HlsInputSettings"
 
@@ -56,7 +56,7 @@ class ChannelHlsInputSettings(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsinputsettings.html#cfn-medialive-channel-hlsinputsettings-retryinterval"""
 
 @attr.s
-class ChannelRec709Settings(Property):
+class PropChannelRec709Settings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.Rec709Settings"
 
@@ -69,7 +69,7 @@ class ChannelRec709Settings(Property):
     
 
 @attr.s
-class ChannelFrameCaptureSettings(Property):
+class PropChannelFrameCaptureSettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.FrameCaptureSettings"
 
@@ -96,7 +96,7 @@ class ChannelFrameCaptureSettings(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-framecapturesettings.html#cfn-medialive-channel-framecapturesettings-captureintervalunits"""
 
 @attr.s
-class ChannelMultiplexProgramChannelDestinationSettings(Property):
+class PropChannelMultiplexProgramChannelDestinationSettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.MultiplexProgramChannelDestinationSettings"
 
@@ -123,7 +123,7 @@ class ChannelMultiplexProgramChannelDestinationSettings(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-multiplexprogramchanneldestinationsettings.html#cfn-medialive-channel-multiplexprogramchanneldestinationsettings-programname"""
 
 @attr.s
-class ChannelEmbeddedPlusScte20DestinationSettings(Property):
+class PropChannelEmbeddedPlusScte20DestinationSettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.EmbeddedPlusScte20DestinationSettings"
 
@@ -136,7 +136,7 @@ class ChannelEmbeddedPlusScte20DestinationSettings(Property):
     
 
 @attr.s
-class ChannelFrameCaptureS3Settings(Property):
+class PropChannelFrameCaptureS3Settings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.FrameCaptureS3Settings"
 
@@ -156,7 +156,7 @@ class ChannelFrameCaptureS3Settings(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-framecaptures3settings.html#cfn-medialive-channel-framecaptures3settings-cannedacl"""
 
 @attr.s
-class ChannelScte27SourceSettings(Property):
+class PropChannelScte27SourceSettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.Scte27SourceSettings"
 
@@ -176,7 +176,7 @@ class ChannelScte27SourceSettings(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-scte27sourcesettings.html#cfn-medialive-channel-scte27sourcesettings-pid"""
 
 @attr.s
-class ChannelEbuTtDDestinationSettings(Property):
+class PropChannelEbuTtDDestinationSettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.EbuTtDDestinationSettings"
 
@@ -217,7 +217,7 @@ class ChannelEbuTtDDestinationSettings(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-ebuttddestinationsettings.html#cfn-medialive-channel-ebuttddestinationsettings-stylecontrol"""
 
 @attr.s
-class ChannelVideoSelectorPid(Property):
+class PropChannelVideoSelectorPid(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.VideoSelectorPid"
 
@@ -237,7 +237,7 @@ class ChannelVideoSelectorPid(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-videoselectorpid.html#cfn-medialive-channel-videoselectorpid-pid"""
 
 @attr.s
-class ChannelHdr10Settings(Property):
+class PropChannelHdr10Settings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.Hdr10Settings"
 
@@ -264,7 +264,7 @@ class ChannelHdr10Settings(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hdr10settings.html#cfn-medialive-channel-hdr10settings-maxfall"""
 
 @attr.s
-class ChannelInputLocation(Property):
+class PropChannelInputLocation(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.InputLocation"
 
@@ -298,7 +298,7 @@ class ChannelInputLocation(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputlocation.html#cfn-medialive-channel-inputlocation-username"""
 
 @attr.s
-class ChannelAudioLanguageSelection(Property):
+class PropChannelAudioLanguageSelection(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.AudioLanguageSelection"
 
@@ -325,7 +325,7 @@ class ChannelAudioLanguageSelection(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiolanguageselection.html#cfn-medialive-channel-audiolanguageselection-languageselectionpolicy"""
 
 @attr.s
-class ChannelCaptionRectangle(Property):
+class PropChannelCaptionRectangle(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.CaptionRectangle"
 
@@ -366,7 +366,7 @@ class ChannelCaptionRectangle(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captionrectangle.html#cfn-medialive-channel-captionrectangle-width"""
 
 @attr.s
-class ChannelArchiveS3Settings(Property):
+class PropChannelArchiveS3Settings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.ArchiveS3Settings"
 
@@ -386,7 +386,7 @@ class ChannelArchiveS3Settings(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-archives3settings.html#cfn-medialive-channel-archives3settings-cannedacl"""
 
 @attr.s
-class ChannelSmpteTtDestinationSettings(Property):
+class PropChannelSmpteTtDestinationSettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.SmpteTtDestinationSettings"
 
@@ -399,7 +399,7 @@ class ChannelSmpteTtDestinationSettings(Property):
     
 
 @attr.s
-class ChannelAribSourceSettings(Property):
+class PropChannelAribSourceSettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.AribSourceSettings"
 
@@ -412,7 +412,7 @@ class ChannelAribSourceSettings(Property):
     
 
 @attr.s
-class ChannelMp2Settings(Property):
+class PropChannelMp2Settings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.Mp2Settings"
 
@@ -446,7 +446,7 @@ class ChannelMp2Settings(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mp2settings.html#cfn-medialive-channel-mp2settings-samplerate"""
 
 @attr.s
-class InputInputSourceRequest(Property):
+class PropInputInputSourceRequest(Property):
     """
     AWS Object Type = "AWS::MediaLive::Input.InputSourceRequest"
 
@@ -480,7 +480,7 @@ class InputInputSourceRequest(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputsourcerequest.html#cfn-medialive-input-inputsourcerequest-username"""
 
 @attr.s
-class ChannelAudioSilenceFailoverSettings(Property):
+class PropChannelAudioSilenceFailoverSettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.AudioSilenceFailoverSettings"
 
@@ -507,7 +507,7 @@ class ChannelAudioSilenceFailoverSettings(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiosilencefailoversettings.html#cfn-medialive-channel-audiosilencefailoversettings-audiosilencethresholdmsec"""
 
 @attr.s
-class ChannelFmp4HlsSettings(Property):
+class PropChannelFmp4HlsSettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.Fmp4HlsSettings"
 
@@ -541,7 +541,7 @@ class ChannelFmp4HlsSettings(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-fmp4hlssettings.html#cfn-medialive-channel-fmp4hlssettings-timedmetadatabehavior"""
 
 @attr.s
-class ChannelScte35SpliceInsert(Property):
+class PropChannelScte35SpliceInsert(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.Scte35SpliceInsert"
 
@@ -575,7 +575,7 @@ class ChannelScte35SpliceInsert(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-scte35spliceinsert.html#cfn-medialive-channel-scte35spliceinsert-webdeliveryallowedflag"""
 
 @attr.s
-class ChannelFeatureActivations(Property):
+class PropChannelFeatureActivations(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.FeatureActivations"
 
@@ -595,7 +595,7 @@ class ChannelFeatureActivations(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-featureactivations.html#cfn-medialive-channel-featureactivations-inputpreparescheduleactions"""
 
 @attr.s
-class ChannelAc3Settings(Property):
+class PropChannelAc3Settings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.Ac3Settings"
 
@@ -657,7 +657,7 @@ class ChannelAc3Settings(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-ac3settings.html#cfn-medialive-channel-ac3settings-metadatacontrol"""
 
 @attr.s
-class ChannelEac3Settings(Property):
+class PropChannelEac3Settings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.Eac3Settings"
 
@@ -810,7 +810,7 @@ class ChannelEac3Settings(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-eac3settings.html#cfn-medialive-channel-eac3settings-surroundmode"""
 
 @attr.s
-class ChannelMediaPackageOutputSettings(Property):
+class PropChannelMediaPackageOutputSettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.MediaPackageOutputSettings"
 
@@ -823,7 +823,7 @@ class ChannelMediaPackageOutputSettings(Property):
     
 
 @attr.s
-class ChannelRec601Settings(Property):
+class PropChannelRec601Settings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.Rec601Settings"
 
@@ -836,7 +836,7 @@ class ChannelRec601Settings(Property):
     
 
 @attr.s
-class ChannelTimecodeConfig(Property):
+class PropChannelTimecodeConfig(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.TimecodeConfig"
 
@@ -863,7 +863,7 @@ class ChannelTimecodeConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-timecodeconfig.html#cfn-medialive-channel-timecodeconfig-syncthreshold"""
 
 @attr.s
-class ChannelDvbTdtSettings(Property):
+class PropChannelDvbTdtSettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.DvbTdtSettings"
 
@@ -883,7 +883,7 @@ class ChannelDvbTdtSettings(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-dvbtdtsettings.html#cfn-medialive-channel-dvbtdtsettings-repinterval"""
 
 @attr.s
-class ChannelOutputDestinationSettings(Property):
+class PropChannelOutputDestinationSettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.OutputDestinationSettings"
 
@@ -924,7 +924,7 @@ class ChannelOutputDestinationSettings(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputdestinationsettings.html#cfn-medialive-channel-outputdestinationsettings-username"""
 
 @attr.s
-class ChannelTeletextDestinationSettings(Property):
+class PropChannelTeletextDestinationSettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.TeletextDestinationSettings"
 
@@ -937,7 +937,7 @@ class ChannelTeletextDestinationSettings(Property):
     
 
 @attr.s
-class ChannelDvbNitSettings(Property):
+class PropChannelDvbNitSettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.DvbNitSettings"
 
@@ -971,7 +971,7 @@ class ChannelDvbNitSettings(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-dvbnitsettings.html#cfn-medialive-channel-dvbnitsettings-repinterval"""
 
 @attr.s
-class ChannelWebvttDestinationSettings(Property):
+class PropChannelWebvttDestinationSettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.WebvttDestinationSettings"
 
@@ -984,7 +984,7 @@ class ChannelWebvttDestinationSettings(Property):
     
 
 @attr.s
-class ChannelAacSettings(Property):
+class PropChannelAacSettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.AacSettings"
 
@@ -1060,7 +1060,7 @@ class ChannelAacSettings(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-aacsettings.html#cfn-medialive-channel-aacsettings-vbrquality"""
 
 @attr.s
-class ChannelScte35TimeSignalApos(Property):
+class PropChannelScte35TimeSignalApos(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.Scte35TimeSignalApos"
 
@@ -1094,7 +1094,7 @@ class ChannelScte35TimeSignalApos(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-scte35timesignalapos.html#cfn-medialive-channel-scte35timesignalapos-webdeliveryallowedflag"""
 
 @attr.s
-class ChannelFecOutputSettings(Property):
+class PropChannelFecOutputSettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.FecOutputSettings"
 
@@ -1128,7 +1128,7 @@ class ChannelFecOutputSettings(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-fecoutputsettings.html#cfn-medialive-channel-fecoutputsettings-rowlength"""
 
 @attr.s
-class ChannelAncillarySourceSettings(Property):
+class PropChannelAncillarySourceSettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.AncillarySourceSettings"
 
@@ -1148,7 +1148,7 @@ class ChannelAncillarySourceSettings(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-ancillarysourcesettings.html#cfn-medialive-channel-ancillarysourcesettings-sourceancillarychannelnumber"""
 
 @attr.s
-class ChannelVideoBlackFailoverSettings(Property):
+class PropChannelVideoBlackFailoverSettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.VideoBlackFailoverSettings"
 
@@ -1175,7 +1175,7 @@ class ChannelVideoBlackFailoverSettings(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-videoblackfailoversettings.html#cfn-medialive-channel-videoblackfailoversettings-videoblackthresholdmsec"""
 
 @attr.s
-class ChannelRtmpCaptionInfoDestinationSettings(Property):
+class PropChannelRtmpCaptionInfoDestinationSettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.RtmpCaptionInfoDestinationSettings"
 
@@ -1188,7 +1188,7 @@ class ChannelRtmpCaptionInfoDestinationSettings(Property):
     
 
 @attr.s
-class ChannelTtmlDestinationSettings(Property):
+class PropChannelTtmlDestinationSettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.TtmlDestinationSettings"
 
@@ -1208,7 +1208,7 @@ class ChannelTtmlDestinationSettings(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-ttmldestinationsettings.html#cfn-medialive-channel-ttmldestinationsettings-stylecontrol"""
 
 @attr.s
-class ChannelHlsWebdavSettings(Property):
+class PropChannelHlsWebdavSettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.HlsWebdavSettings"
 
@@ -1256,7 +1256,7 @@ class ChannelHlsWebdavSettings(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlswebdavsettings.html#cfn-medialive-channel-hlswebdavsettings-restartdelay"""
 
 @attr.s
-class ChannelNielsenConfiguration(Property):
+class PropChannelNielsenConfiguration(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.NielsenConfiguration"
 
@@ -1283,7 +1283,7 @@ class ChannelNielsenConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-nielsenconfiguration.html#cfn-medialive-channel-nielsenconfiguration-nielsenpcmtoid3tagging"""
 
 @attr.s
-class ChannelMediaPackageOutputDestinationSettings(Property):
+class PropChannelMediaPackageOutputDestinationSettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.MediaPackageOutputDestinationSettings"
 
@@ -1303,7 +1303,7 @@ class ChannelMediaPackageOutputDestinationSettings(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mediapackageoutputdestinationsettings.html#cfn-medialive-channel-mediapackageoutputdestinationsettings-channelid"""
 
 @attr.s
-class ChannelAudioOnlyHlsSettings(Property):
+class PropChannelAudioOnlyHlsSettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.AudioOnlyHlsSettings"
 
@@ -1324,10 +1324,10 @@ class ChannelAudioOnlyHlsSettings(Property):
         metadata={AttrMeta.PROPERTY_NAME: "AudioGroupId"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audioonlyhlssettings.html#cfn-medialive-channel-audioonlyhlssettings-audiogroupid"""
-    p_AudioOnlyImage: typing.Union['ChannelInputLocation', dict] = attr.ib(
+    p_AudioOnlyImage: typing.Union['PropChannelInputLocation', dict] = attr.ib(
         default=None,
-        converter=ChannelInputLocation.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelInputLocation)),
+        converter=PropChannelInputLocation.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelInputLocation)),
         metadata={AttrMeta.PROPERTY_NAME: "AudioOnlyImage"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audioonlyhlssettings.html#cfn-medialive-channel-audioonlyhlssettings-audioonlyimage"""
@@ -1345,7 +1345,7 @@ class ChannelAudioOnlyHlsSettings(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audioonlyhlssettings.html#cfn-medialive-channel-audioonlyhlssettings-segmenttype"""
 
 @attr.s
-class ChannelOutputLocationRef(Property):
+class PropChannelOutputLocationRef(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.OutputLocationRef"
 
@@ -1365,7 +1365,7 @@ class ChannelOutputLocationRef(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputlocationref.html#cfn-medialive-channel-outputlocationref-destinationrefid"""
 
 @attr.s
-class InputSecurityGroupInputWhitelistRuleCidr(Property):
+class PropInputSecurityGroupInputWhitelistRuleCidr(Property):
     """
     AWS Object Type = "AWS::MediaLive::InputSecurityGroup.InputWhitelistRuleCidr"
 
@@ -1385,7 +1385,7 @@ class InputSecurityGroupInputWhitelistRuleCidr(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-inputsecuritygroup-inputwhitelistrulecidr.html#cfn-medialive-inputsecuritygroup-inputwhitelistrulecidr-cidr"""
 
 @attr.s
-class ChannelScte27DestinationSettings(Property):
+class PropChannelScte27DestinationSettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.Scte27DestinationSettings"
 
@@ -1398,7 +1398,7 @@ class ChannelScte27DestinationSettings(Property):
     
 
 @attr.s
-class InputInputDeviceRequest(Property):
+class PropInputInputDeviceRequest(Property):
     """
     AWS Object Type = "AWS::MediaLive::Input.InputDeviceRequest"
 
@@ -1418,7 +1418,7 @@ class InputInputDeviceRequest(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputdevicerequest.html#cfn-medialive-input-inputdevicerequest-id"""
 
 @attr.s
-class ChannelRawSettings(Property):
+class PropChannelRawSettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.RawSettings"
 
@@ -1431,7 +1431,7 @@ class ChannelRawSettings(Property):
     
 
 @attr.s
-class ChannelDvbSdtSettings(Property):
+class PropChannelDvbSdtSettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.DvbSdtSettings"
 
@@ -1472,7 +1472,7 @@ class ChannelDvbSdtSettings(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-dvbsdtsettings.html#cfn-medialive-channel-dvbsdtsettings-serviceprovidername"""
 
 @attr.s
-class ChannelVideoSelectorProgramId(Property):
+class PropChannelVideoSelectorProgramId(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.VideoSelectorProgramId"
 
@@ -1492,7 +1492,7 @@ class ChannelVideoSelectorProgramId(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-videoselectorprogramid.html#cfn-medialive-channel-videoselectorprogramid-programid"""
 
 @attr.s
-class InputInputDeviceSettings(Property):
+class PropInputInputDeviceSettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Input.InputDeviceSettings"
 
@@ -1512,7 +1512,7 @@ class InputInputDeviceSettings(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputdevicesettings.html#cfn-medialive-input-inputdevicesettings-id"""
 
 @attr.s
-class ChannelInputChannelLevel(Property):
+class PropChannelInputChannelLevel(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.InputChannelLevel"
 
@@ -1539,7 +1539,7 @@ class ChannelInputChannelLevel(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputchannellevel.html#cfn-medialive-channel-inputchannellevel-inputchannel"""
 
 @attr.s
-class ChannelPassThroughSettings(Property):
+class PropChannelPassThroughSettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.PassThroughSettings"
 
@@ -1552,7 +1552,7 @@ class ChannelPassThroughSettings(Property):
     
 
 @attr.s
-class ChannelEmbeddedSourceSettings(Property):
+class PropChannelEmbeddedSourceSettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.EmbeddedSourceSettings"
 
@@ -1593,7 +1593,7 @@ class ChannelEmbeddedSourceSettings(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-embeddedsourcesettings.html#cfn-medialive-channel-embeddedsourcesettings-source608tracknumber"""
 
 @attr.s
-class ChannelInputSpecification(Property):
+class PropChannelInputSpecification(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.InputSpecification"
 
@@ -1627,7 +1627,7 @@ class ChannelInputSpecification(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputspecification.html#cfn-medialive-channel-inputspecification-resolution"""
 
 @attr.s
-class ChannelFrameCaptureOutputSettings(Property):
+class PropChannelFrameCaptureOutputSettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.FrameCaptureOutputSettings"
 
@@ -1647,7 +1647,7 @@ class ChannelFrameCaptureOutputSettings(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-framecaptureoutputsettings.html#cfn-medialive-channel-framecaptureoutputsettings-namemodifier"""
 
 @attr.s
-class ChannelAvailSettings(Property):
+class PropChannelAvailSettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.AvailSettings"
 
@@ -1660,23 +1660,23 @@ class ChannelAvailSettings(Property):
     """
     AWS_OBJECT_TYPE = "AWS::MediaLive::Channel.AvailSettings"
     
-    p_Scte35SpliceInsert: typing.Union['ChannelScte35SpliceInsert', dict] = attr.ib(
+    p_Scte35SpliceInsert: typing.Union['PropChannelScte35SpliceInsert', dict] = attr.ib(
         default=None,
-        converter=ChannelScte35SpliceInsert.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelScte35SpliceInsert)),
+        converter=PropChannelScte35SpliceInsert.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelScte35SpliceInsert)),
         metadata={AttrMeta.PROPERTY_NAME: "Scte35SpliceInsert"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-availsettings.html#cfn-medialive-channel-availsettings-scte35spliceinsert"""
-    p_Scte35TimeSignalApos: typing.Union['ChannelScte35TimeSignalApos', dict] = attr.ib(
+    p_Scte35TimeSignalApos: typing.Union['PropChannelScte35TimeSignalApos', dict] = attr.ib(
         default=None,
-        converter=ChannelScte35TimeSignalApos.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelScte35TimeSignalApos)),
+        converter=PropChannelScte35TimeSignalApos.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelScte35TimeSignalApos)),
         metadata={AttrMeta.PROPERTY_NAME: "Scte35TimeSignalApos"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-availsettings.html#cfn-medialive-channel-availsettings-scte35timesignalapos"""
 
 @attr.s
-class ChannelMediaPackageGroupSettings(Property):
+class PropChannelMediaPackageGroupSettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.MediaPackageGroupSettings"
 
@@ -1688,16 +1688,16 @@ class ChannelMediaPackageGroupSettings(Property):
     """
     AWS_OBJECT_TYPE = "AWS::MediaLive::Channel.MediaPackageGroupSettings"
     
-    p_Destination: typing.Union['ChannelOutputLocationRef', dict] = attr.ib(
+    p_Destination: typing.Union['PropChannelOutputLocationRef', dict] = attr.ib(
         default=None,
-        converter=ChannelOutputLocationRef.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelOutputLocationRef)),
+        converter=PropChannelOutputLocationRef.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelOutputLocationRef)),
         metadata={AttrMeta.PROPERTY_NAME: "Destination"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mediapackagegroupsettings.html#cfn-medialive-channel-mediapackagegroupsettings-destination"""
 
 @attr.s
-class ChannelMultiplexOutputSettings(Property):
+class PropChannelMultiplexOutputSettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.MultiplexOutputSettings"
 
@@ -1709,16 +1709,16 @@ class ChannelMultiplexOutputSettings(Property):
     """
     AWS_OBJECT_TYPE = "AWS::MediaLive::Channel.MultiplexOutputSettings"
     
-    p_Destination: typing.Union['ChannelOutputLocationRef', dict] = attr.ib(
+    p_Destination: typing.Union['PropChannelOutputLocationRef', dict] = attr.ib(
         default=None,
-        converter=ChannelOutputLocationRef.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelOutputLocationRef)),
+        converter=PropChannelOutputLocationRef.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelOutputLocationRef)),
         metadata={AttrMeta.PROPERTY_NAME: "Destination"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-multiplexoutputsettings.html#cfn-medialive-channel-multiplexoutputsettings-destination"""
 
 @attr.s
-class ChannelEmbeddedDestinationSettings(Property):
+class PropChannelEmbeddedDestinationSettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.EmbeddedDestinationSettings"
 
@@ -1731,7 +1731,7 @@ class ChannelEmbeddedDestinationSettings(Property):
     
 
 @attr.s
-class ChannelAvailBlanking(Property):
+class PropChannelAvailBlanking(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.AvailBlanking"
 
@@ -1744,10 +1744,10 @@ class ChannelAvailBlanking(Property):
     """
     AWS_OBJECT_TYPE = "AWS::MediaLive::Channel.AvailBlanking"
     
-    p_AvailBlankingImage: typing.Union['ChannelInputLocation', dict] = attr.ib(
+    p_AvailBlankingImage: typing.Union['PropChannelInputLocation', dict] = attr.ib(
         default=None,
-        converter=ChannelInputLocation.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelInputLocation)),
+        converter=PropChannelInputLocation.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelInputLocation)),
         metadata={AttrMeta.PROPERTY_NAME: "AvailBlankingImage"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-availblanking.html#cfn-medialive-channel-availblanking-availblankingimage"""
@@ -1759,7 +1759,7 @@ class ChannelAvailBlanking(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-availblanking.html#cfn-medialive-channel-availblanking-state"""
 
 @attr.s
-class ChannelAudioNormalizationSettings(Property):
+class PropChannelAudioNormalizationSettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.AudioNormalizationSettings"
 
@@ -1793,7 +1793,7 @@ class ChannelAudioNormalizationSettings(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audionormalizationsettings.html#cfn-medialive-channel-audionormalizationsettings-targetlkfs"""
 
 @attr.s
-class InputInputVpcRequest(Property):
+class PropInputInputVpcRequest(Property):
     """
     AWS Object Type = "AWS::MediaLive::Input.InputVpcRequest"
 
@@ -1820,7 +1820,7 @@ class InputInputVpcRequest(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputvpcrequest.html#cfn-medialive-input-inputvpcrequest-subnetids"""
 
 @attr.s
-class ChannelMultiplexGroupSettings(Property):
+class PropChannelMultiplexGroupSettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.MultiplexGroupSettings"
 
@@ -1833,7 +1833,7 @@ class ChannelMultiplexGroupSettings(Property):
     
 
 @attr.s
-class ChannelInputLossFailoverSettings(Property):
+class PropChannelInputLossFailoverSettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.InputLossFailoverSettings"
 
@@ -1853,7 +1853,7 @@ class ChannelInputLossFailoverSettings(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputlossfailoversettings.html#cfn-medialive-channel-inputlossfailoversettings-inputlossthresholdmsec"""
 
 @attr.s
-class ChannelAudioPidSelection(Property):
+class PropChannelAudioPidSelection(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.AudioPidSelection"
 
@@ -1873,7 +1873,7 @@ class ChannelAudioPidSelection(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiopidselection.html#cfn-medialive-channel-audiopidselection-pid"""
 
 @attr.s
-class ChannelCaptionLanguageMapping(Property):
+class PropChannelCaptionLanguageMapping(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.CaptionLanguageMapping"
 
@@ -1907,7 +1907,7 @@ class ChannelCaptionLanguageMapping(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captionlanguagemapping.html#cfn-medialive-channel-captionlanguagemapping-languagedescription"""
 
 @attr.s
-class ChannelDvbSubSourceSettings(Property):
+class PropChannelDvbSubSourceSettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.DvbSubSourceSettings"
 
@@ -1927,7 +1927,7 @@ class ChannelDvbSubSourceSettings(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-dvbsubsourcesettings.html#cfn-medialive-channel-dvbsubsourcesettings-pid"""
 
 @attr.s
-class ChannelVideoSelectorSettings(Property):
+class PropChannelVideoSelectorSettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.VideoSelectorSettings"
 
@@ -1940,23 +1940,23 @@ class ChannelVideoSelectorSettings(Property):
     """
     AWS_OBJECT_TYPE = "AWS::MediaLive::Channel.VideoSelectorSettings"
     
-    p_VideoSelectorPid: typing.Union['ChannelVideoSelectorPid', dict] = attr.ib(
+    p_VideoSelectorPid: typing.Union['PropChannelVideoSelectorPid', dict] = attr.ib(
         default=None,
-        converter=ChannelVideoSelectorPid.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelVideoSelectorPid)),
+        converter=PropChannelVideoSelectorPid.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelVideoSelectorPid)),
         metadata={AttrMeta.PROPERTY_NAME: "VideoSelectorPid"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-videoselectorsettings.html#cfn-medialive-channel-videoselectorsettings-videoselectorpid"""
-    p_VideoSelectorProgramId: typing.Union['ChannelVideoSelectorProgramId', dict] = attr.ib(
+    p_VideoSelectorProgramId: typing.Union['PropChannelVideoSelectorProgramId', dict] = attr.ib(
         default=None,
-        converter=ChannelVideoSelectorProgramId.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelVideoSelectorProgramId)),
+        converter=PropChannelVideoSelectorProgramId.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelVideoSelectorProgramId)),
         metadata={AttrMeta.PROPERTY_NAME: "VideoSelectorProgramId"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-videoselectorsettings.html#cfn-medialive-channel-videoselectorsettings-videoselectorprogramid"""
 
 @attr.s
-class ChannelVpcOutputSettings(Property):
+class PropChannelVpcOutputSettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.VpcOutputSettings"
 
@@ -1990,7 +1990,7 @@ class ChannelVpcOutputSettings(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-vpcoutputsettings.html#cfn-medialive-channel-vpcoutputsettings-subnetids"""
 
 @attr.s
-class ChannelTeletextSourceSettings(Property):
+class PropChannelTeletextSourceSettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.TeletextSourceSettings"
 
@@ -2003,10 +2003,10 @@ class ChannelTeletextSourceSettings(Property):
     """
     AWS_OBJECT_TYPE = "AWS::MediaLive::Channel.TeletextSourceSettings"
     
-    p_OutputRectangle: typing.Union['ChannelCaptionRectangle', dict] = attr.ib(
+    p_OutputRectangle: typing.Union['PropChannelCaptionRectangle', dict] = attr.ib(
         default=None,
-        converter=ChannelCaptionRectangle.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelCaptionRectangle)),
+        converter=PropChannelCaptionRectangle.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelCaptionRectangle)),
         metadata={AttrMeta.PROPERTY_NAME: "OutputRectangle"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-teletextsourcesettings.html#cfn-medialive-channel-teletextsourcesettings-outputrectangle"""
@@ -2018,7 +2018,7 @@ class ChannelTeletextSourceSettings(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-teletextsourcesettings.html#cfn-medialive-channel-teletextsourcesettings-pagenumber"""
 
 @attr.s
-class InputInputDestinationRequest(Property):
+class PropInputInputDestinationRequest(Property):
     """
     AWS Object Type = "AWS::MediaLive::Input.InputDestinationRequest"
 
@@ -2038,7 +2038,7 @@ class InputInputDestinationRequest(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-inputdestinationrequest.html#cfn-medialive-input-inputdestinationrequest-streamname"""
 
 @attr.s
-class ChannelVideoSelectorColorSpaceSettings(Property):
+class PropChannelVideoSelectorColorSpaceSettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.VideoSelectorColorSpaceSettings"
 
@@ -2050,16 +2050,16 @@ class ChannelVideoSelectorColorSpaceSettings(Property):
     """
     AWS_OBJECT_TYPE = "AWS::MediaLive::Channel.VideoSelectorColorSpaceSettings"
     
-    p_Hdr10Settings: typing.Union['ChannelHdr10Settings', dict] = attr.ib(
+    p_Hdr10Settings: typing.Union['PropChannelHdr10Settings', dict] = attr.ib(
         default=None,
-        converter=ChannelHdr10Settings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelHdr10Settings)),
+        converter=PropChannelHdr10Settings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelHdr10Settings)),
         metadata={AttrMeta.PROPERTY_NAME: "Hdr10Settings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-videoselectorcolorspacesettings.html#cfn-medialive-channel-videoselectorcolorspacesettings-hdr10settings"""
 
 @attr.s
-class ChannelNetworkInputSettings(Property):
+class PropChannelNetworkInputSettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.NetworkInputSettings"
 
@@ -2072,10 +2072,10 @@ class ChannelNetworkInputSettings(Property):
     """
     AWS_OBJECT_TYPE = "AWS::MediaLive::Channel.NetworkInputSettings"
     
-    p_HlsInputSettings: typing.Union['ChannelHlsInputSettings', dict] = attr.ib(
+    p_HlsInputSettings: typing.Union['PropChannelHlsInputSettings', dict] = attr.ib(
         default=None,
-        converter=ChannelHlsInputSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelHlsInputSettings)),
+        converter=PropChannelHlsInputSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelHlsInputSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "HlsInputSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-networkinputsettings.html#cfn-medialive-channel-networkinputsettings-hlsinputsettings"""
@@ -2087,7 +2087,7 @@ class ChannelNetworkInputSettings(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-networkinputsettings.html#cfn-medialive-channel-networkinputsettings-servervalidation"""
 
 @attr.s
-class InputMediaConnectFlowRequest(Property):
+class PropInputMediaConnectFlowRequest(Property):
     """
     AWS Object Type = "AWS::MediaLive::Input.MediaConnectFlowRequest"
 
@@ -2107,7 +2107,7 @@ class InputMediaConnectFlowRequest(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-input-mediaconnectflowrequest.html#cfn-medialive-input-mediaconnectflowrequest-flowarn"""
 
 @attr.s
-class ChannelHlsBasicPutSettings(Property):
+class PropChannelHlsBasicPutSettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.HlsBasicPutSettings"
 
@@ -2148,7 +2148,7 @@ class ChannelHlsBasicPutSettings(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsbasicputsettings.html#cfn-medialive-channel-hlsbasicputsettings-restartdelay"""
 
 @attr.s
-class ChannelScte20PlusEmbeddedDestinationSettings(Property):
+class PropChannelScte20PlusEmbeddedDestinationSettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.Scte20PlusEmbeddedDestinationSettings"
 
@@ -2161,7 +2161,7 @@ class ChannelScte20PlusEmbeddedDestinationSettings(Property):
     
 
 @attr.s
-class ChannelScte20SourceSettings(Property):
+class PropChannelScte20SourceSettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.Scte20SourceSettings"
 
@@ -2188,7 +2188,7 @@ class ChannelScte20SourceSettings(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-scte20sourcesettings.html#cfn-medialive-channel-scte20sourcesettings-source608channelnumber"""
 
 @attr.s
-class ChannelAudioTrack(Property):
+class PropChannelAudioTrack(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.AudioTrack"
 
@@ -2208,7 +2208,7 @@ class ChannelAudioTrack(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiotrack.html#cfn-medialive-channel-audiotrack-track"""
 
 @attr.s
-class ChannelBurnInDestinationSettings(Property):
+class PropChannelBurnInDestinationSettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.BurnInDestinationSettings"
 
@@ -2254,10 +2254,10 @@ class ChannelBurnInDestinationSettings(Property):
         metadata={AttrMeta.PROPERTY_NAME: "BackgroundOpacity"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-burnindestinationsettings.html#cfn-medialive-channel-burnindestinationsettings-backgroundopacity"""
-    p_Font: typing.Union['ChannelInputLocation', dict] = attr.ib(
+    p_Font: typing.Union['PropChannelInputLocation', dict] = attr.ib(
         default=None,
-        converter=ChannelInputLocation.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelInputLocation)),
+        converter=PropChannelInputLocation.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelInputLocation)),
         metadata={AttrMeta.PROPERTY_NAME: "Font"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-burnindestinationsettings.html#cfn-medialive-channel-burnindestinationsettings-font"""
@@ -2341,7 +2341,7 @@ class ChannelBurnInDestinationSettings(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-burnindestinationsettings.html#cfn-medialive-channel-burnindestinationsettings-yposition"""
 
 @attr.s
-class ChannelRtmpGroupSettings(Property):
+class PropChannelRtmpGroupSettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.RtmpGroupSettings"
 
@@ -2403,7 +2403,7 @@ class ChannelRtmpGroupSettings(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-rtmpgroupsettings.html#cfn-medialive-channel-rtmpgroupsettings-restartdelay"""
 
 @attr.s
-class ChannelMsSmoothOutputSettings(Property):
+class PropChannelMsSmoothOutputSettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.MsSmoothOutputSettings"
 
@@ -2430,7 +2430,7 @@ class ChannelMsSmoothOutputSettings(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mssmoothoutputsettings.html#cfn-medialive-channel-mssmoothoutputsettings-namemodifier"""
 
 @attr.s
-class ChannelMsSmoothGroupSettings(Property):
+class PropChannelMsSmoothGroupSettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.MsSmoothGroupSettings"
 
@@ -2484,10 +2484,10 @@ class ChannelMsSmoothGroupSettings(Property):
         metadata={AttrMeta.PROPERTY_NAME: "ConnectionRetryInterval"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mssmoothgroupsettings.html#cfn-medialive-channel-mssmoothgroupsettings-connectionretryinterval"""
-    p_Destination: typing.Union['ChannelOutputLocationRef', dict] = attr.ib(
+    p_Destination: typing.Union['PropChannelOutputLocationRef', dict] = attr.ib(
         default=None,
-        converter=ChannelOutputLocationRef.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelOutputLocationRef)),
+        converter=PropChannelOutputLocationRef.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelOutputLocationRef)),
         metadata={AttrMeta.PROPERTY_NAME: "Destination"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mssmoothgroupsettings.html#cfn-medialive-channel-mssmoothgroupsettings-destination"""
@@ -2577,7 +2577,7 @@ class ChannelMsSmoothGroupSettings(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mssmoothgroupsettings.html#cfn-medialive-channel-mssmoothgroupsettings-timestampoffsetmode"""
 
 @attr.s
-class ChannelWavSettings(Property):
+class PropChannelWavSettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.WavSettings"
 
@@ -2611,7 +2611,7 @@ class ChannelWavSettings(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-wavsettings.html#cfn-medialive-channel-wavsettings-samplerate"""
 
 @attr.s
-class ChannelCdiInputSpecification(Property):
+class PropChannelCdiInputSpecification(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.CdiInputSpecification"
 
@@ -2631,7 +2631,7 @@ class ChannelCdiInputSpecification(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-cdiinputspecification.html#cfn-medialive-channel-cdiinputspecification-resolution"""
 
 @attr.s
-class ChannelHtmlMotionGraphicsSettings(Property):
+class PropChannelHtmlMotionGraphicsSettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.HtmlMotionGraphicsSettings"
 
@@ -2644,7 +2644,7 @@ class ChannelHtmlMotionGraphicsSettings(Property):
     
 
 @attr.s
-class ChannelHlsS3Settings(Property):
+class PropChannelHlsS3Settings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.HlsS3Settings"
 
@@ -2664,7 +2664,7 @@ class ChannelHlsS3Settings(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlss3settings.html#cfn-medialive-channel-hlss3settings-cannedacl"""
 
 @attr.s
-class ChannelBlackoutSlate(Property):
+class PropChannelBlackoutSlate(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.BlackoutSlate"
 
@@ -2680,10 +2680,10 @@ class ChannelBlackoutSlate(Property):
     """
     AWS_OBJECT_TYPE = "AWS::MediaLive::Channel.BlackoutSlate"
     
-    p_BlackoutSlateImage: typing.Union['ChannelInputLocation', dict] = attr.ib(
+    p_BlackoutSlateImage: typing.Union['PropChannelInputLocation', dict] = attr.ib(
         default=None,
-        converter=ChannelInputLocation.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelInputLocation)),
+        converter=PropChannelInputLocation.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelInputLocation)),
         metadata={AttrMeta.PROPERTY_NAME: "BlackoutSlateImage"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-blackoutslate.html#cfn-medialive-channel-blackoutslate-blackoutslateimage"""
@@ -2693,10 +2693,10 @@ class ChannelBlackoutSlate(Property):
         metadata={AttrMeta.PROPERTY_NAME: "NetworkEndBlackout"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-blackoutslate.html#cfn-medialive-channel-blackoutslate-networkendblackout"""
-    p_NetworkEndBlackoutImage: typing.Union['ChannelInputLocation', dict] = attr.ib(
+    p_NetworkEndBlackoutImage: typing.Union['PropChannelInputLocation', dict] = attr.ib(
         default=None,
-        converter=ChannelInputLocation.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelInputLocation)),
+        converter=PropChannelInputLocation.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelInputLocation)),
         metadata={AttrMeta.PROPERTY_NAME: "NetworkEndBlackoutImage"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-blackoutslate.html#cfn-medialive-channel-blackoutslate-networkendblackoutimage"""
@@ -2714,7 +2714,7 @@ class ChannelBlackoutSlate(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-blackoutslate.html#cfn-medialive-channel-blackoutslate-state"""
 
 @attr.s
-class ChannelColorSpacePassthroughSettings(Property):
+class PropChannelColorSpacePassthroughSettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.ColorSpacePassthroughSettings"
 
@@ -2727,7 +2727,7 @@ class ChannelColorSpacePassthroughSettings(Property):
     
 
 @attr.s
-class ChannelHlsMediaStoreSettings(Property):
+class PropChannelHlsMediaStoreSettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.HlsMediaStoreSettings"
 
@@ -2775,7 +2775,7 @@ class ChannelHlsMediaStoreSettings(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsmediastoresettings.html#cfn-medialive-channel-hlsmediastoresettings-restartdelay"""
 
 @attr.s
-class ChannelM3u8Settings(Property):
+class PropChannelM3u8Settings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.M3u8Settings"
 
@@ -2907,7 +2907,7 @@ class ChannelM3u8Settings(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m3u8settings.html#cfn-medialive-channel-m3u8settings-videopid"""
 
 @attr.s
-class ChannelAribDestinationSettings(Property):
+class PropChannelAribDestinationSettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.AribDestinationSettings"
 
@@ -2920,7 +2920,7 @@ class ChannelAribDestinationSettings(Property):
     
 
 @attr.s
-class ChannelUdpGroupSettings(Property):
+class PropChannelUdpGroupSettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.UdpGroupSettings"
 
@@ -2954,7 +2954,7 @@ class ChannelUdpGroupSettings(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-udpgroupsettings.html#cfn-medialive-channel-udpgroupsettings-timedmetadataid3period"""
 
 @attr.s
-class ChannelFrameCaptureHlsSettings(Property):
+class PropChannelFrameCaptureHlsSettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.FrameCaptureHlsSettings"
 
@@ -2967,7 +2967,7 @@ class ChannelFrameCaptureHlsSettings(Property):
     
 
 @attr.s
-class ChannelTemporalFilterSettings(Property):
+class PropChannelTemporalFilterSettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.TemporalFilterSettings"
 
@@ -2994,7 +2994,7 @@ class ChannelTemporalFilterSettings(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-temporalfiltersettings.html#cfn-medialive-channel-temporalfiltersettings-strength"""
 
 @attr.s
-class ChannelHlsAkamaiSettings(Property):
+class PropChannelHlsAkamaiSettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.HlsAkamaiSettings"
 
@@ -3056,7 +3056,7 @@ class ChannelHlsAkamaiSettings(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsakamaisettings.html#cfn-medialive-channel-hlsakamaisettings-token"""
 
 @attr.s
-class ChannelDvbSubDestinationSettings(Property):
+class PropChannelDvbSubDestinationSettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.DvbSubDestinationSettings"
 
@@ -3102,10 +3102,10 @@ class ChannelDvbSubDestinationSettings(Property):
         metadata={AttrMeta.PROPERTY_NAME: "BackgroundOpacity"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-dvbsubdestinationsettings.html#cfn-medialive-channel-dvbsubdestinationsettings-backgroundopacity"""
-    p_Font: typing.Union['ChannelInputLocation', dict] = attr.ib(
+    p_Font: typing.Union['PropChannelInputLocation', dict] = attr.ib(
         default=None,
-        converter=ChannelInputLocation.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelInputLocation)),
+        converter=PropChannelInputLocation.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelInputLocation)),
         metadata={AttrMeta.PROPERTY_NAME: "Font"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-dvbsubdestinationsettings.html#cfn-medialive-channel-dvbsubdestinationsettings-font"""
@@ -3189,7 +3189,7 @@ class ChannelDvbSubDestinationSettings(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-dvbsubdestinationsettings.html#cfn-medialive-channel-dvbsubdestinationsettings-yposition"""
 
 @attr.s
-class ChannelMotionGraphicsSettings(Property):
+class PropChannelMotionGraphicsSettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.MotionGraphicsSettings"
 
@@ -3201,16 +3201,16 @@ class ChannelMotionGraphicsSettings(Property):
     """
     AWS_OBJECT_TYPE = "AWS::MediaLive::Channel.MotionGraphicsSettings"
     
-    p_HtmlMotionGraphicsSettings: typing.Union['ChannelHtmlMotionGraphicsSettings', dict] = attr.ib(
+    p_HtmlMotionGraphicsSettings: typing.Union['PropChannelHtmlMotionGraphicsSettings', dict] = attr.ib(
         default=None,
-        converter=ChannelHtmlMotionGraphicsSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelHtmlMotionGraphicsSettings)),
+        converter=PropChannelHtmlMotionGraphicsSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelHtmlMotionGraphicsSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "HtmlMotionGraphicsSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-motiongraphicssettings.html#cfn-medialive-channel-motiongraphicssettings-htmlmotiongraphicssettings"""
 
 @attr.s
-class ChannelFrameCaptureCdnSettings(Property):
+class PropChannelFrameCaptureCdnSettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.FrameCaptureCdnSettings"
 
@@ -3222,16 +3222,16 @@ class ChannelFrameCaptureCdnSettings(Property):
     """
     AWS_OBJECT_TYPE = "AWS::MediaLive::Channel.FrameCaptureCdnSettings"
     
-    p_FrameCaptureS3Settings: typing.Union['ChannelFrameCaptureS3Settings', dict] = attr.ib(
+    p_FrameCaptureS3Settings: typing.Union['PropChannelFrameCaptureS3Settings', dict] = attr.ib(
         default=None,
-        converter=ChannelFrameCaptureS3Settings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelFrameCaptureS3Settings)),
+        converter=PropChannelFrameCaptureS3Settings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelFrameCaptureS3Settings)),
         metadata={AttrMeta.PROPERTY_NAME: "FrameCaptureS3Settings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-framecapturecdnsettings.html#cfn-medialive-channel-framecapturecdnsettings-framecaptures3settings"""
 
 @attr.s
-class ChannelInputLossBehavior(Property):
+class PropChannelInputLossBehavior(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.InputLossBehavior"
 
@@ -3259,10 +3259,10 @@ class ChannelInputLossBehavior(Property):
         metadata={AttrMeta.PROPERTY_NAME: "InputLossImageColor"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputlossbehavior.html#cfn-medialive-channel-inputlossbehavior-inputlossimagecolor"""
-    p_InputLossImageSlate: typing.Union['ChannelInputLocation', dict] = attr.ib(
+    p_InputLossImageSlate: typing.Union['PropChannelInputLocation', dict] = attr.ib(
         default=None,
-        converter=ChannelInputLocation.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelInputLocation)),
+        converter=PropChannelInputLocation.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelInputLocation)),
         metadata={AttrMeta.PROPERTY_NAME: "InputLossImageSlate"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputlossbehavior.html#cfn-medialive-channel-inputlossbehavior-inputlossimageslate"""
@@ -3280,7 +3280,7 @@ class ChannelInputLossBehavior(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputlossbehavior.html#cfn-medialive-channel-inputlossbehavior-repeatframemsec"""
 
 @attr.s
-class ChannelHlsCdnSettings(Property):
+class PropChannelHlsCdnSettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.HlsCdnSettings"
 
@@ -3296,44 +3296,44 @@ class ChannelHlsCdnSettings(Property):
     """
     AWS_OBJECT_TYPE = "AWS::MediaLive::Channel.HlsCdnSettings"
     
-    p_HlsAkamaiSettings: typing.Union['ChannelHlsAkamaiSettings', dict] = attr.ib(
+    p_HlsAkamaiSettings: typing.Union['PropChannelHlsAkamaiSettings', dict] = attr.ib(
         default=None,
-        converter=ChannelHlsAkamaiSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelHlsAkamaiSettings)),
+        converter=PropChannelHlsAkamaiSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelHlsAkamaiSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "HlsAkamaiSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlscdnsettings.html#cfn-medialive-channel-hlscdnsettings-hlsakamaisettings"""
-    p_HlsBasicPutSettings: typing.Union['ChannelHlsBasicPutSettings', dict] = attr.ib(
+    p_HlsBasicPutSettings: typing.Union['PropChannelHlsBasicPutSettings', dict] = attr.ib(
         default=None,
-        converter=ChannelHlsBasicPutSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelHlsBasicPutSettings)),
+        converter=PropChannelHlsBasicPutSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelHlsBasicPutSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "HlsBasicPutSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlscdnsettings.html#cfn-medialive-channel-hlscdnsettings-hlsbasicputsettings"""
-    p_HlsMediaStoreSettings: typing.Union['ChannelHlsMediaStoreSettings', dict] = attr.ib(
+    p_HlsMediaStoreSettings: typing.Union['PropChannelHlsMediaStoreSettings', dict] = attr.ib(
         default=None,
-        converter=ChannelHlsMediaStoreSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelHlsMediaStoreSettings)),
+        converter=PropChannelHlsMediaStoreSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelHlsMediaStoreSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "HlsMediaStoreSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlscdnsettings.html#cfn-medialive-channel-hlscdnsettings-hlsmediastoresettings"""
-    p_HlsS3Settings: typing.Union['ChannelHlsS3Settings', dict] = attr.ib(
+    p_HlsS3Settings: typing.Union['PropChannelHlsS3Settings', dict] = attr.ib(
         default=None,
-        converter=ChannelHlsS3Settings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelHlsS3Settings)),
+        converter=PropChannelHlsS3Settings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelHlsS3Settings)),
         metadata={AttrMeta.PROPERTY_NAME: "HlsS3Settings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlscdnsettings.html#cfn-medialive-channel-hlscdnsettings-hlss3settings"""
-    p_HlsWebdavSettings: typing.Union['ChannelHlsWebdavSettings', dict] = attr.ib(
+    p_HlsWebdavSettings: typing.Union['PropChannelHlsWebdavSettings', dict] = attr.ib(
         default=None,
-        converter=ChannelHlsWebdavSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelHlsWebdavSettings)),
+        converter=PropChannelHlsWebdavSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelHlsWebdavSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "HlsWebdavSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlscdnsettings.html#cfn-medialive-channel-hlscdnsettings-hlswebdavsettings"""
 
 @attr.s
-class ChannelArchiveCdnSettings(Property):
+class PropChannelArchiveCdnSettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.ArchiveCdnSettings"
 
@@ -3345,16 +3345,16 @@ class ChannelArchiveCdnSettings(Property):
     """
     AWS_OBJECT_TYPE = "AWS::MediaLive::Channel.ArchiveCdnSettings"
     
-    p_ArchiveS3Settings: typing.Union['ChannelArchiveS3Settings', dict] = attr.ib(
+    p_ArchiveS3Settings: typing.Union['PropChannelArchiveS3Settings', dict] = attr.ib(
         default=None,
-        converter=ChannelArchiveS3Settings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelArchiveS3Settings)),
+        converter=PropChannelArchiveS3Settings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelArchiveS3Settings)),
         metadata={AttrMeta.PROPERTY_NAME: "ArchiveS3Settings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-archivecdnsettings.html#cfn-medialive-channel-archivecdnsettings-archives3settings"""
 
 @attr.s
-class ChannelAudioTrackSelection(Property):
+class PropChannelAudioTrackSelection(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.AudioTrackSelection"
 
@@ -3366,16 +3366,16 @@ class ChannelAudioTrackSelection(Property):
     """
     AWS_OBJECT_TYPE = "AWS::MediaLive::Channel.AudioTrackSelection"
     
-    p_Tracks: typing.List[typing.Union['ChannelAudioTrack', dict]] = attr.ib(
+    p_Tracks: typing.List[typing.Union['PropChannelAudioTrack', dict]] = attr.ib(
         default=None,
-        converter=ChannelAudioTrack.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ChannelAudioTrack), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropChannelAudioTrack.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropChannelAudioTrack), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Tracks"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiotrackselection.html#cfn-medialive-channel-audiotrackselection-tracks"""
 
 @attr.s
-class ChannelStaticKeySettings(Property):
+class PropChannelStaticKeySettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.StaticKeySettings"
 
@@ -3388,10 +3388,10 @@ class ChannelStaticKeySettings(Property):
     """
     AWS_OBJECT_TYPE = "AWS::MediaLive::Channel.StaticKeySettings"
     
-    p_KeyProviderServer: typing.Union['ChannelInputLocation', dict] = attr.ib(
+    p_KeyProviderServer: typing.Union['PropChannelInputLocation', dict] = attr.ib(
         default=None,
-        converter=ChannelInputLocation.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelInputLocation)),
+        converter=PropChannelInputLocation.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelInputLocation)),
         metadata={AttrMeta.PROPERTY_NAME: "KeyProviderServer"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-statickeysettings.html#cfn-medialive-channel-statickeysettings-keyproviderserver"""
@@ -3403,7 +3403,7 @@ class ChannelStaticKeySettings(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-statickeysettings.html#cfn-medialive-channel-statickeysettings-statickeyvalue"""
 
 @attr.s
-class ChannelAudioChannelMapping(Property):
+class PropChannelAudioChannelMapping(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.AudioChannelMapping"
 
@@ -3416,10 +3416,10 @@ class ChannelAudioChannelMapping(Property):
     """
     AWS_OBJECT_TYPE = "AWS::MediaLive::Channel.AudioChannelMapping"
     
-    p_InputChannelLevels: typing.List[typing.Union['ChannelInputChannelLevel', dict]] = attr.ib(
+    p_InputChannelLevels: typing.List[typing.Union['PropChannelInputChannelLevel', dict]] = attr.ib(
         default=None,
-        converter=ChannelInputChannelLevel.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ChannelInputChannelLevel), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropChannelInputChannelLevel.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropChannelInputChannelLevel), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "InputChannelLevels"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiochannelmapping.html#cfn-medialive-channel-audiochannelmapping-inputchannellevels"""
@@ -3431,7 +3431,7 @@ class ChannelAudioChannelMapping(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiochannelmapping.html#cfn-medialive-channel-audiochannelmapping-outputchannel"""
 
 @attr.s
-class ChannelH264FilterSettings(Property):
+class PropChannelH264FilterSettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.H264FilterSettings"
 
@@ -3443,16 +3443,16 @@ class ChannelH264FilterSettings(Property):
     """
     AWS_OBJECT_TYPE = "AWS::MediaLive::Channel.H264FilterSettings"
     
-    p_TemporalFilterSettings: typing.Union['ChannelTemporalFilterSettings', dict] = attr.ib(
+    p_TemporalFilterSettings: typing.Union['PropChannelTemporalFilterSettings', dict] = attr.ib(
         default=None,
-        converter=ChannelTemporalFilterSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelTemporalFilterSettings)),
+        converter=PropChannelTemporalFilterSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelTemporalFilterSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "TemporalFilterSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h264filtersettings.html#cfn-medialive-channel-h264filtersettings-temporalfiltersettings"""
 
 @attr.s
-class ChannelFailoverConditionSettings(Property):
+class PropChannelFailoverConditionSettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.FailoverConditionSettings"
 
@@ -3466,30 +3466,30 @@ class ChannelFailoverConditionSettings(Property):
     """
     AWS_OBJECT_TYPE = "AWS::MediaLive::Channel.FailoverConditionSettings"
     
-    p_AudioSilenceSettings: typing.Union['ChannelAudioSilenceFailoverSettings', dict] = attr.ib(
+    p_AudioSilenceSettings: typing.Union['PropChannelAudioSilenceFailoverSettings', dict] = attr.ib(
         default=None,
-        converter=ChannelAudioSilenceFailoverSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelAudioSilenceFailoverSettings)),
+        converter=PropChannelAudioSilenceFailoverSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelAudioSilenceFailoverSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "AudioSilenceSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-failoverconditionsettings.html#cfn-medialive-channel-failoverconditionsettings-audiosilencesettings"""
-    p_InputLossSettings: typing.Union['ChannelInputLossFailoverSettings', dict] = attr.ib(
+    p_InputLossSettings: typing.Union['PropChannelInputLossFailoverSettings', dict] = attr.ib(
         default=None,
-        converter=ChannelInputLossFailoverSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelInputLossFailoverSettings)),
+        converter=PropChannelInputLossFailoverSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelInputLossFailoverSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "InputLossSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-failoverconditionsettings.html#cfn-medialive-channel-failoverconditionsettings-inputlosssettings"""
-    p_VideoBlackSettings: typing.Union['ChannelVideoBlackFailoverSettings', dict] = attr.ib(
+    p_VideoBlackSettings: typing.Union['PropChannelVideoBlackFailoverSettings', dict] = attr.ib(
         default=None,
-        converter=ChannelVideoBlackFailoverSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelVideoBlackFailoverSettings)),
+        converter=PropChannelVideoBlackFailoverSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelVideoBlackFailoverSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "VideoBlackSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-failoverconditionsettings.html#cfn-medialive-channel-failoverconditionsettings-videoblacksettings"""
 
 @attr.s
-class ChannelAudioSelectorSettings(Property):
+class PropChannelAudioSelectorSettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.AudioSelectorSettings"
 
@@ -3503,30 +3503,30 @@ class ChannelAudioSelectorSettings(Property):
     """
     AWS_OBJECT_TYPE = "AWS::MediaLive::Channel.AudioSelectorSettings"
     
-    p_AudioLanguageSelection: typing.Union['ChannelAudioLanguageSelection', dict] = attr.ib(
+    p_AudioLanguageSelection: typing.Union['PropChannelAudioLanguageSelection', dict] = attr.ib(
         default=None,
-        converter=ChannelAudioLanguageSelection.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelAudioLanguageSelection)),
+        converter=PropChannelAudioLanguageSelection.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelAudioLanguageSelection)),
         metadata={AttrMeta.PROPERTY_NAME: "AudioLanguageSelection"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audioselectorsettings.html#cfn-medialive-channel-audioselectorsettings-audiolanguageselection"""
-    p_AudioPidSelection: typing.Union['ChannelAudioPidSelection', dict] = attr.ib(
+    p_AudioPidSelection: typing.Union['PropChannelAudioPidSelection', dict] = attr.ib(
         default=None,
-        converter=ChannelAudioPidSelection.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelAudioPidSelection)),
+        converter=PropChannelAudioPidSelection.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelAudioPidSelection)),
         metadata={AttrMeta.PROPERTY_NAME: "AudioPidSelection"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audioselectorsettings.html#cfn-medialive-channel-audioselectorsettings-audiopidselection"""
-    p_AudioTrackSelection: typing.Union['ChannelAudioTrackSelection', dict] = attr.ib(
+    p_AudioTrackSelection: typing.Union['PropChannelAudioTrackSelection', dict] = attr.ib(
         default=None,
-        converter=ChannelAudioTrackSelection.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelAudioTrackSelection)),
+        converter=PropChannelAudioTrackSelection.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelAudioTrackSelection)),
         metadata={AttrMeta.PROPERTY_NAME: "AudioTrackSelection"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audioselectorsettings.html#cfn-medialive-channel-audioselectorsettings-audiotrackselection"""
 
 @attr.s
-class ChannelVideoSelector(Property):
+class PropChannelVideoSelector(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.VideoSelector"
 
@@ -3547,10 +3547,10 @@ class ChannelVideoSelector(Property):
         metadata={AttrMeta.PROPERTY_NAME: "ColorSpace"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-videoselector.html#cfn-medialive-channel-videoselector-colorspace"""
-    p_ColorSpaceSettings: typing.Union['ChannelVideoSelectorColorSpaceSettings', dict] = attr.ib(
+    p_ColorSpaceSettings: typing.Union['PropChannelVideoSelectorColorSpaceSettings', dict] = attr.ib(
         default=None,
-        converter=ChannelVideoSelectorColorSpaceSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelVideoSelectorColorSpaceSettings)),
+        converter=PropChannelVideoSelectorColorSpaceSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelVideoSelectorColorSpaceSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "ColorSpaceSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-videoselector.html#cfn-medialive-channel-videoselector-colorspacesettings"""
@@ -3560,16 +3560,16 @@ class ChannelVideoSelector(Property):
         metadata={AttrMeta.PROPERTY_NAME: "ColorSpaceUsage"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-videoselector.html#cfn-medialive-channel-videoselector-colorspaceusage"""
-    p_SelectorSettings: typing.Union['ChannelVideoSelectorSettings', dict] = attr.ib(
+    p_SelectorSettings: typing.Union['PropChannelVideoSelectorSettings', dict] = attr.ib(
         default=None,
-        converter=ChannelVideoSelectorSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelVideoSelectorSettings)),
+        converter=PropChannelVideoSelectorSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelVideoSelectorSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "SelectorSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-videoselector.html#cfn-medialive-channel-videoselector-selectorsettings"""
 
 @attr.s
-class ChannelAvailConfiguration(Property):
+class PropChannelAvailConfiguration(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.AvailConfiguration"
 
@@ -3581,16 +3581,16 @@ class ChannelAvailConfiguration(Property):
     """
     AWS_OBJECT_TYPE = "AWS::MediaLive::Channel.AvailConfiguration"
     
-    p_AvailSettings: typing.Union['ChannelAvailSettings', dict] = attr.ib(
+    p_AvailSettings: typing.Union['PropChannelAvailSettings', dict] = attr.ib(
         default=None,
-        converter=ChannelAvailSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelAvailSettings)),
+        converter=PropChannelAvailSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelAvailSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "AvailSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-availconfiguration.html#cfn-medialive-channel-availconfiguration-availsettings"""
 
 @attr.s
-class ChannelAudioCodecSettings(Property):
+class PropChannelAudioCodecSettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.AudioCodecSettings"
 
@@ -3607,51 +3607,51 @@ class ChannelAudioCodecSettings(Property):
     """
     AWS_OBJECT_TYPE = "AWS::MediaLive::Channel.AudioCodecSettings"
     
-    p_AacSettings: typing.Union['ChannelAacSettings', dict] = attr.ib(
+    p_AacSettings: typing.Union['PropChannelAacSettings', dict] = attr.ib(
         default=None,
-        converter=ChannelAacSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelAacSettings)),
+        converter=PropChannelAacSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelAacSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "AacSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiocodecsettings.html#cfn-medialive-channel-audiocodecsettings-aacsettings"""
-    p_Ac3Settings: typing.Union['ChannelAc3Settings', dict] = attr.ib(
+    p_Ac3Settings: typing.Union['PropChannelAc3Settings', dict] = attr.ib(
         default=None,
-        converter=ChannelAc3Settings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelAc3Settings)),
+        converter=PropChannelAc3Settings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelAc3Settings)),
         metadata={AttrMeta.PROPERTY_NAME: "Ac3Settings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiocodecsettings.html#cfn-medialive-channel-audiocodecsettings-ac3settings"""
-    p_Eac3Settings: typing.Union['ChannelEac3Settings', dict] = attr.ib(
+    p_Eac3Settings: typing.Union['PropChannelEac3Settings', dict] = attr.ib(
         default=None,
-        converter=ChannelEac3Settings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelEac3Settings)),
+        converter=PropChannelEac3Settings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelEac3Settings)),
         metadata={AttrMeta.PROPERTY_NAME: "Eac3Settings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiocodecsettings.html#cfn-medialive-channel-audiocodecsettings-eac3settings"""
-    p_Mp2Settings: typing.Union['ChannelMp2Settings', dict] = attr.ib(
+    p_Mp2Settings: typing.Union['PropChannelMp2Settings', dict] = attr.ib(
         default=None,
-        converter=ChannelMp2Settings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelMp2Settings)),
+        converter=PropChannelMp2Settings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelMp2Settings)),
         metadata={AttrMeta.PROPERTY_NAME: "Mp2Settings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiocodecsettings.html#cfn-medialive-channel-audiocodecsettings-mp2settings"""
-    p_PassThroughSettings: typing.Union['ChannelPassThroughSettings', dict] = attr.ib(
+    p_PassThroughSettings: typing.Union['PropChannelPassThroughSettings', dict] = attr.ib(
         default=None,
-        converter=ChannelPassThroughSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelPassThroughSettings)),
+        converter=PropChannelPassThroughSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelPassThroughSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "PassThroughSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiocodecsettings.html#cfn-medialive-channel-audiocodecsettings-passthroughsettings"""
-    p_WavSettings: typing.Union['ChannelWavSettings', dict] = attr.ib(
+    p_WavSettings: typing.Union['PropChannelWavSettings', dict] = attr.ib(
         default=None,
-        converter=ChannelWavSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelWavSettings)),
+        converter=PropChannelWavSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelWavSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "WavSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiocodecsettings.html#cfn-medialive-channel-audiocodecsettings-wavsettings"""
 
 @attr.s
-class ChannelOutputDestination(Property):
+class PropChannelOutputDestination(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.OutputDestination"
 
@@ -3672,30 +3672,30 @@ class ChannelOutputDestination(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Id"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputdestination.html#cfn-medialive-channel-outputdestination-id"""
-    p_MediaPackageSettings: typing.List[typing.Union['ChannelMediaPackageOutputDestinationSettings', dict]] = attr.ib(
+    p_MediaPackageSettings: typing.List[typing.Union['PropChannelMediaPackageOutputDestinationSettings', dict]] = attr.ib(
         default=None,
-        converter=ChannelMediaPackageOutputDestinationSettings.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ChannelMediaPackageOutputDestinationSettings), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropChannelMediaPackageOutputDestinationSettings.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropChannelMediaPackageOutputDestinationSettings), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "MediaPackageSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputdestination.html#cfn-medialive-channel-outputdestination-mediapackagesettings"""
-    p_MultiplexSettings: typing.Union['ChannelMultiplexProgramChannelDestinationSettings', dict] = attr.ib(
+    p_MultiplexSettings: typing.Union['PropChannelMultiplexProgramChannelDestinationSettings', dict] = attr.ib(
         default=None,
-        converter=ChannelMultiplexProgramChannelDestinationSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelMultiplexProgramChannelDestinationSettings)),
+        converter=PropChannelMultiplexProgramChannelDestinationSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelMultiplexProgramChannelDestinationSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "MultiplexSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputdestination.html#cfn-medialive-channel-outputdestination-multiplexsettings"""
-    p_Settings: typing.List[typing.Union['ChannelOutputDestinationSettings', dict]] = attr.ib(
+    p_Settings: typing.List[typing.Union['PropChannelOutputDestinationSettings', dict]] = attr.ib(
         default=None,
-        converter=ChannelOutputDestinationSettings.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ChannelOutputDestinationSettings), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropChannelOutputDestinationSettings.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropChannelOutputDestinationSettings), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Settings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputdestination.html#cfn-medialive-channel-outputdestination-settings"""
 
 @attr.s
-class ChannelMpeg2FilterSettings(Property):
+class PropChannelMpeg2FilterSettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.Mpeg2FilterSettings"
 
@@ -3707,16 +3707,16 @@ class ChannelMpeg2FilterSettings(Property):
     """
     AWS_OBJECT_TYPE = "AWS::MediaLive::Channel.Mpeg2FilterSettings"
     
-    p_TemporalFilterSettings: typing.Union['ChannelTemporalFilterSettings', dict] = attr.ib(
+    p_TemporalFilterSettings: typing.Union['PropChannelTemporalFilterSettings', dict] = attr.ib(
         default=None,
-        converter=ChannelTemporalFilterSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelTemporalFilterSettings)),
+        converter=PropChannelTemporalFilterSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelTemporalFilterSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "TemporalFilterSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mpeg2filtersettings.html#cfn-medialive-channel-mpeg2filtersettings-temporalfiltersettings"""
 
 @attr.s
-class ChannelRtmpOutputSettings(Property):
+class PropChannelRtmpOutputSettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.RtmpOutputSettings"
 
@@ -3743,10 +3743,10 @@ class ChannelRtmpOutputSettings(Property):
         metadata={AttrMeta.PROPERTY_NAME: "ConnectionRetryInterval"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-rtmpoutputsettings.html#cfn-medialive-channel-rtmpoutputsettings-connectionretryinterval"""
-    p_Destination: typing.Union['ChannelOutputLocationRef', dict] = attr.ib(
+    p_Destination: typing.Union['PropChannelOutputLocationRef', dict] = attr.ib(
         default=None,
-        converter=ChannelOutputLocationRef.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelOutputLocationRef)),
+        converter=PropChannelOutputLocationRef.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelOutputLocationRef)),
         metadata={AttrMeta.PROPERTY_NAME: "Destination"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-rtmpoutputsettings.html#cfn-medialive-channel-rtmpoutputsettings-destination"""
@@ -3758,7 +3758,7 @@ class ChannelRtmpOutputSettings(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-rtmpoutputsettings.html#cfn-medialive-channel-rtmpoutputsettings-numretries"""
 
 @attr.s
-class ChannelM2tsSettings(Property):
+class PropChannelM2tsSettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.M2tsSettings"
 
@@ -3882,17 +3882,17 @@ class ChannelM2tsSettings(Property):
         metadata={AttrMeta.PROPERTY_NAME: "CcDescriptor"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m2tssettings.html#cfn-medialive-channel-m2tssettings-ccdescriptor"""
-    p_DvbNitSettings: typing.Union['ChannelDvbNitSettings', dict] = attr.ib(
+    p_DvbNitSettings: typing.Union['PropChannelDvbNitSettings', dict] = attr.ib(
         default=None,
-        converter=ChannelDvbNitSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelDvbNitSettings)),
+        converter=PropChannelDvbNitSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelDvbNitSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "DvbNitSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m2tssettings.html#cfn-medialive-channel-m2tssettings-dvbnitsettings"""
-    p_DvbSdtSettings: typing.Union['ChannelDvbSdtSettings', dict] = attr.ib(
+    p_DvbSdtSettings: typing.Union['PropChannelDvbSdtSettings', dict] = attr.ib(
         default=None,
-        converter=ChannelDvbSdtSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelDvbSdtSettings)),
+        converter=PropChannelDvbSdtSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelDvbSdtSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "DvbSdtSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m2tssettings.html#cfn-medialive-channel-m2tssettings-dvbsdtsettings"""
@@ -3902,10 +3902,10 @@ class ChannelM2tsSettings(Property):
         metadata={AttrMeta.PROPERTY_NAME: "DvbSubPids"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m2tssettings.html#cfn-medialive-channel-m2tssettings-dvbsubpids"""
-    p_DvbTdtSettings: typing.Union['ChannelDvbTdtSettings', dict] = attr.ib(
+    p_DvbTdtSettings: typing.Union['PropChannelDvbTdtSettings', dict] = attr.ib(
         default=None,
-        converter=ChannelDvbTdtSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelDvbTdtSettings)),
+        converter=PropChannelDvbTdtSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelDvbTdtSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "DvbTdtSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m2tssettings.html#cfn-medialive-channel-m2tssettings-dvbtdtsettings"""
@@ -4103,7 +4103,7 @@ class ChannelM2tsSettings(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-m2tssettings.html#cfn-medialive-channel-m2tssettings-videopid"""
 
 @attr.s
-class ChannelGlobalConfiguration(Property):
+class PropChannelGlobalConfiguration(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.GlobalConfiguration"
 
@@ -4132,10 +4132,10 @@ class ChannelGlobalConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "InputEndAction"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-globalconfiguration.html#cfn-medialive-channel-globalconfiguration-inputendaction"""
-    p_InputLossBehavior: typing.Union['ChannelInputLossBehavior', dict] = attr.ib(
+    p_InputLossBehavior: typing.Union['PropChannelInputLossBehavior', dict] = attr.ib(
         default=None,
-        converter=ChannelInputLossBehavior.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelInputLossBehavior)),
+        converter=PropChannelInputLossBehavior.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelInputLossBehavior)),
         metadata={AttrMeta.PROPERTY_NAME: "InputLossBehavior"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-globalconfiguration.html#cfn-medialive-channel-globalconfiguration-inputlossbehavior"""
@@ -4159,7 +4159,7 @@ class ChannelGlobalConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-globalconfiguration.html#cfn-medialive-channel-globalconfiguration-supportlowframerateinputs"""
 
 @attr.s
-class ChannelFrameCaptureGroupSettings(Property):
+class PropChannelFrameCaptureGroupSettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.FrameCaptureGroupSettings"
 
@@ -4172,23 +4172,23 @@ class ChannelFrameCaptureGroupSettings(Property):
     """
     AWS_OBJECT_TYPE = "AWS::MediaLive::Channel.FrameCaptureGroupSettings"
     
-    p_Destination: typing.Union['ChannelOutputLocationRef', dict] = attr.ib(
+    p_Destination: typing.Union['PropChannelOutputLocationRef', dict] = attr.ib(
         default=None,
-        converter=ChannelOutputLocationRef.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelOutputLocationRef)),
+        converter=PropChannelOutputLocationRef.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelOutputLocationRef)),
         metadata={AttrMeta.PROPERTY_NAME: "Destination"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-framecapturegroupsettings.html#cfn-medialive-channel-framecapturegroupsettings-destination"""
-    p_FrameCaptureCdnSettings: typing.Union['ChannelFrameCaptureCdnSettings', dict] = attr.ib(
+    p_FrameCaptureCdnSettings: typing.Union['PropChannelFrameCaptureCdnSettings', dict] = attr.ib(
         default=None,
-        converter=ChannelFrameCaptureCdnSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelFrameCaptureCdnSettings)),
+        converter=PropChannelFrameCaptureCdnSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelFrameCaptureCdnSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "FrameCaptureCdnSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-framecapturegroupsettings.html#cfn-medialive-channel-framecapturegroupsettings-framecapturecdnsettings"""
 
 @attr.s
-class ChannelArchiveGroupSettings(Property):
+class PropChannelArchiveGroupSettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.ArchiveGroupSettings"
 
@@ -4202,17 +4202,17 @@ class ChannelArchiveGroupSettings(Property):
     """
     AWS_OBJECT_TYPE = "AWS::MediaLive::Channel.ArchiveGroupSettings"
     
-    p_ArchiveCdnSettings: typing.Union['ChannelArchiveCdnSettings', dict] = attr.ib(
+    p_ArchiveCdnSettings: typing.Union['PropChannelArchiveCdnSettings', dict] = attr.ib(
         default=None,
-        converter=ChannelArchiveCdnSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelArchiveCdnSettings)),
+        converter=PropChannelArchiveCdnSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelArchiveCdnSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "ArchiveCdnSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-archivegroupsettings.html#cfn-medialive-channel-archivegroupsettings-archivecdnsettings"""
-    p_Destination: typing.Union['ChannelOutputLocationRef', dict] = attr.ib(
+    p_Destination: typing.Union['PropChannelOutputLocationRef', dict] = attr.ib(
         default=None,
-        converter=ChannelOutputLocationRef.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelOutputLocationRef)),
+        converter=PropChannelOutputLocationRef.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelOutputLocationRef)),
         metadata={AttrMeta.PROPERTY_NAME: "Destination"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-archivegroupsettings.html#cfn-medialive-channel-archivegroupsettings-destination"""
@@ -4224,7 +4224,7 @@ class ChannelArchiveGroupSettings(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-archivegroupsettings.html#cfn-medialive-channel-archivegroupsettings-rolloverinterval"""
 
 @attr.s
-class ChannelStandardHlsSettings(Property):
+class PropChannelStandardHlsSettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.StandardHlsSettings"
 
@@ -4243,16 +4243,16 @@ class ChannelStandardHlsSettings(Property):
         metadata={AttrMeta.PROPERTY_NAME: "AudioRenditionSets"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-standardhlssettings.html#cfn-medialive-channel-standardhlssettings-audiorenditionsets"""
-    p_M3u8Settings: typing.Union['ChannelM3u8Settings', dict] = attr.ib(
+    p_M3u8Settings: typing.Union['PropChannelM3u8Settings', dict] = attr.ib(
         default=None,
-        converter=ChannelM3u8Settings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelM3u8Settings)),
+        converter=PropChannelM3u8Settings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelM3u8Settings)),
         metadata={AttrMeta.PROPERTY_NAME: "M3u8Settings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-standardhlssettings.html#cfn-medialive-channel-standardhlssettings-m3u8settings"""
 
 @attr.s
-class ChannelArchiveContainerSettings(Property):
+class PropChannelArchiveContainerSettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.ArchiveContainerSettings"
 
@@ -4265,23 +4265,23 @@ class ChannelArchiveContainerSettings(Property):
     """
     AWS_OBJECT_TYPE = "AWS::MediaLive::Channel.ArchiveContainerSettings"
     
-    p_M2tsSettings: typing.Union['ChannelM2tsSettings', dict] = attr.ib(
+    p_M2tsSettings: typing.Union['PropChannelM2tsSettings', dict] = attr.ib(
         default=None,
-        converter=ChannelM2tsSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelM2tsSettings)),
+        converter=PropChannelM2tsSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelM2tsSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "M2tsSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-archivecontainersettings.html#cfn-medialive-channel-archivecontainersettings-m2tssettings"""
-    p_RawSettings: typing.Union['ChannelRawSettings', dict] = attr.ib(
+    p_RawSettings: typing.Union['PropChannelRawSettings', dict] = attr.ib(
         default=None,
-        converter=ChannelRawSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelRawSettings)),
+        converter=PropChannelRawSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelRawSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "RawSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-archivecontainersettings.html#cfn-medialive-channel-archivecontainersettings-rawsettings"""
 
 @attr.s
-class ChannelH264ColorSpaceSettings(Property):
+class PropChannelH264ColorSpaceSettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.H264ColorSpaceSettings"
 
@@ -4295,30 +4295,30 @@ class ChannelH264ColorSpaceSettings(Property):
     """
     AWS_OBJECT_TYPE = "AWS::MediaLive::Channel.H264ColorSpaceSettings"
     
-    p_ColorSpacePassthroughSettings: typing.Union['ChannelColorSpacePassthroughSettings', dict] = attr.ib(
+    p_ColorSpacePassthroughSettings: typing.Union['PropChannelColorSpacePassthroughSettings', dict] = attr.ib(
         default=None,
-        converter=ChannelColorSpacePassthroughSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelColorSpacePassthroughSettings)),
+        converter=PropChannelColorSpacePassthroughSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelColorSpacePassthroughSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "ColorSpacePassthroughSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h264colorspacesettings.html#cfn-medialive-channel-h264colorspacesettings-colorspacepassthroughsettings"""
-    p_Rec601Settings: typing.Union['ChannelRec601Settings', dict] = attr.ib(
+    p_Rec601Settings: typing.Union['PropChannelRec601Settings', dict] = attr.ib(
         default=None,
-        converter=ChannelRec601Settings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelRec601Settings)),
+        converter=PropChannelRec601Settings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelRec601Settings)),
         metadata={AttrMeta.PROPERTY_NAME: "Rec601Settings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h264colorspacesettings.html#cfn-medialive-channel-h264colorspacesettings-rec601settings"""
-    p_Rec709Settings: typing.Union['ChannelRec709Settings', dict] = attr.ib(
+    p_Rec709Settings: typing.Union['PropChannelRec709Settings', dict] = attr.ib(
         default=None,
-        converter=ChannelRec709Settings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelRec709Settings)),
+        converter=PropChannelRec709Settings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelRec709Settings)),
         metadata={AttrMeta.PROPERTY_NAME: "Rec709Settings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h264colorspacesettings.html#cfn-medialive-channel-h264colorspacesettings-rec709settings"""
 
 @attr.s
-class ChannelH265ColorSpaceSettings(Property):
+class PropChannelH265ColorSpaceSettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.H265ColorSpaceSettings"
 
@@ -4333,37 +4333,37 @@ class ChannelH265ColorSpaceSettings(Property):
     """
     AWS_OBJECT_TYPE = "AWS::MediaLive::Channel.H265ColorSpaceSettings"
     
-    p_ColorSpacePassthroughSettings: typing.Union['ChannelColorSpacePassthroughSettings', dict] = attr.ib(
+    p_ColorSpacePassthroughSettings: typing.Union['PropChannelColorSpacePassthroughSettings', dict] = attr.ib(
         default=None,
-        converter=ChannelColorSpacePassthroughSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelColorSpacePassthroughSettings)),
+        converter=PropChannelColorSpacePassthroughSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelColorSpacePassthroughSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "ColorSpacePassthroughSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h265colorspacesettings.html#cfn-medialive-channel-h265colorspacesettings-colorspacepassthroughsettings"""
-    p_Hdr10Settings: typing.Union['ChannelHdr10Settings', dict] = attr.ib(
+    p_Hdr10Settings: typing.Union['PropChannelHdr10Settings', dict] = attr.ib(
         default=None,
-        converter=ChannelHdr10Settings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelHdr10Settings)),
+        converter=PropChannelHdr10Settings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelHdr10Settings)),
         metadata={AttrMeta.PROPERTY_NAME: "Hdr10Settings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h265colorspacesettings.html#cfn-medialive-channel-h265colorspacesettings-hdr10settings"""
-    p_Rec601Settings: typing.Union['ChannelRec601Settings', dict] = attr.ib(
+    p_Rec601Settings: typing.Union['PropChannelRec601Settings', dict] = attr.ib(
         default=None,
-        converter=ChannelRec601Settings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelRec601Settings)),
+        converter=PropChannelRec601Settings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelRec601Settings)),
         metadata={AttrMeta.PROPERTY_NAME: "Rec601Settings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h265colorspacesettings.html#cfn-medialive-channel-h265colorspacesettings-rec601settings"""
-    p_Rec709Settings: typing.Union['ChannelRec709Settings', dict] = attr.ib(
+    p_Rec709Settings: typing.Union['PropChannelRec709Settings', dict] = attr.ib(
         default=None,
-        converter=ChannelRec709Settings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelRec709Settings)),
+        converter=PropChannelRec709Settings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelRec709Settings)),
         metadata={AttrMeta.PROPERTY_NAME: "Rec709Settings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h265colorspacesettings.html#cfn-medialive-channel-h265colorspacesettings-rec709settings"""
 
 @attr.s
-class ChannelAudioSelector(Property):
+class PropChannelAudioSelector(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.AudioSelector"
 
@@ -4382,16 +4382,16 @@ class ChannelAudioSelector(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Name"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audioselector.html#cfn-medialive-channel-audioselector-name"""
-    p_SelectorSettings: typing.Union['ChannelAudioSelectorSettings', dict] = attr.ib(
+    p_SelectorSettings: typing.Union['PropChannelAudioSelectorSettings', dict] = attr.ib(
         default=None,
-        converter=ChannelAudioSelectorSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelAudioSelectorSettings)),
+        converter=PropChannelAudioSelectorSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelAudioSelectorSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "SelectorSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audioselector.html#cfn-medialive-channel-audioselector-selectorsettings"""
 
 @attr.s
-class ChannelCaptionSelectorSettings(Property):
+class PropChannelCaptionSelectorSettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.CaptionSelectorSettings"
 
@@ -4409,58 +4409,58 @@ class ChannelCaptionSelectorSettings(Property):
     """
     AWS_OBJECT_TYPE = "AWS::MediaLive::Channel.CaptionSelectorSettings"
     
-    p_AncillarySourceSettings: typing.Union['ChannelAncillarySourceSettings', dict] = attr.ib(
+    p_AncillarySourceSettings: typing.Union['PropChannelAncillarySourceSettings', dict] = attr.ib(
         default=None,
-        converter=ChannelAncillarySourceSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelAncillarySourceSettings)),
+        converter=PropChannelAncillarySourceSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelAncillarySourceSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "AncillarySourceSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captionselectorsettings.html#cfn-medialive-channel-captionselectorsettings-ancillarysourcesettings"""
-    p_AribSourceSettings: typing.Union['ChannelAribSourceSettings', dict] = attr.ib(
+    p_AribSourceSettings: typing.Union['PropChannelAribSourceSettings', dict] = attr.ib(
         default=None,
-        converter=ChannelAribSourceSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelAribSourceSettings)),
+        converter=PropChannelAribSourceSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelAribSourceSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "AribSourceSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captionselectorsettings.html#cfn-medialive-channel-captionselectorsettings-aribsourcesettings"""
-    p_DvbSubSourceSettings: typing.Union['ChannelDvbSubSourceSettings', dict] = attr.ib(
+    p_DvbSubSourceSettings: typing.Union['PropChannelDvbSubSourceSettings', dict] = attr.ib(
         default=None,
-        converter=ChannelDvbSubSourceSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelDvbSubSourceSettings)),
+        converter=PropChannelDvbSubSourceSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelDvbSubSourceSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "DvbSubSourceSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captionselectorsettings.html#cfn-medialive-channel-captionselectorsettings-dvbsubsourcesettings"""
-    p_EmbeddedSourceSettings: typing.Union['ChannelEmbeddedSourceSettings', dict] = attr.ib(
+    p_EmbeddedSourceSettings: typing.Union['PropChannelEmbeddedSourceSettings', dict] = attr.ib(
         default=None,
-        converter=ChannelEmbeddedSourceSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelEmbeddedSourceSettings)),
+        converter=PropChannelEmbeddedSourceSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelEmbeddedSourceSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "EmbeddedSourceSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captionselectorsettings.html#cfn-medialive-channel-captionselectorsettings-embeddedsourcesettings"""
-    p_Scte20SourceSettings: typing.Union['ChannelScte20SourceSettings', dict] = attr.ib(
+    p_Scte20SourceSettings: typing.Union['PropChannelScte20SourceSettings', dict] = attr.ib(
         default=None,
-        converter=ChannelScte20SourceSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelScte20SourceSettings)),
+        converter=PropChannelScte20SourceSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelScte20SourceSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "Scte20SourceSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captionselectorsettings.html#cfn-medialive-channel-captionselectorsettings-scte20sourcesettings"""
-    p_Scte27SourceSettings: typing.Union['ChannelScte27SourceSettings', dict] = attr.ib(
+    p_Scte27SourceSettings: typing.Union['PropChannelScte27SourceSettings', dict] = attr.ib(
         default=None,
-        converter=ChannelScte27SourceSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelScte27SourceSettings)),
+        converter=PropChannelScte27SourceSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelScte27SourceSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "Scte27SourceSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captionselectorsettings.html#cfn-medialive-channel-captionselectorsettings-scte27sourcesettings"""
-    p_TeletextSourceSettings: typing.Union['ChannelTeletextSourceSettings', dict] = attr.ib(
+    p_TeletextSourceSettings: typing.Union['PropChannelTeletextSourceSettings', dict] = attr.ib(
         default=None,
-        converter=ChannelTeletextSourceSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelTeletextSourceSettings)),
+        converter=PropChannelTeletextSourceSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelTeletextSourceSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "TeletextSourceSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captionselectorsettings.html#cfn-medialive-channel-captionselectorsettings-teletextsourcesettings"""
 
 @attr.s
-class ChannelMotionGraphicsConfiguration(Property):
+class PropChannelMotionGraphicsConfiguration(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.MotionGraphicsConfiguration"
 
@@ -4479,16 +4479,16 @@ class ChannelMotionGraphicsConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "MotionGraphicsInsertion"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-motiongraphicsconfiguration.html#cfn-medialive-channel-motiongraphicsconfiguration-motiongraphicsinsertion"""
-    p_MotionGraphicsSettings: typing.Union['ChannelMotionGraphicsSettings', dict] = attr.ib(
+    p_MotionGraphicsSettings: typing.Union['PropChannelMotionGraphicsSettings', dict] = attr.ib(
         default=None,
-        converter=ChannelMotionGraphicsSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelMotionGraphicsSettings)),
+        converter=PropChannelMotionGraphicsSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelMotionGraphicsSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "MotionGraphicsSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-motiongraphicsconfiguration.html#cfn-medialive-channel-motiongraphicsconfiguration-motiongraphicssettings"""
 
 @attr.s
-class ChannelH265FilterSettings(Property):
+class PropChannelH265FilterSettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.H265FilterSettings"
 
@@ -4500,16 +4500,16 @@ class ChannelH265FilterSettings(Property):
     """
     AWS_OBJECT_TYPE = "AWS::MediaLive::Channel.H265FilterSettings"
     
-    p_TemporalFilterSettings: typing.Union['ChannelTemporalFilterSettings', dict] = attr.ib(
+    p_TemporalFilterSettings: typing.Union['PropChannelTemporalFilterSettings', dict] = attr.ib(
         default=None,
-        converter=ChannelTemporalFilterSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelTemporalFilterSettings)),
+        converter=PropChannelTemporalFilterSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelTemporalFilterSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "TemporalFilterSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h265filtersettings.html#cfn-medialive-channel-h265filtersettings-temporalfiltersettings"""
 
 @attr.s
-class ChannelCaptionDestinationSettings(Property):
+class PropChannelCaptionDestinationSettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.CaptionDestinationSettings"
 
@@ -4533,100 +4533,100 @@ class ChannelCaptionDestinationSettings(Property):
     """
     AWS_OBJECT_TYPE = "AWS::MediaLive::Channel.CaptionDestinationSettings"
     
-    p_AribDestinationSettings: typing.Union['ChannelAribDestinationSettings', dict] = attr.ib(
+    p_AribDestinationSettings: typing.Union['PropChannelAribDestinationSettings', dict] = attr.ib(
         default=None,
-        converter=ChannelAribDestinationSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelAribDestinationSettings)),
+        converter=PropChannelAribDestinationSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelAribDestinationSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "AribDestinationSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captiondestinationsettings.html#cfn-medialive-channel-captiondestinationsettings-aribdestinationsettings"""
-    p_BurnInDestinationSettings: typing.Union['ChannelBurnInDestinationSettings', dict] = attr.ib(
+    p_BurnInDestinationSettings: typing.Union['PropChannelBurnInDestinationSettings', dict] = attr.ib(
         default=None,
-        converter=ChannelBurnInDestinationSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelBurnInDestinationSettings)),
+        converter=PropChannelBurnInDestinationSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelBurnInDestinationSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "BurnInDestinationSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captiondestinationsettings.html#cfn-medialive-channel-captiondestinationsettings-burnindestinationsettings"""
-    p_DvbSubDestinationSettings: typing.Union['ChannelDvbSubDestinationSettings', dict] = attr.ib(
+    p_DvbSubDestinationSettings: typing.Union['PropChannelDvbSubDestinationSettings', dict] = attr.ib(
         default=None,
-        converter=ChannelDvbSubDestinationSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelDvbSubDestinationSettings)),
+        converter=PropChannelDvbSubDestinationSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelDvbSubDestinationSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "DvbSubDestinationSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captiondestinationsettings.html#cfn-medialive-channel-captiondestinationsettings-dvbsubdestinationsettings"""
-    p_EbuTtDDestinationSettings: typing.Union['ChannelEbuTtDDestinationSettings', dict] = attr.ib(
+    p_EbuTtDDestinationSettings: typing.Union['PropChannelEbuTtDDestinationSettings', dict] = attr.ib(
         default=None,
-        converter=ChannelEbuTtDDestinationSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelEbuTtDDestinationSettings)),
+        converter=PropChannelEbuTtDDestinationSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelEbuTtDDestinationSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "EbuTtDDestinationSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captiondestinationsettings.html#cfn-medialive-channel-captiondestinationsettings-ebuttddestinationsettings"""
-    p_EmbeddedDestinationSettings: typing.Union['ChannelEmbeddedDestinationSettings', dict] = attr.ib(
+    p_EmbeddedDestinationSettings: typing.Union['PropChannelEmbeddedDestinationSettings', dict] = attr.ib(
         default=None,
-        converter=ChannelEmbeddedDestinationSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelEmbeddedDestinationSettings)),
+        converter=PropChannelEmbeddedDestinationSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelEmbeddedDestinationSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "EmbeddedDestinationSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captiondestinationsettings.html#cfn-medialive-channel-captiondestinationsettings-embeddeddestinationsettings"""
-    p_EmbeddedPlusScte20DestinationSettings: typing.Union['ChannelEmbeddedPlusScte20DestinationSettings', dict] = attr.ib(
+    p_EmbeddedPlusScte20DestinationSettings: typing.Union['PropChannelEmbeddedPlusScte20DestinationSettings', dict] = attr.ib(
         default=None,
-        converter=ChannelEmbeddedPlusScte20DestinationSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelEmbeddedPlusScte20DestinationSettings)),
+        converter=PropChannelEmbeddedPlusScte20DestinationSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelEmbeddedPlusScte20DestinationSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "EmbeddedPlusScte20DestinationSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captiondestinationsettings.html#cfn-medialive-channel-captiondestinationsettings-embeddedplusscte20destinationsettings"""
-    p_RtmpCaptionInfoDestinationSettings: typing.Union['ChannelRtmpCaptionInfoDestinationSettings', dict] = attr.ib(
+    p_RtmpCaptionInfoDestinationSettings: typing.Union['PropChannelRtmpCaptionInfoDestinationSettings', dict] = attr.ib(
         default=None,
-        converter=ChannelRtmpCaptionInfoDestinationSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelRtmpCaptionInfoDestinationSettings)),
+        converter=PropChannelRtmpCaptionInfoDestinationSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelRtmpCaptionInfoDestinationSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "RtmpCaptionInfoDestinationSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captiondestinationsettings.html#cfn-medialive-channel-captiondestinationsettings-rtmpcaptioninfodestinationsettings"""
-    p_Scte20PlusEmbeddedDestinationSettings: typing.Union['ChannelScte20PlusEmbeddedDestinationSettings', dict] = attr.ib(
+    p_Scte20PlusEmbeddedDestinationSettings: typing.Union['PropChannelScte20PlusEmbeddedDestinationSettings', dict] = attr.ib(
         default=None,
-        converter=ChannelScte20PlusEmbeddedDestinationSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelScte20PlusEmbeddedDestinationSettings)),
+        converter=PropChannelScte20PlusEmbeddedDestinationSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelScte20PlusEmbeddedDestinationSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "Scte20PlusEmbeddedDestinationSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captiondestinationsettings.html#cfn-medialive-channel-captiondestinationsettings-scte20plusembeddeddestinationsettings"""
-    p_Scte27DestinationSettings: typing.Union['ChannelScte27DestinationSettings', dict] = attr.ib(
+    p_Scte27DestinationSettings: typing.Union['PropChannelScte27DestinationSettings', dict] = attr.ib(
         default=None,
-        converter=ChannelScte27DestinationSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelScte27DestinationSettings)),
+        converter=PropChannelScte27DestinationSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelScte27DestinationSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "Scte27DestinationSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captiondestinationsettings.html#cfn-medialive-channel-captiondestinationsettings-scte27destinationsettings"""
-    p_SmpteTtDestinationSettings: typing.Union['ChannelSmpteTtDestinationSettings', dict] = attr.ib(
+    p_SmpteTtDestinationSettings: typing.Union['PropChannelSmpteTtDestinationSettings', dict] = attr.ib(
         default=None,
-        converter=ChannelSmpteTtDestinationSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelSmpteTtDestinationSettings)),
+        converter=PropChannelSmpteTtDestinationSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelSmpteTtDestinationSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "SmpteTtDestinationSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captiondestinationsettings.html#cfn-medialive-channel-captiondestinationsettings-smptettdestinationsettings"""
-    p_TeletextDestinationSettings: typing.Union['ChannelTeletextDestinationSettings', dict] = attr.ib(
+    p_TeletextDestinationSettings: typing.Union['PropChannelTeletextDestinationSettings', dict] = attr.ib(
         default=None,
-        converter=ChannelTeletextDestinationSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelTeletextDestinationSettings)),
+        converter=PropChannelTeletextDestinationSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelTeletextDestinationSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "TeletextDestinationSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captiondestinationsettings.html#cfn-medialive-channel-captiondestinationsettings-teletextdestinationsettings"""
-    p_TtmlDestinationSettings: typing.Union['ChannelTtmlDestinationSettings', dict] = attr.ib(
+    p_TtmlDestinationSettings: typing.Union['PropChannelTtmlDestinationSettings', dict] = attr.ib(
         default=None,
-        converter=ChannelTtmlDestinationSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelTtmlDestinationSettings)),
+        converter=PropChannelTtmlDestinationSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelTtmlDestinationSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "TtmlDestinationSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captiondestinationsettings.html#cfn-medialive-channel-captiondestinationsettings-ttmldestinationsettings"""
-    p_WebvttDestinationSettings: typing.Union['ChannelWebvttDestinationSettings', dict] = attr.ib(
+    p_WebvttDestinationSettings: typing.Union['PropChannelWebvttDestinationSettings', dict] = attr.ib(
         default=None,
-        converter=ChannelWebvttDestinationSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelWebvttDestinationSettings)),
+        converter=PropChannelWebvttDestinationSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelWebvttDestinationSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "WebvttDestinationSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captiondestinationsettings.html#cfn-medialive-channel-captiondestinationsettings-webvttdestinationsettings"""
 
 @attr.s
-class ChannelKeyProviderSettings(Property):
+class PropChannelKeyProviderSettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.KeyProviderSettings"
 
@@ -4638,16 +4638,16 @@ class ChannelKeyProviderSettings(Property):
     """
     AWS_OBJECT_TYPE = "AWS::MediaLive::Channel.KeyProviderSettings"
     
-    p_StaticKeySettings: typing.Union['ChannelStaticKeySettings', dict] = attr.ib(
+    p_StaticKeySettings: typing.Union['PropChannelStaticKeySettings', dict] = attr.ib(
         default=None,
-        converter=ChannelStaticKeySettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelStaticKeySettings)),
+        converter=PropChannelStaticKeySettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelStaticKeySettings)),
         metadata={AttrMeta.PROPERTY_NAME: "StaticKeySettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-keyprovidersettings.html#cfn-medialive-channel-keyprovidersettings-statickeysettings"""
 
 @attr.s
-class ChannelRemixSettings(Property):
+class PropChannelRemixSettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.RemixSettings"
 
@@ -4661,10 +4661,10 @@ class ChannelRemixSettings(Property):
     """
     AWS_OBJECT_TYPE = "AWS::MediaLive::Channel.RemixSettings"
     
-    p_ChannelMappings: typing.List[typing.Union['ChannelAudioChannelMapping', dict]] = attr.ib(
+    p_ChannelMappings: typing.List[typing.Union['PropChannelAudioChannelMapping', dict]] = attr.ib(
         default=None,
-        converter=ChannelAudioChannelMapping.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ChannelAudioChannelMapping), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropChannelAudioChannelMapping.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropChannelAudioChannelMapping), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "ChannelMappings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-remixsettings.html#cfn-medialive-channel-remixsettings-channelmappings"""
@@ -4682,7 +4682,7 @@ class ChannelRemixSettings(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-remixsettings.html#cfn-medialive-channel-remixsettings-channelsout"""
 
 @attr.s
-class ChannelHlsSettings(Property):
+class PropChannelHlsSettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.HlsSettings"
 
@@ -4697,37 +4697,37 @@ class ChannelHlsSettings(Property):
     """
     AWS_OBJECT_TYPE = "AWS::MediaLive::Channel.HlsSettings"
     
-    p_AudioOnlyHlsSettings: typing.Union['ChannelAudioOnlyHlsSettings', dict] = attr.ib(
+    p_AudioOnlyHlsSettings: typing.Union['PropChannelAudioOnlyHlsSettings', dict] = attr.ib(
         default=None,
-        converter=ChannelAudioOnlyHlsSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelAudioOnlyHlsSettings)),
+        converter=PropChannelAudioOnlyHlsSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelAudioOnlyHlsSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "AudioOnlyHlsSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlssettings.html#cfn-medialive-channel-hlssettings-audioonlyhlssettings"""
-    p_Fmp4HlsSettings: typing.Union['ChannelFmp4HlsSettings', dict] = attr.ib(
+    p_Fmp4HlsSettings: typing.Union['PropChannelFmp4HlsSettings', dict] = attr.ib(
         default=None,
-        converter=ChannelFmp4HlsSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelFmp4HlsSettings)),
+        converter=PropChannelFmp4HlsSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelFmp4HlsSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "Fmp4HlsSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlssettings.html#cfn-medialive-channel-hlssettings-fmp4hlssettings"""
-    p_FrameCaptureHlsSettings: typing.Union['ChannelFrameCaptureHlsSettings', dict] = attr.ib(
+    p_FrameCaptureHlsSettings: typing.Union['PropChannelFrameCaptureHlsSettings', dict] = attr.ib(
         default=None,
-        converter=ChannelFrameCaptureHlsSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelFrameCaptureHlsSettings)),
+        converter=PropChannelFrameCaptureHlsSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelFrameCaptureHlsSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "FrameCaptureHlsSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlssettings.html#cfn-medialive-channel-hlssettings-framecapturehlssettings"""
-    p_StandardHlsSettings: typing.Union['ChannelStandardHlsSettings', dict] = attr.ib(
+    p_StandardHlsSettings: typing.Union['PropChannelStandardHlsSettings', dict] = attr.ib(
         default=None,
-        converter=ChannelStandardHlsSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelStandardHlsSettings)),
+        converter=PropChannelStandardHlsSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelStandardHlsSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "StandardHlsSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlssettings.html#cfn-medialive-channel-hlssettings-standardhlssettings"""
 
 @attr.s
-class ChannelHlsOutputSettings(Property):
+class PropChannelHlsOutputSettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.HlsOutputSettings"
 
@@ -4748,10 +4748,10 @@ class ChannelHlsOutputSettings(Property):
         metadata={AttrMeta.PROPERTY_NAME: "H265PackagingType"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsoutputsettings.html#cfn-medialive-channel-hlsoutputsettings-h265packagingtype"""
-    p_HlsSettings: typing.Union['ChannelHlsSettings', dict] = attr.ib(
+    p_HlsSettings: typing.Union['PropChannelHlsSettings', dict] = attr.ib(
         default=None,
-        converter=ChannelHlsSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelHlsSettings)),
+        converter=PropChannelHlsSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelHlsSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "HlsSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsoutputsettings.html#cfn-medialive-channel-hlsoutputsettings-hlssettings"""
@@ -4769,7 +4769,7 @@ class ChannelHlsOutputSettings(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsoutputsettings.html#cfn-medialive-channel-hlsoutputsettings-segmentmodifier"""
 
 @attr.s
-class ChannelFailoverCondition(Property):
+class PropChannelFailoverCondition(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.FailoverCondition"
 
@@ -4781,16 +4781,16 @@ class ChannelFailoverCondition(Property):
     """
     AWS_OBJECT_TYPE = "AWS::MediaLive::Channel.FailoverCondition"
     
-    p_FailoverConditionSettings: typing.Union['ChannelFailoverConditionSettings', dict] = attr.ib(
+    p_FailoverConditionSettings: typing.Union['PropChannelFailoverConditionSettings', dict] = attr.ib(
         default=None,
-        converter=ChannelFailoverConditionSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelFailoverConditionSettings)),
+        converter=PropChannelFailoverConditionSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelFailoverConditionSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "FailoverConditionSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-failovercondition.html#cfn-medialive-channel-failovercondition-failoverconditionsettings"""
 
 @attr.s
-class ChannelH264Settings(Property):
+class PropChannelH264Settings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.H264Settings"
 
@@ -4878,10 +4878,10 @@ class ChannelH264Settings(Property):
         metadata={AttrMeta.PROPERTY_NAME: "ColorMetadata"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h264settings.html#cfn-medialive-channel-h264settings-colormetadata"""
-    p_ColorSpaceSettings: typing.Union['ChannelH264ColorSpaceSettings', dict] = attr.ib(
+    p_ColorSpaceSettings: typing.Union['PropChannelH264ColorSpaceSettings', dict] = attr.ib(
         default=None,
-        converter=ChannelH264ColorSpaceSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelH264ColorSpaceSettings)),
+        converter=PropChannelH264ColorSpaceSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelH264ColorSpaceSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "ColorSpaceSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h264settings.html#cfn-medialive-channel-h264settings-colorspacesettings"""
@@ -4891,10 +4891,10 @@ class ChannelH264Settings(Property):
         metadata={AttrMeta.PROPERTY_NAME: "EntropyEncoding"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h264settings.html#cfn-medialive-channel-h264settings-entropyencoding"""
-    p_FilterSettings: typing.Union['ChannelH264FilterSettings', dict] = attr.ib(
+    p_FilterSettings: typing.Union['PropChannelH264FilterSettings', dict] = attr.ib(
         default=None,
-        converter=ChannelH264FilterSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelH264FilterSettings)),
+        converter=PropChannelH264FilterSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelH264FilterSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "FilterSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h264settings.html#cfn-medialive-channel-h264settings-filtersettings"""
@@ -5092,7 +5092,7 @@ class ChannelH264Settings(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h264settings.html#cfn-medialive-channel-h264settings-timecodeinsertion"""
 
 @attr.s
-class ChannelMpeg2Settings(Property):
+class PropChannelMpeg2Settings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.Mpeg2Settings"
 
@@ -5149,10 +5149,10 @@ class ChannelMpeg2Settings(Property):
         metadata={AttrMeta.PROPERTY_NAME: "DisplayAspectRatio"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mpeg2settings.html#cfn-medialive-channel-mpeg2settings-displayaspectratio"""
-    p_FilterSettings: typing.Union['ChannelMpeg2FilterSettings', dict] = attr.ib(
+    p_FilterSettings: typing.Union['PropChannelMpeg2FilterSettings', dict] = attr.ib(
         default=None,
-        converter=ChannelMpeg2FilterSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelMpeg2FilterSettings)),
+        converter=PropChannelMpeg2FilterSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelMpeg2FilterSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "FilterSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mpeg2settings.html#cfn-medialive-channel-mpeg2settings-filtersettings"""
@@ -5218,7 +5218,7 @@ class ChannelMpeg2Settings(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-mpeg2settings.html#cfn-medialive-channel-mpeg2settings-timecodeinsertion"""
 
 @attr.s
-class ChannelUdpContainerSettings(Property):
+class PropChannelUdpContainerSettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.UdpContainerSettings"
 
@@ -5230,16 +5230,16 @@ class ChannelUdpContainerSettings(Property):
     """
     AWS_OBJECT_TYPE = "AWS::MediaLive::Channel.UdpContainerSettings"
     
-    p_M2tsSettings: typing.Union['ChannelM2tsSettings', dict] = attr.ib(
+    p_M2tsSettings: typing.Union['PropChannelM2tsSettings', dict] = attr.ib(
         default=None,
-        converter=ChannelM2tsSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelM2tsSettings)),
+        converter=PropChannelM2tsSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelM2tsSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "M2tsSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-udpcontainersettings.html#cfn-medialive-channel-udpcontainersettings-m2tssettings"""
 
 @attr.s
-class ChannelHlsGroupSettings(Property):
+class PropChannelHlsGroupSettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.HlsGroupSettings"
 
@@ -5322,10 +5322,10 @@ class ChannelHlsGroupSettings(Property):
         metadata={AttrMeta.PROPERTY_NAME: "BaseUrlManifest1"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsgroupsettings.html#cfn-medialive-channel-hlsgroupsettings-baseurlmanifest1"""
-    p_CaptionLanguageMappings: typing.List[typing.Union['ChannelCaptionLanguageMapping', dict]] = attr.ib(
+    p_CaptionLanguageMappings: typing.List[typing.Union['PropChannelCaptionLanguageMapping', dict]] = attr.ib(
         default=None,
-        converter=ChannelCaptionLanguageMapping.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ChannelCaptionLanguageMapping), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropChannelCaptionLanguageMapping.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropChannelCaptionLanguageMapping), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "CaptionLanguageMappings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsgroupsettings.html#cfn-medialive-channel-hlsgroupsettings-captionlanguagemappings"""
@@ -5353,10 +5353,10 @@ class ChannelHlsGroupSettings(Property):
         metadata={AttrMeta.PROPERTY_NAME: "ConstantIv"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsgroupsettings.html#cfn-medialive-channel-hlsgroupsettings-constantiv"""
-    p_Destination: typing.Union['ChannelOutputLocationRef', dict] = attr.ib(
+    p_Destination: typing.Union['PropChannelOutputLocationRef', dict] = attr.ib(
         default=None,
-        converter=ChannelOutputLocationRef.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelOutputLocationRef)),
+        converter=PropChannelOutputLocationRef.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelOutputLocationRef)),
         metadata={AttrMeta.PROPERTY_NAME: "Destination"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsgroupsettings.html#cfn-medialive-channel-hlsgroupsettings-destination"""
@@ -5378,10 +5378,10 @@ class ChannelHlsGroupSettings(Property):
         metadata={AttrMeta.PROPERTY_NAME: "EncryptionType"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsgroupsettings.html#cfn-medialive-channel-hlsgroupsettings-encryptiontype"""
-    p_HlsCdnSettings: typing.Union['ChannelHlsCdnSettings', dict] = attr.ib(
+    p_HlsCdnSettings: typing.Union['PropChannelHlsCdnSettings', dict] = attr.ib(
         default=None,
-        converter=ChannelHlsCdnSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelHlsCdnSettings)),
+        converter=PropChannelHlsCdnSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelHlsCdnSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "HlsCdnSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsgroupsettings.html#cfn-medialive-channel-hlsgroupsettings-hlscdnsettings"""
@@ -5445,10 +5445,10 @@ class ChannelHlsGroupSettings(Property):
         metadata={AttrMeta.PROPERTY_NAME: "KeyFormatVersions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsgroupsettings.html#cfn-medialive-channel-hlsgroupsettings-keyformatversions"""
-    p_KeyProviderSettings: typing.Union['ChannelKeyProviderSettings', dict] = attr.ib(
+    p_KeyProviderSettings: typing.Union['PropChannelKeyProviderSettings', dict] = attr.ib(
         default=None,
-        converter=ChannelKeyProviderSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelKeyProviderSettings)),
+        converter=PropChannelKeyProviderSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelKeyProviderSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "KeyProviderSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsgroupsettings.html#cfn-medialive-channel-hlsgroupsettings-keyprovidersettings"""
@@ -5550,7 +5550,7 @@ class ChannelHlsGroupSettings(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsgroupsettings.html#cfn-medialive-channel-hlsgroupsettings-tsfilemode"""
 
 @attr.s
-class ChannelH265Settings(Property):
+class PropChannelH265Settings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.H265Settings"
 
@@ -5626,17 +5626,17 @@ class ChannelH265Settings(Property):
         metadata={AttrMeta.PROPERTY_NAME: "ColorMetadata"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h265settings.html#cfn-medialive-channel-h265settings-colormetadata"""
-    p_ColorSpaceSettings: typing.Union['ChannelH265ColorSpaceSettings', dict] = attr.ib(
+    p_ColorSpaceSettings: typing.Union['PropChannelH265ColorSpaceSettings', dict] = attr.ib(
         default=None,
-        converter=ChannelH265ColorSpaceSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelH265ColorSpaceSettings)),
+        converter=PropChannelH265ColorSpaceSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelH265ColorSpaceSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "ColorSpaceSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h265settings.html#cfn-medialive-channel-h265settings-colorspacesettings"""
-    p_FilterSettings: typing.Union['ChannelH265FilterSettings', dict] = attr.ib(
+    p_FilterSettings: typing.Union['PropChannelH265FilterSettings', dict] = attr.ib(
         default=None,
-        converter=ChannelH265FilterSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelH265FilterSettings)),
+        converter=PropChannelH265FilterSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelH265FilterSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "FilterSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h265settings.html#cfn-medialive-channel-h265settings-filtersettings"""
@@ -5768,7 +5768,7 @@ class ChannelH265Settings(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h265settings.html#cfn-medialive-channel-h265settings-timecodeinsertion"""
 
 @attr.s
-class ChannelCaptionSelector(Property):
+class PropChannelCaptionSelector(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.CaptionSelector"
 
@@ -5794,16 +5794,16 @@ class ChannelCaptionSelector(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Name"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captionselector.html#cfn-medialive-channel-captionselector-name"""
-    p_SelectorSettings: typing.Union['ChannelCaptionSelectorSettings', dict] = attr.ib(
+    p_SelectorSettings: typing.Union['PropChannelCaptionSelectorSettings', dict] = attr.ib(
         default=None,
-        converter=ChannelCaptionSelectorSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelCaptionSelectorSettings)),
+        converter=PropChannelCaptionSelectorSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelCaptionSelectorSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "SelectorSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captionselector.html#cfn-medialive-channel-captionselector-selectorsettings"""
 
 @attr.s
-class ChannelAutomaticInputFailoverSettings(Property):
+class PropChannelAutomaticInputFailoverSettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.AutomaticInputFailoverSettings"
 
@@ -5824,10 +5824,10 @@ class ChannelAutomaticInputFailoverSettings(Property):
         metadata={AttrMeta.PROPERTY_NAME: "ErrorClearTimeMsec"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-automaticinputfailoversettings.html#cfn-medialive-channel-automaticinputfailoversettings-errorcleartimemsec"""
-    p_FailoverConditions: typing.List[typing.Union['ChannelFailoverCondition', dict]] = attr.ib(
+    p_FailoverConditions: typing.List[typing.Union['PropChannelFailoverCondition', dict]] = attr.ib(
         default=None,
-        converter=ChannelFailoverCondition.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ChannelFailoverCondition), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropChannelFailoverCondition.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropChannelFailoverCondition), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "FailoverConditions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-automaticinputfailoversettings.html#cfn-medialive-channel-automaticinputfailoversettings-failoverconditions"""
@@ -5845,7 +5845,7 @@ class ChannelAutomaticInputFailoverSettings(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-automaticinputfailoversettings.html#cfn-medialive-channel-automaticinputfailoversettings-secondaryinputid"""
 
 @attr.s
-class ChannelArchiveOutputSettings(Property):
+class PropChannelArchiveOutputSettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.ArchiveOutputSettings"
 
@@ -5859,10 +5859,10 @@ class ChannelArchiveOutputSettings(Property):
     """
     AWS_OBJECT_TYPE = "AWS::MediaLive::Channel.ArchiveOutputSettings"
     
-    p_ContainerSettings: typing.Union['ChannelArchiveContainerSettings', dict] = attr.ib(
+    p_ContainerSettings: typing.Union['PropChannelArchiveContainerSettings', dict] = attr.ib(
         default=None,
-        converter=ChannelArchiveContainerSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelArchiveContainerSettings)),
+        converter=PropChannelArchiveContainerSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelArchiveContainerSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "ContainerSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-archiveoutputsettings.html#cfn-medialive-channel-archiveoutputsettings-containersettings"""
@@ -5880,7 +5880,7 @@ class ChannelArchiveOutputSettings(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-archiveoutputsettings.html#cfn-medialive-channel-archiveoutputsettings-namemodifier"""
 
 @attr.s
-class ChannelInputSettings(Property):
+class PropChannelInputSettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.InputSettings"
 
@@ -5901,17 +5901,17 @@ class ChannelInputSettings(Property):
     """
     AWS_OBJECT_TYPE = "AWS::MediaLive::Channel.InputSettings"
     
-    p_AudioSelectors: typing.List[typing.Union['ChannelAudioSelector', dict]] = attr.ib(
+    p_AudioSelectors: typing.List[typing.Union['PropChannelAudioSelector', dict]] = attr.ib(
         default=None,
-        converter=ChannelAudioSelector.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ChannelAudioSelector), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropChannelAudioSelector.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropChannelAudioSelector), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "AudioSelectors"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputsettings.html#cfn-medialive-channel-inputsettings-audioselectors"""
-    p_CaptionSelectors: typing.List[typing.Union['ChannelCaptionSelector', dict]] = attr.ib(
+    p_CaptionSelectors: typing.List[typing.Union['PropChannelCaptionSelector', dict]] = attr.ib(
         default=None,
-        converter=ChannelCaptionSelector.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ChannelCaptionSelector), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropChannelCaptionSelector.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropChannelCaptionSelector), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "CaptionSelectors"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputsettings.html#cfn-medialive-channel-inputsettings-captionselectors"""
@@ -5939,10 +5939,10 @@ class ChannelInputSettings(Property):
         metadata={AttrMeta.PROPERTY_NAME: "InputFilter"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputsettings.html#cfn-medialive-channel-inputsettings-inputfilter"""
-    p_NetworkInputSettings: typing.Union['ChannelNetworkInputSettings', dict] = attr.ib(
+    p_NetworkInputSettings: typing.Union['PropChannelNetworkInputSettings', dict] = attr.ib(
         default=None,
-        converter=ChannelNetworkInputSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelNetworkInputSettings)),
+        converter=PropChannelNetworkInputSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelNetworkInputSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "NetworkInputSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputsettings.html#cfn-medialive-channel-inputsettings-networkinputsettings"""
@@ -5958,16 +5958,16 @@ class ChannelInputSettings(Property):
         metadata={AttrMeta.PROPERTY_NAME: "SourceEndBehavior"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputsettings.html#cfn-medialive-channel-inputsettings-sourceendbehavior"""
-    p_VideoSelector: typing.Union['ChannelVideoSelector', dict] = attr.ib(
+    p_VideoSelector: typing.Union['PropChannelVideoSelector', dict] = attr.ib(
         default=None,
-        converter=ChannelVideoSelector.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelVideoSelector)),
+        converter=PropChannelVideoSelector.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelVideoSelector)),
         metadata={AttrMeta.PROPERTY_NAME: "VideoSelector"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputsettings.html#cfn-medialive-channel-inputsettings-videoselector"""
 
 @attr.s
-class ChannelCaptionDescription(Property):
+class PropChannelCaptionDescription(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.CaptionDescription"
 
@@ -5989,10 +5989,10 @@ class ChannelCaptionDescription(Property):
         metadata={AttrMeta.PROPERTY_NAME: "CaptionSelectorName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captiondescription.html#cfn-medialive-channel-captiondescription-captionselectorname"""
-    p_DestinationSettings: typing.Union['ChannelCaptionDestinationSettings', dict] = attr.ib(
+    p_DestinationSettings: typing.Union['PropChannelCaptionDestinationSettings', dict] = attr.ib(
         default=None,
-        converter=ChannelCaptionDestinationSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelCaptionDestinationSettings)),
+        converter=PropChannelCaptionDestinationSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelCaptionDestinationSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "DestinationSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captiondescription.html#cfn-medialive-channel-captiondescription-destinationsettings"""
@@ -6016,7 +6016,7 @@ class ChannelCaptionDescription(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-captiondescription.html#cfn-medialive-channel-captiondescription-name"""
 
 @attr.s
-class ChannelAudioDescription(Property):
+class PropChannelAudioDescription(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.AudioDescription"
 
@@ -6037,10 +6037,10 @@ class ChannelAudioDescription(Property):
     """
     AWS_OBJECT_TYPE = "AWS::MediaLive::Channel.AudioDescription"
     
-    p_AudioNormalizationSettings: typing.Union['ChannelAudioNormalizationSettings', dict] = attr.ib(
+    p_AudioNormalizationSettings: typing.Union['PropChannelAudioNormalizationSettings', dict] = attr.ib(
         default=None,
-        converter=ChannelAudioNormalizationSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelAudioNormalizationSettings)),
+        converter=PropChannelAudioNormalizationSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelAudioNormalizationSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "AudioNormalizationSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiodescription.html#cfn-medialive-channel-audiodescription-audionormalizationsettings"""
@@ -6062,10 +6062,10 @@ class ChannelAudioDescription(Property):
         metadata={AttrMeta.PROPERTY_NAME: "AudioTypeControl"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiodescription.html#cfn-medialive-channel-audiodescription-audiotypecontrol"""
-    p_CodecSettings: typing.Union['ChannelAudioCodecSettings', dict] = attr.ib(
+    p_CodecSettings: typing.Union['PropChannelAudioCodecSettings', dict] = attr.ib(
         default=None,
-        converter=ChannelAudioCodecSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelAudioCodecSettings)),
+        converter=PropChannelAudioCodecSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelAudioCodecSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "CodecSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiodescription.html#cfn-medialive-channel-audiodescription-codecsettings"""
@@ -6087,10 +6087,10 @@ class ChannelAudioDescription(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Name"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiodescription.html#cfn-medialive-channel-audiodescription-name"""
-    p_RemixSettings: typing.Union['ChannelRemixSettings', dict] = attr.ib(
+    p_RemixSettings: typing.Union['PropChannelRemixSettings', dict] = attr.ib(
         default=None,
-        converter=ChannelRemixSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelRemixSettings)),
+        converter=PropChannelRemixSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelRemixSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "RemixSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiodescription.html#cfn-medialive-channel-audiodescription-remixsettings"""
@@ -6102,7 +6102,7 @@ class ChannelAudioDescription(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiodescription.html#cfn-medialive-channel-audiodescription-streamname"""
 
 @attr.s
-class ChannelOutputGroupSettings(Property):
+class PropChannelOutputGroupSettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.OutputGroupSettings"
 
@@ -6121,65 +6121,65 @@ class ChannelOutputGroupSettings(Property):
     """
     AWS_OBJECT_TYPE = "AWS::MediaLive::Channel.OutputGroupSettings"
     
-    p_ArchiveGroupSettings: typing.Union['ChannelArchiveGroupSettings', dict] = attr.ib(
+    p_ArchiveGroupSettings: typing.Union['PropChannelArchiveGroupSettings', dict] = attr.ib(
         default=None,
-        converter=ChannelArchiveGroupSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelArchiveGroupSettings)),
+        converter=PropChannelArchiveGroupSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelArchiveGroupSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "ArchiveGroupSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputgroupsettings.html#cfn-medialive-channel-outputgroupsettings-archivegroupsettings"""
-    p_FrameCaptureGroupSettings: typing.Union['ChannelFrameCaptureGroupSettings', dict] = attr.ib(
+    p_FrameCaptureGroupSettings: typing.Union['PropChannelFrameCaptureGroupSettings', dict] = attr.ib(
         default=None,
-        converter=ChannelFrameCaptureGroupSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelFrameCaptureGroupSettings)),
+        converter=PropChannelFrameCaptureGroupSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelFrameCaptureGroupSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "FrameCaptureGroupSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputgroupsettings.html#cfn-medialive-channel-outputgroupsettings-framecapturegroupsettings"""
-    p_HlsGroupSettings: typing.Union['ChannelHlsGroupSettings', dict] = attr.ib(
+    p_HlsGroupSettings: typing.Union['PropChannelHlsGroupSettings', dict] = attr.ib(
         default=None,
-        converter=ChannelHlsGroupSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelHlsGroupSettings)),
+        converter=PropChannelHlsGroupSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelHlsGroupSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "HlsGroupSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputgroupsettings.html#cfn-medialive-channel-outputgroupsettings-hlsgroupsettings"""
-    p_MediaPackageGroupSettings: typing.Union['ChannelMediaPackageGroupSettings', dict] = attr.ib(
+    p_MediaPackageGroupSettings: typing.Union['PropChannelMediaPackageGroupSettings', dict] = attr.ib(
         default=None,
-        converter=ChannelMediaPackageGroupSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelMediaPackageGroupSettings)),
+        converter=PropChannelMediaPackageGroupSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelMediaPackageGroupSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "MediaPackageGroupSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputgroupsettings.html#cfn-medialive-channel-outputgroupsettings-mediapackagegroupsettings"""
-    p_MsSmoothGroupSettings: typing.Union['ChannelMsSmoothGroupSettings', dict] = attr.ib(
+    p_MsSmoothGroupSettings: typing.Union['PropChannelMsSmoothGroupSettings', dict] = attr.ib(
         default=None,
-        converter=ChannelMsSmoothGroupSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelMsSmoothGroupSettings)),
+        converter=PropChannelMsSmoothGroupSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelMsSmoothGroupSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "MsSmoothGroupSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputgroupsettings.html#cfn-medialive-channel-outputgroupsettings-mssmoothgroupsettings"""
-    p_MultiplexGroupSettings: typing.Union['ChannelMultiplexGroupSettings', dict] = attr.ib(
+    p_MultiplexGroupSettings: typing.Union['PropChannelMultiplexGroupSettings', dict] = attr.ib(
         default=None,
-        converter=ChannelMultiplexGroupSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelMultiplexGroupSettings)),
+        converter=PropChannelMultiplexGroupSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelMultiplexGroupSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "MultiplexGroupSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputgroupsettings.html#cfn-medialive-channel-outputgroupsettings-multiplexgroupsettings"""
-    p_RtmpGroupSettings: typing.Union['ChannelRtmpGroupSettings', dict] = attr.ib(
+    p_RtmpGroupSettings: typing.Union['PropChannelRtmpGroupSettings', dict] = attr.ib(
         default=None,
-        converter=ChannelRtmpGroupSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelRtmpGroupSettings)),
+        converter=PropChannelRtmpGroupSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelRtmpGroupSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "RtmpGroupSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputgroupsettings.html#cfn-medialive-channel-outputgroupsettings-rtmpgroupsettings"""
-    p_UdpGroupSettings: typing.Union['ChannelUdpGroupSettings', dict] = attr.ib(
+    p_UdpGroupSettings: typing.Union['PropChannelUdpGroupSettings', dict] = attr.ib(
         default=None,
-        converter=ChannelUdpGroupSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelUdpGroupSettings)),
+        converter=PropChannelUdpGroupSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelUdpGroupSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "UdpGroupSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputgroupsettings.html#cfn-medialive-channel-outputgroupsettings-udpgroupsettings"""
 
 @attr.s
-class ChannelVideoCodecSettings(Property):
+class PropChannelVideoCodecSettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.VideoCodecSettings"
 
@@ -6194,37 +6194,37 @@ class ChannelVideoCodecSettings(Property):
     """
     AWS_OBJECT_TYPE = "AWS::MediaLive::Channel.VideoCodecSettings"
     
-    p_FrameCaptureSettings: typing.Union['ChannelFrameCaptureSettings', dict] = attr.ib(
+    p_FrameCaptureSettings: typing.Union['PropChannelFrameCaptureSettings', dict] = attr.ib(
         default=None,
-        converter=ChannelFrameCaptureSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelFrameCaptureSettings)),
+        converter=PropChannelFrameCaptureSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelFrameCaptureSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "FrameCaptureSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-videocodecsettings.html#cfn-medialive-channel-videocodecsettings-framecapturesettings"""
-    p_H264Settings: typing.Union['ChannelH264Settings', dict] = attr.ib(
+    p_H264Settings: typing.Union['PropChannelH264Settings', dict] = attr.ib(
         default=None,
-        converter=ChannelH264Settings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelH264Settings)),
+        converter=PropChannelH264Settings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelH264Settings)),
         metadata={AttrMeta.PROPERTY_NAME: "H264Settings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-videocodecsettings.html#cfn-medialive-channel-videocodecsettings-h264settings"""
-    p_H265Settings: typing.Union['ChannelH265Settings', dict] = attr.ib(
+    p_H265Settings: typing.Union['PropChannelH265Settings', dict] = attr.ib(
         default=None,
-        converter=ChannelH265Settings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelH265Settings)),
+        converter=PropChannelH265Settings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelH265Settings)),
         metadata={AttrMeta.PROPERTY_NAME: "H265Settings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-videocodecsettings.html#cfn-medialive-channel-videocodecsettings-h265settings"""
-    p_Mpeg2Settings: typing.Union['ChannelMpeg2Settings', dict] = attr.ib(
+    p_Mpeg2Settings: typing.Union['PropChannelMpeg2Settings', dict] = attr.ib(
         default=None,
-        converter=ChannelMpeg2Settings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelMpeg2Settings)),
+        converter=PropChannelMpeg2Settings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelMpeg2Settings)),
         metadata={AttrMeta.PROPERTY_NAME: "Mpeg2Settings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-videocodecsettings.html#cfn-medialive-channel-videocodecsettings-mpeg2settings"""
 
 @attr.s
-class ChannelUdpOutputSettings(Property):
+class PropChannelUdpOutputSettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.UdpOutputSettings"
 
@@ -6245,30 +6245,30 @@ class ChannelUdpOutputSettings(Property):
         metadata={AttrMeta.PROPERTY_NAME: "BufferMsec"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-udpoutputsettings.html#cfn-medialive-channel-udpoutputsettings-buffermsec"""
-    p_ContainerSettings: typing.Union['ChannelUdpContainerSettings', dict] = attr.ib(
+    p_ContainerSettings: typing.Union['PropChannelUdpContainerSettings', dict] = attr.ib(
         default=None,
-        converter=ChannelUdpContainerSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelUdpContainerSettings)),
+        converter=PropChannelUdpContainerSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelUdpContainerSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "ContainerSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-udpoutputsettings.html#cfn-medialive-channel-udpoutputsettings-containersettings"""
-    p_Destination: typing.Union['ChannelOutputLocationRef', dict] = attr.ib(
+    p_Destination: typing.Union['PropChannelOutputLocationRef', dict] = attr.ib(
         default=None,
-        converter=ChannelOutputLocationRef.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelOutputLocationRef)),
+        converter=PropChannelOutputLocationRef.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelOutputLocationRef)),
         metadata={AttrMeta.PROPERTY_NAME: "Destination"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-udpoutputsettings.html#cfn-medialive-channel-udpoutputsettings-destination"""
-    p_FecOutputSettings: typing.Union['ChannelFecOutputSettings', dict] = attr.ib(
+    p_FecOutputSettings: typing.Union['PropChannelFecOutputSettings', dict] = attr.ib(
         default=None,
-        converter=ChannelFecOutputSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelFecOutputSettings)),
+        converter=PropChannelFecOutputSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelFecOutputSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "FecOutputSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-udpoutputsettings.html#cfn-medialive-channel-udpoutputsettings-fecoutputsettings"""
 
 @attr.s
-class ChannelInputAttachment(Property):
+class PropChannelInputAttachment(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.InputAttachment"
 
@@ -6283,10 +6283,10 @@ class ChannelInputAttachment(Property):
     """
     AWS_OBJECT_TYPE = "AWS::MediaLive::Channel.InputAttachment"
     
-    p_AutomaticInputFailoverSettings: typing.Union['ChannelAutomaticInputFailoverSettings', dict] = attr.ib(
+    p_AutomaticInputFailoverSettings: typing.Union['PropChannelAutomaticInputFailoverSettings', dict] = attr.ib(
         default=None,
-        converter=ChannelAutomaticInputFailoverSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelAutomaticInputFailoverSettings)),
+        converter=PropChannelAutomaticInputFailoverSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelAutomaticInputFailoverSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "AutomaticInputFailoverSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputattachment.html#cfn-medialive-channel-inputattachment-automaticinputfailoversettings"""
@@ -6302,16 +6302,16 @@ class ChannelInputAttachment(Property):
         metadata={AttrMeta.PROPERTY_NAME: "InputId"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputattachment.html#cfn-medialive-channel-inputattachment-inputid"""
-    p_InputSettings: typing.Union['ChannelInputSettings', dict] = attr.ib(
+    p_InputSettings: typing.Union['PropChannelInputSettings', dict] = attr.ib(
         default=None,
-        converter=ChannelInputSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelInputSettings)),
+        converter=PropChannelInputSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelInputSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "InputSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputattachment.html#cfn-medialive-channel-inputattachment-inputsettings"""
 
 @attr.s
-class ChannelOutputSettings(Property):
+class PropChannelOutputSettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.OutputSettings"
 
@@ -6330,65 +6330,65 @@ class ChannelOutputSettings(Property):
     """
     AWS_OBJECT_TYPE = "AWS::MediaLive::Channel.OutputSettings"
     
-    p_ArchiveOutputSettings: typing.Union['ChannelArchiveOutputSettings', dict] = attr.ib(
+    p_ArchiveOutputSettings: typing.Union['PropChannelArchiveOutputSettings', dict] = attr.ib(
         default=None,
-        converter=ChannelArchiveOutputSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelArchiveOutputSettings)),
+        converter=PropChannelArchiveOutputSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelArchiveOutputSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "ArchiveOutputSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputsettings.html#cfn-medialive-channel-outputsettings-archiveoutputsettings"""
-    p_FrameCaptureOutputSettings: typing.Union['ChannelFrameCaptureOutputSettings', dict] = attr.ib(
+    p_FrameCaptureOutputSettings: typing.Union['PropChannelFrameCaptureOutputSettings', dict] = attr.ib(
         default=None,
-        converter=ChannelFrameCaptureOutputSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelFrameCaptureOutputSettings)),
+        converter=PropChannelFrameCaptureOutputSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelFrameCaptureOutputSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "FrameCaptureOutputSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputsettings.html#cfn-medialive-channel-outputsettings-framecaptureoutputsettings"""
-    p_HlsOutputSettings: typing.Union['ChannelHlsOutputSettings', dict] = attr.ib(
+    p_HlsOutputSettings: typing.Union['PropChannelHlsOutputSettings', dict] = attr.ib(
         default=None,
-        converter=ChannelHlsOutputSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelHlsOutputSettings)),
+        converter=PropChannelHlsOutputSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelHlsOutputSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "HlsOutputSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputsettings.html#cfn-medialive-channel-outputsettings-hlsoutputsettings"""
-    p_MediaPackageOutputSettings: typing.Union['ChannelMediaPackageOutputSettings', dict] = attr.ib(
+    p_MediaPackageOutputSettings: typing.Union['PropChannelMediaPackageOutputSettings', dict] = attr.ib(
         default=None,
-        converter=ChannelMediaPackageOutputSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelMediaPackageOutputSettings)),
+        converter=PropChannelMediaPackageOutputSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelMediaPackageOutputSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "MediaPackageOutputSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputsettings.html#cfn-medialive-channel-outputsettings-mediapackageoutputsettings"""
-    p_MsSmoothOutputSettings: typing.Union['ChannelMsSmoothOutputSettings', dict] = attr.ib(
+    p_MsSmoothOutputSettings: typing.Union['PropChannelMsSmoothOutputSettings', dict] = attr.ib(
         default=None,
-        converter=ChannelMsSmoothOutputSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelMsSmoothOutputSettings)),
+        converter=PropChannelMsSmoothOutputSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelMsSmoothOutputSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "MsSmoothOutputSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputsettings.html#cfn-medialive-channel-outputsettings-mssmoothoutputsettings"""
-    p_MultiplexOutputSettings: typing.Union['ChannelMultiplexOutputSettings', dict] = attr.ib(
+    p_MultiplexOutputSettings: typing.Union['PropChannelMultiplexOutputSettings', dict] = attr.ib(
         default=None,
-        converter=ChannelMultiplexOutputSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelMultiplexOutputSettings)),
+        converter=PropChannelMultiplexOutputSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelMultiplexOutputSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "MultiplexOutputSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputsettings.html#cfn-medialive-channel-outputsettings-multiplexoutputsettings"""
-    p_RtmpOutputSettings: typing.Union['ChannelRtmpOutputSettings', dict] = attr.ib(
+    p_RtmpOutputSettings: typing.Union['PropChannelRtmpOutputSettings', dict] = attr.ib(
         default=None,
-        converter=ChannelRtmpOutputSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelRtmpOutputSettings)),
+        converter=PropChannelRtmpOutputSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelRtmpOutputSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "RtmpOutputSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputsettings.html#cfn-medialive-channel-outputsettings-rtmpoutputsettings"""
-    p_UdpOutputSettings: typing.Union['ChannelUdpOutputSettings', dict] = attr.ib(
+    p_UdpOutputSettings: typing.Union['PropChannelUdpOutputSettings', dict] = attr.ib(
         default=None,
-        converter=ChannelUdpOutputSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelUdpOutputSettings)),
+        converter=PropChannelUdpOutputSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelUdpOutputSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "UdpOutputSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputsettings.html#cfn-medialive-channel-outputsettings-udpoutputsettings"""
 
 @attr.s
-class ChannelVideoDescription(Property):
+class PropChannelVideoDescription(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.VideoDescription"
 
@@ -6406,10 +6406,10 @@ class ChannelVideoDescription(Property):
     """
     AWS_OBJECT_TYPE = "AWS::MediaLive::Channel.VideoDescription"
     
-    p_CodecSettings: typing.Union['ChannelVideoCodecSettings', dict] = attr.ib(
+    p_CodecSettings: typing.Union['PropChannelVideoCodecSettings', dict] = attr.ib(
         default=None,
-        converter=ChannelVideoCodecSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelVideoCodecSettings)),
+        converter=PropChannelVideoCodecSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelVideoCodecSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "CodecSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-videodescription.html#cfn-medialive-channel-videodescription-codecsettings"""
@@ -6451,7 +6451,7 @@ class ChannelVideoDescription(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-videodescription.html#cfn-medialive-channel-videodescription-width"""
 
 @attr.s
-class ChannelOutput(Property):
+class PropChannelOutput(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.Output"
 
@@ -6485,10 +6485,10 @@ class ChannelOutput(Property):
         metadata={AttrMeta.PROPERTY_NAME: "OutputName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-output.html#cfn-medialive-channel-output-outputname"""
-    p_OutputSettings: typing.Union['ChannelOutputSettings', dict] = attr.ib(
+    p_OutputSettings: typing.Union['PropChannelOutputSettings', dict] = attr.ib(
         default=None,
-        converter=ChannelOutputSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelOutputSettings)),
+        converter=PropChannelOutputSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelOutputSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "OutputSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-output.html#cfn-medialive-channel-output-outputsettings"""
@@ -6500,7 +6500,7 @@ class ChannelOutput(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-output.html#cfn-medialive-channel-output-videodescriptionname"""
 
 @attr.s
-class ChannelOutputGroup(Property):
+class PropChannelOutputGroup(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.OutputGroup"
 
@@ -6520,23 +6520,23 @@ class ChannelOutputGroup(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Name"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputgroup.html#cfn-medialive-channel-outputgroup-name"""
-    p_OutputGroupSettings: typing.Union['ChannelOutputGroupSettings', dict] = attr.ib(
+    p_OutputGroupSettings: typing.Union['PropChannelOutputGroupSettings', dict] = attr.ib(
         default=None,
-        converter=ChannelOutputGroupSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelOutputGroupSettings)),
+        converter=PropChannelOutputGroupSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelOutputGroupSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "OutputGroupSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputgroup.html#cfn-medialive-channel-outputgroup-outputgroupsettings"""
-    p_Outputs: typing.List[typing.Union['ChannelOutput', dict]] = attr.ib(
+    p_Outputs: typing.List[typing.Union['PropChannelOutput', dict]] = attr.ib(
         default=None,
-        converter=ChannelOutput.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ChannelOutput), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropChannelOutput.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropChannelOutput), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Outputs"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-outputgroup.html#cfn-medialive-channel-outputgroup-outputs"""
 
 @attr.s
-class ChannelEncoderSettings(Property):
+class PropChannelEncoderSettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.EncoderSettings"
 
@@ -6559,87 +6559,87 @@ class ChannelEncoderSettings(Property):
     """
     AWS_OBJECT_TYPE = "AWS::MediaLive::Channel.EncoderSettings"
     
-    p_AudioDescriptions: typing.List[typing.Union['ChannelAudioDescription', dict]] = attr.ib(
+    p_AudioDescriptions: typing.List[typing.Union['PropChannelAudioDescription', dict]] = attr.ib(
         default=None,
-        converter=ChannelAudioDescription.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ChannelAudioDescription), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropChannelAudioDescription.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropChannelAudioDescription), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "AudioDescriptions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-encodersettings.html#cfn-medialive-channel-encodersettings-audiodescriptions"""
-    p_AvailBlanking: typing.Union['ChannelAvailBlanking', dict] = attr.ib(
+    p_AvailBlanking: typing.Union['PropChannelAvailBlanking', dict] = attr.ib(
         default=None,
-        converter=ChannelAvailBlanking.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelAvailBlanking)),
+        converter=PropChannelAvailBlanking.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelAvailBlanking)),
         metadata={AttrMeta.PROPERTY_NAME: "AvailBlanking"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-encodersettings.html#cfn-medialive-channel-encodersettings-availblanking"""
-    p_AvailConfiguration: typing.Union['ChannelAvailConfiguration', dict] = attr.ib(
+    p_AvailConfiguration: typing.Union['PropChannelAvailConfiguration', dict] = attr.ib(
         default=None,
-        converter=ChannelAvailConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelAvailConfiguration)),
+        converter=PropChannelAvailConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelAvailConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "AvailConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-encodersettings.html#cfn-medialive-channel-encodersettings-availconfiguration"""
-    p_BlackoutSlate: typing.Union['ChannelBlackoutSlate', dict] = attr.ib(
+    p_BlackoutSlate: typing.Union['PropChannelBlackoutSlate', dict] = attr.ib(
         default=None,
-        converter=ChannelBlackoutSlate.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelBlackoutSlate)),
+        converter=PropChannelBlackoutSlate.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelBlackoutSlate)),
         metadata={AttrMeta.PROPERTY_NAME: "BlackoutSlate"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-encodersettings.html#cfn-medialive-channel-encodersettings-blackoutslate"""
-    p_CaptionDescriptions: typing.List[typing.Union['ChannelCaptionDescription', dict]] = attr.ib(
+    p_CaptionDescriptions: typing.List[typing.Union['PropChannelCaptionDescription', dict]] = attr.ib(
         default=None,
-        converter=ChannelCaptionDescription.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ChannelCaptionDescription), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropChannelCaptionDescription.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropChannelCaptionDescription), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "CaptionDescriptions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-encodersettings.html#cfn-medialive-channel-encodersettings-captiondescriptions"""
-    p_FeatureActivations: typing.Union['ChannelFeatureActivations', dict] = attr.ib(
+    p_FeatureActivations: typing.Union['PropChannelFeatureActivations', dict] = attr.ib(
         default=None,
-        converter=ChannelFeatureActivations.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelFeatureActivations)),
+        converter=PropChannelFeatureActivations.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelFeatureActivations)),
         metadata={AttrMeta.PROPERTY_NAME: "FeatureActivations"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-encodersettings.html#cfn-medialive-channel-encodersettings-featureactivations"""
-    p_GlobalConfiguration: typing.Union['ChannelGlobalConfiguration', dict] = attr.ib(
+    p_GlobalConfiguration: typing.Union['PropChannelGlobalConfiguration', dict] = attr.ib(
         default=None,
-        converter=ChannelGlobalConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelGlobalConfiguration)),
+        converter=PropChannelGlobalConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelGlobalConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "GlobalConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-encodersettings.html#cfn-medialive-channel-encodersettings-globalconfiguration"""
-    p_MotionGraphicsConfiguration: typing.Union['ChannelMotionGraphicsConfiguration', dict] = attr.ib(
+    p_MotionGraphicsConfiguration: typing.Union['PropChannelMotionGraphicsConfiguration', dict] = attr.ib(
         default=None,
-        converter=ChannelMotionGraphicsConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelMotionGraphicsConfiguration)),
+        converter=PropChannelMotionGraphicsConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelMotionGraphicsConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "MotionGraphicsConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-encodersettings.html#cfn-medialive-channel-encodersettings-motiongraphicsconfiguration"""
-    p_NielsenConfiguration: typing.Union['ChannelNielsenConfiguration', dict] = attr.ib(
+    p_NielsenConfiguration: typing.Union['PropChannelNielsenConfiguration', dict] = attr.ib(
         default=None,
-        converter=ChannelNielsenConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelNielsenConfiguration)),
+        converter=PropChannelNielsenConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelNielsenConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "NielsenConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-encodersettings.html#cfn-medialive-channel-encodersettings-nielsenconfiguration"""
-    p_OutputGroups: typing.List[typing.Union['ChannelOutputGroup', dict]] = attr.ib(
+    p_OutputGroups: typing.List[typing.Union['PropChannelOutputGroup', dict]] = attr.ib(
         default=None,
-        converter=ChannelOutputGroup.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ChannelOutputGroup), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropChannelOutputGroup.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropChannelOutputGroup), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "OutputGroups"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-encodersettings.html#cfn-medialive-channel-encodersettings-outputgroups"""
-    p_TimecodeConfig: typing.Union['ChannelTimecodeConfig', dict] = attr.ib(
+    p_TimecodeConfig: typing.Union['PropChannelTimecodeConfig', dict] = attr.ib(
         default=None,
-        converter=ChannelTimecodeConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelTimecodeConfig)),
+        converter=PropChannelTimecodeConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelTimecodeConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "TimecodeConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-encodersettings.html#cfn-medialive-channel-encodersettings-timecodeconfig"""
-    p_VideoDescriptions: typing.List[typing.Union['ChannelVideoDescription', dict]] = attr.ib(
+    p_VideoDescriptions: typing.List[typing.Union['PropChannelVideoDescription', dict]] = attr.ib(
         default=None,
-        converter=ChannelVideoDescription.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ChannelVideoDescription), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropChannelVideoDescription.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropChannelVideoDescription), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "VideoDescriptions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-encodersettings.html#cfn-medialive-channel-encodersettings-videodescriptions"""
@@ -6671,10 +6671,10 @@ class Channel(Resource):
     AWS_OBJECT_TYPE = "AWS::MediaLive::Channel"
 
     
-    p_CdiInputSpecification: typing.Union['ChannelCdiInputSpecification', dict] = attr.ib(
+    p_CdiInputSpecification: typing.Union['PropChannelCdiInputSpecification', dict] = attr.ib(
         default=None,
-        converter=ChannelCdiInputSpecification.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelCdiInputSpecification)),
+        converter=PropChannelCdiInputSpecification.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelCdiInputSpecification)),
         metadata={AttrMeta.PROPERTY_NAME: "CdiInputSpecification"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-channel.html#cfn-medialive-channel-cdiinputspecification"""
@@ -6684,31 +6684,31 @@ class Channel(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "ChannelClass"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-channel.html#cfn-medialive-channel-channelclass"""
-    p_Destinations: typing.List[typing.Union['ChannelOutputDestination', dict]] = attr.ib(
+    p_Destinations: typing.List[typing.Union['PropChannelOutputDestination', dict]] = attr.ib(
         default=None,
-        converter=ChannelOutputDestination.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ChannelOutputDestination), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropChannelOutputDestination.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropChannelOutputDestination), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Destinations"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-channel.html#cfn-medialive-channel-destinations"""
-    p_EncoderSettings: typing.Union['ChannelEncoderSettings', dict] = attr.ib(
+    p_EncoderSettings: typing.Union['PropChannelEncoderSettings', dict] = attr.ib(
         default=None,
-        converter=ChannelEncoderSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelEncoderSettings)),
+        converter=PropChannelEncoderSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelEncoderSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "EncoderSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-channel.html#cfn-medialive-channel-encodersettings"""
-    p_InputAttachments: typing.List[typing.Union['ChannelInputAttachment', dict]] = attr.ib(
+    p_InputAttachments: typing.List[typing.Union['PropChannelInputAttachment', dict]] = attr.ib(
         default=None,
-        converter=ChannelInputAttachment.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ChannelInputAttachment), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropChannelInputAttachment.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropChannelInputAttachment), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "InputAttachments"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-channel.html#cfn-medialive-channel-inputattachments"""
-    p_InputSpecification: typing.Union['ChannelInputSpecification', dict] = attr.ib(
+    p_InputSpecification: typing.Union['PropChannelInputSpecification', dict] = attr.ib(
         default=None,
-        converter=ChannelInputSpecification.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelInputSpecification)),
+        converter=PropChannelInputSpecification.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelInputSpecification)),
         metadata={AttrMeta.PROPERTY_NAME: "InputSpecification"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-channel.html#cfn-medialive-channel-inputspecification"""
@@ -6730,10 +6730,10 @@ class Channel(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "RoleArn"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-channel.html#cfn-medialive-channel-rolearn"""
-    p_Vpc: typing.Union['ChannelVpcOutputSettings', dict] = attr.ib(
+    p_Vpc: typing.Union['PropChannelVpcOutputSettings', dict] = attr.ib(
         default=None,
-        converter=ChannelVpcOutputSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ChannelVpcOutputSettings)),
+        converter=PropChannelVpcOutputSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelVpcOutputSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "Vpc"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-channel.html#cfn-medialive-channel-vpc"""
@@ -6779,17 +6779,17 @@ class Input(Resource):
     AWS_OBJECT_TYPE = "AWS::MediaLive::Input"
 
     
-    p_Destinations: typing.List[typing.Union['InputInputDestinationRequest', dict]] = attr.ib(
+    p_Destinations: typing.List[typing.Union['PropInputInputDestinationRequest', dict]] = attr.ib(
         default=None,
-        converter=InputInputDestinationRequest.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(InputInputDestinationRequest), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropInputInputDestinationRequest.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropInputInputDestinationRequest), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Destinations"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-input.html#cfn-medialive-input-destinations"""
-    p_InputDevices: typing.List[typing.Union['InputInputDeviceSettings', dict]] = attr.ib(
+    p_InputDevices: typing.List[typing.Union['PropInputInputDeviceSettings', dict]] = attr.ib(
         default=None,
-        converter=InputInputDeviceSettings.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(InputInputDeviceSettings), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropInputInputDeviceSettings.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropInputInputDeviceSettings), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "InputDevices"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-input.html#cfn-medialive-input-inputdevices"""
@@ -6799,10 +6799,10 @@ class Input(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "InputSecurityGroups"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-input.html#cfn-medialive-input-inputsecuritygroups"""
-    p_MediaConnectFlows: typing.List[typing.Union['InputMediaConnectFlowRequest', dict]] = attr.ib(
+    p_MediaConnectFlows: typing.List[typing.Union['PropInputMediaConnectFlowRequest', dict]] = attr.ib(
         default=None,
-        converter=InputMediaConnectFlowRequest.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(InputMediaConnectFlowRequest), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropInputMediaConnectFlowRequest.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropInputMediaConnectFlowRequest), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "MediaConnectFlows"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-input.html#cfn-medialive-input-mediaconnectflows"""
@@ -6818,10 +6818,10 @@ class Input(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "RoleArn"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-input.html#cfn-medialive-input-rolearn"""
-    p_Sources: typing.List[typing.Union['InputInputSourceRequest', dict]] = attr.ib(
+    p_Sources: typing.List[typing.Union['PropInputInputSourceRequest', dict]] = attr.ib(
         default=None,
-        converter=InputInputSourceRequest.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(InputInputSourceRequest), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropInputInputSourceRequest.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropInputInputSourceRequest), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Sources"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-input.html#cfn-medialive-input-sources"""
@@ -6831,10 +6831,10 @@ class Input(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Type"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-input.html#cfn-medialive-input-type"""
-    p_Vpc: typing.Union['InputInputVpcRequest', dict] = attr.ib(
+    p_Vpc: typing.Union['PropInputInputVpcRequest', dict] = attr.ib(
         default=None,
-        converter=InputInputVpcRequest.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(InputInputVpcRequest)),
+        converter=PropInputInputVpcRequest.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropInputInputVpcRequest)),
         metadata={AttrMeta.PROPERTY_NAME: "Vpc"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-input.html#cfn-medialive-input-vpc"""
@@ -6877,10 +6877,10 @@ class InputSecurityGroup(Resource):
     AWS_OBJECT_TYPE = "AWS::MediaLive::InputSecurityGroup"
 
     
-    p_WhitelistRules: typing.List[typing.Union['InputSecurityGroupInputWhitelistRuleCidr', dict]] = attr.ib(
+    p_WhitelistRules: typing.List[typing.Union['PropInputSecurityGroupInputWhitelistRuleCidr', dict]] = attr.ib(
         default=None,
-        converter=InputSecurityGroupInputWhitelistRuleCidr.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(InputSecurityGroupInputWhitelistRuleCidr), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropInputSecurityGroupInputWhitelistRuleCidr.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropInputSecurityGroupInputWhitelistRuleCidr), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "WhitelistRules"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-inputsecuritygroup.html#cfn-medialive-inputsecuritygroup-whitelistrules"""

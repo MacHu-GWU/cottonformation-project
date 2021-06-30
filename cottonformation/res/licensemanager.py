@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class LicenseProvisionalConfiguration(Property):
+class PropLicenseProvisionalConfiguration(Property):
     """
     AWS Object Type = "AWS::LicenseManager::License.ProvisionalConfiguration"
 
@@ -35,7 +35,7 @@ class LicenseProvisionalConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-licensemanager-license-provisionalconfiguration.html#cfn-licensemanager-license-provisionalconfiguration-maxtimetoliveinminutes"""
 
 @attr.s
-class LicenseIssuerData(Property):
+class PropLicenseIssuerData(Property):
     """
     AWS Object Type = "AWS::LicenseManager::License.IssuerData"
 
@@ -62,7 +62,7 @@ class LicenseIssuerData(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-licensemanager-license-issuerdata.html#cfn-licensemanager-license-issuerdata-signkey"""
 
 @attr.s
-class LicenseBorrowConfiguration(Property):
+class PropLicenseBorrowConfiguration(Property):
     """
     AWS Object Type = "AWS::LicenseManager::License.BorrowConfiguration"
 
@@ -89,7 +89,7 @@ class LicenseBorrowConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-licensemanager-license-borrowconfiguration.html#cfn-licensemanager-license-borrowconfiguration-maxtimetoliveinminutes"""
 
 @attr.s
-class LicenseMetadata(Property):
+class PropLicenseMetadata(Property):
     """
     AWS Object Type = "AWS::LicenseManager::License.Metadata"
 
@@ -116,7 +116,7 @@ class LicenseMetadata(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-licensemanager-license-metadata.html#cfn-licensemanager-license-metadata-value"""
 
 @attr.s
-class LicenseEntitlement(Property):
+class PropLicenseEntitlement(Property):
     """
     AWS Object Type = "AWS::LicenseManager::License.Entitlement"
 
@@ -171,7 +171,7 @@ class LicenseEntitlement(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-licensemanager-license-entitlement.html#cfn-licensemanager-license-entitlement-value"""
 
 @attr.s
-class LicenseValidityDateFormat(Property):
+class PropLicenseValidityDateFormat(Property):
     """
     AWS Object Type = "AWS::LicenseManager::License.ValidityDateFormat"
 
@@ -198,7 +198,7 @@ class LicenseValidityDateFormat(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-licensemanager-license-validitydateformat.html#cfn-licensemanager-license-validitydateformat-end"""
 
 @attr.s
-class LicenseConsumptionConfiguration(Property):
+class PropLicenseConsumptionConfiguration(Property):
     """
     AWS Object Type = "AWS::LicenseManager::License.ConsumptionConfiguration"
 
@@ -212,17 +212,17 @@ class LicenseConsumptionConfiguration(Property):
     """
     AWS_OBJECT_TYPE = "AWS::LicenseManager::License.ConsumptionConfiguration"
     
-    p_BorrowConfiguration: typing.Union['LicenseBorrowConfiguration', dict] = attr.ib(
+    p_BorrowConfiguration: typing.Union['PropLicenseBorrowConfiguration', dict] = attr.ib(
         default=None,
-        converter=LicenseBorrowConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(LicenseBorrowConfiguration)),
+        converter=PropLicenseBorrowConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropLicenseBorrowConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "BorrowConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-licensemanager-license-consumptionconfiguration.html#cfn-licensemanager-license-consumptionconfiguration-borrowconfiguration"""
-    p_ProvisionalConfiguration: typing.Union['LicenseProvisionalConfiguration', dict] = attr.ib(
+    p_ProvisionalConfiguration: typing.Union['PropLicenseProvisionalConfiguration', dict] = attr.ib(
         default=None,
-        converter=LicenseProvisionalConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(LicenseProvisionalConfiguration)),
+        converter=PropLicenseProvisionalConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropLicenseProvisionalConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "ProvisionalConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-licensemanager-license-consumptionconfiguration.html#cfn-licensemanager-license-consumptionconfiguration-provisionalconfiguration"""
@@ -260,17 +260,17 @@ class License(Resource):
     AWS_OBJECT_TYPE = "AWS::LicenseManager::License"
 
     
-    rp_ConsumptionConfiguration: typing.Union['LicenseConsumptionConfiguration', dict] = attr.ib(
+    rp_ConsumptionConfiguration: typing.Union['PropLicenseConsumptionConfiguration', dict] = attr.ib(
         default=None,
-        converter=LicenseConsumptionConfiguration.from_dict,
-        validator=attr.validators.instance_of(LicenseConsumptionConfiguration),
+        converter=PropLicenseConsumptionConfiguration.from_dict,
+        validator=attr.validators.instance_of(PropLicenseConsumptionConfiguration),
         metadata={AttrMeta.PROPERTY_NAME: "ConsumptionConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-licensemanager-license.html#cfn-licensemanager-license-consumptionconfiguration"""
-    rp_Entitlements: typing.List[typing.Union['LicenseEntitlement', dict]] = attr.ib(
+    rp_Entitlements: typing.List[typing.Union['PropLicenseEntitlement', dict]] = attr.ib(
         default=None,
-        converter=LicenseEntitlement.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(LicenseEntitlement), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropLicenseEntitlement.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropLicenseEntitlement), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "Entitlements"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-licensemanager-license.html#cfn-licensemanager-license-entitlements"""
@@ -280,10 +280,10 @@ class License(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "HomeRegion"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-licensemanager-license.html#cfn-licensemanager-license-homeregion"""
-    rp_Issuer: typing.Union['LicenseIssuerData', dict] = attr.ib(
+    rp_Issuer: typing.Union['PropLicenseIssuerData', dict] = attr.ib(
         default=None,
-        converter=LicenseIssuerData.from_dict,
-        validator=attr.validators.instance_of(LicenseIssuerData),
+        converter=PropLicenseIssuerData.from_dict,
+        validator=attr.validators.instance_of(PropLicenseIssuerData),
         metadata={AttrMeta.PROPERTY_NAME: "Issuer"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-licensemanager-license.html#cfn-licensemanager-license-issuer"""
@@ -299,10 +299,10 @@ class License(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "ProductName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-licensemanager-license.html#cfn-licensemanager-license-productname"""
-    rp_Validity: typing.Union['LicenseValidityDateFormat', dict] = attr.ib(
+    rp_Validity: typing.Union['PropLicenseValidityDateFormat', dict] = attr.ib(
         default=None,
-        converter=LicenseValidityDateFormat.from_dict,
-        validator=attr.validators.instance_of(LicenseValidityDateFormat),
+        converter=PropLicenseValidityDateFormat.from_dict,
+        validator=attr.validators.instance_of(PropLicenseValidityDateFormat),
         metadata={AttrMeta.PROPERTY_NAME: "Validity"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-licensemanager-license.html#cfn-licensemanager-license-validity"""
@@ -312,10 +312,10 @@ class License(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Beneficiary"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-licensemanager-license.html#cfn-licensemanager-license-beneficiary"""
-    p_LicenseMetadata: typing.List[typing.Union['LicenseMetadata', dict]] = attr.ib(
+    p_LicenseMetadata: typing.List[typing.Union['PropLicenseMetadata', dict]] = attr.ib(
         default=None,
-        converter=LicenseMetadata.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(LicenseMetadata), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropLicenseMetadata.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropLicenseMetadata), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "LicenseMetadata"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-licensemanager-license.html#cfn-licensemanager-license-licensemetadata"""

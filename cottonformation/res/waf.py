@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class WebACLWafAction(Property):
+class PropWebACLWafAction(Property):
     """
     AWS Object Type = "AWS::WAF::WebACL.WafAction"
 
@@ -35,7 +35,7 @@ class WebACLWafAction(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-webacl-action.html#cfn-waf-webacl-action-type"""
 
 @attr.s
-class IPSetIPSetDescriptor(Property):
+class PropIPSetIPSetDescriptor(Property):
     """
     AWS Object Type = "AWS::WAF::IPSet.IPSetDescriptor"
 
@@ -62,7 +62,7 @@ class IPSetIPSetDescriptor(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-ipset-ipsetdescriptors.html#cfn-waf-ipset-ipsetdescriptors-value"""
 
 @attr.s
-class ByteMatchSetFieldToMatch(Property):
+class PropByteMatchSetFieldToMatch(Property):
     """
     AWS Object Type = "AWS::WAF::ByteMatchSet.FieldToMatch"
 
@@ -89,7 +89,7 @@ class ByteMatchSetFieldToMatch(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-bytematchset-bytematchtuples-fieldtomatch.html#cfn-waf-bytematchset-bytematchtuples-fieldtomatch-data"""
 
 @attr.s
-class SqlInjectionMatchSetFieldToMatch(Property):
+class PropSqlInjectionMatchSetFieldToMatch(Property):
     """
     AWS Object Type = "AWS::WAF::SqlInjectionMatchSet.FieldToMatch"
 
@@ -116,7 +116,7 @@ class SqlInjectionMatchSetFieldToMatch(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-bytematchset-bytematchtuples-fieldtomatch.html#cfn-waf-sizeconstraintset-sizeconstraint-fieldtomatch-data"""
 
 @attr.s
-class ByteMatchSetByteMatchTuple(Property):
+class PropByteMatchSetByteMatchTuple(Property):
     """
     AWS Object Type = "AWS::WAF::ByteMatchSet.ByteMatchTuple"
 
@@ -132,10 +132,10 @@ class ByteMatchSetByteMatchTuple(Property):
     """
     AWS_OBJECT_TYPE = "AWS::WAF::ByteMatchSet.ByteMatchTuple"
     
-    rp_FieldToMatch: typing.Union['ByteMatchSetFieldToMatch', dict] = attr.ib(
+    rp_FieldToMatch: typing.Union['PropByteMatchSetFieldToMatch', dict] = attr.ib(
         default=None,
-        converter=ByteMatchSetFieldToMatch.from_dict,
-        validator=attr.validators.instance_of(ByteMatchSetFieldToMatch),
+        converter=PropByteMatchSetFieldToMatch.from_dict,
+        validator=attr.validators.instance_of(PropByteMatchSetFieldToMatch),
         metadata={AttrMeta.PROPERTY_NAME: "FieldToMatch"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-bytematchset-bytematchtuples.html#cfn-waf-bytematchset-bytematchtuples-fieldtomatch"""
@@ -165,7 +165,7 @@ class ByteMatchSetByteMatchTuple(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-bytematchset-bytematchtuples.html#cfn-waf-bytematchset-bytematchtuples-targetstringbase64"""
 
 @attr.s
-class SqlInjectionMatchSetSqlInjectionMatchTuple(Property):
+class PropSqlInjectionMatchSetSqlInjectionMatchTuple(Property):
     """
     AWS Object Type = "AWS::WAF::SqlInjectionMatchSet.SqlInjectionMatchTuple"
 
@@ -178,10 +178,10 @@ class SqlInjectionMatchSetSqlInjectionMatchTuple(Property):
     """
     AWS_OBJECT_TYPE = "AWS::WAF::SqlInjectionMatchSet.SqlInjectionMatchTuple"
     
-    rp_FieldToMatch: typing.Union['SqlInjectionMatchSetFieldToMatch', dict] = attr.ib(
+    rp_FieldToMatch: typing.Union['PropSqlInjectionMatchSetFieldToMatch', dict] = attr.ib(
         default=None,
-        converter=SqlInjectionMatchSetFieldToMatch.from_dict,
-        validator=attr.validators.instance_of(SqlInjectionMatchSetFieldToMatch),
+        converter=PropSqlInjectionMatchSetFieldToMatch.from_dict,
+        validator=attr.validators.instance_of(PropSqlInjectionMatchSetFieldToMatch),
         metadata={AttrMeta.PROPERTY_NAME: "FieldToMatch"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-sqlinjectionmatchset-sqlinjectionmatchtuples.html#cfn-waf-sqlinjectionmatchset-sqlinjectionmatchtuples-fieldtomatch"""
@@ -193,7 +193,7 @@ class SqlInjectionMatchSetSqlInjectionMatchTuple(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-sqlinjectionmatchset-sqlinjectionmatchtuples.html#cfn-waf-sqlinjectionmatchset-sqlinjectionmatchtuples-texttransformation"""
 
 @attr.s
-class WebACLActivatedRule(Property):
+class PropWebACLActivatedRule(Property):
     """
     AWS Object Type = "AWS::WAF::WebACL.ActivatedRule"
 
@@ -219,16 +219,16 @@ class WebACLActivatedRule(Property):
         metadata={AttrMeta.PROPERTY_NAME: "RuleId"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-webacl-rules.html#cfn-waf-webacl-rules-ruleid"""
-    p_Action: typing.Union['WebACLWafAction', dict] = attr.ib(
+    p_Action: typing.Union['PropWebACLWafAction', dict] = attr.ib(
         default=None,
-        converter=WebACLWafAction.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(WebACLWafAction)),
+        converter=PropWebACLWafAction.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropWebACLWafAction)),
         metadata={AttrMeta.PROPERTY_NAME: "Action"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-webacl-rules.html#cfn-waf-webacl-rules-action"""
 
 @attr.s
-class RulePredicate(Property):
+class PropRulePredicate(Property):
     """
     AWS Object Type = "AWS::WAF::Rule.Predicate"
 
@@ -262,7 +262,7 @@ class RulePredicate(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-rule-predicates.html#cfn-waf-rule-predicates-type"""
 
 @attr.s
-class XssMatchSetFieldToMatch(Property):
+class PropXssMatchSetFieldToMatch(Property):
     """
     AWS Object Type = "AWS::WAF::XssMatchSet.FieldToMatch"
 
@@ -289,7 +289,7 @@ class XssMatchSetFieldToMatch(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-xssmatchset-xssmatchtuple-fieldtomatch.html#cfn-waf-xssmatchset-xssmatchtuple-fieldtomatch-data"""
 
 @attr.s
-class SizeConstraintSetFieldToMatch(Property):
+class PropSizeConstraintSetFieldToMatch(Property):
     """
     AWS Object Type = "AWS::WAF::SizeConstraintSet.FieldToMatch"
 
@@ -316,7 +316,7 @@ class SizeConstraintSetFieldToMatch(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-sizeconstraintset-sizeconstraint-fieldtomatch.html#cfn-waf-sizeconstraintset-sizeconstraint-fieldtomatch-data"""
 
 @attr.s
-class SizeConstraintSetSizeConstraint(Property):
+class PropSizeConstraintSetSizeConstraint(Property):
     """
     AWS Object Type = "AWS::WAF::SizeConstraintSet.SizeConstraint"
 
@@ -337,10 +337,10 @@ class SizeConstraintSetSizeConstraint(Property):
         metadata={AttrMeta.PROPERTY_NAME: "ComparisonOperator"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-sizeconstraintset-sizeconstraint.html#cfn-waf-sizeconstraintset-sizeconstraint-comparisonoperator"""
-    rp_FieldToMatch: typing.Union['SizeConstraintSetFieldToMatch', dict] = attr.ib(
+    rp_FieldToMatch: typing.Union['PropSizeConstraintSetFieldToMatch', dict] = attr.ib(
         default=None,
-        converter=SizeConstraintSetFieldToMatch.from_dict,
-        validator=attr.validators.instance_of(SizeConstraintSetFieldToMatch),
+        converter=PropSizeConstraintSetFieldToMatch.from_dict,
+        validator=attr.validators.instance_of(PropSizeConstraintSetFieldToMatch),
         metadata={AttrMeta.PROPERTY_NAME: "FieldToMatch"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-sizeconstraintset-sizeconstraint.html#cfn-waf-sizeconstraintset-sizeconstraint-fieldtomatch"""
@@ -358,7 +358,7 @@ class SizeConstraintSetSizeConstraint(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-sizeconstraintset-sizeconstraint.html#cfn-waf-sizeconstraintset-sizeconstraint-texttransformation"""
 
 @attr.s
-class XssMatchSetXssMatchTuple(Property):
+class PropXssMatchSetXssMatchTuple(Property):
     """
     AWS Object Type = "AWS::WAF::XssMatchSet.XssMatchTuple"
 
@@ -371,10 +371,10 @@ class XssMatchSetXssMatchTuple(Property):
     """
     AWS_OBJECT_TYPE = "AWS::WAF::XssMatchSet.XssMatchTuple"
     
-    rp_FieldToMatch: typing.Union['XssMatchSetFieldToMatch', dict] = attr.ib(
+    rp_FieldToMatch: typing.Union['PropXssMatchSetFieldToMatch', dict] = attr.ib(
         default=None,
-        converter=XssMatchSetFieldToMatch.from_dict,
-        validator=attr.validators.instance_of(XssMatchSetFieldToMatch),
+        converter=PropXssMatchSetFieldToMatch.from_dict,
+        validator=attr.validators.instance_of(PropXssMatchSetFieldToMatch),
         metadata={AttrMeta.PROPERTY_NAME: "FieldToMatch"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-waf-xssmatchset-xssmatchtuple.html#cfn-waf-xssmatchset-xssmatchtuple-fieldtomatch"""
@@ -409,10 +409,10 @@ class IPSet(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Name"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-ipset.html#cfn-waf-ipset-name"""
-    p_IPSetDescriptors: typing.List[typing.Union['IPSetIPSetDescriptor', dict]] = attr.ib(
+    p_IPSetDescriptors: typing.List[typing.Union['PropIPSetIPSetDescriptor', dict]] = attr.ib(
         default=None,
-        converter=IPSetIPSetDescriptor.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(IPSetIPSetDescriptor), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropIPSetIPSetDescriptor.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropIPSetIPSetDescriptor), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "IPSetDescriptors"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-ipset.html#cfn-waf-ipset-ipsetdescriptors"""
@@ -440,10 +440,10 @@ class SizeConstraintSet(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Name"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-sizeconstraintset.html#cfn-waf-sizeconstraintset-name"""
-    rp_SizeConstraints: typing.List[typing.Union['SizeConstraintSetSizeConstraint', dict]] = attr.ib(
+    rp_SizeConstraints: typing.List[typing.Union['PropSizeConstraintSetSizeConstraint', dict]] = attr.ib(
         default=None,
-        converter=SizeConstraintSetSizeConstraint.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(SizeConstraintSetSizeConstraint), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropSizeConstraintSetSizeConstraint.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropSizeConstraintSetSizeConstraint), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "SizeConstraints"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-sizeconstraintset.html#cfn-waf-sizeconstraintset-sizeconstraints"""
@@ -471,10 +471,10 @@ class ByteMatchSet(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Name"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-bytematchset.html#cfn-waf-bytematchset-name"""
-    p_ByteMatchTuples: typing.List[typing.Union['ByteMatchSetByteMatchTuple', dict]] = attr.ib(
+    p_ByteMatchTuples: typing.List[typing.Union['PropByteMatchSetByteMatchTuple', dict]] = attr.ib(
         default=None,
-        converter=ByteMatchSetByteMatchTuple.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ByteMatchSetByteMatchTuple), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropByteMatchSetByteMatchTuple.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropByteMatchSetByteMatchTuple), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "ByteMatchTuples"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-bytematchset.html#cfn-waf-bytematchset-bytematchtuples"""
@@ -502,10 +502,10 @@ class XssMatchSet(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Name"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-xssmatchset.html#cfn-waf-xssmatchset-name"""
-    rp_XssMatchTuples: typing.List[typing.Union['XssMatchSetXssMatchTuple', dict]] = attr.ib(
+    rp_XssMatchTuples: typing.List[typing.Union['PropXssMatchSetXssMatchTuple', dict]] = attr.ib(
         default=None,
-        converter=XssMatchSetXssMatchTuple.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(XssMatchSetXssMatchTuple), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropXssMatchSetXssMatchTuple.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropXssMatchSetXssMatchTuple), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "XssMatchTuples"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-xssmatchset.html#cfn-waf-xssmatchset-xssmatchtuples"""
@@ -540,10 +540,10 @@ class Rule(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Name"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-rule.html#cfn-waf-rule-name"""
-    p_Predicates: typing.List[typing.Union['RulePredicate', dict]] = attr.ib(
+    p_Predicates: typing.List[typing.Union['PropRulePredicate', dict]] = attr.ib(
         default=None,
-        converter=RulePredicate.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(RulePredicate), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropRulePredicate.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropRulePredicate), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Predicates"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-rule.html#cfn-waf-rule-predicates"""
@@ -571,10 +571,10 @@ class SqlInjectionMatchSet(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Name"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-sqlinjectionmatchset.html#cfn-waf-sqlinjectionmatchset-name"""
-    p_SqlInjectionMatchTuples: typing.List[typing.Union['SqlInjectionMatchSetSqlInjectionMatchTuple', dict]] = attr.ib(
+    p_SqlInjectionMatchTuples: typing.List[typing.Union['PropSqlInjectionMatchSetSqlInjectionMatchTuple', dict]] = attr.ib(
         default=None,
-        converter=SqlInjectionMatchSetSqlInjectionMatchTuple.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(SqlInjectionMatchSetSqlInjectionMatchTuple), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropSqlInjectionMatchSetSqlInjectionMatchTuple.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropSqlInjectionMatchSetSqlInjectionMatchTuple), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "SqlInjectionMatchTuples"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-sqlinjectionmatchset.html#cfn-waf-sqlinjectionmatchset-sqlinjectionmatchtuples"""
@@ -598,10 +598,10 @@ class WebACL(Resource):
     AWS_OBJECT_TYPE = "AWS::WAF::WebACL"
 
     
-    rp_DefaultAction: typing.Union['WebACLWafAction', dict] = attr.ib(
+    rp_DefaultAction: typing.Union['PropWebACLWafAction', dict] = attr.ib(
         default=None,
-        converter=WebACLWafAction.from_dict,
-        validator=attr.validators.instance_of(WebACLWafAction),
+        converter=PropWebACLWafAction.from_dict,
+        validator=attr.validators.instance_of(PropWebACLWafAction),
         metadata={AttrMeta.PROPERTY_NAME: "DefaultAction"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-webacl.html#cfn-waf-webacl-defaultaction"""
@@ -617,10 +617,10 @@ class WebACL(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Name"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-webacl.html#cfn-waf-webacl-name"""
-    p_Rules: typing.List[typing.Union['WebACLActivatedRule', dict]] = attr.ib(
+    p_Rules: typing.List[typing.Union['PropWebACLActivatedRule', dict]] = attr.ib(
         default=None,
-        converter=WebACLActivatedRule.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(WebACLActivatedRule), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropWebACLActivatedRule.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropWebACLActivatedRule), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Rules"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-waf-webacl.html#cfn-waf-webacl-rules"""

@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class DomainDomainEndpointOptions(Property):
+class PropDomainDomainEndpointOptions(Property):
     """
     AWS Object Type = "AWS::Elasticsearch::Domain.DomainEndpointOptions"
 
@@ -63,7 +63,7 @@ class DomainDomainEndpointOptions(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-domainendpointoptions.html#cfn-elasticsearch-domain-domainendpointoptions-tlssecuritypolicy"""
 
 @attr.s
-class DomainNodeToNodeEncryptionOptions(Property):
+class PropDomainNodeToNodeEncryptionOptions(Property):
     """
     AWS Object Type = "AWS::Elasticsearch::Domain.NodeToNodeEncryptionOptions"
 
@@ -83,7 +83,7 @@ class DomainNodeToNodeEncryptionOptions(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-nodetonodeencryptionoptions.html#cfn-elasticsearch-domain-nodetonodeencryptionoptions-enabled"""
 
 @attr.s
-class DomainZoneAwarenessConfig(Property):
+class PropDomainZoneAwarenessConfig(Property):
     """
     AWS Object Type = "AWS::Elasticsearch::Domain.ZoneAwarenessConfig"
 
@@ -103,7 +103,7 @@ class DomainZoneAwarenessConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-zoneawarenessconfig.html#cfn-elasticsearch-domain-zoneawarenessconfig-availabilityzonecount"""
 
 @attr.s
-class DomainSnapshotOptions(Property):
+class PropDomainSnapshotOptions(Property):
     """
     AWS Object Type = "AWS::Elasticsearch::Domain.SnapshotOptions"
 
@@ -123,7 +123,7 @@ class DomainSnapshotOptions(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-snapshotoptions.html#cfn-elasticsearch-domain-snapshotoptions-automatedsnapshotstarthour"""
 
 @attr.s
-class DomainCognitoOptions(Property):
+class PropDomainCognitoOptions(Property):
     """
     AWS Object Type = "AWS::Elasticsearch::Domain.CognitoOptions"
 
@@ -164,7 +164,7 @@ class DomainCognitoOptions(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-cognitooptions.html#cfn-elasticsearch-domain-cognitooptions-userpoolid"""
 
 @attr.s
-class DomainVPCOptions(Property):
+class PropDomainVPCOptions(Property):
     """
     AWS Object Type = "AWS::Elasticsearch::Domain.VPCOptions"
 
@@ -191,7 +191,7 @@ class DomainVPCOptions(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-vpcoptions.html#cfn-elasticsearch-domain-vpcoptions-subnetids"""
 
 @attr.s
-class DomainMasterUserOptions(Property):
+class PropDomainMasterUserOptions(Property):
     """
     AWS Object Type = "AWS::Elasticsearch::Domain.MasterUserOptions"
 
@@ -225,7 +225,7 @@ class DomainMasterUserOptions(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-masteruseroptions.html#cfn-elasticsearch-domain-masteruseroptions-masteruserpassword"""
 
 @attr.s
-class DomainLogPublishingOption(Property):
+class PropDomainLogPublishingOption(Property):
     """
     AWS Object Type = "AWS::Elasticsearch::Domain.LogPublishingOption"
 
@@ -252,7 +252,7 @@ class DomainLogPublishingOption(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-logpublishingoption.html#cfn-elasticsearch-domain-logpublishingoption-enabled"""
 
 @attr.s
-class DomainEBSOptions(Property):
+class PropDomainEBSOptions(Property):
     """
     AWS Object Type = "AWS::Elasticsearch::Domain.EBSOptions"
 
@@ -293,7 +293,7 @@ class DomainEBSOptions(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-ebsoptions.html#cfn-elasticsearch-domain-ebsoptions-volumetype"""
 
 @attr.s
-class DomainEncryptionAtRestOptions(Property):
+class PropDomainEncryptionAtRestOptions(Property):
     """
     AWS Object Type = "AWS::Elasticsearch::Domain.EncryptionAtRestOptions"
 
@@ -320,7 +320,7 @@ class DomainEncryptionAtRestOptions(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-encryptionatrestoptions.html#cfn-elasticsearch-domain-encryptionatrestoptions-kmskeyid"""
 
 @attr.s
-class DomainElasticsearchClusterConfig(Property):
+class PropDomainElasticsearchClusterConfig(Property):
     """
     AWS Object Type = "AWS::Elasticsearch::Domain.ElasticsearchClusterConfig"
 
@@ -389,10 +389,10 @@ class DomainElasticsearchClusterConfig(Property):
         metadata={AttrMeta.PROPERTY_NAME: "WarmType"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-elasticsearchclusterconfig.html#cfn-elasticsearch-domain-elasticsearchclusterconfig-warmtype"""
-    p_ZoneAwarenessConfig: typing.Union['DomainZoneAwarenessConfig', dict] = attr.ib(
+    p_ZoneAwarenessConfig: typing.Union['PropDomainZoneAwarenessConfig', dict] = attr.ib(
         default=None,
-        converter=DomainZoneAwarenessConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DomainZoneAwarenessConfig)),
+        converter=PropDomainZoneAwarenessConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDomainZoneAwarenessConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "ZoneAwarenessConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-elasticsearchclusterconfig.html#cfn-elasticsearch-domain-elasticsearchclusterconfig-zoneawarenessconfig"""
@@ -404,7 +404,7 @@ class DomainElasticsearchClusterConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-elasticsearchclusterconfig.html#cfn-elasticsearch-domain-elasticseachclusterconfig-zoneawarenessenabled"""
 
 @attr.s
-class DomainAdvancedSecurityOptionsInput(Property):
+class PropDomainAdvancedSecurityOptionsInput(Property):
     """
     AWS Object Type = "AWS::Elasticsearch::Domain.AdvancedSecurityOptionsInput"
 
@@ -430,10 +430,10 @@ class DomainAdvancedSecurityOptionsInput(Property):
         metadata={AttrMeta.PROPERTY_NAME: "InternalUserDatabaseEnabled"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-advancedsecurityoptionsinput.html#cfn-elasticsearch-domain-advancedsecurityoptionsinput-internaluserdatabaseenabled"""
-    p_MasterUserOptions: typing.Union['DomainMasterUserOptions', dict] = attr.ib(
+    p_MasterUserOptions: typing.Union['PropDomainMasterUserOptions', dict] = attr.ib(
         default=None,
-        converter=DomainMasterUserOptions.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DomainMasterUserOptions)),
+        converter=PropDomainMasterUserOptions.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDomainMasterUserOptions)),
         metadata={AttrMeta.PROPERTY_NAME: "MasterUserOptions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-advancedsecurityoptionsinput.html#cfn-elasticsearch-domain-advancedsecurityoptionsinput-masteruseroptions"""
@@ -481,24 +481,24 @@ class Domain(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "AdvancedOptions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticsearch-domain.html#cfn-elasticsearch-domain-advancedoptions"""
-    p_AdvancedSecurityOptions: typing.Union['DomainAdvancedSecurityOptionsInput', dict] = attr.ib(
+    p_AdvancedSecurityOptions: typing.Union['PropDomainAdvancedSecurityOptionsInput', dict] = attr.ib(
         default=None,
-        converter=DomainAdvancedSecurityOptionsInput.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DomainAdvancedSecurityOptionsInput)),
+        converter=PropDomainAdvancedSecurityOptionsInput.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDomainAdvancedSecurityOptionsInput)),
         metadata={AttrMeta.PROPERTY_NAME: "AdvancedSecurityOptions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticsearch-domain.html#cfn-elasticsearch-domain-advancedsecurityoptions"""
-    p_CognitoOptions: typing.Union['DomainCognitoOptions', dict] = attr.ib(
+    p_CognitoOptions: typing.Union['PropDomainCognitoOptions', dict] = attr.ib(
         default=None,
-        converter=DomainCognitoOptions.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DomainCognitoOptions)),
+        converter=PropDomainCognitoOptions.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDomainCognitoOptions)),
         metadata={AttrMeta.PROPERTY_NAME: "CognitoOptions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticsearch-domain.html#cfn-elasticsearch-domain-cognitooptions"""
-    p_DomainEndpointOptions: typing.Union['DomainDomainEndpointOptions', dict] = attr.ib(
+    p_DomainEndpointOptions: typing.Union['PropDomainDomainEndpointOptions', dict] = attr.ib(
         default=None,
-        converter=DomainDomainEndpointOptions.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DomainDomainEndpointOptions)),
+        converter=PropDomainDomainEndpointOptions.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDomainDomainEndpointOptions)),
         metadata={AttrMeta.PROPERTY_NAME: "DomainEndpointOptions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticsearch-domain.html#cfn-elasticsearch-domain-domainendpointoptions"""
@@ -508,17 +508,17 @@ class Domain(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "DomainName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticsearch-domain.html#cfn-elasticsearch-domain-domainname"""
-    p_EBSOptions: typing.Union['DomainEBSOptions', dict] = attr.ib(
+    p_EBSOptions: typing.Union['PropDomainEBSOptions', dict] = attr.ib(
         default=None,
-        converter=DomainEBSOptions.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DomainEBSOptions)),
+        converter=PropDomainEBSOptions.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDomainEBSOptions)),
         metadata={AttrMeta.PROPERTY_NAME: "EBSOptions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticsearch-domain.html#cfn-elasticsearch-domain-ebsoptions"""
-    p_ElasticsearchClusterConfig: typing.Union['DomainElasticsearchClusterConfig', dict] = attr.ib(
+    p_ElasticsearchClusterConfig: typing.Union['PropDomainElasticsearchClusterConfig', dict] = attr.ib(
         default=None,
-        converter=DomainElasticsearchClusterConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DomainElasticsearchClusterConfig)),
+        converter=PropDomainElasticsearchClusterConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDomainElasticsearchClusterConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "ElasticsearchClusterConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticsearch-domain.html#cfn-elasticsearch-domain-elasticsearchclusterconfig"""
@@ -528,38 +528,38 @@ class Domain(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "ElasticsearchVersion"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticsearch-domain.html#cfn-elasticsearch-domain-elasticsearchversion"""
-    p_EncryptionAtRestOptions: typing.Union['DomainEncryptionAtRestOptions', dict] = attr.ib(
+    p_EncryptionAtRestOptions: typing.Union['PropDomainEncryptionAtRestOptions', dict] = attr.ib(
         default=None,
-        converter=DomainEncryptionAtRestOptions.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DomainEncryptionAtRestOptions)),
+        converter=PropDomainEncryptionAtRestOptions.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDomainEncryptionAtRestOptions)),
         metadata={AttrMeta.PROPERTY_NAME: "EncryptionAtRestOptions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticsearch-domain.html#cfn-elasticsearch-domain-encryptionatrestoptions"""
-    p_LogPublishingOptions: typing.Union['DomainLogPublishingOption', dict] = attr.ib(
+    p_LogPublishingOptions: typing.Union['PropDomainLogPublishingOption', dict] = attr.ib(
         default=None,
-        converter=DomainLogPublishingOption.from_list,
-        validator=attr.validators.optional(attr.validators.instance_of(DomainLogPublishingOption)),
+        converter=PropDomainLogPublishingOption.from_list,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDomainLogPublishingOption)),
         metadata={AttrMeta.PROPERTY_NAME: "LogPublishingOptions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticsearch-domain.html#cfn-elasticsearch-domain-logpublishingoptions"""
-    p_NodeToNodeEncryptionOptions: typing.Union['DomainNodeToNodeEncryptionOptions', dict] = attr.ib(
+    p_NodeToNodeEncryptionOptions: typing.Union['PropDomainNodeToNodeEncryptionOptions', dict] = attr.ib(
         default=None,
-        converter=DomainNodeToNodeEncryptionOptions.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DomainNodeToNodeEncryptionOptions)),
+        converter=PropDomainNodeToNodeEncryptionOptions.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDomainNodeToNodeEncryptionOptions)),
         metadata={AttrMeta.PROPERTY_NAME: "NodeToNodeEncryptionOptions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticsearch-domain.html#cfn-elasticsearch-domain-nodetonodeencryptionoptions"""
-    p_SnapshotOptions: typing.Union['DomainSnapshotOptions', dict] = attr.ib(
+    p_SnapshotOptions: typing.Union['PropDomainSnapshotOptions', dict] = attr.ib(
         default=None,
-        converter=DomainSnapshotOptions.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DomainSnapshotOptions)),
+        converter=PropDomainSnapshotOptions.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDomainSnapshotOptions)),
         metadata={AttrMeta.PROPERTY_NAME: "SnapshotOptions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticsearch-domain.html#cfn-elasticsearch-domain-snapshotoptions"""
-    p_VPCOptions: typing.Union['DomainVPCOptions', dict] = attr.ib(
+    p_VPCOptions: typing.Union['PropDomainVPCOptions', dict] = attr.ib(
         default=None,
-        converter=DomainVPCOptions.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DomainVPCOptions)),
+        converter=PropDomainVPCOptions.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDomainVPCOptions)),
         metadata={AttrMeta.PROPERTY_NAME: "VPCOptions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticsearch-domain.html#cfn-elasticsearch-domain-vpcoptions"""

@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class GlobalTablePointInTimeRecoverySpecification(Property):
+class PropGlobalTablePointInTimeRecoverySpecification(Property):
     """
     AWS Object Type = "AWS::DynamoDB::GlobalTable.PointInTimeRecoverySpecification"
 
@@ -35,7 +35,7 @@ class GlobalTablePointInTimeRecoverySpecification(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-pointintimerecoveryspecification.html#cfn-dynamodb-globaltable-pointintimerecoveryspecification-pointintimerecoveryenabled"""
 
 @attr.s
-class TablePointInTimeRecoverySpecification(Property):
+class PropTablePointInTimeRecoverySpecification(Property):
     """
     AWS Object Type = "AWS::DynamoDB::Table.PointInTimeRecoverySpecification"
 
@@ -55,7 +55,7 @@ class TablePointInTimeRecoverySpecification(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-table-pointintimerecoveryspecification.html#cfn-dynamodb-table-pointintimerecoveryspecification-pointintimerecoveryenabled"""
 
 @attr.s
-class TableKinesisStreamSpecification(Property):
+class PropTableKinesisStreamSpecification(Property):
     """
     AWS Object Type = "AWS::DynamoDB::Table.KinesisStreamSpecification"
 
@@ -75,7 +75,7 @@ class TableKinesisStreamSpecification(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-kinesisstreamspecification.html#cfn-dynamodb-kinesisstreamspecification-streamarn"""
 
 @attr.s
-class GlobalTableContributorInsightsSpecification(Property):
+class PropGlobalTableContributorInsightsSpecification(Property):
     """
     AWS Object Type = "AWS::DynamoDB::GlobalTable.ContributorInsightsSpecification"
 
@@ -95,7 +95,7 @@ class GlobalTableContributorInsightsSpecification(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-contributorinsightsspecification.html#cfn-dynamodb-globaltable-contributorinsightsspecification-enabled"""
 
 @attr.s
-class TableAttributeDefinition(Property):
+class PropTableAttributeDefinition(Property):
     """
     AWS Object Type = "AWS::DynamoDB::Table.AttributeDefinition"
 
@@ -122,7 +122,7 @@ class TableAttributeDefinition(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-attributedef.html#cfn-dynamodb-attributedef-attributename-attributetype"""
 
 @attr.s
-class TableContributorInsightsSpecification(Property):
+class PropTableContributorInsightsSpecification(Property):
     """
     AWS Object Type = "AWS::DynamoDB::Table.ContributorInsightsSpecification"
 
@@ -142,7 +142,7 @@ class TableContributorInsightsSpecification(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-contributorinsightsspecification.html#cfn-dynamodb-contributorinsightsspecification-enabled"""
 
 @attr.s
-class TableKeySchema(Property):
+class PropTableKeySchema(Property):
     """
     AWS Object Type = "AWS::DynamoDB::Table.KeySchema"
 
@@ -169,7 +169,7 @@ class TableKeySchema(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-keyschema.html#aws-properties-dynamodb-keyschema-keytype"""
 
 @attr.s
-class GlobalTableTargetTrackingScalingPolicyConfiguration(Property):
+class PropGlobalTableTargetTrackingScalingPolicyConfiguration(Property):
     """
     AWS Object Type = "AWS::DynamoDB::GlobalTable.TargetTrackingScalingPolicyConfiguration"
 
@@ -210,7 +210,7 @@ class GlobalTableTargetTrackingScalingPolicyConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-targettrackingscalingpolicyconfiguration.html#cfn-dynamodb-globaltable-targettrackingscalingpolicyconfiguration-scaleoutcooldown"""
 
 @attr.s
-class GlobalTableKeySchema(Property):
+class PropGlobalTableKeySchema(Property):
     """
     AWS Object Type = "AWS::DynamoDB::GlobalTable.KeySchema"
 
@@ -237,7 +237,7 @@ class GlobalTableKeySchema(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-keyschema.html#cfn-dynamodb-globaltable-keyschema-keytype"""
 
 @attr.s
-class GlobalTableStreamSpecification(Property):
+class PropGlobalTableStreamSpecification(Property):
     """
     AWS Object Type = "AWS::DynamoDB::GlobalTable.StreamSpecification"
 
@@ -257,7 +257,7 @@ class GlobalTableStreamSpecification(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-streamspecification.html#cfn-dynamodb-globaltable-streamspecification-streamviewtype"""
 
 @attr.s
-class GlobalTableProjection(Property):
+class PropGlobalTableProjection(Property):
     """
     AWS Object Type = "AWS::DynamoDB::GlobalTable.Projection"
 
@@ -284,7 +284,7 @@ class GlobalTableProjection(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-projection.html#cfn-dynamodb-globaltable-projection-projectiontype"""
 
 @attr.s
-class GlobalTableAttributeDefinition(Property):
+class PropGlobalTableAttributeDefinition(Property):
     """
     AWS Object Type = "AWS::DynamoDB::GlobalTable.AttributeDefinition"
 
@@ -311,7 +311,7 @@ class GlobalTableAttributeDefinition(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-attributedefinition.html#cfn-dynamodb-globaltable-attributedefinition-attributetype"""
 
 @attr.s
-class GlobalTableSSESpecification(Property):
+class PropGlobalTableSSESpecification(Property):
     """
     AWS Object Type = "AWS::DynamoDB::GlobalTable.SSESpecification"
 
@@ -338,7 +338,7 @@ class GlobalTableSSESpecification(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-ssespecification.html#cfn-dynamodb-globaltable-ssespecification-ssetype"""
 
 @attr.s
-class TableSSESpecification(Property):
+class PropTableSSESpecification(Property):
     """
     AWS Object Type = "AWS::DynamoDB::Table.SSESpecification"
 
@@ -372,7 +372,7 @@ class TableSSESpecification(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-table-ssespecification.html#cfn-dynamodb-table-ssespecification-ssetype"""
 
 @attr.s
-class TableTimeToLiveSpecification(Property):
+class PropTableTimeToLiveSpecification(Property):
     """
     AWS Object Type = "AWS::DynamoDB::Table.TimeToLiveSpecification"
 
@@ -399,7 +399,7 @@ class TableTimeToLiveSpecification(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-timetolivespecification.html#cfn-dynamodb-timetolivespecification-enabled"""
 
 @attr.s
-class TableProvisionedThroughput(Property):
+class PropTableProvisionedThroughput(Property):
     """
     AWS Object Type = "AWS::DynamoDB::Table.ProvisionedThroughput"
 
@@ -426,7 +426,7 @@ class TableProvisionedThroughput(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-provisionedthroughput.html#cfn-dynamodb-provisionedthroughput-writecapacityunits"""
 
 @attr.s
-class TableProjection(Property):
+class PropTableProjection(Property):
     """
     AWS Object Type = "AWS::DynamoDB::Table.Projection"
 
@@ -453,7 +453,7 @@ class TableProjection(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-projectionobject.html#cfn-dynamodb-projectionobj-projtype"""
 
 @attr.s
-class GlobalTableTimeToLiveSpecification(Property):
+class PropGlobalTableTimeToLiveSpecification(Property):
     """
     AWS Object Type = "AWS::DynamoDB::GlobalTable.TimeToLiveSpecification"
 
@@ -480,7 +480,7 @@ class GlobalTableTimeToLiveSpecification(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-timetolivespecification.html#cfn-dynamodb-globaltable-timetolivespecification-attributename"""
 
 @attr.s
-class GlobalTableReplicaSSESpecification(Property):
+class PropGlobalTableReplicaSSESpecification(Property):
     """
     AWS Object Type = "AWS::DynamoDB::GlobalTable.ReplicaSSESpecification"
 
@@ -500,7 +500,7 @@ class GlobalTableReplicaSSESpecification(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-replicassespecification.html#cfn-dynamodb-globaltable-replicassespecification-kmsmasterkeyid"""
 
 @attr.s
-class TableStreamSpecification(Property):
+class PropTableStreamSpecification(Property):
     """
     AWS Object Type = "AWS::DynamoDB::Table.StreamSpecification"
 
@@ -520,7 +520,7 @@ class TableStreamSpecification(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-streamspecification.html#cfn-dynamodb-streamspecification-streamviewtype"""
 
 @attr.s
-class TableLocalSecondaryIndex(Property):
+class PropTableLocalSecondaryIndex(Property):
     """
     AWS Object Type = "AWS::DynamoDB::Table.LocalSecondaryIndex"
 
@@ -540,23 +540,23 @@ class TableLocalSecondaryIndex(Property):
         metadata={AttrMeta.PROPERTY_NAME: "IndexName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-lsi.html#cfn-dynamodb-lsi-indexname"""
-    rp_KeySchema: typing.List[typing.Union['TableKeySchema', dict]] = attr.ib(
+    rp_KeySchema: typing.List[typing.Union['PropTableKeySchema', dict]] = attr.ib(
         default=None,
-        converter=TableKeySchema.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TableKeySchema), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropTableKeySchema.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropTableKeySchema), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "KeySchema"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-lsi.html#cfn-dynamodb-lsi-keyschema"""
-    rp_Projection: typing.Union['TableProjection', dict] = attr.ib(
+    rp_Projection: typing.Union['PropTableProjection', dict] = attr.ib(
         default=None,
-        converter=TableProjection.from_dict,
-        validator=attr.validators.instance_of(TableProjection),
+        converter=PropTableProjection.from_dict,
+        validator=attr.validators.instance_of(PropTableProjection),
         metadata={AttrMeta.PROPERTY_NAME: "Projection"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-lsi.html#cfn-dynamodb-lsi-projection"""
 
 @attr.s
-class GlobalTableCapacityAutoScalingSettings(Property):
+class PropGlobalTableCapacityAutoScalingSettings(Property):
     """
     AWS Object Type = "AWS::DynamoDB::GlobalTable.CapacityAutoScalingSettings"
 
@@ -583,10 +583,10 @@ class GlobalTableCapacityAutoScalingSettings(Property):
         metadata={AttrMeta.PROPERTY_NAME: "MinCapacity"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-capacityautoscalingsettings.html#cfn-dynamodb-globaltable-capacityautoscalingsettings-mincapacity"""
-    rp_TargetTrackingScalingPolicyConfiguration: typing.Union['GlobalTableTargetTrackingScalingPolicyConfiguration', dict] = attr.ib(
+    rp_TargetTrackingScalingPolicyConfiguration: typing.Union['PropGlobalTableTargetTrackingScalingPolicyConfiguration', dict] = attr.ib(
         default=None,
-        converter=GlobalTableTargetTrackingScalingPolicyConfiguration.from_dict,
-        validator=attr.validators.instance_of(GlobalTableTargetTrackingScalingPolicyConfiguration),
+        converter=PropGlobalTableTargetTrackingScalingPolicyConfiguration.from_dict,
+        validator=attr.validators.instance_of(PropGlobalTableTargetTrackingScalingPolicyConfiguration),
         metadata={AttrMeta.PROPERTY_NAME: "TargetTrackingScalingPolicyConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-capacityautoscalingsettings.html#cfn-dynamodb-globaltable-capacityautoscalingsettings-targettrackingscalingpolicyconfiguration"""
@@ -598,7 +598,7 @@ class GlobalTableCapacityAutoScalingSettings(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-capacityautoscalingsettings.html#cfn-dynamodb-globaltable-capacityautoscalingsettings-seedcapacity"""
 
 @attr.s
-class GlobalTableReadProvisionedThroughputSettings(Property):
+class PropGlobalTableReadProvisionedThroughputSettings(Property):
     """
     AWS Object Type = "AWS::DynamoDB::GlobalTable.ReadProvisionedThroughputSettings"
 
@@ -611,10 +611,10 @@ class GlobalTableReadProvisionedThroughputSettings(Property):
     """
     AWS_OBJECT_TYPE = "AWS::DynamoDB::GlobalTable.ReadProvisionedThroughputSettings"
     
-    p_ReadCapacityAutoScalingSettings: typing.Union['GlobalTableCapacityAutoScalingSettings', dict] = attr.ib(
+    p_ReadCapacityAutoScalingSettings: typing.Union['PropGlobalTableCapacityAutoScalingSettings', dict] = attr.ib(
         default=None,
-        converter=GlobalTableCapacityAutoScalingSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(GlobalTableCapacityAutoScalingSettings)),
+        converter=PropGlobalTableCapacityAutoScalingSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropGlobalTableCapacityAutoScalingSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "ReadCapacityAutoScalingSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-readprovisionedthroughputsettings.html#cfn-dynamodb-globaltable-readprovisionedthroughputsettings-readcapacityautoscalingsettings"""
@@ -626,7 +626,7 @@ class GlobalTableReadProvisionedThroughputSettings(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-readprovisionedthroughputsettings.html#cfn-dynamodb-globaltable-readprovisionedthroughputsettings-readcapacityunits"""
 
 @attr.s
-class GlobalTableLocalSecondaryIndex(Property):
+class PropGlobalTableLocalSecondaryIndex(Property):
     """
     AWS Object Type = "AWS::DynamoDB::GlobalTable.LocalSecondaryIndex"
 
@@ -646,23 +646,23 @@ class GlobalTableLocalSecondaryIndex(Property):
         metadata={AttrMeta.PROPERTY_NAME: "IndexName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-localsecondaryindex.html#cfn-dynamodb-globaltable-localsecondaryindex-indexname"""
-    rp_KeySchema: typing.List[typing.Union['GlobalTableKeySchema', dict]] = attr.ib(
+    rp_KeySchema: typing.List[typing.Union['PropGlobalTableKeySchema', dict]] = attr.ib(
         default=None,
-        converter=GlobalTableKeySchema.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(GlobalTableKeySchema), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropGlobalTableKeySchema.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropGlobalTableKeySchema), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "KeySchema"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-localsecondaryindex.html#cfn-dynamodb-globaltable-localsecondaryindex-keyschema"""
-    rp_Projection: typing.Union['GlobalTableProjection', dict] = attr.ib(
+    rp_Projection: typing.Union['PropGlobalTableProjection', dict] = attr.ib(
         default=None,
-        converter=GlobalTableProjection.from_dict,
-        validator=attr.validators.instance_of(GlobalTableProjection),
+        converter=PropGlobalTableProjection.from_dict,
+        validator=attr.validators.instance_of(PropGlobalTableProjection),
         metadata={AttrMeta.PROPERTY_NAME: "Projection"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-localsecondaryindex.html#cfn-dynamodb-globaltable-localsecondaryindex-projection"""
 
 @attr.s
-class TableGlobalSecondaryIndex(Property):
+class PropTableGlobalSecondaryIndex(Property):
     """
     AWS Object Type = "AWS::DynamoDB::Table.GlobalSecondaryIndex"
 
@@ -684,37 +684,37 @@ class TableGlobalSecondaryIndex(Property):
         metadata={AttrMeta.PROPERTY_NAME: "IndexName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-gsi.html#cfn-dynamodb-gsi-indexname"""
-    rp_KeySchema: typing.List[typing.Union['TableKeySchema', dict]] = attr.ib(
+    rp_KeySchema: typing.List[typing.Union['PropTableKeySchema', dict]] = attr.ib(
         default=None,
-        converter=TableKeySchema.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TableKeySchema), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropTableKeySchema.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropTableKeySchema), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "KeySchema"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-gsi.html#cfn-dynamodb-gsi-keyschema"""
-    rp_Projection: typing.Union['TableProjection', dict] = attr.ib(
+    rp_Projection: typing.Union['PropTableProjection', dict] = attr.ib(
         default=None,
-        converter=TableProjection.from_dict,
-        validator=attr.validators.instance_of(TableProjection),
+        converter=PropTableProjection.from_dict,
+        validator=attr.validators.instance_of(PropTableProjection),
         metadata={AttrMeta.PROPERTY_NAME: "Projection"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-gsi.html#cfn-dynamodb-gsi-projection"""
-    p_ContributorInsightsSpecification: typing.Union['TableContributorInsightsSpecification', dict] = attr.ib(
+    p_ContributorInsightsSpecification: typing.Union['PropTableContributorInsightsSpecification', dict] = attr.ib(
         default=None,
-        converter=TableContributorInsightsSpecification.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(TableContributorInsightsSpecification)),
+        converter=PropTableContributorInsightsSpecification.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropTableContributorInsightsSpecification)),
         metadata={AttrMeta.PROPERTY_NAME: "ContributorInsightsSpecification"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-gsi.html#cfn-dynamodb-contributorinsightsspecification-enabled"""
-    p_ProvisionedThroughput: typing.Union['TableProvisionedThroughput', dict] = attr.ib(
+    p_ProvisionedThroughput: typing.Union['PropTableProvisionedThroughput', dict] = attr.ib(
         default=None,
-        converter=TableProvisionedThroughput.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(TableProvisionedThroughput)),
+        converter=PropTableProvisionedThroughput.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropTableProvisionedThroughput)),
         metadata={AttrMeta.PROPERTY_NAME: "ProvisionedThroughput"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-gsi.html#cfn-dynamodb-gsi-provisionedthroughput"""
 
 @attr.s
-class GlobalTableReplicaGlobalSecondaryIndexSpecification(Property):
+class PropGlobalTableReplicaGlobalSecondaryIndexSpecification(Property):
     """
     AWS Object Type = "AWS::DynamoDB::GlobalTable.ReplicaGlobalSecondaryIndexSpecification"
 
@@ -734,23 +734,23 @@ class GlobalTableReplicaGlobalSecondaryIndexSpecification(Property):
         metadata={AttrMeta.PROPERTY_NAME: "IndexName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-replicaglobalsecondaryindexspecification.html#cfn-dynamodb-globaltable-replicaglobalsecondaryindexspecification-indexname"""
-    p_ContributorInsightsSpecification: typing.Union['GlobalTableContributorInsightsSpecification', dict] = attr.ib(
+    p_ContributorInsightsSpecification: typing.Union['PropGlobalTableContributorInsightsSpecification', dict] = attr.ib(
         default=None,
-        converter=GlobalTableContributorInsightsSpecification.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(GlobalTableContributorInsightsSpecification)),
+        converter=PropGlobalTableContributorInsightsSpecification.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropGlobalTableContributorInsightsSpecification)),
         metadata={AttrMeta.PROPERTY_NAME: "ContributorInsightsSpecification"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-replicaglobalsecondaryindexspecification.html#cfn-dynamodb-globaltable-replicaglobalsecondaryindexspecification-contributorinsightsspecification"""
-    p_ReadProvisionedThroughputSettings: typing.Union['GlobalTableReadProvisionedThroughputSettings', dict] = attr.ib(
+    p_ReadProvisionedThroughputSettings: typing.Union['PropGlobalTableReadProvisionedThroughputSettings', dict] = attr.ib(
         default=None,
-        converter=GlobalTableReadProvisionedThroughputSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(GlobalTableReadProvisionedThroughputSettings)),
+        converter=PropGlobalTableReadProvisionedThroughputSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropGlobalTableReadProvisionedThroughputSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "ReadProvisionedThroughputSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-replicaglobalsecondaryindexspecification.html#cfn-dynamodb-globaltable-replicaglobalsecondaryindexspecification-readprovisionedthroughputsettings"""
 
 @attr.s
-class GlobalTableWriteProvisionedThroughputSettings(Property):
+class PropGlobalTableWriteProvisionedThroughputSettings(Property):
     """
     AWS Object Type = "AWS::DynamoDB::GlobalTable.WriteProvisionedThroughputSettings"
 
@@ -762,16 +762,16 @@ class GlobalTableWriteProvisionedThroughputSettings(Property):
     """
     AWS_OBJECT_TYPE = "AWS::DynamoDB::GlobalTable.WriteProvisionedThroughputSettings"
     
-    p_WriteCapacityAutoScalingSettings: typing.Union['GlobalTableCapacityAutoScalingSettings', dict] = attr.ib(
+    p_WriteCapacityAutoScalingSettings: typing.Union['PropGlobalTableCapacityAutoScalingSettings', dict] = attr.ib(
         default=None,
-        converter=GlobalTableCapacityAutoScalingSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(GlobalTableCapacityAutoScalingSettings)),
+        converter=PropGlobalTableCapacityAutoScalingSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropGlobalTableCapacityAutoScalingSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "WriteCapacityAutoScalingSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-writeprovisionedthroughputsettings.html#cfn-dynamodb-globaltable-writeprovisionedthroughputsettings-writecapacityautoscalingsettings"""
 
 @attr.s
-class GlobalTableReplicaSpecification(Property):
+class PropGlobalTableReplicaSpecification(Property):
     """
     AWS Object Type = "AWS::DynamoDB::GlobalTable.ReplicaSpecification"
 
@@ -795,38 +795,38 @@ class GlobalTableReplicaSpecification(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Region"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-replicaspecification.html#cfn-dynamodb-globaltable-replicaspecification-region"""
-    p_ContributorInsightsSpecification: typing.Union['GlobalTableContributorInsightsSpecification', dict] = attr.ib(
+    p_ContributorInsightsSpecification: typing.Union['PropGlobalTableContributorInsightsSpecification', dict] = attr.ib(
         default=None,
-        converter=GlobalTableContributorInsightsSpecification.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(GlobalTableContributorInsightsSpecification)),
+        converter=PropGlobalTableContributorInsightsSpecification.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropGlobalTableContributorInsightsSpecification)),
         metadata={AttrMeta.PROPERTY_NAME: "ContributorInsightsSpecification"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-replicaspecification.html#cfn-dynamodb-globaltable-replicaspecification-contributorinsightsspecification"""
-    p_GlobalSecondaryIndexes: typing.List[typing.Union['GlobalTableReplicaGlobalSecondaryIndexSpecification', dict]] = attr.ib(
+    p_GlobalSecondaryIndexes: typing.List[typing.Union['PropGlobalTableReplicaGlobalSecondaryIndexSpecification', dict]] = attr.ib(
         default=None,
-        converter=GlobalTableReplicaGlobalSecondaryIndexSpecification.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(GlobalTableReplicaGlobalSecondaryIndexSpecification), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropGlobalTableReplicaGlobalSecondaryIndexSpecification.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropGlobalTableReplicaGlobalSecondaryIndexSpecification), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "GlobalSecondaryIndexes"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-replicaspecification.html#cfn-dynamodb-globaltable-replicaspecification-globalsecondaryindexes"""
-    p_PointInTimeRecoverySpecification: typing.Union['GlobalTablePointInTimeRecoverySpecification', dict] = attr.ib(
+    p_PointInTimeRecoverySpecification: typing.Union['PropGlobalTablePointInTimeRecoverySpecification', dict] = attr.ib(
         default=None,
-        converter=GlobalTablePointInTimeRecoverySpecification.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(GlobalTablePointInTimeRecoverySpecification)),
+        converter=PropGlobalTablePointInTimeRecoverySpecification.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropGlobalTablePointInTimeRecoverySpecification)),
         metadata={AttrMeta.PROPERTY_NAME: "PointInTimeRecoverySpecification"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-replicaspecification.html#cfn-dynamodb-globaltable-replicaspecification-pointintimerecoveryspecification"""
-    p_ReadProvisionedThroughputSettings: typing.Union['GlobalTableReadProvisionedThroughputSettings', dict] = attr.ib(
+    p_ReadProvisionedThroughputSettings: typing.Union['PropGlobalTableReadProvisionedThroughputSettings', dict] = attr.ib(
         default=None,
-        converter=GlobalTableReadProvisionedThroughputSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(GlobalTableReadProvisionedThroughputSettings)),
+        converter=PropGlobalTableReadProvisionedThroughputSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropGlobalTableReadProvisionedThroughputSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "ReadProvisionedThroughputSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-replicaspecification.html#cfn-dynamodb-globaltable-replicaspecification-readprovisionedthroughputsettings"""
-    p_SSESpecification: typing.Union['GlobalTableReplicaSSESpecification', dict] = attr.ib(
+    p_SSESpecification: typing.Union['PropGlobalTableReplicaSSESpecification', dict] = attr.ib(
         default=None,
-        converter=GlobalTableReplicaSSESpecification.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(GlobalTableReplicaSSESpecification)),
+        converter=PropGlobalTableReplicaSSESpecification.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropGlobalTableReplicaSSESpecification)),
         metadata={AttrMeta.PROPERTY_NAME: "SSESpecification"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-replicaspecification.html#cfn-dynamodb-globaltable-replicaspecification-ssespecification"""
@@ -839,7 +839,7 @@ class GlobalTableReplicaSpecification(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-replicaspecification.html#cfn-dynamodb-globaltable-replicaspecification-tags"""
 
 @attr.s
-class GlobalTableGlobalSecondaryIndex(Property):
+class PropGlobalTableGlobalSecondaryIndex(Property):
     """
     AWS Object Type = "AWS::DynamoDB::GlobalTable.GlobalSecondaryIndex"
 
@@ -860,24 +860,24 @@ class GlobalTableGlobalSecondaryIndex(Property):
         metadata={AttrMeta.PROPERTY_NAME: "IndexName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-globalsecondaryindex.html#cfn-dynamodb-globaltable-globalsecondaryindex-indexname"""
-    rp_KeySchema: typing.List[typing.Union['GlobalTableKeySchema', dict]] = attr.ib(
+    rp_KeySchema: typing.List[typing.Union['PropGlobalTableKeySchema', dict]] = attr.ib(
         default=None,
-        converter=GlobalTableKeySchema.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(GlobalTableKeySchema), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropGlobalTableKeySchema.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropGlobalTableKeySchema), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "KeySchema"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-globalsecondaryindex.html#cfn-dynamodb-globaltable-globalsecondaryindex-keyschema"""
-    rp_Projection: typing.Union['GlobalTableProjection', dict] = attr.ib(
+    rp_Projection: typing.Union['PropGlobalTableProjection', dict] = attr.ib(
         default=None,
-        converter=GlobalTableProjection.from_dict,
-        validator=attr.validators.instance_of(GlobalTableProjection),
+        converter=PropGlobalTableProjection.from_dict,
+        validator=attr.validators.instance_of(PropGlobalTableProjection),
         metadata={AttrMeta.PROPERTY_NAME: "Projection"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-globalsecondaryindex.html#cfn-dynamodb-globaltable-globalsecondaryindex-projection"""
-    p_WriteProvisionedThroughputSettings: typing.Union['GlobalTableWriteProvisionedThroughputSettings', dict] = attr.ib(
+    p_WriteProvisionedThroughputSettings: typing.Union['PropGlobalTableWriteProvisionedThroughputSettings', dict] = attr.ib(
         default=None,
-        converter=GlobalTableWriteProvisionedThroughputSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(GlobalTableWriteProvisionedThroughputSettings)),
+        converter=PropGlobalTableWriteProvisionedThroughputSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropGlobalTableWriteProvisionedThroughputSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "WriteProvisionedThroughputSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-globalsecondaryindex.html#cfn-dynamodb-globaltable-globalsecondaryindex-writeprovisionedthroughputsettings"""
@@ -912,17 +912,17 @@ class Table(Resource):
     AWS_OBJECT_TYPE = "AWS::DynamoDB::Table"
 
     
-    rp_KeySchema: typing.List[typing.Union['TableKeySchema', dict]] = attr.ib(
+    rp_KeySchema: typing.List[typing.Union['PropTableKeySchema', dict]] = attr.ib(
         default=None,
-        converter=TableKeySchema.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TableKeySchema), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropTableKeySchema.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropTableKeySchema), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "KeySchema"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-keyschema"""
-    p_AttributeDefinitions: typing.List[typing.Union['TableAttributeDefinition', dict]] = attr.ib(
+    p_AttributeDefinitions: typing.List[typing.Union['PropTableAttributeDefinition', dict]] = attr.ib(
         default=None,
-        converter=TableAttributeDefinition.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TableAttributeDefinition), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropTableAttributeDefinition.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropTableAttributeDefinition), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "AttributeDefinitions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-attributedef"""
@@ -932,59 +932,59 @@ class Table(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "BillingMode"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-billingmode"""
-    p_ContributorInsightsSpecification: typing.Union['TableContributorInsightsSpecification', dict] = attr.ib(
+    p_ContributorInsightsSpecification: typing.Union['PropTableContributorInsightsSpecification', dict] = attr.ib(
         default=None,
-        converter=TableContributorInsightsSpecification.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(TableContributorInsightsSpecification)),
+        converter=PropTableContributorInsightsSpecification.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropTableContributorInsightsSpecification)),
         metadata={AttrMeta.PROPERTY_NAME: "ContributorInsightsSpecification"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-contributorinsightsspecification-enabled"""
-    p_GlobalSecondaryIndexes: typing.List[typing.Union['TableGlobalSecondaryIndex', dict]] = attr.ib(
+    p_GlobalSecondaryIndexes: typing.List[typing.Union['PropTableGlobalSecondaryIndex', dict]] = attr.ib(
         default=None,
-        converter=TableGlobalSecondaryIndex.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TableGlobalSecondaryIndex), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropTableGlobalSecondaryIndex.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropTableGlobalSecondaryIndex), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "GlobalSecondaryIndexes"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-gsi"""
-    p_KinesisStreamSpecification: typing.Union['TableKinesisStreamSpecification', dict] = attr.ib(
+    p_KinesisStreamSpecification: typing.Union['PropTableKinesisStreamSpecification', dict] = attr.ib(
         default=None,
-        converter=TableKinesisStreamSpecification.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(TableKinesisStreamSpecification)),
+        converter=PropTableKinesisStreamSpecification.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropTableKinesisStreamSpecification)),
         metadata={AttrMeta.PROPERTY_NAME: "KinesisStreamSpecification"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-kinesisstreamspecification"""
-    p_LocalSecondaryIndexes: typing.List[typing.Union['TableLocalSecondaryIndex', dict]] = attr.ib(
+    p_LocalSecondaryIndexes: typing.List[typing.Union['PropTableLocalSecondaryIndex', dict]] = attr.ib(
         default=None,
-        converter=TableLocalSecondaryIndex.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TableLocalSecondaryIndex), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropTableLocalSecondaryIndex.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropTableLocalSecondaryIndex), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "LocalSecondaryIndexes"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-lsi"""
-    p_PointInTimeRecoverySpecification: typing.Union['TablePointInTimeRecoverySpecification', dict] = attr.ib(
+    p_PointInTimeRecoverySpecification: typing.Union['PropTablePointInTimeRecoverySpecification', dict] = attr.ib(
         default=None,
-        converter=TablePointInTimeRecoverySpecification.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(TablePointInTimeRecoverySpecification)),
+        converter=PropTablePointInTimeRecoverySpecification.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropTablePointInTimeRecoverySpecification)),
         metadata={AttrMeta.PROPERTY_NAME: "PointInTimeRecoverySpecification"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-pointintimerecoveryspecification"""
-    p_ProvisionedThroughput: typing.Union['TableProvisionedThroughput', dict] = attr.ib(
+    p_ProvisionedThroughput: typing.Union['PropTableProvisionedThroughput', dict] = attr.ib(
         default=None,
-        converter=TableProvisionedThroughput.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(TableProvisionedThroughput)),
+        converter=PropTableProvisionedThroughput.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropTableProvisionedThroughput)),
         metadata={AttrMeta.PROPERTY_NAME: "ProvisionedThroughput"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-provisionedthroughput"""
-    p_SSESpecification: typing.Union['TableSSESpecification', dict] = attr.ib(
+    p_SSESpecification: typing.Union['PropTableSSESpecification', dict] = attr.ib(
         default=None,
-        converter=TableSSESpecification.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(TableSSESpecification)),
+        converter=PropTableSSESpecification.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropTableSSESpecification)),
         metadata={AttrMeta.PROPERTY_NAME: "SSESpecification"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-ssespecification"""
-    p_StreamSpecification: typing.Union['TableStreamSpecification', dict] = attr.ib(
+    p_StreamSpecification: typing.Union['PropTableStreamSpecification', dict] = attr.ib(
         default=None,
-        converter=TableStreamSpecification.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(TableStreamSpecification)),
+        converter=PropTableStreamSpecification.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropTableStreamSpecification)),
         metadata={AttrMeta.PROPERTY_NAME: "StreamSpecification"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-streamspecification"""
@@ -994,10 +994,10 @@ class Table(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "TableName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-tablename"""
-    p_TimeToLiveSpecification: typing.Union['TableTimeToLiveSpecification', dict] = attr.ib(
+    p_TimeToLiveSpecification: typing.Union['PropTableTimeToLiveSpecification', dict] = attr.ib(
         default=None,
-        converter=TableTimeToLiveSpecification.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(TableTimeToLiveSpecification)),
+        converter=PropTableTimeToLiveSpecification.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropTableTimeToLiveSpecification)),
         metadata={AttrMeta.PROPERTY_NAME: "TimeToLiveSpecification"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-timetolivespecification"""
@@ -1045,24 +1045,24 @@ class GlobalTable(Resource):
     AWS_OBJECT_TYPE = "AWS::DynamoDB::GlobalTable"
 
     
-    rp_AttributeDefinitions: typing.List[typing.Union['GlobalTableAttributeDefinition', dict]] = attr.ib(
+    rp_AttributeDefinitions: typing.List[typing.Union['PropGlobalTableAttributeDefinition', dict]] = attr.ib(
         default=None,
-        converter=GlobalTableAttributeDefinition.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(GlobalTableAttributeDefinition), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropGlobalTableAttributeDefinition.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropGlobalTableAttributeDefinition), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "AttributeDefinitions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-globaltable.html#cfn-dynamodb-globaltable-attributedefinitions"""
-    rp_KeySchema: typing.List[typing.Union['GlobalTableKeySchema', dict]] = attr.ib(
+    rp_KeySchema: typing.List[typing.Union['PropGlobalTableKeySchema', dict]] = attr.ib(
         default=None,
-        converter=GlobalTableKeySchema.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(GlobalTableKeySchema), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropGlobalTableKeySchema.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropGlobalTableKeySchema), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "KeySchema"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-globaltable.html#cfn-dynamodb-globaltable-keyschema"""
-    rp_Replicas: typing.List[typing.Union['GlobalTableReplicaSpecification', dict]] = attr.ib(
+    rp_Replicas: typing.List[typing.Union['PropGlobalTableReplicaSpecification', dict]] = attr.ib(
         default=None,
-        converter=GlobalTableReplicaSpecification.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(GlobalTableReplicaSpecification), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropGlobalTableReplicaSpecification.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropGlobalTableReplicaSpecification), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "Replicas"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-globaltable.html#cfn-dynamodb-globaltable-replicas"""
@@ -1072,31 +1072,31 @@ class GlobalTable(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "BillingMode"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-globaltable.html#cfn-dynamodb-globaltable-billingmode"""
-    p_GlobalSecondaryIndexes: typing.List[typing.Union['GlobalTableGlobalSecondaryIndex', dict]] = attr.ib(
+    p_GlobalSecondaryIndexes: typing.List[typing.Union['PropGlobalTableGlobalSecondaryIndex', dict]] = attr.ib(
         default=None,
-        converter=GlobalTableGlobalSecondaryIndex.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(GlobalTableGlobalSecondaryIndex), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropGlobalTableGlobalSecondaryIndex.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropGlobalTableGlobalSecondaryIndex), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "GlobalSecondaryIndexes"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-globaltable.html#cfn-dynamodb-globaltable-globalsecondaryindexes"""
-    p_LocalSecondaryIndexes: typing.List[typing.Union['GlobalTableLocalSecondaryIndex', dict]] = attr.ib(
+    p_LocalSecondaryIndexes: typing.List[typing.Union['PropGlobalTableLocalSecondaryIndex', dict]] = attr.ib(
         default=None,
-        converter=GlobalTableLocalSecondaryIndex.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(GlobalTableLocalSecondaryIndex), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropGlobalTableLocalSecondaryIndex.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropGlobalTableLocalSecondaryIndex), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "LocalSecondaryIndexes"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-globaltable.html#cfn-dynamodb-globaltable-localsecondaryindexes"""
-    p_SSESpecification: typing.Union['GlobalTableSSESpecification', dict] = attr.ib(
+    p_SSESpecification: typing.Union['PropGlobalTableSSESpecification', dict] = attr.ib(
         default=None,
-        converter=GlobalTableSSESpecification.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(GlobalTableSSESpecification)),
+        converter=PropGlobalTableSSESpecification.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropGlobalTableSSESpecification)),
         metadata={AttrMeta.PROPERTY_NAME: "SSESpecification"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-globaltable.html#cfn-dynamodb-globaltable-ssespecification"""
-    p_StreamSpecification: typing.Union['GlobalTableStreamSpecification', dict] = attr.ib(
+    p_StreamSpecification: typing.Union['PropGlobalTableStreamSpecification', dict] = attr.ib(
         default=None,
-        converter=GlobalTableStreamSpecification.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(GlobalTableStreamSpecification)),
+        converter=PropGlobalTableStreamSpecification.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropGlobalTableStreamSpecification)),
         metadata={AttrMeta.PROPERTY_NAME: "StreamSpecification"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-globaltable.html#cfn-dynamodb-globaltable-streamspecification"""
@@ -1106,17 +1106,17 @@ class GlobalTable(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "TableName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-globaltable.html#cfn-dynamodb-globaltable-tablename"""
-    p_TimeToLiveSpecification: typing.Union['GlobalTableTimeToLiveSpecification', dict] = attr.ib(
+    p_TimeToLiveSpecification: typing.Union['PropGlobalTableTimeToLiveSpecification', dict] = attr.ib(
         default=None,
-        converter=GlobalTableTimeToLiveSpecification.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(GlobalTableTimeToLiveSpecification)),
+        converter=PropGlobalTableTimeToLiveSpecification.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropGlobalTableTimeToLiveSpecification)),
         metadata={AttrMeta.PROPERTY_NAME: "TimeToLiveSpecification"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-globaltable.html#cfn-dynamodb-globaltable-timetolivespecification"""
-    p_WriteProvisionedThroughputSettings: typing.Union['GlobalTableWriteProvisionedThroughputSettings', dict] = attr.ib(
+    p_WriteProvisionedThroughputSettings: typing.Union['PropGlobalTableWriteProvisionedThroughputSettings', dict] = attr.ib(
         default=None,
-        converter=GlobalTableWriteProvisionedThroughputSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(GlobalTableWriteProvisionedThroughputSettings)),
+        converter=PropGlobalTableWriteProvisionedThroughputSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropGlobalTableWriteProvisionedThroughputSettings)),
         metadata={AttrMeta.PROPERTY_NAME: "WriteProvisionedThroughputSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-globaltable.html#cfn-dynamodb-globaltable-writeprovisionedthroughputsettings"""

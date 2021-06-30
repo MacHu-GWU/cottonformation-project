@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class EndpointGroupPortOverride(Property):
+class PropEndpointGroupPortOverride(Property):
     """
     AWS Object Type = "AWS::GlobalAccelerator::EndpointGroup.PortOverride"
 
@@ -42,7 +42,7 @@ class EndpointGroupPortOverride(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-globalaccelerator-endpointgroup-portoverride.html#cfn-globalaccelerator-endpointgroup-portoverride-listenerport"""
 
 @attr.s
-class EndpointGroupEndpointConfiguration(Property):
+class PropEndpointGroupEndpointConfiguration(Property):
     """
     AWS Object Type = "AWS::GlobalAccelerator::EndpointGroup.EndpointConfiguration"
 
@@ -76,7 +76,7 @@ class EndpointGroupEndpointConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-globalaccelerator-endpointgroup-endpointconfiguration.html#cfn-globalaccelerator-endpointgroup-endpointconfiguration-weight"""
 
 @attr.s
-class ListenerPortRange(Property):
+class PropListenerPortRange(Property):
     """
     AWS Object Type = "AWS::GlobalAccelerator::Listener.PortRange"
 
@@ -190,10 +190,10 @@ class Listener(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "AcceleratorArn"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-globalaccelerator-listener.html#cfn-globalaccelerator-listener-acceleratorarn"""
-    rp_PortRanges: typing.List[typing.Union['ListenerPortRange', dict]] = attr.ib(
+    rp_PortRanges: typing.List[typing.Union['PropListenerPortRange', dict]] = attr.ib(
         default=None,
-        converter=ListenerPortRange.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ListenerPortRange), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropListenerPortRange.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropListenerPortRange), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "PortRanges"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-globalaccelerator-listener.html#cfn-globalaccelerator-listener-portranges"""
@@ -252,10 +252,10 @@ class EndpointGroup(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "ListenerArn"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-globalaccelerator-endpointgroup.html#cfn-globalaccelerator-endpointgroup-listenerarn"""
-    p_EndpointConfigurations: typing.List[typing.Union['EndpointGroupEndpointConfiguration', dict]] = attr.ib(
+    p_EndpointConfigurations: typing.List[typing.Union['PropEndpointGroupEndpointConfiguration', dict]] = attr.ib(
         default=None,
-        converter=EndpointGroupEndpointConfiguration.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(EndpointGroupEndpointConfiguration), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropEndpointGroupEndpointConfiguration.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropEndpointGroupEndpointConfiguration), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "EndpointConfigurations"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-globalaccelerator-endpointgroup.html#cfn-globalaccelerator-endpointgroup-endpointconfigurations"""
@@ -283,10 +283,10 @@ class EndpointGroup(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "HealthCheckProtocol"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-globalaccelerator-endpointgroup.html#cfn-globalaccelerator-endpointgroup-healthcheckprotocol"""
-    p_PortOverrides: typing.List[typing.Union['EndpointGroupPortOverride', dict]] = attr.ib(
+    p_PortOverrides: typing.List[typing.Union['PropEndpointGroupPortOverride', dict]] = attr.ib(
         default=None,
-        converter=EndpointGroupPortOverride.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(EndpointGroupPortOverride), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropEndpointGroupPortOverride.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropEndpointGroupPortOverride), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "PortOverrides"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-globalaccelerator-endpointgroup.html#cfn-globalaccelerator-endpointgroup-portoverrides"""

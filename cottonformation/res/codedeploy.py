@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class DeploymentGroupTargetGroupInfo(Property):
+class PropDeploymentGroupTargetGroupInfo(Property):
     """
     AWS Object Type = "AWS::CodeDeploy::DeploymentGroup.TargetGroupInfo"
 
@@ -35,7 +35,7 @@ class DeploymentGroupTargetGroupInfo(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-targetgroupinfo.html#cfn-codedeploy-deploymentgroup-targetgroupinfo-name"""
 
 @attr.s
-class DeploymentGroupDeploymentStyle(Property):
+class PropDeploymentGroupDeploymentStyle(Property):
     """
     AWS Object Type = "AWS::CodeDeploy::DeploymentGroup.DeploymentStyle"
 
@@ -62,7 +62,7 @@ class DeploymentGroupDeploymentStyle(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deploymentstyle.html#cfn-codedeploy-deploymentgroup-deploymentstyle-deploymenttype"""
 
 @attr.s
-class DeploymentGroupEC2TagFilter(Property):
+class PropDeploymentGroupEC2TagFilter(Property):
     """
     AWS Object Type = "AWS::CodeDeploy::DeploymentGroup.EC2TagFilter"
 
@@ -96,7 +96,7 @@ class DeploymentGroupEC2TagFilter(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-ec2tagfilter.html#cfn-codedeploy-deploymentgroup-ec2tagfilter-value"""
 
 @attr.s
-class DeploymentGroupTriggerConfig(Property):
+class PropDeploymentGroupTriggerConfig(Property):
     """
     AWS Object Type = "AWS::CodeDeploy::DeploymentGroup.TriggerConfig"
 
@@ -130,7 +130,7 @@ class DeploymentGroupTriggerConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-triggerconfig.html#cfn-codedeploy-deploymentgroup-triggerconfig-triggertargetarn"""
 
 @attr.s
-class DeploymentConfigMinimumHealthyHosts(Property):
+class PropDeploymentConfigMinimumHealthyHosts(Property):
     """
     AWS Object Type = "AWS::CodeDeploy::DeploymentConfig.MinimumHealthyHosts"
 
@@ -157,7 +157,7 @@ class DeploymentConfigMinimumHealthyHosts(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentconfig-minimumhealthyhosts.html#cfn-codedeploy-deploymentconfig-minimumhealthyhosts-value"""
 
 @attr.s
-class DeploymentGroupAutoRollbackConfiguration(Property):
+class PropDeploymentGroupAutoRollbackConfiguration(Property):
     """
     AWS Object Type = "AWS::CodeDeploy::DeploymentGroup.AutoRollbackConfiguration"
 
@@ -184,7 +184,7 @@ class DeploymentGroupAutoRollbackConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-autorollbackconfiguration.html#cfn-codedeploy-deploymentgroup-autorollbackconfiguration-events"""
 
 @attr.s
-class DeploymentGroupS3Location(Property):
+class PropDeploymentGroupS3Location(Property):
     """
     AWS Object Type = "AWS::CodeDeploy::DeploymentGroup.S3Location"
 
@@ -232,7 +232,7 @@ class DeploymentGroupS3Location(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deployment-revision-s3location.html#cfn-properties-codedeploy-deploymentgroup-deployment-revision-s3location-value"""
 
 @attr.s
-class DeploymentGroupTagFilter(Property):
+class PropDeploymentGroupTagFilter(Property):
     """
     AWS Object Type = "AWS::CodeDeploy::DeploymentGroup.TagFilter"
 
@@ -266,7 +266,7 @@ class DeploymentGroupTagFilter(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-tagfilter.html#cfn-codedeploy-deploymentgroup-tagfilter-value"""
 
 @attr.s
-class DeploymentGroupGitHubLocation(Property):
+class PropDeploymentGroupGitHubLocation(Property):
     """
     AWS Object Type = "AWS::CodeDeploy::DeploymentGroup.GitHubLocation"
 
@@ -293,7 +293,7 @@ class DeploymentGroupGitHubLocation(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deployment-revision-githublocation.html#cfn-properties-codedeploy-deploymentgroup-deployment-revision-githublocation-repository"""
 
 @attr.s
-class DeploymentGroupELBInfo(Property):
+class PropDeploymentGroupELBInfo(Property):
     """
     AWS Object Type = "AWS::CodeDeploy::DeploymentGroup.ELBInfo"
 
@@ -313,7 +313,7 @@ class DeploymentGroupELBInfo(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-elbinfo.html#cfn-codedeploy-deploymentgroup-elbinfo-name"""
 
 @attr.s
-class DeploymentGroupAlarm(Property):
+class PropDeploymentGroupAlarm(Property):
     """
     AWS Object Type = "AWS::CodeDeploy::DeploymentGroup.Alarm"
 
@@ -333,7 +333,7 @@ class DeploymentGroupAlarm(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-alarm.html#cfn-codedeploy-deploymentgroup-alarm-name"""
 
 @attr.s
-class DeploymentGroupEC2TagSetListObject(Property):
+class PropDeploymentGroupEC2TagSetListObject(Property):
     """
     AWS Object Type = "AWS::CodeDeploy::DeploymentGroup.EC2TagSetListObject"
 
@@ -345,16 +345,16 @@ class DeploymentGroupEC2TagSetListObject(Property):
     """
     AWS_OBJECT_TYPE = "AWS::CodeDeploy::DeploymentGroup.EC2TagSetListObject"
     
-    p_Ec2TagGroup: typing.List[typing.Union['DeploymentGroupEC2TagFilter', dict]] = attr.ib(
+    p_Ec2TagGroup: typing.List[typing.Union['PropDeploymentGroupEC2TagFilter', dict]] = attr.ib(
         default=None,
-        converter=DeploymentGroupEC2TagFilter.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(DeploymentGroupEC2TagFilter), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropDeploymentGroupEC2TagFilter.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDeploymentGroupEC2TagFilter), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Ec2TagGroup"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-ec2tagsetlistobject.html#cfn-codedeploy-deploymentgroup-ec2tagsetlistobject-ec2taggroup"""
 
 @attr.s
-class DeploymentGroupOnPremisesTagSetListObject(Property):
+class PropDeploymentGroupOnPremisesTagSetListObject(Property):
     """
     AWS Object Type = "AWS::CodeDeploy::DeploymentGroup.OnPremisesTagSetListObject"
 
@@ -366,16 +366,16 @@ class DeploymentGroupOnPremisesTagSetListObject(Property):
     """
     AWS_OBJECT_TYPE = "AWS::CodeDeploy::DeploymentGroup.OnPremisesTagSetListObject"
     
-    p_OnPremisesTagGroup: typing.List[typing.Union['DeploymentGroupTagFilter', dict]] = attr.ib(
+    p_OnPremisesTagGroup: typing.List[typing.Union['PropDeploymentGroupTagFilter', dict]] = attr.ib(
         default=None,
-        converter=DeploymentGroupTagFilter.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(DeploymentGroupTagFilter), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropDeploymentGroupTagFilter.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDeploymentGroupTagFilter), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "OnPremisesTagGroup"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-onpremisestagsetlistobject.html#cfn-codedeploy-deploymentgroup-onpremisestagsetlistobject-onpremisestaggroup"""
 
 @attr.s
-class DeploymentGroupOnPremisesTagSet(Property):
+class PropDeploymentGroupOnPremisesTagSet(Property):
     """
     AWS Object Type = "AWS::CodeDeploy::DeploymentGroup.OnPremisesTagSet"
 
@@ -387,16 +387,16 @@ class DeploymentGroupOnPremisesTagSet(Property):
     """
     AWS_OBJECT_TYPE = "AWS::CodeDeploy::DeploymentGroup.OnPremisesTagSet"
     
-    p_OnPremisesTagSetList: typing.List[typing.Union['DeploymentGroupOnPremisesTagSetListObject', dict]] = attr.ib(
+    p_OnPremisesTagSetList: typing.List[typing.Union['PropDeploymentGroupOnPremisesTagSetListObject', dict]] = attr.ib(
         default=None,
-        converter=DeploymentGroupOnPremisesTagSetListObject.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(DeploymentGroupOnPremisesTagSetListObject), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropDeploymentGroupOnPremisesTagSetListObject.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDeploymentGroupOnPremisesTagSetListObject), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "OnPremisesTagSetList"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-onpremisestagset.html#cfn-codedeploy-deploymentgroup-onpremisestagset-onpremisestagsetlist"""
 
 @attr.s
-class DeploymentGroupLoadBalancerInfo(Property):
+class PropDeploymentGroupLoadBalancerInfo(Property):
     """
     AWS Object Type = "AWS::CodeDeploy::DeploymentGroup.LoadBalancerInfo"
 
@@ -409,23 +409,23 @@ class DeploymentGroupLoadBalancerInfo(Property):
     """
     AWS_OBJECT_TYPE = "AWS::CodeDeploy::DeploymentGroup.LoadBalancerInfo"
     
-    p_ElbInfoList: typing.List[typing.Union['DeploymentGroupELBInfo', dict]] = attr.ib(
+    p_ElbInfoList: typing.List[typing.Union['PropDeploymentGroupELBInfo', dict]] = attr.ib(
         default=None,
-        converter=DeploymentGroupELBInfo.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(DeploymentGroupELBInfo), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropDeploymentGroupELBInfo.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDeploymentGroupELBInfo), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "ElbInfoList"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-loadbalancerinfo.html#cfn-codedeploy-deploymentgroup-loadbalancerinfo-elbinfolist"""
-    p_TargetGroupInfoList: typing.List[typing.Union['DeploymentGroupTargetGroupInfo', dict]] = attr.ib(
+    p_TargetGroupInfoList: typing.List[typing.Union['PropDeploymentGroupTargetGroupInfo', dict]] = attr.ib(
         default=None,
-        converter=DeploymentGroupTargetGroupInfo.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(DeploymentGroupTargetGroupInfo), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropDeploymentGroupTargetGroupInfo.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDeploymentGroupTargetGroupInfo), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "TargetGroupInfoList"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-loadbalancerinfo.html#cfn-codedeploy-deploymentgroup-loadbalancerinfo-targetgroupinfolist"""
 
 @attr.s
-class DeploymentGroupRevisionLocation(Property):
+class PropDeploymentGroupRevisionLocation(Property):
     """
     AWS Object Type = "AWS::CodeDeploy::DeploymentGroup.RevisionLocation"
 
@@ -439,10 +439,10 @@ class DeploymentGroupRevisionLocation(Property):
     """
     AWS_OBJECT_TYPE = "AWS::CodeDeploy::DeploymentGroup.RevisionLocation"
     
-    p_GitHubLocation: typing.Union['DeploymentGroupGitHubLocation', dict] = attr.ib(
+    p_GitHubLocation: typing.Union['PropDeploymentGroupGitHubLocation', dict] = attr.ib(
         default=None,
-        converter=DeploymentGroupGitHubLocation.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DeploymentGroupGitHubLocation)),
+        converter=PropDeploymentGroupGitHubLocation.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDeploymentGroupGitHubLocation)),
         metadata={AttrMeta.PROPERTY_NAME: "GitHubLocation"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deployment-revision.html#cfn-properties-codedeploy-deploymentgroup-deployment-revision-githublocation"""
@@ -452,16 +452,16 @@ class DeploymentGroupRevisionLocation(Property):
         metadata={AttrMeta.PROPERTY_NAME: "RevisionType"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deployment-revision.html#cfn-properties-codedeploy-deploymentgroup-deployment-revision-revisiontype"""
-    p_S3Location: typing.Union['DeploymentGroupS3Location', dict] = attr.ib(
+    p_S3Location: typing.Union['PropDeploymentGroupS3Location', dict] = attr.ib(
         default=None,
-        converter=DeploymentGroupS3Location.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DeploymentGroupS3Location)),
+        converter=PropDeploymentGroupS3Location.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDeploymentGroupS3Location)),
         metadata={AttrMeta.PROPERTY_NAME: "S3Location"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deployment-revision.html#cfn-properties-codedeploy-deploymentgroup-deployment-revision-s3location"""
 
 @attr.s
-class DeploymentGroupEC2TagSet(Property):
+class PropDeploymentGroupEC2TagSet(Property):
     """
     AWS Object Type = "AWS::CodeDeploy::DeploymentGroup.EC2TagSet"
 
@@ -473,16 +473,16 @@ class DeploymentGroupEC2TagSet(Property):
     """
     AWS_OBJECT_TYPE = "AWS::CodeDeploy::DeploymentGroup.EC2TagSet"
     
-    p_Ec2TagSetList: typing.List[typing.Union['DeploymentGroupEC2TagSetListObject', dict]] = attr.ib(
+    p_Ec2TagSetList: typing.List[typing.Union['PropDeploymentGroupEC2TagSetListObject', dict]] = attr.ib(
         default=None,
-        converter=DeploymentGroupEC2TagSetListObject.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(DeploymentGroupEC2TagSetListObject), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropDeploymentGroupEC2TagSetListObject.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDeploymentGroupEC2TagSetListObject), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Ec2TagSetList"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-ec2tagset.html#cfn-codedeploy-deploymentgroup-ec2tagset-ec2tagsetlist"""
 
 @attr.s
-class DeploymentGroupAlarmConfiguration(Property):
+class PropDeploymentGroupAlarmConfiguration(Property):
     """
     AWS Object Type = "AWS::CodeDeploy::DeploymentGroup.AlarmConfiguration"
 
@@ -496,10 +496,10 @@ class DeploymentGroupAlarmConfiguration(Property):
     """
     AWS_OBJECT_TYPE = "AWS::CodeDeploy::DeploymentGroup.AlarmConfiguration"
     
-    p_Alarms: typing.List[typing.Union['DeploymentGroupAlarm', dict]] = attr.ib(
+    p_Alarms: typing.List[typing.Union['PropDeploymentGroupAlarm', dict]] = attr.ib(
         default=None,
-        converter=DeploymentGroupAlarm.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(DeploymentGroupAlarm), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropDeploymentGroupAlarm.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDeploymentGroupAlarm), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Alarms"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-alarmconfiguration.html#cfn-codedeploy-deploymentgroup-alarmconfiguration-alarms"""
@@ -517,7 +517,7 @@ class DeploymentGroupAlarmConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-alarmconfiguration.html#cfn-codedeploy-deploymentgroup-alarmconfiguration-ignorepollalarmfailure"""
 
 @attr.s
-class DeploymentGroupDeployment(Property):
+class PropDeploymentGroupDeployment(Property):
     """
     AWS Object Type = "AWS::CodeDeploy::DeploymentGroup.Deployment"
 
@@ -531,10 +531,10 @@ class DeploymentGroupDeployment(Property):
     """
     AWS_OBJECT_TYPE = "AWS::CodeDeploy::DeploymentGroup.Deployment"
     
-    rp_Revision: typing.Union['DeploymentGroupRevisionLocation', dict] = attr.ib(
+    rp_Revision: typing.Union['PropDeploymentGroupRevisionLocation', dict] = attr.ib(
         default=None,
-        converter=DeploymentGroupRevisionLocation.from_dict,
-        validator=attr.validators.instance_of(DeploymentGroupRevisionLocation),
+        converter=PropDeploymentGroupRevisionLocation.from_dict,
+        validator=attr.validators.instance_of(PropDeploymentGroupRevisionLocation),
         metadata={AttrMeta.PROPERTY_NAME: "Revision"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deployment.html#cfn-properties-codedeploy-deploymentgroup-deployment-revision"""
@@ -575,10 +575,10 @@ class DeploymentConfig(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "DeploymentConfigName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentconfig.html#cfn-codedeploy-deploymentconfig-deploymentconfigname"""
-    p_MinimumHealthyHosts: typing.Union['DeploymentConfigMinimumHealthyHosts', dict] = attr.ib(
+    p_MinimumHealthyHosts: typing.Union['PropDeploymentConfigMinimumHealthyHosts', dict] = attr.ib(
         default=None,
-        converter=DeploymentConfigMinimumHealthyHosts.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DeploymentConfigMinimumHealthyHosts)),
+        converter=PropDeploymentConfigMinimumHealthyHosts.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDeploymentConfigMinimumHealthyHosts)),
         metadata={AttrMeta.PROPERTY_NAME: "MinimumHealthyHosts"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentconfig.html#cfn-codedeploy-deploymentconfig-minimumhealthyhosts"""
@@ -655,17 +655,17 @@ class DeploymentGroup(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "ServiceRoleArn"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-servicerolearn"""
-    p_AlarmConfiguration: typing.Union['DeploymentGroupAlarmConfiguration', dict] = attr.ib(
+    p_AlarmConfiguration: typing.Union['PropDeploymentGroupAlarmConfiguration', dict] = attr.ib(
         default=None,
-        converter=DeploymentGroupAlarmConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DeploymentGroupAlarmConfiguration)),
+        converter=PropDeploymentGroupAlarmConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDeploymentGroupAlarmConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "AlarmConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-alarmconfiguration"""
-    p_AutoRollbackConfiguration: typing.Union['DeploymentGroupAutoRollbackConfiguration', dict] = attr.ib(
+    p_AutoRollbackConfiguration: typing.Union['PropDeploymentGroupAutoRollbackConfiguration', dict] = attr.ib(
         default=None,
-        converter=DeploymentGroupAutoRollbackConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DeploymentGroupAutoRollbackConfiguration)),
+        converter=PropDeploymentGroupAutoRollbackConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDeploymentGroupAutoRollbackConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "AutoRollbackConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-autorollbackconfiguration"""
@@ -675,10 +675,10 @@ class DeploymentGroup(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "AutoScalingGroups"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-autoscalinggroups"""
-    p_Deployment: typing.Union['DeploymentGroupDeployment', dict] = attr.ib(
+    p_Deployment: typing.Union['PropDeploymentGroupDeployment', dict] = attr.ib(
         default=None,
-        converter=DeploymentGroupDeployment.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DeploymentGroupDeployment)),
+        converter=PropDeploymentGroupDeployment.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDeploymentGroupDeployment)),
         metadata={AttrMeta.PROPERTY_NAME: "Deployment"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-deployment"""
@@ -694,52 +694,52 @@ class DeploymentGroup(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "DeploymentGroupName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-deploymentgroupname"""
-    p_DeploymentStyle: typing.Union['DeploymentGroupDeploymentStyle', dict] = attr.ib(
+    p_DeploymentStyle: typing.Union['PropDeploymentGroupDeploymentStyle', dict] = attr.ib(
         default=None,
-        converter=DeploymentGroupDeploymentStyle.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DeploymentGroupDeploymentStyle)),
+        converter=PropDeploymentGroupDeploymentStyle.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDeploymentGroupDeploymentStyle)),
         metadata={AttrMeta.PROPERTY_NAME: "DeploymentStyle"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-deploymentstyle"""
-    p_Ec2TagFilters: typing.List[typing.Union['DeploymentGroupEC2TagFilter', dict]] = attr.ib(
+    p_Ec2TagFilters: typing.List[typing.Union['PropDeploymentGroupEC2TagFilter', dict]] = attr.ib(
         default=None,
-        converter=DeploymentGroupEC2TagFilter.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(DeploymentGroupEC2TagFilter), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropDeploymentGroupEC2TagFilter.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDeploymentGroupEC2TagFilter), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Ec2TagFilters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-ec2tagfilters"""
-    p_Ec2TagSet: typing.Union['DeploymentGroupEC2TagSet', dict] = attr.ib(
+    p_Ec2TagSet: typing.Union['PropDeploymentGroupEC2TagSet', dict] = attr.ib(
         default=None,
-        converter=DeploymentGroupEC2TagSet.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DeploymentGroupEC2TagSet)),
+        converter=PropDeploymentGroupEC2TagSet.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDeploymentGroupEC2TagSet)),
         metadata={AttrMeta.PROPERTY_NAME: "Ec2TagSet"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-ec2tagset"""
-    p_LoadBalancerInfo: typing.Union['DeploymentGroupLoadBalancerInfo', dict] = attr.ib(
+    p_LoadBalancerInfo: typing.Union['PropDeploymentGroupLoadBalancerInfo', dict] = attr.ib(
         default=None,
-        converter=DeploymentGroupLoadBalancerInfo.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DeploymentGroupLoadBalancerInfo)),
+        converter=PropDeploymentGroupLoadBalancerInfo.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDeploymentGroupLoadBalancerInfo)),
         metadata={AttrMeta.PROPERTY_NAME: "LoadBalancerInfo"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-loadbalancerinfo"""
-    p_OnPremisesInstanceTagFilters: typing.List[typing.Union['DeploymentGroupTagFilter', dict]] = attr.ib(
+    p_OnPremisesInstanceTagFilters: typing.List[typing.Union['PropDeploymentGroupTagFilter', dict]] = attr.ib(
         default=None,
-        converter=DeploymentGroupTagFilter.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(DeploymentGroupTagFilter), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropDeploymentGroupTagFilter.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDeploymentGroupTagFilter), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "OnPremisesInstanceTagFilters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-onpremisesinstancetagfilters"""
-    p_OnPremisesTagSet: typing.Union['DeploymentGroupOnPremisesTagSet', dict] = attr.ib(
+    p_OnPremisesTagSet: typing.Union['PropDeploymentGroupOnPremisesTagSet', dict] = attr.ib(
         default=None,
-        converter=DeploymentGroupOnPremisesTagSet.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DeploymentGroupOnPremisesTagSet)),
+        converter=PropDeploymentGroupOnPremisesTagSet.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDeploymentGroupOnPremisesTagSet)),
         metadata={AttrMeta.PROPERTY_NAME: "OnPremisesTagSet"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-onpremisestagset"""
-    p_TriggerConfigurations: typing.List[typing.Union['DeploymentGroupTriggerConfig', dict]] = attr.ib(
+    p_TriggerConfigurations: typing.List[typing.Union['PropDeploymentGroupTriggerConfig', dict]] = attr.ib(
         default=None,
-        converter=DeploymentGroupTriggerConfig.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(DeploymentGroupTriggerConfig), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropDeploymentGroupTriggerConfig.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDeploymentGroupTriggerConfig), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "TriggerConfigurations"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-triggerconfigurations"""

@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class ServiceHealthCheckConfig(Property):
+class PropServiceHealthCheckConfig(Property):
     """
     AWS Object Type = "AWS::ServiceDiscovery::Service.HealthCheckConfig"
 
@@ -49,7 +49,7 @@ class ServiceHealthCheckConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicediscovery-service-healthcheckconfig.html#cfn-servicediscovery-service-healthcheckconfig-resourcepath"""
 
 @attr.s
-class ServiceHealthCheckCustomConfig(Property):
+class PropServiceHealthCheckCustomConfig(Property):
     """
     AWS Object Type = "AWS::ServiceDiscovery::Service.HealthCheckCustomConfig"
 
@@ -69,7 +69,7 @@ class ServiceHealthCheckCustomConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicediscovery-service-healthcheckcustomconfig.html#cfn-servicediscovery-service-healthcheckcustomconfig-failurethreshold"""
 
 @attr.s
-class ServiceDnsRecord(Property):
+class PropServiceDnsRecord(Property):
     """
     AWS Object Type = "AWS::ServiceDiscovery::Service.DnsRecord"
 
@@ -96,7 +96,7 @@ class ServiceDnsRecord(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicediscovery-service-dnsrecord.html#cfn-servicediscovery-service-dnsrecord-type"""
 
 @attr.s
-class ServiceDnsConfig(Property):
+class PropServiceDnsConfig(Property):
     """
     AWS Object Type = "AWS::ServiceDiscovery::Service.DnsConfig"
 
@@ -110,10 +110,10 @@ class ServiceDnsConfig(Property):
     """
     AWS_OBJECT_TYPE = "AWS::ServiceDiscovery::Service.DnsConfig"
     
-    rp_DnsRecords: typing.List[typing.Union['ServiceDnsRecord', dict]] = attr.ib(
+    rp_DnsRecords: typing.List[typing.Union['PropServiceDnsRecord', dict]] = attr.ib(
         default=None,
-        converter=ServiceDnsRecord.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ServiceDnsRecord), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropServiceDnsRecord.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropServiceDnsRecord), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "DnsRecords"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicediscovery-service-dnsconfig.html#cfn-servicediscovery-service-dnsconfig-dnsrecords"""
@@ -197,24 +197,24 @@ class Service(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Description"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-service.html#cfn-servicediscovery-service-description"""
-    p_DnsConfig: typing.Union['ServiceDnsConfig', dict] = attr.ib(
+    p_DnsConfig: typing.Union['PropServiceDnsConfig', dict] = attr.ib(
         default=None,
-        converter=ServiceDnsConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ServiceDnsConfig)),
+        converter=PropServiceDnsConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropServiceDnsConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "DnsConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-service.html#cfn-servicediscovery-service-dnsconfig"""
-    p_HealthCheckConfig: typing.Union['ServiceHealthCheckConfig', dict] = attr.ib(
+    p_HealthCheckConfig: typing.Union['PropServiceHealthCheckConfig', dict] = attr.ib(
         default=None,
-        converter=ServiceHealthCheckConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ServiceHealthCheckConfig)),
+        converter=PropServiceHealthCheckConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropServiceHealthCheckConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "HealthCheckConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-service.html#cfn-servicediscovery-service-healthcheckconfig"""
-    p_HealthCheckCustomConfig: typing.Union['ServiceHealthCheckCustomConfig', dict] = attr.ib(
+    p_HealthCheckCustomConfig: typing.Union['PropServiceHealthCheckCustomConfig', dict] = attr.ib(
         default=None,
-        converter=ServiceHealthCheckCustomConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ServiceHealthCheckCustomConfig)),
+        converter=PropServiceHealthCheckCustomConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropServiceHealthCheckCustomConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "HealthCheckCustomConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-service.html#cfn-servicediscovery-service-healthcheckcustomconfig"""

@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class ClusterSSESpecification(Property):
+class PropClusterSSESpecification(Property):
     """
     AWS Object Type = "AWS::DAX::Cluster.SSESpecification"
 
@@ -161,10 +161,10 @@ class Cluster(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "PreferredMaintenanceWindow"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html#cfn-dax-cluster-preferredmaintenancewindow"""
-    p_SSESpecification: typing.Union['ClusterSSESpecification', dict] = attr.ib(
+    p_SSESpecification: typing.Union['PropClusterSSESpecification', dict] = attr.ib(
         default=None,
-        converter=ClusterSSESpecification.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ClusterSSESpecification)),
+        converter=PropClusterSSESpecification.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropClusterSSESpecification)),
         metadata={AttrMeta.PROPERTY_NAME: "SSESpecification"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dax-cluster.html#cfn-dax-cluster-ssespecification"""

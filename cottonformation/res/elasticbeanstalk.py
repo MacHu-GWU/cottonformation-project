@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class EnvironmentOptionSetting(Property):
+class PropEnvironmentOptionSetting(Property):
     """
     AWS Object Type = "AWS::ElasticBeanstalk::Environment.OptionSetting"
 
@@ -56,7 +56,7 @@ class EnvironmentOptionSetting(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-option-settings.html#cfn-beanstalk-optionsettings-value"""
 
 @attr.s
-class ApplicationVersionSourceBundle(Property):
+class PropApplicationVersionSourceBundle(Property):
     """
     AWS Object Type = "AWS::ElasticBeanstalk::ApplicationVersion.SourceBundle"
 
@@ -83,7 +83,7 @@ class ApplicationVersionSourceBundle(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-sourcebundle.html#cfn-beanstalk-sourcebundle-s3key"""
 
 @attr.s
-class ApplicationMaxAgeRule(Property):
+class PropApplicationMaxAgeRule(Property):
     """
     AWS Object Type = "AWS::ElasticBeanstalk::Application.MaxAgeRule"
 
@@ -117,7 +117,7 @@ class ApplicationMaxAgeRule(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticbeanstalk-application-maxagerule.html#cfn-elasticbeanstalk-application-maxagerule-maxageindays"""
 
 @attr.s
-class ConfigurationTemplateSourceConfiguration(Property):
+class PropConfigurationTemplateSourceConfiguration(Property):
     """
     AWS Object Type = "AWS::ElasticBeanstalk::ConfigurationTemplate.SourceConfiguration"
 
@@ -144,7 +144,7 @@ class ConfigurationTemplateSourceConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticbeanstalk-configurationtemplate-sourceconfiguration.html#cfn-elasticbeanstalk-configurationtemplate-sourceconfiguration-templatename"""
 
 @attr.s
-class EnvironmentTier(Property):
+class PropEnvironmentTier(Property):
     """
     AWS Object Type = "AWS::ElasticBeanstalk::Environment.Tier"
 
@@ -178,7 +178,7 @@ class EnvironmentTier(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-environment-tier.html#cfn-beanstalk-env-tier-version"""
 
 @attr.s
-class ConfigurationTemplateConfigurationOptionSetting(Property):
+class PropConfigurationTemplateConfigurationOptionSetting(Property):
     """
     AWS Object Type = "AWS::ElasticBeanstalk::ConfigurationTemplate.ConfigurationOptionSetting"
 
@@ -219,7 +219,7 @@ class ConfigurationTemplateConfigurationOptionSetting(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticbeanstalk-configurationtemplate-configurationoptionsetting.html#cfn-elasticbeanstalk-configurationtemplate-configurationoptionsetting-value"""
 
 @attr.s
-class ApplicationMaxCountRule(Property):
+class PropApplicationMaxCountRule(Property):
     """
     AWS Object Type = "AWS::ElasticBeanstalk::Application.MaxCountRule"
 
@@ -253,7 +253,7 @@ class ApplicationMaxCountRule(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticbeanstalk-application-maxcountrule.html#cfn-elasticbeanstalk-application-maxcountrule-maxcount"""
 
 @attr.s
-class ApplicationApplicationVersionLifecycleConfig(Property):
+class PropApplicationApplicationVersionLifecycleConfig(Property):
     """
     AWS Object Type = "AWS::ElasticBeanstalk::Application.ApplicationVersionLifecycleConfig"
 
@@ -266,23 +266,23 @@ class ApplicationApplicationVersionLifecycleConfig(Property):
     """
     AWS_OBJECT_TYPE = "AWS::ElasticBeanstalk::Application.ApplicationVersionLifecycleConfig"
     
-    p_MaxAgeRule: typing.Union['ApplicationMaxAgeRule', dict] = attr.ib(
+    p_MaxAgeRule: typing.Union['PropApplicationMaxAgeRule', dict] = attr.ib(
         default=None,
-        converter=ApplicationMaxAgeRule.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ApplicationMaxAgeRule)),
+        converter=PropApplicationMaxAgeRule.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropApplicationMaxAgeRule)),
         metadata={AttrMeta.PROPERTY_NAME: "MaxAgeRule"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticbeanstalk-application-applicationversionlifecycleconfig.html#cfn-elasticbeanstalk-application-applicationversionlifecycleconfig-maxagerule"""
-    p_MaxCountRule: typing.Union['ApplicationMaxCountRule', dict] = attr.ib(
+    p_MaxCountRule: typing.Union['PropApplicationMaxCountRule', dict] = attr.ib(
         default=None,
-        converter=ApplicationMaxCountRule.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ApplicationMaxCountRule)),
+        converter=PropApplicationMaxCountRule.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropApplicationMaxCountRule)),
         metadata={AttrMeta.PROPERTY_NAME: "MaxCountRule"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticbeanstalk-application-applicationversionlifecycleconfig.html#cfn-elasticbeanstalk-application-applicationversionlifecycleconfig-maxcountrule"""
 
 @attr.s
-class ApplicationApplicationResourceLifecycleConfig(Property):
+class PropApplicationApplicationResourceLifecycleConfig(Property):
     """
     AWS Object Type = "AWS::ElasticBeanstalk::Application.ApplicationResourceLifecycleConfig"
 
@@ -301,10 +301,10 @@ class ApplicationApplicationResourceLifecycleConfig(Property):
         metadata={AttrMeta.PROPERTY_NAME: "ServiceRole"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticbeanstalk-application-applicationresourcelifecycleconfig.html#cfn-elasticbeanstalk-application-applicationresourcelifecycleconfig-servicerole"""
-    p_VersionLifecycleConfig: typing.Union['ApplicationApplicationVersionLifecycleConfig', dict] = attr.ib(
+    p_VersionLifecycleConfig: typing.Union['PropApplicationApplicationVersionLifecycleConfig', dict] = attr.ib(
         default=None,
-        converter=ApplicationApplicationVersionLifecycleConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ApplicationApplicationVersionLifecycleConfig)),
+        converter=PropApplicationApplicationVersionLifecycleConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropApplicationApplicationVersionLifecycleConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "VersionLifecycleConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticbeanstalk-application-applicationresourcelifecycleconfig.html#cfn-elasticbeanstalk-application-applicationresourcelifecycleconfig-versionlifecycleconfig"""
@@ -350,10 +350,10 @@ class ConfigurationTemplate(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "EnvironmentId"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticbeanstalk-configurationtemplate.html#cfn-elasticbeanstalk-configurationtemplate-environmentid"""
-    p_OptionSettings: typing.List[typing.Union['ConfigurationTemplateConfigurationOptionSetting', dict]] = attr.ib(
+    p_OptionSettings: typing.List[typing.Union['PropConfigurationTemplateConfigurationOptionSetting', dict]] = attr.ib(
         default=None,
-        converter=ConfigurationTemplateConfigurationOptionSetting.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ConfigurationTemplateConfigurationOptionSetting), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropConfigurationTemplateConfigurationOptionSetting.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropConfigurationTemplateConfigurationOptionSetting), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "OptionSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticbeanstalk-configurationtemplate.html#cfn-elasticbeanstalk-configurationtemplate-optionsettings"""
@@ -369,10 +369,10 @@ class ConfigurationTemplate(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "SolutionStackName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticbeanstalk-configurationtemplate.html#cfn-elasticbeanstalk-configurationtemplate-solutionstackname"""
-    p_SourceConfiguration: typing.Union['ConfigurationTemplateSourceConfiguration', dict] = attr.ib(
+    p_SourceConfiguration: typing.Union['PropConfigurationTemplateSourceConfiguration', dict] = attr.ib(
         default=None,
-        converter=ConfigurationTemplateSourceConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ConfigurationTemplateSourceConfiguration)),
+        converter=PropConfigurationTemplateSourceConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropConfigurationTemplateSourceConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "SourceConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticbeanstalk-configurationtemplate.html#cfn-elasticbeanstalk-configurationtemplate-sourceconfiguration"""
@@ -407,10 +407,10 @@ class Application(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Description"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk.html#cfn-elasticbeanstalk-application-description"""
-    p_ResourceLifecycleConfig: typing.Union['ApplicationApplicationResourceLifecycleConfig', dict] = attr.ib(
+    p_ResourceLifecycleConfig: typing.Union['PropApplicationApplicationResourceLifecycleConfig', dict] = attr.ib(
         default=None,
-        converter=ApplicationApplicationResourceLifecycleConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ApplicationApplicationResourceLifecycleConfig)),
+        converter=PropApplicationApplicationResourceLifecycleConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropApplicationApplicationResourceLifecycleConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "ResourceLifecycleConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk.html#cfn-elasticbeanstalk-application-resourcelifecycleconfig"""
@@ -472,10 +472,10 @@ class Environment(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "OperationsRole"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-environment.html#cfn-beanstalk-environment-operations-role"""
-    p_OptionSettings: typing.List[typing.Union['EnvironmentOptionSetting', dict]] = attr.ib(
+    p_OptionSettings: typing.List[typing.Union['PropEnvironmentOptionSetting', dict]] = attr.ib(
         default=None,
-        converter=EnvironmentOptionSetting.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(EnvironmentOptionSetting), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropEnvironmentOptionSetting.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropEnvironmentOptionSetting), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "OptionSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-environment.html#cfn-beanstalk-environment-optionsettings"""
@@ -497,10 +497,10 @@ class Environment(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "TemplateName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-environment.html#cfn-beanstalk-environment-templatename"""
-    p_Tier: typing.Union['EnvironmentTier', dict] = attr.ib(
+    p_Tier: typing.Union['PropEnvironmentTier', dict] = attr.ib(
         default=None,
-        converter=EnvironmentTier.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(EnvironmentTier)),
+        converter=PropEnvironmentTier.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropEnvironmentTier)),
         metadata={AttrMeta.PROPERTY_NAME: "Tier"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-environment.html#cfn-beanstalk-environment-tier"""
@@ -547,10 +547,10 @@ class ApplicationVersion(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "ApplicationName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-version.html#cfn-elasticbeanstalk-applicationversion-applicationname"""
-    rp_SourceBundle: typing.Union['ApplicationVersionSourceBundle', dict] = attr.ib(
+    rp_SourceBundle: typing.Union['PropApplicationVersionSourceBundle', dict] = attr.ib(
         default=None,
-        converter=ApplicationVersionSourceBundle.from_dict,
-        validator=attr.validators.instance_of(ApplicationVersionSourceBundle),
+        converter=PropApplicationVersionSourceBundle.from_dict,
+        validator=attr.validators.instance_of(PropApplicationVersionSourceBundle),
         metadata={AttrMeta.PROPERTY_NAME: "SourceBundle"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-version.html#cfn-elasticbeanstalk-applicationversion-sourcebundle"""

@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class MetricFilterMetricTransformation(Property):
+class PropMetricFilterMetricTransformation(Property):
     """
     AWS Object Type = "AWS::Logs::MetricFilter.MetricTransformation"
 
@@ -86,10 +86,10 @@ class MetricFilter(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "LogGroupName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-metricfilter.html#cfn-cwl-metricfilter-loggroupname"""
-    rp_MetricTransformations: typing.List[typing.Union['MetricFilterMetricTransformation', dict]] = attr.ib(
+    rp_MetricTransformations: typing.List[typing.Union['PropMetricFilterMetricTransformation', dict]] = attr.ib(
         default=None,
-        converter=MetricFilterMetricTransformation.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(MetricFilterMetricTransformation), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropMetricFilterMetricTransformation.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropMetricFilterMetricTransformation), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "MetricTransformations"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-logs-metricfilter.html#cfn-cwl-metricfilter-metrictransformations"""

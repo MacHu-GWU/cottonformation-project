@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class BucketAbortIncompleteMultipartUpload(Property):
+class PropBucketAbortIncompleteMultipartUpload(Property):
     """
     AWS Object Type = "AWS::S3Outposts::Bucket.AbortIncompleteMultipartUpload"
 
@@ -35,7 +35,7 @@ class BucketAbortIncompleteMultipartUpload(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3outposts-bucket-abortincompletemultipartupload.html#cfn-s3outposts-bucket-abortincompletemultipartupload-daysafterinitiation"""
 
 @attr.s
-class AccessPointVpcConfiguration(Property):
+class PropAccessPointVpcConfiguration(Property):
     """
     AWS Object Type = "AWS::S3Outposts::AccessPoint.VpcConfiguration"
 
@@ -55,7 +55,7 @@ class AccessPointVpcConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3outposts-accesspoint-vpcconfiguration.html#cfn-s3outposts-accesspoint-vpcconfiguration-vpcid"""
 
 @attr.s
-class BucketRule(Property):
+class PropBucketRule(Property):
     """
     AWS Object Type = "AWS::S3Outposts::Bucket.Rule"
 
@@ -72,10 +72,10 @@ class BucketRule(Property):
     """
     AWS_OBJECT_TYPE = "AWS::S3Outposts::Bucket.Rule"
     
-    p_AbortIncompleteMultipartUpload: typing.Union['BucketAbortIncompleteMultipartUpload', dict] = attr.ib(
+    p_AbortIncompleteMultipartUpload: typing.Union['PropBucketAbortIncompleteMultipartUpload', dict] = attr.ib(
         default=None,
-        converter=BucketAbortIncompleteMultipartUpload.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(BucketAbortIncompleteMultipartUpload)),
+        converter=PropBucketAbortIncompleteMultipartUpload.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropBucketAbortIncompleteMultipartUpload)),
         metadata={AttrMeta.PROPERTY_NAME: "AbortIncompleteMultipartUpload"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3outposts-bucket-rule.html#cfn-s3outposts-bucket-rule-abortincompletemultipartupload"""
@@ -111,7 +111,7 @@ class BucketRule(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3outposts-bucket-rule.html#cfn-s3outposts-bucket-rule-status"""
 
 @attr.s
-class EndpointNetworkInterface(Property):
+class PropEndpointNetworkInterface(Property):
     """
     AWS Object Type = "AWS::S3Outposts::Endpoint.NetworkInterface"
 
@@ -131,7 +131,7 @@ class EndpointNetworkInterface(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3outposts-endpoint-networkinterface.html#cfn-s3outposts-endpoint-networkinterface-networkinterfaceid"""
 
 @attr.s
-class BucketLifecycleConfiguration(Property):
+class PropBucketLifecycleConfiguration(Property):
     """
     AWS Object Type = "AWS::S3Outposts::Bucket.LifecycleConfiguration"
 
@@ -143,10 +143,10 @@ class BucketLifecycleConfiguration(Property):
     """
     AWS_OBJECT_TYPE = "AWS::S3Outposts::Bucket.LifecycleConfiguration"
     
-    rp_Rules: typing.List[typing.Union['BucketRule', dict]] = attr.ib(
+    rp_Rules: typing.List[typing.Union['PropBucketRule', dict]] = attr.ib(
         default=None,
-        converter=BucketRule.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(BucketRule), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropBucketRule.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropBucketRule), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "Rules"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3outposts-bucket-lifecycleconfiguration.html#cfn-s3outposts-bucket-lifecycleconfiguration-rules"""
@@ -183,10 +183,10 @@ class AccessPoint(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Name"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3outposts-accesspoint.html#cfn-s3outposts-accesspoint-name"""
-    rp_VpcConfiguration: typing.Union['AccessPointVpcConfiguration', dict] = attr.ib(
+    rp_VpcConfiguration: typing.Union['PropAccessPointVpcConfiguration', dict] = attr.ib(
         default=None,
-        converter=AccessPointVpcConfiguration.from_dict,
-        validator=attr.validators.instance_of(AccessPointVpcConfiguration),
+        converter=PropAccessPointVpcConfiguration.from_dict,
+        validator=attr.validators.instance_of(PropAccessPointVpcConfiguration),
         metadata={AttrMeta.PROPERTY_NAME: "VpcConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3outposts-accesspoint.html#cfn-s3outposts-accesspoint-vpcconfiguration"""
@@ -233,10 +233,10 @@ class Bucket(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "OutpostId"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3outposts-bucket.html#cfn-s3outposts-bucket-outpostid"""
-    p_LifecycleConfiguration: typing.Union['BucketLifecycleConfiguration', dict] = attr.ib(
+    p_LifecycleConfiguration: typing.Union['PropBucketLifecycleConfiguration', dict] = attr.ib(
         default=None,
-        converter=BucketLifecycleConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(BucketLifecycleConfiguration)),
+        converter=PropBucketLifecycleConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropBucketLifecycleConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "LifecycleConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3outposts-bucket.html#cfn-s3outposts-bucket-lifecycleconfiguration"""

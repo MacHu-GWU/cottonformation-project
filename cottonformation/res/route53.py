@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class HostedZoneHostedZoneTag(Property):
+class PropHostedZoneHostedZoneTag(Property):
     """
     AWS Object Type = "AWS::Route53::HostedZone.HostedZoneTag"
 
@@ -42,7 +42,7 @@ class HostedZoneHostedZoneTag(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-hostedzone-hostedzonetag.html#cfn-route53-hostedzone-hostedzonetag-value"""
 
 @attr.s
-class HostedZoneHostedZoneConfig(Property):
+class PropHostedZoneHostedZoneConfig(Property):
     """
     AWS Object Type = "AWS::Route53::HostedZone.HostedZoneConfig"
 
@@ -62,7 +62,7 @@ class HostedZoneHostedZoneConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-hostedzone-hostedzoneconfig.html#cfn-route53-hostedzone-hostedzoneconfig-comment"""
 
 @attr.s
-class HostedZoneQueryLoggingConfig(Property):
+class PropHostedZoneQueryLoggingConfig(Property):
     """
     AWS Object Type = "AWS::Route53::HostedZone.QueryLoggingConfig"
 
@@ -82,7 +82,7 @@ class HostedZoneQueryLoggingConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-hostedzone-queryloggingconfig.html#cfn-route53-hostedzone-queryloggingconfig-cloudwatchlogsloggrouparn"""
 
 @attr.s
-class RecordSetGroupGeoLocation(Property):
+class PropRecordSetGroupGeoLocation(Property):
     """
     AWS Object Type = "AWS::Route53::RecordSetGroup.GeoLocation"
 
@@ -116,7 +116,7 @@ class RecordSetGroupGeoLocation(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-recordset-geolocation.html#cfn-route53-recordset-geolocation-subdivisioncode"""
 
 @attr.s
-class HostedZoneVPC(Property):
+class PropHostedZoneVPC(Property):
     """
     AWS Object Type = "AWS::Route53::HostedZone.VPC"
 
@@ -143,7 +143,7 @@ class HostedZoneVPC(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-hostedzone-vpc.html#cfn-route53-hostedzone-vpc-vpcregion"""
 
 @attr.s
-class RecordSetGroupAliasTarget(Property):
+class PropRecordSetGroupAliasTarget(Property):
     """
     AWS Object Type = "AWS::Route53::RecordSetGroup.AliasTarget"
 
@@ -177,7 +177,7 @@ class RecordSetGroupAliasTarget(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-aliastarget.html#cfn-route53-aliastarget-evaluatetargethealth"""
 
 @attr.s
-class RecordSetGeoLocation(Property):
+class PropRecordSetGeoLocation(Property):
     """
     AWS Object Type = "AWS::Route53::RecordSet.GeoLocation"
 
@@ -211,7 +211,7 @@ class RecordSetGeoLocation(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-recordset-geolocation.html#cfn-route53-recordset-geolocation-subdivisioncode"""
 
 @attr.s
-class RecordSetAliasTarget(Property):
+class PropRecordSetAliasTarget(Property):
     """
     AWS Object Type = "AWS::Route53::RecordSet.AliasTarget"
 
@@ -245,7 +245,7 @@ class RecordSetAliasTarget(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-aliastarget.html#cfn-route53-aliastarget-evaluatetargethealth"""
 
 @attr.s
-class HealthCheckHealthCheckTag(Property):
+class PropHealthCheckHealthCheckTag(Property):
     """
     AWS Object Type = "AWS::Route53::HealthCheck.HealthCheckTag"
 
@@ -272,7 +272,7 @@ class HealthCheckHealthCheckTag(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-healthcheck-healthchecktag.html#cfn-route53-healthcheck-healthchecktag-value"""
 
 @attr.s
-class RecordSetGroupRecordSet(Property):
+class PropRecordSetGroupRecordSet(Property):
     """
     AWS Object Type = "AWS::Route53::RecordSetGroup.RecordSet"
 
@@ -310,10 +310,10 @@ class RecordSetGroupRecordSet(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Type"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-recordset.html#cfn-route53-recordset-type"""
-    p_AliasTarget: typing.Union['RecordSetGroupAliasTarget', dict] = attr.ib(
+    p_AliasTarget: typing.Union['PropRecordSetGroupAliasTarget', dict] = attr.ib(
         default=None,
-        converter=RecordSetGroupAliasTarget.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(RecordSetGroupAliasTarget)),
+        converter=PropRecordSetGroupAliasTarget.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropRecordSetGroupAliasTarget)),
         metadata={AttrMeta.PROPERTY_NAME: "AliasTarget"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-recordset.html#cfn-route53-recordset-aliastarget"""
@@ -329,10 +329,10 @@ class RecordSetGroupRecordSet(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Failover"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-recordset.html#cfn-route53-recordset-failover"""
-    p_GeoLocation: typing.Union['RecordSetGroupGeoLocation', dict] = attr.ib(
+    p_GeoLocation: typing.Union['PropRecordSetGroupGeoLocation', dict] = attr.ib(
         default=None,
-        converter=RecordSetGroupGeoLocation.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(RecordSetGroupGeoLocation)),
+        converter=PropRecordSetGroupGeoLocation.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropRecordSetGroupGeoLocation)),
         metadata={AttrMeta.PROPERTY_NAME: "GeoLocation"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-recordset.html#cfn-route53-recordset-geolocation"""
@@ -434,10 +434,10 @@ class RecordSet(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Type"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-recordset.html#cfn-route53-recordset-type"""
-    p_AliasTarget: typing.Union['RecordSetAliasTarget', dict] = attr.ib(
+    p_AliasTarget: typing.Union['PropRecordSetAliasTarget', dict] = attr.ib(
         default=None,
-        converter=RecordSetAliasTarget.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(RecordSetAliasTarget)),
+        converter=PropRecordSetAliasTarget.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropRecordSetAliasTarget)),
         metadata={AttrMeta.PROPERTY_NAME: "AliasTarget"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-recordset.html#cfn-route53-recordset-aliastarget"""
@@ -453,10 +453,10 @@ class RecordSet(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Failover"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-recordset.html#cfn-route53-recordset-failover"""
-    p_GeoLocation: typing.Union['RecordSetGeoLocation', dict] = attr.ib(
+    p_GeoLocation: typing.Union['PropRecordSetGeoLocation', dict] = attr.ib(
         default=None,
-        converter=RecordSetGeoLocation.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(RecordSetGeoLocation)),
+        converter=PropRecordSetGeoLocation.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropRecordSetGeoLocation)),
         metadata={AttrMeta.PROPERTY_NAME: "GeoLocation"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53-recordset.html#cfn-route53-recordset-geolocation"""
@@ -564,31 +564,31 @@ class HostedZone(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Name"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-hostedzone.html#cfn-route53-hostedzone-name"""
-    p_HostedZoneConfig: typing.Union['HostedZoneHostedZoneConfig', dict] = attr.ib(
+    p_HostedZoneConfig: typing.Union['PropHostedZoneHostedZoneConfig', dict] = attr.ib(
         default=None,
-        converter=HostedZoneHostedZoneConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(HostedZoneHostedZoneConfig)),
+        converter=PropHostedZoneHostedZoneConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropHostedZoneHostedZoneConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "HostedZoneConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-hostedzone.html#cfn-route53-hostedzone-hostedzoneconfig"""
-    p_HostedZoneTags: typing.List[typing.Union['HostedZoneHostedZoneTag', dict]] = attr.ib(
+    p_HostedZoneTags: typing.List[typing.Union['PropHostedZoneHostedZoneTag', dict]] = attr.ib(
         default=None,
-        converter=HostedZoneHostedZoneTag.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(HostedZoneHostedZoneTag), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropHostedZoneHostedZoneTag.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropHostedZoneHostedZoneTag), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "HostedZoneTags"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-hostedzone.html#cfn-route53-hostedzone-hostedzonetags"""
-    p_QueryLoggingConfig: typing.Union['HostedZoneQueryLoggingConfig', dict] = attr.ib(
+    p_QueryLoggingConfig: typing.Union['PropHostedZoneQueryLoggingConfig', dict] = attr.ib(
         default=None,
-        converter=HostedZoneQueryLoggingConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(HostedZoneQueryLoggingConfig)),
+        converter=PropHostedZoneQueryLoggingConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropHostedZoneQueryLoggingConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "QueryLoggingConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-hostedzone.html#cfn-route53-hostedzone-queryloggingconfig"""
-    p_VPCs: typing.List[typing.Union['HostedZoneVPC', dict]] = attr.ib(
+    p_VPCs: typing.List[typing.Union['PropHostedZoneVPC', dict]] = attr.ib(
         default=None,
-        converter=HostedZoneVPC.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(HostedZoneVPC), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropHostedZoneVPC.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropHostedZoneVPC), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "VPCs"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-hostedzone.html#cfn-route53-hostedzone-vpcs"""
@@ -626,10 +626,10 @@ class HealthCheck(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "HealthCheckConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-healthcheck.html#cfn-route53-healthcheck-healthcheckconfig"""
-    p_HealthCheckTags: typing.List[typing.Union['HealthCheckHealthCheckTag', dict]] = attr.ib(
+    p_HealthCheckTags: typing.List[typing.Union['PropHealthCheckHealthCheckTag', dict]] = attr.ib(
         default=None,
-        converter=HealthCheckHealthCheckTag.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(HealthCheckHealthCheckTag), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropHealthCheckHealthCheckTag.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropHealthCheckHealthCheckTag), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "HealthCheckTags"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-healthcheck.html#cfn-route53-healthcheck-healthchecktags"""
@@ -720,10 +720,10 @@ class RecordSetGroup(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "HostedZoneName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-recordsetgroup.html#cfn-route53-recordsetgroup-hostedzonename"""
-    p_RecordSets: typing.List[typing.Union['RecordSetGroupRecordSet', dict]] = attr.ib(
+    p_RecordSets: typing.List[typing.Union['PropRecordSetGroupRecordSet', dict]] = attr.ib(
         default=None,
-        converter=RecordSetGroupRecordSet.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(RecordSetGroupRecordSet), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropRecordSetGroupRecordSet.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropRecordSetGroupRecordSet), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "RecordSets"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53-recordsetgroup.html#cfn-route53-recordsetgroup-recordsets"""

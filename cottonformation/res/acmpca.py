@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class CertificateSubject(Property):
+class PropCertificateSubject(Property):
     """
     AWS Object Type = "AWS::ACMPCA::Certificate.Subject"
 
@@ -126,7 +126,7 @@ class CertificateSubject(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-subject.html#cfn-acmpca-certificate-subject-title"""
 
 @attr.s
-class CertificateAuthorityKeyUsage(Property):
+class PropCertificateAuthorityKeyUsage(Property):
     """
     AWS Object Type = "AWS::ACMPCA::CertificateAuthority.KeyUsage"
 
@@ -202,7 +202,7 @@ class CertificateAuthorityKeyUsage(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificateauthority-keyusage.html#cfn-acmpca-certificateauthority-keyusage-nonrepudiation"""
 
 @attr.s
-class CertificateQualifier(Property):
+class PropCertificateQualifier(Property):
     """
     AWS Object Type = "AWS::ACMPCA::Certificate.Qualifier"
 
@@ -222,7 +222,7 @@ class CertificateQualifier(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-qualifier.html#cfn-acmpca-certificate-qualifier-cpsuri"""
 
 @attr.s
-class CertificateAuthorityEdiPartyName(Property):
+class PropCertificateAuthorityEdiPartyName(Property):
     """
     AWS Object Type = "AWS::ACMPCA::CertificateAuthority.EdiPartyName"
 
@@ -249,7 +249,7 @@ class CertificateAuthorityEdiPartyName(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificateauthority-edipartyname.html#cfn-acmpca-certificateauthority-edipartyname-partyname"""
 
 @attr.s
-class CertificateEdiPartyName(Property):
+class PropCertificateEdiPartyName(Property):
     """
     AWS Object Type = "AWS::ACMPCA::Certificate.EdiPartyName"
 
@@ -276,7 +276,7 @@ class CertificateEdiPartyName(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-edipartyname.html#cfn-acmpca-certificate-edipartyname-partyname"""
 
 @attr.s
-class CertificateAuthoritySubject(Property):
+class PropCertificateAuthoritySubject(Property):
     """
     AWS Object Type = "AWS::ACMPCA::CertificateAuthority.Subject"
 
@@ -387,7 +387,7 @@ class CertificateAuthoritySubject(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificateauthority-subject.html#cfn-acmpca-certificateauthority-subject-title"""
 
 @attr.s
-class CertificateOtherName(Property):
+class PropCertificateOtherName(Property):
     """
     AWS Object Type = "AWS::ACMPCA::Certificate.OtherName"
 
@@ -414,7 +414,7 @@ class CertificateOtherName(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-othername.html#cfn-acmpca-certificate-othername-value"""
 
 @attr.s
-class CertificateAuthorityAccessMethod(Property):
+class PropCertificateAuthorityAccessMethod(Property):
     """
     AWS Object Type = "AWS::ACMPCA::CertificateAuthority.AccessMethod"
 
@@ -441,7 +441,7 @@ class CertificateAuthorityAccessMethod(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificateauthority-accessmethod.html#cfn-acmpca-certificateauthority-accessmethod-customobjectidentifier"""
 
 @attr.s
-class CertificateValidity(Property):
+class PropCertificateValidity(Property):
     """
     AWS Object Type = "AWS::ACMPCA::Certificate.Validity"
 
@@ -468,7 +468,7 @@ class CertificateValidity(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-validity.html#cfn-acmpca-certificate-validity-value"""
 
 @attr.s
-class CertificateAuthorityOtherName(Property):
+class PropCertificateAuthorityOtherName(Property):
     """
     AWS Object Type = "AWS::ACMPCA::CertificateAuthority.OtherName"
 
@@ -495,7 +495,7 @@ class CertificateAuthorityOtherName(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificateauthority-othername.html#cfn-acmpca-certificateauthority-othername-value"""
 
 @attr.s
-class CertificateExtendedKeyUsage(Property):
+class PropCertificateExtendedKeyUsage(Property):
     """
     AWS Object Type = "AWS::ACMPCA::Certificate.ExtendedKeyUsage"
 
@@ -522,7 +522,7 @@ class CertificateExtendedKeyUsage(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-extendedkeyusage.html#cfn-acmpca-certificate-extendedkeyusage-extendedkeyusagetype"""
 
 @attr.s
-class CertificateAuthorityCrlConfiguration(Property):
+class PropCertificateAuthorityCrlConfiguration(Property):
     """
     AWS Object Type = "AWS::ACMPCA::CertificateAuthority.CrlConfiguration"
 
@@ -570,7 +570,7 @@ class CertificateAuthorityCrlConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificateauthority-crlconfiguration.html#cfn-acmpca-certificateauthority-crlconfiguration-s3objectacl"""
 
 @attr.s
-class CertificateAuthorityGeneralName(Property):
+class PropCertificateAuthorityGeneralName(Property):
     """
     AWS Object Type = "AWS::ACMPCA::CertificateAuthority.GeneralName"
 
@@ -589,10 +589,10 @@ class CertificateAuthorityGeneralName(Property):
     """
     AWS_OBJECT_TYPE = "AWS::ACMPCA::CertificateAuthority.GeneralName"
     
-    p_DirectoryName: typing.Union['CertificateAuthoritySubject', dict] = attr.ib(
+    p_DirectoryName: typing.Union['PropCertificateAuthoritySubject', dict] = attr.ib(
         default=None,
-        converter=CertificateAuthoritySubject.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(CertificateAuthoritySubject)),
+        converter=PropCertificateAuthoritySubject.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropCertificateAuthoritySubject)),
         metadata={AttrMeta.PROPERTY_NAME: "DirectoryName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificateauthority-generalname.html#cfn-acmpca-certificateauthority-generalname-directoryname"""
@@ -602,10 +602,10 @@ class CertificateAuthorityGeneralName(Property):
         metadata={AttrMeta.PROPERTY_NAME: "DnsName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificateauthority-generalname.html#cfn-acmpca-certificateauthority-generalname-dnsname"""
-    p_EdiPartyName: typing.Union['CertificateAuthorityEdiPartyName', dict] = attr.ib(
+    p_EdiPartyName: typing.Union['PropCertificateAuthorityEdiPartyName', dict] = attr.ib(
         default=None,
-        converter=CertificateAuthorityEdiPartyName.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(CertificateAuthorityEdiPartyName)),
+        converter=PropCertificateAuthorityEdiPartyName.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropCertificateAuthorityEdiPartyName)),
         metadata={AttrMeta.PROPERTY_NAME: "EdiPartyName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificateauthority-generalname.html#cfn-acmpca-certificateauthority-generalname-edipartyname"""
@@ -615,10 +615,10 @@ class CertificateAuthorityGeneralName(Property):
         metadata={AttrMeta.PROPERTY_NAME: "IpAddress"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificateauthority-generalname.html#cfn-acmpca-certificateauthority-generalname-ipaddress"""
-    p_OtherName: typing.Union['CertificateAuthorityOtherName', dict] = attr.ib(
+    p_OtherName: typing.Union['PropCertificateAuthorityOtherName', dict] = attr.ib(
         default=None,
-        converter=CertificateAuthorityOtherName.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(CertificateAuthorityOtherName)),
+        converter=PropCertificateAuthorityOtherName.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropCertificateAuthorityOtherName)),
         metadata={AttrMeta.PROPERTY_NAME: "OtherName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificateauthority-generalname.html#cfn-acmpca-certificateauthority-generalname-othername"""
@@ -642,7 +642,7 @@ class CertificateAuthorityGeneralName(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificateauthority-generalname.html#cfn-acmpca-certificateauthority-generalname-uniformresourceidentifier"""
 
 @attr.s
-class CertificateKeyUsage(Property):
+class PropCertificateKeyUsage(Property):
     """
     AWS Object Type = "AWS::ACMPCA::Certificate.KeyUsage"
 
@@ -718,7 +718,7 @@ class CertificateKeyUsage(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-keyusage.html#cfn-acmpca-certificate-keyusage-nonrepudiation"""
 
 @attr.s
-class CertificateAuthorityRevocationConfiguration(Property):
+class PropCertificateAuthorityRevocationConfiguration(Property):
     """
     AWS Object Type = "AWS::ACMPCA::CertificateAuthority.RevocationConfiguration"
 
@@ -730,16 +730,16 @@ class CertificateAuthorityRevocationConfiguration(Property):
     """
     AWS_OBJECT_TYPE = "AWS::ACMPCA::CertificateAuthority.RevocationConfiguration"
     
-    p_CrlConfiguration: typing.Union['CertificateAuthorityCrlConfiguration', dict] = attr.ib(
+    p_CrlConfiguration: typing.Union['PropCertificateAuthorityCrlConfiguration', dict] = attr.ib(
         default=None,
-        converter=CertificateAuthorityCrlConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(CertificateAuthorityCrlConfiguration)),
+        converter=PropCertificateAuthorityCrlConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropCertificateAuthorityCrlConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "CrlConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificateauthority-revocationconfiguration.html#cfn-acmpca-certificateauthority-revocationconfiguration-crlconfiguration"""
 
 @attr.s
-class CertificateAuthorityAccessDescription(Property):
+class PropCertificateAuthorityAccessDescription(Property):
     """
     AWS Object Type = "AWS::ACMPCA::CertificateAuthority.AccessDescription"
 
@@ -752,23 +752,23 @@ class CertificateAuthorityAccessDescription(Property):
     """
     AWS_OBJECT_TYPE = "AWS::ACMPCA::CertificateAuthority.AccessDescription"
     
-    rp_AccessLocation: typing.Union['CertificateAuthorityGeneralName', dict] = attr.ib(
+    rp_AccessLocation: typing.Union['PropCertificateAuthorityGeneralName', dict] = attr.ib(
         default=None,
-        converter=CertificateAuthorityGeneralName.from_dict,
-        validator=attr.validators.instance_of(CertificateAuthorityGeneralName),
+        converter=PropCertificateAuthorityGeneralName.from_dict,
+        validator=attr.validators.instance_of(PropCertificateAuthorityGeneralName),
         metadata={AttrMeta.PROPERTY_NAME: "AccessLocation"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificateauthority-accessdescription.html#cfn-acmpca-certificateauthority-accessdescription-accesslocation"""
-    rp_AccessMethod: typing.Union['CertificateAuthorityAccessMethod', dict] = attr.ib(
+    rp_AccessMethod: typing.Union['PropCertificateAuthorityAccessMethod', dict] = attr.ib(
         default=None,
-        converter=CertificateAuthorityAccessMethod.from_dict,
-        validator=attr.validators.instance_of(CertificateAuthorityAccessMethod),
+        converter=PropCertificateAuthorityAccessMethod.from_dict,
+        validator=attr.validators.instance_of(PropCertificateAuthorityAccessMethod),
         metadata={AttrMeta.PROPERTY_NAME: "AccessMethod"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificateauthority-accessdescription.html#cfn-acmpca-certificateauthority-accessdescription-accessmethod"""
 
 @attr.s
-class CertificatePolicyQualifierInfo(Property):
+class PropCertificatePolicyQualifierInfo(Property):
     """
     AWS Object Type = "AWS::ACMPCA::Certificate.PolicyQualifierInfo"
 
@@ -787,16 +787,16 @@ class CertificatePolicyQualifierInfo(Property):
         metadata={AttrMeta.PROPERTY_NAME: "PolicyQualifierId"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-policyqualifierinfo.html#cfn-acmpca-certificate-policyqualifierinfo-policyqualifierid"""
-    rp_Qualifier: typing.Union['CertificateQualifier', dict] = attr.ib(
+    rp_Qualifier: typing.Union['PropCertificateQualifier', dict] = attr.ib(
         default=None,
-        converter=CertificateQualifier.from_dict,
-        validator=attr.validators.instance_of(CertificateQualifier),
+        converter=PropCertificateQualifier.from_dict,
+        validator=attr.validators.instance_of(PropCertificateQualifier),
         metadata={AttrMeta.PROPERTY_NAME: "Qualifier"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-policyqualifierinfo.html#cfn-acmpca-certificate-policyqualifierinfo-qualifier"""
 
 @attr.s
-class CertificateGeneralName(Property):
+class PropCertificateGeneralName(Property):
     """
     AWS Object Type = "AWS::ACMPCA::Certificate.GeneralName"
 
@@ -815,10 +815,10 @@ class CertificateGeneralName(Property):
     """
     AWS_OBJECT_TYPE = "AWS::ACMPCA::Certificate.GeneralName"
     
-    p_DirectoryName: typing.Union['CertificateSubject', dict] = attr.ib(
+    p_DirectoryName: typing.Union['PropCertificateSubject', dict] = attr.ib(
         default=None,
-        converter=CertificateSubject.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(CertificateSubject)),
+        converter=PropCertificateSubject.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropCertificateSubject)),
         metadata={AttrMeta.PROPERTY_NAME: "DirectoryName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-generalname.html#cfn-acmpca-certificate-generalname-directoryname"""
@@ -828,10 +828,10 @@ class CertificateGeneralName(Property):
         metadata={AttrMeta.PROPERTY_NAME: "DnsName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-generalname.html#cfn-acmpca-certificate-generalname-dnsname"""
-    p_EdiPartyName: typing.Union['CertificateEdiPartyName', dict] = attr.ib(
+    p_EdiPartyName: typing.Union['PropCertificateEdiPartyName', dict] = attr.ib(
         default=None,
-        converter=CertificateEdiPartyName.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(CertificateEdiPartyName)),
+        converter=PropCertificateEdiPartyName.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropCertificateEdiPartyName)),
         metadata={AttrMeta.PROPERTY_NAME: "EdiPartyName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-generalname.html#cfn-acmpca-certificate-generalname-edipartyname"""
@@ -841,10 +841,10 @@ class CertificateGeneralName(Property):
         metadata={AttrMeta.PROPERTY_NAME: "IpAddress"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-generalname.html#cfn-acmpca-certificate-generalname-ipaddress"""
-    p_OtherName: typing.Union['CertificateOtherName', dict] = attr.ib(
+    p_OtherName: typing.Union['PropCertificateOtherName', dict] = attr.ib(
         default=None,
-        converter=CertificateOtherName.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(CertificateOtherName)),
+        converter=PropCertificateOtherName.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropCertificateOtherName)),
         metadata={AttrMeta.PROPERTY_NAME: "OtherName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-generalname.html#cfn-acmpca-certificate-generalname-othername"""
@@ -868,7 +868,7 @@ class CertificateGeneralName(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-generalname.html#cfn-acmpca-certificate-generalname-uniformresourceidentifier"""
 
 @attr.s
-class CertificatePolicyInformation(Property):
+class PropCertificatePolicyInformation(Property):
     """
     AWS Object Type = "AWS::ACMPCA::Certificate.PolicyInformation"
 
@@ -887,16 +887,16 @@ class CertificatePolicyInformation(Property):
         metadata={AttrMeta.PROPERTY_NAME: "CertPolicyId"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-policyinformation.html#cfn-acmpca-certificate-policyinformation-certpolicyid"""
-    p_PolicyQualifiers: typing.List[typing.Union['CertificatePolicyQualifierInfo', dict]] = attr.ib(
+    p_PolicyQualifiers: typing.List[typing.Union['PropCertificatePolicyQualifierInfo', dict]] = attr.ib(
         default=None,
-        converter=CertificatePolicyQualifierInfo.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(CertificatePolicyQualifierInfo), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropCertificatePolicyQualifierInfo.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropCertificatePolicyQualifierInfo), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "PolicyQualifiers"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-policyinformation.html#cfn-acmpca-certificate-policyinformation-policyqualifiers"""
 
 @attr.s
-class CertificateAuthorityCsrExtensions(Property):
+class PropCertificateAuthorityCsrExtensions(Property):
     """
     AWS Object Type = "AWS::ACMPCA::CertificateAuthority.CsrExtensions"
 
@@ -909,23 +909,23 @@ class CertificateAuthorityCsrExtensions(Property):
     """
     AWS_OBJECT_TYPE = "AWS::ACMPCA::CertificateAuthority.CsrExtensions"
     
-    p_KeyUsage: typing.Union['CertificateAuthorityKeyUsage', dict] = attr.ib(
+    p_KeyUsage: typing.Union['PropCertificateAuthorityKeyUsage', dict] = attr.ib(
         default=None,
-        converter=CertificateAuthorityKeyUsage.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(CertificateAuthorityKeyUsage)),
+        converter=PropCertificateAuthorityKeyUsage.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropCertificateAuthorityKeyUsage)),
         metadata={AttrMeta.PROPERTY_NAME: "KeyUsage"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificateauthority-csrextensions.html#cfn-acmpca-certificateauthority-csrextensions-keyusage"""
-    p_SubjectInformationAccess: typing.List[typing.Union['CertificateAuthorityAccessDescription', dict]] = attr.ib(
+    p_SubjectInformationAccess: typing.List[typing.Union['PropCertificateAuthorityAccessDescription', dict]] = attr.ib(
         default=None,
-        converter=CertificateAuthorityAccessDescription.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(CertificateAuthorityAccessDescription), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropCertificateAuthorityAccessDescription.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropCertificateAuthorityAccessDescription), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "SubjectInformationAccess"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificateauthority-csrextensions.html#cfn-acmpca-certificateauthority-csrextensions-subjectinformationaccess"""
 
 @attr.s
-class CertificateExtensions(Property):
+class PropCertificateExtensions(Property):
     """
     AWS Object Type = "AWS::ACMPCA::Certificate.Extensions"
 
@@ -940,37 +940,37 @@ class CertificateExtensions(Property):
     """
     AWS_OBJECT_TYPE = "AWS::ACMPCA::Certificate.Extensions"
     
-    p_CertificatePolicies: typing.List[typing.Union['CertificatePolicyInformation', dict]] = attr.ib(
+    p_CertificatePolicies: typing.List[typing.Union['PropCertificatePolicyInformation', dict]] = attr.ib(
         default=None,
-        converter=CertificatePolicyInformation.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(CertificatePolicyInformation), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropCertificatePolicyInformation.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropCertificatePolicyInformation), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "CertificatePolicies"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-extensions.html#cfn-acmpca-certificate-extensions-certificatepolicies"""
-    p_ExtendedKeyUsage: typing.List[typing.Union['CertificateExtendedKeyUsage', dict]] = attr.ib(
+    p_ExtendedKeyUsage: typing.List[typing.Union['PropCertificateExtendedKeyUsage', dict]] = attr.ib(
         default=None,
-        converter=CertificateExtendedKeyUsage.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(CertificateExtendedKeyUsage), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropCertificateExtendedKeyUsage.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropCertificateExtendedKeyUsage), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "ExtendedKeyUsage"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-extensions.html#cfn-acmpca-certificate-extensions-extendedkeyusage"""
-    p_KeyUsage: typing.Union['CertificateKeyUsage', dict] = attr.ib(
+    p_KeyUsage: typing.Union['PropCertificateKeyUsage', dict] = attr.ib(
         default=None,
-        converter=CertificateKeyUsage.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(CertificateKeyUsage)),
+        converter=PropCertificateKeyUsage.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropCertificateKeyUsage)),
         metadata={AttrMeta.PROPERTY_NAME: "KeyUsage"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-extensions.html#cfn-acmpca-certificate-extensions-keyusage"""
-    p_SubjectAlternativeNames: typing.List[typing.Union['CertificateGeneralName', dict]] = attr.ib(
+    p_SubjectAlternativeNames: typing.List[typing.Union['PropCertificateGeneralName', dict]] = attr.ib(
         default=None,
-        converter=CertificateGeneralName.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(CertificateGeneralName), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropCertificateGeneralName.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropCertificateGeneralName), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "SubjectAlternativeNames"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-extensions.html#cfn-acmpca-certificate-extensions-subjectalternativenames"""
 
 @attr.s
-class CertificateApiPassthrough(Property):
+class PropCertificateApiPassthrough(Property):
     """
     AWS Object Type = "AWS::ACMPCA::Certificate.ApiPassthrough"
 
@@ -983,17 +983,17 @@ class CertificateApiPassthrough(Property):
     """
     AWS_OBJECT_TYPE = "AWS::ACMPCA::Certificate.ApiPassthrough"
     
-    p_Extensions: typing.Union['CertificateExtensions', dict] = attr.ib(
+    p_Extensions: typing.Union['PropCertificateExtensions', dict] = attr.ib(
         default=None,
-        converter=CertificateExtensions.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(CertificateExtensions)),
+        converter=PropCertificateExtensions.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropCertificateExtensions)),
         metadata={AttrMeta.PROPERTY_NAME: "Extensions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-apipassthrough.html#cfn-acmpca-certificate-apipassthrough-extensions"""
-    p_Subject: typing.Union['CertificateSubject', dict] = attr.ib(
+    p_Subject: typing.Union['PropCertificateSubject', dict] = attr.ib(
         default=None,
-        converter=CertificateSubject.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(CertificateSubject)),
+        converter=PropCertificateSubject.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropCertificateSubject)),
         metadata={AttrMeta.PROPERTY_NAME: "Subject"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-acmpca-certificate-apipassthrough.html#cfn-acmpca-certificate-apipassthrough-subject"""
@@ -1034,10 +1034,10 @@ class CertificateAuthority(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "SigningAlgorithm"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-acmpca-certificateauthority.html#cfn-acmpca-certificateauthority-signingalgorithm"""
-    rp_Subject: typing.Union['CertificateAuthoritySubject', dict] = attr.ib(
+    rp_Subject: typing.Union['PropCertificateAuthoritySubject', dict] = attr.ib(
         default=None,
-        converter=CertificateAuthoritySubject.from_dict,
-        validator=attr.validators.instance_of(CertificateAuthoritySubject),
+        converter=PropCertificateAuthoritySubject.from_dict,
+        validator=attr.validators.instance_of(PropCertificateAuthoritySubject),
         metadata={AttrMeta.PROPERTY_NAME: "Subject"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-acmpca-certificateauthority.html#cfn-acmpca-certificateauthority-subject"""
@@ -1047,10 +1047,10 @@ class CertificateAuthority(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Type"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-acmpca-certificateauthority.html#cfn-acmpca-certificateauthority-type"""
-    p_CsrExtensions: typing.Union['CertificateAuthorityCsrExtensions', dict] = attr.ib(
+    p_CsrExtensions: typing.Union['PropCertificateAuthorityCsrExtensions', dict] = attr.ib(
         default=None,
-        converter=CertificateAuthorityCsrExtensions.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(CertificateAuthorityCsrExtensions)),
+        converter=PropCertificateAuthorityCsrExtensions.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropCertificateAuthorityCsrExtensions)),
         metadata={AttrMeta.PROPERTY_NAME: "CsrExtensions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-acmpca-certificateauthority.html#cfn-acmpca-certificateauthority-csrextensions"""
@@ -1060,10 +1060,10 @@ class CertificateAuthority(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "KeyStorageSecurityStandard"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-acmpca-certificateauthority.html#cfn-acmpca-certificateauthority-keystoragesecuritystandard"""
-    p_RevocationConfiguration: typing.Union['CertificateAuthorityRevocationConfiguration', dict] = attr.ib(
+    p_RevocationConfiguration: typing.Union['PropCertificateAuthorityRevocationConfiguration', dict] = attr.ib(
         default=None,
-        converter=CertificateAuthorityRevocationConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(CertificateAuthorityRevocationConfiguration)),
+        converter=PropCertificateAuthorityRevocationConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropCertificateAuthorityRevocationConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "RevocationConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-acmpca-certificateauthority.html#cfn-acmpca-certificateauthority-revocationconfiguration"""
@@ -1174,17 +1174,17 @@ class Certificate(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "SigningAlgorithm"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-acmpca-certificate.html#cfn-acmpca-certificate-signingalgorithm"""
-    rp_Validity: typing.Union['CertificateValidity', dict] = attr.ib(
+    rp_Validity: typing.Union['PropCertificateValidity', dict] = attr.ib(
         default=None,
-        converter=CertificateValidity.from_dict,
-        validator=attr.validators.instance_of(CertificateValidity),
+        converter=PropCertificateValidity.from_dict,
+        validator=attr.validators.instance_of(PropCertificateValidity),
         metadata={AttrMeta.PROPERTY_NAME: "Validity"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-acmpca-certificate.html#cfn-acmpca-certificate-validity"""
-    p_ApiPassthrough: typing.Union['CertificateApiPassthrough', dict] = attr.ib(
+    p_ApiPassthrough: typing.Union['PropCertificateApiPassthrough', dict] = attr.ib(
         default=None,
-        converter=CertificateApiPassthrough.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(CertificateApiPassthrough)),
+        converter=PropCertificateApiPassthrough.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropCertificateApiPassthrough)),
         metadata={AttrMeta.PROPERTY_NAME: "ApiPassthrough"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-acmpca-certificate.html#cfn-acmpca-certificate-apipassthrough"""
@@ -1194,10 +1194,10 @@ class Certificate(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "TemplateArn"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-acmpca-certificate.html#cfn-acmpca-certificate-templatearn"""
-    p_ValidityNotBefore: typing.Union['CertificateValidity', dict] = attr.ib(
+    p_ValidityNotBefore: typing.Union['PropCertificateValidity', dict] = attr.ib(
         default=None,
-        converter=CertificateValidity.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(CertificateValidity)),
+        converter=PropCertificateValidity.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropCertificateValidity)),
         metadata={AttrMeta.PROPERTY_NAME: "ValidityNotBefore"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-acmpca-certificate.html#cfn-acmpca-certificate-validitynotbefore"""

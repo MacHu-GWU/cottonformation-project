@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class DeviceLocation(Property):
+class PropDeviceLocation(Property):
     """
     AWS Object Type = "AWS::NetworkManager::Device.Location"
 
@@ -49,7 +49,7 @@ class DeviceLocation(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-device-location.html#cfn-networkmanager-device-location-longitude"""
 
 @attr.s
-class LinkBandwidth(Property):
+class PropLinkBandwidth(Property):
     """
     AWS Object Type = "AWS::NetworkManager::Link.Bandwidth"
 
@@ -76,7 +76,7 @@ class LinkBandwidth(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-link-bandwidth.html#cfn-networkmanager-link-bandwidth-uploadspeed"""
 
 @attr.s
-class SiteLocation(Property):
+class PropSiteLocation(Property):
     """
     AWS Object Type = "AWS::NetworkManager::Site.Location"
 
@@ -132,10 +132,10 @@ class Link(Resource):
     AWS_OBJECT_TYPE = "AWS::NetworkManager::Link"
 
     
-    rp_Bandwidth: typing.Union['LinkBandwidth', dict] = attr.ib(
+    rp_Bandwidth: typing.Union['PropLinkBandwidth', dict] = attr.ib(
         default=None,
-        converter=LinkBandwidth.from_dict,
-        validator=attr.validators.instance_of(LinkBandwidth),
+        converter=PropLinkBandwidth.from_dict,
+        validator=attr.validators.instance_of(PropLinkBandwidth),
         metadata={AttrMeta.PROPERTY_NAME: "Bandwidth"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-link.html#cfn-networkmanager-link-bandwidth"""
@@ -267,10 +267,10 @@ class Device(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Description"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-device.html#cfn-networkmanager-device-description"""
-    p_Location: typing.Union['DeviceLocation', dict] = attr.ib(
+    p_Location: typing.Union['PropDeviceLocation', dict] = attr.ib(
         default=None,
-        converter=DeviceLocation.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(DeviceLocation)),
+        converter=PropDeviceLocation.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDeviceLocation)),
         metadata={AttrMeta.PROPERTY_NAME: "Location"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-device.html#cfn-networkmanager-device-location"""
@@ -461,10 +461,10 @@ class Site(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Description"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-site.html#cfn-networkmanager-site-description"""
-    p_Location: typing.Union['SiteLocation', dict] = attr.ib(
+    p_Location: typing.Union['PropSiteLocation', dict] = attr.ib(
         default=None,
-        converter=SiteLocation.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(SiteLocation)),
+        converter=PropSiteLocation.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropSiteLocation)),
         metadata={AttrMeta.PROPERTY_NAME: "Location"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-site.html#cfn-networkmanager-site-location"""

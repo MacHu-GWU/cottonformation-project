@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class RepositoryS3(Property):
+class PropRepositoryS3(Property):
     """
     AWS Object Type = "AWS::CodeCommit::Repository.S3"
 
@@ -49,7 +49,7 @@ class RepositoryS3(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codecommit-repository-s3.html#cfn-codecommit-repository-s3-objectversion"""
 
 @attr.s
-class RepositoryRepositoryTrigger(Property):
+class PropRepositoryRepositoryTrigger(Property):
     """
     AWS Object Type = "AWS::CodeCommit::Repository.RepositoryTrigger"
 
@@ -97,7 +97,7 @@ class RepositoryRepositoryTrigger(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codecommit-repository-repositorytrigger.html#cfn-codecommit-repository-repositorytrigger-customdata"""
 
 @attr.s
-class RepositoryCode(Property):
+class PropRepositoryCode(Property):
     """
     AWS Object Type = "AWS::CodeCommit::Repository.Code"
 
@@ -110,10 +110,10 @@ class RepositoryCode(Property):
     """
     AWS_OBJECT_TYPE = "AWS::CodeCommit::Repository.Code"
     
-    rp_S3: typing.Union['RepositoryS3', dict] = attr.ib(
+    rp_S3: typing.Union['PropRepositoryS3', dict] = attr.ib(
         default=None,
-        converter=RepositoryS3.from_dict,
-        validator=attr.validators.instance_of(RepositoryS3),
+        converter=PropRepositoryS3.from_dict,
+        validator=attr.validators.instance_of(PropRepositoryS3),
         metadata={AttrMeta.PROPERTY_NAME: "S3"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codecommit-repository-code.html#cfn-codecommit-repository-code-s3"""
@@ -151,10 +151,10 @@ class Repository(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "RepositoryName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codecommit-repository.html#cfn-codecommit-repository-repositoryname"""
-    p_Code: typing.Union['RepositoryCode', dict] = attr.ib(
+    p_Code: typing.Union['PropRepositoryCode', dict] = attr.ib(
         default=None,
-        converter=RepositoryCode.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(RepositoryCode)),
+        converter=PropRepositoryCode.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropRepositoryCode)),
         metadata={AttrMeta.PROPERTY_NAME: "Code"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codecommit-repository.html#cfn-codecommit-repository-code"""
@@ -164,10 +164,10 @@ class Repository(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "RepositoryDescription"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codecommit-repository.html#cfn-codecommit-repository-repositorydescription"""
-    p_Triggers: typing.List[typing.Union['RepositoryRepositoryTrigger', dict]] = attr.ib(
+    p_Triggers: typing.List[typing.Union['PropRepositoryRepositoryTrigger', dict]] = attr.ib(
         default=None,
-        converter=RepositoryRepositoryTrigger.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(RepositoryRepositoryTrigger), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropRepositoryRepositoryTrigger.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropRepositoryRepositoryTrigger), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Triggers"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codecommit-repository.html#cfn-codecommit-repository-triggers"""

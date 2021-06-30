@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class SimulationApplicationSimulationSoftwareSuite(Property):
+class PropSimulationApplicationSimulationSoftwareSuite(Property):
     """
     AWS Object Type = "AWS::RoboMaker::SimulationApplication.SimulationSoftwareSuite"
 
@@ -42,7 +42,7 @@ class SimulationApplicationSimulationSoftwareSuite(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-robomaker-simulationapplication-simulationsoftwaresuite.html#cfn-robomaker-simulationapplication-simulationsoftwaresuite-version"""
 
 @attr.s
-class SimulationApplicationRobotSoftwareSuite(Property):
+class PropSimulationApplicationRobotSoftwareSuite(Property):
     """
     AWS Object Type = "AWS::RoboMaker::SimulationApplication.RobotSoftwareSuite"
 
@@ -69,7 +69,7 @@ class SimulationApplicationRobotSoftwareSuite(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-robomaker-simulationapplication-robotsoftwaresuite.html#cfn-robomaker-simulationapplication-robotsoftwaresuite-version"""
 
 @attr.s
-class SimulationApplicationSourceConfig(Property):
+class PropSimulationApplicationSourceConfig(Property):
     """
     AWS Object Type = "AWS::RoboMaker::SimulationApplication.SourceConfig"
 
@@ -103,7 +103,7 @@ class SimulationApplicationSourceConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-robomaker-simulationapplication-sourceconfig.html#cfn-robomaker-simulationapplication-sourceconfig-s3key"""
 
 @attr.s
-class RobotApplicationRobotSoftwareSuite(Property):
+class PropRobotApplicationRobotSoftwareSuite(Property):
     """
     AWS Object Type = "AWS::RoboMaker::RobotApplication.RobotSoftwareSuite"
 
@@ -130,7 +130,7 @@ class RobotApplicationRobotSoftwareSuite(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-robomaker-robotapplication-robotsoftwaresuite.html#cfn-robomaker-robotapplication-robotsoftwaresuite-version"""
 
 @attr.s
-class SimulationApplicationRenderingEngine(Property):
+class PropSimulationApplicationRenderingEngine(Property):
     """
     AWS Object Type = "AWS::RoboMaker::SimulationApplication.RenderingEngine"
 
@@ -157,7 +157,7 @@ class SimulationApplicationRenderingEngine(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-robomaker-simulationapplication-renderingengine.html#cfn-robomaker-simulationapplication-renderingengine-version"""
 
 @attr.s
-class RobotApplicationSourceConfig(Property):
+class PropRobotApplicationSourceConfig(Property):
     """
     AWS Object Type = "AWS::RoboMaker::RobotApplication.SourceConfig"
 
@@ -213,31 +213,31 @@ class SimulationApplication(Resource):
     AWS_OBJECT_TYPE = "AWS::RoboMaker::SimulationApplication"
 
     
-    rp_RenderingEngine: typing.Union['SimulationApplicationRenderingEngine', dict] = attr.ib(
+    rp_RenderingEngine: typing.Union['PropSimulationApplicationRenderingEngine', dict] = attr.ib(
         default=None,
-        converter=SimulationApplicationRenderingEngine.from_dict,
-        validator=attr.validators.instance_of(SimulationApplicationRenderingEngine),
+        converter=PropSimulationApplicationRenderingEngine.from_dict,
+        validator=attr.validators.instance_of(PropSimulationApplicationRenderingEngine),
         metadata={AttrMeta.PROPERTY_NAME: "RenderingEngine"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-simulationapplication.html#cfn-robomaker-simulationapplication-renderingengine"""
-    rp_RobotSoftwareSuite: typing.Union['SimulationApplicationRobotSoftwareSuite', dict] = attr.ib(
+    rp_RobotSoftwareSuite: typing.Union['PropSimulationApplicationRobotSoftwareSuite', dict] = attr.ib(
         default=None,
-        converter=SimulationApplicationRobotSoftwareSuite.from_dict,
-        validator=attr.validators.instance_of(SimulationApplicationRobotSoftwareSuite),
+        converter=PropSimulationApplicationRobotSoftwareSuite.from_dict,
+        validator=attr.validators.instance_of(PropSimulationApplicationRobotSoftwareSuite),
         metadata={AttrMeta.PROPERTY_NAME: "RobotSoftwareSuite"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-simulationapplication.html#cfn-robomaker-simulationapplication-robotsoftwaresuite"""
-    rp_SimulationSoftwareSuite: typing.Union['SimulationApplicationSimulationSoftwareSuite', dict] = attr.ib(
+    rp_SimulationSoftwareSuite: typing.Union['PropSimulationApplicationSimulationSoftwareSuite', dict] = attr.ib(
         default=None,
-        converter=SimulationApplicationSimulationSoftwareSuite.from_dict,
-        validator=attr.validators.instance_of(SimulationApplicationSimulationSoftwareSuite),
+        converter=PropSimulationApplicationSimulationSoftwareSuite.from_dict,
+        validator=attr.validators.instance_of(PropSimulationApplicationSimulationSoftwareSuite),
         metadata={AttrMeta.PROPERTY_NAME: "SimulationSoftwareSuite"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-simulationapplication.html#cfn-robomaker-simulationapplication-simulationsoftwaresuite"""
-    rp_Sources: typing.List[typing.Union['SimulationApplicationSourceConfig', dict]] = attr.ib(
+    rp_Sources: typing.List[typing.Union['PropSimulationApplicationSourceConfig', dict]] = attr.ib(
         default=None,
-        converter=SimulationApplicationSourceConfig.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(SimulationApplicationSourceConfig), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropSimulationApplicationSourceConfig.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropSimulationApplicationSourceConfig), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "Sources"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-simulationapplication.html#cfn-robomaker-simulationapplication-sources"""
@@ -320,17 +320,17 @@ class RobotApplication(Resource):
     AWS_OBJECT_TYPE = "AWS::RoboMaker::RobotApplication"
 
     
-    rp_RobotSoftwareSuite: typing.Union['RobotApplicationRobotSoftwareSuite', dict] = attr.ib(
+    rp_RobotSoftwareSuite: typing.Union['PropRobotApplicationRobotSoftwareSuite', dict] = attr.ib(
         default=None,
-        converter=RobotApplicationRobotSoftwareSuite.from_dict,
-        validator=attr.validators.instance_of(RobotApplicationRobotSoftwareSuite),
+        converter=PropRobotApplicationRobotSoftwareSuite.from_dict,
+        validator=attr.validators.instance_of(PropRobotApplicationRobotSoftwareSuite),
         metadata={AttrMeta.PROPERTY_NAME: "RobotSoftwareSuite"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-robotapplication.html#cfn-robomaker-robotapplication-robotsoftwaresuite"""
-    rp_Sources: typing.List[typing.Union['RobotApplicationSourceConfig', dict]] = attr.ib(
+    rp_Sources: typing.List[typing.Union['PropRobotApplicationSourceConfig', dict]] = attr.ib(
         default=None,
-        converter=RobotApplicationSourceConfig.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(RobotApplicationSourceConfig), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropRobotApplicationSourceConfig.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropRobotApplicationSourceConfig), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "Sources"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-robotapplication.html#cfn-robomaker-robotapplication-sources"""

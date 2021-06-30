@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class CampaignMetricDimension(Property):
+class PropCampaignMetricDimension(Property):
     """
     AWS Object Type = "AWS::Pinpoint::Campaign.MetricDimension"
 
@@ -42,7 +42,7 @@ class CampaignMetricDimension(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-metricdimension.html#cfn-pinpoint-campaign-metricdimension-value"""
 
 @attr.s
-class SegmentAttributeDimension(Property):
+class PropSegmentAttributeDimension(Property):
     """
     AWS Object Type = "AWS::Pinpoint::Segment.AttributeDimension"
 
@@ -69,7 +69,7 @@ class SegmentAttributeDimension(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-attributedimension.html#cfn-pinpoint-segment-attributedimension-values"""
 
 @attr.s
-class SegmentRecency(Property):
+class PropSegmentRecency(Property):
     """
     AWS Object Type = "AWS::Pinpoint::Segment.Recency"
 
@@ -96,7 +96,7 @@ class SegmentRecency(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentdimensions-behavior-recency.html#cfn-pinpoint-segment-segmentdimensions-behavior-recency-recencytype"""
 
 @attr.s
-class CampaignQuietTime(Property):
+class PropCampaignQuietTime(Property):
     """
     AWS Object Type = "AWS::Pinpoint::Campaign.QuietTime"
 
@@ -123,7 +123,7 @@ class CampaignQuietTime(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-schedule-quiettime.html#cfn-pinpoint-campaign-schedule-quiettime-start"""
 
 @attr.s
-class ApplicationSettingsCampaignHook(Property):
+class PropApplicationSettingsCampaignHook(Property):
     """
     AWS Object Type = "AWS::Pinpoint::ApplicationSettings.CampaignHook"
 
@@ -157,7 +157,7 @@ class ApplicationSettingsCampaignHook(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-applicationsettings-campaignhook.html#cfn-pinpoint-applicationsettings-campaignhook-weburl"""
 
 @attr.s
-class PushTemplateDefaultPushNotificationTemplate(Property):
+class PropPushTemplateDefaultPushNotificationTemplate(Property):
     """
     AWS Object Type = "AWS::Pinpoint::PushTemplate.DefaultPushNotificationTemplate"
 
@@ -205,7 +205,7 @@ class PushTemplateDefaultPushNotificationTemplate(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-pushtemplate-defaultpushnotificationtemplate.html#cfn-pinpoint-pushtemplate-defaultpushnotificationtemplate-url"""
 
 @attr.s
-class CampaignMessage(Property):
+class PropCampaignMessage(Property):
     """
     AWS Object Type = "AWS::Pinpoint::Campaign.Message"
 
@@ -302,7 +302,7 @@ class CampaignMessage(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-message.html#cfn-pinpoint-campaign-message-url"""
 
 @attr.s
-class CampaignCampaignSmsMessage(Property):
+class PropCampaignCampaignSmsMessage(Property):
     """
     AWS Object Type = "AWS::Pinpoint::Campaign.CampaignSmsMessage"
 
@@ -357,7 +357,7 @@ class CampaignCampaignSmsMessage(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-campaignsmsmessage.html#cfn-pinpoint-campaign-campaignsmsmessage-templateid"""
 
 @attr.s
-class SegmentCoordinates(Property):
+class PropSegmentCoordinates(Property):
     """
     AWS Object Type = "AWS::Pinpoint::Segment.Coordinates"
 
@@ -384,7 +384,7 @@ class SegmentCoordinates(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentdimensions-location-gpspoint-coordinates.html#cfn-pinpoint-segment-segmentdimensions-location-gpspoint-coordinates-longitude"""
 
 @attr.s
-class CampaignSetDimension(Property):
+class PropCampaignSetDimension(Property):
     """
     AWS Object Type = "AWS::Pinpoint::Campaign.SetDimension"
 
@@ -411,7 +411,7 @@ class CampaignSetDimension(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-setdimension.html#cfn-pinpoint-campaign-setdimension-values"""
 
 @attr.s
-class PushTemplateAndroidPushNotificationTemplate(Property):
+class PropPushTemplateAndroidPushNotificationTemplate(Property):
     """
     AWS Object Type = "AWS::Pinpoint::PushTemplate.AndroidPushNotificationTemplate"
 
@@ -480,7 +480,7 @@ class PushTemplateAndroidPushNotificationTemplate(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-pushtemplate-androidpushnotificationtemplate.html#cfn-pinpoint-pushtemplate-androidpushnotificationtemplate-url"""
 
 @attr.s
-class CampaignEventDimensions(Property):
+class PropCampaignEventDimensions(Property):
     """
     AWS Object Type = "AWS::Pinpoint::Campaign.EventDimensions"
 
@@ -500,10 +500,10 @@ class CampaignEventDimensions(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Attributes"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-eventdimensions.html#cfn-pinpoint-campaign-eventdimensions-attributes"""
-    p_EventType: typing.Union['CampaignSetDimension', dict] = attr.ib(
+    p_EventType: typing.Union['PropCampaignSetDimension', dict] = attr.ib(
         default=None,
-        converter=CampaignSetDimension.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(CampaignSetDimension)),
+        converter=PropCampaignSetDimension.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropCampaignSetDimension)),
         metadata={AttrMeta.PROPERTY_NAME: "EventType"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-eventdimensions.html#cfn-pinpoint-campaign-eventdimensions-eventtype"""
@@ -515,7 +515,7 @@ class CampaignEventDimensions(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-eventdimensions.html#cfn-pinpoint-campaign-eventdimensions-metrics"""
 
 @attr.s
-class SegmentSourceSegments(Property):
+class PropSegmentSourceSegments(Property):
     """
     AWS Object Type = "AWS::Pinpoint::Segment.SourceSegments"
 
@@ -542,7 +542,7 @@ class SegmentSourceSegments(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentgroups-groups-sourcesegments.html#cfn-pinpoint-segment-segmentgroups-groups-sourcesegments-version"""
 
 @attr.s
-class SegmentGPSPoint(Property):
+class PropSegmentGPSPoint(Property):
     """
     AWS Object Type = "AWS::Pinpoint::Segment.GPSPoint"
 
@@ -555,10 +555,10 @@ class SegmentGPSPoint(Property):
     """
     AWS_OBJECT_TYPE = "AWS::Pinpoint::Segment.GPSPoint"
     
-    rp_Coordinates: typing.Union['SegmentCoordinates', dict] = attr.ib(
+    rp_Coordinates: typing.Union['PropSegmentCoordinates', dict] = attr.ib(
         default=None,
-        converter=SegmentCoordinates.from_dict,
-        validator=attr.validators.instance_of(SegmentCoordinates),
+        converter=PropSegmentCoordinates.from_dict,
+        validator=attr.validators.instance_of(PropSegmentCoordinates),
         metadata={AttrMeta.PROPERTY_NAME: "Coordinates"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentdimensions-location-gpspoint.html#cfn-pinpoint-segment-segmentdimensions-location-gpspoint-coordinates"""
@@ -570,7 +570,7 @@ class SegmentGPSPoint(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentdimensions-location-gpspoint.html#cfn-pinpoint-segment-segmentdimensions-location-gpspoint-rangeinkilometers"""
 
 @attr.s
-class ApplicationSettingsLimits(Property):
+class PropApplicationSettingsLimits(Property):
     """
     AWS Object Type = "AWS::Pinpoint::ApplicationSettings.Limits"
 
@@ -611,7 +611,7 @@ class ApplicationSettingsLimits(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-applicationsettings-limits.html#cfn-pinpoint-applicationsettings-limits-total"""
 
 @attr.s
-class CampaignLimits(Property):
+class PropCampaignLimits(Property):
     """
     AWS Object Type = "AWS::Pinpoint::Campaign.Limits"
 
@@ -652,7 +652,7 @@ class CampaignLimits(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-limits.html#cfn-pinpoint-campaign-limits-total"""
 
 @attr.s
-class SegmentSetDimension(Property):
+class PropSegmentSetDimension(Property):
     """
     AWS Object Type = "AWS::Pinpoint::Segment.SetDimension"
 
@@ -679,7 +679,7 @@ class SegmentSetDimension(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-setdimension.html#cfn-pinpoint-segment-setdimension-values"""
 
 @attr.s
-class CampaignAttributeDimension(Property):
+class PropCampaignAttributeDimension(Property):
     """
     AWS Object Type = "AWS::Pinpoint::Campaign.AttributeDimension"
 
@@ -706,7 +706,7 @@ class CampaignAttributeDimension(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-attributedimension.html#cfn-pinpoint-campaign-attributedimension-values"""
 
 @attr.s
-class SegmentBehavior(Property):
+class PropSegmentBehavior(Property):
     """
     AWS Object Type = "AWS::Pinpoint::Segment.Behavior"
 
@@ -718,16 +718,16 @@ class SegmentBehavior(Property):
     """
     AWS_OBJECT_TYPE = "AWS::Pinpoint::Segment.Behavior"
     
-    p_Recency: typing.Union['SegmentRecency', dict] = attr.ib(
+    p_Recency: typing.Union['PropSegmentRecency', dict] = attr.ib(
         default=None,
-        converter=SegmentRecency.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(SegmentRecency)),
+        converter=PropSegmentRecency.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropSegmentRecency)),
         metadata={AttrMeta.PROPERTY_NAME: "Recency"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentdimensions-behavior.html#cfn-pinpoint-segment-segmentdimensions-behavior-recency"""
 
 @attr.s
-class CampaignCampaignHook(Property):
+class PropCampaignCampaignHook(Property):
     """
     AWS Object Type = "AWS::Pinpoint::Campaign.CampaignHook"
 
@@ -761,7 +761,7 @@ class CampaignCampaignHook(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-campaignhook.html#cfn-pinpoint-campaign-campaignhook-weburl"""
 
 @attr.s
-class PushTemplateAPNSPushNotificationTemplate(Property):
+class PropPushTemplateAPNSPushNotificationTemplate(Property):
     """
     AWS Object Type = "AWS::Pinpoint::PushTemplate.APNSPushNotificationTemplate"
 
@@ -816,7 +816,7 @@ class PushTemplateAPNSPushNotificationTemplate(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-pushtemplate-apnspushnotificationtemplate.html#cfn-pinpoint-pushtemplate-apnspushnotificationtemplate-url"""
 
 @attr.s
-class CampaignCampaignEmailMessage(Property):
+class PropCampaignCampaignEmailMessage(Property):
     """
     AWS Object Type = "AWS::Pinpoint::Campaign.CampaignEmailMessage"
 
@@ -857,7 +857,7 @@ class CampaignCampaignEmailMessage(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-campaignemailmessage.html#cfn-pinpoint-campaign-campaignemailmessage-title"""
 
 @attr.s
-class ApplicationSettingsQuietTime(Property):
+class PropApplicationSettingsQuietTime(Property):
     """
     AWS Object Type = "AWS::Pinpoint::ApplicationSettings.QuietTime"
 
@@ -884,7 +884,7 @@ class ApplicationSettingsQuietTime(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-applicationsettings-quiettime.html#cfn-pinpoint-applicationsettings-quiettime-start"""
 
 @attr.s
-class SegmentLocation(Property):
+class PropSegmentLocation(Property):
     """
     AWS Object Type = "AWS::Pinpoint::Segment.Location"
 
@@ -897,23 +897,23 @@ class SegmentLocation(Property):
     """
     AWS_OBJECT_TYPE = "AWS::Pinpoint::Segment.Location"
     
-    p_Country: typing.Union['SegmentSetDimension', dict] = attr.ib(
+    p_Country: typing.Union['PropSegmentSetDimension', dict] = attr.ib(
         default=None,
-        converter=SegmentSetDimension.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(SegmentSetDimension)),
+        converter=PropSegmentSetDimension.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropSegmentSetDimension)),
         metadata={AttrMeta.PROPERTY_NAME: "Country"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentdimensions-location.html#cfn-pinpoint-segment-segmentdimensions-location-country"""
-    p_GPSPoint: typing.Union['SegmentGPSPoint', dict] = attr.ib(
+    p_GPSPoint: typing.Union['PropSegmentGPSPoint', dict] = attr.ib(
         default=None,
-        converter=SegmentGPSPoint.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(SegmentGPSPoint)),
+        converter=PropSegmentGPSPoint.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropSegmentGPSPoint)),
         metadata={AttrMeta.PROPERTY_NAME: "GPSPoint"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentdimensions-location.html#cfn-pinpoint-segment-segmentdimensions-location-gpspoint"""
 
 @attr.s
-class CampaignCampaignEventFilter(Property):
+class PropCampaignCampaignEventFilter(Property):
     """
     AWS Object Type = "AWS::Pinpoint::Campaign.CampaignEventFilter"
 
@@ -926,10 +926,10 @@ class CampaignCampaignEventFilter(Property):
     """
     AWS_OBJECT_TYPE = "AWS::Pinpoint::Campaign.CampaignEventFilter"
     
-    p_Dimensions: typing.Union['CampaignEventDimensions', dict] = attr.ib(
+    p_Dimensions: typing.Union['PropCampaignEventDimensions', dict] = attr.ib(
         default=None,
-        converter=CampaignEventDimensions.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(CampaignEventDimensions)),
+        converter=PropCampaignEventDimensions.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropCampaignEventDimensions)),
         metadata={AttrMeta.PROPERTY_NAME: "Dimensions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-campaigneventfilter.html#cfn-pinpoint-campaign-campaigneventfilter-dimensions"""
@@ -941,7 +941,7 @@ class CampaignCampaignEventFilter(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-campaigneventfilter.html#cfn-pinpoint-campaign-campaigneventfilter-filtertype"""
 
 @attr.s
-class SegmentDemographic(Property):
+class PropSegmentDemographic(Property):
     """
     AWS Object Type = "AWS::Pinpoint::Segment.Demographic"
 
@@ -958,51 +958,51 @@ class SegmentDemographic(Property):
     """
     AWS_OBJECT_TYPE = "AWS::Pinpoint::Segment.Demographic"
     
-    p_AppVersion: typing.Union['SegmentSetDimension', dict] = attr.ib(
+    p_AppVersion: typing.Union['PropSegmentSetDimension', dict] = attr.ib(
         default=None,
-        converter=SegmentSetDimension.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(SegmentSetDimension)),
+        converter=PropSegmentSetDimension.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropSegmentSetDimension)),
         metadata={AttrMeta.PROPERTY_NAME: "AppVersion"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentdimensions-demographic.html#cfn-pinpoint-segment-segmentdimensions-demographic-appversion"""
-    p_Channel: typing.Union['SegmentSetDimension', dict] = attr.ib(
+    p_Channel: typing.Union['PropSegmentSetDimension', dict] = attr.ib(
         default=None,
-        converter=SegmentSetDimension.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(SegmentSetDimension)),
+        converter=PropSegmentSetDimension.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropSegmentSetDimension)),
         metadata={AttrMeta.PROPERTY_NAME: "Channel"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentdimensions-demographic.html#cfn-pinpoint-segment-segmentdimensions-demographic-channel"""
-    p_DeviceType: typing.Union['SegmentSetDimension', dict] = attr.ib(
+    p_DeviceType: typing.Union['PropSegmentSetDimension', dict] = attr.ib(
         default=None,
-        converter=SegmentSetDimension.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(SegmentSetDimension)),
+        converter=PropSegmentSetDimension.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropSegmentSetDimension)),
         metadata={AttrMeta.PROPERTY_NAME: "DeviceType"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentdimensions-demographic.html#cfn-pinpoint-segment-segmentdimensions-demographic-devicetype"""
-    p_Make: typing.Union['SegmentSetDimension', dict] = attr.ib(
+    p_Make: typing.Union['PropSegmentSetDimension', dict] = attr.ib(
         default=None,
-        converter=SegmentSetDimension.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(SegmentSetDimension)),
+        converter=PropSegmentSetDimension.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropSegmentSetDimension)),
         metadata={AttrMeta.PROPERTY_NAME: "Make"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentdimensions-demographic.html#cfn-pinpoint-segment-segmentdimensions-demographic-make"""
-    p_Model: typing.Union['SegmentSetDimension', dict] = attr.ib(
+    p_Model: typing.Union['PropSegmentSetDimension', dict] = attr.ib(
         default=None,
-        converter=SegmentSetDimension.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(SegmentSetDimension)),
+        converter=PropSegmentSetDimension.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropSegmentSetDimension)),
         metadata={AttrMeta.PROPERTY_NAME: "Model"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentdimensions-demographic.html#cfn-pinpoint-segment-segmentdimensions-demographic-model"""
-    p_Platform: typing.Union['SegmentSetDimension', dict] = attr.ib(
+    p_Platform: typing.Union['PropSegmentSetDimension', dict] = attr.ib(
         default=None,
-        converter=SegmentSetDimension.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(SegmentSetDimension)),
+        converter=PropSegmentSetDimension.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropSegmentSetDimension)),
         metadata={AttrMeta.PROPERTY_NAME: "Platform"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentdimensions-demographic.html#cfn-pinpoint-segment-segmentdimensions-demographic-platform"""
 
 @attr.s
-class CampaignMessageConfiguration(Property):
+class PropCampaignMessageConfiguration(Property):
     """
     AWS Object Type = "AWS::Pinpoint::Campaign.MessageConfiguration"
 
@@ -1020,58 +1020,58 @@ class CampaignMessageConfiguration(Property):
     """
     AWS_OBJECT_TYPE = "AWS::Pinpoint::Campaign.MessageConfiguration"
     
-    p_ADMMessage: typing.Union['CampaignMessage', dict] = attr.ib(
+    p_ADMMessage: typing.Union['PropCampaignMessage', dict] = attr.ib(
         default=None,
-        converter=CampaignMessage.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(CampaignMessage)),
+        converter=PropCampaignMessage.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropCampaignMessage)),
         metadata={AttrMeta.PROPERTY_NAME: "ADMMessage"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-messageconfiguration.html#cfn-pinpoint-campaign-messageconfiguration-admmessage"""
-    p_APNSMessage: typing.Union['CampaignMessage', dict] = attr.ib(
+    p_APNSMessage: typing.Union['PropCampaignMessage', dict] = attr.ib(
         default=None,
-        converter=CampaignMessage.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(CampaignMessage)),
+        converter=PropCampaignMessage.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropCampaignMessage)),
         metadata={AttrMeta.PROPERTY_NAME: "APNSMessage"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-messageconfiguration.html#cfn-pinpoint-campaign-messageconfiguration-apnsmessage"""
-    p_BaiduMessage: typing.Union['CampaignMessage', dict] = attr.ib(
+    p_BaiduMessage: typing.Union['PropCampaignMessage', dict] = attr.ib(
         default=None,
-        converter=CampaignMessage.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(CampaignMessage)),
+        converter=PropCampaignMessage.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropCampaignMessage)),
         metadata={AttrMeta.PROPERTY_NAME: "BaiduMessage"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-messageconfiguration.html#cfn-pinpoint-campaign-messageconfiguration-baidumessage"""
-    p_DefaultMessage: typing.Union['CampaignMessage', dict] = attr.ib(
+    p_DefaultMessage: typing.Union['PropCampaignMessage', dict] = attr.ib(
         default=None,
-        converter=CampaignMessage.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(CampaignMessage)),
+        converter=PropCampaignMessage.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropCampaignMessage)),
         metadata={AttrMeta.PROPERTY_NAME: "DefaultMessage"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-messageconfiguration.html#cfn-pinpoint-campaign-messageconfiguration-defaultmessage"""
-    p_EmailMessage: typing.Union['CampaignCampaignEmailMessage', dict] = attr.ib(
+    p_EmailMessage: typing.Union['PropCampaignCampaignEmailMessage', dict] = attr.ib(
         default=None,
-        converter=CampaignCampaignEmailMessage.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(CampaignCampaignEmailMessage)),
+        converter=PropCampaignCampaignEmailMessage.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropCampaignCampaignEmailMessage)),
         metadata={AttrMeta.PROPERTY_NAME: "EmailMessage"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-messageconfiguration.html#cfn-pinpoint-campaign-messageconfiguration-emailmessage"""
-    p_GCMMessage: typing.Union['CampaignMessage', dict] = attr.ib(
+    p_GCMMessage: typing.Union['PropCampaignMessage', dict] = attr.ib(
         default=None,
-        converter=CampaignMessage.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(CampaignMessage)),
+        converter=PropCampaignMessage.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropCampaignMessage)),
         metadata={AttrMeta.PROPERTY_NAME: "GCMMessage"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-messageconfiguration.html#cfn-pinpoint-campaign-messageconfiguration-gcmmessage"""
-    p_SMSMessage: typing.Union['CampaignCampaignSmsMessage', dict] = attr.ib(
+    p_SMSMessage: typing.Union['PropCampaignCampaignSmsMessage', dict] = attr.ib(
         default=None,
-        converter=CampaignCampaignSmsMessage.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(CampaignCampaignSmsMessage)),
+        converter=PropCampaignCampaignSmsMessage.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropCampaignCampaignSmsMessage)),
         metadata={AttrMeta.PROPERTY_NAME: "SMSMessage"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-messageconfiguration.html#cfn-pinpoint-campaign-messageconfiguration-smsmessage"""
 
 @attr.s
-class CampaignSchedule(Property):
+class PropCampaignSchedule(Property):
     """
     AWS Object Type = "AWS::Pinpoint::Campaign.Schedule"
 
@@ -1095,10 +1095,10 @@ class CampaignSchedule(Property):
         metadata={AttrMeta.PROPERTY_NAME: "EndTime"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-schedule.html#cfn-pinpoint-campaign-schedule-endtime"""
-    p_EventFilter: typing.Union['CampaignCampaignEventFilter', dict] = attr.ib(
+    p_EventFilter: typing.Union['PropCampaignCampaignEventFilter', dict] = attr.ib(
         default=None,
-        converter=CampaignCampaignEventFilter.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(CampaignCampaignEventFilter)),
+        converter=PropCampaignCampaignEventFilter.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropCampaignCampaignEventFilter)),
         metadata={AttrMeta.PROPERTY_NAME: "EventFilter"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-schedule.html#cfn-pinpoint-campaign-schedule-eventfilter"""
@@ -1114,10 +1114,10 @@ class CampaignSchedule(Property):
         metadata={AttrMeta.PROPERTY_NAME: "IsLocalTime"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-schedule.html#cfn-pinpoint-campaign-schedule-islocaltime"""
-    p_QuietTime: typing.Union['CampaignQuietTime', dict] = attr.ib(
+    p_QuietTime: typing.Union['PropCampaignQuietTime', dict] = attr.ib(
         default=None,
-        converter=CampaignQuietTime.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(CampaignQuietTime)),
+        converter=PropCampaignQuietTime.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropCampaignQuietTime)),
         metadata={AttrMeta.PROPERTY_NAME: "QuietTime"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-schedule.html#cfn-pinpoint-campaign-schedule-quiettime"""
@@ -1135,7 +1135,7 @@ class CampaignSchedule(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-schedule.html#cfn-pinpoint-campaign-schedule-timezone"""
 
 @attr.s
-class CampaignWriteTreatmentResource(Property):
+class PropCampaignWriteTreatmentResource(Property):
     """
     AWS Object Type = "AWS::Pinpoint::Campaign.WriteTreatmentResource"
 
@@ -1151,17 +1151,17 @@ class CampaignWriteTreatmentResource(Property):
     """
     AWS_OBJECT_TYPE = "AWS::Pinpoint::Campaign.WriteTreatmentResource"
     
-    p_MessageConfiguration: typing.Union['CampaignMessageConfiguration', dict] = attr.ib(
+    p_MessageConfiguration: typing.Union['PropCampaignMessageConfiguration', dict] = attr.ib(
         default=None,
-        converter=CampaignMessageConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(CampaignMessageConfiguration)),
+        converter=PropCampaignMessageConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropCampaignMessageConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "MessageConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-writetreatmentresource.html#cfn-pinpoint-campaign-writetreatmentresource-messageconfiguration"""
-    p_Schedule: typing.Union['CampaignSchedule', dict] = attr.ib(
+    p_Schedule: typing.Union['PropCampaignSchedule', dict] = attr.ib(
         default=None,
-        converter=CampaignSchedule.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(CampaignSchedule)),
+        converter=PropCampaignSchedule.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropCampaignSchedule)),
         metadata={AttrMeta.PROPERTY_NAME: "Schedule"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-writetreatmentresource.html#cfn-pinpoint-campaign-writetreatmentresource-schedule"""
@@ -1185,7 +1185,7 @@ class CampaignWriteTreatmentResource(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-campaign-writetreatmentresource.html#cfn-pinpoint-campaign-writetreatmentresource-treatmentname"""
 
 @attr.s
-class SegmentSegmentDimensions(Property):
+class PropSegmentSegmentDimensions(Property):
     """
     AWS Object Type = "AWS::Pinpoint::Segment.SegmentDimensions"
 
@@ -1208,24 +1208,24 @@ class SegmentSegmentDimensions(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Attributes"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentdimensions.html#cfn-pinpoint-segment-segmentdimensions-attributes"""
-    p_Behavior: typing.Union['SegmentBehavior', dict] = attr.ib(
+    p_Behavior: typing.Union['PropSegmentBehavior', dict] = attr.ib(
         default=None,
-        converter=SegmentBehavior.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(SegmentBehavior)),
+        converter=PropSegmentBehavior.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropSegmentBehavior)),
         metadata={AttrMeta.PROPERTY_NAME: "Behavior"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentdimensions.html#cfn-pinpoint-segment-segmentdimensions-behavior"""
-    p_Demographic: typing.Union['SegmentDemographic', dict] = attr.ib(
+    p_Demographic: typing.Union['PropSegmentDemographic', dict] = attr.ib(
         default=None,
-        converter=SegmentDemographic.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(SegmentDemographic)),
+        converter=PropSegmentDemographic.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropSegmentDemographic)),
         metadata={AttrMeta.PROPERTY_NAME: "Demographic"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentdimensions.html#cfn-pinpoint-segment-segmentdimensions-demographic"""
-    p_Location: typing.Union['SegmentLocation', dict] = attr.ib(
+    p_Location: typing.Union['PropSegmentLocation', dict] = attr.ib(
         default=None,
-        converter=SegmentLocation.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(SegmentLocation)),
+        converter=PropSegmentLocation.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropSegmentLocation)),
         metadata={AttrMeta.PROPERTY_NAME: "Location"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentdimensions.html#cfn-pinpoint-segment-segmentdimensions-location"""
@@ -1243,7 +1243,7 @@ class SegmentSegmentDimensions(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentdimensions.html#cfn-pinpoint-segment-segmentdimensions-userattributes"""
 
 @attr.s
-class SegmentGroups(Property):
+class PropSegmentGroups(Property):
     """
     AWS Object Type = "AWS::Pinpoint::Segment.Groups"
 
@@ -1258,17 +1258,17 @@ class SegmentGroups(Property):
     """
     AWS_OBJECT_TYPE = "AWS::Pinpoint::Segment.Groups"
     
-    p_Dimensions: typing.List[typing.Union['SegmentSegmentDimensions', dict]] = attr.ib(
+    p_Dimensions: typing.List[typing.Union['PropSegmentSegmentDimensions', dict]] = attr.ib(
         default=None,
-        converter=SegmentSegmentDimensions.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(SegmentSegmentDimensions), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropSegmentSegmentDimensions.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropSegmentSegmentDimensions), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Dimensions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentgroups-groups.html#cfn-pinpoint-segment-segmentgroups-groups-dimensions"""
-    p_SourceSegments: typing.List[typing.Union['SegmentSourceSegments', dict]] = attr.ib(
+    p_SourceSegments: typing.List[typing.Union['PropSegmentSourceSegments', dict]] = attr.ib(
         default=None,
-        converter=SegmentSourceSegments.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(SegmentSourceSegments), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropSegmentSourceSegments.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropSegmentSourceSegments), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "SourceSegments"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentgroups-groups.html#cfn-pinpoint-segment-segmentgroups-groups-sourcesegments"""
@@ -1286,7 +1286,7 @@ class SegmentGroups(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentgroups-groups.html#cfn-pinpoint-segment-segmentgroups-groups-type"""
 
 @attr.s
-class SegmentSegmentGroups(Property):
+class PropSegmentSegmentGroups(Property):
     """
     AWS Object Type = "AWS::Pinpoint::Segment.SegmentGroups"
 
@@ -1299,10 +1299,10 @@ class SegmentSegmentGroups(Property):
     """
     AWS_OBJECT_TYPE = "AWS::Pinpoint::Segment.SegmentGroups"
     
-    p_Groups: typing.List[typing.Union['SegmentGroups', dict]] = attr.ib(
+    p_Groups: typing.List[typing.Union['PropSegmentGroups', dict]] = attr.ib(
         default=None,
-        converter=SegmentGroups.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(SegmentGroups), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropSegmentGroups.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropSegmentGroups), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Groups"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pinpoint-segment-segmentgroups.html#cfn-pinpoint-segment-segmentgroups-groups"""
@@ -1743,17 +1743,17 @@ class Segment(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Name"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-segment.html#cfn-pinpoint-segment-name"""
-    p_Dimensions: typing.Union['SegmentSegmentDimensions', dict] = attr.ib(
+    p_Dimensions: typing.Union['PropSegmentSegmentDimensions', dict] = attr.ib(
         default=None,
-        converter=SegmentSegmentDimensions.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(SegmentSegmentDimensions)),
+        converter=PropSegmentSegmentDimensions.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropSegmentSegmentDimensions)),
         metadata={AttrMeta.PROPERTY_NAME: "Dimensions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-segment.html#cfn-pinpoint-segment-dimensions"""
-    p_SegmentGroups: typing.Union['SegmentSegmentGroups', dict] = attr.ib(
+    p_SegmentGroups: typing.Union['PropSegmentSegmentGroups', dict] = attr.ib(
         default=None,
-        converter=SegmentSegmentGroups.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(SegmentSegmentGroups)),
+        converter=PropSegmentSegmentGroups.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropSegmentSegmentGroups)),
         metadata={AttrMeta.PROPERTY_NAME: "SegmentGroups"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-segment.html#cfn-pinpoint-segment-segmentgroups"""
@@ -1923,10 +1923,10 @@ class ApplicationSettings(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "ApplicationId"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-applicationsettings.html#cfn-pinpoint-applicationsettings-applicationid"""
-    p_CampaignHook: typing.Union['ApplicationSettingsCampaignHook', dict] = attr.ib(
+    p_CampaignHook: typing.Union['PropApplicationSettingsCampaignHook', dict] = attr.ib(
         default=None,
-        converter=ApplicationSettingsCampaignHook.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ApplicationSettingsCampaignHook)),
+        converter=PropApplicationSettingsCampaignHook.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropApplicationSettingsCampaignHook)),
         metadata={AttrMeta.PROPERTY_NAME: "CampaignHook"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-applicationsettings.html#cfn-pinpoint-applicationsettings-campaignhook"""
@@ -1936,17 +1936,17 @@ class ApplicationSettings(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "CloudWatchMetricsEnabled"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-applicationsettings.html#cfn-pinpoint-applicationsettings-cloudwatchmetricsenabled"""
-    p_Limits: typing.Union['ApplicationSettingsLimits', dict] = attr.ib(
+    p_Limits: typing.Union['PropApplicationSettingsLimits', dict] = attr.ib(
         default=None,
-        converter=ApplicationSettingsLimits.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ApplicationSettingsLimits)),
+        converter=PropApplicationSettingsLimits.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropApplicationSettingsLimits)),
         metadata={AttrMeta.PROPERTY_NAME: "Limits"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-applicationsettings.html#cfn-pinpoint-applicationsettings-limits"""
-    p_QuietTime: typing.Union['ApplicationSettingsQuietTime', dict] = attr.ib(
+    p_QuietTime: typing.Union['PropApplicationSettingsQuietTime', dict] = attr.ib(
         default=None,
-        converter=ApplicationSettingsQuietTime.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ApplicationSettingsQuietTime)),
+        converter=PropApplicationSettingsQuietTime.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropApplicationSettingsQuietTime)),
         metadata={AttrMeta.PROPERTY_NAME: "QuietTime"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-applicationsettings.html#cfn-pinpoint-applicationsettings-quiettime"""
@@ -1987,10 +1987,10 @@ class Campaign(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "ApplicationId"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-applicationid"""
-    rp_MessageConfiguration: typing.Union['CampaignMessageConfiguration', dict] = attr.ib(
+    rp_MessageConfiguration: typing.Union['PropCampaignMessageConfiguration', dict] = attr.ib(
         default=None,
-        converter=CampaignMessageConfiguration.from_dict,
-        validator=attr.validators.instance_of(CampaignMessageConfiguration),
+        converter=PropCampaignMessageConfiguration.from_dict,
+        validator=attr.validators.instance_of(PropCampaignMessageConfiguration),
         metadata={AttrMeta.PROPERTY_NAME: "MessageConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-messageconfiguration"""
@@ -2000,10 +2000,10 @@ class Campaign(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Name"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-name"""
-    rp_Schedule: typing.Union['CampaignSchedule', dict] = attr.ib(
+    rp_Schedule: typing.Union['PropCampaignSchedule', dict] = attr.ib(
         default=None,
-        converter=CampaignSchedule.from_dict,
-        validator=attr.validators.instance_of(CampaignSchedule),
+        converter=PropCampaignSchedule.from_dict,
+        validator=attr.validators.instance_of(PropCampaignSchedule),
         metadata={AttrMeta.PROPERTY_NAME: "Schedule"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-schedule"""
@@ -2013,17 +2013,17 @@ class Campaign(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "SegmentId"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-segmentid"""
-    p_AdditionalTreatments: typing.List[typing.Union['CampaignWriteTreatmentResource', dict]] = attr.ib(
+    p_AdditionalTreatments: typing.List[typing.Union['PropCampaignWriteTreatmentResource', dict]] = attr.ib(
         default=None,
-        converter=CampaignWriteTreatmentResource.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(CampaignWriteTreatmentResource), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropCampaignWriteTreatmentResource.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropCampaignWriteTreatmentResource), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "AdditionalTreatments"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-additionaltreatments"""
-    p_CampaignHook: typing.Union['CampaignCampaignHook', dict] = attr.ib(
+    p_CampaignHook: typing.Union['PropCampaignCampaignHook', dict] = attr.ib(
         default=None,
-        converter=CampaignCampaignHook.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(CampaignCampaignHook)),
+        converter=PropCampaignCampaignHook.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropCampaignCampaignHook)),
         metadata={AttrMeta.PROPERTY_NAME: "CampaignHook"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-campaignhook"""
@@ -2045,10 +2045,10 @@ class Campaign(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "IsPaused"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-ispaused"""
-    p_Limits: typing.Union['CampaignLimits', dict] = attr.ib(
+    p_Limits: typing.Union['PropCampaignLimits', dict] = attr.ib(
         default=None,
-        converter=CampaignLimits.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(CampaignLimits)),
+        converter=PropCampaignLimits.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropCampaignLimits)),
         metadata={AttrMeta.PROPERTY_NAME: "Limits"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-campaign.html#cfn-pinpoint-campaign-limits"""
@@ -2117,31 +2117,31 @@ class PushTemplate(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "TemplateName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-pushtemplate.html#cfn-pinpoint-pushtemplate-templatename"""
-    p_ADM: typing.Union['PushTemplateAndroidPushNotificationTemplate', dict] = attr.ib(
+    p_ADM: typing.Union['PropPushTemplateAndroidPushNotificationTemplate', dict] = attr.ib(
         default=None,
-        converter=PushTemplateAndroidPushNotificationTemplate.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PushTemplateAndroidPushNotificationTemplate)),
+        converter=PropPushTemplateAndroidPushNotificationTemplate.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropPushTemplateAndroidPushNotificationTemplate)),
         metadata={AttrMeta.PROPERTY_NAME: "ADM"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-pushtemplate.html#cfn-pinpoint-pushtemplate-adm"""
-    p_APNS: typing.Union['PushTemplateAPNSPushNotificationTemplate', dict] = attr.ib(
+    p_APNS: typing.Union['PropPushTemplateAPNSPushNotificationTemplate', dict] = attr.ib(
         default=None,
-        converter=PushTemplateAPNSPushNotificationTemplate.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PushTemplateAPNSPushNotificationTemplate)),
+        converter=PropPushTemplateAPNSPushNotificationTemplate.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropPushTemplateAPNSPushNotificationTemplate)),
         metadata={AttrMeta.PROPERTY_NAME: "APNS"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-pushtemplate.html#cfn-pinpoint-pushtemplate-apns"""
-    p_Baidu: typing.Union['PushTemplateAndroidPushNotificationTemplate', dict] = attr.ib(
+    p_Baidu: typing.Union['PropPushTemplateAndroidPushNotificationTemplate', dict] = attr.ib(
         default=None,
-        converter=PushTemplateAndroidPushNotificationTemplate.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PushTemplateAndroidPushNotificationTemplate)),
+        converter=PropPushTemplateAndroidPushNotificationTemplate.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropPushTemplateAndroidPushNotificationTemplate)),
         metadata={AttrMeta.PROPERTY_NAME: "Baidu"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-pushtemplate.html#cfn-pinpoint-pushtemplate-baidu"""
-    p_Default: typing.Union['PushTemplateDefaultPushNotificationTemplate', dict] = attr.ib(
+    p_Default: typing.Union['PropPushTemplateDefaultPushNotificationTemplate', dict] = attr.ib(
         default=None,
-        converter=PushTemplateDefaultPushNotificationTemplate.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PushTemplateDefaultPushNotificationTemplate)),
+        converter=PropPushTemplateDefaultPushNotificationTemplate.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropPushTemplateDefaultPushNotificationTemplate)),
         metadata={AttrMeta.PROPERTY_NAME: "Default"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-pushtemplate.html#cfn-pinpoint-pushtemplate-default"""
@@ -2151,10 +2151,10 @@ class PushTemplate(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "DefaultSubstitutions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-pushtemplate.html#cfn-pinpoint-pushtemplate-defaultsubstitutions"""
-    p_GCM: typing.Union['PushTemplateAndroidPushNotificationTemplate', dict] = attr.ib(
+    p_GCM: typing.Union['PropPushTemplateAndroidPushNotificationTemplate', dict] = attr.ib(
         default=None,
-        converter=PushTemplateAndroidPushNotificationTemplate.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PushTemplateAndroidPushNotificationTemplate)),
+        converter=PropPushTemplateAndroidPushNotificationTemplate.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropPushTemplateAndroidPushNotificationTemplate)),
         metadata={AttrMeta.PROPERTY_NAME: "GCM"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pinpoint-pushtemplate.html#cfn-pinpoint-pushtemplate-gcm"""

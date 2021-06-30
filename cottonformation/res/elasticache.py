@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class ReplicationGroupCloudWatchLogsDestinationDetails(Property):
+class PropReplicationGroupCloudWatchLogsDestinationDetails(Property):
     """
     AWS Object Type = "AWS::ElastiCache::ReplicationGroup.CloudWatchLogsDestinationDetails"
 
@@ -35,7 +35,7 @@ class ReplicationGroupCloudWatchLogsDestinationDetails(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-replicationgroup-cloudwatchlogsdestinationdetails.html#cfn-elasticache-replicationgroup-cloudwatchlogsdestinationdetails-loggroup"""
 
 @attr.s
-class ReplicationGroupNodeGroupConfiguration(Property):
+class PropReplicationGroupNodeGroupConfiguration(Property):
     """
     AWS Object Type = "AWS::ElastiCache::ReplicationGroup.NodeGroupConfiguration"
 
@@ -83,7 +83,7 @@ class ReplicationGroupNodeGroupConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-replicationgroup-nodegroupconfiguration.html#cfn-elasticache-replicationgroup-nodegroupconfiguration-slots"""
 
 @attr.s
-class CacheClusterKinesisFirehoseDestinationDetails(Property):
+class PropCacheClusterKinesisFirehoseDestinationDetails(Property):
     """
     AWS Object Type = "AWS::ElastiCache::CacheCluster.KinesisFirehoseDestinationDetails"
 
@@ -103,7 +103,7 @@ class CacheClusterKinesisFirehoseDestinationDetails(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cachecluster-kinesisfirehosedestinationdetails.html#cfn-elasticache-cachecluster-kinesisfirehosedestinationdetails-deliverystream"""
 
 @attr.s
-class GlobalReplicationGroupReshardingConfiguration(Property):
+class PropGlobalReplicationGroupReshardingConfiguration(Property):
     """
     AWS Object Type = "AWS::ElastiCache::GlobalReplicationGroup.ReshardingConfiguration"
 
@@ -130,7 +130,7 @@ class GlobalReplicationGroupReshardingConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-globalreplicationgroup-reshardingconfiguration.html#cfn-elasticache-globalreplicationgroup-reshardingconfiguration-preferredavailabilityzones"""
 
 @attr.s
-class GlobalReplicationGroupGlobalReplicationGroupMember(Property):
+class PropGlobalReplicationGroupGlobalReplicationGroupMember(Property):
     """
     AWS Object Type = "AWS::ElastiCache::GlobalReplicationGroup.GlobalReplicationGroupMember"
 
@@ -164,7 +164,7 @@ class GlobalReplicationGroupGlobalReplicationGroupMember(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-globalreplicationgroup-globalreplicationgroupmember.html#cfn-elasticache-globalreplicationgroup-globalreplicationgroupmember-role"""
 
 @attr.s
-class CacheClusterCloudWatchLogsDestinationDetails(Property):
+class PropCacheClusterCloudWatchLogsDestinationDetails(Property):
     """
     AWS Object Type = "AWS::ElastiCache::CacheCluster.CloudWatchLogsDestinationDetails"
 
@@ -184,7 +184,7 @@ class CacheClusterCloudWatchLogsDestinationDetails(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cachecluster-cloudwatchlogsdestinationdetails.html#cfn-elasticache-cachecluster-cloudwatchlogsdestinationdetails-loggroup"""
 
 @attr.s
-class ReplicationGroupKinesisFirehoseDestinationDetails(Property):
+class PropReplicationGroupKinesisFirehoseDestinationDetails(Property):
     """
     AWS Object Type = "AWS::ElastiCache::ReplicationGroup.KinesisFirehoseDestinationDetails"
 
@@ -204,7 +204,7 @@ class ReplicationGroupKinesisFirehoseDestinationDetails(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-replicationgroup-kinesisfirehosedestinationdetails.html#cfn-elasticache-replicationgroup-kinesisfirehosedestinationdetails-deliverystream"""
 
 @attr.s
-class ReplicationGroupDestinationDetails(Property):
+class PropReplicationGroupDestinationDetails(Property):
     """
     AWS Object Type = "AWS::ElastiCache::ReplicationGroup.DestinationDetails"
 
@@ -217,23 +217,23 @@ class ReplicationGroupDestinationDetails(Property):
     """
     AWS_OBJECT_TYPE = "AWS::ElastiCache::ReplicationGroup.DestinationDetails"
     
-    p_CloudWatchLogsDetails: typing.Union['ReplicationGroupCloudWatchLogsDestinationDetails', dict] = attr.ib(
+    p_CloudWatchLogsDetails: typing.Union['PropReplicationGroupCloudWatchLogsDestinationDetails', dict] = attr.ib(
         default=None,
-        converter=ReplicationGroupCloudWatchLogsDestinationDetails.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ReplicationGroupCloudWatchLogsDestinationDetails)),
+        converter=PropReplicationGroupCloudWatchLogsDestinationDetails.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropReplicationGroupCloudWatchLogsDestinationDetails)),
         metadata={AttrMeta.PROPERTY_NAME: "CloudWatchLogsDetails"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-replicationgroup-destinationdetails.html#cfn-elasticache-replicationgroup-destinationdetails-cloudwatchlogsdetails"""
-    p_KinesisFirehoseDetails: typing.Union['ReplicationGroupKinesisFirehoseDestinationDetails', dict] = attr.ib(
+    p_KinesisFirehoseDetails: typing.Union['PropReplicationGroupKinesisFirehoseDestinationDetails', dict] = attr.ib(
         default=None,
-        converter=ReplicationGroupKinesisFirehoseDestinationDetails.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ReplicationGroupKinesisFirehoseDestinationDetails)),
+        converter=PropReplicationGroupKinesisFirehoseDestinationDetails.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropReplicationGroupKinesisFirehoseDestinationDetails)),
         metadata={AttrMeta.PROPERTY_NAME: "KinesisFirehoseDetails"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-replicationgroup-destinationdetails.html#cfn-elasticache-replicationgroup-destinationdetails-kinesisfirehosedetails"""
 
 @attr.s
-class GlobalReplicationGroupRegionalConfiguration(Property):
+class PropGlobalReplicationGroupRegionalConfiguration(Property):
     """
     AWS Object Type = "AWS::ElastiCache::GlobalReplicationGroup.RegionalConfiguration"
 
@@ -259,16 +259,16 @@ class GlobalReplicationGroupRegionalConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "ReplicationGroupRegion"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-globalreplicationgroup-regionalconfiguration.html#cfn-elasticache-globalreplicationgroup-regionalconfiguration-replicationgroupregion"""
-    p_ReshardingConfigurations: typing.List[typing.Union['GlobalReplicationGroupReshardingConfiguration', dict]] = attr.ib(
+    p_ReshardingConfigurations: typing.List[typing.Union['PropGlobalReplicationGroupReshardingConfiguration', dict]] = attr.ib(
         default=None,
-        converter=GlobalReplicationGroupReshardingConfiguration.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(GlobalReplicationGroupReshardingConfiguration), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropGlobalReplicationGroupReshardingConfiguration.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropGlobalReplicationGroupReshardingConfiguration), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "ReshardingConfigurations"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-globalreplicationgroup-regionalconfiguration.html#cfn-elasticache-globalreplicationgroup-regionalconfiguration-reshardingconfigurations"""
 
 @attr.s
-class CacheClusterDestinationDetails(Property):
+class PropCacheClusterDestinationDetails(Property):
     """
     AWS Object Type = "AWS::ElastiCache::CacheCluster.DestinationDetails"
 
@@ -281,23 +281,23 @@ class CacheClusterDestinationDetails(Property):
     """
     AWS_OBJECT_TYPE = "AWS::ElastiCache::CacheCluster.DestinationDetails"
     
-    p_CloudWatchLogsDetails: typing.Union['CacheClusterCloudWatchLogsDestinationDetails', dict] = attr.ib(
+    p_CloudWatchLogsDetails: typing.Union['PropCacheClusterCloudWatchLogsDestinationDetails', dict] = attr.ib(
         default=None,
-        converter=CacheClusterCloudWatchLogsDestinationDetails.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(CacheClusterCloudWatchLogsDestinationDetails)),
+        converter=PropCacheClusterCloudWatchLogsDestinationDetails.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropCacheClusterCloudWatchLogsDestinationDetails)),
         metadata={AttrMeta.PROPERTY_NAME: "CloudWatchLogsDetails"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cachecluster-destinationdetails.html#cfn-elasticache-cachecluster-destinationdetails-cloudwatchlogsdetails"""
-    p_KinesisFirehoseDetails: typing.Union['CacheClusterKinesisFirehoseDestinationDetails', dict] = attr.ib(
+    p_KinesisFirehoseDetails: typing.Union['PropCacheClusterKinesisFirehoseDestinationDetails', dict] = attr.ib(
         default=None,
-        converter=CacheClusterKinesisFirehoseDestinationDetails.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(CacheClusterKinesisFirehoseDestinationDetails)),
+        converter=PropCacheClusterKinesisFirehoseDestinationDetails.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropCacheClusterKinesisFirehoseDestinationDetails)),
         metadata={AttrMeta.PROPERTY_NAME: "KinesisFirehoseDetails"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cachecluster-destinationdetails.html#cfn-elasticache-cachecluster-destinationdetails-kinesisfirehosedetails"""
 
 @attr.s
-class ReplicationGroupLogDeliveryConfigurationRequest(Property):
+class PropReplicationGroupLogDeliveryConfigurationRequest(Property):
     """
     AWS Object Type = "AWS::ElastiCache::ReplicationGroup.LogDeliveryConfigurationRequest"
 
@@ -312,10 +312,10 @@ class ReplicationGroupLogDeliveryConfigurationRequest(Property):
     """
     AWS_OBJECT_TYPE = "AWS::ElastiCache::ReplicationGroup.LogDeliveryConfigurationRequest"
     
-    p_DestinationDetails: typing.Union['ReplicationGroupDestinationDetails', dict] = attr.ib(
+    p_DestinationDetails: typing.Union['PropReplicationGroupDestinationDetails', dict] = attr.ib(
         default=None,
-        converter=ReplicationGroupDestinationDetails.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ReplicationGroupDestinationDetails)),
+        converter=PropReplicationGroupDestinationDetails.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropReplicationGroupDestinationDetails)),
         metadata={AttrMeta.PROPERTY_NAME: "DestinationDetails"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-replicationgroup-logdeliveryconfigurationrequest.html#cfn-elasticache-replicationgroup-logdeliveryconfigurationrequest-destinationdetails"""
@@ -339,7 +339,7 @@ class ReplicationGroupLogDeliveryConfigurationRequest(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-replicationgroup-logdeliveryconfigurationrequest.html#cfn-elasticache-replicationgroup-logdeliveryconfigurationrequest-logtype"""
 
 @attr.s
-class CacheClusterLogDeliveryConfigurationRequest(Property):
+class PropCacheClusterLogDeliveryConfigurationRequest(Property):
     """
     AWS Object Type = "AWS::ElastiCache::CacheCluster.LogDeliveryConfigurationRequest"
 
@@ -354,10 +354,10 @@ class CacheClusterLogDeliveryConfigurationRequest(Property):
     """
     AWS_OBJECT_TYPE = "AWS::ElastiCache::CacheCluster.LogDeliveryConfigurationRequest"
     
-    p_DestinationDetails: typing.Union['CacheClusterDestinationDetails', dict] = attr.ib(
+    p_DestinationDetails: typing.Union['PropCacheClusterDestinationDetails', dict] = attr.ib(
         default=None,
-        converter=CacheClusterDestinationDetails.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(CacheClusterDestinationDetails)),
+        converter=PropCacheClusterDestinationDetails.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropCacheClusterDestinationDetails)),
         metadata={AttrMeta.PROPERTY_NAME: "DestinationDetails"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cachecluster-logdeliveryconfigurationrequest.html#cfn-elasticache-cachecluster-logdeliveryconfigurationrequest-destinationdetails"""
@@ -736,10 +736,10 @@ class ReplicationGroup(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "KmsKeyId"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-kmskeyid"""
-    p_LogDeliveryConfigurations: typing.List[typing.Union['ReplicationGroupLogDeliveryConfigurationRequest', dict]] = attr.ib(
+    p_LogDeliveryConfigurations: typing.List[typing.Union['PropReplicationGroupLogDeliveryConfigurationRequest', dict]] = attr.ib(
         default=None,
-        converter=ReplicationGroupLogDeliveryConfigurationRequest.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ReplicationGroupLogDeliveryConfigurationRequest), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropReplicationGroupLogDeliveryConfigurationRequest.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropReplicationGroupLogDeliveryConfigurationRequest), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "LogDeliveryConfigurations"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-logdeliveryconfigurations"""
@@ -749,10 +749,10 @@ class ReplicationGroup(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "MultiAZEnabled"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-multiazenabled"""
-    p_NodeGroupConfiguration: typing.List[typing.Union['ReplicationGroupNodeGroupConfiguration', dict]] = attr.ib(
+    p_NodeGroupConfiguration: typing.List[typing.Union['PropReplicationGroupNodeGroupConfiguration', dict]] = attr.ib(
         default=None,
-        converter=ReplicationGroupNodeGroupConfiguration.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ReplicationGroupNodeGroupConfiguration), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropReplicationGroupNodeGroupConfiguration.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropReplicationGroupNodeGroupConfiguration), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "NodeGroupConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-nodegroupconfiguration"""
@@ -985,10 +985,10 @@ class GlobalReplicationGroup(Resource):
     AWS_OBJECT_TYPE = "AWS::ElastiCache::GlobalReplicationGroup"
 
     
-    rp_Members: typing.List[typing.Union['GlobalReplicationGroupGlobalReplicationGroupMember', dict]] = attr.ib(
+    rp_Members: typing.List[typing.Union['PropGlobalReplicationGroupGlobalReplicationGroupMember', dict]] = attr.ib(
         default=None,
-        converter=GlobalReplicationGroupGlobalReplicationGroupMember.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(GlobalReplicationGroupGlobalReplicationGroupMember), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropGlobalReplicationGroupGlobalReplicationGroupMember.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropGlobalReplicationGroupGlobalReplicationGroupMember), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "Members"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-globalreplicationgroup.html#cfn-elasticache-globalreplicationgroup-members"""
@@ -1034,10 +1034,10 @@ class GlobalReplicationGroup(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "GlobalReplicationGroupIdSuffix"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-globalreplicationgroup.html#cfn-elasticache-globalreplicationgroup-globalreplicationgroupidsuffix"""
-    p_RegionalConfigurations: typing.List[typing.Union['GlobalReplicationGroupRegionalConfiguration', dict]] = attr.ib(
+    p_RegionalConfigurations: typing.List[typing.Union['PropGlobalReplicationGroupRegionalConfiguration', dict]] = attr.ib(
         default=None,
-        converter=GlobalReplicationGroupRegionalConfiguration.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(GlobalReplicationGroupRegionalConfiguration), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropGlobalReplicationGroupRegionalConfiguration.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropGlobalReplicationGroupRegionalConfiguration), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "RegionalConfigurations"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-globalreplicationgroup.html#cfn-elasticache-globalreplicationgroup-regionalconfigurations"""
@@ -1149,10 +1149,10 @@ class CacheCluster(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "EngineVersion"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-engineversion"""
-    p_LogDeliveryConfigurations: typing.List[typing.Union['CacheClusterLogDeliveryConfigurationRequest', dict]] = attr.ib(
+    p_LogDeliveryConfigurations: typing.List[typing.Union['PropCacheClusterLogDeliveryConfigurationRequest', dict]] = attr.ib(
         default=None,
-        converter=CacheClusterLogDeliveryConfigurationRequest.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(CacheClusterLogDeliveryConfigurationRequest), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropCacheClusterLogDeliveryConfigurationRequest.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropCacheClusterLogDeliveryConfigurationRequest), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "LogDeliveryConfigurations"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-logdeliveryconfigurations"""

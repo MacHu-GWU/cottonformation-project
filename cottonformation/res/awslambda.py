@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class FunctionVpcConfig(Property):
+class PropFunctionVpcConfig(Property):
     """
     AWS Object Type = "AWS::Lambda::Function.VpcConfig"
 
@@ -42,7 +42,7 @@ class FunctionVpcConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-vpcconfig.html#cfn-lambda-function-vpcconfig-subnetids"""
 
 @attr.s
-class AliasProvisionedConcurrencyConfiguration(Property):
+class PropAliasProvisionedConcurrencyConfiguration(Property):
     """
     AWS Object Type = "AWS::Lambda::Alias.ProvisionedConcurrencyConfiguration"
 
@@ -62,7 +62,7 @@ class AliasProvisionedConcurrencyConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-alias-provisionedconcurrencyconfiguration.html#cfn-lambda-alias-provisionedconcurrencyconfiguration-provisionedconcurrentexecutions"""
 
 @attr.s
-class FunctionDeadLetterConfig(Property):
+class PropFunctionDeadLetterConfig(Property):
     """
     AWS Object Type = "AWS::Lambda::Function.DeadLetterConfig"
 
@@ -82,7 +82,7 @@ class FunctionDeadLetterConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-deadletterconfig.html#cfn-lambda-function-deadletterconfig-targetarn"""
 
 @attr.s
-class FunctionFileSystemConfig(Property):
+class PropFunctionFileSystemConfig(Property):
     """
     AWS Object Type = "AWS::Lambda::Function.FileSystemConfig"
 
@@ -109,7 +109,7 @@ class FunctionFileSystemConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-filesystemconfig.html#cfn-lambda-function-filesystemconfig-localmountpath"""
 
 @attr.s
-class EventInvokeConfigOnFailure(Property):
+class PropEventInvokeConfigOnFailure(Property):
     """
     AWS Object Type = "AWS::Lambda::EventInvokeConfig.OnFailure"
 
@@ -129,7 +129,7 @@ class EventInvokeConfigOnFailure(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventinvokeconfig-destinationconfig-onfailure.html#cfn-lambda-eventinvokeconfig-destinationconfig-onfailure-destination"""
 
 @attr.s
-class FunctionCode(Property):
+class PropFunctionCode(Property):
     """
     AWS Object Type = "AWS::Lambda::Function.Code"
 
@@ -177,7 +177,7 @@ class FunctionCode(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-code.html#cfn-lambda-function-code-zipfile"""
 
 @attr.s
-class LayerVersionContent(Property):
+class PropLayerVersionContent(Property):
     """
     AWS Object Type = "AWS::Lambda::LayerVersion.Content"
 
@@ -211,7 +211,7 @@ class LayerVersionContent(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-layerversion-content.html#cfn-lambda-layerversion-content-s3objectversion"""
 
 @attr.s
-class EventInvokeConfigOnSuccess(Property):
+class PropEventInvokeConfigOnSuccess(Property):
     """
     AWS Object Type = "AWS::Lambda::EventInvokeConfig.OnSuccess"
 
@@ -231,7 +231,7 @@ class EventInvokeConfigOnSuccess(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventinvokeconfig-destinationconfig-onsuccess.html#cfn-lambda-eventinvokeconfig-destinationconfig-onsuccess-destination"""
 
 @attr.s
-class FunctionTracingConfig(Property):
+class PropFunctionTracingConfig(Property):
     """
     AWS Object Type = "AWS::Lambda::Function.TracingConfig"
 
@@ -251,7 +251,7 @@ class FunctionTracingConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-tracingconfig.html#cfn-lambda-function-tracingconfig-mode"""
 
 @attr.s
-class EventInvokeConfigDestinationConfig(Property):
+class PropEventInvokeConfigDestinationConfig(Property):
     """
     AWS Object Type = "AWS::Lambda::EventInvokeConfig.DestinationConfig"
 
@@ -264,23 +264,23 @@ class EventInvokeConfigDestinationConfig(Property):
     """
     AWS_OBJECT_TYPE = "AWS::Lambda::EventInvokeConfig.DestinationConfig"
     
-    p_OnFailure: typing.Union['EventInvokeConfigOnFailure', dict] = attr.ib(
+    p_OnFailure: typing.Union['PropEventInvokeConfigOnFailure', dict] = attr.ib(
         default=None,
-        converter=EventInvokeConfigOnFailure.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(EventInvokeConfigOnFailure)),
+        converter=PropEventInvokeConfigOnFailure.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropEventInvokeConfigOnFailure)),
         metadata={AttrMeta.PROPERTY_NAME: "OnFailure"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventinvokeconfig-destinationconfig.html#cfn-lambda-eventinvokeconfig-destinationconfig-onfailure"""
-    p_OnSuccess: typing.Union['EventInvokeConfigOnSuccess', dict] = attr.ib(
+    p_OnSuccess: typing.Union['PropEventInvokeConfigOnSuccess', dict] = attr.ib(
         default=None,
-        converter=EventInvokeConfigOnSuccess.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(EventInvokeConfigOnSuccess)),
+        converter=PropEventInvokeConfigOnSuccess.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropEventInvokeConfigOnSuccess)),
         metadata={AttrMeta.PROPERTY_NAME: "OnSuccess"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventinvokeconfig-destinationconfig.html#cfn-lambda-eventinvokeconfig-destinationconfig-onsuccess"""
 
 @attr.s
-class FunctionEnvironment(Property):
+class PropFunctionEnvironment(Property):
     """
     AWS Object Type = "AWS::Lambda::Function.Environment"
 
@@ -300,7 +300,7 @@ class FunctionEnvironment(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-environment.html#cfn-lambda-function-environment-variables"""
 
 @attr.s
-class CodeSigningConfigCodeSigningPolicies(Property):
+class PropCodeSigningConfigCodeSigningPolicies(Property):
     """
     AWS Object Type = "AWS::Lambda::CodeSigningConfig.CodeSigningPolicies"
 
@@ -320,7 +320,7 @@ class CodeSigningConfigCodeSigningPolicies(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-codesigningconfig-codesigningpolicies.html#cfn-lambda-codesigningconfig-codesigningpolicies-untrustedartifactondeployment"""
 
 @attr.s
-class AliasVersionWeight(Property):
+class PropAliasVersionWeight(Property):
     """
     AWS Object Type = "AWS::Lambda::Alias.VersionWeight"
 
@@ -347,7 +347,7 @@ class AliasVersionWeight(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-alias-versionweight.html#cfn-lambda-alias-versionweight-functionweight"""
 
 @attr.s
-class VersionProvisionedConcurrencyConfiguration(Property):
+class PropVersionProvisionedConcurrencyConfiguration(Property):
     """
     AWS Object Type = "AWS::Lambda::Version.ProvisionedConcurrencyConfiguration"
 
@@ -367,7 +367,7 @@ class VersionProvisionedConcurrencyConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-version-provisionedconcurrencyconfiguration.html#cfn-lambda-version-provisionedconcurrencyconfiguration-provisionedconcurrentexecutions"""
 
 @attr.s
-class FunctionImageConfig(Property):
+class PropFunctionImageConfig(Property):
     """
     AWS Object Type = "AWS::Lambda::Function.ImageConfig"
 
@@ -401,7 +401,7 @@ class FunctionImageConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-imageconfig.html#cfn-lambda-function-imageconfig-workingdirectory"""
 
 @attr.s
-class EventSourceMappingOnFailure(Property):
+class PropEventSourceMappingOnFailure(Property):
     """
     AWS Object Type = "AWS::Lambda::EventSourceMapping.OnFailure"
 
@@ -421,7 +421,7 @@ class EventSourceMappingOnFailure(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventsourcemapping-onfailure.html#cfn-lambda-eventsourcemapping-onfailure-destination"""
 
 @attr.s
-class EventSourceMappingSourceAccessConfiguration(Property):
+class PropEventSourceMappingSourceAccessConfiguration(Property):
     """
     AWS Object Type = "AWS::Lambda::EventSourceMapping.SourceAccessConfiguration"
 
@@ -448,7 +448,7 @@ class EventSourceMappingSourceAccessConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventsourcemapping-sourceaccessconfiguration.html#cfn-lambda-eventsourcemapping-sourceaccessconfiguration-uri"""
 
 @attr.s
-class EventSourceMappingEndpoints(Property):
+class PropEventSourceMappingEndpoints(Property):
     """
     AWS Object Type = "AWS::Lambda::EventSourceMapping.Endpoints"
 
@@ -468,7 +468,7 @@ class EventSourceMappingEndpoints(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventsourcemapping-endpoints.html#cfn-lambda-eventsourcemapping-endpoints-kafkabootstrapservers"""
 
 @attr.s
-class CodeSigningConfigAllowedPublishers(Property):
+class PropCodeSigningConfigAllowedPublishers(Property):
     """
     AWS Object Type = "AWS::Lambda::CodeSigningConfig.AllowedPublishers"
 
@@ -488,7 +488,7 @@ class CodeSigningConfigAllowedPublishers(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-codesigningconfig-allowedpublishers.html#cfn-lambda-codesigningconfig-allowedpublishers-signingprofileversionarns"""
 
 @attr.s
-class EventSourceMappingDestinationConfig(Property):
+class PropEventSourceMappingDestinationConfig(Property):
     """
     AWS Object Type = "AWS::Lambda::EventSourceMapping.DestinationConfig"
 
@@ -500,16 +500,16 @@ class EventSourceMappingDestinationConfig(Property):
     """
     AWS_OBJECT_TYPE = "AWS::Lambda::EventSourceMapping.DestinationConfig"
     
-    p_OnFailure: typing.Union['EventSourceMappingOnFailure', dict] = attr.ib(
+    p_OnFailure: typing.Union['PropEventSourceMappingOnFailure', dict] = attr.ib(
         default=None,
-        converter=EventSourceMappingOnFailure.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(EventSourceMappingOnFailure)),
+        converter=PropEventSourceMappingOnFailure.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropEventSourceMappingOnFailure)),
         metadata={AttrMeta.PROPERTY_NAME: "OnFailure"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventsourcemapping-destinationconfig.html#cfn-lambda-eventsourcemapping-destinationconfig-onfailure"""
 
 @attr.s
-class AliasAliasRoutingConfiguration(Property):
+class PropAliasAliasRoutingConfiguration(Property):
     """
     AWS Object Type = "AWS::Lambda::Alias.AliasRoutingConfiguration"
 
@@ -521,16 +521,16 @@ class AliasAliasRoutingConfiguration(Property):
     """
     AWS_OBJECT_TYPE = "AWS::Lambda::Alias.AliasRoutingConfiguration"
     
-    rp_AdditionalVersionWeights: typing.List[typing.Union['AliasVersionWeight', dict]] = attr.ib(
+    rp_AdditionalVersionWeights: typing.List[typing.Union['PropAliasVersionWeight', dict]] = attr.ib(
         default=None,
-        converter=AliasVersionWeight.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(AliasVersionWeight), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropAliasVersionWeight.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropAliasVersionWeight), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "AdditionalVersionWeights"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-alias-aliasroutingconfiguration.html#cfn-lambda-alias-aliasroutingconfiguration-additionalversionweights"""
 
 @attr.s
-class EventSourceMappingSelfManagedEventSource(Property):
+class PropEventSourceMappingSelfManagedEventSource(Property):
     """
     AWS Object Type = "AWS::Lambda::EventSourceMapping.SelfManagedEventSource"
 
@@ -542,10 +542,10 @@ class EventSourceMappingSelfManagedEventSource(Property):
     """
     AWS_OBJECT_TYPE = "AWS::Lambda::EventSourceMapping.SelfManagedEventSource"
     
-    p_Endpoints: typing.Union['EventSourceMappingEndpoints', dict] = attr.ib(
+    p_Endpoints: typing.Union['PropEventSourceMappingEndpoints', dict] = attr.ib(
         default=None,
-        converter=EventSourceMappingEndpoints.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(EventSourceMappingEndpoints)),
+        converter=PropEventSourceMappingEndpoints.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropEventSourceMappingEndpoints)),
         metadata={AttrMeta.PROPERTY_NAME: "Endpoints"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventsourcemapping-selfmanagedeventsource.html#cfn-lambda-eventsourcemapping-selfmanagedeventsource-endpoints"""
@@ -601,10 +601,10 @@ class EventSourceMapping(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "BisectBatchOnFunctionError"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-bisectbatchonfunctionerror"""
-    p_DestinationConfig: typing.Union['EventSourceMappingDestinationConfig', dict] = attr.ib(
+    p_DestinationConfig: typing.Union['PropEventSourceMappingDestinationConfig', dict] = attr.ib(
         default=None,
-        converter=EventSourceMappingDestinationConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(EventSourceMappingDestinationConfig)),
+        converter=PropEventSourceMappingDestinationConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropEventSourceMappingDestinationConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "DestinationConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-destinationconfig"""
@@ -656,17 +656,17 @@ class EventSourceMapping(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Queues"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-queues"""
-    p_SelfManagedEventSource: typing.Union['EventSourceMappingSelfManagedEventSource', dict] = attr.ib(
+    p_SelfManagedEventSource: typing.Union['PropEventSourceMappingSelfManagedEventSource', dict] = attr.ib(
         default=None,
-        converter=EventSourceMappingSelfManagedEventSource.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(EventSourceMappingSelfManagedEventSource)),
+        converter=PropEventSourceMappingSelfManagedEventSource.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropEventSourceMappingSelfManagedEventSource)),
         metadata={AttrMeta.PROPERTY_NAME: "SelfManagedEventSource"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-selfmanagedeventsource"""
-    p_SourceAccessConfigurations: typing.List[typing.Union['EventSourceMappingSourceAccessConfiguration', dict]] = attr.ib(
+    p_SourceAccessConfigurations: typing.List[typing.Union['PropEventSourceMappingSourceAccessConfiguration', dict]] = attr.ib(
         default=None,
-        converter=EventSourceMappingSourceAccessConfiguration.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(EventSourceMappingSourceAccessConfiguration), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropEventSourceMappingSourceAccessConfiguration.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropEventSourceMappingSourceAccessConfiguration), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "SourceAccessConfigurations"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-sourceaccessconfigurations"""
@@ -714,10 +714,10 @@ class LayerVersion(Resource):
     AWS_OBJECT_TYPE = "AWS::Lambda::LayerVersion"
 
     
-    rp_Content: typing.Union['LayerVersionContent', dict] = attr.ib(
+    rp_Content: typing.Union['PropLayerVersionContent', dict] = attr.ib(
         default=None,
-        converter=LayerVersionContent.from_dict,
-        validator=attr.validators.instance_of(LayerVersionContent),
+        converter=PropLayerVersionContent.from_dict,
+        validator=attr.validators.instance_of(PropLayerVersionContent),
         metadata={AttrMeta.PROPERTY_NAME: "Content"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-layerversion.html#cfn-lambda-layerversion-content"""
@@ -791,17 +791,17 @@ class Alias(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Description"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-alias.html#cfn-lambda-alias-description"""
-    p_ProvisionedConcurrencyConfig: typing.Union['AliasProvisionedConcurrencyConfiguration', dict] = attr.ib(
+    p_ProvisionedConcurrencyConfig: typing.Union['PropAliasProvisionedConcurrencyConfiguration', dict] = attr.ib(
         default=None,
-        converter=AliasProvisionedConcurrencyConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(AliasProvisionedConcurrencyConfiguration)),
+        converter=PropAliasProvisionedConcurrencyConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropAliasProvisionedConcurrencyConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "ProvisionedConcurrencyConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-alias.html#cfn-lambda-alias-provisionedconcurrencyconfig"""
-    p_RoutingConfig: typing.Union['AliasAliasRoutingConfiguration', dict] = attr.ib(
+    p_RoutingConfig: typing.Union['PropAliasAliasRoutingConfiguration', dict] = attr.ib(
         default=None,
-        converter=AliasAliasRoutingConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(AliasAliasRoutingConfiguration)),
+        converter=PropAliasAliasRoutingConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropAliasAliasRoutingConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "RoutingConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-alias.html#cfn-lambda-alias-routingconfig"""
@@ -887,10 +887,10 @@ class Version(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Description"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-version.html#cfn-lambda-version-description"""
-    p_ProvisionedConcurrencyConfig: typing.Union['VersionProvisionedConcurrencyConfiguration', dict] = attr.ib(
+    p_ProvisionedConcurrencyConfig: typing.Union['PropVersionProvisionedConcurrencyConfiguration', dict] = attr.ib(
         default=None,
-        converter=VersionProvisionedConcurrencyConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(VersionProvisionedConcurrencyConfiguration)),
+        converter=PropVersionProvisionedConcurrencyConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropVersionProvisionedConcurrencyConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "ProvisionedConcurrencyConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-version.html#cfn-lambda-version-provisionedconcurrencyconfig"""
@@ -918,17 +918,17 @@ class CodeSigningConfig(Resource):
     AWS_OBJECT_TYPE = "AWS::Lambda::CodeSigningConfig"
 
     
-    rp_AllowedPublishers: typing.Union['CodeSigningConfigAllowedPublishers', dict] = attr.ib(
+    rp_AllowedPublishers: typing.Union['PropCodeSigningConfigAllowedPublishers', dict] = attr.ib(
         default=None,
-        converter=CodeSigningConfigAllowedPublishers.from_dict,
-        validator=attr.validators.instance_of(CodeSigningConfigAllowedPublishers),
+        converter=PropCodeSigningConfigAllowedPublishers.from_dict,
+        validator=attr.validators.instance_of(PropCodeSigningConfigAllowedPublishers),
         metadata={AttrMeta.PROPERTY_NAME: "AllowedPublishers"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-codesigningconfig.html#cfn-lambda-codesigningconfig-allowedpublishers"""
-    p_CodeSigningPolicies: typing.Union['CodeSigningConfigCodeSigningPolicies', dict] = attr.ib(
+    p_CodeSigningPolicies: typing.Union['PropCodeSigningConfigCodeSigningPolicies', dict] = attr.ib(
         default=None,
-        converter=CodeSigningConfigCodeSigningPolicies.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(CodeSigningConfigCodeSigningPolicies)),
+        converter=PropCodeSigningConfigCodeSigningPolicies.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropCodeSigningConfigCodeSigningPolicies)),
         metadata={AttrMeta.PROPERTY_NAME: "CodeSigningPolicies"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-codesigningconfig.html#cfn-lambda-codesigningconfig-codesigningpolicies"""
@@ -981,10 +981,10 @@ class EventInvokeConfig(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Qualifier"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventinvokeconfig.html#cfn-lambda-eventinvokeconfig-qualifier"""
-    p_DestinationConfig: typing.Union['EventInvokeConfigDestinationConfig', dict] = attr.ib(
+    p_DestinationConfig: typing.Union['PropEventInvokeConfigDestinationConfig', dict] = attr.ib(
         default=None,
-        converter=EventInvokeConfigDestinationConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(EventInvokeConfigDestinationConfig)),
+        converter=PropEventInvokeConfigDestinationConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropEventInvokeConfigDestinationConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "DestinationConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventinvokeconfig.html#cfn-lambda-eventinvokeconfig-destinationconfig"""
@@ -1036,10 +1036,10 @@ class Function(Resource):
     AWS_OBJECT_TYPE = "AWS::Lambda::Function"
 
     
-    rp_Code: typing.Union['FunctionCode', dict] = attr.ib(
+    rp_Code: typing.Union['PropFunctionCode', dict] = attr.ib(
         default=None,
-        converter=FunctionCode.from_dict,
-        validator=attr.validators.instance_of(FunctionCode),
+        converter=PropFunctionCode.from_dict,
+        validator=attr.validators.instance_of(PropFunctionCode),
         metadata={AttrMeta.PROPERTY_NAME: "Code"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-code"""
@@ -1055,10 +1055,10 @@ class Function(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "CodeSigningConfigArn"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-codesigningconfigarn"""
-    p_DeadLetterConfig: typing.Union['FunctionDeadLetterConfig', dict] = attr.ib(
+    p_DeadLetterConfig: typing.Union['PropFunctionDeadLetterConfig', dict] = attr.ib(
         default=None,
-        converter=FunctionDeadLetterConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(FunctionDeadLetterConfig)),
+        converter=PropFunctionDeadLetterConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropFunctionDeadLetterConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "DeadLetterConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-deadletterconfig"""
@@ -1068,17 +1068,17 @@ class Function(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Description"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-description"""
-    p_Environment: typing.Union['FunctionEnvironment', dict] = attr.ib(
+    p_Environment: typing.Union['PropFunctionEnvironment', dict] = attr.ib(
         default=None,
-        converter=FunctionEnvironment.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(FunctionEnvironment)),
+        converter=PropFunctionEnvironment.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropFunctionEnvironment)),
         metadata={AttrMeta.PROPERTY_NAME: "Environment"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-environment"""
-    p_FileSystemConfigs: typing.List[typing.Union['FunctionFileSystemConfig', dict]] = attr.ib(
+    p_FileSystemConfigs: typing.List[typing.Union['PropFunctionFileSystemConfig', dict]] = attr.ib(
         default=None,
-        converter=FunctionFileSystemConfig.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(FunctionFileSystemConfig), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropFunctionFileSystemConfig.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropFunctionFileSystemConfig), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "FileSystemConfigs"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-filesystemconfigs"""
@@ -1094,10 +1094,10 @@ class Function(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Handler"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-handler"""
-    p_ImageConfig: typing.Union['FunctionImageConfig', dict] = attr.ib(
+    p_ImageConfig: typing.Union['PropFunctionImageConfig', dict] = attr.ib(
         default=None,
-        converter=FunctionImageConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(FunctionImageConfig)),
+        converter=PropFunctionImageConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropFunctionImageConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "ImageConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-imageconfig"""
@@ -1143,17 +1143,17 @@ class Function(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Timeout"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-timeout"""
-    p_TracingConfig: typing.Union['FunctionTracingConfig', dict] = attr.ib(
+    p_TracingConfig: typing.Union['PropFunctionTracingConfig', dict] = attr.ib(
         default=None,
-        converter=FunctionTracingConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(FunctionTracingConfig)),
+        converter=PropFunctionTracingConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropFunctionTracingConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "TracingConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-tracingconfig"""
-    p_VpcConfig: typing.Union['FunctionVpcConfig', dict] = attr.ib(
+    p_VpcConfig: typing.Union['PropFunctionVpcConfig', dict] = attr.ib(
         default=None,
-        converter=FunctionVpcConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(FunctionVpcConfig)),
+        converter=PropFunctionVpcConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropFunctionVpcConfig)),
         metadata={AttrMeta.PROPERTY_NAME: "VpcConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-vpcconfig"""

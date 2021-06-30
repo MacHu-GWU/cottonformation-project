@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class ScalableTargetSuspendedState(Property):
+class PropScalableTargetSuspendedState(Property):
     """
     AWS Object Type = "AWS::ApplicationAutoScaling::ScalableTarget.SuspendedState"
 
@@ -49,7 +49,7 @@ class ScalableTargetSuspendedState(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalabletarget-suspendedstate.html#cfn-applicationautoscaling-scalabletarget-suspendedstate-scheduledscalingsuspended"""
 
 @attr.s
-class ScalingPolicyPredefinedMetricSpecification(Property):
+class PropScalingPolicyPredefinedMetricSpecification(Property):
     """
     AWS Object Type = "AWS::ApplicationAutoScaling::ScalingPolicy.PredefinedMetricSpecification"
 
@@ -76,7 +76,7 @@ class ScalingPolicyPredefinedMetricSpecification(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-predefinedmetricspecification.html#cfn-applicationautoscaling-scalingpolicy-predefinedmetricspecification-resourcelabel"""
 
 @attr.s
-class ScalingPolicyMetricDimension(Property):
+class PropScalingPolicyMetricDimension(Property):
     """
     AWS Object Type = "AWS::ApplicationAutoScaling::ScalingPolicy.MetricDimension"
 
@@ -103,7 +103,7 @@ class ScalingPolicyMetricDimension(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-metricdimension.html#cfn-applicationautoscaling-scalingpolicy-metricdimension-value"""
 
 @attr.s
-class ScalingPolicyStepAdjustment(Property):
+class PropScalingPolicyStepAdjustment(Property):
     """
     AWS Object Type = "AWS::ApplicationAutoScaling::ScalingPolicy.StepAdjustment"
 
@@ -137,7 +137,7 @@ class ScalingPolicyStepAdjustment(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-stepscalingpolicyconfiguration-stepadjustment.html#cfn-applicationautoscaling-scalingpolicy-stepscalingpolicyconfiguration-stepadjustment-metricintervalupperbound"""
 
 @attr.s
-class ScalableTargetScalableTargetAction(Property):
+class PropScalableTargetScalableTargetAction(Property):
     """
     AWS Object Type = "AWS::ApplicationAutoScaling::ScalableTarget.ScalableTargetAction"
 
@@ -164,7 +164,7 @@ class ScalableTargetScalableTargetAction(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalabletarget-scalabletargetaction.html#cfn-applicationautoscaling-scalabletarget-scalabletargetaction-mincapacity"""
 
 @attr.s
-class ScalingPolicyStepScalingPolicyConfiguration(Property):
+class PropScalingPolicyStepScalingPolicyConfiguration(Property):
     """
     AWS Object Type = "AWS::ApplicationAutoScaling::ScalingPolicy.StepScalingPolicyConfiguration"
 
@@ -204,16 +204,16 @@ class ScalingPolicyStepScalingPolicyConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "MinAdjustmentMagnitude"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-stepscalingpolicyconfiguration.html#cfn-applicationautoscaling-scalingpolicy-stepscalingpolicyconfiguration-minadjustmentmagnitude"""
-    p_StepAdjustments: typing.List[typing.Union['ScalingPolicyStepAdjustment', dict]] = attr.ib(
+    p_StepAdjustments: typing.List[typing.Union['PropScalingPolicyStepAdjustment', dict]] = attr.ib(
         default=None,
-        converter=ScalingPolicyStepAdjustment.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ScalingPolicyStepAdjustment), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropScalingPolicyStepAdjustment.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropScalingPolicyStepAdjustment), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "StepAdjustments"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-stepscalingpolicyconfiguration.html#cfn-applicationautoscaling-scalingpolicy-stepscalingpolicyconfiguration-stepadjustments"""
 
 @attr.s
-class ScalingPolicyCustomizedMetricSpecification(Property):
+class PropScalingPolicyCustomizedMetricSpecification(Property):
     """
     AWS Object Type = "AWS::ApplicationAutoScaling::ScalingPolicy.CustomizedMetricSpecification"
 
@@ -247,10 +247,10 @@ class ScalingPolicyCustomizedMetricSpecification(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Statistic"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-customizedmetricspecification.html#cfn-applicationautoscaling-scalingpolicy-customizedmetricspecification-statistic"""
-    p_Dimensions: typing.List[typing.Union['ScalingPolicyMetricDimension', dict]] = attr.ib(
+    p_Dimensions: typing.List[typing.Union['PropScalingPolicyMetricDimension', dict]] = attr.ib(
         default=None,
-        converter=ScalingPolicyMetricDimension.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ScalingPolicyMetricDimension), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropScalingPolicyMetricDimension.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropScalingPolicyMetricDimension), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Dimensions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-customizedmetricspecification.html#cfn-applicationautoscaling-scalingpolicy-customizedmetricspecification-dimensions"""
@@ -262,7 +262,7 @@ class ScalingPolicyCustomizedMetricSpecification(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-customizedmetricspecification.html#cfn-applicationautoscaling-scalingpolicy-customizedmetricspecification-unit"""
 
 @attr.s
-class ScalableTargetScheduledAction(Property):
+class PropScalableTargetScheduledAction(Property):
     """
     AWS Object Type = "AWS::ApplicationAutoScaling::ScalableTarget.ScheduledAction"
 
@@ -296,10 +296,10 @@ class ScalableTargetScheduledAction(Property):
         metadata={AttrMeta.PROPERTY_NAME: "EndTime"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalabletarget-scheduledaction.html#cfn-applicationautoscaling-scalabletarget-scheduledaction-endtime"""
-    p_ScalableTargetAction: typing.Union['ScalableTargetScalableTargetAction', dict] = attr.ib(
+    p_ScalableTargetAction: typing.Union['PropScalableTargetScalableTargetAction', dict] = attr.ib(
         default=None,
-        converter=ScalableTargetScalableTargetAction.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ScalableTargetScalableTargetAction)),
+        converter=PropScalableTargetScalableTargetAction.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropScalableTargetScalableTargetAction)),
         metadata={AttrMeta.PROPERTY_NAME: "ScalableTargetAction"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalabletarget-scheduledaction.html#cfn-applicationautoscaling-scalabletarget-scheduledaction-scalabletargetaction"""
@@ -311,7 +311,7 @@ class ScalableTargetScheduledAction(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalabletarget-scheduledaction.html#cfn-applicationautoscaling-scalabletarget-scheduledaction-starttime"""
 
 @attr.s
-class ScalingPolicyTargetTrackingScalingPolicyConfiguration(Property):
+class PropScalingPolicyTargetTrackingScalingPolicyConfiguration(Property):
     """
     AWS Object Type = "AWS::ApplicationAutoScaling::ScalingPolicy.TargetTrackingScalingPolicyConfiguration"
 
@@ -334,10 +334,10 @@ class ScalingPolicyTargetTrackingScalingPolicyConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "TargetValue"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-targettrackingscalingpolicyconfiguration.html#cfn-applicationautoscaling-scalingpolicy-targettrackingscalingpolicyconfiguration-targetvalue"""
-    p_CustomizedMetricSpecification: typing.Union['ScalingPolicyCustomizedMetricSpecification', dict] = attr.ib(
+    p_CustomizedMetricSpecification: typing.Union['PropScalingPolicyCustomizedMetricSpecification', dict] = attr.ib(
         default=None,
-        converter=ScalingPolicyCustomizedMetricSpecification.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ScalingPolicyCustomizedMetricSpecification)),
+        converter=PropScalingPolicyCustomizedMetricSpecification.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropScalingPolicyCustomizedMetricSpecification)),
         metadata={AttrMeta.PROPERTY_NAME: "CustomizedMetricSpecification"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-targettrackingscalingpolicyconfiguration.html#cfn-applicationautoscaling-scalingpolicy-targettrackingscalingpolicyconfiguration-customizedmetricspecification"""
@@ -347,10 +347,10 @@ class ScalingPolicyTargetTrackingScalingPolicyConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "DisableScaleIn"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-targettrackingscalingpolicyconfiguration.html#cfn-applicationautoscaling-scalingpolicy-targettrackingscalingpolicyconfiguration-disablescalein"""
-    p_PredefinedMetricSpecification: typing.Union['ScalingPolicyPredefinedMetricSpecification', dict] = attr.ib(
+    p_PredefinedMetricSpecification: typing.Union['PropScalingPolicyPredefinedMetricSpecification', dict] = attr.ib(
         default=None,
-        converter=ScalingPolicyPredefinedMetricSpecification.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ScalingPolicyPredefinedMetricSpecification)),
+        converter=PropScalingPolicyPredefinedMetricSpecification.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropScalingPolicyPredefinedMetricSpecification)),
         metadata={AttrMeta.PROPERTY_NAME: "PredefinedMetricSpecification"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationautoscaling-scalingpolicy-targettrackingscalingpolicyconfiguration.html#cfn-applicationautoscaling-scalingpolicy-targettrackingscalingpolicyconfiguration-predefinedmetricspecification"""
@@ -427,17 +427,17 @@ class ScalingPolicy(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "ServiceNamespace"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html#cfn-applicationautoscaling-scalingpolicy-servicenamespace"""
-    p_StepScalingPolicyConfiguration: typing.Union['ScalingPolicyStepScalingPolicyConfiguration', dict] = attr.ib(
+    p_StepScalingPolicyConfiguration: typing.Union['PropScalingPolicyStepScalingPolicyConfiguration', dict] = attr.ib(
         default=None,
-        converter=ScalingPolicyStepScalingPolicyConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ScalingPolicyStepScalingPolicyConfiguration)),
+        converter=PropScalingPolicyStepScalingPolicyConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropScalingPolicyStepScalingPolicyConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "StepScalingPolicyConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html#cfn-applicationautoscaling-scalingpolicy-stepscalingpolicyconfiguration"""
-    p_TargetTrackingScalingPolicyConfiguration: typing.Union['ScalingPolicyTargetTrackingScalingPolicyConfiguration', dict] = attr.ib(
+    p_TargetTrackingScalingPolicyConfiguration: typing.Union['PropScalingPolicyTargetTrackingScalingPolicyConfiguration', dict] = attr.ib(
         default=None,
-        converter=ScalingPolicyTargetTrackingScalingPolicyConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ScalingPolicyTargetTrackingScalingPolicyConfiguration)),
+        converter=PropScalingPolicyTargetTrackingScalingPolicyConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropScalingPolicyTargetTrackingScalingPolicyConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "TargetTrackingScalingPolicyConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalingpolicy.html#cfn-applicationautoscaling-scalingpolicy-targettrackingscalingpolicyconfiguration"""
@@ -501,17 +501,17 @@ class ScalableTarget(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "ServiceNamespace"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalabletarget.html#cfn-applicationautoscaling-scalabletarget-servicenamespace"""
-    p_ScheduledActions: typing.List[typing.Union['ScalableTargetScheduledAction', dict]] = attr.ib(
+    p_ScheduledActions: typing.List[typing.Union['PropScalableTargetScheduledAction', dict]] = attr.ib(
         default=None,
-        converter=ScalableTargetScheduledAction.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ScalableTargetScheduledAction), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropScalableTargetScheduledAction.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropScalableTargetScheduledAction), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "ScheduledActions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalabletarget.html#cfn-applicationautoscaling-scalabletarget-scheduledactions"""
-    p_SuspendedState: typing.Union['ScalableTargetSuspendedState', dict] = attr.ib(
+    p_SuspendedState: typing.Union['PropScalableTargetSuspendedState', dict] = attr.ib(
         default=None,
-        converter=ScalableTargetSuspendedState.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ScalableTargetSuspendedState)),
+        converter=PropScalableTargetSuspendedState.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropScalableTargetSuspendedState)),
         metadata={AttrMeta.PROPERTY_NAME: "SuspendedState"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-applicationautoscaling-scalabletarget.html#cfn-applicationautoscaling-scalabletarget-suspendedstate"""

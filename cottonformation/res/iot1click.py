@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class ProjectDeviceTemplate(Property):
+class PropProjectDeviceTemplate(Property):
     """
     AWS Object Type = "AWS::IoT1Click::Project.DeviceTemplate"
 
@@ -42,7 +42,7 @@ class ProjectDeviceTemplate(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot1click-project-devicetemplate.html#cfn-iot1click-project-devicetemplate-devicetype"""
 
 @attr.s
-class ProjectPlacementTemplate(Property):
+class PropProjectPlacementTemplate(Property):
     """
     AWS Object Type = "AWS::IoT1Click::Project.PlacementTemplate"
 
@@ -87,10 +87,10 @@ class Project(Resource):
     AWS_OBJECT_TYPE = "AWS::IoT1Click::Project"
 
     
-    rp_PlacementTemplate: typing.Union['ProjectPlacementTemplate', dict] = attr.ib(
+    rp_PlacementTemplate: typing.Union['PropProjectPlacementTemplate', dict] = attr.ib(
         default=None,
-        converter=ProjectPlacementTemplate.from_dict,
-        validator=attr.validators.instance_of(ProjectPlacementTemplate),
+        converter=PropProjectPlacementTemplate.from_dict,
+        validator=attr.validators.instance_of(PropProjectPlacementTemplate),
         metadata={AttrMeta.PROPERTY_NAME: "PlacementTemplate"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot1click-project.html#cfn-iot1click-project-placementtemplate"""

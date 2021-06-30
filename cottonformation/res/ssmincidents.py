@@ -15,7 +15,7 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class ResponsePlanSsmParameter(Property):
+class PropResponsePlanSsmParameter(Property):
     """
     AWS Object Type = "AWS::SSMIncidents::ResponsePlan.SsmParameter"
 
@@ -42,7 +42,7 @@ class ResponsePlanSsmParameter(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmincidents-responseplan-ssmparameter.html#cfn-ssmincidents-responseplan-ssmparameter-values"""
 
 @attr.s
-class ResponsePlanSsmAutomation(Property):
+class PropResponsePlanSsmAutomation(Property):
     """
     AWS Object Type = "AWS::SSMIncidents::ResponsePlan.SsmAutomation"
 
@@ -76,10 +76,10 @@ class ResponsePlanSsmAutomation(Property):
         metadata={AttrMeta.PROPERTY_NAME: "DocumentVersion"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmincidents-responseplan-ssmautomation.html#cfn-ssmincidents-responseplan-ssmautomation-documentversion"""
-    p_Parameters: typing.List[typing.Union['ResponsePlanSsmParameter', dict]] = attr.ib(
+    p_Parameters: typing.List[typing.Union['PropResponsePlanSsmParameter', dict]] = attr.ib(
         default=None,
-        converter=ResponsePlanSsmParameter.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ResponsePlanSsmParameter), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropResponsePlanSsmParameter.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropResponsePlanSsmParameter), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Parameters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmincidents-responseplan-ssmautomation.html#cfn-ssmincidents-responseplan-ssmautomation-parameters"""
@@ -91,7 +91,7 @@ class ResponsePlanSsmAutomation(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmincidents-responseplan-ssmautomation.html#cfn-ssmincidents-responseplan-ssmautomation-targetaccount"""
 
 @attr.s
-class ResponsePlanAction(Property):
+class PropResponsePlanAction(Property):
     """
     AWS Object Type = "AWS::SSMIncidents::ResponsePlan.Action"
 
@@ -103,16 +103,16 @@ class ResponsePlanAction(Property):
     """
     AWS_OBJECT_TYPE = "AWS::SSMIncidents::ResponsePlan.Action"
     
-    p_SsmAutomation: typing.Union['ResponsePlanSsmAutomation', dict] = attr.ib(
+    p_SsmAutomation: typing.Union['PropResponsePlanSsmAutomation', dict] = attr.ib(
         default=None,
-        converter=ResponsePlanSsmAutomation.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ResponsePlanSsmAutomation)),
+        converter=PropResponsePlanSsmAutomation.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropResponsePlanSsmAutomation)),
         metadata={AttrMeta.PROPERTY_NAME: "SsmAutomation"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmincidents-responseplan-action.html#cfn-ssmincidents-responseplan-action-ssmautomation"""
 
 @attr.s
-class ReplicationSetRegionConfiguration(Property):
+class PropReplicationSetRegionConfiguration(Property):
     """
     AWS Object Type = "AWS::SSMIncidents::ReplicationSet.RegionConfiguration"
 
@@ -132,7 +132,7 @@ class ReplicationSetRegionConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmincidents-replicationset-regionconfiguration.html#cfn-ssmincidents-replicationset-regionconfiguration-ssekmskeyid"""
 
 @attr.s
-class ResponsePlanNotificationTargetItem(Property):
+class PropResponsePlanNotificationTargetItem(Property):
     """
     AWS Object Type = "AWS::SSMIncidents::ResponsePlan.NotificationTargetItem"
 
@@ -152,7 +152,7 @@ class ResponsePlanNotificationTargetItem(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmincidents-responseplan-notificationtargetitem.html#cfn-ssmincidents-responseplan-notificationtargetitem-snstopicarn"""
 
 @attr.s
-class ResponsePlanChatChannel(Property):
+class PropResponsePlanChatChannel(Property):
     """
     AWS Object Type = "AWS::SSMIncidents::ResponsePlan.ChatChannel"
 
@@ -172,7 +172,7 @@ class ResponsePlanChatChannel(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmincidents-responseplan-chatchannel.html#cfn-ssmincidents-responseplan-chatchannel-chatbotsns"""
 
 @attr.s
-class ReplicationSetReplicationRegion(Property):
+class PropReplicationSetReplicationRegion(Property):
     """
     AWS Object Type = "AWS::SSMIncidents::ReplicationSet.ReplicationRegion"
 
@@ -185,10 +185,10 @@ class ReplicationSetReplicationRegion(Property):
     """
     AWS_OBJECT_TYPE = "AWS::SSMIncidents::ReplicationSet.ReplicationRegion"
     
-    p_RegionConfiguration: typing.Union['ReplicationSetRegionConfiguration', dict] = attr.ib(
+    p_RegionConfiguration: typing.Union['PropReplicationSetRegionConfiguration', dict] = attr.ib(
         default=None,
-        converter=ReplicationSetRegionConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ReplicationSetRegionConfiguration)),
+        converter=PropReplicationSetRegionConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropReplicationSetRegionConfiguration)),
         metadata={AttrMeta.PROPERTY_NAME: "RegionConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmincidents-replicationset-replicationregion.html#cfn-ssmincidents-replicationset-replicationregion-regionconfiguration"""
@@ -200,7 +200,7 @@ class ReplicationSetReplicationRegion(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmincidents-replicationset-replicationregion.html#cfn-ssmincidents-replicationset-replicationregion-regionname"""
 
 @attr.s
-class ResponsePlanIncidentTemplate(Property):
+class PropResponsePlanIncidentTemplate(Property):
     """
     AWS Object Type = "AWS::SSMIncidents::ResponsePlan.IncidentTemplate"
 
@@ -234,10 +234,10 @@ class ResponsePlanIncidentTemplate(Property):
         metadata={AttrMeta.PROPERTY_NAME: "DedupeString"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmincidents-responseplan-incidenttemplate.html#cfn-ssmincidents-responseplan-incidenttemplate-dedupestring"""
-    p_NotificationTargets: typing.List[typing.Union['ResponsePlanNotificationTargetItem', dict]] = attr.ib(
+    p_NotificationTargets: typing.List[typing.Union['PropResponsePlanNotificationTargetItem', dict]] = attr.ib(
         default=None,
-        converter=ResponsePlanNotificationTargetItem.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ResponsePlanNotificationTargetItem), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropResponsePlanNotificationTargetItem.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropResponsePlanNotificationTargetItem), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "NotificationTargets"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmincidents-responseplan-incidenttemplate.html#cfn-ssmincidents-responseplan-incidenttemplate-notificationtargets"""
@@ -266,10 +266,10 @@ class ReplicationSet(Resource):
     AWS_OBJECT_TYPE = "AWS::SSMIncidents::ReplicationSet"
 
     
-    rp_Regions: typing.List[typing.Union['ReplicationSetReplicationRegion', dict]] = attr.ib(
+    rp_Regions: typing.List[typing.Union['PropReplicationSetReplicationRegion', dict]] = attr.ib(
         default=None,
-        converter=ReplicationSetReplicationRegion.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ReplicationSetReplicationRegion), iterable_validator=attr.validators.instance_of(list)),
+        converter=PropReplicationSetReplicationRegion.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropReplicationSetReplicationRegion), iterable_validator=attr.validators.instance_of(list)),
         metadata={AttrMeta.PROPERTY_NAME: "Regions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssmincidents-replicationset.html#cfn-ssmincidents-replicationset-regions"""
@@ -307,10 +307,10 @@ class ResponsePlan(Resource):
     AWS_OBJECT_TYPE = "AWS::SSMIncidents::ResponsePlan"
 
     
-    rp_IncidentTemplate: typing.Union['ResponsePlanIncidentTemplate', dict] = attr.ib(
+    rp_IncidentTemplate: typing.Union['PropResponsePlanIncidentTemplate', dict] = attr.ib(
         default=None,
-        converter=ResponsePlanIncidentTemplate.from_dict,
-        validator=attr.validators.instance_of(ResponsePlanIncidentTemplate),
+        converter=PropResponsePlanIncidentTemplate.from_dict,
+        validator=attr.validators.instance_of(PropResponsePlanIncidentTemplate),
         metadata={AttrMeta.PROPERTY_NAME: "IncidentTemplate"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssmincidents-responseplan.html#cfn-ssmincidents-responseplan-incidenttemplate"""
@@ -320,17 +320,17 @@ class ResponsePlan(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Name"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssmincidents-responseplan.html#cfn-ssmincidents-responseplan-name"""
-    p_Actions: typing.List[typing.Union['ResponsePlanAction', dict]] = attr.ib(
+    p_Actions: typing.List[typing.Union['PropResponsePlanAction', dict]] = attr.ib(
         default=None,
-        converter=ResponsePlanAction.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(ResponsePlanAction), iterable_validator=attr.validators.instance_of(list))),
+        converter=PropResponsePlanAction.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropResponsePlanAction), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Actions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssmincidents-responseplan.html#cfn-ssmincidents-responseplan-actions"""
-    p_ChatChannel: typing.Union['ResponsePlanChatChannel', dict] = attr.ib(
+    p_ChatChannel: typing.Union['PropResponsePlanChatChannel', dict] = attr.ib(
         default=None,
-        converter=ResponsePlanChatChannel.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(ResponsePlanChatChannel)),
+        converter=PropResponsePlanChatChannel.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropResponsePlanChatChannel)),
         metadata={AttrMeta.PROPERTY_NAME: "ChatChannel"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssmincidents-responseplan.html#cfn-ssmincidents-responseplan-chatchannel"""
