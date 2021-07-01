@@ -7,3 +7,8 @@ jinja2                          # template engine
 
 # AWS
 boto3                           # AWS Python SDK
+
+#
+SQLAlchemy==1.4.20
+psycopg2-binary==2.9.1
+sqlalchemy_mate==0.0.11

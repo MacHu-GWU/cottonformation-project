@@ -49,6 +49,37 @@ class TestTemplate:
         with raises(ValueError):
             tpl._add(b, add_or_ignore=True, add_or_update=True)
 
+    def test_add_with_dependencies(self):
+        # when adding an object having dependencies, it should also
+        # add dependency objects to the template too.
+        tpl = ctf.Template()
+
+        p_1 = ctf.Parameter("p1", Type="String")
+        p_2 = ctf.Parameter("p2", Type="String")
+
+        res_a = s3.Bucket("a")
+        res_a1 = s3.Bucket("a1", ra_DependsOn=[res_a, p_1])
+        res_a2 = s3.Bucket("a2", ra_DependsOn=[res_a, p_2])
+
+        res_b = s3.Bucket("b")
+        res_b1 = s3.Bucket("b1", ra_DependsOn=[res_b, p_1])
+        res_b2 = s3.Bucket("b2", ra_DependsOn=[res_b, p_2])
+
+        o_1 = ctf.Output("o1", Value=0, DependsOn=[res_a1, res_b1])
+        o_2 = ctf.Output("o2", Value=0, DependsOn=[res_a2, res_b2])
+        o_a = ctf.Output("oa", Value=0, DependsOn=[res_a1, res_a2])
+        o_b = ctf.Output("ob", Value=0, DependsOn=[res_b1, res_b2])
+
+        assert tpl.n_named_object == 0
+
+        tpl.add(o_1)
+        tpl.add(o_2)
+        assert tpl.n_named_object == 10
+
+        tpl.add(o_a)
+        tpl.add(o_b)
+        assert tpl.n_named_object == 12
+
     def test_remove(self):
         tpl = ctf.Template()
         b = s3.Bucket("b", p_BucketName="b")
@@ -56,13 +87,20 @@ class TestTemplate:
         tpl.add(b)
         assert len(tpl.Resources) == 1
 
+        # successfully removed, and the update_flag return value is corect
         assert tpl.remove(b) == True
         assert len(tpl.Resources) == 0
 
+        # raise exception when remove a non-exists value
         with raises(ValueError):
             tpl.remove(b)
 
         assert tpl.remove_and_ignore(b) == False
+
+    def test_remove_error(self):
+        tpl = ctf.Template()
+        with raises(TypeError):
+            tpl.remove(1)
 
     def test_dependencies(self):
         tpl = ctf.Template()
@@ -102,6 +140,10 @@ class TestTemplate:
         ]
 
     def test_remove_with_dependent(self):
+        """
+        If remove an object that there are many other objects depends on this,
+        otherr objects are also removed.
+        """
         p_1 = ctf.Parameter("p1", Type="String")
         p_2 = ctf.Parameter("p2", Type="String")
 
@@ -145,6 +187,17 @@ class TestTemplate:
         tpl.remove(p_1)
         assert tpl._iterate_addable_keys() == ['1-Parameter--p2', '5-Resource--a', '5-Resource--a2', '5-Resource--b', '5-Resource--b2', '6-Output--o2']
 
+    def test_remove_with_dependency_(self):
+        b1 = s3.Bucket("b1")
+        b2 = s3.Bucket("b2", ra_DependsOn=b1)
+        b3 = s3.Bucket("b3", ra_DependsOn=[b2, b1])
+
+        objects = [b1, b2, b3]
+        tpl = ctf.Template.from_many_objects(objects)
+        assert tpl.n_named_object == 3
+        tpl.remove(b1)
+        assert tpl.n_named_object == 0
+
     def test_complex_tpl_case1(self):
         import cottonformation as ctf
         from cottonformation.res import iam, awslambda
@@ -177,7 +230,7 @@ class TestTemplate:
 
         lbd_func = awslambda.Function(
             "LbdFuncHelloWorld",
-            rp_Code=awslambda.FunctionCode(
+            rp_Code=awslambda.PropFunctionCode(
                 p_ZipFile=lbd_source_code,
             ),
             rp_Role=iam_role_for_lambda.rv_Arn,

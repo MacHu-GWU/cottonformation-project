@@ -20,7 +20,7 @@ class TypeHint:
     intrinsic_int = typing.Union[int, dict, 'IntrinsicFunction']
     addable_obj = typing.Union[
         'Parameter', 'Resource', 'Output',
-        'Rule', 'Mapping', 'Condition',
+        'Rule', 'Mapping', 'Condition', 'Pack',
     ]
     dependency_obj = typing.Union[
         str, 'Resource', 'Parameter', 'Mapping', 'Condition'
@@ -423,6 +423,13 @@ class Parameter(AwsObject, _DictMember, _Dependency):
         converter=ensure_list,
     )
 
+    _value: typing.Any = attr.ib(
+        default=None,
+    )
+    """
+    Allow user to bind the value to use for deploy with the parameter.
+    """
+
     class TypeEnum:
         String = "String"
         Number = "Number"
@@ -461,9 +468,16 @@ class Parameter(AwsObject, _DictMember, _Dependency):
 
     def serialize(self, **kwargs) -> typing.Any:
         dct = get_key_value_dict(self)
+        dct.pop("_value")
         dct = remove_id_and_empty(dct)
         dct = serialize(dct)
         return dct
+
+    def set_value(self, value):
+        self._value = value
+
+    def get_value(self):
+        return self._value
 
 @attr.s
 class Export(AwsObject):
@@ -502,6 +516,7 @@ class Output(AwsObject, _DictMember):
         # asdict AWSObject value too. actually we want to call the serialize
         # method instead of asdict here.
         dct = get_key_value_dict(self)
+        dct.pop("DependsOn")
         dct = remove_id_and_empty(dct)
         dct = serialize(dct)
         return dct
@@ -540,8 +555,6 @@ class Tag(Property):
             cls(p_Key=k, p_Value=v)
             for k, v in dct.items()
         ]
-
-
 
 
 @attr.s
@@ -648,13 +661,21 @@ class GetAZs(IntrinsicFunction):
     Reference:
 
     - Fn::GetAZs: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-getavailabilityzones.html
+    - Region and Az information: https://aws.amazon.com/about-aws/global-infrastructure/regions_az/
     """
     region: TypeHint.intrinsic_str = attr.ib(
-        validator=vs.instance_of(TypeCheck.intrinsic_str_type)
+        default="",
+        validator=vs.optional(vs.instance_of(TypeCheck.intrinsic_str_type)),
     )
 
+    @classmethod
+    def n_th(cls, ind: int, region: str=""):
+        if ind <= 0:
+            raise ValueError
+        return Select(ind-1, cls(region=region))
+
     def serialize(self, **kwargs) -> dict:
-        return {constant.IntrinsicFunction.GET_ATT: serialize(self.region)}
+        return {constant.IntrinsicFunction.GET_AZS: serialize(self.region)}
 
 
 @attr.s
@@ -713,6 +734,33 @@ class Sub(IntrinsicFunction):
             if ("${%s}" % k) not in self.string:
                 raise ValueError
 
+    @classmethod
+    def from_params(cls, f_string, *params: Parameter):
+        """
+        A helper factory method to construct a Sub syntax from the popular
+        positioning formatted string literals and multiple :class:`Parameter`.
+
+        Sample usage::
+
+            >>> p_project_name = Parameter("ProjName", Type=Parameter.TypeEnum.String)
+            >>> p_stage = Parameter("Stage", Type=Parameter.TypeEnum.String)
+            >>> sub = Sub.from_params("{}-{}-main-ec2-instance", p_project_name, p_stage)
+            >>> sub.serialize() # the sub object is equavilent to
+            {
+                "Fn::Sub": [
+                    "${ProjName}-${Stage}",
+                    {
+                        "ProjName": {"Ref": "ProjName"},
+                        "Stage": {"Ref": "Stage"}
+                    }
+                ]
+            }
+        """
+        string = f_string
+        for p in params:
+            string = string.replace("{}", "${" + p.id + "}", 1)
+        return cls(string, {p.id: p.ref() for p in params})
+
     def serialize(self, **kwargs) -> dict:
         return {
             constant.IntrinsicFunction.SUB: [
@@ -733,8 +781,8 @@ class Select(IntrinsicFunction):
         validator=vs.instance_of((int, str)),
         converter=int,
     )
-    list_of_objects: list = attr.ib(
-        validator=vs.instance_of(list),
+    list_of_objects: typing.Union[list, IntrinsicFunction] = attr.ib(
+        validator=vs.instance_of((list, IntrinsicFunction)),
     )
 
     def serialize(self, **kwargs) -> dict:
@@ -815,6 +863,26 @@ class Transform(AwsObject, _ListMember):
     CLASS_TYPE = "7-Transform"
 
 
+@attr.s
+class Pack(AwsObject, _DictMember):
+    CLASS_TYPE = "99-Pack"
+
+    id: str = attr.ib(
+        default="__never_exists__",
+        validator=vs.instance_of(str)
+    )
+    DependsOn: typing.List[TypeHint.addable_obj] = attr.ib(
+        factory=list,
+        validator=vs.instance_of(list),
+    )
+
+    def add(self, obj: TypeHint.addable_obj):
+        self.DependsOn.append(obj)
+
+    def add_many(self, objects: typing.List[TypeHint.addable_obj]):
+        self.DependsOn.extend(objects)
+
+
 def get_key_value_dict(obj: attr.s) -> dict:
     """
     In serialization (convert object to dict data), since we are trying to
@@ -890,4 +958,5 @@ _class_type_to_attr_mapper = {
     Rule.CLASS_TYPE: "Rules",
     Mapping.CLASS_TYPE: "Mappings",
     Condition.CLASS_TYPE: "Conditions",
+    Pack.CLASS_TYPE: "Packs",
 }

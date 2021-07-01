@@ -35,7 +35,8 @@ from .core import constant, helpers
 from .core.model import (
     # data model
     Parameter, Resource, Output, Export,
-    Rule, Mapping, Condition, Transform, Tag,
+    Rule, Mapping, Condition, Transform,
+    Pack, Tag,
 
     # intrinsic function
     Ref, Base64, Cidr, FindInMap, GetAtt, GetAZs,
@@ -53,4 +54,5 @@ from .core.model import (
 )
 from .core.config import CtfConfig
 from .core.template import Template
+from .core.stack import Stack
 from .core.env import Env

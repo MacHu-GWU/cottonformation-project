@@ -16,7 +16,7 @@ def test_easiest_case():
         rp_AssumeRolePolicyDocument={"key": "value"},
         p_RoleName="test-role",
         p_Policies=[
-            iam.RolePolicy(
+            iam.PropRolePolicy(
                 rp_PolicyName="first-policy",
                 rp_PolicyDocument={"key": "value"}
             )

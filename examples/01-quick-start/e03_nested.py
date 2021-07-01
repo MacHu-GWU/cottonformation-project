@@ -90,7 +90,7 @@ def handler(event, context):
 
 lbd_func_app1 = awslambda.Function(
     "LbdFuncApp1",
-    rp_Code=awslambda.FunctionCode(
+    rp_Code=awslambda.PropFunctionCode(
         p_ZipFile=lbd_source_code,
     ),
     rp_Role=param_lambda_role_arn.ref(),
@@ -120,7 +120,7 @@ def handler(event, context):
 
 lbd_func_app2 = awslambda.Function(
     "LbdFuncApp2",
-    rp_Code=awslambda.FunctionCode(
+    rp_Code=awslambda.PropFunctionCode(
         p_ZipFile=lbd_source_code,
     ),
     rp_Role=param_lambda_role_arn.ref(),

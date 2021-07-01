@@ -4,7 +4,7 @@ cottonformation.egg-info/
 cottonformation-*/
 cottonformation/core/helpers/*.json
 cft-spec.json
-
+config.json
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

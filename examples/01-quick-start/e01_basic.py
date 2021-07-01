@@ -66,7 +66,7 @@ lbd_func = awslambda.Function(
     "LbdFuncHelloWorld",
     # rp_ stands for Required Property, it will gives you parameter-hint
     # for all valid required properties.
-    rp_Code=awslambda.FunctionCode(
+    rp_Code=awslambda.PropFunctionCode(
         p_ZipFile=lbd_source_code,
     ),
 

@@ -33,6 +33,20 @@ class TestSub:
         Sub("${arg1}", dict(arg1="value1"))
         Sub("${arg1}", dict(arg1=p.ref()))
 
+    def test(self):
+        p1 = Parameter("p1", Type=Parameter.TypeEnum.String)
+        p2 = Parameter("p2", Type=Parameter.TypeEnum.String)
+        sub = Sub.from_params("{}-{}", p1, p2)
+        assert sub.serialize() == {
+            constant.IntrinsicFunction.SUB: [
+                "${p1}-${p2}",
+                {
+                    "p1": {constant.IntrinsicFunction.REF: "p1"},
+                    "p2": {constant.IntrinsicFunction.REF: "p2"}
+                }
+            ]
+        }
+
     def test_serialize(self):
         sub = Sub("${arg1}", dict(arg1="value1"))
         assert sub.serialize() == {
@@ -82,6 +96,18 @@ class TestBase64:
             constant.IntrinsicFunction.BASE64: "the-token"
         }
 
+
+class TestGetAzs:
+    def test(self):
+        assert GetAZs.n_th(1).serialize() == {
+            constant.IntrinsicFunction.SELECT: [
+                0,
+                {constant.IntrinsicFunction.GET_AZS: ""}
+            ]
+        }
+
+        with raises(ValueError):
+            GetAZs.n_th(0)
 
 if __name__ == "__main__":
     import os

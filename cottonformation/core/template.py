@@ -13,7 +13,7 @@ from collections import OrderedDict
 from toposort import toposort
 from .model import (
     _Addable,
-    Parameter, Resource, Output, Rule, Mapping, Condition, Transform, Tag,
+    Parameter, Resource, Output, Rule, Mapping, Condition, Transform, Pack, Tag,
     TypeHint,
     get_id,
     get_key_value_dict,
@@ -52,12 +52,74 @@ class Template:
     Outputs: typing.Dict[str, Output] = attr.ib(factory=OrderedDict)
     Transform: typing.List['Transform'] = attr.ib(factory=list)
     NestedStack: typing.Dict[str, 'Template'] = attr.ib(factory=OrderedDict)
-
+    Packs: typing.Dict[str, 'Pack'] = attr.ib(factory=OrderedDict)
+    
     _deps_data_need_build_flag: bool = attr.ib(default=True)
     _deps_on_data_cache: typing.Dict[str, typing.Set[str]] = attr.ib(factory=OrderedDict)
     _deps_by_data_cache: typing.Dict[str, typing.Set[str]] = attr.ib(factory=OrderedDict)
     _deps_sort_need_build_flag: bool = attr.ib(default=True)
     _deps_sort_cache: typing.Dict[str, int] = attr.ib(factory=OrderedDict)
+
+    @property
+    def n_parameter(self):
+        """
+        Return number of Parameters declared.
+        """
+        return len(self.Parameters)
+
+    @property
+    def n_resource(self):
+        """
+        Return number of Resources declared.
+        """
+        return len(self.Resources)
+
+    @property
+    def n_output(self):
+        """
+        Return number of Outputs declared.
+        """
+        return len(self.Outputs)
+
+    @property
+    def n_rule(self):
+        """
+        Return number of Rules declared.
+        """
+        return len(self.Rules)
+
+    @property
+    def n_mapping(self):
+        """
+        Return number of Mappings declared.
+        """
+        return len(self.Mappings)
+
+    @property
+    def n_condition(self):
+        """
+        Return number of Conditions declared.
+        """
+        return len(self.Conditions)
+
+    @property
+    def n_transform(self):
+        """
+        Return number of Transform declared.
+        """
+        return len(self.Transform)
+
+    @property
+    def n_named_object(self):
+        """
+        Return number of named object declared in this template. For example,
+        Parameter, Resource, Output, Rule, Mapping, Condition are named object,
+        because they have a logic id.
+        """
+        return sum([
+            self.n_parameter, self.n_resource, self.n_output,
+            self.n_rule, self.n_mapping, self.n_condition,
+        ])
 
     # handle the inter dependency relationship among Parameter, Mapping,
     # Condition, Resource, Output
@@ -147,7 +209,7 @@ class Template:
         """
         # validate argument
         if not isinstance(obj, _Addable):
-            raise TypeError(f"You cannot add {obj.__class__.__name__}")
+            raise TypeError(f"You cannot add a {obj.__class__.__name__} object to template")
 
         if add_or_update and add_or_ignore:
             raise ValueError("Can't do add_or_update=True and add_or_ignore=True")
@@ -160,6 +222,13 @@ class Template:
             self._deps_data_need_build_flag = True
             return True
 
+        # add dependency objects
+        if (obj.DependsOn is not None):
+            for dep_obj in obj.DependsOn:
+                if not isinstance(dep_obj, str):
+                    self._add(dep_obj, add_or_update=True)
+
+        # add this object
         if obj.id in collection:
             if add_or_update:
                 collection[obj.id] = obj
@@ -174,6 +243,9 @@ class Template:
                     type_name = obj.__class__.__name__
                 raise ValueError(f"{type_name} logic id '{obj.id}' already exists!")
         else:
+            if isinstance(obj, Pack):
+                return False
+
             collection[obj.id] = obj
             self._deps_data_need_build_flag = True
             return True
@@ -225,11 +297,19 @@ class Template:
         **If the AWS object is a dependency for other objects, then other objects
         will also be removed**.
         """
+        # validate argument
+        if not isinstance(obj, _Addable):
+            raise TypeError(f"You cannot remove a {obj.__class__.__name__} object from template")
+
+        # handle other object depends on this
         if _deps_data is None:
             _deps_data = self.deps_on_data
 
         for child_gid in self.deps_by_data.get(obj.gid, set()):
-            self._remove(self._get_by_gid(child_gid), ignore_not_exists)
+            self._remove_by_gid(child_gid, ignore_not_exists=True)
+
+        if isinstance(obj, Pack):
+            return False
 
         return self._remove_by_gid(obj.gid, ignore_not_exists)
 
@@ -238,6 +318,17 @@ class Template:
 
     def remove_and_ignore(self, obj: TypeHint.addable_obj) -> bool:
         return self._remove(obj, ignore_not_exists=True)
+
+    def add_pack(self, pack: Pack):
+        for obj in pack.DependsOn:
+            self.add_pack()
+
+    # --- parameter handling
+    def get_param_values(self) -> typing.Dict[str, typing.Any]:
+        return OrderedDict([
+            (p.id, p.get_value())
+            for p in self.Parameters.values()
+        ])
 
     # --- nested stack
     def add_nested_stack(self,
@@ -263,6 +354,7 @@ class Template:
 
         dct = get_key_value_dict(self)
         dct.pop("NestedStack")
+        dct.pop("Packs")
         dct.pop("_deps_data_need_build_flag")
         dct.pop("_deps_on_data_cache")
         dct.pop("_deps_by_data_cache")
@@ -323,3 +415,11 @@ class Template:
         for r in self.Resources.values():
             if r.support_tags():
                 r.update_tags(overwrite, **kwargs)
+
+    # factory method
+    @classmethod
+    def from_many_objects(cls, objects: typing.Iterable[TypeHint.addable_obj]) -> 'Template':
+        tpl = cls()
+        for obj in objects:
+            tpl.add_or_update(obj)
+        return tpl

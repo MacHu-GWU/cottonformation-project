@@ -97,70 +97,81 @@ def _find_type_hint_and_validator(prop: typing.Union['Property', 'ResourceProper
     #--- Debug ---
     # if prop_type_class_name == "InstanceGroupConfigConfiguration":
     # if prop_type_class_name == "InstanceGroupConfigConfiguration" and prop.Name == "Configuration":
-    # if prop.ResourceName == "Bucket" and prop.Name == "BucketName":
+    # if prop.ResourceName == "WebACL" and prop.Name == "ScopeDownStatement":
     #     print(prop.Type, prop.PrimitiveType, prop.ItemType, prop.PrimitiveItemType)
+
     #-------------
     need_validator = True
     if (prop.Type == LIST_TYPE) and (prop.ItemType == TAG_TYPE):
         type_hint = f"typing.List[typing.Union[{TAG_TYPE}, dict]]"
         validator = f"attr.validators.deep_iterable(member_validator=attr.validators.instance_of({TAG_TYPE}), iterable_validator=attr.validators.instance_of(list))"
         converter = f"{TAG_TYPE}.from_list"
+
     elif (prop.Type == LIST_TYPE) and bool(prop.ItemType):
         parent_class_name = prop.ResourceName + prop.ItemType
-        type_hint = "typing.List[typing.Union['{}', dict]]".format(parent_class_name)
+        type_hint = "typing.List[typing.Union['{}', dict]]".format("Prop" + parent_class_name)
         if (parent_class_name == prop_type_class_name) or (parent_class_name in cycled_class_name_set): # self depends on self or cycle depends
             validator = "attr.validators.instance_of(list)"
             converter = None
         else:
-            validator = "attr.validators.deep_iterable(member_validator=attr.validators.instance_of({}), iterable_validator=attr.validators.instance_of(list))".format(parent_class_name)
-            converter = "{}.from_list".format(parent_class_name)
+            validator = "attr.validators.deep_iterable(member_validator=attr.validators.instance_of({}), iterable_validator=attr.validators.instance_of(list))".format("Prop" + parent_class_name)
+            converter = "{}.from_list".format("Prop" + parent_class_name)
+
     elif (prop.Type == LIST_TYPE) and bool(prop.PrimitiveItemType) and (prop.PrimitiveItemType == STR_TYPE):
         type_hint = "typing.List[TypeHint.intrinsic_str]"
         validator = "attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))"
         converter = None
+
     elif (prop.Type == LIST_TYPE) and bool(prop.PrimitiveItemType):
         type_hint = "typing.List[{}]".format(PRIMITIVE_TYPE_DICT[prop.PrimitiveItemType])
         validator = "attr.validators.deep_iterable(member_validator=attr.validators.instance_of({}), iterable_validator=attr.validators.instance_of(list))".format(
             PRIMITIVE_TYPE_DICT[prop.PrimitiveItemType])
         converter = None
+
     elif (prop.Type == MAP_TYPE) and bool(prop.ItemType):
         parent_class_name = prop.ResourceName + prop.ItemType
-        type_hint = "typing.Union['{}', dict]".format(parent_class_name)
+        type_hint = "typing.Union['{}', dict]".format("Prop" + parent_class_name)
         if (parent_class_name == prop_type_class_name) or (parent_class_name in cycled_class_name_set): # self depends on self or cycle depends
             validator = None
             need_validator = False
             converter = None
         else:
-            validator = "attr.validators.instance_of({})".format(parent_class_name)
-            converter = "{}.from_list".format(parent_class_name)
+            validator = "attr.validators.instance_of({})".format("Prop" + parent_class_name)
+            converter = "{}.from_list".format("Prop" + parent_class_name)
+
     elif (prop.Type == MAP_TYPE) and bool(prop.PrimitiveItemType) and (prop.PrimitiveItemType == STR_TYPE):
         type_hint = "typing.Dict[str, TypeHint.intrinsic_str]"
         validator = "attr.validators.deep_mapping(key_validator=attr.validators.instance_of(str), value_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type))"
         converter = None
+
     elif (prop.Type == MAP_TYPE) and bool(prop.PrimitiveItemType):
         type_hint = "typing.Dict[str, {}]".format(PRIMITIVE_TYPE_DICT[prop.PrimitiveItemType])
         validator = "attr.validators.deep_mapping(key_validator=attr.validators.instance_of(str), value_validator=attr.validators.instance_of({}))".format(
             PRIMITIVE_TYPE_DICT[prop.PrimitiveItemType]
         )
         converter = None
+
     elif bool(prop.Type):
         parent_class_name = prop.ResourceName + prop.Type
-        type_hint = "typing.Union['{}', dict]".format(parent_class_name)
+        type_hint = "typing.Union['{}', dict]".format("Prop" + parent_class_name)
         if (parent_class_name == prop_type_class_name) or (parent_class_name in cycled_class_name_set):  # self depends on self or cycle depends
             validator = None
             need_validator = False
             converter = None
         else:
-            validator = "attr.validators.instance_of({})".format(parent_class_name)
-            converter = "{}.from_dict".format(parent_class_name)
+            validator = "attr.validators.instance_of({})".format("Prop" + parent_class_name)
+            converter = "{}.from_dict".format("Prop" + parent_class_name)
+
     elif bool(prop.PrimitiveType) and (prop.PrimitiveType == STR_TYPE):
         type_hint = "TypeHint.intrinsic_str"
         validator = "attr.validators.instance_of(TypeCheck.intrinsic_str_type)"
         converter = None
+
     elif bool(prop.PrimitiveType):
         type_hint = PRIMITIVE_TYPE_DICT[prop.PrimitiveType]
         validator = "attr.validators.instance_of({})".format(PRIMITIVE_TYPE_DICT[prop.PrimitiveType])
         converter = None
+
     else:
         raise ValueError
 
@@ -291,10 +302,16 @@ class PropertyType:
 
     @property
     def class_name(self):
-        return self.PropertyFullName.replace(".", "")
+        return "Prop" + self.PropertyFullName.replace(".", "")
 
     def render(self):
         return property_def_template.render(prop_type=self)
+
+    def find_property(self, name):
+        for property in self.Properties:
+            if property.Name == name:
+                return property
+        raise ValueError
 
 
 @attr.s
