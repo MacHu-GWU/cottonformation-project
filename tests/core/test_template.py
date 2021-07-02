@@ -165,25 +165,19 @@ class TestTemplate:
             res_a, res_a1, res_a2, res_b, res_b1, res_b2,
             o_1, o_2, o_a, o_b,
         ]
-        def mk_tpl() -> ctf.Template:
-            tpl = ctf.Template()
-            for res in res_list:
-                tpl.add(res)
-            return tpl
-
-        tpl = mk_tpl()
+        tpl = ctf.Template.from_many_objects(res_list)
         tpl.remove(res_b)
         assert tpl._iterate_addable_keys() == ['1-Parameter--p1', '1-Parameter--p2', '5-Resource--a', '5-Resource--a1', '5-Resource--a2', '6-Output--oa']
 
-        tpl = mk_tpl()
+        tpl = ctf.Template.from_many_objects(res_list)
         tpl.remove(res_b1)
         assert tpl._iterate_addable_keys() == ['1-Parameter--p1', '1-Parameter--p2', '5-Resource--a', '5-Resource--a1', '5-Resource--a2', '5-Resource--b', '5-Resource--b2', '6-Output--o2', '6-Output--oa']
 
-        tpl = mk_tpl()
+        tpl = ctf.Template.from_many_objects(res_list)
         tpl.remove(res_b2)
         assert tpl._iterate_addable_keys() == ['1-Parameter--p1', '1-Parameter--p2', '5-Resource--a', '5-Resource--a1', '5-Resource--a2', '5-Resource--b', '5-Resource--b1', '6-Output--o1', '6-Output--oa']
 
-        tpl = mk_tpl()
+        tpl = ctf.Template.from_many_objects(res_list)
         tpl.remove(p_1)
         assert tpl._iterate_addable_keys() == ['1-Parameter--p2', '5-Resource--a', '5-Resource--a2', '5-Resource--b', '5-Resource--b2', '6-Output--o2']
 

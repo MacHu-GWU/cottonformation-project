@@ -289,7 +289,7 @@ class Template:
     def _remove(self,
                 obj: TypeHint.addable_obj,
                 ignore_not_exists: bool = False,
-                _deps_data: OrderedDict = None) -> bool:
+                _deps_by_data: OrderedDict = None) -> bool:
         """
         Remove a AWS object from the template. Return a bool value to indicate that
         if any change been made.
@@ -302,11 +302,12 @@ class Template:
             raise TypeError(f"You cannot remove a {obj.__class__.__name__} object from template")
 
         # handle other object depends on this
-        if _deps_data is None:
-            _deps_data = self.deps_on_data
+        if _deps_by_data is None:
+            _deps_by_data = self.deps_by_data
 
         for child_gid in self.deps_by_data.get(obj.gid, set()):
-            self._remove_by_gid(child_gid, ignore_not_exists=True)
+            child_obj = self._get_by_gid(child_gid)
+            self._remove(child_obj, ignore_not_exists=True, _deps_by_data=_deps_by_data)
 
         if isinstance(obj, Pack):
             return False

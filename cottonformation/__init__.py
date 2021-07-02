@@ -34,7 +34,7 @@ __fingerprint_of_license_file = "e5834e80c86c4898dd9f1462a2349cbf"
 from .core import constant, helpers
 from .core.model import (
     # data model
-    Parameter, Resource, Output, Export,
+    Parameter, Property, Resource, Output, Export,
     Rule, Mapping, Condition, Transform,
     Pack, Tag,
 
