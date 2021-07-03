@@ -85,7 +85,7 @@ class VpcStack(ctf.Stack):
                 p_AvailabilityZone=ctf.GetAZs.n_th(ind),
                 p_MapPublicIpOnLaunch=True,
                 p_Tags=ctf.Tag.make_many(
-                    Name=f"{self.env_name}/public/%s",
+                    Name=f"{self.env_name}/public/{ind}",
                 ),
                 ra_DependsOn=self.vpc,
             )
@@ -119,9 +119,9 @@ class VpcStack(ctf.Stack):
                 ),
                 rp_VpcId=self.vpc.ref(),
                 p_AvailabilityZone=ctf.GetAZs.n_th(ind),
-                p_MapPublicIpOnLaunch=True,
+                p_MapPublicIpOnLaunch=False,
                 p_Tags=ctf.Tag.make_many(
-                    Name=f"{self.env_name}/private/%s",
+                    Name=f"{self.env_name}/private/{ind}",
                 ),
                 ra_DependsOn=self.vpc,
             )

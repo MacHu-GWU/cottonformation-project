@@ -306,8 +306,11 @@ class Template:
             _deps_by_data = self.deps_by_data
 
         for child_gid in self.deps_by_data.get(obj.gid, set()):
-            child_obj = self._get_by_gid(child_gid)
-            self._remove(child_obj, ignore_not_exists=True, _deps_by_data=_deps_by_data)
+            try:
+                child_obj = self._get_by_gid(child_gid)
+                self._remove(child_obj, ignore_not_exists=True, _deps_by_data=_deps_by_data)
+            except KeyError:
+                pass
 
         if isinstance(obj, Pack):
             return False

@@ -186,14 +186,26 @@ class JumpboxStack(ctf.Stack):
         )
         self.pack2_ec2.add(self.ec2_private_box)
 
+
+# ------ load secret data ------
+# below is a code snippet that load secret data
+# for testing, you can comment it out and manually pass in hard code value
+# for ``public_db_username`` and ``public_db_password``
+import pysecret
+from pathlib_mate import Path
+
+repo_dir = Path(__file__).parent.parent.parent
+config_file = Path(repo_dir, "config.json")
+js = pysecret.JsonSecret.new(secret_file=config_file.abspath)
+# ------------------------------
+
+
 jump_box_stack = JumpboxStack(
     project_name="ctf-lib-jump-box",
     stage="dev",
     vpc_id=vpc_stack.get_output_value(boto_ses, vpc_stack.out_vpc_id.id),
     public_subnet_cidr_block_list=vpc_stack.public_subnet_cidr_block_list,
-    sg_authorized_ips=[
-        "0.0.0.0",
-    ],
+    sg_authorized_ips=js.get("example-stack.rds.sg_authorized_ips"),
     jump_box_subnet_id=vpc_stack.get_output_value(boto_ses, vpc_stack.out_list_public_subnet_id[0].id),
     jump_box_key_name="eq-sanhe-dev",
     private_box_subnet_id=vpc_stack.get_output_value(boto_ses, vpc_stack.out_list_private_subnet_id[0].id),
