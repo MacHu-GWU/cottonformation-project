@@ -13,7 +13,7 @@ from collections import OrderedDict
 from toposort import toposort
 from .model import (
     _Addable,
-    Parameter, Resource, Output, Rule, Mapping, Condition, Transform, Pack, Tag,
+    Parameter, Resource, Output, Rule, Mapping, Condition, Transform, ResourceGroup, Tag,
     TypeHint,
     get_id,
     get_key_value_dict,
@@ -21,10 +21,21 @@ from .model import (
     serialize,
     _class_type_to_attr_mapper,
 )
-from .constant import MetaData
+from .constant import MetaData, CloudFomation
 from .config import CtfConfig
 from ..res.cloudformation import Stack
 from .._version import __version__
+
+
+class AWSObjectLogicIdConlictError(Exception):
+    pass
+
+
+class AWSObjectNotExistsError(Exception):
+    @classmethod
+    def make(cls, obj_type: str, logic_id: str):
+        msg = f"Template.{obj_type} doesn't have logic id = '{logic_id}'"
+        return cls(msg)
 
 
 @attr.s
@@ -52,7 +63,7 @@ class Template:
     Outputs: typing.Dict[str, Output] = attr.ib(factory=OrderedDict)
     Transform: typing.List['Transform'] = attr.ib(factory=list)
     NestedStack: typing.Dict[str, 'Template'] = attr.ib(factory=OrderedDict)
-    Packs: typing.Dict[str, 'Pack'] = attr.ib(factory=OrderedDict)
+    Groups: typing.Dict[str, 'ResourceGroup'] = attr.ib(factory=OrderedDict)
     
     _deps_data_need_build_flag: bool = attr.ib(default=True)
     _deps_on_data_cache: typing.Dict[str, typing.Set[str]] = attr.ib(factory=OrderedDict)
@@ -136,28 +147,32 @@ class Template:
                 st.add(obj.gid)
         return st
 
-    def _iterate_addable(self) -> typing.List[typing.Tuple[str, TypeHint.addable_obj]]:
+    def _iterate_addable(self, include_resource_group: bool = False) -> typing.List[typing.Tuple[str, TypeHint.addable_obj]]:
         """
         Iterate through all addable object (Parameter, Resource, Output, ...).
         """
         l = list()
-        for attr_name in _class_type_to_attr_mapper.values():
+        for class_type, attr_name in _class_type_to_attr_mapper.items():
+            if (class_type == ResourceGroup.CLASS_TYPE):
+                if include_resource_group is False:
+                    continue
+
             collection = getattr(self, attr_name)
             for obj in collection.values():
                 l.append((obj.gid, obj))
         return l
 
-    def _iterate_addable_keys(self) -> typing.List[str]:
-        return [gid for gid, _ in self._iterate_addable()]
+    def _iterate_addable_keys(self, include_resource_group: bool = False) -> typing.List[str]:
+        return [gid for gid, _ in self._iterate_addable(include_resource_group)]
 
     def _build_deps_data(self) -> typing.Tuple[typing.Dict[str, typing.Set[str]], typing.Dict[str, typing.Set[str]]]:
         deps_on_data = OrderedDict()
         deps_by_data = OrderedDict()
-        for gid, _ in self._iterate_addable():
+        for gid, _ in self._iterate_addable(include_resource_group=True):
             deps_on_data[gid] = set()
             deps_by_data[gid] = set()
 
-        for gid, obj in self._iterate_addable():
+        for gid, obj in self._iterate_addable(include_resource_group=True):
             deps_on_data[gid] = self._encode_depends_on(obj.DependsOn)
             for parent_gid in self._encode_depends_on(obj.DependsOn):
                 deps_by_data[parent_gid].add(gid)
@@ -166,6 +181,16 @@ class Template:
 
     @property
     def deps_on_data(self) -> typing.Dict[str, typing.Set[str]]:
+        """
+        Depends on data is a dictionary structure. It shows the dependency
+        relationship in this way (child depends on parent)::
+
+            {
+                child_id_1: {parent_id_11, parent_id_12, ...},
+                child_id_2: {parent_id_21, parent_id_22, ...},
+                ...
+            }
+        """
         if self._deps_data_need_build_flag:
             deps_on_data, deps_by_data = self._build_deps_data()
             self._deps_on_data_cache = deps_on_data
@@ -176,6 +201,16 @@ class Template:
 
     @property
     def deps_by_data(self) -> typing.Dict[str, typing.Set[str]]:
+        """
+        Depends on data is a dictionary structure. It shows the dependency
+        relationship in this way (child depends on parent)::
+
+            {
+                parent_id_1: {child_id_11, child_id_12, ...},
+                parent_id_2: {child_id_21, child_id_22, ...},
+                ...
+            }
+        """
         if self._deps_data_need_build_flag:
             deps_on_data, deps_by_data = self._build_deps_data()
             self._deps_on_data_cache = deps_on_data
@@ -196,16 +231,23 @@ class Template:
             self._deps_sort_need_build_flag = False
         return self._deps_sort_cache
 
-    # --- handle AWS Object
-    def _add(self,
-             obj: TypeHint.addable_obj,
-             add_or_update: bool = False,
-             add_or_ignore: bool = False) -> bool:
-        """
-        Add a AWS object to the template. Return a bool value to indicate that
-        if any change been made.
 
-        TODO: allow auto recursive add if DependsOn is defined.
+    # --- handle AWS Object
+    def add_one(self,
+                obj: TypeHint.addable_obj,
+                add_or_update: bool = False,
+                add_or_ignore: bool = False) -> bool:
+        """
+        Add single object to Template. If there is a existing object with
+        the same logic id and no flag is passed, exception will be raised.
+
+        :param obj: The object you add to template.
+        :param add_or_update: if True, will overwrite other object with
+            the same logic id
+        :param add_or_ignore: if True, will ignore and pass if there's
+            existing object with the same logic id
+
+        :return: a boolean flag indicates that whether change is made.
         """
         # validate argument
         if not isinstance(obj, _Addable):
@@ -214,118 +256,171 @@ class Template:
         if add_or_update and add_or_ignore:
             raise ValueError("Can't do add_or_update=True and add_or_ignore=True")
 
-        class_type, logic_id = obj.gid.split("--")
-        collection = getattr(self, _class_type_to_attr_mapper[class_type])
+        obj: TypeHint.addable_obj
 
-        if isinstance(obj, Transform): # pragma: no cover
-            collection.append(obj)
-            self._deps_data_need_build_flag = True
-            return True
-
-        # add dependency objects
-        if (obj.DependsOn is not None):
-            for dep_obj in obj.DependsOn:
-                if not isinstance(dep_obj, str):
-                    self._add(dep_obj, add_or_update=True)
+        # find values for future use
+        collection: typing.Union[
+            typing.Dict[str, TypeHint.addable_obj], typing.List[Transform],
+        ] = getattr(
+            self, _class_type_to_attr_mapper[obj.CLASS_TYPE])
 
         # add this object
-        if obj.id in collection:
+        if obj.id in collection: # handle logic id conflict
             if add_or_update:
                 collection[obj.id] = obj
                 self._deps_data_need_build_flag = True
                 return True
             elif add_or_ignore:
                 return False
-            else:
+            else: # raise exception
                 if isinstance(obj, Resource):
                     type_name = Resource.__name__
                 else:
                     type_name = obj.__class__.__name__
-                raise ValueError(f"{type_name} logic id '{obj.id}' already exists!")
+                raise AWSObjectLogicIdConlictError(
+                    f"{type_name} logic id '{obj.id}' already exists!")
         else:
-            if isinstance(obj, Pack):
-                return False
-
             collection[obj.id] = obj
             self._deps_data_need_build_flag = True
             return True
 
-    def add(self, obj: TypeHint.addable_obj) -> bool:
-        return self._add(obj)
+    def add(self,
+            obj: TypeHint.addable_obj,
+            _objects_to_update: typing.Dict[str, TypeHint.addable_obj] = None):
+        """
+        Add a AWS object to the template. If the obj declared some dependency
+        AWS Objects like Parameter, Mapping, Condition, it will also add
+        those objects.
 
-    def add_or_update(self, obj: TypeHint.addable_obj) -> bool:
-        return self._add(obj, add_or_update=True)
+        If there's any logic id conflict include the root object or those
+        dependency objects, the new object will overwrite the existing one.
 
-    def add_or_ignore(self, obj: TypeHint.addable_obj) -> bool:
-        return self._add(obj, add_or_ignore=True)
+        This method is atomic. In other word, either all objects succeed or
+        non.
+        """
+        if _objects_to_update is None:
+            is_first_call = True
+            _objects_to_update = OrderedDict()
+        else:
+            is_first_call = False
+
+        _objects_to_update[obj.gid] = obj
+
+        # add dependency objects
+        if (obj.DependsOn is not None):
+            for dep_obj in obj.DependsOn:
+                if isinstance(dep_obj, str):
+                    if self.Resources:
+                        pass
+                    if dep_obj not in self.Resources:
+                        raise AWSObjectNotExistsError.make(
+                            obj_type=CloudFomation.Resources,
+                            logic_id=dep_obj,
+                        )
+                    dep_obj = self.Resources[dep_obj]
+                self.add(dep_obj, _objects_to_update=_objects_to_update)
+
+        if is_first_call:
+            # validate type before making the change
+            for obj in _objects_to_update.values():
+                if not isinstance(obj, _Addable):
+                    raise TypeError(f"You cannot add a {obj.__class__.__name__} object to template")
+
+            for obj in _objects_to_update.values():
+                self.add_one(obj, add_or_update=True)
 
     def _get_by_gid(self, gid: str) -> TypeHint.addable_obj:
+        """
+        Get aws object by global id.
+        """
         class_type, logic_id = gid.split("--")
         collection = getattr(self, _class_type_to_attr_mapper[class_type])
         return collection[logic_id]
 
-    def _remove_by_gid(self,
-                       gid: str,
-                       ignore_not_exists: bool = False):
-        class_type, logic_id = gid.split("--")
-        collection = getattr(self, _class_type_to_attr_mapper[class_type])
-
-        if class_type == Transform.CLASS_TYPE: # pragma: no cover
-            return
-
-        if logic_id in collection:
-            collection.pop(logic_id)
-            self._deps_data_need_build_flag = True
-            return True
-        elif ignore_not_exists:
-            return False
-        else:
-            if class_type == Resource.CLASS_TYPE:
-                type_name = Resource.__name__
-            else:
-                type_name = _class_type_to_attr_mapper[class_type][:-1]
-            raise ValueError(f"{type_name} logic id '{logic_id}' not exists!")
-
-    def _remove(self,
-                obj: TypeHint.addable_obj,
-                ignore_not_exists: bool = False,
-                _deps_by_data: OrderedDict = None) -> bool:
+    def remove_one(self,
+                   obj: TypeHint.addable_obj,
+                   ignore_not_exists: bool = False) -> bool:
         """
-        Remove a AWS object from the template. Return a bool value to indicate that
-        if any change been made.
+        Remove single object from  Template. If there is no a existing object with
+        the same logic id and no flag is passed, exception will be raised.
 
-        **If the AWS object is a dependency for other objects, then other objects
-        will also be removed**.
+        :param obj: The object you remove template.
+        :param ignore_not_exists: if True, will ignore and pass if there's
+            NO existing object with the same logic id
+
+        :return: a boolean flag indicates that whether change is made.
         """
         # validate argument
         if not isinstance(obj, _Addable):
             raise TypeError(f"You cannot remove a {obj.__class__.__name__} object from template")
 
-        # handle other object depends on this
+        obj: TypeHint.addable_obj
+        collection = getattr(self, _class_type_to_attr_mapper[obj.CLASS_TYPE])
+
+        # remove object
+        if obj.id in collection:
+            collection.pop(obj.id)
+            self._deps_data_need_build_flag = True
+            return True
+        elif ignore_not_exists:
+            return False
+        else:
+            raise AWSObjectNotExistsError.make(
+                obj_type=obj.CLASS_TYPE, logic_id=obj.id)
+
+    def remove(self,
+               obj: TypeHint.addable_obj,
+               _deps_by_data: OrderedDict = None,
+               _objects_to_remove: typing.Dict[str, TypeHint.addable_obj] = None):
+        """
+        Remove a AWS object from the template. If there are other objects depend
+        on this object, it will also remove other objects.
+
+        This method is atomic. In other word, either all objects succeed or
+        non.
+        """
+        if _objects_to_remove is None:
+            is_first_call = True
+            _objects_to_remove = OrderedDict()
+        else:
+            is_first_call = False
+
         if _deps_by_data is None:
             _deps_by_data = self.deps_by_data
 
+        _objects_to_remove[obj.gid] = obj
+
+        # handle other object depends on this
         for child_gid in self.deps_by_data.get(obj.gid, set()):
             try:
                 child_obj = self._get_by_gid(child_gid)
-                self._remove(child_obj, ignore_not_exists=True, _deps_by_data=_deps_by_data)
+                self.remove(
+                    child_obj,
+                    _deps_by_data=_deps_by_data,
+                    _objects_to_remove=_objects_to_remove,
+                )
             except KeyError:
                 pass
 
-        if isinstance(obj, Pack):
-            return False
+        # if it is resource group, aws objects in the DependsOn list should
+        # also be removed
+        if isinstance(obj, ResourceGroup):
+            for child_obj in obj.DependsOn:
+                if (not isinstance(child_obj, ResourceGroup)) and (child_obj.gid not in _objects_to_remove):
+                    self.remove(
+                        child_obj,
+                        _deps_by_data=_deps_by_data,
+                        _objects_to_remove=_objects_to_remove,
+                    )
 
-        return self._remove_by_gid(obj.gid, ignore_not_exists)
+        if is_first_call:
+            # validate type before making the change
+            for obj in _objects_to_remove.values():
+                if not isinstance(obj, _Addable):
+                    raise TypeError(f"You cannot remove a {obj.__class__.__name__} object to template")
 
-    def remove(self, obj: TypeHint.addable_obj) -> bool:
-        return self._remove(obj)
-
-    def remove_and_ignore(self, obj: TypeHint.addable_obj) -> bool:
-        return self._remove(obj, ignore_not_exists=True)
-
-    def add_pack(self, pack: Pack):
-        for obj in pack.DependsOn:
-            self.add_pack()
+            for obj in _objects_to_remove.values():
+                self.remove_one(obj, ignore_not_exists=True)
 
     # --- parameter handling
     def get_param_values(self) -> typing.Dict[str, typing.Any]:
@@ -354,11 +449,14 @@ class Template:
 
     # --- serialization
     def to_dict(self) -> dict:
+        """
+        Serialize the template, convert it to python dict.
+        """
         self.__pre_serialize__()
 
         dct = get_key_value_dict(self)
         dct.pop("NestedStack")
-        dct.pop("Packs")
+        dct.pop("Groups")
         dct.pop("_deps_data_need_build_flag")
         dct.pop("_deps_on_data_cache")
         dct.pop("_deps_by_data_cache")
@@ -369,16 +467,28 @@ class Template:
         return dct
 
     def to_json(self) -> str:
+        """
+        Convert template to json string.
+        """
         return json.dumps(self.to_dict(), indent=4)
 
     def to_json_file(self, path):  # pragma: no cover
+        """
+        Dump template to json file.
+        """
         with open(path, "w") as f:
             f.write(self.to_json())
 
     def to_yml(self) -> str:  # pragma: no cover
+        """
+        Convert template to yaml string
+        """
         raise NotImplementedError
 
     def to_yml_file(self, path):  # pragma: no cover
+        """
+        Dump template to yaml file.
+        """
         with open(path, "w") as f:
             f.write(self.to_yml())
 
@@ -423,7 +533,10 @@ class Template:
     # factory method
     @classmethod
     def from_many_objects(cls, objects: typing.Iterable[TypeHint.addable_obj]) -> 'Template':
+        """
+        A factory method can create a Template object from many AWS Objects.
+        """
         tpl = cls()
         for obj in objects:
-            tpl.add_or_update(obj)
+            tpl.add(obj)
         return tpl

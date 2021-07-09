@@ -20,7 +20,7 @@ class TypeHint:
     intrinsic_int = typing.Union[int, dict, 'IntrinsicFunction']
     addable_obj = typing.Union[
         'Parameter', 'Resource', 'Output',
-        'Rule', 'Mapping', 'Condition', 'Pack',
+        'Rule', 'Mapping', 'Condition', 'ResourceGroup',
     ]
     dependency_obj = typing.Union[
         str, 'Resource', 'Parameter', 'Mapping', 'Condition'
@@ -38,6 +38,8 @@ class _IntrinsicFunctionType:
 class _Addable:
     """
     A base class for type check for item to be added to a Template.
+
+    Includes 'Parameter', 'Resource', 'Output', 'Rule', 'Mapping', 'Condition', 'Pack'.
     """
     @property
     def gid(self) -> str:
@@ -864,16 +866,17 @@ class Transform(AwsObject, _ListMember):
 
 
 @attr.s
-class Pack(AwsObject, _DictMember):
-    CLASS_TYPE = "99-Pack"
+class ResourceGroup(AwsObject, _DictMember, _Dependency):
+    CLASS_TYPE = "99-Resource-Group"
 
     id: str = attr.ib(
         default="__never_exists__",
         validator=vs.instance_of(str)
     )
-    DependsOn: typing.List[TypeHint.addable_obj] = attr.ib(
+    DependsOn: typing.Union[TypeHint.dependency_obj, typing.List[TypeHint.dependency_obj]] = attr.ib(
         factory=list,
-        validator=vs.instance_of(list),
+        validator=vs.optional(vs.instance_of((str, _Dependency, list))),
+        converter=ensure_list,
     )
 
     def add(self, obj: TypeHint.addable_obj):
@@ -958,5 +961,5 @@ _class_type_to_attr_mapper = {
     Rule.CLASS_TYPE: "Rules",
     Mapping.CLASS_TYPE: "Mappings",
     Condition.CLASS_TYPE: "Conditions",
-    Pack.CLASS_TYPE: "Packs",
+    ResourceGroup.CLASS_TYPE: "Groups",
 }

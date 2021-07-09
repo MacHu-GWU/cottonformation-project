@@ -29,11 +29,13 @@ tpl = ctf.Template(
     Description="Sample CloudFormation template build on cottonformation library",
 )
 
-# create a ``Parameter`` object, and add it to template.
+# create a ``Parameter`` object
 param_env_name = ctf.Parameter(
     "EnvName",
     Type=ctf.Parameter.TypeEnum.String,
 )
+# the declared ``Parameter`` object is not associated to ``Template`` yet
+# we need to explicitly add it to template
 tpl.add(param_env_name)
 
 # create a ``Resource`` object for aws iam role
@@ -53,6 +55,7 @@ iam_role_for_lambda = iam.Role(
         ctf.helpers.iam.AwsManagedPolicy.AWSLambdaBasicExecutionRole,
     ]
 )
+# add resource object to template
 tpl.add(iam_role_for_lambda)
 
 
@@ -86,6 +89,7 @@ lbd_func = awslambda.Function(
     p_Handler="index.handler",
     ra_DependsOn=iam_role_for_lambda,
 )
+# add resource object to template
 tpl.add(lbd_func)
 
 out_lambda_role_arn = ctf.Output(
@@ -93,6 +97,7 @@ out_lambda_role_arn = ctf.Output(
     Description="aws lambda basic execution iam role for reuse",
     Value=iam_role_for_lambda.rv_Arn
 )
+# add Output object to template
 tpl.add(out_lambda_role_arn)
 
 

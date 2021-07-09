@@ -31,7 +31,7 @@ class RdsStack(ctf.Stack):
         self.mk_pack1_public_db()
 
     def mk_pack1_public_db(self):
-        self.pack1_public_db = ctf.Pack()
+        self.pack1_public_db = ctf.ResourceGroup()
         self.public_db_security_group = ec2.SecurityGroup(
             "SecurityGroupForPublicDB",
             rp_GroupDescription="Security Group used for Public accessible DB Instance",
@@ -105,7 +105,7 @@ class RdsStack(ctf.Stack):
 
 
     def mk_pack2_private_db(self):
-        self.pack2_private_db = ctf.Pack()
+        self.pack2_private_db = ctf.ResourceGroup()
         self.private_db_security_group = ec2.SecurityGroup(
             "SecurityGroupForPrivateDB",
             rp_GroupDescription="Security Group used for DB Instance on Private Subnet",

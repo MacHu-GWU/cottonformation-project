@@ -1,12 +1,29 @@
 # -*- coding: utf-8 -*-
 
 import pytest
-from pytest import raises, approx
 
 
 def test():
-    import cottonformation
-    pass
+    import cottonformation as ctf
+
+    _ = ctf.Template
+    _ = ctf.Parameter
+    _ = ctf.Resource
+    _ = ctf.Output
+    _ = ctf.Rule
+    _ = ctf.Mapping
+    _ = ctf.Condition
+    _ = ctf.ResourceGroup
+    _ = ctf.Tag
+    _ = ctf.Ref
+    _ = ctf.GetAtt
+    _ = ctf.ImportValue
+    _ = ctf.Env
+    _ = ctf.Stack
+
+    from cottonformation.res import _imp
+
+    _ = _imp
 
 
 if __name__ == "__main__":

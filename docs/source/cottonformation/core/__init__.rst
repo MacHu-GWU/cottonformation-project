@@ -14,7 +14,8 @@ sub packages and modules
     config <config>
     env <env>
     model <model>
+    exc <exc>
+    stack <stack>
     template <template>
     constant <constant>
-    tagging <tagging>
     

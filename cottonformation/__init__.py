@@ -31,12 +31,12 @@ __github_username__ = "MacHu-GWU"
 __fingerprint_of_license_file = "e5834e80c86c4898dd9f1462a2349cbf"
 
 
-from .core import constant, helpers
+from .core import constant, helpers, exc
 from .core.model import (
     # data model
     Parameter, Property, Resource, Output, Export,
     Rule, Mapping, Condition, Transform,
-    Pack, Tag,
+    ResourceGroup, Tag,
 
     # intrinsic function
     Ref, Base64, Cidr, FindInMap, GetAtt, GetAZs,

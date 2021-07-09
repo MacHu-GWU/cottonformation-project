@@ -41,7 +41,7 @@ class VpcStack(ctf.Stack):
         self.mk_pack3_route()
 
     def mk_pack1_vpc(self):
-        self.pack1_vpc = ctf.Pack()
+        self.pack1_vpc = ctf.ResourceGroup()
         self.vpc = ec2.VPC(
             "VPC",
             rp_CidrBlock=self.vpc_cidr_block,
@@ -70,7 +70,7 @@ class VpcStack(ctf.Stack):
         self.pack1_vpc.DependsOn.extend([self.vpc, self.out_vpc_id, self.out_vpc_cidr_block])
 
     def mk_pack2_subnet(self):
-        self.pack2_subnet = ctf.Pack()
+        self.pack2_subnet = ctf.ResourceGroup()
 
         self.public_subnet_list: typing.List[ec2.Subnet] = list()
         self.out_list_public_subnet_id: typing.List[ctf.Output] = list()
@@ -162,7 +162,7 @@ class VpcStack(ctf.Stack):
             self.pack2_subnet.DependsOn.append(out)
 
     def mk_pack3_route(self):
-        self.pack3_router = ctf.Pack()
+        self.pack3_router = ctf.ResourceGroup()
 
         self.igw = ec2.InternetGateway(
             "IGW",
@@ -257,7 +257,7 @@ class VpcStack(ctf.Stack):
             self.pack3_router.DependsOn.append(route_table_association)
 
     def mk_pack4_security_group(self):
-        self.pack4_security_group = ctf.Pack()
+        self.pack4_security_group = ctf.ResourceGroup()
         self.sg_of_allow_all_traffic_from_authorized_ip = ec2.SecurityGroup(
             "SecurityGroupOfAllowAllTrafficFromAuthorizedIp",
             rp_GroupDescription="Allow all traffic from authorized ip usually workspace ip or developer home ip",
@@ -323,7 +323,7 @@ class VpcStack(ctf.Stack):
         self.pack4_security_group.add(self.output_sg_id_of_allow_ssh_from_public_subnet)
 
     def mk_pack5_jump_box(self):
-        self.pack5_ec2 = ctf.Pack()
+        self.pack5_ec2 = ctf.ResourceGroup()
 
 
 vpc_stack = VpcStack(

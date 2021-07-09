@@ -33,7 +33,7 @@ class JumpboxStack(ctf.Stack):
         self.mk_pack2_ec2()
 
     def mk_pack1_sg(self):
-        self.pack1_sg = ctf.Pack()
+        self.pack1_sg = ctf.ResourceGroup()
         self.sg_of_allow_all_traffic_from_authorized_ip = ec2.SecurityGroup(
             "SecurityGroupOfAllowAllTrafficFromAuthorizedIp",
             rp_GroupDescription="Allow all traffic from authorized ip usually workspace ip or developer home ip",
@@ -97,7 +97,7 @@ class JumpboxStack(ctf.Stack):
         self.pack1_sg.add(self.output_sg_id_of_allow_ssh_from_public_subnet)
 
     def mk_pack2_ec2(self):
-        self.pack2_ec2 = ctf.Pack()
+        self.pack2_ec2 = ctf.ResourceGroup()
 
         self.iam_role_ec2_jump_host = iam.Role(
             "IamRoleEc2JumpBox",

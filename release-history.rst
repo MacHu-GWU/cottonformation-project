@@ -20,15 +20,21 @@ Release and Version History
 **Features and Improvements**
 
 - Allow :meth:`~cottonformation.core.template.Template.add` to automatically add dependencies AWS object if available
-- Allow deserialize the dict data into AWS Object
-- Allow auto generate cottonformation script from Template file
+- A CloudFormation stack abstraction class :class:`~cottonformation.core.stack.Stack` provided. It is the best practice to organize AWS Object declaration.
+- Add :class:`~cottonformation.core.model.ResourceGroup` class. It is a AWS Object container object. Allow you to group AWS objects and add / remove them in batch. It also support auto-add/auto-remove if dependency relationship is declared.
+- Add exception module.
 - Add more best practice / programming pattern example
 
 **Minor Improvements**
 
+- refactor :meth:`~cottonformation.core.template.Template.add` and :meth:`~cottonformation.core.template.Template.remove` API.
+- re implement the code generator with topo sort algorithm.
+
 **Bugfixes**
 
 **Miscellaneous**
+
+- Unittest improvement.
 
 
 0.0.2 (2021-06-28)
