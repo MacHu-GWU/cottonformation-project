@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
 
 import boto3
+from cottonformation.core.template import Template
 from cottonformation.core.model import (
-    Template, Parameter, Output,
+    Parameter, Output,
     Ref, Sub, serialize,
 )
 from cottonformation.res import (
@@ -16,17 +17,20 @@ param_project_name = Parameter(
     "ProjectName",
     Type=Parameter.TypeEnum.String,
     Default="cottonformation-dev",
-).add(tpl)
+)
+tpl.add(param_project_name)
 
 bucket = s3.Bucket(
     "MyBucket",
     p_BucketName=Sub("${ProjectName}-bucket", dict(ProjectName=param_project_name.ref())),
-).add(tpl)
+)
+tpl.add(bucket)
 
 out_bucket_domain_name = Output(
     "MyBucketDomainName",
     Value=bucket.rv_DomainName,
-).add(tpl)
+)
+tpl.add(out_bucket_domain_name)
 
 # tpl.to_json_file("tpl.json")
 
