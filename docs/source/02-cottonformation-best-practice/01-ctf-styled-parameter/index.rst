@@ -7,3 +7,31 @@ Parameterization of the CloudFormation is awesome. Because the nature of CloudFo
 
 .. literalinclude:: ../../../../examples/02-best-practice/e01_ctf_styled_parameter.py
     :linenos:
+
+Template json:
+
+.. code-block:: javascript
+
+    {
+        "AWSTemplateFormatVersion": "2010-09-09",
+        "Description": "Demo: ctf styled parameter",
+        "Metadata": {
+            "cottonformation": {
+                "version": "0.0.3"
+            }
+        },
+        "Resources": {
+            "MyBucket": {
+                "Type": "AWS::S3::Bucket",
+                "Properties": {
+                    "BucketName": "ctf-styled-param-dev-my-bucket",
+                    "Tags": [
+                        {
+                            "Key": "EnvName",
+                            "Value": "ctf-styled-param-dev"
+                        }
+                    ]
+                }
+            }
+        }
+    }

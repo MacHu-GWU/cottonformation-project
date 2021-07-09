@@ -1,6 +1,6 @@
 .. _resource-group:
 
-Resource Group
+Organize AWS Object using Resource Group
 ==============================================================================
 
 When there are many resources in your template, it becomes difficult to manage and debug. You probably want to put resources into different logic "Resource Group", and you want to test them separately, even though in most of the case they depend on each other. For debugging, it is always better to deploy resources gradually rather than deploy all of them at once.

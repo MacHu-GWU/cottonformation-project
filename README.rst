@@ -192,8 +192,7 @@ Welcome to ``cottonformation`` Documentation
 Getting Help
 ------------------------------------------------------------------------------
 
-1. The easiest way to learn the best practice is to **learn by example**. You can start from `cottonformation by example <https://cottonformation.readthedocs.io/en/latest/01-cottonformation-by-example/index.html>`_
-
+1. The easiest way to learn the best practice is to **learn by example**. You can start from `cottonformation by example <https://cottonformation.readthedocs.io/en/latest/01-cottonformation-by-example/index.html>`_. Then you can **learn best practice proved in production environment** in `cottonformation best practice <file:///Users/sanhehu/Documents/GitHub/cottonformation-project/docs/build/html/02-cottonformation-best-practice/index.html>`_.
 
 2. Second method is to `submit an GitHub issue <https://github.com/MacHu-GWU/cottonformation-project/issues>`_. So other people may see the discussion and solution too. In addition there's a `cottonformation community <https://gitter.im/cottonformation/community>`_ **on gitter to directly ASK THE AUTHOR**.
 
