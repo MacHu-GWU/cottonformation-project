@@ -1,3 +1,5 @@
+.. _ctf-styled-parameter:
+
 cottonformation Styled Parameter
 ==============================================================================
 
@@ -5,7 +7,7 @@ Parameterization of the CloudFormation is awesome. Because the nature of CloudFo
 
 **HOWEVER**, with cottonformation, Infrastructure is simply Python Code. Python can do far more better parameterization and data handling over the Parameter and Intrinsict Function system. Here's the introduction of the **cottonformation Styled Parameter system** that can completely replace the Cloudformation Parameter / Mapping / Condition / Rule and Intrisic Function system.
 
-.. literalinclude:: ../../../../examples/02-best-practice/e01_ctf_styled_parameter.py
+.. literalinclude:: ../../../../examples/02-best-practice/e02_ctf_styled_parameter.py
     :linenos:
 
 Template json:

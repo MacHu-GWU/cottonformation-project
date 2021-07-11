@@ -8,6 +8,8 @@ I have to deeply understand the data in spec file, so I can generate cottonforma
 code out of it.
 """
 
+import json
+from pathlib_mate import Path
 from cottonformation.code.spec import (
     download_spec_file, read_spec_file,
 )
@@ -85,9 +87,54 @@ def inspect_types():
     print(f"primitive_item_type: {all_type_list[3]}")
 
 
+def create_alfred_cloudformation_data_file():
+    """
+    Generate data file for alfred full text search anything:
+
+    https://github.com/MacHu-GWU/afwf_fts_anything-project
+    """
+    spec_data = read_spec_file()
+
+    alfred_data = list()
+
+    for res_id, res_dct in spec_data["ResourceTypes"].items():
+        if "Documentation" not in res_dct:
+            continue
+        print(res_id)
+        _, service, resource = res_id.split("::")
+        doc_link = res_dct["Documentation"]
+        dct = dict(
+            title=f"Resource: {service} | {resource}",
+            subtitle=f"open {doc_link}",
+            arg=doc_link,
+        )
+        alfred_data.append(dct)
+
+    for prop_id, prop_dct in spec_data["PropertyTypes"].items():
+        if "Documentation" not in prop_dct:
+            continue
+        if prop_id == "Tag":
+            continue
+        _, service, prop_full_name = prop_id.split("::")
+        resource, prop_name = prop_full_name.split(".")
+
+        doc_link = prop_dct["Documentation"]
+        dct = dict(
+            title=f"Property: {service} | {resource} - {prop_name}",
+            subtitle=f"open {doc_link}",
+            arg=doc_link,
+        )
+        alfred_data.append(dct)
+
+    p = Path.home().append_parts(".alfred-fts", "cloudformation.json")
+    p.write_text(json.dumps(alfred_data, indent=4))
+
+
 if __name__ == "__main__":
     # inspect_resource_type()
     # inspect_property_type()
     # inspect_types()
-    print(len(spec_data["PropertyTypes"]))
-    print(len(spec_data["ResourceTypes"]))
+    # print(len(spec_data["PropertyTypes"]))
+    # print(len(spec_data["ResourceTypes"]))
+
+    create_alfred_cloudformation_data_file()

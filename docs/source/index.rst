@@ -7,7 +7,7 @@ Full Table of Content
 ------------------------------------------------------------------------------
 
 .. autotoctree::
-
+    :maxdepth: 2
 
 
 .. include:: ../../AUTHORS.rst

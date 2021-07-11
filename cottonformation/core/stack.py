@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 
 import attr
+import typing
 from .template import Template
+from .model import Parameter
 
 
 @attr.s
@@ -57,3 +59,4 @@ class Stack:
         after object initialization.
         """
         pass
+
