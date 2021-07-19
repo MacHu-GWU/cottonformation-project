@@ -14,7 +14,7 @@ Step 1. Declare cottonformation style parameter
 At begin, we simply declare a CloudFormation stack object. And declared two simple cottonformation style parameters ``project_name`` and ``stage``. Stack is not associated with a CloudFormation template object yet.
 
 
-.. literalinclude:: ../../../../examples/02-best-practice/e02_res_group_1.py
+.. literalinclude:: ../../../../examples/02-best-practice/e03_res_group_1.py
     :linenos:
 
 
@@ -23,7 +23,7 @@ Step 2. Declare abstract resource group logic
 
 Now we believe that we will need two resource groups. For each resource group, we define a method to put into creation logics. And we have a high level method ``post_hook`` to explicitly call resource group creation methods. Of course, you can easily comment them in-and-out to enable/disable those resources. Right now we have nothing in those resource group creation methods.
 
-.. literalinclude:: ../../../../examples/02-best-practice/e02_res_group_2.py
+.. literalinclude:: ../../../../examples/02-best-practice/e03_res_group_2.py
     :linenos:
 
 
@@ -36,7 +36,7 @@ Resource group itself is similar to other AWS Object, you have to pass a unique 
 
 At the end, we create a instance of this stack and a template object for future use. At this moment, stack and template doesn't know each other yet.
 
-.. literalinclude:: ../../../../examples/02-best-practice/e02_res_group_3.py
+.. literalinclude:: ../../../../examples/02-best-practice/e03_res_group_3.py
     :linenos:
 
 
@@ -47,7 +47,7 @@ To add resource declared in a stack to a cloudformation Template is easy. You ca
 
 For debug, sometime you want to remove resource in descending order.
 
-.. literalinclude:: ../../../../examples/02-best-practice/e02_res_group_4.py
+.. literalinclude:: ../../../../examples/02-best-practice/e03_res_group_4.py
     :linenos:
 
 
@@ -56,5 +56,5 @@ Step 5. Play with Deployment
 
 Now we can play with the deployment. And feel free to comment in and out either in the ``template.add(resource_group)`` code block, either in the ``template.remove(resource_group)`` code block.
 
-.. literalinclude:: ../../../../examples/02-best-practice/e02_res_group_5.py
+.. literalinclude:: ../../../../examples/02-best-practice/e03_res_group_5.py
     :linenos:
