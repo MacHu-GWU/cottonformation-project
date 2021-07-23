@@ -12,6 +12,7 @@ class VpcStack(ctf.Stack):
     stage: str = attr.ib()
     vpc_cidr_seed: int = attr.ib()
     n_az_used: int = attr.ib()
+    sg_authorized_ips: typing.List[str] = attr.ib()
 
     @property
     def env_name(self):
@@ -19,7 +20,7 @@ class VpcStack(ctf.Stack):
 
     @property
     def stack_name(self):
-        return self.env_name
+        return f"{self.env_name}-vpc"
 
     @property
     def vpc_cidr_block(self):
@@ -32,16 +33,17 @@ class VpcStack(ctf.Stack):
                 self.vpc_cidr_seed,
                 ind * 2,
             )
-            for ind in range(1, self.n_az_used+1)
+            for ind in range(1, self.n_az_used + 1)
         ]
 
     def __attrs_post_init__(self):
-        self.mk_pack1_vpc()
-        self.mk_pack2_subnet()
-        self.mk_pack3_route()
+        self.mk_rg1_vpc()
+        self.mk_rg2_subnet()
+        self.mk_rg3_route()
+        self.mk_pk4_security_group()
 
-    def mk_pack1_vpc(self):
-        self.pack1_vpc = ctf.ResourceGroup()
+    def mk_rg1_vpc(self):
+        self.rg1_vpc = ctf.ResourceGroup()
         self.vpc = ec2.VPC(
             "VPC",
             rp_CidrBlock=self.vpc_cidr_block,
@@ -67,10 +69,10 @@ class VpcStack(ctf.Stack):
             Export=ctf.Export(f"{self.env_name}-vpc-cidr-block"),
             DependsOn=self.vpc,
         )
-        self.pack1_vpc.DependsOn.extend([self.vpc, self.out_vpc_id, self.out_vpc_cidr_block])
+        self.rg1_vpc.DependsOn.extend([self.vpc, self.out_vpc_id, self.out_vpc_cidr_block])
 
-    def mk_pack2_subnet(self):
-        self.pack2_subnet = ctf.ResourceGroup()
+    def mk_rg2_subnet(self):
+        self.rg2_subnet = ctf.ResourceGroup()
 
         self.public_subnet_list: typing.List[ec2.Subnet] = list()
         self.out_list_public_subnet_id: typing.List[ctf.Output] = list()
@@ -105,8 +107,8 @@ class VpcStack(ctf.Stack):
             )
             self.out_list_public_subnet_id.append(out)
 
-            self.pack2_subnet.DependsOn.append(public_subnet)
-            self.pack2_subnet.DependsOn.append(out)
+            self.rg2_subnet.DependsOn.append(public_subnet)
+            self.rg2_subnet.DependsOn.append(out)
 
         self.private_subnet_list: typing.List[ec2.Subnet] = list()
         self.out_list_private_subnet_id: typing.List[ctf.Output] = list()
@@ -141,8 +143,8 @@ class VpcStack(ctf.Stack):
             )
             self.out_list_private_subnet_id.append(out)
 
-            self.pack2_subnet.DependsOn.append(private_subnet)
-            self.pack2_subnet.DependsOn.append(out)
+            self.rg2_subnet.DependsOn.append(private_subnet)
+            self.rg2_subnet.DependsOn.append(out)
 
         self.out_list_subnet_cidr_block: typing.List[ctf.Output] = list()
         for subnet in (self.public_subnet_list + self.private_subnet_list):
@@ -159,10 +161,10 @@ class VpcStack(ctf.Stack):
                 DependsOn=subnet,
             )
             self.out_list_subnet_cidr_block.append(out)
-            self.pack2_subnet.DependsOn.append(out)
+            self.rg2_subnet.DependsOn.append(out)
 
-    def mk_pack3_route(self):
-        self.pack3_router = ctf.ResourceGroup()
+    def mk_rg3_route(self):
+        self.rg3_route = ctf.ResourceGroup()
 
         self.igw = ec2.InternetGateway(
             "IGW",
@@ -197,7 +199,7 @@ class VpcStack(ctf.Stack):
             ra_DependsOn=self.eip,
         )
 
-        self.pack3_router.DependsOn.extend([self.igw, self.igw_attach_vpc, self.eip, self.ngw])
+        self.rg3_route.DependsOn.extend([self.igw, self.igw_attach_vpc, self.eip, self.ngw])
 
         # public / private route table
         self.public_route_table = ec2.RouteTable(
@@ -217,7 +219,7 @@ class VpcStack(ctf.Stack):
             ra_DependsOn=[self.public_route_table, self.igw],
         )
 
-        self.pack3_router.DependsOn.extend([self.public_route_table, self.public_route_default])
+        self.rg3_route.DependsOn.extend([self.public_route_table, self.public_route_default])
 
         for ind, subnet in enumerate(self.public_subnet_list):
             route_table_association = ec2.SubnetRouteTableAssociation(
@@ -226,7 +228,7 @@ class VpcStack(ctf.Stack):
                 rp_SubnetId=subnet.ref(),
                 ra_DependsOn=[self.public_route_table, subnet],
             )
-            self.pack3_router.DependsOn.append(route_table_association)
+            self.rg3_route.DependsOn.append(route_table_association)
 
         self.private_route_table = ec2.RouteTable(
             "PrivateRouteTable",
@@ -245,7 +247,7 @@ class VpcStack(ctf.Stack):
             ra_DependsOn=[self.private_route_table, self.ngw],
         )
 
-        self.pack3_router.DependsOn.extend([self.private_route_table, self.private_route_default])
+        self.rg3_route.DependsOn.extend([self.private_route_table, self.private_route_default])
 
         for ind, subnet in enumerate(self.private_subnet_list):
             route_table_association = ec2.SubnetRouteTableAssociation(
@@ -254,41 +256,41 @@ class VpcStack(ctf.Stack):
                 rp_SubnetId=subnet.ref(),
                 ra_DependsOn=[self.private_route_table, subnet],
             )
-            self.pack3_router.DependsOn.append(route_table_association)
+            self.rg3_route.DependsOn.append(route_table_association)
 
-    def mk_pack4_security_group(self):
-        self.pack4_security_group = ctf.ResourceGroup()
-        self.sg_of_allow_all_traffic_from_authorized_ip = ec2.SecurityGroup(
-            "SecurityGroupOfAllowAllTrafficFromAuthorizedIp",
-            rp_GroupDescription="Allow all traffic from authorized ip usually workspace ip or developer home ip",
-            p_GroupName=f"{self.env_name}/sg/allow-all-traffic-from-authorized-ip",
+    def mk_pk4_security_group(self):
+        self.rg4_security_group = ctf.ResourceGroup()
+        self.sg_of_allow_restricted_traffic_from_authorized_ip = ec2.SecurityGroup(
+            "SecurityGroupOfAllowRestrictedTrafficFromAuthorizedIp",
+            rp_GroupDescription="Allow restricted traffic from authorized ip usually workspace ip or developer home ip",
+            p_GroupName=f"{self.env_name}/sg/allow-restricted-traffic-from-authorized-ip",
             p_VpcId=self.vpc.ref(),
             p_SecurityGroupIngress=[
                 ec2.PropSecurityGroupIngress(
-                    rp_IpProtocol="-1",
-                    p_FromPort=-1,
-                    p_ToPort=-1,
+                    rp_IpProtocol="tcp",
+                    p_FromPort=22,
+                    p_ToPort=22,
                     p_CidrIp=f"{authorized_ip}/32",
                 )
                 for authorized_ip in self.sg_authorized_ips
             ],
             p_Tags=ctf.Tag.make_many(
-                Name=f"{self.env_name}/sg/allow-all-traffic-from-authorized-ip"
+                Name=f"{self.env_name}/sg/allow-restricted-traffic-from-authorized-ip"
             ),
             ra_DependsOn=self.vpc,
         )
-        self.pack4_security_group.add(self.sg_of_allow_all_traffic_from_authorized_ip)
+        self.rg4_security_group.add(self.sg_of_allow_restricted_traffic_from_authorized_ip)
 
         self.output_sg_id_of_allow_all_traffic_from_authorized_ip = ctf.Output(
-            f"{self.sg_of_allow_all_traffic_from_authorized_ip.id}Id",
+            f"{self.sg_of_allow_restricted_traffic_from_authorized_ip.id}Id",
             Description="Security Group ID",
-            Value=self.sg_of_allow_all_traffic_from_authorized_ip.rv_GroupId,
+            Value=self.sg_of_allow_restricted_traffic_from_authorized_ip.rv_GroupId,
             Export=ctf.Export(
-                f"{self.env_name}-{self.sg_of_allow_all_traffic_from_authorized_ip.id}-id"
+                f"{self.env_name}-{self.sg_of_allow_restricted_traffic_from_authorized_ip.id}-id"
             ),
-            DependsOn=self.sg_of_allow_all_traffic_from_authorized_ip,
+            DependsOn=self.sg_of_allow_restricted_traffic_from_authorized_ip,
         )
-        self.pack4_security_group.add(self.output_sg_id_of_allow_all_traffic_from_authorized_ip)
+        self.rg4_security_group.add(self.output_sg_id_of_allow_all_traffic_from_authorized_ip)
 
         self.sg_of_allow_ssh_from_public_subnet = ec2.SecurityGroup(
             "SecurityGroupOfAllowSSHFromPublicSubnet",
@@ -309,7 +311,7 @@ class VpcStack(ctf.Stack):
             ),
             ra_DependsOn=[self.vpc, ] + self.public_subnet_list,
         )
-        self.pack4_security_group.add(self.sg_of_allow_ssh_from_public_subnet)
+        self.rg4_security_group.add(self.sg_of_allow_ssh_from_public_subnet)
 
         self.output_sg_id_of_allow_ssh_from_public_subnet = ctf.Output(
             f"{self.sg_of_allow_ssh_from_public_subnet.id}Id",
@@ -320,23 +322,35 @@ class VpcStack(ctf.Stack):
             ),
             DependsOn=self.sg_of_allow_ssh_from_public_subnet,
         )
-        self.pack4_security_group.add(self.output_sg_id_of_allow_ssh_from_public_subnet)
+        self.rg4_security_group.add(self.output_sg_id_of_allow_ssh_from_public_subnet)
 
-    def mk_pack5_jump_box(self):
-        self.pack5_ec2 = ctf.ResourceGroup()
 
+# ------ load secret data ------
+# below is a code snippet that load config and secret data
+# for testing, you can comment it out and manually pass in hard code value
+import pysecret
+from pathlib_mate import Path
+
+here = Path(__file__).parent
+config_file = Path(here, "config.json")
+config = pysecret.JsonSecret.new(secret_file=config_file.abspath)
+# ------------------------------
 
 vpc_stack = VpcStack(
-    project_name="ctf-lib-vpc",
-    stage="dev",
-    vpc_cidr_seed=5,
-    n_az_used=3,
+    project_name=config.get("example-stack.vpc.project_name"),
+    stage=config.get("example-stack.vpc.stage"),
+    vpc_cidr_seed=config.get("example-stack.vpc.vpc_cidr_seed"),
+    n_az_used=config.get("example-stack.vpc.n_az_used"),
+    sg_authorized_ips=config.get("example-stack.vpc.sg_authorized_ips")
 )
 
 tpl = ctf.Template()
-tpl.add(vpc_stack.pack1_vpc)
-tpl.add(vpc_stack.pack2_subnet)
-tpl.add(vpc_stack.pack3_router)
+tpl.add(vpc_stack.rg1_vpc)
+tpl.add(vpc_stack.rg2_subnet)
+tpl.add(vpc_stack.rg3_route)
+tpl.add(vpc_stack.rg4_security_group)
+
+tpl.batch_tagging(ProjectName=vpc_stack.project_name, Stage=vpc_stack.stage)
 
 
 if __name__ == "__main__":
@@ -345,6 +359,6 @@ if __name__ == "__main__":
     env = ctf.Env(boto_ses=boto_ses)
     env.deploy(
         template=tpl,
-        stack_name=f"{vpc_stack.env_name}",
+        stack_name=vpc_stack.stack_name,
         bucket_name=bucket,
     )

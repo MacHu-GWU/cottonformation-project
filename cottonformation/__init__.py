@@ -31,28 +31,31 @@ __github_username__ = "MacHu-GWU"
 __fingerprint_of_license_file = "e5834e80c86c4898dd9f1462a2349cbf"
 
 
-from .core import constant, helpers, exc
-from .core.model import (
-    # data model
-    Parameter, Property, Resource, Output, Export,
-    Rule, Mapping, Condition, Transform,
-    ResourceGroup, Tag,
+try:
+    from .core import constant, helpers, exc
+    from .core.model import (
+        # data model
+        Parameter, Property, Resource, Output, Export,
+        Rule, Mapping, Condition, Transform,
+        ResourceGroup, Tag,
 
-    # intrinsic function
-    Ref, Base64, Cidr, FindInMap, GetAtt, GetAZs,
-    ImportValue, Join, Select, Split, Sub,
+        # intrinsic function
+        Ref, Base64, Cidr, FindInMap, GetAtt, GetAZs,
+        ImportValue, Join, Select, Split, Sub,
 
-    # pseudo parameter
-    AWS_ACCOUNT_ID,
-    AWS_NOTIFICATION_ARNS,
-    AWS_NO_VALUE,
-    AWS_PARTITION,
-    AWS_REGION,
-    AWS_STACK_ID,
-    AWS_STACK_NAME,
-    AWS_URL_SURFIX,
-)
-from .core.config import CtfConfig
-from .core.template import Template
-from .core.stack import Stack
-from .core.env import Env
+        # pseudo parameter
+        AWS_ACCOUNT_ID,
+        AWS_NOTIFICATION_ARNS,
+        AWS_NO_VALUE,
+        AWS_PARTITION,
+        AWS_REGION,
+        AWS_STACK_ID,
+        AWS_STACK_NAME,
+        AWS_URL_SURFIX,
+    )
+    from .core.config import CtfConfig
+    from .core.template import Template
+    from .core.stack import Stack
+    from .core.env import Env
+except ImportError as e:
+    pass

@@ -2,7 +2,7 @@
 
 import boto3
 
-aws_profile = "eq_sanhe"
+aws_profile = "aws_data_lab_sanhe"
 region = "us-east-1"
 boto_ses = boto3.session.Session(profile_name=aws_profile, region_name=region)
-bucket = "eq-sanhe-for-everything"
+bucket = "aws-data-lab-sanhe-for-everything"

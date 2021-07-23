@@ -14,7 +14,6 @@ class JumpboxStack(ctf.Stack):
     stage: str = attr.ib()
     vpc_id: str = attr.ib()
     public_subnet_cidr_block_list: typing.List[str] = attr.ib()
-    sg_authorized_ips: typing.List[str] = attr.ib()
     jump_box_subnet_id: str = attr.ib()
     jump_box_key_name: str = attr.ib()
     private_box_subnet_id: str = attr.ib()
@@ -26,78 +25,17 @@ class JumpboxStack(ctf.Stack):
 
     @property
     def stack_name(self):
-        return self.env_name
+        return f"{self.env_name}-jump-box"
 
     def __attrs_post_init__(self):
-        self.mk_pack1_sg()
-        self.mk_pack2_ec2()
+        self.mk_rg1_jump_box()
+        self.mk_rg2_private_box()
 
-    def mk_pack1_sg(self):
-        self.pack1_sg = ctf.ResourceGroup()
-        self.sg_of_allow_all_traffic_from_authorized_ip = ec2.SecurityGroup(
-            "SecurityGroupOfAllowAllTrafficFromAuthorizedIp",
-            rp_GroupDescription="Allow all traffic from authorized ip usually workspace ip or developer home ip",
-            p_GroupName=f"{self.env_name}/sg/allow-all-traffic-from-authorized-ip",
-            p_VpcId=self.vpc_id,
-            p_SecurityGroupIngress=[
-                ec2.PropSecurityGroupIngress(
-                    rp_IpProtocol="-1",
-                    p_FromPort=-1,
-                    p_ToPort=-1,
-                    p_CidrIp=f"{authorized_ip}/32",
-                )
-                for authorized_ip in self.sg_authorized_ips
-            ],
-            p_Tags=ctf.Tag.make_many(
-                Name=f"{self.env_name}/sg/allow-all-traffic-from-authorized-ip"
-            ),
-        )
-        self.pack1_sg.add(self.sg_of_allow_all_traffic_from_authorized_ip)
-
-        self.output_sg_id_of_allow_all_traffic_from_authorized_ip = ctf.Output(
-            f"{self.sg_of_allow_all_traffic_from_authorized_ip.id}Id",
-            Description="Security Group ID",
-            Value=self.sg_of_allow_all_traffic_from_authorized_ip.rv_GroupId,
-            Export=ctf.Export(
-                f"{self.env_name}-{self.sg_of_allow_all_traffic_from_authorized_ip.id}-id"
-            ),
-            DependsOn=self.sg_of_allow_all_traffic_from_authorized_ip,
-        )
-        self.pack1_sg.add(self.output_sg_id_of_allow_all_traffic_from_authorized_ip)
-
-        self.sg_of_allow_ssh_from_public_subnet = ec2.SecurityGroup(
-            "SecurityGroupOfAllowSSHFromPublicSubnet",
-            rp_GroupDescription="Allow ssh in from public subnet",
-            p_GroupName=f"{self.env_name}/sg/allow-ssh-from-public-subnet",
-            p_VpcId=self.vpc_id,
-            p_SecurityGroupIngress=[
-                ec2.PropSecurityGroupIngress(
-                    rp_IpProtocol="tcp",
-                    p_FromPort=22,
-                    p_ToPort=22,
-                    p_CidrIp=cidr,
-                )
-                for cidr in self.public_subnet_cidr_block_list
-            ],
-            p_Tags=ctf.Tag.make_many(
-                Name=f"{self.env_name}/sg/allow-ssh-from-public-subnet"
-            ),
-        )
-        self.pack1_sg.add(self.sg_of_allow_ssh_from_public_subnet)
-
-        self.output_sg_id_of_allow_ssh_from_public_subnet = ctf.Output(
-            f"{self.sg_of_allow_ssh_from_public_subnet.id}Id",
-            Description="Security Group ID",
-            Value=self.sg_of_allow_ssh_from_public_subnet.rv_GroupId,
-            Export=ctf.Export(
-                f"{self.env_name}-{self.sg_of_allow_ssh_from_public_subnet.id}-id"
-            ),
-            DependsOn=self.sg_of_allow_ssh_from_public_subnet,
-        )
-        self.pack1_sg.add(self.output_sg_id_of_allow_ssh_from_public_subnet)
-
-    def mk_pack2_ec2(self):
-        self.pack2_ec2 = ctf.ResourceGroup()
+    def mk_rg1_jump_box(self):
+        """
+        Create a Jumpbox on Public Subnet for developer to use.
+        """
+        self.rg1_jump_box = ctf.ResourceGroup()
 
         self.iam_role_ec2_jump_host = iam.Role(
             "IamRoleEc2JumpBox",
@@ -106,10 +44,10 @@ class JumpboxStack(ctf.Stack):
             ).build(),
             p_RoleName=f"{self.env_name}-iam-role-for-ec2-jump-box",
             p_ManagedPolicyArns=[
-                ctf.helpers.iam.AwsManagedPolicy.AmazonSSMManagedInstanceCore,
+                ctf.helpers.iam.AwsManagedPolicy.AdministratorAccess,
             ]
         )
-        self.pack2_ec2.add(self.iam_role_ec2_jump_host)
+        self.rg1_jump_box.add(self.iam_role_ec2_jump_host)
 
         self.iam_inst_profile_ec2_jump_box = iam.InstanceProfile(
             "IamInstanceProfileEc2JumpBox",
@@ -118,7 +56,7 @@ class JumpboxStack(ctf.Stack):
             ],
             ra_DependsOn=self.iam_role_ec2_jump_host,
         )
-        self.pack2_ec2.add(self.iam_role_ec2_jump_host)
+        self.rg1_jump_box.add(self.iam_role_ec2_jump_host)
 
         self.ec2_jump_host = ec2.Instance(
             "EC2InstanceJumpbox",
@@ -127,21 +65,17 @@ class JumpboxStack(ctf.Stack):
             p_InstanceType="t2.micro",
             p_SubnetId=self.jump_box_subnet_id,
             p_SecurityGroupIds=[
-                self.sg_of_allow_all_traffic_from_authorized_ip.rv_GroupId
+                ctf.ImportValue(name=vpc_stack.output_sg_id_of_allow_all_traffic_from_authorized_ip.Export.Name),
             ],
             p_BlockDeviceMappings=[
                 ec2.PropInstanceBlockDeviceMapping(
-                    rp_DeviceName="/dev/sdm",
+                    rp_DeviceName="/dev/xvda",
                     p_Ebs=ec2.PropInstanceEbs(
                         p_DeleteOnTermination=True,
-                        p_VolumeSize=100,
+                        p_VolumeSize=256,
                         p_VolumeType="gp2",
                         p_Encrypted=False,
-                    )
-                ),
-                ec2.PropInstanceBlockDeviceMapping(
-                    rp_DeviceName="/dev/sdk",
-                    p_NoDevice=ec2.PropInstanceNoDevice(),
+                    ),
                 ),
             ],
             p_IamInstanceProfile=self.iam_inst_profile_ec2_jump_box.ref(),
@@ -149,12 +83,32 @@ class JumpboxStack(ctf.Stack):
                 Name=f"{self.env_name}-jump-box",
             ),
             ra_DependsOn=[
-                self.sg_of_allow_all_traffic_from_authorized_ip,
                 self.iam_inst_profile_ec2_jump_box,
             ],
         )
-        self.pack2_ec2.add(self.ec2_jump_host)
+        self.rg1_jump_box.add(self.ec2_jump_host)
 
+        self.eip = ec2.EIP(
+            "EIP",
+            p_Domain="vpc",
+            p_Tags=ctf.Tag.make_many(
+                Name=f"{self.env_name}-jump-box",
+            ),
+        )
+        self.rg1_jump_box.add(self.eip)
+        self.eip_asso = ec2.EIPAssociation(
+            "EIPAssociation",
+            p_AllocationId=self.eip.rv_AllocationId,
+            p_InstanceId=self.ec2_jump_host.ref(),
+            ra_DependsOn=[
+                self.eip,
+                self.ec2_jump_host,
+            ]
+        )
+        self.rg1_jump_box.add(self.eip_asso)
+
+    def mk_rg2_private_box(self):
+        self.rg2_private_box = ctf.ResourceGroup()
         self.ec2_private_box = ec2.Instance(
             "EC2InstancePrivateBox",
             p_ImageId="ami-04d29b6f966df1537",
@@ -162,29 +116,24 @@ class JumpboxStack(ctf.Stack):
             p_InstanceType="t2.micro",
             p_SubnetId=self.private_box_subnet_id,
             p_SecurityGroupIds=[
-                self.sg_of_allow_ssh_from_public_subnet.rv_GroupId
+                ctf.ImportValue(name=vpc_stack.output_sg_id_of_allow_ssh_from_public_subnet.Export.Name),
             ],
             p_BlockDeviceMappings=[
                 ec2.PropInstanceBlockDeviceMapping(
-                    rp_DeviceName="/dev/sdm",
+                    rp_DeviceName="/dev/xvda",
                     p_Ebs=ec2.PropInstanceEbs(
                         p_DeleteOnTermination=True,
-                        p_VolumeSize=8,
+                        p_VolumeSize=256,
                         p_VolumeType="gp2",
                         p_Encrypted=False,
-                    )
-                ),
-                ec2.PropInstanceBlockDeviceMapping(
-                    rp_DeviceName="/dev/sdk",
-                    p_NoDevice=ec2.PropInstanceNoDevice(),
+                    ),
                 ),
             ],
             p_Tags=ctf.Tag.make_many(
                 Name=f"{self.env_name}-private-box",
             ),
-            ra_DependsOn=self.sg_of_allow_ssh_from_public_subnet,
         )
-        self.pack2_ec2.add(self.ec2_private_box)
+        self.rg2_private_box.add(self.ec2_private_box)
 
 
 # ------ load secret data ------
@@ -194,27 +143,27 @@ class JumpboxStack(ctf.Stack):
 import pysecret
 from pathlib_mate import Path
 
-repo_dir = Path(__file__).parent.parent.parent
-config_file = Path(repo_dir, "config.json")
-js = pysecret.JsonSecret.new(secret_file=config_file.abspath)
+here = Path(__file__).parent
+config_file = Path(here, "config.json")
+config = pysecret.JsonSecret.new(secret_file=config_file.abspath)
 # ------------------------------
 
-
 jump_box_stack = JumpboxStack(
-    project_name="ctf-lib-jump-box",
-    stage="dev",
+    project_name=config.get("example-stack.jump_box.project_name"),
+    stage=config.get("example-stack.jump_box.stage"),
     vpc_id=vpc_stack.get_output_value(boto_ses, vpc_stack.out_vpc_id.id),
     public_subnet_cidr_block_list=vpc_stack.public_subnet_cidr_block_list,
-    sg_authorized_ips=js.get("example-stack.rds.sg_authorized_ips"),
     jump_box_subnet_id=vpc_stack.get_output_value(boto_ses, vpc_stack.out_list_public_subnet_id[0].id),
-    jump_box_key_name="eq-sanhe-dev",
+    jump_box_key_name=config.get("example-stack.jump_box.key_name"),
     private_box_subnet_id=vpc_stack.get_output_value(boto_ses, vpc_stack.out_list_private_subnet_id[0].id),
-    private_box_key_name="eq-sanhe-dev",
+    private_box_key_name=config.get("example-stack.jump_box.key_name"),
 )
 
 tpl = ctf.Template()
-tpl.add(jump_box_stack.pack1_sg)
-tpl.add(jump_box_stack.pack2_ec2)
+tpl.add(jump_box_stack.rg1_jump_box)
+# tpl.add(jump_box_stack.rg2_private_box)
+
+tpl.batch_tagging(ProjectName=jump_box_stack.project_name, Stage=jump_box_stack.stage)
 
 
 if __name__ == "__main__":

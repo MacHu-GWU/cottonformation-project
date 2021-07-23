@@ -129,6 +129,31 @@ def create_alfred_cloudformation_data_file():
     p = Path.home().append_parts(".alfred-fts", "cloudformation.json")
     p.write_text(json.dumps(alfred_data, indent=4))
 
+    alfred_setting_data = {
+        "columns": [
+            {
+                "name": "title",
+                "ngram_maxsize": 10,
+                "ngram_minsize": 2,
+                "type_is_ngram": True
+            },
+            {
+                "name": "subtitle",
+                "type_is_store": True
+            },
+            {
+                "name": "arg",
+                "type_is_store": True
+            },
+        ],
+        "title_field": "{title}",
+        "subtitle_field": "{subtitle}",
+        "arg_field": "{arg}",
+        "autocomplete_field": "{title}"
+    }
+    p = Path.home().append_parts(".alfred-fts", "cloudformation-setting.json")
+    p.write_text(json.dumps(alfred_setting_data, indent=4))
+
 
 if __name__ == "__main__":
     # inspect_resource_type()

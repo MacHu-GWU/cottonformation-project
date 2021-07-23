@@ -16,20 +16,36 @@ Ref:
 - For an Ubuntu AMI, the user name is ubuntu.
 """
 
+from __future__ import print_function
 import boto3
+from pprint import pprint
 
 #------------------------- File in value here -------------------------
-aws_profile = "eq_sanhe"
+aws_profile = "aws_data_lab_sanhe"
 region = "us-east-1"
-ec2_name = "ctf-lib-jump-box-dev-jump-box"
-ec2_pem = "~/ec2-pem/eq-sanhe-dev.pem"
+ec2_name = "sanhe-infra-dev-jump-box"
+ec2_pem = "~/ec2-pem/aws-data-lab-sanhe-dev.pem"
 #----------------------------------------------------------------------
 
 boto_ses = boto3.session.Session(profile_name=aws_profile, region_name=region)
 ec2_client = boto_ses.client("ec2")
 
 res = ec2_client.describe_instances(Filters=[dict(Name="tag:Name", Values=[ec2_name,])])
-inst_dict = res["Reservations"][0]["Instances"][0]
+
+inst_dict_list = list()
+for res_dict in res["Reservations"]:
+    for inst_dict in res_dict["Instances"]:
+        inst_dict_list.append(inst_dict)
+
+inst_dict = None
+for _inst_dict in inst_dict_list:
+    if _inst_dict["State"]["Name"] == "running":
+        inst_dict = _inst_dict
+
+if inst_dict is None:
+    print("there's no running EC2 named '{}' in aws region {}".format(ec2_name, region))
+    exit(1)
+
 public_ip = inst_dict["PublicIpAddress"]
 image_id = inst_dict["ImageId"]
 

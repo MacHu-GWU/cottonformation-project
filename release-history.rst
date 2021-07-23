@@ -23,6 +23,8 @@ Release and Version History
 
 **Bugfixes**
 
+- fix a bug that remove a resource that in a resource group will also remove the entire resource group.
+
 **Miscellaneous**
 
 
