@@ -30,6 +30,8 @@ class JumpboxStack(ctf.Stack):
     def __attrs_post_init__(self):
         self.mk_rg1_jump_box()
         self.mk_rg2_private_box()
+        self.mk_rg3_redhat_box()
+        self.mk_rg4_ubuntu_box()
 
     def mk_rg1_jump_box(self):
         """
@@ -60,7 +62,7 @@ class JumpboxStack(ctf.Stack):
 
         self.ec2_jump_host = ec2.Instance(
             "EC2InstanceJumpbox",
-            p_ImageId="ami-04d29b6f966df1537",
+            p_ImageId="ami-04d29b6f966df1537", # amz linux 2 hvm
             p_KeyName=self.jump_box_key_name,
             p_InstanceType="t2.micro",
             p_SubnetId=self.jump_box_subnet_id,
@@ -135,6 +137,64 @@ class JumpboxStack(ctf.Stack):
         )
         self.rg2_private_box.add(self.ec2_private_box)
 
+    def mk_rg3_redhat_box(self):
+        self.rg3_redhat = ctf.ResourceGroup()
+        self.ec2_redhat_box = ec2.Instance(
+            "EC2InstanceMacBox",
+            p_ImageId="ami-af3577fe5e3532", # Redhat 8 hvm
+            p_KeyName=self.jump_box_key_name,
+            p_InstanceType="t2.micro",
+            p_SubnetId=self.jump_box_subnet_id,
+            p_SecurityGroupIds=[
+                ctf.ImportValue(name=vpc_stack.output_sg_id_of_allow_all_traffic_from_authorized_ip.Export.Name),
+            ],
+            p_BlockDeviceMappings=[
+                ec2.PropInstanceBlockDeviceMapping(
+                    rp_DeviceName="/dev/xvda",
+                    p_Ebs=ec2.PropInstanceEbs(
+                        p_DeleteOnTermination=True,
+                        p_VolumeSize=30,
+                        p_VolumeType="gp2",
+                        p_Encrypted=False,
+                    ),
+                ),
+            ],
+            p_IamInstanceProfile=self.iam_inst_profile_ec2_jump_box.ref(),
+            p_Tags=ctf.Tag.make_many(
+                Name=f"{self.env_name}-redhat-box",
+            ),
+        )
+        self.rg3_redhat.add(self.ec2_redhat_box)
+
+    def mk_rg4_ubuntu_box(self):
+        self.rg4_ubuntu_box = ctf.ResourceGroup()
+        self.ec2_ubuntu_box = ec2.Instance(
+            "EC2InstanceUbuntuBox",
+            p_ImageId="ami-0747bdcabd34c712a", # Ubuntu 18.04 LTS hvm
+            p_KeyName=self.jump_box_key_name,
+            p_InstanceType="t2.micro",
+            p_SubnetId=self.jump_box_subnet_id,
+            p_SecurityGroupIds=[
+                ctf.ImportValue(name=vpc_stack.output_sg_id_of_allow_all_traffic_from_authorized_ip.Export.Name),
+            ],
+            p_BlockDeviceMappings=[
+                ec2.PropInstanceBlockDeviceMapping(
+                    rp_DeviceName="/dev/xvda",
+                    p_Ebs=ec2.PropInstanceEbs(
+                        p_DeleteOnTermination=True,
+                        p_VolumeSize=30,
+                        p_VolumeType="gp2",
+                        p_Encrypted=False,
+                    ),
+                ),
+            ],
+            p_IamInstanceProfile=self.iam_inst_profile_ec2_jump_box.ref(),
+            p_Tags=ctf.Tag.make_many(
+                Name=f"{self.env_name}-ubuntu-box",
+            ),
+        )
+        self.rg4_ubuntu_box.add(self.ec2_ubuntu_box)
+
 
 # ------ load secret data ------
 # below is a code snippet that load secret data
@@ -162,6 +222,8 @@ jump_box_stack = JumpboxStack(
 tpl = ctf.Template()
 tpl.add(jump_box_stack.rg1_jump_box)
 # tpl.add(jump_box_stack.rg2_private_box)
+# tpl.add(jump_box_stack.rg3_redhat)
+# tpl.add(jump_box_stack.rg4_ubuntu_box)
 
 tpl.batch_tagging(ProjectName=jump_box_stack.project_name, Stage=jump_box_stack.stage)
 
