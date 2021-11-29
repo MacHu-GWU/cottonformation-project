@@ -83,6 +83,26 @@ class PropDomainNodeToNodeEncryptionOptions(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-nodetonodeencryptionoptions.html#cfn-elasticsearch-domain-nodetonodeencryptionoptions-enabled"""
 
 @attr.s
+class PropDomainColdStorageOptions(Property):
+    """
+    AWS Object Type = "AWS::Elasticsearch::Domain.ColdStorageOptions"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-coldstorageoptions.html
+
+    Property Document:
+    
+    - ``p_Enabled``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-coldstorageoptions.html#cfn-elasticsearch-domain-coldstorageoptions-enabled
+    """
+    AWS_OBJECT_TYPE = "AWS::Elasticsearch::Domain.ColdStorageOptions"
+    
+    p_Enabled: bool = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(bool)),
+        metadata={AttrMeta.PROPERTY_NAME: "Enabled"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-coldstorageoptions.html#cfn-elasticsearch-domain-coldstorageoptions-enabled"""
+
+@attr.s
 class PropDomainZoneAwarenessConfig(Property):
     """
     AWS Object Type = "AWS::Elasticsearch::Domain.ZoneAwarenessConfig"
@@ -328,6 +348,7 @@ class PropDomainElasticsearchClusterConfig(Property):
 
     Property Document:
     
+    - ``p_ColdStorageOptions``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-elasticsearchclusterconfig.html#cfn-elasticsearch-domain-elasticsearchclusterconfig-coldstorageoptions
     - ``p_DedicatedMasterCount``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-elasticsearchclusterconfig.html#cfn-elasticsearch-domain-elasticseachclusterconfig-dedicatedmastercount
     - ``p_DedicatedMasterEnabled``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-elasticsearchclusterconfig.html#cfn-elasticsearch-domain-elasticseachclusterconfig-dedicatedmasterenabled
     - ``p_DedicatedMasterType``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-elasticsearchclusterconfig.html#cfn-elasticsearch-domain-elasticseachclusterconfig-dedicatedmastertype
@@ -341,6 +362,13 @@ class PropDomainElasticsearchClusterConfig(Property):
     """
     AWS_OBJECT_TYPE = "AWS::Elasticsearch::Domain.ElasticsearchClusterConfig"
     
+    p_ColdStorageOptions: typing.Union['PropDomainColdStorageOptions', dict] = attr.ib(
+        default=None,
+        converter=PropDomainColdStorageOptions.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDomainColdStorageOptions)),
+        metadata={AttrMeta.PROPERTY_NAME: "ColdStorageOptions"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticsearch-domain-elasticsearchclusterconfig.html#cfn-elasticsearch-domain-elasticsearchclusterconfig-coldstorageoptions"""
     p_DedicatedMasterCount: int = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(int)),

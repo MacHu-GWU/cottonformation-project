@@ -69,27 +69,6 @@ class PropReplicationConfigurationReplicationDestination(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-replicationconfiguration-replicationdestination.html#cfn-ecr-replicationconfiguration-replicationdestination-registryid"""
 
 @attr.s
-class PropReplicationConfigurationReplicationRule(Property):
-    """
-    AWS Object Type = "AWS::ECR::ReplicationConfiguration.ReplicationRule"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-replicationconfiguration-replicationrule.html
-
-    Property Document:
-    
-    - ``rp_Destinations``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-replicationconfiguration-replicationrule.html#cfn-ecr-replicationconfiguration-replicationrule-destinations
-    """
-    AWS_OBJECT_TYPE = "AWS::ECR::ReplicationConfiguration.ReplicationRule"
-    
-    rp_Destinations: typing.List[typing.Union['PropReplicationConfigurationReplicationDestination', dict]] = attr.ib(
-        default=None,
-        converter=PropReplicationConfigurationReplicationDestination.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropReplicationConfigurationReplicationDestination), iterable_validator=attr.validators.instance_of(list)),
-        metadata={AttrMeta.PROPERTY_NAME: "Destinations"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-replicationconfiguration-replicationrule.html#cfn-ecr-replicationconfiguration-replicationrule-destinations"""
-
-@attr.s
 class PropRepositoryImageScanningConfiguration(Property):
     """
     AWS Object Type = "AWS::ECR::Repository.ImageScanningConfiguration"
@@ -108,6 +87,33 @@ class PropRepositoryImageScanningConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "ScanOnPush"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-repository-imagescanningconfiguration.html#cfn-ecr-repository-imagescanningconfiguration-scanonpush"""
+
+@attr.s
+class PropReplicationConfigurationRepositoryFilter(Property):
+    """
+    AWS Object Type = "AWS::ECR::ReplicationConfiguration.RepositoryFilter"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-replicationconfiguration-repositoryfilter.html
+
+    Property Document:
+    
+    - ``rp_Filter``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-replicationconfiguration-repositoryfilter.html#cfn-ecr-replicationconfiguration-repositoryfilter-filter
+    - ``rp_FilterType``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-replicationconfiguration-repositoryfilter.html#cfn-ecr-replicationconfiguration-repositoryfilter-filtertype
+    """
+    AWS_OBJECT_TYPE = "AWS::ECR::ReplicationConfiguration.RepositoryFilter"
+    
+    rp_Filter: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "Filter"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-replicationconfiguration-repositoryfilter.html#cfn-ecr-replicationconfiguration-repositoryfilter-filter"""
+    rp_FilterType: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "FilterType"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-replicationconfiguration-repositoryfilter.html#cfn-ecr-replicationconfiguration-repositoryfilter-filtertype"""
 
 @attr.s
 class PropRepositoryEncryptionConfiguration(Property):
@@ -135,6 +141,35 @@ class PropRepositoryEncryptionConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "KmsKey"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-repository-encryptionconfiguration.html#cfn-ecr-repository-encryptionconfiguration-kmskey"""
+
+@attr.s
+class PropReplicationConfigurationReplicationRule(Property):
+    """
+    AWS Object Type = "AWS::ECR::ReplicationConfiguration.ReplicationRule"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-replicationconfiguration-replicationrule.html
+
+    Property Document:
+    
+    - ``rp_Destinations``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-replicationconfiguration-replicationrule.html#cfn-ecr-replicationconfiguration-replicationrule-destinations
+    - ``p_RepositoryFilters``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-replicationconfiguration-replicationrule.html#cfn-ecr-replicationconfiguration-replicationrule-repositoryfilters
+    """
+    AWS_OBJECT_TYPE = "AWS::ECR::ReplicationConfiguration.ReplicationRule"
+    
+    rp_Destinations: typing.List[typing.Union['PropReplicationConfigurationReplicationDestination', dict]] = attr.ib(
+        default=None,
+        converter=PropReplicationConfigurationReplicationDestination.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropReplicationConfigurationReplicationDestination), iterable_validator=attr.validators.instance_of(list)),
+        metadata={AttrMeta.PROPERTY_NAME: "Destinations"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-replicationconfiguration-replicationrule.html#cfn-ecr-replicationconfiguration-replicationrule-destinations"""
+    p_RepositoryFilters: typing.List[typing.Union['PropReplicationConfigurationRepositoryFilter', dict]] = attr.ib(
+        default=None,
+        converter=PropReplicationConfigurationRepositoryFilter.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropReplicationConfigurationRepositoryFilter), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "RepositoryFilters"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-replicationconfiguration-replicationrule.html#cfn-ecr-replicationconfiguration-replicationrule-repositoryfilters"""
 
 @attr.s
 class PropReplicationConfigurationReplicationConfiguration(Property):
@@ -269,6 +304,34 @@ class ReplicationConfiguration(Resource):
     
 
 @attr.s
+class RegistryPolicy(Resource):
+    """
+    AWS Object Type = "AWS::ECR::RegistryPolicy"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-registrypolicy.html
+
+    Property Document:
+    
+    - ``rp_PolicyText``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-registrypolicy.html#cfn-ecr-registrypolicy-policytext
+    """
+    AWS_OBJECT_TYPE = "AWS::ECR::RegistryPolicy"
+
+    
+    rp_PolicyText: dict = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(dict),
+        metadata={AttrMeta.PROPERTY_NAME: "PolicyText"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-registrypolicy.html#cfn-ecr-registrypolicy-policytext"""
+
+    
+    @property
+    def rv_RegistryId(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-registrypolicy.html#aws-resource-ecr-registrypolicy-return-values"""
+        return GetAtt(resource=self, attr_name="RegistryId")
+    
+
+@attr.s
 class PublicRepository(Resource):
     """
     AWS Object Type = "AWS::ECR::PublicRepository"
@@ -316,32 +379,4 @@ class PublicRepository(Resource):
     def rv_Arn(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-publicrepository.html#aws-resource-ecr-publicrepository-return-values"""
         return GetAtt(resource=self, attr_name="Arn")
-    
-
-@attr.s
-class RegistryPolicy(Resource):
-    """
-    AWS Object Type = "AWS::ECR::RegistryPolicy"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-registrypolicy.html
-
-    Property Document:
-    
-    - ``rp_PolicyText``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-registrypolicy.html#cfn-ecr-registrypolicy-policytext
-    """
-    AWS_OBJECT_TYPE = "AWS::ECR::RegistryPolicy"
-
-    
-    rp_PolicyText: dict = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(dict),
-        metadata={AttrMeta.PROPERTY_NAME: "PolicyText"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-registrypolicy.html#cfn-ecr-registrypolicy-policytext"""
-
-    
-    @property
-    def rv_RegistryId(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-registrypolicy.html#aws-resource-ecr-registrypolicy-return-values"""
-        return GetAtt(resource=self, attr_name="RegistryId")
     

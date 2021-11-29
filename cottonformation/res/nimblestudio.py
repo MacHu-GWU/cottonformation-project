@@ -406,9 +406,9 @@ class StreamingImage(Resource):
 
     
     @property
-    def rv_StreamingImageId(self) -> GetAtt:
+    def rv_EulaIds(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-nimblestudio-streamingimage.html#aws-resource-nimblestudio-streamingimage-return-values"""
-        return GetAtt(resource=self, attr_name="StreamingImageId")
+        return GetAtt(resource=self, attr_name="EulaIds")
     
     @property
     def rv_Owner(self) -> GetAtt:
@@ -416,14 +416,14 @@ class StreamingImage(Resource):
         return GetAtt(resource=self, attr_name="Owner")
     
     @property
-    def rv_EulaIds(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-nimblestudio-streamingimage.html#aws-resource-nimblestudio-streamingimage-return-values"""
-        return GetAtt(resource=self, attr_name="EulaIds")
-    
-    @property
     def rv_Platform(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-nimblestudio-streamingimage.html#aws-resource-nimblestudio-streamingimage-return-values"""
         return GetAtt(resource=self, attr_name="Platform")
+    
+    @property
+    def rv_StreamingImageId(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-nimblestudio-streamingimage.html#aws-resource-nimblestudio-streamingimage-return-values"""
+        return GetAtt(resource=self, attr_name="StreamingImageId")
     
 
 @attr.s

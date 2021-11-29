@@ -15,6 +15,33 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
+class PropDeploymentConfigTimeBasedCanary(Property):
+    """
+    AWS Object Type = "AWS::CodeDeploy::DeploymentConfig.TimeBasedCanary"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentconfig-timebasedcanary.html
+
+    Property Document:
+    
+    - ``rp_CanaryInterval``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentconfig-timebasedcanary.html#cfn-properties-codedeploy-deploymentconfig-trafficroutingconfig-timebasedcanary-canaryinterval
+    - ``rp_CanaryPercentage``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentconfig-timebasedcanary.html#cfn-properties-codedeploy-deploymentconfig-trafficroutingconfig-timebasedcanary-canarypercentage
+    """
+    AWS_OBJECT_TYPE = "AWS::CodeDeploy::DeploymentConfig.TimeBasedCanary"
+    
+    rp_CanaryInterval: int = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(int),
+        metadata={AttrMeta.PROPERTY_NAME: "CanaryInterval"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentconfig-timebasedcanary.html#cfn-properties-codedeploy-deploymentconfig-trafficroutingconfig-timebasedcanary-canaryinterval"""
+    rp_CanaryPercentage: int = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(int),
+        metadata={AttrMeta.PROPERTY_NAME: "CanaryPercentage"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentconfig-timebasedcanary.html#cfn-properties-codedeploy-deploymentconfig-trafficroutingconfig-timebasedcanary-canarypercentage"""
+
+@attr.s
 class PropDeploymentGroupTargetGroupInfo(Property):
     """
     AWS Object Type = "AWS::CodeDeploy::DeploymentGroup.TargetGroupInfo"
@@ -130,6 +157,33 @@ class PropDeploymentGroupTriggerConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-triggerconfig.html#cfn-codedeploy-deploymentgroup-triggerconfig-triggertargetarn"""
 
 @attr.s
+class PropDeploymentGroupDeploymentReadyOption(Property):
+    """
+    AWS Object Type = "AWS::CodeDeploy::DeploymentGroup.DeploymentReadyOption"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deploymentreadyoption.html
+
+    Property Document:
+    
+    - ``p_ActionOnTimeout``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deploymentreadyoption.html#cfn-codedeploy-deploymentgroup-bluegreendeploymentconfiguration-deploymentreadyoption-actionontimeout
+    - ``p_WaitTimeInMinutes``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deploymentreadyoption.html#cfn-codedeploy-deploymentgroup-bluegreendeploymentconfiguration-deploymentreadyoption-waittimeinminutes
+    """
+    AWS_OBJECT_TYPE = "AWS::CodeDeploy::DeploymentGroup.DeploymentReadyOption"
+    
+    p_ActionOnTimeout: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "ActionOnTimeout"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deploymentreadyoption.html#cfn-codedeploy-deploymentgroup-bluegreendeploymentconfiguration-deploymentreadyoption-actionontimeout"""
+    p_WaitTimeInMinutes: int = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(int)),
+        metadata={AttrMeta.PROPERTY_NAME: "WaitTimeInMinutes"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deploymentreadyoption.html#cfn-codedeploy-deploymentgroup-bluegreendeploymentconfiguration-deploymentreadyoption-waittimeinminutes"""
+
+@attr.s
 class PropDeploymentConfigMinimumHealthyHosts(Property):
     """
     AWS Object Type = "AWS::CodeDeploy::DeploymentConfig.MinimumHealthyHosts"
@@ -232,6 +286,33 @@ class PropDeploymentGroupS3Location(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deployment-revision-s3location.html#cfn-properties-codedeploy-deploymentgroup-deployment-revision-s3location-value"""
 
 @attr.s
+class PropDeploymentGroupBlueInstanceTerminationOption(Property):
+    """
+    AWS Object Type = "AWS::CodeDeploy::DeploymentGroup.BlueInstanceTerminationOption"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-blueinstanceterminationoption.html
+
+    Property Document:
+    
+    - ``p_Action``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-blueinstanceterminationoption.html#cfn-codedeploy-deploymentgroup-bluegreendeploymentconfiguration-blueinstanceterminationoption-action
+    - ``p_TerminationWaitTimeInMinutes``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-blueinstanceterminationoption.html#cfn-codedeploy-deploymentgroup-bluegreendeploymentconfiguration-blueinstanceterminationoption-terminationwaittimeinminutes
+    """
+    AWS_OBJECT_TYPE = "AWS::CodeDeploy::DeploymentGroup.BlueInstanceTerminationOption"
+    
+    p_Action: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "Action"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-blueinstanceterminationoption.html#cfn-codedeploy-deploymentgroup-bluegreendeploymentconfiguration-blueinstanceterminationoption-action"""
+    p_TerminationWaitTimeInMinutes: int = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(int)),
+        metadata={AttrMeta.PROPERTY_NAME: "TerminationWaitTimeInMinutes"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-blueinstanceterminationoption.html#cfn-codedeploy-deploymentgroup-bluegreendeploymentconfiguration-blueinstanceterminationoption-terminationwaittimeinminutes"""
+
+@attr.s
 class PropDeploymentGroupTagFilter(Property):
     """
     AWS Object Type = "AWS::CodeDeploy::DeploymentGroup.TagFilter"
@@ -331,6 +412,80 @@ class PropDeploymentGroupAlarm(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Name"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-alarm.html#cfn-codedeploy-deploymentgroup-alarm-name"""
+
+@attr.s
+class PropDeploymentConfigTimeBasedLinear(Property):
+    """
+    AWS Object Type = "AWS::CodeDeploy::DeploymentConfig.TimeBasedLinear"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentconfig-timebasedlinear.html
+
+    Property Document:
+    
+    - ``rp_LinearInterval``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentconfig-timebasedlinear.html#cfn-properties-codedeploy-deploymentconfig-trafficroutingconfig-timebasedlinear-linearinterval
+    - ``rp_LinearPercentage``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentconfig-timebasedlinear.html#cfn-properties-codedeploy-deploymentconfig-trafficroutingconfig-timebasedlinear-linearpercentage
+    """
+    AWS_OBJECT_TYPE = "AWS::CodeDeploy::DeploymentConfig.TimeBasedLinear"
+    
+    rp_LinearInterval: int = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(int),
+        metadata={AttrMeta.PROPERTY_NAME: "LinearInterval"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentconfig-timebasedlinear.html#cfn-properties-codedeploy-deploymentconfig-trafficroutingconfig-timebasedlinear-linearinterval"""
+    rp_LinearPercentage: int = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(int),
+        metadata={AttrMeta.PROPERTY_NAME: "LinearPercentage"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentconfig-timebasedlinear.html#cfn-properties-codedeploy-deploymentconfig-trafficroutingconfig-timebasedlinear-linearpercentage"""
+
+@attr.s
+class PropDeploymentGroupGreenFleetProvisioningOption(Property):
+    """
+    AWS Object Type = "AWS::CodeDeploy::DeploymentGroup.GreenFleetProvisioningOption"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-greenfleetprovisioningoption.html
+
+    Property Document:
+    
+    - ``p_Action``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-greenfleetprovisioningoption.html#cfn-codedeploy-deploymentgroup-bluegreendeploymentconfiguration-greenfleetprovisioningoption-action
+    """
+    AWS_OBJECT_TYPE = "AWS::CodeDeploy::DeploymentGroup.GreenFleetProvisioningOption"
+    
+    p_Action: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "Action"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-greenfleetprovisioningoption.html#cfn-codedeploy-deploymentgroup-bluegreendeploymentconfiguration-greenfleetprovisioningoption-action"""
+
+@attr.s
+class PropDeploymentGroupECSService(Property):
+    """
+    AWS Object Type = "AWS::CodeDeploy::DeploymentGroup.ECSService"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-ecsservice.html
+
+    Property Document:
+    
+    - ``rp_ClusterName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-ecsservice.html#cfn-codedeploy-deploymentgroup-ecsservice-clustername
+    - ``rp_ServiceName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-ecsservice.html#cfn-codedeploy-deploymentgroup-ecsservice-servicename
+    """
+    AWS_OBJECT_TYPE = "AWS::CodeDeploy::DeploymentGroup.ECSService"
+    
+    rp_ClusterName: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "ClusterName"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-ecsservice.html#cfn-codedeploy-deploymentgroup-ecsservice-clustername"""
+    rp_ServiceName: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "ServiceName"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-ecsservice.html#cfn-codedeploy-deploymentgroup-ecsservice-servicename"""
 
 @attr.s
 class PropDeploymentGroupEC2TagSetListObject(Property):
@@ -517,6 +672,79 @@ class PropDeploymentGroupAlarmConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-alarmconfiguration.html#cfn-codedeploy-deploymentgroup-alarmconfiguration-ignorepollalarmfailure"""
 
 @attr.s
+class PropDeploymentGroupBlueGreenDeploymentConfiguration(Property):
+    """
+    AWS Object Type = "AWS::CodeDeploy::DeploymentGroup.BlueGreenDeploymentConfiguration"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-bluegreendeploymentconfiguration.html
+
+    Property Document:
+    
+    - ``p_DeploymentReadyOption``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-bluegreendeploymentconfiguration.html#cfn-codedeploy-deploymentgroup-bluegreendeploymentconfiguration-deploymentreadyoption
+    - ``p_GreenFleetProvisioningOption``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-bluegreendeploymentconfiguration.html#cfn-codedeploy-deploymentgroup-bluegreendeploymentconfiguration-greenfleetprovisioningoption
+    - ``p_TerminateBlueInstancesOnDeploymentSuccess``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-bluegreendeploymentconfiguration.html#cfn-codedeploy-deploymentgroup-bluegreendeploymentconfiguration-terminateblueinstancesondeploymentsuccess
+    """
+    AWS_OBJECT_TYPE = "AWS::CodeDeploy::DeploymentGroup.BlueGreenDeploymentConfiguration"
+    
+    p_DeploymentReadyOption: typing.Union['PropDeploymentGroupDeploymentReadyOption', dict] = attr.ib(
+        default=None,
+        converter=PropDeploymentGroupDeploymentReadyOption.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDeploymentGroupDeploymentReadyOption)),
+        metadata={AttrMeta.PROPERTY_NAME: "DeploymentReadyOption"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-bluegreendeploymentconfiguration.html#cfn-codedeploy-deploymentgroup-bluegreendeploymentconfiguration-deploymentreadyoption"""
+    p_GreenFleetProvisioningOption: typing.Union['PropDeploymentGroupGreenFleetProvisioningOption', dict] = attr.ib(
+        default=None,
+        converter=PropDeploymentGroupGreenFleetProvisioningOption.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDeploymentGroupGreenFleetProvisioningOption)),
+        metadata={AttrMeta.PROPERTY_NAME: "GreenFleetProvisioningOption"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-bluegreendeploymentconfiguration.html#cfn-codedeploy-deploymentgroup-bluegreendeploymentconfiguration-greenfleetprovisioningoption"""
+    p_TerminateBlueInstancesOnDeploymentSuccess: typing.Union['PropDeploymentGroupBlueInstanceTerminationOption', dict] = attr.ib(
+        default=None,
+        converter=PropDeploymentGroupBlueInstanceTerminationOption.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDeploymentGroupBlueInstanceTerminationOption)),
+        metadata={AttrMeta.PROPERTY_NAME: "TerminateBlueInstancesOnDeploymentSuccess"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-bluegreendeploymentconfiguration.html#cfn-codedeploy-deploymentgroup-bluegreendeploymentconfiguration-terminateblueinstancesondeploymentsuccess"""
+
+@attr.s
+class PropDeploymentConfigTrafficRoutingConfig(Property):
+    """
+    AWS Object Type = "AWS::CodeDeploy::DeploymentConfig.TrafficRoutingConfig"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentconfig-trafficroutingconfig.html
+
+    Property Document:
+    
+    - ``rp_Type``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentconfig-trafficroutingconfig.html#cfn-properties-codedeploy-deploymentconfig-trafficroutingconfig-type
+    - ``p_TimeBasedCanary``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentconfig-trafficroutingconfig.html#cfn-properties-codedeploy-deploymentconfig-trafficroutingconfig-timebasedcanary
+    - ``p_TimeBasedLinear``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentconfig-trafficroutingconfig.html#cfn-properties-codedeploy-deploymentconfig-trafficroutingconfig-timebasedlinear
+    """
+    AWS_OBJECT_TYPE = "AWS::CodeDeploy::DeploymentConfig.TrafficRoutingConfig"
+    
+    rp_Type: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "Type"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentconfig-trafficroutingconfig.html#cfn-properties-codedeploy-deploymentconfig-trafficroutingconfig-type"""
+    p_TimeBasedCanary: typing.Union['PropDeploymentConfigTimeBasedCanary', dict] = attr.ib(
+        default=None,
+        converter=PropDeploymentConfigTimeBasedCanary.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDeploymentConfigTimeBasedCanary)),
+        metadata={AttrMeta.PROPERTY_NAME: "TimeBasedCanary"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentconfig-trafficroutingconfig.html#cfn-properties-codedeploy-deploymentconfig-trafficroutingconfig-timebasedcanary"""
+    p_TimeBasedLinear: typing.Union['PropDeploymentConfigTimeBasedLinear', dict] = attr.ib(
+        default=None,
+        converter=PropDeploymentConfigTimeBasedLinear.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDeploymentConfigTimeBasedLinear)),
+        metadata={AttrMeta.PROPERTY_NAME: "TimeBasedLinear"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentconfig-trafficroutingconfig.html#cfn-properties-codedeploy-deploymentconfig-trafficroutingconfig-timebasedlinear"""
+
+@attr.s
 class PropDeploymentGroupDeployment(Property):
     """
     AWS Object Type = "AWS::CodeDeploy::DeploymentGroup.Deployment"
@@ -563,12 +791,20 @@ class DeploymentConfig(Resource):
 
     Property Document:
     
+    - ``p_ComputePlatform``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentconfig.html#cfn-codedeploy-deploymentconfig-computeplatform
     - ``p_DeploymentConfigName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentconfig.html#cfn-codedeploy-deploymentconfig-deploymentconfigname
     - ``p_MinimumHealthyHosts``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentconfig.html#cfn-codedeploy-deploymentconfig-minimumhealthyhosts
+    - ``p_TrafficRoutingConfig``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentconfig.html#cfn-codedeploy-deploymentconfig-trafficroutingconfig
     """
     AWS_OBJECT_TYPE = "AWS::CodeDeploy::DeploymentConfig"
 
     
+    p_ComputePlatform: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "ComputePlatform"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentconfig.html#cfn-codedeploy-deploymentconfig-computeplatform"""
     p_DeploymentConfigName: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
@@ -582,6 +818,13 @@ class DeploymentConfig(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "MinimumHealthyHosts"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentconfig.html#cfn-codedeploy-deploymentconfig-minimumhealthyhosts"""
+    p_TrafficRoutingConfig: typing.Union['PropDeploymentConfigTrafficRoutingConfig', dict] = attr.ib(
+        default=None,
+        converter=PropDeploymentConfigTrafficRoutingConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDeploymentConfigTrafficRoutingConfig)),
+        metadata={AttrMeta.PROPERTY_NAME: "TrafficRoutingConfig"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentconfig.html#cfn-codedeploy-deploymentconfig-trafficroutingconfig"""
 
     
 
@@ -596,6 +839,7 @@ class Application(Resource):
     
     - ``p_ApplicationName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-application.html#cfn-codedeploy-application-applicationname
     - ``p_ComputePlatform``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-application.html#cfn-codedeploy-application-computeplatform
+    - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-application.html#cfn-codedeploy-application-tags
     """
     AWS_OBJECT_TYPE = "AWS::CodeDeploy::Application"
 
@@ -612,6 +856,13 @@ class Application(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "ComputePlatform"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-application.html#cfn-codedeploy-application-computeplatform"""
+    p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
+        default=None,
+        converter=Tag.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-application.html#cfn-codedeploy-application-tags"""
 
     
 
@@ -629,10 +880,12 @@ class DeploymentGroup(Resource):
     - ``p_AlarmConfiguration``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-alarmconfiguration
     - ``p_AutoRollbackConfiguration``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-autorollbackconfiguration
     - ``p_AutoScalingGroups``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-autoscalinggroups
+    - ``p_BlueGreenDeploymentConfiguration``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-bluegreendeploymentconfiguration
     - ``p_Deployment``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-deployment
     - ``p_DeploymentConfigName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-deploymentconfigname
     - ``p_DeploymentGroupName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-deploymentgroupname
     - ``p_DeploymentStyle``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-deploymentstyle
+    - ``p_ECSServices``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-ecsservices
     - ``p_Ec2TagFilters``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-ec2tagfilters
     - ``p_Ec2TagSet``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-ec2tagset
     - ``p_LoadBalancerInfo``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-loadbalancerinfo
@@ -675,6 +928,13 @@ class DeploymentGroup(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "AutoScalingGroups"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-autoscalinggroups"""
+    p_BlueGreenDeploymentConfiguration: typing.Union['PropDeploymentGroupBlueGreenDeploymentConfiguration', dict] = attr.ib(
+        default=None,
+        converter=PropDeploymentGroupBlueGreenDeploymentConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDeploymentGroupBlueGreenDeploymentConfiguration)),
+        metadata={AttrMeta.PROPERTY_NAME: "BlueGreenDeploymentConfiguration"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-bluegreendeploymentconfiguration"""
     p_Deployment: typing.Union['PropDeploymentGroupDeployment', dict] = attr.ib(
         default=None,
         converter=PropDeploymentGroupDeployment.from_dict,
@@ -701,6 +961,13 @@ class DeploymentGroup(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "DeploymentStyle"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-deploymentstyle"""
+    p_ECSServices: typing.List[typing.Union['PropDeploymentGroupECSService', dict]] = attr.ib(
+        default=None,
+        converter=PropDeploymentGroupECSService.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDeploymentGroupECSService), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "ECSServices"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-ecsservices"""
     p_Ec2TagFilters: typing.List[typing.Union['PropDeploymentGroupEC2TagFilter', dict]] = attr.ib(
         default=None,
         converter=PropDeploymentGroupEC2TagFilter.from_list,

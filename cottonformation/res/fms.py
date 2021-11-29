@@ -147,6 +147,7 @@ class Policy(Resource):
     - ``p_IncludeMap``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fms-policy.html#cfn-fms-policy-includemap
     - ``p_ResourceTags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fms-policy.html#cfn-fms-policy-resourcetags
     - ``p_ResourceTypeList``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fms-policy.html#cfn-fms-policy-resourcetypelist
+    - ``p_ResourcesCleanUp``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fms-policy.html#cfn-fms-policy-resourcescleanup
     - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fms-policy.html#cfn-fms-policy-tags
     """
     AWS_OBJECT_TYPE = "AWS::FMS::Policy"
@@ -215,6 +216,12 @@ class Policy(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "ResourceTypeList"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fms-policy.html#cfn-fms-policy-resourcetypelist"""
+    p_ResourcesCleanUp: bool = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(bool)),
+        metadata={AttrMeta.PROPERTY_NAME: "ResourcesCleanUp"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fms-policy.html#cfn-fms-policy-resourcescleanup"""
     p_Tags: typing.List[typing.Union['PropPolicyPolicyTag', dict]] = attr.ib(
         default=None,
         converter=PropPolicyPolicyTag.from_list,

@@ -72,6 +72,35 @@ class PropCertificateDomainValidationOption(Property):
 #--- Resource declaration ---
 
 @attr.s
+class Account(Resource):
+    """
+    AWS Object Type = "AWS::CertificateManager::Account"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-certificatemanager-account.html
+
+    Property Document:
+    
+    - ``rp_ExpiryEventsConfiguration``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-certificatemanager-account.html#cfn-certificatemanager-account-expiryeventsconfiguration
+    """
+    AWS_OBJECT_TYPE = "AWS::CertificateManager::Account"
+
+    
+    rp_ExpiryEventsConfiguration: typing.Union['PropAccountExpiryEventsConfiguration', dict] = attr.ib(
+        default=None,
+        converter=PropAccountExpiryEventsConfiguration.from_dict,
+        validator=attr.validators.instance_of(PropAccountExpiryEventsConfiguration),
+        metadata={AttrMeta.PROPERTY_NAME: "ExpiryEventsConfiguration"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-certificatemanager-account.html#cfn-certificatemanager-account-expiryeventsconfiguration"""
+
+    
+    @property
+    def rv_AccountId(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-certificatemanager-account.html#aws-resource-certificatemanager-account-return-values"""
+        return GetAtt(resource=self, attr_name="AccountId")
+    
+
+@attr.s
 class Certificate(Resource):
     """
     AWS Object Type = "AWS::CertificateManager::Certificate"
@@ -136,33 +165,4 @@ class Certificate(Resource):
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-certificatemanager-certificate.html#cfn-certificatemanager-certificate-tags"""
 
-    
-
-@attr.s
-class Account(Resource):
-    """
-    AWS Object Type = "AWS::CertificateManager::Account"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-certificatemanager-account.html
-
-    Property Document:
-    
-    - ``rp_ExpiryEventsConfiguration``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-certificatemanager-account.html#cfn-certificatemanager-account-expiryeventsconfiguration
-    """
-    AWS_OBJECT_TYPE = "AWS::CertificateManager::Account"
-
-    
-    rp_ExpiryEventsConfiguration: typing.Union['PropAccountExpiryEventsConfiguration', dict] = attr.ib(
-        default=None,
-        converter=PropAccountExpiryEventsConfiguration.from_dict,
-        validator=attr.validators.instance_of(PropAccountExpiryEventsConfiguration),
-        metadata={AttrMeta.PROPERTY_NAME: "ExpiryEventsConfiguration"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-certificatemanager-account.html#cfn-certificatemanager-account-expiryeventsconfiguration"""
-
-    
-    @property
-    def rv_AccountId(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-certificatemanager-account.html#aws-resource-certificatemanager-account-return-values"""
-        return GetAtt(resource=self, attr_name="AccountId")
     

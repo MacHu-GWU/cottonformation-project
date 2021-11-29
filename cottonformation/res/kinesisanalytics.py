@@ -802,37 +802,6 @@ class ApplicationOutput(Resource):
     
 
 @attr.s
-class ApplicationReferenceDataSource(Resource):
-    """
-    AWS Object Type = "AWS::KinesisAnalytics::ApplicationReferenceDataSource"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisanalytics-applicationreferencedatasource.html
-
-    Property Document:
-    
-    - ``rp_ApplicationName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisanalytics-applicationreferencedatasource.html#cfn-kinesisanalytics-applicationreferencedatasource-applicationname
-    - ``rp_ReferenceDataSource``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisanalytics-applicationreferencedatasource.html#cfn-kinesisanalytics-applicationreferencedatasource-referencedatasource
-    """
-    AWS_OBJECT_TYPE = "AWS::KinesisAnalytics::ApplicationReferenceDataSource"
-
-    
-    rp_ApplicationName: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "ApplicationName"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisanalytics-applicationreferencedatasource.html#cfn-kinesisanalytics-applicationreferencedatasource-applicationname"""
-    rp_ReferenceDataSource: typing.Union['PropApplicationReferenceDataSourceReferenceDataSource', dict] = attr.ib(
-        default=None,
-        converter=PropApplicationReferenceDataSourceReferenceDataSource.from_dict,
-        validator=attr.validators.instance_of(PropApplicationReferenceDataSourceReferenceDataSource),
-        metadata={AttrMeta.PROPERTY_NAME: "ReferenceDataSource"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisanalytics-applicationreferencedatasource.html#cfn-kinesisanalytics-applicationreferencedatasource-referencedatasource"""
-
-    
-
-@attr.s
 class Application(Resource):
     """
     AWS Object Type = "AWS::KinesisAnalytics::Application"
@@ -874,5 +843,36 @@ class Application(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "ApplicationName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisanalytics-application.html#cfn-kinesisanalytics-application-applicationname"""
+
+    
+
+@attr.s
+class ApplicationReferenceDataSource(Resource):
+    """
+    AWS Object Type = "AWS::KinesisAnalytics::ApplicationReferenceDataSource"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisanalytics-applicationreferencedatasource.html
+
+    Property Document:
+    
+    - ``rp_ApplicationName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisanalytics-applicationreferencedatasource.html#cfn-kinesisanalytics-applicationreferencedatasource-applicationname
+    - ``rp_ReferenceDataSource``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisanalytics-applicationreferencedatasource.html#cfn-kinesisanalytics-applicationreferencedatasource-referencedatasource
+    """
+    AWS_OBJECT_TYPE = "AWS::KinesisAnalytics::ApplicationReferenceDataSource"
+
+    
+    rp_ApplicationName: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "ApplicationName"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisanalytics-applicationreferencedatasource.html#cfn-kinesisanalytics-applicationreferencedatasource-applicationname"""
+    rp_ReferenceDataSource: typing.Union['PropApplicationReferenceDataSourceReferenceDataSource', dict] = attr.ib(
+        default=None,
+        converter=PropApplicationReferenceDataSourceReferenceDataSource.from_dict,
+        validator=attr.validators.instance_of(PropApplicationReferenceDataSourceReferenceDataSource),
+        metadata={AttrMeta.PROPERTY_NAME: "ReferenceDataSource"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisanalytics-applicationreferencedatasource.html#cfn-kinesisanalytics-applicationreferencedatasource-referencedatasource"""
 
     

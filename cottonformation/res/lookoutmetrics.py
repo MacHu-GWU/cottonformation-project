@@ -97,6 +97,33 @@ class PropAnomalyDetectorVpcConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-anomalydetector-vpcconfiguration.html#cfn-lookoutmetrics-anomalydetector-vpcconfiguration-subnetidlist"""
 
 @attr.s
+class PropAlertSNSConfiguration(Property):
+    """
+    AWS Object Type = "AWS::LookoutMetrics::Alert.SNSConfiguration"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-alert-snsconfiguration.html
+
+    Property Document:
+    
+    - ``rp_RoleArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-alert-snsconfiguration.html#cfn-lookoutmetrics-alert-snsconfiguration-rolearn
+    - ``rp_SnsTopicArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-alert-snsconfiguration.html#cfn-lookoutmetrics-alert-snsconfiguration-snstopicarn
+    """
+    AWS_OBJECT_TYPE = "AWS::LookoutMetrics::Alert.SNSConfiguration"
+    
+    rp_RoleArn: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "RoleArn"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-alert-snsconfiguration.html#cfn-lookoutmetrics-alert-snsconfiguration-rolearn"""
+    rp_SnsTopicArn: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "SnsTopicArn"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-alert-snsconfiguration.html#cfn-lookoutmetrics-alert-snsconfiguration-snstopicarn"""
+
+@attr.s
 class PropAnomalyDetectorRDSSourceConfig(Property):
     """
     AWS Object Type = "AWS::LookoutMetrics::AnomalyDetector.RDSSourceConfig"
@@ -221,6 +248,26 @@ class PropAnomalyDetectorJsonFormatDescriptor(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-anomalydetector-jsonformatdescriptor.html#cfn-lookoutmetrics-anomalydetector-jsonformatdescriptor-filecompression"""
 
 @attr.s
+class PropAnomalyDetectorAnomalyDetectorConfig(Property):
+    """
+    AWS Object Type = "AWS::LookoutMetrics::AnomalyDetector.AnomalyDetectorConfig"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-anomalydetector-anomalydetectorconfig.html
+
+    Property Document:
+    
+    - ``rp_AnomalyDetectorFrequency``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-anomalydetector-anomalydetectorconfig.html#cfn-lookoutmetrics-anomalydetector-anomalydetectorconfig-anomalydetectorfrequency
+    """
+    AWS_OBJECT_TYPE = "AWS::LookoutMetrics::AnomalyDetector.AnomalyDetectorConfig"
+    
+    rp_AnomalyDetectorFrequency: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "AnomalyDetectorFrequency"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-anomalydetector-anomalydetectorconfig.html#cfn-lookoutmetrics-anomalydetector-anomalydetectorconfig-anomalydetectorfrequency"""
+
+@attr.s
 class PropAnomalyDetectorAppFlowConfig(Property):
     """
     AWS Object Type = "AWS::LookoutMetrics::AnomalyDetector.AppFlowConfig"
@@ -246,6 +293,33 @@ class PropAnomalyDetectorAppFlowConfig(Property):
         metadata={AttrMeta.PROPERTY_NAME: "RoleArn"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-anomalydetector-appflowconfig.html#cfn-lookoutmetrics-anomalydetector-appflowconfig-rolearn"""
+
+@attr.s
+class PropAlertLambdaConfiguration(Property):
+    """
+    AWS Object Type = "AWS::LookoutMetrics::Alert.LambdaConfiguration"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-alert-lambdaconfiguration.html
+
+    Property Document:
+    
+    - ``rp_LambdaArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-alert-lambdaconfiguration.html#cfn-lookoutmetrics-alert-lambdaconfiguration-lambdaarn
+    - ``rp_RoleArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-alert-lambdaconfiguration.html#cfn-lookoutmetrics-alert-lambdaconfiguration-rolearn
+    """
+    AWS_OBJECT_TYPE = "AWS::LookoutMetrics::Alert.LambdaConfiguration"
+    
+    rp_LambdaArn: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "LambdaArn"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-alert-lambdaconfiguration.html#cfn-lookoutmetrics-alert-lambdaconfiguration-lambdaarn"""
+    rp_RoleArn: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "RoleArn"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-alert-lambdaconfiguration.html#cfn-lookoutmetrics-alert-lambdaconfiguration-rolearn"""
 
 @attr.s
 class PropAnomalyDetectorRedshiftSourceConfig(Property):
@@ -316,6 +390,35 @@ class PropAnomalyDetectorRedshiftSourceConfig(Property):
         metadata={AttrMeta.PROPERTY_NAME: "VpcConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-anomalydetector-redshiftsourceconfig.html#cfn-lookoutmetrics-anomalydetector-redshiftsourceconfig-vpcconfiguration"""
+
+@attr.s
+class PropAlertAction(Property):
+    """
+    AWS Object Type = "AWS::LookoutMetrics::Alert.Action"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-alert-action.html
+
+    Property Document:
+    
+    - ``p_LambdaConfiguration``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-alert-action.html#cfn-lookoutmetrics-alert-action-lambdaconfiguration
+    - ``p_SNSConfiguration``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-alert-action.html#cfn-lookoutmetrics-alert-action-snsconfiguration
+    """
+    AWS_OBJECT_TYPE = "AWS::LookoutMetrics::Alert.Action"
+    
+    p_LambdaConfiguration: typing.Union['PropAlertLambdaConfiguration', dict] = attr.ib(
+        default=None,
+        converter=PropAlertLambdaConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropAlertLambdaConfiguration)),
+        metadata={AttrMeta.PROPERTY_NAME: "LambdaConfiguration"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-alert-action.html#cfn-lookoutmetrics-alert-action-lambdaconfiguration"""
+    p_SNSConfiguration: typing.Union['PropAlertSNSConfiguration', dict] = attr.ib(
+        default=None,
+        converter=PropAlertSNSConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropAlertSNSConfiguration)),
+        metadata={AttrMeta.PROPERTY_NAME: "SNSConfiguration"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutmetrics-alert-action.html#cfn-lookoutmetrics-alert-action-snsconfiguration"""
 
 @attr.s
 class PropAnomalyDetectorMetric(Property):
@@ -595,9 +698,10 @@ class Alert(Resource):
     AWS_OBJECT_TYPE = "AWS::LookoutMetrics::Alert"
 
     
-    rp_Action: dict = attr.ib(
+    rp_Action: typing.Union['PropAlertAction', dict] = attr.ib(
         default=None,
-        validator=attr.validators.instance_of(dict),
+        converter=PropAlertAction.from_dict,
+        validator=attr.validators.instance_of(PropAlertAction),
         metadata={AttrMeta.PROPERTY_NAME: "Action"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lookoutmetrics-alert.html#cfn-lookoutmetrics-alert-action"""
@@ -651,9 +755,10 @@ class AnomalyDetector(Resource):
     AWS_OBJECT_TYPE = "AWS::LookoutMetrics::AnomalyDetector"
 
     
-    rp_AnomalyDetectorConfig: dict = attr.ib(
+    rp_AnomalyDetectorConfig: typing.Union['PropAnomalyDetectorAnomalyDetectorConfig', dict] = attr.ib(
         default=None,
-        validator=attr.validators.instance_of(dict),
+        converter=PropAnomalyDetectorAnomalyDetectorConfig.from_dict,
+        validator=attr.validators.instance_of(PropAnomalyDetectorAnomalyDetectorConfig),
         metadata={AttrMeta.PROPERTY_NAME: "AnomalyDetectorConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lookoutmetrics-anomalydetector.html#cfn-lookoutmetrics-anomalydetector-anomalydetectorconfig"""

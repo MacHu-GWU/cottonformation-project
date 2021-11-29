@@ -15,7 +15,7 @@ Release and Version History
 **Miscellaneous**
 
 
-0.0.4 (Next Milestone)
+0.0.5 (Next Milestone)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Features and Improvements**
 
@@ -23,9 +23,16 @@ Release and Version History
 
 **Bugfixes**
 
-- fix a bug that remove a resource that in a resource group will also remove the entire resource group.
+- fix a bug that remove a resource that in a resource group will also remove the entire resource group. Logically, a resource group is a container of a resource, so resource group depends on the resource member. But practically resource group should not be removed.
 
 **Miscellaneous**
+
+
+0.0.4 (2021-11-29)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Features and Improvements**
+
+- update code to adapt latest spec file
 
 
 0.0.3 (2021-07-08)

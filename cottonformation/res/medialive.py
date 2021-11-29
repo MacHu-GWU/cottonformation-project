@@ -6648,6 +6648,42 @@ class PropChannelEncoderSettings(Property):
 #--- Resource declaration ---
 
 @attr.s
+class InputSecurityGroup(Resource):
+    """
+    AWS Object Type = "AWS::MediaLive::InputSecurityGroup"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-inputsecuritygroup.html
+
+    Property Document:
+    
+    - ``p_WhitelistRules``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-inputsecuritygroup.html#cfn-medialive-inputsecuritygroup-whitelistrules
+    - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-inputsecuritygroup.html#cfn-medialive-inputsecuritygroup-tags
+    """
+    AWS_OBJECT_TYPE = "AWS::MediaLive::InputSecurityGroup"
+
+    
+    p_WhitelistRules: typing.List[typing.Union['PropInputSecurityGroupInputWhitelistRuleCidr', dict]] = attr.ib(
+        default=None,
+        converter=PropInputSecurityGroupInputWhitelistRuleCidr.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropInputSecurityGroupInputWhitelistRuleCidr), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "WhitelistRules"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-inputsecuritygroup.html#cfn-medialive-inputsecuritygroup-whitelistrules"""
+    p_Tags: dict = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-inputsecuritygroup.html#cfn-medialive-inputsecuritygroup-tags"""
+
+    
+    @property
+    def rv_Arn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-inputsecuritygroup.html#aws-resource-medialive-inputsecuritygroup-return-values"""
+        return GetAtt(resource=self, attr_name="Arn")
+    
+
+@attr.s
 class Channel(Resource):
     """
     AWS Object Type = "AWS::MediaLive::Channel"
@@ -6860,40 +6896,4 @@ class Input(Resource):
     def rv_Sources(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-input.html#aws-resource-medialive-input-return-values"""
         return GetAtt(resource=self, attr_name="Sources")
-    
-
-@attr.s
-class InputSecurityGroup(Resource):
-    """
-    AWS Object Type = "AWS::MediaLive::InputSecurityGroup"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-inputsecuritygroup.html
-
-    Property Document:
-    
-    - ``p_WhitelistRules``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-inputsecuritygroup.html#cfn-medialive-inputsecuritygroup-whitelistrules
-    - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-inputsecuritygroup.html#cfn-medialive-inputsecuritygroup-tags
-    """
-    AWS_OBJECT_TYPE = "AWS::MediaLive::InputSecurityGroup"
-
-    
-    p_WhitelistRules: typing.List[typing.Union['PropInputSecurityGroupInputWhitelistRuleCidr', dict]] = attr.ib(
-        default=None,
-        converter=PropInputSecurityGroupInputWhitelistRuleCidr.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropInputSecurityGroupInputWhitelistRuleCidr), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "WhitelistRules"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-inputsecuritygroup.html#cfn-medialive-inputsecuritygroup-whitelistrules"""
-    p_Tags: dict = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(dict)),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-inputsecuritygroup.html#cfn-medialive-inputsecuritygroup-tags"""
-
-    
-    @property
-    def rv_Arn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-medialive-inputsecuritygroup.html#aws-resource-medialive-inputsecuritygroup-return-values"""
-        return GetAtt(resource=self, attr_name="Arn")
     

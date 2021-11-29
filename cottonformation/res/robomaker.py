@@ -194,85 +194,6 @@ class PropRobotApplicationSourceConfig(Property):
 #--- Resource declaration ---
 
 @attr.s
-class SimulationApplication(Resource):
-    """
-    AWS Object Type = "AWS::RoboMaker::SimulationApplication"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-simulationapplication.html
-
-    Property Document:
-    
-    - ``rp_RenderingEngine``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-simulationapplication.html#cfn-robomaker-simulationapplication-renderingengine
-    - ``rp_RobotSoftwareSuite``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-simulationapplication.html#cfn-robomaker-simulationapplication-robotsoftwaresuite
-    - ``rp_SimulationSoftwareSuite``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-simulationapplication.html#cfn-robomaker-simulationapplication-simulationsoftwaresuite
-    - ``rp_Sources``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-simulationapplication.html#cfn-robomaker-simulationapplication-sources
-    - ``p_CurrentRevisionId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-simulationapplication.html#cfn-robomaker-simulationapplication-currentrevisionid
-    - ``p_Name``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-simulationapplication.html#cfn-robomaker-simulationapplication-name
-    - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-simulationapplication.html#cfn-robomaker-simulationapplication-tags
-    """
-    AWS_OBJECT_TYPE = "AWS::RoboMaker::SimulationApplication"
-
-    
-    rp_RenderingEngine: typing.Union['PropSimulationApplicationRenderingEngine', dict] = attr.ib(
-        default=None,
-        converter=PropSimulationApplicationRenderingEngine.from_dict,
-        validator=attr.validators.instance_of(PropSimulationApplicationRenderingEngine),
-        metadata={AttrMeta.PROPERTY_NAME: "RenderingEngine"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-simulationapplication.html#cfn-robomaker-simulationapplication-renderingengine"""
-    rp_RobotSoftwareSuite: typing.Union['PropSimulationApplicationRobotSoftwareSuite', dict] = attr.ib(
-        default=None,
-        converter=PropSimulationApplicationRobotSoftwareSuite.from_dict,
-        validator=attr.validators.instance_of(PropSimulationApplicationRobotSoftwareSuite),
-        metadata={AttrMeta.PROPERTY_NAME: "RobotSoftwareSuite"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-simulationapplication.html#cfn-robomaker-simulationapplication-robotsoftwaresuite"""
-    rp_SimulationSoftwareSuite: typing.Union['PropSimulationApplicationSimulationSoftwareSuite', dict] = attr.ib(
-        default=None,
-        converter=PropSimulationApplicationSimulationSoftwareSuite.from_dict,
-        validator=attr.validators.instance_of(PropSimulationApplicationSimulationSoftwareSuite),
-        metadata={AttrMeta.PROPERTY_NAME: "SimulationSoftwareSuite"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-simulationapplication.html#cfn-robomaker-simulationapplication-simulationsoftwaresuite"""
-    rp_Sources: typing.List[typing.Union['PropSimulationApplicationSourceConfig', dict]] = attr.ib(
-        default=None,
-        converter=PropSimulationApplicationSourceConfig.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropSimulationApplicationSourceConfig), iterable_validator=attr.validators.instance_of(list)),
-        metadata={AttrMeta.PROPERTY_NAME: "Sources"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-simulationapplication.html#cfn-robomaker-simulationapplication-sources"""
-    p_CurrentRevisionId: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "CurrentRevisionId"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-simulationapplication.html#cfn-robomaker-simulationapplication-currentrevisionid"""
-    p_Name: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Name"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-simulationapplication.html#cfn-robomaker-simulationapplication-name"""
-    p_Tags: dict = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(dict)),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-simulationapplication.html#cfn-robomaker-simulationapplication-tags"""
-
-    
-    @property
-    def rv_CurrentRevisionId(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-simulationapplication.html#aws-resource-robomaker-simulationapplication-return-values"""
-        return GetAtt(resource=self, attr_name="CurrentRevisionId")
-    
-    @property
-    def rv_Arn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-simulationapplication.html#aws-resource-robomaker-simulationapplication-return-values"""
-        return GetAtt(resource=self, attr_name="Arn")
-    
-
-@attr.s
 class SimulationApplicationVersion(Resource):
     """
     AWS Object Type = "AWS::RoboMaker::SimulationApplicationVersion"
@@ -300,6 +221,16 @@ class SimulationApplicationVersion(Resource):
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-simulationapplicationversion.html#cfn-robomaker-simulationapplicationversion-currentrevisionid"""
 
+    
+    @property
+    def rv_ApplicationVersion(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-simulationapplicationversion.html#aws-resource-robomaker-simulationapplicationversion-return-values"""
+        return GetAtt(resource=self, attr_name="ApplicationVersion")
+    
+    @property
+    def rv_Arn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-simulationapplicationversion.html#aws-resource-robomaker-simulationapplicationversion-return-values"""
+        return GetAtt(resource=self, attr_name="Arn")
     
 
 @attr.s
@@ -386,9 +317,9 @@ class Fleet(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Name"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-fleet.html#cfn-robomaker-fleet-name"""
-    p_Tags: dict = attr.ib(
+    p_Tags: typing.Dict[str, TypeHint.intrinsic_str] = attr.ib(
         default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        validator=attr.validators.optional(attr.validators.deep_mapping(key_validator=attr.validators.instance_of(str), value_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type))),
         metadata={AttrMeta.PROPERTY_NAME: "Tags"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-fleet.html#cfn-robomaker-fleet-tags"""
@@ -428,6 +359,16 @@ class RobotApplicationVersion(Resource):
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-robotapplicationversion.html#cfn-robomaker-robotapplicationversion-currentrevisionid"""
 
+    
+    @property
+    def rv_ApplicationVersion(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-robotapplicationversion.html#aws-resource-robomaker-robotapplicationversion-return-values"""
+        return GetAtt(resource=self, attr_name="ApplicationVersion")
+    
+    @property
+    def rv_Arn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-robotapplicationversion.html#aws-resource-robomaker-robotapplicationversion-return-values"""
+        return GetAtt(resource=self, attr_name="Arn")
     
 
 @attr.s
@@ -472,11 +413,102 @@ class Robot(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Name"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-robot.html#cfn-robomaker-robot-name"""
-    p_Tags: dict = attr.ib(
+    p_Tags: typing.Dict[str, TypeHint.intrinsic_str] = attr.ib(
         default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        validator=attr.validators.optional(attr.validators.deep_mapping(key_validator=attr.validators.instance_of(str), value_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type))),
         metadata={AttrMeta.PROPERTY_NAME: "Tags"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-robot.html#cfn-robomaker-robot-tags"""
 
+    
+    @property
+    def rv_Arn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-robot.html#aws-resource-robomaker-robot-return-values"""
+        return GetAtt(resource=self, attr_name="Arn")
+    
+
+@attr.s
+class SimulationApplication(Resource):
+    """
+    AWS Object Type = "AWS::RoboMaker::SimulationApplication"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-simulationapplication.html
+
+    Property Document:
+    
+    - ``rp_RobotSoftwareSuite``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-simulationapplication.html#cfn-robomaker-simulationapplication-robotsoftwaresuite
+    - ``rp_SimulationSoftwareSuite``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-simulationapplication.html#cfn-robomaker-simulationapplication-simulationsoftwaresuite
+    - ``p_CurrentRevisionId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-simulationapplication.html#cfn-robomaker-simulationapplication-currentrevisionid
+    - ``p_Environment``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-simulationapplication.html#cfn-robomaker-simulationapplication-environment
+    - ``p_Name``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-simulationapplication.html#cfn-robomaker-simulationapplication-name
+    - ``p_RenderingEngine``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-simulationapplication.html#cfn-robomaker-simulationapplication-renderingengine
+    - ``p_Sources``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-simulationapplication.html#cfn-robomaker-simulationapplication-sources
+    - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-simulationapplication.html#cfn-robomaker-simulationapplication-tags
+    """
+    AWS_OBJECT_TYPE = "AWS::RoboMaker::SimulationApplication"
+
+    
+    rp_RobotSoftwareSuite: typing.Union['PropSimulationApplicationRobotSoftwareSuite', dict] = attr.ib(
+        default=None,
+        converter=PropSimulationApplicationRobotSoftwareSuite.from_dict,
+        validator=attr.validators.instance_of(PropSimulationApplicationRobotSoftwareSuite),
+        metadata={AttrMeta.PROPERTY_NAME: "RobotSoftwareSuite"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-simulationapplication.html#cfn-robomaker-simulationapplication-robotsoftwaresuite"""
+    rp_SimulationSoftwareSuite: typing.Union['PropSimulationApplicationSimulationSoftwareSuite', dict] = attr.ib(
+        default=None,
+        converter=PropSimulationApplicationSimulationSoftwareSuite.from_dict,
+        validator=attr.validators.instance_of(PropSimulationApplicationSimulationSoftwareSuite),
+        metadata={AttrMeta.PROPERTY_NAME: "SimulationSoftwareSuite"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-simulationapplication.html#cfn-robomaker-simulationapplication-simulationsoftwaresuite"""
+    p_CurrentRevisionId: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "CurrentRevisionId"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-simulationapplication.html#cfn-robomaker-simulationapplication-currentrevisionid"""
+    p_Environment: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "Environment"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-simulationapplication.html#cfn-robomaker-simulationapplication-environment"""
+    p_Name: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "Name"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-simulationapplication.html#cfn-robomaker-simulationapplication-name"""
+    p_RenderingEngine: typing.Union['PropSimulationApplicationRenderingEngine', dict] = attr.ib(
+        default=None,
+        converter=PropSimulationApplicationRenderingEngine.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropSimulationApplicationRenderingEngine)),
+        metadata={AttrMeta.PROPERTY_NAME: "RenderingEngine"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-simulationapplication.html#cfn-robomaker-simulationapplication-renderingengine"""
+    p_Sources: typing.List[typing.Union['PropSimulationApplicationSourceConfig', dict]] = attr.ib(
+        default=None,
+        converter=PropSimulationApplicationSourceConfig.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropSimulationApplicationSourceConfig), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "Sources"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-simulationapplication.html#cfn-robomaker-simulationapplication-sources"""
+    p_Tags: typing.Dict[str, TypeHint.intrinsic_str] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.deep_mapping(key_validator=attr.validators.instance_of(str), value_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type))),
+        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-simulationapplication.html#cfn-robomaker-simulationapplication-tags"""
+
+    
+    @property
+    def rv_Arn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-simulationapplication.html#aws-resource-robomaker-simulationapplication-return-values"""
+        return GetAtt(resource=self, attr_name="Arn")
+    
+    @property
+    def rv_CurrentRevisionId(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-simulationapplication.html#aws-resource-robomaker-simulationapplication-return-values"""
+        return GetAtt(resource=self, attr_name="CurrentRevisionId")
     

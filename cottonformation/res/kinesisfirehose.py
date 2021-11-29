@@ -15,6 +15,26 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
+class PropDeliveryStreamAmazonopensearchserviceRetryOptions(Property):
+    """
+    AWS Object Type = "AWS::KinesisFirehose::DeliveryStream.AmazonopensearchserviceRetryOptions"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-amazonopensearchserviceretryoptions.html
+
+    Property Document:
+    
+    - ``p_DurationInSeconds``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-amazonopensearchserviceretryoptions.html#cfn-kinesisfirehose-deliverystream-amazonopensearchserviceretryoptions-durationinseconds
+    """
+    AWS_OBJECT_TYPE = "AWS::KinesisFirehose::DeliveryStream.AmazonopensearchserviceRetryOptions"
+    
+    p_DurationInSeconds: int = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(int)),
+        metadata={AttrMeta.PROPERTY_NAME: "DurationInSeconds"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-amazonopensearchserviceretryoptions.html#cfn-kinesisfirehose-deliverystream-amazonopensearchserviceretryoptions-durationinseconds"""
+
+@attr.s
 class PropDeliveryStreamHiveJsonSerDe(Property):
     """
     AWS Object Type = "AWS::KinesisFirehose::DeliveryStream.HiveJsonSerDe"
@@ -408,6 +428,33 @@ class PropDeliveryStreamProcessorParameter(Property):
         metadata={AttrMeta.PROPERTY_NAME: "ParameterValue"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-processorparameter.html#cfn-kinesisfirehose-deliverystream-processorparameter-parametervalue"""
+
+@attr.s
+class PropDeliveryStreamAmazonopensearchserviceBufferingHints(Property):
+    """
+    AWS Object Type = "AWS::KinesisFirehose::DeliveryStream.AmazonopensearchserviceBufferingHints"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-amazonopensearchservicebufferinghints.html
+
+    Property Document:
+    
+    - ``p_IntervalInSeconds``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-amazonopensearchservicebufferinghints.html#cfn-kinesisfirehose-deliverystream-amazonopensearchservicebufferinghints-intervalinseconds
+    - ``p_SizeInMBs``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-amazonopensearchservicebufferinghints.html#cfn-kinesisfirehose-deliverystream-amazonopensearchservicebufferinghints-sizeinmbs
+    """
+    AWS_OBJECT_TYPE = "AWS::KinesisFirehose::DeliveryStream.AmazonopensearchserviceBufferingHints"
+    
+    p_IntervalInSeconds: int = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(int)),
+        metadata={AttrMeta.PROPERTY_NAME: "IntervalInSeconds"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-amazonopensearchservicebufferinghints.html#cfn-kinesisfirehose-deliverystream-amazonopensearchservicebufferinghints-intervalinseconds"""
+    p_SizeInMBs: int = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(int)),
+        metadata={AttrMeta.PROPERTY_NAME: "SizeInMBs"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-amazonopensearchservicebufferinghints.html#cfn-kinesisfirehose-deliverystream-amazonopensearchservicebufferinghints-sizeinmbs"""
 
 @attr.s
 class PropDeliveryStreamDeliveryStreamEncryptionConfigurationInput(Property):
@@ -823,6 +870,34 @@ class PropDeliveryStreamSerializer(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-serializer.html#cfn-kinesisfirehose-deliverystream-serializer-parquetserde"""
 
 @attr.s
+class PropDeliveryStreamDynamicPartitioningConfiguration(Property):
+    """
+    AWS Object Type = "AWS::KinesisFirehose::DeliveryStream.DynamicPartitioningConfiguration"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-dynamicpartitioningconfiguration.html
+
+    Property Document:
+    
+    - ``p_Enabled``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-dynamicpartitioningconfiguration.html#cfn-kinesisfirehose-deliverystream-dynamicpartitioningconfiguration-enabled
+    - ``p_RetryOptions``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-dynamicpartitioningconfiguration.html#cfn-kinesisfirehose-deliverystream-dynamicpartitioningconfiguration-retryoptions
+    """
+    AWS_OBJECT_TYPE = "AWS::KinesisFirehose::DeliveryStream.DynamicPartitioningConfiguration"
+    
+    p_Enabled: bool = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(bool)),
+        metadata={AttrMeta.PROPERTY_NAME: "Enabled"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-dynamicpartitioningconfiguration.html#cfn-kinesisfirehose-deliverystream-dynamicpartitioningconfiguration-enabled"""
+    p_RetryOptions: typing.Union['PropDeliveryStreamRetryOptions', dict] = attr.ib(
+        default=None,
+        converter=PropDeliveryStreamRetryOptions.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDeliveryStreamRetryOptions)),
+        metadata={AttrMeta.PROPERTY_NAME: "RetryOptions"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-dynamicpartitioningconfiguration.html#cfn-kinesisfirehose-deliverystream-dynamicpartitioningconfiguration-retryoptions"""
+
+@attr.s
 class PropDeliveryStreamProcessingConfiguration(Property):
     """
     AWS Object Type = "AWS::KinesisFirehose::DeliveryStream.ProcessingConfiguration"
@@ -1167,6 +1242,116 @@ class PropDeliveryStreamDataFormatConversionConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-dataformatconversionconfiguration.html#cfn-kinesisfirehose-deliverystream-dataformatconversionconfiguration-schemaconfiguration"""
 
 @attr.s
+class PropDeliveryStreamAmazonopensearchserviceDestinationConfiguration(Property):
+    """
+    AWS Object Type = "AWS::KinesisFirehose::DeliveryStream.AmazonopensearchserviceDestinationConfiguration"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-amazonopensearchservicedestinationconfiguration.html
+
+    Property Document:
+    
+    - ``rp_IndexName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-amazonopensearchservicedestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-amazonopensearchservicedestinationconfiguration-indexname
+    - ``rp_RoleARN``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-amazonopensearchservicedestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-amazonopensearchservicedestinationconfiguration-rolearn
+    - ``rp_S3Configuration``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-amazonopensearchservicedestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-amazonopensearchservicedestinationconfiguration-s3configuration
+    - ``p_BufferingHints``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-amazonopensearchservicedestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-amazonopensearchservicedestinationconfiguration-bufferinghints
+    - ``p_CloudWatchLoggingOptions``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-amazonopensearchservicedestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-amazonopensearchservicedestinationconfiguration-cloudwatchloggingoptions
+    - ``p_ClusterEndpoint``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-amazonopensearchservicedestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-amazonopensearchservicedestinationconfiguration-clusterendpoint
+    - ``p_DomainARN``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-amazonopensearchservicedestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-amazonopensearchservicedestinationconfiguration-domainarn
+    - ``p_IndexRotationPeriod``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-amazonopensearchservicedestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-amazonopensearchservicedestinationconfiguration-indexrotationperiod
+    - ``p_ProcessingConfiguration``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-amazonopensearchservicedestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-amazonopensearchservicedestinationconfiguration-processingconfiguration
+    - ``p_RetryOptions``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-amazonopensearchservicedestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-amazonopensearchservicedestinationconfiguration-retryoptions
+    - ``p_S3BackupMode``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-amazonopensearchservicedestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-amazonopensearchservicedestinationconfiguration-s3backupmode
+    - ``p_TypeName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-amazonopensearchservicedestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-amazonopensearchservicedestinationconfiguration-typename
+    - ``p_VpcConfiguration``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-amazonopensearchservicedestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-amazonopensearchservicedestinationconfiguration-vpcconfiguration
+    """
+    AWS_OBJECT_TYPE = "AWS::KinesisFirehose::DeliveryStream.AmazonopensearchserviceDestinationConfiguration"
+    
+    rp_IndexName: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "IndexName"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-amazonopensearchservicedestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-amazonopensearchservicedestinationconfiguration-indexname"""
+    rp_RoleARN: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "RoleARN"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-amazonopensearchservicedestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-amazonopensearchservicedestinationconfiguration-rolearn"""
+    rp_S3Configuration: typing.Union['PropDeliveryStreamS3DestinationConfiguration', dict] = attr.ib(
+        default=None,
+        converter=PropDeliveryStreamS3DestinationConfiguration.from_dict,
+        validator=attr.validators.instance_of(PropDeliveryStreamS3DestinationConfiguration),
+        metadata={AttrMeta.PROPERTY_NAME: "S3Configuration"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-amazonopensearchservicedestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-amazonopensearchservicedestinationconfiguration-s3configuration"""
+    p_BufferingHints: typing.Union['PropDeliveryStreamAmazonopensearchserviceBufferingHints', dict] = attr.ib(
+        default=None,
+        converter=PropDeliveryStreamAmazonopensearchserviceBufferingHints.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDeliveryStreamAmazonopensearchserviceBufferingHints)),
+        metadata={AttrMeta.PROPERTY_NAME: "BufferingHints"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-amazonopensearchservicedestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-amazonopensearchservicedestinationconfiguration-bufferinghints"""
+    p_CloudWatchLoggingOptions: typing.Union['PropDeliveryStreamCloudWatchLoggingOptions', dict] = attr.ib(
+        default=None,
+        converter=PropDeliveryStreamCloudWatchLoggingOptions.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDeliveryStreamCloudWatchLoggingOptions)),
+        metadata={AttrMeta.PROPERTY_NAME: "CloudWatchLoggingOptions"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-amazonopensearchservicedestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-amazonopensearchservicedestinationconfiguration-cloudwatchloggingoptions"""
+    p_ClusterEndpoint: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "ClusterEndpoint"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-amazonopensearchservicedestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-amazonopensearchservicedestinationconfiguration-clusterendpoint"""
+    p_DomainARN: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "DomainARN"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-amazonopensearchservicedestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-amazonopensearchservicedestinationconfiguration-domainarn"""
+    p_IndexRotationPeriod: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "IndexRotationPeriod"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-amazonopensearchservicedestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-amazonopensearchservicedestinationconfiguration-indexrotationperiod"""
+    p_ProcessingConfiguration: typing.Union['PropDeliveryStreamProcessingConfiguration', dict] = attr.ib(
+        default=None,
+        converter=PropDeliveryStreamProcessingConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDeliveryStreamProcessingConfiguration)),
+        metadata={AttrMeta.PROPERTY_NAME: "ProcessingConfiguration"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-amazonopensearchservicedestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-amazonopensearchservicedestinationconfiguration-processingconfiguration"""
+    p_RetryOptions: typing.Union['PropDeliveryStreamAmazonopensearchserviceRetryOptions', dict] = attr.ib(
+        default=None,
+        converter=PropDeliveryStreamAmazonopensearchserviceRetryOptions.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDeliveryStreamAmazonopensearchserviceRetryOptions)),
+        metadata={AttrMeta.PROPERTY_NAME: "RetryOptions"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-amazonopensearchservicedestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-amazonopensearchservicedestinationconfiguration-retryoptions"""
+    p_S3BackupMode: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "S3BackupMode"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-amazonopensearchservicedestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-amazonopensearchservicedestinationconfiguration-s3backupmode"""
+    p_TypeName: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "TypeName"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-amazonopensearchservicedestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-amazonopensearchservicedestinationconfiguration-typename"""
+    p_VpcConfiguration: typing.Union['PropDeliveryStreamVpcConfiguration', dict] = attr.ib(
+        default=None,
+        converter=PropDeliveryStreamVpcConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDeliveryStreamVpcConfiguration)),
+        metadata={AttrMeta.PROPERTY_NAME: "VpcConfiguration"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-amazonopensearchservicedestinationconfiguration.html#cfn-kinesisfirehose-deliverystream-amazonopensearchservicedestinationconfiguration-vpcconfiguration"""
+
+@attr.s
 class PropDeliveryStreamSplunkDestinationConfiguration(Property):
     """
     AWS Object Type = "AWS::KinesisFirehose::DeliveryStream.SplunkDestinationConfiguration"
@@ -1371,6 +1556,7 @@ class PropDeliveryStreamExtendedS3DestinationConfiguration(Property):
     - ``p_CloudWatchLoggingOptions``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-extendeds3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-extendeds3destinationconfiguration-cloudwatchloggingoptions
     - ``p_CompressionFormat``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-extendeds3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-extendeds3destinationconfiguration-compressionformat
     - ``p_DataFormatConversionConfiguration``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-extendeds3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-extendeds3destinationconfiguration-dataformatconversionconfiguration
+    - ``p_DynamicPartitioningConfiguration``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-extendeds3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-extendeds3destinationconfiguration-dynamicpartitioningconfiguration
     - ``p_EncryptionConfiguration``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-extendeds3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-extendeds3destinationconfiguration-encryptionconfiguration
     - ``p_ErrorOutputPrefix``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-extendeds3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-extendeds3destinationconfiguration-erroroutputprefix
     - ``p_Prefix``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-extendeds3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-extendeds3destinationconfiguration-prefix
@@ -1419,6 +1605,13 @@ class PropDeliveryStreamExtendedS3DestinationConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "DataFormatConversionConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-extendeds3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-extendeds3destinationconfiguration-dataformatconversionconfiguration"""
+    p_DynamicPartitioningConfiguration: typing.Union['PropDeliveryStreamDynamicPartitioningConfiguration', dict] = attr.ib(
+        default=None,
+        converter=PropDeliveryStreamDynamicPartitioningConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDeliveryStreamDynamicPartitioningConfiguration)),
+        metadata={AttrMeta.PROPERTY_NAME: "DynamicPartitioningConfiguration"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisfirehose-deliverystream-extendeds3destinationconfiguration.html#cfn-kinesisfirehose-deliverystream-extendeds3destinationconfiguration-dynamicpartitioningconfiguration"""
     p_EncryptionConfiguration: typing.Union['PropDeliveryStreamEncryptionConfiguration', dict] = attr.ib(
         default=None,
         converter=PropDeliveryStreamEncryptionConfiguration.from_dict,
@@ -1471,6 +1664,7 @@ class DeliveryStream(Resource):
 
     Property Document:
     
+    - ``p_AmazonopensearchserviceDestinationConfiguration``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisfirehose-deliverystream.html#cfn-kinesisfirehose-deliverystream-amazonopensearchservicedestinationconfiguration
     - ``p_DeliveryStreamEncryptionConfigurationInput``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisfirehose-deliverystream.html#cfn-kinesisfirehose-deliverystream-deliverystreamencryptionconfigurationinput
     - ``p_DeliveryStreamName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisfirehose-deliverystream.html#cfn-kinesisfirehose-deliverystream-deliverystreamname
     - ``p_DeliveryStreamType``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisfirehose-deliverystream.html#cfn-kinesisfirehose-deliverystream-deliverystreamtype
@@ -1486,6 +1680,13 @@ class DeliveryStream(Resource):
     AWS_OBJECT_TYPE = "AWS::KinesisFirehose::DeliveryStream"
 
     
+    p_AmazonopensearchserviceDestinationConfiguration: typing.Union['PropDeliveryStreamAmazonopensearchserviceDestinationConfiguration', dict] = attr.ib(
+        default=None,
+        converter=PropDeliveryStreamAmazonopensearchserviceDestinationConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDeliveryStreamAmazonopensearchserviceDestinationConfiguration)),
+        metadata={AttrMeta.PROPERTY_NAME: "AmazonopensearchserviceDestinationConfiguration"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisfirehose-deliverystream.html#cfn-kinesisfirehose-deliverystream-amazonopensearchservicedestinationconfiguration"""
     p_DeliveryStreamEncryptionConfigurationInput: typing.Union['PropDeliveryStreamDeliveryStreamEncryptionConfigurationInput', dict] = attr.ib(
         default=None,
         converter=PropDeliveryStreamDeliveryStreamEncryptionConfigurationInput.from_dict,

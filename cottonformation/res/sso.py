@@ -124,6 +124,37 @@ class Assignment(Resource):
     
 
 @attr.s
+class InstanceAccessControlAttributeConfiguration(Resource):
+    """
+    AWS Object Type = "AWS::SSO::InstanceAccessControlAttributeConfiguration"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sso-instanceaccesscontrolattributeconfiguration.html
+
+    Property Document:
+    
+    - ``rp_InstanceArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sso-instanceaccesscontrolattributeconfiguration.html#cfn-sso-instanceaccesscontrolattributeconfiguration-instancearn
+    - ``p_AccessControlAttributes``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sso-instanceaccesscontrolattributeconfiguration.html#cfn-sso-instanceaccesscontrolattributeconfiguration-accesscontrolattributes
+    """
+    AWS_OBJECT_TYPE = "AWS::SSO::InstanceAccessControlAttributeConfiguration"
+
+    
+    rp_InstanceArn: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "InstanceArn"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sso-instanceaccesscontrolattributeconfiguration.html#cfn-sso-instanceaccesscontrolattributeconfiguration-instancearn"""
+    p_AccessControlAttributes: typing.List[typing.Union['PropInstanceAccessControlAttributeConfigurationAccessControlAttribute', dict]] = attr.ib(
+        default=None,
+        converter=PropInstanceAccessControlAttributeConfigurationAccessControlAttribute.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropInstanceAccessControlAttributeConfigurationAccessControlAttribute), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "AccessControlAttributes"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sso-instanceaccesscontrolattributeconfiguration.html#cfn-sso-instanceaccesscontrolattributeconfiguration-accesscontrolattributes"""
+
+    
+
+@attr.s
 class PermissionSet(Resource):
     """
     AWS Object Type = "AWS::SSO::PermissionSet"
@@ -199,35 +230,4 @@ class PermissionSet(Resource):
     def rv_PermissionSetArn(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sso-permissionset.html#aws-resource-sso-permissionset-return-values"""
         return GetAtt(resource=self, attr_name="PermissionSetArn")
-    
-
-@attr.s
-class InstanceAccessControlAttributeConfiguration(Resource):
-    """
-    AWS Object Type = "AWS::SSO::InstanceAccessControlAttributeConfiguration"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sso-instanceaccesscontrolattributeconfiguration.html
-
-    Property Document:
-    
-    - ``rp_InstanceArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sso-instanceaccesscontrolattributeconfiguration.html#cfn-sso-instanceaccesscontrolattributeconfiguration-instancearn
-    - ``p_AccessControlAttributes``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sso-instanceaccesscontrolattributeconfiguration.html#cfn-sso-instanceaccesscontrolattributeconfiguration-accesscontrolattributes
-    """
-    AWS_OBJECT_TYPE = "AWS::SSO::InstanceAccessControlAttributeConfiguration"
-
-    
-    rp_InstanceArn: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "InstanceArn"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sso-instanceaccesscontrolattributeconfiguration.html#cfn-sso-instanceaccesscontrolattributeconfiguration-instancearn"""
-    p_AccessControlAttributes: typing.List[typing.Union['PropInstanceAccessControlAttributeConfigurationAccessControlAttribute', dict]] = attr.ib(
-        default=None,
-        converter=PropInstanceAccessControlAttributeConfigurationAccessControlAttribute.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropInstanceAccessControlAttributeConfigurationAccessControlAttribute), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "AccessControlAttributes"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sso-instanceaccesscontrolattributeconfiguration.html#cfn-sso-instanceaccesscontrolattributeconfiguration-accesscontrolattributes"""
-
     

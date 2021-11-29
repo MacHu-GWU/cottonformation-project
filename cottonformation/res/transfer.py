@@ -84,6 +84,7 @@ class PropServerIdentityProviderDetails(Property):
     Property Document:
     
     - ``p_DirectoryId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-server-identityproviderdetails.html#cfn-transfer-server-identityproviderdetails-directoryid
+    - ``p_Function``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-server-identityproviderdetails.html#cfn-transfer-server-identityproviderdetails-function
     - ``p_InvocationRole``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-server-identityproviderdetails.html#cfn-transfer-server-identityproviderdetails-invocationrole
     - ``p_Url``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-server-identityproviderdetails.html#cfn-transfer-server-identityproviderdetails-url
     """
@@ -95,6 +96,12 @@ class PropServerIdentityProviderDetails(Property):
         metadata={AttrMeta.PROPERTY_NAME: "DirectoryId"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-server-identityproviderdetails.html#cfn-transfer-server-identityproviderdetails-directoryid"""
+    p_Function: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "Function"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-server-identityproviderdetails.html#cfn-transfer-server-identityproviderdetails-function"""
     p_InvocationRole: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
@@ -107,6 +114,33 @@ class PropServerIdentityProviderDetails(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Url"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-server-identityproviderdetails.html#cfn-transfer-server-identityproviderdetails-url"""
+
+@attr.s
+class PropServerWorkflowDetail(Property):
+    """
+    AWS Object Type = "AWS::Transfer::Server.WorkflowDetail"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-server-workflowdetail.html
+
+    Property Document:
+    
+    - ``rp_ExecutionRole``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-server-workflowdetail.html#cfn-transfer-server-workflowdetail-executionrole
+    - ``rp_WorkflowId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-server-workflowdetail.html#cfn-transfer-server-workflowdetail-workflowid
+    """
+    AWS_OBJECT_TYPE = "AWS::Transfer::Server.WorkflowDetail"
+    
+    rp_ExecutionRole: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "ExecutionRole"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-server-workflowdetail.html#cfn-transfer-server-workflowdetail-executionrole"""
+    rp_WorkflowId: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "WorkflowId"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-server-workflowdetail.html#cfn-transfer-server-workflowdetail-workflowid"""
 
 @attr.s
 class PropServerEndpointDetails(Property):
@@ -203,6 +237,27 @@ class PropServerProtocol(Property):
     AWS_OBJECT_TYPE = "AWS::Transfer::Server.Protocol"
     
 
+@attr.s
+class PropServerWorkflowDetails(Property):
+    """
+    AWS Object Type = "AWS::Transfer::Server.WorkflowDetails"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-server-workflowdetails.html
+
+    Property Document:
+    
+    - ``rp_OnUpload``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-server-workflowdetails.html#cfn-transfer-server-workflowdetails-onupload
+    """
+    AWS_OBJECT_TYPE = "AWS::Transfer::Server.WorkflowDetails"
+    
+    rp_OnUpload: typing.List[typing.Union['PropServerWorkflowDetail', dict]] = attr.ib(
+        default=None,
+        converter=PropServerWorkflowDetail.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropServerWorkflowDetail), iterable_validator=attr.validators.instance_of(list)),
+        metadata={AttrMeta.PROPERTY_NAME: "OnUpload"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-transfer-server-workflowdetails.html#cfn-transfer-server-workflowdetails-onupload"""
+
 
 #--- Resource declaration ---
 
@@ -225,6 +280,7 @@ class Server(Resource):
     - ``p_ProtocolDetails``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-server.html#cfn-transfer-server-protocoldetails
     - ``p_Protocols``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-server.html#cfn-transfer-server-protocols
     - ``p_SecurityPolicyName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-server.html#cfn-transfer-server-securitypolicyname
+    - ``p_WorkflowDetails``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-server.html#cfn-transfer-server-workflowdetails
     - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-server.html#cfn-transfer-server-tags
     """
     AWS_OBJECT_TYPE = "AWS::Transfer::Server"
@@ -294,6 +350,13 @@ class Server(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "SecurityPolicyName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-server.html#cfn-transfer-server-securitypolicyname"""
+    p_WorkflowDetails: typing.Union['PropServerWorkflowDetails', dict] = attr.ib(
+        default=None,
+        converter=PropServerWorkflowDetails.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropServerWorkflowDetails)),
+        metadata={AttrMeta.PROPERTY_NAME: "WorkflowDetails"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-transfer-server.html#cfn-transfer-server-workflowdetails"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,

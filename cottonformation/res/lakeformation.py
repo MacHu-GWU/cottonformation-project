@@ -331,6 +331,37 @@ class Resource(Resource):
     
 
 @attr.s
+class DataLakeSettings(Resource):
+    """
+    AWS Object Type = "AWS::LakeFormation::DataLakeSettings"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lakeformation-datalakesettings.html
+
+    Property Document:
+    
+    - ``p_Admins``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lakeformation-datalakesettings.html#cfn-lakeformation-datalakesettings-admins
+    - ``p_TrustedResourceOwners``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lakeformation-datalakesettings.html#cfn-lakeformation-datalakesettings-trustedresourceowners
+    """
+    AWS_OBJECT_TYPE = "AWS::LakeFormation::DataLakeSettings"
+
+    
+    p_Admins: typing.Union['PropDataLakeSettingsAdmins', dict] = attr.ib(
+        default=None,
+        converter=PropDataLakeSettingsAdmins.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataLakeSettingsAdmins)),
+        metadata={AttrMeta.PROPERTY_NAME: "Admins"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lakeformation-datalakesettings.html#cfn-lakeformation-datalakesettings-admins"""
+    p_TrustedResourceOwners: typing.List[TypeHint.intrinsic_str] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "TrustedResourceOwners"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lakeformation-datalakesettings.html#cfn-lakeformation-datalakesettings-trustedresourceowners"""
+
+    
+
+@attr.s
 class Permissions(Resource):
     """
     AWS Object Type = "AWS::LakeFormation::Permissions"
@@ -373,36 +404,5 @@ class Permissions(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "PermissionsWithGrantOption"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lakeformation-permissions.html#cfn-lakeformation-permissions-permissionswithgrantoption"""
-
-    
-
-@attr.s
-class DataLakeSettings(Resource):
-    """
-    AWS Object Type = "AWS::LakeFormation::DataLakeSettings"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lakeformation-datalakesettings.html
-
-    Property Document:
-    
-    - ``p_Admins``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lakeformation-datalakesettings.html#cfn-lakeformation-datalakesettings-admins
-    - ``p_TrustedResourceOwners``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lakeformation-datalakesettings.html#cfn-lakeformation-datalakesettings-trustedresourceowners
-    """
-    AWS_OBJECT_TYPE = "AWS::LakeFormation::DataLakeSettings"
-
-    
-    p_Admins: typing.Union['PropDataLakeSettingsAdmins', dict] = attr.ib(
-        default=None,
-        converter=PropDataLakeSettingsAdmins.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropDataLakeSettingsAdmins)),
-        metadata={AttrMeta.PROPERTY_NAME: "Admins"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lakeformation-datalakesettings.html#cfn-lakeformation-datalakesettings-admins"""
-    p_TrustedResourceOwners: typing.List[TypeHint.intrinsic_str] = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "TrustedResourceOwners"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lakeformation-datalakesettings.html#cfn-lakeformation-datalakesettings-trustedresourceowners"""
 
     

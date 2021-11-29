@@ -109,3 +109,8 @@ class Table(Resource):
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-timestream-table.html#aws-resource-timestream-table-return-values"""
         return GetAtt(resource=self, attr_name="Arn")
     
+    @property
+    def rv_Name(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-timestream-table.html#aws-resource-timestream-table-return-values"""
+        return GetAtt(resource=self, attr_name="Name")
+    

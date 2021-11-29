@@ -380,44 +380,6 @@ class ConfigurationTemplate(Resource):
     
 
 @attr.s
-class Application(Resource):
-    """
-    AWS Object Type = "AWS::ElasticBeanstalk::Application"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk.html
-
-    Property Document:
-    
-    - ``p_ApplicationName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk.html#cfn-elasticbeanstalk-application-name
-    - ``p_Description``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk.html#cfn-elasticbeanstalk-application-description
-    - ``p_ResourceLifecycleConfig``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk.html#cfn-elasticbeanstalk-application-resourcelifecycleconfig
-    """
-    AWS_OBJECT_TYPE = "AWS::ElasticBeanstalk::Application"
-
-    
-    p_ApplicationName: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "ApplicationName"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk.html#cfn-elasticbeanstalk-application-name"""
-    p_Description: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Description"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk.html#cfn-elasticbeanstalk-application-description"""
-    p_ResourceLifecycleConfig: typing.Union['PropApplicationApplicationResourceLifecycleConfig', dict] = attr.ib(
-        default=None,
-        converter=PropApplicationApplicationResourceLifecycleConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropApplicationApplicationResourceLifecycleConfig)),
-        metadata={AttrMeta.PROPERTY_NAME: "ResourceLifecycleConfig"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk.html#cfn-elasticbeanstalk-application-resourcelifecycleconfig"""
-
-    
-
-@attr.s
 class Environment(Resource):
     """
     AWS Object Type = "AWS::ElasticBeanstalk::Environment"
@@ -523,6 +485,44 @@ class Environment(Resource):
     def rv_EndpointURL(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk-environment.html#aws-properties-beanstalk-environment-return-values"""
         return GetAtt(resource=self, attr_name="EndpointURL")
+    
+
+@attr.s
+class Application(Resource):
+    """
+    AWS Object Type = "AWS::ElasticBeanstalk::Application"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk.html
+
+    Property Document:
+    
+    - ``p_ApplicationName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk.html#cfn-elasticbeanstalk-application-name
+    - ``p_Description``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk.html#cfn-elasticbeanstalk-application-description
+    - ``p_ResourceLifecycleConfig``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk.html#cfn-elasticbeanstalk-application-resourcelifecycleconfig
+    """
+    AWS_OBJECT_TYPE = "AWS::ElasticBeanstalk::Application"
+
+    
+    p_ApplicationName: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "ApplicationName"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk.html#cfn-elasticbeanstalk-application-name"""
+    p_Description: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "Description"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk.html#cfn-elasticbeanstalk-application-description"""
+    p_ResourceLifecycleConfig: typing.Union['PropApplicationApplicationResourceLifecycleConfig', dict] = attr.ib(
+        default=None,
+        converter=PropApplicationApplicationResourceLifecycleConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropApplicationApplicationResourceLifecycleConfig)),
+        metadata={AttrMeta.PROPERTY_NAME: "ResourceLifecycleConfig"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-beanstalk.html#cfn-elasticbeanstalk-application-resourcelifecycleconfig"""
+
     
 
 @attr.s

@@ -252,13 +252,3 @@ class CustomDataIdentifier(Resource):
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-macie-customdataidentifier.html#aws-resource-macie-customdataidentifier-return-values"""
         return GetAtt(resource=self, attr_name="Arn")
     
-    @property
-    def rv_CreatedAt(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-macie-customdataidentifier.html#aws-resource-macie-customdataidentifier-return-values"""
-        return GetAtt(resource=self, attr_name="CreatedAt")
-    
-    @property
-    def rv_Deleted(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-macie-customdataidentifier.html#aws-resource-macie-customdataidentifier-return-values"""
-        return GetAtt(resource=self, attr_name="Deleted")
-    

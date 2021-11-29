@@ -689,30 +689,6 @@ class ContactList(Resource):
     
 
 @attr.s
-class ReceiptFilter(Resource):
-    """
-    AWS Object Type = "AWS::SES::ReceiptFilter"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-receiptfilter.html
-
-    Property Document:
-    
-    - ``rp_Filter``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-receiptfilter.html#cfn-ses-receiptfilter-filter
-    """
-    AWS_OBJECT_TYPE = "AWS::SES::ReceiptFilter"
-
-    
-    rp_Filter: typing.Union['PropReceiptFilterFilter', dict] = attr.ib(
-        default=None,
-        converter=PropReceiptFilterFilter.from_dict,
-        validator=attr.validators.instance_of(PropReceiptFilterFilter),
-        metadata={AttrMeta.PROPERTY_NAME: "Filter"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-receiptfilter.html#cfn-ses-receiptfilter-filter"""
-
-    
-
-@attr.s
 class ConfigurationSetEventDestination(Resource):
     """
     AWS Object Type = "AWS::SES::ConfigurationSetEventDestination"
@@ -791,6 +767,53 @@ class ConfigurationSet(Resource):
     
 
 @attr.s
+class ReceiptRuleSet(Resource):
+    """
+    AWS Object Type = "AWS::SES::ReceiptRuleSet"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-receiptruleset.html
+
+    Property Document:
+    
+    - ``p_RuleSetName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-receiptruleset.html#cfn-ses-receiptruleset-rulesetname
+    """
+    AWS_OBJECT_TYPE = "AWS::SES::ReceiptRuleSet"
+
+    
+    p_RuleSetName: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "RuleSetName"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-receiptruleset.html#cfn-ses-receiptruleset-rulesetname"""
+
+    
+
+@attr.s
+class ReceiptFilter(Resource):
+    """
+    AWS Object Type = "AWS::SES::ReceiptFilter"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-receiptfilter.html
+
+    Property Document:
+    
+    - ``rp_Filter``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-receiptfilter.html#cfn-ses-receiptfilter-filter
+    """
+    AWS_OBJECT_TYPE = "AWS::SES::ReceiptFilter"
+
+    
+    rp_Filter: typing.Union['PropReceiptFilterFilter', dict] = attr.ib(
+        default=None,
+        converter=PropReceiptFilterFilter.from_dict,
+        validator=attr.validators.instance_of(PropReceiptFilterFilter),
+        metadata={AttrMeta.PROPERTY_NAME: "Filter"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-receiptfilter.html#cfn-ses-receiptfilter-filter"""
+
+    
+
+@attr.s
 class ReceiptRule(Resource):
     """
     AWS Object Type = "AWS::SES::ReceiptRule"
@@ -825,28 +848,5 @@ class ReceiptRule(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "After"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-receiptrule.html#cfn-ses-receiptrule-after"""
-
-    
-
-@attr.s
-class ReceiptRuleSet(Resource):
-    """
-    AWS Object Type = "AWS::SES::ReceiptRuleSet"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-receiptruleset.html
-
-    Property Document:
-    
-    - ``p_RuleSetName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-receiptruleset.html#cfn-ses-receiptruleset-rulesetname
-    """
-    AWS_OBJECT_TYPE = "AWS::SES::ReceiptRuleSet"
-
-    
-    p_RuleSetName: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "RuleSetName"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-receiptruleset.html#cfn-ses-receiptruleset-rulesetname"""
 
     

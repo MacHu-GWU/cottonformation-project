@@ -1221,6 +1221,140 @@ class PropOriginEndpointDashPackage(Property):
 #--- Resource declaration ---
 
 @attr.s
+class Channel(Resource):
+    """
+    AWS Object Type = "AWS::MediaPackage::Channel"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-channel.html
+
+    Property Document:
+    
+    - ``rp_Id``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-channel.html#cfn-mediapackage-channel-id
+    - ``p_Description``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-channel.html#cfn-mediapackage-channel-description
+    - ``p_EgressAccessLogs``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-channel.html#cfn-mediapackage-channel-egressaccesslogs
+    - ``p_IngressAccessLogs``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-channel.html#cfn-mediapackage-channel-ingressaccesslogs
+    - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-channel.html#cfn-mediapackage-channel-tags
+    """
+    AWS_OBJECT_TYPE = "AWS::MediaPackage::Channel"
+
+    
+    rp_Id: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "Id"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-channel.html#cfn-mediapackage-channel-id"""
+    p_Description: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "Description"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-channel.html#cfn-mediapackage-channel-description"""
+    p_EgressAccessLogs: typing.Union['PropChannelLogConfiguration', dict] = attr.ib(
+        default=None,
+        converter=PropChannelLogConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelLogConfiguration)),
+        metadata={AttrMeta.PROPERTY_NAME: "EgressAccessLogs"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-channel.html#cfn-mediapackage-channel-egressaccesslogs"""
+    p_IngressAccessLogs: typing.Union['PropChannelLogConfiguration', dict] = attr.ib(
+        default=None,
+        converter=PropChannelLogConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelLogConfiguration)),
+        metadata={AttrMeta.PROPERTY_NAME: "IngressAccessLogs"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-channel.html#cfn-mediapackage-channel-ingressaccesslogs"""
+    p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
+        default=None,
+        converter=Tag.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-channel.html#cfn-mediapackage-channel-tags"""
+
+    
+    @property
+    def rv_Arn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-channel.html#aws-resource-mediapackage-channel-return-values"""
+        return GetAtt(resource=self, attr_name="Arn")
+    
+
+@attr.s
+class PackagingConfiguration(Resource):
+    """
+    AWS Object Type = "AWS::MediaPackage::PackagingConfiguration"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-packagingconfiguration.html
+
+    Property Document:
+    
+    - ``rp_Id``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-packagingconfiguration.html#cfn-mediapackage-packagingconfiguration-id
+    - ``rp_PackagingGroupId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-packagingconfiguration.html#cfn-mediapackage-packagingconfiguration-packaginggroupid
+    - ``p_CmafPackage``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-packagingconfiguration.html#cfn-mediapackage-packagingconfiguration-cmafpackage
+    - ``p_DashPackage``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-packagingconfiguration.html#cfn-mediapackage-packagingconfiguration-dashpackage
+    - ``p_HlsPackage``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-packagingconfiguration.html#cfn-mediapackage-packagingconfiguration-hlspackage
+    - ``p_MssPackage``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-packagingconfiguration.html#cfn-mediapackage-packagingconfiguration-msspackage
+    - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-packagingconfiguration.html#cfn-mediapackage-packagingconfiguration-tags
+    """
+    AWS_OBJECT_TYPE = "AWS::MediaPackage::PackagingConfiguration"
+
+    
+    rp_Id: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "Id"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-packagingconfiguration.html#cfn-mediapackage-packagingconfiguration-id"""
+    rp_PackagingGroupId: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "PackagingGroupId"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-packagingconfiguration.html#cfn-mediapackage-packagingconfiguration-packaginggroupid"""
+    p_CmafPackage: typing.Union['PropPackagingConfigurationCmafPackage', dict] = attr.ib(
+        default=None,
+        converter=PropPackagingConfigurationCmafPackage.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropPackagingConfigurationCmafPackage)),
+        metadata={AttrMeta.PROPERTY_NAME: "CmafPackage"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-packagingconfiguration.html#cfn-mediapackage-packagingconfiguration-cmafpackage"""
+    p_DashPackage: typing.Union['PropPackagingConfigurationDashPackage', dict] = attr.ib(
+        default=None,
+        converter=PropPackagingConfigurationDashPackage.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropPackagingConfigurationDashPackage)),
+        metadata={AttrMeta.PROPERTY_NAME: "DashPackage"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-packagingconfiguration.html#cfn-mediapackage-packagingconfiguration-dashpackage"""
+    p_HlsPackage: typing.Union['PropPackagingConfigurationHlsPackage', dict] = attr.ib(
+        default=None,
+        converter=PropPackagingConfigurationHlsPackage.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropPackagingConfigurationHlsPackage)),
+        metadata={AttrMeta.PROPERTY_NAME: "HlsPackage"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-packagingconfiguration.html#cfn-mediapackage-packagingconfiguration-hlspackage"""
+    p_MssPackage: typing.Union['PropPackagingConfigurationMssPackage', dict] = attr.ib(
+        default=None,
+        converter=PropPackagingConfigurationMssPackage.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropPackagingConfigurationMssPackage)),
+        metadata={AttrMeta.PROPERTY_NAME: "MssPackage"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-packagingconfiguration.html#cfn-mediapackage-packagingconfiguration-msspackage"""
+    p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
+        default=None,
+        converter=Tag.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-packagingconfiguration.html#cfn-mediapackage-packagingconfiguration-tags"""
+
+    
+    @property
+    def rv_Arn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-packagingconfiguration.html#aws-resource-mediapackage-packagingconfiguration-return-values"""
+        return GetAtt(resource=self, attr_name="Arn")
+    
+
+@attr.s
 class Asset(Resource):
     """
     AWS Object Type = "AWS::MediaPackage::Asset"
@@ -1233,7 +1367,6 @@ class Asset(Resource):
     - ``rp_PackagingGroupId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-asset.html#cfn-mediapackage-asset-packaginggroupid
     - ``rp_SourceArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-asset.html#cfn-mediapackage-asset-sourcearn
     - ``rp_SourceRoleArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-asset.html#cfn-mediapackage-asset-sourcerolearn
-    - ``p_EgressEndpoints``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-asset.html#cfn-mediapackage-asset-egressendpoints
     - ``p_ResourceId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-asset.html#cfn-mediapackage-asset-resourceid
     - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-asset.html#cfn-mediapackage-asset-tags
     """
@@ -1264,13 +1397,6 @@ class Asset(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "SourceRoleArn"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-asset.html#cfn-mediapackage-asset-sourcerolearn"""
-    p_EgressEndpoints: typing.List[typing.Union['PropAssetEgressEndpoint', dict]] = attr.ib(
-        default=None,
-        converter=PropAssetEgressEndpoint.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropAssetEgressEndpoint), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "EgressEndpoints"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-asset.html#cfn-mediapackage-asset-egressendpoints"""
     p_ResourceId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
@@ -1295,6 +1421,11 @@ class Asset(Resource):
     def rv_CreatedAt(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-asset.html#aws-resource-mediapackage-asset-return-values"""
         return GetAtt(resource=self, attr_name="CreatedAt")
+    
+    @property
+    def rv_EgressEndpoints(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-asset.html#aws-resource-mediapackage-asset-return-values"""
+        return GetAtt(resource=self, attr_name="EgressEndpoints")
     
 
 @attr.s
@@ -1482,138 +1613,4 @@ class OriginEndpoint(Resource):
     def rv_Url(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-originendpoint.html#aws-resource-mediapackage-originendpoint-return-values"""
         return GetAtt(resource=self, attr_name="Url")
-    
-
-@attr.s
-class Channel(Resource):
-    """
-    AWS Object Type = "AWS::MediaPackage::Channel"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-channel.html
-
-    Property Document:
-    
-    - ``rp_Id``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-channel.html#cfn-mediapackage-channel-id
-    - ``p_Description``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-channel.html#cfn-mediapackage-channel-description
-    - ``p_EgressAccessLogs``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-channel.html#cfn-mediapackage-channel-egressaccesslogs
-    - ``p_IngressAccessLogs``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-channel.html#cfn-mediapackage-channel-ingressaccesslogs
-    - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-channel.html#cfn-mediapackage-channel-tags
-    """
-    AWS_OBJECT_TYPE = "AWS::MediaPackage::Channel"
-
-    
-    rp_Id: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Id"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-channel.html#cfn-mediapackage-channel-id"""
-    p_Description: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Description"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-channel.html#cfn-mediapackage-channel-description"""
-    p_EgressAccessLogs: typing.Union['PropChannelLogConfiguration', dict] = attr.ib(
-        default=None,
-        converter=PropChannelLogConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropChannelLogConfiguration)),
-        metadata={AttrMeta.PROPERTY_NAME: "EgressAccessLogs"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-channel.html#cfn-mediapackage-channel-egressaccesslogs"""
-    p_IngressAccessLogs: typing.Union['PropChannelLogConfiguration', dict] = attr.ib(
-        default=None,
-        converter=PropChannelLogConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropChannelLogConfiguration)),
-        metadata={AttrMeta.PROPERTY_NAME: "IngressAccessLogs"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-channel.html#cfn-mediapackage-channel-ingressaccesslogs"""
-    p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
-        default=None,
-        converter=Tag.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-channel.html#cfn-mediapackage-channel-tags"""
-
-    
-    @property
-    def rv_Arn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-channel.html#aws-resource-mediapackage-channel-return-values"""
-        return GetAtt(resource=self, attr_name="Arn")
-    
-
-@attr.s
-class PackagingConfiguration(Resource):
-    """
-    AWS Object Type = "AWS::MediaPackage::PackagingConfiguration"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-packagingconfiguration.html
-
-    Property Document:
-    
-    - ``rp_Id``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-packagingconfiguration.html#cfn-mediapackage-packagingconfiguration-id
-    - ``rp_PackagingGroupId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-packagingconfiguration.html#cfn-mediapackage-packagingconfiguration-packaginggroupid
-    - ``p_CmafPackage``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-packagingconfiguration.html#cfn-mediapackage-packagingconfiguration-cmafpackage
-    - ``p_DashPackage``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-packagingconfiguration.html#cfn-mediapackage-packagingconfiguration-dashpackage
-    - ``p_HlsPackage``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-packagingconfiguration.html#cfn-mediapackage-packagingconfiguration-hlspackage
-    - ``p_MssPackage``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-packagingconfiguration.html#cfn-mediapackage-packagingconfiguration-msspackage
-    - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-packagingconfiguration.html#cfn-mediapackage-packagingconfiguration-tags
-    """
-    AWS_OBJECT_TYPE = "AWS::MediaPackage::PackagingConfiguration"
-
-    
-    rp_Id: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Id"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-packagingconfiguration.html#cfn-mediapackage-packagingconfiguration-id"""
-    rp_PackagingGroupId: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "PackagingGroupId"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-packagingconfiguration.html#cfn-mediapackage-packagingconfiguration-packaginggroupid"""
-    p_CmafPackage: typing.Union['PropPackagingConfigurationCmafPackage', dict] = attr.ib(
-        default=None,
-        converter=PropPackagingConfigurationCmafPackage.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropPackagingConfigurationCmafPackage)),
-        metadata={AttrMeta.PROPERTY_NAME: "CmafPackage"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-packagingconfiguration.html#cfn-mediapackage-packagingconfiguration-cmafpackage"""
-    p_DashPackage: typing.Union['PropPackagingConfigurationDashPackage', dict] = attr.ib(
-        default=None,
-        converter=PropPackagingConfigurationDashPackage.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropPackagingConfigurationDashPackage)),
-        metadata={AttrMeta.PROPERTY_NAME: "DashPackage"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-packagingconfiguration.html#cfn-mediapackage-packagingconfiguration-dashpackage"""
-    p_HlsPackage: typing.Union['PropPackagingConfigurationHlsPackage', dict] = attr.ib(
-        default=None,
-        converter=PropPackagingConfigurationHlsPackage.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropPackagingConfigurationHlsPackage)),
-        metadata={AttrMeta.PROPERTY_NAME: "HlsPackage"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-packagingconfiguration.html#cfn-mediapackage-packagingconfiguration-hlspackage"""
-    p_MssPackage: typing.Union['PropPackagingConfigurationMssPackage', dict] = attr.ib(
-        default=None,
-        converter=PropPackagingConfigurationMssPackage.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropPackagingConfigurationMssPackage)),
-        metadata={AttrMeta.PROPERTY_NAME: "MssPackage"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-packagingconfiguration.html#cfn-mediapackage-packagingconfiguration-msspackage"""
-    p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
-        default=None,
-        converter=Tag.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-packagingconfiguration.html#cfn-mediapackage-packagingconfiguration-tags"""
-
-    
-    @property
-    def rv_Arn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediapackage-packagingconfiguration.html#aws-resource-mediapackage-packagingconfiguration-return-values"""
-        return GetAtt(resource=self, attr_name="Arn")
     

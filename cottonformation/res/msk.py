@@ -76,6 +76,26 @@ class PropClusterCloudWatchLogs(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-cloudwatchlogs.html#cfn-msk-cluster-cloudwatchlogs-loggroup"""
 
 @attr.s
+class PropClusterPublicAccess(Property):
+    """
+    AWS Object Type = "AWS::MSK::Cluster.PublicAccess"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-publicaccess.html
+
+    Property Document:
+    
+    - ``p_Type``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-publicaccess.html#cfn-msk-cluster-publicaccess-type
+    """
+    AWS_OBJECT_TYPE = "AWS::MSK::Cluster.PublicAccess"
+    
+    p_Type: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "Type"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-publicaccess.html#cfn-msk-cluster-publicaccess-type"""
+
+@attr.s
 class PropClusterEncryptionAtRest(Property):
     """
     AWS Object Type = "AWS::MSK::Cluster.EncryptionAtRest"
@@ -94,6 +114,26 @@ class PropClusterEncryptionAtRest(Property):
         metadata={AttrMeta.PROPERTY_NAME: "DataVolumeKMSKeyId"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-encryptionatrest.html#cfn-msk-cluster-encryptionatrest-datavolumekmskeyid"""
+
+@attr.s
+class PropClusterUnauthenticated(Property):
+    """
+    AWS Object Type = "AWS::MSK::Cluster.Unauthenticated"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-unauthenticated.html
+
+    Property Document:
+    
+    - ``rp_Enabled``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-unauthenticated.html#cfn-msk-cluster-unauthenticated-enabled
+    """
+    AWS_OBJECT_TYPE = "AWS::MSK::Cluster.Unauthenticated"
+    
+    rp_Enabled: bool = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(bool),
+        metadata={AttrMeta.PROPERTY_NAME: "Enabled"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-unauthenticated.html#cfn-msk-cluster-unauthenticated-enabled"""
 
 @attr.s
 class PropClusterEncryptionInTransit(Property):
@@ -239,6 +279,27 @@ class PropClusterJmxExporter(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-jmxexporter.html#cfn-msk-cluster-jmxexporter-enabledinbroker"""
 
 @attr.s
+class PropClusterConnectivityInfo(Property):
+    """
+    AWS Object Type = "AWS::MSK::Cluster.ConnectivityInfo"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-connectivityinfo.html
+
+    Property Document:
+    
+    - ``p_PublicAccess``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-connectivityinfo.html#cfn-msk-cluster-connectivityinfo-publicaccess
+    """
+    AWS_OBJECT_TYPE = "AWS::MSK::Cluster.ConnectivityInfo"
+    
+    p_PublicAccess: typing.Union['PropClusterPublicAccess', dict] = attr.ib(
+        default=None,
+        converter=PropClusterPublicAccess.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropClusterPublicAccess)),
+        metadata={AttrMeta.PROPERTY_NAME: "PublicAccess"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-connectivityinfo.html#cfn-msk-cluster-connectivityinfo-publicaccess"""
+
+@attr.s
 class PropClusterNodeExporter(Property):
     """
     AWS Object Type = "AWS::MSK::Cluster.NodeExporter"
@@ -315,6 +376,7 @@ class PropClusterTls(Property):
     Property Document:
     
     - ``p_CertificateAuthorityArnList``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-tls.html#cfn-msk-cluster-tls-certificateauthorityarnlist
+    - ``p_Enabled``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-tls.html#cfn-msk-cluster-tls-enabled
     """
     AWS_OBJECT_TYPE = "AWS::MSK::Cluster.Tls"
     
@@ -324,6 +386,12 @@ class PropClusterTls(Property):
         metadata={AttrMeta.PROPERTY_NAME: "CertificateAuthorityArnList"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-tls.html#cfn-msk-cluster-tls-certificateauthorityarnlist"""
+    p_Enabled: bool = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(bool)),
+        metadata={AttrMeta.PROPERTY_NAME: "Enabled"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-tls.html#cfn-msk-cluster-tls-enabled"""
 
 @attr.s
 class PropClusterBrokerLogs(Property):
@@ -473,6 +541,7 @@ class PropClusterClientAuthentication(Property):
     
     - ``p_Sasl``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-clientauthentication.html#cfn-msk-cluster-clientauthentication-sasl
     - ``p_Tls``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-clientauthentication.html#cfn-msk-cluster-clientauthentication-tls
+    - ``p_Unauthenticated``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-clientauthentication.html#cfn-msk-cluster-clientauthentication-unauthenticated
     """
     AWS_OBJECT_TYPE = "AWS::MSK::Cluster.ClientAuthentication"
     
@@ -490,6 +559,13 @@ class PropClusterClientAuthentication(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Tls"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-clientauthentication.html#cfn-msk-cluster-clientauthentication-tls"""
+    p_Unauthenticated: typing.Union['PropClusterUnauthenticated', dict] = attr.ib(
+        default=None,
+        converter=PropClusterUnauthenticated.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropClusterUnauthenticated)),
+        metadata={AttrMeta.PROPERTY_NAME: "Unauthenticated"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-clientauthentication.html#cfn-msk-cluster-clientauthentication-unauthenticated"""
 
 @attr.s
 class PropClusterOpenMonitoring(Property):
@@ -524,6 +600,7 @@ class PropClusterBrokerNodeGroupInfo(Property):
     - ``rp_ClientSubnets``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-brokernodegroupinfo.html#cfn-msk-cluster-brokernodegroupinfo-clientsubnets
     - ``rp_InstanceType``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-brokernodegroupinfo.html#cfn-msk-cluster-brokernodegroupinfo-instancetype
     - ``p_BrokerAZDistribution``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-brokernodegroupinfo.html#cfn-msk-cluster-brokernodegroupinfo-brokerazdistribution
+    - ``p_ConnectivityInfo``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-brokernodegroupinfo.html#cfn-msk-cluster-brokernodegroupinfo-connectivityinfo
     - ``p_SecurityGroups``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-brokernodegroupinfo.html#cfn-msk-cluster-brokernodegroupinfo-securitygroups
     - ``p_StorageInfo``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-brokernodegroupinfo.html#cfn-msk-cluster-brokernodegroupinfo-storageinfo
     """
@@ -547,6 +624,13 @@ class PropClusterBrokerNodeGroupInfo(Property):
         metadata={AttrMeta.PROPERTY_NAME: "BrokerAZDistribution"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-brokernodegroupinfo.html#cfn-msk-cluster-brokernodegroupinfo-brokerazdistribution"""
+    p_ConnectivityInfo: typing.Union['PropClusterConnectivityInfo', dict] = attr.ib(
+        default=None,
+        converter=PropClusterConnectivityInfo.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropClusterConnectivityInfo)),
+        metadata={AttrMeta.PROPERTY_NAME: "ConnectivityInfo"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-brokernodegroupinfo.html#cfn-msk-cluster-brokernodegroupinfo-connectivityinfo"""
     p_SecurityGroups: typing.List[TypeHint.intrinsic_str] = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),

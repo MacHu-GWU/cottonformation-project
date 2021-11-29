@@ -76,19 +76,6 @@ class PropEnvironmentModuleLoggingConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mwaa-environment-moduleloggingconfiguration.html#cfn-mwaa-environment-moduleloggingconfiguration-loglevel"""
 
 @attr.s
-class PropEnvironmentTagMap(Property):
-    """
-    AWS Object Type = "AWS::MWAA::Environment.TagMap"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mwaa-environment-tagmap.html
-
-    Property Document:
-    
-    """
-    AWS_OBJECT_TYPE = "AWS::MWAA::Environment.TagMap"
-    
-
-@attr.s
 class PropEnvironmentLoggingConfiguration(Property):
     """
     AWS Object Type = "AWS::MWAA::Environment.LoggingConfiguration"
@@ -293,10 +280,9 @@ class Environment(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "WeeklyMaintenanceWindowStart"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mwaa-environment.html#cfn-mwaa-environment-weeklymaintenancewindowstart"""
-    p_Tags: typing.Union['PropEnvironmentTagMap', dict] = attr.ib(
+    p_Tags: dict = attr.ib(
         default=None,
-        converter=PropEnvironmentTagMap.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropEnvironmentTagMap)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "Tags"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mwaa-environment.html#cfn-mwaa-environment-tags"""
@@ -316,4 +302,24 @@ class Environment(Resource):
     def rv_LoggingConfigurationDagProcessingLogsCloudWatchLogGroupArn(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mwaa-environment.html#aws-resource-mwaa-environment-return-values"""
         return GetAtt(resource=self, attr_name="LoggingConfiguration.DagProcessingLogs.CloudWatchLogGroupArn")
+    
+    @property
+    def rv_LoggingConfigurationSchedulerLogsCloudWatchLogGroupArn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mwaa-environment.html#aws-resource-mwaa-environment-return-values"""
+        return GetAtt(resource=self, attr_name="LoggingConfiguration.SchedulerLogs.CloudWatchLogGroupArn")
+    
+    @property
+    def rv_LoggingConfigurationWebserverLogsCloudWatchLogGroupArn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mwaa-environment.html#aws-resource-mwaa-environment-return-values"""
+        return GetAtt(resource=self, attr_name="LoggingConfiguration.WebserverLogs.CloudWatchLogGroupArn")
+    
+    @property
+    def rv_LoggingConfigurationWorkerLogsCloudWatchLogGroupArn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mwaa-environment.html#aws-resource-mwaa-environment-return-values"""
+        return GetAtt(resource=self, attr_name="LoggingConfiguration.WorkerLogs.CloudWatchLogGroupArn")
+    
+    @property
+    def rv_LoggingConfigurationTaskLogsCloudWatchLogGroupArn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mwaa-environment.html#aws-resource-mwaa-environment-return-values"""
+        return GetAtt(resource=self, attr_name="LoggingConfiguration.TaskLogs.CloudWatchLogGroupArn")
     

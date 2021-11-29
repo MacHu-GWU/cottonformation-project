@@ -15,6 +15,33 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
+class PropCanaryS3Encryption(Property):
+    """
+    AWS Object Type = "AWS::Synthetics::Canary.S3Encryption"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-s3encryption.html
+
+    Property Document:
+    
+    - ``p_EncryptionMode``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-s3encryption.html#cfn-synthetics-canary-s3encryption-encryptionmode
+    - ``p_KmsKeyArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-s3encryption.html#cfn-synthetics-canary-s3encryption-kmskeyarn
+    """
+    AWS_OBJECT_TYPE = "AWS::Synthetics::Canary.S3Encryption"
+    
+    p_EncryptionMode: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "EncryptionMode"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-s3encryption.html#cfn-synthetics-canary-s3encryption-encryptionmode"""
+    p_KmsKeyArn: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "KmsKeyArn"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-s3encryption.html#cfn-synthetics-canary-s3encryption-kmskeyarn"""
+
+@attr.s
 class PropCanaryVPCConfig(Property):
     """
     AWS Object Type = "AWS::Synthetics::Canary.VPCConfig"
@@ -124,6 +151,33 @@ class PropCanaryCode(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-code.html#cfn-synthetics-canary-code-script"""
 
 @attr.s
+class PropCanaryBaseScreenshot(Property):
+    """
+    AWS Object Type = "AWS::Synthetics::Canary.BaseScreenshot"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-basescreenshot.html
+
+    Property Document:
+    
+    - ``rp_ScreenshotName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-basescreenshot.html#cfn-synthetics-canary-basescreenshot-screenshotname
+    - ``p_IgnoreCoordinates``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-basescreenshot.html#cfn-synthetics-canary-basescreenshot-ignorecoordinates
+    """
+    AWS_OBJECT_TYPE = "AWS::Synthetics::Canary.BaseScreenshot"
+    
+    rp_ScreenshotName: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "ScreenshotName"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-basescreenshot.html#cfn-synthetics-canary-basescreenshot-screenshotname"""
+    p_IgnoreCoordinates: typing.List[TypeHint.intrinsic_str] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "IgnoreCoordinates"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-basescreenshot.html#cfn-synthetics-canary-basescreenshot-ignorecoordinates"""
+
+@attr.s
 class PropCanaryRunConfig(Property):
     """
     AWS Object Type = "AWS::Synthetics::Canary.RunConfig"
@@ -164,6 +218,55 @@ class PropCanaryRunConfig(Property):
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-runconfig.html#cfn-synthetics-canary-runconfig-timeoutinseconds"""
 
+@attr.s
+class PropCanaryArtifactConfig(Property):
+    """
+    AWS Object Type = "AWS::Synthetics::Canary.ArtifactConfig"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-artifactconfig.html
+
+    Property Document:
+    
+    - ``p_S3Encryption``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-artifactconfig.html#cfn-synthetics-canary-artifactconfig-s3encryption
+    """
+    AWS_OBJECT_TYPE = "AWS::Synthetics::Canary.ArtifactConfig"
+    
+    p_S3Encryption: typing.Union['PropCanaryS3Encryption', dict] = attr.ib(
+        default=None,
+        converter=PropCanaryS3Encryption.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropCanaryS3Encryption)),
+        metadata={AttrMeta.PROPERTY_NAME: "S3Encryption"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-artifactconfig.html#cfn-synthetics-canary-artifactconfig-s3encryption"""
+
+@attr.s
+class PropCanaryVisualReference(Property):
+    """
+    AWS Object Type = "AWS::Synthetics::Canary.VisualReference"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-visualreference.html
+
+    Property Document:
+    
+    - ``rp_BaseCanaryRunId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-visualreference.html#cfn-synthetics-canary-visualreference-basecanaryrunid
+    - ``p_BaseScreenshots``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-visualreference.html#cfn-synthetics-canary-visualreference-basescreenshots
+    """
+    AWS_OBJECT_TYPE = "AWS::Synthetics::Canary.VisualReference"
+    
+    rp_BaseCanaryRunId: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "BaseCanaryRunId"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-visualreference.html#cfn-synthetics-canary-visualreference-basecanaryrunid"""
+    p_BaseScreenshots: typing.List[typing.Union['PropCanaryBaseScreenshot', dict]] = attr.ib(
+        default=None,
+        converter=PropCanaryBaseScreenshot.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropCanaryBaseScreenshot), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "BaseScreenshots"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-visualreference.html#cfn-synthetics-canary-visualreference-basescreenshots"""
+
 
 #--- Resource declaration ---
 
@@ -183,10 +286,12 @@ class Canary(Resource):
     - ``rp_RuntimeVersion``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html#cfn-synthetics-canary-runtimeversion
     - ``rp_Schedule``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html#cfn-synthetics-canary-schedule
     - ``rp_StartCanaryAfterCreation``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html#cfn-synthetics-canary-startcanaryaftercreation
+    - ``p_ArtifactConfig``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html#cfn-synthetics-canary-artifactconfig
     - ``p_FailureRetentionPeriod``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html#cfn-synthetics-canary-failureretentionperiod
     - ``p_RunConfig``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html#cfn-synthetics-canary-runconfig
     - ``p_SuccessRetentionPeriod``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html#cfn-synthetics-canary-successretentionperiod
     - ``p_VPCConfig``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html#cfn-synthetics-canary-vpcconfig
+    - ``p_VisualReference``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html#cfn-synthetics-canary-visualreference
     - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html#cfn-synthetics-canary-tags
     """
     AWS_OBJECT_TYPE = "AWS::Synthetics::Canary"
@@ -236,6 +341,13 @@ class Canary(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "StartCanaryAfterCreation"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html#cfn-synthetics-canary-startcanaryaftercreation"""
+    p_ArtifactConfig: typing.Union['PropCanaryArtifactConfig', dict] = attr.ib(
+        default=None,
+        converter=PropCanaryArtifactConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropCanaryArtifactConfig)),
+        metadata={AttrMeta.PROPERTY_NAME: "ArtifactConfig"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html#cfn-synthetics-canary-artifactconfig"""
     p_FailureRetentionPeriod: int = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(int)),
@@ -262,6 +374,13 @@ class Canary(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "VPCConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html#cfn-synthetics-canary-vpcconfig"""
+    p_VisualReference: typing.Union['PropCanaryVisualReference', dict] = attr.ib(
+        default=None,
+        converter=PropCanaryVisualReference.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropCanaryVisualReference)),
+        metadata={AttrMeta.PROPERTY_NAME: "VisualReference"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html#cfn-synthetics-canary-visualreference"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,

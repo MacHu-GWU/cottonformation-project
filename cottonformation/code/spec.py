@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+
 import json
 import attr
 import jinja2
@@ -18,6 +19,10 @@ spec_file = here.parent.parent.append_parts("cft-spec.json")
 
 
 def download_spec_file():
+    """
+    The spec file can be found in
+    https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-resource-specification.html
+    """
     if not spec_file.exists():
         url = "https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json"
         spec_file.write_text(requests.get(url).text, encoding="utf-8")
@@ -83,7 +88,8 @@ PRIMITIVE_TYPE_DICT = {
 
 def _find_type_hint_and_validator(prop: typing.Union['Property', 'ResourceProperty'],
                                   prop_type_class_name: str,
-                                  cycled_class_name_set: typing.Set[str]) -> typing.Tuple[str, typing.Union[str, None], typing.Union[str, None]]:
+                                  cycled_class_name_set: typing.Set[str]) -> typing.Tuple[
+    str, typing.Union[str, None], typing.Union[str, None]]:
     """
     We need to define type hint and validators for attrs.
 
@@ -94,13 +100,13 @@ def _find_type_hint_and_validator(prop: typing.Union['Property', 'ResourceProper
     **I know the logic is complicate, and there's a lots of edge case need to be
     handled properly. This is the best I can do now**.
     """
-    #--- Debug ---
+    # --- Debug ---
     # if prop_type_class_name == "InstanceGroupConfigConfiguration":
     # if prop_type_class_name == "InstanceGroupConfigConfiguration" and prop.Name == "Configuration":
     # if prop.ResourceName == "WebACL" and prop.Name == "ScopeDownStatement":
     #     print(prop.Type, prop.PrimitiveType, prop.ItemType, prop.PrimitiveItemType)
 
-    #-------------
+    # -------------
     need_validator = True
     if (prop.Type == LIST_TYPE) and (prop.ItemType == TAG_TYPE):
         type_hint = f"typing.List[typing.Union[{TAG_TYPE}, dict]]"
@@ -110,11 +116,13 @@ def _find_type_hint_and_validator(prop: typing.Union['Property', 'ResourceProper
     elif (prop.Type == LIST_TYPE) and bool(prop.ItemType):
         parent_class_name = prop.ResourceName + prop.ItemType
         type_hint = "typing.List[typing.Union['{}', dict]]".format("Prop" + parent_class_name)
-        if (parent_class_name == prop_type_class_name) or (parent_class_name in cycled_class_name_set): # self depends on self or cycle depends
+        if (parent_class_name == prop_type_class_name) or (
+            parent_class_name in cycled_class_name_set):  # self depends on self or cycle depends
             validator = "attr.validators.instance_of(list)"
             converter = None
         else:
-            validator = "attr.validators.deep_iterable(member_validator=attr.validators.instance_of({}), iterable_validator=attr.validators.instance_of(list))".format("Prop" + parent_class_name)
+            validator = "attr.validators.deep_iterable(member_validator=attr.validators.instance_of({}), iterable_validator=attr.validators.instance_of(list))".format(
+                "Prop" + parent_class_name)
             converter = "{}.from_list".format("Prop" + parent_class_name)
 
     elif (prop.Type == LIST_TYPE) and bool(prop.PrimitiveItemType) and (prop.PrimitiveItemType == STR_TYPE):
@@ -131,7 +139,8 @@ def _find_type_hint_and_validator(prop: typing.Union['Property', 'ResourceProper
     elif (prop.Type == MAP_TYPE) and bool(prop.ItemType):
         parent_class_name = prop.ResourceName + prop.ItemType
         type_hint = "typing.Union['{}', dict]".format("Prop" + parent_class_name)
-        if (parent_class_name == prop_type_class_name) or (parent_class_name in cycled_class_name_set): # self depends on self or cycle depends
+        if (parent_class_name == prop_type_class_name) or (
+            parent_class_name in cycled_class_name_set):  # self depends on self or cycle depends
             validator = None
             need_validator = False
             converter = None
@@ -154,7 +163,8 @@ def _find_type_hint_and_validator(prop: typing.Union['Property', 'ResourceProper
     elif bool(prop.Type):
         parent_class_name = prop.ResourceName + prop.Type
         type_hint = "typing.Union['{}', dict]".format("Prop" + parent_class_name)
-        if (parent_class_name == prop_type_class_name) or (parent_class_name in cycled_class_name_set):  # self depends on self or cycle depends
+        if (parent_class_name == prop_type_class_name) or (
+            parent_class_name in cycled_class_name_set):  # self depends on self or cycle depends
             validator = None
             need_validator = False
             converter = None
@@ -474,7 +484,8 @@ class CftSpec:
             for resource_attribute_name, resource_attribute_dct in resource_type_dct.get("Attributes", {}).items():
                 # print(f"--- {resource_attribute_name} ---")
                 resource_doc_url = resource_type_dct["Documentation"]
-                resource_attribute_doc_url = resource_doc_url + "#" + resource_doc_url.split("/")[-1].split(".")[0] + "-return-values"
+                resource_attribute_doc_url = resource_doc_url + "#" + resource_doc_url.split("/")[-1].split(".")[
+                    0] + "-return-values"
 
                 resource_attribute_dct["Name"] = resource_attribute_name
                 resource_attribute_dct["SystemName"] = SystemName
@@ -541,7 +552,7 @@ def _standardize_service_name(service_name):
 
 
 def order_by_dependencies(dependency_mapper: typing.Dict[str, typing.Set[str]]) \
-        -> typing.Tuple[typing.List[str], typing.List[str]]:
+    -> typing.Tuple[typing.List[str], typing.List[str]]:
     """
     You have to make sure there's no cycle dependency.
     """

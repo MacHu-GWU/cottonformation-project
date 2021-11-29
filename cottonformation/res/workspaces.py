@@ -107,6 +107,52 @@ class PropConnectionAliasConnectionAliasAssociation(Property):
 #--- Resource declaration ---
 
 @attr.s
+class ConnectionAlias(Resource):
+    """
+    AWS Object Type = "AWS::WorkSpaces::ConnectionAlias"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-connectionalias.html
+
+    Property Document:
+    
+    - ``rp_ConnectionString``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-connectionalias.html#cfn-workspaces-connectionalias-connectionstring
+    - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-connectionalias.html#cfn-workspaces-connectionalias-tags
+    """
+    AWS_OBJECT_TYPE = "AWS::WorkSpaces::ConnectionAlias"
+
+    
+    rp_ConnectionString: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "ConnectionString"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-connectionalias.html#cfn-workspaces-connectionalias-connectionstring"""
+    p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
+        default=None,
+        converter=Tag.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-connectionalias.html#cfn-workspaces-connectionalias-tags"""
+
+    
+    @property
+    def rv_Associations(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-connectionalias.html#aws-resource-workspaces-connectionalias-return-values"""
+        return GetAtt(resource=self, attr_name="Associations")
+    
+    @property
+    def rv_AliasId(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-connectionalias.html#aws-resource-workspaces-connectionalias-return-values"""
+        return GetAtt(resource=self, attr_name="AliasId")
+    
+    @property
+    def rv_ConnectionAliasState(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-connectionalias.html#aws-resource-workspaces-connectionalias-return-values"""
+        return GetAtt(resource=self, attr_name="ConnectionAliasState")
+    
+
+@attr.s
 class Workspace(Resource):
     """
     AWS Object Type = "AWS::WorkSpaces::Workspace"
@@ -178,50 +224,4 @@ class Workspace(Resource):
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-workspace.html#cfn-workspaces-workspace-tags"""
 
-    
-
-@attr.s
-class ConnectionAlias(Resource):
-    """
-    AWS Object Type = "AWS::WorkSpaces::ConnectionAlias"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-connectionalias.html
-
-    Property Document:
-    
-    - ``rp_ConnectionString``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-connectionalias.html#cfn-workspaces-connectionalias-connectionstring
-    - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-connectionalias.html#cfn-workspaces-connectionalias-tags
-    """
-    AWS_OBJECT_TYPE = "AWS::WorkSpaces::ConnectionAlias"
-
-    
-    rp_ConnectionString: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "ConnectionString"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-connectionalias.html#cfn-workspaces-connectionalias-connectionstring"""
-    p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
-        default=None,
-        converter=Tag.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-connectionalias.html#cfn-workspaces-connectionalias-tags"""
-
-    
-    @property
-    def rv_Associations(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-connectionalias.html#aws-resource-workspaces-connectionalias-return-values"""
-        return GetAtt(resource=self, attr_name="Associations")
-    
-    @property
-    def rv_AliasId(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-connectionalias.html#aws-resource-workspaces-connectionalias-return-values"""
-        return GetAtt(resource=self, attr_name="AliasId")
-    
-    @property
-    def rv_ConnectionAliasState(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-connectionalias.html#aws-resource-workspaces-connectionalias-return-values"""
-        return GetAtt(resource=self, attr_name="ConnectionAliasState")
     

@@ -358,6 +358,51 @@ class ResolverQueryLoggingConfigAssociation(Resource):
     
 
 @attr.s
+class ResolverConfig(Resource):
+    """
+    AWS Object Type = "AWS::Route53Resolver::ResolverConfig"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverconfig.html
+
+    Property Document:
+    
+    - ``rp_AutodefinedReverseFlag``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverconfig.html#cfn-route53resolver-resolverconfig-autodefinedreverseflag
+    - ``rp_ResourceId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverconfig.html#cfn-route53resolver-resolverconfig-resourceid
+    """
+    AWS_OBJECT_TYPE = "AWS::Route53Resolver::ResolverConfig"
+
+    
+    rp_AutodefinedReverseFlag: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "AutodefinedReverseFlag"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverconfig.html#cfn-route53resolver-resolverconfig-autodefinedreverseflag"""
+    rp_ResourceId: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "ResourceId"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverconfig.html#cfn-route53resolver-resolverconfig-resourceid"""
+
+    
+    @property
+    def rv_Id(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverconfig.html#aws-resource-route53resolver-resolverconfig-return-values"""
+        return GetAtt(resource=self, attr_name="Id")
+    
+    @property
+    def rv_OwnerId(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverconfig.html#aws-resource-route53resolver-resolverconfig-return-values"""
+        return GetAtt(resource=self, attr_name="OwnerId")
+    
+    @property
+    def rv_AutodefinedReverse(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverconfig.html#aws-resource-route53resolver-resolverconfig-return-values"""
+        return GetAtt(resource=self, attr_name="AutodefinedReverse")
+    
+
+@attr.s
 class ResolverDNSSECConfig(Resource):
     """
     AWS Object Type = "AWS::Route53Resolver::ResolverDNSSECConfig"
@@ -555,14 +600,9 @@ class ResolverRule(Resource):
         return GetAtt(resource=self, attr_name="DomainName")
     
     @property
-    def rv_ResolverRuleId(self) -> GetAtt:
+    def rv_Name(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverrule.html#aws-resource-route53resolver-resolverrule-return-values"""
-        return GetAtt(resource=self, attr_name="ResolverRuleId")
-    
-    @property
-    def rv_Arn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverrule.html#aws-resource-route53resolver-resolverrule-return-values"""
-        return GetAtt(resource=self, attr_name="Arn")
+        return GetAtt(resource=self, attr_name="Name")
     
     @property
     def rv_TargetIps(self) -> GetAtt:
@@ -570,9 +610,14 @@ class ResolverRule(Resource):
         return GetAtt(resource=self, attr_name="TargetIps")
     
     @property
-    def rv_Name(self) -> GetAtt:
+    def rv_Arn(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverrule.html#aws-resource-route53resolver-resolverrule-return-values"""
-        return GetAtt(resource=self, attr_name="Name")
+        return GetAtt(resource=self, attr_name="Arn")
+    
+    @property
+    def rv_ResolverRuleId(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverrule.html#aws-resource-route53resolver-resolverrule-return-values"""
+        return GetAtt(resource=self, attr_name="ResolverRuleId")
     
 
 @attr.s

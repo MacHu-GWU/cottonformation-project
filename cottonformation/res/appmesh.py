@@ -3499,6 +3499,7 @@ class PropGatewayRouteGatewayRouteSpec(Property):
     - ``p_GrpcRoute``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-gatewayroutespec.html#cfn-appmesh-gatewayroute-gatewayroutespec-grpcroute
     - ``p_Http2Route``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-gatewayroutespec.html#cfn-appmesh-gatewayroute-gatewayroutespec-http2route
     - ``p_HttpRoute``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-gatewayroutespec.html#cfn-appmesh-gatewayroute-gatewayroutespec-httproute
+    - ``p_Priority``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-gatewayroutespec.html#cfn-appmesh-gatewayroute-gatewayroutespec-priority
     """
     AWS_OBJECT_TYPE = "AWS::AppMesh::GatewayRoute.GatewayRouteSpec"
     
@@ -3523,6 +3524,12 @@ class PropGatewayRouteGatewayRouteSpec(Property):
         metadata={AttrMeta.PROPERTY_NAME: "HttpRoute"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-gatewayroutespec.html#cfn-appmesh-gatewayroute-gatewayroutespec-httproute"""
+    p_Priority: int = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(int)),
+        metadata={AttrMeta.PROPERTY_NAME: "Priority"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-gatewayroutespec.html#cfn-appmesh-gatewayroute-gatewayroutespec-priority"""
 
 @attr.s
 class PropRouteRouteSpec(Property):
@@ -3898,6 +3905,236 @@ class Route(Resource):
     
 
 @attr.s
+class VirtualNode(Resource):
+    """
+    AWS Object Type = "AWS::AppMesh::VirtualNode"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualnode.html
+
+    Property Document:
+    
+    - ``rp_MeshName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualnode.html#cfn-appmesh-virtualnode-meshname
+    - ``rp_Spec``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualnode.html#cfn-appmesh-virtualnode-spec
+    - ``p_MeshOwner``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualnode.html#cfn-appmesh-virtualnode-meshowner
+    - ``p_VirtualNodeName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualnode.html#cfn-appmesh-virtualnode-virtualnodename
+    - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualnode.html#cfn-appmesh-virtualnode-tags
+    """
+    AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualNode"
+
+    
+    rp_MeshName: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "MeshName"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualnode.html#cfn-appmesh-virtualnode-meshname"""
+    rp_Spec: typing.Union['PropVirtualNodeVirtualNodeSpec', dict] = attr.ib(
+        default=None,
+        converter=PropVirtualNodeVirtualNodeSpec.from_dict,
+        validator=attr.validators.instance_of(PropVirtualNodeVirtualNodeSpec),
+        metadata={AttrMeta.PROPERTY_NAME: "Spec"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualnode.html#cfn-appmesh-virtualnode-spec"""
+    p_MeshOwner: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "MeshOwner"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualnode.html#cfn-appmesh-virtualnode-meshowner"""
+    p_VirtualNodeName: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "VirtualNodeName"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualnode.html#cfn-appmesh-virtualnode-virtualnodename"""
+    p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
+        default=None,
+        converter=Tag.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualnode.html#cfn-appmesh-virtualnode-tags"""
+
+    
+    @property
+    def rv_Uid(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualnode.html#aws-resource-appmesh-virtualnode-return-values"""
+        return GetAtt(resource=self, attr_name="Uid")
+    
+    @property
+    def rv_MeshName(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualnode.html#aws-resource-appmesh-virtualnode-return-values"""
+        return GetAtt(resource=self, attr_name="MeshName")
+    
+    @property
+    def rv_MeshOwner(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualnode.html#aws-resource-appmesh-virtualnode-return-values"""
+        return GetAtt(resource=self, attr_name="MeshOwner")
+    
+    @property
+    def rv_ResourceOwner(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualnode.html#aws-resource-appmesh-virtualnode-return-values"""
+        return GetAtt(resource=self, attr_name="ResourceOwner")
+    
+    @property
+    def rv_Arn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualnode.html#aws-resource-appmesh-virtualnode-return-values"""
+        return GetAtt(resource=self, attr_name="Arn")
+    
+    @property
+    def rv_VirtualNodeName(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualnode.html#aws-resource-appmesh-virtualnode-return-values"""
+        return GetAtt(resource=self, attr_name="VirtualNodeName")
+    
+
+@attr.s
+class VirtualRouter(Resource):
+    """
+    AWS Object Type = "AWS::AppMesh::VirtualRouter"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualrouter.html
+
+    Property Document:
+    
+    - ``rp_MeshName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualrouter.html#cfn-appmesh-virtualrouter-meshname
+    - ``rp_Spec``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualrouter.html#cfn-appmesh-virtualrouter-spec
+    - ``p_MeshOwner``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualrouter.html#cfn-appmesh-virtualrouter-meshowner
+    - ``p_VirtualRouterName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualrouter.html#cfn-appmesh-virtualrouter-virtualroutername
+    - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualrouter.html#cfn-appmesh-virtualrouter-tags
+    """
+    AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualRouter"
+
+    
+    rp_MeshName: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "MeshName"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualrouter.html#cfn-appmesh-virtualrouter-meshname"""
+    rp_Spec: typing.Union['PropVirtualRouterVirtualRouterSpec', dict] = attr.ib(
+        default=None,
+        converter=PropVirtualRouterVirtualRouterSpec.from_dict,
+        validator=attr.validators.instance_of(PropVirtualRouterVirtualRouterSpec),
+        metadata={AttrMeta.PROPERTY_NAME: "Spec"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualrouter.html#cfn-appmesh-virtualrouter-spec"""
+    p_MeshOwner: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "MeshOwner"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualrouter.html#cfn-appmesh-virtualrouter-meshowner"""
+    p_VirtualRouterName: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "VirtualRouterName"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualrouter.html#cfn-appmesh-virtualrouter-virtualroutername"""
+    p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
+        default=None,
+        converter=Tag.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualrouter.html#cfn-appmesh-virtualrouter-tags"""
+
+    
+    @property
+    def rv_Uid(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualrouter.html#aws-resource-appmesh-virtualrouter-return-values"""
+        return GetAtt(resource=self, attr_name="Uid")
+    
+    @property
+    def rv_MeshName(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualrouter.html#aws-resource-appmesh-virtualrouter-return-values"""
+        return GetAtt(resource=self, attr_name="MeshName")
+    
+    @property
+    def rv_VirtualRouterName(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualrouter.html#aws-resource-appmesh-virtualrouter-return-values"""
+        return GetAtt(resource=self, attr_name="VirtualRouterName")
+    
+    @property
+    def rv_MeshOwner(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualrouter.html#aws-resource-appmesh-virtualrouter-return-values"""
+        return GetAtt(resource=self, attr_name="MeshOwner")
+    
+    @property
+    def rv_ResourceOwner(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualrouter.html#aws-resource-appmesh-virtualrouter-return-values"""
+        return GetAtt(resource=self, attr_name="ResourceOwner")
+    
+    @property
+    def rv_Arn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualrouter.html#aws-resource-appmesh-virtualrouter-return-values"""
+        return GetAtt(resource=self, attr_name="Arn")
+    
+
+@attr.s
+class Mesh(Resource):
+    """
+    AWS Object Type = "AWS::AppMesh::Mesh"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-mesh.html
+
+    Property Document:
+    
+    - ``p_MeshName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-mesh.html#cfn-appmesh-mesh-meshname
+    - ``p_Spec``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-mesh.html#cfn-appmesh-mesh-spec
+    - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-mesh.html#cfn-appmesh-mesh-tags
+    """
+    AWS_OBJECT_TYPE = "AWS::AppMesh::Mesh"
+
+    
+    p_MeshName: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "MeshName"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-mesh.html#cfn-appmesh-mesh-meshname"""
+    p_Spec: typing.Union['PropMeshMeshSpec', dict] = attr.ib(
+        default=None,
+        converter=PropMeshMeshSpec.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropMeshMeshSpec)),
+        metadata={AttrMeta.PROPERTY_NAME: "Spec"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-mesh.html#cfn-appmesh-mesh-spec"""
+    p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
+        default=None,
+        converter=Tag.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-mesh.html#cfn-appmesh-mesh-tags"""
+
+    
+    @property
+    def rv_Uid(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-mesh.html#aws-resource-appmesh-mesh-return-values"""
+        return GetAtt(resource=self, attr_name="Uid")
+    
+    @property
+    def rv_MeshName(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-mesh.html#aws-resource-appmesh-mesh-return-values"""
+        return GetAtt(resource=self, attr_name="MeshName")
+    
+    @property
+    def rv_MeshOwner(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-mesh.html#aws-resource-appmesh-mesh-return-values"""
+        return GetAtt(resource=self, attr_name="MeshOwner")
+    
+    @property
+    def rv_ResourceOwner(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-mesh.html#aws-resource-appmesh-mesh-return-values"""
+        return GetAtt(resource=self, attr_name="ResourceOwner")
+    
+    @property
+    def rv_Arn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-mesh.html#aws-resource-appmesh-mesh-return-values"""
+        return GetAtt(resource=self, attr_name="Arn")
+    
+
+@attr.s
 class GatewayRoute(Resource):
     """
     AWS Object Type = "AWS::AppMesh::GatewayRoute"
@@ -4076,172 +4313,6 @@ class VirtualGateway(Resource):
     
 
 @attr.s
-class VirtualNode(Resource):
-    """
-    AWS Object Type = "AWS::AppMesh::VirtualNode"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualnode.html
-
-    Property Document:
-    
-    - ``rp_MeshName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualnode.html#cfn-appmesh-virtualnode-meshname
-    - ``rp_Spec``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualnode.html#cfn-appmesh-virtualnode-spec
-    - ``p_MeshOwner``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualnode.html#cfn-appmesh-virtualnode-meshowner
-    - ``p_VirtualNodeName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualnode.html#cfn-appmesh-virtualnode-virtualnodename
-    - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualnode.html#cfn-appmesh-virtualnode-tags
-    """
-    AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualNode"
-
-    
-    rp_MeshName: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "MeshName"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualnode.html#cfn-appmesh-virtualnode-meshname"""
-    rp_Spec: typing.Union['PropVirtualNodeVirtualNodeSpec', dict] = attr.ib(
-        default=None,
-        converter=PropVirtualNodeVirtualNodeSpec.from_dict,
-        validator=attr.validators.instance_of(PropVirtualNodeVirtualNodeSpec),
-        metadata={AttrMeta.PROPERTY_NAME: "Spec"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualnode.html#cfn-appmesh-virtualnode-spec"""
-    p_MeshOwner: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "MeshOwner"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualnode.html#cfn-appmesh-virtualnode-meshowner"""
-    p_VirtualNodeName: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "VirtualNodeName"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualnode.html#cfn-appmesh-virtualnode-virtualnodename"""
-    p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
-        default=None,
-        converter=Tag.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualnode.html#cfn-appmesh-virtualnode-tags"""
-
-    
-    @property
-    def rv_Uid(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualnode.html#aws-resource-appmesh-virtualnode-return-values"""
-        return GetAtt(resource=self, attr_name="Uid")
-    
-    @property
-    def rv_MeshName(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualnode.html#aws-resource-appmesh-virtualnode-return-values"""
-        return GetAtt(resource=self, attr_name="MeshName")
-    
-    @property
-    def rv_MeshOwner(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualnode.html#aws-resource-appmesh-virtualnode-return-values"""
-        return GetAtt(resource=self, attr_name="MeshOwner")
-    
-    @property
-    def rv_ResourceOwner(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualnode.html#aws-resource-appmesh-virtualnode-return-values"""
-        return GetAtt(resource=self, attr_name="ResourceOwner")
-    
-    @property
-    def rv_Arn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualnode.html#aws-resource-appmesh-virtualnode-return-values"""
-        return GetAtt(resource=self, attr_name="Arn")
-    
-    @property
-    def rv_VirtualNodeName(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualnode.html#aws-resource-appmesh-virtualnode-return-values"""
-        return GetAtt(resource=self, attr_name="VirtualNodeName")
-    
-
-@attr.s
-class VirtualRouter(Resource):
-    """
-    AWS Object Type = "AWS::AppMesh::VirtualRouter"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualrouter.html
-
-    Property Document:
-    
-    - ``rp_MeshName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualrouter.html#cfn-appmesh-virtualrouter-meshname
-    - ``rp_Spec``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualrouter.html#cfn-appmesh-virtualrouter-spec
-    - ``p_MeshOwner``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualrouter.html#cfn-appmesh-virtualrouter-meshowner
-    - ``p_VirtualRouterName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualrouter.html#cfn-appmesh-virtualrouter-virtualroutername
-    - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualrouter.html#cfn-appmesh-virtualrouter-tags
-    """
-    AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualRouter"
-
-    
-    rp_MeshName: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "MeshName"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualrouter.html#cfn-appmesh-virtualrouter-meshname"""
-    rp_Spec: typing.Union['PropVirtualRouterVirtualRouterSpec', dict] = attr.ib(
-        default=None,
-        converter=PropVirtualRouterVirtualRouterSpec.from_dict,
-        validator=attr.validators.instance_of(PropVirtualRouterVirtualRouterSpec),
-        metadata={AttrMeta.PROPERTY_NAME: "Spec"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualrouter.html#cfn-appmesh-virtualrouter-spec"""
-    p_MeshOwner: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "MeshOwner"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualrouter.html#cfn-appmesh-virtualrouter-meshowner"""
-    p_VirtualRouterName: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "VirtualRouterName"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualrouter.html#cfn-appmesh-virtualrouter-virtualroutername"""
-    p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
-        default=None,
-        converter=Tag.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualrouter.html#cfn-appmesh-virtualrouter-tags"""
-
-    
-    @property
-    def rv_Uid(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualrouter.html#aws-resource-appmesh-virtualrouter-return-values"""
-        return GetAtt(resource=self, attr_name="Uid")
-    
-    @property
-    def rv_MeshName(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualrouter.html#aws-resource-appmesh-virtualrouter-return-values"""
-        return GetAtt(resource=self, attr_name="MeshName")
-    
-    @property
-    def rv_VirtualRouterName(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualrouter.html#aws-resource-appmesh-virtualrouter-return-values"""
-        return GetAtt(resource=self, attr_name="VirtualRouterName")
-    
-    @property
-    def rv_MeshOwner(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualrouter.html#aws-resource-appmesh-virtualrouter-return-values"""
-        return GetAtt(resource=self, attr_name="MeshOwner")
-    
-    @property
-    def rv_ResourceOwner(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualrouter.html#aws-resource-appmesh-virtualrouter-return-values"""
-        return GetAtt(resource=self, attr_name="ResourceOwner")
-    
-    @property
-    def rv_Arn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualrouter.html#aws-resource-appmesh-virtualrouter-return-values"""
-        return GetAtt(resource=self, attr_name="Arn")
-    
-
-@attr.s
 class VirtualService(Resource):
     """
     AWS Object Type = "AWS::AppMesh::VirtualService"
@@ -4321,69 +4392,5 @@ class VirtualService(Resource):
     @property
     def rv_Arn(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualservice.html#aws-resource-appmesh-virtualservice-return-values"""
-        return GetAtt(resource=self, attr_name="Arn")
-    
-
-@attr.s
-class Mesh(Resource):
-    """
-    AWS Object Type = "AWS::AppMesh::Mesh"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-mesh.html
-
-    Property Document:
-    
-    - ``p_MeshName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-mesh.html#cfn-appmesh-mesh-meshname
-    - ``p_Spec``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-mesh.html#cfn-appmesh-mesh-spec
-    - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-mesh.html#cfn-appmesh-mesh-tags
-    """
-    AWS_OBJECT_TYPE = "AWS::AppMesh::Mesh"
-
-    
-    p_MeshName: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "MeshName"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-mesh.html#cfn-appmesh-mesh-meshname"""
-    p_Spec: typing.Union['PropMeshMeshSpec', dict] = attr.ib(
-        default=None,
-        converter=PropMeshMeshSpec.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropMeshMeshSpec)),
-        metadata={AttrMeta.PROPERTY_NAME: "Spec"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-mesh.html#cfn-appmesh-mesh-spec"""
-    p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
-        default=None,
-        converter=Tag.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-mesh.html#cfn-appmesh-mesh-tags"""
-
-    
-    @property
-    def rv_Uid(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-mesh.html#aws-resource-appmesh-mesh-return-values"""
-        return GetAtt(resource=self, attr_name="Uid")
-    
-    @property
-    def rv_MeshName(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-mesh.html#aws-resource-appmesh-mesh-return-values"""
-        return GetAtt(resource=self, attr_name="MeshName")
-    
-    @property
-    def rv_MeshOwner(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-mesh.html#aws-resource-appmesh-mesh-return-values"""
-        return GetAtt(resource=self, attr_name="MeshOwner")
-    
-    @property
-    def rv_ResourceOwner(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-mesh.html#aws-resource-appmesh-mesh-return-values"""
-        return GetAtt(resource=self, attr_name="ResourceOwner")
-    
-    @property
-    def rv_Arn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-mesh.html#aws-resource-appmesh-mesh-return-values"""
         return GetAtt(resource=self, attr_name="Arn")
     
