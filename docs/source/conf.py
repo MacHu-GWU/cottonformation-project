@@ -88,7 +88,7 @@ language = None
 exclude_patterns = []
 
 # The name of the Pygments (syntax highlighting) style to use.
-pygments_style = 'sphinx'
+pygments_style = 'monokai'
 
 # If true, `todo` and `todoList` produce output, else they produce nothing.
 todo_include_todos = True
@@ -97,11 +97,9 @@ todo_include_todos = True
 
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
-#
 html_theme = 'furo'
 html_theme_options = {
     "sidebar_hide_name": False,
-    "dark_logo": "cottonformation-logo.png",
 }
 pygments_dark_style = "monokai"
 
@@ -115,6 +113,12 @@ pygments_dark_style = "monokai"
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
+html_css_files = [
+    'css/custom-style.css',
+]
+html_js_files = [
+    'js/sorttable.js',
+]
 html_logo = "./_static/cottonformation-logo.png"
 html_favicon = "./_static/cottonformation-favicon.ico"
 
@@ -227,8 +231,3 @@ docfly.ApiReferenceDoc(
         "%s.tests" % package_name,
     ]
 ).fly()
-
-
-def setup(app):
-    app.add_stylesheet('css/custom-style.css')
-    app.add_javascript('js/sorttable.js')

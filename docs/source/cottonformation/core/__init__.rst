@@ -12,10 +12,10 @@ sub packages and modules
 
     helpers <helpers/__init__>
     config <config>
+    constant <constant>
     env <env>
-    model <model>
     exc <exc>
+    model <model>
     stack <stack>
     template <template>
-    constant <constant>
     

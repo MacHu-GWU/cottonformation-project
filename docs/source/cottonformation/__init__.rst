@@ -10,6 +10,6 @@ sub packages and modules
 .. toctree::
     :maxdepth: 1
 
-    stacks <stacks/__init__>
     core <core/__init__>
+    stacks <stacks/__init__>
     

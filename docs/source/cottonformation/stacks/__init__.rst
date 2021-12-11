@@ -10,7 +10,7 @@ sub packages and modules
 .. toctree::
     :maxdepth: 1
 
-    vpc <vpc>
-    rds <rds>
     jump_box <jump_box>
+    rds <rds>
+    vpc <vpc>
     

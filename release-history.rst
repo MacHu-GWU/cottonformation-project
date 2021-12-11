@@ -23,7 +23,7 @@ Release and Version History
 
 **Bugfixes**
 
-- fix a bug that remove a resource that in a resource group will also remove the entire resource group. Logically, a resource group is a container of a resource, so resource group depends on the resource member. But practically resource group should not be removed.
+- fix a bug that remove a resource that in a resource group will also remove the entire resource group. Logically, a resource group is a container of a resource, so resource group depends on the resource member. But practically resource group should not be removed.ma
 
 **Miscellaneous**
 
