@@ -394,6 +394,11 @@ class PublicDnsNamespace(Resource):
 
     
     @property
+    def rv_HostedZoneId(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-publicdnsnamespace.html#aws-resource-servicediscovery-publicdnsnamespace-return-values"""
+        return GetAtt(resource=self, attr_name="HostedZoneId")
+    
+    @property
     def rv_Id(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-publicdnsnamespace.html#aws-resource-servicediscovery-publicdnsnamespace-return-values"""
         return GetAtt(resource=self, attr_name="Id")
@@ -540,6 +545,11 @@ class PrivateDnsNamespace(Resource):
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-privatednsnamespace.html#cfn-servicediscovery-privatednsnamespace-tags"""
 
+    
+    @property
+    def rv_HostedZoneId(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-privatednsnamespace.html#aws-resource-servicediscovery-privatednsnamespace-return-values"""
+        return GetAtt(resource=self, attr_name="HostedZoneId")
     
     @property
     def rv_Id(self) -> GetAtt:

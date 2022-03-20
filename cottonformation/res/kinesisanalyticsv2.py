@@ -305,19 +305,6 @@ class PropApplicationOutputDestinationSchema(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-applicationoutput-destinationschema.html#cfn-kinesisanalyticsv2-applicationoutput-destinationschema-recordformattype"""
 
 @attr.s
-class PropApplicationCustomArtifactsConfiguration(Property):
-    """
-    AWS Object Type = "AWS::KinesisAnalyticsV2::Application.CustomArtifactsConfiguration"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-customartifactsconfiguration.html
-
-    Property Document:
-    
-    """
-    AWS_OBJECT_TYPE = "AWS::KinesisAnalyticsV2::Application.CustomArtifactsConfiguration"
-    
-
-@attr.s
 class PropApplicationOutputLambdaOutput(Property):
     """
     AWS Object Type = "AWS::KinesisAnalyticsV2::ApplicationOutput.LambdaOutput"
@@ -1018,10 +1005,10 @@ class PropApplicationZeppelinApplicationConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "CatalogConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-zeppelinapplicationconfiguration.html#cfn-kinesisanalyticsv2-application-zeppelinapplicationconfiguration-catalogconfiguration"""
-    p_CustomArtifactsConfiguration: typing.Union['PropApplicationCustomArtifactsConfiguration', dict] = attr.ib(
+    p_CustomArtifactsConfiguration: typing.List[typing.Union['PropApplicationCustomArtifactConfiguration', dict]] = attr.ib(
         default=None,
-        converter=PropApplicationCustomArtifactsConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropApplicationCustomArtifactsConfiguration)),
+        converter=PropApplicationCustomArtifactConfiguration.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropApplicationCustomArtifactConfiguration), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "CustomArtifactsConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalyticsv2-application-zeppelinapplicationconfiguration.html#cfn-kinesisanalyticsv2-application-zeppelinapplicationconfiguration-customartifactsconfiguration"""

@@ -161,6 +161,7 @@ class PropUserPoolSmsConfiguration(Property):
     
     - ``p_ExternalId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-smsconfiguration.html#cfn-cognito-userpool-smsconfiguration-externalid
     - ``p_SnsCallerArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-smsconfiguration.html#cfn-cognito-userpool-smsconfiguration-snscallerarn
+    - ``p_SnsRegion``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-smsconfiguration.html#cfn-cognito-userpool-smsconfiguration-snsregion
     """
     AWS_OBJECT_TYPE = "AWS::Cognito::UserPool.SmsConfiguration"
     
@@ -176,6 +177,12 @@ class PropUserPoolSmsConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "SnsCallerArn"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-smsconfiguration.html#cfn-cognito-userpool-smsconfiguration-snscallerarn"""
+    p_SnsRegion: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "SnsRegion"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cognito-userpool-smsconfiguration.html#cfn-cognito-userpool-smsconfiguration-snsregion"""
 
 @attr.s
 class PropUserPoolRiskConfigurationAttachmentAccountTakeoverActionType(Property):

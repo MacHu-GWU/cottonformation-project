@@ -1347,3 +1347,8 @@ class Image(Resource):
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-image.html#aws-resource-imagebuilder-image-return-values"""
         return GetAtt(resource=self, attr_name="ImageId")
     
+    @property
+    def rv_ImageUri(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-image.html#aws-resource-imagebuilder-image-return-values"""
+        return GetAtt(resource=self, attr_name="ImageUri")
+    

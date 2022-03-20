@@ -470,6 +470,47 @@ class PropDataSourceConfluenceBlogToIndexFieldMapping(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-confluenceblogtoindexfieldmapping.html#cfn-kendra-datasource-confluenceblogtoindexfieldmapping-datefieldformat"""
 
 @attr.s
+class PropDataSourceDocumentAttributeValue(Property):
+    """
+    AWS Object Type = "AWS::Kendra::DataSource.DocumentAttributeValue"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-documentattributevalue.html
+
+    Property Document:
+    
+    - ``p_DateValue``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-documentattributevalue.html#cfn-kendra-datasource-documentattributevalue-datevalue
+    - ``p_LongValue``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-documentattributevalue.html#cfn-kendra-datasource-documentattributevalue-longvalue
+    - ``p_StringListValue``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-documentattributevalue.html#cfn-kendra-datasource-documentattributevalue-stringlistvalue
+    - ``p_StringValue``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-documentattributevalue.html#cfn-kendra-datasource-documentattributevalue-stringvalue
+    """
+    AWS_OBJECT_TYPE = "AWS::Kendra::DataSource.DocumentAttributeValue"
+    
+    p_DateValue: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "DateValue"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-documentattributevalue.html#cfn-kendra-datasource-documentattributevalue-datevalue"""
+    p_LongValue: int = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(int)),
+        metadata={AttrMeta.PROPERTY_NAME: "LongValue"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-documentattributevalue.html#cfn-kendra-datasource-documentattributevalue-longvalue"""
+    p_StringListValue: typing.List[TypeHint.intrinsic_str] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "StringListValue"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-documentattributevalue.html#cfn-kendra-datasource-documentattributevalue-stringlistvalue"""
+    p_StringValue: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "StringValue"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-documentattributevalue.html#cfn-kendra-datasource-documentattributevalue-stringvalue"""
+
+@attr.s
 class PropDataSourceWebCrawlerSiteMapsConfiguration(Property):
     """
     AWS Object Type = "AWS::Kendra::DataSource.WebCrawlerSiteMapsConfiguration"
@@ -1361,6 +1402,41 @@ class PropDataSourceGoogleDriveConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-googledriveconfiguration.html#cfn-kendra-datasource-googledriveconfiguration-inclusionpatterns"""
 
 @attr.s
+class PropDataSourceDocumentAttributeTarget(Property):
+    """
+    AWS Object Type = "AWS::Kendra::DataSource.DocumentAttributeTarget"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-documentattributetarget.html
+
+    Property Document:
+    
+    - ``rp_TargetDocumentAttributeKey``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-documentattributetarget.html#cfn-kendra-datasource-documentattributetarget-targetdocumentattributekey
+    - ``p_TargetDocumentAttributeValue``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-documentattributetarget.html#cfn-kendra-datasource-documentattributetarget-targetdocumentattributevalue
+    - ``p_TargetDocumentAttributeValueDeletion``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-documentattributetarget.html#cfn-kendra-datasource-documentattributetarget-targetdocumentattributevaluedeletion
+    """
+    AWS_OBJECT_TYPE = "AWS::Kendra::DataSource.DocumentAttributeTarget"
+    
+    rp_TargetDocumentAttributeKey: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "TargetDocumentAttributeKey"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-documentattributetarget.html#cfn-kendra-datasource-documentattributetarget-targetdocumentattributekey"""
+    p_TargetDocumentAttributeValue: typing.Union['PropDataSourceDocumentAttributeValue', dict] = attr.ib(
+        default=None,
+        converter=PropDataSourceDocumentAttributeValue.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataSourceDocumentAttributeValue)),
+        metadata={AttrMeta.PROPERTY_NAME: "TargetDocumentAttributeValue"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-documentattributetarget.html#cfn-kendra-datasource-documentattributetarget-targetdocumentattributevalue"""
+    p_TargetDocumentAttributeValueDeletion: bool = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(bool)),
+        metadata={AttrMeta.PROPERTY_NAME: "TargetDocumentAttributeValueDeletion"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-documentattributetarget.html#cfn-kendra-datasource-documentattributetarget-targetdocumentattributevaluedeletion"""
+
+@attr.s
 class PropDataSourceWorkDocsConfiguration(Property):
     """
     AWS Object Type = "AWS::Kendra::DataSource.WorkDocsConfiguration"
@@ -1547,6 +1623,41 @@ class PropIndexUserTokenConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "JwtTokenTypeConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-index-usertokenconfiguration.html#cfn-kendra-index-usertokenconfiguration-jwttokentypeconfiguration"""
+
+@attr.s
+class PropDataSourceDocumentAttributeCondition(Property):
+    """
+    AWS Object Type = "AWS::Kendra::DataSource.DocumentAttributeCondition"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-documentattributecondition.html
+
+    Property Document:
+    
+    - ``rp_ConditionDocumentAttributeKey``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-documentattributecondition.html#cfn-kendra-datasource-documentattributecondition-conditiondocumentattributekey
+    - ``rp_Operator``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-documentattributecondition.html#cfn-kendra-datasource-documentattributecondition-operator
+    - ``p_ConditionOnValue``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-documentattributecondition.html#cfn-kendra-datasource-documentattributecondition-conditiononvalue
+    """
+    AWS_OBJECT_TYPE = "AWS::Kendra::DataSource.DocumentAttributeCondition"
+    
+    rp_ConditionDocumentAttributeKey: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "ConditionDocumentAttributeKey"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-documentattributecondition.html#cfn-kendra-datasource-documentattributecondition-conditiondocumentattributekey"""
+    rp_Operator: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "Operator"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-documentattributecondition.html#cfn-kendra-datasource-documentattributecondition-operator"""
+    p_ConditionOnValue: typing.Union['PropDataSourceDocumentAttributeValue', dict] = attr.ib(
+        default=None,
+        converter=PropDataSourceDocumentAttributeValue.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataSourceDocumentAttributeValue)),
+        metadata={AttrMeta.PROPERTY_NAME: "ConditionOnValue"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-documentattributecondition.html#cfn-kendra-datasource-documentattributecondition-conditiononvalue"""
 
 @attr.s
 class PropDataSourceS3DataSourceConfiguration(Property):
@@ -1753,6 +1864,42 @@ class PropDataSourceSalesforceCustomKnowledgeArticleTypeConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-salesforcecustomknowledgearticletypeconfiguration.html#cfn-kendra-datasource-salesforcecustomknowledgearticletypeconfiguration-fieldmappings"""
 
 @attr.s
+class PropDataSourceInlineCustomDocumentEnrichmentConfiguration(Property):
+    """
+    AWS Object Type = "AWS::Kendra::DataSource.InlineCustomDocumentEnrichmentConfiguration"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-inlinecustomdocumentenrichmentconfiguration.html
+
+    Property Document:
+    
+    - ``p_Condition``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-inlinecustomdocumentenrichmentconfiguration.html#cfn-kendra-datasource-inlinecustomdocumentenrichmentconfiguration-condition
+    - ``p_DocumentContentDeletion``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-inlinecustomdocumentenrichmentconfiguration.html#cfn-kendra-datasource-inlinecustomdocumentenrichmentconfiguration-documentcontentdeletion
+    - ``p_Target``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-inlinecustomdocumentenrichmentconfiguration.html#cfn-kendra-datasource-inlinecustomdocumentenrichmentconfiguration-target
+    """
+    AWS_OBJECT_TYPE = "AWS::Kendra::DataSource.InlineCustomDocumentEnrichmentConfiguration"
+    
+    p_Condition: typing.Union['PropDataSourceDocumentAttributeCondition', dict] = attr.ib(
+        default=None,
+        converter=PropDataSourceDocumentAttributeCondition.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataSourceDocumentAttributeCondition)),
+        metadata={AttrMeta.PROPERTY_NAME: "Condition"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-inlinecustomdocumentenrichmentconfiguration.html#cfn-kendra-datasource-inlinecustomdocumentenrichmentconfiguration-condition"""
+    p_DocumentContentDeletion: bool = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(bool)),
+        metadata={AttrMeta.PROPERTY_NAME: "DocumentContentDeletion"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-inlinecustomdocumentenrichmentconfiguration.html#cfn-kendra-datasource-inlinecustomdocumentenrichmentconfiguration-documentcontentdeletion"""
+    p_Target: typing.Union['PropDataSourceDocumentAttributeTarget', dict] = attr.ib(
+        default=None,
+        converter=PropDataSourceDocumentAttributeTarget.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataSourceDocumentAttributeTarget)),
+        metadata={AttrMeta.PROPERTY_NAME: "Target"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-inlinecustomdocumentenrichmentconfiguration.html#cfn-kendra-datasource-inlinecustomdocumentenrichmentconfiguration-target"""
+
+@attr.s
 class PropDataSourceSalesforceStandardKnowledgeArticleTypeConfiguration(Property):
     """
     AWS Object Type = "AWS::Kendra::DataSource.SalesforceStandardKnowledgeArticleTypeConfiguration"
@@ -1901,6 +2048,85 @@ class PropDataSourceSalesforceKnowledgeArticleConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "StandardKnowledgeArticleTypeConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-salesforceknowledgearticleconfiguration.html#cfn-kendra-datasource-salesforceknowledgearticleconfiguration-standardknowledgearticletypeconfiguration"""
+
+@attr.s
+class PropDataSourceHookConfiguration(Property):
+    """
+    AWS Object Type = "AWS::Kendra::DataSource.HookConfiguration"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-hookconfiguration.html
+
+    Property Document:
+    
+    - ``rp_LambdaArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-hookconfiguration.html#cfn-kendra-datasource-hookconfiguration-lambdaarn
+    - ``rp_S3Bucket``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-hookconfiguration.html#cfn-kendra-datasource-hookconfiguration-s3bucket
+    - ``p_InvocationCondition``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-hookconfiguration.html#cfn-kendra-datasource-hookconfiguration-invocationcondition
+    """
+    AWS_OBJECT_TYPE = "AWS::Kendra::DataSource.HookConfiguration"
+    
+    rp_LambdaArn: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "LambdaArn"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-hookconfiguration.html#cfn-kendra-datasource-hookconfiguration-lambdaarn"""
+    rp_S3Bucket: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "S3Bucket"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-hookconfiguration.html#cfn-kendra-datasource-hookconfiguration-s3bucket"""
+    p_InvocationCondition: typing.Union['PropDataSourceDocumentAttributeCondition', dict] = attr.ib(
+        default=None,
+        converter=PropDataSourceDocumentAttributeCondition.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataSourceDocumentAttributeCondition)),
+        metadata={AttrMeta.PROPERTY_NAME: "InvocationCondition"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-hookconfiguration.html#cfn-kendra-datasource-hookconfiguration-invocationcondition"""
+
+@attr.s
+class PropDataSourceCustomDocumentEnrichmentConfiguration(Property):
+    """
+    AWS Object Type = "AWS::Kendra::DataSource.CustomDocumentEnrichmentConfiguration"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-customdocumentenrichmentconfiguration.html
+
+    Property Document:
+    
+    - ``p_InlineConfigurations``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-customdocumentenrichmentconfiguration.html#cfn-kendra-datasource-customdocumentenrichmentconfiguration-inlineconfigurations
+    - ``p_PostExtractionHookConfiguration``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-customdocumentenrichmentconfiguration.html#cfn-kendra-datasource-customdocumentenrichmentconfiguration-postextractionhookconfiguration
+    - ``p_PreExtractionHookConfiguration``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-customdocumentenrichmentconfiguration.html#cfn-kendra-datasource-customdocumentenrichmentconfiguration-preextractionhookconfiguration
+    - ``p_RoleArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-customdocumentenrichmentconfiguration.html#cfn-kendra-datasource-customdocumentenrichmentconfiguration-rolearn
+    """
+    AWS_OBJECT_TYPE = "AWS::Kendra::DataSource.CustomDocumentEnrichmentConfiguration"
+    
+    p_InlineConfigurations: typing.List[typing.Union['PropDataSourceInlineCustomDocumentEnrichmentConfiguration', dict]] = attr.ib(
+        default=None,
+        converter=PropDataSourceInlineCustomDocumentEnrichmentConfiguration.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDataSourceInlineCustomDocumentEnrichmentConfiguration), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "InlineConfigurations"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-customdocumentenrichmentconfiguration.html#cfn-kendra-datasource-customdocumentenrichmentconfiguration-inlineconfigurations"""
+    p_PostExtractionHookConfiguration: typing.Union['PropDataSourceHookConfiguration', dict] = attr.ib(
+        default=None,
+        converter=PropDataSourceHookConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataSourceHookConfiguration)),
+        metadata={AttrMeta.PROPERTY_NAME: "PostExtractionHookConfiguration"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-customdocumentenrichmentconfiguration.html#cfn-kendra-datasource-customdocumentenrichmentconfiguration-postextractionhookconfiguration"""
+    p_PreExtractionHookConfiguration: typing.Union['PropDataSourceHookConfiguration', dict] = attr.ib(
+        default=None,
+        converter=PropDataSourceHookConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataSourceHookConfiguration)),
+        metadata={AttrMeta.PROPERTY_NAME: "PreExtractionHookConfiguration"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-customdocumentenrichmentconfiguration.html#cfn-kendra-datasource-customdocumentenrichmentconfiguration-preextractionhookconfiguration"""
+    p_RoleArn: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "RoleArn"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kendra-datasource-customdocumentenrichmentconfiguration.html#cfn-kendra-datasource-customdocumentenrichmentconfiguration-rolearn"""
 
 @attr.s
 class PropDataSourceSalesforceConfiguration(Property):
@@ -2235,6 +2461,7 @@ class DataSource(Resource):
     - ``rp_IndexId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kendra-datasource.html#cfn-kendra-datasource-indexid
     - ``rp_Name``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kendra-datasource.html#cfn-kendra-datasource-name
     - ``rp_Type``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kendra-datasource.html#cfn-kendra-datasource-type
+    - ``p_CustomDocumentEnrichmentConfiguration``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kendra-datasource.html#cfn-kendra-datasource-customdocumentenrichmentconfiguration
     - ``p_DataSourceConfiguration``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kendra-datasource.html#cfn-kendra-datasource-datasourceconfiguration
     - ``p_Description``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kendra-datasource.html#cfn-kendra-datasource-description
     - ``p_RoleArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kendra-datasource.html#cfn-kendra-datasource-rolearn
@@ -2262,6 +2489,13 @@ class DataSource(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "Type"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kendra-datasource.html#cfn-kendra-datasource-type"""
+    p_CustomDocumentEnrichmentConfiguration: typing.Union['PropDataSourceCustomDocumentEnrichmentConfiguration', dict] = attr.ib(
+        default=None,
+        converter=PropDataSourceCustomDocumentEnrichmentConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataSourceCustomDocumentEnrichmentConfiguration)),
+        metadata={AttrMeta.PROPERTY_NAME: "CustomDocumentEnrichmentConfiguration"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kendra-datasource.html#cfn-kendra-datasource-customdocumentenrichmentconfiguration"""
     p_DataSourceConfiguration: typing.Union['PropDataSourceDataSourceConfiguration', dict] = attr.ib(
         default=None,
         converter=PropDataSourceDataSourceConfiguration.from_dict,

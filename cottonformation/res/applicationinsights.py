@@ -104,6 +104,26 @@ class PropApplicationAlarm(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-alarm.html#cfn-applicationinsights-application-alarm-severity"""
 
 @attr.s
+class PropApplicationHAClusterPrometheusExporter(Property):
+    """
+    AWS Object Type = "AWS::ApplicationInsights::Application.HAClusterPrometheusExporter"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-haclusterprometheusexporter.html
+
+    Property Document:
+    
+    - ``p_PrometheusPort``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-haclusterprometheusexporter.html#cfn-applicationinsights-application-haclusterprometheusexporter-prometheusport
+    """
+    AWS_OBJECT_TYPE = "AWS::ApplicationInsights::Application.HAClusterPrometheusExporter"
+    
+    p_PrometheusPort: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "PrometheusPort"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-haclusterprometheusexporter.html#cfn-applicationinsights-application-haclusterprometheusexporter-prometheusport"""
+
+@attr.s
 class PropApplicationWindowsEvent(Property):
     """
     AWS Object Type = "AWS::ApplicationInsights::Application.WindowsEvent"
@@ -226,6 +246,54 @@ class PropApplicationAlarmMetric(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-alarmmetric.html#cfn-applicationinsights-application-alarmmetric-alarmmetricname"""
 
 @attr.s
+class PropApplicationHANAPrometheusExporter(Property):
+    """
+    AWS Object Type = "AWS::ApplicationInsights::Application.HANAPrometheusExporter"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-hanaprometheusexporter.html
+
+    Property Document:
+    
+    - ``rp_AgreeToInstallHANADBClient``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-hanaprometheusexporter.html#cfn-applicationinsights-application-hanaprometheusexporter-agreetoinstallhanadbclient
+    - ``rp_HANAPort``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-hanaprometheusexporter.html#cfn-applicationinsights-application-hanaprometheusexporter-hanaport
+    - ``rp_HANASID``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-hanaprometheusexporter.html#cfn-applicationinsights-application-hanaprometheusexporter-hanasid
+    - ``rp_HANASecretName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-hanaprometheusexporter.html#cfn-applicationinsights-application-hanaprometheusexporter-hanasecretname
+    - ``p_PrometheusPort``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-hanaprometheusexporter.html#cfn-applicationinsights-application-hanaprometheusexporter-prometheusport
+    """
+    AWS_OBJECT_TYPE = "AWS::ApplicationInsights::Application.HANAPrometheusExporter"
+    
+    rp_AgreeToInstallHANADBClient: bool = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(bool),
+        metadata={AttrMeta.PROPERTY_NAME: "AgreeToInstallHANADBClient"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-hanaprometheusexporter.html#cfn-applicationinsights-application-hanaprometheusexporter-agreetoinstallhanadbclient"""
+    rp_HANAPort: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "HANAPort"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-hanaprometheusexporter.html#cfn-applicationinsights-application-hanaprometheusexporter-hanaport"""
+    rp_HANASID: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "HANASID"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-hanaprometheusexporter.html#cfn-applicationinsights-application-hanaprometheusexporter-hanasid"""
+    rp_HANASecretName: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "HANASecretName"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-hanaprometheusexporter.html#cfn-applicationinsights-application-hanaprometheusexporter-hanasecretname"""
+    p_PrometheusPort: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "PrometheusPort"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-hanaprometheusexporter.html#cfn-applicationinsights-application-hanaprometheusexporter-prometheusport"""
+
+@attr.s
 class PropApplicationLog(Property):
     """
     AWS Object Type = "AWS::ApplicationInsights::Application.Log"
@@ -321,6 +389,8 @@ class PropApplicationConfigurationDetails(Property):
     
     - ``p_AlarmMetrics``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-configurationdetails.html#cfn-applicationinsights-application-configurationdetails-alarmmetrics
     - ``p_Alarms``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-configurationdetails.html#cfn-applicationinsights-application-configurationdetails-alarms
+    - ``p_HAClusterPrometheusExporter``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-configurationdetails.html#cfn-applicationinsights-application-configurationdetails-haclusterprometheusexporter
+    - ``p_HANAPrometheusExporter``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-configurationdetails.html#cfn-applicationinsights-application-configurationdetails-hanaprometheusexporter
     - ``p_JMXPrometheusExporter``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-configurationdetails.html#cfn-applicationinsights-application-configurationdetails-jmxprometheusexporter
     - ``p_Logs``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-configurationdetails.html#cfn-applicationinsights-application-configurationdetails-logs
     - ``p_WindowsEvents``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-configurationdetails.html#cfn-applicationinsights-application-configurationdetails-windowsevents
@@ -341,6 +411,20 @@ class PropApplicationConfigurationDetails(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Alarms"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-configurationdetails.html#cfn-applicationinsights-application-configurationdetails-alarms"""
+    p_HAClusterPrometheusExporter: typing.Union['PropApplicationHAClusterPrometheusExporter', dict] = attr.ib(
+        default=None,
+        converter=PropApplicationHAClusterPrometheusExporter.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropApplicationHAClusterPrometheusExporter)),
+        metadata={AttrMeta.PROPERTY_NAME: "HAClusterPrometheusExporter"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-configurationdetails.html#cfn-applicationinsights-application-configurationdetails-haclusterprometheusexporter"""
+    p_HANAPrometheusExporter: typing.Union['PropApplicationHANAPrometheusExporter', dict] = attr.ib(
+        default=None,
+        converter=PropApplicationHANAPrometheusExporter.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropApplicationHANAPrometheusExporter)),
+        metadata={AttrMeta.PROPERTY_NAME: "HANAPrometheusExporter"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-applicationinsights-application-configurationdetails.html#cfn-applicationinsights-application-configurationdetails-hanaprometheusexporter"""
     p_JMXPrometheusExporter: typing.Union['PropApplicationJMXPrometheusExporter', dict] = attr.ib(
         default=None,
         converter=PropApplicationJMXPrometheusExporter.from_dict,

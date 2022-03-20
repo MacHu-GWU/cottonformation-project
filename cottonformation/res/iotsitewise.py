@@ -122,6 +122,26 @@ class PropAssetModelTumblingWindow(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-assetmodel-tumblingwindow.html#cfn-iotsitewise-assetmodel-tumblingwindow-offset"""
 
 @attr.s
+class PropGatewayGreengrassV2(Property):
+    """
+    AWS Object Type = "AWS::IoTSiteWise::Gateway.GreengrassV2"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-gateway-greengrassv2.html
+
+    Property Document:
+    
+    - ``rp_CoreDeviceThingName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-gateway-greengrassv2.html#cfn-iotsitewise-gateway-greengrassv2-coredevicethingname
+    """
+    AWS_OBJECT_TYPE = "AWS::IoTSiteWise::Gateway.GreengrassV2"
+    
+    rp_CoreDeviceThingName: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "CoreDeviceThingName"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-gateway-greengrassv2.html#cfn-iotsitewise-gateway-greengrassv2-coredevicethingname"""
+
+@attr.s
 class PropAssetModelAttribute(Property):
     """
     AWS Object Type = "AWS::IoTSiteWise::AssetModel.Attribute"
@@ -278,17 +298,25 @@ class PropGatewayGatewayPlatform(Property):
 
     Property Document:
     
-    - ``rp_Greengrass``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-gateway-gatewayplatform.html#cfn-iotsitewise-gateway-gatewayplatform-greengrass
+    - ``p_Greengrass``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-gateway-gatewayplatform.html#cfn-iotsitewise-gateway-gatewayplatform-greengrass
+    - ``p_GreengrassV2``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-gateway-gatewayplatform.html#cfn-iotsitewise-gateway-gatewayplatform-greengrassv2
     """
     AWS_OBJECT_TYPE = "AWS::IoTSiteWise::Gateway.GatewayPlatform"
     
-    rp_Greengrass: typing.Union['PropGatewayGreengrass', dict] = attr.ib(
+    p_Greengrass: typing.Union['PropGatewayGreengrass', dict] = attr.ib(
         default=None,
         converter=PropGatewayGreengrass.from_dict,
-        validator=attr.validators.instance_of(PropGatewayGreengrass),
+        validator=attr.validators.optional(attr.validators.instance_of(PropGatewayGreengrass)),
         metadata={AttrMeta.PROPERTY_NAME: "Greengrass"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-gateway-gatewayplatform.html#cfn-iotsitewise-gateway-gatewayplatform-greengrass"""
+    p_GreengrassV2: typing.Union['PropGatewayGreengrassV2', dict] = attr.ib(
+        default=None,
+        converter=PropGatewayGreengrassV2.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropGatewayGreengrassV2)),
+        metadata={AttrMeta.PROPERTY_NAME: "GreengrassV2"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-gateway-gatewayplatform.html#cfn-iotsitewise-gateway-gatewayplatform-greengrassv2"""
 
 @attr.s
 class PropAssetAssetHierarchy(Property):
@@ -1026,6 +1054,7 @@ class Project(Resource):
     
     - ``rp_PortalId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-project.html#cfn-iotsitewise-project-portalid
     - ``rp_ProjectName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-project.html#cfn-iotsitewise-project-projectname
+    - ``p_AssetIds``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-project.html#cfn-iotsitewise-project-assetids
     - ``p_ProjectDescription``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-project.html#cfn-iotsitewise-project-projectdescription
     - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-project.html#cfn-iotsitewise-project-tags
     """
@@ -1044,6 +1073,12 @@ class Project(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "ProjectName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-project.html#cfn-iotsitewise-project-projectname"""
+    p_AssetIds: typing.List[TypeHint.intrinsic_str] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "AssetIds"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-project.html#cfn-iotsitewise-project-assetids"""
     p_ProjectDescription: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),

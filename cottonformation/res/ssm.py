@@ -46,7 +46,7 @@ class PropPatchBaselinePatchStringDate(Property):
     """
     AWS Object Type = "AWS::SSM::PatchBaseline.PatchStringDate"
 
-    Resource Document: None
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-patchbaseline-patchstringdate.html
 
     Property Document:
     
@@ -114,6 +114,33 @@ class PropMaintenanceWindowTaskTarget(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Values"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-target.html#cfn-ssm-maintenancewindowtask-target-values"""
+
+@attr.s
+class PropMaintenanceWindowTaskCloudWatchOutputConfig(Property):
+    """
+    AWS Object Type = "AWS::SSM::MaintenanceWindowTask.CloudWatchOutputConfig"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-cloudwatchoutputconfig.html
+
+    Property Document:
+    
+    - ``p_CloudWatchLogGroupName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-cloudwatchoutputconfig.html#cfn-ssm-maintenancewindowtask-cloudwatchoutputconfig-cloudwatchloggroupname
+    - ``p_CloudWatchOutputEnabled``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-cloudwatchoutputconfig.html#cfn-ssm-maintenancewindowtask-cloudwatchoutputconfig-cloudwatchoutputenabled
+    """
+    AWS_OBJECT_TYPE = "AWS::SSM::MaintenanceWindowTask.CloudWatchOutputConfig"
+    
+    p_CloudWatchLogGroupName: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "CloudWatchLogGroupName"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-cloudwatchoutputconfig.html#cfn-ssm-maintenancewindowtask-cloudwatchoutputconfig-cloudwatchloggroupname"""
+    p_CloudWatchOutputEnabled: bool = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(bool)),
+        metadata={AttrMeta.PROPERTY_NAME: "CloudWatchOutputEnabled"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-cloudwatchoutputconfig.html#cfn-ssm-maintenancewindowtask-cloudwatchoutputconfig-cloudwatchoutputenabled"""
 
 @attr.s
 class PropMaintenanceWindowTaskNotificationConfig(Property):
@@ -533,9 +560,11 @@ class PropMaintenanceWindowTaskMaintenanceWindowRunCommandParameters(Property):
 
     Property Document:
     
+    - ``p_CloudWatchOutputConfig``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-maintenancewindowruncommandparameters.html#cfn-ssm-maintenancewindowtask-maintenancewindowruncommandparameters-cloudwatchoutputconfig
     - ``p_Comment``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-maintenancewindowruncommandparameters.html#cfn-ssm-maintenancewindowtask-maintenancewindowruncommandparameters-comment
     - ``p_DocumentHash``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-maintenancewindowruncommandparameters.html#cfn-ssm-maintenancewindowtask-maintenancewindowruncommandparameters-documenthash
     - ``p_DocumentHashType``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-maintenancewindowruncommandparameters.html#cfn-ssm-maintenancewindowtask-maintenancewindowruncommandparameters-documenthashtype
+    - ``p_DocumentVersion``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-maintenancewindowruncommandparameters.html#cfn-ssm-maintenancewindowtask-maintenancewindowruncommandparameters-documentversion
     - ``p_NotificationConfig``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-maintenancewindowruncommandparameters.html#cfn-ssm-maintenancewindowtask-maintenancewindowruncommandparameters-notificationconfig
     - ``p_OutputS3BucketName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-maintenancewindowruncommandparameters.html#cfn-ssm-maintenancewindowtask-maintenancewindowruncommandparameters-outputs3bucketname
     - ``p_OutputS3KeyPrefix``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-maintenancewindowruncommandparameters.html#cfn-ssm-maintenancewindowtask-maintenancewindowruncommandparameters-outputs3keyprefix
@@ -545,6 +574,13 @@ class PropMaintenanceWindowTaskMaintenanceWindowRunCommandParameters(Property):
     """
     AWS_OBJECT_TYPE = "AWS::SSM::MaintenanceWindowTask.MaintenanceWindowRunCommandParameters"
     
+    p_CloudWatchOutputConfig: typing.Union['PropMaintenanceWindowTaskCloudWatchOutputConfig', dict] = attr.ib(
+        default=None,
+        converter=PropMaintenanceWindowTaskCloudWatchOutputConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropMaintenanceWindowTaskCloudWatchOutputConfig)),
+        metadata={AttrMeta.PROPERTY_NAME: "CloudWatchOutputConfig"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-maintenancewindowruncommandparameters.html#cfn-ssm-maintenancewindowtask-maintenancewindowruncommandparameters-cloudwatchoutputconfig"""
     p_Comment: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
@@ -563,6 +599,12 @@ class PropMaintenanceWindowTaskMaintenanceWindowRunCommandParameters(Property):
         metadata={AttrMeta.PROPERTY_NAME: "DocumentHashType"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-maintenancewindowruncommandparameters.html#cfn-ssm-maintenancewindowtask-maintenancewindowruncommandparameters-documenthashtype"""
+    p_DocumentVersion: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "DocumentVersion"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssm-maintenancewindowtask-maintenancewindowruncommandparameters.html#cfn-ssm-maintenancewindowtask-maintenancewindowruncommandparameters-documentversion"""
     p_NotificationConfig: typing.Union['PropMaintenanceWindowTaskNotificationConfig', dict] = attr.ib(
         default=None,
         converter=PropMaintenanceWindowTaskNotificationConfig.from_dict,

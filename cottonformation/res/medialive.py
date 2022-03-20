@@ -27,6 +27,7 @@ class PropChannelHlsInputSettings(Property):
     - ``p_BufferSegments``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsinputsettings.html#cfn-medialive-channel-hlsinputsettings-buffersegments
     - ``p_Retries``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsinputsettings.html#cfn-medialive-channel-hlsinputsettings-retries
     - ``p_RetryInterval``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsinputsettings.html#cfn-medialive-channel-hlsinputsettings-retryinterval
+    - ``p_Scte35Source``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsinputsettings.html#cfn-medialive-channel-hlsinputsettings-scte35source
     """
     AWS_OBJECT_TYPE = "AWS::MediaLive::Channel.HlsInputSettings"
     
@@ -54,6 +55,12 @@ class PropChannelHlsInputSettings(Property):
         metadata={AttrMeta.PROPERTY_NAME: "RetryInterval"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsinputsettings.html#cfn-medialive-channel-hlsinputsettings-retryinterval"""
+    p_Scte35Source: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "Scte35Source"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsinputsettings.html#cfn-medialive-channel-hlsinputsettings-scte35source"""
 
 @attr.s
 class PropChannelRec709Settings(Property):
@@ -94,6 +101,33 @@ class PropChannelFrameCaptureSettings(Property):
         metadata={AttrMeta.PROPERTY_NAME: "CaptureIntervalUnits"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-framecapturesettings.html#cfn-medialive-channel-framecapturesettings-captureintervalunits"""
+
+@attr.s
+class PropChannelNielsenNaesIiNw(Property):
+    """
+    AWS Object Type = "AWS::MediaLive::Channel.NielsenNaesIiNw"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-nielsennaesiinw.html
+
+    Property Document:
+    
+    - ``p_CheckDigitString``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-nielsennaesiinw.html#cfn-medialive-channel-nielsennaesiinw-checkdigitstring
+    - ``p_Sid``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-nielsennaesiinw.html#cfn-medialive-channel-nielsennaesiinw-sid
+    """
+    AWS_OBJECT_TYPE = "AWS::MediaLive::Channel.NielsenNaesIiNw"
+    
+    p_CheckDigitString: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "CheckDigitString"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-nielsennaesiinw.html#cfn-medialive-channel-nielsennaesiinw-checkdigitstring"""
+    p_Sid: float = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(float)),
+        metadata={AttrMeta.PROPERTY_NAME: "Sid"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-nielsennaesiinw.html#cfn-medialive-channel-nielsennaesiinw-sid"""
 
 @attr.s
 class PropChannelMultiplexProgramChannelDestinationSettings(Property):
@@ -164,10 +198,17 @@ class PropChannelScte27SourceSettings(Property):
 
     Property Document:
     
+    - ``p_OcrLanguage``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-scte27sourcesettings.html#cfn-medialive-channel-scte27sourcesettings-ocrlanguage
     - ``p_Pid``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-scte27sourcesettings.html#cfn-medialive-channel-scte27sourcesettings-pid
     """
     AWS_OBJECT_TYPE = "AWS::MediaLive::Channel.Scte27SourceSettings"
     
+    p_OcrLanguage: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "OcrLanguage"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-scte27sourcesettings.html#cfn-medialive-channel-scte27sourcesettings-ocrlanguage"""
     p_Pid: int = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(int)),
@@ -979,9 +1020,16 @@ class PropChannelWebvttDestinationSettings(Property):
 
     Property Document:
     
+    - ``p_StyleControl``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-webvttdestinationsettings.html#cfn-medialive-channel-webvttdestinationsettings-stylecontrol
     """
     AWS_OBJECT_TYPE = "AWS::MediaLive::Channel.WebvttDestinationSettings"
     
+    p_StyleControl: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "StyleControl"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-webvttdestinationsettings.html#cfn-medialive-channel-webvttdestinationsettings-stylecontrol"""
 
 @attr.s
 class PropChannelAacSettings(Property):
@@ -1552,6 +1600,40 @@ class PropChannelPassThroughSettings(Property):
     
 
 @attr.s
+class PropChannelNielsenCBET(Property):
+    """
+    AWS Object Type = "AWS::MediaLive::Channel.NielsenCBET"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-nielsencbet.html
+
+    Property Document:
+    
+    - ``p_CbetCheckDigitString``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-nielsencbet.html#cfn-medialive-channel-nielsencbet-cbetcheckdigitstring
+    - ``p_CbetStepaside``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-nielsencbet.html#cfn-medialive-channel-nielsencbet-cbetstepaside
+    - ``p_Csid``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-nielsencbet.html#cfn-medialive-channel-nielsencbet-csid
+    """
+    AWS_OBJECT_TYPE = "AWS::MediaLive::Channel.NielsenCBET"
+    
+    p_CbetCheckDigitString: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "CbetCheckDigitString"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-nielsencbet.html#cfn-medialive-channel-nielsencbet-cbetcheckdigitstring"""
+    p_CbetStepaside: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "CbetStepaside"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-nielsencbet.html#cfn-medialive-channel-nielsencbet-cbetstepaside"""
+    p_Csid: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "Csid"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-nielsencbet.html#cfn-medialive-channel-nielsencbet-csid"""
+
+@attr.s
 class PropChannelEmbeddedSourceSettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.EmbeddedSourceSettings"
@@ -1716,6 +1798,33 @@ class PropChannelMultiplexOutputSettings(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Destination"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-multiplexoutputsettings.html#cfn-medialive-channel-multiplexoutputsettings-destination"""
+
+@attr.s
+class PropChannelAudioHlsRenditionSelection(Property):
+    """
+    AWS Object Type = "AWS::MediaLive::Channel.AudioHlsRenditionSelection"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiohlsrenditionselection.html
+
+    Property Document:
+    
+    - ``p_GroupId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiohlsrenditionselection.html#cfn-medialive-channel-audiohlsrenditionselection-groupid
+    - ``p_Name``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiohlsrenditionselection.html#cfn-medialive-channel-audiohlsrenditionselection-name
+    """
+    AWS_OBJECT_TYPE = "AWS::MediaLive::Channel.AudioHlsRenditionSelection"
+    
+    p_GroupId: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "GroupId"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiohlsrenditionselection.html#cfn-medialive-channel-audiohlsrenditionselection-groupid"""
+    p_Name: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "Name"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiohlsrenditionselection.html#cfn-medialive-channel-audiohlsrenditionselection-name"""
 
 @attr.s
 class PropChannelEmbeddedDestinationSettings(Property):
@@ -1915,10 +2024,17 @@ class PropChannelDvbSubSourceSettings(Property):
 
     Property Document:
     
+    - ``p_OcrLanguage``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-dvbsubsourcesettings.html#cfn-medialive-channel-dvbsubsourcesettings-ocrlanguage
     - ``p_Pid``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-dvbsubsourcesettings.html#cfn-medialive-channel-dvbsubsourcesettings-pid
     """
     AWS_OBJECT_TYPE = "AWS::MediaLive::Channel.DvbSubSourceSettings"
     
+    p_OcrLanguage: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "OcrLanguage"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-dvbsubsourcesettings.html#cfn-medialive-channel-dvbsubsourcesettings-ocrlanguage"""
     p_Pid: int = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(int)),
@@ -3497,12 +3613,20 @@ class PropChannelAudioSelectorSettings(Property):
 
     Property Document:
     
+    - ``p_AudioHlsRenditionSelection``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audioselectorsettings.html#cfn-medialive-channel-audioselectorsettings-audiohlsrenditionselection
     - ``p_AudioLanguageSelection``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audioselectorsettings.html#cfn-medialive-channel-audioselectorsettings-audiolanguageselection
     - ``p_AudioPidSelection``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audioselectorsettings.html#cfn-medialive-channel-audioselectorsettings-audiopidselection
     - ``p_AudioTrackSelection``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audioselectorsettings.html#cfn-medialive-channel-audioselectorsettings-audiotrackselection
     """
     AWS_OBJECT_TYPE = "AWS::MediaLive::Channel.AudioSelectorSettings"
     
+    p_AudioHlsRenditionSelection: typing.Union['PropChannelAudioHlsRenditionSelection', dict] = attr.ib(
+        default=None,
+        converter=PropChannelAudioHlsRenditionSelection.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelAudioHlsRenditionSelection)),
+        metadata={AttrMeta.PROPERTY_NAME: "AudioHlsRenditionSelection"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audioselectorsettings.html#cfn-medialive-channel-audioselectorsettings-audiohlsrenditionselection"""
     p_AudioLanguageSelection: typing.Union['PropChannelAudioLanguageSelection', dict] = attr.ib(
         default=None,
         converter=PropChannelAudioLanguageSelection.from_dict,
@@ -4224,6 +4348,42 @@ class PropChannelArchiveGroupSettings(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-archivegroupsettings.html#cfn-medialive-channel-archivegroupsettings-rolloverinterval"""
 
 @attr.s
+class PropChannelNielsenWatermarksSettings(Property):
+    """
+    AWS Object Type = "AWS::MediaLive::Channel.NielsenWatermarksSettings"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-nielsenwatermarkssettings.html
+
+    Property Document:
+    
+    - ``p_NielsenCbetSettings``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-nielsenwatermarkssettings.html#cfn-medialive-channel-nielsenwatermarkssettings-nielsencbetsettings
+    - ``p_NielsenDistributionType``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-nielsenwatermarkssettings.html#cfn-medialive-channel-nielsenwatermarkssettings-nielsendistributiontype
+    - ``p_NielsenNaesIiNwSettings``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-nielsenwatermarkssettings.html#cfn-medialive-channel-nielsenwatermarkssettings-nielsennaesiinwsettings
+    """
+    AWS_OBJECT_TYPE = "AWS::MediaLive::Channel.NielsenWatermarksSettings"
+    
+    p_NielsenCbetSettings: typing.Union['PropChannelNielsenCBET', dict] = attr.ib(
+        default=None,
+        converter=PropChannelNielsenCBET.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelNielsenCBET)),
+        metadata={AttrMeta.PROPERTY_NAME: "NielsenCbetSettings"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-nielsenwatermarkssettings.html#cfn-medialive-channel-nielsenwatermarkssettings-nielsencbetsettings"""
+    p_NielsenDistributionType: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "NielsenDistributionType"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-nielsenwatermarkssettings.html#cfn-medialive-channel-nielsenwatermarkssettings-nielsendistributiontype"""
+    p_NielsenNaesIiNwSettings: typing.Union['PropChannelNielsenNaesIiNw', dict] = attr.ib(
+        default=None,
+        converter=PropChannelNielsenNaesIiNw.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelNielsenNaesIiNw)),
+        metadata={AttrMeta.PROPERTY_NAME: "NielsenNaesIiNwSettings"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-nielsenwatermarkssettings.html#cfn-medialive-channel-nielsenwatermarkssettings-nielsennaesiinwsettings"""
+
+@attr.s
 class PropChannelStandardHlsSettings(Property):
     """
     AWS Object Type = "AWS::MediaLive::Channel.StandardHlsSettings"
@@ -4361,6 +4521,27 @@ class PropChannelH265ColorSpaceSettings(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Rec709Settings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-h265colorspacesettings.html#cfn-medialive-channel-h265colorspacesettings-rec709settings"""
+
+@attr.s
+class PropChannelAudioWatermarkSettings(Property):
+    """
+    AWS Object Type = "AWS::MediaLive::Channel.AudioWatermarkSettings"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiowatermarksettings.html
+
+    Property Document:
+    
+    - ``p_NielsenWatermarksSettings``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiowatermarksettings.html#cfn-medialive-channel-audiowatermarksettings-nielsenwatermarkssettings
+    """
+    AWS_OBJECT_TYPE = "AWS::MediaLive::Channel.AudioWatermarkSettings"
+    
+    p_NielsenWatermarksSettings: typing.Union['PropChannelNielsenWatermarksSettings', dict] = attr.ib(
+        default=None,
+        converter=PropChannelNielsenWatermarksSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelNielsenWatermarksSettings)),
+        metadata={AttrMeta.PROPERTY_NAME: "NielsenWatermarksSettings"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiowatermarksettings.html#cfn-medialive-channel-audiowatermarksettings-nielsenwatermarkssettings"""
 
 @attr.s
 class PropChannelAudioSelector(Property):
@@ -5279,6 +5460,7 @@ class PropChannelHlsGroupSettings(Property):
     - ``p_Mode``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsgroupsettings.html#cfn-medialive-channel-hlsgroupsettings-mode
     - ``p_OutputSelection``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsgroupsettings.html#cfn-medialive-channel-hlsgroupsettings-outputselection
     - ``p_ProgramDateTime``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsgroupsettings.html#cfn-medialive-channel-hlsgroupsettings-programdatetime
+    - ``p_ProgramDateTimeClock``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsgroupsettings.html#cfn-medialive-channel-hlsgroupsettings-programdatetimeclock
     - ``p_ProgramDateTimePeriod``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsgroupsettings.html#cfn-medialive-channel-hlsgroupsettings-programdatetimeperiod
     - ``p_RedundantManifest``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsgroupsettings.html#cfn-medialive-channel-hlsgroupsettings-redundantmanifest
     - ``p_SegmentLength``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsgroupsettings.html#cfn-medialive-channel-hlsgroupsettings-segmentlength
@@ -5488,6 +5670,12 @@ class PropChannelHlsGroupSettings(Property):
         metadata={AttrMeta.PROPERTY_NAME: "ProgramDateTime"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsgroupsettings.html#cfn-medialive-channel-hlsgroupsettings-programdatetime"""
+    p_ProgramDateTimeClock: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "ProgramDateTimeClock"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-hlsgroupsettings.html#cfn-medialive-channel-hlsgroupsettings-programdatetimeclock"""
     p_ProgramDateTimePeriod: int = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(int)),
@@ -5895,6 +6083,7 @@ class PropChannelInputSettings(Property):
     - ``p_FilterStrength``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputsettings.html#cfn-medialive-channel-inputsettings-filterstrength
     - ``p_InputFilter``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputsettings.html#cfn-medialive-channel-inputsettings-inputfilter
     - ``p_NetworkInputSettings``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputsettings.html#cfn-medialive-channel-inputsettings-networkinputsettings
+    - ``p_Scte35Pid``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputsettings.html#cfn-medialive-channel-inputsettings-scte35pid
     - ``p_Smpte2038DataPreference``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputsettings.html#cfn-medialive-channel-inputsettings-smpte2038datapreference
     - ``p_SourceEndBehavior``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputsettings.html#cfn-medialive-channel-inputsettings-sourceendbehavior
     - ``p_VideoSelector``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputsettings.html#cfn-medialive-channel-inputsettings-videoselector
@@ -5946,6 +6135,12 @@ class PropChannelInputSettings(Property):
         metadata={AttrMeta.PROPERTY_NAME: "NetworkInputSettings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputsettings.html#cfn-medialive-channel-inputsettings-networkinputsettings"""
+    p_Scte35Pid: int = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(int)),
+        metadata={AttrMeta.PROPERTY_NAME: "Scte35Pid"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-inputsettings.html#cfn-medialive-channel-inputsettings-scte35pid"""
     p_Smpte2038DataPreference: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
@@ -6028,6 +6223,7 @@ class PropChannelAudioDescription(Property):
     - ``p_AudioSelectorName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiodescription.html#cfn-medialive-channel-audiodescription-audioselectorname
     - ``p_AudioType``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiodescription.html#cfn-medialive-channel-audiodescription-audiotype
     - ``p_AudioTypeControl``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiodescription.html#cfn-medialive-channel-audiodescription-audiotypecontrol
+    - ``p_AudioWatermarkingSettings``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiodescription.html#cfn-medialive-channel-audiodescription-audiowatermarkingsettings
     - ``p_CodecSettings``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiodescription.html#cfn-medialive-channel-audiodescription-codecsettings
     - ``p_LanguageCode``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiodescription.html#cfn-medialive-channel-audiodescription-languagecode
     - ``p_LanguageCodeControl``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiodescription.html#cfn-medialive-channel-audiodescription-languagecodecontrol
@@ -6062,6 +6258,13 @@ class PropChannelAudioDescription(Property):
         metadata={AttrMeta.PROPERTY_NAME: "AudioTypeControl"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiodescription.html#cfn-medialive-channel-audiodescription-audiotypecontrol"""
+    p_AudioWatermarkingSettings: typing.Union['PropChannelAudioWatermarkSettings', dict] = attr.ib(
+        default=None,
+        converter=PropChannelAudioWatermarkSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelAudioWatermarkSettings)),
+        metadata={AttrMeta.PROPERTY_NAME: "AudioWatermarkingSettings"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-medialive-channel-audiodescription.html#cfn-medialive-channel-audiodescription-audiowatermarkingsettings"""
     p_CodecSettings: typing.Union['PropChannelAudioCodecSettings', dict] = attr.ib(
         default=None,
         converter=PropChannelAudioCodecSettings.from_dict,

@@ -90,6 +90,26 @@ class PropLoggingConfigurationFieldToMatch(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-loggingconfiguration-fieldtomatch.html#cfn-wafv2-loggingconfiguration-fieldtomatch-uripath"""
 
 @attr.s
+class PropWebACLFieldIdentifier(Property):
+    """
+    AWS Object Type = "AWS::WAFv2::WebACL.FieldIdentifier"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-fieldidentifier.html
+
+    Property Document:
+    
+    - ``rp_Identifier``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-fieldidentifier.html#cfn-wafv2-webacl-fieldidentifier-identifier
+    """
+    AWS_OBJECT_TYPE = "AWS::WAFv2::WebACL.FieldIdentifier"
+    
+    rp_Identifier: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "Identifier"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-fieldidentifier.html#cfn-wafv2-webacl-fieldidentifier-identifier"""
+
+@attr.s
 class PropWebACLTextTransformation(Property):
     """
     AWS Object Type = "AWS::WAFv2::WebACL.TextTransformation"
@@ -181,6 +201,7 @@ class PropRuleGroupRuleAction(Property):
     
     - ``p_Allow``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-ruleaction.html#cfn-wafv2-rulegroup-ruleaction-allow
     - ``p_Block``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-ruleaction.html#cfn-wafv2-rulegroup-ruleaction-block
+    - ``p_Captcha``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-ruleaction.html#cfn-wafv2-rulegroup-ruleaction-captcha
     - ``p_Count``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-ruleaction.html#cfn-wafv2-rulegroup-ruleaction-count
     """
     AWS_OBJECT_TYPE = "AWS::WAFv2::RuleGroup.RuleAction"
@@ -197,6 +218,12 @@ class PropRuleGroupRuleAction(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Block"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-ruleaction.html#cfn-wafv2-rulegroup-ruleaction-block"""
+    p_Captcha: dict = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "Captcha"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-ruleaction.html#cfn-wafv2-rulegroup-ruleaction-captcha"""
     p_Count: dict = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(dict)),
@@ -333,6 +360,26 @@ class PropWebACLCustomResponseBody(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-customresponsebody.html#cfn-wafv2-webacl-customresponsebody-contenttype"""
 
 @attr.s
+class PropWebACLImmunityTimeProperty(Property):
+    """
+    AWS Object Type = "AWS::WAFv2::WebACL.ImmunityTimeProperty"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-immunitytimeproperty.html
+
+    Property Document:
+    
+    - ``rp_ImmunityTime``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-immunitytimeproperty.html#cfn-wafv2-webacl-immunitytimeproperty-immunitytime
+    """
+    AWS_OBJECT_TYPE = "AWS::WAFv2::WebACL.ImmunityTimeProperty"
+    
+    rp_ImmunityTime: int = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(int),
+        metadata={AttrMeta.PROPERTY_NAME: "ImmunityTime"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-immunitytimeproperty.html#cfn-wafv2-webacl-immunitytimeproperty-immunitytime"""
+
+@attr.s
 class PropWebACLLabelMatchStatement(Property):
     """
     AWS Object Type = "AWS::WAFv2::WebACL.LabelMatchStatement"
@@ -385,6 +432,90 @@ class PropWebACLJsonMatchPattern(Property):
         metadata={AttrMeta.PROPERTY_NAME: "IncludedPaths"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-jsonmatchpattern.html#cfn-wafv2-webacl-jsonmatchpattern-includedpaths"""
+
+@attr.s
+class PropWebACLCaptchaConfig(Property):
+    """
+    AWS Object Type = "AWS::WAFv2::WebACL.CaptchaConfig"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-captchaconfig.html
+
+    Property Document:
+    
+    - ``p_ImmunityTimeProperty``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-captchaconfig.html#cfn-wafv2-webacl-captchaconfig-immunitytimeproperty
+    """
+    AWS_OBJECT_TYPE = "AWS::WAFv2::WebACL.CaptchaConfig"
+    
+    p_ImmunityTimeProperty: typing.Union['PropWebACLImmunityTimeProperty', dict] = attr.ib(
+        default=None,
+        converter=PropWebACLImmunityTimeProperty.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropWebACLImmunityTimeProperty)),
+        metadata={AttrMeta.PROPERTY_NAME: "ImmunityTimeProperty"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-captchaconfig.html#cfn-wafv2-webacl-captchaconfig-immunitytimeproperty"""
+
+@attr.s
+class PropRuleGroupImmunityTimeProperty(Property):
+    """
+    AWS Object Type = "AWS::WAFv2::RuleGroup.ImmunityTimeProperty"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-immunitytimeproperty.html
+
+    Property Document:
+    
+    - ``rp_ImmunityTime``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-immunitytimeproperty.html#cfn-wafv2-rulegroup-immunitytimeproperty-immunitytime
+    """
+    AWS_OBJECT_TYPE = "AWS::WAFv2::RuleGroup.ImmunityTimeProperty"
+    
+    rp_ImmunityTime: int = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(int),
+        metadata={AttrMeta.PROPERTY_NAME: "ImmunityTime"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-immunitytimeproperty.html#cfn-wafv2-rulegroup-immunitytimeproperty-immunitytime"""
+
+@attr.s
+class PropWebACLManagedRuleGroupConfig(Property):
+    """
+    AWS Object Type = "AWS::WAFv2::WebACL.ManagedRuleGroupConfig"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-managedrulegroupconfig.html
+
+    Property Document:
+    
+    - ``p_LoginPath``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-managedrulegroupconfig.html#cfn-wafv2-webacl-managedrulegroupconfig-loginpath
+    - ``p_PasswordField``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-managedrulegroupconfig.html#cfn-wafv2-webacl-managedrulegroupconfig-passwordfield
+    - ``p_PayloadType``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-managedrulegroupconfig.html#cfn-wafv2-webacl-managedrulegroupconfig-payloadtype
+    - ``p_UsernameField``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-managedrulegroupconfig.html#cfn-wafv2-webacl-managedrulegroupconfig-usernamefield
+    """
+    AWS_OBJECT_TYPE = "AWS::WAFv2::WebACL.ManagedRuleGroupConfig"
+    
+    p_LoginPath: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "LoginPath"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-managedrulegroupconfig.html#cfn-wafv2-webacl-managedrulegroupconfig-loginpath"""
+    p_PasswordField: typing.Union['PropWebACLFieldIdentifier', dict] = attr.ib(
+        default=None,
+        converter=PropWebACLFieldIdentifier.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropWebACLFieldIdentifier)),
+        metadata={AttrMeta.PROPERTY_NAME: "PasswordField"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-managedrulegroupconfig.html#cfn-wafv2-webacl-managedrulegroupconfig-passwordfield"""
+    p_PayloadType: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "PayloadType"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-managedrulegroupconfig.html#cfn-wafv2-webacl-managedrulegroupconfig-payloadtype"""
+    p_UsernameField: typing.Union['PropWebACLFieldIdentifier', dict] = attr.ib(
+        default=None,
+        converter=PropWebACLFieldIdentifier.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropWebACLFieldIdentifier)),
+        metadata={AttrMeta.PROPERTY_NAME: "UsernameField"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-managedrulegroupconfig.html#cfn-wafv2-webacl-managedrulegroupconfig-usernamefield"""
 
 @attr.s
 class PropWebACLGeoMatchStatement(Property):
@@ -987,6 +1118,27 @@ class PropWebACLRuleGroupReferenceStatement(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-rulegroupreferencestatement.html#cfn-wafv2-webacl-rulegroupreferencestatement-excludedrules"""
 
 @attr.s
+class PropRuleGroupCaptchaConfig(Property):
+    """
+    AWS Object Type = "AWS::WAFv2::RuleGroup.CaptchaConfig"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-captchaconfig.html
+
+    Property Document:
+    
+    - ``p_ImmunityTimeProperty``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-captchaconfig.html#cfn-wafv2-rulegroup-captchaconfig-immunitytimeproperty
+    """
+    AWS_OBJECT_TYPE = "AWS::WAFv2::RuleGroup.CaptchaConfig"
+    
+    p_ImmunityTimeProperty: typing.Union['PropRuleGroupImmunityTimeProperty', dict] = attr.ib(
+        default=None,
+        converter=PropRuleGroupImmunityTimeProperty.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropRuleGroupImmunityTimeProperty)),
+        metadata={AttrMeta.PROPERTY_NAME: "ImmunityTimeProperty"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-captchaconfig.html#cfn-wafv2-rulegroup-captchaconfig-immunitytimeproperty"""
+
+@attr.s
 class PropWebACLCountAction(Property):
     """
     AWS Object Type = "AWS::WAFv2::WebACL.CountAction"
@@ -1135,41 +1287,40 @@ class PropRuleGroupGeoMatchStatement(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-geomatchstatement.html#cfn-wafv2-rulegroup-geomatchstatement-forwardedipconfig"""
 
 @attr.s
-class PropWebACLRuleAction(Property):
+class PropRuleGroupRegexMatchStatement(Property):
     """
-    AWS Object Type = "AWS::WAFv2::WebACL.RuleAction"
+    AWS Object Type = "AWS::WAFv2::RuleGroup.RegexMatchStatement"
 
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-ruleaction.html
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-regexmatchstatement.html
 
     Property Document:
     
-    - ``p_Allow``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-ruleaction.html#cfn-wafv2-webacl-ruleaction-allow
-    - ``p_Block``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-ruleaction.html#cfn-wafv2-webacl-ruleaction-block
-    - ``p_Count``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-ruleaction.html#cfn-wafv2-webacl-ruleaction-count
+    - ``rp_FieldToMatch``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-regexmatchstatement.html#cfn-wafv2-rulegroup-regexmatchstatement-fieldtomatch
+    - ``rp_RegexString``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-regexmatchstatement.html#cfn-wafv2-rulegroup-regexmatchstatement-regexstring
+    - ``rp_TextTransformations``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-regexmatchstatement.html#cfn-wafv2-rulegroup-regexmatchstatement-texttransformations
     """
-    AWS_OBJECT_TYPE = "AWS::WAFv2::WebACL.RuleAction"
+    AWS_OBJECT_TYPE = "AWS::WAFv2::RuleGroup.RegexMatchStatement"
     
-    p_Allow: typing.Union['PropWebACLAllowAction', dict] = attr.ib(
+    rp_FieldToMatch: typing.Union['PropRuleGroupFieldToMatch', dict] = attr.ib(
         default=None,
-        converter=PropWebACLAllowAction.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropWebACLAllowAction)),
-        metadata={AttrMeta.PROPERTY_NAME: "Allow"},
+        converter=PropRuleGroupFieldToMatch.from_dict,
+        validator=attr.validators.instance_of(PropRuleGroupFieldToMatch),
+        metadata={AttrMeta.PROPERTY_NAME: "FieldToMatch"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-ruleaction.html#cfn-wafv2-webacl-ruleaction-allow"""
-    p_Block: typing.Union['PropWebACLBlockAction', dict] = attr.ib(
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-regexmatchstatement.html#cfn-wafv2-rulegroup-regexmatchstatement-fieldtomatch"""
+    rp_RegexString: TypeHint.intrinsic_str = attr.ib(
         default=None,
-        converter=PropWebACLBlockAction.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropWebACLBlockAction)),
-        metadata={AttrMeta.PROPERTY_NAME: "Block"},
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "RegexString"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-ruleaction.html#cfn-wafv2-webacl-ruleaction-block"""
-    p_Count: typing.Union['PropWebACLCountAction', dict] = attr.ib(
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-regexmatchstatement.html#cfn-wafv2-rulegroup-regexmatchstatement-regexstring"""
+    rp_TextTransformations: typing.List[typing.Union['PropRuleGroupTextTransformation', dict]] = attr.ib(
         default=None,
-        converter=PropWebACLCountAction.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropWebACLCountAction)),
-        metadata={AttrMeta.PROPERTY_NAME: "Count"},
+        converter=PropRuleGroupTextTransformation.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropRuleGroupTextTransformation), iterable_validator=attr.validators.instance_of(list)),
+        metadata={AttrMeta.PROPERTY_NAME: "TextTransformations"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-ruleaction.html#cfn-wafv2-webacl-ruleaction-count"""
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-regexmatchstatement.html#cfn-wafv2-rulegroup-regexmatchstatement-texttransformations"""
 
 @attr.s
 class PropRuleGroupByteMatchStatement(Property):
@@ -1256,6 +1407,63 @@ class PropRuleGroupRegexPatternSetReferenceStatement(Property):
         metadata={AttrMeta.PROPERTY_NAME: "TextTransformations"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-regexpatternsetreferencestatement.html#cfn-wafv2-rulegroup-regexpatternsetreferencestatement-texttransformations"""
+
+@attr.s
+class PropWebACLRegexMatchStatement(Property):
+    """
+    AWS Object Type = "AWS::WAFv2::WebACL.RegexMatchStatement"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-regexmatchstatement.html
+
+    Property Document:
+    
+    - ``rp_FieldToMatch``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-regexmatchstatement.html#cfn-wafv2-webacl-regexmatchstatement-fieldtomatch
+    - ``rp_RegexString``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-regexmatchstatement.html#cfn-wafv2-webacl-regexmatchstatement-regexstring
+    - ``rp_TextTransformations``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-regexmatchstatement.html#cfn-wafv2-webacl-regexmatchstatement-texttransformations
+    """
+    AWS_OBJECT_TYPE = "AWS::WAFv2::WebACL.RegexMatchStatement"
+    
+    rp_FieldToMatch: typing.Union['PropWebACLFieldToMatch', dict] = attr.ib(
+        default=None,
+        converter=PropWebACLFieldToMatch.from_dict,
+        validator=attr.validators.instance_of(PropWebACLFieldToMatch),
+        metadata={AttrMeta.PROPERTY_NAME: "FieldToMatch"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-regexmatchstatement.html#cfn-wafv2-webacl-regexmatchstatement-fieldtomatch"""
+    rp_RegexString: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "RegexString"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-regexmatchstatement.html#cfn-wafv2-webacl-regexmatchstatement-regexstring"""
+    rp_TextTransformations: typing.List[typing.Union['PropWebACLTextTransformation', dict]] = attr.ib(
+        default=None,
+        converter=PropWebACLTextTransformation.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropWebACLTextTransformation), iterable_validator=attr.validators.instance_of(list)),
+        metadata={AttrMeta.PROPERTY_NAME: "TextTransformations"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-regexmatchstatement.html#cfn-wafv2-webacl-regexmatchstatement-texttransformations"""
+
+@attr.s
+class PropWebACLCaptchaAction(Property):
+    """
+    AWS Object Type = "AWS::WAFv2::WebACL.CaptchaAction"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-captchaaction.html
+
+    Property Document:
+    
+    - ``p_CustomRequestHandling``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-captchaaction.html#cfn-wafv2-webacl-captchaaction-customrequesthandling
+    """
+    AWS_OBJECT_TYPE = "AWS::WAFv2::WebACL.CaptchaAction"
+    
+    p_CustomRequestHandling: typing.Union['PropWebACLCustomRequestHandling', dict] = attr.ib(
+        default=None,
+        converter=PropWebACLCustomRequestHandling.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropWebACLCustomRequestHandling)),
+        metadata={AttrMeta.PROPERTY_NAME: "CustomRequestHandling"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-captchaaction.html#cfn-wafv2-webacl-captchaaction-customrequesthandling"""
 
 @attr.s
 class PropRuleGroupSqliMatchStatement(Property):
@@ -1546,6 +1754,51 @@ class PropWebACLSizeConstraintStatement(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-sizeconstraintstatement.html#cfn-wafv2-webacl-sizeconstraintstatement-texttransformations"""
 
 @attr.s
+class PropWebACLRuleAction(Property):
+    """
+    AWS Object Type = "AWS::WAFv2::WebACL.RuleAction"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-ruleaction.html
+
+    Property Document:
+    
+    - ``p_Allow``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-ruleaction.html#cfn-wafv2-webacl-ruleaction-allow
+    - ``p_Block``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-ruleaction.html#cfn-wafv2-webacl-ruleaction-block
+    - ``p_Captcha``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-ruleaction.html#cfn-wafv2-webacl-ruleaction-captcha
+    - ``p_Count``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-ruleaction.html#cfn-wafv2-webacl-ruleaction-count
+    """
+    AWS_OBJECT_TYPE = "AWS::WAFv2::WebACL.RuleAction"
+    
+    p_Allow: typing.Union['PropWebACLAllowAction', dict] = attr.ib(
+        default=None,
+        converter=PropWebACLAllowAction.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropWebACLAllowAction)),
+        metadata={AttrMeta.PROPERTY_NAME: "Allow"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-ruleaction.html#cfn-wafv2-webacl-ruleaction-allow"""
+    p_Block: typing.Union['PropWebACLBlockAction', dict] = attr.ib(
+        default=None,
+        converter=PropWebACLBlockAction.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropWebACLBlockAction)),
+        metadata={AttrMeta.PROPERTY_NAME: "Block"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-ruleaction.html#cfn-wafv2-webacl-ruleaction-block"""
+    p_Captcha: typing.Union['PropWebACLCaptchaAction', dict] = attr.ib(
+        default=None,
+        converter=PropWebACLCaptchaAction.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropWebACLCaptchaAction)),
+        metadata={AttrMeta.PROPERTY_NAME: "Captcha"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-ruleaction.html#cfn-wafv2-webacl-ruleaction-captcha"""
+    p_Count: typing.Union['PropWebACLCountAction', dict] = attr.ib(
+        default=None,
+        converter=PropWebACLCountAction.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropWebACLCountAction)),
+        metadata={AttrMeta.PROPERTY_NAME: "Count"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-ruleaction.html#cfn-wafv2-webacl-ruleaction-count"""
+
+@attr.s
 class PropWebACLManagedRuleGroupStatement(Property):
     """
     AWS Object Type = "AWS::WAFv2::WebACL.ManagedRuleGroupStatement"
@@ -1557,6 +1810,7 @@ class PropWebACLManagedRuleGroupStatement(Property):
     - ``rp_Name``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-managedrulegroupstatement.html#cfn-wafv2-webacl-managedrulegroupstatement-name
     - ``rp_VendorName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-managedrulegroupstatement.html#cfn-wafv2-webacl-managedrulegroupstatement-vendorname
     - ``p_ExcludedRules``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-managedrulegroupstatement.html#cfn-wafv2-webacl-managedrulegroupstatement-excludedrules
+    - ``p_ManagedRuleGroupConfigs``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-managedrulegroupstatement.html#cfn-wafv2-webacl-managedrulegroupstatement-managedrulegroupconfigs
     - ``p_ScopeDownStatement``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-managedrulegroupstatement.html#cfn-wafv2-webacl-managedrulegroupstatement-scopedownstatement
     - ``p_Version``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-managedrulegroupstatement.html#cfn-wafv2-webacl-managedrulegroupstatement-version
     """
@@ -1581,6 +1835,13 @@ class PropWebACLManagedRuleGroupStatement(Property):
         metadata={AttrMeta.PROPERTY_NAME: "ExcludedRules"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-managedrulegroupstatement.html#cfn-wafv2-webacl-managedrulegroupstatement-excludedrules"""
+    p_ManagedRuleGroupConfigs: typing.List[typing.Union['PropWebACLManagedRuleGroupConfig', dict]] = attr.ib(
+        default=None,
+        converter=PropWebACLManagedRuleGroupConfig.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropWebACLManagedRuleGroupConfig), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "ManagedRuleGroupConfigs"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-managedrulegroupstatement.html#cfn-wafv2-webacl-managedrulegroupstatement-managedrulegroupconfigs"""
     p_ScopeDownStatement: typing.Union['PropWebACLStatement', dict] = attr.ib(
         default=None,
         validator=None,
@@ -1631,6 +1892,7 @@ class PropRuleGroupStatement(Property):
     - ``p_NotStatement``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-statement.html#cfn-wafv2-rulegroup-statement-notstatement
     - ``p_OrStatement``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-statement.html#cfn-wafv2-rulegroup-statement-orstatement
     - ``p_RateBasedStatement``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-statement.html#cfn-wafv2-rulegroup-statement-ratebasedstatement
+    - ``p_RegexMatchStatement``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-statement.html#cfn-wafv2-rulegroup-statement-regexmatchstatement
     - ``p_RegexPatternSetReferenceStatement``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-statement.html#cfn-wafv2-rulegroup-statement-regexpatternsetreferencestatement
     - ``p_SizeConstraintStatement``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-statement.html#cfn-wafv2-rulegroup-statement-sizeconstraintstatement
     - ``p_SqliMatchStatement``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-statement.html#cfn-wafv2-rulegroup-statement-sqlimatchstatement
@@ -1690,6 +1952,13 @@ class PropRuleGroupStatement(Property):
         metadata={AttrMeta.PROPERTY_NAME: "RateBasedStatement"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-statement.html#cfn-wafv2-rulegroup-statement-ratebasedstatement"""
+    p_RegexMatchStatement: typing.Union['PropRuleGroupRegexMatchStatement', dict] = attr.ib(
+        default=None,
+        converter=PropRuleGroupRegexMatchStatement.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropRuleGroupRegexMatchStatement)),
+        metadata={AttrMeta.PROPERTY_NAME: "RegexMatchStatement"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-statement.html#cfn-wafv2-rulegroup-statement-regexmatchstatement"""
     p_RegexPatternSetReferenceStatement: typing.Union['PropRuleGroupRegexPatternSetReferenceStatement', dict] = attr.ib(
         default=None,
         converter=PropRuleGroupRegexPatternSetReferenceStatement.from_dict,
@@ -1737,6 +2006,7 @@ class PropWebACLStatement(Property):
     - ``p_NotStatement``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-statement.html#cfn-wafv2-webacl-statement-notstatement
     - ``p_OrStatement``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-statement.html#cfn-wafv2-webacl-statement-orstatement
     - ``p_RateBasedStatement``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-statement.html#cfn-wafv2-webacl-statement-ratebasedstatement
+    - ``p_RegexMatchStatement``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-statement.html#cfn-wafv2-webacl-statement-regexmatchstatement
     - ``p_RegexPatternSetReferenceStatement``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-statement.html#cfn-wafv2-webacl-statement-regexpatternsetreferencestatement
     - ``p_RuleGroupReferenceStatement``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-statement.html#cfn-wafv2-webacl-statement-rulegroupreferencestatement
     - ``p_SizeConstraintStatement``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-statement.html#cfn-wafv2-webacl-statement-sizeconstraintstatement
@@ -1803,6 +2073,13 @@ class PropWebACLStatement(Property):
         metadata={AttrMeta.PROPERTY_NAME: "RateBasedStatement"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-statement.html#cfn-wafv2-webacl-statement-ratebasedstatement"""
+    p_RegexMatchStatement: typing.Union['PropWebACLRegexMatchStatement', dict] = attr.ib(
+        default=None,
+        converter=PropWebACLRegexMatchStatement.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropWebACLRegexMatchStatement)),
+        metadata={AttrMeta.PROPERTY_NAME: "RegexMatchStatement"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-statement.html#cfn-wafv2-webacl-statement-regexmatchstatement"""
     p_RegexPatternSetReferenceStatement: typing.Union['PropWebACLRegexPatternSetReferenceStatement', dict] = attr.ib(
         default=None,
         converter=PropWebACLRegexPatternSetReferenceStatement.from_dict,
@@ -1975,6 +2252,7 @@ class PropRuleGroupRule(Property):
     - ``rp_Statement``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-rule.html#cfn-wafv2-rulegroup-rule-statement
     - ``rp_VisibilityConfig``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-rule.html#cfn-wafv2-rulegroup-rule-visibilityconfig
     - ``p_Action``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-rule.html#cfn-wafv2-rulegroup-rule-action
+    - ``p_CaptchaConfig``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-rule.html#cfn-wafv2-rulegroup-rule-captchaconfig
     - ``p_RuleLabels``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-rule.html#cfn-wafv2-rulegroup-rule-rulelabels
     """
     AWS_OBJECT_TYPE = "AWS::WAFv2::RuleGroup.Rule"
@@ -2011,6 +2289,13 @@ class PropRuleGroupRule(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Action"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-rule.html#cfn-wafv2-rulegroup-rule-action"""
+    p_CaptchaConfig: typing.Union['PropRuleGroupCaptchaConfig', dict] = attr.ib(
+        default=None,
+        converter=PropRuleGroupCaptchaConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropRuleGroupCaptchaConfig)),
+        metadata={AttrMeta.PROPERTY_NAME: "CaptchaConfig"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-rulegroup-rule.html#cfn-wafv2-rulegroup-rule-captchaconfig"""
     p_RuleLabels: typing.List[typing.Union['PropRuleGroupLabel', dict]] = attr.ib(
         default=None,
         converter=PropRuleGroupLabel.from_list,
@@ -2033,6 +2318,7 @@ class PropWebACLRule(Property):
     - ``rp_Statement``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-rule.html#cfn-wafv2-webacl-rule-statement
     - ``rp_VisibilityConfig``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-rule.html#cfn-wafv2-webacl-rule-visibilityconfig
     - ``p_Action``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-rule.html#cfn-wafv2-webacl-rule-action
+    - ``p_CaptchaConfig``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-rule.html#cfn-wafv2-webacl-rule-captchaconfig
     - ``p_OverrideAction``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-rule.html#cfn-wafv2-webacl-rule-overrideaction
     - ``p_RuleLabels``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-rule.html#cfn-wafv2-webacl-rule-rulelabels
     """
@@ -2070,6 +2356,13 @@ class PropWebACLRule(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Action"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-rule.html#cfn-wafv2-webacl-rule-action"""
+    p_CaptchaConfig: typing.Union['PropWebACLCaptchaConfig', dict] = attr.ib(
+        default=None,
+        converter=PropWebACLCaptchaConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropWebACLCaptchaConfig)),
+        metadata={AttrMeta.PROPERTY_NAME: "CaptchaConfig"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wafv2-webacl-rule.html#cfn-wafv2-webacl-rule-captchaconfig"""
     p_OverrideAction: typing.Union['PropWebACLOverrideAction', dict] = attr.ib(
         default=None,
         converter=PropWebACLOverrideAction.from_dict,
@@ -2373,6 +2666,7 @@ class WebACL(Resource):
     - ``rp_DefaultAction``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-webacl.html#cfn-wafv2-webacl-defaultaction
     - ``rp_Scope``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-webacl.html#cfn-wafv2-webacl-scope
     - ``rp_VisibilityConfig``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-webacl.html#cfn-wafv2-webacl-visibilityconfig
+    - ``p_CaptchaConfig``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-webacl.html#cfn-wafv2-webacl-captchaconfig
     - ``p_CustomResponseBodies``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-webacl.html#cfn-wafv2-webacl-customresponsebodies
     - ``p_Description``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-webacl.html#cfn-wafv2-webacl-description
     - ``p_Name``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-webacl.html#cfn-wafv2-webacl-name
@@ -2402,6 +2696,13 @@ class WebACL(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "VisibilityConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-webacl.html#cfn-wafv2-webacl-visibilityconfig"""
+    p_CaptchaConfig: typing.Union['PropWebACLCaptchaConfig', dict] = attr.ib(
+        default=None,
+        converter=PropWebACLCaptchaConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropWebACLCaptchaConfig)),
+        metadata={AttrMeta.PROPERTY_NAME: "CaptchaConfig"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-wafv2-webacl.html#cfn-wafv2-webacl-captchaconfig"""
     p_CustomResponseBodies: typing.Union['PropWebACLCustomResponseBody', dict] = attr.ib(
         default=None,
         converter=PropWebACLCustomResponseBody.from_list,

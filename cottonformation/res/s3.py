@@ -340,6 +340,33 @@ class PropBucketSseKmsEncryptedObjects(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-ssekmsencryptedobjects.html#cfn-s3-bucket-ssekmsencryptedobjects-status"""
 
 @attr.s
+class PropBucketNoncurrentVersionExpiration(Property):
+    """
+    AWS Object Type = "AWS::S3::Bucket.NoncurrentVersionExpiration"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule-noncurrentversionexpiration.html
+
+    Property Document:
+    
+    - ``rp_NoncurrentDays``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule-noncurrentversionexpiration.html#cfn-s3-bucket-lifecycleconfig-rule-noncurrentversionexpiration-noncurrentdays
+    - ``p_NewerNoncurrentVersions``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule-noncurrentversionexpiration.html#cfn-s3-bucket-lifecycleconfig-rule-noncurrentversionexpiration-newernoncurrentversions
+    """
+    AWS_OBJECT_TYPE = "AWS::S3::Bucket.NoncurrentVersionExpiration"
+    
+    rp_NoncurrentDays: int = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(int),
+        metadata={AttrMeta.PROPERTY_NAME: "NoncurrentDays"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule-noncurrentversionexpiration.html#cfn-s3-bucket-lifecycleconfig-rule-noncurrentversionexpiration-noncurrentdays"""
+    p_NewerNoncurrentVersions: int = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(int)),
+        metadata={AttrMeta.PROPERTY_NAME: "NewerNoncurrentVersions"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule-noncurrentversionexpiration.html#cfn-s3-bucket-lifecycleconfig-rule-noncurrentversionexpiration-newernoncurrentversions"""
+
+@attr.s
 class PropStorageLensActivityMetrics(Property):
     """
     AWS Object Type = "AWS::S3::StorageLens.ActivityMetrics"
@@ -605,6 +632,26 @@ class PropBucketRedirectRule(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-websiteconfiguration-routingrules-redirectrule.html#cfn-s3-websiteconfiguration-redirectrule-replacekeywith"""
 
 @attr.s
+class PropStorageLensCloudWatchMetrics(Property):
+    """
+    AWS Object Type = "AWS::S3::StorageLens.CloudWatchMetrics"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-cloudwatchmetrics.html
+
+    Property Document:
+    
+    - ``rp_IsEnabled``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-cloudwatchmetrics.html#cfn-s3-storagelens-cloudwatchmetrics-isenabled
+    """
+    AWS_OBJECT_TYPE = "AWS::S3::StorageLens.CloudWatchMetrics"
+    
+    rp_IsEnabled: bool = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(bool),
+        metadata={AttrMeta.PROPERTY_NAME: "IsEnabled"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-cloudwatchmetrics.html#cfn-s3-storagelens-cloudwatchmetrics-isenabled"""
+
+@attr.s
 class PropBucketDataExport(Property):
     """
     AWS Object Type = "AWS::S3::Bucket.DataExport"
@@ -678,6 +725,26 @@ class PropBucketFilterRule(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Value"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfiguration-config-filter-s3key-rules.html#cfn-s3-bucket-notificationconfiguraiton-config-filter-s3key-rules-value"""
+
+@attr.s
+class PropBucketEventBridgeConfiguration(Property):
+    """
+    AWS Object Type = "AWS::S3::Bucket.EventBridgeConfiguration"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfig-eventbridgeconfig.html
+
+    Property Document:
+    
+    - ``p_EventBridgeEnabled``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfig-eventbridgeconfig.html#cfn-s3-bucket-eventbridgeconfiguration-eventbridgeenabled
+    """
+    AWS_OBJECT_TYPE = "AWS::S3::Bucket.EventBridgeConfiguration"
+    
+    p_EventBridgeEnabled: bool = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(bool)),
+        metadata={AttrMeta.PROPERTY_NAME: "EventBridgeEnabled"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfig-eventbridgeconfig.html#cfn-s3-bucket-eventbridgeconfiguration-eventbridgeenabled"""
 
 @attr.s
 class PropBucketMetrics(Property):
@@ -938,6 +1005,7 @@ class PropBucketNoncurrentVersionTransition(Property):
     
     - ``rp_StorageClass``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule-noncurrentversiontransition.html#cfn-s3-bucket-lifecycleconfig-rule-noncurrentversiontransition-storageclass
     - ``rp_TransitionInDays``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule-noncurrentversiontransition.html#cfn-s3-bucket-lifecycleconfig-rule-noncurrentversiontransition-transitionindays
+    - ``p_NewerNoncurrentVersions``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule-noncurrentversiontransition.html#cfn-s3-bucket-lifecycleconfig-rule-noncurrentversiontransition-newernoncurrentversions
     """
     AWS_OBJECT_TYPE = "AWS::S3::Bucket.NoncurrentVersionTransition"
     
@@ -953,6 +1021,12 @@ class PropBucketNoncurrentVersionTransition(Property):
         metadata={AttrMeta.PROPERTY_NAME: "TransitionInDays"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule-noncurrentversiontransition.html#cfn-s3-bucket-lifecycleconfig-rule-noncurrentversiontransition-transitionindays"""
+    p_NewerNoncurrentVersions: int = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(int)),
+        metadata={AttrMeta.PROPERTY_NAME: "NewerNoncurrentVersions"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule-noncurrentversiontransition.html#cfn-s3-bucket-lifecycleconfig-rule-noncurrentversiontransition-newernoncurrentversions"""
 
 @attr.s
 class PropStorageLensEncryption(Property):
@@ -1477,14 +1551,22 @@ class PropStorageLensDataExport(Property):
 
     Property Document:
     
-    - ``rp_S3BucketDestination``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-dataexport.html#cfn-s3-storagelens-dataexport-s3bucketdestination
+    - ``p_CloudWatchMetrics``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-dataexport.html#cfn-s3-storagelens-dataexport-cloudwatchmetrics
+    - ``p_S3BucketDestination``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-dataexport.html#cfn-s3-storagelens-dataexport-s3bucketdestination
     """
     AWS_OBJECT_TYPE = "AWS::S3::StorageLens.DataExport"
     
-    rp_S3BucketDestination: typing.Union['PropStorageLensS3BucketDestination', dict] = attr.ib(
+    p_CloudWatchMetrics: typing.Union['PropStorageLensCloudWatchMetrics', dict] = attr.ib(
+        default=None,
+        converter=PropStorageLensCloudWatchMetrics.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropStorageLensCloudWatchMetrics)),
+        metadata={AttrMeta.PROPERTY_NAME: "CloudWatchMetrics"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-dataexport.html#cfn-s3-storagelens-dataexport-cloudwatchmetrics"""
+    p_S3BucketDestination: typing.Union['PropStorageLensS3BucketDestination', dict] = attr.ib(
         default=None,
         converter=PropStorageLensS3BucketDestination.from_dict,
-        validator=attr.validators.instance_of(PropStorageLensS3BucketDestination),
+        validator=attr.validators.optional(attr.validators.instance_of(PropStorageLensS3BucketDestination)),
         metadata={AttrMeta.PROPERTY_NAME: "S3BucketDestination"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-dataexport.html#cfn-s3-storagelens-dataexport-s3bucketdestination"""
@@ -1617,9 +1699,12 @@ class PropBucketRule(Property):
     - ``p_ExpirationInDays``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule.html#cfn-s3-bucket-lifecycleconfig-rule-expirationindays
     - ``p_ExpiredObjectDeleteMarker``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule.html#cfn-s3-bucket-rule-expiredobjectdeletemarker
     - ``p_Id``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule.html#cfn-s3-bucket-lifecycleconfig-rule-id
+    - ``p_NoncurrentVersionExpiration``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule.html#cfn-s3-bucket-lifecycleconfig-rule-noncurrentversionexpiration
     - ``p_NoncurrentVersionExpirationInDays``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule.html#cfn-s3-bucket-lifecycleconfig-rule-noncurrentversionexpirationindays
     - ``p_NoncurrentVersionTransition``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule.html#cfn-s3-bucket-lifecycleconfig-rule-noncurrentversiontransition
     - ``p_NoncurrentVersionTransitions``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule.html#cfn-s3-bucket-lifecycleconfig-rule-noncurrentversiontransitions
+    - ``p_ObjectSizeGreaterThan``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule.html#cfn-s3-bucket-lifecycleconfig-rule-objectsizegreaterthan
+    - ``p_ObjectSizeLessThan``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule.html#cfn-s3-bucket-lifecycleconfig-rule-objectsizelessthan
     - ``p_Prefix``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule.html#cfn-s3-bucket-lifecycleconfig-rule-prefix
     - ``p_TagFilters``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule.html#cfn-s3-bucket-rule-tagfilters
     - ``p_Transition``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule.html#cfn-s3-bucket-lifecycleconfig-rule-transition
@@ -1664,6 +1749,13 @@ class PropBucketRule(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Id"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule.html#cfn-s3-bucket-lifecycleconfig-rule-id"""
+    p_NoncurrentVersionExpiration: typing.Union['PropBucketNoncurrentVersionExpiration', dict] = attr.ib(
+        default=None,
+        converter=PropBucketNoncurrentVersionExpiration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropBucketNoncurrentVersionExpiration)),
+        metadata={AttrMeta.PROPERTY_NAME: "NoncurrentVersionExpiration"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule.html#cfn-s3-bucket-lifecycleconfig-rule-noncurrentversionexpiration"""
     p_NoncurrentVersionExpirationInDays: int = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(int)),
@@ -1684,6 +1776,18 @@ class PropBucketRule(Property):
         metadata={AttrMeta.PROPERTY_NAME: "NoncurrentVersionTransitions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule.html#cfn-s3-bucket-lifecycleconfig-rule-noncurrentversiontransitions"""
+    p_ObjectSizeGreaterThan: int = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(int)),
+        metadata={AttrMeta.PROPERTY_NAME: "ObjectSizeGreaterThan"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule.html#cfn-s3-bucket-lifecycleconfig-rule-objectsizegreaterthan"""
+    p_ObjectSizeLessThan: int = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(int)),
+        metadata={AttrMeta.PROPERTY_NAME: "ObjectSizeLessThan"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule.html#cfn-s3-bucket-lifecycleconfig-rule-objectsizelessthan"""
     p_Prefix: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
@@ -1833,12 +1937,20 @@ class PropBucketNotificationConfiguration(Property):
 
     Property Document:
     
+    - ``p_EventBridgeConfiguration``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfig.html#cfn-s3-bucket-notificationconfig-eventbridgeconfig
     - ``p_LambdaConfigurations``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfig.html#cfn-s3-bucket-notificationconfig-lambdaconfig
     - ``p_QueueConfigurations``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfig.html#cfn-s3-bucket-notificationconfig-queueconfig
     - ``p_TopicConfigurations``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfig.html#cfn-s3-bucket-notificationconfig-topicconfig
     """
     AWS_OBJECT_TYPE = "AWS::S3::Bucket.NotificationConfiguration"
     
+    p_EventBridgeConfiguration: typing.Union['PropBucketEventBridgeConfiguration', dict] = attr.ib(
+        default=None,
+        converter=PropBucketEventBridgeConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropBucketEventBridgeConfiguration)),
+        metadata={AttrMeta.PROPERTY_NAME: "EventBridgeConfiguration"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-notificationconfig.html#cfn-s3-bucket-notificationconfig-eventbridgeconfig"""
     p_LambdaConfigurations: typing.List[typing.Union['PropBucketLambdaConfiguration', dict]] = attr.ib(
         default=None,
         converter=PropBucketLambdaConfiguration.from_list,

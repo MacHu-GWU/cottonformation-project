@@ -1562,11 +1562,6 @@ class DBProxy(Resource):
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxy.html#aws-resource-rds-dbproxy-return-values"""
         return GetAtt(resource=self, attr_name="Endpoint")
     
-    @property
-    def rv_VpcId(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxy.html#aws-resource-rds-dbproxy-return-values"""
-        return GetAtt(resource=self, attr_name="VpcId")
-    
 
 @attr.s
 class DBProxyTargetGroup(Resource):

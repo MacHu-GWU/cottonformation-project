@@ -15,6 +15,60 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
+class PropConnectionApiKeyAuthParameters(Property):
+    """
+    AWS Object Type = "AWS::Events::Connection.ApiKeyAuthParameters"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-connection-apikeyauthparameters.html
+
+    Property Document:
+    
+    - ``rp_ApiKeyName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-connection-apikeyauthparameters.html#cfn-events-connection-apikeyauthparameters-apikeyname
+    - ``rp_ApiKeyValue``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-connection-apikeyauthparameters.html#cfn-events-connection-apikeyauthparameters-apikeyvalue
+    """
+    AWS_OBJECT_TYPE = "AWS::Events::Connection.ApiKeyAuthParameters"
+    
+    rp_ApiKeyName: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "ApiKeyName"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-connection-apikeyauthparameters.html#cfn-events-connection-apikeyauthparameters-apikeyname"""
+    rp_ApiKeyValue: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "ApiKeyValue"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-connection-apikeyauthparameters.html#cfn-events-connection-apikeyauthparameters-apikeyvalue"""
+
+@attr.s
+class PropRuleSageMakerPipelineParameter(Property):
+    """
+    AWS Object Type = "AWS::Events::Rule.SageMakerPipelineParameter"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-sagemakerpipelineparameter.html
+
+    Property Document:
+    
+    - ``rp_Name``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-sagemakerpipelineparameter.html#cfn-events-rule-sagemakerpipelineparameter-name
+    - ``rp_Value``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-sagemakerpipelineparameter.html#cfn-events-rule-sagemakerpipelineparameter-value
+    """
+    AWS_OBJECT_TYPE = "AWS::Events::Rule.SageMakerPipelineParameter"
+    
+    rp_Name: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "Name"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-sagemakerpipelineparameter.html#cfn-events-rule-sagemakerpipelineparameter-name"""
+    rp_Value: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "Value"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-sagemakerpipelineparameter.html#cfn-events-rule-sagemakerpipelineparameter-value"""
+
+@attr.s
 class PropRuleBatchRetryStrategy(Property):
     """
     AWS Object Type = "AWS::Events::Rule.BatchRetryStrategy"
@@ -33,6 +87,33 @@ class PropRuleBatchRetryStrategy(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Attempts"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-batchretrystrategy.html#cfn-events-rule-batchretrystrategy-attempts"""
+
+@attr.s
+class PropEventBusTagEntry(Property):
+    """
+    AWS Object Type = "AWS::Events::EventBus.TagEntry"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-eventbus-tagentry.html
+
+    Property Document:
+    
+    - ``rp_Key``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-eventbus-tagentry.html#cfn-events-eventbus-tagentry-key
+    - ``rp_Value``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-eventbus-tagentry.html#cfn-events-eventbus-tagentry-value
+    """
+    AWS_OBJECT_TYPE = "AWS::Events::EventBus.TagEntry"
+    
+    rp_Key: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "Key"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-eventbus-tagentry.html#cfn-events-eventbus-tagentry-key"""
+    rp_Value: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "Value"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-eventbus-tagentry.html#cfn-events-eventbus-tagentry-value"""
 
 @attr.s
 class PropRulePlacementConstraint(Property):
@@ -128,6 +209,67 @@ class PropEventBusPolicyCondition(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Value"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-eventbuspolicy-condition.html#cfn-events-eventbuspolicy-condition-value"""
+
+@attr.s
+class PropConnectionBasicAuthParameters(Property):
+    """
+    AWS Object Type = "AWS::Events::Connection.BasicAuthParameters"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-connection-basicauthparameters.html
+
+    Property Document:
+    
+    - ``rp_Password``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-connection-basicauthparameters.html#cfn-events-connection-basicauthparameters-password
+    - ``rp_Username``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-connection-basicauthparameters.html#cfn-events-connection-basicauthparameters-username
+    """
+    AWS_OBJECT_TYPE = "AWS::Events::Connection.BasicAuthParameters"
+    
+    rp_Password: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "Password"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-connection-basicauthparameters.html#cfn-events-connection-basicauthparameters-password"""
+    rp_Username: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "Username"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-connection-basicauthparameters.html#cfn-events-connection-basicauthparameters-username"""
+
+@attr.s
+class PropConnectionParameter(Property):
+    """
+    AWS Object Type = "AWS::Events::Connection.Parameter"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-connection-parameter.html
+
+    Property Document:
+    
+    - ``rp_Key``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-connection-parameter.html#cfn-events-connection-parameter-key
+    - ``rp_Value``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-connection-parameter.html#cfn-events-connection-parameter-value
+    - ``p_IsValueSecret``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-connection-parameter.html#cfn-events-connection-parameter-isvaluesecret
+    """
+    AWS_OBJECT_TYPE = "AWS::Events::Connection.Parameter"
+    
+    rp_Key: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "Key"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-connection-parameter.html#cfn-events-connection-parameter-key"""
+    rp_Value: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "Value"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-connection-parameter.html#cfn-events-connection-parameter-value"""
+    p_IsValueSecret: bool = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(bool)),
+        metadata={AttrMeta.PROPERTY_NAME: "IsValueSecret"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-connection-parameter.html#cfn-events-connection-parameter-isvaluesecret"""
 
 @attr.s
 class PropRuleBatchArrayProperties(Property):
@@ -375,6 +517,33 @@ class PropRulePlacementStrategy(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-placementstrategy.html#cfn-events-rule-placementstrategy-type"""
 
 @attr.s
+class PropConnectionClientParameters(Property):
+    """
+    AWS Object Type = "AWS::Events::Connection.ClientParameters"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-connection-clientparameters.html
+
+    Property Document:
+    
+    - ``rp_ClientID``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-connection-clientparameters.html#cfn-events-connection-clientparameters-clientid
+    - ``rp_ClientSecret``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-connection-clientparameters.html#cfn-events-connection-clientparameters-clientsecret
+    """
+    AWS_OBJECT_TYPE = "AWS::Events::Connection.ClientParameters"
+    
+    rp_ClientID: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "ClientID"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-connection-clientparameters.html#cfn-events-connection-clientparameters-clientid"""
+    rp_ClientSecret: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "ClientSecret"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-connection-clientparameters.html#cfn-events-connection-clientparameters-clientsecret"""
+
+@attr.s
 class PropRuleKinesisParameters(Property):
     """
     AWS Object Type = "AWS::Events::Rule.KinesisParameters"
@@ -393,6 +562,27 @@ class PropRuleKinesisParameters(Property):
         metadata={AttrMeta.PROPERTY_NAME: "PartitionKeyPath"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-kinesisparameters.html#cfn-events-rule-kinesisparameters-partitionkeypath"""
+
+@attr.s
+class PropRuleSageMakerPipelineParameters(Property):
+    """
+    AWS Object Type = "AWS::Events::Rule.SageMakerPipelineParameters"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-sagemakerpipelineparameters.html
+
+    Property Document:
+    
+    - ``p_PipelineParameterList``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-sagemakerpipelineparameters.html#cfn-events-rule-sagemakerpipelineparameters-pipelineparameterlist
+    """
+    AWS_OBJECT_TYPE = "AWS::Events::Rule.SageMakerPipelineParameters"
+    
+    p_PipelineParameterList: typing.List[typing.Union['PropRuleSageMakerPipelineParameter', dict]] = attr.ib(
+        default=None,
+        converter=PropRuleSageMakerPipelineParameter.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropRuleSageMakerPipelineParameter), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "PipelineParameterList"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-sagemakerpipelineparameters.html#cfn-events-rule-sagemakerpipelineparameters-pipelineparameterlist"""
 
 @attr.s
 class PropRuleTag(Property):
@@ -511,6 +701,43 @@ class PropRuleAwsVpcConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-awsvpcconfiguration.html#cfn-events-rule-awsvpcconfiguration-securitygroups"""
 
 @attr.s
+class PropConnectionConnectionHttpParameters(Property):
+    """
+    AWS Object Type = "AWS::Events::Connection.ConnectionHttpParameters"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-connection-connectionhttpparameters.html
+
+    Property Document:
+    
+    - ``p_BodyParameters``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-connection-connectionhttpparameters.html#cfn-events-connection-connectionhttpparameters-bodyparameters
+    - ``p_HeaderParameters``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-connection-connectionhttpparameters.html#cfn-events-connection-connectionhttpparameters-headerparameters
+    - ``p_QueryStringParameters``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-connection-connectionhttpparameters.html#cfn-events-connection-connectionhttpparameters-querystringparameters
+    """
+    AWS_OBJECT_TYPE = "AWS::Events::Connection.ConnectionHttpParameters"
+    
+    p_BodyParameters: typing.List[typing.Union['PropConnectionParameter', dict]] = attr.ib(
+        default=None,
+        converter=PropConnectionParameter.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropConnectionParameter), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "BodyParameters"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-connection-connectionhttpparameters.html#cfn-events-connection-connectionhttpparameters-bodyparameters"""
+    p_HeaderParameters: typing.List[typing.Union['PropConnectionParameter', dict]] = attr.ib(
+        default=None,
+        converter=PropConnectionParameter.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropConnectionParameter), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "HeaderParameters"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-connection-connectionhttpparameters.html#cfn-events-connection-connectionhttpparameters-headerparameters"""
+    p_QueryStringParameters: typing.List[typing.Union['PropConnectionParameter', dict]] = attr.ib(
+        default=None,
+        converter=PropConnectionParameter.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropConnectionParameter), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "QueryStringParameters"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-connection-connectionhttpparameters.html#cfn-events-connection-connectionhttpparameters-querystringparameters"""
+
+@attr.s
 class PropRuleRunCommandParameters(Property):
     """
     AWS Object Type = "AWS::Events::Rule.RunCommandParameters"
@@ -551,6 +778,49 @@ class PropRuleNetworkConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "AwsVpcConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-networkconfiguration.html#cfn-events-rule-networkconfiguration-awsvpcconfiguration"""
+
+@attr.s
+class PropConnectionOAuthParameters(Property):
+    """
+    AWS Object Type = "AWS::Events::Connection.OAuthParameters"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-connection-oauthparameters.html
+
+    Property Document:
+    
+    - ``rp_AuthorizationEndpoint``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-connection-oauthparameters.html#cfn-events-connection-oauthparameters-authorizationendpoint
+    - ``rp_ClientParameters``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-connection-oauthparameters.html#cfn-events-connection-oauthparameters-clientparameters
+    - ``rp_HttpMethod``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-connection-oauthparameters.html#cfn-events-connection-oauthparameters-httpmethod
+    - ``p_OAuthHttpParameters``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-connection-oauthparameters.html#cfn-events-connection-oauthparameters-oauthhttpparameters
+    """
+    AWS_OBJECT_TYPE = "AWS::Events::Connection.OAuthParameters"
+    
+    rp_AuthorizationEndpoint: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "AuthorizationEndpoint"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-connection-oauthparameters.html#cfn-events-connection-oauthparameters-authorizationendpoint"""
+    rp_ClientParameters: typing.Union['PropConnectionClientParameters', dict] = attr.ib(
+        default=None,
+        converter=PropConnectionClientParameters.from_dict,
+        validator=attr.validators.instance_of(PropConnectionClientParameters),
+        metadata={AttrMeta.PROPERTY_NAME: "ClientParameters"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-connection-oauthparameters.html#cfn-events-connection-oauthparameters-clientparameters"""
+    rp_HttpMethod: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "HttpMethod"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-connection-oauthparameters.html#cfn-events-connection-oauthparameters-httpmethod"""
+    p_OAuthHttpParameters: typing.Union['PropConnectionConnectionHttpParameters', dict] = attr.ib(
+        default=None,
+        converter=PropConnectionConnectionHttpParameters.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropConnectionConnectionHttpParameters)),
+        metadata={AttrMeta.PROPERTY_NAME: "OAuthHttpParameters"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-connection-oauthparameters.html#cfn-events-connection-oauthparameters-oauthhttpparameters"""
 
 @attr.s
 class PropRuleEcsParameters(Property):
@@ -669,6 +939,51 @@ class PropRuleEcsParameters(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-ecsparameters.html#cfn-events-rule-ecsparameters-taskcount"""
 
 @attr.s
+class PropConnectionAuthParameters(Property):
+    """
+    AWS Object Type = "AWS::Events::Connection.AuthParameters"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-connection-authparameters.html
+
+    Property Document:
+    
+    - ``p_ApiKeyAuthParameters``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-connection-authparameters.html#cfn-events-connection-authparameters-apikeyauthparameters
+    - ``p_BasicAuthParameters``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-connection-authparameters.html#cfn-events-connection-authparameters-basicauthparameters
+    - ``p_InvocationHttpParameters``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-connection-authparameters.html#cfn-events-connection-authparameters-invocationhttpparameters
+    - ``p_OAuthParameters``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-connection-authparameters.html#cfn-events-connection-authparameters-oauthparameters
+    """
+    AWS_OBJECT_TYPE = "AWS::Events::Connection.AuthParameters"
+    
+    p_ApiKeyAuthParameters: typing.Union['PropConnectionApiKeyAuthParameters', dict] = attr.ib(
+        default=None,
+        converter=PropConnectionApiKeyAuthParameters.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropConnectionApiKeyAuthParameters)),
+        metadata={AttrMeta.PROPERTY_NAME: "ApiKeyAuthParameters"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-connection-authparameters.html#cfn-events-connection-authparameters-apikeyauthparameters"""
+    p_BasicAuthParameters: typing.Union['PropConnectionBasicAuthParameters', dict] = attr.ib(
+        default=None,
+        converter=PropConnectionBasicAuthParameters.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropConnectionBasicAuthParameters)),
+        metadata={AttrMeta.PROPERTY_NAME: "BasicAuthParameters"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-connection-authparameters.html#cfn-events-connection-authparameters-basicauthparameters"""
+    p_InvocationHttpParameters: typing.Union['PropConnectionConnectionHttpParameters', dict] = attr.ib(
+        default=None,
+        converter=PropConnectionConnectionHttpParameters.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropConnectionConnectionHttpParameters)),
+        metadata={AttrMeta.PROPERTY_NAME: "InvocationHttpParameters"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-connection-authparameters.html#cfn-events-connection-authparameters-invocationhttpparameters"""
+    p_OAuthParameters: typing.Union['PropConnectionOAuthParameters', dict] = attr.ib(
+        default=None,
+        converter=PropConnectionOAuthParameters.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropConnectionOAuthParameters)),
+        metadata={AttrMeta.PROPERTY_NAME: "OAuthParameters"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-connection-authparameters.html#cfn-events-connection-authparameters-oauthparameters"""
+
+@attr.s
 class PropRuleTarget(Property):
     """
     AWS Object Type = "AWS::Events::Rule.Target"
@@ -691,6 +1006,7 @@ class PropRuleTarget(Property):
     - ``p_RetryPolicy``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html#cfn-events-rule-target-retrypolicy
     - ``p_RoleArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html#cfn-events-rule-target-rolearn
     - ``p_RunCommandParameters``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html#cfn-events-rule-target-runcommandparameters
+    - ``p_SageMakerPipelineParameters``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html#cfn-events-rule-target-sagemakerpipelineparameters
     - ``p_SqsParameters``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html#cfn-events-rule-target-sqsparameters
     """
     AWS_OBJECT_TYPE = "AWS::Events::Rule.Target"
@@ -788,6 +1104,13 @@ class PropRuleTarget(Property):
         metadata={AttrMeta.PROPERTY_NAME: "RunCommandParameters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html#cfn-events-rule-target-runcommandparameters"""
+    p_SageMakerPipelineParameters: typing.Union['PropRuleSageMakerPipelineParameters', dict] = attr.ib(
+        default=None,
+        converter=PropRuleSageMakerPipelineParameters.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropRuleSageMakerPipelineParameters)),
+        metadata={AttrMeta.PROPERTY_NAME: "SageMakerPipelineParameters"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-events-rule-target.html#cfn-events-rule-target-sagemakerpipelineparameters"""
     p_SqsParameters: typing.Union['PropRuleSqsParameters', dict] = attr.ib(
         default=None,
         converter=PropRuleSqsParameters.from_dict,
@@ -1018,9 +1341,10 @@ class Connection(Resource):
     AWS_OBJECT_TYPE = "AWS::Events::Connection"
 
     
-    rp_AuthParameters: dict = attr.ib(
+    rp_AuthParameters: typing.Union['PropConnectionAuthParameters', dict] = attr.ib(
         default=None,
-        validator=attr.validators.instance_of(dict),
+        converter=PropConnectionAuthParameters.from_dict,
+        validator=attr.validators.instance_of(PropConnectionAuthParameters),
         metadata={AttrMeta.PROPERTY_NAME: "AuthParameters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-connection.html#cfn-events-connection-authparameters"""
@@ -1125,6 +1449,7 @@ class EventBus(Resource):
     
     - ``rp_Name``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-eventbus.html#cfn-events-eventbus-name
     - ``p_EventSourceName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-eventbus.html#cfn-events-eventbus-eventsourcename
+    - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-eventbus.html#cfn-events-eventbus-tags
     """
     AWS_OBJECT_TYPE = "AWS::Events::EventBus"
 
@@ -1141,6 +1466,13 @@ class EventBus(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "EventSourceName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-eventbus.html#cfn-events-eventbus-eventsourcename"""
+    p_Tags: typing.List[typing.Union['PropEventBusTagEntry', dict]] = attr.ib(
+        default=None,
+        converter=PropEventBusTagEntry.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropEventBusTagEntry), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-eventbus.html#cfn-events-eventbus-tags"""
 
     
     @property

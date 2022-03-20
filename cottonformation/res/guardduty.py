@@ -15,6 +15,26 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
+class PropDetectorCFNKubernetesAuditLogsConfiguration(Property):
+    """
+    AWS Object Type = "AWS::GuardDuty::Detector.CFNKubernetesAuditLogsConfiguration"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-detector-cfnkubernetesauditlogsconfiguration.html
+
+    Property Document:
+    
+    - ``p_Enable``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-detector-cfnkubernetesauditlogsconfiguration.html#cfn-guardduty-detector-cfnkubernetesauditlogsconfiguration-enable
+    """
+    AWS_OBJECT_TYPE = "AWS::GuardDuty::Detector.CFNKubernetesAuditLogsConfiguration"
+    
+    p_Enable: bool = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(bool)),
+        metadata={AttrMeta.PROPERTY_NAME: "Enable"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-detector-cfnkubernetesauditlogsconfiguration.html#cfn-guardduty-detector-cfnkubernetesauditlogsconfiguration-enable"""
+
+@attr.s
 class PropDetectorCFNS3LogsConfiguration(Property):
     """
     AWS Object Type = "AWS::GuardDuty::Detector.CFNS3LogsConfiguration"
@@ -33,6 +53,27 @@ class PropDetectorCFNS3LogsConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Enable"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-detector-cfns3logsconfiguration.html#cfn-guardduty-detector-cfns3logsconfiguration-enable"""
+
+@attr.s
+class PropDetectorCFNKubernetesConfiguration(Property):
+    """
+    AWS Object Type = "AWS::GuardDuty::Detector.CFNKubernetesConfiguration"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-detector-cfnkubernetesconfiguration.html
+
+    Property Document:
+    
+    - ``p_AuditLogs``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-detector-cfnkubernetesconfiguration.html#cfn-guardduty-detector-cfnkubernetesconfiguration-auditlogs
+    """
+    AWS_OBJECT_TYPE = "AWS::GuardDuty::Detector.CFNKubernetesConfiguration"
+    
+    p_AuditLogs: typing.Union['PropDetectorCFNKubernetesAuditLogsConfiguration', dict] = attr.ib(
+        default=None,
+        converter=PropDetectorCFNKubernetesAuditLogsConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDetectorCFNKubernetesAuditLogsConfiguration)),
+        metadata={AttrMeta.PROPERTY_NAME: "AuditLogs"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-detector-cfnkubernetesconfiguration.html#cfn-guardduty-detector-cfnkubernetesconfiguration-auditlogs"""
 
 @attr.s
 class PropFilterCondition(Property):
@@ -119,10 +160,18 @@ class PropDetectorCFNDataSourceConfigurations(Property):
 
     Property Document:
     
+    - ``p_Kubernetes``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-detector-cfndatasourceconfigurations.html#cfn-guardduty-detector-cfndatasourceconfigurations-kubernetes
     - ``p_S3Logs``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-detector-cfndatasourceconfigurations.html#cfn-guardduty-detector-cfndatasourceconfigurations-s3logs
     """
     AWS_OBJECT_TYPE = "AWS::GuardDuty::Detector.CFNDataSourceConfigurations"
     
+    p_Kubernetes: typing.Union['PropDetectorCFNKubernetesConfiguration', dict] = attr.ib(
+        default=None,
+        converter=PropDetectorCFNKubernetesConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDetectorCFNKubernetesConfiguration)),
+        metadata={AttrMeta.PROPERTY_NAME: "Kubernetes"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-guardduty-detector-cfndatasourceconfigurations.html#cfn-guardduty-detector-cfndatasourceconfigurations-kubernetes"""
     p_S3Logs: typing.Union['PropDetectorCFNS3LogsConfiguration', dict] = attr.ib(
         default=None,
         converter=PropDetectorCFNS3LogsConfiguration.from_dict,

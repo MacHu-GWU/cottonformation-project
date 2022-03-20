@@ -374,6 +374,26 @@ class PropDeploymentGroupGitHubLocation(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-deployment-revision-githublocation.html#cfn-properties-codedeploy-deploymentgroup-deployment-revision-githublocation-repository"""
 
 @attr.s
+class PropDeploymentGroupTrafficRoute(Property):
+    """
+    AWS Object Type = "AWS::CodeDeploy::DeploymentGroup.TrafficRoute"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-trafficroute.html
+
+    Property Document:
+    
+    - ``p_ListenerArns``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-trafficroute.html#cfn-codedeploy-deploymentgroup-trafficroute-listenerarns
+    """
+    AWS_OBJECT_TYPE = "AWS::CodeDeploy::DeploymentGroup.TrafficRoute"
+    
+    p_ListenerArns: typing.List[TypeHint.intrinsic_str] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "ListenerArns"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-trafficroute.html#cfn-codedeploy-deploymentgroup-trafficroute-listenerarns"""
+
+@attr.s
 class PropDeploymentGroupELBInfo(Property):
     """
     AWS Object Type = "AWS::CodeDeploy::DeploymentGroup.ELBInfo"
@@ -488,6 +508,43 @@ class PropDeploymentGroupECSService(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-ecsservice.html#cfn-codedeploy-deploymentgroup-ecsservice-servicename"""
 
 @attr.s
+class PropDeploymentGroupTargetGroupPairInfo(Property):
+    """
+    AWS Object Type = "AWS::CodeDeploy::DeploymentGroup.TargetGroupPairInfo"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-targetgrouppairinfo.html
+
+    Property Document:
+    
+    - ``p_ProdTrafficRoute``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-targetgrouppairinfo.html#cfn-codedeploy-deploymentgroup-targetgrouppairinfo-prodtrafficroute
+    - ``p_TargetGroups``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-targetgrouppairinfo.html#cfn-codedeploy-deploymentgroup-targetgrouppairinfo-targetgroups
+    - ``p_TestTrafficRoute``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-targetgrouppairinfo.html#cfn-codedeploy-deploymentgroup-targetgrouppairinfo-testtrafficroute
+    """
+    AWS_OBJECT_TYPE = "AWS::CodeDeploy::DeploymentGroup.TargetGroupPairInfo"
+    
+    p_ProdTrafficRoute: typing.Union['PropDeploymentGroupTrafficRoute', dict] = attr.ib(
+        default=None,
+        converter=PropDeploymentGroupTrafficRoute.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDeploymentGroupTrafficRoute)),
+        metadata={AttrMeta.PROPERTY_NAME: "ProdTrafficRoute"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-targetgrouppairinfo.html#cfn-codedeploy-deploymentgroup-targetgrouppairinfo-prodtrafficroute"""
+    p_TargetGroups: typing.List[typing.Union['PropDeploymentGroupTargetGroupInfo', dict]] = attr.ib(
+        default=None,
+        converter=PropDeploymentGroupTargetGroupInfo.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDeploymentGroupTargetGroupInfo), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "TargetGroups"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-targetgrouppairinfo.html#cfn-codedeploy-deploymentgroup-targetgrouppairinfo-targetgroups"""
+    p_TestTrafficRoute: typing.Union['PropDeploymentGroupTrafficRoute', dict] = attr.ib(
+        default=None,
+        converter=PropDeploymentGroupTrafficRoute.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDeploymentGroupTrafficRoute)),
+        metadata={AttrMeta.PROPERTY_NAME: "TestTrafficRoute"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-targetgrouppairinfo.html#cfn-codedeploy-deploymentgroup-targetgrouppairinfo-testtrafficroute"""
+
+@attr.s
 class PropDeploymentGroupEC2TagSetListObject(Property):
     """
     AWS Object Type = "AWS::CodeDeploy::DeploymentGroup.EC2TagSetListObject"
@@ -561,6 +618,7 @@ class PropDeploymentGroupLoadBalancerInfo(Property):
     
     - ``p_ElbInfoList``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-loadbalancerinfo.html#cfn-codedeploy-deploymentgroup-loadbalancerinfo-elbinfolist
     - ``p_TargetGroupInfoList``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-loadbalancerinfo.html#cfn-codedeploy-deploymentgroup-loadbalancerinfo-targetgroupinfolist
+    - ``p_TargetGroupPairInfoList``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-loadbalancerinfo.html#cfn-codedeploy-deploymentgroup-loadbalancerinfo-targetgrouppairinfolist
     """
     AWS_OBJECT_TYPE = "AWS::CodeDeploy::DeploymentGroup.LoadBalancerInfo"
     
@@ -578,6 +636,13 @@ class PropDeploymentGroupLoadBalancerInfo(Property):
         metadata={AttrMeta.PROPERTY_NAME: "TargetGroupInfoList"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-loadbalancerinfo.html#cfn-codedeploy-deploymentgroup-loadbalancerinfo-targetgroupinfolist"""
+    p_TargetGroupPairInfoList: typing.List[typing.Union['PropDeploymentGroupTargetGroupPairInfo', dict]] = attr.ib(
+        default=None,
+        converter=PropDeploymentGroupTargetGroupPairInfo.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDeploymentGroupTargetGroupPairInfo), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "TargetGroupPairInfoList"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codedeploy-deploymentgroup-loadbalancerinfo.html#cfn-codedeploy-deploymentgroup-loadbalancerinfo-targetgrouppairinfolist"""
 
 @attr.s
 class PropDeploymentGroupRevisionLocation(Property):
@@ -891,7 +956,9 @@ class DeploymentGroup(Resource):
     - ``p_LoadBalancerInfo``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-loadbalancerinfo
     - ``p_OnPremisesInstanceTagFilters``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-onpremisesinstancetagfilters
     - ``p_OnPremisesTagSet``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-onpremisestagset
+    - ``p_OutdatedInstancesStrategy``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-outdatedinstancesstrategy
     - ``p_TriggerConfigurations``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-triggerconfigurations
+    - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-tags
     """
     AWS_OBJECT_TYPE = "AWS::CodeDeploy::DeploymentGroup"
 
@@ -1003,6 +1070,12 @@ class DeploymentGroup(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "OnPremisesTagSet"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-onpremisestagset"""
+    p_OutdatedInstancesStrategy: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "OutdatedInstancesStrategy"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-outdatedinstancesstrategy"""
     p_TriggerConfigurations: typing.List[typing.Union['PropDeploymentGroupTriggerConfig', dict]] = attr.ib(
         default=None,
         converter=PropDeploymentGroupTriggerConfig.from_list,
@@ -1010,5 +1083,12 @@ class DeploymentGroup(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "TriggerConfigurations"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-triggerconfigurations"""
+    p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
+        default=None,
+        converter=Tag.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codedeploy-deploymentgroup.html#cfn-codedeploy-deploymentgroup-tags"""
 
     

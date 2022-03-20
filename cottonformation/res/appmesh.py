@@ -250,6 +250,19 @@ class PropVirtualGatewayVirtualGatewayTlsValidationContextFileTrust(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaytlsvalidationcontextfiletrust.html#cfn-appmesh-virtualgateway-virtualgatewaytlsvalidationcontextfiletrust-certificatechain"""
 
 @attr.s
+class PropMeshMeshServiceDiscovery(Property):
+    """
+    AWS Object Type = "AWS::AppMesh::Mesh.MeshServiceDiscovery"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-mesh-meshservicediscovery.html
+
+    Property Document:
+    
+    """
+    AWS_OBJECT_TYPE = "AWS::AppMesh::Mesh.MeshServiceDiscovery"
+    
+
+@attr.s
 class PropRouteHttpPathMatch(Property):
     """
     AWS Object Type = "AWS::AppMesh::Route.HttpPathMatch"
@@ -2133,43 +2146,6 @@ class PropVirtualNodeListenerTls(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-listenertls.html#cfn-appmesh-virtualnode-listenertls-validation"""
 
 @attr.s
-class PropVirtualGatewayVirtualGatewayListenerTlsCertificate(Property):
-    """
-    AWS Object Type = "AWS::AppMesh::VirtualGateway.VirtualGatewayListenerTlsCertificate"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistenertlscertificate.html
-
-    Property Document:
-    
-    - ``p_ACM``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistenertlscertificate.html#cfn-appmesh-virtualgateway-virtualgatewaylistenertlscertificate-acm
-    - ``p_File``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistenertlscertificate.html#cfn-appmesh-virtualgateway-virtualgatewaylistenertlscertificate-file
-    - ``p_SDS``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistenertlscertificate.html#cfn-appmesh-virtualgateway-virtualgatewaylistenertlscertificate-sds
-    """
-    AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualGateway.VirtualGatewayListenerTlsCertificate"
-    
-    p_ACM: typing.Union['PropVirtualGatewayVirtualGatewayListenerTlsAcmCertificate', dict] = attr.ib(
-        default=None,
-        converter=PropVirtualGatewayVirtualGatewayListenerTlsAcmCertificate.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropVirtualGatewayVirtualGatewayListenerTlsAcmCertificate)),
-        metadata={AttrMeta.PROPERTY_NAME: "ACM"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistenertlscertificate.html#cfn-appmesh-virtualgateway-virtualgatewaylistenertlscertificate-acm"""
-    p_File: typing.Union['PropVirtualGatewayVirtualGatewayListenerTlsFileCertificate', dict] = attr.ib(
-        default=None,
-        converter=PropVirtualGatewayVirtualGatewayListenerTlsFileCertificate.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropVirtualGatewayVirtualGatewayListenerTlsFileCertificate)),
-        metadata={AttrMeta.PROPERTY_NAME: "File"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistenertlscertificate.html#cfn-appmesh-virtualgateway-virtualgatewaylistenertlscertificate-file"""
-    p_SDS: typing.Union['PropVirtualGatewayVirtualGatewayListenerTlsSdsCertificate', dict] = attr.ib(
-        default=None,
-        converter=PropVirtualGatewayVirtualGatewayListenerTlsSdsCertificate.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropVirtualGatewayVirtualGatewayListenerTlsSdsCertificate)),
-        metadata={AttrMeta.PROPERTY_NAME: "SDS"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistenertlscertificate.html#cfn-appmesh-virtualgateway-virtualgatewaylistenertlscertificate-sds"""
-
-@attr.s
 class PropGatewayRouteGatewayRouteMetadataMatch(Property):
     """
     AWS Object Type = "AWS::AppMesh::GatewayRoute.GatewayRouteMetadataMatch"
@@ -2217,6 +2193,43 @@ class PropGatewayRouteGatewayRouteMetadataMatch(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Suffix"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-gatewayroutemetadatamatch.html#cfn-appmesh-gatewayroute-gatewayroutemetadatamatch-suffix"""
+
+@attr.s
+class PropVirtualGatewayVirtualGatewayListenerTlsCertificate(Property):
+    """
+    AWS Object Type = "AWS::AppMesh::VirtualGateway.VirtualGatewayListenerTlsCertificate"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistenertlscertificate.html
+
+    Property Document:
+    
+    - ``p_ACM``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistenertlscertificate.html#cfn-appmesh-virtualgateway-virtualgatewaylistenertlscertificate-acm
+    - ``p_File``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistenertlscertificate.html#cfn-appmesh-virtualgateway-virtualgatewaylistenertlscertificate-file
+    - ``p_SDS``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistenertlscertificate.html#cfn-appmesh-virtualgateway-virtualgatewaylistenertlscertificate-sds
+    """
+    AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualGateway.VirtualGatewayListenerTlsCertificate"
+    
+    p_ACM: typing.Union['PropVirtualGatewayVirtualGatewayListenerTlsAcmCertificate', dict] = attr.ib(
+        default=None,
+        converter=PropVirtualGatewayVirtualGatewayListenerTlsAcmCertificate.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropVirtualGatewayVirtualGatewayListenerTlsAcmCertificate)),
+        metadata={AttrMeta.PROPERTY_NAME: "ACM"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistenertlscertificate.html#cfn-appmesh-virtualgateway-virtualgatewaylistenertlscertificate-acm"""
+    p_File: typing.Union['PropVirtualGatewayVirtualGatewayListenerTlsFileCertificate', dict] = attr.ib(
+        default=None,
+        converter=PropVirtualGatewayVirtualGatewayListenerTlsFileCertificate.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropVirtualGatewayVirtualGatewayListenerTlsFileCertificate)),
+        metadata={AttrMeta.PROPERTY_NAME: "File"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistenertlscertificate.html#cfn-appmesh-virtualgateway-virtualgatewaylistenertlscertificate-file"""
+    p_SDS: typing.Union['PropVirtualGatewayVirtualGatewayListenerTlsSdsCertificate', dict] = attr.ib(
+        default=None,
+        converter=PropVirtualGatewayVirtualGatewayListenerTlsSdsCertificate.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropVirtualGatewayVirtualGatewayListenerTlsSdsCertificate)),
+        metadata={AttrMeta.PROPERTY_NAME: "SDS"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistenertlscertificate.html#cfn-appmesh-virtualgateway-virtualgatewaylistenertlscertificate-sds"""
 
 @attr.s
 class PropVirtualGatewayVirtualGatewayConnectionPool(Property):

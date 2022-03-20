@@ -41,6 +41,26 @@ class PropStreamStreamEncryption(Property):
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesis-stream-streamencryption.html#cfn-kinesis-stream-streamencryption-keyid"""
 
+@attr.s
+class PropStreamStreamModeDetails(Property):
+    """
+    AWS Object Type = "AWS::Kinesis::Stream.StreamModeDetails"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesis-stream-streammodedetails.html
+
+    Property Document:
+    
+    - ``rp_StreamMode``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesis-stream-streammodedetails.html#cfn-kinesis-stream-streammodedetails-streammode
+    """
+    AWS_OBJECT_TYPE = "AWS::Kinesis::Stream.StreamModeDetails"
+    
+    rp_StreamMode: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "StreamMode"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesis-stream-streammodedetails.html#cfn-kinesis-stream-streammodedetails-streammode"""
+
 
 #--- Resource declaration ---
 
@@ -53,21 +73,16 @@ class Stream(Resource):
 
     Property Document:
     
-    - ``rp_ShardCount``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesis-stream.html#cfn-kinesis-stream-shardcount
     - ``p_Name``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesis-stream.html#cfn-kinesis-stream-name
     - ``p_RetentionPeriodHours``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesis-stream.html#cfn-kinesis-stream-retentionperiodhours
+    - ``p_ShardCount``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesis-stream.html#cfn-kinesis-stream-shardcount
     - ``p_StreamEncryption``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesis-stream.html#cfn-kinesis-stream-streamencryption
+    - ``p_StreamModeDetails``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesis-stream.html#cfn-kinesis-stream-streammodedetails
     - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesis-stream.html#cfn-kinesis-stream-tags
     """
     AWS_OBJECT_TYPE = "AWS::Kinesis::Stream"
 
     
-    rp_ShardCount: int = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(int),
-        metadata={AttrMeta.PROPERTY_NAME: "ShardCount"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesis-stream.html#cfn-kinesis-stream-shardcount"""
     p_Name: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
@@ -80,6 +95,12 @@ class Stream(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "RetentionPeriodHours"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesis-stream.html#cfn-kinesis-stream-retentionperiodhours"""
+    p_ShardCount: int = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(int)),
+        metadata={AttrMeta.PROPERTY_NAME: "ShardCount"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesis-stream.html#cfn-kinesis-stream-shardcount"""
     p_StreamEncryption: typing.Union['PropStreamStreamEncryption', dict] = attr.ib(
         default=None,
         converter=PropStreamStreamEncryption.from_dict,
@@ -87,6 +108,13 @@ class Stream(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "StreamEncryption"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesis-stream.html#cfn-kinesis-stream-streamencryption"""
+    p_StreamModeDetails: typing.Union['PropStreamStreamModeDetails', dict] = attr.ib(
+        default=None,
+        converter=PropStreamStreamModeDetails.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropStreamStreamModeDetails)),
+        metadata={AttrMeta.PROPERTY_NAME: "StreamModeDetails"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesis-stream.html#cfn-kinesis-stream-streammodedetails"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,

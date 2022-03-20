@@ -231,6 +231,26 @@ class PropEventInvokeConfigOnSuccess(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventinvokeconfig-destinationconfig-onsuccess.html#cfn-lambda-eventinvokeconfig-destinationconfig-onsuccess-destination"""
 
 @attr.s
+class PropEventSourceMappingFilter(Property):
+    """
+    AWS Object Type = "AWS::Lambda::EventSourceMapping.Filter"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventsourcemapping-filter.html
+
+    Property Document:
+    
+    - ``p_Pattern``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventsourcemapping-filter.html#cfn-lambda-eventsourcemapping-filter-pattern
+    """
+    AWS_OBJECT_TYPE = "AWS::Lambda::EventSourceMapping.Filter"
+    
+    p_Pattern: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "Pattern"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventsourcemapping-filter.html#cfn-lambda-eventsourcemapping-filter-pattern"""
+
+@attr.s
 class PropFunctionTracingConfig(Property):
     """
     AWS Object Type = "AWS::Lambda::Function.TracingConfig"
@@ -318,6 +338,27 @@ class PropCodeSigningConfigCodeSigningPolicies(Property):
         metadata={AttrMeta.PROPERTY_NAME: "UntrustedArtifactOnDeployment"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-codesigningconfig-codesigningpolicies.html#cfn-lambda-codesigningconfig-codesigningpolicies-untrustedartifactondeployment"""
+
+@attr.s
+class PropEventSourceMappingFilterCriteria(Property):
+    """
+    AWS Object Type = "AWS::Lambda::EventSourceMapping.FilterCriteria"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventsourcemapping-filtercriteria.html
+
+    Property Document:
+    
+    - ``p_Filters``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventsourcemapping-filtercriteria.html#cfn-lambda-eventsourcemapping-filtercriteria-filters
+    """
+    AWS_OBJECT_TYPE = "AWS::Lambda::EventSourceMapping.FilterCriteria"
+    
+    p_Filters: typing.List[typing.Union['PropEventSourceMappingFilter', dict]] = attr.ib(
+        default=None,
+        converter=PropEventSourceMappingFilter.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropEventSourceMappingFilter), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "Filters"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventsourcemapping-filtercriteria.html#cfn-lambda-eventsourcemapping-filtercriteria-filters"""
 
 @attr.s
 class PropAliasVersionWeight(Property):
@@ -1071,9 +1112,10 @@ class EventSourceMapping(Resource):
         metadata={AttrMeta.PROPERTY_NAME: "EventSourceArn"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-eventsourcearn"""
-    p_FilterCriteria: dict = attr.ib(
+    p_FilterCriteria: typing.Union['PropEventSourceMappingFilterCriteria', dict] = attr.ib(
         default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        converter=PropEventSourceMappingFilterCriteria.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropEventSourceMappingFilterCriteria)),
         metadata={AttrMeta.PROPERTY_NAME: "FilterCriteria"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-filtercriteria"""
