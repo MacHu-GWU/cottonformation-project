@@ -19,11 +19,13 @@ Release and Version History
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Features and Improvements**
 
+- update code to adapt latest spec file
+- add ``DeletePolicy`` and ``UpdateReplacePolicy`` constant.
+
 **Minor Improvements**
 
 **Bugfixes**
 
-- add ``DeletePolicy`` and ``UpdateReplacePolicy`` constant.
 - fix a bug that remove a resource that in a resource group will also remove the entire resource group. Logically, a resource group is a container of a resource, so resource group depends on the resource member. But practically resource, group should not be removed.
 
 **Miscellaneous**
