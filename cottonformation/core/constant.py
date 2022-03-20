@@ -41,6 +41,24 @@ class ResourceAttribute:
     CONDITION = "Condition"
 
 
+class DeletionPolicy:
+    """
+    Ref: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html
+    """
+    Delete = "Delete"
+    Retain = "Retain"
+    Snapshot = "Snapshot"
+
+
+class UpdateReplacePolicy:
+    """
+    https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-updatereplacepolicy.html
+    """
+    Delete = "Delete"
+    Retain = "Retain"
+    Snapshot = "Snapshot"
+
+
 class CloudFomation:
     """
     Used in cloudformation template as Keys
@@ -76,7 +94,6 @@ class PseudoParameter:
     AWS_STACK_ID = "AWS::StackId"
     AWS_STACK_NAME = "AWS::StackName"
     AWS_URL_SURFIX = "AWS::URLSuffix"
-
 
 
 def _collect_enum(klass):

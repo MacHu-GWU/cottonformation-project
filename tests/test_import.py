@@ -21,6 +21,9 @@ def test():
     _ = ctf.Env
     _ = ctf.Stack
 
+    _ = ctf.DeletionPolicy
+    _ = ctf.UpdateReplacePolicy
+
     from cottonformation.res import _imp
 
     _ = _imp

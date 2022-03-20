@@ -33,6 +33,7 @@ __fingerprint_of_license_file = "e5834e80c86c4898dd9f1462a2349cbf"
 
 try:
     from .core import constant, helpers, exc
+    from .core.constant import DeletionPolicy, UpdateReplacePolicy
     from .core.model import (
         # data model
         Parameter, Property, Resource, Output, Export,
