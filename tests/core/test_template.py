@@ -127,7 +127,7 @@ class TestTemplateAddAWSObject:
             tpl.add_one(1)
         with raises(ValueError):
             tpl.add_one(b, add_or_ignore=True, add_or_update=True)
-        with raises(ctf.exc.AWSObjectLogicIdConlictError):
+        with raises(ctf.exc.AWSObjectLogicIdConflictError):
             tpl.add_one(b)
 
     def test_add_with_dependencies(self):
