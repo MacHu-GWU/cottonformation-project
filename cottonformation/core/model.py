@@ -5,6 +5,14 @@ This module implements the AWS Object used in CloudFormation template.
 """
 
 import typing
+from typing import (
+    Any,
+    Optional,
+    Union,
+    List,
+    Tuple,
+    Dict,
+)
 from collections import OrderedDict
 import attr
 from attr import validators as vs
@@ -16,13 +24,13 @@ class TypeHint:
     """
     Constant value hosting class for typehint
     """
-    intrinsic_str = typing.Union[str, dict, 'IntrinsicFunction']
-    intrinsic_int = typing.Union[int, dict, 'IntrinsicFunction']
-    addable_obj = typing.Union[
+    intrinsic_str = Union[str, dict, 'IntrinsicFunction']
+    intrinsic_int = Union[int, dict, 'IntrinsicFunction']
+    addable_obj = Union[
         'Parameter', 'Resource', 'Output',
         'Rule', 'Mapping', 'Condition', 'ResourceGroup',
     ]
-    dependency_obj = typing.Union[
+    dependency_obj = Union[
         str, 'Resource', 'Parameter', 'Mapping', 'Condition'
     ]
 
@@ -147,9 +155,13 @@ class _PropertyOrResource(AwsObject):
         return cls._cf_name_to_attr_name
 
     @classmethod
-    def from_dict(cls, dct_or_obj):
+    def from_dict(
+        cls,
+        dct_or_obj,
+    ):
         """
         Construct an instance from dictionary data.
+
         :type dct_or_obj: Union[dict, None]
         :rtype: cls
         """
@@ -163,7 +175,14 @@ class _PropertyOrResource(AwsObject):
             return TypeError
 
     @classmethod
-    def from_list(cls, list_of_dct_or_obj):
+    def from_list(
+        cls,
+        list_of_dct_or_obj: Optional[
+            List[
+                Union['AwsObject', dict]
+            ]
+        ],
+    ):
         """
         Construct list of instance from list of dictionary data.
         :type list_of_dct_or_obj: Union[List[cls], List[dict], None]
@@ -298,7 +317,11 @@ class Resource(_PropertyOrResource, _DictMember, _Dependency):
         """
         return "p_Tags" in attr.fields_dict(cls)
 
-    def update_tags(self, overwrite: bool = False, **kwargs):
+    def update_tags(
+        self,
+        overwrite: bool = False,
+        **kwargs,
+    ):
         """
         Update tags. overwrite flag can be used to decide whether you want to
         the tag value if tag key already exists.
@@ -671,7 +694,11 @@ class GetAZs(IntrinsicFunction):
     )
 
     @classmethod
-    def n_th(cls, ind: int, region: str=""):
+    def n_th(
+        cls,
+        ind: int,
+        region: str="",
+    ):
         if ind <= 0:
             raise ValueError
         return Select(ind-1, cls(region=region))
@@ -737,7 +764,11 @@ class Sub(IntrinsicFunction):
                 raise ValueError
 
     @classmethod
-    def from_params(cls, f_string, *params: Parameter):
+    def from_params(
+        cls,
+        f_string,
+        *params: Parameter,
+    ):
         """
         A helper factory method to construct a Sub syntax from the popular
         positioning formatted string literals and multiple :class:`Parameter`.
@@ -764,10 +795,18 @@ class Sub(IntrinsicFunction):
         return cls(string, {p.id: p.ref() for p in params})
 
     def serialize(self, **kwargs) -> dict:
+        data = dict()
+        v: typing.Union[Parameter, Resource]
+        for k, v in self.data.items():
+            if isinstance(v, (Parameter, Resource)):
+                data[k] = v.ref()
+            else:
+                data[k] = v
+
         return {
             constant.IntrinsicFunction.SUB: [
                 self.string,
-                serialize(self.data),
+                serialize(data),
             ]
         }
 
@@ -917,7 +956,17 @@ def remove_id_and_empty(dct: dict) -> dict:
     return new_dct
 
 
-def get_id(obj_or_id: typing.Union[str, Parameter, Resource, Output, Rule, Mapping, Condition]) -> str:
+def get_id(
+    obj_or_id: typing.Union[
+        str,
+        Parameter,
+        Resource,
+        Output,
+        Rule,
+        Mapping,
+        Condition,
+    ],
+) -> str:
     """
     Get the logic id string.
     """
@@ -928,6 +977,9 @@ def get_id(obj_or_id: typing.Union[str, Parameter, Resource, Output, Rule, Mappi
 
 
 def serialize(obj: typing.Union['AwsObject', dict, typing.Any]) -> typing.Any:
+    """
+    An universal api that convert anything to json serializable python dictionary.
+    """
     if isinstance(obj, AwsObject):
         return obj.serialize()
     elif isinstance(obj, (list, tuple)):

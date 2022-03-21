@@ -23,19 +23,12 @@ from .model import (
 )
 from .constant import MetaData, CloudFomation
 from .config import CtfConfig
+from .exc import (
+    AWSObjectLogicIdConflictError,
+    AWSObjectNotExistsError,
+)
 from ..res.cloudformation import Stack
 from .._version import __version__
-
-
-class AWSObjectLogicIdConlictError(Exception):
-    pass
-
-
-class AWSObjectNotExistsError(Exception):
-    @classmethod
-    def make(cls, obj_type: str, logic_id: str):
-        msg = f"Template.{obj_type} doesn't have logic id = '{logic_id}'"
-        return cls(msg)
 
 
 @attr.s
@@ -64,7 +57,7 @@ class Template:
     Transform: typing.List['Transform'] = attr.ib(factory=list)
     NestedStack: typing.Dict[str, 'Template'] = attr.ib(factory=OrderedDict)
     Groups: typing.Dict[str, 'ResourceGroup'] = attr.ib(factory=OrderedDict)
-    
+
     _deps_data_need_build_flag: bool = attr.ib(default=True)
     _deps_on_data_cache: typing.Dict[str, typing.Set[str]] = attr.ib(factory=OrderedDict)
     _deps_by_data_cache: typing.Dict[str, typing.Set[str]] = attr.ib(factory=OrderedDict)
@@ -134,7 +127,10 @@ class Template:
 
     # handle the inter dependency relationship among Parameter, Mapping,
     # Condition, Resource, Output
-    def _encode_depends_on(self, obj_list: typing.List[TypeHint.dependency_obj]) -> typing.Set[str]:
+    def _encode_depends_on(
+        self,
+        obj_list: typing.List[TypeHint.dependency_obj],
+    ) -> typing.Set[str]:
         """
         In generic dependency resolver algorithm, we don't need object,
         we only need the gid string. This method can ensure return a list of gid.
@@ -147,7 +143,11 @@ class Template:
                 st.add(obj.gid)
         return st
 
-    def _iterate_addable(self, include_resource_group: bool = False) -> typing.List[typing.Tuple[str, TypeHint.addable_obj]]:
+    def _iterate_addable(
+        self,
+        include_resource_group: bool = False,
+    ) -> typing.List[
+        typing.Tuple[str, TypeHint.addable_obj]]:
         """
         Iterate through all addable object (Parameter, Resource, Output, ...).
         """
@@ -162,10 +162,16 @@ class Template:
                 l.append((obj.gid, obj))
         return l
 
-    def _iterate_addable_keys(self, include_resource_group: bool = False) -> typing.List[str]:
+    def _iterate_addable_keys(
+        self,
+        include_resource_group: bool = False,
+    ) -> typing.List[str]:
         return [gid for gid, _ in self._iterate_addable(include_resource_group)]
 
-    def _build_deps_data(self) -> typing.Tuple[typing.Dict[str, typing.Set[str]], typing.Dict[str, typing.Set[str]]]:
+    def _build_deps_data(self) -> typing.Tuple[
+        typing.Dict[str, typing.Set[str]],
+        typing.Dict[str, typing.Set[str]]
+    ]:
         deps_on_data = OrderedDict()
         deps_by_data = OrderedDict()
         for gid, _ in self._iterate_addable(include_resource_group=True):
@@ -231,12 +237,13 @@ class Template:
             self._deps_sort_need_build_flag = False
         return self._deps_sort_cache
 
-
     # --- handle AWS Object
-    def add_one(self,
-                obj: TypeHint.addable_obj,
-                add_or_update: bool = False,
-                add_or_ignore: bool = False) -> bool:
+    def add_one(
+        self,
+        obj: TypeHint.addable_obj,
+        add_or_update: bool = False,
+        add_or_ignore: bool = False,
+    ) -> bool:
         """
         Add single object to Template. If there is a existing object with
         the same logic id and no flag is passed, exception will be raised.
@@ -265,28 +272,30 @@ class Template:
             self, _class_type_to_attr_mapper[obj.CLASS_TYPE])
 
         # add this object
-        if obj.id in collection: # handle logic id conflict
+        if obj.id in collection:  # handle logic id conflict
             if add_or_update:
                 collection[obj.id] = obj
                 self._deps_data_need_build_flag = True
                 return True
             elif add_or_ignore:
                 return False
-            else: # raise exception
+            else:  # raise exception
                 if isinstance(obj, Resource):
                     type_name = Resource.__name__
                 else:
                     type_name = obj.__class__.__name__
-                raise AWSObjectLogicIdConlictError(
+                raise AWSObjectLogicIdConflictError(
                     f"{type_name} logic id '{obj.id}' already exists!")
         else:
             collection[obj.id] = obj
             self._deps_data_need_build_flag = True
             return True
 
-    def add(self,
-            obj: TypeHint.addable_obj,
-            _objects_to_update: typing.Dict[str, TypeHint.addable_obj] = None):
+    def add(
+        self,
+        obj: TypeHint.addable_obj,
+        _objects_to_update: typing.Dict[str, TypeHint.addable_obj] = None,
+    ):
         """
         Add a AWS object to the template. If the obj declared some dependency
         AWS Objects like Parameter, Mapping, Condition, it will also add
@@ -329,7 +338,10 @@ class Template:
             for obj in _objects_to_update.values():
                 self.add_one(obj, add_or_update=True)
 
-    def _get_by_gid(self, gid: str) -> TypeHint.addable_obj:
+    def _get_by_gid(
+        self,
+        gid: str,
+    ) -> TypeHint.addable_obj:
         """
         Get aws object by global id.
         """
@@ -337,9 +349,11 @@ class Template:
         collection = getattr(self, _class_type_to_attr_mapper[class_type])
         return collection[logic_id]
 
-    def remove_one(self,
-                   obj: TypeHint.addable_obj,
-                   ignore_not_exists: bool = False) -> bool:
+    def remove_one(
+        self,
+        obj: TypeHint.addable_obj,
+        ignore_not_exists: bool = False,
+    ) -> bool:
         """
         Remove single object from  Template. If there is no a existing object with
         the same logic id and no flag is passed, exception will be raised.
@@ -368,10 +382,12 @@ class Template:
             raise AWSObjectNotExistsError.make(
                 obj_type=obj.CLASS_TYPE, logic_id=obj.id)
 
-    def remove(self,
-               obj: TypeHint.addable_obj,
-               _deps_by_data: OrderedDict = None,
-               _objects_to_remove: typing.Dict[str, TypeHint.addable_obj] = None):
+    def remove(
+        self,
+        obj: TypeHint.addable_obj,
+        _deps_by_data: OrderedDict = None,
+        _objects_to_remove: typing.Dict[str, TypeHint.addable_obj] = None,
+    ):
         """
         Remove a AWS object from the template. If there are other objects depend
         on this object, it will also remove other objects.
@@ -430,9 +446,11 @@ class Template:
         ])
 
     # --- nested stack
-    def add_nested_stack(self,
-                         stack: typing.Union[str, Stack],
-                         template: 'Template') -> bool:
+    def add_nested_stack(
+        self,
+        stack: typing.Union[str, Stack],
+        template: 'Template',
+    ) -> bool:
         """
         Reference:
 
@@ -466,13 +484,23 @@ class Template:
         dct = serialize(dct)
         return dct
 
-    def to_json(self) -> str:
+    def to_json(
+        self,
+        human_readable: bool = True,
+    ) -> str:
         """
         Convert template to json string.
         """
-        return json.dumps(self.to_dict(), indent=4)
+        if human_readable:
+            indent = 4
+        else:  # pragma: no cover
+            indent = None
+        return json.dumps(self.to_dict(), indent=indent, ensure_ascii=False)
 
-    def to_json_file(self, path):  # pragma: no cover
+    def to_json_file(
+        self,
+        path: str,
+    ):  # pragma: no cover
         """
         Dump template to json file.
         """
@@ -485,7 +513,10 @@ class Template:
         """
         raise NotImplementedError
 
-    def to_yml_file(self, path):  # pragma: no cover
+    def to_yml_file(
+        self,
+        path: str,
+    ):  # pragma: no cover
         """
         Dump template to yaml file.
         """
@@ -515,14 +546,17 @@ class Template:
         self.Metadata.setdefault(MetaData.CTF, OrderedDict())
         self.Metadata[MetaData.CTF][MetaData.Version] = __version__
 
-
     def pre_serialize_hook(self):
         """
         User can overwrite this method to extend cottonformation.Template
         """
         pass
 
-    def batch_tagging(self, overwrite: bool = False, **kwargs):
+    def batch_tagging(
+        self,
+        overwrite: bool = False,
+        **kwargs
+    ):
         """
         Batch tag all resources if supporting Tags.
         """
@@ -532,7 +566,10 @@ class Template:
 
     # factory method
     @classmethod
-    def from_many_objects(cls, objects: typing.Iterable[TypeHint.addable_obj]) -> 'Template':
+    def from_many_objects(
+        cls,
+        objects: typing.Iterable[TypeHint.addable_obj],
+    ) -> 'Template':
         """
         A factory method can create a Template object from many AWS Objects.
         """

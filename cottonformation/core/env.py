@@ -10,7 +10,6 @@ import typing
 from .template import Template
 from ..res.cloudformation import Stack
 
-
 DEFAULT_CFT_S3_PREFIX = "cloudformation/upload"
 
 
@@ -60,15 +59,21 @@ class Env:
     :type boto_ses: boto3.session.Session
     """
 
-    def __init__(self, boto_ses):
-        self.boto_ses = boto_ses
+    def __init__(self, boto_ses=None):
+        if boto_ses is None:
+            import boto3
+            self.boto_ses = boto3.session.Session()
+        else:
+            self.boto_ses = boto_ses
         self.s3_client = self.boto_ses.client("s3")
         self.cf_client = self.boto_ses.client("cloudformation")
 
-    def upload_template(self,
-                        template: Template,
-                        bucket_name: str,
-                        prefix: str = DEFAULT_CFT_S3_PREFIX) -> typing.Tuple[str, str]:
+    def upload_template(
+        self,
+        template: Template,
+        bucket_name: str,
+        prefix: str = DEFAULT_CFT_S3_PREFIX,
+    ) -> typing.Tuple[str, str]:
         """
         Upload cloudformation template to s3 bucket and returns template url.
         It is a format like this https://s3.amazonaws.com/<s3-bucket-name>/<s3-key>
@@ -92,13 +97,17 @@ class Env:
         )
         return template_url, s3_console_url
 
-    def package(self,
-                template: Template,
-                bucket_name: str,
-                prefix: str = DEFAULT_CFT_S3_PREFIX,
-                verbose: bool = True,
-                _is_master: bool = True):
-
+    def package(
+        self,
+        template: Template,
+        bucket_name: str,
+        prefix: str = DEFAULT_CFT_S3_PREFIX,
+        verbose: bool = True,
+        _is_master: bool = True,
+    ):
+        """
+        Depth-first.
+        """
         stack_resource: Stack
         for stack_resource in template.Resources.values():
             if stack_resource.AWS_OBJECT_TYPE != Stack.AWS_OBJECT_TYPE:
@@ -113,6 +122,12 @@ class Env:
                 _is_master=False
             )
 
+            if bucket_name is None:
+                raise ValueError(
+                    "Because you have a nested template, "
+                    "you have to upload template to S3 bucket! "
+                    "However ``bucket_name`` is None"
+                )
             nested_template_url, nested_template_s3_console_url = self.upload_template(
                 template=nested_template,
                 bucket_name=bucket_name,
@@ -133,17 +148,21 @@ class Env:
                 )
                 print(msg)
 
+    def deploy(
+        self,
+        template: Template,
+        stack_name: str,
+        bucket_name: str = None,
+        prefix: str = DEFAULT_CFT_S3_PREFIX,
+        stack_tags: dict = None,
+        stack_parameters: dict = None,
+        execution_role_arn: str = None,
+        include_iam: bool = False,
+        verbose: bool = True,
+    ) -> dict:
+        """
 
-    def deploy(self,
-               template: Template,
-               stack_name: str,
-               bucket_name: str,
-               prefix: str = DEFAULT_CFT_S3_PREFIX,
-               stack_tags: dict = None,
-               stack_parameters: dict = None,
-               execution_role_arn: str = None,
-               include_iam: bool = False,
-               verbose: bool = True) -> dict:
+        """
         stack_console_url = "https://console.aws.amazon.com/cloudformation/home?region={aws_region}#/stacks?filteringStatus=active&filteringText={stack_name}&viewNested=true&hideStacks=false&stackId=".format(
             aws_region=self.boto_ses.region_name,
             stack_name=stack_name,
@@ -158,9 +177,6 @@ class Env:
             verbose=verbose
         )
 
-        template_url, s3_console_url = self.upload_template(template, bucket_name, prefix)
-        if verbose:
-            print(f"view raw cloudformation Template('{template.Description}') in console {s3_console_url}")
         # check if stack already exists
         try:
             res = self.cf_client.describe_stacks(
@@ -203,8 +219,15 @@ class Env:
         # execute create_stack or update_stack
         create_or_update_stack_kwargs = dict(
             StackName=stack_name,
-            TemplateURL=template_url,
         )
+        if bucket_name:
+            template_url, s3_console_url = self.upload_template(template, bucket_name, prefix)
+            if verbose:
+                print(f"view raw cloudformation Template('{template.Description}') in console {s3_console_url}")
+            create_or_update_stack_kwargs["TemplateURL"] = template_url
+        else:
+            create_or_update_stack_kwargs["TemplateBody"] = template.to_json(human_readable=False)
+
         if len(Capabilities):
             create_or_update_stack_kwargs["Capabilities"] = Capabilities
         if len(Parameters):
