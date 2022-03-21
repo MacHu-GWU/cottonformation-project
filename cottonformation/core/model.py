@@ -729,21 +729,55 @@ class Join(IntrinsicFunction):
 
     - Fn::Join: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-join.html
     """
-    delimiter: TypeHint.intrinsic_str = attr.ib(
-        validator=vs.instance_of(TypeCheck.intrinsic_str_type)
+    delimiter: Union[
+        str,
+        dict,
+        IntrinsicFunction,
+        Parameter,
+    ] = attr.ib(
+        validator=vs.instance_of((
+            str,
+            dict,
+            IntrinsicFunction,
+            Parameter,
+        ))
     )
-    list_of_values: typing.List[TypeHint.intrinsic_str] = attr.ib(
+    list_of_values: List[Union[
+        str,
+        dict,
+        IntrinsicFunction,
+        Parameter,
+        Resource,
+    ]] = attr.ib(
         validator=vs.deep_iterable(
-            member_validator=vs.instance_of(TypeCheck.intrinsic_str_type),
-            iterable_validator=list,
+            member_validator=vs.instance_of((
+                str,
+                dict,
+                IntrinsicFunction,
+                Parameter,
+                Resource,
+            )),
+            iterable_validator=vs.instance_of(list),
         )
     )
 
     def serialize(self, **kwargs) -> dict:
+        if isinstance(self.delimiter, (Parameter, Resource)):
+            delimiter = self.delimiter.ref()
+        else:
+            delimiter = self.delimiter
+
+        list_of_values = list()
+        for v in self.list_of_values:
+            if isinstance(v, (Parameter, Resource)):
+                list_of_values.append(v.ref())
+            else:
+                list_of_values.append(v)
+
         return {
             constant.IntrinsicFunction.JOIN: [
-                serialize(self.delimiter),
-                serialize(self.list_of_values)
+                serialize(delimiter),
+                serialize(list_of_values)
             ]
         }
 
