@@ -17,6 +17,21 @@ Release and Version History
 **Miscellaneous**
 
 
+0.0.6 (TBD)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Features and Improvements**
+
+- add aws lambda permission builder to ``helpers.awslambda.py``
+
+**Minor Improvements**
+
+- update AWS Managed Policy ARN list
+
+**Bugfixes**
+
+**Miscellaneous**
+
+
 0.0.5 (2022-03-21)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Features and Improvements**
