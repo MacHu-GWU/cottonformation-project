@@ -80,26 +80,20 @@ class AwsManagedPolicy(_AwsManagedPolicy):
 _TAB = " " * 4
 
 def _find_all_service_name_list_from_botocore() -> list: # pragma: no cover
-    import json
     import requests
-    from pathlib_mate import Path
+    from bs4 import BeautifulSoup
 
-    file = "endpoints.json"
-    p = Path(__file__).change(new_basename=file)
-    url = "https://raw.githubusercontent.com/boto/botocore/develop/botocore/data/endpoints.json"
-    if p.exists():
-        json_content = p.read_text()
-    else:
-        json_content = requests.get(url).text
-        p.write_text(json_content)
-    data = json.loads(json_content)
-    service_name_set = set()
-    for dct in data["partitions"]:
-        for service_name in dct["services"]:
-            service_name_set.add(service_name)
-
-    service_name_list = list(service_name_set)
-    service_name_list.sort()
+    service_name_list = list()
+    path_prefix = "/boto/botocore/tree/master/botocore/data/"
+    url = "https://github.com/boto/botocore/tree/master/botocore/data"
+    res = requests.get(url)
+    soup = BeautifulSoup(res.text, "html.parser")
+    div = soup.find("div", class_="js-details-container Details")
+    for a in div.find_all("a"):
+        href = a.attrs["href"]
+        if href.startswith(path_prefix):
+            service_name = href.replace(path_prefix, "").split("/")[0]
+            service_name_list.append(service_name)
     return service_name_list
 
 
@@ -259,7 +253,7 @@ class AssumeRolePolicyBuilder:
         self.principal_list: typing.Tuple[_AwsPrincipal] = args
 
     def build(self):
-        return     {
+        return {
         "Version": "2012-10-17",
         "Statement": [
             principal.to_dict()
