@@ -79,7 +79,8 @@ class AwsManagedPolicy(_AwsManagedPolicy):
 
 _TAB = " " * 4
 
-def _find_all_service_name_list_from_botocore() -> list: # pragma: no cover
+
+def _find_all_service_name_list_from_botocore() -> list:  # pragma: no cover
     import requests
     from bs4 import BeautifulSoup
 
@@ -97,7 +98,7 @@ def _find_all_service_name_list_from_botocore() -> list: # pragma: no cover
     return service_name_list
 
 
-def _find_all_service_name_list_from_gist() -> typing.List[str]: # pragma: no cover
+def _find_all_service_name_list_from_gist() -> typing.List[str]:  # pragma: no cover
     """
 
     :return:
@@ -112,7 +113,7 @@ def _find_all_service_name_list_from_gist() -> typing.List[str]: # pragma: no co
     return service_name_list
 
 
-def _generate_aws_service_principal_code(service_name_list: typing.List[str]): # pragma: no cover
+def _generate_aws_service_principal_code(service_name_list: typing.List[str]):  # pragma: no cover
     from pathlib_mate import PathCls as Path
 
     lines = [
@@ -130,7 +131,8 @@ def _generate_aws_service_principal_code(service_name_list: typing.List[str]): #
         attr_name = service_name.replace("-", "_").replace(".", "_")
         attr_name = special_case_mapper.get(attr_name, attr_name)
         lines.append(f"{_TAB}@classmethod")
-        lines.append(f"{_TAB}def {attr_name}(cls): return cls._build(\"{service_name}.amazonaws.com\") # pragma: no cover")
+        lines.append(
+            f"{_TAB}def {attr_name}(cls): return cls._build(\"{service_name}.amazonaws.com\") # pragma: no cover")
         lines.append("")
 
     code = "\n".join(lines)
@@ -139,6 +141,8 @@ def _generate_aws_service_principal_code(service_name_list: typing.List[str]): #
 
 @attr.s
 class _AwsPrincipal:
+    service_principal: str = attr.ib()
+
     def to_dict(self) -> dict:
         raise NotImplementedError
 
@@ -156,7 +160,6 @@ class ServicePrincipal(_AwsPrincipal, _ServicePrincipalMixin):
             "Action": "sts:AssumeRole"
         }
     """
-    service_principal: str = attr.ib()
 
     def to_dict(self) -> dict:
         return {
@@ -249,20 +252,34 @@ class AssumeRolePolicyBuilder:
     """
     Helper class to build IAM trusted entity / assume role policy.
     """
+
     def __init__(self, *args: _AwsPrincipal):
         self.principal_list: typing.Tuple[_AwsPrincipal] = args
 
     def build(self):
+        service_list = list()
+        for principal in self.principal_list:
+            if isinstance(principal, _AwsPrincipal):
+                service_list.append(principal.service_principal)
+            elif isinstance(principal, str):  # pragma: no cover
+                service_list.append(principal)
+            else:  # pragma: no cover
+                raise NotImplementedError
         return {
-        "Version": "2012-10-17",
-        "Statement": [
-            principal.to_dict()
-            for principal in self.principal_list
-        ]
-    }
+            "Version": "2012-10-17",
+            "Statement": [
+                {
+                    "Effect": "Allow",
+                    "Principal": {
+                        "Service": service_list
+                    },
+                    "Action": "sts:AssumeRole"
+                }
+            ]
+        }
 
 
-def _find_all_aws_managed_policies() -> typing.List[typing.Tuple[str, str]]: # pragma: no cover
+def _find_all_aws_managed_policies() -> typing.List[typing.Tuple[str, str]]:  # pragma: no cover
     import boto3
 
     aws_profile = "sanhe"
@@ -277,7 +294,7 @@ def _find_all_aws_managed_policies() -> typing.List[typing.Tuple[str, str]]: # p
     return data
 
 
-def _generate_aws_managed_policy_code(aws_managed_policy_data: typing.List[typing.Tuple[str, str]]): # pragma: no cover
+def _generate_aws_managed_policy_code(aws_managed_policy_data: typing.List[typing.Tuple[str, str]]):  # pragma: no cover
     from pathlib_mate import PathCls as Path
 
     lines = [

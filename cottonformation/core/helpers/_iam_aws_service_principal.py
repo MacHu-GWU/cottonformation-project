@@ -836,7 +836,7 @@ class _ServicePrincipalMixin:
     def sso(cls): return cls._build("sso.amazonaws.com") # pragma: no cover
 
     @classmethod
-    def stepfunctions(cls): return cls._build("stepfunctions.amazonaws.com") # pragma: no cover
+    def stepfunctions(cls): return cls._build("states.amazonaws.com") # pragma: no cover
 
     @classmethod
     def storagegateway(cls): return cls._build("storagegateway.amazonaws.com") # pragma: no cover
