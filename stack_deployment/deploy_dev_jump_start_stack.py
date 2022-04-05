@@ -1,0 +1,76 @@
+# -*- coding: utf-8 -*-
+
+import boto3
+from pathlib_mate import Path
+import cottonformation as cf
+from cottonformation.stacks.dev_jump_start import DevJumpStartStack
+
+aws_profile = "aws_try_new_feature_us_east_1"
+main_aws_region = "us-east-1"
+
+aws_region = "us-east-1"
+# aws_region = "us-east-2"
+# aws_region = "us-west-1"
+# aws_region = "us-west-2"
+
+
+boto_ses = boto3.session.Session(profile_name=aws_profile, region_name=aws_region)
+aws_account_id = boto_ses.client("sts").get_caller_identity()["Account"]
+
+dir_here = Path.dir_here(__file__)
+
+def deploy_stack():
+    stack = DevJumpStartStack(
+        aws_account_id=aws_account_id,
+        main_aws_region=main_aws_region, aws_region=aws_region,
+    )
+
+    tpl = cf.Template()
+    tpl.add(stack.rg1_s3)
+    tpl.add(stack.rg2_iam_role)
+
+    tpl.batch_tagging(ProjectName="DevJumpBox")
+
+    p_tpl = Path(dir_here, "dev-jump-start-stack.json")
+    tpl.to_json_file(p_tpl.abspath)
+
+    env = cf.Env(boto_ses=boto_ses)
+    env.deploy(
+        template=tpl,
+        stack_name=stack.stack_name,
+        include_iam=True,
+    )
+
+
+def create_s3_folder():
+    from s3pathlib import S3Path, context
+
+    context.attach_boto_session(boto_ses)
+
+    bucket = f"{aws_account_id}-{aws_region}-artifacts"
+    p_list = [
+        S3Path(bucket, "artifacts", "README.txt"),
+        S3Path(bucket, "athena", "results", "README.txt"),
+        S3Path(bucket, "lambda", "README.txt"),
+        S3Path(bucket, "lambda", "artifacts", "README.txt"),
+        S3Path(bucket, "glue", "README.txt"),
+        S3Path(bucket, "glue", "scripts", "README.txt"),
+        S3Path(bucket, "glue", "sparkHistoryLogs", "README.txt"),
+        S3Path(bucket, "glue", "temporary", "README.txt"),
+        S3Path(bucket, "cloudformation", "README.txt"),
+        S3Path(bucket, "cloudtrail", "README.txt"),
+        S3Path(bucket, "cloudwatch", "README.txt"),
+        S3Path(bucket, "github", "README.txt"),
+        S3Path(bucket, "gitlab", "README.txt"),
+        S3Path(bucket, "tests", "unittest", "README.txt"),
+        S3Path(bucket, "tests", "integration-test", "README.txt"),
+        S3Path(bucket, "tests", "load-test", "README.txt"),
+        S3Path(bucket, "datalake", "README.txt"),
+        S3Path(bucket, "poc", "README.txt"),
+    ]
+    for p in p_list:
+        p.write_text("S3 folder placeholder")
+
+
+deploy_stack()
+# create_s3_folder()
