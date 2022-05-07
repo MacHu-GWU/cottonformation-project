@@ -17,11 +17,23 @@ Release and Version History
 **Miscellaneous**
 
 
-0.0.6 (TBD)
+0.0.7 (TBD)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Features and Improvements**
+
+**Minor Improvements**
+
+**Bugfixes**
+
+**Miscellaneous**
+
+
+0.0.6 (2022-05-07)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Features and Improvements**
 
 - add aws lambda permission builder to ``helpers.awslambda.py``
+- add ``.to_yaml_file`` and ``.to_yaml`` method
 
 **Minor Improvements**
 
