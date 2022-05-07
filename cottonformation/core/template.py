@@ -8,9 +8,11 @@ black magic features are provided.
 import json
 import attr
 import typing
-
 from collections import OrderedDict
+
+import cfn_flip
 from toposort import toposort
+
 from .model import (
     _Addable,
     Parameter, Resource, Output, Rule, Mapping, Condition, Transform, ResourceGroup, Tag,
@@ -511,7 +513,11 @@ class Template:
         """
         Convert template to yaml string
         """
-        raise NotImplementedError
+        return cfn_flip.to_yaml(
+            self.to_json(human_readable=True),
+            clean_up=False,
+            long_form=False
+        )
 
     def to_yml_file(
         self,

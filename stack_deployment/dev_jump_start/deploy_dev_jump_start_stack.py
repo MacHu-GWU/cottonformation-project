@@ -8,7 +8,7 @@ from cottonformation.stacks.dev_jump_start import DevJumpStartStack
 aws_profile = "aws_sanhe_dev2_us_east_2"
 main_aws_region = "us-east-1"
 
-aws_region = "us-east-2"
+aws_region = "us-east-1"
 # aws_region = "us-east-2"
 # aws_region = "us-west-1"
 # aws_region = "us-west-2"
@@ -18,6 +18,7 @@ boto_ses = boto3.session.Session(profile_name=aws_profile, region_name=aws_regio
 aws_account_id = boto_ses.client("sts").get_caller_identity()["Account"]
 
 dir_here = Path.dir_here(__file__)
+
 
 def deploy_stack():
     stack = DevJumpStartStack(
@@ -31,15 +32,17 @@ def deploy_stack():
 
     tpl.batch_tagging(ProjectName="DevJumpBox")
 
-    p_tpl = Path(dir_here, "dev-jump-start-stack.json")
-    tpl.to_json_file(p_tpl.abspath)
+    p_tpl_json = Path(dir_here, "dev-jump-start-stack.json")
+    p_tpl_yml = Path(dir_here, "dev-jump-start-stack.yml")
+    tpl.to_json_file(p_tpl_json.abspath)
+    tpl.to_yml_file(p_tpl_yml.abspath)
 
     env = cf.Env(boto_ses=boto_ses)
-    env.deploy(
-        template=tpl,
-        stack_name=stack.stack_name,
-        include_iam=True,
-    )
+    # env.deploy(
+    #     template=tpl,
+    #     stack_name=stack.stack_name,
+    #     include_iam=True,
+    # )
 
 
 def create_s3_folder():
@@ -72,5 +75,5 @@ def create_s3_folder():
         p.write_text("S3 folder placeholder")
 
 
-# deploy_stack()
+deploy_stack()
 create_s3_folder()
