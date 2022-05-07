@@ -7,27 +7,9 @@ from cottonformation.tests.helpers import jprint
 
 class TestAssumeRolePolicyBuilder:
     def test_build(self):
-        assert helpers.iam.AssumeRolePolicyBuilder(
-            helpers.iam.ServicePrincipal.ec2(),
-            helpers.iam.ServicePrincipal.awslambda(),
-            helpers.iam.AccountPrincipal("111122223333", external_id="ext", mfa_auth=True),
-        ).build() == {
+        expected = {
             "Version": "2012-10-17",
             "Statement": [
-                {
-                    "Effect": "Allow",
-                    "Principal": {
-                        "Service": "ec2.amazonaws.com"
-                    },
-                    "Action": "sts:AssumeRole"
-                },
-                {
-                    "Effect": "Allow",
-                    "Principal": {
-                        "Service": "lambda.amazonaws.com"
-                    },
-                    "Action": "sts:AssumeRole"
-                },
                 {
                     "Effect": "Allow",
                     "Principal": {
@@ -42,9 +24,34 @@ class TestAssumeRolePolicyBuilder:
                             "aws:MultiFactorAuthPresent": "true"
                         }
                     }
-                }
+                },
+                {
+                    "Effect": "Allow",
+                    "Principal": {
+                        "AWS": "arn:aws:iam::444455556666:root"
+                    },
+                    "Action": "sts:AssumeRole",
+                },
+                {
+                    "Effect": "Allow",
+                    "Principal": {
+                        "Service": [
+                            "ec2.amazonaws.com",
+                            "lambda.amazonaws.com",
+                            "ecs.amazonaws.com",
+                        ]
+                    },
+                    "Action": "sts:AssumeRole"
+                },
             ]
         }
+        assert helpers.iam.AssumeRolePolicyBuilder(
+            helpers.iam.ServicePrincipal.ec2(),
+            helpers.iam.ServicePrincipal.awslambda(),
+            "ecs.amazonaws.com",
+            helpers.iam.AccountPrincipal("111122223333", external_id="ext", mfa_auth=True),
+            "444455556666",
+        ).build() == expected
 
 
 class TestAwsManagedPolicy:

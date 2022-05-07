@@ -63,6 +63,7 @@ import typing
 
 from ._iam_aws_service_principal import _ServicePrincipalMixin
 from ._iam_aws_managed_policy import _AwsManagedPolicy
+from ..regex import ServiceEnum
 
 
 class AwsManagedPolicy(_AwsManagedPolicy):
@@ -141,8 +142,6 @@ def _generate_aws_service_principal_code(service_name_list: typing.List[str]):  
 
 @attr.s
 class _AwsPrincipal:
-    service_principal: str = attr.ib()
-
     def to_dict(self) -> dict:
         raise NotImplementedError
 
@@ -160,6 +159,7 @@ class ServicePrincipal(_AwsPrincipal, _ServicePrincipalMixin):
             "Action": "sts:AssumeRole"
         }
     """
+    service_principal: str = attr.ib()
 
     def to_dict(self) -> dict:
         return {
@@ -253,29 +253,36 @@ class AssumeRolePolicyBuilder:
     Helper class to build IAM trusted entity / assume role policy.
     """
 
-    def __init__(self, *args: _AwsPrincipal):
-        self.principal_list: typing.Tuple[_AwsPrincipal] = args
+    def __init__(self, *args: typing.Union[_AwsPrincipal, str]):
+        self.principal_list: typing.List[typing.Union[_AwsPrincipal, str]] = args
 
     def build(self):
-        service_list = list()
+        service_principal_list: typing.List[str] = list()
+        statements: typing.List[dict] = list()
         for principal in self.principal_list:
-            if isinstance(principal, _AwsPrincipal):
-                service_list.append(principal.service_principal)
+            if isinstance(principal, ServicePrincipal):
+                service_principal_list.append(principal.service_principal)
+            elif isinstance(principal, AccountPrincipal):
+                statements.append(principal.to_dict())
             elif isinstance(principal, str):  # pragma: no cover
-                service_list.append(principal)
+                if ServiceEnum.is_aws_account_id(principal):
+                    statements.append(AccountPrincipal(account_id=principal).to_dict())
+                elif ServiceEnum.is_aws_service_domain(principal):
+                    service_principal_list.append(principal)
+                else: # pragma: no cover
+                    raise NotImplementedError
             else:  # pragma: no cover
                 raise NotImplementedError
+        statements.append({
+            "Effect": "Allow",
+            "Principal": {
+                "Service": service_principal_list
+            },
+            "Action": "sts:AssumeRole"
+        })
         return {
             "Version": "2012-10-17",
-            "Statement": [
-                {
-                    "Effect": "Allow",
-                    "Principal": {
-                        "Service": service_list
-                    },
-                    "Action": "sts:AssumeRole"
-                }
-            ]
+            "Statement": statements,
         }
 
 
