@@ -9,5 +9,5 @@ source ${dir_bin}/py/python-env.sh
 
 print_colored_line $color_cyan "[DOING] Run code coverage tests in ${path_test_dir} ..."
 cd ${dir_project_root}
-rm -r ${path_coverage_annotate_dir}
-${bin_pytest} ${path_test_dir} -s --cov=${package_name} --cov-report term-missing --cov-report annotate:${path_coverage_annotate_dir}
+rm -r ${path_coverage_html_dir}
+${bin_pytest} ${path_test_dir} -s --cov=${package_name} --cov-report term-missing --cov-report html:${path_coverage_html_dir}

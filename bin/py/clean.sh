@@ -12,7 +12,7 @@ source ${dir_bin}/py/python-env.sh
 print_colored_line $color_cyan "[DOING] remove all temp files ..."
 
 tmp_to_remove_list=(
-    ${path_coverage_annotate_dir}
+    ${path_coverage_html_dir}
     ${path_tox_dir}
     ${path_build_dir}
     ${path_dist_dir}

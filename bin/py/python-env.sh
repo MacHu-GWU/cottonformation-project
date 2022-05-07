@@ -52,7 +52,7 @@ resolve_important_path()
     path_test_requirement_file=${tmp_dir_project_root}/requirements-test.txt
 
     path_test_dir=${tmp_dir_project_root}/tests
-    path_coverage_annotate_dir=${tmp_dir_project_root}/.coverage.annotate
+    path_coverage_html_dir=${tmp_dir_project_root}/htmlcov
     path_tox_dir=${tmp_dir_project_root}/.tox
 
     path_auto_pep8_script=${tmp_dir_project_root}/fix_code_style.py
