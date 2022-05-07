@@ -36,5 +36,4 @@ class ServiceEnum(enum.Enum):
 
     @classmethod
     def is_s3_uri(cls, s: str) -> bool:
-        print(re.fullmatch(_p_s3_uri, s))
         return re.fullmatch(_p_s3_uri, s) is not None
