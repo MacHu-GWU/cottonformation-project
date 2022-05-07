@@ -12,6 +12,7 @@ class VpcStack(ctf.Stack):
     stage: str = attr.ib()
     vpc_cidr_seed: int = attr.ib()
     n_az_used: int = attr.ib()
+    n_subnet_per_az_per_public_private: int = attr.ib()
     sg_authorized_ips: typing.List[str] = attr.ib()
 
     @property
@@ -53,6 +54,7 @@ class VpcStack(ctf.Stack):
                 Description=ctf.Sub.from_params(f"The main vpc for {self.env_name}"),
             ),
         )
+        self.rg1_vpc.add(self.vpc)
 
         self.out_vpc_id = ctf.Output(
             "VpcId",
@@ -61,6 +63,7 @@ class VpcStack(ctf.Stack):
             Export=ctf.Export(f"{self.env_name}-vpc-id"),
             DependsOn=self.vpc,
         )
+        self.rg1_vpc.add(self.out_vpc_id)
 
         self.out_vpc_cidr_block = ctf.Output(
             "VpcCidrBlock",
@@ -69,89 +72,95 @@ class VpcStack(ctf.Stack):
             Export=ctf.Export(f"{self.env_name}-vpc-cidr-block"),
             DependsOn=self.vpc,
         )
-        self.rg1_vpc.DependsOn.extend([self.vpc, self.out_vpc_id, self.out_vpc_cidr_block])
+        self.rg1_vpc.add(self.out_vpc_cidr_block)
 
     def mk_rg2_subnet(self):
         self.rg2_subnet = ctf.ResourceGroup()
 
         self.public_subnet_list: typing.List[ec2.Subnet] = list()
         self.out_list_public_subnet_id: typing.List[ctf.Output] = list()
-        for ind in range(1, self.n_az_used + 1):
-            public_subnet = ec2.Subnet(
-                f"PublicSubnet{ind}",
-                rp_CidrBlock="10.{}.{}.0/24".format(
-                    self.vpc_cidr_seed,
-                    ind * 2 - 1,
-                ),
-                rp_VpcId=self.vpc.ref(),
-                p_AvailabilityZone=ctf.GetAZs.n_th(ind),
-                p_MapPublicIpOnLaunch=True,
-                p_Tags=ctf.Tag.make_many(
-                    Name=f"{self.env_name}/public/{ind}",
-                ),
-                ra_DependsOn=self.vpc,
-            )
-            self.public_subnet_list.append(public_subnet)
-
-            out = ctf.Output(
-                f"{public_subnet.id}Id",
-                Description=f"{public_subnet.id} Id",
-                Value=public_subnet.ref(),
-                Export=ctf.Export(
-                    "{}-{}-id".format(
-                        self.env_name,
-                        public_subnet.id.lower().replace("subnet", "-subnet-")
+        for az_ind in range(1, self.n_az_used + 1):
+            for subnet_ind in range(1, self.n_subnet_per_az_per_public_private + 1):
+                nth_pub_or_pri_subnet = (az_ind - 1) * self.n_subnet_per_az_per_public_private + subnet_ind
+                logic_id = nth_pub_or_pri_subnet * 2 - 1
+                public_subnet = ec2.Subnet(
+                    f"PublicSubnet{logic_id}",
+                    p_CidrBlock="10.{}.{}.0/24".format(
+                        self.vpc_cidr_seed,
+                        logic_id,
                     ),
-                ),
-                DependsOn=public_subnet,
-            )
-            self.out_list_public_subnet_id.append(out)
+                    rp_VpcId=self.vpc.ref(),
+                    p_AvailabilityZone=ctf.GetAZs.n_th(az_ind),
+                    p_MapPublicIpOnLaunch=True,
+                    p_Tags=ctf.Tag.make_many(
+                        Name=f"{self.env_name}/public/{nth_pub_or_pri_subnet}",
+                    ),
+                    ra_DependsOn=self.vpc,
+                )
+                self.public_subnet_list.append(public_subnet)
 
-            self.rg2_subnet.DependsOn.append(public_subnet)
-            self.rg2_subnet.DependsOn.append(out)
+                out = ctf.Output(
+                    f"{public_subnet.id}Id",
+                    Description=f"{public_subnet.id} Id",
+                    Value=public_subnet.ref(),
+                    Export=ctf.Export(
+                        "{}-{}-id".format(
+                            self.env_name,
+                            public_subnet.id.lower().replace("subnet", "-subnet-")
+                        ),
+                    ),
+                    DependsOn=public_subnet,
+                )
+                self.out_list_public_subnet_id.append(out)
+
+                self.rg2_subnet.add(public_subnet)
+                self.rg2_subnet.add(out)
 
         self.private_subnet_list: typing.List[ec2.Subnet] = list()
         self.out_list_private_subnet_id: typing.List[ctf.Output] = list()
-        for ind in range(1, self.n_az_used + 1):
-            private_subnet = ec2.Subnet(
-                f"PrivateSubnet{ind}",
-                rp_CidrBlock="10.{}.{}.0/24".format(
-                    self.vpc_cidr_seed,
-                    ind * 2,
-                ),
-                rp_VpcId=self.vpc.ref(),
-                p_AvailabilityZone=ctf.GetAZs.n_th(ind),
-                p_MapPublicIpOnLaunch=False,
-                p_Tags=ctf.Tag.make_many(
-                    Name=f"{self.env_name}/private/{ind}",
-                ),
-                ra_DependsOn=self.vpc,
-            )
-            self.private_subnet_list.append(private_subnet)
-
-            out = ctf.Output(
-                f"{private_subnet.id}Id",
-                Description=f"{private_subnet.id} Id",
-                Value=private_subnet.ref(),
-                Export=ctf.Export(
-                    "{}-{}-id".format(
-                        self.env_name,
-                        private_subnet.id.lower().replace("subnet", "-subnet-")
+        for az_ind in range(1, self.n_az_used + 1):
+            for subnet_ind in range(1, self.n_subnet_per_az_per_public_private + 1):
+                nth_pub_or_pri_subnet = (az_ind - 1) * self.n_subnet_per_az_per_public_private + subnet_ind
+                logic_id = nth_pub_or_pri_subnet * 2
+                private_subnet = ec2.Subnet(
+                    f"PrivateSubnet{logic_id}",
+                    p_CidrBlock="10.{}.{}.0/24".format(
+                        self.vpc_cidr_seed,
+                        logic_id,
                     ),
-                ),
-                DependsOn=private_subnet,
-            )
-            self.out_list_private_subnet_id.append(out)
+                    rp_VpcId=self.vpc.ref(),
+                    p_AvailabilityZone=ctf.GetAZs.n_th(az_ind),
+                    p_MapPublicIpOnLaunch=False,
+                    p_Tags=ctf.Tag.make_many(
+                        Name=f"{self.env_name}/private/{nth_pub_or_pri_subnet}",
+                    ),
+                    ra_DependsOn=self.vpc,
+                )
+                self.private_subnet_list.append(private_subnet)
 
-            self.rg2_subnet.DependsOn.append(private_subnet)
-            self.rg2_subnet.DependsOn.append(out)
+                out = ctf.Output(
+                    f"{private_subnet.id}Id",
+                    Description=f"{private_subnet.id} Id",
+                    Value=private_subnet.ref(),
+                    Export=ctf.Export(
+                        "{}-{}-id".format(
+                            self.env_name,
+                            private_subnet.id.lower().replace("subnet", "-subnet-")
+                        ),
+                    ),
+                    DependsOn=private_subnet,
+                )
+                self.out_list_private_subnet_id.append(out)
+
+                self.rg2_subnet.add(private_subnet)
+                self.rg2_subnet.add(out)
 
         self.out_list_subnet_cidr_block: typing.List[ctf.Output] = list()
         for subnet in (self.public_subnet_list + self.private_subnet_list):
             out = ctf.Output(
                 f"{subnet.id}CidrBlock",
                 Description=f"{subnet.id} Cidr Block",
-                Value=subnet.rp_CidrBlock,
+                Value=subnet.p_CidrBlock,
                 Export=ctf.Export(
                     "{}-{}-cidr-block".format(
                         self.env_name,
@@ -161,7 +170,7 @@ class VpcStack(ctf.Stack):
                 DependsOn=subnet,
             )
             self.out_list_subnet_cidr_block.append(out)
-            self.rg2_subnet.DependsOn.append(out)
+            self.rg2_subnet.add(out)
 
     def mk_rg3_route(self):
         self.rg3_route = ctf.ResourceGroup()
@@ -172,6 +181,7 @@ class VpcStack(ctf.Stack):
                 Name=self.env_name,
             ),
         )
+        self.rg3_route.add(self.igw)
 
         self.igw_attach_vpc = ec2.VPCGatewayAttachment(
             "IGWAttachVpc",
@@ -179,6 +189,7 @@ class VpcStack(ctf.Stack):
             p_InternetGatewayId=self.igw.ref(),
             ra_DependsOn=[self.vpc, self.igw]
         )
+        self.rg3_route.add(self.igw_attach_vpc)
 
         self.eip = ec2.EIP(
             "EIP",
@@ -188,6 +199,7 @@ class VpcStack(ctf.Stack):
             ),
             ra_DependsOn=self.vpc,
         )
+        self.rg3_route.add(self.eip)
 
         self.ngw = ec2.NatGateway(
             "NGW",
@@ -198,10 +210,10 @@ class VpcStack(ctf.Stack):
             ),
             ra_DependsOn=self.eip,
         )
+        self.rg3_route.add(self.ngw)
 
-        self.rg3_route.DependsOn.extend([self.igw, self.igw_attach_vpc, self.eip, self.ngw])
 
-        # public / private route table
+        # # public / private route table
         self.public_route_table = ec2.RouteTable(
             "PublicRouteTable",
             rp_VpcId=self.vpc.ref(),
@@ -210,6 +222,7 @@ class VpcStack(ctf.Stack):
             ),
             ra_DependsOn=self.vpc,
         )
+        self.rg3_route.add(self.public_route_table)
 
         self.public_route_default = ec2.Route(
             "PublicRouteDefault",
@@ -218,8 +231,7 @@ class VpcStack(ctf.Stack):
             p_GatewayId=self.igw.ref(),
             ra_DependsOn=[self.public_route_table, self.igw],
         )
-
-        self.rg3_route.DependsOn.extend([self.public_route_table, self.public_route_default])
+        self.rg3_route.add(self.public_route_default)
 
         for ind, subnet in enumerate(self.public_subnet_list):
             route_table_association = ec2.SubnetRouteTableAssociation(
@@ -228,7 +240,7 @@ class VpcStack(ctf.Stack):
                 rp_SubnetId=subnet.ref(),
                 ra_DependsOn=[self.public_route_table, subnet],
             )
-            self.rg3_route.DependsOn.append(route_table_association)
+            self.rg3_route.add(route_table_association)
 
         self.private_route_table = ec2.RouteTable(
             "PrivateRouteTable",
@@ -238,6 +250,7 @@ class VpcStack(ctf.Stack):
             ),
             ra_DependsOn=self.vpc,
         )
+        self.rg3_route.add(self.private_route_table)
 
         self.private_route_default = ec2.Route(
             "PrivateRouteDefault",
@@ -246,8 +259,7 @@ class VpcStack(ctf.Stack):
             p_NatGatewayId=self.ngw.ref(),
             ra_DependsOn=[self.private_route_table, self.ngw],
         )
-
-        self.rg3_route.DependsOn.extend([self.private_route_table, self.private_route_default])
+        self.rg3_route.add(self.private_route_default)
 
         for ind, subnet in enumerate(self.private_subnet_list):
             route_table_association = ec2.SubnetRouteTableAssociation(
@@ -256,7 +268,7 @@ class VpcStack(ctf.Stack):
                 rp_SubnetId=subnet.ref(),
                 ra_DependsOn=[self.private_route_table, subnet],
             )
-            self.rg3_route.DependsOn.append(route_table_association)
+            self.rg3_route.add(route_table_association)
 
     def mk_pk4_security_group(self):
         self.rg4_security_group = ctf.ResourceGroup()
@@ -302,7 +314,7 @@ class VpcStack(ctf.Stack):
                     rp_IpProtocol="tcp",
                     p_FromPort=22,
                     p_ToPort=22,
-                    p_CidrIp=subnet.rp_CidrBlock,
+                    p_CidrIp=subnet.p_CidrBlock,
                 )
                 for subnet in self.public_subnet_list
             ],
@@ -323,42 +335,3 @@ class VpcStack(ctf.Stack):
             DependsOn=self.sg_of_allow_ssh_from_public_subnet,
         )
         self.rg4_security_group.add(self.output_sg_id_of_allow_ssh_from_public_subnet)
-
-
-# ------ load secret data ------
-# below is a code snippet that load config and secret data
-# for testing, you can comment it out and manually pass in hard code value
-import pysecret
-from pathlib_mate import Path
-
-here = Path(__file__).parent
-config_file = Path(here, "config.json")
-config = pysecret.JsonSecret.new(secret_file=config_file.abspath)
-# ------------------------------
-
-vpc_stack = VpcStack(
-    project_name=config.get("example-stack.vpc.project_name"),
-    stage=config.get("example-stack.vpc.stage"),
-    vpc_cidr_seed=config.get("example-stack.vpc.vpc_cidr_seed"),
-    n_az_used=config.get("example-stack.vpc.n_az_used"),
-    sg_authorized_ips=config.get("example-stack.vpc.sg_authorized_ips")
-)
-
-tpl = ctf.Template()
-tpl.add(vpc_stack.rg1_vpc)
-tpl.add(vpc_stack.rg2_subnet)
-tpl.add(vpc_stack.rg3_route)
-tpl.add(vpc_stack.rg4_security_group)
-
-tpl.batch_tagging(ProjectName=vpc_stack.project_name, Stage=vpc_stack.stage)
-
-
-if __name__ == "__main__":
-    from cottonformation.tests.boto_ses import boto_ses, bucket
-
-    env = ctf.Env(boto_ses=boto_ses)
-    env.deploy(
-        template=tpl,
-        stack_name=vpc_stack.stack_name,
-        bucket_name=bucket,
-    )

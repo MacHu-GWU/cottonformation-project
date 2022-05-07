@@ -5,10 +5,10 @@ from pathlib_mate import Path
 import cottonformation as cf
 from cottonformation.stacks.dev_jump_start import DevJumpStartStack
 
-aws_profile = "aws_try_new_feature_us_east_1"
+aws_profile = "aws_sanhe_dev2_us_east_2"
 main_aws_region = "us-east-1"
 
-aws_region = "us-east-1"
+aws_region = "us-east-2"
 # aws_region = "us-east-2"
 # aws_region = "us-west-1"
 # aws_region = "us-west-2"
@@ -72,5 +72,5 @@ def create_s3_folder():
         p.write_text("S3 folder placeholder")
 
 
-deploy_stack()
-# create_s3_folder()
+# deploy_stack()
+create_s3_folder()
