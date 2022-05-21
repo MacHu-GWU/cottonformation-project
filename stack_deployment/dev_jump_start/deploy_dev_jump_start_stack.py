@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-import boto3
+from boto_session_manager import BotoSesManager
 from pathlib_mate import Path
 import cottonformation as cf
 from cottonformation.stacks.dev_jump_start import DevJumpStartStack
@@ -14,8 +14,8 @@ aws_region = "us-east-1"
 # aws_region = "us-west-2"
 
 
-boto_ses = boto3.session.Session(profile_name=aws_profile, region_name=aws_region)
-aws_account_id = boto_ses.client("sts").get_caller_identity()["Account"]
+bsm = BotoSesManager(profile_name=aws_profile, region_name=aws_region)
+aws_account_id = bsm.aws_account_id
 
 dir_here = Path.dir_here(__file__)
 
@@ -37,18 +37,18 @@ def deploy_stack():
     tpl.to_json_file(p_tpl_json.abspath)
     tpl.to_yml_file(p_tpl_yml.abspath)
 
-    env = cf.Env(boto_ses=boto_ses)
-    # env.deploy(
-    #     template=tpl,
-    #     stack_name=stack.stack_name,
-    #     include_iam=True,
-    # )
+    env = cf.Env(bsm=bsm)
+    env.deploy(
+        template=tpl,
+        stack_name=stack.stack_name,
+        include_iam=True,
+    )
 
 
 def create_s3_folder():
     from s3pathlib import S3Path, context
 
-    context.attach_boto_session(boto_ses)
+    context.attach_boto_session(bsm.boto_ses)
 
     bucket = f"{aws_account_id}-{aws_region}-artifacts"
     p_list = [
