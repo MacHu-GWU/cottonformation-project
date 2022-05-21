@@ -17,15 +17,12 @@ Release and Version History
 **Miscellaneous**
 
 
-0.0.7 (TBD)
+0.0.7 (2022-05-20)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Features and Improvements**
 
-**Minor Improvements**
-
-**Bugfixes**
-
-**Miscellaneous**
+- remove ``boto_ses`` argument from ``Env``, use ``boto_session_manager.BotoSesManager`` to manage boto3 sessions.
+- add localstack support.
 
 
 0.0.6 (2022-05-07)
