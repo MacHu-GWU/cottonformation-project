@@ -168,7 +168,7 @@ class Env:
         verbose: bool = True,
     ) -> dict:
         """
-
+        create / update a cloudformation
         """
         stack_console_url = "https://console.aws.amazon.com/cloudformation/home?region={aws_region}#/stacks?filteringStatus=active&filteringText={stack_name}&viewNested=true&hideStacks=false&stackId=".format(
             aws_region=self.bsm.aws_region,
@@ -254,4 +254,35 @@ class Env:
             create_stack_response = self.cf_client.create_stack(**create_stack_kwargs)
             response = create_stack_response
 
+        return response
+
+    def delete(
+        self,
+        stack_name: str,
+        retain_resources: typing.List[str] = None,
+        role_arn: str = None,
+        client_request_token: str = None,
+        verbose: bool = True,
+    ) -> dict:
+        """
+        delete a cloudformation stack.
+        """
+        stack_console_url = "https://console.aws.amazon.com/cloudformation/home?region={aws_region}#/stacks?filteringStatus=active&filteringText={stack_name}&viewNested=true&hideStacks=false&stackId=".format(
+            aws_region=self.bsm.aws_region,
+            stack_name=stack_name,
+        )
+        if verbose:
+            print(f"open cloudformation console for status: {stack_console_url}")
+        kwargs = dict(
+            StackName=stack_name,
+            RetainResources=retain_resources,
+            RoleARN=role_arn,
+            ClientRequestToken=client_request_token,
+        )
+        kwargs = {
+            k: v
+            for k, v in kwargs.items()
+            if v is not None
+        }
+        response = self.cf_client.delete_stack(**kwargs)
         return response
