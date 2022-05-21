@@ -7,6 +7,10 @@ AWS Environment and Deployment component.
 import hashlib
 import typing
 
+if typing.TYPE_CHECKING:
+    import boto3
+    from boto_session_manager import BotoSesManager
+
 from .template import Template
 from ..res.cloudformation import Stack
 
@@ -46,7 +50,7 @@ class Env:
 
     3. EC2 or AWS Lambda environment, using IAM role. It is exactly same to #1
 
-    4. Load credential in a secue way, manually pass in credential to the session:
+    4. Load credential in a secure way, manually pass in credential to the session:
 
     .. code-block:: python
 
@@ -59,14 +63,17 @@ class Env:
     :type boto_ses: boto3.session.Session
     """
 
-    def __init__(self, boto_ses=None):
-        if boto_ses is None:
-            import boto3
-            self.boto_ses = boto3.session.Session()
+    def __init__(
+        self,
+        bsm: 'BotoSesManager' = None
+    ):
+        if bsm is None:
+            self.bsm = BotoSesManager()
         else:
-            self.boto_ses = boto_ses
-        self.s3_client = self.boto_ses.client("s3")
-        self.cf_client = self.boto_ses.client("cloudformation")
+            self.bsm = bsm
+
+        self.s3_client = self.bsm.get_client("s3")
+        self.cf_client = self.bsm.get_client("cloudformation")
 
     def upload_template(
         self,
@@ -164,7 +171,7 @@ class Env:
 
         """
         stack_console_url = "https://console.aws.amazon.com/cloudformation/home?region={aws_region}#/stacks?filteringStatus=active&filteringText={stack_name}&viewNested=true&hideStacks=false&stackId=".format(
-            aws_region=self.boto_ses.region_name,
+            aws_region=self.bsm.aws_region,
             stack_name=stack_name,
         )
         if verbose:
