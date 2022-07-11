@@ -28,6 +28,17 @@ class IntrinsicFunction:
     TRANSFORM = "Fn::Transform"
 
 
+class ConditionFunction:
+    """
+    Condition Function constant value.
+    """
+    AND = "Fn::And"
+    EQUALS = "Fn::Equals"
+    IF = "Fn::If"
+    NOT = "Fn::Not"
+    OR = "Fn::Or"
+
+
 class ResourceAttribute:
     """
     Resource Attribute constant value
@@ -93,7 +104,7 @@ class PseudoParameter:
     AWS_REGION = "AWS::Region"
     AWS_STACK_ID = "AWS::StackId"
     AWS_STACK_NAME = "AWS::StackName"
-    AWS_URL_SURFIX = "AWS::URLSuffix"
+    AWS_URL_SUFFIX = "AWS::URLSuffix"
 
 
 def _collect_enum(klass):

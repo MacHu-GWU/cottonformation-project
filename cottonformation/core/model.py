@@ -1203,7 +1203,7 @@ AWS_PARTITION = Ref(constant.PseudoParameter.AWS_PARTITION)
 AWS_REGION = Ref(constant.PseudoParameter.AWS_REGION)
 AWS_STACK_ID = Ref(constant.PseudoParameter.AWS_STACK_ID)
 AWS_STACK_NAME = Ref(constant.PseudoParameter.AWS_STACK_NAME)
-AWS_URL_SURFIX = Ref(constant.PseudoParameter.AWS_URL_SURFIX)
+AWS_URL_SUFFIX = Ref(constant.PseudoParameter.AWS_URL_SUFFIX)
 
 _class_type_to_attr_mapper = {
     Parameter.CLASS_TYPE: "Parameters",

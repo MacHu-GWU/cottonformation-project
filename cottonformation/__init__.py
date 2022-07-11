@@ -55,7 +55,7 @@ try:
         AWS_REGION,
         AWS_STACK_ID,
         AWS_STACK_NAME,
-        AWS_URL_SURFIX,
+        AWS_URL_SUFFIX,
     )
     from .core.config import CtfConfig
     from .core.template import Template
