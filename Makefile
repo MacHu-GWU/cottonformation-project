@@ -58,6 +58,10 @@ cov-only: ## Run Code Coverage test without checking test dependencies
 	bash ./bin/py/test-cov.sh
 
 
+view-cov: ## Open Code Coverage Results
+	bash ./bin/py/view-cov.sh
+
+
 tox: ## Run multi python version test with tox
 	bash ./bin/py/test-tox.sh
 
