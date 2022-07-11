@@ -12,8 +12,7 @@ an Output. Eventually we deploy it to AWS Console. Everything is PURE PYTHON.
 
 You are responsible to prepare your AWS Credential to call cloudformation API and a S3 bucket to upload template. Follow this `boto3 Session reference <https://boto3.amazonaws.com/v1/documentation/api/latest/reference/core/session.html>`_ document to create your own boto session object for authentication. My recommendation is to create a named profile in ``${HOME}/.aws/credentials`` and ``${HOME}/.aws/config``. And then the code to create boto session looks like this https://github.com/MacHu-GWU/cottonformation-project/blob/main/cottonformation/tests/boto_ses.py.
 
-.. literalinclude:: ../../../examples/01-quick-start/e01_basic.py
-    :linenos:
+.. literalinclude:: ../../../cottonformation/examples/e01_basic.py
 
 
 2. Batch Tagging
@@ -29,8 +28,7 @@ You are responsible to prepare your AWS Credential to call cloudformation API an
 In this example, let's learn how to use the :meth:`~cottonformation.core.template.Template.batch_tagging` method to **manage tag at scale**. You don't need to memorize whether an AWS Resource
 supports Tagging. cottonformation will handle that automatically for you.
 
-.. literalinclude:: ../../../examples/01-quick-start/e02_tagging.py
-    :linenos:
+.. literalinclude:: ../../../cottonformation/examples/e02_tagging.py
 
 
 3. Nested Stack / Template
@@ -52,5 +50,4 @@ Assume you have a complex architect design like this. Each line represent a Clou
     ...
 
 
-.. literalinclude:: ../../../examples/01-quick-start/e03_nested.py
-    :linenos:
+.. literalinclude:: ../../../cottonformation/examples/e03_nested.py

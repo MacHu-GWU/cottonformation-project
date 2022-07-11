@@ -227,7 +227,9 @@ docfly.ApiReferenceDoc(
         "%s.docs" % package_name,
         "%s.res" % package_name,
         "%s.code" % package_name,
-        "%s._version" % package_name,
+        "%s.examples" % package_name,
+        "%s.stacks" % package_name,
         "%s.tests" % package_name,
+        "%s._version" % package_name,
     ]
 ).fly()

@@ -16,6 +16,7 @@ sub packages and modules
     env <env>
     exc <exc>
     model <model>
+    regex <regex>
     stack <stack>
     template <template>
     

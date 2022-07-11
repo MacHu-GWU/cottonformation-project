@@ -11,5 +11,4 @@ sub packages and modules
     :maxdepth: 1
 
     core <core/__init__>
-    stacks <stacks/__init__>
     
