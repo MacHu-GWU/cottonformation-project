@@ -4,25 +4,52 @@ import pytest
 
 
 def test():
-    import cottonformation as ctf
+    import cottonformation as cf
 
-    _ = ctf.Template
-    _ = ctf.Parameter
-    _ = ctf.Resource
-    _ = ctf.Output
-    _ = ctf.Rule
-    _ = ctf.Mapping
-    _ = ctf.Condition
-    _ = ctf.ResourceGroup
-    _ = ctf.Tag
-    _ = ctf.Ref
-    _ = ctf.GetAtt
-    _ = ctf.ImportValue
-    _ = ctf.Env
-    _ = ctf.Stack
+    _ = cf.Template
+    _ = cf.Parameter
+    _ = cf.Resource
+    _ = cf.Output
+    _ = cf.Rule
+    _ = cf.Mapping
+    _ = cf.Condition
+    _ = cf.ResourceGroup
+    _ = cf.Tag
+    _ = cf.Ref
+    _ = cf.GetAtt
+    _ = cf.ImportValue
+    _ = cf.Env
+    _ = cf.Stack
 
-    _ = ctf.DeletionPolicy
-    _ = ctf.UpdateReplacePolicy
+    _ = cf.DeletionPolicy
+    _ = cf.UpdateReplacePolicy
+
+    _ = cf.Ref
+    _ = cf.Base64
+    _ = cf.Cidr
+    _ = cf.FindInMap
+    _ = cf.GetAtt
+    _ = cf.GetAZs
+    _ = cf.ImportValue
+    _ = cf.Join
+    _ = cf.Select
+    _ = cf.Split
+    _ = cf.Sub
+
+    _ = cf.Equals
+    _ = cf.If
+    _ = cf.Not
+    _ = cf.And
+    _ = cf.Or
+
+    _ = cf.AWS_ACCOUNT_ID
+    _ = cf.AWS_NOTIFICATION_ARNS
+    _ = cf.AWS_NO_VALUE
+    _ = cf.AWS_PARTITION
+    _ = cf.AWS_REGION
+    _ = cf.AWS_STACK_ID
+    _ = cf.AWS_STACK_NAME
+    _ = cf.AWS_URL_SURFIX
 
     from cottonformation.res import _imp
 

@@ -44,6 +44,9 @@ try:
         Ref, Base64, Cidr, FindInMap, GetAtt, GetAZs,
         ImportValue, Join, Select, Split, Sub,
 
+        # condition function
+        Equals, If, Not, And, Or,
+
         # pseudo parameter
         AWS_ACCOUNT_ID,
         AWS_NOTIFICATION_ARNS,

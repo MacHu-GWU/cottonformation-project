@@ -49,6 +49,7 @@ class _Addable:
 
     Includes 'Parameter', 'Resource', 'Output', 'Rule', 'Mapping', 'Condition', 'Pack'.
     """
+
     @property
     def gid(self) -> str:
         raise NotImplementedError
@@ -79,6 +80,7 @@ class _DictMember(_Addable):
     - :class:`Mapping`
     - :class:`Condition`
     """
+
     @property
     def gid(self) -> str:
         """
@@ -86,7 +88,6 @@ class _DictMember(_Addable):
         :return:
         """
         return f"{self.CLASS_TYPE}--{self.id}"
-
 
     @property
     def _ez_repr(self) -> str:
@@ -122,13 +123,16 @@ class AwsObject:
     def deserialize(self, **kwargs) -> typing.Any:
         raise NotImplementedError
 
+    def eval(self, **kwargs) -> typing.Any:
+        raise NotImplementedError
+
 
 @attr.s
 class IntrinsicFunction(AwsObject, _IntrinsicFunctionType):
     CLASS_TYPE = "IntrinsicFunction"
 
-    def special_int_fun(self):
-        pass
+    def eval(self, **kwargs) -> dict:
+        return self.serialize()
 
 
 @attr.s
@@ -215,7 +219,7 @@ class Property(_PropertyOrResource):
 
 def ensure_list(obj):
     if not isinstance(obj, list):
-        return [obj,]
+        return [obj, ]
     else:
         return obj
 
@@ -240,7 +244,7 @@ class Resource(_PropertyOrResource, _DictMember, _Dependency):
         validator=None,
         metadata={constant.AttrMeta.PROPERTY_NAME: constant.ResourceAttribute.DELETION_POLICY},
     )
-    ra_DependsOn: typing.Union[TypeHint.dependency_obj, typing.List[TypeHint.dependency_obj]] = attr.ib(
+    ra_DependsOn: Union[TypeHint.dependency_obj, List[TypeHint.dependency_obj]] = attr.ib(
         factory=list,
         validator=vs.instance_of((str, _Dependency, list)),
         metadata={constant.AttrMeta.PROPERTY_NAME: constant.ResourceAttribute.DEPENDS_ON},
@@ -291,7 +295,7 @@ class Resource(_PropertyOrResource, _DictMember, _Dependency):
         #         self.ra_Metadata[mt.CTF][mt.DependsOn][mt.Resources][get_id(obj)] = True
 
     @property
-    def DependsOn(self) -> typing.List[TypeHint.dependency_obj]:
+    def DependsOn(self) -> List[TypeHint.dependency_obj]:
         return self.ra_DependsOn
 
     def ref(self) -> 'Ref':
@@ -299,6 +303,7 @@ class Resource(_PropertyOrResource, _DictMember, _Dependency):
 
     @property
     def tags_dict(self) -> OrderedDict:
+        self.p_Tags: List[Tag]
         if self.p_Tags is None:
             return OrderedDict()
         dct = OrderedDict([
@@ -345,8 +350,7 @@ class Resource(_PropertyOrResource, _DictMember, _Dependency):
         if len(existing_tags):
             self.p_Tags = list(existing_tags.values())
 
-
-    def serialize(self):
+    def serialize(self) -> dict:
         class_data = get_key_value_dict(self)
         attr_name_to_cf_name_mapper = self.get_attr_name_to_cf_name()
 
@@ -378,7 +382,7 @@ class Resource(_PropertyOrResource, _DictMember, _Dependency):
         return resource_dct
 
     @classmethod
-    def deserialize(cls, data: dict): # pragma: no cover
+    def deserialize(cls, data: dict):  # pragma: no cover
         """
         TODO
         """
@@ -388,6 +392,10 @@ class Resource(_PropertyOrResource, _DictMember, _Dependency):
             class_data = [
                 cf_name_to_attr_name_mapper
             ]
+
+    def eval(self, **kwargs) -> dict:
+        return self.ref().serialize()
+
 
 @attr.s
 class Parameter(AwsObject, _DictMember, _Dependency):
@@ -410,7 +418,7 @@ class Parameter(AwsObject, _DictMember, _Dependency):
         default=None,
         validator=vs.optional(vs.instance_of(bool))
     )
-    AllowedValues: typing.List[typing.Any] = attr.ib(
+    AllowedValues: List[typing.Any] = attr.ib(
         default=None,
         validator=vs.optional(vs.instance_of(list))
     )
@@ -442,7 +450,7 @@ class Parameter(AwsObject, _DictMember, _Dependency):
         default=None,
         validator=vs.optional(vs.instance_of(str))
     )
-    DependsOn: typing.Union[TypeHint.dependency_obj, typing.List[TypeHint.dependency_obj]] = attr.ib(
+    DependsOn: Union[TypeHint.dependency_obj, List[TypeHint.dependency_obj]] = attr.ib(
         factory=list,
         validator=vs.optional(vs.instance_of((str, _Dependency, list))),
         converter=ensure_list,
@@ -498,11 +506,15 @@ class Parameter(AwsObject, _DictMember, _Dependency):
         dct = serialize(dct)
         return dct
 
+    def eval(self, **kwargs) -> dict:
+        return self.ref().serialize()
+
     def set_value(self, value):
         self._value = value
 
     def get_value(self):
         return self._value
+
 
 @attr.s
 class Export(AwsObject):
@@ -530,7 +542,7 @@ class Output(AwsObject, _DictMember):
         default=None,
         validator=vs.optional(vs.instance_of(Export))
     )
-    DependsOn: typing.Union[TypeHint.dependency_obj, typing.List[TypeHint.dependency_obj]] = attr.ib(
+    DependsOn: Union[TypeHint.dependency_obj, List[TypeHint.dependency_obj]] = attr.ib(
         factory=list,
         validator=vs.optional(vs.instance_of((str, _Dependency, list))),
         converter=ensure_list,
@@ -562,15 +574,23 @@ class Tag(Property):
 
     def __attrs_post_init__(self):
         if isinstance(self.p_Key, str) and len(self.p_Key) > 128:
-            raise ValueError(f"invalid tag key, see aws doc about the limits {self._tag_naming_limits_doc_url}")
+            raise ValueError(
+                f"invalid tag key, see aws doc about the limits "
+                f"{self._tag_naming_limits_doc_url}")
         if isinstance(self.p_Value, str) and len(self.p_Value) > 256:
-            raise ValueError(f"invalid tag value, see aws doc about the limits {self._tag_naming_limits_doc_url}")
+            raise ValueError(
+                f"invalid tag value, see aws doc about the limits "
+                f"{self._tag_naming_limits_doc_url}"
+            )
 
     def serialize(self, **kwargs) -> typing.Any:
         return {"Key": serialize(self.p_Key), "Value": serialize(self.p_Value)}
 
     @classmethod
-    def make_many(cls, dict_data=None, **kwargs) -> typing.List['Tag']:
+    def make_many(cls, dict_data: dict = None, **kwargs) -> List['Tag']:
+        """
+        A factory method to make many
+        """
         if dict_data is None:
             dct = kwargs
         else:
@@ -589,7 +609,7 @@ class Ref(IntrinsicFunction):
 
     - Ref: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-ref.html
     """
-    param_or_res: typing.Union[str, Parameter, Resource] = attr.ib(
+    param_or_res: Union[str, Parameter, Resource] = attr.ib(
         validator=vs.instance_of((str, Parameter, Resource))
     )
 
@@ -668,7 +688,7 @@ class GetAtt(IntrinsicFunction):
 
     - Fn::GetAtt: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-getatt.html
     """
-    resource: typing.Union[str, Resource] = attr.field(validator=vs.instance_of((str, Resource)))
+    resource: Union[str, Resource] = attr.field(validator=vs.instance_of((str, Resource)))
     attr_name: str = attr.field(validator=vs.instance_of(str))
 
     def serialize(self, **kwargs) -> dict:
@@ -697,11 +717,11 @@ class GetAZs(IntrinsicFunction):
     def n_th(
         cls,
         ind: int,
-        region: str="",
+        region: str = "",
     ):
         if ind <= 0:
             raise ValueError
-        return Select(ind-1, cls(region=region))
+        return Select(ind - 1, cls(region=region))
 
     def serialize(self, **kwargs) -> dict:
         return {constant.IntrinsicFunction.GET_AZS: serialize(self.region)}
@@ -762,22 +782,22 @@ class Join(IntrinsicFunction):
     )
 
     def serialize(self, **kwargs) -> dict:
-        if isinstance(self.delimiter, (Parameter, Resource)):
-            delimiter = self.delimiter.ref()
-        else:
-            delimiter = self.delimiter
-
-        list_of_values = list()
-        for v in self.list_of_values:
-            if isinstance(v, (Parameter, Resource)):
-                list_of_values.append(v.ref())
-            else:
-                list_of_values.append(v)
+        # if isinstance(self.delimiter, (Parameter, Resource)):
+        #     delimiter = self.delimiter.ref()
+        # else:
+        #     delimiter = self.delimiter
+        #
+        # list_of_values = list()
+        # for v in self.list_of_values:
+        #     if isinstance(v, (Parameter, Resource)):
+        #         list_of_values.append(v.ref())
+        #     else:
+        #         list_of_values.append(v)
 
         return {
             constant.IntrinsicFunction.JOIN: [
-                serialize(delimiter),
-                serialize(list_of_values)
+                eval(self.delimiter),
+                [eval(value) for value in self.list_of_values]
             ]
         }
 
@@ -785,6 +805,19 @@ class Join(IntrinsicFunction):
 @attr.s
 class Sub(IntrinsicFunction):
     """
+    Example::
+
+        >>> Sub("${project}-${env}", dict(project="my_app", env="dev")).serialize()
+        {
+            "Fn::Sub": [
+                "${project}-${env}",
+                {
+                    "project": "my_app",
+                    "env": "dev",
+                }
+            ]
+        }
+
     Reference:
 
     - Fn::Sub: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-sub.html
@@ -795,7 +828,10 @@ class Sub(IntrinsicFunction):
     def __attrs_post_init__(self):
         for k in self.data:
             if ("${%s}" % k) not in self.string:
-                raise ValueError
+                raise ValueError(
+                    f"argument {k!r} is provided but "
+                    f"not defined in string template {self.string!r}!"
+                )
 
     @classmethod
     def from_params(
@@ -829,20 +865,26 @@ class Sub(IntrinsicFunction):
         return cls(string, {p.id: p.ref() for p in params})
 
     def serialize(self, **kwargs) -> dict:
-        data = dict()
-        v: typing.Union[Parameter, Resource]
-        for k, v in self.data.items():
-            if isinstance(v, (Parameter, Resource)):
-                data[k] = v.ref()
-            else:
-                data[k] = v
-
         return {
             constant.IntrinsicFunction.SUB: [
                 self.string,
-                serialize(data),
+                {k: eval(v) for k, v in self.data.items()},
             ]
         }
+        # data = dict()
+        # v: Union[Parameter, Resource]
+        # for k, v in self.data.items():
+        #     if isinstance(v, (Parameter, Resource)):
+        #         data[k] = v.ref()
+        #     else:
+        #         data[k] = v
+        #
+        # return {
+        #     constant.IntrinsicFunction.SUB: [
+        #         self.string,
+        #         serialize(data),
+        #     ]
+        # }
 
 
 @attr.s
@@ -852,11 +894,11 @@ class Select(IntrinsicFunction):
 
     - Fn::Select: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-select.html
     """
-    index: typing.Union[int, str] = attr.ib(
+    index: Union[int, str] = attr.ib(
         validator=vs.instance_of((int, str)),
         converter=int,
     )
-    list_of_objects: typing.Union[list, IntrinsicFunction] = attr.ib(
+    list_of_objects: Union[list, IntrinsicFunction] = attr.ib(
         validator=vs.instance_of((list, IntrinsicFunction)),
     )
 
@@ -899,7 +941,7 @@ class Mapping(AwsObject, _DictMember, _Dependency):
     id: str = attr.ib(
         validator=vs.instance_of(str)
     )
-    DependsOn: typing.Union[TypeHint.dependency_obj, typing.List[TypeHint.dependency_obj]] = attr.ib(
+    DependsOn: Union[TypeHint.dependency_obj, List[TypeHint.dependency_obj]] = attr.ib(
         factory=list,
         validator=vs.optional(vs.instance_of((str, _Dependency, list))),
         converter=ensure_list,
@@ -913,11 +955,99 @@ class Condition(AwsObject, _DictMember, _Dependency):
     id: str = attr.ib(
         validator=vs.instance_of(str)
     )
-    DependsOn: typing.Union[TypeHint.dependency_obj, typing.List[TypeHint.dependency_obj]] = attr.ib(
-        factory=list,
-        validator=vs.optional(vs.instance_of((str, _Dependency, list))),
-        converter=ensure_list,
+
+    # TODO: identify if we really need ``DependsOn`` attributes
+    # DependsOn: Union[TypeHint.dependency_obj, List[TypeHint.dependency_obj]] = attr.ib(
+    #     factory=list,
+    #     validator=vs.optional(vs.instance_of((str, _Dependency, list))),
+    #     converter=ensure_list,
+    # )
+
+    def ref(self) -> dict:
+        return {"Condition": self.id}
+
+    def eval(self, **kwargs) -> str:
+        return self.id
+
+
+@attr.s
+class Equals(Condition):
+    value_one: Union[AwsObject, typing.Any] = attr.ib()
+    value_two: Union[AwsObject, typing.Any] = attr.ib()
+
+    def serialize(self, **kwargs) -> typing.Any:
+        return {
+            constant.ConditionFunction.EQUALS: [
+                eval(self.value_one),
+                eval(self.value_two),
+            ],
+        }
+
+
+@attr.s
+class If(Condition):
+    condition_name: Union[Condition, str] = attr.ib(
+        validator=vs.instance_of((Condition, str))
     )
+    value_if_true = attr.ib()
+    value_if_false = attr.ib()
+
+    def serialize(self, **kwargs) -> dict:
+        return {
+            constant.ConditionFunction.IF: [
+                get_id(self.condition_name),
+                eval(self.value_if_true),
+                eval(self.value_if_false),
+            ],
+        }
+
+
+@attr.s
+class Not(Condition):
+    condition: 'Condition' = attr.ib()
+
+    def serialize(self, **kwargs) -> dict:
+        return {
+            constant.ConditionFunction.NOT: [
+                self.condition.serialize(),
+            ],
+        }
+
+
+@attr.s
+class And(Condition):
+    conditions: List[Union[Condition, dict]] = attr.ib(
+        validator=vs.deep_iterable(
+            member_validator=vs.instance_of((Condition, dict)),
+            iterable_validator=vs.instance_of(list)
+        ),
+    )
+
+    def serialize(self, **kwargs) -> dict:
+        return {
+            constant.ConditionFunction.AND: [
+                serialize(condition)
+                for condition in self.conditions
+            ]
+        }
+
+
+@attr.s
+class Or(Condition):
+    conditions: List[Union[Condition, dict]] = attr.ib(
+        validator=vs.deep_iterable(
+            member_validator=vs.instance_of((Condition, dict)),
+            iterable_validator=vs.instance_of(list)
+        ),
+    )
+
+    def serialize(self, **kwargs) -> dict:
+        return {
+            constant.ConditionFunction.OR: [
+                serialize(condition)
+                for condition in self.conditions
+            ]
+        }
 
 
 @attr.s
@@ -927,7 +1057,7 @@ class Rule(AwsObject, _DictMember):
     id: str = attr.ib(
         validator=vs.instance_of(str)
     )
-    DependsOn: typing.Union[TypeHint.dependency_obj, typing.List[TypeHint.dependency_obj]] = attr.ib(
+    DependsOn: Union[TypeHint.dependency_obj, List[TypeHint.dependency_obj]] = attr.ib(
         factory=list,
         validator=vs.optional(vs.instance_of((str, _Dependency, list))),
     )
@@ -946,7 +1076,7 @@ class ResourceGroup(AwsObject, _DictMember, _Dependency):
         default="__never_exists__",
         validator=vs.instance_of(str)
     )
-    DependsOn: typing.Union[TypeHint.dependency_obj, typing.List[TypeHint.dependency_obj]] = attr.ib(
+    DependsOn: Union[TypeHint.dependency_obj, List[TypeHint.dependency_obj]] = attr.ib(
         factory=list,
         validator=vs.optional(vs.instance_of((str, _Dependency, list))),
         converter=ensure_list,
@@ -955,7 +1085,7 @@ class ResourceGroup(AwsObject, _DictMember, _Dependency):
     def add(self, obj: TypeHint.addable_obj):
         self.DependsOn.append(obj)
 
-    def add_many(self, objects: typing.List[TypeHint.addable_obj]):
+    def add_many(self, objects: List[TypeHint.addable_obj]):
         self.DependsOn.extend(objects)
 
 
@@ -977,6 +1107,25 @@ def remove_id_and_empty(dct: dict) -> dict:
     In serialization (convert object to dict data), a common case is we ignore
     the id field and those key-valur pair having None value or empty collection
     object. This helper function does that.
+
+    Example::
+
+        >>> remove_id_and_empty({
+        ...     "id": 1, # id field
+        ...     "key": "good_key",
+        ...     "good_value": False,
+        ...     "bad_value": None,
+        ...     "good_list": [1, 2, 3],
+        ...     "bad_list": [],
+        ...     "good_dict": {"a": 1},
+        ...     "bad_dict": {},
+        ... })
+        {
+            "key": "good_key,
+            "good_value": False,
+            "good_list": [1, 2, 3],
+            "good_dict": {"a": 1},
+        }
     """
     new_dct = dict()
     for k, v in dct.items():
@@ -991,7 +1140,7 @@ def remove_id_and_empty(dct: dict) -> dict:
 
 
 def get_id(
-    obj_or_id: typing.Union[
+    obj_or_id: Union[
         str,
         Parameter,
         Resource,
@@ -1010,7 +1159,7 @@ def get_id(
         return obj_or_id.id
 
 
-def serialize(obj: typing.Union['AwsObject', dict, typing.Any]) -> typing.Any:
+def serialize(obj: Union['AwsObject', dict, typing.Any]) -> typing.Any:
     """
     An universal api that convert anything to json serializable python dictionary.
     """
@@ -1030,6 +1179,23 @@ def serialize(obj: typing.Union['AwsObject', dict, typing.Any]) -> typing.Any:
         return obj
 
 
+def eval(
+    obj: Union[
+        'AwsObject',
+        dict,
+        str,
+        typing.Any,
+    ]
+) -> typing.Any:
+    """
+    A universal api that convert anything to an object that represent its value.
+    """
+    if isinstance(obj, AwsObject):
+        return obj.eval()
+    else:
+        return obj
+
+
 AWS_ACCOUNT_ID = Ref(constant.PseudoParameter.AWS_ACCOUNT_ID)
 AWS_NOTIFICATION_ARNS = Ref(constant.PseudoParameter.AWS_NOTIFICATION_ARNS)
 AWS_NO_VALUE = Ref(constant.PseudoParameter.AWS_NO_VALUE)
@@ -1038,7 +1204,6 @@ AWS_REGION = Ref(constant.PseudoParameter.AWS_REGION)
 AWS_STACK_ID = Ref(constant.PseudoParameter.AWS_STACK_ID)
 AWS_STACK_NAME = Ref(constant.PseudoParameter.AWS_STACK_NAME)
 AWS_URL_SURFIX = Ref(constant.PseudoParameter.AWS_URL_SURFIX)
-
 
 _class_type_to_attr_mapper = {
     Parameter.CLASS_TYPE: "Parameters",
