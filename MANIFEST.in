@@ -5,6 +5,4 @@
 
 include *.txt
 include *.rst
-recursive-include cottonformation *.*
-recursive-exclude *.pyc
-recursive-exclude *.pyo
+exclude cottonformation/examples/*.* cottonformation/tests/*.*
