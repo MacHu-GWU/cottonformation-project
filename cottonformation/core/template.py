@@ -299,7 +299,7 @@ class Template:
         _objects_to_update: typing.Dict[str, TypeHint.addable_obj] = None,
     ):
         """
-        Add a AWS object to the template. If the obj declared some dependency
+        Add an AWS object to the template. If the obj declared some dependency
         AWS Objects like Parameter, Mapping, Condition, it will also add
         those objects.
 
