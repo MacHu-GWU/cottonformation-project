@@ -49,7 +49,7 @@ def test():
     _ = cf.AWS_REGION
     _ = cf.AWS_STACK_ID
     _ = cf.AWS_STACK_NAME
-    _ = cf.AWS_URL_SURFIX
+    _ = cf.AWS_URL_SUFFIX
 
     from cottonformation.res import _imp
 
