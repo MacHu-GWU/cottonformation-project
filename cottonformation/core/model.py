@@ -263,11 +263,16 @@ class Resource(_PropertyOrResource, _DictMember, _Dependency):
         validator=None,
         metadata={constant.AttrMeta.PROPERTY_NAME: constant.ResourceAttribute.UPDATE_REPLACE_POLICY},
     )
-    ra_Condition: str = attr.ib(
+    ra_Condition: Union['Condition', str] = attr.ib(
         default=None,
-        validator=None,
         metadata={constant.AttrMeta.PROPERTY_NAME: constant.ResourceAttribute.CONDITION},
     )
+
+    @ra_Condition.validator
+    def check_ra_Condition(self, attribute, value):
+        if value is not None:
+            if not isinstance(value, (Condition, str)):
+                raise ValueError("ra_Condition has to be 'Condition' or str!")
 
     def __attrs_post_init__(self):
         self.ra_DependsOn = ensure_list(self.ra_DependsOn)
@@ -956,16 +961,16 @@ class Mapping(AwsObject, _DictMember, _Dependency):
 class Condition(AwsObject, _DictMember, _Dependency):
     CLASS_TYPE = "3-Condition"
 
-    id: str = attr.ib(
-        validator=vs.instance_of(str)
-    )
+    def ref(self) -> dict:
+        raise NotImplementedError
 
-    # TODO: identify if we really need ``DependsOn`` attributes
-    # DependsOn: Union[TypeHint.dependency_obj, List[TypeHint.dependency_obj]] = attr.ib(
-    #     factory=list,
-    #     validator=vs.optional(vs.instance_of((str, _Dependency, list))),
-    #     converter=ensure_list,
-    # )
+    def eval(self, **kwargs) -> Union[str, dict]:
+        raise NotImplementedError
+
+
+@attr.s
+class BooleanCondition(Condition):
+    id: str = attr.ib(validator=vs.instance_of(str))
 
     def ref(self) -> dict:
         return {"Condition": self.id}
@@ -975,9 +980,15 @@ class Condition(AwsObject, _DictMember, _Dependency):
 
 
 @attr.s
-class Equals(Condition):
+class Equals(BooleanCondition):
     value_one: Union[AwsObject, typing.Any] = attr.ib()
     value_two: Union[AwsObject, typing.Any] = attr.ib()
+
+    DependsOn: Union[TypeHint.dependency_obj, List[TypeHint.dependency_obj]] = attr.ib(
+        factory=list,
+        validator=vs.optional(vs.instance_of((str, _Dependency, list))),
+        converter=ensure_list,
+    )
 
     def serialize(self, **kwargs) -> typing.Any:
         return {
@@ -989,25 +1000,7 @@ class Equals(Condition):
 
 
 @attr.s
-class If(Condition):
-    condition_name: Union[Condition, str] = attr.ib(
-        validator=vs.instance_of((Condition, str))
-    )
-    value_if_true = attr.ib()
-    value_if_false = attr.ib()
-
-    def serialize(self, **kwargs) -> dict:
-        return {
-            constant.ConditionFunction.IF: [
-                get_id(self.condition_name),
-                eval(self.value_if_true),
-                eval(self.value_if_false),
-            ],
-        }
-
-
-@attr.s
-class Not(Condition):
+class Not(BooleanCondition):
     condition: 'Condition' = attr.ib()
 
     def serialize(self, **kwargs) -> dict:
@@ -1019,12 +1012,18 @@ class Not(Condition):
 
 
 @attr.s
-class And(Condition):
+class And(BooleanCondition):
     conditions: List[Union[Condition, dict]] = attr.ib(
         validator=vs.deep_iterable(
             member_validator=vs.instance_of((Condition, dict)),
             iterable_validator=vs.instance_of(list)
         ),
+    )
+
+    DependsOn: Union[TypeHint.dependency_obj, List[TypeHint.dependency_obj]] = attr.ib(
+        factory=list,
+        validator=vs.optional(vs.instance_of((str, _Dependency, list))),
+        converter=ensure_list,
     )
 
     def serialize(self, **kwargs) -> dict:
@@ -1037,12 +1036,18 @@ class And(Condition):
 
 
 @attr.s
-class Or(Condition):
+class Or(BooleanCondition):
     conditions: List[Union[Condition, dict]] = attr.ib(
         validator=vs.deep_iterable(
             member_validator=vs.instance_of((Condition, dict)),
             iterable_validator=vs.instance_of(list)
         ),
+    )
+
+    DependsOn: Union[TypeHint.dependency_obj, List[TypeHint.dependency_obj]] = attr.ib(
+        factory=list,
+        validator=vs.optional(vs.instance_of((str, _Dependency, list))),
+        converter=ensure_list,
     )
 
     def serialize(self, **kwargs) -> dict:
@@ -1055,12 +1060,58 @@ class Or(Condition):
 
 
 @attr.s
+class If(Condition, _IntrinsicFunctionType):
+    """
+    Ref:
+
+    - Official Doc: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-conditions.html#intrinsic-function-reference-conditions-if
+    """
+    condition_name: Union[Condition, str] = attr.ib(
+        validator=vs.instance_of((Condition, str))
+    )
+    value_if_true = attr.ib()
+    value_if_false = attr.ib()
+
+    DependsOn: Union[TypeHint.dependency_obj, List[TypeHint.dependency_obj]] = attr.ib(
+        factory=list,
+        validator=vs.optional(vs.instance_of((str, _Dependency, list))),
+        converter=ensure_list,
+    )
+
+    @property
+    def id(self):
+        raise NotImplementedError(
+            "If Condition doesn't have ID, it is for assigning "
+            "a conditional value. Thus you cannot add If Condition "
+            "to template! See "
+            "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-conditions.html#intrinsic-function-reference-conditions-if "
+            "for more information"
+        )
+
+    def serialize(self, **kwargs) -> dict:
+        return {
+            constant.ConditionFunction.IF: [
+                get_id(self.condition_name),
+                eval(self.value_if_true),
+                eval(self.value_if_false),
+            ],
+        }
+
+    def ref(self) -> dict:
+        raise NotImplementedError("If Condition should not be referenced")
+
+    def eval(self, **kwargs) -> dict:
+        return self.serialize()
+
+
+@attr.s
 class Rule(AwsObject, _DictMember):
     CLASS_TYPE = "4-Rule"
 
     id: str = attr.ib(
         validator=vs.instance_of(str)
     )
+
     DependsOn: Union[TypeHint.dependency_obj, List[TypeHint.dependency_obj]] = attr.ib(
         factory=list,
         validator=vs.optional(vs.instance_of((str, _Dependency, list))),

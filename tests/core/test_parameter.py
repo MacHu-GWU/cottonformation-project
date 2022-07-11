@@ -4,7 +4,7 @@ import pytest
 from pytest import raises
 from cottonformation.core.model import (
     Parameter, Output, Export,
-    Ref,
+    Ref, constant,
 )
 
 
@@ -47,6 +47,14 @@ class TestParameter:
             "Default": "my-project",
         }
 
+    def test_eval(self):
+        p = Parameter(
+            "ProjectName",
+            Type=Parameter.TypeEnum.String,
+        )
+        assert p.eval() == {
+            constant.IntrinsicFunction.REF: "ProjectName"
+        }
 
 
 if __name__ == "__main__":
