@@ -28,17 +28,20 @@ class TestResource:
 
         b = s3.Bucket("Res", p_Tags=Tag.make_many(k1="v1"))
         assert b.tags_dict == dict(k1="v1")
+
+    def test_update_tags(self):
+        b = s3.Bucket("Res")
         b.update_tags(k1="v1")
         assert b.tags_dict == dict(k1="v1")
 
-        b.update_tags(k1="v11", overwrite=True)
-        assert b.tags_dict == dict(k1="v11")
+        with pytest.raises(KeyError):
+            b.update_tags(k1="v2")
 
-        b.update_tags(k1="v111", k2="v2")
-        assert b.tags_dict == dict(k1="v11", k2="v2")
+        b.update_tags(k1="v2", overwrite_existing=True)
+        assert b.tags_dict == dict(k1="v2")
 
-        b.update_tags(k1="v111", k2="v22", overwrite=True)
-        assert b.tags_dict == dict(k1="v111", k2="v22")
+        b.update_tags(k1="v3", k2="v2", overwrite_existing=True)
+        assert b.tags_dict == dict(k1="v3", k2="v2")
 
     def test_serialize(self):
         p = ctf.Parameter("p", Type=ctf.Parameter.TypeEnum.String)

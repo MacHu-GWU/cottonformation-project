@@ -1,11 +1,9 @@
 # -*- coding: utf-8 -*-
 
 import pytest
-from pytest import raises
 from cottonformation.core.model import (
     Parameter, Export, Output, Ref, Sub, serialize,
 )
-from cottonformation.tests.helpers import jprint
 
 
 class TestExport:

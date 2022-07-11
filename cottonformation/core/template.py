@@ -560,7 +560,7 @@ class Template:
 
     def batch_tagging(
         self,
-        overwrite: bool = False,
+        overwrite_existing: bool = False,
         **kwargs
     ):
         """
@@ -568,7 +568,7 @@ class Template:
         """
         for r in self.Resources.values():
             if r.support_tags():
-                r.update_tags(overwrite, **kwargs)
+                r.update_tags(overwrite_existing, **kwargs)
 
     # factory method
     @classmethod
