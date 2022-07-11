@@ -142,6 +142,9 @@ class _PropertyOrResource(AwsObject):
 
     @classmethod
     def get_attr_name_to_cf_name(cls):
+        """
+        Convert data class attribute name to CloudFormation attribute name.
+        """
         if cls._attr_name_to_cf_name is None:
             cls._attr_name_to_cf_name = {
                 field.name: field.metadata[constant.AttrMeta.PROPERTY_NAME]
@@ -150,7 +153,11 @@ class _PropertyOrResource(AwsObject):
         return cls._attr_name_to_cf_name
 
     @classmethod
-    def get_cf_name_to_attr_name(cls):
+    def get_cf_name_to_attr_name(cls):  # pragma: no cover
+        """
+        Convert CloudFormation attribute name back to data class attribute name.
+        This function is for dev only.
+        """
         if cls._cf_name_to_attr_name is None:
             cls._cf_name_to_attr_name = {
                 field.metadata[constant.AttrMeta.PROPERTY_NAME]: field.name
@@ -329,12 +336,17 @@ class Resource(_PropertyOrResource, _DictMember, _Dependency):
 
     def update_tags(
         self,
-        overwrite: bool = False,
+        overwrite_existing: bool = False,
         **kwargs,
     ):
         """
         Update tags. overwrite flag can be used to decide whether you want to
         the tag value if tag key already exists.
+
+        :param overwrite_existing: if True, it won't raise exception if try
+            to overwrite an existing tag key. Since we have ``**kwargs``
+            for arbitrary tag key value pair, we use a long name parameter
+            name to avoid naming collision.
         """
         if self.p_Tags is None:
             existing_tags = OrderedDict()
@@ -347,10 +359,13 @@ class Resource(_PropertyOrResource, _DictMember, _Dependency):
         for k, v in kwargs.items():
             if k not in existing_tags:
                 existing_tags[k] = Tag(p_Key=k, p_Value=v)
-            elif overwrite:
+            elif overwrite_existing:
                 existing_tags[k] = Tag(p_Key=k, p_Value=v)
             else:
-                pass
+                raise KeyError(
+                    f"{k!r} already exists in Tags! Maybe "
+                    f"you want to turn on the ``overwrite`` option."
+                )
 
         if len(existing_tags):
             self.p_Tags = list(existing_tags.values())
