@@ -27,57 +27,57 @@ the resources needed to run the app::
     ...
 """
 
-import cottonformation as ctf
+import cottonformation as cf
 from cottonformation.res import iam, awslambda, cloudformation
 
 # global parameter
-param_project_name = ctf.Parameter(
-    "ProjectName", Type=ctf.Parameter.TypeEnum.String
+param_project_name = cf.Parameter(
+    "ProjectName", Type=cf.Parameter.TypeEnum.String
 )
 
-param_stage = ctf.Parameter(
-    "Stage", Type=ctf.Parameter.TypeEnum.String
+param_stage = cf.Parameter(
+    "Stage", Type=cf.Parameter.TypeEnum.String
 )
 
 
 # We declared lots of template here. Each one can be deployed independently
 # but cottonformation will put them together using nested stack at the end.
 #--- Template(infra) ---
-tpl_infra_tier = ctf.Template(Description="the master/infra tier")
+tpl_infra_tier = cf.Template(Description="the master/infra tier")
 
 tpl_infra_tier.add(param_project_name)
 tpl_infra_tier.add(param_stage)
 
 iam_role_for_lambda = iam.Role(
     "IamRoleForLambdaExecution",
-    rp_AssumeRolePolicyDocument=ctf.helpers.iam.AssumeRolePolicyBuilder(
-        ctf.helpers.iam.ServicePrincipal.awslambda()
+    rp_AssumeRolePolicyDocument=cf.helpers.iam.AssumeRolePolicyBuilder(
+        cf.helpers.iam.ServicePrincipal.awslambda()
     ).build(),
-    p_RoleName=ctf.Sub(
+    p_RoleName=cf.Sub(
         "${ProjectName}-${Stage}-lambda-role",
         dict(ProjectName=param_project_name.ref(), Stage=param_stage.ref())
     ),
     p_Description="Minimal iam role for lambda execution",
     p_ManagedPolicyArns=[
-        ctf.helpers.iam.AwsManagedPolicy.AWSLambdaBasicExecutionRole,
+        cf.helpers.iam.AwsManagedPolicy.AWSLambdaBasicExecutionRole,
     ]
 )
 tpl_infra_tier.add(iam_role_for_lambda)
 
 
 #--- Template(app tier) ---
-param_lambda_role_arn = ctf.Parameter(
-    "LambdaRoleArn", Type=ctf.Parameter.TypeEnum.String,
+param_lambda_role_arn = cf.Parameter(
+    "LambdaRoleArn", Type=cf.Parameter.TypeEnum.String,
 )
 
-tpl_app_tier = ctf.Template(Description="the app tier")
+tpl_app_tier = cf.Template(Description="the app tier")
 tpl_app_tier.add(param_project_name)
 tpl_app_tier.add(param_stage)
 tpl_app_tier.add(param_lambda_role_arn)
 
 
 #--- Template(app1) ---
-tpl_app1 = ctf.Template(Description="the app1")
+tpl_app1 = cf.Template(Description="the app1")
 
 tpl_app1.add(param_project_name)
 tpl_app1.add(param_stage)
@@ -94,20 +94,20 @@ lbd_func_app1 = awslambda.Function(
         p_ZipFile=lbd_source_code,
     ),
     rp_Role=param_lambda_role_arn.ref(),
-    p_FunctionName=ctf.Sub(
+    p_FunctionName=cf.Sub(
         "${ProjectName}-${Stage}-app1",
         dict(ProjectName=param_project_name.ref(), Stage=param_stage.ref())
     ),
     p_MemorySize=128,
     p_Timeout=3,
-    p_Runtime=ctf.helpers.awslambda.LambdaRuntime.python37,
+    p_Runtime=cf.helpers.awslambda.LambdaRuntime.python37,
     p_Handler="index.handler",
 )
 tpl_app1.add(lbd_func_app1)
 
 
 #--- Template(app2) ---
-tpl_app2 = ctf.Template(Description="the app2")
+tpl_app2 = cf.Template(Description="the app2")
 
 tpl_app2.add(param_project_name)
 tpl_app2.add(param_stage)
@@ -124,13 +124,13 @@ lbd_func_app2 = awslambda.Function(
         p_ZipFile=lbd_source_code,
     ),
     rp_Role=param_lambda_role_arn.ref(),
-    p_FunctionName=ctf.Sub(
+    p_FunctionName=cf.Sub(
         "${ProjectName}-${Stage}-app2",
         dict(ProjectName=param_project_name.ref(), Stage=param_stage.ref())
     ),
     p_MemorySize=128,
     p_Timeout=3,
-    p_Runtime=ctf.helpers.awslambda.LambdaRuntime.python37,
+    p_Runtime=cf.helpers.awslambda.LambdaRuntime.python37,
     p_Handler="index.handler",
 )
 tpl_app2.add(lbd_func_app2)
@@ -195,7 +195,7 @@ tpl_app_tier.add_nested_stack(app2_stack, tpl_app2)
 
 if __name__ == "__main__":
     # my private aws account session and bucket for testing
-    from cottonformation.tests.boto_ses import boto_ses, bucket
+    from cottonformation.tests.boto_ses import bsm, bucket
 
     # define the Parameter.EnvName value
     project_name = "ctf-1-quick-start-3-nested-stack"
@@ -204,7 +204,7 @@ if __name__ == "__main__":
     # there's no additional step to deploy a nested stack
     # cottonformation will automatically upload all nested template to s3
     # and update the AWS::CloudFormation::Stack.TemplateUrl property for you.
-    env = ctf.Env(boto_ses=boto_ses)
+    env = cf.Env(bsm=bsm)
     env.deploy(
         template=tpl_infra_tier,
         stack_name=project_name,

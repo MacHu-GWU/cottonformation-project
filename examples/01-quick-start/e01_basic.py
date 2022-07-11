@@ -19,20 +19,20 @@ https://github.com/MacHu-GWU/cottonformation-project/blob/main/cottonformation/t
 """
 
 # First, import cottonformation, I prefer to use ctf for a short name
-import cottonformation as ctf
+import cottonformation as cf
 
 # import the aws service module you need
 from cottonformation.res import iam, awslambda
 
 # create a ``Template`` object to represent your cloudformation template
-tpl = ctf.Template(
+tpl = cf.Template(
     Description="Sample CloudFormation template build on cottonformation library",
 )
 
 # create a ``Parameter`` object
-param_env_name = ctf.Parameter(
+param_env_name = cf.Parameter(
     "EnvName",
-    Type=ctf.Parameter.TypeEnum.String,
+    Type=cf.Parameter.TypeEnum.String,
 )
 # the declared ``Parameter`` object is not associated to ``Template`` yet
 # we need to explicitly add it to template
@@ -43,16 +43,16 @@ iam_role_for_lambda = iam.Role(
     "IamRoleForLambdaExecution",
     # you don't need to remember the exact name or syntax for
     # trusted entity / assume role policy, cottonformation has a helper for this
-    rp_AssumeRolePolicyDocument=ctf.helpers.iam.AssumeRolePolicyBuilder(
-        ctf.helpers.iam.ServicePrincipal.awslambda()
+    rp_AssumeRolePolicyDocument=cf.helpers.iam.AssumeRolePolicyBuilder(
+        cf.helpers.iam.ServicePrincipal.awslambda()
     ).build(),
-    p_RoleName=ctf.Sub("${EnvName}-iam-role-for-lambda", dict(EnvName=param_env_name.ref())),
+    p_RoleName=cf.Sub("${EnvName}-iam-role-for-lambda", dict(EnvName=param_env_name.ref())),
     p_Description="Minimal iam role for lambda execution",
 
     # you don't need to remember the exact ARN for aws managed policy.
     # cottonformation has a helper for this
     p_ManagedPolicyArns=[
-        ctf.helpers.iam.AwsManagedPolicy.AWSLambdaBasicExecutionRole,
+        cf.helpers.iam.AwsManagedPolicy.AWSLambdaBasicExecutionRole,
     ]
 )
 # add resource object to template
@@ -85,14 +85,14 @@ lbd_func = awslambda.Function(
     p_Timeout=3,
 
     # some constant value helper here too
-    p_Runtime=ctf.helpers.awslambda.LambdaRuntime.python37,
+    p_Runtime=cf.helpers.awslambda.LambdaRuntime.python37,
     p_Handler="index.handler",
     ra_DependsOn=iam_role_for_lambda,
 )
 # add resource object to template
 tpl.add(lbd_func)
 
-out_lambda_role_arn = ctf.Output(
+out_lambda_role_arn = cf.Output(
     "LbdRoleArn",
     Description="aws lambda basic execution iam role for reuse",
     Value=iam_role_for_lambda.rv_Arn
@@ -103,14 +103,14 @@ tpl.add(out_lambda_role_arn)
 
 if __name__ == "__main__":
     # my private aws account session and bucket for testing
-    from cottonformation.tests.boto_ses import boto_ses, bucket
+    from cottonformation.tests.boto_ses import bsm, bucket
 
     # define the Parameter.EnvName value
     env_name = "ctf-1-quick-start-1-basic"
 
     # create an environment for deployment, it is generally a boto3 session
     # and a s3 bucket to upload cloudformation template
-    env = ctf.Env(boto_ses=boto_ses)
+    env = cf.Env(bsm=bsm)
     env.deploy(
         template=tpl,
         stack_name=env_name,

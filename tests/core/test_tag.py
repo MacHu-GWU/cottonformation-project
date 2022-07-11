@@ -43,7 +43,7 @@ class TestTag:
         )
         assert tags[0].p_Key == "creator"
         assert tags[0].p_Value == "alice@example.com"
-        
+
     def test_immutable(self):
         t = Tag("k", "v")
         # Tag is immutable
@@ -58,7 +58,7 @@ class TestTag:
         p = Parameter("Name", Type=Parameter.TypeEnum.String)
         assert Tag("Name", p.ref()).serialize() == {
             "Key": "Name",
-            "Value": {constant.IntrinsicFunction.REF: "Name"}
+            "Value": {constant.IntrinsicFunction.REF: "Name"},
         }
 
 

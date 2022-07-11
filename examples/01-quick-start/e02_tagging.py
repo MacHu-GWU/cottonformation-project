@@ -14,39 +14,39 @@ to manage tag at scale. You don't need to memorize whether an AWS Resource
 supports Tagging. cottonformation will handle that automatically for you.
 """
 
-import cottonformation as ctf
+import cottonformation as cf
 from cottonformation.res import iam
 
 # declare a Template
-tpl = ctf.Template(
+tpl = cf.Template(
     Description="Tagging best practice in cottonformation demo",
 )
 
 # declare one Parameter and two Resource
-param_env_name = ctf.Parameter(
+param_env_name = cf.Parameter(
     "EnvName",
-    Type=ctf.Parameter.TypeEnum.String,
+    Type=cf.Parameter.TypeEnum.String,
 )
 tpl.add(param_env_name)
 
 # this iam role doesn't have existing tag
 iam_role_for_ec2 = iam.Role(
     "IamRoleEC2",
-    rp_AssumeRolePolicyDocument=ctf.helpers.iam.AssumeRolePolicyBuilder(
-        ctf.helpers.iam.ServicePrincipal.awslambda()
+    rp_AssumeRolePolicyDocument=cf.helpers.iam.AssumeRolePolicyBuilder(
+        cf.helpers.iam.ServicePrincipal.awslambda()
     ).build(),
-    p_RoleName=ctf.Sub("${EnvName}-ec2-role", dict(EnvName=param_env_name.ref())),
+    p_RoleName=cf.Sub("${EnvName}-ec2-role", dict(EnvName=param_env_name.ref())),
 )
 tpl.add(iam_role_for_ec2)
 
 # this iam role has existing tag
 iam_role_for_lambda = iam.Role(
     "IamRoleLambda",
-    rp_AssumeRolePolicyDocument=ctf.helpers.iam.AssumeRolePolicyBuilder(
-        ctf.helpers.iam.ServicePrincipal.awslambda()
+    rp_AssumeRolePolicyDocument=cf.helpers.iam.AssumeRolePolicyBuilder(
+        cf.helpers.iam.ServicePrincipal.awslambda()
     ).build(),
-    p_RoleName=ctf.Sub("${EnvName}-lbd-role", dict(EnvName=param_env_name.ref())),
-    p_Tags=ctf.Tag.make_many(
+    p_RoleName=cf.Sub("${EnvName}-lbd-role", dict(EnvName=param_env_name.ref())),
+    p_Tags=cf.Tag.make_many(
         Creator="bob@email.com",
     ),
 )
@@ -68,12 +68,12 @@ tpl.batch_tagging(
 
 if __name__ == "__main__":
     # my private aws account session and bucket for testing
-    from cottonformation.tests.boto_ses import boto_ses, bucket
+    from cottonformation.tests.boto_ses import bsm, bucket
 
     # define the Parameter.EnvName value
     env_name = "ctf-1-quick-start-2-tagging"
 
-    env = ctf.Env(boto_ses=boto_ses)
+    env = cf.Env(bsm=bsm)
     env.deploy(
         template=tpl,
         stack_name=env_name,
