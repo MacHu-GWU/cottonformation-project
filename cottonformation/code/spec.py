@@ -86,9 +86,11 @@ PRIMITIVE_TYPE_DICT = {
 }
 
 
-def _find_type_hint_and_validator(prop: typing.Union['Property', 'ResourceProperty'],
-                                  prop_type_class_name: str,
-                                  cycled_class_name_set: typing.Set[str]) -> typing.Tuple[
+def _find_type_hint_and_validator(
+    prop: typing.Union['Property', 'ResourceProperty'],
+    prop_type_class_name: str,
+    cycled_class_name_set: typing.Set[str]
+) -> typing.Tuple[
     str, typing.Union[str, None], typing.Union[str, None]]:
     """
     We need to define type hint and validators for attrs.
@@ -103,11 +105,12 @@ def _find_type_hint_and_validator(prop: typing.Union['Property', 'ResourceProper
     # --- Debug ---
     # if prop_type_class_name == "InstanceGroupConfigConfiguration":
     # if prop_type_class_name == "InstanceGroupConfigConfiguration" and prop.Name == "Configuration":
-    # if prop.ResourceName == "WebACL" and prop.Name == "ScopeDownStatement":
+    # if prop.ResourceName == "ModelPackage" and prop.Name == "Tags":
     #     print(prop.Type, prop.PrimitiveType, prop.ItemType, prop.PrimitiveItemType)
 
     # -------------
     need_validator = True
+
     if (prop.Type == LIST_TYPE) and (prop.ItemType == TAG_TYPE):
         type_hint = f"typing.List[typing.Union[{TAG_TYPE}, dict]]"
         validator = f"attr.validators.deep_iterable(member_validator=attr.validators.instance_of({TAG_TYPE}), iterable_validator=attr.validators.instance_of(list))"
@@ -129,6 +132,19 @@ def _find_type_hint_and_validator(prop: typing.Union['Property', 'ResourceProper
         type_hint = "typing.List[TypeHint.intrinsic_str]"
         validator = "attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))"
         converter = None
+
+    # TODO
+    # elif (prop.Type == LIST_TYPE) and bool(prop.ItemType == LIST_TYPE):
+    #     parent_class_name = prop.ResourceName + prop.ItemType
+    #     type_hint = "typing.List[typing.Union['{}', list]]".format("Prop" + parent_class_name)
+    #     if (parent_class_name == prop_type_class_name) or (
+    #         parent_class_name in cycled_class_name_set):  # self depends on self or cycle depends
+    #         validator = "attr.validators.instance_of(list)"
+    #         converter = None
+    #     else:
+    #         validator = "attr.validators.deep_iterable(member_validator=attr.validators.instance_of({}), iterable_validator=attr.validators.instance_of(list))".format(
+    #             "Prop" + parent_class_name)
+    #         converter = "{}.from_list".format("Prop" + parent_class_name)
 
     elif (prop.Type == LIST_TYPE) and bool(prop.PrimitiveItemType):
         type_hint = "typing.List[{}]".format(PRIMITIVE_TYPE_DICT[prop.PrimitiveItemType])
@@ -160,6 +176,19 @@ def _find_type_hint_and_validator(prop: typing.Union['Property', 'ResourceProper
         )
         converter = None
 
+    # TODO
+    # elif prop.Type == TAG_TYPE:
+    #     parent_class_name = prop.ResourceName + prop.Type
+    #     type_hint = "typing.Union['{}', dict]".format("Prop" + parent_class_name)
+    #     if (parent_class_name == prop_type_class_name) or (
+    #         parent_class_name in cycled_class_name_set):  # self depends on self or cycle depends
+    #         validator = None
+    #         need_validator = False
+    #         converter = None
+    #     else:
+    #         validator = "attr.validators.instance_of({})".format("Prop" + parent_class_name)
+    #         converter = "{}.from_dict".format("Prop" + parent_class_name)
+
     elif bool(prop.Type):
         parent_class_name = prop.ResourceName + prop.Type
         type_hint = "typing.Union['{}', dict]".format("Prop" + parent_class_name)
@@ -183,7 +212,15 @@ def _find_type_hint_and_validator(prop: typing.Union['Property', 'ResourceProper
         converter = None
 
     else:
-        raise ValueError
+        # comment this out for debug, let it raise ValueError
+        # sometime AWS spec file doesn't have data type up-to-date
+        # print(prop, prop_type_class_name)
+        type_hint = "TypeHint.intrinsic_str"
+        validator = "attr.validators.instance_of(TypeCheck.intrinsic_str_type)"
+        converter = None
+
+        # don't raise if you want to generate code
+        # raise ValueError
 
     if need_validator and (not bool(prop.Required)):
         validator = f"attr.validators.optional({validator})"
@@ -191,9 +228,11 @@ def _find_type_hint_and_validator(prop: typing.Union['Property', 'ResourceProper
     return type_hint, validator, converter
 
 
-def _get_type_hint(prop: typing.Union['Property', 'ResourceProperty'],
-                   prop_type_class_name: str,
-                   cycled_class_name_set: typing.Set[str]) -> str:
+def _get_type_hint(
+    prop: typing.Union['Property', 'ResourceProperty'],
+    prop_type_class_name: str,
+    cycled_class_name_set: typing.Set[str],
+) -> str:
     """
     For example::
 
@@ -205,9 +244,11 @@ def _get_type_hint(prop: typing.Union['Property', 'ResourceProperty'],
     return _find_type_hint_and_validator(prop, prop_type_class_name, cycled_class_name_set)[0]
 
 
-def _get_vali_def(prop: typing.Union['Property', 'ResourceProperty'],
-                  prop_type_class_name: str,
-                  cycled_class_name_set: typing.Set[str]) -> str:
+def _get_vali_def(
+    prop: typing.Union['Property', 'ResourceProperty'],
+    prop_type_class_name: str,
+    cycled_class_name_set: typing.Set[str],
+) -> str:
     """
     For example::
 
