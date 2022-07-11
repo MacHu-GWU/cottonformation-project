@@ -583,13 +583,17 @@ class Tag(Property):
                 f"{self._tag_naming_limits_doc_url}"
             )
 
-    def serialize(self, **kwargs) -> typing.Any:
+    def serialize(self, **kwargs) -> dict:
         return {"Key": serialize(self.p_Key), "Value": serialize(self.p_Value)}
 
     @classmethod
     def make_many(cls, dict_data: dict = None, **kwargs) -> List['Tag']:
         """
-        A factory method to make many
+        A factory method to make many tags.
+
+        :param dict_data: key value pairs of the tags.
+
+        :return: list of tags
         """
         if dict_data is None:
             dct = kwargs

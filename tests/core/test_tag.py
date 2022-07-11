@@ -22,14 +22,31 @@ class TestTag:
         with raises(ValueError):
             Tag(p_Key="key", p_Value="value" * 100)
 
-
-        tags = Tag.make_many(dict_data=dict(name="ctf", stage="dev"), creator="alice@example.com")
+        tags = Tag.make_many(
+            dict_data=dict(name="ctf", stage="dev"),
+            creator="alice@example.com",
+        )
         assert tags[0].p_Key == "name"
         assert tags[1].p_Key == "stage"
         assert tags[2].p_Key == "creator"
 
+        tags = Tag.make_many(
+            dict_data=dict(name="ctf", stage="dev"),
+        )
+        assert tags[0].p_Key == "name"
+        assert tags[0].p_Value == "ctf"
+        assert tags[1].p_Key == "stage"
+        assert tags[1].p_Value == "dev"
+
+        tags = Tag.make_many(
+            creator="alice@example.com",
+        )
+        assert tags[0].p_Key == "creator"
+        assert tags[0].p_Value == "alice@example.com"
+        
     def test_immutable(self):
         t = Tag("k", "v")
+        # Tag is immutable
         with raises(Exception):
             t.p_Key = "k1"
         with raises(Exception):
@@ -37,6 +54,7 @@ class TestTag:
 
     def test_serialize(self):
         assert Tag("Name", "Alice").serialize() == {"Key": "Name", "Value": "Alice"}
+
         p = Parameter("Name", Type=Parameter.TypeEnum.String)
         assert Tag("Name", p.ref()).serialize() == {
             "Key": "Name",
