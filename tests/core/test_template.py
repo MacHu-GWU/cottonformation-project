@@ -2,18 +2,17 @@
 
 import pytest
 from pytest import raises
-import cottonformation as ctf
+import cottonformation as cf
 from cottonformation.res import s3
-from pprint import pprint
 from collections import OrderedDict
 
 
 class TestTemplateDependencySolver:
     def test_dependencies(self):
-        tpl = ctf.Template()
+        tpl = cf.Template()
 
-        p_1 = ctf.Parameter("p1", Type="String")
-        p_2 = ctf.Parameter("p2", Type="String")
+        p_1 = cf.Parameter("p1", Type="String")
+        p_2 = cf.Parameter("p2", Type="String")
 
         res_a = s3.Bucket("a")
         res_a1 = s3.Bucket("a1", ra_DependsOn=res_a)
@@ -23,8 +22,8 @@ class TestTemplateDependencySolver:
         res_b1 = s3.Bucket("b1", ra_DependsOn=res_b)
         res_b2 = s3.Bucket("b2", ra_DependsOn=res_b)
 
-        out_a1 = ctf.Output("a1", Value=0, DependsOn=res_a1)
-        out_b1 = ctf.Output("b1", Value=0, DependsOn=res_b1)
+        out_a1 = cf.Output("a1", Value=0, DependsOn=res_a1)
+        out_b1 = cf.Output("b1", Value=0, DependsOn=res_b1)
 
         for obj in [
             p_1, p_2, res_a, res_a1, res_a2, res_b, res_b1, res_b2, out_a1, out_b1,
@@ -77,7 +76,7 @@ class TestTemplateDependencySolver:
         ])
 
     def test_cycle_dependency(self):
-        tpl = ctf.Template()
+        tpl = cf.Template()
         a = s3.Bucket("a", ra_DependsOn="c")
         b = s3.Bucket("b", ra_DependsOn=a)
         c = s3.Bucket("c", ra_DependsOn=b)
@@ -90,12 +89,12 @@ class TestTemplateDependencySolver:
 
 class TestTemplateAddAWSObject:
     def test_add_one_good_case(self):
-        tpl = ctf.Template()
+        tpl = cf.Template()
         assert len(tpl.Parameters) == 0
         assert len(tpl.Resources) == 0
         assert len(tpl.Outputs) == 0
 
-        p = ctf.Parameter("p", Type=ctf.Parameter.TypeEnum.String)
+        p = cf.Parameter("p", Type=cf.Parameter.TypeEnum.String)
         tpl.add_one(p)
         assert len(tpl.Parameters) == 1
 
@@ -113,30 +112,30 @@ class TestTemplateAddAWSObject:
         assert tpl.Resources["b"].p_BucketName == "b2"
         assert len(tpl.Resources) == 1
 
-        o = ctf.Output("o", Value=b.rv_WebsiteURL)
+        o = cf.Output("o", Value=b.rv_WebsiteURL)
         tpl.add_one(o)
         assert len(tpl.Parameters) == 1
         assert len(tpl.Resources) == 1
         assert len(tpl.Outputs) == 1
 
     def test_add_one_exceptions(self):
-        tpl = ctf.Template()
+        tpl = cf.Template()
         b = s3.Bucket("b", p_BucketName="b")
         tpl.add_one(b)
         with raises(TypeError):
             tpl.add_one(1)
         with raises(ValueError):
             tpl.add_one(b, add_or_ignore=True, add_or_update=True)
-        with raises(ctf.exc.AWSObjectLogicIdConflictError):
+        with raises(cf.exc.AWSObjectLogicIdConflictError):
             tpl.add_one(b)
 
     def test_add_with_dependencies(self):
         # when adding an object having dependencies, it should also
         # add dependency objects to the template too.
-        tpl = ctf.Template()
+        tpl = cf.Template()
 
-        p_1 = ctf.Parameter("p1", Type="String")
-        p_2 = ctf.Parameter("p2", Type="String")
+        p_1 = cf.Parameter("p1", Type="String")
+        p_2 = cf.Parameter("p2", Type="String")
 
         res_a = s3.Bucket("a")
         res_a1 = s3.Bucket("a1", ra_DependsOn=[res_a, p_1])
@@ -146,10 +145,10 @@ class TestTemplateAddAWSObject:
         res_b1 = s3.Bucket("b1", ra_DependsOn=[res_b, p_1])
         res_b2 = s3.Bucket("b2", ra_DependsOn=[res_b, p_2])
 
-        o_1 = ctf.Output("o1", Value=0, DependsOn=[res_a1, res_b1])
-        o_2 = ctf.Output("o2", Value=0, DependsOn=[res_a2, res_b2])
-        o_a = ctf.Output("oa", Value=0, DependsOn=[res_a1, res_a2])
-        o_b = ctf.Output("ob", Value=0, DependsOn=[res_b1, res_b2])
+        o_1 = cf.Output("o1", Value=0, DependsOn=[res_a1, res_b1])
+        o_2 = cf.Output("o2", Value=0, DependsOn=[res_a2, res_b2])
+        o_a = cf.Output("oa", Value=0, DependsOn=[res_a1, res_a2])
+        o_b = cf.Output("ob", Value=0, DependsOn=[res_b1, res_b2])
 
         assert tpl.n_named_object == 0
 
@@ -162,14 +161,14 @@ class TestTemplateAddAWSObject:
         assert tpl.n_named_object == 12
 
     def test_add_atomic(self):
-        tpl = ctf.Template()
+        tpl = cf.Template()
         b3 = s3.Bucket("b3", p_BucketName="b3-before")
         tpl.add_one(b3)
 
         b1 = s3.Bucket("b1", ra_DependsOn="not-exists")
         b2 = s3.Bucket("b2", ra_DependsOn=b1)
         b3 = s3.Bucket("b3", p_BucketName="b3-after", ra_DependsOn=b2)
-        with raises(ctf.exc.AWSObjectNotExistsError):
+        with raises(cf.exc.AWSObjectNotExistsError):
             tpl.add(b3)
 
         assert tpl.n_named_object == 1
@@ -178,7 +177,7 @@ class TestTemplateAddAWSObject:
 
 class TestTemplateRemoveAWSObject:
     def test_remove_one_good_case(self):
-        tpl = ctf.Template()
+        tpl = cf.Template()
         b = s3.Bucket("b", p_BucketName="b")
         tpl.add(b)
         assert len(tpl.Resources) == 1
@@ -188,13 +187,13 @@ class TestTemplateRemoveAWSObject:
         assert len(tpl.Resources) == 0
 
         # raise exception when remove a non-exists value
-        with raises(ctf.exc.AWSObjectNotExistsError):
+        with raises(cf.exc.AWSObjectNotExistsError):
             tpl.remove_one(b)
 
         assert tpl.remove_one(b, ignore_not_exists=True) == False
 
     def test_remove_one_exceptions(self):
-        tpl = ctf.Template()
+        tpl = cf.Template()
         with raises(TypeError):
             tpl.remove_one(1)
 
@@ -204,7 +203,7 @@ class TestTemplateRemoveAWSObject:
         b3 = s3.Bucket("b3", ra_DependsOn=[b2, b1])
 
         objects = [b1, b2, b3]
-        tpl = ctf.Template.from_many_objects(objects)
+        tpl = cf.Template.from_many_objects(objects)
         assert tpl.n_named_object == 3
         tpl.remove(b1)
         assert tpl.n_named_object == 0
@@ -214,8 +213,8 @@ class TestTemplateRemoveAWSObject:
         If remove an object that there are many other objects depends on this,
         otherr objects are also removed.
         """
-        p_1 = ctf.Parameter("p1", Type="String")
-        p_2 = ctf.Parameter("p2", Type="String")
+        p_1 = cf.Parameter("p1", Type="String")
+        p_2 = cf.Parameter("p2", Type="String")
 
         res_a = s3.Bucket("a")
         res_a1 = s3.Bucket("a1", ra_DependsOn=[res_a, p_1])
@@ -225,34 +224,34 @@ class TestTemplateRemoveAWSObject:
         res_b1 = s3.Bucket("b1", ra_DependsOn=[res_b, p_1])
         res_b2 = s3.Bucket("b2", ra_DependsOn=[res_b, p_2])
 
-        o_1 = ctf.Output("o1", Value=0, DependsOn=[res_a1, res_b1])
-        o_2 = ctf.Output("o2", Value=0, DependsOn=[res_a2, res_b2])
-        o_a = ctf.Output("oa", Value=0, DependsOn=[res_a1, res_a2])
-        o_b = ctf.Output("ob", Value=0, DependsOn=[res_b1, res_b2])
+        o_1 = cf.Output("o1", Value=0, DependsOn=[res_a1, res_b1])
+        o_2 = cf.Output("o2", Value=0, DependsOn=[res_a2, res_b2])
+        o_a = cf.Output("oa", Value=0, DependsOn=[res_a1, res_a2])
+        o_b = cf.Output("ob", Value=0, DependsOn=[res_b1, res_b2])
 
         res_list = [
             p_1, p_2,
             res_a, res_a1, res_a2, res_b, res_b1, res_b2,
             o_1, o_2, o_a, o_b,
         ]
-        tpl = ctf.Template.from_many_objects(res_list)
+        tpl = cf.Template.from_many_objects(res_list)
         tpl.remove(res_b)
         assert tpl._iterate_addable_keys() == ['1-Parameter--p1', '1-Parameter--p2', '5-Resource--a', '5-Resource--a1',
                                                '5-Resource--a2', '6-Output--oa']
 
-        tpl = ctf.Template.from_many_objects(res_list)
+        tpl = cf.Template.from_many_objects(res_list)
         tpl.remove(res_b1)
         assert tpl._iterate_addable_keys() == ['1-Parameter--p1', '1-Parameter--p2', '5-Resource--a', '5-Resource--a1',
                                                '5-Resource--a2', '5-Resource--b', '5-Resource--b2', '6-Output--o2',
                                                '6-Output--oa']
 
-        tpl = ctf.Template.from_many_objects(res_list)
+        tpl = cf.Template.from_many_objects(res_list)
         tpl.remove(res_b2)
         assert tpl._iterate_addable_keys() == ['1-Parameter--p1', '1-Parameter--p2', '5-Resource--a', '5-Resource--a1',
                                                '5-Resource--a2', '5-Resource--b', '5-Resource--b1', '6-Output--o1',
                                                '6-Output--oa']
 
-        tpl = ctf.Template.from_many_objects(res_list)
+        tpl = cf.Template.from_many_objects(res_list)
         tpl.remove(p_1)
         assert tpl._iterate_addable_keys() == ['1-Parameter--p2', '5-Resource--a', '5-Resource--a2', '5-Resource--b',
                                                '5-Resource--b2', '6-Output--o2']
