@@ -2,7 +2,11 @@
 
 import pytest
 from pytest import raises
-from cottonformation.core.model import Tag, Parameter, constant
+from cottonformation.core.model import (
+    constant,
+    Tag, Parameter,
+    Ref, Join,
+)
 
 
 class TestTag:
@@ -53,10 +57,20 @@ class TestTag:
             t.p_Value = "v1"
 
     def test_serialize(self):
-        assert Tag("Name", "Alice").serialize() == {"Key": "Name", "Value": "Alice"}
+        assert Tag("Name", "Alice").serialize() == {
+            "Key": "Name", "Value": "Alice"
+        }
 
         p = Parameter("Name", Type=Parameter.TypeEnum.String)
+        assert Tag("Name", p).serialize() == {
+            "Key": "Name",
+            "Value": {constant.IntrinsicFunction.REF: "Name"},
+        }
         assert Tag("Name", p.ref()).serialize() == {
+            "Key": "Name",
+            "Value": {constant.IntrinsicFunction.REF: "Name"},
+        }
+        assert Tag("Name", Ref(p)).serialize() == {
             "Key": "Name",
             "Value": {constant.IntrinsicFunction.REF: "Name"},
         }

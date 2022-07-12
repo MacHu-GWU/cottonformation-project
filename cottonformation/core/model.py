@@ -645,11 +645,9 @@ class Output(AwsObject, _DictMember):
 @attr.s(frozen=True)
 class Tag(Property):
     p_Key: TypeHint.intrinsic_str = attr.ib(
-        validator=vs.optional(vs.instance_of(TypeCheck.intrinsic_str_type)),
         metadata={constant.AttrMeta.PROPERTY_NAME: "Key"},
     )
     p_Value: Union[TypeHint.intrinsic_str, Parameter, 'ImportValue'] = attr.ib(
-        # validator=vs.optional(vs.instance_of((TypeCheck.intrinsic_str_type, Parameter, ImportValue)),
         metadata={constant.AttrMeta.PROPERTY_NAME: "Value"},
     )
 
@@ -1303,7 +1301,9 @@ def get_id(
 
 def serialize(obj: Union['AwsObject', dict, typing.Any]) -> typing.Any:
     """
-    An universal api that convert anything to json serializable python dictionary.
+    A universal api that convert anything to json serializable python dictionary.
+
+    It is for CloudFormation template serialization.
     """
     if isinstance(obj, AwsObject):
         return obj.serialize()
@@ -1331,6 +1331,8 @@ def eval(
 ) -> typing.Any:
     """
     A universal api that convert anything to an object that represent its value.
+
+    It is for referencing the "Value" of the object.
     """
     if isinstance(obj, AwsObject):
         return obj.eval()
