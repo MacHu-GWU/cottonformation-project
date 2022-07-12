@@ -101,7 +101,7 @@ class TestEqual:
         )
         assert (
             bucket_json[constant.ResourceAttribute.CONDITION]
-            == equal_condition.serialize()
+            == equal_condition.eval()
         )
 
 
