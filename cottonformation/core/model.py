@@ -76,8 +76,19 @@ class Validators:
                 Join,
                 Select,
                 Sub,
+                If,
             )
         )
+
+    def resource_condition(self, inst, attr, value):
+        if value is not None:
+            self.instance_of(
+                inst, attr, value,
+                (
+                    _BooleanCondition,
+                    str,
+                )
+            )
 
 
 vali = Validators()
@@ -333,16 +344,14 @@ class Resource(_PropertyOrResource, _DictMember, _Dependency):
         validator=None,
         metadata={constant.AttrMeta.PROPERTY_NAME: constant.ResourceAttribute.UPDATE_REPLACE_POLICY},
     )
-    ra_Condition: Union['Condition', str] = attr.ib(
+    ra_Condition: Union['_BooleanCondition', str] = attr.ib(
         default=None,
         metadata={constant.AttrMeta.PROPERTY_NAME: constant.ResourceAttribute.CONDITION},
     )
 
     @ra_Condition.validator
     def check_ra_Condition(self, attribute, value):
-        if value is not None:
-            if not isinstance(value, (Condition, str)):
-                raise ValueError("ra_Condition has to be 'Condition' or str!")
+        vali.resource_condition(self, attribute, value)
 
     def __attrs_post_init__(self):
         self.ra_DependsOn = ensure_list(self.ra_DependsOn)
@@ -444,6 +453,9 @@ class Resource(_PropertyOrResource, _DictMember, _Dependency):
             if k.startswith("rp_") or k.startswith("p_"):
                 if v is not None:
                     properties_dct[attr_name_to_cf_name_mapper[k]] = v
+            elif k == "ra_Condition":
+                if v is not None:
+                    resource_dct[attr_name_to_cf_name_mapper[k]] = eval(v)
             elif k.startswith("ra_"):
                 if v is not None:
                     resource_dct[attr_name_to_cf_name_mapper[k]] = v
@@ -1044,6 +1056,14 @@ class Mapping(AwsObject, _DictMember, _Dependency):
 
 @attr.s
 class Condition(AwsObject, _DictMember, _Dependency):
+    """
+    Ref:
+
+    - `Conditions <https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/conditions-section-structure.html>`_
+    - `Conditions Functions <https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-conditions.html>`_
+    
+    .. versionadded:: 0.0.8
+    """
     CLASS_TYPE = "3-Condition"
 
     def ref(self) -> dict:
@@ -1054,7 +1074,13 @@ class Condition(AwsObject, _DictMember, _Dependency):
 
 
 @attr.s
-class BooleanCondition(Condition):
+class _BooleanCondition(Condition):
+    """
+    A Cloudformation condition that suppose to return a boolean value.
+
+    For example: ``Equals, Not, And, Or`` are boolean condition, But ``If``
+    is not. Because it returns a value for Resource Property value assignment.
+    """
     id: str = attr.ib(validator=vs.instance_of(str))
 
     def ref(self) -> dict:
@@ -1065,7 +1091,19 @@ class BooleanCondition(Condition):
 
 
 @attr.s
-class Equals(BooleanCondition):
+class Equals(_BooleanCondition):
+    """
+    Compares if two values are equal. Returns true if the two values
+    are equal or false if they aren't.
+
+    :param value_one: the value can be generic value, Parameter / Resource,
+        Reference of Parameter / Resource, Intrinsic Function.
+    :param value_two: same as value_one
+
+    Ref:
+
+    - https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-conditions.html#intrinsic-function-reference-conditions-equals
+    """
     value_one: Union[AwsObject, typing.Any] = attr.ib()
     value_two: Union[AwsObject, typing.Any] = attr.ib()
 
@@ -1085,8 +1123,19 @@ class Equals(BooleanCondition):
 
 
 @attr.s
-class Not(BooleanCondition):
-    condition: 'Condition' = attr.ib()
+class Not(_BooleanCondition):
+    """
+    Returns true for a condition that evaluates to false or returns false
+    for a condition that evaluates to true. Fn::Not acts as a NOT operator.
+
+    :param condition: can be an :class:`_BooleanCondition` object, or a
+        serialized dictionary view of a condition.
+
+    Ref:
+
+    - https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-conditions.html#intrinsic-function-reference-conditions-not
+    """
+    condition: Union[_BooleanCondition, dict] = attr.ib()
 
     def serialize(self, **kwargs) -> dict:
         return {
@@ -1097,10 +1146,20 @@ class Not(BooleanCondition):
 
 
 @attr.s
-class And(BooleanCondition):
-    conditions: List[Union[Condition, dict]] = attr.ib(
+class And(_BooleanCondition):
+    """
+    Logic And
+
+    :param conditions: can be list of :class:`_BooleanCondition` object, or a
+        serialized dictionary view of a condition.
+
+    Ref:
+
+    - https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-conditions.html#intrinsic-function-reference-conditions-and
+    """
+    conditions: List[Union[_BooleanCondition, dict]] = attr.ib(
         validator=vs.deep_iterable(
-            member_validator=vs.instance_of((Condition, dict)),
+            member_validator=vs.instance_of((_BooleanCondition, dict)),
             iterable_validator=vs.instance_of(list)
         ),
     )
@@ -1121,10 +1180,20 @@ class And(BooleanCondition):
 
 
 @attr.s
-class Or(BooleanCondition):
-    conditions: List[Union[Condition, dict]] = attr.ib(
+class Or(_BooleanCondition):
+    """
+    Logic Or
+
+    :param conditions: can be list of :class:`_BooleanCondition` object, or a
+        serialized dictionary view of a condition.
+
+    Ref:
+
+    - https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-conditions.html#intrinsic-function-reference-conditions-or
+    """
+    conditions: List[Union[_BooleanCondition, dict]] = attr.ib(
         validator=vs.deep_iterable(
-            member_validator=vs.instance_of((Condition, dict)),
+            member_validator=vs.instance_of((_BooleanCondition, dict)),
             iterable_validator=vs.instance_of(list)
         ),
     )
@@ -1147,12 +1216,17 @@ class Or(BooleanCondition):
 @attr.s
 class If(Condition, _IntrinsicFunctionType):
     """
+    Returns one value if the specified condition evaluates to true and
+    another value if the specified condition evaluates to false.
+
+    If Condition should be used directly for value assignment.
+
     Ref:
 
     - Official Doc: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-conditions.html#intrinsic-function-reference-conditions-if
     """
-    condition_name: Union[Condition, str] = attr.ib(
-        validator=vs.instance_of((Condition, str))
+    condition_name: Union[_BooleanCondition, str] = attr.ib(
+        validator=vs.instance_of((_BooleanCondition, str))
     )
     value_if_true = attr.ib()
     value_if_false = attr.ib()
@@ -1210,6 +1284,10 @@ class Transform(AwsObject, _ListMember):
 
 @attr.s
 class ResourceGroup(AwsObject, _DictMember, _Dependency):
+    """
+    A custom container to group multiple :class:`AwsObject` together. So you
+    can add / remove all item in resource group in one API call.
+    """
     CLASS_TYPE = "99-Resource-Group"
 
     id: str = attr.ib(
