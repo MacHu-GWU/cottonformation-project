@@ -21,17 +21,19 @@ Release and Version History
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Features and Improvements**
 
-- add `Condition Function <https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-conditions.html>`_ support
+- add `Condition Function <https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-conditions.html>`_ support.
+- add :meth:`cottonformation.core.env.Env.validate`` method to validate a template.
 
 **Minor Improvements**
 
-- add Intrinsic Function and Condition Function example in document
+- add Intrinsic Function and Condition Function example in document.
 
 **Bugfixes**
 
 **Miscellaneous**
 
 - fix out-dated document
+- improve test coverage
 
 
 0.0.7 (2022-05-20)

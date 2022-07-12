@@ -25,7 +25,6 @@
 
 ------
 
-
 .. image:: https://img.shields.io/badge/Link-Document-blue.svg
     :target: https://cottonformation.readthedocs.io/en/latest/index.html
 
@@ -99,18 +98,18 @@ Welcome to ``cottonformation`` Documentation
     # -*- coding: utf-8 -*-
 
     # First, import cottonformation, I prefer to use ctf for a short name
-    import cottonformation as ctf
+    import cottonformation as cf
 
     # import the aws service module you need
     from cottonformation.res import iam, awslambda
 
     # create a ``Template`` object to represent your cloudformation template
-    tpl = ctf.Template()
+    tpl = cf.Template()
 
     # create a ``Parameter`` object, and add it to template.
-    param_env_name = ctf.Parameter(
+    param_env_name = cf.Parameter(
         "EnvName",
-        Type=ctf.Parameter.TypeEnum.String,
+        Type=cf.Parameter.TypeEnum.String,
     )
     tpl.add(param_env_name)
 
@@ -119,15 +118,15 @@ Welcome to ``cottonformation`` Documentation
         "IamRoleForLambdaExecution",
         # you don't need to remember the exact name or syntax for
         # trusted entity / assume role policy, cottonformation has a helper for this
-        rp_AssumeRolePolicyDocument=ctf.helpers.iam.AssumeRolePolicyBuilder(
-            ctf.helpers.iam.ServicePrincipal.awslambda()
+        rp_AssumeRolePolicyDocument=cf.helpers.iam.AssumeRolePolicyBuilder(
+            cf.helpers.iam.ServicePrincipal.awslambda()
         ).build(),
-        p_RoleName=ctf.Sub("${EnvName}-iam-role-for-lambda", dict(EnvName=param_env_name.ref())),
+        p_RoleName=cf.Sub("${EnvName}-iam-role-for-lambda", dict(EnvName=param_env_name.ref())),
         p_Description="Minimal iam role for lambda execution",
         # you don't need to remember the exact ARN for aws managed policy.
         # cottonformation has a helper for this
         p_ManagedPolicyArns=[
-            ctf.helpers.iam.AwsManagedPolicy.AWSLambdaBasicExecutionRole,
+            cf.helpers.iam.AwsManagedPolicy.AWSLambdaBasicExecutionRole,
         ]
     )
     tpl.add(iam_role_for_lambda)
@@ -156,13 +155,13 @@ Welcome to ``cottonformation`` Documentation
         p_MemorySize=256,
         p_Timeout=3,
         # some constant value helper here too
-        p_Runtime=ctf.helpers.awslambda.LambdaRuntime.python37,
+        p_Runtime=cf.helpers.awslambda.LambdaRuntime.python37,
         p_Handler="index.handler",
         ra_DependsOn=iam_role_for_lambda,
     )
     tpl.add(lbd_func)
 
-    out_lambda_role_arn = ctf.Output(
+    out_lambda_role_arn = cf.Output(
         "LbdRoleArn",
         Description="aws lambda basic execution iam role for reuse",
         Value=iam_role_for_lambda.rv_Arn
@@ -179,7 +178,7 @@ Welcome to ``cottonformation`` Documentation
 
         # create an environment for deployment, it is generally a boto3 session
         # and a s3 bucket to upload cloudformation template
-        env = ctf.Env(boto_ses=boto_ses)
+        env = cf.Env(boto_ses=boto_ses)
         env.deploy(
             template=tpl,
             stack_name=env_name,
@@ -193,7 +192,6 @@ Welcome to ``cottonformation`` Documentation
 
 Getting Help
 ------------------------------------------------------------------------------
-
 1. The easiest way to learn the best practice is to **learn by example**. You can start from `cottonformation by example <https://cottonformation.readthedocs.io/en/latest/01-cottonformation-by-example/index.html>`_. Then you can **learn best practice proved in production environment** in `cottonformation best practice <https://cottonformation.readthedocs.io/en/latest/02-cottonformation-best-practice/index.html>`_.
 
 2. Second method is to `submit an GitHub issue <https://github.com/MacHu-GWU/cottonformation-project/issues>`_. So other people may see the discussion and solution too. In addition there's a `cottonformation community <https://gitter.im/cottonformation/community>`_ **on gitter to directly ASK THE AUTHOR**.
@@ -230,7 +228,6 @@ I started to maintain a parallel library ``troposphere_mate`` to support "Auto C
 
 What about AWS CDK or Pulumi?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 Again, ``cottomformation`` don't want to be the improved AWS CDK or Pulumi. It want to do the best on the limited, but important feature as IAC tool.
 
 **AWS CDK**:
