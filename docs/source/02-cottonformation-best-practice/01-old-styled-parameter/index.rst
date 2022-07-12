@@ -9,8 +9,7 @@ In ``cottonformation``, there's a best practice called **Late Template Creation*
 
 :class:`~cottonformation.core.model.Parameter` has two method that allow to "set" value for template creation and "get" value for future use. You can firstly declare all :class:`~cottonformation.core.model.Parameter`, give them values, and eventually execute the :class:`~cottonformation.core.template.Template` generation logic.
 
-.. literalinclude:: ../../../../examples/02-best-practice/e01_old_styled_parameter.py
-    :linenos:
+.. literalinclude:: ../../../../cottonformation/examples/s2_best_practice/e01_old_styled_parameter.py
 
 Template json:
 

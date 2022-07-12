@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 
 import attr
-import cottonformation as ctf
+import cottonformation as cf
 
 
 @attr.s
-class IamStack(ctf.Stack):
+class IamStack(cf.Stack):
     project_name: str = attr.ib()
     stage: str = attr.ib()
 

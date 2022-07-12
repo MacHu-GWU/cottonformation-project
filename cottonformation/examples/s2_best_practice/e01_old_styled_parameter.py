@@ -54,9 +54,9 @@ if __name__ == "__main__":
     print(tpl.to_json())
 
     # my private aws account session and bucket for testing
-    from cottonformation.tests.boto_ses import boto_ses, bucket
+    from cottonformation.tests.boto_ses import bsm, bucket
 
-    env = ctf.Env(boto_ses=boto_ses)
+    env = ctf.Env(bsm=bsm)
     env.deploy(
         template=tpl,
         stack_name=Params.env_name.get_value(),

@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 
 import attr
-import cottonformation as ctf
+import cottonformation as cf
 from cottonformation.res import iam
 
 
 @attr.s
-class IamStack(ctf.Stack):
+class IamStack(cf.Stack):
     project_name: str = attr.ib()
     stage: str = attr.ib()
 
@@ -32,7 +32,7 @@ class IamStack(ctf.Stack):
         Make resource group 1
         """
         # declare a resource group, you can use Stack.rg1 to access it later.
-        self.rg1 = ctf.ResourceGroup("RG1")
+        self.rg1 = cf.ResourceGroup("RG1")
 
         # declare a resource
         self.iam_group1 = iam.Group(
@@ -49,7 +49,7 @@ class IamStack(ctf.Stack):
         """
         Make resource group 2
         """
-        self.rg2 = ctf.ResourceGroup("RG2")
+        self.rg2 = cf.ResourceGroup("RG2")
         # you can even add another resource group to it
         self.rg2.add(self.rg1)
 
@@ -63,7 +63,7 @@ class IamStack(ctf.Stack):
         """
         Make resource group 3
         """
-        self.rg3 = ctf.ResourceGroup("RG3")
+        self.rg3 = cf.ResourceGroup("RG3")
         self.rg3.add(self.rg2)
 
         self.iam_group3 = iam.Group(
@@ -93,4 +93,4 @@ iam_stack = IamStack(
     stage="dev",
 )
 
-tpl = ctf.Template(Description="Demo: Resource Group best practice")
+tpl = cf.Template(Description="Demo: Resource Group best practice")
