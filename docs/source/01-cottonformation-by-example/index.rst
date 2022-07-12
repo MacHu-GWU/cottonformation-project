@@ -65,7 +65,7 @@ However, ``cottonformation`` has the ability to use the native Intrinsic Functio
 
 .. literalinclude:: ../../../cottonformation/examples/s1_quick_start/e04_intrinsic_function.py
 
-Here's an example of the equivalent template WITHOUT Intrinsic Functions.
+**Here's an example of the equivalent template WITHOUT Intrinsic Functions**.
 
 .. literalinclude:: ../../../cottonformation/examples/s1_quick_start/e04_intrinsic_function_alt.py
 
@@ -79,3 +79,7 @@ In 90% of the case, it is unnecessary with ``cottonformation``. Because you are 
 However, ``cottonformation`` has the ability to use the native Condition Functions.
 
 .. literalinclude:: ../../../cottonformation/examples/s1_quick_start/e05_condition.py
+
+**Here's an example of the equivalent template WITHOUT Condition Functions**.
+
+.. literalinclude:: ../../../cottonformation/examples/s1_quick_start/e05_condition_alt.py

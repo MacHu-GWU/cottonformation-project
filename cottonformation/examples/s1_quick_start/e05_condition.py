@@ -89,27 +89,11 @@ if __name__ == "__main__":
     _ = {
         "AWSTemplateFormatVersion": "2010-09-09",
         "Description": "Conditional Function Example",
-        "Metadata": {
-            "cottonformation": {
-                "version": "0.0.8"
-            }
-        },
-        "Parameters": {
-            "MainAWSRegion": {
-                "Type": "String",
-                "Default": "us-east-1"
-            }
-        },
+        "Metadata": {"cottonformation": {"version": "0.0.8"}},
+        "Parameters": {"MainAWSRegion": {"Type": "String", "Default": "us-east-1"}},
         "Conditions": {
             "IsMainAWSRegion": {
-                "Fn::Equals": [
-                    {
-                        "Ref": "AWS::Region"
-                    },
-                    {
-                        "Ref": "MainAWSRegion"
-                    }
-                ]
+                "Fn::Equals": [{"Ref": "AWS::Region"}, {"Ref": "MainAWSRegion"}]
             }
         },
         "Resources": {
@@ -121,17 +105,15 @@ if __name__ == "__main__":
                         "Fn::Join": [
                             "-",
                             [
-                                {
-                                    "Ref": "AWS::AccountId"
-                                },
+                                {"Ref": "AWS::AccountId"},
                                 "cottonformation",
                                 "example",
                                 "condition",
-                                "for-ec2"
-                            ]
+                                "for-ec2",
+                            ],
                         ]
                     }
-                }
+                },
             },
             "Ec2Server": {
                 "Type": "AWS::S3::Bucket",
@@ -140,31 +122,23 @@ if __name__ == "__main__":
                         "Fn::Join": [
                             "-",
                             [
-                                {
-                                    "Ref": "AWS::AccountId"
-                                },
+                                {"Ref": "AWS::AccountId"},
                                 "cottonformation",
                                 "example",
                                 "condition",
-                                "ec2-server"
-                            ]
+                                "ec2-server",
+                            ],
                         ]
                     },
                     "Tags": [
                         {
                             "Key": "IsMainAwsRegion",
-                            "Value": {
-                                "Fn::If": [
-                                    "IsMainAWSRegion",
-                                    "Y",
-                                    "N"
-                                ]
-                            }
+                            "Value": {"Fn::If": ["IsMainAWSRegion", "Y", "N"]},
                         }
-                    ]
-                }
-            }
-        }
+                    ],
+                },
+            },
+        },
     }
 
     stack_name = "cottonformation-example-condition"

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import pytest
-from cottonformation.examples.s1_quick_start.e02_tagging import tpl
+from cottonformation.examples.s1_quick_start.e04_intrinsic_function import tpl
 
 
 def test():

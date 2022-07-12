@@ -17,6 +17,23 @@ Release and Version History
 **Miscellaneous**
 
 
+0.0.8 (2022-07-12)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Features and Improvements**
+
+- add `Condition Function <https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-conditions.html>`_ support
+
+**Minor Improvements**
+
+- add Intrinsic Function and Condition Function example in document
+
+**Bugfixes**
+
+**Miscellaneous**
+
+- fix out-dated document
+
+
 0.0.7 (2022-05-20)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Features and Improvements**

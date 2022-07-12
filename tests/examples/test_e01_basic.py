@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 
 import pytest
-from cottonformation.examples.e01_basic import tpl
+from cottonformation.examples.s1_quick_start.e01_basic import tpl
 
 
 def test():
-    _ = tpl
+    tpl.to_json()
 
 
 if __name__ == "__main__":

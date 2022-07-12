@@ -15,7 +15,7 @@ from cottonformation.res import s3
 class Params:
     project_name: str = attr.ib(default="cf-example-intrinsic-function")
 
-
+# initialize params object
 params = Params()
 
 # get value of Pseudo Parameter value from AWS boto3 session
