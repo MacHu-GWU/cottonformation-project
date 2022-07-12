@@ -307,6 +307,9 @@ def ensure_list(obj):
 
 @attr.s
 class Resource(_PropertyOrResource, _DictMember, _Dependency):
+    """
+    The base class for all AWS Resources.
+    """
     AWS_OBJECT_TYPE = None
     CLASS_TYPE = "5-Resource"
 

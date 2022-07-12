@@ -320,6 +320,27 @@ class TestTemplateParameterHandling:
         }
 
 
+class TestTemplateNestedStackHandling:
+    def test(self):
+        from cottonformation.res import cloudformation
+
+        tpl_master = cf.Template()
+        tpl_app_tier = cf.Template()
+
+        app_tier_stack = cloudformation.Stack(
+            "AppTier",
+            rp_TemplateURL="",
+        )
+
+        # the stack in master template is declared but not added
+        with pytest.raises(ValueError):
+            tpl_master.add_nested_stack(app_tier_stack, tpl_app_tier)
+
+        # now we got no issue
+        tpl_master.add(app_tier_stack)
+        tpl_master.add_nested_stack(app_tier_stack, tpl_app_tier)
+
+
 if __name__ == "__main__":
     import os
 
