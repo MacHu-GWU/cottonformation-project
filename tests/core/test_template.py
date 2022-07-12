@@ -308,6 +308,18 @@ class TestTemplateRemoveAWSObject:
         tpl.to_json()
 
 
+class TestTemplateParameterHandling:
+    def test(self):
+        tpl = cf.Template()
+        param_project_name = cf.Parameter("ProjectName", Type=cf.Parameter.TypeEnum.String)
+        tpl.add(param_project_name)
+
+        param_project_name.set_value("my-app")
+        assert tpl.get_param_values() == {
+            param_project_name.id: "my-app"
+        }
+
+
 if __name__ == "__main__":
     import os
 
