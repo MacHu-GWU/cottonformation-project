@@ -14,10 +14,73 @@ from typing import (
     Dict,
 )
 from collections import OrderedDict
+
 import attr
 from attr import validators as vs
 
 from . import constant
+
+
+class Validators:
+    """
+    **Why this class**?
+
+    In ``cottonformation``, the data model is highly based on
+    `attr <https://www.attrs.org/en/stable>`_ library. It ships with lots of
+    convenient built-in `validators <https://www.attrs.org/en/stable/examples.html#validators>`_
+    However, the data type has to be defined first to use in the
+    ``attr.validators.instance_of`` method.
+    """
+
+    def _test(self, inst, attr, value):
+        self.instance_of(
+            inst, attr, value, (int, str)
+        )
+
+    def instance_of(self, inst, attr, value, type_):
+        """
+        Don't use this function with partial,
+        """
+        if not isinstance(value, type_):
+            raise TypeError(
+                "'{name}' must be {type!r} (got {value!r} that is a "
+                "{actual!r}).".format(
+                    name=attr.name,
+                    type=type_,
+                    actual=value.__class__,
+                    value=value,
+                ),
+                attr,
+                type_,
+                value,
+            )
+
+    def tag_key_or_value(self, inst, attr, value):
+        self.instance_of(
+            inst, attr, value,
+            (
+                str,
+                Parameter,
+                dict,
+                Ref,
+                # TODO, considering to add support for resource.
+                # I don't want to do it now
+                # because Resource.ref() may not always valid, I want the
+                # user to know exactly what they are doing.
+                # Resource,
+                Cidr,
+                ImportValue,
+                FindInMap,
+                GetAtt,
+                GetAZs,
+                Join,
+                Select,
+                Sub,
+            )
+        )
+
+
+vali = Validators()
 
 
 class TypeHint:
@@ -585,26 +648,35 @@ class Tag(Property):
         validator=vs.optional(vs.instance_of(TypeCheck.intrinsic_str_type)),
         metadata={constant.AttrMeta.PROPERTY_NAME: "Key"},
     )
-    p_Value: TypeHint.intrinsic_str = attr.ib(
-        validator=vs.optional(vs.instance_of(TypeCheck.intrinsic_str_type)),
+    p_Value: Union[TypeHint.intrinsic_str, Parameter, 'ImportValue'] = attr.ib(
+        # validator=vs.optional(vs.instance_of((TypeCheck.intrinsic_str_type, Parameter, ImportValue)),
         metadata={constant.AttrMeta.PROPERTY_NAME: "Value"},
     )
 
-    _tag_naming_limits_doc_url = "https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html#tag-conventions"
-
-    def __attrs_post_init__(self):
-        if isinstance(self.p_Key, str) and len(self.p_Key) > 128:
+    @p_Key.validator
+    def check_p_Key(self, attribute, value):
+        vali.tag_key_or_value(self, attribute, value)
+        if isinstance(value, str) and len(value) > 128:
             raise ValueError(
                 f"invalid tag key, see aws doc about the limits "
                 f"{self._tag_naming_limits_doc_url}")
-        if isinstance(self.p_Value, str) and len(self.p_Value) > 256:
+
+    @p_Value.validator
+    def check_p_Value(self, attribute, value):
+        vali.tag_key_or_value(self, attribute, value)
+        if isinstance(value, str) and len(value) > 256:
             raise ValueError(
                 f"invalid tag value, see aws doc about the limits "
                 f"{self._tag_naming_limits_doc_url}"
             )
 
+    _tag_naming_limits_doc_url = "https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html#tag-conventions"
+
     def serialize(self, **kwargs) -> dict:
-        return {"Key": serialize(self.p_Key), "Value": serialize(self.p_Value)}
+        return {
+            "Key": eval(self.p_Key),
+            "Value": eval(self.p_Value),
+        }
 
     @classmethod
     def make_many(cls, dict_data: dict = None, **kwargs) -> List['Tag']:
