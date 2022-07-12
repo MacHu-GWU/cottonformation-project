@@ -4,11 +4,13 @@
 AWS Environment and Deployment component.
 """
 
+import sys
 import hashlib
-import typing
+from typing import (
+    TYPE_CHECKING, Tuple, List,
+)
 
-if typing.TYPE_CHECKING:
-    import boto3
+if TYPE_CHECKING:
     from boto_session_manager import BotoSesManager
 
 from .template import Template
@@ -25,20 +27,22 @@ def md5_of_text(text):
 
 class Env:
     """
-    Environment is simply a abstraction layer with a boto3 session object
+    Environment is simply an abstraction layer with a boto3 session object
     connected to AWS, allowing you to perform AWS API call.
 
-    You are responsible to create you own boto3 session object.
-    
+    You are responsible to create you own boto session manager object.
+    You can find more information about ``BotoSesManager`` at
+    https://github.com/MacHu-GWU/boto_session_manager-project
+
     1. Local laptop environment, using default AWS credential based on the
         environment variable https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-envvars.html,
         or based on the default profile in ``~/.aws/credentials``:
-    
+
     .. code-block:: python
-    
+
         import boto3
 
-        boto_ses = boto3.session.Session()
+        bsm = BotoSesManager()
 
     2. Local laptop environment, using named profile. You have to configure the
         ``~/.aws/credentials`` and ``~/.aws/config`` file. Here's how
@@ -46,7 +50,7 @@ class Env:
 
     .. code-block:: python
 
-        boto_ses = boto3.session.Session(profile_name="your_aws_profile")
+        bsm = BotoSesManager(profile_name="your_aws_profile")
 
     3. EC2 or AWS Lambda environment, using IAM role. It is exactly same to #1
 
@@ -54,13 +58,11 @@ class Env:
 
     .. code-block:: python
 
-        boto_ses = boto3.session.Session(
+        bsm = BotoSesManager(
             aws_access_key_id="your_access_key",
             aws_secret_access_key="your_secret_access_key",
             region_name="us-east-1",
         )
-
-    :type boto_ses: boto3.session.Session
     """
 
     def __init__(
@@ -80,7 +82,7 @@ class Env:
         template: Template,
         bucket_name: str,
         prefix: str = DEFAULT_CFT_S3_PREFIX,
-    ) -> typing.Tuple[str, str]:
+    ) -> Tuple[str, str]:
         """
         Upload cloudformation template to s3 bucket and returns template url.
         It is a format like this https://s3.amazonaws.com/<s3-bucket-name>/<s3-key>
@@ -259,7 +261,7 @@ class Env:
     def delete(
         self,
         stack_name: str,
-        retain_resources: typing.List[str] = None,
+        retain_resources: List[str] = None,
         role_arn: str = None,
         client_request_token: str = None,
         verbose: bool = True,
@@ -286,3 +288,33 @@ class Env:
         }
         response = self.cf_client.delete_stack(**kwargs)
         return response
+
+    def validate(
+        self,
+        template: Template,
+        bucket_name: str = None,
+        prefix: str = DEFAULT_CFT_S3_PREFIX,
+    ):
+        """
+        Validate if a :class:`~cottonformation.core.template.Template` object
+        is valid.
+
+        .. versionadded:: 0.0.8
+        """
+        template_body = template.to_json(human_readable=False)
+        kwargs = dict()
+        if sys.getsizeof(template_body) >= 51200:
+            if bucket_name is None:
+                raise ValueError(
+                    "the body of Template is too large! you have to specify "
+                    "``bucket_name`` argument to upload it to S3!"
+                )
+            template_url, _ = self.upload_template(
+                template=template,
+                bucket_name=bucket_name,
+                prefix=prefix,
+            )
+            kwargs["TemplateURL"] = template_url
+        else:
+            kwargs["TemplateBody"] = template_body
+        self.cf_client.validate_template(**kwargs)
