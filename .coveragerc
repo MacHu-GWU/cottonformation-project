@@ -10,6 +10,7 @@ omit =
     cottonformation/code/*
     cottonformation/core/env.py
     cottonformation/stacks/*
+    cottonformation/examples/*
 
 [report]
 # Regexes for lines to exclude from consideration
