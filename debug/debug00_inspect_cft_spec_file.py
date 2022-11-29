@@ -127,6 +127,7 @@ def create_alfred_cloudformation_data_file():
         alfred_data.append(dct)
 
     p = Path.home().append_parts(".alfred-fts", "cloudformation.json")
+    p.parent.mkdir_if_not_exists()
     p.write_text(json.dumps(alfred_data, indent=4))
 
     alfred_setting_data = {
