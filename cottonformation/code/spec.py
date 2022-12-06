@@ -194,6 +194,7 @@ def _find_type_hint_and_validator(
     #         converter = "{}.from_dict".format("Prop" + parent_class_name)
 
     elif bool(prop.Type):
+        # special handler for appflow, some property are special type but not defined
         if isinstance(prop, Property):
             expected_property_types_key = "{}.{}".format(
                 prop.PropertyTypesKey.split(".")[0],

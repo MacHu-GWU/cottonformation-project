@@ -5,6 +5,7 @@ This module implements the core component CloudFormation Template. Many
 black magic features are provided.
 """
 
+import typing as T
 import json
 import attr
 import typing
@@ -560,15 +561,27 @@ class Template:
 
     def batch_tagging(
         self,
-        overwrite_existing: bool = False,
-        **kwargs
+        tags: T.Dict[str, str],
+        mode_skip: bool = False,
+        mode_overwrite: bool = False,
+        mode_raise: bool = False,
     ):
         """
         Batch tag all resources if supporting Tags.
+
+        :param tags: key value tags in python dictionary
+        :param mode_skip: if the key already exists, then skip it
+        :param mode_overwrite: if the key already exists, then overwrite it with new value
+        :param mode_raise: if the key already exists, then raise error
         """
         for r in self.Resources.values():
             if r.support_tags():
-                r.update_tags(overwrite_existing, **kwargs)
+                r.update_tags(
+                    tags,
+                    mode_skip=mode_skip,
+                    mode_overwrite=mode_overwrite,
+                    mode_raise=mode_raise,
+                )
 
     # factory method
     @classmethod

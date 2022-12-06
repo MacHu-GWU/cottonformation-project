@@ -33,7 +33,7 @@ def create_template(params: typing.Type[Params]) -> ctf.Template:
         tpl.add(iam_group)
 
     # tag everything using parameter env_name
-    tpl.batch_tagging(EnvName=params.env_name.ref())
+    tpl.batch_tagging(dict(EnvName=params.env_name.ref()))
 
     return tpl
 

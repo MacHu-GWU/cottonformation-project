@@ -225,7 +225,7 @@ tpl.add(jump_box_stack.rg1_jump_box)
 # tpl.add(jump_box_stack.rg3_redhat)
 # tpl.add(jump_box_stack.rg4_ubuntu_box)
 
-tpl.batch_tagging(ProjectName=jump_box_stack.project_name, Stage=jump_box_stack.stage)
+tpl.batch_tagging(dict(ProjectName=jump_box_stack.project_name, Stage=jump_box_stack.stage))
 
 
 if __name__ == "__main__":

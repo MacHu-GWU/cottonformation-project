@@ -174,11 +174,13 @@ def update_tags(
     """
     Update CloudFormation resource tags.
 
-    mode:
+    :param res: the :class:`~cottonformation.core.model.Resource` object
+    :param tags: key value tags in python dictionary
+    :param mode_skip: if the key already exists, then skip it
+    :param mode_overwrite: if the key already exists, then overwrite it with new value
+    :param mode_raise: if the key already exists, then raise error
 
-    1. skip: if the key already exists, then skip it
-    2. overwrite: if the key already exists, then overwrite it with new value
-    3. raise: if the key already exists, then raise error
+    :return: the before and after tags in python dictionary.
     """
     flag_sum = sum([mode_skip, mode_overwrite, mode_raise])
     if flag_sum == 0:

@@ -60,9 +60,11 @@ tpl.add(iam_role_for_lambda)
 # For instance, ec2 in dev will be automatically shut down to save cost,
 # but ec2 in prod will never be stopped.
 tpl.batch_tagging(
-    EnvName=param_env_name.ref(),
-    Creator="alice@example.com",
-    overwrite_existing=True, # you can use overwrite flag to choice whether you want to overwrite existing tag
+    dict(
+        EnvName=param_env_name.ref(),
+        Creator="alice@example.com",
+    ),
+    mode_overwrite=True,# you can use overwrite flag to choice whether you want to overwrite existing tag
 )
 
 

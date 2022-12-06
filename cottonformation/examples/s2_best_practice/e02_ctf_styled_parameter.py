@@ -25,7 +25,7 @@ def create_template(params: Params) -> ctf.Template:
     bucket = s3.Bucket("MyBucket", p_BucketName=f"{params.env_name}-my-bucket")
     tpl.add(bucket)
 
-    tpl.batch_tagging(EnvName=params.env_name)
+    tpl.batch_tagging(dict(EnvName=params.env_name))
 
     return tpl
 

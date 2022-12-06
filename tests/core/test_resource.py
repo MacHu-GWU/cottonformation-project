@@ -31,16 +31,16 @@ class TestResource:
 
     def test_update_tags(self):
         b = s3.Bucket("Res")
-        b.update_tags(k1="v1")
+        b.update_tags(dict(k1="v1"))
         assert b.tags_dict == dict(k1="v1")
 
         with pytest.raises(KeyError):
-            b.update_tags(k1="v2")
+            b.update_tags(dict(k1="v2"))
 
-        b.update_tags(k1="v2", overwrite_existing=True)
+        b.update_tags(dict(k1="v2"), mode_overwrite=True)
         assert b.tags_dict == dict(k1="v2")
 
-        b.update_tags(k1="v3", k2="v2", overwrite_existing=True)
+        b.update_tags(dict(k1="v3", k2="v2"), mode_overwrite=True)
         assert b.tags_dict == dict(k1="v3", k2="v2")
 
     def test_serialize(self):

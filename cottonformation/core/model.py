@@ -5,6 +5,7 @@ This module implements the AWS Object used in CloudFormation template.
 """
 
 import typing
+import typing as T
 from typing import (
     Any,
     Optional,
@@ -19,6 +20,7 @@ import attr
 from attr import validators as vs
 
 from . import constant
+from .tagging import get_tags, update_tags
 
 
 class Validators:
@@ -390,16 +392,11 @@ class Resource(_PropertyOrResource, _DictMember, _Dependency):
 
     @property
     def tags_dict(self) -> OrderedDict:
-        self.p_Tags: List[Tag]
-        if self.p_Tags is None:
-            return OrderedDict()
-        dct = OrderedDict([
-            (t.p_Key, t.p_Value)
-            for t in self.p_Tags
-        ])
-        if len(self.p_Tags) != len(dct):
-            raise ValueError(f"duplicate key found in {self._ez_repr}")
-        return dct
+        tags = get_tags(self)
+        if self.p_Tags is not None:
+            if len(self.p_Tags) != len(tags):
+                raise ValueError(f"duplicate key found in {self._ez_repr}")
+        return tags
 
     @classmethod
     def support_tags(cls) -> bool:
@@ -411,39 +408,26 @@ class Resource(_PropertyOrResource, _DictMember, _Dependency):
 
     def update_tags(
         self,
-        overwrite_existing: bool = False,
-        **kwargs,
-    ):
+        tags: T.Dict[str, str],
+        mode_skip: bool = False,
+        mode_overwrite: bool = False,
+        mode_raise: bool = False,
+    ) -> T.Tuple[T.Dict[str, str], T.Dict[str, str]]:
         """
-        Update tags. overwrite flag can be used to decide whether you want to
-        the tag value if tag key already exists.
+        Update CloudFormation resource tags.
 
-        :param overwrite_existing: if True, it won't raise exception if try
-            to overwrite an existing tag key. Since we have ``**kwargs``
-            for arbitrary tag key value pair, we use a long name parameter
-            name to avoid naming collision.
+        :param tags: key value tags in python dictionary
+        :param mode_skip: if the key already exists, then skip it
+        :param mode_overwrite: if the key already exists, then overwrite it with new value
+        :param mode_raise: if the key already exists, then raise error
         """
-        if self.p_Tags is None:
-            existing_tags = OrderedDict()
-        else:
-            existing_tags = OrderedDict([
-                (tag.p_Key, tag)
-                for tag in self.p_Tags
-            ])
-
-        for k, v in kwargs.items():
-            if k not in existing_tags:
-                existing_tags[k] = Tag(p_Key=k, p_Value=v)
-            elif overwrite_existing:
-                existing_tags[k] = Tag(p_Key=k, p_Value=v)
-            else:
-                raise KeyError(
-                    f"{k!r} already exists in Tags! Maybe "
-                    f"you want to turn on the ``overwrite`` option."
-                )
-
-        if len(existing_tags):
-            self.p_Tags = list(existing_tags.values())
+        return update_tags(
+            res=self,
+            tags=tags,
+            mode_skip=mode_skip,
+            mode_overwrite=mode_overwrite,
+            mode_raise=mode_raise,
+        )
 
     def serialize(self) -> dict:
         class_data = get_key_value_dict(self)
