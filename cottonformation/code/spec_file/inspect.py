@@ -191,3 +191,23 @@ def see_resource_tags(spec_file_data: dict):
     type_key_list.sort()
     print("\nvalid type key includes:")
     rprint(type_key_list)
+
+
+def see_property_prop_type_is_self(spec_file_data: dict):
+    """
+    Some property type is a property object. however, that property object
+    is undefined in cft-spec.json, those are usually
+    """
+    property_types: T.Dict[str, dict] = spec_file_data["PropertyTypes"]
+    for property_type_name, property_type_object in property_types.items():
+        if "Properties" in property_type_object:
+            properties = property_type_object["Properties"]
+            for key, dct in properties.items():
+                typ = dct.get("Type", "THIS-IS-NOT-POSSIBLE")
+                if key == typ:
+                    desired_property_type_name = "{}.{}".format(
+                        property_type_name.split(".")[0],
+                        key,
+                    )
+                    if desired_property_type_name not in property_types:
+                        print(f"{property_type_name} | {key} | {typ}")

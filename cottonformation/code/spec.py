@@ -89,17 +89,21 @@ PRIMITIVE_TYPE_DICT = {
 def _find_type_hint_and_validator(
     prop: typing.Union['Property', 'ResourceProperty'],
     prop_type_class_name: str,
-    cycled_class_name_set: typing.Set[str]
+    cycled_class_name_set: typing.Set[str],
+    spec_data: dict,
 ) -> typing.Tuple[
-    str, typing.Union[str, None], typing.Union[str, None]]:
+    str,
+    typing.Union[str, None],
+    typing.Union[str, None]
+]:
     """
     We need to define type hint and validators for attrs.
 
-    Those syntax is generally based on the type, primitive_type, item_type,
+    The syntax is generally based on the type, primitive_type, item_type,
     primitive_item_type of the property. This method implements the logic to
     generate type hint and validator python code.
 
-    **I know the logic is complicate, and there's a lots of edge case need to be
+    **I know the logic is complicated, and there's a lots of edge case need to be
     handled properly. This is the best I can do now**.
     """
     # --- Debug ---
@@ -190,6 +194,17 @@ def _find_type_hint_and_validator(
     #         converter = "{}.from_dict".format("Prop" + parent_class_name)
 
     elif bool(prop.Type):
+        if isinstance(prop, Property):
+            expected_property_types_key = "{}.{}".format(
+                prop.PropertyTypesKey.split(".")[0],
+                prop.Name,
+            )
+            if expected_property_types_key not in prop.SpecData["PropertyTypes"]:
+                type_hint = "typing.Optional[dict]"
+                validator = "attr.validators.optional(attr.validators.instance_of(dict))"
+                converter = None
+                return type_hint, validator, converter
+
         parent_class_name = prop.ResourceName + prop.Type
         type_hint = "typing.Union['{}', dict]".format("Prop" + parent_class_name)
         if (parent_class_name == prop_type_class_name) or (
@@ -232,6 +247,7 @@ def _get_type_hint(
     prop: typing.Union['Property', 'ResourceProperty'],
     prop_type_class_name: str,
     cycled_class_name_set: typing.Set[str],
+    spec_data: dict,
 ) -> str:
     """
     For example::
@@ -241,13 +257,19 @@ def _get_type_hint(
             # name: {{ type_hint }}
             name: str
     """
-    return _find_type_hint_and_validator(prop, prop_type_class_name, cycled_class_name_set)[0]
+    return _find_type_hint_and_validator(
+        prop,
+        prop_type_class_name,
+        cycled_class_name_set,
+        spec_data,
+    )[0]
 
 
 def _get_vali_def(
     prop: typing.Union['Property', 'ResourceProperty'],
     prop_type_class_name: str,
     cycled_class_name_set: typing.Set[str],
+    spec_data: dict,
 ) -> str:
     """
     For example::
@@ -257,12 +279,20 @@ def _get_vali_def(
             # name: str = attr.ib(validators={{ vali_def }})
             name: str = attr.ib(validators=attr.validators.instance_of(str))
     """
-    return _find_type_hint_and_validator(prop, prop_type_class_name, cycled_class_name_set)[1]
+    return _find_type_hint_and_validator(
+        prop,
+        prop_type_class_name,
+        cycled_class_name_set,
+        spec_data,
+    )[1]
 
 
-def _get_converter(prop: typing.Union['Property', 'ResourceProperty'],
-                   prop_type_class_name: str,
-                   cycled_class_name_set: typing.Set[str]) -> typing.Union[str, None]:
+def _get_converter(
+    prop: typing.Union['Property', 'ResourceProperty'],
+    prop_type_class_name: str,
+    cycled_class_name_set: typing.Set[str],
+    spec_data: dict,
+) -> typing.Union[str, None]:
     """
     For example::
 
@@ -271,7 +301,12 @@ def _get_converter(prop: typing.Union['Property', 'ResourceProperty'],
             # name: str = attr.ib(validators={{ vali_def }})
             name: str = attr.ib(validators=attr.validators.instance_of(str))
     """
-    return _find_type_hint_and_validator(prop, prop_type_class_name, cycled_class_name_set)[2]
+    return _find_type_hint_and_validator(
+        prop,
+        prop_type_class_name,
+        cycled_class_name_set,
+        spec_data,
+    )[2]
 
 
 def _make_template(filename):
@@ -289,12 +324,17 @@ import_template = _make_template("_imp.py")
 
 @attr.s
 class Property:
+    """
+    Represent a ``.PropertyTypes.${property_name}.Properties.${prop_name}`` object
+    in cft-spec.json file.
+    """
     Name: str = attr.field(default=None)
     SystemName: str = attr.field(default=None)
     ServiceName: str = attr.field(default=None)
     ResourceName: str = attr.field(default=None)
     PropertyName: str = attr.field(default=None)
     PropertyFullName: str = attr.field(default=None)
+    PropertyTypesKey: str = attr.field(default=None)
 
     Required: bool = attr.field(default=None)
     Type: str = attr.field(default=None)
@@ -307,6 +347,8 @@ class Property:
 
     PropertyTypeClassName: str = attr.field(default=None)
     CycledClassNameSet: typing.Set[str] = attr.field(default=None)
+
+    SpecData: dict = attr.field(default=None)
 
     @property
     def sort_key(self):
@@ -322,19 +364,23 @@ class Property:
 
     @property
     def type_hint(self):
-        return _get_type_hint(self, self.PropertyTypeClassName, self.CycledClassNameSet)
+        return _get_type_hint(self, self.PropertyTypeClassName, self.CycledClassNameSet, self.SpecData)
 
     @property
     def vali_def(self):
-        return _get_vali_def(self, self.PropertyTypeClassName, self.CycledClassNameSet)
+        return _get_vali_def(self, self.PropertyTypeClassName, self.CycledClassNameSet, self.SpecData)
 
     @property
     def converter(self):
-        return _get_converter(self, self.PropertyTypeClassName, self.CycledClassNameSet)
+        return _get_converter(self, self.PropertyTypeClassName, self.CycledClassNameSet, self.SpecData)
 
 
 @attr.s
 class PropertyType:
+    """
+    Represent a ``.PropertyTypes.${property_name}`` object
+    in cft-spec.json file.
+    """
     Name: str = attr.field(default=None)
     SystemName: str = attr.field(default=None)
     ServiceName: str = attr.field(default=None)
@@ -350,6 +396,8 @@ class PropertyType:
     UpdateType: str = attr.field(default=None)
 
     Properties: typing.List[Property] = attr.field(default=None)
+
+    SpecData: dict = attr.field(default=None)
 
     @property
     def class_name(self):
@@ -367,6 +415,10 @@ class PropertyType:
 
 @attr.s
 class ResourceProperty:
+    """
+    Represent a ``.ResourceTypes.${resource_name}.Properties.${property_name}`` object
+    in cft-spec.json file.
+    """
     Name: str = attr.field(default=None)
     SystemName: str = attr.field(default=None)
     ServiceName: str = attr.field(default=None)
@@ -383,6 +435,8 @@ class ResourceProperty:
     DuplicatesAllowed: str = attr.field(default=None)
     Data: dict = attr.field(default=None)
 
+    SpecData: dict = attr.field(default=None)
+
     @property
     def sort_key(self):
         return _get_sort_key(self)
@@ -393,19 +447,23 @@ class ResourceProperty:
 
     @property
     def type_hint(self):
-        return _get_type_hint(self, "NEVER_HAPPEN", set())
+        return _get_type_hint(self, "NEVER_HAPPEN", set(), self.SpecData)
 
     @property
     def vali_def(self):
-        return _get_vali_def(self, "NEVER_HAPPEN", set())
+        return _get_vali_def(self, "NEVER_HAPPEN", set(), self.SpecData)
 
     @property
     def converter(self):
-        return _get_converter(self, "NEVER_HAPPEN", set())
+        return _get_converter(self, "NEVER_HAPPEN", set(), self.SpecData)
 
 
 @attr.s
 class ResourceAttribute:
+    """
+    Represent a ``.ResourceTypes.${resource_name}.Attributes.${attribute_name}`` object
+    in cft-spec.json file.
+    """
     Name: str = attr.ib(default=None)
     SystemName: str = attr.field(default=None)
     ServiceName: str = attr.field(default=None)
@@ -426,6 +484,8 @@ class ResourceAttribute:
 @attr.s
 class ResourceType:
     """
+    Represent a ``.ResourceTypes.${resource_name}`` object
+    in cft-spec.json file.
     """
     Name: str = attr.field(default=None)
     SystemName: str = attr.field(default=None)
@@ -472,7 +532,9 @@ class CftSpec:
                 property_dct["PropertyName"] = property_name
                 property_dct["PropertyFullName"] = ResourceName + "." + property_name
                 property_dct["PropertyTypeClassName"] = ResourceName + PropertyName
-                property = Property(**property_dct)
+                property_dct["PropertyTypesKey"] = property_type_name
+
+                property = Property(SpecData=spec_data, **property_dct)
                 property_properties.append(property)
 
                 # --- Debug ---
@@ -494,7 +556,8 @@ class CftSpec:
             property_type_dct["PropertyName"] = PropertyName
             property_type_dct["PropertyFullName"] = PropertyFullName
             property_type_dct["Properties"] = property_properties
-            property_type = PropertyType(**property_type_dct)
+
+            property_type = PropertyType(SpecData=spec_data, **property_type_dct)
 
             property_type_list.append(property_type)
 
@@ -513,7 +576,7 @@ class CftSpec:
                 resource_property_dct["ResourceName"] = ResourceName
                 resource_property_dct["PropertyName"] = resource_property_name
                 resource_property_dct["PropertyFullName"] = ResourceName + "." + resource_property_name
-                resource_property = ResourceProperty(**resource_property_dct)
+                resource_property = ResourceProperty(SpecData=spec_data, **resource_property_dct)
                 resource_properties.append(resource_property)
 
                 # sometime, both Type and PrimitiveType exists, in this case
