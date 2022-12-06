@@ -7,6 +7,7 @@ class AttrMeta:
     """
     PROPERTY_NAME = "p_name"
     DATA = "p_data"
+    TAGS = "p_Tags"
 
 
 class IntrinsicFunction:
