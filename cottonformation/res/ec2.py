@@ -42,26 +42,6 @@ class PropSpotFleetMemoryGiBPerVCpuRequest(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-memorygibpervcpurequest.html#cfn-ec2-spotfleet-memorygibpervcpurequest-min"""
 
 @attr.s
-class PropTransitGatewayConnectTransitGatewayConnectOptions(Property):
-    """
-    AWS Object Type = "AWS::EC2::TransitGatewayConnect.TransitGatewayConnectOptions"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-transitgatewayconnect-transitgatewayconnectoptions.html
-
-    Property Document:
-    
-    - ``p_Protocol``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-transitgatewayconnect-transitgatewayconnectoptions.html#cfn-ec2-transitgatewayconnect-transitgatewayconnectoptions-protocol
-    """
-    AWS_OBJECT_TYPE = "AWS::EC2::TransitGatewayConnect.TransitGatewayConnectOptions"
-    
-    p_Protocol: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Protocol"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-transitgatewayconnect-transitgatewayconnectoptions.html#cfn-ec2-transitgatewayconnect-transitgatewayconnectoptions-protocol"""
-
-@attr.s
 class PropEC2FleetFleetLaunchTemplateSpecificationRequest(Property):
     """
     AWS Object Type = "AWS::EC2::EC2Fleet.FleetLaunchTemplateSpecificationRequest"
@@ -70,12 +50,18 @@ class PropEC2FleetFleetLaunchTemplateSpecificationRequest(Property):
 
     Property Document:
     
+    - ``rp_Version``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-fleetlaunchtemplatespecificationrequest.html#cfn-ec2-ec2fleet-fleetlaunchtemplatespecificationrequest-version
     - ``p_LaunchTemplateId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-fleetlaunchtemplatespecificationrequest.html#cfn-ec2-ec2fleet-fleetlaunchtemplatespecificationrequest-launchtemplateid
     - ``p_LaunchTemplateName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-fleetlaunchtemplatespecificationrequest.html#cfn-ec2-ec2fleet-fleetlaunchtemplatespecificationrequest-launchtemplatename
-    - ``p_Version``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-fleetlaunchtemplatespecificationrequest.html#cfn-ec2-ec2fleet-fleetlaunchtemplatespecificationrequest-version
     """
     AWS_OBJECT_TYPE = "AWS::EC2::EC2Fleet.FleetLaunchTemplateSpecificationRequest"
     
+    rp_Version: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "Version"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-fleetlaunchtemplatespecificationrequest.html#cfn-ec2-ec2fleet-fleetlaunchtemplatespecificationrequest-version"""
     p_LaunchTemplateId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
@@ -88,12 +74,6 @@ class PropEC2FleetFleetLaunchTemplateSpecificationRequest(Property):
         metadata={AttrMeta.PROPERTY_NAME: "LaunchTemplateName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-fleetlaunchtemplatespecificationrequest.html#cfn-ec2-ec2fleet-fleetlaunchtemplatespecificationrequest-launchtemplatename"""
-    p_Version: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Version"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-fleetlaunchtemplatespecificationrequest.html#cfn-ec2-ec2fleet-fleetlaunchtemplatespecificationrequest-version"""
 
 @attr.s
 class PropVPNConnectionVpnTunnelOptionsSpecification(Property):
@@ -123,33 +103,6 @@ class PropVPNConnectionVpnTunnelOptionsSpecification(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-vpnconnection-vpntunneloptionsspecification.html#cfn-ec2-vpnconnection-vpntunneloptionsspecification-tunnelinsidecidr"""
 
 @attr.s
-class PropTrafficMirrorFilterRuleTrafficMirrorPortRange(Property):
-    """
-    AWS Object Type = "AWS::EC2::TrafficMirrorFilterRule.TrafficMirrorPortRange"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-trafficmirrorfilterrule-trafficmirrorportrange.html
-
-    Property Document:
-    
-    - ``rp_FromPort``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-trafficmirrorfilterrule-trafficmirrorportrange.html#cfn-ec2-trafficmirrorfilterrule-trafficmirrorportrange-fromport
-    - ``rp_ToPort``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-trafficmirrorfilterrule-trafficmirrorportrange.html#cfn-ec2-trafficmirrorfilterrule-trafficmirrorportrange-toport
-    """
-    AWS_OBJECT_TYPE = "AWS::EC2::TrafficMirrorFilterRule.TrafficMirrorPortRange"
-    
-    rp_FromPort: int = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(int),
-        metadata={AttrMeta.PROPERTY_NAME: "FromPort"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-trafficmirrorfilterrule-trafficmirrorportrange.html#cfn-ec2-trafficmirrorfilterrule-trafficmirrorportrange-fromport"""
-    rp_ToPort: int = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(int),
-        metadata={AttrMeta.PROPERTY_NAME: "ToPort"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-trafficmirrorfilterrule-trafficmirrorportrange.html#cfn-ec2-trafficmirrorfilterrule-trafficmirrorportrange-toport"""
-
-@attr.s
 class PropSpotFleetMemoryMiBRequest(Property):
     """
     AWS Object Type = "AWS::EC2::SpotFleet.MemoryMiBRequest"
@@ -175,54 +128,6 @@ class PropSpotFleetMemoryMiBRequest(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Min"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-memorymibrequest.html#cfn-ec2-spotfleet-memorymibrequest-min"""
-
-@attr.s
-class PropLaunchTemplateSpotOptions(Property):
-    """
-    AWS Object Type = "AWS::EC2::LaunchTemplate.SpotOptions"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-instancemarketoptions-spotoptions.html
-
-    Property Document:
-    
-    - ``p_BlockDurationMinutes``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-instancemarketoptions-spotoptions.html#cfn-ec2-launchtemplate-launchtemplatedata-instancemarketoptions-spotoptions-blockdurationminutes
-    - ``p_InstanceInterruptionBehavior``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-instancemarketoptions-spotoptions.html#cfn-ec2-launchtemplate-launchtemplatedata-instancemarketoptions-spotoptions-instanceinterruptionbehavior
-    - ``p_MaxPrice``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-instancemarketoptions-spotoptions.html#cfn-ec2-launchtemplate-launchtemplatedata-instancemarketoptions-spotoptions-maxprice
-    - ``p_SpotInstanceType``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-instancemarketoptions-spotoptions.html#cfn-ec2-launchtemplate-launchtemplatedata-instancemarketoptions-spotoptions-spotinstancetype
-    - ``p_ValidUntil``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-instancemarketoptions-spotoptions.html#cfn-ec2-launchtemplate-launchtemplatedata-instancemarketoptions-spotoptions-validuntil
-    """
-    AWS_OBJECT_TYPE = "AWS::EC2::LaunchTemplate.SpotOptions"
-    
-    p_BlockDurationMinutes: int = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "BlockDurationMinutes"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-instancemarketoptions-spotoptions.html#cfn-ec2-launchtemplate-launchtemplatedata-instancemarketoptions-spotoptions-blockdurationminutes"""
-    p_InstanceInterruptionBehavior: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "InstanceInterruptionBehavior"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-instancemarketoptions-spotoptions.html#cfn-ec2-launchtemplate-launchtemplatedata-instancemarketoptions-spotoptions-instanceinterruptionbehavior"""
-    p_MaxPrice: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "MaxPrice"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-instancemarketoptions-spotoptions.html#cfn-ec2-launchtemplate-launchtemplatedata-instancemarketoptions-spotoptions-maxprice"""
-    p_SpotInstanceType: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "SpotInstanceType"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-instancemarketoptions-spotoptions.html#cfn-ec2-launchtemplate-launchtemplatedata-instancemarketoptions-spotoptions-spotinstancetype"""
-    p_ValidUntil: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "ValidUntil"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-instancemarketoptions-spotoptions.html#cfn-ec2-launchtemplate-launchtemplatedata-instancemarketoptions-spotoptions-validuntil"""
 
 @attr.s
 class PropInstanceHibernationOptions(Property):
@@ -277,26 +182,6 @@ class PropSpotFleetSpotPlacement(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Tenancy"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotplacement.html#cfn-ec2-spotfleet-spotplacement-tenancy"""
-
-@attr.s
-class PropNetworkInterfaceInstanceIpv6Address(Property):
-    """
-    AWS Object Type = "AWS::EC2::NetworkInterface.InstanceIpv6Address"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinterface-instanceipv6address.html
-
-    Property Document:
-    
-    - ``rp_Ipv6Address``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinterface-instanceipv6address.html#cfn-ec2-networkinterface-instanceipv6address-ipv6address
-    """
-    AWS_OBJECT_TYPE = "AWS::EC2::NetworkInterface.InstanceIpv6Address"
-    
-    rp_Ipv6Address: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Ipv6Address"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinterface-instanceipv6address.html#cfn-ec2-networkinterface-instanceipv6address-ipv6address"""
 
 @attr.s
 class PropEC2FleetNetworkInterfaceCountRequest(Property):
@@ -544,33 +429,6 @@ class PropLaunchTemplateTagSpecification(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-tagspecification.html#cfn-ec2-launchtemplate-tagspecification-tags"""
 
 @attr.s
-class PropSpotFleetBaselineEbsBandwidthMbpsRequest(Property):
-    """
-    AWS Object Type = "AWS::EC2::SpotFleet.BaselineEbsBandwidthMbpsRequest"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-baselineebsbandwidthmbpsrequest.html
-
-    Property Document:
-    
-    - ``p_Max``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-baselineebsbandwidthmbpsrequest.html#cfn-ec2-spotfleet-baselineebsbandwidthmbpsrequest-max
-    - ``p_Min``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-baselineebsbandwidthmbpsrequest.html#cfn-ec2-spotfleet-baselineebsbandwidthmbpsrequest-min
-    """
-    AWS_OBJECT_TYPE = "AWS::EC2::SpotFleet.BaselineEbsBandwidthMbpsRequest"
-    
-    p_Max: int = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "Max"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-baselineebsbandwidthmbpsrequest.html#cfn-ec2-spotfleet-baselineebsbandwidthmbpsrequest-max"""
-    p_Min: int = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "Min"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-baselineebsbandwidthmbpsrequest.html#cfn-ec2-spotfleet-baselineebsbandwidthmbpsrequest-min"""
-
-@attr.s
 class PropInstanceNoDevice(Property):
     """
     AWS Object Type = "AWS::EC2::Instance.NoDevice"
@@ -582,102 +440,6 @@ class PropInstanceNoDevice(Property):
     """
     AWS_OBJECT_TYPE = "AWS::EC2::Instance.NoDevice"
     
-
-@attr.s
-class PropInstanceCreditSpecification(Property):
-    """
-    AWS Object Type = "AWS::EC2::Instance.CreditSpecification"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-creditspecification.html
-
-    Property Document:
-    
-    - ``p_CPUCredits``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-creditspecification.html#cfn-ec2-instance-creditspecification-cpucredits
-    """
-    AWS_OBJECT_TYPE = "AWS::EC2::Instance.CreditSpecification"
-    
-    p_CPUCredits: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "CPUCredits"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-creditspecification.html#cfn-ec2-instance-creditspecification-cpucredits"""
-
-@attr.s
-class PropEC2FleetTargetCapacitySpecificationRequest(Property):
-    """
-    AWS Object Type = "AWS::EC2::EC2Fleet.TargetCapacitySpecificationRequest"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-targetcapacityspecificationrequest.html
-
-    Property Document:
-    
-    - ``rp_TotalTargetCapacity``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-targetcapacityspecificationrequest.html#cfn-ec2-ec2fleet-targetcapacityspecificationrequest-totaltargetcapacity
-    - ``p_DefaultTargetCapacityType``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-targetcapacityspecificationrequest.html#cfn-ec2-ec2fleet-targetcapacityspecificationrequest-defaulttargetcapacitytype
-    - ``p_OnDemandTargetCapacity``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-targetcapacityspecificationrequest.html#cfn-ec2-ec2fleet-targetcapacityspecificationrequest-ondemandtargetcapacity
-    - ``p_SpotTargetCapacity``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-targetcapacityspecificationrequest.html#cfn-ec2-ec2fleet-targetcapacityspecificationrequest-spottargetcapacity
-    - ``p_TargetCapacityUnitType``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-targetcapacityspecificationrequest.html#cfn-ec2-ec2fleet-targetcapacityspecificationrequest-targetcapacityunittype
-    """
-    AWS_OBJECT_TYPE = "AWS::EC2::EC2Fleet.TargetCapacitySpecificationRequest"
-    
-    rp_TotalTargetCapacity: int = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(int),
-        metadata={AttrMeta.PROPERTY_NAME: "TotalTargetCapacity"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-targetcapacityspecificationrequest.html#cfn-ec2-ec2fleet-targetcapacityspecificationrequest-totaltargetcapacity"""
-    p_DefaultTargetCapacityType: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "DefaultTargetCapacityType"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-targetcapacityspecificationrequest.html#cfn-ec2-ec2fleet-targetcapacityspecificationrequest-defaulttargetcapacitytype"""
-    p_OnDemandTargetCapacity: int = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "OnDemandTargetCapacity"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-targetcapacityspecificationrequest.html#cfn-ec2-ec2fleet-targetcapacityspecificationrequest-ondemandtargetcapacity"""
-    p_SpotTargetCapacity: int = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "SpotTargetCapacity"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-targetcapacityspecificationrequest.html#cfn-ec2-ec2fleet-targetcapacityspecificationrequest-spottargetcapacity"""
-    p_TargetCapacityUnitType: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "TargetCapacityUnitType"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-targetcapacityspecificationrequest.html#cfn-ec2-ec2fleet-targetcapacityspecificationrequest-targetcapacityunittype"""
-
-@attr.s
-class PropCapacityReservationFleetTagSpecification(Property):
-    """
-    AWS Object Type = "AWS::EC2::CapacityReservationFleet.TagSpecification"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-capacityreservationfleet-tagspecification.html
-
-    Property Document:
-    
-    - ``p_ResourceType``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-capacityreservationfleet-tagspecification.html#cfn-ec2-capacityreservationfleet-tagspecification-resourcetype
-    - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-capacityreservationfleet-tagspecification.html#cfn-ec2-capacityreservationfleet-tagspecification-tags
-    """
-    AWS_OBJECT_TYPE = "AWS::EC2::CapacityReservationFleet.TagSpecification"
-    
-    p_ResourceType: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "ResourceType"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-capacityreservationfleet-tagspecification.html#cfn-ec2-capacityreservationfleet-tagspecification-resourcetype"""
-    p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
-        default=None,
-        converter=Tag.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-capacityreservationfleet-tagspecification.html#cfn-ec2-capacityreservationfleet-tagspecification-tags"""
 
 @attr.s
 class PropNetworkInsightsAnalysisAnalysisLoadBalancerListener(Property):
@@ -707,75 +469,6 @@ class PropNetworkInsightsAnalysisAnalysisLoadBalancerListener(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysisloadbalancerlistener.html#cfn-ec2-networkinsightsanalysis-analysisloadbalancerlistener-loadbalancerport"""
 
 @attr.s
-class PropLaunchTemplateEbs(Property):
-    """
-    AWS Object Type = "AWS::EC2::LaunchTemplate.Ebs"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-blockdevicemapping-ebs.html
-
-    Property Document:
-    
-    - ``p_DeleteOnTermination``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-blockdevicemapping-ebs.html#cfn-ec2-launchtemplate-blockdevicemapping-ebs-deleteontermination
-    - ``p_Encrypted``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-blockdevicemapping-ebs.html#cfn-ec2-launchtemplate-blockdevicemapping-ebs-encrypted
-    - ``p_Iops``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-blockdevicemapping-ebs.html#cfn-ec2-launchtemplate-blockdevicemapping-ebs-iops
-    - ``p_KmsKeyId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-blockdevicemapping-ebs.html#cfn-ec2-launchtemplate-blockdevicemapping-ebs-kmskeyid
-    - ``p_SnapshotId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-blockdevicemapping-ebs.html#cfn-ec2-launchtemplate-blockdevicemapping-ebs-snapshotid
-    - ``p_Throughput``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-blockdevicemapping-ebs.html#cfn-ec2-launchtemplate-blockdevicemapping-ebs-throughput
-    - ``p_VolumeSize``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-blockdevicemapping-ebs.html#cfn-ec2-launchtemplate-blockdevicemapping-ebs-volumesize
-    - ``p_VolumeType``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-blockdevicemapping-ebs.html#cfn-ec2-launchtemplate-blockdevicemapping-ebs-volumetype
-    """
-    AWS_OBJECT_TYPE = "AWS::EC2::LaunchTemplate.Ebs"
-    
-    p_DeleteOnTermination: bool = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(bool)),
-        metadata={AttrMeta.PROPERTY_NAME: "DeleteOnTermination"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-blockdevicemapping-ebs.html#cfn-ec2-launchtemplate-blockdevicemapping-ebs-deleteontermination"""
-    p_Encrypted: bool = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(bool)),
-        metadata={AttrMeta.PROPERTY_NAME: "Encrypted"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-blockdevicemapping-ebs.html#cfn-ec2-launchtemplate-blockdevicemapping-ebs-encrypted"""
-    p_Iops: int = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "Iops"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-blockdevicemapping-ebs.html#cfn-ec2-launchtemplate-blockdevicemapping-ebs-iops"""
-    p_KmsKeyId: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "KmsKeyId"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-blockdevicemapping-ebs.html#cfn-ec2-launchtemplate-blockdevicemapping-ebs-kmskeyid"""
-    p_SnapshotId: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "SnapshotId"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-blockdevicemapping-ebs.html#cfn-ec2-launchtemplate-blockdevicemapping-ebs-snapshotid"""
-    p_Throughput: int = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "Throughput"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-blockdevicemapping-ebs.html#cfn-ec2-launchtemplate-blockdevicemapping-ebs-throughput"""
-    p_VolumeSize: int = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "VolumeSize"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-blockdevicemapping-ebs.html#cfn-ec2-launchtemplate-blockdevicemapping-ebs-volumesize"""
-    p_VolumeType: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "VolumeType"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-blockdevicemapping-ebs.html#cfn-ec2-launchtemplate-blockdevicemapping-ebs-volumetype"""
-
-@attr.s
 class PropLaunchTemplateBaselineEbsBandwidthMbps(Property):
     """
     AWS Object Type = "AWS::EC2::LaunchTemplate.BaselineEbsBandwidthMbps"
@@ -801,161 +494,6 @@ class PropLaunchTemplateBaselineEbsBandwidthMbps(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Min"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-baselineebsbandwidthmbps.html#cfn-ec2-launchtemplate-baselineebsbandwidthmbps-min"""
-
-@attr.s
-class PropClientVpnEndpointDirectoryServiceAuthenticationRequest(Property):
-    """
-    AWS Object Type = "AWS::EC2::ClientVpnEndpoint.DirectoryServiceAuthenticationRequest"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-directoryserviceauthenticationrequest.html
-
-    Property Document:
-    
-    - ``rp_DirectoryId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-directoryserviceauthenticationrequest.html#cfn-ec2-clientvpnendpoint-directoryserviceauthenticationrequest-directoryid
-    """
-    AWS_OBJECT_TYPE = "AWS::EC2::ClientVpnEndpoint.DirectoryServiceAuthenticationRequest"
-    
-    rp_DirectoryId: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "DirectoryId"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-directoryserviceauthenticationrequest.html#cfn-ec2-clientvpnendpoint-directoryserviceauthenticationrequest-directoryid"""
-
-@attr.s
-class PropLaunchTemplateEnclaveOptions(Property):
-    """
-    AWS Object Type = "AWS::EC2::LaunchTemplate.EnclaveOptions"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-enclaveoptions.html
-
-    Property Document:
-    
-    - ``p_Enabled``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-enclaveoptions.html#cfn-ec2-launchtemplate-launchtemplatedata-enclaveoptions-enabled
-    """
-    AWS_OBJECT_TYPE = "AWS::EC2::LaunchTemplate.EnclaveOptions"
-    
-    p_Enabled: bool = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(bool)),
-        metadata={AttrMeta.PROPERTY_NAME: "Enabled"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-enclaveoptions.html#cfn-ec2-launchtemplate-launchtemplatedata-enclaveoptions-enabled"""
-
-@attr.s
-class PropSpotFleetTotalLocalStorageGBRequest(Property):
-    """
-    AWS Object Type = "AWS::EC2::SpotFleet.TotalLocalStorageGBRequest"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-totallocalstoragegbrequest.html
-
-    Property Document:
-    
-    - ``p_Max``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-totallocalstoragegbrequest.html#cfn-ec2-spotfleet-totallocalstoragegbrequest-max
-    - ``p_Min``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-totallocalstoragegbrequest.html#cfn-ec2-spotfleet-totallocalstoragegbrequest-min
-    """
-    AWS_OBJECT_TYPE = "AWS::EC2::SpotFleet.TotalLocalStorageGBRequest"
-    
-    p_Max: float = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(float)),
-        metadata={AttrMeta.PROPERTY_NAME: "Max"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-totallocalstoragegbrequest.html#cfn-ec2-spotfleet-totallocalstoragegbrequest-max"""
-    p_Min: float = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(float)),
-        metadata={AttrMeta.PROPERTY_NAME: "Min"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-totallocalstoragegbrequest.html#cfn-ec2-spotfleet-totallocalstoragegbrequest-min"""
-
-@attr.s
-class PropInstanceElasticGpuSpecification(Property):
-    """
-    AWS Object Type = "AWS::EC2::Instance.ElasticGpuSpecification"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-elasticgpuspecification.html
-
-    Property Document:
-    
-    - ``rp_Type``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-elasticgpuspecification.html#cfn-ec2-instance-elasticgpuspecification-type
-    """
-    AWS_OBJECT_TYPE = "AWS::EC2::Instance.ElasticGpuSpecification"
-    
-    rp_Type: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Type"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-elasticgpuspecification.html#cfn-ec2-instance-elasticgpuspecification-type"""
-
-@attr.s
-class PropClientVpnEndpointTagSpecification(Property):
-    """
-    AWS Object Type = "AWS::EC2::ClientVpnEndpoint.TagSpecification"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-tagspecification.html
-
-    Property Document:
-    
-    - ``rp_ResourceType``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-tagspecification.html#cfn-ec2-clientvpnendpoint-tagspecification-resourcetype
-    - ``rp_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-tagspecification.html#cfn-ec2-clientvpnendpoint-tagspecification-tags
-    """
-    AWS_OBJECT_TYPE = "AWS::EC2::ClientVpnEndpoint.TagSpecification"
-    
-    rp_ResourceType: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "ResourceType"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-tagspecification.html#cfn-ec2-clientvpnendpoint-tagspecification-resourcetype"""
-    rp_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
-        default=None,
-        converter=Tag.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list)),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-tagspecification.html#cfn-ec2-clientvpnendpoint-tagspecification-tags"""
-
-@attr.s
-class PropSpotFleetIamInstanceProfileSpecification(Property):
-    """
-    AWS Object Type = "AWS::EC2::SpotFleet.IamInstanceProfileSpecification"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-iaminstanceprofilespecification.html
-
-    Property Document:
-    
-    - ``p_Arn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-iaminstanceprofilespecification.html#cfn-ec2-spotfleet-iaminstanceprofilespecification-arn
-    """
-    AWS_OBJECT_TYPE = "AWS::EC2::SpotFleet.IamInstanceProfileSpecification"
-    
-    p_Arn: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Arn"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-iaminstanceprofilespecification.html#cfn-ec2-spotfleet-iaminstanceprofilespecification-arn"""
-
-@attr.s
-class PropEC2FleetCapacityReservationOptionsRequest(Property):
-    """
-    AWS Object Type = "AWS::EC2::EC2Fleet.CapacityReservationOptionsRequest"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-capacityreservationoptionsrequest.html
-
-    Property Document:
-    
-    - ``p_UsageStrategy``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-capacityreservationoptionsrequest.html#cfn-ec2-ec2fleet-capacityreservationoptionsrequest-usagestrategy
-    """
-    AWS_OBJECT_TYPE = "AWS::EC2::EC2Fleet.CapacityReservationOptionsRequest"
-    
-    p_UsageStrategy: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "UsageStrategy"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-capacityreservationoptionsrequest.html#cfn-ec2-ec2fleet-capacityreservationoptionsrequest-usagestrategy"""
 
 @attr.s
 class PropEC2FleetBaselineEbsBandwidthMbpsRequest(Property):
@@ -1044,6 +582,7 @@ class PropNetworkInsightsAnalysisAnalysisRouteTableRoute(Property):
     - ``p_NatGatewayId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysisroutetableroute.html#cfn-ec2-networkinsightsanalysis-analysisroutetableroute-natgatewayid
     - ``p_NetworkInterfaceId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysisroutetableroute.html#cfn-ec2-networkinsightsanalysis-analysisroutetableroute-networkinterfaceid
     - ``p_Origin``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysisroutetableroute.html#cfn-ec2-networkinsightsanalysis-analysisroutetableroute-origin
+    - ``p_State``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysisroutetableroute.html#cfn-ec2-networkinsightsanalysis-analysisroutetableroute-state
     - ``p_TransitGatewayId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysisroutetableroute.html#cfn-ec2-networkinsightsanalysis-analysisroutetableroute-transitgatewayid
     - ``p_VpcPeeringConnectionId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysisroutetableroute.html#cfn-ec2-networkinsightsanalysis-analysisroutetableroute-vpcpeeringconnectionid
     - ``p_destinationCidr``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysisroutetableroute.html#cfn-ec2-networkinsightsanalysis-analysisroutetableroute-destinationcidr
@@ -1072,6 +611,12 @@ class PropNetworkInsightsAnalysisAnalysisRouteTableRoute(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Origin"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysisroutetableroute.html#cfn-ec2-networkinsightsanalysis-analysisroutetableroute-origin"""
+    p_State: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "State"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysisroutetableroute.html#cfn-ec2-networkinsightsanalysis-analysisroutetableroute-state"""
     p_TransitGatewayId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
@@ -1114,60 +659,6 @@ class PropNetworkInsightsAnalysisAnalysisRouteTableRoute(Property):
         metadata={AttrMeta.PROPERTY_NAME: "instanceId"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysisroutetableroute.html#cfn-ec2-networkinsightsanalysis-analysisroutetableroute-instanceid"""
-
-@attr.s
-class PropEC2FleetTotalLocalStorageGBRequest(Property):
-    """
-    AWS Object Type = "AWS::EC2::EC2Fleet.TotalLocalStorageGBRequest"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-totallocalstoragegbrequest.html
-
-    Property Document:
-    
-    - ``p_Max``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-totallocalstoragegbrequest.html#cfn-ec2-ec2fleet-totallocalstoragegbrequest-max
-    - ``p_Min``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-totallocalstoragegbrequest.html#cfn-ec2-ec2fleet-totallocalstoragegbrequest-min
-    """
-    AWS_OBJECT_TYPE = "AWS::EC2::EC2Fleet.TotalLocalStorageGBRequest"
-    
-    p_Max: float = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(float)),
-        metadata={AttrMeta.PROPERTY_NAME: "Max"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-totallocalstoragegbrequest.html#cfn-ec2-ec2fleet-totallocalstoragegbrequest-max"""
-    p_Min: float = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(float)),
-        metadata={AttrMeta.PROPERTY_NAME: "Min"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-totallocalstoragegbrequest.html#cfn-ec2-ec2fleet-totallocalstoragegbrequest-min"""
-
-@attr.s
-class PropClientVpnEndpointFederatedAuthenticationRequest(Property):
-    """
-    AWS Object Type = "AWS::EC2::ClientVpnEndpoint.FederatedAuthenticationRequest"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-federatedauthenticationrequest.html
-
-    Property Document:
-    
-    - ``rp_SAMLProviderArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-federatedauthenticationrequest.html#cfn-ec2-clientvpnendpoint-federatedauthenticationrequest-samlproviderarn
-    - ``p_SelfServiceSAMLProviderArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-federatedauthenticationrequest.html#cfn-ec2-clientvpnendpoint-federatedauthenticationrequest-selfservicesamlproviderarn
-    """
-    AWS_OBJECT_TYPE = "AWS::EC2::ClientVpnEndpoint.FederatedAuthenticationRequest"
-    
-    rp_SAMLProviderArn: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "SAMLProviderArn"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-federatedauthenticationrequest.html#cfn-ec2-clientvpnendpoint-federatedauthenticationrequest-samlproviderarn"""
-    p_SelfServiceSAMLProviderArn: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "SelfServiceSAMLProviderArn"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-federatedauthenticationrequest.html#cfn-ec2-clientvpnendpoint-federatedauthenticationrequest-selfservicesamlproviderarn"""
 
 @attr.s
 class PropCapacityReservationFleetInstanceTypeSpecification(Property):
@@ -1259,33 +750,6 @@ class PropSpotFleetAcceleratorCountRequest(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-acceleratorcountrequest.html#cfn-ec2-spotfleet-acceleratorcountrequest-min"""
 
 @attr.s
-class PropInstanceCpuOptions(Property):
-    """
-    AWS Object Type = "AWS::EC2::Instance.CpuOptions"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-cpuoptions.html
-
-    Property Document:
-    
-    - ``p_CoreCount``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-cpuoptions.html#cfn-ec2-instance-cpuoptions-corecount
-    - ``p_ThreadsPerCore``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-cpuoptions.html#cfn-ec2-instance-cpuoptions-threadspercore
-    """
-    AWS_OBJECT_TYPE = "AWS::EC2::Instance.CpuOptions"
-    
-    p_CoreCount: int = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "CoreCount"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-cpuoptions.html#cfn-ec2-instance-cpuoptions-corecount"""
-    p_ThreadsPerCore: int = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "ThreadsPerCore"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-cpuoptions.html#cfn-ec2-instance-cpuoptions-threadspercore"""
-
-@attr.s
 class PropInstanceLaunchTemplateSpecification(Property):
     """
     AWS Object Type = "AWS::EC2::Instance.LaunchTemplateSpecification"
@@ -1320,40 +784,6 @@ class PropInstanceLaunchTemplateSpecification(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-launchtemplatespecification.html#cfn-ec2-instance-launchtemplatespecification-launchtemplatename"""
 
 @attr.s
-class PropInstancePrivateDnsNameOptions(Property):
-    """
-    AWS Object Type = "AWS::EC2::Instance.PrivateDnsNameOptions"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-privatednsnameoptions.html
-
-    Property Document:
-    
-    - ``p_EnableResourceNameDnsAAAARecord``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-privatednsnameoptions.html#cfn-ec2-instance-privatednsnameoptions-enableresourcenamednsaaaarecord
-    - ``p_EnableResourceNameDnsARecord``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-privatednsnameoptions.html#cfn-ec2-instance-privatednsnameoptions-enableresourcenamednsarecord
-    - ``p_HostnameType``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-privatednsnameoptions.html#cfn-ec2-instance-privatednsnameoptions-hostnametype
-    """
-    AWS_OBJECT_TYPE = "AWS::EC2::Instance.PrivateDnsNameOptions"
-    
-    p_EnableResourceNameDnsAAAARecord: bool = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(bool)),
-        metadata={AttrMeta.PROPERTY_NAME: "EnableResourceNameDnsAAAARecord"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-privatednsnameoptions.html#cfn-ec2-instance-privatednsnameoptions-enableresourcenamednsaaaarecord"""
-    p_EnableResourceNameDnsARecord: bool = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(bool)),
-        metadata={AttrMeta.PROPERTY_NAME: "EnableResourceNameDnsARecord"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-privatednsnameoptions.html#cfn-ec2-instance-privatednsnameoptions-enableresourcenamednsarecord"""
-    p_HostnameType: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "HostnameType"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-privatednsnameoptions.html#cfn-ec2-instance-privatednsnameoptions-hostnametype"""
-
-@attr.s
 class PropLaunchTemplateNetworkInterfaceCount(Property):
     """
     AWS Object Type = "AWS::EC2::LaunchTemplate.NetworkInterfaceCount"
@@ -1379,88 +809,6 @@ class PropLaunchTemplateNetworkInterfaceCount(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Min"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterfacecount.html#cfn-ec2-launchtemplate-networkinterfacecount-min"""
-
-@attr.s
-class PropLaunchTemplateCapacityReservationTarget(Property):
-    """
-    AWS Object Type = "AWS::EC2::LaunchTemplate.CapacityReservationTarget"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-capacityreservationtarget.html
-
-    Property Document:
-    
-    - ``p_CapacityReservationId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-capacityreservationtarget.html#cfn-ec2-launchtemplate-capacityreservationtarget-capacityreservationid
-    - ``p_CapacityReservationResourceGroupArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-capacityreservationtarget.html#cfn-ec2-launchtemplate-capacityreservationtarget-capacityreservationresourcegrouparn
-    """
-    AWS_OBJECT_TYPE = "AWS::EC2::LaunchTemplate.CapacityReservationTarget"
-    
-    p_CapacityReservationId: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "CapacityReservationId"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-capacityreservationtarget.html#cfn-ec2-launchtemplate-capacityreservationtarget-capacityreservationid"""
-    p_CapacityReservationResourceGroupArn: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "CapacityReservationResourceGroupArn"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-capacityreservationtarget.html#cfn-ec2-launchtemplate-capacityreservationtarget-capacityreservationresourcegrouparn"""
-
-@attr.s
-class PropCapacityReservationTagSpecification(Property):
-    """
-    AWS Object Type = "AWS::EC2::CapacityReservation.TagSpecification"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-capacityreservation-tagspecification.html
-
-    Property Document:
-    
-    - ``p_ResourceType``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-capacityreservation-tagspecification.html#cfn-ec2-capacityreservation-tagspecification-resourcetype
-    - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-capacityreservation-tagspecification.html#cfn-ec2-capacityreservation-tagspecification-tags
-    """
-    AWS_OBJECT_TYPE = "AWS::EC2::CapacityReservation.TagSpecification"
-    
-    p_ResourceType: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "ResourceType"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-capacityreservation-tagspecification.html#cfn-ec2-capacityreservation-tagspecification-resourcetype"""
-    p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
-        default=None,
-        converter=Tag.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-capacityreservation-tagspecification.html#cfn-ec2-capacityreservation-tagspecification-tags"""
-
-@attr.s
-class PropLaunchTemplateCpuOptions(Property):
-    """
-    AWS Object Type = "AWS::EC2::LaunchTemplate.CpuOptions"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-cpuoptions.html
-
-    Property Document:
-    
-    - ``p_CoreCount``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-cpuoptions.html#cfn-ec2-launchtemplate-launchtemplatedata-cpuoptions-corecount
-    - ``p_ThreadsPerCore``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-cpuoptions.html#cfn-ec2-launchtemplate-launchtemplatedata-cpuoptions-threadspercore
-    """
-    AWS_OBJECT_TYPE = "AWS::EC2::LaunchTemplate.CpuOptions"
-    
-    p_CoreCount: int = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "CoreCount"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-cpuoptions.html#cfn-ec2-launchtemplate-launchtemplatedata-cpuoptions-corecount"""
-    p_ThreadsPerCore: int = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "ThreadsPerCore"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-cpuoptions.html#cfn-ec2-launchtemplate-launchtemplatedata-cpuoptions-threadspercore"""
 
 @attr.s
 class PropNetworkInsightsAnalysisAnalysisComponent(Property):
@@ -1615,40 +963,6 @@ class PropLaunchTemplatePrivateIpAdd(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-privateipadd.html#cfn-ec2-launchtemplate-privateipadd-privateipaddress"""
 
 @attr.s
-class PropLaunchTemplatePrivateDnsNameOptions(Property):
-    """
-    AWS Object Type = "AWS::EC2::LaunchTemplate.PrivateDnsNameOptions"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-privatednsnameoptions.html
-
-    Property Document:
-    
-    - ``p_EnableResourceNameDnsAAAARecord``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-privatednsnameoptions.html#cfn-ec2-launchtemplate-launchtemplatedata-privatednsnameoptions-enableresourcenamednsaaaarecord
-    - ``p_EnableResourceNameDnsARecord``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-privatednsnameoptions.html#cfn-ec2-launchtemplate-launchtemplatedata-privatednsnameoptions-enableresourcenamednsarecord
-    - ``p_HostnameType``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-privatednsnameoptions.html#cfn-ec2-launchtemplate-launchtemplatedata-privatednsnameoptions-hostnametype
-    """
-    AWS_OBJECT_TYPE = "AWS::EC2::LaunchTemplate.PrivateDnsNameOptions"
-    
-    p_EnableResourceNameDnsAAAARecord: bool = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(bool)),
-        metadata={AttrMeta.PROPERTY_NAME: "EnableResourceNameDnsAAAARecord"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-privatednsnameoptions.html#cfn-ec2-launchtemplate-launchtemplatedata-privatednsnameoptions-enableresourcenamednsaaaarecord"""
-    p_EnableResourceNameDnsARecord: bool = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(bool)),
-        metadata={AttrMeta.PROPERTY_NAME: "EnableResourceNameDnsARecord"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-privatednsnameoptions.html#cfn-ec2-launchtemplate-launchtemplatedata-privatednsnameoptions-enableresourcenamednsarecord"""
-    p_HostnameType: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "HostnameType"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-privatednsnameoptions.html#cfn-ec2-launchtemplate-launchtemplatedata-privatednsnameoptions-hostnametype"""
-
-@attr.s
 class PropSpotFleetSpotFleetTagSpecification(Property):
     """
     AWS Object Type = "AWS::EC2::SpotFleet.SpotFleetTagSpecification"
@@ -1702,6 +1016,1521 @@ class PropSpotFleetPrivateIpAddressSpecification(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Primary"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-privateipaddressspecification.html#cfn-ec2-spotfleet-privateipaddressspecification-primary"""
+
+@attr.s
+class PropLaunchTemplateNetworkBandwidthGbps(Property):
+    """
+    AWS Object Type = "AWS::EC2::LaunchTemplate.NetworkBandwidthGbps"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkbandwidthgbps.html
+
+    Property Document:
+    
+    - ``p_Max``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkbandwidthgbps.html#cfn-ec2-launchtemplate-networkbandwidthgbps-max
+    - ``p_Min``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkbandwidthgbps.html#cfn-ec2-launchtemplate-networkbandwidthgbps-min
+    """
+    AWS_OBJECT_TYPE = "AWS::EC2::LaunchTemplate.NetworkBandwidthGbps"
+    
+    p_Max: float = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(float)),
+        metadata={AttrMeta.PROPERTY_NAME: "Max"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkbandwidthgbps.html#cfn-ec2-launchtemplate-networkbandwidthgbps-max"""
+    p_Min: float = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(float)),
+        metadata={AttrMeta.PROPERTY_NAME: "Min"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkbandwidthgbps.html#cfn-ec2-launchtemplate-networkbandwidthgbps-min"""
+
+@attr.s
+class PropNetworkInsightsAnalysisPortRange(Property):
+    """
+    AWS Object Type = "AWS::EC2::NetworkInsightsAnalysis.PortRange"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-portrange.html
+
+    Property Document:
+    
+    - ``p_From``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-portrange.html#cfn-ec2-networkinsightsanalysis-portrange-from
+    - ``p_To``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-portrange.html#cfn-ec2-networkinsightsanalysis-portrange-to
+    """
+    AWS_OBJECT_TYPE = "AWS::EC2::NetworkInsightsAnalysis.PortRange"
+    
+    p_From: int = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(int)),
+        metadata={AttrMeta.PROPERTY_NAME: "From"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-portrange.html#cfn-ec2-networkinsightsanalysis-portrange-from"""
+    p_To: int = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(int)),
+        metadata={AttrMeta.PROPERTY_NAME: "To"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-portrange.html#cfn-ec2-networkinsightsanalysis-portrange-to"""
+
+@attr.s
+class PropSpotFleetAcceleratorTotalMemoryMiBRequest(Property):
+    """
+    AWS Object Type = "AWS::EC2::SpotFleet.AcceleratorTotalMemoryMiBRequest"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-acceleratortotalmemorymibrequest.html
+
+    Property Document:
+    
+    - ``p_Max``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-acceleratortotalmemorymibrequest.html#cfn-ec2-spotfleet-acceleratortotalmemorymibrequest-max
+    - ``p_Min``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-acceleratortotalmemorymibrequest.html#cfn-ec2-spotfleet-acceleratortotalmemorymibrequest-min
+    """
+    AWS_OBJECT_TYPE = "AWS::EC2::SpotFleet.AcceleratorTotalMemoryMiBRequest"
+    
+    p_Max: int = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(int)),
+        metadata={AttrMeta.PROPERTY_NAME: "Max"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-acceleratortotalmemorymibrequest.html#cfn-ec2-spotfleet-acceleratortotalmemorymibrequest-max"""
+    p_Min: int = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(int)),
+        metadata={AttrMeta.PROPERTY_NAME: "Min"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-acceleratortotalmemorymibrequest.html#cfn-ec2-spotfleet-acceleratortotalmemorymibrequest-min"""
+
+@attr.s
+class PropSpotFleetTargetGroup(Property):
+    """
+    AWS Object Type = "AWS::EC2::SpotFleet.TargetGroup"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-targetgroup.html
+
+    Property Document:
+    
+    - ``rp_Arn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-targetgroup.html#cfn-ec2-spotfleet-targetgroup-arn
+    """
+    AWS_OBJECT_TYPE = "AWS::EC2::SpotFleet.TargetGroup"
+    
+    rp_Arn: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "Arn"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-targetgroup.html#cfn-ec2-spotfleet-targetgroup-arn"""
+
+@attr.s
+class PropClientVpnEndpointConnectionLogOptions(Property):
+    """
+    AWS Object Type = "AWS::EC2::ClientVpnEndpoint.ConnectionLogOptions"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-connectionlogoptions.html
+
+    Property Document:
+    
+    - ``rp_Enabled``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-connectionlogoptions.html#cfn-ec2-clientvpnendpoint-connectionlogoptions-enabled
+    - ``p_CloudwatchLogGroup``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-connectionlogoptions.html#cfn-ec2-clientvpnendpoint-connectionlogoptions-cloudwatchloggroup
+    - ``p_CloudwatchLogStream``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-connectionlogoptions.html#cfn-ec2-clientvpnendpoint-connectionlogoptions-cloudwatchlogstream
+    """
+    AWS_OBJECT_TYPE = "AWS::EC2::ClientVpnEndpoint.ConnectionLogOptions"
+    
+    rp_Enabled: bool = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(bool),
+        metadata={AttrMeta.PROPERTY_NAME: "Enabled"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-connectionlogoptions.html#cfn-ec2-clientvpnendpoint-connectionlogoptions-enabled"""
+    p_CloudwatchLogGroup: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "CloudwatchLogGroup"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-connectionlogoptions.html#cfn-ec2-clientvpnendpoint-connectionlogoptions-cloudwatchloggroup"""
+    p_CloudwatchLogStream: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "CloudwatchLogStream"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-connectionlogoptions.html#cfn-ec2-clientvpnendpoint-connectionlogoptions-cloudwatchlogstream"""
+
+@attr.s
+class PropLaunchTemplateIamInstanceProfile(Property):
+    """
+    AWS Object Type = "AWS::EC2::LaunchTemplate.IamInstanceProfile"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-iaminstanceprofile.html
+
+    Property Document:
+    
+    - ``p_Arn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-iaminstanceprofile.html#cfn-ec2-launchtemplate-launchtemplatedata-iaminstanceprofile-arn
+    - ``p_Name``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-iaminstanceprofile.html#cfn-ec2-launchtemplate-launchtemplatedata-iaminstanceprofile-name
+    """
+    AWS_OBJECT_TYPE = "AWS::EC2::LaunchTemplate.IamInstanceProfile"
+    
+    p_Arn: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "Arn"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-iaminstanceprofile.html#cfn-ec2-launchtemplate-launchtemplatedata-iaminstanceprofile-arn"""
+    p_Name: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "Name"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-iaminstanceprofile.html#cfn-ec2-launchtemplate-launchtemplatedata-iaminstanceprofile-name"""
+
+@attr.s
+class PropSecurityGroupEgress(Property):
+    """
+    AWS Object Type = "AWS::EC2::SecurityGroup.Egress"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-rule.html
+
+    Property Document:
+    
+    - ``rp_IpProtocol``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-rule.html#cfn-ec2-security-group-rule-ipprotocol
+    - ``p_CidrIp``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-rule.html#cfn-ec2-security-group-rule-cidrip
+    - ``p_CidrIpv6``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-rule.html#cfn-ec2-security-group-rule-cidripv6
+    - ``p_Description``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-rule.html#cfn-ec2-security-group-rule-description
+    - ``p_DestinationPrefixListId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-rule.html#cfn-ec2-security-group-rule-destinationprefixlistid
+    - ``p_DestinationSecurityGroupId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-rule.html#cfn-ec2-security-group-rule-destsecgroupid
+    - ``p_FromPort``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-rule.html#cfn-ec2-security-group-rule-fromport
+    - ``p_ToPort``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-rule.html#cfn-ec2-security-group-rule-toport
+    """
+    AWS_OBJECT_TYPE = "AWS::EC2::SecurityGroup.Egress"
+    
+    rp_IpProtocol: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "IpProtocol"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-rule.html#cfn-ec2-security-group-rule-ipprotocol"""
+    p_CidrIp: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "CidrIp"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-rule.html#cfn-ec2-security-group-rule-cidrip"""
+    p_CidrIpv6: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "CidrIpv6"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-rule.html#cfn-ec2-security-group-rule-cidripv6"""
+    p_Description: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "Description"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-rule.html#cfn-ec2-security-group-rule-description"""
+    p_DestinationPrefixListId: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "DestinationPrefixListId"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-rule.html#cfn-ec2-security-group-rule-destinationprefixlistid"""
+    p_DestinationSecurityGroupId: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "DestinationSecurityGroupId"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-rule.html#cfn-ec2-security-group-rule-destsecgroupid"""
+    p_FromPort: int = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(int)),
+        metadata={AttrMeta.PROPERTY_NAME: "FromPort"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-rule.html#cfn-ec2-security-group-rule-fromport"""
+    p_ToPort: int = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(int)),
+        metadata={AttrMeta.PROPERTY_NAME: "ToPort"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-rule.html#cfn-ec2-security-group-rule-toport"""
+
+@attr.s
+class PropNetworkInsightsAnalysisTransitGatewayRouteTableRoute(Property):
+    """
+    AWS Object Type = "AWS::EC2::NetworkInsightsAnalysis.TransitGatewayRouteTableRoute"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-transitgatewayroutetableroute.html
+
+    Property Document:
+    
+    - ``p_AttachmentId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-transitgatewayroutetableroute.html#cfn-ec2-networkinsightsanalysis-transitgatewayroutetableroute-attachmentid
+    - ``p_DestinationCidr``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-transitgatewayroutetableroute.html#cfn-ec2-networkinsightsanalysis-transitgatewayroutetableroute-destinationcidr
+    - ``p_PrefixListId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-transitgatewayroutetableroute.html#cfn-ec2-networkinsightsanalysis-transitgatewayroutetableroute-prefixlistid
+    - ``p_ResourceId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-transitgatewayroutetableroute.html#cfn-ec2-networkinsightsanalysis-transitgatewayroutetableroute-resourceid
+    - ``p_ResourceType``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-transitgatewayroutetableroute.html#cfn-ec2-networkinsightsanalysis-transitgatewayroutetableroute-resourcetype
+    - ``p_RouteOrigin``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-transitgatewayroutetableroute.html#cfn-ec2-networkinsightsanalysis-transitgatewayroutetableroute-routeorigin
+    - ``p_State``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-transitgatewayroutetableroute.html#cfn-ec2-networkinsightsanalysis-transitgatewayroutetableroute-state
+    """
+    AWS_OBJECT_TYPE = "AWS::EC2::NetworkInsightsAnalysis.TransitGatewayRouteTableRoute"
+    
+    p_AttachmentId: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "AttachmentId"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-transitgatewayroutetableroute.html#cfn-ec2-networkinsightsanalysis-transitgatewayroutetableroute-attachmentid"""
+    p_DestinationCidr: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "DestinationCidr"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-transitgatewayroutetableroute.html#cfn-ec2-networkinsightsanalysis-transitgatewayroutetableroute-destinationcidr"""
+    p_PrefixListId: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "PrefixListId"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-transitgatewayroutetableroute.html#cfn-ec2-networkinsightsanalysis-transitgatewayroutetableroute-prefixlistid"""
+    p_ResourceId: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "ResourceId"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-transitgatewayroutetableroute.html#cfn-ec2-networkinsightsanalysis-transitgatewayroutetableroute-resourceid"""
+    p_ResourceType: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "ResourceType"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-transitgatewayroutetableroute.html#cfn-ec2-networkinsightsanalysis-transitgatewayroutetableroute-resourcetype"""
+    p_RouteOrigin: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "RouteOrigin"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-transitgatewayroutetableroute.html#cfn-ec2-networkinsightsanalysis-transitgatewayroutetableroute-routeorigin"""
+    p_State: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "State"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-transitgatewayroutetableroute.html#cfn-ec2-networkinsightsanalysis-transitgatewayroutetableroute-state"""
+
+@attr.s
+class PropSpotFleetSpotFleetMonitoring(Property):
+    """
+    AWS Object Type = "AWS::EC2::SpotFleet.SpotFleetMonitoring"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetmonitoring.html
+
+    Property Document:
+    
+    - ``p_Enabled``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetmonitoring.html#cfn-ec2-spotfleet-spotfleetmonitoring-enabled
+    """
+    AWS_OBJECT_TYPE = "AWS::EC2::SpotFleet.SpotFleetMonitoring"
+    
+    p_Enabled: bool = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(bool)),
+        metadata={AttrMeta.PROPERTY_NAME: "Enabled"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetmonitoring.html#cfn-ec2-spotfleet-spotfleetmonitoring-enabled"""
+
+@attr.s
+class PropClientVpnEndpointClientLoginBannerOptions(Property):
+    """
+    AWS Object Type = "AWS::EC2::ClientVpnEndpoint.ClientLoginBannerOptions"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-clientloginbanneroptions.html
+
+    Property Document:
+    
+    - ``rp_Enabled``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-clientloginbanneroptions.html#cfn-ec2-clientvpnendpoint-clientloginbanneroptions-enabled
+    - ``p_BannerText``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-clientloginbanneroptions.html#cfn-ec2-clientvpnendpoint-clientloginbanneroptions-bannertext
+    """
+    AWS_OBJECT_TYPE = "AWS::EC2::ClientVpnEndpoint.ClientLoginBannerOptions"
+    
+    rp_Enabled: bool = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(bool),
+        metadata={AttrMeta.PROPERTY_NAME: "Enabled"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-clientloginbanneroptions.html#cfn-ec2-clientvpnendpoint-clientloginbanneroptions-enabled"""
+    p_BannerText: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "BannerText"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-clientloginbanneroptions.html#cfn-ec2-clientvpnendpoint-clientloginbanneroptions-bannertext"""
+
+@attr.s
+class PropLaunchTemplateTotalLocalStorageGB(Property):
+    """
+    AWS Object Type = "AWS::EC2::LaunchTemplate.TotalLocalStorageGB"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-totallocalstoragegb.html
+
+    Property Document:
+    
+    - ``p_Max``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-totallocalstoragegb.html#cfn-ec2-launchtemplate-totallocalstoragegb-max
+    - ``p_Min``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-totallocalstoragegb.html#cfn-ec2-launchtemplate-totallocalstoragegb-min
+    """
+    AWS_OBJECT_TYPE = "AWS::EC2::LaunchTemplate.TotalLocalStorageGB"
+    
+    p_Max: float = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(float)),
+        metadata={AttrMeta.PROPERTY_NAME: "Max"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-totallocalstoragegb.html#cfn-ec2-launchtemplate-totallocalstoragegb-max"""
+    p_Min: float = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(float)),
+        metadata={AttrMeta.PROPERTY_NAME: "Min"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-totallocalstoragegb.html#cfn-ec2-launchtemplate-totallocalstoragegb-min"""
+
+@attr.s
+class PropLaunchTemplatePlacement(Property):
+    """
+    AWS Object Type = "AWS::EC2::LaunchTemplate.Placement"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-placement.html
+
+    Property Document:
+    
+    - ``p_Affinity``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-placement.html#cfn-ec2-launchtemplate-launchtemplatedata-placement-affinity
+    - ``p_AvailabilityZone``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-placement.html#cfn-ec2-launchtemplate-launchtemplatedata-placement-availabilityzone
+    - ``p_GroupId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-placement.html#cfn-ec2-launchtemplate-launchtemplatedata-placement-groupid
+    - ``p_GroupName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-placement.html#cfn-ec2-launchtemplate-launchtemplatedata-placement-groupname
+    - ``p_HostId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-placement.html#cfn-ec2-launchtemplate-launchtemplatedata-placement-hostid
+    - ``p_HostResourceGroupArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-placement.html#cfn-ec2-launchtemplate-launchtemplatedata-placement-hostresourcegrouparn
+    - ``p_PartitionNumber``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-placement.html#cfn-ec2-launchtemplate-launchtemplatedata-placement-partitionnumber
+    - ``p_SpreadDomain``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-placement.html#cfn-ec2-launchtemplate-launchtemplatedata-placement-spreaddomain
+    - ``p_Tenancy``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-placement.html#cfn-ec2-launchtemplate-launchtemplatedata-placement-tenancy
+    """
+    AWS_OBJECT_TYPE = "AWS::EC2::LaunchTemplate.Placement"
+    
+    p_Affinity: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "Affinity"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-placement.html#cfn-ec2-launchtemplate-launchtemplatedata-placement-affinity"""
+    p_AvailabilityZone: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "AvailabilityZone"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-placement.html#cfn-ec2-launchtemplate-launchtemplatedata-placement-availabilityzone"""
+    p_GroupId: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "GroupId"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-placement.html#cfn-ec2-launchtemplate-launchtemplatedata-placement-groupid"""
+    p_GroupName: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "GroupName"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-placement.html#cfn-ec2-launchtemplate-launchtemplatedata-placement-groupname"""
+    p_HostId: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "HostId"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-placement.html#cfn-ec2-launchtemplate-launchtemplatedata-placement-hostid"""
+    p_HostResourceGroupArn: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "HostResourceGroupArn"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-placement.html#cfn-ec2-launchtemplate-launchtemplatedata-placement-hostresourcegrouparn"""
+    p_PartitionNumber: int = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(int)),
+        metadata={AttrMeta.PROPERTY_NAME: "PartitionNumber"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-placement.html#cfn-ec2-launchtemplate-launchtemplatedata-placement-partitionnumber"""
+    p_SpreadDomain: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "SpreadDomain"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-placement.html#cfn-ec2-launchtemplate-launchtemplatedata-placement-spreaddomain"""
+    p_Tenancy: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "Tenancy"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-placement.html#cfn-ec2-launchtemplate-launchtemplatedata-placement-tenancy"""
+
+@attr.s
+class PropEC2FleetMemoryMiBRequest(Property):
+    """
+    AWS Object Type = "AWS::EC2::EC2Fleet.MemoryMiBRequest"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-memorymibrequest.html
+
+    Property Document:
+    
+    - ``p_Max``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-memorymibrequest.html#cfn-ec2-ec2fleet-memorymibrequest-max
+    - ``p_Min``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-memorymibrequest.html#cfn-ec2-ec2fleet-memorymibrequest-min
+    """
+    AWS_OBJECT_TYPE = "AWS::EC2::EC2Fleet.MemoryMiBRequest"
+    
+    p_Max: int = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(int)),
+        metadata={AttrMeta.PROPERTY_NAME: "Max"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-memorymibrequest.html#cfn-ec2-ec2fleet-memorymibrequest-max"""
+    p_Min: int = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(int)),
+        metadata={AttrMeta.PROPERTY_NAME: "Min"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-memorymibrequest.html#cfn-ec2-ec2fleet-memorymibrequest-min"""
+
+@attr.s
+class PropInstanceInstanceIpv6Address(Property):
+    """
+    AWS Object Type = "AWS::EC2::Instance.InstanceIpv6Address"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-instanceipv6address.html
+
+    Property Document:
+    
+    - ``rp_Ipv6Address``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-instanceipv6address.html#cfn-ec2-instance-instanceipv6address-ipv6address
+    """
+    AWS_OBJECT_TYPE = "AWS::EC2::Instance.InstanceIpv6Address"
+    
+    rp_Ipv6Address: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "Ipv6Address"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-instanceipv6address.html#cfn-ec2-instance-instanceipv6address-ipv6address"""
+
+@attr.s
+class PropInstanceAssociationParameter(Property):
+    """
+    AWS Object Type = "AWS::EC2::Instance.AssociationParameter"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-ssmassociations-associationparameters.html
+
+    Property Document:
+    
+    - ``rp_Key``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-ssmassociations-associationparameters.html#cfn-ec2-instance-ssmassociations-associationparameters-key
+    - ``rp_Value``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-ssmassociations-associationparameters.html#cfn-ec2-instance-ssmassociations-associationparameters-value
+    """
+    AWS_OBJECT_TYPE = "AWS::EC2::Instance.AssociationParameter"
+    
+    rp_Key: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "Key"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-ssmassociations-associationparameters.html#cfn-ec2-instance-ssmassociations-associationparameters-key"""
+    rp_Value: typing.List[TypeHint.intrinsic_str] = attr.ib(
+        default=None,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list)),
+        metadata={AttrMeta.PROPERTY_NAME: "Value"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-ssmassociations-associationparameters.html#cfn-ec2-instance-ssmassociations-associationparameters-value"""
+
+@attr.s
+class PropInstanceEnclaveOptions(Property):
+    """
+    AWS Object Type = "AWS::EC2::Instance.EnclaveOptions"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-enclaveoptions.html
+
+    Property Document:
+    
+    - ``p_Enabled``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-enclaveoptions.html#cfn-ec2-instance-enclaveoptions-enabled
+    """
+    AWS_OBJECT_TYPE = "AWS::EC2::Instance.EnclaveOptions"
+    
+    p_Enabled: bool = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(bool)),
+        metadata={AttrMeta.PROPERTY_NAME: "Enabled"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-enclaveoptions.html#cfn-ec2-instance-enclaveoptions-enabled"""
+
+@attr.s
+class PropLaunchTemplateIpv6Add(Property):
+    """
+    AWS Object Type = "AWS::EC2::LaunchTemplate.Ipv6Add"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-ipv6add.html
+
+    Property Document:
+    
+    - ``p_Ipv6Address``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-ipv6add.html#cfn-ec2-launchtemplate-ipv6add-ipv6address
+    """
+    AWS_OBJECT_TYPE = "AWS::EC2::LaunchTemplate.Ipv6Add"
+    
+    p_Ipv6Address: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "Ipv6Address"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-ipv6add.html#cfn-ec2-launchtemplate-ipv6add-ipv6address"""
+
+@attr.s
+class PropNetworkInsightsAccessScopeResourceStatementRequest(Property):
+    """
+    AWS Object Type = "AWS::EC2::NetworkInsightsAccessScope.ResourceStatementRequest"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsaccessscope-resourcestatementrequest.html
+
+    Property Document:
+    
+    - ``p_ResourceTypes``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsaccessscope-resourcestatementrequest.html#cfn-ec2-networkinsightsaccessscope-resourcestatementrequest-resourcetypes
+    - ``p_Resources``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsaccessscope-resourcestatementrequest.html#cfn-ec2-networkinsightsaccessscope-resourcestatementrequest-resources
+    """
+    AWS_OBJECT_TYPE = "AWS::EC2::NetworkInsightsAccessScope.ResourceStatementRequest"
+    
+    p_ResourceTypes: typing.List[TypeHint.intrinsic_str] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "ResourceTypes"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsaccessscope-resourcestatementrequest.html#cfn-ec2-networkinsightsaccessscope-resourcestatementrequest-resourcetypes"""
+    p_Resources: typing.List[TypeHint.intrinsic_str] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "Resources"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsaccessscope-resourcestatementrequest.html#cfn-ec2-networkinsightsaccessscope-resourcestatementrequest-resources"""
+
+@attr.s
+class PropInstanceSsmAssociation(Property):
+    """
+    AWS Object Type = "AWS::EC2::Instance.SsmAssociation"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-ssmassociations.html
+
+    Property Document:
+    
+    - ``rp_DocumentName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-ssmassociations.html#cfn-ec2-instance-ssmassociations-documentname
+    - ``p_AssociationParameters``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-ssmassociations.html#cfn-ec2-instance-ssmassociations-associationparameters
+    """
+    AWS_OBJECT_TYPE = "AWS::EC2::Instance.SsmAssociation"
+    
+    rp_DocumentName: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "DocumentName"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-ssmassociations.html#cfn-ec2-instance-ssmassociations-documentname"""
+    p_AssociationParameters: typing.List[typing.Union['PropInstanceAssociationParameter', dict]] = attr.ib(
+        default=None,
+        converter=PropInstanceAssociationParameter.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropInstanceAssociationParameter), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "AssociationParameters"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-ssmassociations.html#cfn-ec2-instance-ssmassociations-associationparameters"""
+
+@attr.s
+class PropIPAMPoolProvisionedCidr(Property):
+    """
+    AWS Object Type = "AWS::EC2::IPAMPool.ProvisionedCidr"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ipampool-provisionedcidr.html
+
+    Property Document:
+    
+    - ``rp_Cidr``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ipampool-provisionedcidr.html#cfn-ec2-ipampool-provisionedcidr-cidr
+    """
+    AWS_OBJECT_TYPE = "AWS::EC2::IPAMPool.ProvisionedCidr"
+    
+    rp_Cidr: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "Cidr"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ipampool-provisionedcidr.html#cfn-ec2-ipampool-provisionedcidr-cidr"""
+
+@attr.s
+class PropSpotFleetNetworkBandwidthGbpsRequest(Property):
+    """
+    AWS Object Type = "AWS::EC2::SpotFleet.NetworkBandwidthGbpsRequest"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-networkbandwidthgbpsrequest.html
+
+    Property Document:
+    
+    - ``p_Max``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-networkbandwidthgbpsrequest.html#cfn-ec2-spotfleet-networkbandwidthgbpsrequest-max
+    - ``p_Min``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-networkbandwidthgbpsrequest.html#cfn-ec2-spotfleet-networkbandwidthgbpsrequest-min
+    """
+    AWS_OBJECT_TYPE = "AWS::EC2::SpotFleet.NetworkBandwidthGbpsRequest"
+    
+    p_Max: float = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(float)),
+        metadata={AttrMeta.PROPERTY_NAME: "Max"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-networkbandwidthgbpsrequest.html#cfn-ec2-spotfleet-networkbandwidthgbpsrequest-max"""
+    p_Min: float = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(float)),
+        metadata={AttrMeta.PROPERTY_NAME: "Min"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-networkbandwidthgbpsrequest.html#cfn-ec2-spotfleet-networkbandwidthgbpsrequest-min"""
+
+@attr.s
+class PropIPAMIpamOperatingRegion(Property):
+    """
+    AWS Object Type = "AWS::EC2::IPAM.IpamOperatingRegion"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ipam-ipamoperatingregion.html
+
+    Property Document:
+    
+    - ``rp_RegionName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ipam-ipamoperatingregion.html#cfn-ec2-ipam-ipamoperatingregion-regionname
+    """
+    AWS_OBJECT_TYPE = "AWS::EC2::IPAM.IpamOperatingRegion"
+    
+    rp_RegionName: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "RegionName"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ipam-ipamoperatingregion.html#cfn-ec2-ipam-ipamoperatingregion-regionname"""
+
+@attr.s
+class PropPrefixListEntry(Property):
+    """
+    AWS Object Type = "AWS::EC2::PrefixList.Entry"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-prefixlist-entry.html
+
+    Property Document:
+    
+    - ``rp_Cidr``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-prefixlist-entry.html#cfn-ec2-prefixlist-entry-cidr
+    - ``p_Description``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-prefixlist-entry.html#cfn-ec2-prefixlist-entry-description
+    """
+    AWS_OBJECT_TYPE = "AWS::EC2::PrefixList.Entry"
+    
+    rp_Cidr: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "Cidr"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-prefixlist-entry.html#cfn-ec2-prefixlist-entry-cidr"""
+    p_Description: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "Description"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-prefixlist-entry.html#cfn-ec2-prefixlist-entry-description"""
+
+@attr.s
+class PropLaunchTemplateLaunchTemplateTagSpecification(Property):
+    """
+    AWS Object Type = "AWS::EC2::LaunchTemplate.LaunchTemplateTagSpecification"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatetagspecification.html
+
+    Property Document:
+    
+    - ``p_ResourceType``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatetagspecification.html#cfn-ec2-launchtemplate-launchtemplatetagspecification-resourcetype
+    - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatetagspecification.html#cfn-ec2-launchtemplate-launchtemplatetagspecification-tags
+    """
+    AWS_OBJECT_TYPE = "AWS::EC2::LaunchTemplate.LaunchTemplateTagSpecification"
+    
+    p_ResourceType: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "ResourceType"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatetagspecification.html#cfn-ec2-launchtemplate-launchtemplatetagspecification-resourcetype"""
+    p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
+        default=None,
+        converter=Tag.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatetagspecification.html#cfn-ec2-launchtemplate-launchtemplatetagspecification-tags"""
+
+@attr.s
+class PropTransitGatewayConnectTransitGatewayConnectOptions(Property):
+    """
+    AWS Object Type = "AWS::EC2::TransitGatewayConnect.TransitGatewayConnectOptions"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-transitgatewayconnect-transitgatewayconnectoptions.html
+
+    Property Document:
+    
+    - ``p_Protocol``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-transitgatewayconnect-transitgatewayconnectoptions.html#cfn-ec2-transitgatewayconnect-transitgatewayconnectoptions-protocol
+    """
+    AWS_OBJECT_TYPE = "AWS::EC2::TransitGatewayConnect.TransitGatewayConnectOptions"
+    
+    p_Protocol: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "Protocol"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-transitgatewayconnect-transitgatewayconnectoptions.html#cfn-ec2-transitgatewayconnect-transitgatewayconnectoptions-protocol"""
+
+@attr.s
+class PropTrafficMirrorFilterRuleTrafficMirrorPortRange(Property):
+    """
+    AWS Object Type = "AWS::EC2::TrafficMirrorFilterRule.TrafficMirrorPortRange"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-trafficmirrorfilterrule-trafficmirrorportrange.html
+
+    Property Document:
+    
+    - ``rp_FromPort``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-trafficmirrorfilterrule-trafficmirrorportrange.html#cfn-ec2-trafficmirrorfilterrule-trafficmirrorportrange-fromport
+    - ``rp_ToPort``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-trafficmirrorfilterrule-trafficmirrorportrange.html#cfn-ec2-trafficmirrorfilterrule-trafficmirrorportrange-toport
+    """
+    AWS_OBJECT_TYPE = "AWS::EC2::TrafficMirrorFilterRule.TrafficMirrorPortRange"
+    
+    rp_FromPort: int = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(int),
+        metadata={AttrMeta.PROPERTY_NAME: "FromPort"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-trafficmirrorfilterrule-trafficmirrorportrange.html#cfn-ec2-trafficmirrorfilterrule-trafficmirrorportrange-fromport"""
+    rp_ToPort: int = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(int),
+        metadata={AttrMeta.PROPERTY_NAME: "ToPort"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-trafficmirrorfilterrule-trafficmirrorportrange.html#cfn-ec2-trafficmirrorfilterrule-trafficmirrorportrange-toport"""
+
+@attr.s
+class PropLaunchTemplateSpotOptions(Property):
+    """
+    AWS Object Type = "AWS::EC2::LaunchTemplate.SpotOptions"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-instancemarketoptions-spotoptions.html
+
+    Property Document:
+    
+    - ``p_BlockDurationMinutes``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-instancemarketoptions-spotoptions.html#cfn-ec2-launchtemplate-launchtemplatedata-instancemarketoptions-spotoptions-blockdurationminutes
+    - ``p_InstanceInterruptionBehavior``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-instancemarketoptions-spotoptions.html#cfn-ec2-launchtemplate-launchtemplatedata-instancemarketoptions-spotoptions-instanceinterruptionbehavior
+    - ``p_MaxPrice``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-instancemarketoptions-spotoptions.html#cfn-ec2-launchtemplate-launchtemplatedata-instancemarketoptions-spotoptions-maxprice
+    - ``p_SpotInstanceType``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-instancemarketoptions-spotoptions.html#cfn-ec2-launchtemplate-launchtemplatedata-instancemarketoptions-spotoptions-spotinstancetype
+    - ``p_ValidUntil``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-instancemarketoptions-spotoptions.html#cfn-ec2-launchtemplate-launchtemplatedata-instancemarketoptions-spotoptions-validuntil
+    """
+    AWS_OBJECT_TYPE = "AWS::EC2::LaunchTemplate.SpotOptions"
+    
+    p_BlockDurationMinutes: int = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(int)),
+        metadata={AttrMeta.PROPERTY_NAME: "BlockDurationMinutes"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-instancemarketoptions-spotoptions.html#cfn-ec2-launchtemplate-launchtemplatedata-instancemarketoptions-spotoptions-blockdurationminutes"""
+    p_InstanceInterruptionBehavior: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "InstanceInterruptionBehavior"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-instancemarketoptions-spotoptions.html#cfn-ec2-launchtemplate-launchtemplatedata-instancemarketoptions-spotoptions-instanceinterruptionbehavior"""
+    p_MaxPrice: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "MaxPrice"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-instancemarketoptions-spotoptions.html#cfn-ec2-launchtemplate-launchtemplatedata-instancemarketoptions-spotoptions-maxprice"""
+    p_SpotInstanceType: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "SpotInstanceType"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-instancemarketoptions-spotoptions.html#cfn-ec2-launchtemplate-launchtemplatedata-instancemarketoptions-spotoptions-spotinstancetype"""
+    p_ValidUntil: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "ValidUntil"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-instancemarketoptions-spotoptions.html#cfn-ec2-launchtemplate-launchtemplatedata-instancemarketoptions-spotoptions-validuntil"""
+
+@attr.s
+class PropNetworkInterfaceInstanceIpv6Address(Property):
+    """
+    AWS Object Type = "AWS::EC2::NetworkInterface.InstanceIpv6Address"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinterface-instanceipv6address.html
+
+    Property Document:
+    
+    - ``rp_Ipv6Address``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinterface-instanceipv6address.html#cfn-ec2-networkinterface-instanceipv6address-ipv6address
+    """
+    AWS_OBJECT_TYPE = "AWS::EC2::NetworkInterface.InstanceIpv6Address"
+    
+    rp_Ipv6Address: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "Ipv6Address"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinterface-instanceipv6address.html#cfn-ec2-networkinterface-instanceipv6address-ipv6address"""
+
+@attr.s
+class PropEC2FleetNetworkBandwidthGbpsRequest(Property):
+    """
+    AWS Object Type = "AWS::EC2::EC2Fleet.NetworkBandwidthGbpsRequest"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-networkbandwidthgbpsrequest.html
+
+    Property Document:
+    
+    - ``p_Max``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-networkbandwidthgbpsrequest.html#cfn-ec2-ec2fleet-networkbandwidthgbpsrequest-max
+    - ``p_Min``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-networkbandwidthgbpsrequest.html#cfn-ec2-ec2fleet-networkbandwidthgbpsrequest-min
+    """
+    AWS_OBJECT_TYPE = "AWS::EC2::EC2Fleet.NetworkBandwidthGbpsRequest"
+    
+    p_Max: float = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(float)),
+        metadata={AttrMeta.PROPERTY_NAME: "Max"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-networkbandwidthgbpsrequest.html#cfn-ec2-ec2fleet-networkbandwidthgbpsrequest-max"""
+    p_Min: float = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(float)),
+        metadata={AttrMeta.PROPERTY_NAME: "Min"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-networkbandwidthgbpsrequest.html#cfn-ec2-ec2fleet-networkbandwidthgbpsrequest-min"""
+
+@attr.s
+class PropSpotFleetBaselineEbsBandwidthMbpsRequest(Property):
+    """
+    AWS Object Type = "AWS::EC2::SpotFleet.BaselineEbsBandwidthMbpsRequest"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-baselineebsbandwidthmbpsrequest.html
+
+    Property Document:
+    
+    - ``p_Max``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-baselineebsbandwidthmbpsrequest.html#cfn-ec2-spotfleet-baselineebsbandwidthmbpsrequest-max
+    - ``p_Min``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-baselineebsbandwidthmbpsrequest.html#cfn-ec2-spotfleet-baselineebsbandwidthmbpsrequest-min
+    """
+    AWS_OBJECT_TYPE = "AWS::EC2::SpotFleet.BaselineEbsBandwidthMbpsRequest"
+    
+    p_Max: int = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(int)),
+        metadata={AttrMeta.PROPERTY_NAME: "Max"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-baselineebsbandwidthmbpsrequest.html#cfn-ec2-spotfleet-baselineebsbandwidthmbpsrequest-max"""
+    p_Min: int = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(int)),
+        metadata={AttrMeta.PROPERTY_NAME: "Min"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-baselineebsbandwidthmbpsrequest.html#cfn-ec2-spotfleet-baselineebsbandwidthmbpsrequest-min"""
+
+@attr.s
+class PropInstanceCreditSpecification(Property):
+    """
+    AWS Object Type = "AWS::EC2::Instance.CreditSpecification"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-creditspecification.html
+
+    Property Document:
+    
+    - ``p_CPUCredits``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-creditspecification.html#cfn-ec2-instance-creditspecification-cpucredits
+    """
+    AWS_OBJECT_TYPE = "AWS::EC2::Instance.CreditSpecification"
+    
+    p_CPUCredits: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "CPUCredits"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-creditspecification.html#cfn-ec2-instance-creditspecification-cpucredits"""
+
+@attr.s
+class PropEC2FleetTargetCapacitySpecificationRequest(Property):
+    """
+    AWS Object Type = "AWS::EC2::EC2Fleet.TargetCapacitySpecificationRequest"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-targetcapacityspecificationrequest.html
+
+    Property Document:
+    
+    - ``rp_TotalTargetCapacity``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-targetcapacityspecificationrequest.html#cfn-ec2-ec2fleet-targetcapacityspecificationrequest-totaltargetcapacity
+    - ``p_DefaultTargetCapacityType``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-targetcapacityspecificationrequest.html#cfn-ec2-ec2fleet-targetcapacityspecificationrequest-defaulttargetcapacitytype
+    - ``p_OnDemandTargetCapacity``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-targetcapacityspecificationrequest.html#cfn-ec2-ec2fleet-targetcapacityspecificationrequest-ondemandtargetcapacity
+    - ``p_SpotTargetCapacity``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-targetcapacityspecificationrequest.html#cfn-ec2-ec2fleet-targetcapacityspecificationrequest-spottargetcapacity
+    - ``p_TargetCapacityUnitType``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-targetcapacityspecificationrequest.html#cfn-ec2-ec2fleet-targetcapacityspecificationrequest-targetcapacityunittype
+    """
+    AWS_OBJECT_TYPE = "AWS::EC2::EC2Fleet.TargetCapacitySpecificationRequest"
+    
+    rp_TotalTargetCapacity: int = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(int),
+        metadata={AttrMeta.PROPERTY_NAME: "TotalTargetCapacity"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-targetcapacityspecificationrequest.html#cfn-ec2-ec2fleet-targetcapacityspecificationrequest-totaltargetcapacity"""
+    p_DefaultTargetCapacityType: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "DefaultTargetCapacityType"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-targetcapacityspecificationrequest.html#cfn-ec2-ec2fleet-targetcapacityspecificationrequest-defaulttargetcapacitytype"""
+    p_OnDemandTargetCapacity: int = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(int)),
+        metadata={AttrMeta.PROPERTY_NAME: "OnDemandTargetCapacity"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-targetcapacityspecificationrequest.html#cfn-ec2-ec2fleet-targetcapacityspecificationrequest-ondemandtargetcapacity"""
+    p_SpotTargetCapacity: int = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(int)),
+        metadata={AttrMeta.PROPERTY_NAME: "SpotTargetCapacity"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-targetcapacityspecificationrequest.html#cfn-ec2-ec2fleet-targetcapacityspecificationrequest-spottargetcapacity"""
+    p_TargetCapacityUnitType: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "TargetCapacityUnitType"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-targetcapacityspecificationrequest.html#cfn-ec2-ec2fleet-targetcapacityspecificationrequest-targetcapacityunittype"""
+
+@attr.s
+class PropCapacityReservationFleetTagSpecification(Property):
+    """
+    AWS Object Type = "AWS::EC2::CapacityReservationFleet.TagSpecification"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-capacityreservationfleet-tagspecification.html
+
+    Property Document:
+    
+    - ``p_ResourceType``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-capacityreservationfleet-tagspecification.html#cfn-ec2-capacityreservationfleet-tagspecification-resourcetype
+    - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-capacityreservationfleet-tagspecification.html#cfn-ec2-capacityreservationfleet-tagspecification-tags
+    """
+    AWS_OBJECT_TYPE = "AWS::EC2::CapacityReservationFleet.TagSpecification"
+    
+    p_ResourceType: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "ResourceType"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-capacityreservationfleet-tagspecification.html#cfn-ec2-capacityreservationfleet-tagspecification-resourcetype"""
+    p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
+        default=None,
+        converter=Tag.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-capacityreservationfleet-tagspecification.html#cfn-ec2-capacityreservationfleet-tagspecification-tags"""
+
+@attr.s
+class PropLaunchTemplateEbs(Property):
+    """
+    AWS Object Type = "AWS::EC2::LaunchTemplate.Ebs"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-blockdevicemapping-ebs.html
+
+    Property Document:
+    
+    - ``p_DeleteOnTermination``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-blockdevicemapping-ebs.html#cfn-ec2-launchtemplate-blockdevicemapping-ebs-deleteontermination
+    - ``p_Encrypted``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-blockdevicemapping-ebs.html#cfn-ec2-launchtemplate-blockdevicemapping-ebs-encrypted
+    - ``p_Iops``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-blockdevicemapping-ebs.html#cfn-ec2-launchtemplate-blockdevicemapping-ebs-iops
+    - ``p_KmsKeyId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-blockdevicemapping-ebs.html#cfn-ec2-launchtemplate-blockdevicemapping-ebs-kmskeyid
+    - ``p_SnapshotId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-blockdevicemapping-ebs.html#cfn-ec2-launchtemplate-blockdevicemapping-ebs-snapshotid
+    - ``p_Throughput``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-blockdevicemapping-ebs.html#cfn-ec2-launchtemplate-blockdevicemapping-ebs-throughput
+    - ``p_VolumeSize``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-blockdevicemapping-ebs.html#cfn-ec2-launchtemplate-blockdevicemapping-ebs-volumesize
+    - ``p_VolumeType``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-blockdevicemapping-ebs.html#cfn-ec2-launchtemplate-blockdevicemapping-ebs-volumetype
+    """
+    AWS_OBJECT_TYPE = "AWS::EC2::LaunchTemplate.Ebs"
+    
+    p_DeleteOnTermination: bool = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(bool)),
+        metadata={AttrMeta.PROPERTY_NAME: "DeleteOnTermination"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-blockdevicemapping-ebs.html#cfn-ec2-launchtemplate-blockdevicemapping-ebs-deleteontermination"""
+    p_Encrypted: bool = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(bool)),
+        metadata={AttrMeta.PROPERTY_NAME: "Encrypted"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-blockdevicemapping-ebs.html#cfn-ec2-launchtemplate-blockdevicemapping-ebs-encrypted"""
+    p_Iops: int = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(int)),
+        metadata={AttrMeta.PROPERTY_NAME: "Iops"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-blockdevicemapping-ebs.html#cfn-ec2-launchtemplate-blockdevicemapping-ebs-iops"""
+    p_KmsKeyId: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "KmsKeyId"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-blockdevicemapping-ebs.html#cfn-ec2-launchtemplate-blockdevicemapping-ebs-kmskeyid"""
+    p_SnapshotId: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "SnapshotId"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-blockdevicemapping-ebs.html#cfn-ec2-launchtemplate-blockdevicemapping-ebs-snapshotid"""
+    p_Throughput: int = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(int)),
+        metadata={AttrMeta.PROPERTY_NAME: "Throughput"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-blockdevicemapping-ebs.html#cfn-ec2-launchtemplate-blockdevicemapping-ebs-throughput"""
+    p_VolumeSize: int = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(int)),
+        metadata={AttrMeta.PROPERTY_NAME: "VolumeSize"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-blockdevicemapping-ebs.html#cfn-ec2-launchtemplate-blockdevicemapping-ebs-volumesize"""
+    p_VolumeType: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "VolumeType"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-blockdevicemapping-ebs.html#cfn-ec2-launchtemplate-blockdevicemapping-ebs-volumetype"""
+
+@attr.s
+class PropClientVpnEndpointDirectoryServiceAuthenticationRequest(Property):
+    """
+    AWS Object Type = "AWS::EC2::ClientVpnEndpoint.DirectoryServiceAuthenticationRequest"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-directoryserviceauthenticationrequest.html
+
+    Property Document:
+    
+    - ``rp_DirectoryId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-directoryserviceauthenticationrequest.html#cfn-ec2-clientvpnendpoint-directoryserviceauthenticationrequest-directoryid
+    """
+    AWS_OBJECT_TYPE = "AWS::EC2::ClientVpnEndpoint.DirectoryServiceAuthenticationRequest"
+    
+    rp_DirectoryId: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "DirectoryId"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-directoryserviceauthenticationrequest.html#cfn-ec2-clientvpnendpoint-directoryserviceauthenticationrequest-directoryid"""
+
+@attr.s
+class PropNetworkInsightsAnalysisAnalysisLoadBalancerTarget(Property):
+    """
+    AWS Object Type = "AWS::EC2::NetworkInsightsAnalysis.AnalysisLoadBalancerTarget"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysisloadbalancertarget.html
+
+    Property Document:
+    
+    - ``p_Address``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysisloadbalancertarget.html#cfn-ec2-networkinsightsanalysis-analysisloadbalancertarget-address
+    - ``p_AvailabilityZone``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysisloadbalancertarget.html#cfn-ec2-networkinsightsanalysis-analysisloadbalancertarget-availabilityzone
+    - ``p_Instance``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysisloadbalancertarget.html#cfn-ec2-networkinsightsanalysis-analysisloadbalancertarget-instance
+    - ``p_Port``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysisloadbalancertarget.html#cfn-ec2-networkinsightsanalysis-analysisloadbalancertarget-port
+    """
+    AWS_OBJECT_TYPE = "AWS::EC2::NetworkInsightsAnalysis.AnalysisLoadBalancerTarget"
+    
+    p_Address: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "Address"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysisloadbalancertarget.html#cfn-ec2-networkinsightsanalysis-analysisloadbalancertarget-address"""
+    p_AvailabilityZone: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "AvailabilityZone"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysisloadbalancertarget.html#cfn-ec2-networkinsightsanalysis-analysisloadbalancertarget-availabilityzone"""
+    p_Instance: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "Instance"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysisloadbalancertarget.html#cfn-ec2-networkinsightsanalysis-analysisloadbalancertarget-instance"""
+    p_Port: int = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(int)),
+        metadata={AttrMeta.PROPERTY_NAME: "Port"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysisloadbalancertarget.html#cfn-ec2-networkinsightsanalysis-analysisloadbalancertarget-port"""
+
+@attr.s
+class PropLaunchTemplateEnclaveOptions(Property):
+    """
+    AWS Object Type = "AWS::EC2::LaunchTemplate.EnclaveOptions"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-enclaveoptions.html
+
+    Property Document:
+    
+    - ``p_Enabled``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-enclaveoptions.html#cfn-ec2-launchtemplate-launchtemplatedata-enclaveoptions-enabled
+    """
+    AWS_OBJECT_TYPE = "AWS::EC2::LaunchTemplate.EnclaveOptions"
+    
+    p_Enabled: bool = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(bool)),
+        metadata={AttrMeta.PROPERTY_NAME: "Enabled"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-enclaveoptions.html#cfn-ec2-launchtemplate-launchtemplatedata-enclaveoptions-enabled"""
+
+@attr.s
+class PropSpotFleetTotalLocalStorageGBRequest(Property):
+    """
+    AWS Object Type = "AWS::EC2::SpotFleet.TotalLocalStorageGBRequest"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-totallocalstoragegbrequest.html
+
+    Property Document:
+    
+    - ``p_Max``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-totallocalstoragegbrequest.html#cfn-ec2-spotfleet-totallocalstoragegbrequest-max
+    - ``p_Min``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-totallocalstoragegbrequest.html#cfn-ec2-spotfleet-totallocalstoragegbrequest-min
+    """
+    AWS_OBJECT_TYPE = "AWS::EC2::SpotFleet.TotalLocalStorageGBRequest"
+    
+    p_Max: float = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(float)),
+        metadata={AttrMeta.PROPERTY_NAME: "Max"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-totallocalstoragegbrequest.html#cfn-ec2-spotfleet-totallocalstoragegbrequest-max"""
+    p_Min: float = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(float)),
+        metadata={AttrMeta.PROPERTY_NAME: "Min"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-totallocalstoragegbrequest.html#cfn-ec2-spotfleet-totallocalstoragegbrequest-min"""
+
+@attr.s
+class PropInstanceElasticGpuSpecification(Property):
+    """
+    AWS Object Type = "AWS::EC2::Instance.ElasticGpuSpecification"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-elasticgpuspecification.html
+
+    Property Document:
+    
+    - ``rp_Type``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-elasticgpuspecification.html#cfn-ec2-instance-elasticgpuspecification-type
+    """
+    AWS_OBJECT_TYPE = "AWS::EC2::Instance.ElasticGpuSpecification"
+    
+    rp_Type: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "Type"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-elasticgpuspecification.html#cfn-ec2-instance-elasticgpuspecification-type"""
+
+@attr.s
+class PropClientVpnEndpointTagSpecification(Property):
+    """
+    AWS Object Type = "AWS::EC2::ClientVpnEndpoint.TagSpecification"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-tagspecification.html
+
+    Property Document:
+    
+    - ``rp_ResourceType``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-tagspecification.html#cfn-ec2-clientvpnendpoint-tagspecification-resourcetype
+    - ``rp_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-tagspecification.html#cfn-ec2-clientvpnendpoint-tagspecification-tags
+    """
+    AWS_OBJECT_TYPE = "AWS::EC2::ClientVpnEndpoint.TagSpecification"
+    
+    rp_ResourceType: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "ResourceType"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-tagspecification.html#cfn-ec2-clientvpnendpoint-tagspecification-resourcetype"""
+    rp_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
+        default=None,
+        converter=Tag.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list)),
+        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-tagspecification.html#cfn-ec2-clientvpnendpoint-tagspecification-tags"""
+
+@attr.s
+class PropSpotFleetIamInstanceProfileSpecification(Property):
+    """
+    AWS Object Type = "AWS::EC2::SpotFleet.IamInstanceProfileSpecification"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-iaminstanceprofilespecification.html
+
+    Property Document:
+    
+    - ``p_Arn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-iaminstanceprofilespecification.html#cfn-ec2-spotfleet-iaminstanceprofilespecification-arn
+    """
+    AWS_OBJECT_TYPE = "AWS::EC2::SpotFleet.IamInstanceProfileSpecification"
+    
+    p_Arn: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "Arn"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-iaminstanceprofilespecification.html#cfn-ec2-spotfleet-iaminstanceprofilespecification-arn"""
+
+@attr.s
+class PropEC2FleetCapacityReservationOptionsRequest(Property):
+    """
+    AWS Object Type = "AWS::EC2::EC2Fleet.CapacityReservationOptionsRequest"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-capacityreservationoptionsrequest.html
+
+    Property Document:
+    
+    - ``p_UsageStrategy``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-capacityreservationoptionsrequest.html#cfn-ec2-ec2fleet-capacityreservationoptionsrequest-usagestrategy
+    """
+    AWS_OBJECT_TYPE = "AWS::EC2::EC2Fleet.CapacityReservationOptionsRequest"
+    
+    p_UsageStrategy: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "UsageStrategy"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-capacityreservationoptionsrequest.html#cfn-ec2-ec2fleet-capacityreservationoptionsrequest-usagestrategy"""
+
+@attr.s
+class PropLaunchTemplateMaintenanceOptions(Property):
+    """
+    AWS Object Type = "AWS::EC2::LaunchTemplate.MaintenanceOptions"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-maintenanceoptions.html
+
+    Property Document:
+    
+    - ``p_AutoRecovery``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-maintenanceoptions.html#cfn-ec2-launchtemplate-launchtemplatedata-maintenanceoptions-autorecovery
+    """
+    AWS_OBJECT_TYPE = "AWS::EC2::LaunchTemplate.MaintenanceOptions"
+    
+    p_AutoRecovery: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "AutoRecovery"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-maintenanceoptions.html#cfn-ec2-launchtemplate-launchtemplatedata-maintenanceoptions-autorecovery"""
+
+@attr.s
+class PropEC2FleetTotalLocalStorageGBRequest(Property):
+    """
+    AWS Object Type = "AWS::EC2::EC2Fleet.TotalLocalStorageGBRequest"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-totallocalstoragegbrequest.html
+
+    Property Document:
+    
+    - ``p_Max``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-totallocalstoragegbrequest.html#cfn-ec2-ec2fleet-totallocalstoragegbrequest-max
+    - ``p_Min``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-totallocalstoragegbrequest.html#cfn-ec2-ec2fleet-totallocalstoragegbrequest-min
+    """
+    AWS_OBJECT_TYPE = "AWS::EC2::EC2Fleet.TotalLocalStorageGBRequest"
+    
+    p_Max: float = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(float)),
+        metadata={AttrMeta.PROPERTY_NAME: "Max"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-totallocalstoragegbrequest.html#cfn-ec2-ec2fleet-totallocalstoragegbrequest-max"""
+    p_Min: float = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(float)),
+        metadata={AttrMeta.PROPERTY_NAME: "Min"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-totallocalstoragegbrequest.html#cfn-ec2-ec2fleet-totallocalstoragegbrequest-min"""
+
+@attr.s
+class PropClientVpnEndpointFederatedAuthenticationRequest(Property):
+    """
+    AWS Object Type = "AWS::EC2::ClientVpnEndpoint.FederatedAuthenticationRequest"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-federatedauthenticationrequest.html
+
+    Property Document:
+    
+    - ``rp_SAMLProviderArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-federatedauthenticationrequest.html#cfn-ec2-clientvpnendpoint-federatedauthenticationrequest-samlproviderarn
+    - ``p_SelfServiceSAMLProviderArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-federatedauthenticationrequest.html#cfn-ec2-clientvpnendpoint-federatedauthenticationrequest-selfservicesamlproviderarn
+    """
+    AWS_OBJECT_TYPE = "AWS::EC2::ClientVpnEndpoint.FederatedAuthenticationRequest"
+    
+    rp_SAMLProviderArn: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "SAMLProviderArn"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-federatedauthenticationrequest.html#cfn-ec2-clientvpnendpoint-federatedauthenticationrequest-samlproviderarn"""
+    p_SelfServiceSAMLProviderArn: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "SelfServiceSAMLProviderArn"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-federatedauthenticationrequest.html#cfn-ec2-clientvpnendpoint-federatedauthenticationrequest-selfservicesamlproviderarn"""
+
+@attr.s
+class PropInstanceCpuOptions(Property):
+    """
+    AWS Object Type = "AWS::EC2::Instance.CpuOptions"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-cpuoptions.html
+
+    Property Document:
+    
+    - ``p_CoreCount``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-cpuoptions.html#cfn-ec2-instance-cpuoptions-corecount
+    - ``p_ThreadsPerCore``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-cpuoptions.html#cfn-ec2-instance-cpuoptions-threadspercore
+    """
+    AWS_OBJECT_TYPE = "AWS::EC2::Instance.CpuOptions"
+    
+    p_CoreCount: int = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(int)),
+        metadata={AttrMeta.PROPERTY_NAME: "CoreCount"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-cpuoptions.html#cfn-ec2-instance-cpuoptions-corecount"""
+    p_ThreadsPerCore: int = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(int)),
+        metadata={AttrMeta.PROPERTY_NAME: "ThreadsPerCore"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-cpuoptions.html#cfn-ec2-instance-cpuoptions-threadspercore"""
+
+@attr.s
+class PropInstancePrivateDnsNameOptions(Property):
+    """
+    AWS Object Type = "AWS::EC2::Instance.PrivateDnsNameOptions"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-privatednsnameoptions.html
+
+    Property Document:
+    
+    - ``p_EnableResourceNameDnsAAAARecord``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-privatednsnameoptions.html#cfn-ec2-instance-privatednsnameoptions-enableresourcenamednsaaaarecord
+    - ``p_EnableResourceNameDnsARecord``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-privatednsnameoptions.html#cfn-ec2-instance-privatednsnameoptions-enableresourcenamednsarecord
+    - ``p_HostnameType``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-privatednsnameoptions.html#cfn-ec2-instance-privatednsnameoptions-hostnametype
+    """
+    AWS_OBJECT_TYPE = "AWS::EC2::Instance.PrivateDnsNameOptions"
+    
+    p_EnableResourceNameDnsAAAARecord: bool = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(bool)),
+        metadata={AttrMeta.PROPERTY_NAME: "EnableResourceNameDnsAAAARecord"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-privatednsnameoptions.html#cfn-ec2-instance-privatednsnameoptions-enableresourcenamednsaaaarecord"""
+    p_EnableResourceNameDnsARecord: bool = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(bool)),
+        metadata={AttrMeta.PROPERTY_NAME: "EnableResourceNameDnsARecord"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-privatednsnameoptions.html#cfn-ec2-instance-privatednsnameoptions-enableresourcenamednsarecord"""
+    p_HostnameType: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "HostnameType"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-privatednsnameoptions.html#cfn-ec2-instance-privatednsnameoptions-hostnametype"""
+
+@attr.s
+class PropLaunchTemplateCapacityReservationTarget(Property):
+    """
+    AWS Object Type = "AWS::EC2::LaunchTemplate.CapacityReservationTarget"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-capacityreservationtarget.html
+
+    Property Document:
+    
+    - ``p_CapacityReservationId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-capacityreservationtarget.html#cfn-ec2-launchtemplate-capacityreservationtarget-capacityreservationid
+    - ``p_CapacityReservationResourceGroupArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-capacityreservationtarget.html#cfn-ec2-launchtemplate-capacityreservationtarget-capacityreservationresourcegrouparn
+    """
+    AWS_OBJECT_TYPE = "AWS::EC2::LaunchTemplate.CapacityReservationTarget"
+    
+    p_CapacityReservationId: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "CapacityReservationId"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-capacityreservationtarget.html#cfn-ec2-launchtemplate-capacityreservationtarget-capacityreservationid"""
+    p_CapacityReservationResourceGroupArn: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "CapacityReservationResourceGroupArn"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-capacityreservationtarget.html#cfn-ec2-launchtemplate-capacityreservationtarget-capacityreservationresourcegrouparn"""
+
+@attr.s
+class PropCapacityReservationTagSpecification(Property):
+    """
+    AWS Object Type = "AWS::EC2::CapacityReservation.TagSpecification"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-capacityreservation-tagspecification.html
+
+    Property Document:
+    
+    - ``p_ResourceType``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-capacityreservation-tagspecification.html#cfn-ec2-capacityreservation-tagspecification-resourcetype
+    - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-capacityreservation-tagspecification.html#cfn-ec2-capacityreservation-tagspecification-tags
+    """
+    AWS_OBJECT_TYPE = "AWS::EC2::CapacityReservation.TagSpecification"
+    
+    p_ResourceType: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "ResourceType"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-capacityreservation-tagspecification.html#cfn-ec2-capacityreservation-tagspecification-resourcetype"""
+    p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
+        default=None,
+        converter=Tag.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-capacityreservation-tagspecification.html#cfn-ec2-capacityreservation-tagspecification-tags"""
+
+@attr.s
+class PropLaunchTemplateCpuOptions(Property):
+    """
+    AWS Object Type = "AWS::EC2::LaunchTemplate.CpuOptions"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-cpuoptions.html
+
+    Property Document:
+    
+    - ``p_CoreCount``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-cpuoptions.html#cfn-ec2-launchtemplate-launchtemplatedata-cpuoptions-corecount
+    - ``p_ThreadsPerCore``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-cpuoptions.html#cfn-ec2-launchtemplate-launchtemplatedata-cpuoptions-threadspercore
+    """
+    AWS_OBJECT_TYPE = "AWS::EC2::LaunchTemplate.CpuOptions"
+    
+    p_CoreCount: int = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(int)),
+        metadata={AttrMeta.PROPERTY_NAME: "CoreCount"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-cpuoptions.html#cfn-ec2-launchtemplate-launchtemplatedata-cpuoptions-corecount"""
+    p_ThreadsPerCore: int = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(int)),
+        metadata={AttrMeta.PROPERTY_NAME: "ThreadsPerCore"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-cpuoptions.html#cfn-ec2-launchtemplate-launchtemplatedata-cpuoptions-threadspercore"""
+
+@attr.s
+class PropLaunchTemplatePrivateDnsNameOptions(Property):
+    """
+    AWS Object Type = "AWS::EC2::LaunchTemplate.PrivateDnsNameOptions"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-privatednsnameoptions.html
+
+    Property Document:
+    
+    - ``p_EnableResourceNameDnsAAAARecord``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-privatednsnameoptions.html#cfn-ec2-launchtemplate-launchtemplatedata-privatednsnameoptions-enableresourcenamednsaaaarecord
+    - ``p_EnableResourceNameDnsARecord``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-privatednsnameoptions.html#cfn-ec2-launchtemplate-launchtemplatedata-privatednsnameoptions-enableresourcenamednsarecord
+    - ``p_HostnameType``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-privatednsnameoptions.html#cfn-ec2-launchtemplate-launchtemplatedata-privatednsnameoptions-hostnametype
+    """
+    AWS_OBJECT_TYPE = "AWS::EC2::LaunchTemplate.PrivateDnsNameOptions"
+    
+    p_EnableResourceNameDnsAAAARecord: bool = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(bool)),
+        metadata={AttrMeta.PROPERTY_NAME: "EnableResourceNameDnsAAAARecord"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-privatednsnameoptions.html#cfn-ec2-launchtemplate-launchtemplatedata-privatednsnameoptions-enableresourcenamednsaaaarecord"""
+    p_EnableResourceNameDnsARecord: bool = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(bool)),
+        metadata={AttrMeta.PROPERTY_NAME: "EnableResourceNameDnsARecord"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-privatednsnameoptions.html#cfn-ec2-launchtemplate-launchtemplatedata-privatednsnameoptions-enableresourcenamednsarecord"""
+    p_HostnameType: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "HostnameType"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-privatednsnameoptions.html#cfn-ec2-launchtemplate-launchtemplatedata-privatednsnameoptions-hostnametype"""
 
 @attr.s
 class PropNetworkInsightsAccessScopePacketHeaderStatementRequest(Property):
@@ -1820,33 +2649,6 @@ class PropSpotFleetSpotCapacityRebalance(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotcapacityrebalance.html#cfn-ec2-spotfleet-spotcapacityrebalance-terminationdelay"""
 
 @attr.s
-class PropNetworkInsightsAnalysisPortRange(Property):
-    """
-    AWS Object Type = "AWS::EC2::NetworkInsightsAnalysis.PortRange"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-portrange.html
-
-    Property Document:
-    
-    - ``p_From``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-portrange.html#cfn-ec2-networkinsightsanalysis-portrange-from
-    - ``p_To``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-portrange.html#cfn-ec2-networkinsightsanalysis-portrange-to
-    """
-    AWS_OBJECT_TYPE = "AWS::EC2::NetworkInsightsAnalysis.PortRange"
-    
-    p_From: int = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "From"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-portrange.html#cfn-ec2-networkinsightsanalysis-portrange-from"""
-    p_To: int = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "To"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-portrange.html#cfn-ec2-networkinsightsanalysis-portrange-to"""
-
-@attr.s
 class PropSpotFleetEbsBlockDevice(Property):
     """
     AWS Object Type = "AWS::EC2::SpotFleet.EbsBlockDevice"
@@ -1936,33 +2738,6 @@ class PropSpotFleetFleetLaunchTemplateSpecification(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-fleetlaunchtemplatespecification.html#cfn-ec2-spotfleet-fleetlaunchtemplatespecification-launchtemplatename"""
 
 @attr.s
-class PropSpotFleetAcceleratorTotalMemoryMiBRequest(Property):
-    """
-    AWS Object Type = "AWS::EC2::SpotFleet.AcceleratorTotalMemoryMiBRequest"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-acceleratortotalmemorymibrequest.html
-
-    Property Document:
-    
-    - ``p_Max``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-acceleratortotalmemorymibrequest.html#cfn-ec2-spotfleet-acceleratortotalmemorymibrequest-max
-    - ``p_Min``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-acceleratortotalmemorymibrequest.html#cfn-ec2-spotfleet-acceleratortotalmemorymibrequest-min
-    """
-    AWS_OBJECT_TYPE = "AWS::EC2::SpotFleet.AcceleratorTotalMemoryMiBRequest"
-    
-    p_Max: int = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "Max"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-acceleratortotalmemorymibrequest.html#cfn-ec2-spotfleet-acceleratortotalmemorymibrequest-max"""
-    p_Min: int = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "Min"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-acceleratortotalmemorymibrequest.html#cfn-ec2-spotfleet-acceleratortotalmemorymibrequest-min"""
-
-@attr.s
 class PropInstanceVolume(Property):
     """
     AWS Object Type = "AWS::EC2::Instance.Volume"
@@ -2044,26 +2819,6 @@ class PropEC2FleetMemoryGiBPerVCpuRequest(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-memorygibpervcpurequest.html#cfn-ec2-ec2fleet-memorygibpervcpurequest-min"""
 
 @attr.s
-class PropSpotFleetTargetGroup(Property):
-    """
-    AWS Object Type = "AWS::EC2::SpotFleet.TargetGroup"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-targetgroup.html
-
-    Property Document:
-    
-    - ``rp_Arn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-targetgroup.html#cfn-ec2-spotfleet-targetgroup-arn
-    """
-    AWS_OBJECT_TYPE = "AWS::EC2::SpotFleet.TargetGroup"
-    
-    rp_Arn: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Arn"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-targetgroup.html#cfn-ec2-spotfleet-targetgroup-arn"""
-
-@attr.s
 class PropEC2FleetOnDemandOptionsRequest(Property):
     """
     AWS Object Type = "AWS::EC2::EC2Fleet.OnDemandOptionsRequest"
@@ -2087,10 +2842,9 @@ class PropEC2FleetOnDemandOptionsRequest(Property):
         metadata={AttrMeta.PROPERTY_NAME: "AllocationStrategy"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-ondemandoptionsrequest.html#cfn-ec2-ec2fleet-ondemandoptionsrequest-allocationstrategy"""
-    p_CapacityReservationOptions: typing.Union['PropEC2FleetCapacityReservationOptionsRequest', dict] = attr.ib(
+    p_CapacityReservationOptions: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropEC2FleetCapacityReservationOptionsRequest.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropEC2FleetCapacityReservationOptionsRequest)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "CapacityReservationOptions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-ondemandoptionsrequest.html#cfn-ec2-ec2fleet-ondemandoptionsrequest-capacityreservationoptions"""
@@ -2147,67 +2901,6 @@ class PropSpotFleetNetworkInterfaceCountRequest(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-networkinterfacecountrequest.html#cfn-ec2-spotfleet-networkinterfacecountrequest-min"""
 
 @attr.s
-class PropClientVpnEndpointConnectionLogOptions(Property):
-    """
-    AWS Object Type = "AWS::EC2::ClientVpnEndpoint.ConnectionLogOptions"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-connectionlogoptions.html
-
-    Property Document:
-    
-    - ``rp_Enabled``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-connectionlogoptions.html#cfn-ec2-clientvpnendpoint-connectionlogoptions-enabled
-    - ``p_CloudwatchLogGroup``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-connectionlogoptions.html#cfn-ec2-clientvpnendpoint-connectionlogoptions-cloudwatchloggroup
-    - ``p_CloudwatchLogStream``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-connectionlogoptions.html#cfn-ec2-clientvpnendpoint-connectionlogoptions-cloudwatchlogstream
-    """
-    AWS_OBJECT_TYPE = "AWS::EC2::ClientVpnEndpoint.ConnectionLogOptions"
-    
-    rp_Enabled: bool = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(bool),
-        metadata={AttrMeta.PROPERTY_NAME: "Enabled"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-connectionlogoptions.html#cfn-ec2-clientvpnendpoint-connectionlogoptions-enabled"""
-    p_CloudwatchLogGroup: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "CloudwatchLogGroup"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-connectionlogoptions.html#cfn-ec2-clientvpnendpoint-connectionlogoptions-cloudwatchloggroup"""
-    p_CloudwatchLogStream: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "CloudwatchLogStream"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-connectionlogoptions.html#cfn-ec2-clientvpnendpoint-connectionlogoptions-cloudwatchlogstream"""
-
-@attr.s
-class PropLaunchTemplateIamInstanceProfile(Property):
-    """
-    AWS Object Type = "AWS::EC2::LaunchTemplate.IamInstanceProfile"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-iaminstanceprofile.html
-
-    Property Document:
-    
-    - ``p_Arn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-iaminstanceprofile.html#cfn-ec2-launchtemplate-launchtemplatedata-iaminstanceprofile-arn
-    - ``p_Name``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-iaminstanceprofile.html#cfn-ec2-launchtemplate-launchtemplatedata-iaminstanceprofile-name
-    """
-    AWS_OBJECT_TYPE = "AWS::EC2::LaunchTemplate.IamInstanceProfile"
-    
-    p_Arn: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Arn"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-iaminstanceprofile.html#cfn-ec2-launchtemplate-launchtemplatedata-iaminstanceprofile-arn"""
-    p_Name: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Name"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-iaminstanceprofile.html#cfn-ec2-launchtemplate-launchtemplatedata-iaminstanceprofile-name"""
-
-@attr.s
 class PropLaunchTemplateLicenseSpecification(Property):
     """
     AWS Object Type = "AWS::EC2::LaunchTemplate.LicenseSpecification"
@@ -2226,95 +2919,6 @@ class PropLaunchTemplateLicenseSpecification(Property):
         metadata={AttrMeta.PROPERTY_NAME: "LicenseConfigurationArn"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-licensespecification.html#cfn-ec2-launchtemplate-licensespecification-licenseconfigurationarn"""
-
-@attr.s
-class PropSecurityGroupEgress(Property):
-    """
-    AWS Object Type = "AWS::EC2::SecurityGroup.Egress"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-rule.html
-
-    Property Document:
-    
-    - ``rp_IpProtocol``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-rule.html#cfn-ec2-security-group-rule-ipprotocol
-    - ``p_CidrIp``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-rule.html#cfn-ec2-security-group-rule-cidrip
-    - ``p_CidrIpv6``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-rule.html#cfn-ec2-security-group-rule-cidripv6
-    - ``p_Description``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-rule.html#cfn-ec2-security-group-rule-description
-    - ``p_DestinationPrefixListId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-rule.html#cfn-ec2-security-group-rule-destinationprefixlistid
-    - ``p_DestinationSecurityGroupId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-rule.html#cfn-ec2-security-group-rule-destsecgroupid
-    - ``p_FromPort``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-rule.html#cfn-ec2-security-group-rule-fromport
-    - ``p_ToPort``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-rule.html#cfn-ec2-security-group-rule-toport
-    """
-    AWS_OBJECT_TYPE = "AWS::EC2::SecurityGroup.Egress"
-    
-    rp_IpProtocol: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "IpProtocol"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-rule.html#cfn-ec2-security-group-rule-ipprotocol"""
-    p_CidrIp: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "CidrIp"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-rule.html#cfn-ec2-security-group-rule-cidrip"""
-    p_CidrIpv6: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "CidrIpv6"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-rule.html#cfn-ec2-security-group-rule-cidripv6"""
-    p_Description: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Description"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-rule.html#cfn-ec2-security-group-rule-description"""
-    p_DestinationPrefixListId: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "DestinationPrefixListId"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-rule.html#cfn-ec2-security-group-rule-destinationprefixlistid"""
-    p_DestinationSecurityGroupId: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "DestinationSecurityGroupId"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-rule.html#cfn-ec2-security-group-rule-destsecgroupid"""
-    p_FromPort: int = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "FromPort"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-rule.html#cfn-ec2-security-group-rule-fromport"""
-    p_ToPort: int = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "ToPort"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-rule.html#cfn-ec2-security-group-rule-toport"""
-
-@attr.s
-class PropSpotFleetSpotFleetMonitoring(Property):
-    """
-    AWS Object Type = "AWS::EC2::SpotFleet.SpotFleetMonitoring"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetmonitoring.html
-
-    Property Document:
-    
-    - ``p_Enabled``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetmonitoring.html#cfn-ec2-spotfleet-spotfleetmonitoring-enabled
-    """
-    AWS_OBJECT_TYPE = "AWS::EC2::SpotFleet.SpotFleetMonitoring"
-    
-    p_Enabled: bool = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(bool)),
-        metadata={AttrMeta.PROPERTY_NAME: "Enabled"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetmonitoring.html#cfn-ec2-spotfleet-spotfleetmonitoring-enabled"""
 
 @attr.s
 class PropLaunchTemplateHibernationOptions(Property):
@@ -2487,33 +3091,6 @@ class PropSpotFleetClassicLoadBalancer(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-classicloadbalancer.html#cfn-ec2-spotfleet-classicloadbalancer-name"""
 
 @attr.s
-class PropClientVpnEndpointClientLoginBannerOptions(Property):
-    """
-    AWS Object Type = "AWS::EC2::ClientVpnEndpoint.ClientLoginBannerOptions"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-clientloginbanneroptions.html
-
-    Property Document:
-    
-    - ``rp_Enabled``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-clientloginbanneroptions.html#cfn-ec2-clientvpnendpoint-clientloginbanneroptions-enabled
-    - ``p_BannerText``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-clientloginbanneroptions.html#cfn-ec2-clientvpnendpoint-clientloginbanneroptions-bannertext
-    """
-    AWS_OBJECT_TYPE = "AWS::EC2::ClientVpnEndpoint.ClientLoginBannerOptions"
-    
-    rp_Enabled: bool = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(bool),
-        metadata={AttrMeta.PROPERTY_NAME: "Enabled"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-clientloginbanneroptions.html#cfn-ec2-clientvpnendpoint-clientloginbanneroptions-enabled"""
-    p_BannerText: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "BannerText"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-clientloginbanneroptions.html#cfn-ec2-clientvpnendpoint-clientloginbanneroptions-bannertext"""
-
-@attr.s
 class PropNetworkAclEntryIcmp(Property):
     """
     AWS Object Type = "AWS::EC2::NetworkAclEntry.Icmp"
@@ -2587,33 +3164,6 @@ class PropLaunchTemplateCreditSpecification(Property):
         metadata={AttrMeta.PROPERTY_NAME: "CpuCredits"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-creditspecification.html#cfn-ec2-launchtemplate-launchtemplatedata-creditspecification-cpucredits"""
-
-@attr.s
-class PropLaunchTemplateTotalLocalStorageGB(Property):
-    """
-    AWS Object Type = "AWS::EC2::LaunchTemplate.TotalLocalStorageGB"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-totallocalstoragegb.html
-
-    Property Document:
-    
-    - ``p_Max``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-totallocalstoragegb.html#cfn-ec2-launchtemplate-totallocalstoragegb-max
-    - ``p_Min``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-totallocalstoragegb.html#cfn-ec2-launchtemplate-totallocalstoragegb-min
-    """
-    AWS_OBJECT_TYPE = "AWS::EC2::LaunchTemplate.TotalLocalStorageGB"
-    
-    p_Max: float = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(float)),
-        metadata={AttrMeta.PROPERTY_NAME: "Max"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-totallocalstoragegb.html#cfn-ec2-launchtemplate-totallocalstoragegb-max"""
-    p_Min: float = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(float)),
-        metadata={AttrMeta.PROPERTY_NAME: "Min"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-totallocalstoragegb.html#cfn-ec2-launchtemplate-totallocalstoragegb-min"""
 
 @attr.s
 class PropLaunchTemplateMonitoring(Property):
@@ -2705,75 +3255,6 @@ class PropEC2FleetPlacement(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-placement.html#cfn-ec2-ec2fleet-placement-tenancy"""
 
 @attr.s
-class PropLaunchTemplatePlacement(Property):
-    """
-    AWS Object Type = "AWS::EC2::LaunchTemplate.Placement"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-placement.html
-
-    Property Document:
-    
-    - ``p_Affinity``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-placement.html#cfn-ec2-launchtemplate-launchtemplatedata-placement-affinity
-    - ``p_AvailabilityZone``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-placement.html#cfn-ec2-launchtemplate-launchtemplatedata-placement-availabilityzone
-    - ``p_GroupName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-placement.html#cfn-ec2-launchtemplate-launchtemplatedata-placement-groupname
-    - ``p_HostId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-placement.html#cfn-ec2-launchtemplate-launchtemplatedata-placement-hostid
-    - ``p_HostResourceGroupArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-placement.html#cfn-ec2-launchtemplate-launchtemplatedata-placement-hostresourcegrouparn
-    - ``p_PartitionNumber``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-placement.html#cfn-ec2-launchtemplate-launchtemplatedata-placement-partitionnumber
-    - ``p_SpreadDomain``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-placement.html#cfn-ec2-launchtemplate-launchtemplatedata-placement-spreaddomain
-    - ``p_Tenancy``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-placement.html#cfn-ec2-launchtemplate-launchtemplatedata-placement-tenancy
-    """
-    AWS_OBJECT_TYPE = "AWS::EC2::LaunchTemplate.Placement"
-    
-    p_Affinity: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Affinity"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-placement.html#cfn-ec2-launchtemplate-launchtemplatedata-placement-affinity"""
-    p_AvailabilityZone: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "AvailabilityZone"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-placement.html#cfn-ec2-launchtemplate-launchtemplatedata-placement-availabilityzone"""
-    p_GroupName: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "GroupName"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-placement.html#cfn-ec2-launchtemplate-launchtemplatedata-placement-groupname"""
-    p_HostId: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "HostId"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-placement.html#cfn-ec2-launchtemplate-launchtemplatedata-placement-hostid"""
-    p_HostResourceGroupArn: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "HostResourceGroupArn"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-placement.html#cfn-ec2-launchtemplate-launchtemplatedata-placement-hostresourcegrouparn"""
-    p_PartitionNumber: int = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "PartitionNumber"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-placement.html#cfn-ec2-launchtemplate-launchtemplatedata-placement-partitionnumber"""
-    p_SpreadDomain: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "SpreadDomain"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-placement.html#cfn-ec2-launchtemplate-launchtemplatedata-placement-spreaddomain"""
-    p_Tenancy: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Tenancy"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-placement.html#cfn-ec2-launchtemplate-launchtemplatedata-placement-tenancy"""
-
-@attr.s
 class PropNetworkInsightsAnalysisAnalysisSecurityGroupRule(Property):
     """
     AWS Object Type = "AWS::EC2::NetworkInsightsAnalysis.AnalysisSecurityGroupRule"
@@ -2830,98 +3311,44 @@ class PropNetworkInsightsAnalysisAnalysisSecurityGroupRule(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysissecuritygrouprule.html#cfn-ec2-networkinsightsanalysis-analysissecuritygrouprule-securitygroupid"""
 
 @attr.s
-class PropEC2FleetMemoryMiBRequest(Property):
+class PropLaunchTemplateIpv4PrefixSpecification(Property):
     """
-    AWS Object Type = "AWS::EC2::EC2Fleet.MemoryMiBRequest"
+    AWS Object Type = "AWS::EC2::LaunchTemplate.Ipv4PrefixSpecification"
 
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-memorymibrequest.html
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-ipv4prefixspecification.html
 
     Property Document:
     
-    - ``p_Max``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-memorymibrequest.html#cfn-ec2-ec2fleet-memorymibrequest-max
-    - ``p_Min``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-memorymibrequest.html#cfn-ec2-ec2fleet-memorymibrequest-min
+    - ``p_Ipv4Prefix``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-ipv4prefixspecification.html#cfn-ec2-launchtemplate-ipv4prefixspecification-ipv4prefix
     """
-    AWS_OBJECT_TYPE = "AWS::EC2::EC2Fleet.MemoryMiBRequest"
+    AWS_OBJECT_TYPE = "AWS::EC2::LaunchTemplate.Ipv4PrefixSpecification"
     
-    p_Max: int = attr.ib(
+    p_Ipv4Prefix: TypeHint.intrinsic_str = attr.ib(
         default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "Max"},
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "Ipv4Prefix"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-memorymibrequest.html#cfn-ec2-ec2fleet-memorymibrequest-max"""
-    p_Min: int = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "Min"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-memorymibrequest.html#cfn-ec2-ec2fleet-memorymibrequest-min"""
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-ipv4prefixspecification.html#cfn-ec2-launchtemplate-ipv4prefixspecification-ipv4prefix"""
 
 @attr.s
-class PropInstanceInstanceIpv6Address(Property):
+class PropLaunchTemplateIpv6PrefixSpecification(Property):
     """
-    AWS Object Type = "AWS::EC2::Instance.InstanceIpv6Address"
+    AWS Object Type = "AWS::EC2::LaunchTemplate.Ipv6PrefixSpecification"
 
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-instanceipv6address.html
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-ipv6prefixspecification.html
 
     Property Document:
     
-    - ``rp_Ipv6Address``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-instanceipv6address.html#cfn-ec2-instance-instanceipv6address-ipv6address
+    - ``p_Ipv6Prefix``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-ipv6prefixspecification.html#cfn-ec2-launchtemplate-ipv6prefixspecification-ipv6prefix
     """
-    AWS_OBJECT_TYPE = "AWS::EC2::Instance.InstanceIpv6Address"
+    AWS_OBJECT_TYPE = "AWS::EC2::LaunchTemplate.Ipv6PrefixSpecification"
     
-    rp_Ipv6Address: TypeHint.intrinsic_str = attr.ib(
+    p_Ipv6Prefix: TypeHint.intrinsic_str = attr.ib(
         default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Ipv6Address"},
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "Ipv6Prefix"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-instanceipv6address.html#cfn-ec2-instance-instanceipv6address-ipv6address"""
-
-@attr.s
-class PropInstanceAssociationParameter(Property):
-    """
-    AWS Object Type = "AWS::EC2::Instance.AssociationParameter"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-ssmassociations-associationparameters.html
-
-    Property Document:
-    
-    - ``rp_Key``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-ssmassociations-associationparameters.html#cfn-ec2-instance-ssmassociations-associationparameters-key
-    - ``rp_Value``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-ssmassociations-associationparameters.html#cfn-ec2-instance-ssmassociations-associationparameters-value
-    """
-    AWS_OBJECT_TYPE = "AWS::EC2::Instance.AssociationParameter"
-    
-    rp_Key: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Key"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-ssmassociations-associationparameters.html#cfn-ec2-instance-ssmassociations-associationparameters-key"""
-    rp_Value: typing.List[TypeHint.intrinsic_str] = attr.ib(
-        default=None,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list)),
-        metadata={AttrMeta.PROPERTY_NAME: "Value"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-ssmassociations-associationparameters.html#cfn-ec2-instance-ssmassociations-associationparameters-value"""
-
-@attr.s
-class PropInstanceEnclaveOptions(Property):
-    """
-    AWS Object Type = "AWS::EC2::Instance.EnclaveOptions"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-enclaveoptions.html
-
-    Property Document:
-    
-    - ``p_Enabled``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-enclaveoptions.html#cfn-ec2-instance-enclaveoptions-enabled
-    """
-    AWS_OBJECT_TYPE = "AWS::EC2::Instance.EnclaveOptions"
-    
-    p_Enabled: bool = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(bool)),
-        metadata={AttrMeta.PROPERTY_NAME: "Enabled"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-enclaveoptions.html#cfn-ec2-instance-enclaveoptions-enabled"""
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-ipv6prefixspecification.html#cfn-ec2-launchtemplate-ipv6prefixspecification-ipv6prefix"""
 
 @attr.s
 class PropEC2FleetCapacityRebalance(Property):
@@ -2951,26 +3378,6 @@ class PropEC2FleetCapacityRebalance(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-capacityrebalance.html#cfn-ec2-ec2fleet-capacityrebalance-terminationdelay"""
 
 @attr.s
-class PropLaunchTemplateIpv6Add(Property):
-    """
-    AWS Object Type = "AWS::EC2::LaunchTemplate.Ipv6Add"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-ipv6add.html
-
-    Property Document:
-    
-    - ``p_Ipv6Address``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-ipv6add.html#cfn-ec2-launchtemplate-ipv6add-ipv6address
-    """
-    AWS_OBJECT_TYPE = "AWS::EC2::LaunchTemplate.Ipv6Add"
-    
-    p_Ipv6Address: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Ipv6Address"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-ipv6add.html#cfn-ec2-launchtemplate-ipv6add-ipv6address"""
-
-@attr.s
 class PropInstanceLicenseSpecification(Property):
     """
     AWS Object Type = "AWS::EC2::Instance.LicenseSpecification"
@@ -2991,61 +3398,6 @@ class PropInstanceLicenseSpecification(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-licensespecification.html#cfn-ec2-instance-licensespecification-licenseconfigurationarn"""
 
 @attr.s
-class PropNetworkInsightsAccessScopeResourceStatementRequest(Property):
-    """
-    AWS Object Type = "AWS::EC2::NetworkInsightsAccessScope.ResourceStatementRequest"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsaccessscope-resourcestatementrequest.html
-
-    Property Document:
-    
-    - ``p_ResourceTypes``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsaccessscope-resourcestatementrequest.html#cfn-ec2-networkinsightsaccessscope-resourcestatementrequest-resourcetypes
-    - ``p_Resources``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsaccessscope-resourcestatementrequest.html#cfn-ec2-networkinsightsaccessscope-resourcestatementrequest-resources
-    """
-    AWS_OBJECT_TYPE = "AWS::EC2::NetworkInsightsAccessScope.ResourceStatementRequest"
-    
-    p_ResourceTypes: typing.List[TypeHint.intrinsic_str] = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "ResourceTypes"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsaccessscope-resourcestatementrequest.html#cfn-ec2-networkinsightsaccessscope-resourcestatementrequest-resourcetypes"""
-    p_Resources: typing.List[TypeHint.intrinsic_str] = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Resources"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsaccessscope-resourcestatementrequest.html#cfn-ec2-networkinsightsaccessscope-resourcestatementrequest-resources"""
-
-@attr.s
-class PropInstanceSsmAssociation(Property):
-    """
-    AWS Object Type = "AWS::EC2::Instance.SsmAssociation"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-ssmassociations.html
-
-    Property Document:
-    
-    - ``rp_DocumentName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-ssmassociations.html#cfn-ec2-instance-ssmassociations-documentname
-    - ``p_AssociationParameters``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-ssmassociations.html#cfn-ec2-instance-ssmassociations-associationparameters
-    """
-    AWS_OBJECT_TYPE = "AWS::EC2::Instance.SsmAssociation"
-    
-    rp_DocumentName: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "DocumentName"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-ssmassociations.html#cfn-ec2-instance-ssmassociations-documentname"""
-    p_AssociationParameters: typing.List[typing.Union['PropInstanceAssociationParameter', dict]] = attr.ib(
-        default=None,
-        converter=PropInstanceAssociationParameter.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropInstanceAssociationParameter), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "AssociationParameters"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance-ssmassociations.html#cfn-ec2-instance-ssmassociations-associationparameters"""
-
-@attr.s
 class PropLaunchTemplateNetworkInterface(Property):
     """
     AWS Object Type = "AWS::EC2::LaunchTemplate.NetworkInterface"
@@ -3061,8 +3413,12 @@ class PropLaunchTemplateNetworkInterface(Property):
     - ``p_DeviceIndex``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-deviceindex
     - ``p_Groups``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-groups
     - ``p_InterfaceType``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-interfacetype
+    - ``p_Ipv4PrefixCount``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-ipv4prefixcount
+    - ``p_Ipv4Prefixes``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-ipv4prefixes
     - ``p_Ipv6AddressCount``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-ipv6addresscount
     - ``p_Ipv6Addresses``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-ipv6addresses
+    - ``p_Ipv6PrefixCount``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-ipv6prefixcount
+    - ``p_Ipv6Prefixes``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-ipv6prefixes
     - ``p_NetworkCardIndex``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-networkcardindex
     - ``p_NetworkInterfaceId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-networkinterfaceid
     - ``p_PrivateIpAddress``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-privateipaddress
@@ -3114,6 +3470,19 @@ class PropLaunchTemplateNetworkInterface(Property):
         metadata={AttrMeta.PROPERTY_NAME: "InterfaceType"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-interfacetype"""
+    p_Ipv4PrefixCount: int = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(int)),
+        metadata={AttrMeta.PROPERTY_NAME: "Ipv4PrefixCount"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-ipv4prefixcount"""
+    p_Ipv4Prefixes: typing.List[typing.Union['PropLaunchTemplateIpv4PrefixSpecification', dict]] = attr.ib(
+        default=None,
+        converter=PropLaunchTemplateIpv4PrefixSpecification.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropLaunchTemplateIpv4PrefixSpecification), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "Ipv4Prefixes"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-ipv4prefixes"""
     p_Ipv6AddressCount: int = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(int)),
@@ -3127,6 +3496,19 @@ class PropLaunchTemplateNetworkInterface(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Ipv6Addresses"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-ipv6addresses"""
+    p_Ipv6PrefixCount: int = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(int)),
+        metadata={AttrMeta.PROPERTY_NAME: "Ipv6PrefixCount"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-ipv6prefixcount"""
+    p_Ipv6Prefixes: typing.List[typing.Union['PropLaunchTemplateIpv6PrefixSpecification', dict]] = attr.ib(
+        default=None,
+        converter=PropLaunchTemplateIpv6PrefixSpecification.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropLaunchTemplateIpv6PrefixSpecification), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "Ipv6Prefixes"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-networkinterface.html#cfn-ec2-launchtemplate-networkinterface-ipv6prefixes"""
     p_NetworkCardIndex: int = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(int)),
@@ -3184,26 +3566,6 @@ class PropSpotFleetInstanceIpv6Address(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Ipv6Address"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-instanceipv6address.html#cfn-ec2-spotfleet-instanceipv6address-ipv6address"""
-
-@attr.s
-class PropIPAMPoolProvisionedCidr(Property):
-    """
-    AWS Object Type = "AWS::EC2::IPAMPool.ProvisionedCidr"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ipampool-provisionedcidr.html
-
-    Property Document:
-    
-    - ``rp_Cidr``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ipampool-provisionedcidr.html#cfn-ec2-ipampool-provisionedcidr-cidr
-    """
-    AWS_OBJECT_TYPE = "AWS::EC2::IPAMPool.ProvisionedCidr"
-    
-    rp_Cidr: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Cidr"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ipampool-provisionedcidr.html#cfn-ec2-ipampool-provisionedcidr-cidr"""
 
 @attr.s
 class PropSpotFleetTargetGroupsConfig(Property):
@@ -3301,27 +3663,6 @@ class PropSpotFleetGroupIdentifier(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-groupidentifier.html#cfn-ec2-spotfleet-groupidentifier-groupid"""
 
 @attr.s
-class PropEC2FleetMaintenanceStrategies(Property):
-    """
-    AWS Object Type = "AWS::EC2::EC2Fleet.MaintenanceStrategies"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-maintenancestrategies.html
-
-    Property Document:
-    
-    - ``p_CapacityRebalance``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-maintenancestrategies.html#cfn-ec2-ec2fleet-maintenancestrategies-capacityrebalance
-    """
-    AWS_OBJECT_TYPE = "AWS::EC2::EC2Fleet.MaintenanceStrategies"
-    
-    p_CapacityRebalance: typing.Union['PropEC2FleetCapacityRebalance', dict] = attr.ib(
-        default=None,
-        converter=PropEC2FleetCapacityRebalance.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropEC2FleetCapacityRebalance)),
-        metadata={AttrMeta.PROPERTY_NAME: "CapacityRebalance"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-maintenancestrategies.html#cfn-ec2-ec2fleet-maintenancestrategies-capacityrebalance"""
-
-@attr.s
 class PropLaunchTemplateMemoryMiB(Property):
     """
     AWS Object Type = "AWS::EC2::LaunchTemplate.MemoryMiB"
@@ -3403,48 +3744,6 @@ class PropLaunchTemplateMemoryGiBPerVCpu(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-memorygibpervcpu.html#cfn-ec2-launchtemplate-memorygibpervcpu-min"""
 
 @attr.s
-class PropSpotFleetBlockDeviceMapping(Property):
-    """
-    AWS Object Type = "AWS::EC2::SpotFleet.BlockDeviceMapping"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-blockdevicemapping.html
-
-    Property Document:
-    
-    - ``rp_DeviceName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-blockdevicemapping.html#cfn-ec2-spotfleet-blockdevicemapping-devicename
-    - ``p_Ebs``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-blockdevicemapping.html#cfn-ec2-spotfleet-blockdevicemapping-ebs
-    - ``p_NoDevice``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-blockdevicemapping.html#cfn-ec2-spotfleet-blockdevicemapping-nodevice
-    - ``p_VirtualName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-blockdevicemapping.html#cfn-ec2-spotfleet-blockdevicemapping-virtualname
-    """
-    AWS_OBJECT_TYPE = "AWS::EC2::SpotFleet.BlockDeviceMapping"
-    
-    rp_DeviceName: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "DeviceName"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-blockdevicemapping.html#cfn-ec2-spotfleet-blockdevicemapping-devicename"""
-    p_Ebs: typing.Union['PropSpotFleetEbsBlockDevice', dict] = attr.ib(
-        default=None,
-        converter=PropSpotFleetEbsBlockDevice.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropSpotFleetEbsBlockDevice)),
-        metadata={AttrMeta.PROPERTY_NAME: "Ebs"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-blockdevicemapping.html#cfn-ec2-spotfleet-blockdevicemapping-ebs"""
-    p_NoDevice: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "NoDevice"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-blockdevicemapping.html#cfn-ec2-spotfleet-blockdevicemapping-nodevice"""
-    p_VirtualName: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "VirtualName"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-blockdevicemapping.html#cfn-ec2-spotfleet-blockdevicemapping-virtualname"""
-
-@attr.s
 class PropSpotFleetVCpuCountRangeRequest(Property):
     """
     AWS Object Type = "AWS::EC2::SpotFleet.VCpuCountRangeRequest"
@@ -3472,26 +3771,6 @@ class PropSpotFleetVCpuCountRangeRequest(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-vcpucountrangerequest.html#cfn-ec2-spotfleet-vcpucountrangerequest-min"""
 
 @attr.s
-class PropIPAMIpamOperatingRegion(Property):
-    """
-    AWS Object Type = "AWS::EC2::IPAM.IpamOperatingRegion"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ipam-ipamoperatingregion.html
-
-    Property Document:
-    
-    - ``rp_RegionName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ipam-ipamoperatingregion.html#cfn-ec2-ipam-ipamoperatingregion-regionname
-    """
-    AWS_OBJECT_TYPE = "AWS::EC2::IPAM.IpamOperatingRegion"
-    
-    rp_RegionName: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "RegionName"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ipam-ipamoperatingregion.html#cfn-ec2-ipam-ipamoperatingregion-regionname"""
-
-@attr.s
 class PropLaunchTemplateLaunchTemplateElasticInferenceAccelerator(Property):
     """
     AWS Object Type = "AWS::EC2::LaunchTemplate.LaunchTemplateElasticInferenceAccelerator"
@@ -3517,61 +3796,6 @@ class PropLaunchTemplateLaunchTemplateElasticInferenceAccelerator(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Type"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplateelasticinferenceaccelerator.html#cfn-ec2-launchtemplate-launchtemplateelasticinferenceaccelerator-type"""
-
-@attr.s
-class PropPrefixListEntry(Property):
-    """
-    AWS Object Type = "AWS::EC2::PrefixList.Entry"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-prefixlist-entry.html
-
-    Property Document:
-    
-    - ``rp_Cidr``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-prefixlist-entry.html#cfn-ec2-prefixlist-entry-cidr
-    - ``p_Description``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-prefixlist-entry.html#cfn-ec2-prefixlist-entry-description
-    """
-    AWS_OBJECT_TYPE = "AWS::EC2::PrefixList.Entry"
-    
-    rp_Cidr: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Cidr"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-prefixlist-entry.html#cfn-ec2-prefixlist-entry-cidr"""
-    p_Description: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Description"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-prefixlist-entry.html#cfn-ec2-prefixlist-entry-description"""
-
-@attr.s
-class PropLaunchTemplateLaunchTemplateTagSpecification(Property):
-    """
-    AWS Object Type = "AWS::EC2::LaunchTemplate.LaunchTemplateTagSpecification"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatetagspecification.html
-
-    Property Document:
-    
-    - ``p_ResourceType``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatetagspecification.html#cfn-ec2-launchtemplate-launchtemplatetagspecification-resourcetype
-    - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatetagspecification.html#cfn-ec2-launchtemplate-launchtemplatetagspecification-tags
-    """
-    AWS_OBJECT_TYPE = "AWS::EC2::LaunchTemplate.LaunchTemplateTagSpecification"
-    
-    p_ResourceType: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "ResourceType"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatetagspecification.html#cfn-ec2-launchtemplate-launchtemplatetagspecification-resourcetype"""
-    p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
-        default=None,
-        converter=Tag.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatetagspecification.html#cfn-ec2-launchtemplate-launchtemplatetagspecification-tags"""
 
 @attr.s
 class PropEC2FleetAcceleratorCountRequest(Property):
@@ -3699,35 +3923,6 @@ class PropNetworkInsightsAnalysisAnalysisAclRule(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysisaclrule.html#cfn-ec2-networkinsightsanalysis-analysisaclrule-rulenumber"""
 
 @attr.s
-class PropNetworkInsightsAccessScopePathStatementRequest(Property):
-    """
-    AWS Object Type = "AWS::EC2::NetworkInsightsAccessScope.PathStatementRequest"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsaccessscope-pathstatementrequest.html
-
-    Property Document:
-    
-    - ``p_PacketHeaderStatement``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsaccessscope-pathstatementrequest.html#cfn-ec2-networkinsightsaccessscope-pathstatementrequest-packetheaderstatement
-    - ``p_ResourceStatement``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsaccessscope-pathstatementrequest.html#cfn-ec2-networkinsightsaccessscope-pathstatementrequest-resourcestatement
-    """
-    AWS_OBJECT_TYPE = "AWS::EC2::NetworkInsightsAccessScope.PathStatementRequest"
-    
-    p_PacketHeaderStatement: typing.Union['PropNetworkInsightsAccessScopePacketHeaderStatementRequest', dict] = attr.ib(
-        default=None,
-        converter=PropNetworkInsightsAccessScopePacketHeaderStatementRequest.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropNetworkInsightsAccessScopePacketHeaderStatementRequest)),
-        metadata={AttrMeta.PROPERTY_NAME: "PacketHeaderStatement"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsaccessscope-pathstatementrequest.html#cfn-ec2-networkinsightsaccessscope-pathstatementrequest-packetheaderstatement"""
-    p_ResourceStatement: typing.Union['PropNetworkInsightsAccessScopeResourceStatementRequest', dict] = attr.ib(
-        default=None,
-        converter=PropNetworkInsightsAccessScopeResourceStatementRequest.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropNetworkInsightsAccessScopeResourceStatementRequest)),
-        metadata={AttrMeta.PROPERTY_NAME: "ResourceStatement"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsaccessscope-pathstatementrequest.html#cfn-ec2-networkinsightsaccessscope-pathstatementrequest-resourcestatement"""
-
-@attr.s
 class PropSpotFleetInstanceRequirementsRequest(Property):
     """
     AWS Object Type = "AWS::EC2::SpotFleet.InstanceRequirementsRequest"
@@ -3741,6 +3936,7 @@ class PropSpotFleetInstanceRequirementsRequest(Property):
     - ``p_AcceleratorNames``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-instancerequirementsrequest.html#cfn-ec2-spotfleet-instancerequirementsrequest-acceleratornames
     - ``p_AcceleratorTotalMemoryMiB``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-instancerequirementsrequest.html#cfn-ec2-spotfleet-instancerequirementsrequest-acceleratortotalmemorymib
     - ``p_AcceleratorTypes``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-instancerequirementsrequest.html#cfn-ec2-spotfleet-instancerequirementsrequest-acceleratortypes
+    - ``p_AllowedInstanceTypes``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-instancerequirementsrequest.html#cfn-ec2-spotfleet-instancerequirementsrequest-allowedinstancetypes
     - ``p_BareMetal``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-instancerequirementsrequest.html#cfn-ec2-spotfleet-instancerequirementsrequest-baremetal
     - ``p_BaselineEbsBandwidthMbps``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-instancerequirementsrequest.html#cfn-ec2-spotfleet-instancerequirementsrequest-baselineebsbandwidthmbps
     - ``p_BurstablePerformance``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-instancerequirementsrequest.html#cfn-ec2-spotfleet-instancerequirementsrequest-burstableperformance
@@ -3751,6 +3947,7 @@ class PropSpotFleetInstanceRequirementsRequest(Property):
     - ``p_LocalStorageTypes``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-instancerequirementsrequest.html#cfn-ec2-spotfleet-instancerequirementsrequest-localstoragetypes
     - ``p_MemoryGiBPerVCpu``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-instancerequirementsrequest.html#cfn-ec2-spotfleet-instancerequirementsrequest-memorygibpervcpu
     - ``p_MemoryMiB``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-instancerequirementsrequest.html#cfn-ec2-spotfleet-instancerequirementsrequest-memorymib
+    - ``p_NetworkBandwidthGbps``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-instancerequirementsrequest.html#cfn-ec2-spotfleet-instancerequirementsrequest-networkbandwidthgbps
     - ``p_NetworkInterfaceCount``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-instancerequirementsrequest.html#cfn-ec2-spotfleet-instancerequirementsrequest-networkinterfacecount
     - ``p_OnDemandMaxPricePercentageOverLowestPrice``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-instancerequirementsrequest.html#cfn-ec2-spotfleet-instancerequirementsrequest-ondemandmaxpricepercentageoverlowestprice
     - ``p_RequireHibernateSupport``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-instancerequirementsrequest.html#cfn-ec2-spotfleet-instancerequirementsrequest-requirehibernatesupport
@@ -3760,10 +3957,9 @@ class PropSpotFleetInstanceRequirementsRequest(Property):
     """
     AWS_OBJECT_TYPE = "AWS::EC2::SpotFleet.InstanceRequirementsRequest"
     
-    p_AcceleratorCount: typing.Union['PropSpotFleetAcceleratorCountRequest', dict] = attr.ib(
+    p_AcceleratorCount: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropSpotFleetAcceleratorCountRequest.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropSpotFleetAcceleratorCountRequest)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "AcceleratorCount"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-instancerequirementsrequest.html#cfn-ec2-spotfleet-instancerequirementsrequest-acceleratorcount"""
@@ -3779,10 +3975,9 @@ class PropSpotFleetInstanceRequirementsRequest(Property):
         metadata={AttrMeta.PROPERTY_NAME: "AcceleratorNames"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-instancerequirementsrequest.html#cfn-ec2-spotfleet-instancerequirementsrequest-acceleratornames"""
-    p_AcceleratorTotalMemoryMiB: typing.Union['PropSpotFleetAcceleratorTotalMemoryMiBRequest', dict] = attr.ib(
+    p_AcceleratorTotalMemoryMiB: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropSpotFleetAcceleratorTotalMemoryMiBRequest.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropSpotFleetAcceleratorTotalMemoryMiBRequest)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "AcceleratorTotalMemoryMiB"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-instancerequirementsrequest.html#cfn-ec2-spotfleet-instancerequirementsrequest-acceleratortotalmemorymib"""
@@ -3792,16 +3987,21 @@ class PropSpotFleetInstanceRequirementsRequest(Property):
         metadata={AttrMeta.PROPERTY_NAME: "AcceleratorTypes"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-instancerequirementsrequest.html#cfn-ec2-spotfleet-instancerequirementsrequest-acceleratortypes"""
+    p_AllowedInstanceTypes: typing.List[TypeHint.intrinsic_str] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "AllowedInstanceTypes"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-instancerequirementsrequest.html#cfn-ec2-spotfleet-instancerequirementsrequest-allowedinstancetypes"""
     p_BareMetal: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
         metadata={AttrMeta.PROPERTY_NAME: "BareMetal"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-instancerequirementsrequest.html#cfn-ec2-spotfleet-instancerequirementsrequest-baremetal"""
-    p_BaselineEbsBandwidthMbps: typing.Union['PropSpotFleetBaselineEbsBandwidthMbpsRequest', dict] = attr.ib(
+    p_BaselineEbsBandwidthMbps: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropSpotFleetBaselineEbsBandwidthMbpsRequest.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropSpotFleetBaselineEbsBandwidthMbpsRequest)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "BaselineEbsBandwidthMbps"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-instancerequirementsrequest.html#cfn-ec2-spotfleet-instancerequirementsrequest-baselineebsbandwidthmbps"""
@@ -3841,24 +4041,27 @@ class PropSpotFleetInstanceRequirementsRequest(Property):
         metadata={AttrMeta.PROPERTY_NAME: "LocalStorageTypes"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-instancerequirementsrequest.html#cfn-ec2-spotfleet-instancerequirementsrequest-localstoragetypes"""
-    p_MemoryGiBPerVCpu: typing.Union['PropSpotFleetMemoryGiBPerVCpuRequest', dict] = attr.ib(
+    p_MemoryGiBPerVCpu: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropSpotFleetMemoryGiBPerVCpuRequest.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropSpotFleetMemoryGiBPerVCpuRequest)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "MemoryGiBPerVCpu"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-instancerequirementsrequest.html#cfn-ec2-spotfleet-instancerequirementsrequest-memorygibpervcpu"""
-    p_MemoryMiB: typing.Union['PropSpotFleetMemoryMiBRequest', dict] = attr.ib(
+    p_MemoryMiB: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropSpotFleetMemoryMiBRequest.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropSpotFleetMemoryMiBRequest)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "MemoryMiB"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-instancerequirementsrequest.html#cfn-ec2-spotfleet-instancerequirementsrequest-memorymib"""
-    p_NetworkInterfaceCount: typing.Union['PropSpotFleetNetworkInterfaceCountRequest', dict] = attr.ib(
+    p_NetworkBandwidthGbps: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropSpotFleetNetworkInterfaceCountRequest.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropSpotFleetNetworkInterfaceCountRequest)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "NetworkBandwidthGbps"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-instancerequirementsrequest.html#cfn-ec2-spotfleet-instancerequirementsrequest-networkbandwidthgbps"""
+    p_NetworkInterfaceCount: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "NetworkInterfaceCount"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-instancerequirementsrequest.html#cfn-ec2-spotfleet-instancerequirementsrequest-networkinterfacecount"""
@@ -3880,17 +4083,15 @@ class PropSpotFleetInstanceRequirementsRequest(Property):
         metadata={AttrMeta.PROPERTY_NAME: "SpotMaxPricePercentageOverLowestPrice"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-instancerequirementsrequest.html#cfn-ec2-spotfleet-instancerequirementsrequest-spotmaxpricepercentageoverlowestprice"""
-    p_TotalLocalStorageGB: typing.Union['PropSpotFleetTotalLocalStorageGBRequest', dict] = attr.ib(
+    p_TotalLocalStorageGB: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropSpotFleetTotalLocalStorageGBRequest.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropSpotFleetTotalLocalStorageGBRequest)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "TotalLocalStorageGB"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-instancerequirementsrequest.html#cfn-ec2-spotfleet-instancerequirementsrequest-totallocalstoragegb"""
-    p_VCpuCount: typing.Union['PropSpotFleetVCpuCountRangeRequest', dict] = attr.ib(
+    p_VCpuCount: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropSpotFleetVCpuCountRangeRequest.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropSpotFleetVCpuCountRangeRequest)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "VCpuCount"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-instancerequirementsrequest.html#cfn-ec2-spotfleet-instancerequirementsrequest-vcpucount"""
@@ -3920,10 +4121,9 @@ class PropSpotFleetLaunchTemplateOverrides(Property):
         metadata={AttrMeta.PROPERTY_NAME: "AvailabilityZone"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-launchtemplateoverrides.html#cfn-ec2-spotfleet-launchtemplateoverrides-availabilityzone"""
-    p_InstanceRequirements: typing.Union['PropSpotFleetInstanceRequirementsRequest', dict] = attr.ib(
+    p_InstanceRequirements: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropSpotFleetInstanceRequirementsRequest.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropSpotFleetInstanceRequirementsRequest)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "InstanceRequirements"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-launchtemplateoverrides.html#cfn-ec2-spotfleet-launchtemplateoverrides-instancerequirements"""
@@ -3959,46 +4159,844 @@ class PropSpotFleetLaunchTemplateOverrides(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-launchtemplateoverrides.html#cfn-ec2-spotfleet-launchtemplateoverrides-weightedcapacity"""
 
 @attr.s
-class PropNetworkInsightsAnalysisAnalysisLoadBalancerTarget(Property):
+class PropNetworkInsightsAnalysisAdditionalDetail(Property):
     """
-    AWS Object Type = "AWS::EC2::NetworkInsightsAnalysis.AnalysisLoadBalancerTarget"
+    AWS Object Type = "AWS::EC2::NetworkInsightsAnalysis.AdditionalDetail"
 
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysisloadbalancertarget.html
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-additionaldetail.html
 
     Property Document:
     
-    - ``p_Address``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysisloadbalancertarget.html#cfn-ec2-networkinsightsanalysis-analysisloadbalancertarget-address
-    - ``p_AvailabilityZone``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysisloadbalancertarget.html#cfn-ec2-networkinsightsanalysis-analysisloadbalancertarget-availabilityzone
-    - ``p_Instance``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysisloadbalancertarget.html#cfn-ec2-networkinsightsanalysis-analysisloadbalancertarget-instance
-    - ``p_Port``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysisloadbalancertarget.html#cfn-ec2-networkinsightsanalysis-analysisloadbalancertarget-port
+    - ``p_AdditionalDetailType``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-additionaldetail.html#cfn-ec2-networkinsightsanalysis-additionaldetail-additionaldetailtype
+    - ``p_Component``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-additionaldetail.html#cfn-ec2-networkinsightsanalysis-additionaldetail-component
     """
-    AWS_OBJECT_TYPE = "AWS::EC2::NetworkInsightsAnalysis.AnalysisLoadBalancerTarget"
+    AWS_OBJECT_TYPE = "AWS::EC2::NetworkInsightsAnalysis.AdditionalDetail"
     
+    p_AdditionalDetailType: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "AdditionalDetailType"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-additionaldetail.html#cfn-ec2-networkinsightsanalysis-additionaldetail-additionaldetailtype"""
+    p_Component: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "Component"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-additionaldetail.html#cfn-ec2-networkinsightsanalysis-additionaldetail-component"""
+
+@attr.s
+class PropNetworkInsightsAnalysisAnalysisPacketHeader(Property):
+    """
+    AWS Object Type = "AWS::EC2::NetworkInsightsAnalysis.AnalysisPacketHeader"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysispacketheader.html
+
+    Property Document:
+    
+    - ``p_DestinationAddresses``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysispacketheader.html#cfn-ec2-networkinsightsanalysis-analysispacketheader-destinationaddresses
+    - ``p_DestinationPortRanges``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysispacketheader.html#cfn-ec2-networkinsightsanalysis-analysispacketheader-destinationportranges
+    - ``p_Protocol``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysispacketheader.html#cfn-ec2-networkinsightsanalysis-analysispacketheader-protocol
+    - ``p_SourceAddresses``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysispacketheader.html#cfn-ec2-networkinsightsanalysis-analysispacketheader-sourceaddresses
+    - ``p_SourcePortRanges``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysispacketheader.html#cfn-ec2-networkinsightsanalysis-analysispacketheader-sourceportranges
+    """
+    AWS_OBJECT_TYPE = "AWS::EC2::NetworkInsightsAnalysis.AnalysisPacketHeader"
+    
+    p_DestinationAddresses: typing.List[TypeHint.intrinsic_str] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "DestinationAddresses"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysispacketheader.html#cfn-ec2-networkinsightsanalysis-analysispacketheader-destinationaddresses"""
+    p_DestinationPortRanges: typing.List[typing.Union['PropNetworkInsightsAnalysisPortRange', dict]] = attr.ib(
+        default=None,
+        converter=PropNetworkInsightsAnalysisPortRange.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropNetworkInsightsAnalysisPortRange), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "DestinationPortRanges"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysispacketheader.html#cfn-ec2-networkinsightsanalysis-analysispacketheader-destinationportranges"""
+    p_Protocol: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "Protocol"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysispacketheader.html#cfn-ec2-networkinsightsanalysis-analysispacketheader-protocol"""
+    p_SourceAddresses: typing.List[TypeHint.intrinsic_str] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "SourceAddresses"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysispacketheader.html#cfn-ec2-networkinsightsanalysis-analysispacketheader-sourceaddresses"""
+    p_SourcePortRanges: typing.List[typing.Union['PropNetworkInsightsAnalysisPortRange', dict]] = attr.ib(
+        default=None,
+        converter=PropNetworkInsightsAnalysisPortRange.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropNetworkInsightsAnalysisPortRange), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "SourcePortRanges"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysispacketheader.html#cfn-ec2-networkinsightsanalysis-analysispacketheader-sourceportranges"""
+
+@attr.s
+class PropNetworkInsightsAccessScopeThroughResourcesStatementRequest(Property):
+    """
+    AWS Object Type = "AWS::EC2::NetworkInsightsAccessScope.ThroughResourcesStatementRequest"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsaccessscope-throughresourcesstatementrequest.html
+
+    Property Document:
+    
+    - ``p_ResourceStatement``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsaccessscope-throughresourcesstatementrequest.html#cfn-ec2-networkinsightsaccessscope-throughresourcesstatementrequest-resourcestatement
+    """
+    AWS_OBJECT_TYPE = "AWS::EC2::NetworkInsightsAccessScope.ThroughResourcesStatementRequest"
+    
+    p_ResourceStatement: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "ResourceStatement"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsaccessscope-throughresourcesstatementrequest.html#cfn-ec2-networkinsightsaccessscope-throughresourcesstatementrequest-resourcestatement"""
+
+@attr.s
+class PropEC2FleetInstanceRequirementsRequest(Property):
+    """
+    AWS Object Type = "AWS::EC2::EC2Fleet.InstanceRequirementsRequest"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html
+
+    Property Document:
+    
+    - ``p_AcceleratorCount``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-acceleratorcount
+    - ``p_AcceleratorManufacturers``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-acceleratormanufacturers
+    - ``p_AcceleratorNames``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-acceleratornames
+    - ``p_AcceleratorTotalMemoryMiB``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-acceleratortotalmemorymib
+    - ``p_AcceleratorTypes``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-acceleratortypes
+    - ``p_AllowedInstanceTypes``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-allowedinstancetypes
+    - ``p_BareMetal``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-baremetal
+    - ``p_BaselineEbsBandwidthMbps``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-baselineebsbandwidthmbps
+    - ``p_BurstablePerformance``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-burstableperformance
+    - ``p_CpuManufacturers``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-cpumanufacturers
+    - ``p_ExcludedInstanceTypes``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-excludedinstancetypes
+    - ``p_InstanceGenerations``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-instancegenerations
+    - ``p_LocalStorage``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-localstorage
+    - ``p_LocalStorageTypes``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-localstoragetypes
+    - ``p_MemoryGiBPerVCpu``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-memorygibpervcpu
+    - ``p_MemoryMiB``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-memorymib
+    - ``p_NetworkBandwidthGbps``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-networkbandwidthgbps
+    - ``p_NetworkInterfaceCount``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-networkinterfacecount
+    - ``p_OnDemandMaxPricePercentageOverLowestPrice``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-ondemandmaxpricepercentageoverlowestprice
+    - ``p_RequireHibernateSupport``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-requirehibernatesupport
+    - ``p_SpotMaxPricePercentageOverLowestPrice``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-spotmaxpricepercentageoverlowestprice
+    - ``p_TotalLocalStorageGB``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-totallocalstoragegb
+    - ``p_VCpuCount``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-vcpucount
+    """
+    AWS_OBJECT_TYPE = "AWS::EC2::EC2Fleet.InstanceRequirementsRequest"
+    
+    p_AcceleratorCount: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "AcceleratorCount"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-acceleratorcount"""
+    p_AcceleratorManufacturers: typing.List[TypeHint.intrinsic_str] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "AcceleratorManufacturers"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-acceleratormanufacturers"""
+    p_AcceleratorNames: typing.List[TypeHint.intrinsic_str] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "AcceleratorNames"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-acceleratornames"""
+    p_AcceleratorTotalMemoryMiB: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "AcceleratorTotalMemoryMiB"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-acceleratortotalmemorymib"""
+    p_AcceleratorTypes: typing.List[TypeHint.intrinsic_str] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "AcceleratorTypes"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-acceleratortypes"""
+    p_AllowedInstanceTypes: typing.List[TypeHint.intrinsic_str] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "AllowedInstanceTypes"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-allowedinstancetypes"""
+    p_BareMetal: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "BareMetal"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-baremetal"""
+    p_BaselineEbsBandwidthMbps: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "BaselineEbsBandwidthMbps"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-baselineebsbandwidthmbps"""
+    p_BurstablePerformance: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "BurstablePerformance"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-burstableperformance"""
+    p_CpuManufacturers: typing.List[TypeHint.intrinsic_str] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "CpuManufacturers"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-cpumanufacturers"""
+    p_ExcludedInstanceTypes: typing.List[TypeHint.intrinsic_str] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "ExcludedInstanceTypes"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-excludedinstancetypes"""
+    p_InstanceGenerations: typing.List[TypeHint.intrinsic_str] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "InstanceGenerations"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-instancegenerations"""
+    p_LocalStorage: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "LocalStorage"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-localstorage"""
+    p_LocalStorageTypes: typing.List[TypeHint.intrinsic_str] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "LocalStorageTypes"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-localstoragetypes"""
+    p_MemoryGiBPerVCpu: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "MemoryGiBPerVCpu"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-memorygibpervcpu"""
+    p_MemoryMiB: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "MemoryMiB"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-memorymib"""
+    p_NetworkBandwidthGbps: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "NetworkBandwidthGbps"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-networkbandwidthgbps"""
+    p_NetworkInterfaceCount: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "NetworkInterfaceCount"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-networkinterfacecount"""
+    p_OnDemandMaxPricePercentageOverLowestPrice: int = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(int)),
+        metadata={AttrMeta.PROPERTY_NAME: "OnDemandMaxPricePercentageOverLowestPrice"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-ondemandmaxpricepercentageoverlowestprice"""
+    p_RequireHibernateSupport: bool = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(bool)),
+        metadata={AttrMeta.PROPERTY_NAME: "RequireHibernateSupport"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-requirehibernatesupport"""
+    p_SpotMaxPricePercentageOverLowestPrice: int = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(int)),
+        metadata={AttrMeta.PROPERTY_NAME: "SpotMaxPricePercentageOverLowestPrice"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-spotmaxpricepercentageoverlowestprice"""
+    p_TotalLocalStorageGB: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "TotalLocalStorageGB"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-totallocalstoragegb"""
+    p_VCpuCount: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "VCpuCount"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-vcpucount"""
+
+@attr.s
+class PropInstanceNetworkInterface(Property):
+    """
+    AWS Object Type = "AWS::EC2::Instance.NetworkInterface"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-network-iface-embedded.html
+
+    Property Document:
+    
+    - ``rp_DeviceIndex``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-network-iface-embedded.html#aws-properties-ec2-network-iface-embedded-deviceindex
+    - ``p_AssociateCarrierIpAddress``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-network-iface-embedded.html#cfn-ec2-instance-networkinterface-associatecarrieripaddress
+    - ``p_AssociatePublicIpAddress``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-network-iface-embedded.html#aws-properties-ec2-network-iface-embedded-associatepubip
+    - ``p_DeleteOnTermination``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-network-iface-embedded.html#aws-properties-ec2-network-iface-embedded-delete
+    - ``p_Description``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-network-iface-embedded.html#aws-properties-ec2-network-iface-embedded-description
+    - ``p_GroupSet``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-network-iface-embedded.html#aws-properties-ec2-network-iface-embedded-groupset
+    - ``p_Ipv6AddressCount``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-network-iface-embedded.html#cfn-ec2-instance-networkinterface-ipv6addresscount
+    - ``p_Ipv6Addresses``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-network-iface-embedded.html#cfn-ec2-instance-networkinterface-ipv6addresses
+    - ``p_NetworkInterfaceId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-network-iface-embedded.html#aws-properties-ec2-network-iface-embedded-network-iface
+    - ``p_PrivateIpAddress``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-network-iface-embedded.html#aws-properties-ec2-network-iface-embedded-privateipaddress
+    - ``p_PrivateIpAddresses``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-network-iface-embedded.html#aws-properties-ec2-network-iface-embedded-privateipaddresses
+    - ``p_SecondaryPrivateIpAddressCount``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-network-iface-embedded.html#aws-properties-ec2-network-iface-embedded-secondprivateip
+    - ``p_SubnetId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-network-iface-embedded.html#aws-properties-ec2-network-iface-embedded-subnetid
+    """
+    AWS_OBJECT_TYPE = "AWS::EC2::Instance.NetworkInterface"
+    
+    rp_DeviceIndex: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "DeviceIndex"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-network-iface-embedded.html#aws-properties-ec2-network-iface-embedded-deviceindex"""
+    p_AssociateCarrierIpAddress: bool = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(bool)),
+        metadata={AttrMeta.PROPERTY_NAME: "AssociateCarrierIpAddress"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-network-iface-embedded.html#cfn-ec2-instance-networkinterface-associatecarrieripaddress"""
+    p_AssociatePublicIpAddress: bool = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(bool)),
+        metadata={AttrMeta.PROPERTY_NAME: "AssociatePublicIpAddress"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-network-iface-embedded.html#aws-properties-ec2-network-iface-embedded-associatepubip"""
+    p_DeleteOnTermination: bool = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(bool)),
+        metadata={AttrMeta.PROPERTY_NAME: "DeleteOnTermination"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-network-iface-embedded.html#aws-properties-ec2-network-iface-embedded-delete"""
+    p_Description: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "Description"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-network-iface-embedded.html#aws-properties-ec2-network-iface-embedded-description"""
+    p_GroupSet: typing.List[TypeHint.intrinsic_str] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "GroupSet"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-network-iface-embedded.html#aws-properties-ec2-network-iface-embedded-groupset"""
+    p_Ipv6AddressCount: int = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(int)),
+        metadata={AttrMeta.PROPERTY_NAME: "Ipv6AddressCount"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-network-iface-embedded.html#cfn-ec2-instance-networkinterface-ipv6addresscount"""
+    p_Ipv6Addresses: typing.List[typing.Union['PropInstanceInstanceIpv6Address', dict]] = attr.ib(
+        default=None,
+        converter=PropInstanceInstanceIpv6Address.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropInstanceInstanceIpv6Address), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "Ipv6Addresses"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-network-iface-embedded.html#cfn-ec2-instance-networkinterface-ipv6addresses"""
+    p_NetworkInterfaceId: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "NetworkInterfaceId"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-network-iface-embedded.html#aws-properties-ec2-network-iface-embedded-network-iface"""
+    p_PrivateIpAddress: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "PrivateIpAddress"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-network-iface-embedded.html#aws-properties-ec2-network-iface-embedded-privateipaddress"""
+    p_PrivateIpAddresses: typing.List[typing.Union['PropInstancePrivateIpAddressSpecification', dict]] = attr.ib(
+        default=None,
+        converter=PropInstancePrivateIpAddressSpecification.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropInstancePrivateIpAddressSpecification), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "PrivateIpAddresses"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-network-iface-embedded.html#aws-properties-ec2-network-iface-embedded-privateipaddresses"""
+    p_SecondaryPrivateIpAddressCount: int = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(int)),
+        metadata={AttrMeta.PROPERTY_NAME: "SecondaryPrivateIpAddressCount"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-network-iface-embedded.html#aws-properties-ec2-network-iface-embedded-secondprivateip"""
+    p_SubnetId: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "SubnetId"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-network-iface-embedded.html#aws-properties-ec2-network-iface-embedded-subnetid"""
+
+@attr.s
+class PropEC2FleetMaintenanceStrategies(Property):
+    """
+    AWS Object Type = "AWS::EC2::EC2Fleet.MaintenanceStrategies"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-maintenancestrategies.html
+
+    Property Document:
+    
+    - ``p_CapacityRebalance``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-maintenancestrategies.html#cfn-ec2-ec2fleet-maintenancestrategies-capacityrebalance
+    """
+    AWS_OBJECT_TYPE = "AWS::EC2::EC2Fleet.MaintenanceStrategies"
+    
+    p_CapacityRebalance: typing.Union['PropEC2FleetCapacityRebalance', dict] = attr.ib(
+        default=None,
+        converter=PropEC2FleetCapacityRebalance.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropEC2FleetCapacityRebalance)),
+        metadata={AttrMeta.PROPERTY_NAME: "CapacityRebalance"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-maintenancestrategies.html#cfn-ec2-ec2fleet-maintenancestrategies-capacityrebalance"""
+
+@attr.s
+class PropSpotFleetBlockDeviceMapping(Property):
+    """
+    AWS Object Type = "AWS::EC2::SpotFleet.BlockDeviceMapping"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-blockdevicemapping.html
+
+    Property Document:
+    
+    - ``rp_DeviceName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-blockdevicemapping.html#cfn-ec2-spotfleet-blockdevicemapping-devicename
+    - ``p_Ebs``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-blockdevicemapping.html#cfn-ec2-spotfleet-blockdevicemapping-ebs
+    - ``p_NoDevice``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-blockdevicemapping.html#cfn-ec2-spotfleet-blockdevicemapping-nodevice
+    - ``p_VirtualName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-blockdevicemapping.html#cfn-ec2-spotfleet-blockdevicemapping-virtualname
+    """
+    AWS_OBJECT_TYPE = "AWS::EC2::SpotFleet.BlockDeviceMapping"
+    
+    rp_DeviceName: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "DeviceName"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-blockdevicemapping.html#cfn-ec2-spotfleet-blockdevicemapping-devicename"""
+    p_Ebs: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "Ebs"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-blockdevicemapping.html#cfn-ec2-spotfleet-blockdevicemapping-ebs"""
+    p_NoDevice: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "NoDevice"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-blockdevicemapping.html#cfn-ec2-spotfleet-blockdevicemapping-nodevice"""
+    p_VirtualName: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "VirtualName"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-blockdevicemapping.html#cfn-ec2-spotfleet-blockdevicemapping-virtualname"""
+
+@attr.s
+class PropNetworkInsightsAccessScopePathStatementRequest(Property):
+    """
+    AWS Object Type = "AWS::EC2::NetworkInsightsAccessScope.PathStatementRequest"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsaccessscope-pathstatementrequest.html
+
+    Property Document:
+    
+    - ``p_PacketHeaderStatement``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsaccessscope-pathstatementrequest.html#cfn-ec2-networkinsightsaccessscope-pathstatementrequest-packetheaderstatement
+    - ``p_ResourceStatement``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsaccessscope-pathstatementrequest.html#cfn-ec2-networkinsightsaccessscope-pathstatementrequest-resourcestatement
+    """
+    AWS_OBJECT_TYPE = "AWS::EC2::NetworkInsightsAccessScope.PathStatementRequest"
+    
+    p_PacketHeaderStatement: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "PacketHeaderStatement"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsaccessscope-pathstatementrequest.html#cfn-ec2-networkinsightsaccessscope-pathstatementrequest-packetheaderstatement"""
+    p_ResourceStatement: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "ResourceStatement"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsaccessscope-pathstatementrequest.html#cfn-ec2-networkinsightsaccessscope-pathstatementrequest-resourcestatement"""
+
+@attr.s
+class PropNetworkInsightsAnalysisExplanation(Property):
+    """
+    AWS Object Type = "AWS::EC2::NetworkInsightsAnalysis.Explanation"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html
+
+    Property Document:
+    
+    - ``p_Acl``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-acl
+    - ``p_AclRule``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-aclrule
+    - ``p_Address``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-address
+    - ``p_Addresses``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-addresses
+    - ``p_AttachedTo``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-attachedto
+    - ``p_AvailabilityZones``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-availabilityzones
+    - ``p_Cidrs``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-cidrs
+    - ``p_ClassicLoadBalancerListener``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-classicloadbalancerlistener
+    - ``p_Component``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-component
+    - ``p_ComponentAccount``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-componentaccount
+    - ``p_ComponentRegion``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-componentregion
+    - ``p_CustomerGateway``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-customergateway
+    - ``p_Destination``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-destination
+    - ``p_DestinationVpc``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-destinationvpc
+    - ``p_Direction``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-direction
+    - ``p_ElasticLoadBalancerListener``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-elasticloadbalancerlistener
+    - ``p_ExplanationCode``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-explanationcode
+    - ``p_IngressRouteTable``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-ingressroutetable
+    - ``p_InternetGateway``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-internetgateway
+    - ``p_LoadBalancerArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-loadbalancerarn
+    - ``p_LoadBalancerListenerPort``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-loadbalancerlistenerport
+    - ``p_LoadBalancerTarget``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-loadbalancertarget
+    - ``p_LoadBalancerTargetGroup``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-loadbalancertargetgroup
+    - ``p_LoadBalancerTargetGroups``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-loadbalancertargetgroups
+    - ``p_LoadBalancerTargetPort``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-loadbalancertargetport
+    - ``p_MissingComponent``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-missingcomponent
+    - ``p_NatGateway``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-natgateway
+    - ``p_NetworkInterface``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-networkinterface
+    - ``p_PacketField``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-packetfield
+    - ``p_Port``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-port
+    - ``p_PortRanges``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-portranges
+    - ``p_PrefixList``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-prefixlist
+    - ``p_Protocols``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-protocols
+    - ``p_RouteTable``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-routetable
+    - ``p_RouteTableRoute``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-routetableroute
+    - ``p_SecurityGroup``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-securitygroup
+    - ``p_SecurityGroupRule``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-securitygrouprule
+    - ``p_SecurityGroups``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-securitygroups
+    - ``p_SourceVpc``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-sourcevpc
+    - ``p_State``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-state
+    - ``p_Subnet``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-subnet
+    - ``p_SubnetRouteTable``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-subnetroutetable
+    - ``p_TransitGateway``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-transitgateway
+    - ``p_TransitGatewayAttachment``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-transitgatewayattachment
+    - ``p_TransitGatewayRouteTable``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-transitgatewayroutetable
+    - ``p_TransitGatewayRouteTableRoute``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-transitgatewayroutetableroute
+    - ``p_Vpc``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-vpc
+    - ``p_VpcPeeringConnection``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-vpcpeeringconnection
+    - ``p_VpnConnection``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-vpnconnection
+    - ``p_VpnGateway``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-vpngateway
+    - ``p_vpcEndpoint``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-vpcendpoint
+    """
+    AWS_OBJECT_TYPE = "AWS::EC2::NetworkInsightsAnalysis.Explanation"
+    
+    p_Acl: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "Acl"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-acl"""
+    p_AclRule: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "AclRule"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-aclrule"""
     p_Address: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
         metadata={AttrMeta.PROPERTY_NAME: "Address"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysisloadbalancertarget.html#cfn-ec2-networkinsightsanalysis-analysisloadbalancertarget-address"""
-    p_AvailabilityZone: TypeHint.intrinsic_str = attr.ib(
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-address"""
+    p_Addresses: typing.List[TypeHint.intrinsic_str] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "Addresses"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-addresses"""
+    p_AttachedTo: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "AttachedTo"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-attachedto"""
+    p_AvailabilityZones: typing.List[TypeHint.intrinsic_str] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "AvailabilityZones"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-availabilityzones"""
+    p_Cidrs: typing.List[TypeHint.intrinsic_str] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "Cidrs"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-cidrs"""
+    p_ClassicLoadBalancerListener: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "ClassicLoadBalancerListener"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-classicloadbalancerlistener"""
+    p_Component: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "Component"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-component"""
+    p_ComponentAccount: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "AvailabilityZone"},
+        metadata={AttrMeta.PROPERTY_NAME: "ComponentAccount"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysisloadbalancertarget.html#cfn-ec2-networkinsightsanalysis-analysisloadbalancertarget-availabilityzone"""
-    p_Instance: typing.Union['PropNetworkInsightsAnalysisAnalysisComponent', dict] = attr.ib(
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-componentaccount"""
+    p_ComponentRegion: TypeHint.intrinsic_str = attr.ib(
         default=None,
-        converter=PropNetworkInsightsAnalysisAnalysisComponent.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropNetworkInsightsAnalysisAnalysisComponent)),
-        metadata={AttrMeta.PROPERTY_NAME: "Instance"},
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "ComponentRegion"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysisloadbalancertarget.html#cfn-ec2-networkinsightsanalysis-analysisloadbalancertarget-instance"""
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-componentregion"""
+    p_CustomerGateway: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "CustomerGateway"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-customergateway"""
+    p_Destination: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "Destination"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-destination"""
+    p_DestinationVpc: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "DestinationVpc"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-destinationvpc"""
+    p_Direction: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "Direction"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-direction"""
+    p_ElasticLoadBalancerListener: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "ElasticLoadBalancerListener"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-elasticloadbalancerlistener"""
+    p_ExplanationCode: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "ExplanationCode"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-explanationcode"""
+    p_IngressRouteTable: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "IngressRouteTable"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-ingressroutetable"""
+    p_InternetGateway: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "InternetGateway"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-internetgateway"""
+    p_LoadBalancerArn: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "LoadBalancerArn"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-loadbalancerarn"""
+    p_LoadBalancerListenerPort: int = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(int)),
+        metadata={AttrMeta.PROPERTY_NAME: "LoadBalancerListenerPort"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-loadbalancerlistenerport"""
+    p_LoadBalancerTarget: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "LoadBalancerTarget"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-loadbalancertarget"""
+    p_LoadBalancerTargetGroup: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "LoadBalancerTargetGroup"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-loadbalancertargetgroup"""
+    p_LoadBalancerTargetGroups: typing.List[typing.Union['PropNetworkInsightsAnalysisAnalysisComponent', dict]] = attr.ib(
+        default=None,
+        converter=PropNetworkInsightsAnalysisAnalysisComponent.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropNetworkInsightsAnalysisAnalysisComponent), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "LoadBalancerTargetGroups"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-loadbalancertargetgroups"""
+    p_LoadBalancerTargetPort: int = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(int)),
+        metadata={AttrMeta.PROPERTY_NAME: "LoadBalancerTargetPort"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-loadbalancertargetport"""
+    p_MissingComponent: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "MissingComponent"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-missingcomponent"""
+    p_NatGateway: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "NatGateway"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-natgateway"""
+    p_NetworkInterface: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "NetworkInterface"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-networkinterface"""
+    p_PacketField: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "PacketField"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-packetfield"""
     p_Port: int = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(int)),
         metadata={AttrMeta.PROPERTY_NAME: "Port"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysisloadbalancertarget.html#cfn-ec2-networkinsightsanalysis-analysisloadbalancertarget-port"""
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-port"""
+    p_PortRanges: typing.List[typing.Union['PropNetworkInsightsAnalysisPortRange', dict]] = attr.ib(
+        default=None,
+        converter=PropNetworkInsightsAnalysisPortRange.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropNetworkInsightsAnalysisPortRange), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "PortRanges"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-portranges"""
+    p_PrefixList: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "PrefixList"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-prefixlist"""
+    p_Protocols: typing.List[TypeHint.intrinsic_str] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "Protocols"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-protocols"""
+    p_RouteTable: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "RouteTable"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-routetable"""
+    p_RouteTableRoute: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "RouteTableRoute"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-routetableroute"""
+    p_SecurityGroup: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "SecurityGroup"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-securitygroup"""
+    p_SecurityGroupRule: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "SecurityGroupRule"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-securitygrouprule"""
+    p_SecurityGroups: typing.List[typing.Union['PropNetworkInsightsAnalysisAnalysisComponent', dict]] = attr.ib(
+        default=None,
+        converter=PropNetworkInsightsAnalysisAnalysisComponent.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropNetworkInsightsAnalysisAnalysisComponent), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "SecurityGroups"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-securitygroups"""
+    p_SourceVpc: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "SourceVpc"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-sourcevpc"""
+    p_State: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "State"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-state"""
+    p_Subnet: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "Subnet"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-subnet"""
+    p_SubnetRouteTable: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "SubnetRouteTable"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-subnetroutetable"""
+    p_TransitGateway: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "TransitGateway"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-transitgateway"""
+    p_TransitGatewayAttachment: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "TransitGatewayAttachment"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-transitgatewayattachment"""
+    p_TransitGatewayRouteTable: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "TransitGatewayRouteTable"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-transitgatewayroutetable"""
+    p_TransitGatewayRouteTableRoute: typing.Union['PropNetworkInsightsAnalysisTransitGatewayRouteTableRoute', dict] = attr.ib(
+        default=None,
+        converter=PropNetworkInsightsAnalysisTransitGatewayRouteTableRoute.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropNetworkInsightsAnalysisTransitGatewayRouteTableRoute)),
+        metadata={AttrMeta.PROPERTY_NAME: "TransitGatewayRouteTableRoute"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-transitgatewayroutetableroute"""
+    p_Vpc: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "Vpc"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-vpc"""
+    p_VpcPeeringConnection: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "VpcPeeringConnection"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-vpcpeeringconnection"""
+    p_VpnConnection: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "VpnConnection"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-vpnconnection"""
+    p_VpnGateway: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "VpnGateway"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-vpngateway"""
+    p_vpcEndpoint: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "vpcEndpoint"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-vpcendpoint"""
 
 @attr.s
 class PropSpotFleetInstanceNetworkInterfaceSpecification(Property):
@@ -4114,24 +5112,21 @@ class PropClientVpnEndpointClientAuthenticationRequest(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Type"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-clientauthenticationrequest.html#cfn-ec2-clientvpnendpoint-clientauthenticationrequest-type"""
-    p_ActiveDirectory: typing.Union['PropClientVpnEndpointDirectoryServiceAuthenticationRequest', dict] = attr.ib(
+    p_ActiveDirectory: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropClientVpnEndpointDirectoryServiceAuthenticationRequest.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropClientVpnEndpointDirectoryServiceAuthenticationRequest)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "ActiveDirectory"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-clientauthenticationrequest.html#cfn-ec2-clientvpnendpoint-clientauthenticationrequest-activedirectory"""
-    p_FederatedAuthentication: typing.Union['PropClientVpnEndpointFederatedAuthenticationRequest', dict] = attr.ib(
+    p_FederatedAuthentication: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropClientVpnEndpointFederatedAuthenticationRequest.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropClientVpnEndpointFederatedAuthenticationRequest)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "FederatedAuthentication"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-clientauthenticationrequest.html#cfn-ec2-clientvpnendpoint-clientauthenticationrequest-federatedauthentication"""
-    p_MutualAuthentication: typing.Union['PropClientVpnEndpointCertificateAuthenticationRequest', dict] = attr.ib(
+    p_MutualAuthentication: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropClientVpnEndpointCertificateAuthenticationRequest.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropClientVpnEndpointCertificateAuthenticationRequest)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "MutualAuthentication"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-clientvpnendpoint-clientauthenticationrequest.html#cfn-ec2-clientvpnendpoint-clientauthenticationrequest-mutualauthentication"""
@@ -4185,17 +5180,15 @@ class PropSpotFleetSpotFleetLaunchSpecification(Property):
         metadata={AttrMeta.PROPERTY_NAME: "EbsOptimized"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetlaunchspecification.html#cfn-ec2-spotfleet-spotfleetlaunchspecification-ebsoptimized"""
-    p_IamInstanceProfile: typing.Union['PropSpotFleetIamInstanceProfileSpecification', dict] = attr.ib(
+    p_IamInstanceProfile: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropSpotFleetIamInstanceProfileSpecification.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropSpotFleetIamInstanceProfileSpecification)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "IamInstanceProfile"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetlaunchspecification.html#cfn-ec2-spotfleet-spotfleetlaunchspecification-iaminstanceprofile"""
-    p_InstanceRequirements: typing.Union['PropSpotFleetInstanceRequirementsRequest', dict] = attr.ib(
+    p_InstanceRequirements: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropSpotFleetInstanceRequirementsRequest.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropSpotFleetInstanceRequirementsRequest)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "InstanceRequirements"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetlaunchspecification.html#cfn-ec2-spotfleet-spotfleetlaunchspecification-instancerequirements"""
@@ -4217,10 +5210,9 @@ class PropSpotFleetSpotFleetLaunchSpecification(Property):
         metadata={AttrMeta.PROPERTY_NAME: "KeyName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetlaunchspecification.html#cfn-ec2-spotfleet-spotfleetlaunchspecification-keyname"""
-    p_Monitoring: typing.Union['PropSpotFleetSpotFleetMonitoring', dict] = attr.ib(
+    p_Monitoring: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropSpotFleetSpotFleetMonitoring.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropSpotFleetSpotFleetMonitoring)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "Monitoring"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetlaunchspecification.html#cfn-ec2-spotfleet-spotfleetlaunchspecification-monitoring"""
@@ -4231,10 +5223,9 @@ class PropSpotFleetSpotFleetLaunchSpecification(Property):
         metadata={AttrMeta.PROPERTY_NAME: "NetworkInterfaces"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetlaunchspecification.html#cfn-ec2-spotfleet-spotfleetlaunchspecification-networkinterfaces"""
-    p_Placement: typing.Union['PropSpotFleetSpotPlacement', dict] = attr.ib(
+    p_Placement: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropSpotFleetSpotPlacement.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropSpotFleetSpotPlacement)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "Placement"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetlaunchspecification.html#cfn-ec2-spotfleet-spotfleetlaunchspecification-placement"""
@@ -4282,56 +5273,6 @@ class PropSpotFleetSpotFleetLaunchSpecification(Property):
         metadata={AttrMeta.PROPERTY_NAME: "WeightedCapacity"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetlaunchspecification.html#cfn-ec2-spotfleet-spotfleetlaunchspecification-weightedcapacity"""
-
-@attr.s
-class PropNetworkInsightsAnalysisAnalysisPacketHeader(Property):
-    """
-    AWS Object Type = "AWS::EC2::NetworkInsightsAnalysis.AnalysisPacketHeader"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysispacketheader.html
-
-    Property Document:
-    
-    - ``p_DestinationAddresses``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysispacketheader.html#cfn-ec2-networkinsightsanalysis-analysispacketheader-destinationaddresses
-    - ``p_DestinationPortRanges``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysispacketheader.html#cfn-ec2-networkinsightsanalysis-analysispacketheader-destinationportranges
-    - ``p_Protocol``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysispacketheader.html#cfn-ec2-networkinsightsanalysis-analysispacketheader-protocol
-    - ``p_SourceAddresses``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysispacketheader.html#cfn-ec2-networkinsightsanalysis-analysispacketheader-sourceaddresses
-    - ``p_SourcePortRanges``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysispacketheader.html#cfn-ec2-networkinsightsanalysis-analysispacketheader-sourceportranges
-    """
-    AWS_OBJECT_TYPE = "AWS::EC2::NetworkInsightsAnalysis.AnalysisPacketHeader"
-    
-    p_DestinationAddresses: typing.List[TypeHint.intrinsic_str] = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "DestinationAddresses"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysispacketheader.html#cfn-ec2-networkinsightsanalysis-analysispacketheader-destinationaddresses"""
-    p_DestinationPortRanges: typing.List[typing.Union['PropNetworkInsightsAnalysisPortRange', dict]] = attr.ib(
-        default=None,
-        converter=PropNetworkInsightsAnalysisPortRange.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropNetworkInsightsAnalysisPortRange), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "DestinationPortRanges"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysispacketheader.html#cfn-ec2-networkinsightsanalysis-analysispacketheader-destinationportranges"""
-    p_Protocol: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Protocol"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysispacketheader.html#cfn-ec2-networkinsightsanalysis-analysispacketheader-protocol"""
-    p_SourceAddresses: typing.List[TypeHint.intrinsic_str] = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "SourceAddresses"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysispacketheader.html#cfn-ec2-networkinsightsanalysis-analysispacketheader-sourceaddresses"""
-    p_SourcePortRanges: typing.List[typing.Union['PropNetworkInsightsAnalysisPortRange', dict]] = attr.ib(
-        default=None,
-        converter=PropNetworkInsightsAnalysisPortRange.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropNetworkInsightsAnalysisPortRange), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "SourcePortRanges"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysispacketheader.html#cfn-ec2-networkinsightsanalysis-analysispacketheader-sourceportranges"""
 
 @attr.s
 class PropSpotFleetClassicLoadBalancersConfig(Property):
@@ -4383,365 +5324,6 @@ class PropLaunchTemplateCapacityReservationSpecification(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-capacityreservationspecification.html#cfn-ec2-launchtemplate-launchtemplatedata-capacityreservationspecification-capacityreservationtarget"""
 
 @attr.s
-class PropNetworkInsightsAccessScopeThroughResourcesStatementRequest(Property):
-    """
-    AWS Object Type = "AWS::EC2::NetworkInsightsAccessScope.ThroughResourcesStatementRequest"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsaccessscope-throughresourcesstatementrequest.html
-
-    Property Document:
-    
-    - ``p_ResourceStatement``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsaccessscope-throughresourcesstatementrequest.html#cfn-ec2-networkinsightsaccessscope-throughresourcesstatementrequest-resourcestatement
-    """
-    AWS_OBJECT_TYPE = "AWS::EC2::NetworkInsightsAccessScope.ThroughResourcesStatementRequest"
-    
-    p_ResourceStatement: typing.Union['PropNetworkInsightsAccessScopeResourceStatementRequest', dict] = attr.ib(
-        default=None,
-        converter=PropNetworkInsightsAccessScopeResourceStatementRequest.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropNetworkInsightsAccessScopeResourceStatementRequest)),
-        metadata={AttrMeta.PROPERTY_NAME: "ResourceStatement"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsaccessscope-throughresourcesstatementrequest.html#cfn-ec2-networkinsightsaccessscope-throughresourcesstatementrequest-resourcestatement"""
-
-@attr.s
-class PropNetworkInsightsAnalysisPathComponent(Property):
-    """
-    AWS Object Type = "AWS::EC2::NetworkInsightsAnalysis.PathComponent"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html
-
-    Property Document:
-    
-    - ``p_AclRule``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-aclrule
-    - ``p_Component``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-component
-    - ``p_DestinationVpc``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-destinationvpc
-    - ``p_InboundHeader``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-inboundheader
-    - ``p_OutboundHeader``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-outboundheader
-    - ``p_RouteTableRoute``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-routetableroute
-    - ``p_SecurityGroupRule``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-securitygrouprule
-    - ``p_SequenceNumber``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-sequencenumber
-    - ``p_SourceVpc``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-sourcevpc
-    - ``p_Subnet``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-subnet
-    - ``p_Vpc``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-vpc
-    """
-    AWS_OBJECT_TYPE = "AWS::EC2::NetworkInsightsAnalysis.PathComponent"
-    
-    p_AclRule: typing.Union['PropNetworkInsightsAnalysisAnalysisAclRule', dict] = attr.ib(
-        default=None,
-        converter=PropNetworkInsightsAnalysisAnalysisAclRule.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropNetworkInsightsAnalysisAnalysisAclRule)),
-        metadata={AttrMeta.PROPERTY_NAME: "AclRule"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-aclrule"""
-    p_Component: typing.Union['PropNetworkInsightsAnalysisAnalysisComponent', dict] = attr.ib(
-        default=None,
-        converter=PropNetworkInsightsAnalysisAnalysisComponent.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropNetworkInsightsAnalysisAnalysisComponent)),
-        metadata={AttrMeta.PROPERTY_NAME: "Component"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-component"""
-    p_DestinationVpc: typing.Union['PropNetworkInsightsAnalysisAnalysisComponent', dict] = attr.ib(
-        default=None,
-        converter=PropNetworkInsightsAnalysisAnalysisComponent.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropNetworkInsightsAnalysisAnalysisComponent)),
-        metadata={AttrMeta.PROPERTY_NAME: "DestinationVpc"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-destinationvpc"""
-    p_InboundHeader: typing.Union['PropNetworkInsightsAnalysisAnalysisPacketHeader', dict] = attr.ib(
-        default=None,
-        converter=PropNetworkInsightsAnalysisAnalysisPacketHeader.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropNetworkInsightsAnalysisAnalysisPacketHeader)),
-        metadata={AttrMeta.PROPERTY_NAME: "InboundHeader"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-inboundheader"""
-    p_OutboundHeader: typing.Union['PropNetworkInsightsAnalysisAnalysisPacketHeader', dict] = attr.ib(
-        default=None,
-        converter=PropNetworkInsightsAnalysisAnalysisPacketHeader.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropNetworkInsightsAnalysisAnalysisPacketHeader)),
-        metadata={AttrMeta.PROPERTY_NAME: "OutboundHeader"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-outboundheader"""
-    p_RouteTableRoute: typing.Union['PropNetworkInsightsAnalysisAnalysisRouteTableRoute', dict] = attr.ib(
-        default=None,
-        converter=PropNetworkInsightsAnalysisAnalysisRouteTableRoute.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropNetworkInsightsAnalysisAnalysisRouteTableRoute)),
-        metadata={AttrMeta.PROPERTY_NAME: "RouteTableRoute"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-routetableroute"""
-    p_SecurityGroupRule: typing.Union['PropNetworkInsightsAnalysisAnalysisSecurityGroupRule', dict] = attr.ib(
-        default=None,
-        converter=PropNetworkInsightsAnalysisAnalysisSecurityGroupRule.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropNetworkInsightsAnalysisAnalysisSecurityGroupRule)),
-        metadata={AttrMeta.PROPERTY_NAME: "SecurityGroupRule"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-securitygrouprule"""
-    p_SequenceNumber: int = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "SequenceNumber"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-sequencenumber"""
-    p_SourceVpc: typing.Union['PropNetworkInsightsAnalysisAnalysisComponent', dict] = attr.ib(
-        default=None,
-        converter=PropNetworkInsightsAnalysisAnalysisComponent.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropNetworkInsightsAnalysisAnalysisComponent)),
-        metadata={AttrMeta.PROPERTY_NAME: "SourceVpc"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-sourcevpc"""
-    p_Subnet: typing.Union['PropNetworkInsightsAnalysisAnalysisComponent', dict] = attr.ib(
-        default=None,
-        converter=PropNetworkInsightsAnalysisAnalysisComponent.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropNetworkInsightsAnalysisAnalysisComponent)),
-        metadata={AttrMeta.PROPERTY_NAME: "Subnet"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-subnet"""
-    p_Vpc: typing.Union['PropNetworkInsightsAnalysisAnalysisComponent', dict] = attr.ib(
-        default=None,
-        converter=PropNetworkInsightsAnalysisAnalysisComponent.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropNetworkInsightsAnalysisAnalysisComponent)),
-        metadata={AttrMeta.PROPERTY_NAME: "Vpc"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-vpc"""
-
-@attr.s
-class PropEC2FleetSpotOptionsRequest(Property):
-    """
-    AWS Object Type = "AWS::EC2::EC2Fleet.SpotOptionsRequest"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-spotoptionsrequest.html
-
-    Property Document:
-    
-    - ``p_AllocationStrategy``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-spotoptionsrequest.html#cfn-ec2-ec2fleet-spotoptionsrequest-allocationstrategy
-    - ``p_InstanceInterruptionBehavior``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-spotoptionsrequest.html#cfn-ec2-ec2fleet-spotoptionsrequest-instanceinterruptionbehavior
-    - ``p_InstancePoolsToUseCount``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-spotoptionsrequest.html#cfn-ec2-ec2fleet-spotoptionsrequest-instancepoolstousecount
-    - ``p_MaintenanceStrategies``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-spotoptionsrequest.html#cfn-ec2-ec2fleet-spotoptionsrequest-maintenancestrategies
-    - ``p_MaxTotalPrice``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-spotoptionsrequest.html#cfn-ec2-ec2fleet-spotoptionsrequest-maxtotalprice
-    - ``p_MinTargetCapacity``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-spotoptionsrequest.html#cfn-ec2-ec2fleet-spotoptionsrequest-mintargetcapacity
-    - ``p_SingleAvailabilityZone``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-spotoptionsrequest.html#cfn-ec2-ec2fleet-spotoptionsrequest-singleavailabilityzone
-    - ``p_SingleInstanceType``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-spotoptionsrequest.html#cfn-ec2-ec2fleet-spotoptionsrequest-singleinstancetype
-    """
-    AWS_OBJECT_TYPE = "AWS::EC2::EC2Fleet.SpotOptionsRequest"
-    
-    p_AllocationStrategy: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "AllocationStrategy"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-spotoptionsrequest.html#cfn-ec2-ec2fleet-spotoptionsrequest-allocationstrategy"""
-    p_InstanceInterruptionBehavior: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "InstanceInterruptionBehavior"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-spotoptionsrequest.html#cfn-ec2-ec2fleet-spotoptionsrequest-instanceinterruptionbehavior"""
-    p_InstancePoolsToUseCount: int = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "InstancePoolsToUseCount"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-spotoptionsrequest.html#cfn-ec2-ec2fleet-spotoptionsrequest-instancepoolstousecount"""
-    p_MaintenanceStrategies: typing.Union['PropEC2FleetMaintenanceStrategies', dict] = attr.ib(
-        default=None,
-        converter=PropEC2FleetMaintenanceStrategies.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropEC2FleetMaintenanceStrategies)),
-        metadata={AttrMeta.PROPERTY_NAME: "MaintenanceStrategies"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-spotoptionsrequest.html#cfn-ec2-ec2fleet-spotoptionsrequest-maintenancestrategies"""
-    p_MaxTotalPrice: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "MaxTotalPrice"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-spotoptionsrequest.html#cfn-ec2-ec2fleet-spotoptionsrequest-maxtotalprice"""
-    p_MinTargetCapacity: int = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "MinTargetCapacity"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-spotoptionsrequest.html#cfn-ec2-ec2fleet-spotoptionsrequest-mintargetcapacity"""
-    p_SingleAvailabilityZone: bool = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(bool)),
-        metadata={AttrMeta.PROPERTY_NAME: "SingleAvailabilityZone"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-spotoptionsrequest.html#cfn-ec2-ec2fleet-spotoptionsrequest-singleavailabilityzone"""
-    p_SingleInstanceType: bool = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(bool)),
-        metadata={AttrMeta.PROPERTY_NAME: "SingleInstanceType"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-spotoptionsrequest.html#cfn-ec2-ec2fleet-spotoptionsrequest-singleinstancetype"""
-
-@attr.s
-class PropEC2FleetInstanceRequirementsRequest(Property):
-    """
-    AWS Object Type = "AWS::EC2::EC2Fleet.InstanceRequirementsRequest"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html
-
-    Property Document:
-    
-    - ``p_AcceleratorCount``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-acceleratorcount
-    - ``p_AcceleratorManufacturers``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-acceleratormanufacturers
-    - ``p_AcceleratorNames``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-acceleratornames
-    - ``p_AcceleratorTotalMemoryMiB``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-acceleratortotalmemorymib
-    - ``p_AcceleratorTypes``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-acceleratortypes
-    - ``p_BareMetal``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-baremetal
-    - ``p_BaselineEbsBandwidthMbps``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-baselineebsbandwidthmbps
-    - ``p_BurstablePerformance``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-burstableperformance
-    - ``p_CpuManufacturers``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-cpumanufacturers
-    - ``p_ExcludedInstanceTypes``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-excludedinstancetypes
-    - ``p_InstanceGenerations``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-instancegenerations
-    - ``p_LocalStorage``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-localstorage
-    - ``p_LocalStorageTypes``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-localstoragetypes
-    - ``p_MemoryGiBPerVCpu``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-memorygibpervcpu
-    - ``p_MemoryMiB``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-memorymib
-    - ``p_NetworkInterfaceCount``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-networkinterfacecount
-    - ``p_OnDemandMaxPricePercentageOverLowestPrice``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-ondemandmaxpricepercentageoverlowestprice
-    - ``p_RequireHibernateSupport``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-requirehibernatesupport
-    - ``p_SpotMaxPricePercentageOverLowestPrice``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-spotmaxpricepercentageoverlowestprice
-    - ``p_TotalLocalStorageGB``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-totallocalstoragegb
-    - ``p_VCpuCount``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-vcpucount
-    """
-    AWS_OBJECT_TYPE = "AWS::EC2::EC2Fleet.InstanceRequirementsRequest"
-    
-    p_AcceleratorCount: typing.Union['PropEC2FleetAcceleratorCountRequest', dict] = attr.ib(
-        default=None,
-        converter=PropEC2FleetAcceleratorCountRequest.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropEC2FleetAcceleratorCountRequest)),
-        metadata={AttrMeta.PROPERTY_NAME: "AcceleratorCount"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-acceleratorcount"""
-    p_AcceleratorManufacturers: typing.List[TypeHint.intrinsic_str] = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "AcceleratorManufacturers"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-acceleratormanufacturers"""
-    p_AcceleratorNames: typing.List[TypeHint.intrinsic_str] = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "AcceleratorNames"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-acceleratornames"""
-    p_AcceleratorTotalMemoryMiB: typing.Union['PropEC2FleetAcceleratorTotalMemoryMiBRequest', dict] = attr.ib(
-        default=None,
-        converter=PropEC2FleetAcceleratorTotalMemoryMiBRequest.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropEC2FleetAcceleratorTotalMemoryMiBRequest)),
-        metadata={AttrMeta.PROPERTY_NAME: "AcceleratorTotalMemoryMiB"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-acceleratortotalmemorymib"""
-    p_AcceleratorTypes: typing.List[TypeHint.intrinsic_str] = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "AcceleratorTypes"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-acceleratortypes"""
-    p_BareMetal: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "BareMetal"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-baremetal"""
-    p_BaselineEbsBandwidthMbps: typing.Union['PropEC2FleetBaselineEbsBandwidthMbpsRequest', dict] = attr.ib(
-        default=None,
-        converter=PropEC2FleetBaselineEbsBandwidthMbpsRequest.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropEC2FleetBaselineEbsBandwidthMbpsRequest)),
-        metadata={AttrMeta.PROPERTY_NAME: "BaselineEbsBandwidthMbps"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-baselineebsbandwidthmbps"""
-    p_BurstablePerformance: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "BurstablePerformance"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-burstableperformance"""
-    p_CpuManufacturers: typing.List[TypeHint.intrinsic_str] = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "CpuManufacturers"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-cpumanufacturers"""
-    p_ExcludedInstanceTypes: typing.List[TypeHint.intrinsic_str] = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "ExcludedInstanceTypes"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-excludedinstancetypes"""
-    p_InstanceGenerations: typing.List[TypeHint.intrinsic_str] = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "InstanceGenerations"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-instancegenerations"""
-    p_LocalStorage: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "LocalStorage"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-localstorage"""
-    p_LocalStorageTypes: typing.List[TypeHint.intrinsic_str] = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "LocalStorageTypes"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-localstoragetypes"""
-    p_MemoryGiBPerVCpu: typing.Union['PropEC2FleetMemoryGiBPerVCpuRequest', dict] = attr.ib(
-        default=None,
-        converter=PropEC2FleetMemoryGiBPerVCpuRequest.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropEC2FleetMemoryGiBPerVCpuRequest)),
-        metadata={AttrMeta.PROPERTY_NAME: "MemoryGiBPerVCpu"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-memorygibpervcpu"""
-    p_MemoryMiB: typing.Union['PropEC2FleetMemoryMiBRequest', dict] = attr.ib(
-        default=None,
-        converter=PropEC2FleetMemoryMiBRequest.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropEC2FleetMemoryMiBRequest)),
-        metadata={AttrMeta.PROPERTY_NAME: "MemoryMiB"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-memorymib"""
-    p_NetworkInterfaceCount: typing.Union['PropEC2FleetNetworkInterfaceCountRequest', dict] = attr.ib(
-        default=None,
-        converter=PropEC2FleetNetworkInterfaceCountRequest.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropEC2FleetNetworkInterfaceCountRequest)),
-        metadata={AttrMeta.PROPERTY_NAME: "NetworkInterfaceCount"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-networkinterfacecount"""
-    p_OnDemandMaxPricePercentageOverLowestPrice: int = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "OnDemandMaxPricePercentageOverLowestPrice"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-ondemandmaxpricepercentageoverlowestprice"""
-    p_RequireHibernateSupport: bool = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(bool)),
-        metadata={AttrMeta.PROPERTY_NAME: "RequireHibernateSupport"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-requirehibernatesupport"""
-    p_SpotMaxPricePercentageOverLowestPrice: int = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "SpotMaxPricePercentageOverLowestPrice"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-spotmaxpricepercentageoverlowestprice"""
-    p_TotalLocalStorageGB: typing.Union['PropEC2FleetTotalLocalStorageGBRequest', dict] = attr.ib(
-        default=None,
-        converter=PropEC2FleetTotalLocalStorageGBRequest.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropEC2FleetTotalLocalStorageGBRequest)),
-        metadata={AttrMeta.PROPERTY_NAME: "TotalLocalStorageGB"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-totallocalstoragegb"""
-    p_VCpuCount: typing.Union['PropEC2FleetVCpuCountRangeRequest', dict] = attr.ib(
-        default=None,
-        converter=PropEC2FleetVCpuCountRangeRequest.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropEC2FleetVCpuCountRangeRequest)),
-        metadata={AttrMeta.PROPERTY_NAME: "VCpuCount"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-instancerequirementsrequest.html#cfn-ec2-ec2fleet-instancerequirementsrequest-vcpucount"""
-
-@attr.s
 class PropSpotFleetSpotMaintenanceStrategies(Property):
     """
     AWS Object Type = "AWS::EC2::SpotFleet.SpotMaintenanceStrategies"
@@ -4754,10 +5336,9 @@ class PropSpotFleetSpotMaintenanceStrategies(Property):
     """
     AWS_OBJECT_TYPE = "AWS::EC2::SpotFleet.SpotMaintenanceStrategies"
     
-    p_CapacityRebalance: typing.Union['PropSpotFleetSpotCapacityRebalance', dict] = attr.ib(
+    p_CapacityRebalance: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropSpotFleetSpotCapacityRebalance.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropSpotFleetSpotCapacityRebalance)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "CapacityRebalance"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotmaintenancestrategies.html#cfn-ec2-spotfleet-spotmaintenancestrategies-capacityrebalance"""
@@ -4776,6 +5357,7 @@ class PropLaunchTemplateInstanceRequirements(Property):
     - ``p_AcceleratorNames``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-instancerequirements.html#cfn-ec2-launchtemplate-launchtemplatedata-instancerequirements-acceleratornames
     - ``p_AcceleratorTotalMemoryMiB``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-instancerequirements.html#cfn-ec2-launchtemplate-launchtemplatedata-instancerequirements-acceleratortotalmemorymib
     - ``p_AcceleratorTypes``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-instancerequirements.html#cfn-ec2-launchtemplate-launchtemplatedata-instancerequirements-acceleratortypes
+    - ``p_AllowedInstanceTypes``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-instancerequirements.html#cfn-ec2-launchtemplate-launchtemplatedata-instancerequirements-allowedinstancetypes
     - ``p_BareMetal``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-instancerequirements.html#cfn-ec2-launchtemplate-launchtemplatedata-instancerequirements-baremetal
     - ``p_BaselineEbsBandwidthMbps``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-instancerequirements.html#cfn-ec2-launchtemplate-launchtemplatedata-instancerequirements-baselineebsbandwidthmbps
     - ``p_BurstablePerformance``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-instancerequirements.html#cfn-ec2-launchtemplate-launchtemplatedata-instancerequirements-burstableperformance
@@ -4786,6 +5368,7 @@ class PropLaunchTemplateInstanceRequirements(Property):
     - ``p_LocalStorageTypes``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-instancerequirements.html#cfn-ec2-launchtemplate-launchtemplatedata-instancerequirements-localstoragetypes
     - ``p_MemoryGiBPerVCpu``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-instancerequirements.html#cfn-ec2-launchtemplate-launchtemplatedata-instancerequirements-memorygibpervcpu
     - ``p_MemoryMiB``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-instancerequirements.html#cfn-ec2-launchtemplate-launchtemplatedata-instancerequirements-memorymib
+    - ``p_NetworkBandwidthGbps``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-instancerequirements.html#cfn-ec2-launchtemplate-launchtemplatedata-instancerequirements-networkbandwidthgbps
     - ``p_NetworkInterfaceCount``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-instancerequirements.html#cfn-ec2-launchtemplate-launchtemplatedata-instancerequirements-networkinterfacecount
     - ``p_OnDemandMaxPricePercentageOverLowestPrice``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-instancerequirements.html#cfn-ec2-launchtemplate-launchtemplatedata-instancerequirements-ondemandmaxpricepercentageoverlowestprice
     - ``p_RequireHibernateSupport``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-instancerequirements.html#cfn-ec2-launchtemplate-launchtemplatedata-instancerequirements-requirehibernatesupport
@@ -4827,6 +5410,12 @@ class PropLaunchTemplateInstanceRequirements(Property):
         metadata={AttrMeta.PROPERTY_NAME: "AcceleratorTypes"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-instancerequirements.html#cfn-ec2-launchtemplate-launchtemplatedata-instancerequirements-acceleratortypes"""
+    p_AllowedInstanceTypes: typing.List[TypeHint.intrinsic_str] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "AllowedInstanceTypes"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-instancerequirements.html#cfn-ec2-launchtemplate-launchtemplatedata-instancerequirements-allowedinstancetypes"""
     p_BareMetal: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
@@ -4890,6 +5479,13 @@ class PropLaunchTemplateInstanceRequirements(Property):
         metadata={AttrMeta.PROPERTY_NAME: "MemoryMiB"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-instancerequirements.html#cfn-ec2-launchtemplate-launchtemplatedata-instancerequirements-memorymib"""
+    p_NetworkBandwidthGbps: typing.Union['PropLaunchTemplateNetworkBandwidthGbps', dict] = attr.ib(
+        default=None,
+        converter=PropLaunchTemplateNetworkBandwidthGbps.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropLaunchTemplateNetworkBandwidthGbps)),
+        metadata={AttrMeta.PROPERTY_NAME: "NetworkBandwidthGbps"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-instancerequirements.html#cfn-ec2-launchtemplate-launchtemplatedata-instancerequirements-networkbandwidthgbps"""
     p_NetworkInterfaceCount: typing.Union['PropLaunchTemplateNetworkInterfaceCount', dict] = attr.ib(
         default=None,
         converter=PropLaunchTemplateNetworkInterfaceCount.from_dict,
@@ -4985,10 +5581,9 @@ class PropEC2FleetFleetLaunchTemplateOverridesRequest(Property):
         metadata={AttrMeta.PROPERTY_NAME: "AvailabilityZone"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-fleetlaunchtemplateoverridesrequest.html#cfn-ec2-ec2fleet-fleetlaunchtemplateoverridesrequest-availabilityzone"""
-    p_InstanceRequirements: typing.Union['PropEC2FleetInstanceRequirementsRequest', dict] = attr.ib(
+    p_InstanceRequirements: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropEC2FleetInstanceRequirementsRequest.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropEC2FleetInstanceRequirementsRequest)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "InstanceRequirements"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-fleetlaunchtemplateoverridesrequest.html#cfn-ec2-ec2fleet-fleetlaunchtemplateoverridesrequest-instancerequirements"""
@@ -5044,10 +5639,9 @@ class PropSpotFleetLaunchTemplateConfig(Property):
     """
     AWS_OBJECT_TYPE = "AWS::EC2::SpotFleet.LaunchTemplateConfig"
     
-    p_LaunchTemplateSpecification: typing.Union['PropSpotFleetFleetLaunchTemplateSpecification', dict] = attr.ib(
+    p_LaunchTemplateSpecification: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropSpotFleetFleetLaunchTemplateSpecification.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropSpotFleetFleetLaunchTemplateSpecification)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "LaunchTemplateSpecification"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-launchtemplateconfig.html#cfn-ec2-spotfleet-launchtemplateconfig-launchtemplatespecification"""
@@ -5060,103 +5654,486 @@ class PropSpotFleetLaunchTemplateConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-launchtemplateconfig.html#cfn-ec2-spotfleet-launchtemplateconfig-overrides"""
 
 @attr.s
-class PropInstanceNetworkInterface(Property):
+class PropLaunchTemplateLaunchTemplateData(Property):
     """
-    AWS Object Type = "AWS::EC2::Instance.NetworkInterface"
+    AWS Object Type = "AWS::EC2::LaunchTemplate.LaunchTemplateData"
 
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-network-iface-embedded.html
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html
 
     Property Document:
     
-    - ``rp_DeviceIndex``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-network-iface-embedded.html#aws-properties-ec2-network-iface-embedded-deviceindex
-    - ``p_AssociatePublicIpAddress``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-network-iface-embedded.html#aws-properties-ec2-network-iface-embedded-associatepubip
-    - ``p_DeleteOnTermination``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-network-iface-embedded.html#aws-properties-ec2-network-iface-embedded-delete
-    - ``p_Description``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-network-iface-embedded.html#aws-properties-ec2-network-iface-embedded-description
-    - ``p_GroupSet``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-network-iface-embedded.html#aws-properties-ec2-network-iface-embedded-groupset
-    - ``p_Ipv6AddressCount``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-network-iface-embedded.html#cfn-ec2-instance-networkinterface-ipv6addresscount
-    - ``p_Ipv6Addresses``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-network-iface-embedded.html#cfn-ec2-instance-networkinterface-ipv6addresses
-    - ``p_NetworkInterfaceId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-network-iface-embedded.html#aws-properties-ec2-network-iface-embedded-network-iface
-    - ``p_PrivateIpAddress``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-network-iface-embedded.html#aws-properties-ec2-network-iface-embedded-privateipaddress
-    - ``p_PrivateIpAddresses``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-network-iface-embedded.html#aws-properties-ec2-network-iface-embedded-privateipaddresses
-    - ``p_SecondaryPrivateIpAddressCount``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-network-iface-embedded.html#aws-properties-ec2-network-iface-embedded-secondprivateip
-    - ``p_SubnetId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-network-iface-embedded.html#aws-properties-ec2-network-iface-embedded-subnetid
+    - ``p_BlockDeviceMappings``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-blockdevicemappings
+    - ``p_CapacityReservationSpecification``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-capacityreservationspecification
+    - ``p_CpuOptions``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-cpuoptions
+    - ``p_CreditSpecification``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-creditspecification
+    - ``p_DisableApiStop``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-disableapistop
+    - ``p_DisableApiTermination``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-disableapitermination
+    - ``p_EbsOptimized``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-ebsoptimized
+    - ``p_ElasticGpuSpecifications``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-elasticgpuspecifications
+    - ``p_ElasticInferenceAccelerators``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-elasticinferenceaccelerators
+    - ``p_EnclaveOptions``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-enclaveoptions
+    - ``p_HibernationOptions``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-hibernationoptions
+    - ``p_IamInstanceProfile``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-iaminstanceprofile
+    - ``p_ImageId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-imageid
+    - ``p_InstanceInitiatedShutdownBehavior``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-instanceinitiatedshutdownbehavior
+    - ``p_InstanceMarketOptions``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-instancemarketoptions
+    - ``p_InstanceRequirements``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-instancerequirements
+    - ``p_InstanceType``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-instancetype
+    - ``p_KernelId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-kernelid
+    - ``p_KeyName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-keyname
+    - ``p_LicenseSpecifications``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-licensespecifications
+    - ``p_MaintenanceOptions``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-maintenanceoptions
+    - ``p_MetadataOptions``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-metadataoptions
+    - ``p_Monitoring``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-monitoring
+    - ``p_NetworkInterfaces``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-networkinterfaces
+    - ``p_Placement``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-placement
+    - ``p_PrivateDnsNameOptions``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-privatednsnameoptions
+    - ``p_RamDiskId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-ramdiskid
+    - ``p_SecurityGroupIds``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-securitygroupids
+    - ``p_SecurityGroups``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-securitygroups
+    - ``p_TagSpecifications``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-tagspecifications
+    - ``p_UserData``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-userdata
     """
-    AWS_OBJECT_TYPE = "AWS::EC2::Instance.NetworkInterface"
+    AWS_OBJECT_TYPE = "AWS::EC2::LaunchTemplate.LaunchTemplateData"
     
-    rp_DeviceIndex: TypeHint.intrinsic_str = attr.ib(
+    p_BlockDeviceMappings: typing.List[typing.Union['PropLaunchTemplateBlockDeviceMapping', dict]] = attr.ib(
         default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "DeviceIndex"},
+        converter=PropLaunchTemplateBlockDeviceMapping.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropLaunchTemplateBlockDeviceMapping), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "BlockDeviceMappings"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-network-iface-embedded.html#aws-properties-ec2-network-iface-embedded-deviceindex"""
-    p_AssociatePublicIpAddress: bool = attr.ib(
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-blockdevicemappings"""
+    p_CapacityReservationSpecification: typing.Union['PropLaunchTemplateCapacityReservationSpecification', dict] = attr.ib(
+        default=None,
+        converter=PropLaunchTemplateCapacityReservationSpecification.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropLaunchTemplateCapacityReservationSpecification)),
+        metadata={AttrMeta.PROPERTY_NAME: "CapacityReservationSpecification"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-capacityreservationspecification"""
+    p_CpuOptions: typing.Union['PropLaunchTemplateCpuOptions', dict] = attr.ib(
+        default=None,
+        converter=PropLaunchTemplateCpuOptions.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropLaunchTemplateCpuOptions)),
+        metadata={AttrMeta.PROPERTY_NAME: "CpuOptions"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-cpuoptions"""
+    p_CreditSpecification: typing.Union['PropLaunchTemplateCreditSpecification', dict] = attr.ib(
+        default=None,
+        converter=PropLaunchTemplateCreditSpecification.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropLaunchTemplateCreditSpecification)),
+        metadata={AttrMeta.PROPERTY_NAME: "CreditSpecification"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-creditspecification"""
+    p_DisableApiStop: bool = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(bool)),
-        metadata={AttrMeta.PROPERTY_NAME: "AssociatePublicIpAddress"},
+        metadata={AttrMeta.PROPERTY_NAME: "DisableApiStop"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-network-iface-embedded.html#aws-properties-ec2-network-iface-embedded-associatepubip"""
-    p_DeleteOnTermination: bool = attr.ib(
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-disableapistop"""
+    p_DisableApiTermination: bool = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(bool)),
-        metadata={AttrMeta.PROPERTY_NAME: "DeleteOnTermination"},
+        metadata={AttrMeta.PROPERTY_NAME: "DisableApiTermination"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-network-iface-embedded.html#aws-properties-ec2-network-iface-embedded-delete"""
-    p_Description: TypeHint.intrinsic_str = attr.ib(
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-disableapitermination"""
+    p_EbsOptimized: bool = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(bool)),
+        metadata={AttrMeta.PROPERTY_NAME: "EbsOptimized"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-ebsoptimized"""
+    p_ElasticGpuSpecifications: typing.List[typing.Union['PropLaunchTemplateElasticGpuSpecification', dict]] = attr.ib(
+        default=None,
+        converter=PropLaunchTemplateElasticGpuSpecification.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropLaunchTemplateElasticGpuSpecification), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "ElasticGpuSpecifications"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-elasticgpuspecifications"""
+    p_ElasticInferenceAccelerators: typing.List[typing.Union['PropLaunchTemplateLaunchTemplateElasticInferenceAccelerator', dict]] = attr.ib(
+        default=None,
+        converter=PropLaunchTemplateLaunchTemplateElasticInferenceAccelerator.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropLaunchTemplateLaunchTemplateElasticInferenceAccelerator), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "ElasticInferenceAccelerators"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-elasticinferenceaccelerators"""
+    p_EnclaveOptions: typing.Union['PropLaunchTemplateEnclaveOptions', dict] = attr.ib(
+        default=None,
+        converter=PropLaunchTemplateEnclaveOptions.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropLaunchTemplateEnclaveOptions)),
+        metadata={AttrMeta.PROPERTY_NAME: "EnclaveOptions"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-enclaveoptions"""
+    p_HibernationOptions: typing.Union['PropLaunchTemplateHibernationOptions', dict] = attr.ib(
+        default=None,
+        converter=PropLaunchTemplateHibernationOptions.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropLaunchTemplateHibernationOptions)),
+        metadata={AttrMeta.PROPERTY_NAME: "HibernationOptions"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-hibernationoptions"""
+    p_IamInstanceProfile: typing.Union['PropLaunchTemplateIamInstanceProfile', dict] = attr.ib(
+        default=None,
+        converter=PropLaunchTemplateIamInstanceProfile.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropLaunchTemplateIamInstanceProfile)),
+        metadata={AttrMeta.PROPERTY_NAME: "IamInstanceProfile"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-iaminstanceprofile"""
+    p_ImageId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Description"},
+        metadata={AttrMeta.PROPERTY_NAME: "ImageId"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-network-iface-embedded.html#aws-properties-ec2-network-iface-embedded-description"""
-    p_GroupSet: typing.List[TypeHint.intrinsic_str] = attr.ib(
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-imageid"""
+    p_InstanceInitiatedShutdownBehavior: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "InstanceInitiatedShutdownBehavior"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-instanceinitiatedshutdownbehavior"""
+    p_InstanceMarketOptions: typing.Union['PropLaunchTemplateInstanceMarketOptions', dict] = attr.ib(
+        default=None,
+        converter=PropLaunchTemplateInstanceMarketOptions.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropLaunchTemplateInstanceMarketOptions)),
+        metadata={AttrMeta.PROPERTY_NAME: "InstanceMarketOptions"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-instancemarketoptions"""
+    p_InstanceRequirements: typing.Union['PropLaunchTemplateInstanceRequirements', dict] = attr.ib(
+        default=None,
+        converter=PropLaunchTemplateInstanceRequirements.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropLaunchTemplateInstanceRequirements)),
+        metadata={AttrMeta.PROPERTY_NAME: "InstanceRequirements"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-instancerequirements"""
+    p_InstanceType: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "InstanceType"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-instancetype"""
+    p_KernelId: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "KernelId"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-kernelid"""
+    p_KeyName: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "KeyName"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-keyname"""
+    p_LicenseSpecifications: typing.List[typing.Union['PropLaunchTemplateLicenseSpecification', dict]] = attr.ib(
+        default=None,
+        converter=PropLaunchTemplateLicenseSpecification.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropLaunchTemplateLicenseSpecification), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "LicenseSpecifications"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-licensespecifications"""
+    p_MaintenanceOptions: typing.Union['PropLaunchTemplateMaintenanceOptions', dict] = attr.ib(
+        default=None,
+        converter=PropLaunchTemplateMaintenanceOptions.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropLaunchTemplateMaintenanceOptions)),
+        metadata={AttrMeta.PROPERTY_NAME: "MaintenanceOptions"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-maintenanceoptions"""
+    p_MetadataOptions: typing.Union['PropLaunchTemplateMetadataOptions', dict] = attr.ib(
+        default=None,
+        converter=PropLaunchTemplateMetadataOptions.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropLaunchTemplateMetadataOptions)),
+        metadata={AttrMeta.PROPERTY_NAME: "MetadataOptions"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-metadataoptions"""
+    p_Monitoring: typing.Union['PropLaunchTemplateMonitoring', dict] = attr.ib(
+        default=None,
+        converter=PropLaunchTemplateMonitoring.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropLaunchTemplateMonitoring)),
+        metadata={AttrMeta.PROPERTY_NAME: "Monitoring"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-monitoring"""
+    p_NetworkInterfaces: typing.List[typing.Union['PropLaunchTemplateNetworkInterface', dict]] = attr.ib(
+        default=None,
+        converter=PropLaunchTemplateNetworkInterface.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropLaunchTemplateNetworkInterface), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "NetworkInterfaces"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-networkinterfaces"""
+    p_Placement: typing.Union['PropLaunchTemplatePlacement', dict] = attr.ib(
+        default=None,
+        converter=PropLaunchTemplatePlacement.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropLaunchTemplatePlacement)),
+        metadata={AttrMeta.PROPERTY_NAME: "Placement"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-placement"""
+    p_PrivateDnsNameOptions: typing.Union['PropLaunchTemplatePrivateDnsNameOptions', dict] = attr.ib(
+        default=None,
+        converter=PropLaunchTemplatePrivateDnsNameOptions.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropLaunchTemplatePrivateDnsNameOptions)),
+        metadata={AttrMeta.PROPERTY_NAME: "PrivateDnsNameOptions"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-privatednsnameoptions"""
+    p_RamDiskId: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "RamDiskId"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-ramdiskid"""
+    p_SecurityGroupIds: typing.List[TypeHint.intrinsic_str] = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "GroupSet"},
+        metadata={AttrMeta.PROPERTY_NAME: "SecurityGroupIds"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-network-iface-embedded.html#aws-properties-ec2-network-iface-embedded-groupset"""
-    p_Ipv6AddressCount: int = attr.ib(
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-securitygroupids"""
+    p_SecurityGroups: typing.List[TypeHint.intrinsic_str] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "SecurityGroups"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-securitygroups"""
+    p_TagSpecifications: typing.List[typing.Union['PropLaunchTemplateTagSpecification', dict]] = attr.ib(
+        default=None,
+        converter=PropLaunchTemplateTagSpecification.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropLaunchTemplateTagSpecification), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "TagSpecifications"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-tagspecifications"""
+    p_UserData: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "UserData"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-userdata"""
+
+@attr.s
+class PropNetworkInsightsAccessScopeAccessScopePathRequest(Property):
+    """
+    AWS Object Type = "AWS::EC2::NetworkInsightsAccessScope.AccessScopePathRequest"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsaccessscope-accessscopepathrequest.html
+
+    Property Document:
+    
+    - ``p_Destination``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsaccessscope-accessscopepathrequest.html#cfn-ec2-networkinsightsaccessscope-accessscopepathrequest-destination
+    - ``p_Source``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsaccessscope-accessscopepathrequest.html#cfn-ec2-networkinsightsaccessscope-accessscopepathrequest-source
+    - ``p_ThroughResources``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsaccessscope-accessscopepathrequest.html#cfn-ec2-networkinsightsaccessscope-accessscopepathrequest-throughresources
+    """
+    AWS_OBJECT_TYPE = "AWS::EC2::NetworkInsightsAccessScope.AccessScopePathRequest"
+    
+    p_Destination: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "Destination"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsaccessscope-accessscopepathrequest.html#cfn-ec2-networkinsightsaccessscope-accessscopepathrequest-destination"""
+    p_Source: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "Source"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsaccessscope-accessscopepathrequest.html#cfn-ec2-networkinsightsaccessscope-accessscopepathrequest-source"""
+    p_ThroughResources: typing.List[typing.Union['PropNetworkInsightsAccessScopeThroughResourcesStatementRequest', dict]] = attr.ib(
+        default=None,
+        converter=PropNetworkInsightsAccessScopeThroughResourcesStatementRequest.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropNetworkInsightsAccessScopeThroughResourcesStatementRequest), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "ThroughResources"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsaccessscope-accessscopepathrequest.html#cfn-ec2-networkinsightsaccessscope-accessscopepathrequest-throughresources"""
+
+@attr.s
+class PropNetworkInsightsAnalysisPathComponent(Property):
+    """
+    AWS Object Type = "AWS::EC2::NetworkInsightsAnalysis.PathComponent"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html
+
+    Property Document:
+    
+    - ``p_AclRule``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-aclrule
+    - ``p_AdditionalDetails``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-additionaldetails
+    - ``p_Component``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-component
+    - ``p_DestinationVpc``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-destinationvpc
+    - ``p_ElasticLoadBalancerListener``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-elasticloadbalancerlistener
+    - ``p_Explanations``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-explanations
+    - ``p_InboundHeader``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-inboundheader
+    - ``p_OutboundHeader``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-outboundheader
+    - ``p_RouteTableRoute``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-routetableroute
+    - ``p_SecurityGroupRule``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-securitygrouprule
+    - ``p_SequenceNumber``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-sequencenumber
+    - ``p_SourceVpc``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-sourcevpc
+    - ``p_Subnet``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-subnet
+    - ``p_TransitGateway``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-transitgateway
+    - ``p_TransitGatewayRouteTableRoute``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-transitgatewayroutetableroute
+    - ``p_Vpc``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-vpc
+    """
+    AWS_OBJECT_TYPE = "AWS::EC2::NetworkInsightsAnalysis.PathComponent"
+    
+    p_AclRule: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "AclRule"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-aclrule"""
+    p_AdditionalDetails: typing.List[typing.Union['PropNetworkInsightsAnalysisAdditionalDetail', dict]] = attr.ib(
+        default=None,
+        converter=PropNetworkInsightsAnalysisAdditionalDetail.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropNetworkInsightsAnalysisAdditionalDetail), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "AdditionalDetails"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-additionaldetails"""
+    p_Component: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "Component"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-component"""
+    p_DestinationVpc: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "DestinationVpc"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-destinationvpc"""
+    p_ElasticLoadBalancerListener: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "ElasticLoadBalancerListener"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-elasticloadbalancerlistener"""
+    p_Explanations: typing.List[typing.Union['PropNetworkInsightsAnalysisExplanation', dict]] = attr.ib(
+        default=None,
+        converter=PropNetworkInsightsAnalysisExplanation.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropNetworkInsightsAnalysisExplanation), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "Explanations"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-explanations"""
+    p_InboundHeader: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "InboundHeader"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-inboundheader"""
+    p_OutboundHeader: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "OutboundHeader"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-outboundheader"""
+    p_RouteTableRoute: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "RouteTableRoute"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-routetableroute"""
+    p_SecurityGroupRule: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "SecurityGroupRule"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-securitygrouprule"""
+    p_SequenceNumber: int = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "Ipv6AddressCount"},
+        metadata={AttrMeta.PROPERTY_NAME: "SequenceNumber"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-network-iface-embedded.html#cfn-ec2-instance-networkinterface-ipv6addresscount"""
-    p_Ipv6Addresses: typing.List[typing.Union['PropInstanceInstanceIpv6Address', dict]] = attr.ib(
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-sequencenumber"""
+    p_SourceVpc: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropInstanceInstanceIpv6Address.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropInstanceInstanceIpv6Address), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Ipv6Addresses"},
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "SourceVpc"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-network-iface-embedded.html#cfn-ec2-instance-networkinterface-ipv6addresses"""
-    p_NetworkInterfaceId: TypeHint.intrinsic_str = attr.ib(
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-sourcevpc"""
+    p_Subnet: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "Subnet"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-subnet"""
+    p_TransitGateway: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "TransitGateway"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-transitgateway"""
+    p_TransitGatewayRouteTableRoute: typing.Union['PropNetworkInsightsAnalysisTransitGatewayRouteTableRoute', dict] = attr.ib(
+        default=None,
+        converter=PropNetworkInsightsAnalysisTransitGatewayRouteTableRoute.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropNetworkInsightsAnalysisTransitGatewayRouteTableRoute)),
+        metadata={AttrMeta.PROPERTY_NAME: "TransitGatewayRouteTableRoute"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-transitgatewayroutetableroute"""
+    p_Vpc: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "Vpc"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-vpc"""
+
+@attr.s
+class PropEC2FleetSpotOptionsRequest(Property):
+    """
+    AWS Object Type = "AWS::EC2::EC2Fleet.SpotOptionsRequest"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-spotoptionsrequest.html
+
+    Property Document:
+    
+    - ``p_AllocationStrategy``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-spotoptionsrequest.html#cfn-ec2-ec2fleet-spotoptionsrequest-allocationstrategy
+    - ``p_InstanceInterruptionBehavior``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-spotoptionsrequest.html#cfn-ec2-ec2fleet-spotoptionsrequest-instanceinterruptionbehavior
+    - ``p_InstancePoolsToUseCount``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-spotoptionsrequest.html#cfn-ec2-ec2fleet-spotoptionsrequest-instancepoolstousecount
+    - ``p_MaintenanceStrategies``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-spotoptionsrequest.html#cfn-ec2-ec2fleet-spotoptionsrequest-maintenancestrategies
+    - ``p_MaxTotalPrice``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-spotoptionsrequest.html#cfn-ec2-ec2fleet-spotoptionsrequest-maxtotalprice
+    - ``p_MinTargetCapacity``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-spotoptionsrequest.html#cfn-ec2-ec2fleet-spotoptionsrequest-mintargetcapacity
+    - ``p_SingleAvailabilityZone``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-spotoptionsrequest.html#cfn-ec2-ec2fleet-spotoptionsrequest-singleavailabilityzone
+    - ``p_SingleInstanceType``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-spotoptionsrequest.html#cfn-ec2-ec2fleet-spotoptionsrequest-singleinstancetype
+    """
+    AWS_OBJECT_TYPE = "AWS::EC2::EC2Fleet.SpotOptionsRequest"
+    
+    p_AllocationStrategy: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "NetworkInterfaceId"},
+        metadata={AttrMeta.PROPERTY_NAME: "AllocationStrategy"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-network-iface-embedded.html#aws-properties-ec2-network-iface-embedded-network-iface"""
-    p_PrivateIpAddress: TypeHint.intrinsic_str = attr.ib(
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-spotoptionsrequest.html#cfn-ec2-ec2fleet-spotoptionsrequest-allocationstrategy"""
+    p_InstanceInterruptionBehavior: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "PrivateIpAddress"},
+        metadata={AttrMeta.PROPERTY_NAME: "InstanceInterruptionBehavior"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-network-iface-embedded.html#aws-properties-ec2-network-iface-embedded-privateipaddress"""
-    p_PrivateIpAddresses: typing.List[typing.Union['PropInstancePrivateIpAddressSpecification', dict]] = attr.ib(
-        default=None,
-        converter=PropInstancePrivateIpAddressSpecification.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropInstancePrivateIpAddressSpecification), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "PrivateIpAddresses"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-network-iface-embedded.html#aws-properties-ec2-network-iface-embedded-privateipaddresses"""
-    p_SecondaryPrivateIpAddressCount: int = attr.ib(
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-spotoptionsrequest.html#cfn-ec2-ec2fleet-spotoptionsrequest-instanceinterruptionbehavior"""
+    p_InstancePoolsToUseCount: int = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "SecondaryPrivateIpAddressCount"},
+        metadata={AttrMeta.PROPERTY_NAME: "InstancePoolsToUseCount"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-network-iface-embedded.html#aws-properties-ec2-network-iface-embedded-secondprivateip"""
-    p_SubnetId: TypeHint.intrinsic_str = attr.ib(
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-spotoptionsrequest.html#cfn-ec2-ec2fleet-spotoptionsrequest-instancepoolstousecount"""
+    p_MaintenanceStrategies: typing.Union['PropEC2FleetMaintenanceStrategies', dict] = attr.ib(
+        default=None,
+        converter=PropEC2FleetMaintenanceStrategies.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropEC2FleetMaintenanceStrategies)),
+        metadata={AttrMeta.PROPERTY_NAME: "MaintenanceStrategies"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-spotoptionsrequest.html#cfn-ec2-ec2fleet-spotoptionsrequest-maintenancestrategies"""
+    p_MaxTotalPrice: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "SubnetId"},
+        metadata={AttrMeta.PROPERTY_NAME: "MaxTotalPrice"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-network-iface-embedded.html#aws-properties-ec2-network-iface-embedded-subnetid"""
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-spotoptionsrequest.html#cfn-ec2-ec2fleet-spotoptionsrequest-maxtotalprice"""
+    p_MinTargetCapacity: int = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(int)),
+        metadata={AttrMeta.PROPERTY_NAME: "MinTargetCapacity"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-spotoptionsrequest.html#cfn-ec2-ec2fleet-spotoptionsrequest-mintargetcapacity"""
+    p_SingleAvailabilityZone: bool = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(bool)),
+        metadata={AttrMeta.PROPERTY_NAME: "SingleAvailabilityZone"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-spotoptionsrequest.html#cfn-ec2-ec2fleet-spotoptionsrequest-singleavailabilityzone"""
+    p_SingleInstanceType: bool = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(bool)),
+        metadata={AttrMeta.PROPERTY_NAME: "SingleInstanceType"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-spotoptionsrequest.html#cfn-ec2-ec2fleet-spotoptionsrequest-singleinstancetype"""
 
 @attr.s
 class PropSpotFleetSpotFleetRequestConfigData(Property):
@@ -5184,6 +6161,7 @@ class PropSpotFleetSpotFleetRequestConfigData(Property):
     - ``p_SpotMaintenanceStrategies``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata.html#cfn-ec2-spotfleet-spotfleetrequestconfigdata-spotmaintenancestrategies
     - ``p_SpotMaxTotalPrice``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata.html#cfn-ec2-spotfleet-spotfleetrequestconfigdata-spotmaxtotalprice
     - ``p_SpotPrice``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata.html#cfn-ec2-spotfleet-spotfleetrequestconfigdata-spotprice
+    - ``p_TagSpecifications``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata.html#cfn-ec2-spotfleet-spotfleetrequestconfigdata-tagspecifications
     - ``p_TargetCapacityUnitType``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata.html#cfn-ec2-spotfleet-spotfleetrequestconfigdata-targetcapacityunittype
     - ``p_TerminateInstancesWithExpiration``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata.html#cfn-ec2-spotfleet-spotfleetrequestconfigdata-terminateinstanceswithexpiration
     - ``p_Type``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata.html#cfn-ec2-spotfleet-spotfleetrequestconfigdata-type
@@ -5298,6 +6276,13 @@ class PropSpotFleetSpotFleetRequestConfigData(Property):
         metadata={AttrMeta.PROPERTY_NAME: "SpotPrice"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata.html#cfn-ec2-spotfleet-spotfleetrequestconfigdata-spotprice"""
+    p_TagSpecifications: typing.List[typing.Union['PropSpotFleetSpotFleetTagSpecification', dict]] = attr.ib(
+        default=None,
+        converter=PropSpotFleetSpotFleetTagSpecification.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropSpotFleetSpotFleetTagSpecification), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "TagSpecifications"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata.html#cfn-ec2-spotfleet-spotfleetrequestconfigdata-tagspecifications"""
     p_TargetCapacityUnitType: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
@@ -5330,599 +6315,6 @@ class PropSpotFleetSpotFleetRequestConfigData(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-spotfleetrequestconfigdata.html#cfn-ec2-spotfleet-spotfleetrequestconfigdata-validuntil"""
 
 @attr.s
-class PropNetworkInsightsAnalysisExplanation(Property):
-    """
-    AWS Object Type = "AWS::EC2::NetworkInsightsAnalysis.Explanation"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html
-
-    Property Document:
-    
-    - ``p_Acl``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-acl
-    - ``p_AclRule``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-aclrule
-    - ``p_Address``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-address
-    - ``p_Addresses``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-addresses
-    - ``p_AttachedTo``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-attachedto
-    - ``p_AvailabilityZones``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-availabilityzones
-    - ``p_Cidrs``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-cidrs
-    - ``p_ClassicLoadBalancerListener``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-classicloadbalancerlistener
-    - ``p_Component``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-component
-    - ``p_CustomerGateway``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-customergateway
-    - ``p_Destination``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-destination
-    - ``p_DestinationVpc``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-destinationvpc
-    - ``p_Direction``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-direction
-    - ``p_ElasticLoadBalancerListener``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-elasticloadbalancerlistener
-    - ``p_ExplanationCode``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-explanationcode
-    - ``p_IngressRouteTable``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-ingressroutetable
-    - ``p_InternetGateway``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-internetgateway
-    - ``p_LoadBalancerArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-loadbalancerarn
-    - ``p_LoadBalancerListenerPort``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-loadbalancerlistenerport
-    - ``p_LoadBalancerTarget``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-loadbalancertarget
-    - ``p_LoadBalancerTargetGroup``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-loadbalancertargetgroup
-    - ``p_LoadBalancerTargetGroups``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-loadbalancertargetgroups
-    - ``p_LoadBalancerTargetPort``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-loadbalancertargetport
-    - ``p_MissingComponent``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-missingcomponent
-    - ``p_NatGateway``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-natgateway
-    - ``p_NetworkInterface``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-networkinterface
-    - ``p_PacketField``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-packetfield
-    - ``p_Port``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-port
-    - ``p_PortRanges``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-portranges
-    - ``p_PrefixList``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-prefixlist
-    - ``p_Protocols``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-protocols
-    - ``p_RouteTable``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-routetable
-    - ``p_RouteTableRoute``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-routetableroute
-    - ``p_SecurityGroup``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-securitygroup
-    - ``p_SecurityGroupRule``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-securitygrouprule
-    - ``p_SecurityGroups``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-securitygroups
-    - ``p_SourceVpc``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-sourcevpc
-    - ``p_State``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-state
-    - ``p_Subnet``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-subnet
-    - ``p_SubnetRouteTable``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-subnetroutetable
-    - ``p_Vpc``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-vpc
-    - ``p_VpcPeeringConnection``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-vpcpeeringconnection
-    - ``p_VpnConnection``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-vpnconnection
-    - ``p_VpnGateway``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-vpngateway
-    - ``p_vpcEndpoint``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-vpcendpoint
-    """
-    AWS_OBJECT_TYPE = "AWS::EC2::NetworkInsightsAnalysis.Explanation"
-    
-    p_Acl: typing.Union['PropNetworkInsightsAnalysisAnalysisComponent', dict] = attr.ib(
-        default=None,
-        converter=PropNetworkInsightsAnalysisAnalysisComponent.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropNetworkInsightsAnalysisAnalysisComponent)),
-        metadata={AttrMeta.PROPERTY_NAME: "Acl"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-acl"""
-    p_AclRule: typing.Union['PropNetworkInsightsAnalysisAnalysisAclRule', dict] = attr.ib(
-        default=None,
-        converter=PropNetworkInsightsAnalysisAnalysisAclRule.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropNetworkInsightsAnalysisAnalysisAclRule)),
-        metadata={AttrMeta.PROPERTY_NAME: "AclRule"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-aclrule"""
-    p_Address: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Address"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-address"""
-    p_Addresses: typing.List[TypeHint.intrinsic_str] = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Addresses"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-addresses"""
-    p_AttachedTo: typing.Union['PropNetworkInsightsAnalysisAnalysisComponent', dict] = attr.ib(
-        default=None,
-        converter=PropNetworkInsightsAnalysisAnalysisComponent.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropNetworkInsightsAnalysisAnalysisComponent)),
-        metadata={AttrMeta.PROPERTY_NAME: "AttachedTo"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-attachedto"""
-    p_AvailabilityZones: typing.List[TypeHint.intrinsic_str] = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "AvailabilityZones"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-availabilityzones"""
-    p_Cidrs: typing.List[TypeHint.intrinsic_str] = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Cidrs"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-cidrs"""
-    p_ClassicLoadBalancerListener: typing.Union['PropNetworkInsightsAnalysisAnalysisLoadBalancerListener', dict] = attr.ib(
-        default=None,
-        converter=PropNetworkInsightsAnalysisAnalysisLoadBalancerListener.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropNetworkInsightsAnalysisAnalysisLoadBalancerListener)),
-        metadata={AttrMeta.PROPERTY_NAME: "ClassicLoadBalancerListener"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-classicloadbalancerlistener"""
-    p_Component: typing.Union['PropNetworkInsightsAnalysisAnalysisComponent', dict] = attr.ib(
-        default=None,
-        converter=PropNetworkInsightsAnalysisAnalysisComponent.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropNetworkInsightsAnalysisAnalysisComponent)),
-        metadata={AttrMeta.PROPERTY_NAME: "Component"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-component"""
-    p_CustomerGateway: typing.Union['PropNetworkInsightsAnalysisAnalysisComponent', dict] = attr.ib(
-        default=None,
-        converter=PropNetworkInsightsAnalysisAnalysisComponent.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropNetworkInsightsAnalysisAnalysisComponent)),
-        metadata={AttrMeta.PROPERTY_NAME: "CustomerGateway"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-customergateway"""
-    p_Destination: typing.Union['PropNetworkInsightsAnalysisAnalysisComponent', dict] = attr.ib(
-        default=None,
-        converter=PropNetworkInsightsAnalysisAnalysisComponent.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropNetworkInsightsAnalysisAnalysisComponent)),
-        metadata={AttrMeta.PROPERTY_NAME: "Destination"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-destination"""
-    p_DestinationVpc: typing.Union['PropNetworkInsightsAnalysisAnalysisComponent', dict] = attr.ib(
-        default=None,
-        converter=PropNetworkInsightsAnalysisAnalysisComponent.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropNetworkInsightsAnalysisAnalysisComponent)),
-        metadata={AttrMeta.PROPERTY_NAME: "DestinationVpc"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-destinationvpc"""
-    p_Direction: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Direction"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-direction"""
-    p_ElasticLoadBalancerListener: typing.Union['PropNetworkInsightsAnalysisAnalysisComponent', dict] = attr.ib(
-        default=None,
-        converter=PropNetworkInsightsAnalysisAnalysisComponent.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropNetworkInsightsAnalysisAnalysisComponent)),
-        metadata={AttrMeta.PROPERTY_NAME: "ElasticLoadBalancerListener"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-elasticloadbalancerlistener"""
-    p_ExplanationCode: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "ExplanationCode"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-explanationcode"""
-    p_IngressRouteTable: typing.Union['PropNetworkInsightsAnalysisAnalysisComponent', dict] = attr.ib(
-        default=None,
-        converter=PropNetworkInsightsAnalysisAnalysisComponent.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropNetworkInsightsAnalysisAnalysisComponent)),
-        metadata={AttrMeta.PROPERTY_NAME: "IngressRouteTable"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-ingressroutetable"""
-    p_InternetGateway: typing.Union['PropNetworkInsightsAnalysisAnalysisComponent', dict] = attr.ib(
-        default=None,
-        converter=PropNetworkInsightsAnalysisAnalysisComponent.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropNetworkInsightsAnalysisAnalysisComponent)),
-        metadata={AttrMeta.PROPERTY_NAME: "InternetGateway"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-internetgateway"""
-    p_LoadBalancerArn: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "LoadBalancerArn"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-loadbalancerarn"""
-    p_LoadBalancerListenerPort: int = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "LoadBalancerListenerPort"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-loadbalancerlistenerport"""
-    p_LoadBalancerTarget: typing.Union['PropNetworkInsightsAnalysisAnalysisLoadBalancerTarget', dict] = attr.ib(
-        default=None,
-        converter=PropNetworkInsightsAnalysisAnalysisLoadBalancerTarget.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropNetworkInsightsAnalysisAnalysisLoadBalancerTarget)),
-        metadata={AttrMeta.PROPERTY_NAME: "LoadBalancerTarget"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-loadbalancertarget"""
-    p_LoadBalancerTargetGroup: typing.Union['PropNetworkInsightsAnalysisAnalysisComponent', dict] = attr.ib(
-        default=None,
-        converter=PropNetworkInsightsAnalysisAnalysisComponent.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropNetworkInsightsAnalysisAnalysisComponent)),
-        metadata={AttrMeta.PROPERTY_NAME: "LoadBalancerTargetGroup"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-loadbalancertargetgroup"""
-    p_LoadBalancerTargetGroups: typing.List[typing.Union['PropNetworkInsightsAnalysisAnalysisComponent', dict]] = attr.ib(
-        default=None,
-        converter=PropNetworkInsightsAnalysisAnalysisComponent.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropNetworkInsightsAnalysisAnalysisComponent), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "LoadBalancerTargetGroups"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-loadbalancertargetgroups"""
-    p_LoadBalancerTargetPort: int = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "LoadBalancerTargetPort"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-loadbalancertargetport"""
-    p_MissingComponent: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "MissingComponent"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-missingcomponent"""
-    p_NatGateway: typing.Union['PropNetworkInsightsAnalysisAnalysisComponent', dict] = attr.ib(
-        default=None,
-        converter=PropNetworkInsightsAnalysisAnalysisComponent.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropNetworkInsightsAnalysisAnalysisComponent)),
-        metadata={AttrMeta.PROPERTY_NAME: "NatGateway"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-natgateway"""
-    p_NetworkInterface: typing.Union['PropNetworkInsightsAnalysisAnalysisComponent', dict] = attr.ib(
-        default=None,
-        converter=PropNetworkInsightsAnalysisAnalysisComponent.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropNetworkInsightsAnalysisAnalysisComponent)),
-        metadata={AttrMeta.PROPERTY_NAME: "NetworkInterface"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-networkinterface"""
-    p_PacketField: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "PacketField"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-packetfield"""
-    p_Port: int = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "Port"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-port"""
-    p_PortRanges: typing.List[typing.Union['PropNetworkInsightsAnalysisPortRange', dict]] = attr.ib(
-        default=None,
-        converter=PropNetworkInsightsAnalysisPortRange.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropNetworkInsightsAnalysisPortRange), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "PortRanges"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-portranges"""
-    p_PrefixList: typing.Union['PropNetworkInsightsAnalysisAnalysisComponent', dict] = attr.ib(
-        default=None,
-        converter=PropNetworkInsightsAnalysisAnalysisComponent.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropNetworkInsightsAnalysisAnalysisComponent)),
-        metadata={AttrMeta.PROPERTY_NAME: "PrefixList"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-prefixlist"""
-    p_Protocols: typing.List[TypeHint.intrinsic_str] = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Protocols"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-protocols"""
-    p_RouteTable: typing.Union['PropNetworkInsightsAnalysisAnalysisComponent', dict] = attr.ib(
-        default=None,
-        converter=PropNetworkInsightsAnalysisAnalysisComponent.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropNetworkInsightsAnalysisAnalysisComponent)),
-        metadata={AttrMeta.PROPERTY_NAME: "RouteTable"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-routetable"""
-    p_RouteTableRoute: typing.Union['PropNetworkInsightsAnalysisAnalysisRouteTableRoute', dict] = attr.ib(
-        default=None,
-        converter=PropNetworkInsightsAnalysisAnalysisRouteTableRoute.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropNetworkInsightsAnalysisAnalysisRouteTableRoute)),
-        metadata={AttrMeta.PROPERTY_NAME: "RouteTableRoute"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-routetableroute"""
-    p_SecurityGroup: typing.Union['PropNetworkInsightsAnalysisAnalysisComponent', dict] = attr.ib(
-        default=None,
-        converter=PropNetworkInsightsAnalysisAnalysisComponent.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropNetworkInsightsAnalysisAnalysisComponent)),
-        metadata={AttrMeta.PROPERTY_NAME: "SecurityGroup"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-securitygroup"""
-    p_SecurityGroupRule: typing.Union['PropNetworkInsightsAnalysisAnalysisSecurityGroupRule', dict] = attr.ib(
-        default=None,
-        converter=PropNetworkInsightsAnalysisAnalysisSecurityGroupRule.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropNetworkInsightsAnalysisAnalysisSecurityGroupRule)),
-        metadata={AttrMeta.PROPERTY_NAME: "SecurityGroupRule"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-securitygrouprule"""
-    p_SecurityGroups: typing.List[typing.Union['PropNetworkInsightsAnalysisAnalysisComponent', dict]] = attr.ib(
-        default=None,
-        converter=PropNetworkInsightsAnalysisAnalysisComponent.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropNetworkInsightsAnalysisAnalysisComponent), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "SecurityGroups"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-securitygroups"""
-    p_SourceVpc: typing.Union['PropNetworkInsightsAnalysisAnalysisComponent', dict] = attr.ib(
-        default=None,
-        converter=PropNetworkInsightsAnalysisAnalysisComponent.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropNetworkInsightsAnalysisAnalysisComponent)),
-        metadata={AttrMeta.PROPERTY_NAME: "SourceVpc"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-sourcevpc"""
-    p_State: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "State"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-state"""
-    p_Subnet: typing.Union['PropNetworkInsightsAnalysisAnalysisComponent', dict] = attr.ib(
-        default=None,
-        converter=PropNetworkInsightsAnalysisAnalysisComponent.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropNetworkInsightsAnalysisAnalysisComponent)),
-        metadata={AttrMeta.PROPERTY_NAME: "Subnet"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-subnet"""
-    p_SubnetRouteTable: typing.Union['PropNetworkInsightsAnalysisAnalysisComponent', dict] = attr.ib(
-        default=None,
-        converter=PropNetworkInsightsAnalysisAnalysisComponent.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropNetworkInsightsAnalysisAnalysisComponent)),
-        metadata={AttrMeta.PROPERTY_NAME: "SubnetRouteTable"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-subnetroutetable"""
-    p_Vpc: typing.Union['PropNetworkInsightsAnalysisAnalysisComponent', dict] = attr.ib(
-        default=None,
-        converter=PropNetworkInsightsAnalysisAnalysisComponent.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropNetworkInsightsAnalysisAnalysisComponent)),
-        metadata={AttrMeta.PROPERTY_NAME: "Vpc"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-vpc"""
-    p_VpcPeeringConnection: typing.Union['PropNetworkInsightsAnalysisAnalysisComponent', dict] = attr.ib(
-        default=None,
-        converter=PropNetworkInsightsAnalysisAnalysisComponent.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropNetworkInsightsAnalysisAnalysisComponent)),
-        metadata={AttrMeta.PROPERTY_NAME: "VpcPeeringConnection"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-vpcpeeringconnection"""
-    p_VpnConnection: typing.Union['PropNetworkInsightsAnalysisAnalysisComponent', dict] = attr.ib(
-        default=None,
-        converter=PropNetworkInsightsAnalysisAnalysisComponent.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropNetworkInsightsAnalysisAnalysisComponent)),
-        metadata={AttrMeta.PROPERTY_NAME: "VpnConnection"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-vpnconnection"""
-    p_VpnGateway: typing.Union['PropNetworkInsightsAnalysisAnalysisComponent', dict] = attr.ib(
-        default=None,
-        converter=PropNetworkInsightsAnalysisAnalysisComponent.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropNetworkInsightsAnalysisAnalysisComponent)),
-        metadata={AttrMeta.PROPERTY_NAME: "VpnGateway"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-vpngateway"""
-    p_vpcEndpoint: typing.Union['PropNetworkInsightsAnalysisAnalysisComponent', dict] = attr.ib(
-        default=None,
-        converter=PropNetworkInsightsAnalysisAnalysisComponent.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropNetworkInsightsAnalysisAnalysisComponent)),
-        metadata={AttrMeta.PROPERTY_NAME: "vpcEndpoint"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-explanation.html#cfn-ec2-networkinsightsanalysis-explanation-vpcendpoint"""
-
-@attr.s
-class PropLaunchTemplateLaunchTemplateData(Property):
-    """
-    AWS Object Type = "AWS::EC2::LaunchTemplate.LaunchTemplateData"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html
-
-    Property Document:
-    
-    - ``p_BlockDeviceMappings``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-blockdevicemappings
-    - ``p_CapacityReservationSpecification``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-capacityreservationspecification
-    - ``p_CpuOptions``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-cpuoptions
-    - ``p_CreditSpecification``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-creditspecification
-    - ``p_DisableApiTermination``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-disableapitermination
-    - ``p_EbsOptimized``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-ebsoptimized
-    - ``p_ElasticGpuSpecifications``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-elasticgpuspecifications
-    - ``p_ElasticInferenceAccelerators``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-elasticinferenceaccelerators
-    - ``p_EnclaveOptions``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-enclaveoptions
-    - ``p_HibernationOptions``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-hibernationoptions
-    - ``p_IamInstanceProfile``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-iaminstanceprofile
-    - ``p_ImageId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-imageid
-    - ``p_InstanceInitiatedShutdownBehavior``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-instanceinitiatedshutdownbehavior
-    - ``p_InstanceMarketOptions``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-instancemarketoptions
-    - ``p_InstanceRequirements``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-instancerequirements
-    - ``p_InstanceType``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-instancetype
-    - ``p_KernelId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-kernelid
-    - ``p_KeyName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-keyname
-    - ``p_LicenseSpecifications``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-licensespecifications
-    - ``p_MetadataOptions``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-metadataoptions
-    - ``p_Monitoring``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-monitoring
-    - ``p_NetworkInterfaces``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-networkinterfaces
-    - ``p_Placement``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-placement
-    - ``p_PrivateDnsNameOptions``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-privatednsnameoptions
-    - ``p_RamDiskId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-ramdiskid
-    - ``p_SecurityGroupIds``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-securitygroupids
-    - ``p_SecurityGroups``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-securitygroups
-    - ``p_TagSpecifications``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-tagspecifications
-    - ``p_UserData``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-userdata
-    """
-    AWS_OBJECT_TYPE = "AWS::EC2::LaunchTemplate.LaunchTemplateData"
-    
-    p_BlockDeviceMappings: typing.List[typing.Union['PropLaunchTemplateBlockDeviceMapping', dict]] = attr.ib(
-        default=None,
-        converter=PropLaunchTemplateBlockDeviceMapping.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropLaunchTemplateBlockDeviceMapping), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "BlockDeviceMappings"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-blockdevicemappings"""
-    p_CapacityReservationSpecification: typing.Union['PropLaunchTemplateCapacityReservationSpecification', dict] = attr.ib(
-        default=None,
-        converter=PropLaunchTemplateCapacityReservationSpecification.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropLaunchTemplateCapacityReservationSpecification)),
-        metadata={AttrMeta.PROPERTY_NAME: "CapacityReservationSpecification"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-capacityreservationspecification"""
-    p_CpuOptions: typing.Union['PropLaunchTemplateCpuOptions', dict] = attr.ib(
-        default=None,
-        converter=PropLaunchTemplateCpuOptions.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropLaunchTemplateCpuOptions)),
-        metadata={AttrMeta.PROPERTY_NAME: "CpuOptions"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-cpuoptions"""
-    p_CreditSpecification: typing.Union['PropLaunchTemplateCreditSpecification', dict] = attr.ib(
-        default=None,
-        converter=PropLaunchTemplateCreditSpecification.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropLaunchTemplateCreditSpecification)),
-        metadata={AttrMeta.PROPERTY_NAME: "CreditSpecification"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-creditspecification"""
-    p_DisableApiTermination: bool = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(bool)),
-        metadata={AttrMeta.PROPERTY_NAME: "DisableApiTermination"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-disableapitermination"""
-    p_EbsOptimized: bool = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(bool)),
-        metadata={AttrMeta.PROPERTY_NAME: "EbsOptimized"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-ebsoptimized"""
-    p_ElasticGpuSpecifications: typing.List[typing.Union['PropLaunchTemplateElasticGpuSpecification', dict]] = attr.ib(
-        default=None,
-        converter=PropLaunchTemplateElasticGpuSpecification.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropLaunchTemplateElasticGpuSpecification), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "ElasticGpuSpecifications"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-elasticgpuspecifications"""
-    p_ElasticInferenceAccelerators: typing.List[typing.Union['PropLaunchTemplateLaunchTemplateElasticInferenceAccelerator', dict]] = attr.ib(
-        default=None,
-        converter=PropLaunchTemplateLaunchTemplateElasticInferenceAccelerator.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropLaunchTemplateLaunchTemplateElasticInferenceAccelerator), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "ElasticInferenceAccelerators"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-elasticinferenceaccelerators"""
-    p_EnclaveOptions: typing.Union['PropLaunchTemplateEnclaveOptions', dict] = attr.ib(
-        default=None,
-        converter=PropLaunchTemplateEnclaveOptions.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropLaunchTemplateEnclaveOptions)),
-        metadata={AttrMeta.PROPERTY_NAME: "EnclaveOptions"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-enclaveoptions"""
-    p_HibernationOptions: typing.Union['PropLaunchTemplateHibernationOptions', dict] = attr.ib(
-        default=None,
-        converter=PropLaunchTemplateHibernationOptions.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropLaunchTemplateHibernationOptions)),
-        metadata={AttrMeta.PROPERTY_NAME: "HibernationOptions"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-hibernationoptions"""
-    p_IamInstanceProfile: typing.Union['PropLaunchTemplateIamInstanceProfile', dict] = attr.ib(
-        default=None,
-        converter=PropLaunchTemplateIamInstanceProfile.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropLaunchTemplateIamInstanceProfile)),
-        metadata={AttrMeta.PROPERTY_NAME: "IamInstanceProfile"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-iaminstanceprofile"""
-    p_ImageId: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "ImageId"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-imageid"""
-    p_InstanceInitiatedShutdownBehavior: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "InstanceInitiatedShutdownBehavior"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-instanceinitiatedshutdownbehavior"""
-    p_InstanceMarketOptions: typing.Union['PropLaunchTemplateInstanceMarketOptions', dict] = attr.ib(
-        default=None,
-        converter=PropLaunchTemplateInstanceMarketOptions.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropLaunchTemplateInstanceMarketOptions)),
-        metadata={AttrMeta.PROPERTY_NAME: "InstanceMarketOptions"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-instancemarketoptions"""
-    p_InstanceRequirements: typing.Union['PropLaunchTemplateInstanceRequirements', dict] = attr.ib(
-        default=None,
-        converter=PropLaunchTemplateInstanceRequirements.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropLaunchTemplateInstanceRequirements)),
-        metadata={AttrMeta.PROPERTY_NAME: "InstanceRequirements"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-instancerequirements"""
-    p_InstanceType: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "InstanceType"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-instancetype"""
-    p_KernelId: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "KernelId"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-kernelid"""
-    p_KeyName: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "KeyName"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-keyname"""
-    p_LicenseSpecifications: typing.List[typing.Union['PropLaunchTemplateLicenseSpecification', dict]] = attr.ib(
-        default=None,
-        converter=PropLaunchTemplateLicenseSpecification.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropLaunchTemplateLicenseSpecification), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "LicenseSpecifications"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-licensespecifications"""
-    p_MetadataOptions: typing.Union['PropLaunchTemplateMetadataOptions', dict] = attr.ib(
-        default=None,
-        converter=PropLaunchTemplateMetadataOptions.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropLaunchTemplateMetadataOptions)),
-        metadata={AttrMeta.PROPERTY_NAME: "MetadataOptions"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-metadataoptions"""
-    p_Monitoring: typing.Union['PropLaunchTemplateMonitoring', dict] = attr.ib(
-        default=None,
-        converter=PropLaunchTemplateMonitoring.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropLaunchTemplateMonitoring)),
-        metadata={AttrMeta.PROPERTY_NAME: "Monitoring"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-monitoring"""
-    p_NetworkInterfaces: typing.List[typing.Union['PropLaunchTemplateNetworkInterface', dict]] = attr.ib(
-        default=None,
-        converter=PropLaunchTemplateNetworkInterface.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropLaunchTemplateNetworkInterface), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "NetworkInterfaces"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-networkinterfaces"""
-    p_Placement: typing.Union['PropLaunchTemplatePlacement', dict] = attr.ib(
-        default=None,
-        converter=PropLaunchTemplatePlacement.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropLaunchTemplatePlacement)),
-        metadata={AttrMeta.PROPERTY_NAME: "Placement"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-placement"""
-    p_PrivateDnsNameOptions: typing.Union['PropLaunchTemplatePrivateDnsNameOptions', dict] = attr.ib(
-        default=None,
-        converter=PropLaunchTemplatePrivateDnsNameOptions.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropLaunchTemplatePrivateDnsNameOptions)),
-        metadata={AttrMeta.PROPERTY_NAME: "PrivateDnsNameOptions"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-privatednsnameoptions"""
-    p_RamDiskId: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "RamDiskId"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-ramdiskid"""
-    p_SecurityGroupIds: typing.List[TypeHint.intrinsic_str] = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "SecurityGroupIds"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-securitygroupids"""
-    p_SecurityGroups: typing.List[TypeHint.intrinsic_str] = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "SecurityGroups"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-securitygroups"""
-    p_TagSpecifications: typing.List[typing.Union['PropLaunchTemplateTagSpecification', dict]] = attr.ib(
-        default=None,
-        converter=PropLaunchTemplateTagSpecification.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropLaunchTemplateTagSpecification), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "TagSpecifications"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-tagspecifications"""
-    p_UserData: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "UserData"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata.html#cfn-ec2-launchtemplate-launchtemplatedata-userdata"""
-
-@attr.s
 class PropEC2FleetFleetLaunchTemplateConfigRequest(Property):
     """
     AWS Object Type = "AWS::EC2::EC2Fleet.FleetLaunchTemplateConfigRequest"
@@ -5936,10 +6328,9 @@ class PropEC2FleetFleetLaunchTemplateConfigRequest(Property):
     """
     AWS_OBJECT_TYPE = "AWS::EC2::EC2Fleet.FleetLaunchTemplateConfigRequest"
     
-    p_LaunchTemplateSpecification: typing.Union['PropEC2FleetFleetLaunchTemplateSpecificationRequest', dict] = attr.ib(
+    p_LaunchTemplateSpecification: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropEC2FleetFleetLaunchTemplateSpecificationRequest.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropEC2FleetFleetLaunchTemplateSpecificationRequest)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "LaunchTemplateSpecification"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-fleetlaunchtemplateconfigrequest.html#cfn-ec2-ec2fleet-fleetlaunchtemplateconfigrequest-launchtemplatespecification"""
@@ -5950,43 +6341,6 @@ class PropEC2FleetFleetLaunchTemplateConfigRequest(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Overrides"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ec2fleet-fleetlaunchtemplateconfigrequest.html#cfn-ec2-ec2fleet-fleetlaunchtemplateconfigrequest-overrides"""
-
-@attr.s
-class PropNetworkInsightsAccessScopeAccessScopePathRequest(Property):
-    """
-    AWS Object Type = "AWS::EC2::NetworkInsightsAccessScope.AccessScopePathRequest"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsaccessscope-accessscopepathrequest.html
-
-    Property Document:
-    
-    - ``p_Destination``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsaccessscope-accessscopepathrequest.html#cfn-ec2-networkinsightsaccessscope-accessscopepathrequest-destination
-    - ``p_Source``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsaccessscope-accessscopepathrequest.html#cfn-ec2-networkinsightsaccessscope-accessscopepathrequest-source
-    - ``p_ThroughResources``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsaccessscope-accessscopepathrequest.html#cfn-ec2-networkinsightsaccessscope-accessscopepathrequest-throughresources
-    """
-    AWS_OBJECT_TYPE = "AWS::EC2::NetworkInsightsAccessScope.AccessScopePathRequest"
-    
-    p_Destination: typing.Union['PropNetworkInsightsAccessScopePathStatementRequest', dict] = attr.ib(
-        default=None,
-        converter=PropNetworkInsightsAccessScopePathStatementRequest.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropNetworkInsightsAccessScopePathStatementRequest)),
-        metadata={AttrMeta.PROPERTY_NAME: "Destination"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsaccessscope-accessscopepathrequest.html#cfn-ec2-networkinsightsaccessscope-accessscopepathrequest-destination"""
-    p_Source: typing.Union['PropNetworkInsightsAccessScopePathStatementRequest', dict] = attr.ib(
-        default=None,
-        converter=PropNetworkInsightsAccessScopePathStatementRequest.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropNetworkInsightsAccessScopePathStatementRequest)),
-        metadata={AttrMeta.PROPERTY_NAME: "Source"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsaccessscope-accessscopepathrequest.html#cfn-ec2-networkinsightsaccessscope-accessscopepathrequest-source"""
-    p_ThroughResources: typing.List[typing.Union['PropNetworkInsightsAccessScopeThroughResourcesStatementRequest', dict]] = attr.ib(
-        default=None,
-        converter=PropNetworkInsightsAccessScopeThroughResourcesStatementRequest.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropNetworkInsightsAccessScopeThroughResourcesStatementRequest), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "ThroughResources"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsaccessscope-accessscopepathrequest.html#cfn-ec2-networkinsightsaccessscope-accessscopepathrequest-throughresources"""
 
 
 #--- Resource declaration ---
@@ -6013,41 +6367,90 @@ class VPCPeeringConnection(Resource):
     rp_PeerVpcId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "PeerVpcId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "PeerVpcId",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcpeeringconnection.html#cfn-ec2-vpcpeeringconnection-peervpcid"""
     rp_VpcId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "VpcId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "VpcId",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcpeeringconnection.html#cfn-ec2-vpcpeeringconnection-vpcid"""
     p_PeerOwnerId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "PeerOwnerId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "PeerOwnerId",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcpeeringconnection.html#cfn-ec2-vpcpeeringconnection-peerownerid"""
     p_PeerRegion: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "PeerRegion"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "PeerRegion",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcpeeringconnection.html#cfn-ec2-vpcpeeringconnection-peerregion"""
     p_PeerRoleArn: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "PeerRoleArn"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "PeerRoleArn",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcpeeringconnection.html#cfn-ec2-vpcpeeringconnection-peerrolearn"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'List',
+                "ItemType": 'Tag',
+                "DuplicatesAllowed": True,
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcpeeringconnection.html#cfn-ec2-vpcpeeringconnection-tags"""
 
+    
+    @property
+    def rv_Id(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcpeeringconnection.html#aws-resource-ec2-vpcpeeringconnection-return-values"""
+        return GetAtt(resource=self, attr_name="Id")
     
 
 @attr.s
@@ -6079,80 +6482,173 @@ class CapacityReservation(Resource):
     rp_AvailabilityZone: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "AvailabilityZone"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "AvailabilityZone",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-capacityreservation.html#cfn-ec2-capacityreservation-availabilityzone"""
     rp_InstanceCount: int = attr.ib(
         default=None,
         validator=attr.validators.instance_of(int),
-        metadata={AttrMeta.PROPERTY_NAME: "InstanceCount"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "InstanceCount",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": True,
+                "PrimitiveType": 'Integer',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-capacityreservation.html#cfn-ec2-capacityreservation-instancecount"""
     rp_InstancePlatform: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "InstancePlatform"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "InstancePlatform",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-capacityreservation.html#cfn-ec2-capacityreservation-instanceplatform"""
     rp_InstanceType: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "InstanceType"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "InstanceType",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-capacityreservation.html#cfn-ec2-capacityreservation-instancetype"""
     p_EbsOptimized: bool = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(bool)),
-        metadata={AttrMeta.PROPERTY_NAME: "EbsOptimized"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "EbsOptimized",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'Boolean',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-capacityreservation.html#cfn-ec2-capacityreservation-ebsoptimized"""
     p_EndDate: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "EndDate"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "EndDate",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-capacityreservation.html#cfn-ec2-capacityreservation-enddate"""
     p_EndDateType: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "EndDateType"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "EndDateType",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-capacityreservation.html#cfn-ec2-capacityreservation-enddatetype"""
     p_EphemeralStorage: bool = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(bool)),
-        metadata={AttrMeta.PROPERTY_NAME: "EphemeralStorage"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "EphemeralStorage",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'Boolean',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-capacityreservation.html#cfn-ec2-capacityreservation-ephemeralstorage"""
     p_InstanceMatchCriteria: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "InstanceMatchCriteria"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "InstanceMatchCriteria",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-capacityreservation.html#cfn-ec2-capacityreservation-instancematchcriteria"""
     p_OutPostArn: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "OutPostArn"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "OutPostArn",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-capacityreservation.html#cfn-ec2-capacityreservation-outpostarn"""
     p_PlacementGroupArn: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "PlacementGroupArn"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "PlacementGroupArn",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-capacityreservation.html#cfn-ec2-capacityreservation-placementgrouparn"""
     p_TagSpecifications: typing.List[typing.Union['PropCapacityReservationTagSpecification', dict]] = attr.ib(
         default=None,
         converter=PropCapacityReservationTagSpecification.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropCapacityReservationTagSpecification), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "TagSpecifications"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "TagSpecifications",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "Type": 'List',
+                "ItemType": 'TagSpecification',
+                "DuplicatesAllowed": True,
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-capacityreservation.html#cfn-ec2-capacityreservation-tagspecifications"""
     p_Tenancy: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Tenancy"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tenancy",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-capacityreservation.html#cfn-ec2-capacityreservation-tenancy"""
 
@@ -6163,11 +6659,6 @@ class CapacityReservation(Resource):
         return GetAtt(resource=self, attr_name="Tenancy")
     
     @property
-    def rv_AvailableInstanceCount(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-capacityreservation.html#aws-resource-ec2-capacityreservation-return-values"""
-        return GetAtt(resource=self, attr_name="AvailableInstanceCount")
-    
-    @property
     def rv_AvailabilityZone(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-capacityreservation.html#aws-resource-ec2-capacityreservation-return-values"""
         return GetAtt(resource=self, attr_name="AvailabilityZone")
@@ -6176,6 +6667,16 @@ class CapacityReservation(Resource):
     def rv_TotalInstanceCount(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-capacityreservation.html#aws-resource-ec2-capacityreservation-return-values"""
         return GetAtt(resource=self, attr_name="TotalInstanceCount")
+    
+    @property
+    def rv_AvailableInstanceCount(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-capacityreservation.html#aws-resource-ec2-capacityreservation-return-values"""
+        return GetAtt(resource=self, attr_name="AvailableInstanceCount")
+    
+    @property
+    def rv_Id(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-capacityreservation.html#aws-resource-ec2-capacityreservation-return-values"""
+        return GetAtt(resource=self, attr_name="Id")
     
     @property
     def rv_InstanceType(self) -> GetAtt:
@@ -6201,13 +6702,28 @@ class VPCEndpointServicePermissions(Resource):
     rp_ServiceId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "ServiceId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ServiceId",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpointservicepermissions.html#cfn-ec2-vpcendpointservicepermissions-serviceid"""
     p_AllowedPrincipals: typing.List[TypeHint.intrinsic_str] = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "AllowedPrincipals"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "AllowedPrincipals",
+            AttrMeta.DATA: {
+                "PrimitiveItemType": 'String',
+                "Type": 'List',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpointservicepermissions.html#cfn-ec2-vpcendpointservicepermissions-allowedprincipals"""
 
@@ -6231,13 +6747,27 @@ class TransitGatewayRouteTableAssociation(Resource):
     rp_TransitGatewayAttachmentId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "TransitGatewayAttachmentId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "TransitGatewayAttachmentId",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayroutetableassociation.html#cfn-ec2-transitgatewayroutetableassociation-transitgatewayattachmentid"""
     rp_TransitGatewayRouteTableId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "TransitGatewayRouteTableId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "TransitGatewayRouteTableId",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayroutetableassociation.html#cfn-ec2-transitgatewayroutetableassociation-transitgatewayroutetableid"""
 
@@ -6262,21 +6792,46 @@ class IPAM(Resource):
     p_Description: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Description"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Description",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipam.html#cfn-ec2-ipam-description"""
     p_OperatingRegions: typing.List[typing.Union['PropIPAMIpamOperatingRegion', dict]] = attr.ib(
         default=None,
         converter=PropIPAMIpamOperatingRegion.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropIPAMIpamOperatingRegion), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "OperatingRegions"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "OperatingRegions",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'List',
+                "ItemType": 'IpamOperatingRegion',
+                "DuplicatesAllowed": False,
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipam.html#cfn-ec2-ipam-operatingregions"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'List',
+                "ItemType": 'Tag',
+                "DuplicatesAllowed": False,
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipam.html#cfn-ec2-ipam-tags"""
 
@@ -6312,14 +6867,16 @@ class EIP(Resource):
     """
     AWS Object Type = "AWS::EC2::EIP"
 
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-eip.html
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-eip.html
 
     Property Document:
     
-    - ``p_Domain``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-eip.html#cfn-ec2-eip-domain
-    - ``p_InstanceId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-eip.html#cfn-ec2-eip-instanceid
-    - ``p_PublicIpv4Pool``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-eip.html#cfn-ec2-eip-publicipv4pool
-    - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-eip.html#cfn-ec2-eip-tags
+    - ``p_Domain``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-eip.html#cfn-ec2-eip-domain
+    - ``p_InstanceId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-eip.html#cfn-ec2-eip-instanceid
+    - ``p_NetworkBorderGroup``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-eip.html#cfn-ec2-eip-networkbordergroup
+    - ``p_PublicIpv4Pool``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-eip.html#cfn-ec2-eip-publicipv4pool
+    - ``p_TransferAddress``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-eip.html#cfn-ec2-eip-transferaddress
+    - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-eip.html#cfn-ec2-eip-tags
     """
     AWS_OBJECT_TYPE = "AWS::EC2::EIP"
 
@@ -6327,33 +6884,94 @@ class EIP(Resource):
     p_Domain: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Domain"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Domain",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-eip.html#cfn-ec2-eip-domain"""
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-eip.html#cfn-ec2-eip-domain"""
     p_InstanceId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "InstanceId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "InstanceId",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-eip.html#cfn-ec2-eip-instanceid"""
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-eip.html#cfn-ec2-eip-instanceid"""
+    p_NetworkBorderGroup: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "NetworkBorderGroup",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-eip.html#cfn-ec2-eip-networkbordergroup"""
     p_PublicIpv4Pool: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "PublicIpv4Pool"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "PublicIpv4Pool",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-eip.html#cfn-ec2-eip-publicipv4pool"""
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-eip.html#cfn-ec2-eip-publicipv4pool"""
+    p_TransferAddress: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "TransferAddress",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-eip.html#cfn-ec2-eip-transferaddress"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'List',
+                "ItemType": 'Tag',
+                "DuplicatesAllowed": True,
+            }
+        },
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-eip.html#cfn-ec2-eip-tags"""
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-eip.html#cfn-ec2-eip-tags"""
 
     
     @property
+    def rv_PublicIp(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-eip.html#aws-resource-ec2-eip-return-values"""
+        return GetAtt(resource=self, attr_name="PublicIp")
+    
+    @property
     def rv_AllocationId(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-eip.html#aws-properties-ec2-eip-return-values"""
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-eip.html#aws-resource-ec2-eip-return-values"""
         return GetAtt(resource=self, attr_name="AllocationId")
     
 
@@ -6382,55 +7000,118 @@ class SecurityGroupEgress(Resource):
     rp_GroupId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "GroupId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "GroupId",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": True,
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-egress.html#cfn-ec2-securitygroupegress-groupid"""
     rp_IpProtocol: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "IpProtocol"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "IpProtocol",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": True,
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-egress.html#cfn-ec2-securitygroupegress-ipprotocol"""
     p_CidrIp: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "CidrIp"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "CidrIp",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-egress.html#cfn-ec2-securitygroupegress-cidrip"""
     p_CidrIpv6: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "CidrIpv6"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "CidrIpv6",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-egress.html#cfn-ec2-securitygroupegress-cidripv6"""
     p_Description: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Description"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Description",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-egress.html#cfn-ec2-securitygroupegress-description"""
     p_DestinationPrefixListId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "DestinationPrefixListId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "DestinationPrefixListId",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-egress.html#cfn-ec2-securitygroupegress-destinationprefixlistid"""
     p_DestinationSecurityGroupId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "DestinationSecurityGroupId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "DestinationSecurityGroupId",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-egress.html#cfn-ec2-securitygroupegress-destinationsecuritygroupid"""
     p_FromPort: int = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "FromPort"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "FromPort",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'Integer',
+                "Required": False,
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-egress.html#cfn-ec2-securitygroupegress-fromport"""
     p_ToPort: int = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "ToPort"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ToPort",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'Integer',
+                "Required": False,
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-security-group-egress.html#cfn-ec2-securitygroupegress-toport"""
 
@@ -6448,6 +7129,7 @@ class TransitGatewayAttachment(Resource):
     - ``rp_SubnetIds``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayattachment.html#cfn-ec2-transitgatewayattachment-subnetids
     - ``rp_TransitGatewayId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayattachment.html#cfn-ec2-transitgatewayattachment-transitgatewayid
     - ``rp_VpcId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayattachment.html#cfn-ec2-transitgatewayattachment-vpcid
+    - ``p_Options``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayattachment.html#cfn-ec2-transitgatewayattachment-options
     - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayattachment.html#cfn-ec2-transitgatewayattachment-tags
     """
     AWS_OBJECT_TYPE = "AWS::EC2::TransitGatewayAttachment"
@@ -6456,29 +7138,79 @@ class TransitGatewayAttachment(Resource):
     rp_SubnetIds: typing.List[TypeHint.intrinsic_str] = attr.ib(
         default=None,
         validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list)),
-        metadata={AttrMeta.PROPERTY_NAME: "SubnetIds"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "SubnetIds",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": True,
+                "Type": 'List',
+                "PrimitiveItemType": 'String',
+                "DuplicatesAllowed": True,
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayattachment.html#cfn-ec2-transitgatewayattachment-subnetids"""
     rp_TransitGatewayId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "TransitGatewayId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "TransitGatewayId",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayattachment.html#cfn-ec2-transitgatewayattachment-transitgatewayid"""
     rp_VpcId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "VpcId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "VpcId",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayattachment.html#cfn-ec2-transitgatewayattachment-vpcid"""
+    p_Options: dict = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Options",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'Json',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayattachment.html#cfn-ec2-transitgatewayattachment-options"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'List',
+                "ItemType": 'Tag',
+                "DuplicatesAllowed": True,
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayattachment.html#cfn-ec2-transitgatewayattachment-tags"""
 
+    
+    @property
+    def rv_Id(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayattachment.html#aws-resource-ec2-transitgatewayattachment-return-values"""
+        return GetAtt(resource=self, attr_name="Id")
     
 
 @attr.s
@@ -6500,19 +7232,40 @@ class TransitGatewayMulticastDomainAssociation(Resource):
     rp_SubnetId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "SubnetId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "SubnetId",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewaymulticastdomainassociation.html#cfn-ec2-transitgatewaymulticastdomainassociation-subnetid"""
     rp_TransitGatewayAttachmentId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "TransitGatewayAttachmentId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "TransitGatewayAttachmentId",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewaymulticastdomainassociation.html#cfn-ec2-transitgatewaymulticastdomainassociation-transitgatewayattachmentid"""
     rp_TransitGatewayMulticastDomainId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "TransitGatewayMulticastDomainId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "TransitGatewayMulticastDomainId",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewaymulticastdomainassociation.html#cfn-ec2-transitgatewaymulticastdomainassociation-transitgatewaymulticastdomainid"""
 
@@ -6555,38 +7308,88 @@ class DHCPOptions(Resource):
     p_DomainName: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "DomainName"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "DomainName",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-dhcpoptions.html#cfn-ec2-dhcpoptions-domainname"""
     p_DomainNameServers: typing.List[TypeHint.intrinsic_str] = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "DomainNameServers"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "DomainNameServers",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "Type": 'List',
+                "PrimitiveItemType": 'String',
+                "DuplicatesAllowed": False,
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-dhcpoptions.html#cfn-ec2-dhcpoptions-domainnameservers"""
     p_NetbiosNameServers: typing.List[TypeHint.intrinsic_str] = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "NetbiosNameServers"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "NetbiosNameServers",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "Type": 'List',
+                "PrimitiveItemType": 'String',
+                "DuplicatesAllowed": False,
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-dhcpoptions.html#cfn-ec2-dhcpoptions-netbiosnameservers"""
     p_NetbiosNodeType: int = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "NetbiosNodeType"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "NetbiosNodeType",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'Integer',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-dhcpoptions.html#cfn-ec2-dhcpoptions-netbiosnodetype"""
     p_NtpServers: typing.List[TypeHint.intrinsic_str] = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "NtpServers"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "NtpServers",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "Type": 'List',
+                "PrimitiveItemType": 'String',
+                "DuplicatesAllowed": True,
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-dhcpoptions.html#cfn-ec2-dhcpoptions-ntpservers"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'List',
+                "ItemType": 'Tag',
+                "DuplicatesAllowed": True,
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-dhcpoptions.html#cfn-ec2-dhcpoptions-tags"""
 
@@ -6614,7 +7417,14 @@ class EgressOnlyInternetGateway(Resource):
     rp_VpcId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "VpcId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "VpcId",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-egressonlyinternetgateway.html#cfn-ec2-egressonlyinternetgateway-vpcid"""
 
@@ -6645,25 +7455,53 @@ class NetworkInterfaceAttachment(Resource):
     rp_DeviceIndex: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "DeviceIndex"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "DeviceIndex",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": True,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface-attachment.html#cfn-ec2-network-interface-attachment-deviceindex"""
     rp_InstanceId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "InstanceId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "InstanceId",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": True,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface-attachment.html#cfn-ec2-network-interface-attachment-instanceid"""
     rp_NetworkInterfaceId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "NetworkInterfaceId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "NetworkInterfaceId",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": True,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface-attachment.html#cfn-ec2-network-interface-attachment-networkinterfaceid"""
     p_DeleteOnTermination: bool = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(bool)),
-        metadata={AttrMeta.PROPERTY_NAME: "DeleteOnTermination"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "DeleteOnTermination",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'Boolean',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-network-interface-attachment.html#cfn-ec2-network-interface-attachment-deleteonterm"""
 
@@ -6674,14 +7512,14 @@ class CustomerGateway(Resource):
     """
     AWS Object Type = "AWS::EC2::CustomerGateway"
 
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-customer-gateway.html
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-customergateway.html
 
     Property Document:
     
-    - ``rp_BgpAsn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-customer-gateway.html#cfn-ec2-customergateway-bgpasn
-    - ``rp_IpAddress``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-customer-gateway.html#cfn-ec2-customergateway-ipaddress
-    - ``rp_Type``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-customer-gateway.html#cfn-ec2-customergateway-type
-    - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-customer-gateway.html#cfn-ec2-customergateway-tags
+    - ``rp_BgpAsn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-customergateway.html#cfn-ec2-customergateway-bgpasn
+    - ``rp_IpAddress``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-customergateway.html#cfn-ec2-customergateway-ipaddress
+    - ``rp_Type``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-customergateway.html#cfn-ec2-customergateway-type
+    - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-customergateway.html#cfn-ec2-customergateway-tags
     """
     AWS_OBJECT_TYPE = "AWS::EC2::CustomerGateway"
 
@@ -6689,29 +7527,64 @@ class CustomerGateway(Resource):
     rp_BgpAsn: int = attr.ib(
         default=None,
         validator=attr.validators.instance_of(int),
-        metadata={AttrMeta.PROPERTY_NAME: "BgpAsn"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "BgpAsn",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'Integer',
+            }
+        },
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-customer-gateway.html#cfn-ec2-customergateway-bgpasn"""
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-customergateway.html#cfn-ec2-customergateway-bgpasn"""
     rp_IpAddress: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "IpAddress"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "IpAddress",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-customer-gateway.html#cfn-ec2-customergateway-ipaddress"""
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-customergateway.html#cfn-ec2-customergateway-ipaddress"""
     rp_Type: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Type"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Type",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-customer-gateway.html#cfn-ec2-customergateway-type"""
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-customergateway.html#cfn-ec2-customergateway-type"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'List',
+                "ItemType": 'Tag',
+                "DuplicatesAllowed": True,
+            }
+        },
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-customer-gateway.html#cfn-ec2-customergateway-tags"""
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-customergateway.html#cfn-ec2-customergateway-tags"""
 
+    
+    @property
+    def rv_CustomerGatewayId(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-customergateway.html#aws-resource-ec2-customergateway-return-values"""
+        return GetAtt(resource=self, attr_name="CustomerGatewayId")
     
 
 @attr.s
@@ -6734,25 +7607,53 @@ class ClientVpnRoute(Resource):
     rp_ClientVpnEndpointId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "ClientVpnEndpointId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ClientVpnEndpointId",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnroute.html#cfn-ec2-clientvpnroute-clientvpnendpointid"""
     rp_DestinationCidrBlock: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "DestinationCidrBlock"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "DestinationCidrBlock",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnroute.html#cfn-ec2-clientvpnroute-destinationcidrblock"""
     rp_TargetVpcSubnetId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "TargetVpcSubnetId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "TargetVpcSubnetId",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnroute.html#cfn-ec2-clientvpnroute-targetvpcsubnetid"""
     p_Description: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Description"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Description",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnroute.html#cfn-ec2-clientvpnroute-description"""
 
@@ -6777,20 +7678,43 @@ class IPAMScope(Resource):
     rp_IpamId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "IpamId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "IpamId",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipamscope.html#cfn-ec2-ipamscope-ipamid"""
     p_Description: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Description"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Description",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipamscope.html#cfn-ec2-ipamscope-description"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'List',
+                "ItemType": 'Tag',
+                "DuplicatesAllowed": False,
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipamscope.html#cfn-ec2-ipamscope-tags"""
 
@@ -6835,18 +7759,44 @@ class PlacementGroup(Resource):
 
     Property Document:
     
+    - ``p_SpreadLevel``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-placementgroup.html#cfn-ec2-placementgroup-spreadlevel
     - ``p_Strategy``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-placementgroup.html#cfn-ec2-placementgroup-strategy
     """
     AWS_OBJECT_TYPE = "AWS::EC2::PlacementGroup"
 
     
+    p_SpreadLevel: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "SpreadLevel",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-placementgroup.html#cfn-ec2-placementgroup-spreadlevel"""
     p_Strategy: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Strategy"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Strategy",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-placementgroup.html#cfn-ec2-placementgroup-strategy"""
 
+    
+    @property
+    def rv_GroupName(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-placementgroup.html#aws-resource-ec2-placementgroup-return-values"""
+        return GetAtt(resource=self, attr_name="GroupName")
     
 
 @attr.s
@@ -6867,7 +7817,16 @@ class InternetGateway(Resource):
         default=None,
         converter=Tag.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'List',
+                "ItemType": 'Tag',
+                "DuplicatesAllowed": True,
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-internetgateway.html#cfn-ec2-internetgateway-tags"""
 
@@ -6887,33 +7846,69 @@ class LaunchTemplate(Resource):
 
     Property Document:
     
-    - ``p_LaunchTemplateData``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-launchtemplate.html#cfn-ec2-launchtemplate-launchtemplatedata
+    - ``rp_LaunchTemplateData``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-launchtemplate.html#cfn-ec2-launchtemplate-launchtemplatedata
     - ``p_LaunchTemplateName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-launchtemplate.html#cfn-ec2-launchtemplate-launchtemplatename
     - ``p_TagSpecifications``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-launchtemplate.html#cfn-ec2-launchtemplate-tagspecifications
+    - ``p_VersionDescription``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-launchtemplate.html#cfn-ec2-launchtemplate-versiondescription
     """
     AWS_OBJECT_TYPE = "AWS::EC2::LaunchTemplate"
 
     
-    p_LaunchTemplateData: typing.Union['PropLaunchTemplateLaunchTemplateData', dict] = attr.ib(
+    rp_LaunchTemplateData: typing.Union['PropLaunchTemplateLaunchTemplateData', dict] = attr.ib(
         default=None,
         converter=PropLaunchTemplateLaunchTemplateData.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropLaunchTemplateLaunchTemplateData)),
-        metadata={AttrMeta.PROPERTY_NAME: "LaunchTemplateData"},
+        validator=attr.validators.instance_of(PropLaunchTemplateLaunchTemplateData),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "LaunchTemplateData",
+            AttrMeta.DATA: {
+                "Type": 'LaunchTemplateData',
+                "Required": True,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-launchtemplate.html#cfn-ec2-launchtemplate-launchtemplatedata"""
     p_LaunchTemplateName: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "LaunchTemplateName"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "LaunchTemplateName",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-launchtemplate.html#cfn-ec2-launchtemplate-launchtemplatename"""
     p_TagSpecifications: typing.List[typing.Union['PropLaunchTemplateLaunchTemplateTagSpecification', dict]] = attr.ib(
         default=None,
         converter=PropLaunchTemplateLaunchTemplateTagSpecification.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropLaunchTemplateLaunchTemplateTagSpecification), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "TagSpecifications"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "TagSpecifications",
+            AttrMeta.DATA: {
+                "Type": 'List',
+                "Required": False,
+                "ItemType": 'LaunchTemplateTagSpecification',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-launchtemplate.html#cfn-ec2-launchtemplate-tagspecifications"""
+    p_VersionDescription: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "VersionDescription",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Mutable',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-launchtemplate.html#cfn-ec2-launchtemplate-versiondescription"""
 
     
     @property
@@ -6945,13 +7940,27 @@ class VPNConnectionRoute(Resource):
     rp_DestinationCidrBlock: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "DestinationCidrBlock"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "DestinationCidrBlock",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": True,
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-connection-route.html#cfn-ec2-vpnconnectionroute-cidrblock"""
     rp_VpnConnectionId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "VpnConnectionId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "VpnConnectionId",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": True,
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-connection-route.html#cfn-ec2-vpnconnectionroute-connectionid"""
 
@@ -6976,19 +7985,40 @@ class NetworkInterfacePermission(Resource):
     rp_AwsAccountId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "AwsAccountId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "AwsAccountId",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": True,
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinterfacepermission.html#cfn-ec2-networkinterfacepermission-awsaccountid"""
     rp_NetworkInterfaceId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "NetworkInterfaceId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "NetworkInterfaceId",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": True,
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinterfacepermission.html#cfn-ec2-networkinterfacepermission-networkinterfaceid"""
     rp_Permission: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Permission"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Permission",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": True,
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinterfacepermission.html#cfn-ec2-networkinterfacepermission-permission"""
 
@@ -7013,19 +8043,40 @@ class TransitGatewayMulticastGroupMember(Resource):
     rp_GroupIpAddress: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "GroupIpAddress"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "GroupIpAddress",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewaymulticastgroupmember.html#cfn-ec2-transitgatewaymulticastgroupmember-groupipaddress"""
     rp_NetworkInterfaceId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "NetworkInterfaceId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "NetworkInterfaceId",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewaymulticastgroupmember.html#cfn-ec2-transitgatewaymulticastgroupmember-networkinterfaceid"""
     rp_TransitGatewayMulticastDomainId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "TransitGatewayMulticastDomainId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "TransitGatewayMulticastDomainId",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewaymulticastgroupmember.html#cfn-ec2-transitgatewaymulticastgroupmember-transitgatewaymulticastdomainid"""
 
@@ -7104,101 +8155,217 @@ class ClientVpnEndpoint(Resource):
         default=None,
         converter=PropClientVpnEndpointClientAuthenticationRequest.from_list,
         validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropClientVpnEndpointClientAuthenticationRequest), iterable_validator=attr.validators.instance_of(list)),
-        metadata={AttrMeta.PROPERTY_NAME: "AuthenticationOptions"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "AuthenticationOptions",
+            AttrMeta.DATA: {
+                "Type": 'List',
+                "Required": True,
+                "ItemType": 'ClientAuthenticationRequest',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnendpoint.html#cfn-ec2-clientvpnendpoint-authenticationoptions"""
     rp_ClientCidrBlock: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "ClientCidrBlock"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ClientCidrBlock",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnendpoint.html#cfn-ec2-clientvpnendpoint-clientcidrblock"""
     rp_ConnectionLogOptions: typing.Union['PropClientVpnEndpointConnectionLogOptions', dict] = attr.ib(
         default=None,
         converter=PropClientVpnEndpointConnectionLogOptions.from_dict,
         validator=attr.validators.instance_of(PropClientVpnEndpointConnectionLogOptions),
-        metadata={AttrMeta.PROPERTY_NAME: "ConnectionLogOptions"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ConnectionLogOptions",
+            AttrMeta.DATA: {
+                "Type": 'ConnectionLogOptions',
+                "Required": True,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnendpoint.html#cfn-ec2-clientvpnendpoint-connectionlogoptions"""
     rp_ServerCertificateArn: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "ServerCertificateArn"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ServerCertificateArn",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnendpoint.html#cfn-ec2-clientvpnendpoint-servercertificatearn"""
     p_ClientConnectOptions: typing.Union['PropClientVpnEndpointClientConnectOptions', dict] = attr.ib(
         default=None,
         converter=PropClientVpnEndpointClientConnectOptions.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropClientVpnEndpointClientConnectOptions)),
-        metadata={AttrMeta.PROPERTY_NAME: "ClientConnectOptions"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ClientConnectOptions",
+            AttrMeta.DATA: {
+                "Type": 'ClientConnectOptions',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnendpoint.html#cfn-ec2-clientvpnendpoint-clientconnectoptions"""
     p_ClientLoginBannerOptions: typing.Union['PropClientVpnEndpointClientLoginBannerOptions', dict] = attr.ib(
         default=None,
         converter=PropClientVpnEndpointClientLoginBannerOptions.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropClientVpnEndpointClientLoginBannerOptions)),
-        metadata={AttrMeta.PROPERTY_NAME: "ClientLoginBannerOptions"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ClientLoginBannerOptions",
+            AttrMeta.DATA: {
+                "Type": 'ClientLoginBannerOptions',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnendpoint.html#cfn-ec2-clientvpnendpoint-clientloginbanneroptions"""
     p_Description: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Description"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Description",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnendpoint.html#cfn-ec2-clientvpnendpoint-description"""
     p_DnsServers: typing.List[TypeHint.intrinsic_str] = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "DnsServers"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "DnsServers",
+            AttrMeta.DATA: {
+                "PrimitiveItemType": 'String',
+                "Type": 'List',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnendpoint.html#cfn-ec2-clientvpnendpoint-dnsservers"""
     p_SecurityGroupIds: typing.List[TypeHint.intrinsic_str] = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "SecurityGroupIds"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "SecurityGroupIds",
+            AttrMeta.DATA: {
+                "PrimitiveItemType": 'String',
+                "Type": 'List',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnendpoint.html#cfn-ec2-clientvpnendpoint-securitygroupids"""
     p_SelfServicePortal: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "SelfServicePortal"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "SelfServicePortal",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnendpoint.html#cfn-ec2-clientvpnendpoint-selfserviceportal"""
     p_SessionTimeoutHours: int = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "SessionTimeoutHours"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "SessionTimeoutHours",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'Integer',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnendpoint.html#cfn-ec2-clientvpnendpoint-sessiontimeouthours"""
     p_SplitTunnel: bool = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(bool)),
-        metadata={AttrMeta.PROPERTY_NAME: "SplitTunnel"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "SplitTunnel",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'Boolean',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnendpoint.html#cfn-ec2-clientvpnendpoint-splittunnel"""
     p_TagSpecifications: typing.List[typing.Union['PropClientVpnEndpointTagSpecification', dict]] = attr.ib(
         default=None,
         converter=PropClientVpnEndpointTagSpecification.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropClientVpnEndpointTagSpecification), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "TagSpecifications"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "TagSpecifications",
+            AttrMeta.DATA: {
+                "Type": 'List',
+                "Required": False,
+                "ItemType": 'TagSpecification',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnendpoint.html#cfn-ec2-clientvpnendpoint-tagspecifications"""
     p_TransportProtocol: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "TransportProtocol"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "TransportProtocol",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnendpoint.html#cfn-ec2-clientvpnendpoint-transportprotocol"""
     p_VpcId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "VpcId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "VpcId",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnendpoint.html#cfn-ec2-clientvpnendpoint-vpcid"""
     p_VpnPort: int = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "VpnPort"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "VpnPort",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'Integer',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnendpoint.html#cfn-ec2-clientvpnendpoint-vpnport"""
 
@@ -7223,20 +8390,43 @@ class LocalGatewayRouteTableVPCAssociation(Resource):
     rp_LocalGatewayRouteTableId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "LocalGatewayRouteTableId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "LocalGatewayRouteTableId",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-localgatewayroutetablevpcassociation.html#cfn-ec2-localgatewayroutetablevpcassociation-localgatewayroutetableid"""
     rp_VpcId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "VpcId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "VpcId",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-localgatewayroutetablevpcassociation.html#cfn-ec2-localgatewayroutetablevpcassociation-vpcid"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'List',
+                "ItemType": 'Tag',
+                "DuplicatesAllowed": False,
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-localgatewayroutetablevpcassociation.html#cfn-ec2-localgatewayroutetablevpcassociation-tags"""
 
@@ -7284,70 +8474,155 @@ class NetworkInterface(Resource):
     rp_SubnetId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "SubnetId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "SubnetId",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinterface.html#cfn-ec2-networkinterface-subnetid"""
     p_Description: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Description"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Description",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinterface.html#cfn-ec2-networkinterface-description"""
     p_GroupSet: typing.List[TypeHint.intrinsic_str] = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "GroupSet"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "GroupSet",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'List',
+                "PrimitiveItemType": 'String',
+                "DuplicatesAllowed": True,
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinterface.html#cfn-ec2-networkinterface-groupset"""
     p_InterfaceType: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "InterfaceType"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "InterfaceType",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinterface.html#cfn-ec2-networkinterface-interfacetype"""
     p_Ipv6AddressCount: int = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "Ipv6AddressCount"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Ipv6AddressCount",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'Integer',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinterface.html#cfn-ec2-networkinterface-ipv6addresscount"""
     p_Ipv6Addresses: typing.List[typing.Union['PropNetworkInterfaceInstanceIpv6Address', dict]] = attr.ib(
         default=None,
         converter=PropNetworkInterfaceInstanceIpv6Address.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropNetworkInterfaceInstanceIpv6Address), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Ipv6Addresses"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Ipv6Addresses",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'List',
+                "ItemType": 'InstanceIpv6Address',
+                "DuplicatesAllowed": False,
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinterface.html#cfn-ec2-networkinterface-ipv6addresses"""
     p_PrivateIpAddress: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "PrivateIpAddress"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "PrivateIpAddress",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinterface.html#cfn-ec2-networkinterface-privateipaddress"""
     p_PrivateIpAddresses: typing.List[typing.Union['PropNetworkInterfacePrivateIpAddressSpecification', dict]] = attr.ib(
         default=None,
         converter=PropNetworkInterfacePrivateIpAddressSpecification.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropNetworkInterfacePrivateIpAddressSpecification), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "PrivateIpAddresses"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "PrivateIpAddresses",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'List',
+                "ItemType": 'PrivateIpAddressSpecification',
+                "DuplicatesAllowed": True,
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinterface.html#cfn-ec2-networkinterface-privateipaddresses"""
     p_SecondaryPrivateIpAddressCount: int = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "SecondaryPrivateIpAddressCount"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "SecondaryPrivateIpAddressCount",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'Integer',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinterface.html#cfn-ec2-networkinterface-secondaryprivateipaddresscount"""
     p_SourceDestCheck: bool = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(bool)),
-        metadata={AttrMeta.PROPERTY_NAME: "SourceDestCheck"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "SourceDestCheck",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'Boolean',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinterface.html#cfn-ec2-networkinterface-sourcedestcheck"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'List',
+                "ItemType": 'Tag',
+                "DuplicatesAllowed": True,
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinterface.html#cfn-ec2-networkinterface-tags"""
 
@@ -7387,19 +8662,40 @@ class TransitGatewayMulticastGroupSource(Resource):
     rp_GroupIpAddress: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "GroupIpAddress"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "GroupIpAddress",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewaymulticastgroupsource.html#cfn-ec2-transitgatewaymulticastgroupsource-groupipaddress"""
     rp_NetworkInterfaceId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "NetworkInterfaceId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "NetworkInterfaceId",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewaymulticastgroupsource.html#cfn-ec2-transitgatewaymulticastgroupsource-networkinterfaceid"""
     rp_TransitGatewayMulticastDomainId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "TransitGatewayMulticastDomainId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "TransitGatewayMulticastDomainId",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewaymulticastgroupsource.html#cfn-ec2-transitgatewaymulticastgroupsource-transitgatewaymulticastdomainid"""
 
@@ -7466,31 +8762,66 @@ class ClientVpnAuthorizationRule(Resource):
     rp_ClientVpnEndpointId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "ClientVpnEndpointId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ClientVpnEndpointId",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnauthorizationrule.html#cfn-ec2-clientvpnauthorizationrule-clientvpnendpointid"""
     rp_TargetNetworkCidr: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "TargetNetworkCidr"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "TargetNetworkCidr",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnauthorizationrule.html#cfn-ec2-clientvpnauthorizationrule-targetnetworkcidr"""
     p_AccessGroupId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "AccessGroupId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "AccessGroupId",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnauthorizationrule.html#cfn-ec2-clientvpnauthorizationrule-accessgroupid"""
     p_AuthorizeAllGroups: bool = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(bool)),
-        metadata={AttrMeta.PROPERTY_NAME: "AuthorizeAllGroups"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "AuthorizeAllGroups",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'Boolean',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnauthorizationrule.html#cfn-ec2-clientvpnauthorizationrule-authorizeallgroups"""
     p_Description: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Description"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Description",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpnauthorizationrule.html#cfn-ec2-clientvpnauthorizationrule-description"""
 
@@ -7508,6 +8839,7 @@ class NatGateway(Resource):
     - ``rp_SubnetId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-natgateway.html#cfn-ec2-natgateway-subnetid
     - ``p_AllocationId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-natgateway.html#cfn-ec2-natgateway-allocationid
     - ``p_ConnectivityType``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-natgateway.html#cfn-ec2-natgateway-connectivitytype
+    - ``p_PrivateIpAddress``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-natgateway.html#cfn-ec2-natgateway-privateipaddress
     - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-natgateway.html#cfn-ec2-natgateway-tags
     """
     AWS_OBJECT_TYPE = "AWS::EC2::NatGateway"
@@ -7516,29 +8848,77 @@ class NatGateway(Resource):
     rp_SubnetId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "SubnetId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "SubnetId",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-natgateway.html#cfn-ec2-natgateway-subnetid"""
     p_AllocationId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "AllocationId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "AllocationId",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-natgateway.html#cfn-ec2-natgateway-allocationid"""
     p_ConnectivityType: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "ConnectivityType"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ConnectivityType",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-natgateway.html#cfn-ec2-natgateway-connectivitytype"""
+    p_PrivateIpAddress: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "PrivateIpAddress",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-natgateway.html#cfn-ec2-natgateway-privateipaddress"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'List',
+                "ItemType": 'Tag',
+                "DuplicatesAllowed": True,
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-natgateway.html#cfn-ec2-natgateway-tags"""
 
+    
+    @property
+    def rv_NatGatewayId(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-natgateway.html#aws-resource-ec2-natgateway-return-values"""
+        return GetAtt(resource=self, attr_name="NatGatewayId")
     
 
 @attr.s
@@ -7567,63 +8947,133 @@ class TrafficMirrorFilterRule(Resource):
     rp_DestinationCidrBlock: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "DestinationCidrBlock"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "DestinationCidrBlock",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrorfilterrule.html#cfn-ec2-trafficmirrorfilterrule-destinationcidrblock"""
     rp_RuleAction: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "RuleAction"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "RuleAction",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrorfilterrule.html#cfn-ec2-trafficmirrorfilterrule-ruleaction"""
     rp_RuleNumber: int = attr.ib(
         default=None,
         validator=attr.validators.instance_of(int),
-        metadata={AttrMeta.PROPERTY_NAME: "RuleNumber"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "RuleNumber",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'Integer',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrorfilterrule.html#cfn-ec2-trafficmirrorfilterrule-rulenumber"""
     rp_SourceCidrBlock: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "SourceCidrBlock"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "SourceCidrBlock",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrorfilterrule.html#cfn-ec2-trafficmirrorfilterrule-sourcecidrblock"""
     rp_TrafficDirection: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "TrafficDirection"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "TrafficDirection",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrorfilterrule.html#cfn-ec2-trafficmirrorfilterrule-trafficdirection"""
     rp_TrafficMirrorFilterId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "TrafficMirrorFilterId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "TrafficMirrorFilterId",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrorfilterrule.html#cfn-ec2-trafficmirrorfilterrule-trafficmirrorfilterid"""
     p_Description: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Description"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Description",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrorfilterrule.html#cfn-ec2-trafficmirrorfilterrule-description"""
     p_DestinationPortRange: typing.Union['PropTrafficMirrorFilterRuleTrafficMirrorPortRange', dict] = attr.ib(
         default=None,
         converter=PropTrafficMirrorFilterRuleTrafficMirrorPortRange.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropTrafficMirrorFilterRuleTrafficMirrorPortRange)),
-        metadata={AttrMeta.PROPERTY_NAME: "DestinationPortRange"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "DestinationPortRange",
+            AttrMeta.DATA: {
+                "Type": 'TrafficMirrorPortRange',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrorfilterrule.html#cfn-ec2-trafficmirrorfilterrule-destinationportrange"""
     p_Protocol: int = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "Protocol"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Protocol",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'Integer',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrorfilterrule.html#cfn-ec2-trafficmirrorfilterrule-protocol"""
     p_SourcePortRange: typing.Union['PropTrafficMirrorFilterRuleTrafficMirrorPortRange', dict] = attr.ib(
         default=None,
         converter=PropTrafficMirrorFilterRuleTrafficMirrorPortRange.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropTrafficMirrorFilterRuleTrafficMirrorPortRange)),
-        metadata={AttrMeta.PROPERTY_NAME: "SourcePortRange"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "SourcePortRange",
+            AttrMeta.DATA: {
+                "Type": 'TrafficMirrorPortRange',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrorfilterrule.html#cfn-ec2-trafficmirrorfilterrule-sourceportrange"""
 
@@ -7650,33 +9100,70 @@ class PrefixList(Resource):
     rp_AddressFamily: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "AddressFamily"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "AddressFamily",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-prefixlist.html#cfn-ec2-prefixlist-addressfamily"""
     rp_MaxEntries: int = attr.ib(
         default=None,
         validator=attr.validators.instance_of(int),
-        metadata={AttrMeta.PROPERTY_NAME: "MaxEntries"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "MaxEntries",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": True,
+                "PrimitiveType": 'Integer',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-prefixlist.html#cfn-ec2-prefixlist-maxentries"""
     rp_PrefixListName: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "PrefixListName"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "PrefixListName",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-prefixlist.html#cfn-ec2-prefixlist-prefixlistname"""
     p_Entries: typing.List[typing.Union['PropPrefixListEntry', dict]] = attr.ib(
         default=None,
         converter=PropPrefixListEntry.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropPrefixListEntry), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Entries"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Entries",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'List',
+                "ItemType": 'Entry',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-prefixlist.html#cfn-ec2-prefixlist-entries"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'List',
+                "ItemType": 'Tag',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-prefixlist.html#cfn-ec2-prefixlist-tags"""
 
@@ -7721,20 +9208,42 @@ class TransitGatewayMulticastDomain(Resource):
     rp_TransitGatewayId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "TransitGatewayId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "TransitGatewayId",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewaymulticastdomain.html#cfn-ec2-transitgatewaymulticastdomain-transitgatewayid"""
     p_Options: dict = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(dict)),
-        metadata={AttrMeta.PROPERTY_NAME: "Options"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Options",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'Json',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewaymulticastdomain.html#cfn-ec2-transitgatewaymulticastdomain-options"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'List',
+                "ItemType": 'Tag',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewaymulticastdomain.html#cfn-ec2-transitgatewaymulticastdomain-tags"""
 
@@ -7770,6 +9279,7 @@ class NetworkInsightsAnalysis(Resource):
     Property Document:
     
     - ``rp_NetworkInsightsPathId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightsanalysis.html#cfn-ec2-networkinsightsanalysis-networkinsightspathid
+    - ``p_AdditionalAccounts``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightsanalysis.html#cfn-ec2-networkinsightsanalysis-additionalaccounts
     - ``p_FilterInArns``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightsanalysis.html#cfn-ec2-networkinsightsanalysis-filterinarns
     - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightsanalysis.html#cfn-ec2-networkinsightsanalysis-tags
     """
@@ -7779,20 +9289,58 @@ class NetworkInsightsAnalysis(Resource):
     rp_NetworkInsightsPathId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "NetworkInsightsPathId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "NetworkInsightsPathId",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightsanalysis.html#cfn-ec2-networkinsightsanalysis-networkinsightspathid"""
+    p_AdditionalAccounts: typing.List[TypeHint.intrinsic_str] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "AdditionalAccounts",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'List',
+                "PrimitiveItemType": 'String',
+                "DuplicatesAllowed": False,
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightsanalysis.html#cfn-ec2-networkinsightsanalysis-additionalaccounts"""
     p_FilterInArns: typing.List[TypeHint.intrinsic_str] = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "FilterInArns"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "FilterInArns",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "Type": 'List',
+                "PrimitiveItemType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightsanalysis.html#cfn-ec2-networkinsightsanalysis-filterinarns"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'List',
+                "ItemType": 'Tag',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightsanalysis.html#cfn-ec2-networkinsightsanalysis-tags"""
 
@@ -7843,6 +9391,11 @@ class NetworkInsightsAnalysis(Resource):
         return GetAtt(resource=self, attr_name="Explanations")
     
     @property
+    def rv_SuggestedAccounts(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightsanalysis.html#aws-resource-ec2-networkinsightsanalysis-return-values"""
+        return GetAtt(resource=self, attr_name="SuggestedAccounts")
+    
+    @property
     def rv_AlternatePathHints(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightsanalysis.html#aws-resource-ec2-networkinsightsanalysis-return-values"""
         return GetAtt(resource=self, attr_name="AlternatePathHints")
@@ -7868,21 +9421,45 @@ class NetworkInsightsAccessScope(Resource):
         default=None,
         converter=PropNetworkInsightsAccessScopeAccessScopePathRequest.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropNetworkInsightsAccessScopeAccessScopePathRequest), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "ExcludePaths"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ExcludePaths",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "Type": 'List',
+                "ItemType": 'AccessScopePathRequest',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightsaccessscope.html#cfn-ec2-networkinsightsaccessscope-excludepaths"""
     p_MatchPaths: typing.List[typing.Union['PropNetworkInsightsAccessScopeAccessScopePathRequest', dict]] = attr.ib(
         default=None,
         converter=PropNetworkInsightsAccessScopeAccessScopePathRequest.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropNetworkInsightsAccessScopeAccessScopePathRequest), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "MatchPaths"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "MatchPaths",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "Type": 'List',
+                "ItemType": 'AccessScopePathRequest',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightsaccessscope.html#cfn-ec2-networkinsightsaccessscope-matchpaths"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'List',
+                "ItemType": 'Tag',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightsaccessscope.html#cfn-ec2-networkinsightsaccessscope-tags"""
 
@@ -7937,77 +9514,165 @@ class EC2Fleet(Resource):
         default=None,
         converter=PropEC2FleetFleetLaunchTemplateConfigRequest.from_list,
         validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropEC2FleetFleetLaunchTemplateConfigRequest), iterable_validator=attr.validators.instance_of(list)),
-        metadata={AttrMeta.PROPERTY_NAME: "LaunchTemplateConfigs"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "LaunchTemplateConfigs",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "Type": 'List',
+                "ItemType": 'FleetLaunchTemplateConfigRequest',
+                "DuplicatesAllowed": True,
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ec2fleet.html#cfn-ec2-ec2fleet-launchtemplateconfigs"""
     rp_TargetCapacitySpecification: typing.Union['PropEC2FleetTargetCapacitySpecificationRequest', dict] = attr.ib(
         default=None,
         converter=PropEC2FleetTargetCapacitySpecificationRequest.from_dict,
         validator=attr.validators.instance_of(PropEC2FleetTargetCapacitySpecificationRequest),
-        metadata={AttrMeta.PROPERTY_NAME: "TargetCapacitySpecification"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "TargetCapacitySpecification",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": True,
+                "Type": 'TargetCapacitySpecificationRequest',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ec2fleet.html#cfn-ec2-ec2fleet-targetcapacityspecification"""
     p_Context: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Context"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Context",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ec2fleet.html#cfn-ec2-ec2fleet-context"""
     p_ExcessCapacityTerminationPolicy: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "ExcessCapacityTerminationPolicy"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ExcessCapacityTerminationPolicy",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ec2fleet.html#cfn-ec2-ec2fleet-excesscapacityterminationpolicy"""
     p_OnDemandOptions: typing.Union['PropEC2FleetOnDemandOptionsRequest', dict] = attr.ib(
         default=None,
         converter=PropEC2FleetOnDemandOptionsRequest.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropEC2FleetOnDemandOptionsRequest)),
-        metadata={AttrMeta.PROPERTY_NAME: "OnDemandOptions"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "OnDemandOptions",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "Type": 'OnDemandOptionsRequest',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ec2fleet.html#cfn-ec2-ec2fleet-ondemandoptions"""
     p_ReplaceUnhealthyInstances: bool = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(bool)),
-        metadata={AttrMeta.PROPERTY_NAME: "ReplaceUnhealthyInstances"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ReplaceUnhealthyInstances",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'Boolean',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ec2fleet.html#cfn-ec2-ec2fleet-replaceunhealthyinstances"""
     p_SpotOptions: typing.Union['PropEC2FleetSpotOptionsRequest', dict] = attr.ib(
         default=None,
         converter=PropEC2FleetSpotOptionsRequest.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropEC2FleetSpotOptionsRequest)),
-        metadata={AttrMeta.PROPERTY_NAME: "SpotOptions"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "SpotOptions",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "Type": 'SpotOptionsRequest',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ec2fleet.html#cfn-ec2-ec2fleet-spotoptions"""
     p_TagSpecifications: typing.List[typing.Union['PropEC2FleetTagSpecification', dict]] = attr.ib(
         default=None,
         converter=PropEC2FleetTagSpecification.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropEC2FleetTagSpecification), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "TagSpecifications"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "TagSpecifications",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "Type": 'List',
+                "ItemType": 'TagSpecification',
+                "DuplicatesAllowed": True,
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ec2fleet.html#cfn-ec2-ec2fleet-tagspecifications"""
     p_TerminateInstancesWithExpiration: bool = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(bool)),
-        metadata={AttrMeta.PROPERTY_NAME: "TerminateInstancesWithExpiration"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "TerminateInstancesWithExpiration",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'Boolean',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ec2fleet.html#cfn-ec2-ec2fleet-terminateinstanceswithexpiration"""
     p_Type: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Type"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Type",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ec2fleet.html#cfn-ec2-ec2fleet-type"""
     p_ValidFrom: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "ValidFrom"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ValidFrom",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ec2fleet.html#cfn-ec2-ec2fleet-validfrom"""
     p_ValidUntil: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "ValidUntil"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ValidUntil",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ec2fleet.html#cfn-ec2-ec2fleet-validuntil"""
 
@@ -8036,13 +9701,27 @@ class VPCDHCPOptionsAssociation(Resource):
     rp_DhcpOptionsId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "DhcpOptionsId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "DhcpOptionsId",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcdhcpoptionsassociation.html#cfn-ec2-vpcdhcpoptionsassociation-dhcpoptionsid"""
     rp_VpcId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "VpcId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "VpcId",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcdhcpoptionsassociation.html#cfn-ec2-vpcdhcpoptionsassociation-vpcid"""
 
@@ -8071,13 +9750,27 @@ class EnclaveCertificateIamRoleAssociation(Resource):
     rp_CertificateArn: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "CertificateArn"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "CertificateArn",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-enclavecertificateiamroleassociation.html#cfn-ec2-enclavecertificateiamroleassociation-certificatearn"""
     rp_RoleArn: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "RoleArn"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "RoleArn",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-enclavecertificateiamroleassociation.html#cfn-ec2-enclavecertificateiamroleassociation-rolearn"""
 
@@ -8118,20 +9811,42 @@ class TransitGatewayConnect(Resource):
         default=None,
         converter=PropTransitGatewayConnectTransitGatewayConnectOptions.from_dict,
         validator=attr.validators.instance_of(PropTransitGatewayConnectTransitGatewayConnectOptions),
-        metadata={AttrMeta.PROPERTY_NAME: "Options"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Options",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "Type": 'TransitGatewayConnectOptions',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayconnect.html#cfn-ec2-transitgatewayconnect-options"""
     rp_TransportTransitGatewayAttachmentId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "TransportTransitGatewayAttachmentId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "TransportTransitGatewayAttachmentId",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayconnect.html#cfn-ec2-transitgatewayconnect-transporttransitgatewayattachmentid"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'List',
+                "ItemType": 'Tag',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayconnect.html#cfn-ec2-transitgatewayconnect-tags"""
 
@@ -8167,6 +9882,7 @@ class TrafficMirrorTarget(Resource):
     Property Document:
     
     - ``p_Description``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrortarget.html#cfn-ec2-trafficmirrortarget-description
+    - ``p_GatewayLoadBalancerEndpointId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrortarget.html#cfn-ec2-trafficmirrortarget-gatewayloadbalancerendpointid
     - ``p_NetworkInterfaceId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrortarget.html#cfn-ec2-trafficmirrortarget-networkinterfaceid
     - ``p_NetworkLoadBalancerArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrortarget.html#cfn-ec2-trafficmirrortarget-networkloadbalancerarn
     - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrortarget.html#cfn-ec2-trafficmirrortarget-tags
@@ -8177,26 +9893,68 @@ class TrafficMirrorTarget(Resource):
     p_Description: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Description"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Description",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrortarget.html#cfn-ec2-trafficmirrortarget-description"""
+    p_GatewayLoadBalancerEndpointId: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "GatewayLoadBalancerEndpointId",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrortarget.html#cfn-ec2-trafficmirrortarget-gatewayloadbalancerendpointid"""
     p_NetworkInterfaceId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "NetworkInterfaceId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "NetworkInterfaceId",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrortarget.html#cfn-ec2-trafficmirrortarget-networkinterfaceid"""
     p_NetworkLoadBalancerArn: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "NetworkLoadBalancerArn"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "NetworkLoadBalancerArn",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrortarget.html#cfn-ec2-trafficmirrortarget-networkloadbalancerarn"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "Type": 'List',
+                "Required": False,
+                "ItemType": 'Tag',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrortarget.html#cfn-ec2-trafficmirrortarget-tags"""
 
@@ -8220,14 +9978,30 @@ class RouteTable(Resource):
     rp_VpcId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "VpcId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "VpcId",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-routetable.html#cfn-ec2-routetable-vpcid"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'List',
+                "ItemType": 'Tag',
+                "DuplicatesAllowed": True,
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-routetable.html#cfn-ec2-routetable-tags"""
 
@@ -8266,74 +10040,161 @@ class TransitGateway(Resource):
     p_AmazonSideAsn: int = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "AmazonSideAsn"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "AmazonSideAsn",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'Integer',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgateway.html#cfn-ec2-transitgateway-amazonsideasn"""
     p_AssociationDefaultRouteTableId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "AssociationDefaultRouteTableId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "AssociationDefaultRouteTableId",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgateway.html#cfn-ec2-transitgateway-associationdefaultroutetableid"""
     p_AutoAcceptSharedAttachments: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "AutoAcceptSharedAttachments"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "AutoAcceptSharedAttachments",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgateway.html#cfn-ec2-transitgateway-autoacceptsharedattachments"""
     p_DefaultRouteTableAssociation: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "DefaultRouteTableAssociation"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "DefaultRouteTableAssociation",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgateway.html#cfn-ec2-transitgateway-defaultroutetableassociation"""
     p_DefaultRouteTablePropagation: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "DefaultRouteTablePropagation"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "DefaultRouteTablePropagation",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgateway.html#cfn-ec2-transitgateway-defaultroutetablepropagation"""
     p_Description: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Description"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Description",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgateway.html#cfn-ec2-transitgateway-description"""
     p_DnsSupport: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "DnsSupport"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "DnsSupport",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgateway.html#cfn-ec2-transitgateway-dnssupport"""
     p_MulticastSupport: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "MulticastSupport"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "MulticastSupport",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgateway.html#cfn-ec2-transitgateway-multicastsupport"""
     p_PropagationDefaultRouteTableId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "PropagationDefaultRouteTableId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "PropagationDefaultRouteTableId",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgateway.html#cfn-ec2-transitgateway-propagationdefaultroutetableid"""
     p_TransitGatewayCidrBlocks: typing.List[TypeHint.intrinsic_str] = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "TransitGatewayCidrBlocks"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "TransitGatewayCidrBlocks",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'List',
+                "PrimitiveItemType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgateway.html#cfn-ec2-transitgateway-transitgatewaycidrblocks"""
     p_VpnEcmpSupport: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "VpnEcmpSupport"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "VpnEcmpSupport",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgateway.html#cfn-ec2-transitgateway-vpnecmpsupport"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'List',
+                "ItemType": 'Tag',
+                "DuplicatesAllowed": True,
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgateway.html#cfn-ec2-transitgateway-tags"""
 
@@ -8369,57 +10230,124 @@ class CapacityReservationFleet(Resource):
     p_AllocationStrategy: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "AllocationStrategy"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "AllocationStrategy",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-capacityreservationfleet.html#cfn-ec2-capacityreservationfleet-allocationstrategy"""
     p_EndDate: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "EndDate"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "EndDate",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-capacityreservationfleet.html#cfn-ec2-capacityreservationfleet-enddate"""
     p_InstanceMatchCriteria: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "InstanceMatchCriteria"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "InstanceMatchCriteria",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-capacityreservationfleet.html#cfn-ec2-capacityreservationfleet-instancematchcriteria"""
     p_InstanceTypeSpecifications: typing.List[typing.Union['PropCapacityReservationFleetInstanceTypeSpecification', dict]] = attr.ib(
         default=None,
         converter=PropCapacityReservationFleetInstanceTypeSpecification.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropCapacityReservationFleetInstanceTypeSpecification), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "InstanceTypeSpecifications"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "InstanceTypeSpecifications",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "Type": 'List',
+                "ItemType": 'InstanceTypeSpecification',
+                "DuplicatesAllowed": False,
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-capacityreservationfleet.html#cfn-ec2-capacityreservationfleet-instancetypespecifications"""
     p_NoRemoveEndDate: bool = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(bool)),
-        metadata={AttrMeta.PROPERTY_NAME: "NoRemoveEndDate"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "NoRemoveEndDate",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'Boolean',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-capacityreservationfleet.html#cfn-ec2-capacityreservationfleet-noremoveenddate"""
     p_RemoveEndDate: bool = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(bool)),
-        metadata={AttrMeta.PROPERTY_NAME: "RemoveEndDate"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "RemoveEndDate",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'Boolean',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-capacityreservationfleet.html#cfn-ec2-capacityreservationfleet-removeenddate"""
     p_TagSpecifications: typing.List[typing.Union['PropCapacityReservationFleetTagSpecification', dict]] = attr.ib(
         default=None,
         converter=PropCapacityReservationFleetTagSpecification.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropCapacityReservationFleetTagSpecification), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "TagSpecifications"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "TagSpecifications",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "Type": 'List',
+                "ItemType": 'TagSpecification',
+                "DuplicatesAllowed": True,
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-capacityreservationfleet.html#cfn-ec2-capacityreservationfleet-tagspecifications"""
     p_Tenancy: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Tenancy"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tenancy",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-capacityreservationfleet.html#cfn-ec2-capacityreservationfleet-tenancy"""
     p_TotalTargetCapacity: int = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "TotalTargetCapacity"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "TotalTargetCapacity",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'Integer',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-capacityreservationfleet.html#cfn-ec2-capacityreservationfleet-totaltargetcapacity"""
 
@@ -8458,74 +10386,160 @@ class Volume(Resource):
     rp_AvailabilityZone: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "AvailabilityZone"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "AvailabilityZone",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": True,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ebs-volume.html#cfn-ec2-ebs-volume-availabilityzone"""
     p_AutoEnableIO: bool = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(bool)),
-        metadata={AttrMeta.PROPERTY_NAME: "AutoEnableIO"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "AutoEnableIO",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'Boolean',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ebs-volume.html#cfn-ec2-ebs-volume-autoenableio"""
     p_Encrypted: bool = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(bool)),
-        metadata={AttrMeta.PROPERTY_NAME: "Encrypted"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Encrypted",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'Boolean',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ebs-volume.html#cfn-ec2-ebs-volume-encrypted"""
     p_Iops: int = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "Iops"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Iops",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'Integer',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ebs-volume.html#cfn-ec2-ebs-volume-iops"""
     p_KmsKeyId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "KmsKeyId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "KmsKeyId",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ebs-volume.html#cfn-ec2-ebs-volume-kmskeyid"""
     p_MultiAttachEnabled: bool = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(bool)),
-        metadata={AttrMeta.PROPERTY_NAME: "MultiAttachEnabled"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "MultiAttachEnabled",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'Boolean',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ebs-volume.html#cfn-ec2-ebs-volume-multiattachenabled"""
     p_OutpostArn: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "OutpostArn"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "OutpostArn",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ebs-volume.html#cfn-ec2-ebs-volume-outpostarn"""
     p_Size: int = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "Size"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Size",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'Integer',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ebs-volume.html#cfn-ec2-ebs-volume-size"""
     p_SnapshotId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "SnapshotId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "SnapshotId",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ebs-volume.html#cfn-ec2-ebs-volume-snapshotid"""
     p_Throughput: int = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "Throughput"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Throughput",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'Integer',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ebs-volume.html#cfn-ec2-ebs-volume-throughput"""
     p_VolumeType: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "VolumeType"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "VolumeType",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ebs-volume.html#cfn-ec2-ebs-volume-volumetype"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "DuplicatesAllowed": True,
+                "ItemType": 'Tag',
+                "Required": False,
+                "Type": 'List',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ebs-volume.html#cfn-ec2-ebs-volume-tags"""
 
@@ -8542,7 +10556,8 @@ class LocalGatewayRoute(Resource):
     
     - ``rp_DestinationCidrBlock``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-localgatewayroute.html#cfn-ec2-localgatewayroute-destinationcidrblock
     - ``rp_LocalGatewayRouteTableId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-localgatewayroute.html#cfn-ec2-localgatewayroute-localgatewayroutetableid
-    - ``rp_LocalGatewayVirtualInterfaceGroupId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-localgatewayroute.html#cfn-ec2-localgatewayroute-localgatewayvirtualinterfacegroupid
+    - ``p_LocalGatewayVirtualInterfaceGroupId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-localgatewayroute.html#cfn-ec2-localgatewayroute-localgatewayvirtualinterfacegroupid
+    - ``p_NetworkInterfaceId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-localgatewayroute.html#cfn-ec2-localgatewayroute-networkinterfaceid
     """
     AWS_OBJECT_TYPE = "AWS::EC2::LocalGatewayRoute"
 
@@ -8550,21 +10565,55 @@ class LocalGatewayRoute(Resource):
     rp_DestinationCidrBlock: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "DestinationCidrBlock"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "DestinationCidrBlock",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-localgatewayroute.html#cfn-ec2-localgatewayroute-destinationcidrblock"""
     rp_LocalGatewayRouteTableId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "LocalGatewayRouteTableId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "LocalGatewayRouteTableId",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-localgatewayroute.html#cfn-ec2-localgatewayroute-localgatewayroutetableid"""
-    rp_LocalGatewayVirtualInterfaceGroupId: TypeHint.intrinsic_str = attr.ib(
+    p_LocalGatewayVirtualInterfaceGroupId: TypeHint.intrinsic_str = attr.ib(
         default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "LocalGatewayVirtualInterfaceGroupId"},
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "LocalGatewayVirtualInterfaceGroupId",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-localgatewayroute.html#cfn-ec2-localgatewayroute-localgatewayvirtualinterfacegroupid"""
+    p_NetworkInterfaceId: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "NetworkInterfaceId",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-localgatewayroute.html#cfn-ec2-localgatewayroute-networkinterfaceid"""
 
     
     @property
@@ -8601,44 +10650,101 @@ class TransitGatewayVpcAttachment(Resource):
     rp_SubnetIds: typing.List[TypeHint.intrinsic_str] = attr.ib(
         default=None,
         validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list)),
-        metadata={AttrMeta.PROPERTY_NAME: "SubnetIds"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "SubnetIds",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "Type": 'List',
+                "PrimitiveItemType": 'String',
+                "DuplicatesAllowed": True,
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayvpcattachment.html#cfn-ec2-transitgatewayvpcattachment-subnetids"""
     rp_TransitGatewayId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "TransitGatewayId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "TransitGatewayId",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayvpcattachment.html#cfn-ec2-transitgatewayvpcattachment-transitgatewayid"""
     rp_VpcId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "VpcId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "VpcId",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayvpcattachment.html#cfn-ec2-transitgatewayvpcattachment-vpcid"""
     p_AddSubnetIds: typing.List[TypeHint.intrinsic_str] = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "AddSubnetIds"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "AddSubnetIds",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'List',
+                "PrimitiveItemType": 'String',
+                "DuplicatesAllowed": True,
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayvpcattachment.html#cfn-ec2-transitgatewayvpcattachment-addsubnetids"""
     p_Options: dict = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(dict)),
-        metadata={AttrMeta.PROPERTY_NAME: "Options"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Options",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'Json',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayvpcattachment.html#cfn-ec2-transitgatewayvpcattachment-options"""
     p_RemoveSubnetIds: typing.List[TypeHint.intrinsic_str] = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "RemoveSubnetIds"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "RemoveSubnetIds",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'List',
+                "PrimitiveItemType": 'String',
+                "DuplicatesAllowed": True,
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayvpcattachment.html#cfn-ec2-transitgatewayvpcattachment-removesubnetids"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'List',
+                "ItemType": 'Tag',
+                "DuplicatesAllowed": True,
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayvpcattachment.html#cfn-ec2-transitgatewayvpcattachment-tags"""
 
@@ -8669,25 +10775,54 @@ class VPCEndpointConnectionNotification(Resource):
     rp_ConnectionEvents: typing.List[TypeHint.intrinsic_str] = attr.ib(
         default=None,
         validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list)),
-        metadata={AttrMeta.PROPERTY_NAME: "ConnectionEvents"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ConnectionEvents",
+            AttrMeta.DATA: {
+                "PrimitiveItemType": 'String',
+                "Type": 'List',
+                "Required": True,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpointconnectionnotification.html#cfn-ec2-vpcendpointconnectionnotification-connectionevents"""
     rp_ConnectionNotificationArn: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "ConnectionNotificationArn"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ConnectionNotificationArn",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpointconnectionnotification.html#cfn-ec2-vpcendpointconnectionnotification-connectionnotificationarn"""
     p_ServiceId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "ServiceId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ServiceId",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpointconnectionnotification.html#cfn-ec2-vpcendpointconnectionnotification-serviceid"""
     p_VPCEndpointId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "VPCEndpointId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "VPCEndpointId",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpointconnectionnotification.html#cfn-ec2-vpcendpointconnectionnotification-vpcendpointid"""
 
@@ -8713,25 +10848,53 @@ class IPAMAllocation(Resource):
     rp_IpamPoolId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "IpamPoolId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "IpamPoolId",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipamallocation.html#cfn-ec2-ipamallocation-ipampoolid"""
     p_Cidr: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Cidr"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Cidr",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipamallocation.html#cfn-ec2-ipamallocation-cidr"""
     p_Description: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Description"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Description",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipamallocation.html#cfn-ec2-ipamallocation-description"""
     p_NetmaskLength: int = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "NetmaskLength"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "NetmaskLength",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'Integer',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipamallocation.html#cfn-ec2-ipamallocation-netmasklength"""
 
@@ -8753,7 +10916,6 @@ class FlowLog(Resource):
     
     - ``rp_ResourceId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-flowlog.html#cfn-ec2-flowlog-resourceid
     - ``rp_ResourceType``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-flowlog.html#cfn-ec2-flowlog-resourcetype
-    - ``rp_TrafficType``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-flowlog.html#cfn-ec2-flowlog-traffictype
     - ``p_DeliverLogsPermissionArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-flowlog.html#cfn-ec2-flowlog-deliverlogspermissionarn
     - ``p_DestinationOptions``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-flowlog.html#cfn-ec2-flowlog-destinationoptions
     - ``p_LogDestination``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-flowlog.html#cfn-ec2-flowlog-logdestination
@@ -8761,6 +10923,7 @@ class FlowLog(Resource):
     - ``p_LogFormat``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-flowlog.html#cfn-ec2-flowlog-logformat
     - ``p_LogGroupName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-flowlog.html#cfn-ec2-flowlog-loggroupname
     - ``p_MaxAggregationInterval``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-flowlog.html#cfn-ec2-flowlog-maxaggregationinterval
+    - ``p_TrafficType``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-flowlog.html#cfn-ec2-flowlog-traffictype
     - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-flowlog.html#cfn-ec2-flowlog-tags
     """
     AWS_OBJECT_TYPE = "AWS::EC2::FlowLog"
@@ -8769,68 +10932,147 @@ class FlowLog(Resource):
     rp_ResourceId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "ResourceId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ResourceId",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-flowlog.html#cfn-ec2-flowlog-resourceid"""
     rp_ResourceType: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "ResourceType"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ResourceType",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-flowlog.html#cfn-ec2-flowlog-resourcetype"""
-    rp_TrafficType: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "TrafficType"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-flowlog.html#cfn-ec2-flowlog-traffictype"""
     p_DeliverLogsPermissionArn: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "DeliverLogsPermissionArn"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "DeliverLogsPermissionArn",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-flowlog.html#cfn-ec2-flowlog-deliverlogspermissionarn"""
     p_DestinationOptions: dict = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(dict)),
-        metadata={AttrMeta.PROPERTY_NAME: "DestinationOptions"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "DestinationOptions",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'Json',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-flowlog.html#cfn-ec2-flowlog-destinationoptions"""
     p_LogDestination: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "LogDestination"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "LogDestination",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-flowlog.html#cfn-ec2-flowlog-logdestination"""
     p_LogDestinationType: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "LogDestinationType"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "LogDestinationType",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-flowlog.html#cfn-ec2-flowlog-logdestinationtype"""
     p_LogFormat: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "LogFormat"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "LogFormat",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-flowlog.html#cfn-ec2-flowlog-logformat"""
     p_LogGroupName: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "LogGroupName"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "LogGroupName",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-flowlog.html#cfn-ec2-flowlog-loggroupname"""
     p_MaxAggregationInterval: int = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "MaxAggregationInterval"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "MaxAggregationInterval",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'Integer',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-flowlog.html#cfn-ec2-flowlog-maxaggregationinterval"""
+    p_TrafficType: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "TrafficType",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-flowlog.html#cfn-ec2-flowlog-traffictype"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'List',
+                "ItemType": 'Tag',
+                "DuplicatesAllowed": True,
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-flowlog.html#cfn-ec2-flowlog-tags"""
 
@@ -8869,74 +11111,160 @@ class Subnet(Resource):
     rp_VpcId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "VpcId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "VpcId",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet.html#cfn-ec2-subnet-vpcid"""
     p_AssignIpv6AddressOnCreation: bool = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(bool)),
-        metadata={AttrMeta.PROPERTY_NAME: "AssignIpv6AddressOnCreation"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "AssignIpv6AddressOnCreation",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'Boolean',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet.html#cfn-ec2-subnet-assignipv6addressoncreation"""
     p_AvailabilityZone: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "AvailabilityZone"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "AvailabilityZone",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet.html#cfn-ec2-subnet-availabilityzone"""
     p_AvailabilityZoneId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "AvailabilityZoneId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "AvailabilityZoneId",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet.html#cfn-ec2-subnet-availabilityzoneid"""
     p_CidrBlock: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "CidrBlock"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "CidrBlock",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet.html#cfn-ec2-subnet-cidrblock"""
     p_EnableDns64: bool = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(bool)),
-        metadata={AttrMeta.PROPERTY_NAME: "EnableDns64"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "EnableDns64",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'Boolean',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet.html#cfn-ec2-subnet-enabledns64"""
     p_Ipv6CidrBlock: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Ipv6CidrBlock"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Ipv6CidrBlock",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet.html#cfn-ec2-subnet-ipv6cidrblock"""
     p_Ipv6Native: bool = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(bool)),
-        metadata={AttrMeta.PROPERTY_NAME: "Ipv6Native"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Ipv6Native",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'Boolean',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet.html#cfn-ec2-subnet-ipv6native"""
     p_MapPublicIpOnLaunch: bool = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(bool)),
-        metadata={AttrMeta.PROPERTY_NAME: "MapPublicIpOnLaunch"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "MapPublicIpOnLaunch",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'Boolean',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet.html#cfn-ec2-subnet-mappubliciponlaunch"""
     p_OutpostArn: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "OutpostArn"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "OutpostArn",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet.html#cfn-ec2-subnet-outpostarn"""
     p_PrivateDnsNameOptionsOnLaunch: dict = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(dict)),
-        metadata={AttrMeta.PROPERTY_NAME: "PrivateDnsNameOptionsOnLaunch"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "PrivateDnsNameOptionsOnLaunch",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'Json',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet.html#cfn-ec2-subnet-privatednsnameoptionsonlaunch"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'List',
+                "ItemType": 'Tag',
+                "DuplicatesAllowed": True,
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet.html#cfn-ec2-subnet-tags"""
 
@@ -8990,14 +11318,30 @@ class CarrierGateway(Resource):
     rp_VpcId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "VpcId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "VpcId",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-carriergateway.html#cfn-ec2-carriergateway-vpcid"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'List',
+                "ItemType": 'Tag',
+                "DuplicatesAllowed": False,
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-carriergateway.html#cfn-ec2-carriergateway-tags"""
 
@@ -9074,256 +11418,558 @@ class Instance(Resource):
     p_AdditionalInfo: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "AdditionalInfo"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "AdditionalInfo",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Conditional',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-additionalinfo"""
     p_Affinity: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Affinity"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Affinity",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Conditional',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-affinity"""
     p_AvailabilityZone: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "AvailabilityZone"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "AvailabilityZone",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-availabilityzone"""
     p_BlockDeviceMappings: typing.List[typing.Union['PropInstanceBlockDeviceMapping', dict]] = attr.ib(
         default=None,
         converter=PropInstanceBlockDeviceMapping.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropInstanceBlockDeviceMapping), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "BlockDeviceMappings"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "BlockDeviceMappings",
+            AttrMeta.DATA: {
+                "DuplicatesAllowed": True,
+                "ItemType": 'BlockDeviceMapping',
+                "Required": False,
+                "Type": 'List',
+                "UpdateType": 'Conditional',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-blockdevicemappings"""
     p_CpuOptions: typing.Union['PropInstanceCpuOptions', dict] = attr.ib(
         default=None,
         converter=PropInstanceCpuOptions.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropInstanceCpuOptions)),
-        metadata={AttrMeta.PROPERTY_NAME: "CpuOptions"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "CpuOptions",
+            AttrMeta.DATA: {
+                "Required": False,
+                "Type": 'CpuOptions',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-cpuoptions"""
     p_CreditSpecification: typing.Union['PropInstanceCreditSpecification', dict] = attr.ib(
         default=None,
         converter=PropInstanceCreditSpecification.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropInstanceCreditSpecification)),
-        metadata={AttrMeta.PROPERTY_NAME: "CreditSpecification"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "CreditSpecification",
+            AttrMeta.DATA: {
+                "Required": False,
+                "Type": 'CreditSpecification',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-creditspecification"""
     p_DisableApiTermination: bool = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(bool)),
-        metadata={AttrMeta.PROPERTY_NAME: "DisableApiTermination"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "DisableApiTermination",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'Boolean',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-disableapitermination"""
     p_EbsOptimized: bool = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(bool)),
-        metadata={AttrMeta.PROPERTY_NAME: "EbsOptimized"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "EbsOptimized",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'Boolean',
+                "Required": False,
+                "UpdateType": 'Conditional',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-ebsoptimized"""
     p_ElasticGpuSpecifications: typing.List[typing.Union['PropInstanceElasticGpuSpecification', dict]] = attr.ib(
         default=None,
         converter=PropInstanceElasticGpuSpecification.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropInstanceElasticGpuSpecification), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "ElasticGpuSpecifications"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ElasticGpuSpecifications",
+            AttrMeta.DATA: {
+                "DuplicatesAllowed": False,
+                "ItemType": 'ElasticGpuSpecification',
+                "Required": False,
+                "Type": 'List',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-elasticgpuspecifications"""
     p_ElasticInferenceAccelerators: typing.List[typing.Union['PropInstanceElasticInferenceAccelerator', dict]] = attr.ib(
         default=None,
         converter=PropInstanceElasticInferenceAccelerator.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropInstanceElasticInferenceAccelerator), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "ElasticInferenceAccelerators"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ElasticInferenceAccelerators",
+            AttrMeta.DATA: {
+                "DuplicatesAllowed": False,
+                "ItemType": 'ElasticInferenceAccelerator',
+                "Required": False,
+                "Type": 'List',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-elasticinferenceaccelerators"""
     p_EnclaveOptions: typing.Union['PropInstanceEnclaveOptions', dict] = attr.ib(
         default=None,
         converter=PropInstanceEnclaveOptions.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropInstanceEnclaveOptions)),
-        metadata={AttrMeta.PROPERTY_NAME: "EnclaveOptions"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "EnclaveOptions",
+            AttrMeta.DATA: {
+                "Required": False,
+                "Type": 'EnclaveOptions',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-enclaveoptions"""
     p_HibernationOptions: typing.Union['PropInstanceHibernationOptions', dict] = attr.ib(
         default=None,
         converter=PropInstanceHibernationOptions.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropInstanceHibernationOptions)),
-        metadata={AttrMeta.PROPERTY_NAME: "HibernationOptions"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "HibernationOptions",
+            AttrMeta.DATA: {
+                "Required": False,
+                "Type": 'HibernationOptions',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-hibernationoptions"""
     p_HostId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "HostId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "HostId",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Conditional',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-hostid"""
     p_HostResourceGroupArn: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "HostResourceGroupArn"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "HostResourceGroupArn",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-hostresourcegrouparn"""
     p_IamInstanceProfile: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "IamInstanceProfile"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "IamInstanceProfile",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-iaminstanceprofile"""
     p_ImageId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "ImageId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ImageId",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-imageid"""
     p_InstanceInitiatedShutdownBehavior: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "InstanceInitiatedShutdownBehavior"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "InstanceInitiatedShutdownBehavior",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-instanceinitiatedshutdownbehavior"""
     p_InstanceType: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "InstanceType"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "InstanceType",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Conditional',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-instancetype"""
     p_Ipv6AddressCount: int = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "Ipv6AddressCount"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Ipv6AddressCount",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'Integer',
+                "Required": False,
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-ipv6addresscount"""
     p_Ipv6Addresses: typing.List[typing.Union['PropInstanceInstanceIpv6Address', dict]] = attr.ib(
         default=None,
         converter=PropInstanceInstanceIpv6Address.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropInstanceInstanceIpv6Address), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Ipv6Addresses"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Ipv6Addresses",
+            AttrMeta.DATA: {
+                "DuplicatesAllowed": True,
+                "ItemType": 'InstanceIpv6Address',
+                "Required": False,
+                "Type": 'List',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-ipv6addresses"""
     p_KernelId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "KernelId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "KernelId",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Conditional',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-kernelid"""
     p_KeyName: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "KeyName"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "KeyName",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-keyname"""
     p_LaunchTemplate: typing.Union['PropInstanceLaunchTemplateSpecification', dict] = attr.ib(
         default=None,
         converter=PropInstanceLaunchTemplateSpecification.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropInstanceLaunchTemplateSpecification)),
-        metadata={AttrMeta.PROPERTY_NAME: "LaunchTemplate"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "LaunchTemplate",
+            AttrMeta.DATA: {
+                "Required": False,
+                "Type": 'LaunchTemplateSpecification',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-launchtemplate"""
     p_LicenseSpecifications: typing.List[typing.Union['PropInstanceLicenseSpecification', dict]] = attr.ib(
         default=None,
         converter=PropInstanceLicenseSpecification.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropInstanceLicenseSpecification), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "LicenseSpecifications"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "LicenseSpecifications",
+            AttrMeta.DATA: {
+                "DuplicatesAllowed": False,
+                "ItemType": 'LicenseSpecification',
+                "Required": False,
+                "Type": 'List',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-licensespecifications"""
     p_Monitoring: bool = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(bool)),
-        metadata={AttrMeta.PROPERTY_NAME: "Monitoring"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Monitoring",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'Boolean',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-monitoring"""
     p_NetworkInterfaces: typing.List[typing.Union['PropInstanceNetworkInterface', dict]] = attr.ib(
         default=None,
         converter=PropInstanceNetworkInterface.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropInstanceNetworkInterface), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "NetworkInterfaces"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "NetworkInterfaces",
+            AttrMeta.DATA: {
+                "DuplicatesAllowed": True,
+                "ItemType": 'NetworkInterface',
+                "Required": False,
+                "Type": 'List',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-networkinterfaces"""
     p_PlacementGroupName: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "PlacementGroupName"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "PlacementGroupName",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-placementgroupname"""
     p_PrivateDnsNameOptions: typing.Union['PropInstancePrivateDnsNameOptions', dict] = attr.ib(
         default=None,
         converter=PropInstancePrivateDnsNameOptions.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropInstancePrivateDnsNameOptions)),
-        metadata={AttrMeta.PROPERTY_NAME: "PrivateDnsNameOptions"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "PrivateDnsNameOptions",
+            AttrMeta.DATA: {
+                "Required": False,
+                "Type": 'PrivateDnsNameOptions',
+                "UpdateType": 'Conditional',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-privatednsnameoptions"""
     p_PrivateIpAddress: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "PrivateIpAddress"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "PrivateIpAddress",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-privateipaddress"""
     p_PropagateTagsToVolumeOnCreation: bool = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(bool)),
-        metadata={AttrMeta.PROPERTY_NAME: "PropagateTagsToVolumeOnCreation"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "PropagateTagsToVolumeOnCreation",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'Boolean',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-propagatetagstovolumeoncreation"""
     p_RamdiskId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "RamdiskId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "RamdiskId",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Conditional',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-ramdiskid"""
     p_SecurityGroupIds: typing.List[TypeHint.intrinsic_str] = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "SecurityGroupIds"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "SecurityGroupIds",
+            AttrMeta.DATA: {
+                "DuplicatesAllowed": True,
+                "PrimitiveItemType": 'String',
+                "Required": False,
+                "Type": 'List',
+                "UpdateType": 'Conditional',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-securitygroupids"""
     p_SecurityGroups: typing.List[TypeHint.intrinsic_str] = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "SecurityGroups"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "SecurityGroups",
+            AttrMeta.DATA: {
+                "DuplicatesAllowed": True,
+                "PrimitiveItemType": 'String',
+                "Required": False,
+                "Type": 'List',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-securitygroups"""
     p_SourceDestCheck: bool = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(bool)),
-        metadata={AttrMeta.PROPERTY_NAME: "SourceDestCheck"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "SourceDestCheck",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'Boolean',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-sourcedestcheck"""
     p_SsmAssociations: typing.List[typing.Union['PropInstanceSsmAssociation', dict]] = attr.ib(
         default=None,
         converter=PropInstanceSsmAssociation.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropInstanceSsmAssociation), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "SsmAssociations"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "SsmAssociations",
+            AttrMeta.DATA: {
+                "DuplicatesAllowed": True,
+                "ItemType": 'SsmAssociation',
+                "Required": False,
+                "Type": 'List',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-ssmassociations"""
     p_SubnetId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "SubnetId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "SubnetId",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-subnetid"""
     p_Tenancy: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Tenancy"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tenancy",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Conditional',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-tenancy"""
     p_UserData: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "UserData"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "UserData",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Conditional',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-userdata"""
     p_Volumes: typing.List[typing.Union['PropInstanceVolume', dict]] = attr.ib(
         default=None,
         converter=PropInstanceVolume.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropInstanceVolume), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Volumes"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Volumes",
+            AttrMeta.DATA: {
+                "DuplicatesAllowed": True,
+                "ItemType": 'Volume',
+                "Required": False,
+                "Type": 'List',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-volumes"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "DuplicatesAllowed": True,
+                "ItemType": 'Tag',
+                "Required": False,
+                "Type": 'List',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html#cfn-ec2-instance-tags"""
 
@@ -9370,6 +12016,7 @@ class IPAMPool(Resource):
     - ``p_AllocationMinNetmaskLength``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipampool.html#cfn-ec2-ipampool-allocationminnetmasklength
     - ``p_AllocationResourceTags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipampool.html#cfn-ec2-ipampool-allocationresourcetags
     - ``p_AutoImport``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipampool.html#cfn-ec2-ipampool-autoimport
+    - ``p_AwsService``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipampool.html#cfn-ec2-ipampool-awsservice
     - ``p_Description``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipampool.html#cfn-ec2-ipampool-description
     - ``p_Locale``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipampool.html#cfn-ec2-ipampool-locale
     - ``p_ProvisionedCidrs``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipampool.html#cfn-ec2-ipampool-provisionedcidrs
@@ -9383,82 +12030,192 @@ class IPAMPool(Resource):
     rp_AddressFamily: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "AddressFamily"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "AddressFamily",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipampool.html#cfn-ec2-ipampool-addressfamily"""
     rp_IpamScopeId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "IpamScopeId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "IpamScopeId",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipampool.html#cfn-ec2-ipampool-ipamscopeid"""
     p_AllocationDefaultNetmaskLength: int = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "AllocationDefaultNetmaskLength"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "AllocationDefaultNetmaskLength",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'Integer',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipampool.html#cfn-ec2-ipampool-allocationdefaultnetmasklength"""
     p_AllocationMaxNetmaskLength: int = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "AllocationMaxNetmaskLength"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "AllocationMaxNetmaskLength",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'Integer',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipampool.html#cfn-ec2-ipampool-allocationmaxnetmasklength"""
     p_AllocationMinNetmaskLength: int = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "AllocationMinNetmaskLength"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "AllocationMinNetmaskLength",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'Integer',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipampool.html#cfn-ec2-ipampool-allocationminnetmasklength"""
     p_AllocationResourceTags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "AllocationResourceTags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "AllocationResourceTags",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'List',
+                "ItemType": 'Tag',
+                "DuplicatesAllowed": False,
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipampool.html#cfn-ec2-ipampool-allocationresourcetags"""
     p_AutoImport: bool = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(bool)),
-        metadata={AttrMeta.PROPERTY_NAME: "AutoImport"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "AutoImport",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'Boolean',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipampool.html#cfn-ec2-ipampool-autoimport"""
+    p_AwsService: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "AwsService",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipampool.html#cfn-ec2-ipampool-awsservice"""
     p_Description: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Description"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Description",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipampool.html#cfn-ec2-ipampool-description"""
     p_Locale: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Locale"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Locale",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipampool.html#cfn-ec2-ipampool-locale"""
     p_ProvisionedCidrs: typing.List[typing.Union['PropIPAMPoolProvisionedCidr', dict]] = attr.ib(
         default=None,
         converter=PropIPAMPoolProvisionedCidr.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropIPAMPoolProvisionedCidr), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "ProvisionedCidrs"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ProvisionedCidrs",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'List',
+                "ItemType": 'ProvisionedCidr',
+                "DuplicatesAllowed": False,
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipampool.html#cfn-ec2-ipampool-provisionedcidrs"""
     p_PubliclyAdvertisable: bool = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(bool)),
-        metadata={AttrMeta.PROPERTY_NAME: "PubliclyAdvertisable"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "PubliclyAdvertisable",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'Boolean',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipampool.html#cfn-ec2-ipampool-publiclyadvertisable"""
     p_SourceIpamPoolId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "SourceIpamPoolId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "SourceIpamPoolId",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipampool.html#cfn-ec2-ipampool-sourceipampoolid"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'List',
+                "ItemType": 'Tag',
+                "DuplicatesAllowed": False,
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipampool.html#cfn-ec2-ipampool-tags"""
 
@@ -9527,44 +12284,94 @@ class NetworkInsightsPath(Resource):
     rp_Destination: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Destination"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Destination",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightspath.html#cfn-ec2-networkinsightspath-destination"""
     rp_Protocol: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Protocol"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Protocol",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightspath.html#cfn-ec2-networkinsightspath-protocol"""
     rp_Source: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Source"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Source",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightspath.html#cfn-ec2-networkinsightspath-source"""
     p_DestinationIp: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "DestinationIp"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "DestinationIp",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightspath.html#cfn-ec2-networkinsightspath-destinationip"""
     p_DestinationPort: int = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "DestinationPort"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "DestinationPort",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'Integer',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightspath.html#cfn-ec2-networkinsightspath-destinationport"""
     p_SourceIp: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "SourceIp"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "SourceIp",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightspath.html#cfn-ec2-networkinsightspath-sourceip"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'List',
+                "ItemType": 'Tag',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightspath.html#cfn-ec2-networkinsightspath-tags"""
 
@@ -9583,6 +12390,16 @@ class NetworkInsightsPath(Resource):
     def rv_CreatedDate(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightspath.html#aws-resource-ec2-networkinsightspath-return-values"""
         return GetAtt(resource=self, attr_name="CreatedDate")
+    
+    @property
+    def rv_SourceArn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightspath.html#aws-resource-ec2-networkinsightspath-return-values"""
+        return GetAtt(resource=self, attr_name="SourceArn")
+    
+    @property
+    def rv_DestinationArn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightspath.html#aws-resource-ec2-networkinsightspath-return-values"""
+        return GetAtt(resource=self, attr_name="DestinationArn")
     
 
 @attr.s
@@ -9606,31 +12423,66 @@ class EIPAssociation(Resource):
     p_AllocationId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "AllocationId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "AllocationId",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Conditional',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-eip-association.html#cfn-ec2-eipassociation-allocationid"""
     p_EIP: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "EIP"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "EIP",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Conditional',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-eip-association.html#cfn-ec2-eipassociation-eip"""
     p_InstanceId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "InstanceId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "InstanceId",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Conditional',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-eip-association.html#cfn-ec2-eipassociation-instanceid"""
     p_NetworkInterfaceId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "NetworkInterfaceId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "NetworkInterfaceId",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Conditional',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-eip-association.html#cfn-ec2-eipassociation-networkinterfaceid"""
     p_PrivateIpAddress: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "PrivateIpAddress"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "PrivateIpAddress",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-eip-association.html#cfn-ec2-eipassociation-PrivateIpAddress"""
 
@@ -9641,13 +12493,13 @@ class VPNGateway(Resource):
     """
     AWS Object Type = "AWS::EC2::VPNGateway"
 
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-gateway.html
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpngateway.html
 
     Property Document:
     
-    - ``rp_Type``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-gateway.html#cfn-ec2-vpngateway-type
-    - ``p_AmazonSideAsn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-gateway.html#cfn-ec2-vpngateway-amazonsideasn
-    - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-gateway.html#cfn-ec2-vpngateway-tags
+    - ``rp_Type``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpngateway.html#cfn-ec2-vpngateway-type
+    - ``p_AmazonSideAsn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpngateway.html#cfn-ec2-vpngateway-amazonsideasn
+    - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpngateway.html#cfn-ec2-vpngateway-tags
     """
     AWS_OBJECT_TYPE = "AWS::EC2::VPNGateway"
 
@@ -9655,23 +12507,51 @@ class VPNGateway(Resource):
     rp_Type: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Type"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Type",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-gateway.html#cfn-ec2-vpngateway-type"""
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpngateway.html#cfn-ec2-vpngateway-type"""
     p_AmazonSideAsn: int = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "AmazonSideAsn"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "AmazonSideAsn",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'Integer',
+            }
+        },
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-gateway.html#cfn-ec2-vpngateway-amazonsideasn"""
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpngateway.html#cfn-ec2-vpngateway-amazonsideasn"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'List',
+                "ItemType": 'Tag',
+                "DuplicatesAllowed": True,
+            }
+        },
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-gateway.html#cfn-ec2-vpngateway-tags"""
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpngateway.html#cfn-ec2-vpngateway-tags"""
 
+    
+    @property
+    def rv_VPNGatewayId(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpngateway.html#aws-resource-ec2-vpngateway-return-values"""
+        return GetAtt(resource=self, attr_name="VPNGatewayId")
     
 
 @attr.s
@@ -9679,17 +12559,17 @@ class VPNConnection(Resource):
     """
     AWS Object Type = "AWS::EC2::VPNConnection"
 
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-connection.html
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpnconnection.html
 
     Property Document:
     
-    - ``rp_CustomerGatewayId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-connection.html#cfn-ec2-vpnconnection-customergatewayid
-    - ``rp_Type``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-connection.html#cfn-ec2-vpnconnection-type
-    - ``p_StaticRoutesOnly``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-connection.html#cfn-ec2-vpnconnection-StaticRoutesOnly
-    - ``p_TransitGatewayId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-connection.html#cfn-ec2-vpnconnection-transitgatewayid
-    - ``p_VpnGatewayId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-connection.html#cfn-ec2-vpnconnection-vpngatewayid
-    - ``p_VpnTunnelOptionsSpecifications``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-connection.html#cfn-ec2-vpnconnection-vpntunneloptionsspecifications
-    - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-connection.html#cfn-ec2-vpnconnection-tags
+    - ``rp_CustomerGatewayId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpnconnection.html#cfn-ec2-vpnconnection-customergatewayid
+    - ``rp_Type``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpnconnection.html#cfn-ec2-vpnconnection-type
+    - ``p_StaticRoutesOnly``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpnconnection.html#cfn-ec2-vpnconnection-staticroutesonly
+    - ``p_TransitGatewayId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpnconnection.html#cfn-ec2-vpnconnection-transitgatewayid
+    - ``p_VpnGatewayId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpnconnection.html#cfn-ec2-vpnconnection-vpngatewayid
+    - ``p_VpnTunnelOptionsSpecifications``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpnconnection.html#cfn-ec2-vpnconnection-vpntunneloptionsspecifications
+    - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpnconnection.html#cfn-ec2-vpnconnection-tags
     """
     AWS_OBJECT_TYPE = "AWS::EC2::VPNConnection"
 
@@ -9697,48 +12577,106 @@ class VPNConnection(Resource):
     rp_CustomerGatewayId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "CustomerGatewayId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "CustomerGatewayId",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-connection.html#cfn-ec2-vpnconnection-customergatewayid"""
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpnconnection.html#cfn-ec2-vpnconnection-customergatewayid"""
     rp_Type: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Type"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Type",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-connection.html#cfn-ec2-vpnconnection-type"""
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpnconnection.html#cfn-ec2-vpnconnection-type"""
     p_StaticRoutesOnly: bool = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(bool)),
-        metadata={AttrMeta.PROPERTY_NAME: "StaticRoutesOnly"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "StaticRoutesOnly",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'Boolean',
+            }
+        },
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-connection.html#cfn-ec2-vpnconnection-StaticRoutesOnly"""
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpnconnection.html#cfn-ec2-vpnconnection-staticroutesonly"""
     p_TransitGatewayId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "TransitGatewayId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "TransitGatewayId",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-connection.html#cfn-ec2-vpnconnection-transitgatewayid"""
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpnconnection.html#cfn-ec2-vpnconnection-transitgatewayid"""
     p_VpnGatewayId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "VpnGatewayId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "VpnGatewayId",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-connection.html#cfn-ec2-vpnconnection-vpngatewayid"""
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpnconnection.html#cfn-ec2-vpnconnection-vpngatewayid"""
     p_VpnTunnelOptionsSpecifications: typing.List[typing.Union['PropVPNConnectionVpnTunnelOptionsSpecification', dict]] = attr.ib(
         default=None,
         converter=PropVPNConnectionVpnTunnelOptionsSpecification.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropVPNConnectionVpnTunnelOptionsSpecification), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "VpnTunnelOptionsSpecifications"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "VpnTunnelOptionsSpecifications",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "Type": 'List',
+                "ItemType": 'VpnTunnelOptionsSpecification',
+                "DuplicatesAllowed": True,
+            }
+        },
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-connection.html#cfn-ec2-vpnconnection-vpntunneloptionsspecifications"""
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpnconnection.html#cfn-ec2-vpnconnection-vpntunneloptionsspecifications"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'List',
+                "ItemType": 'Tag',
+                "DuplicatesAllowed": True,
+            }
+        },
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-connection.html#cfn-ec2-vpnconnection-tags"""
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpnconnection.html#cfn-ec2-vpnconnection-tags"""
 
+    
+    @property
+    def rv_VpnConnectionId(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpnconnection.html#aws-resource-ec2-vpnconnection-return-values"""
+        return GetAtt(resource=self, attr_name="VpnConnectionId")
     
 
 @attr.s
@@ -9759,14 +12697,29 @@ class TransitGatewayRouteTable(Resource):
     rp_TransitGatewayId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "TransitGatewayId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "TransitGatewayId",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayroutetable.html#cfn-ec2-transitgatewayroutetable-transitgatewayid"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "Type": 'List',
+                "Required": False,
+                "ItemType": 'Tag',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayroutetable.html#cfn-ec2-transitgatewayroutetable-tags"""
 
@@ -9782,6 +12735,7 @@ class VPCEndpointService(Resource):
     Property Document:
     
     - ``p_AcceptanceRequired``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpointservice.html#cfn-ec2-vpcendpointservice-acceptancerequired
+    - ``p_ContributorInsightsEnabled``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpointservice.html#cfn-ec2-vpcendpointservice-contributorinsightsenabled
     - ``p_GatewayLoadBalancerArns``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpointservice.html#cfn-ec2-vpcendpointservice-gatewayloadbalancerarns
     - ``p_NetworkLoadBalancerArns``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpointservice.html#cfn-ec2-vpcendpointservice-networkloadbalancerarns
     - ``p_PayerResponsibility``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpointservice.html#cfn-ec2-vpcendpointservice-payerresponsibility
@@ -9792,25 +12746,68 @@ class VPCEndpointService(Resource):
     p_AcceptanceRequired: bool = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(bool)),
-        metadata={AttrMeta.PROPERTY_NAME: "AcceptanceRequired"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "AcceptanceRequired",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'Boolean',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpointservice.html#cfn-ec2-vpcendpointservice-acceptancerequired"""
+    p_ContributorInsightsEnabled: bool = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(bool)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ContributorInsightsEnabled",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'Boolean',
+                "UpdateType": 'Mutable',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpointservice.html#cfn-ec2-vpcendpointservice-contributorinsightsenabled"""
     p_GatewayLoadBalancerArns: typing.List[TypeHint.intrinsic_str] = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "GatewayLoadBalancerArns"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "GatewayLoadBalancerArns",
+            AttrMeta.DATA: {
+                "PrimitiveItemType": 'String',
+                "Type": 'List',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpointservice.html#cfn-ec2-vpcendpointservice-gatewayloadbalancerarns"""
     p_NetworkLoadBalancerArns: typing.List[TypeHint.intrinsic_str] = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "NetworkLoadBalancerArns"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "NetworkLoadBalancerArns",
+            AttrMeta.DATA: {
+                "PrimitiveItemType": 'String',
+                "Type": 'List',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpointservice.html#cfn-ec2-vpcendpointservice-networkloadbalancerarns"""
     p_PayerResponsibility: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "PayerResponsibility"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "PayerResponsibility",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpointservice.html#cfn-ec2-vpcendpointservice-payerresponsibility"""
 
@@ -9834,14 +12831,29 @@ class NetworkInsightsAccessScopeAnalysis(Resource):
     rp_NetworkInsightsAccessScopeId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "NetworkInsightsAccessScopeId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "NetworkInsightsAccessScopeId",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightsaccessscopeanalysis.html#cfn-ec2-networkinsightsaccessscopeanalysis-networkinsightsaccessscopeid"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'List',
+                "ItemType": 'Tag',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightsaccessscopeanalysis.html#cfn-ec2-networkinsightsaccessscopeanalysis-tags"""
 
@@ -9905,13 +12917,27 @@ class GatewayRouteTableAssociation(Resource):
     rp_GatewayId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "GatewayId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "GatewayId",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-gatewayroutetableassociation.html#cfn-ec2-gatewayroutetableassociation-gatewayid"""
     rp_RouteTableId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "RouteTableId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "RouteTableId",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-gatewayroutetableassociation.html#cfn-ec2-gatewayroutetableassociation-routetableid"""
 
@@ -9947,57 +12973,120 @@ class NetworkAclEntry(Resource):
     rp_NetworkAclId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "NetworkAclId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "NetworkAclId",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkaclentry.html#cfn-ec2-networkaclentry-networkaclid"""
     rp_Protocol: int = attr.ib(
         default=None,
         validator=attr.validators.instance_of(int),
-        metadata={AttrMeta.PROPERTY_NAME: "Protocol"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Protocol",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": True,
+                "PrimitiveType": 'Integer',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkaclentry.html#cfn-ec2-networkaclentry-protocol"""
     rp_RuleAction: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "RuleAction"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "RuleAction",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkaclentry.html#cfn-ec2-networkaclentry-ruleaction"""
     rp_RuleNumber: int = attr.ib(
         default=None,
         validator=attr.validators.instance_of(int),
-        metadata={AttrMeta.PROPERTY_NAME: "RuleNumber"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "RuleNumber",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'Integer',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkaclentry.html#cfn-ec2-networkaclentry-rulenumber"""
     p_CidrBlock: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "CidrBlock"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "CidrBlock",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkaclentry.html#cfn-ec2-networkaclentry-cidrblock"""
     p_Egress: bool = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(bool)),
-        metadata={AttrMeta.PROPERTY_NAME: "Egress"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Egress",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'Boolean',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkaclentry.html#cfn-ec2-networkaclentry-egress"""
     p_Icmp: typing.Union['PropNetworkAclEntryIcmp', dict] = attr.ib(
         default=None,
         converter=PropNetworkAclEntryIcmp.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropNetworkAclEntryIcmp)),
-        metadata={AttrMeta.PROPERTY_NAME: "Icmp"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Icmp",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'Icmp',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkaclentry.html#cfn-ec2-networkaclentry-icmp"""
     p_Ipv6CidrBlock: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Ipv6CidrBlock"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Ipv6CidrBlock",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkaclentry.html#cfn-ec2-networkaclentry-ipv6cidrblock"""
     p_PortRange: typing.Union['PropNetworkAclEntryPortRange', dict] = attr.ib(
         default=None,
         converter=PropNetworkAclEntryPortRange.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropNetworkAclEntryPortRange)),
-        metadata={AttrMeta.PROPERTY_NAME: "PortRange"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "PortRange",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'PortRange',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkaclentry.html#cfn-ec2-networkaclentry-portrange"""
 
@@ -10026,7 +13115,14 @@ class SpotFleet(Resource):
         default=None,
         converter=PropSpotFleetSpotFleetRequestConfigData.from_dict,
         validator=attr.validators.instance_of(PropSpotFleetSpotFleetRequestConfigData),
-        metadata={AttrMeta.PROPERTY_NAME: "SpotFleetRequestConfigData"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "SpotFleetRequestConfigData",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": True,
+                "Type": 'SpotFleetRequestConfigData',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-spotfleet.html#cfn-ec2-spotfleet-spotfleetrequestconfigdata"""
 
@@ -10056,20 +13152,43 @@ class TrafficMirrorFilter(Resource):
     p_Description: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Description"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Description",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrorfilter.html#cfn-ec2-trafficmirrorfilter-description"""
     p_NetworkServices: typing.List[TypeHint.intrinsic_str] = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "NetworkServices"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "NetworkServices",
+            AttrMeta.DATA: {
+                "PrimitiveItemType": 'String',
+                "Type": 'List',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrorfilter.html#cfn-ec2-trafficmirrorfilter-networkservices"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "Type": 'List',
+                "Required": False,
+                "ItemType": 'Tag',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrorfilter.html#cfn-ec2-trafficmirrorfilter-tags"""
 
@@ -10103,73 +13222,157 @@ class SecurityGroupIngress(Resource):
     rp_IpProtocol: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "IpProtocol"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "IpProtocol",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": True,
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-ingress.html#cfn-ec2-security-group-ingress-ipprotocol"""
     p_CidrIp: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "CidrIp"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "CidrIp",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-ingress.html#cfn-ec2-security-group-ingress-cidrip"""
     p_CidrIpv6: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "CidrIpv6"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "CidrIpv6",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-ingress.html#cfn-ec2-security-group-ingress-cidripv6"""
     p_Description: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Description"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Description",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-ingress.html#cfn-ec2-security-group-ingress-description"""
     p_FromPort: int = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "FromPort"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "FromPort",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'Integer',
+                "Required": False,
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-ingress.html#cfn-ec2-security-group-ingress-fromport"""
     p_GroupId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "GroupId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "GroupId",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-ingress.html#cfn-ec2-security-group-ingress-groupid"""
     p_GroupName: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "GroupName"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "GroupName",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-ingress.html#cfn-ec2-security-group-ingress-groupname"""
     p_SourcePrefixListId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "SourcePrefixListId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "SourcePrefixListId",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-ingress.html#cfn-ec2-securitygroupingress-sourceprefixlistid"""
     p_SourceSecurityGroupId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "SourceSecurityGroupId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "SourceSecurityGroupId",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-ingress.html#cfn-ec2-security-group-ingress-sourcesecuritygroupid"""
     p_SourceSecurityGroupName: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "SourceSecurityGroupName"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "SourceSecurityGroupName",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-ingress.html#cfn-ec2-security-group-ingress-sourcesecuritygroupname"""
     p_SourceSecurityGroupOwnerId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "SourceSecurityGroupOwnerId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "SourceSecurityGroupOwnerId",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-ingress.html#cfn-ec2-security-group-ingress-sourcesecuritygroupownerid"""
     p_ToPort: int = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "ToPort"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ToPort",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'Integer',
+                "Required": False,
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group-ingress.html#cfn-ec2-security-group-ingress-toport"""
 
@@ -10193,13 +13396,27 @@ class SubnetRouteTableAssociation(Resource):
     rp_RouteTableId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "RouteTableId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "RouteTableId",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnetroutetableassociation.html#cfn-ec2-subnetroutetableassociation-routetableid"""
     rp_SubnetId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "SubnetId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "SubnetId",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnetroutetableassociation.html#cfn-ec2-subnetroutetableassociation-subnetid"""
 
@@ -10239,79 +13456,170 @@ class Route(Resource):
     rp_RouteTableId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "RouteTableId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "RouteTableId",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": True,
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route.html#cfn-ec2-route-routetableid"""
     p_CarrierGatewayId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "CarrierGatewayId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "CarrierGatewayId",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route.html#cfn-ec2-route-carriergatewayid"""
     p_DestinationCidrBlock: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "DestinationCidrBlock"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "DestinationCidrBlock",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route.html#cfn-ec2-route-destinationcidrblock"""
     p_DestinationIpv6CidrBlock: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "DestinationIpv6CidrBlock"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "DestinationIpv6CidrBlock",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route.html#cfn-ec2-route-destinationipv6cidrblock"""
     p_EgressOnlyInternetGatewayId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "EgressOnlyInternetGatewayId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "EgressOnlyInternetGatewayId",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route.html#cfn-ec2-route-egressonlyinternetgatewayid"""
     p_GatewayId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "GatewayId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "GatewayId",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route.html#cfn-ec2-route-gatewayid"""
     p_InstanceId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "InstanceId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "InstanceId",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route.html#cfn-ec2-route-instanceid"""
     p_LocalGatewayId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "LocalGatewayId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "LocalGatewayId",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route.html#cfn-ec2-route-localgatewayid"""
     p_NatGatewayId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "NatGatewayId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "NatGatewayId",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route.html#cfn-ec2-route-natgatewayid"""
     p_NetworkInterfaceId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "NetworkInterfaceId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "NetworkInterfaceId",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route.html#cfn-ec2-route-networkinterfaceid"""
     p_TransitGatewayId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "TransitGatewayId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "TransitGatewayId",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route.html#cfn-ec2-route-transitgatewayid"""
     p_VpcEndpointId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "VpcEndpointId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "VpcEndpointId",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route.html#cfn-ec2-route-vpcendpointid"""
     p_VpcPeeringConnectionId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "VpcPeeringConnectionId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "VpcPeeringConnectionId",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-route.html#cfn-ec2-route-vpcpeeringconnectionid"""
 
@@ -10335,13 +13643,27 @@ class TransitGatewayRouteTablePropagation(Resource):
     rp_TransitGatewayAttachmentId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "TransitGatewayAttachmentId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "TransitGatewayAttachmentId",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayroutetablepropagation.html#cfn-ec2-transitgatewayroutetablepropagation-transitgatewayattachmentid"""
     rp_TransitGatewayRouteTableId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "TransitGatewayRouteTableId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "TransitGatewayRouteTableId",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayroutetablepropagation.html#cfn-ec2-transitgatewayroutetablepropagation-transitgatewayroutetableid"""
 
@@ -10365,13 +13687,27 @@ class SubnetNetworkAclAssociation(Resource):
     rp_NetworkAclId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "NetworkAclId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "NetworkAclId",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": True,
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet-network-acl-assoc.html#cfn-ec2-subnetnetworkaclassociation-networkaclid"""
     rp_SubnetId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "SubnetId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "SubnetId",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": True,
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet-network-acl-assoc.html#cfn-ec2-subnetnetworkaclassociation-associationid"""
 
@@ -10406,50 +13742,107 @@ class TrafficMirrorSession(Resource):
     rp_NetworkInterfaceId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "NetworkInterfaceId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "NetworkInterfaceId",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrorsession.html#cfn-ec2-trafficmirrorsession-networkinterfaceid"""
     rp_SessionNumber: int = attr.ib(
         default=None,
         validator=attr.validators.instance_of(int),
-        metadata={AttrMeta.PROPERTY_NAME: "SessionNumber"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "SessionNumber",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'Integer',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrorsession.html#cfn-ec2-trafficmirrorsession-sessionnumber"""
     rp_TrafficMirrorFilterId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "TrafficMirrorFilterId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "TrafficMirrorFilterId",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrorsession.html#cfn-ec2-trafficmirrorsession-trafficmirrorfilterid"""
     rp_TrafficMirrorTargetId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "TrafficMirrorTargetId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "TrafficMirrorTargetId",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrorsession.html#cfn-ec2-trafficmirrorsession-trafficmirrortargetid"""
     p_Description: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Description"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Description",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrorsession.html#cfn-ec2-trafficmirrorsession-description"""
     p_PacketLength: int = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "PacketLength"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "PacketLength",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'Integer',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrorsession.html#cfn-ec2-trafficmirrorsession-packetlength"""
     p_VirtualNetworkId: int = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "VirtualNetworkId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "VirtualNetworkId",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'Integer',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrorsession.html#cfn-ec2-trafficmirrorsession-virtualnetworkid"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "Type": 'List',
+                "Required": False,
+                "ItemType": 'Tag',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-trafficmirrorsession.html#cfn-ec2-trafficmirrorsession-tags"""
 
@@ -10473,16 +13866,115 @@ class SubnetCidrBlock(Resource):
     rp_Ipv6CidrBlock: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Ipv6CidrBlock"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Ipv6CidrBlock",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": True,
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnetcidrblock.html#cfn-ec2-subnetcidrblock-ipv6cidrblock"""
     rp_SubnetId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "SubnetId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "SubnetId",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": True,
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnetcidrblock.html#cfn-ec2-subnetcidrblock-subnetid"""
 
+    
+
+@attr.s
+class KeyPair(Resource):
+    """
+    AWS Object Type = "AWS::EC2::KeyPair"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-keypair.html
+
+    Property Document:
+    
+    - ``rp_KeyName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-keypair.html#cfn-ec2-keypair-keyname
+    - ``p_KeyType``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-keypair.html#cfn-ec2-keypair-keytype
+    - ``p_PublicKeyMaterial``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-keypair.html#cfn-ec2-keypair-publickeymaterial
+    - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-keypair.html#cfn-ec2-keypair-tags
+    """
+    AWS_OBJECT_TYPE = "AWS::EC2::KeyPair"
+
+    
+    rp_KeyName: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "KeyName",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-keypair.html#cfn-ec2-keypair-keyname"""
+    p_KeyType: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "KeyType",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-keypair.html#cfn-ec2-keypair-keytype"""
+    p_PublicKeyMaterial: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "PublicKeyMaterial",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-keypair.html#cfn-ec2-keypair-publickeymaterial"""
+    p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
+        default=None,
+        converter=Tag.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'List',
+                "ItemType": 'Tag',
+                "DuplicatesAllowed": False,
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-keypair.html#cfn-ec2-keypair-tags"""
+
+    
+    @property
+    def rv_KeyFingerprint(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-keypair.html#aws-resource-ec2-keypair-return-values"""
+        return GetAtt(resource=self, attr_name="KeyFingerprint")
+    
+    @property
+    def rv_KeyPairId(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-keypair.html#aws-resource-ec2-keypair-return-values"""
+        return GetAtt(resource=self, attr_name="KeyPairId")
     
 
 @attr.s
@@ -10507,40 +13999,88 @@ class SecurityGroup(Resource):
     rp_GroupDescription: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "GroupDescription"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "GroupDescription",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": True,
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group.html#cfn-ec2-securitygroup-groupdescription"""
     p_GroupName: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "GroupName"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "GroupName",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group.html#cfn-ec2-securitygroup-groupname"""
     p_SecurityGroupEgress: typing.List[typing.Union['PropSecurityGroupEgress', dict]] = attr.ib(
         default=None,
         converter=PropSecurityGroupEgress.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropSecurityGroupEgress), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "SecurityGroupEgress"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "SecurityGroupEgress",
+            AttrMeta.DATA: {
+                "DuplicatesAllowed": True,
+                "ItemType": 'Egress',
+                "Required": False,
+                "Type": 'List',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group.html#cfn-ec2-securitygroup-securitygroupegress"""
     p_SecurityGroupIngress: typing.List[typing.Union['PropSecurityGroupIngress', dict]] = attr.ib(
         default=None,
         converter=PropSecurityGroupIngress.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropSecurityGroupIngress), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "SecurityGroupIngress"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "SecurityGroupIngress",
+            AttrMeta.DATA: {
+                "DuplicatesAllowed": True,
+                "ItemType": 'Ingress',
+                "Required": False,
+                "Type": 'List',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group.html#cfn-ec2-securitygroup-securitygroupingress"""
     p_VpcId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "VpcId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "VpcId",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group.html#cfn-ec2-securitygroup-vpcid"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "DuplicatesAllowed": True,
+                "ItemType": 'Tag',
+                "Required": False,
+                "Type": 'List',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-security-group.html#cfn-ec2-securitygroup-tags"""
 
@@ -10565,61 +14105,117 @@ class VPC(Resource):
 
     Property Document:
     
-    - ``rp_CidrBlock``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc.html#cfn-aws-ec2-vpc-cidrblock
-    - ``p_EnableDnsHostnames``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc.html#cfn-aws-ec2-vpc-EnableDnsHostnames
-    - ``p_EnableDnsSupport``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc.html#cfn-aws-ec2-vpc-EnableDnsSupport
-    - ``p_InstanceTenancy``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc.html#cfn-aws-ec2-vpc-instancetenancy
+    - ``p_CidrBlock``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc.html#cfn-ec2-vpc-cidrblock
+    - ``p_EnableDnsHostnames``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc.html#cfn-ec2-vpc-enablednshostnames
+    - ``p_EnableDnsSupport``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc.html#cfn-ec2-vpc-enablednssupport
+    - ``p_InstanceTenancy``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc.html#cfn-ec2-vpc-instancetenancy
     - ``p_Ipv4IpamPoolId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc.html#cfn-ec2-vpc-ipv4ipampoolid
     - ``p_Ipv4NetmaskLength``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc.html#cfn-ec2-vpc-ipv4netmasklength
-    - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc.html#cfn-aws-ec2-vpc-tags
+    - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc.html#cfn-ec2-vpc-tags
     """
     AWS_OBJECT_TYPE = "AWS::EC2::VPC"
 
     
-    rp_CidrBlock: TypeHint.intrinsic_str = attr.ib(
+    p_CidrBlock: TypeHint.intrinsic_str = attr.ib(
         default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "CidrBlock"},
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "CidrBlock",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc.html#cfn-aws-ec2-vpc-cidrblock"""
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc.html#cfn-ec2-vpc-cidrblock"""
     p_EnableDnsHostnames: bool = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(bool)),
-        metadata={AttrMeta.PROPERTY_NAME: "EnableDnsHostnames"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "EnableDnsHostnames",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'Boolean',
+            }
+        },
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc.html#cfn-aws-ec2-vpc-EnableDnsHostnames"""
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc.html#cfn-ec2-vpc-enablednshostnames"""
     p_EnableDnsSupport: bool = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(bool)),
-        metadata={AttrMeta.PROPERTY_NAME: "EnableDnsSupport"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "EnableDnsSupport",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'Boolean',
+            }
+        },
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc.html#cfn-aws-ec2-vpc-EnableDnsSupport"""
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc.html#cfn-ec2-vpc-enablednssupport"""
     p_InstanceTenancy: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "InstanceTenancy"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "InstanceTenancy",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc.html#cfn-aws-ec2-vpc-instancetenancy"""
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc.html#cfn-ec2-vpc-instancetenancy"""
     p_Ipv4IpamPoolId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Ipv4IpamPoolId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Ipv4IpamPoolId",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc.html#cfn-ec2-vpc-ipv4ipampoolid"""
     p_Ipv4NetmaskLength: int = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "Ipv4NetmaskLength"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Ipv4NetmaskLength",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'Integer',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc.html#cfn-ec2-vpc-ipv4netmasklength"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'List',
+                "ItemType": 'Tag',
+                "DuplicatesAllowed": True,
+            }
+        },
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc.html#cfn-aws-ec2-vpc-tags"""
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc.html#cfn-ec2-vpc-tags"""
 
+    
+    @property
+    def rv_VpcId(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc.html#aws-resource-ec2-vpc-return-values"""
+        return GetAtt(resource=self, attr_name="VpcId")
     
     @property
     def rv_CidrBlock(self) -> GetAtt:
@@ -10667,25 +14263,53 @@ class TransitGatewayRoute(Resource):
     rp_TransitGatewayRouteTableId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "TransitGatewayRouteTableId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "TransitGatewayRouteTableId",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayroute.html#cfn-ec2-transitgatewayroute-transitgatewayroutetableid"""
     p_Blackhole: bool = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(bool)),
-        metadata={AttrMeta.PROPERTY_NAME: "Blackhole"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Blackhole",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'Boolean',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayroute.html#cfn-ec2-transitgatewayroute-blackhole"""
     p_DestinationCidrBlock: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "DestinationCidrBlock"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "DestinationCidrBlock",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayroute.html#cfn-ec2-transitgatewayroute-destinationcidrblock"""
     p_TransitGatewayAttachmentId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "TransitGatewayAttachmentId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "TransitGatewayAttachmentId",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayroute.html#cfn-ec2-transitgatewayroute-transitgatewayattachmentid"""
 
@@ -10709,14 +14333,30 @@ class NetworkAcl(Resource):
     rp_VpcId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "VpcId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "VpcId",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkacl.html#cfn-ec2-networkacl-vpcid"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'List',
+                "ItemType": 'Tag',
+                "DuplicatesAllowed": True,
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkacl.html#cfn-ec2-networkacl-tags"""
 
@@ -10745,13 +14385,29 @@ class VPNGatewayRoutePropagation(Resource):
     rp_RouteTableIds: typing.List[TypeHint.intrinsic_str] = attr.ib(
         default=None,
         validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list)),
-        metadata={AttrMeta.PROPERTY_NAME: "RouteTableIds"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "RouteTableIds",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": True,
+                "Type": 'List',
+                "PrimitiveItemType": 'String',
+                "DuplicatesAllowed": True,
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpngatewayroutepropagation.html#cfn-ec2-vpngatewayroutepropagation-routetableids"""
     rp_VpnGatewayId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "VpnGatewayId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "VpnGatewayId",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpngatewayroutepropagation.html#cfn-ec2-vpngatewayroutepropagation-vpngatewayid"""
 
@@ -10780,13 +14436,27 @@ class ClientVpnTargetNetworkAssociation(Resource):
     rp_ClientVpnEndpointId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "ClientVpnEndpointId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ClientVpnEndpointId",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpntargetnetworkassociation.html#cfn-ec2-clientvpntargetnetworkassociation-clientvpnendpointid"""
     rp_SubnetId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "SubnetId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "SubnetId",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-clientvpntargetnetworkassociation.html#cfn-ec2-clientvpntargetnetworkassociation-subnetid"""
 
@@ -10813,32 +14483,68 @@ class TransitGatewayPeeringAttachment(Resource):
     rp_PeerAccountId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "PeerAccountId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "PeerAccountId",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewaypeeringattachment.html#cfn-ec2-transitgatewaypeeringattachment-peeraccountid"""
     rp_PeerRegion: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "PeerRegion"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "PeerRegion",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewaypeeringattachment.html#cfn-ec2-transitgatewaypeeringattachment-peerregion"""
     rp_PeerTransitGatewayId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "PeerTransitGatewayId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "PeerTransitGatewayId",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewaypeeringattachment.html#cfn-ec2-transitgatewaypeeringattachment-peertransitgatewayid"""
     rp_TransitGatewayId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "TransitGatewayId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "TransitGatewayId",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewaypeeringattachment.html#cfn-ec2-transitgatewaypeeringattachment-transitgatewayid"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'List',
+                "ItemType": 'Tag',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewaypeeringattachment.html#cfn-ec2-transitgatewaypeeringattachment-tags"""
 
@@ -10878,19 +14584,40 @@ class VolumeAttachment(Resource):
     rp_Device: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Device"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Device",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": True,
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ebs-volumeattachment.html#cfn-ec2-ebs-volumeattachment-device"""
     rp_InstanceId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "InstanceId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "InstanceId",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": True,
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ebs-volumeattachment.html#cfn-ec2-ebs-volumeattachment-instanceid"""
     rp_VolumeId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "VolumeId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "VolumeId",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": True,
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ebs-volumeattachment.html#cfn-ec2-ebs-volumeattachment-volumeid"""
 
@@ -10906,9 +14633,11 @@ class Host(Resource):
     Property Document:
     
     - ``rp_AvailabilityZone``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-host.html#cfn-ec2-host-availabilityzone
-    - ``rp_InstanceType``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-host.html#cfn-ec2-host-instancetype
     - ``p_AutoPlacement``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-host.html#cfn-ec2-host-autoplacement
     - ``p_HostRecovery``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-host.html#cfn-ec2-host-hostrecovery
+    - ``p_InstanceFamily``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-host.html#cfn-ec2-host-instancefamily
+    - ``p_InstanceType``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-host.html#cfn-ec2-host-instancetype
+    - ``p_OutpostArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-host.html#cfn-ec2-host-outpostarn
     """
     AWS_OBJECT_TYPE = "AWS::EC2::Host"
 
@@ -10916,27 +14645,81 @@ class Host(Resource):
     rp_AvailabilityZone: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "AvailabilityZone"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "AvailabilityZone",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-host.html#cfn-ec2-host-availabilityzone"""
-    rp_InstanceType: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "InstanceType"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-host.html#cfn-ec2-host-instancetype"""
     p_AutoPlacement: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "AutoPlacement"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "AutoPlacement",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-host.html#cfn-ec2-host-autoplacement"""
     p_HostRecovery: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "HostRecovery"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "HostRecovery",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-host.html#cfn-ec2-host-hostrecovery"""
+    p_InstanceFamily: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "InstanceFamily",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-host.html#cfn-ec2-host-instancefamily"""
+    p_InstanceType: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "InstanceType",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-host.html#cfn-ec2-host-instancetype"""
+    p_OutpostArn: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "OutpostArn",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-host.html#cfn-ec2-host-outpostarn"""
 
     
     @property
@@ -10969,49 +14752,111 @@ class VPCEndpoint(Resource):
     rp_ServiceName: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "ServiceName"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ServiceName",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": True,
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpoint.html#cfn-ec2-vpcendpoint-servicename"""
     rp_VpcId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "VpcId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "VpcId",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": True,
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpoint.html#cfn-ec2-vpcendpoint-vpcid"""
     p_PolicyDocument: dict = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(dict)),
-        metadata={AttrMeta.PROPERTY_NAME: "PolicyDocument"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "PolicyDocument",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'Json',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpoint.html#cfn-ec2-vpcendpoint-policydocument"""
     p_PrivateDnsEnabled: bool = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(bool)),
-        metadata={AttrMeta.PROPERTY_NAME: "PrivateDnsEnabled"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "PrivateDnsEnabled",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'Boolean',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpoint.html#cfn-ec2-vpcendpoint-privatednsenabled"""
     p_RouteTableIds: typing.List[TypeHint.intrinsic_str] = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "RouteTableIds"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "RouteTableIds",
+            AttrMeta.DATA: {
+                "DuplicatesAllowed": False,
+                "PrimitiveItemType": 'String',
+                "Required": False,
+                "Type": 'List',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpoint.html#cfn-ec2-vpcendpoint-routetableids"""
     p_SecurityGroupIds: typing.List[TypeHint.intrinsic_str] = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "SecurityGroupIds"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "SecurityGroupIds",
+            AttrMeta.DATA: {
+                "DuplicatesAllowed": False,
+                "PrimitiveItemType": 'String',
+                "Required": False,
+                "Type": 'List',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpoint.html#cfn-ec2-vpcendpoint-securitygroupids"""
     p_SubnetIds: typing.List[TypeHint.intrinsic_str] = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "SubnetIds"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "SubnetIds",
+            AttrMeta.DATA: {
+                "DuplicatesAllowed": False,
+                "PrimitiveItemType": 'String',
+                "Required": False,
+                "Type": 'List',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpoint.html#cfn-ec2-vpcendpoint-subnetids"""
     p_VpcEndpointType: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "VpcEndpointType"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "VpcEndpointType",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpoint.html#cfn-ec2-vpcendpoint-vpcendpointtype"""
 
@@ -11051,19 +14896,40 @@ class VPCGatewayAttachment(Resource):
     rp_VpcId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "VpcId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "VpcId",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": True,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc-gateway-attachment.html#cfn-ec2-vpcgatewayattachment-vpcid"""
     p_InternetGatewayId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "InternetGatewayId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "InternetGatewayId",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc-gateway-attachment.html#cfn-ec2-vpcgatewayattachment-internetgatewayid"""
     p_VpnGatewayId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "VpnGatewayId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "VpnGatewayId",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc-gateway-attachment.html#cfn-ec2-vpcgatewayattachment-vpngatewayid"""
 
@@ -11094,55 +14960,118 @@ class VPCCidrBlock(Resource):
     rp_VpcId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "VpcId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "VpcId",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": True,
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpccidrblock.html#cfn-ec2-vpccidrblock-vpcid"""
     p_AmazonProvidedIpv6CidrBlock: bool = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(bool)),
-        metadata={AttrMeta.PROPERTY_NAME: "AmazonProvidedIpv6CidrBlock"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "AmazonProvidedIpv6CidrBlock",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'Boolean',
+                "Required": False,
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpccidrblock.html#cfn-ec2-vpccidrblock-amazonprovidedipv6cidrblock"""
     p_CidrBlock: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "CidrBlock"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "CidrBlock",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpccidrblock.html#cfn-ec2-vpccidrblock-cidrblock"""
     p_Ipv4IpamPoolId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Ipv4IpamPoolId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Ipv4IpamPoolId",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpccidrblock.html#cfn-ec2-vpccidrblock-ipv4ipampoolid"""
     p_Ipv4NetmaskLength: int = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "Ipv4NetmaskLength"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Ipv4NetmaskLength",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'Integer',
+                "Required": False,
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpccidrblock.html#cfn-ec2-vpccidrblock-ipv4netmasklength"""
     p_Ipv6CidrBlock: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Ipv6CidrBlock"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Ipv6CidrBlock",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpccidrblock.html#cfn-ec2-vpccidrblock-ipv6cidrblock"""
     p_Ipv6IpamPoolId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Ipv6IpamPoolId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Ipv6IpamPoolId",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpccidrblock.html#cfn-ec2-vpccidrblock-ipv6ipampoolid"""
     p_Ipv6NetmaskLength: int = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "Ipv6NetmaskLength"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Ipv6NetmaskLength",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'Integer',
+                "Required": False,
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpccidrblock.html#cfn-ec2-vpccidrblock-ipv6netmasklength"""
     p_Ipv6Pool: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Ipv6Pool"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Ipv6Pool",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpccidrblock.html#cfn-ec2-vpccidrblock-ipv6pool"""
 

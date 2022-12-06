@@ -105,13 +105,27 @@ class AccessPoint(Resource):
         default=None,
         converter=PropAccessPointObjectLambdaConfiguration.from_dict,
         validator=attr.validators.instance_of(PropAccessPointObjectLambdaConfiguration),
-        metadata={AttrMeta.PROPERTY_NAME: "ObjectLambdaConfiguration"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ObjectLambdaConfiguration",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": True,
+                "Type": 'ObjectLambdaConfiguration',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3objectlambda-accesspoint.html#cfn-s3objectlambda-accesspoint-objectlambdaconfiguration"""
     p_Name: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Name"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Name",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3objectlambda-accesspoint.html#cfn-s3objectlambda-accesspoint-name"""
 
@@ -145,13 +159,27 @@ class AccessPointPolicy(Resource):
     rp_ObjectLambdaAccessPoint: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "ObjectLambdaAccessPoint"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ObjectLambdaAccessPoint",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3objectlambda-accesspointpolicy.html#cfn-s3objectlambda-accesspointpolicy-objectlambdaaccesspoint"""
     rp_PolicyDocument: dict = attr.ib(
         default=None,
         validator=attr.validators.instance_of(dict),
-        metadata={AttrMeta.PROPERTY_NAME: "PolicyDocument"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "PolicyDocument",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": True,
+                "PrimitiveType": 'Json',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3objectlambda-accesspointpolicy.html#cfn-s3objectlambda-accesspointpolicy-policydocument"""
 

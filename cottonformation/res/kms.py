@@ -39,38 +39,82 @@ class ReplicaKey(Resource):
     rp_KeyPolicy: dict = attr.ib(
         default=None,
         validator=attr.validators.instance_of(dict),
-        metadata={AttrMeta.PROPERTY_NAME: "KeyPolicy"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "KeyPolicy",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": True,
+                "PrimitiveType": 'Json',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kms-replicakey.html#cfn-kms-replicakey-keypolicy"""
     rp_PrimaryKeyArn: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "PrimaryKeyArn"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "PrimaryKeyArn",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kms-replicakey.html#cfn-kms-replicakey-primarykeyarn"""
     p_Description: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Description"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Description",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kms-replicakey.html#cfn-kms-replicakey-description"""
     p_Enabled: bool = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(bool)),
-        metadata={AttrMeta.PROPERTY_NAME: "Enabled"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Enabled",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'Boolean',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kms-replicakey.html#cfn-kms-replicakey-enabled"""
     p_PendingWindowInDays: int = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "PendingWindowInDays"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "PendingWindowInDays",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'Integer',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kms-replicakey.html#cfn-kms-replicakey-pendingwindowindays"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'List',
+                "ItemType": 'Tag',
+                "DuplicatesAllowed": False,
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kms-replicakey.html#cfn-kms-replicakey-tags"""
 
@@ -104,13 +148,27 @@ class Alias(Resource):
     rp_AliasName: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "AliasName"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "AliasName",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kms-alias.html#cfn-kms-alias-aliasname"""
     rp_TargetKeyId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "TargetKeyId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "TargetKeyId",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kms-alias.html#cfn-kms-alias-targetkeyid"""
 
@@ -141,56 +199,121 @@ class Key(Resource):
     rp_KeyPolicy: dict = attr.ib(
         default=None,
         validator=attr.validators.instance_of(dict),
-        metadata={AttrMeta.PROPERTY_NAME: "KeyPolicy"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "KeyPolicy",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": True,
+                "PrimitiveType": 'Json',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kms-key.html#cfn-kms-key-keypolicy"""
     p_Description: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Description"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Description",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kms-key.html#cfn-kms-key-description"""
     p_EnableKeyRotation: bool = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(bool)),
-        metadata={AttrMeta.PROPERTY_NAME: "EnableKeyRotation"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "EnableKeyRotation",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'Boolean',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kms-key.html#cfn-kms-key-enablekeyrotation"""
     p_Enabled: bool = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(bool)),
-        metadata={AttrMeta.PROPERTY_NAME: "Enabled"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Enabled",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'Boolean',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kms-key.html#cfn-kms-key-enabled"""
     p_KeySpec: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "KeySpec"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "KeySpec",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kms-key.html#cfn-kms-key-keyspec"""
     p_KeyUsage: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "KeyUsage"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "KeyUsage",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kms-key.html#cfn-kms-key-keyusage"""
     p_MultiRegion: bool = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(bool)),
-        metadata={AttrMeta.PROPERTY_NAME: "MultiRegion"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "MultiRegion",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'Boolean',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kms-key.html#cfn-kms-key-multiregion"""
     p_PendingWindowInDays: int = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "PendingWindowInDays"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "PendingWindowInDays",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'Integer',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kms-key.html#cfn-kms-key-pendingwindowindays"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'List',
+                "ItemType": 'Tag',
+                "DuplicatesAllowed": False,
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kms-key.html#cfn-kms-key-tags"""
 

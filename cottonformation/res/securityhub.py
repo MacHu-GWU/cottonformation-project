@@ -34,7 +34,14 @@ class Hub(Resource):
     p_Tags: dict = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(dict)),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'Json',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-securityhub-hub.html#cfn-securityhub-hub-tags"""
 

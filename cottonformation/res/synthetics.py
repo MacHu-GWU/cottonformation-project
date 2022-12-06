@@ -15,6 +15,74 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
+class PropCanarySchedule(Property):
+    """
+    AWS Object Type = "AWS::Synthetics::Canary.Schedule"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-schedule.html
+
+    Property Document:
+    
+    - ``rp_Expression``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-schedule.html#cfn-synthetics-canary-schedule-expression
+    - ``p_DurationInSeconds``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-schedule.html#cfn-synthetics-canary-schedule-durationinseconds
+    """
+    AWS_OBJECT_TYPE = "AWS::Synthetics::Canary.Schedule"
+    
+    rp_Expression: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "Expression"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-schedule.html#cfn-synthetics-canary-schedule-expression"""
+    p_DurationInSeconds: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "DurationInSeconds"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-schedule.html#cfn-synthetics-canary-schedule-durationinseconds"""
+
+@attr.s
+class PropCanaryRunConfig(Property):
+    """
+    AWS Object Type = "AWS::Synthetics::Canary.RunConfig"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-runconfig.html
+
+    Property Document:
+    
+    - ``p_ActiveTracing``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-runconfig.html#cfn-synthetics-canary-runconfig-activetracing
+    - ``p_EnvironmentVariables``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-runconfig.html#cfn-synthetics-canary-runconfig-environmentvariables
+    - ``p_MemoryInMB``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-runconfig.html#cfn-synthetics-canary-runconfig-memoryinmb
+    - ``p_TimeoutInSeconds``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-runconfig.html#cfn-synthetics-canary-runconfig-timeoutinseconds
+    """
+    AWS_OBJECT_TYPE = "AWS::Synthetics::Canary.RunConfig"
+    
+    p_ActiveTracing: bool = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(bool)),
+        metadata={AttrMeta.PROPERTY_NAME: "ActiveTracing"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-runconfig.html#cfn-synthetics-canary-runconfig-activetracing"""
+    p_EnvironmentVariables: typing.Dict[str, TypeHint.intrinsic_str] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.deep_mapping(key_validator=attr.validators.instance_of(str), value_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type))),
+        metadata={AttrMeta.PROPERTY_NAME: "EnvironmentVariables"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-runconfig.html#cfn-synthetics-canary-runconfig-environmentvariables"""
+    p_MemoryInMB: int = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(int)),
+        metadata={AttrMeta.PROPERTY_NAME: "MemoryInMB"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-runconfig.html#cfn-synthetics-canary-runconfig-memoryinmb"""
+    p_TimeoutInSeconds: int = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(int)),
+        metadata={AttrMeta.PROPERTY_NAME: "TimeoutInSeconds"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-runconfig.html#cfn-synthetics-canary-runconfig-timeoutinseconds"""
+
+@attr.s
 class PropCanaryS3Encryption(Property):
     """
     AWS Object Type = "AWS::Synthetics::Canary.S3Encryption"
@@ -74,33 +142,6 @@ class PropCanaryVPCConfig(Property):
         metadata={AttrMeta.PROPERTY_NAME: "VpcId"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-vpcconfig.html#cfn-synthetics-canary-vpcconfig-vpcid"""
-
-@attr.s
-class PropCanarySchedule(Property):
-    """
-    AWS Object Type = "AWS::Synthetics::Canary.Schedule"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-schedule.html
-
-    Property Document:
-    
-    - ``rp_Expression``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-schedule.html#cfn-synthetics-canary-schedule-expression
-    - ``p_DurationInSeconds``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-schedule.html#cfn-synthetics-canary-schedule-durationinseconds
-    """
-    AWS_OBJECT_TYPE = "AWS::Synthetics::Canary.Schedule"
-    
-    rp_Expression: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Expression"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-schedule.html#cfn-synthetics-canary-schedule-expression"""
-    p_DurationInSeconds: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "DurationInSeconds"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-schedule.html#cfn-synthetics-canary-schedule-durationinseconds"""
 
 @attr.s
 class PropCanaryCode(Property):
@@ -178,68 +219,6 @@ class PropCanaryBaseScreenshot(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-basescreenshot.html#cfn-synthetics-canary-basescreenshot-ignorecoordinates"""
 
 @attr.s
-class PropCanaryRunConfig(Property):
-    """
-    AWS Object Type = "AWS::Synthetics::Canary.RunConfig"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-runconfig.html
-
-    Property Document:
-    
-    - ``p_ActiveTracing``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-runconfig.html#cfn-synthetics-canary-runconfig-activetracing
-    - ``p_EnvironmentVariables``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-runconfig.html#cfn-synthetics-canary-runconfig-environmentvariables
-    - ``p_MemoryInMB``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-runconfig.html#cfn-synthetics-canary-runconfig-memoryinmb
-    - ``p_TimeoutInSeconds``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-runconfig.html#cfn-synthetics-canary-runconfig-timeoutinseconds
-    """
-    AWS_OBJECT_TYPE = "AWS::Synthetics::Canary.RunConfig"
-    
-    p_ActiveTracing: bool = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(bool)),
-        metadata={AttrMeta.PROPERTY_NAME: "ActiveTracing"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-runconfig.html#cfn-synthetics-canary-runconfig-activetracing"""
-    p_EnvironmentVariables: typing.Dict[str, TypeHint.intrinsic_str] = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.deep_mapping(key_validator=attr.validators.instance_of(str), value_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type))),
-        metadata={AttrMeta.PROPERTY_NAME: "EnvironmentVariables"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-runconfig.html#cfn-synthetics-canary-runconfig-environmentvariables"""
-    p_MemoryInMB: int = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "MemoryInMB"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-runconfig.html#cfn-synthetics-canary-runconfig-memoryinmb"""
-    p_TimeoutInSeconds: int = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "TimeoutInSeconds"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-runconfig.html#cfn-synthetics-canary-runconfig-timeoutinseconds"""
-
-@attr.s
-class PropCanaryArtifactConfig(Property):
-    """
-    AWS Object Type = "AWS::Synthetics::Canary.ArtifactConfig"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-artifactconfig.html
-
-    Property Document:
-    
-    - ``p_S3Encryption``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-artifactconfig.html#cfn-synthetics-canary-artifactconfig-s3encryption
-    """
-    AWS_OBJECT_TYPE = "AWS::Synthetics::Canary.ArtifactConfig"
-    
-    p_S3Encryption: typing.Union['PropCanaryS3Encryption', dict] = attr.ib(
-        default=None,
-        converter=PropCanaryS3Encryption.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropCanaryS3Encryption)),
-        metadata={AttrMeta.PROPERTY_NAME: "S3Encryption"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-artifactconfig.html#cfn-synthetics-canary-artifactconfig-s3encryption"""
-
-@attr.s
 class PropCanaryVisualReference(Property):
     """
     AWS Object Type = "AWS::Synthetics::Canary.VisualReference"
@@ -267,6 +246,27 @@ class PropCanaryVisualReference(Property):
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-visualreference.html#cfn-synthetics-canary-visualreference-basescreenshots"""
 
+@attr.s
+class PropCanaryArtifactConfig(Property):
+    """
+    AWS Object Type = "AWS::Synthetics::Canary.ArtifactConfig"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-artifactconfig.html
+
+    Property Document:
+    
+    - ``p_S3Encryption``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-artifactconfig.html#cfn-synthetics-canary-artifactconfig-s3encryption
+    """
+    AWS_OBJECT_TYPE = "AWS::Synthetics::Canary.ArtifactConfig"
+    
+    p_S3Encryption: typing.Union['PropCanaryS3Encryption', dict] = attr.ib(
+        default=None,
+        converter=PropCanaryS3Encryption.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropCanaryS3Encryption)),
+        metadata={AttrMeta.PROPERTY_NAME: "S3Encryption"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-synthetics-canary-artifactconfig.html#cfn-synthetics-canary-artifactconfig-s3encryption"""
+
 
 #--- Resource declaration ---
 
@@ -287,6 +287,7 @@ class Canary(Resource):
     - ``rp_Schedule``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html#cfn-synthetics-canary-schedule
     - ``rp_StartCanaryAfterCreation``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html#cfn-synthetics-canary-startcanaryaftercreation
     - ``p_ArtifactConfig``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html#cfn-synthetics-canary-artifactconfig
+    - ``p_DeleteLambdaResourcesOnCanaryDeletion``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html#cfn-synthetics-canary-deletelambdaresourcesoncanarydeletion
     - ``p_FailureRetentionPeriod``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html#cfn-synthetics-canary-failureretentionperiod
     - ``p_RunConfig``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html#cfn-synthetics-canary-runconfig
     - ``p_SuccessRetentionPeriod``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html#cfn-synthetics-canary-successretentionperiod
@@ -300,92 +301,205 @@ class Canary(Resource):
     rp_ArtifactS3Location: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "ArtifactS3Location"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ArtifactS3Location",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html#cfn-synthetics-canary-artifacts3location"""
     rp_Code: typing.Union['PropCanaryCode', dict] = attr.ib(
         default=None,
         converter=PropCanaryCode.from_dict,
         validator=attr.validators.instance_of(PropCanaryCode),
-        metadata={AttrMeta.PROPERTY_NAME: "Code"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Code",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": True,
+                "Type": 'Code',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html#cfn-synthetics-canary-code"""
     rp_ExecutionRoleArn: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "ExecutionRoleArn"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ExecutionRoleArn",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html#cfn-synthetics-canary-executionrolearn"""
     rp_Name: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Name"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Name",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html#cfn-synthetics-canary-name"""
     rp_RuntimeVersion: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "RuntimeVersion"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "RuntimeVersion",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html#cfn-synthetics-canary-runtimeversion"""
     rp_Schedule: typing.Union['PropCanarySchedule', dict] = attr.ib(
         default=None,
         converter=PropCanarySchedule.from_dict,
         validator=attr.validators.instance_of(PropCanarySchedule),
-        metadata={AttrMeta.PROPERTY_NAME: "Schedule"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Schedule",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": True,
+                "Type": 'Schedule',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html#cfn-synthetics-canary-schedule"""
     rp_StartCanaryAfterCreation: bool = attr.ib(
         default=None,
         validator=attr.validators.instance_of(bool),
-        metadata={AttrMeta.PROPERTY_NAME: "StartCanaryAfterCreation"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "StartCanaryAfterCreation",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": True,
+                "PrimitiveType": 'Boolean',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html#cfn-synthetics-canary-startcanaryaftercreation"""
     p_ArtifactConfig: typing.Union['PropCanaryArtifactConfig', dict] = attr.ib(
         default=None,
         converter=PropCanaryArtifactConfig.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropCanaryArtifactConfig)),
-        metadata={AttrMeta.PROPERTY_NAME: "ArtifactConfig"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ArtifactConfig",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'ArtifactConfig',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html#cfn-synthetics-canary-artifactconfig"""
+    p_DeleteLambdaResourcesOnCanaryDeletion: bool = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(bool)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "DeleteLambdaResourcesOnCanaryDeletion",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'Boolean',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html#cfn-synthetics-canary-deletelambdaresourcesoncanarydeletion"""
     p_FailureRetentionPeriod: int = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "FailureRetentionPeriod"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "FailureRetentionPeriod",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'Integer',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html#cfn-synthetics-canary-failureretentionperiod"""
     p_RunConfig: typing.Union['PropCanaryRunConfig', dict] = attr.ib(
         default=None,
         converter=PropCanaryRunConfig.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropCanaryRunConfig)),
-        metadata={AttrMeta.PROPERTY_NAME: "RunConfig"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "RunConfig",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'RunConfig',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html#cfn-synthetics-canary-runconfig"""
     p_SuccessRetentionPeriod: int = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "SuccessRetentionPeriod"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "SuccessRetentionPeriod",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'Integer',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html#cfn-synthetics-canary-successretentionperiod"""
     p_VPCConfig: typing.Union['PropCanaryVPCConfig', dict] = attr.ib(
         default=None,
         converter=PropCanaryVPCConfig.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropCanaryVPCConfig)),
-        metadata={AttrMeta.PROPERTY_NAME: "VPCConfig"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "VPCConfig",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'VPCConfig',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html#cfn-synthetics-canary-vpcconfig"""
     p_VisualReference: typing.Union['PropCanaryVisualReference', dict] = attr.ib(
         default=None,
         converter=PropCanaryVisualReference.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropCanaryVisualReference)),
-        metadata={AttrMeta.PROPERTY_NAME: "VisualReference"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "VisualReference",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'VisualReference',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html#cfn-synthetics-canary-visualreference"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'List',
+                "ItemType": 'Tag',
+                "DuplicatesAllowed": True,
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html#cfn-synthetics-canary-tags"""
 
@@ -399,4 +513,72 @@ class Canary(Resource):
     def rv_State(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html#aws-resource-synthetics-canary-return-values"""
         return GetAtt(resource=self, attr_name="State")
+    
+
+@attr.s
+class Group(Resource):
+    """
+    AWS Object Type = "AWS::Synthetics::Group"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-group.html
+
+    Property Document:
+    
+    - ``rp_Name``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-group.html#cfn-synthetics-group-name
+    - ``p_ResourceArns``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-group.html#cfn-synthetics-group-resourcearns
+    - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-group.html#cfn-synthetics-group-tags
+    """
+    AWS_OBJECT_TYPE = "AWS::Synthetics::Group"
+
+    
+    rp_Name: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Name",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-group.html#cfn-synthetics-group-name"""
+    p_ResourceArns: typing.List[TypeHint.intrinsic_str] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ResourceArns",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'List',
+                "PrimitiveItemType": 'String',
+                "DuplicatesAllowed": False,
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-group.html#cfn-synthetics-group-resourcearns"""
+    p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
+        default=None,
+        converter=Tag.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'List',
+                "ItemType": 'Tag',
+                "DuplicatesAllowed": True,
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-group.html#cfn-synthetics-group-tags"""
+
+    
+    @property
+    def rv_Id(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-group.html#aws-resource-synthetics-group-return-values"""
+        return GetAtt(resource=self, attr_name="Id")
     

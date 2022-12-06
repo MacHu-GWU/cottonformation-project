@@ -35,6 +35,40 @@ class PropReplicationGroupCloudWatchLogsDestinationDetails(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-replicationgroup-cloudwatchlogsdestinationdetails.html#cfn-elasticache-replicationgroup-cloudwatchlogsdestinationdetails-loggroup"""
 
 @attr.s
+class PropGlobalReplicationGroupGlobalReplicationGroupMember(Property):
+    """
+    AWS Object Type = "AWS::ElastiCache::GlobalReplicationGroup.GlobalReplicationGroupMember"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-globalreplicationgroup-globalreplicationgroupmember.html
+
+    Property Document:
+    
+    - ``p_ReplicationGroupId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-globalreplicationgroup-globalreplicationgroupmember.html#cfn-elasticache-globalreplicationgroup-globalreplicationgroupmember-replicationgroupid
+    - ``p_ReplicationGroupRegion``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-globalreplicationgroup-globalreplicationgroupmember.html#cfn-elasticache-globalreplicationgroup-globalreplicationgroupmember-replicationgroupregion
+    - ``p_Role``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-globalreplicationgroup-globalreplicationgroupmember.html#cfn-elasticache-globalreplicationgroup-globalreplicationgroupmember-role
+    """
+    AWS_OBJECT_TYPE = "AWS::ElastiCache::GlobalReplicationGroup.GlobalReplicationGroupMember"
+    
+    p_ReplicationGroupId: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "ReplicationGroupId"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-globalreplicationgroup-globalreplicationgroupmember.html#cfn-elasticache-globalreplicationgroup-globalreplicationgroupmember-replicationgroupid"""
+    p_ReplicationGroupRegion: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "ReplicationGroupRegion"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-globalreplicationgroup-globalreplicationgroupmember.html#cfn-elasticache-globalreplicationgroup-globalreplicationgroupmember-replicationgroupregion"""
+    p_Role: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "Role"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-globalreplicationgroup-globalreplicationgroupmember.html#cfn-elasticache-globalreplicationgroup-globalreplicationgroupmember-role"""
+
+@attr.s
 class PropReplicationGroupNodeGroupConfiguration(Property):
     """
     AWS Object Type = "AWS::ElastiCache::ReplicationGroup.NodeGroupConfiguration"
@@ -130,40 +164,6 @@ class PropGlobalReplicationGroupReshardingConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-globalreplicationgroup-reshardingconfiguration.html#cfn-elasticache-globalreplicationgroup-reshardingconfiguration-preferredavailabilityzones"""
 
 @attr.s
-class PropGlobalReplicationGroupGlobalReplicationGroupMember(Property):
-    """
-    AWS Object Type = "AWS::ElastiCache::GlobalReplicationGroup.GlobalReplicationGroupMember"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-globalreplicationgroup-globalreplicationgroupmember.html
-
-    Property Document:
-    
-    - ``p_ReplicationGroupId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-globalreplicationgroup-globalreplicationgroupmember.html#cfn-elasticache-globalreplicationgroup-globalreplicationgroupmember-replicationgroupid
-    - ``p_ReplicationGroupRegion``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-globalreplicationgroup-globalreplicationgroupmember.html#cfn-elasticache-globalreplicationgroup-globalreplicationgroupmember-replicationgroupregion
-    - ``p_Role``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-globalreplicationgroup-globalreplicationgroupmember.html#cfn-elasticache-globalreplicationgroup-globalreplicationgroupmember-role
-    """
-    AWS_OBJECT_TYPE = "AWS::ElastiCache::GlobalReplicationGroup.GlobalReplicationGroupMember"
-    
-    p_ReplicationGroupId: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "ReplicationGroupId"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-globalreplicationgroup-globalreplicationgroupmember.html#cfn-elasticache-globalreplicationgroup-globalreplicationgroupmember-replicationgroupid"""
-    p_ReplicationGroupRegion: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "ReplicationGroupRegion"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-globalreplicationgroup-globalreplicationgroupmember.html#cfn-elasticache-globalreplicationgroup-globalreplicationgroupmember-replicationgroupregion"""
-    p_Role: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Role"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-globalreplicationgroup-globalreplicationgroupmember.html#cfn-elasticache-globalreplicationgroup-globalreplicationgroupmember-role"""
-
-@attr.s
 class PropCacheClusterCloudWatchLogsDestinationDetails(Property):
     """
     AWS Object Type = "AWS::ElastiCache::CacheCluster.CloudWatchLogsDestinationDetails"
@@ -217,17 +217,15 @@ class PropReplicationGroupDestinationDetails(Property):
     """
     AWS_OBJECT_TYPE = "AWS::ElastiCache::ReplicationGroup.DestinationDetails"
     
-    p_CloudWatchLogsDetails: typing.Union['PropReplicationGroupCloudWatchLogsDestinationDetails', dict] = attr.ib(
+    p_CloudWatchLogsDetails: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropReplicationGroupCloudWatchLogsDestinationDetails.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropReplicationGroupCloudWatchLogsDestinationDetails)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "CloudWatchLogsDetails"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-replicationgroup-destinationdetails.html#cfn-elasticache-replicationgroup-destinationdetails-cloudwatchlogsdetails"""
-    p_KinesisFirehoseDetails: typing.Union['PropReplicationGroupKinesisFirehoseDestinationDetails', dict] = attr.ib(
+    p_KinesisFirehoseDetails: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropReplicationGroupKinesisFirehoseDestinationDetails.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropReplicationGroupKinesisFirehoseDestinationDetails)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "KinesisFirehoseDetails"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-replicationgroup-destinationdetails.html#cfn-elasticache-replicationgroup-destinationdetails-kinesisfirehosedetails"""
@@ -281,17 +279,15 @@ class PropCacheClusterDestinationDetails(Property):
     """
     AWS_OBJECT_TYPE = "AWS::ElastiCache::CacheCluster.DestinationDetails"
     
-    p_CloudWatchLogsDetails: typing.Union['PropCacheClusterCloudWatchLogsDestinationDetails', dict] = attr.ib(
+    p_CloudWatchLogsDetails: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropCacheClusterCloudWatchLogsDestinationDetails.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropCacheClusterCloudWatchLogsDestinationDetails)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "CloudWatchLogsDetails"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cachecluster-destinationdetails.html#cfn-elasticache-cachecluster-destinationdetails-cloudwatchlogsdetails"""
-    p_KinesisFirehoseDetails: typing.Union['PropCacheClusterKinesisFirehoseDestinationDetails', dict] = attr.ib(
+    p_KinesisFirehoseDetails: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropCacheClusterKinesisFirehoseDestinationDetails.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropCacheClusterKinesisFirehoseDestinationDetails)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "KinesisFirehoseDetails"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cachecluster-destinationdetails.html#cfn-elasticache-cachecluster-destinationdetails-kinesisfirehosedetails"""
@@ -402,19 +398,42 @@ class UserGroup(Resource):
     rp_Engine: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Engine"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Engine",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-usergroup.html#cfn-elasticache-usergroup-engine"""
     rp_UserGroupId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "UserGroupId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "UserGroupId",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-usergroup.html#cfn-elasticache-usergroup-usergroupid"""
     p_UserIds: typing.List[TypeHint.intrinsic_str] = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "UserIds"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "UserIds",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'List',
+                "PrimitiveItemType": 'String',
+                "DuplicatesAllowed": False,
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-usergroup.html#cfn-elasticache-usergroup-userids"""
 
@@ -435,14 +454,14 @@ class SubnetGroup(Resource):
     """
     AWS Object Type = "AWS::ElastiCache::SubnetGroup"
 
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-subnetgroup.html
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-subnetgroup.html
 
     Property Document:
     
-    - ``rp_Description``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-subnetgroup.html#cfn-elasticache-subnetgroup-description
-    - ``rp_SubnetIds``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-subnetgroup.html#cfn-elasticache-subnetgroup-subnetids
-    - ``p_CacheSubnetGroupName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-subnetgroup.html#cfn-elasticache-subnetgroup-cachesubnetgroupname
-    - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-subnetgroup.html#cfn-elasticache-subnetgroup-tags
+    - ``rp_Description``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-subnetgroup.html#cfn-elasticache-subnetgroup-description
+    - ``rp_SubnetIds``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-subnetgroup.html#cfn-elasticache-subnetgroup-subnetids
+    - ``p_CacheSubnetGroupName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-subnetgroup.html#cfn-elasticache-subnetgroup-cachesubnetgroupname
+    - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-subnetgroup.html#cfn-elasticache-subnetgroup-tags
     """
     AWS_OBJECT_TYPE = "AWS::ElastiCache::SubnetGroup"
 
@@ -450,28 +469,60 @@ class SubnetGroup(Resource):
     rp_Description: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Description"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Description",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-subnetgroup.html#cfn-elasticache-subnetgroup-description"""
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-subnetgroup.html#cfn-elasticache-subnetgroup-description"""
     rp_SubnetIds: typing.List[TypeHint.intrinsic_str] = attr.ib(
         default=None,
         validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list)),
-        metadata={AttrMeta.PROPERTY_NAME: "SubnetIds"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "SubnetIds",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": True,
+                "Type": 'List',
+                "PrimitiveItemType": 'String',
+                "DuplicatesAllowed": True,
+            }
+        },
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-subnetgroup.html#cfn-elasticache-subnetgroup-subnetids"""
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-subnetgroup.html#cfn-elasticache-subnetgroup-subnetids"""
     p_CacheSubnetGroupName: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "CacheSubnetGroupName"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "CacheSubnetGroupName",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-subnetgroup.html#cfn-elasticache-subnetgroup-cachesubnetgroupname"""
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-subnetgroup.html#cfn-elasticache-subnetgroup-cachesubnetgroupname"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'List',
+                "ItemType": 'Tag',
+                "DuplicatesAllowed": True,
+            }
+        },
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-subnetgroup.html#cfn-elasticache-subnetgroup-tags"""
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-subnetgroup.html#cfn-elasticache-subnetgroup-tags"""
 
     
 
@@ -497,9 +548,11 @@ class ReplicationGroup(Resource):
     - ``p_Engine``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-engine
     - ``p_EngineVersion``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-engineversion
     - ``p_GlobalReplicationGroupId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-globalreplicationgroupid
+    - ``p_IpDiscovery``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-ipdiscovery
     - ``p_KmsKeyId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-kmskeyid
     - ``p_LogDeliveryConfigurations``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-logdeliveryconfigurations
     - ``p_MultiAZEnabled``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-multiazenabled
+    - ``p_NetworkType``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-networktype
     - ``p_NodeGroupConfiguration``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-nodegroupconfiguration
     - ``p_NotificationTopicArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-notificationtopicarn
     - ``p_NumCacheClusters``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-numcacheclusters
@@ -526,214 +579,501 @@ class ReplicationGroup(Resource):
     rp_ReplicationGroupDescription: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "ReplicationGroupDescription"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ReplicationGroupDescription",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": True,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-replicationgroupdescription"""
     p_AtRestEncryptionEnabled: bool = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(bool)),
-        metadata={AttrMeta.PROPERTY_NAME: "AtRestEncryptionEnabled"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "AtRestEncryptionEnabled",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'Boolean',
+                "Required": False,
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-atrestencryptionenabled"""
     p_AuthToken: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "AuthToken"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "AuthToken",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Conditional',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-authtoken"""
     p_AutoMinorVersionUpgrade: bool = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(bool)),
-        metadata={AttrMeta.PROPERTY_NAME: "AutoMinorVersionUpgrade"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "AutoMinorVersionUpgrade",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'Boolean',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-autominorversionupgrade"""
     p_AutomaticFailoverEnabled: bool = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(bool)),
-        metadata={AttrMeta.PROPERTY_NAME: "AutomaticFailoverEnabled"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "AutomaticFailoverEnabled",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'Boolean',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-automaticfailoverenabled"""
     p_CacheNodeType: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "CacheNodeType"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "CacheNodeType",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-cachenodetype"""
     p_CacheParameterGroupName: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "CacheParameterGroupName"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "CacheParameterGroupName",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-cacheparametergroupname"""
     p_CacheSecurityGroupNames: typing.List[TypeHint.intrinsic_str] = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "CacheSecurityGroupNames"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "CacheSecurityGroupNames",
+            AttrMeta.DATA: {
+                "DuplicatesAllowed": False,
+                "PrimitiveItemType": 'String',
+                "Required": False,
+                "Type": 'List',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-cachesecuritygroupnames"""
     p_CacheSubnetGroupName: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "CacheSubnetGroupName"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "CacheSubnetGroupName",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-cachesubnetgroupname"""
     p_DataTieringEnabled: bool = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(bool)),
-        metadata={AttrMeta.PROPERTY_NAME: "DataTieringEnabled"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "DataTieringEnabled",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'Boolean',
+                "Required": False,
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-datatieringenabled"""
     p_Engine: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Engine"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Engine",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-engine"""
     p_EngineVersion: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "EngineVersion"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "EngineVersion",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-engineversion"""
     p_GlobalReplicationGroupId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "GlobalReplicationGroupId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "GlobalReplicationGroupId",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-globalreplicationgroupid"""
+    p_IpDiscovery: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "IpDiscovery",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-ipdiscovery"""
     p_KmsKeyId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "KmsKeyId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "KmsKeyId",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-kmskeyid"""
     p_LogDeliveryConfigurations: typing.List[typing.Union['PropReplicationGroupLogDeliveryConfigurationRequest', dict]] = attr.ib(
         default=None,
         converter=PropReplicationGroupLogDeliveryConfigurationRequest.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropReplicationGroupLogDeliveryConfigurationRequest), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "LogDeliveryConfigurations"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "LogDeliveryConfigurations",
+            AttrMeta.DATA: {
+                "DuplicatesAllowed": False,
+                "ItemType": 'LogDeliveryConfigurationRequest',
+                "Required": False,
+                "Type": 'List',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-logdeliveryconfigurations"""
     p_MultiAZEnabled: bool = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(bool)),
-        metadata={AttrMeta.PROPERTY_NAME: "MultiAZEnabled"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "MultiAZEnabled",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'Boolean',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-multiazenabled"""
+    p_NetworkType: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "NetworkType",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Immutable',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-networktype"""
     p_NodeGroupConfiguration: typing.List[typing.Union['PropReplicationGroupNodeGroupConfiguration', dict]] = attr.ib(
         default=None,
         converter=PropReplicationGroupNodeGroupConfiguration.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropReplicationGroupNodeGroupConfiguration), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "NodeGroupConfiguration"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "NodeGroupConfiguration",
+            AttrMeta.DATA: {
+                "DuplicatesAllowed": False,
+                "ItemType": 'NodeGroupConfiguration',
+                "Required": False,
+                "Type": 'List',
+                "UpdateType": 'Conditional',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-nodegroupconfiguration"""
     p_NotificationTopicArn: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "NotificationTopicArn"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "NotificationTopicArn",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-notificationtopicarn"""
     p_NumCacheClusters: int = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "NumCacheClusters"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "NumCacheClusters",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'Integer',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-numcacheclusters"""
     p_NumNodeGroups: int = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "NumNodeGroups"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "NumNodeGroups",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'Integer',
+                "Required": False,
+                "UpdateType": 'Conditional',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-numnodegroups"""
     p_Port: int = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "Port"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Port",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'Integer',
+                "Required": False,
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-port"""
     p_PreferredCacheClusterAZs: typing.List[TypeHint.intrinsic_str] = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "PreferredCacheClusterAZs"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "PreferredCacheClusterAZs",
+            AttrMeta.DATA: {
+                "DuplicatesAllowed": False,
+                "PrimitiveItemType": 'String',
+                "Required": False,
+                "Type": 'List',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-preferredcacheclusterazs"""
     p_PreferredMaintenanceWindow: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "PreferredMaintenanceWindow"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "PreferredMaintenanceWindow",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-preferredmaintenancewindow"""
     p_PrimaryClusterId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "PrimaryClusterId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "PrimaryClusterId",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-primaryclusterid"""
     p_ReplicasPerNodeGroup: int = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "ReplicasPerNodeGroup"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ReplicasPerNodeGroup",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'Integer',
+                "Required": False,
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-replicaspernodegroup"""
     p_ReplicationGroupId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "ReplicationGroupId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ReplicationGroupId",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-replicationgroupid"""
     p_SecurityGroupIds: typing.List[TypeHint.intrinsic_str] = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "SecurityGroupIds"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "SecurityGroupIds",
+            AttrMeta.DATA: {
+                "DuplicatesAllowed": False,
+                "PrimitiveItemType": 'String',
+                "Required": False,
+                "Type": 'List',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-securitygroupids"""
     p_SnapshotArns: typing.List[TypeHint.intrinsic_str] = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "SnapshotArns"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "SnapshotArns",
+            AttrMeta.DATA: {
+                "DuplicatesAllowed": False,
+                "PrimitiveItemType": 'String',
+                "Required": False,
+                "Type": 'List',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-snapshotarns"""
     p_SnapshotName: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "SnapshotName"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "SnapshotName",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-snapshotname"""
     p_SnapshotRetentionLimit: int = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "SnapshotRetentionLimit"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "SnapshotRetentionLimit",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'Integer',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-snapshotretentionlimit"""
     p_SnapshotWindow: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "SnapshotWindow"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "SnapshotWindow",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-snapshotwindow"""
     p_SnapshottingClusterId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "SnapshottingClusterId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "SnapshottingClusterId",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-snapshottingclusterid"""
     p_TransitEncryptionEnabled: bool = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(bool)),
-        metadata={AttrMeta.PROPERTY_NAME: "TransitEncryptionEnabled"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "TransitEncryptionEnabled",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'Boolean',
+                "Required": False,
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-transitencryptionenabled"""
     p_UserGroupIds: typing.List[TypeHint.intrinsic_str] = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "UserGroupIds"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "UserGroupIds",
+            AttrMeta.DATA: {
+                "DuplicatesAllowed": False,
+                "PrimitiveItemType": 'String',
+                "Required": False,
+                "Type": 'List',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-usergroupids"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "DuplicatesAllowed": True,
+                "ItemType": 'Tag',
+                "Required": False,
+                "Type": 'List',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-replicationgroup.html#cfn-elasticache-replicationgroup-tags"""
 
@@ -809,26 +1149,58 @@ class ParameterGroup(Resource):
     rp_CacheParameterGroupFamily: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "CacheParameterGroupFamily"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "CacheParameterGroupFamily",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": True,
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-parameter-group.html#cfn-elasticache-parametergroup-cacheparametergroupfamily"""
     rp_Description: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Description"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Description",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": True,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-parameter-group.html#cfn-elasticache-parametergroup-description"""
     p_Properties: typing.Dict[str, TypeHint.intrinsic_str] = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.deep_mapping(key_validator=attr.validators.instance_of(str), value_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type))),
-        metadata={AttrMeta.PROPERTY_NAME: "Properties"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Properties",
+            AttrMeta.DATA: {
+                "DuplicatesAllowed": False,
+                "PrimitiveItemType": 'String',
+                "Required": False,
+                "Type": 'Map',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-parameter-group.html#cfn-elasticache-parametergroup-properties"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "DuplicatesAllowed": True,
+                "ItemType": 'Tag',
+                "Required": False,
+                "Type": 'List',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-parameter-group.html#cfn-elasticache-parametergroup-tags"""
 
@@ -860,56 +1232,123 @@ class GlobalReplicationGroup(Resource):
         default=None,
         converter=PropGlobalReplicationGroupGlobalReplicationGroupMember.from_list,
         validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropGlobalReplicationGroupGlobalReplicationGroupMember), iterable_validator=attr.validators.instance_of(list)),
-        metadata={AttrMeta.PROPERTY_NAME: "Members"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Members",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": True,
+                "Type": 'List',
+                "ItemType": 'GlobalReplicationGroupMember',
+                "DuplicatesAllowed": False,
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-globalreplicationgroup.html#cfn-elasticache-globalreplicationgroup-members"""
     p_AutomaticFailoverEnabled: bool = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(bool)),
-        metadata={AttrMeta.PROPERTY_NAME: "AutomaticFailoverEnabled"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "AutomaticFailoverEnabled",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'Boolean',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-globalreplicationgroup.html#cfn-elasticache-globalreplicationgroup-automaticfailoverenabled"""
     p_CacheNodeType: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "CacheNodeType"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "CacheNodeType",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-globalreplicationgroup.html#cfn-elasticache-globalreplicationgroup-cachenodetype"""
     p_CacheParameterGroupName: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "CacheParameterGroupName"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "CacheParameterGroupName",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-globalreplicationgroup.html#cfn-elasticache-globalreplicationgroup-cacheparametergroupname"""
     p_EngineVersion: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "EngineVersion"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "EngineVersion",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-globalreplicationgroup.html#cfn-elasticache-globalreplicationgroup-engineversion"""
     p_GlobalNodeGroupCount: int = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "GlobalNodeGroupCount"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "GlobalNodeGroupCount",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'Integer',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-globalreplicationgroup.html#cfn-elasticache-globalreplicationgroup-globalnodegroupcount"""
     p_GlobalReplicationGroupDescription: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "GlobalReplicationGroupDescription"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "GlobalReplicationGroupDescription",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-globalreplicationgroup.html#cfn-elasticache-globalreplicationgroup-globalreplicationgroupdescription"""
     p_GlobalReplicationGroupIdSuffix: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "GlobalReplicationGroupIdSuffix"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "GlobalReplicationGroupIdSuffix",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-globalreplicationgroup.html#cfn-elasticache-globalreplicationgroup-globalreplicationgroupidsuffix"""
     p_RegionalConfigurations: typing.List[typing.Union['PropGlobalReplicationGroupRegionalConfiguration', dict]] = attr.ib(
         default=None,
         converter=PropGlobalReplicationGroupRegionalConfiguration.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropGlobalReplicationGroupRegionalConfiguration), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "RegionalConfigurations"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "RegionalConfigurations",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'List',
+                "ItemType": 'RegionalConfiguration',
+                "DuplicatesAllowed": False,
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-globalreplicationgroup.html#cfn-elasticache-globalreplicationgroup-regionalconfigurations"""
 
@@ -944,7 +1383,9 @@ class CacheCluster(Resource):
     - ``p_CacheSubnetGroupName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-cachesubnetgroupname
     - ``p_ClusterName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-clustername
     - ``p_EngineVersion``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-engineversion
+    - ``p_IpDiscovery``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-ipdiscovery
     - ``p_LogDeliveryConfigurations``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-logdeliveryconfigurations
+    - ``p_NetworkType``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-networktype
     - ``p_NotificationTopicArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-notificationtopicarn
     - ``p_Port``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-port
     - ``p_PreferredAvailabilityZone``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-preferredavailabilityzone
@@ -954,6 +1395,7 @@ class CacheCluster(Resource):
     - ``p_SnapshotName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-snapshotname
     - ``p_SnapshotRetentionLimit``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-snapshotretentionlimit
     - ``p_SnapshotWindow``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-snapshotwindow
+    - ``p_TransitEncryptionEnabled``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-transitencryptionenabled
     - ``p_VpcSecurityGroupIds``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-vpcsecuritygroupids
     - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-tags
     """
@@ -963,135 +1405,340 @@ class CacheCluster(Resource):
     rp_CacheNodeType: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "CacheNodeType"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "CacheNodeType",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": True,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-cachenodetype"""
     rp_Engine: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Engine"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Engine",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": True,
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-engine"""
     rp_NumCacheNodes: int = attr.ib(
         default=None,
         validator=attr.validators.instance_of(int),
-        metadata={AttrMeta.PROPERTY_NAME: "NumCacheNodes"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "NumCacheNodes",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'Integer',
+                "Required": True,
+                "UpdateType": 'Conditional',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-numcachenodes"""
     p_AZMode: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "AZMode"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "AZMode",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Conditional',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-azmode"""
     p_AutoMinorVersionUpgrade: bool = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(bool)),
-        metadata={AttrMeta.PROPERTY_NAME: "AutoMinorVersionUpgrade"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "AutoMinorVersionUpgrade",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'Boolean',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-autominorversionupgrade"""
     p_CacheParameterGroupName: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "CacheParameterGroupName"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "CacheParameterGroupName",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-cacheparametergroupname"""
     p_CacheSecurityGroupNames: typing.List[TypeHint.intrinsic_str] = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "CacheSecurityGroupNames"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "CacheSecurityGroupNames",
+            AttrMeta.DATA: {
+                "DuplicatesAllowed": True,
+                "PrimitiveItemType": 'String',
+                "Required": False,
+                "Type": 'List',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-cachesecuritygroupnames"""
     p_CacheSubnetGroupName: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "CacheSubnetGroupName"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "CacheSubnetGroupName",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-cachesubnetgroupname"""
     p_ClusterName: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "ClusterName"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ClusterName",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-clustername"""
     p_EngineVersion: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "EngineVersion"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "EngineVersion",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-engineversion"""
+    p_IpDiscovery: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "IpDiscovery",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-ipdiscovery"""
     p_LogDeliveryConfigurations: typing.List[typing.Union['PropCacheClusterLogDeliveryConfigurationRequest', dict]] = attr.ib(
         default=None,
         converter=PropCacheClusterLogDeliveryConfigurationRequest.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropCacheClusterLogDeliveryConfigurationRequest), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "LogDeliveryConfigurations"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "LogDeliveryConfigurations",
+            AttrMeta.DATA: {
+                "DuplicatesAllowed": False,
+                "ItemType": 'LogDeliveryConfigurationRequest',
+                "Required": False,
+                "Type": 'List',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-logdeliveryconfigurations"""
+    p_NetworkType: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "NetworkType",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Immutable',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-networktype"""
     p_NotificationTopicArn: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "NotificationTopicArn"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "NotificationTopicArn",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-notificationtopicarn"""
     p_Port: int = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "Port"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Port",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'Integer',
+                "Required": False,
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-port"""
     p_PreferredAvailabilityZone: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "PreferredAvailabilityZone"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "PreferredAvailabilityZone",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Conditional',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-preferredavailabilityzone"""
     p_PreferredAvailabilityZones: typing.List[TypeHint.intrinsic_str] = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "PreferredAvailabilityZones"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "PreferredAvailabilityZones",
+            AttrMeta.DATA: {
+                "DuplicatesAllowed": False,
+                "PrimitiveItemType": 'String',
+                "Required": False,
+                "Type": 'List',
+                "UpdateType": 'Conditional',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-preferredavailabilityzones"""
     p_PreferredMaintenanceWindow: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "PreferredMaintenanceWindow"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "PreferredMaintenanceWindow",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-preferredmaintenancewindow"""
     p_SnapshotArns: typing.List[TypeHint.intrinsic_str] = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "SnapshotArns"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "SnapshotArns",
+            AttrMeta.DATA: {
+                "DuplicatesAllowed": False,
+                "PrimitiveItemType": 'String',
+                "Required": False,
+                "Type": 'List',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-snapshotarns"""
     p_SnapshotName: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "SnapshotName"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "SnapshotName",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-snapshotname"""
     p_SnapshotRetentionLimit: int = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "SnapshotRetentionLimit"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "SnapshotRetentionLimit",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'Integer',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-snapshotretentionlimit"""
     p_SnapshotWindow: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "SnapshotWindow"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "SnapshotWindow",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-snapshotwindow"""
+    p_TransitEncryptionEnabled: bool = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(bool)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "TransitEncryptionEnabled",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'Boolean',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-transitencryptionenabled"""
     p_VpcSecurityGroupIds: typing.List[TypeHint.intrinsic_str] = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "VpcSecurityGroupIds"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "VpcSecurityGroupIds",
+            AttrMeta.DATA: {
+                "DuplicatesAllowed": True,
+                "PrimitiveItemType": 'String',
+                "Required": False,
+                "Type": 'List',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-vpcsecuritygroupids"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "DuplicatesAllowed": True,
+                "ItemType": 'Tag',
+                "Required": False,
+                "Type": 'List',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-cache-cluster.html#cfn-elasticache-cachecluster-tags"""
 
@@ -1130,6 +1777,7 @@ class User(Resource):
     - ``rp_UserId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-user.html#cfn-elasticache-user-userid
     - ``rp_UserName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-user.html#cfn-elasticache-user-username
     - ``p_AccessString``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-user.html#cfn-elasticache-user-accessstring
+    - ``p_AuthenticationMode``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-user.html#cfn-elasticache-user-authenticationmode
     - ``p_NoPasswordRequired``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-user.html#cfn-elasticache-user-nopasswordrequired
     - ``p_Passwords``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-user.html#cfn-elasticache-user-passwords
     """
@@ -1139,37 +1787,94 @@ class User(Resource):
     rp_Engine: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Engine"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Engine",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-user.html#cfn-elasticache-user-engine"""
     rp_UserId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "UserId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "UserId",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-user.html#cfn-elasticache-user-userid"""
     rp_UserName: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "UserName"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "UserName",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-user.html#cfn-elasticache-user-username"""
     p_AccessString: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "AccessString"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "AccessString",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-user.html#cfn-elasticache-user-accessstring"""
+    p_AuthenticationMode: dict = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "AuthenticationMode",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'Json',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-user.html#cfn-elasticache-user-authenticationmode"""
     p_NoPasswordRequired: bool = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(bool)),
-        metadata={AttrMeta.PROPERTY_NAME: "NoPasswordRequired"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "NoPasswordRequired",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'Boolean',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-user.html#cfn-elasticache-user-nopasswordrequired"""
     p_Passwords: typing.List[TypeHint.intrinsic_str] = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Passwords"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Passwords",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'List',
+                "PrimitiveItemType": 'String',
+                "DuplicatesAllowed": False,
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticache-user.html#cfn-elasticache-user-passwords"""
 
@@ -1203,14 +1908,30 @@ class SecurityGroup(Resource):
     rp_Description: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Description"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Description",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": True,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-security-group.html#cfn-elasticache-securitygroup-description"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "DuplicatesAllowed": True,
+                "ItemType": 'Tag',
+                "Required": False,
+                "Type": 'List',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-security-group.html#cfn-elasticache-securitygroup-tags"""
 
@@ -1235,19 +1956,40 @@ class SecurityGroupIngress(Resource):
     rp_CacheSecurityGroupName: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "CacheSecurityGroupName"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "CacheSecurityGroupName",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": True,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-security-group-ingress.html#cfn-elasticache-securitygroupingress-cachesecuritygroupname"""
     rp_EC2SecurityGroupName: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "EC2SecurityGroupName"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "EC2SecurityGroupName",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": True,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-security-group-ingress.html#cfn-elasticache-securitygroupingress-ec2securitygroupname"""
     p_EC2SecurityGroupOwnerId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "EC2SecurityGroupOwnerId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "EC2SecurityGroupOwnerId",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-elasticache-security-group-ingress.html#cfn-elasticache-securitygroupingress-ec2securitygroupownerid"""
 

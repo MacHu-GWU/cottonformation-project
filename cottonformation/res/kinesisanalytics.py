@@ -96,6 +96,114 @@ class PropApplicationReferenceDataSourceCSVMappingParameters(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationreferencedatasource-csvmappingparameters.html#cfn-kinesisanalytics-applicationreferencedatasource-csvmappingparameters-recordrowdelimiter"""
 
 @attr.s
+class PropApplicationRecordColumn(Property):
+    """
+    AWS Object Type = "AWS::KinesisAnalytics::Application.RecordColumn"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-recordcolumn.html
+
+    Property Document:
+    
+    - ``rp_Name``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-recordcolumn.html#cfn-kinesisanalytics-application-recordcolumn-name
+    - ``rp_SqlType``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-recordcolumn.html#cfn-kinesisanalytics-application-recordcolumn-sqltype
+    - ``p_Mapping``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-recordcolumn.html#cfn-kinesisanalytics-application-recordcolumn-mapping
+    """
+    AWS_OBJECT_TYPE = "AWS::KinesisAnalytics::Application.RecordColumn"
+    
+    rp_Name: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "Name"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-recordcolumn.html#cfn-kinesisanalytics-application-recordcolumn-name"""
+    rp_SqlType: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "SqlType"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-recordcolumn.html#cfn-kinesisanalytics-application-recordcolumn-sqltype"""
+    p_Mapping: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "Mapping"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-recordcolumn.html#cfn-kinesisanalytics-application-recordcolumn-mapping"""
+
+@attr.s
+class PropApplicationKinesisFirehoseInput(Property):
+    """
+    AWS Object Type = "AWS::KinesisAnalytics::Application.KinesisFirehoseInput"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-kinesisfirehoseinput.html
+
+    Property Document:
+    
+    - ``rp_ResourceARN``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-kinesisfirehoseinput.html#cfn-kinesisanalytics-application-kinesisfirehoseinput-resourcearn
+    - ``rp_RoleARN``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-kinesisfirehoseinput.html#cfn-kinesisanalytics-application-kinesisfirehoseinput-rolearn
+    """
+    AWS_OBJECT_TYPE = "AWS::KinesisAnalytics::Application.KinesisFirehoseInput"
+    
+    rp_ResourceARN: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "ResourceARN"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-kinesisfirehoseinput.html#cfn-kinesisanalytics-application-kinesisfirehoseinput-resourcearn"""
+    rp_RoleARN: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "RoleARN"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-kinesisfirehoseinput.html#cfn-kinesisanalytics-application-kinesisfirehoseinput-rolearn"""
+
+@attr.s
+class PropApplicationOutputLambdaOutput(Property):
+    """
+    AWS Object Type = "AWS::KinesisAnalytics::ApplicationOutput.LambdaOutput"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationoutput-lambdaoutput.html
+
+    Property Document:
+    
+    - ``rp_ResourceARN``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationoutput-lambdaoutput.html#cfn-kinesisanalytics-applicationoutput-lambdaoutput-resourcearn
+    - ``rp_RoleARN``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationoutput-lambdaoutput.html#cfn-kinesisanalytics-applicationoutput-lambdaoutput-rolearn
+    """
+    AWS_OBJECT_TYPE = "AWS::KinesisAnalytics::ApplicationOutput.LambdaOutput"
+    
+    rp_ResourceARN: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "ResourceARN"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationoutput-lambdaoutput.html#cfn-kinesisanalytics-applicationoutput-lambdaoutput-resourcearn"""
+    rp_RoleARN: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "RoleARN"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationoutput-lambdaoutput.html#cfn-kinesisanalytics-applicationoutput-lambdaoutput-rolearn"""
+
+@attr.s
+class PropApplicationOutputDestinationSchema(Property):
+    """
+    AWS Object Type = "AWS::KinesisAnalytics::ApplicationOutput.DestinationSchema"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationoutput-destinationschema.html
+
+    Property Document:
+    
+    - ``p_RecordFormatType``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationoutput-destinationschema.html#cfn-kinesisanalytics-applicationoutput-destinationschema-recordformattype
+    """
+    AWS_OBJECT_TYPE = "AWS::KinesisAnalytics::ApplicationOutput.DestinationSchema"
+    
+    p_RecordFormatType: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "RecordFormatType"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationoutput-destinationschema.html#cfn-kinesisanalytics-applicationoutput-destinationschema-recordformattype"""
+
+@attr.s
 class PropApplicationJSONMappingParameters(Property):
     """
     AWS Object Type = "AWS::KinesisAnalytics::Application.JSONMappingParameters"
@@ -204,40 +312,6 @@ class PropApplicationKinesisStreamsInput(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-kinesisstreamsinput.html#cfn-kinesisanalytics-application-kinesisstreamsinput-rolearn"""
 
 @attr.s
-class PropApplicationRecordColumn(Property):
-    """
-    AWS Object Type = "AWS::KinesisAnalytics::Application.RecordColumn"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-recordcolumn.html
-
-    Property Document:
-    
-    - ``rp_Name``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-recordcolumn.html#cfn-kinesisanalytics-application-recordcolumn-name
-    - ``rp_SqlType``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-recordcolumn.html#cfn-kinesisanalytics-application-recordcolumn-sqltype
-    - ``p_Mapping``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-recordcolumn.html#cfn-kinesisanalytics-application-recordcolumn-mapping
-    """
-    AWS_OBJECT_TYPE = "AWS::KinesisAnalytics::Application.RecordColumn"
-    
-    rp_Name: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Name"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-recordcolumn.html#cfn-kinesisanalytics-application-recordcolumn-name"""
-    rp_SqlType: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "SqlType"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-recordcolumn.html#cfn-kinesisanalytics-application-recordcolumn-sqltype"""
-    p_Mapping: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Mapping"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-recordcolumn.html#cfn-kinesisanalytics-application-recordcolumn-mapping"""
-
-@attr.s
 class PropApplicationReferenceDataSourceRecordColumn(Property):
     """
     AWS Object Type = "AWS::KinesisAnalytics::ApplicationReferenceDataSource.RecordColumn"
@@ -272,33 +346,6 @@ class PropApplicationReferenceDataSourceRecordColumn(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationreferencedatasource-recordcolumn.html#cfn-kinesisanalytics-applicationreferencedatasource-recordcolumn-mapping"""
 
 @attr.s
-class PropApplicationKinesisFirehoseInput(Property):
-    """
-    AWS Object Type = "AWS::KinesisAnalytics::Application.KinesisFirehoseInput"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-kinesisfirehoseinput.html
-
-    Property Document:
-    
-    - ``rp_ResourceARN``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-kinesisfirehoseinput.html#cfn-kinesisanalytics-application-kinesisfirehoseinput-resourcearn
-    - ``rp_RoleARN``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-kinesisfirehoseinput.html#cfn-kinesisanalytics-application-kinesisfirehoseinput-rolearn
-    """
-    AWS_OBJECT_TYPE = "AWS::KinesisAnalytics::Application.KinesisFirehoseInput"
-    
-    rp_ResourceARN: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "ResourceARN"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-kinesisfirehoseinput.html#cfn-kinesisanalytics-application-kinesisfirehoseinput-resourcearn"""
-    rp_RoleARN: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "RoleARN"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-kinesisfirehoseinput.html#cfn-kinesisanalytics-application-kinesisfirehoseinput-rolearn"""
-
-@attr.s
 class PropApplicationInputParallelism(Property):
     """
     AWS Object Type = "AWS::KinesisAnalytics::Application.InputParallelism"
@@ -317,53 +364,6 @@ class PropApplicationInputParallelism(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Count"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-inputparallelism.html#cfn-kinesisanalytics-application-inputparallelism-count"""
-
-@attr.s
-class PropApplicationOutputLambdaOutput(Property):
-    """
-    AWS Object Type = "AWS::KinesisAnalytics::ApplicationOutput.LambdaOutput"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationoutput-lambdaoutput.html
-
-    Property Document:
-    
-    - ``rp_ResourceARN``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationoutput-lambdaoutput.html#cfn-kinesisanalytics-applicationoutput-lambdaoutput-resourcearn
-    - ``rp_RoleARN``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationoutput-lambdaoutput.html#cfn-kinesisanalytics-applicationoutput-lambdaoutput-rolearn
-    """
-    AWS_OBJECT_TYPE = "AWS::KinesisAnalytics::ApplicationOutput.LambdaOutput"
-    
-    rp_ResourceARN: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "ResourceARN"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationoutput-lambdaoutput.html#cfn-kinesisanalytics-applicationoutput-lambdaoutput-resourcearn"""
-    rp_RoleARN: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "RoleARN"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationoutput-lambdaoutput.html#cfn-kinesisanalytics-applicationoutput-lambdaoutput-rolearn"""
-
-@attr.s
-class PropApplicationOutputDestinationSchema(Property):
-    """
-    AWS Object Type = "AWS::KinesisAnalytics::ApplicationOutput.DestinationSchema"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationoutput-destinationschema.html
-
-    Property Document:
-    
-    - ``p_RecordFormatType``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationoutput-destinationschema.html#cfn-kinesisanalytics-applicationoutput-destinationschema-recordformattype
-    """
-    AWS_OBJECT_TYPE = "AWS::KinesisAnalytics::ApplicationOutput.DestinationSchema"
-    
-    p_RecordFormatType: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "RecordFormatType"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationoutput-destinationschema.html#cfn-kinesisanalytics-applicationoutput-destinationschema-recordformattype"""
 
 @attr.s
 class PropApplicationMappingParameters(Property):
@@ -413,34 +413,6 @@ class PropApplicationReferenceDataSourceJSONMappingParameters(Property):
         metadata={AttrMeta.PROPERTY_NAME: "RecordRowPath"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationreferencedatasource-jsonmappingparameters.html#cfn-kinesisanalytics-applicationreferencedatasource-jsonmappingparameters-recordrowpath"""
-
-@attr.s
-class PropApplicationRecordFormat(Property):
-    """
-    AWS Object Type = "AWS::KinesisAnalytics::Application.RecordFormat"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-recordformat.html
-
-    Property Document:
-    
-    - ``rp_RecordFormatType``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-recordformat.html#cfn-kinesisanalytics-application-recordformat-recordformattype
-    - ``p_MappingParameters``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-recordformat.html#cfn-kinesisanalytics-application-recordformat-mappingparameters
-    """
-    AWS_OBJECT_TYPE = "AWS::KinesisAnalytics::Application.RecordFormat"
-    
-    rp_RecordFormatType: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "RecordFormatType"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-recordformat.html#cfn-kinesisanalytics-application-recordformat-recordformattype"""
-    p_MappingParameters: typing.Union['PropApplicationMappingParameters', dict] = attr.ib(
-        default=None,
-        converter=PropApplicationMappingParameters.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropApplicationMappingParameters)),
-        metadata={AttrMeta.PROPERTY_NAME: "MappingParameters"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-recordformat.html#cfn-kinesisanalytics-application-recordformat-mappingparameters"""
 
 @attr.s
 class PropApplicationInputLambdaProcessor(Property):
@@ -520,6 +492,34 @@ class PropApplicationOutputOutput(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Name"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-applicationoutput-output.html#cfn-kinesisanalytics-applicationoutput-output-name"""
+
+@attr.s
+class PropApplicationRecordFormat(Property):
+    """
+    AWS Object Type = "AWS::KinesisAnalytics::Application.RecordFormat"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-recordformat.html
+
+    Property Document:
+    
+    - ``rp_RecordFormatType``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-recordformat.html#cfn-kinesisanalytics-application-recordformat-recordformattype
+    - ``p_MappingParameters``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-recordformat.html#cfn-kinesisanalytics-application-recordformat-mappingparameters
+    """
+    AWS_OBJECT_TYPE = "AWS::KinesisAnalytics::Application.RecordFormat"
+    
+    rp_RecordFormatType: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "RecordFormatType"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-recordformat.html#cfn-kinesisanalytics-application-recordformat-recordformattype"""
+    p_MappingParameters: typing.Union['PropApplicationMappingParameters', dict] = attr.ib(
+        default=None,
+        converter=PropApplicationMappingParameters.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropApplicationMappingParameters)),
+        metadata={AttrMeta.PROPERTY_NAME: "MappingParameters"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesisanalytics-application-recordformat.html#cfn-kinesisanalytics-application-recordformat-mappingparameters"""
 
 @attr.s
 class PropApplicationInputSchema(Property):
@@ -788,14 +788,28 @@ class ApplicationOutput(Resource):
     rp_ApplicationName: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "ApplicationName"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ApplicationName",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisanalytics-applicationoutput.html#cfn-kinesisanalytics-applicationoutput-applicationname"""
     rp_Output: typing.Union['PropApplicationOutputOutput', dict] = attr.ib(
         default=None,
         converter=PropApplicationOutputOutput.from_dict,
         validator=attr.validators.instance_of(PropApplicationOutputOutput),
-        metadata={AttrMeta.PROPERTY_NAME: "Output"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Output",
+            AttrMeta.DATA: {
+                "Type": 'Output',
+                "Required": True,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisanalytics-applicationoutput.html#cfn-kinesisanalytics-applicationoutput-output"""
 
@@ -822,25 +836,54 @@ class Application(Resource):
         default=None,
         converter=PropApplicationInput.from_list,
         validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropApplicationInput), iterable_validator=attr.validators.instance_of(list)),
-        metadata={AttrMeta.PROPERTY_NAME: "Inputs"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Inputs",
+            AttrMeta.DATA: {
+                "Type": 'List',
+                "Required": True,
+                "ItemType": 'Input',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisanalytics-application.html#cfn-kinesisanalytics-application-inputs"""
     p_ApplicationCode: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "ApplicationCode"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ApplicationCode",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisanalytics-application.html#cfn-kinesisanalytics-application-applicationcode"""
     p_ApplicationDescription: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "ApplicationDescription"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ApplicationDescription",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisanalytics-application.html#cfn-kinesisanalytics-application-applicationdescription"""
     p_ApplicationName: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "ApplicationName"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ApplicationName",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisanalytics-application.html#cfn-kinesisanalytics-application-applicationname"""
 
@@ -864,14 +907,28 @@ class ApplicationReferenceDataSource(Resource):
     rp_ApplicationName: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "ApplicationName"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ApplicationName",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisanalytics-applicationreferencedatasource.html#cfn-kinesisanalytics-applicationreferencedatasource-applicationname"""
     rp_ReferenceDataSource: typing.Union['PropApplicationReferenceDataSourceReferenceDataSource', dict] = attr.ib(
         default=None,
         converter=PropApplicationReferenceDataSourceReferenceDataSource.from_dict,
         validator=attr.validators.instance_of(PropApplicationReferenceDataSourceReferenceDataSource),
-        metadata={AttrMeta.PROPERTY_NAME: "ReferenceDataSource"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ReferenceDataSource",
+            AttrMeta.DATA: {
+                "Type": 'ReferenceDataSource',
+                "Required": True,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesisanalytics-applicationreferencedatasource.html#cfn-kinesisanalytics-applicationreferencedatasource-referencedatasource"""
 

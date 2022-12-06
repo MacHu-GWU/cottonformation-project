@@ -15,6 +15,80 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
+class PropLoadBalancerConnectionSettings(Property):
+    """
+    AWS Object Type = "AWS::ElasticLoadBalancing::LoadBalancer.ConnectionSettings"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-connectionsettings.html
+
+    Property Document:
+    
+    - ``rp_IdleTimeout``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-connectionsettings.html#cfn-elb-connectionsettings-idletimeout
+    """
+    AWS_OBJECT_TYPE = "AWS::ElasticLoadBalancing::LoadBalancer.ConnectionSettings"
+    
+    rp_IdleTimeout: int = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(int),
+        metadata={AttrMeta.PROPERTY_NAME: "IdleTimeout"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-connectionsettings.html#cfn-elb-connectionsettings-idletimeout"""
+
+@attr.s
+class PropLoadBalancerAppCookieStickinessPolicy(Property):
+    """
+    AWS Object Type = "AWS::ElasticLoadBalancing::LoadBalancer.AppCookieStickinessPolicy"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-AppCookieStickinessPolicy.html
+
+    Property Document:
+    
+    - ``rp_CookieName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-AppCookieStickinessPolicy.html#cfn-elb-appcookiestickinesspolicy-cookiename
+    - ``rp_PolicyName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-AppCookieStickinessPolicy.html#cfn-elb-appcookiestickinesspolicy-policyname
+    """
+    AWS_OBJECT_TYPE = "AWS::ElasticLoadBalancing::LoadBalancer.AppCookieStickinessPolicy"
+    
+    rp_CookieName: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "CookieName"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-AppCookieStickinessPolicy.html#cfn-elb-appcookiestickinesspolicy-cookiename"""
+    rp_PolicyName: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "PolicyName"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-AppCookieStickinessPolicy.html#cfn-elb-appcookiestickinesspolicy-policyname"""
+
+@attr.s
+class PropLoadBalancerLBCookieStickinessPolicy(Property):
+    """
+    AWS Object Type = "AWS::ElasticLoadBalancing::LoadBalancer.LBCookieStickinessPolicy"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-LBCookieStickinessPolicy.html
+
+    Property Document:
+    
+    - ``p_CookieExpirationPeriod``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-LBCookieStickinessPolicy.html#cfn-elb-lbcookiestickinesspolicy-cookieexpirationperiod
+    - ``p_PolicyName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-LBCookieStickinessPolicy.html#cfn-elb-lbcookiestickinesspolicy-policyname
+    """
+    AWS_OBJECT_TYPE = "AWS::ElasticLoadBalancing::LoadBalancer.LBCookieStickinessPolicy"
+    
+    p_CookieExpirationPeriod: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "CookieExpirationPeriod"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-LBCookieStickinessPolicy.html#cfn-elb-lbcookiestickinesspolicy-cookieexpirationperiod"""
+    p_PolicyName: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "PolicyName"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-LBCookieStickinessPolicy.html#cfn-elb-lbcookiestickinesspolicy-policyname"""
+
+@attr.s
 class PropLoadBalancerAccessLoggingPolicy(Property):
     """
     AWS Object Type = "AWS::ElasticLoadBalancing::LoadBalancer.AccessLoggingPolicy"
@@ -104,26 +178,6 @@ class PropLoadBalancerHealthCheck(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-health-check.html#cfn-elb-healthcheck-unhealthythreshold"""
 
 @attr.s
-class PropLoadBalancerConnectionSettings(Property):
-    """
-    AWS Object Type = "AWS::ElasticLoadBalancing::LoadBalancer.ConnectionSettings"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-connectionsettings.html
-
-    Property Document:
-    
-    - ``rp_IdleTimeout``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-connectionsettings.html#cfn-elb-connectionsettings-idletimeout
-    """
-    AWS_OBJECT_TYPE = "AWS::ElasticLoadBalancing::LoadBalancer.ConnectionSettings"
-    
-    rp_IdleTimeout: int = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(int),
-        metadata={AttrMeta.PROPERTY_NAME: "IdleTimeout"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-connectionsettings.html#cfn-elb-connectionsettings-idletimeout"""
-
-@attr.s
 class PropLoadBalancerConnectionDrainingPolicy(Property):
     """
     AWS Object Type = "AWS::ElasticLoadBalancing::LoadBalancer.ConnectionDrainingPolicy"
@@ -149,60 +203,6 @@ class PropLoadBalancerConnectionDrainingPolicy(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Timeout"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-connectiondrainingpolicy.html#cfn-elb-connectiondrainingpolicy-timeout"""
-
-@attr.s
-class PropLoadBalancerAppCookieStickinessPolicy(Property):
-    """
-    AWS Object Type = "AWS::ElasticLoadBalancing::LoadBalancer.AppCookieStickinessPolicy"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-AppCookieStickinessPolicy.html
-
-    Property Document:
-    
-    - ``rp_CookieName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-AppCookieStickinessPolicy.html#cfn-elb-appcookiestickinesspolicy-cookiename
-    - ``rp_PolicyName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-AppCookieStickinessPolicy.html#cfn-elb-appcookiestickinesspolicy-policyname
-    """
-    AWS_OBJECT_TYPE = "AWS::ElasticLoadBalancing::LoadBalancer.AppCookieStickinessPolicy"
-    
-    rp_CookieName: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "CookieName"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-AppCookieStickinessPolicy.html#cfn-elb-appcookiestickinesspolicy-cookiename"""
-    rp_PolicyName: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "PolicyName"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-AppCookieStickinessPolicy.html#cfn-elb-appcookiestickinesspolicy-policyname"""
-
-@attr.s
-class PropLoadBalancerLBCookieStickinessPolicy(Property):
-    """
-    AWS Object Type = "AWS::ElasticLoadBalancing::LoadBalancer.LBCookieStickinessPolicy"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-LBCookieStickinessPolicy.html
-
-    Property Document:
-    
-    - ``p_CookieExpirationPeriod``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-LBCookieStickinessPolicy.html#cfn-elb-lbcookiestickinesspolicy-cookieexpirationperiod
-    - ``p_PolicyName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-LBCookieStickinessPolicy.html#cfn-elb-lbcookiestickinesspolicy-policyname
-    """
-    AWS_OBJECT_TYPE = "AWS::ElasticLoadBalancing::LoadBalancer.LBCookieStickinessPolicy"
-    
-    p_CookieExpirationPeriod: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "CookieExpirationPeriod"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-LBCookieStickinessPolicy.html#cfn-elb-lbcookiestickinesspolicy-cookieexpirationperiod"""
-    p_PolicyName: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "PolicyName"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb-LBCookieStickinessPolicy.html#cfn-elb-lbcookiestickinesspolicy-policyname"""
 
 @attr.s
 class PropLoadBalancerListeners(Property):
@@ -343,105 +343,235 @@ class LoadBalancer(Resource):
         default=None,
         converter=PropLoadBalancerListeners.from_list,
         validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropLoadBalancerListeners), iterable_validator=attr.validators.instance_of(list)),
-        metadata={AttrMeta.PROPERTY_NAME: "Listeners"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Listeners",
+            AttrMeta.DATA: {
+                "DuplicatesAllowed": False,
+                "ItemType": 'Listeners',
+                "Required": True,
+                "Type": 'List',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-listeners"""
     p_AccessLoggingPolicy: typing.Union['PropLoadBalancerAccessLoggingPolicy', dict] = attr.ib(
         default=None,
         converter=PropLoadBalancerAccessLoggingPolicy.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropLoadBalancerAccessLoggingPolicy)),
-        metadata={AttrMeta.PROPERTY_NAME: "AccessLoggingPolicy"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "AccessLoggingPolicy",
+            AttrMeta.DATA: {
+                "Required": False,
+                "Type": 'AccessLoggingPolicy',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-accessloggingpolicy"""
     p_AppCookieStickinessPolicy: typing.List[typing.Union['PropLoadBalancerAppCookieStickinessPolicy', dict]] = attr.ib(
         default=None,
         converter=PropLoadBalancerAppCookieStickinessPolicy.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropLoadBalancerAppCookieStickinessPolicy), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "AppCookieStickinessPolicy"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "AppCookieStickinessPolicy",
+            AttrMeta.DATA: {
+                "DuplicatesAllowed": False,
+                "ItemType": 'AppCookieStickinessPolicy',
+                "Required": False,
+                "Type": 'List',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-appcookiestickinesspolicy"""
     p_AvailabilityZones: typing.List[TypeHint.intrinsic_str] = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "AvailabilityZones"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "AvailabilityZones",
+            AttrMeta.DATA: {
+                "DuplicatesAllowed": False,
+                "PrimitiveItemType": 'String',
+                "Required": False,
+                "Type": 'List',
+                "UpdateType": 'Conditional',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-availabilityzones"""
     p_ConnectionDrainingPolicy: typing.Union['PropLoadBalancerConnectionDrainingPolicy', dict] = attr.ib(
         default=None,
         converter=PropLoadBalancerConnectionDrainingPolicy.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropLoadBalancerConnectionDrainingPolicy)),
-        metadata={AttrMeta.PROPERTY_NAME: "ConnectionDrainingPolicy"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ConnectionDrainingPolicy",
+            AttrMeta.DATA: {
+                "Required": False,
+                "Type": 'ConnectionDrainingPolicy',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-connectiondrainingpolicy"""
     p_ConnectionSettings: typing.Union['PropLoadBalancerConnectionSettings', dict] = attr.ib(
         default=None,
         converter=PropLoadBalancerConnectionSettings.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropLoadBalancerConnectionSettings)),
-        metadata={AttrMeta.PROPERTY_NAME: "ConnectionSettings"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ConnectionSettings",
+            AttrMeta.DATA: {
+                "Required": False,
+                "Type": 'ConnectionSettings',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-connectionsettings"""
     p_CrossZone: bool = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(bool)),
-        metadata={AttrMeta.PROPERTY_NAME: "CrossZone"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "CrossZone",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'Boolean',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-crosszone"""
     p_HealthCheck: typing.Union['PropLoadBalancerHealthCheck', dict] = attr.ib(
         default=None,
         converter=PropLoadBalancerHealthCheck.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropLoadBalancerHealthCheck)),
-        metadata={AttrMeta.PROPERTY_NAME: "HealthCheck"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "HealthCheck",
+            AttrMeta.DATA: {
+                "Required": False,
+                "Type": 'HealthCheck',
+                "UpdateType": 'Conditional',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-healthcheck"""
     p_Instances: typing.List[TypeHint.intrinsic_str] = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Instances"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Instances",
+            AttrMeta.DATA: {
+                "DuplicatesAllowed": False,
+                "PrimitiveItemType": 'String',
+                "Required": False,
+                "Type": 'List',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-instances"""
     p_LBCookieStickinessPolicy: typing.List[typing.Union['PropLoadBalancerLBCookieStickinessPolicy', dict]] = attr.ib(
         default=None,
         converter=PropLoadBalancerLBCookieStickinessPolicy.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropLoadBalancerLBCookieStickinessPolicy), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "LBCookieStickinessPolicy"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "LBCookieStickinessPolicy",
+            AttrMeta.DATA: {
+                "DuplicatesAllowed": False,
+                "ItemType": 'LBCookieStickinessPolicy',
+                "Required": False,
+                "Type": 'List',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-lbcookiestickinesspolicy"""
     p_LoadBalancerName: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "LoadBalancerName"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "LoadBalancerName",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-elbname"""
     p_Policies: typing.List[typing.Union['PropLoadBalancerPolicies', dict]] = attr.ib(
         default=None,
         converter=PropLoadBalancerPolicies.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropLoadBalancerPolicies), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Policies"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Policies",
+            AttrMeta.DATA: {
+                "DuplicatesAllowed": False,
+                "ItemType": 'Policies',
+                "Required": False,
+                "Type": 'List',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-policies"""
     p_Scheme: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Scheme"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Scheme",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-scheme"""
     p_SecurityGroups: typing.List[TypeHint.intrinsic_str] = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "SecurityGroups"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "SecurityGroups",
+            AttrMeta.DATA: {
+                "DuplicatesAllowed": False,
+                "PrimitiveItemType": 'String',
+                "Required": False,
+                "Type": 'List',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-securitygroups"""
     p_Subnets: typing.List[TypeHint.intrinsic_str] = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Subnets"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Subnets",
+            AttrMeta.DATA: {
+                "DuplicatesAllowed": False,
+                "PrimitiveItemType": 'String',
+                "Required": False,
+                "Type": 'List',
+                "UpdateType": 'Conditional',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-ec2-elb-subnets"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "DuplicatesAllowed": True,
+                "ItemType": 'Tag',
+                "Required": False,
+                "Type": 'List',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-elb.html#cfn-elasticloadbalancing-loadbalancer-tags"""
 

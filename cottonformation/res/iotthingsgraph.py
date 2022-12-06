@@ -63,13 +63,27 @@ class FlowTemplate(Resource):
         default=None,
         converter=PropFlowTemplateDefinitionDocument.from_dict,
         validator=attr.validators.instance_of(PropFlowTemplateDefinitionDocument),
-        metadata={AttrMeta.PROPERTY_NAME: "Definition"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Definition",
+            AttrMeta.DATA: {
+                "Type": 'DefinitionDocument',
+                "Required": True,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotthingsgraph-flowtemplate.html#cfn-iotthingsgraph-flowtemplate-definition"""
     p_CompatibleNamespaceVersion: float = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(float)),
-        metadata={AttrMeta.PROPERTY_NAME: "CompatibleNamespaceVersion"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "CompatibleNamespaceVersion",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'Double',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotthingsgraph-flowtemplate.html#cfn-iotthingsgraph-flowtemplate-compatiblenamespaceversion"""
 

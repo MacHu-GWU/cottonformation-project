@@ -42,67 +42,6 @@ class PropJobValidationConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-validationconfiguration.html#cfn-databrew-job-validationconfiguration-validationmode"""
 
 @attr.s
-class PropRulesetThreshold(Property):
-    """
-    AWS Object Type = "AWS::DataBrew::Ruleset.Threshold"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-ruleset-threshold.html
-
-    Property Document:
-    
-    - ``rp_Value``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-ruleset-threshold.html#cfn-databrew-ruleset-threshold-value
-    - ``p_Type``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-ruleset-threshold.html#cfn-databrew-ruleset-threshold-type
-    - ``p_Unit``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-ruleset-threshold.html#cfn-databrew-ruleset-threshold-unit
-    """
-    AWS_OBJECT_TYPE = "AWS::DataBrew::Ruleset.Threshold"
-    
-    rp_Value: float = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(float),
-        metadata={AttrMeta.PROPERTY_NAME: "Value"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-ruleset-threshold.html#cfn-databrew-ruleset-threshold-value"""
-    p_Type: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Type"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-ruleset-threshold.html#cfn-databrew-ruleset-threshold-type"""
-    p_Unit: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Unit"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-ruleset-threshold.html#cfn-databrew-ruleset-threshold-unit"""
-
-@attr.s
-class PropRulesetSubstitutionValue(Property):
-    """
-    AWS Object Type = "AWS::DataBrew::Ruleset.SubstitutionValue"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-ruleset-substitutionvalue.html
-
-    Property Document:
-    
-    - ``rp_Value``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-ruleset-substitutionvalue.html#cfn-databrew-ruleset-substitutionvalue-value
-    - ``rp_ValueReference``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-ruleset-substitutionvalue.html#cfn-databrew-ruleset-substitutionvalue-valuereference
-    """
-    AWS_OBJECT_TYPE = "AWS::DataBrew::Ruleset.SubstitutionValue"
-    
-    rp_Value: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Value"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-ruleset-substitutionvalue.html#cfn-databrew-ruleset-substitutionvalue-value"""
-    rp_ValueReference: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "ValueReference"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-ruleset-substitutionvalue.html#cfn-databrew-ruleset-substitutionvalue-valuereference"""
-
-@attr.s
 class PropJobS3Location(Property):
     """
     AWS Object Type = "AWS::DataBrew::Job.S3Location"
@@ -137,53 +76,6 @@ class PropJobS3Location(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-s3location.html#cfn-databrew-job-s3location-key"""
 
 @attr.s
-class PropJobCsvOutputOptions(Property):
-    """
-    AWS Object Type = "AWS::DataBrew::Job.CsvOutputOptions"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-csvoutputoptions.html
-
-    Property Document:
-    
-    - ``p_Delimiter``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-csvoutputoptions.html#cfn-databrew-job-csvoutputoptions-delimiter
-    """
-    AWS_OBJECT_TYPE = "AWS::DataBrew::Job.CsvOutputOptions"
-    
-    p_Delimiter: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Delimiter"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-csvoutputoptions.html#cfn-databrew-job-csvoutputoptions-delimiter"""
-
-@attr.s
-class PropJobRecipe(Property):
-    """
-    AWS Object Type = "AWS::DataBrew::Job.Recipe"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-recipe.html
-
-    Property Document:
-    
-    - ``rp_Name``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-recipe.html#cfn-databrew-job-recipe-name
-    - ``p_Version``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-recipe.html#cfn-databrew-job-recipe-version
-    """
-    AWS_OBJECT_TYPE = "AWS::DataBrew::Job.Recipe"
-    
-    rp_Name: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Name"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-recipe.html#cfn-databrew-job-recipe-name"""
-    p_Version: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Version"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-recipe.html#cfn-databrew-job-recipe-version"""
-
-@attr.s
 class PropJobS3TableOutputOptions(Property):
     """
     AWS Object Type = "AWS::DataBrew::Job.S3TableOutputOptions"
@@ -196,10 +88,9 @@ class PropJobS3TableOutputOptions(Property):
     """
     AWS_OBJECT_TYPE = "AWS::DataBrew::Job.S3TableOutputOptions"
     
-    rp_Location: typing.Union['PropJobS3Location', dict] = attr.ib(
+    rp_Location: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropJobS3Location.from_dict,
-        validator=attr.validators.instance_of(PropJobS3Location),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "Location"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-s3tableoutputoptions.html#cfn-databrew-job-s3tableoutputoptions-location"""
@@ -300,33 +191,6 @@ class PropDatasetCsvOptions(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-csvoptions.html#cfn-databrew-dataset-csvoptions-headerrow"""
 
 @attr.s
-class PropJobColumnSelector(Property):
-    """
-    AWS Object Type = "AWS::DataBrew::Job.ColumnSelector"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-columnselector.html
-
-    Property Document:
-    
-    - ``p_Name``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-columnselector.html#cfn-databrew-job-columnselector-name
-    - ``p_Regex``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-columnselector.html#cfn-databrew-job-columnselector-regex
-    """
-    AWS_OBJECT_TYPE = "AWS::DataBrew::Job.ColumnSelector"
-    
-    p_Name: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Name"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-columnselector.html#cfn-databrew-job-columnselector-name"""
-    p_Regex: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Regex"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-columnselector.html#cfn-databrew-job-columnselector-regex"""
-
-@attr.s
 class PropDatasetExcelOptions(Property):
     """
     AWS Object Type = "AWS::DataBrew::Dataset.ExcelOptions"
@@ -386,6 +250,337 @@ class PropRulesetColumnSelector(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Regex"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-ruleset-columnselector.html#cfn-databrew-ruleset-columnselector-regex"""
+
+@attr.s
+class PropJobDatabaseTableOutputOptions(Property):
+    """
+    AWS Object Type = "AWS::DataBrew::Job.DatabaseTableOutputOptions"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-databasetableoutputoptions.html
+
+    Property Document:
+    
+    - ``rp_TableName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-databasetableoutputoptions.html#cfn-databrew-job-databasetableoutputoptions-tablename
+    - ``p_TempDirectory``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-databasetableoutputoptions.html#cfn-databrew-job-databasetableoutputoptions-tempdirectory
+    """
+    AWS_OBJECT_TYPE = "AWS::DataBrew::Job.DatabaseTableOutputOptions"
+    
+    rp_TableName: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "TableName"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-databasetableoutputoptions.html#cfn-databrew-job-databasetableoutputoptions-tablename"""
+    p_TempDirectory: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "TempDirectory"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-databasetableoutputoptions.html#cfn-databrew-job-databasetableoutputoptions-tempdirectory"""
+
+@attr.s
+class PropDatasetFilterValue(Property):
+    """
+    AWS Object Type = "AWS::DataBrew::Dataset.FilterValue"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-filtervalue.html
+
+    Property Document:
+    
+    - ``rp_Value``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-filtervalue.html#cfn-databrew-dataset-filtervalue-value
+    - ``rp_ValueReference``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-filtervalue.html#cfn-databrew-dataset-filtervalue-valuereference
+    """
+    AWS_OBJECT_TYPE = "AWS::DataBrew::Dataset.FilterValue"
+    
+    rp_Value: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "Value"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-filtervalue.html#cfn-databrew-dataset-filtervalue-value"""
+    rp_ValueReference: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "ValueReference"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-filtervalue.html#cfn-databrew-dataset-filtervalue-valuereference"""
+
+@attr.s
+class PropJobParameterMap(Property):
+    """
+    AWS Object Type = "AWS::DataBrew::Job.ParameterMap"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-parametermap.html
+
+    Property Document:
+    
+    """
+    AWS_OBJECT_TYPE = "AWS::DataBrew::Job.ParameterMap"
+    
+
+@attr.s
+class PropRecipeParameterMap(Property):
+    """
+    AWS Object Type = "AWS::DataBrew::Recipe.ParameterMap"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-parametermap.html
+
+    Property Document:
+    
+    """
+    AWS_OBJECT_TYPE = "AWS::DataBrew::Recipe.ParameterMap"
+    
+
+@attr.s
+class PropProjectSample(Property):
+    """
+    AWS Object Type = "AWS::DataBrew::Project.Sample"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-project-sample.html
+
+    Property Document:
+    
+    - ``rp_Type``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-project-sample.html#cfn-databrew-project-sample-type
+    - ``p_Size``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-project-sample.html#cfn-databrew-project-sample-size
+    """
+    AWS_OBJECT_TYPE = "AWS::DataBrew::Project.Sample"
+    
+    rp_Type: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "Type"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-project-sample.html#cfn-databrew-project-sample-type"""
+    p_Size: int = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(int)),
+        metadata={AttrMeta.PROPERTY_NAME: "Size"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-project-sample.html#cfn-databrew-project-sample-size"""
+
+@attr.s
+class PropRecipeConditionExpression(Property):
+    """
+    AWS Object Type = "AWS::DataBrew::Recipe.ConditionExpression"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-conditionexpression.html
+
+    Property Document:
+    
+    - ``rp_Condition``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-conditionexpression.html#cfn-databrew-recipe-conditionexpression-condition
+    - ``rp_TargetColumn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-conditionexpression.html#cfn-databrew-recipe-conditionexpression-targetcolumn
+    - ``p_Value``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-conditionexpression.html#cfn-databrew-recipe-conditionexpression-value
+    """
+    AWS_OBJECT_TYPE = "AWS::DataBrew::Recipe.ConditionExpression"
+    
+    rp_Condition: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "Condition"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-conditionexpression.html#cfn-databrew-recipe-conditionexpression-condition"""
+    rp_TargetColumn: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "TargetColumn"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-conditionexpression.html#cfn-databrew-recipe-conditionexpression-targetcolumn"""
+    p_Value: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "Value"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-conditionexpression.html#cfn-databrew-recipe-conditionexpression-value"""
+
+@attr.s
+class PropDatasetFilterExpression(Property):
+    """
+    AWS Object Type = "AWS::DataBrew::Dataset.FilterExpression"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-filterexpression.html
+
+    Property Document:
+    
+    - ``rp_Expression``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-filterexpression.html#cfn-databrew-dataset-filterexpression-expression
+    - ``rp_ValuesMap``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-filterexpression.html#cfn-databrew-dataset-filterexpression-valuesmap
+    """
+    AWS_OBJECT_TYPE = "AWS::DataBrew::Dataset.FilterExpression"
+    
+    rp_Expression: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "Expression"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-filterexpression.html#cfn-databrew-dataset-filterexpression-expression"""
+    rp_ValuesMap: typing.List[typing.Union['PropDatasetFilterValue', dict]] = attr.ib(
+        default=None,
+        converter=PropDatasetFilterValue.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDatasetFilterValue), iterable_validator=attr.validators.instance_of(list)),
+        metadata={AttrMeta.PROPERTY_NAME: "ValuesMap"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-filterexpression.html#cfn-databrew-dataset-filterexpression-valuesmap"""
+
+@attr.s
+class PropRulesetThreshold(Property):
+    """
+    AWS Object Type = "AWS::DataBrew::Ruleset.Threshold"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-ruleset-threshold.html
+
+    Property Document:
+    
+    - ``rp_Value``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-ruleset-threshold.html#cfn-databrew-ruleset-threshold-value
+    - ``p_Type``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-ruleset-threshold.html#cfn-databrew-ruleset-threshold-type
+    - ``p_Unit``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-ruleset-threshold.html#cfn-databrew-ruleset-threshold-unit
+    """
+    AWS_OBJECT_TYPE = "AWS::DataBrew::Ruleset.Threshold"
+    
+    rp_Value: float = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(float),
+        metadata={AttrMeta.PROPERTY_NAME: "Value"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-ruleset-threshold.html#cfn-databrew-ruleset-threshold-value"""
+    p_Type: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "Type"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-ruleset-threshold.html#cfn-databrew-ruleset-threshold-type"""
+    p_Unit: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "Unit"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-ruleset-threshold.html#cfn-databrew-ruleset-threshold-unit"""
+
+@attr.s
+class PropRulesetSubstitutionValue(Property):
+    """
+    AWS Object Type = "AWS::DataBrew::Ruleset.SubstitutionValue"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-ruleset-substitutionvalue.html
+
+    Property Document:
+    
+    - ``rp_Value``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-ruleset-substitutionvalue.html#cfn-databrew-ruleset-substitutionvalue-value
+    - ``rp_ValueReference``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-ruleset-substitutionvalue.html#cfn-databrew-ruleset-substitutionvalue-valuereference
+    """
+    AWS_OBJECT_TYPE = "AWS::DataBrew::Ruleset.SubstitutionValue"
+    
+    rp_Value: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "Value"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-ruleset-substitutionvalue.html#cfn-databrew-ruleset-substitutionvalue-value"""
+    rp_ValueReference: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "ValueReference"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-ruleset-substitutionvalue.html#cfn-databrew-ruleset-substitutionvalue-valuereference"""
+
+@attr.s
+class PropRecipeAction(Property):
+    """
+    AWS Object Type = "AWS::DataBrew::Recipe.Action"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-action.html
+
+    Property Document:
+    
+    - ``rp_Operation``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-action.html#cfn-databrew-recipe-action-operation
+    - ``p_Parameters``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-action.html#cfn-databrew-recipe-action-parameters
+    """
+    AWS_OBJECT_TYPE = "AWS::DataBrew::Recipe.Action"
+    
+    rp_Operation: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "Operation"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-action.html#cfn-databrew-recipe-action-operation"""
+    p_Parameters: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "Parameters"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-action.html#cfn-databrew-recipe-action-parameters"""
+
+@attr.s
+class PropJobCsvOutputOptions(Property):
+    """
+    AWS Object Type = "AWS::DataBrew::Job.CsvOutputOptions"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-csvoutputoptions.html
+
+    Property Document:
+    
+    - ``p_Delimiter``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-csvoutputoptions.html#cfn-databrew-job-csvoutputoptions-delimiter
+    """
+    AWS_OBJECT_TYPE = "AWS::DataBrew::Job.CsvOutputOptions"
+    
+    p_Delimiter: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "Delimiter"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-csvoutputoptions.html#cfn-databrew-job-csvoutputoptions-delimiter"""
+
+@attr.s
+class PropJobRecipe(Property):
+    """
+    AWS Object Type = "AWS::DataBrew::Job.Recipe"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-recipe.html
+
+    Property Document:
+    
+    - ``rp_Name``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-recipe.html#cfn-databrew-job-recipe-name
+    - ``p_Version``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-recipe.html#cfn-databrew-job-recipe-version
+    """
+    AWS_OBJECT_TYPE = "AWS::DataBrew::Job.Recipe"
+    
+    rp_Name: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "Name"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-recipe.html#cfn-databrew-job-recipe-name"""
+    p_Version: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "Version"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-recipe.html#cfn-databrew-job-recipe-version"""
+
+@attr.s
+class PropJobColumnSelector(Property):
+    """
+    AWS Object Type = "AWS::DataBrew::Job.ColumnSelector"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-columnselector.html
+
+    Property Document:
+    
+    - ``p_Name``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-columnselector.html#cfn-databrew-job-columnselector-name
+    - ``p_Regex``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-columnselector.html#cfn-databrew-job-columnselector-regex
+    """
+    AWS_OBJECT_TYPE = "AWS::DataBrew::Job.ColumnSelector"
+    
+    p_Name: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "Name"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-columnselector.html#cfn-databrew-job-columnselector-name"""
+    p_Regex: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "Regex"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-columnselector.html#cfn-databrew-job-columnselector-regex"""
 
 @attr.s
 class PropDatasetJsonOptions(Property):
@@ -455,74 +650,6 @@ class PropJobAllowedStatistics(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-allowedstatistics.html#cfn-databrew-job-allowedstatistics-statistics"""
 
 @attr.s
-class PropJobDatabaseTableOutputOptions(Property):
-    """
-    AWS Object Type = "AWS::DataBrew::Job.DatabaseTableOutputOptions"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-databasetableoutputoptions.html
-
-    Property Document:
-    
-    - ``rp_TableName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-databasetableoutputoptions.html#cfn-databrew-job-databasetableoutputoptions-tablename
-    - ``p_TempDirectory``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-databasetableoutputoptions.html#cfn-databrew-job-databasetableoutputoptions-tempdirectory
-    """
-    AWS_OBJECT_TYPE = "AWS::DataBrew::Job.DatabaseTableOutputOptions"
-    
-    rp_TableName: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "TableName"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-databasetableoutputoptions.html#cfn-databrew-job-databasetableoutputoptions-tablename"""
-    p_TempDirectory: typing.Union['PropJobS3Location', dict] = attr.ib(
-        default=None,
-        converter=PropJobS3Location.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropJobS3Location)),
-        metadata={AttrMeta.PROPERTY_NAME: "TempDirectory"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-databasetableoutputoptions.html#cfn-databrew-job-databasetableoutputoptions-tempdirectory"""
-
-@attr.s
-class PropDatasetFilterValue(Property):
-    """
-    AWS Object Type = "AWS::DataBrew::Dataset.FilterValue"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-filtervalue.html
-
-    Property Document:
-    
-    - ``rp_Value``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-filtervalue.html#cfn-databrew-dataset-filtervalue-value
-    - ``rp_ValueReference``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-filtervalue.html#cfn-databrew-dataset-filtervalue-valuereference
-    """
-    AWS_OBJECT_TYPE = "AWS::DataBrew::Dataset.FilterValue"
-    
-    rp_Value: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Value"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-filtervalue.html#cfn-databrew-dataset-filtervalue-value"""
-    rp_ValueReference: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "ValueReference"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-filtervalue.html#cfn-databrew-dataset-filtervalue-valuereference"""
-
-@attr.s
-class PropJobParameterMap(Property):
-    """
-    AWS Object Type = "AWS::DataBrew::Job.ParameterMap"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-parametermap.html
-
-    Property Document:
-    
-    """
-    AWS_OBJECT_TYPE = "AWS::DataBrew::Job.ParameterMap"
-    
-
-@attr.s
 class PropJobStatisticOverride(Property):
     """
     AWS Object Type = "AWS::DataBrew::Job.StatisticOverride"
@@ -536,10 +663,9 @@ class PropJobStatisticOverride(Property):
     """
     AWS_OBJECT_TYPE = "AWS::DataBrew::Job.StatisticOverride"
     
-    rp_Parameters: typing.Union['PropJobParameterMap', dict] = attr.ib(
+    rp_Parameters: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropJobParameterMap.from_dict,
-        validator=attr.validators.instance_of(PropJobParameterMap),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "Parameters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-statisticoverride.html#cfn-databrew-job-statisticoverride-parameters"""
@@ -549,46 +675,6 @@ class PropJobStatisticOverride(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Statistic"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-statisticoverride.html#cfn-databrew-job-statisticoverride-statistic"""
-
-@attr.s
-class PropRecipeParameterMap(Property):
-    """
-    AWS Object Type = "AWS::DataBrew::Recipe.ParameterMap"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-parametermap.html
-
-    Property Document:
-    
-    """
-    AWS_OBJECT_TYPE = "AWS::DataBrew::Recipe.ParameterMap"
-    
-
-@attr.s
-class PropProjectSample(Property):
-    """
-    AWS Object Type = "AWS::DataBrew::Project.Sample"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-project-sample.html
-
-    Property Document:
-    
-    - ``rp_Type``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-project-sample.html#cfn-databrew-project-sample-type
-    - ``p_Size``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-project-sample.html#cfn-databrew-project-sample-size
-    """
-    AWS_OBJECT_TYPE = "AWS::DataBrew::Project.Sample"
-    
-    rp_Type: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Type"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-project-sample.html#cfn-databrew-project-sample-type"""
-    p_Size: int = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "Size"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-project-sample.html#cfn-databrew-project-sample-size"""
 
 @attr.s
 class PropJobJobSample(Property):
@@ -710,40 +796,6 @@ class PropRulesetRule(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-ruleset-rule.html#cfn-databrew-ruleset-rule-threshold"""
 
 @attr.s
-class PropRecipeConditionExpression(Property):
-    """
-    AWS Object Type = "AWS::DataBrew::Recipe.ConditionExpression"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-conditionexpression.html
-
-    Property Document:
-    
-    - ``rp_Condition``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-conditionexpression.html#cfn-databrew-recipe-conditionexpression-condition
-    - ``rp_TargetColumn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-conditionexpression.html#cfn-databrew-recipe-conditionexpression-targetcolumn
-    - ``p_Value``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-conditionexpression.html#cfn-databrew-recipe-conditionexpression-value
-    """
-    AWS_OBJECT_TYPE = "AWS::DataBrew::Recipe.ConditionExpression"
-    
-    rp_Condition: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Condition"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-conditionexpression.html#cfn-databrew-recipe-conditionexpression-condition"""
-    rp_TargetColumn: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "TargetColumn"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-conditionexpression.html#cfn-databrew-recipe-conditionexpression-targetcolumn"""
-    p_Value: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Value"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-conditionexpression.html#cfn-databrew-recipe-conditionexpression-value"""
-
-@attr.s
 class PropDatasetMetadata(Property):
     """
     AWS Object Type = "AWS::DataBrew::Dataset.Metadata"
@@ -797,10 +849,9 @@ class PropRecipeDataCatalogInputDefinition(Property):
         metadata={AttrMeta.PROPERTY_NAME: "TableName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-datacataloginputdefinition.html#cfn-databrew-recipe-datacataloginputdefinition-tablename"""
-    p_TempDirectory: typing.Union['PropRecipeS3Location', dict] = attr.ib(
+    p_TempDirectory: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropRecipeS3Location.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropRecipeS3Location)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "TempDirectory"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-datacataloginputdefinition.html#cfn-databrew-recipe-datacataloginputdefinition-tempdirectory"""
@@ -833,60 +884,33 @@ class PropDatasetS3Location(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-s3location.html#cfn-databrew-dataset-s3location-key"""
 
 @attr.s
-class PropDatasetFilterExpression(Property):
+class PropRecipeRecipeStep(Property):
     """
-    AWS Object Type = "AWS::DataBrew::Dataset.FilterExpression"
+    AWS Object Type = "AWS::DataBrew::Recipe.RecipeStep"
 
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-filterexpression.html
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipestep.html
 
     Property Document:
     
-    - ``rp_Expression``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-filterexpression.html#cfn-databrew-dataset-filterexpression-expression
-    - ``rp_ValuesMap``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-filterexpression.html#cfn-databrew-dataset-filterexpression-valuesmap
+    - ``rp_Action``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipestep.html#cfn-databrew-recipe-recipestep-action
+    - ``p_ConditionExpressions``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipestep.html#cfn-databrew-recipe-recipestep-conditionexpressions
     """
-    AWS_OBJECT_TYPE = "AWS::DataBrew::Dataset.FilterExpression"
+    AWS_OBJECT_TYPE = "AWS::DataBrew::Recipe.RecipeStep"
     
-    rp_Expression: TypeHint.intrinsic_str = attr.ib(
+    rp_Action: typing.Union['PropRecipeAction', dict] = attr.ib(
         default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Expression"},
+        converter=PropRecipeAction.from_dict,
+        validator=attr.validators.instance_of(PropRecipeAction),
+        metadata={AttrMeta.PROPERTY_NAME: "Action"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-filterexpression.html#cfn-databrew-dataset-filterexpression-expression"""
-    rp_ValuesMap: typing.List[typing.Union['PropDatasetFilterValue', dict]] = attr.ib(
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipestep.html#cfn-databrew-recipe-recipestep-action"""
+    p_ConditionExpressions: typing.List[typing.Union['PropRecipeConditionExpression', dict]] = attr.ib(
         default=None,
-        converter=PropDatasetFilterValue.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDatasetFilterValue), iterable_validator=attr.validators.instance_of(list)),
-        metadata={AttrMeta.PROPERTY_NAME: "ValuesMap"},
+        converter=PropRecipeConditionExpression.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropRecipeConditionExpression), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "ConditionExpressions"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-filterexpression.html#cfn-databrew-dataset-filterexpression-valuesmap"""
-
-@attr.s
-class PropJobEntityDetectorConfiguration(Property):
-    """
-    AWS Object Type = "AWS::DataBrew::Job.EntityDetectorConfiguration"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-entitydetectorconfiguration.html
-
-    Property Document:
-    
-    - ``rp_EntityTypes``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-entitydetectorconfiguration.html#cfn-databrew-job-entitydetectorconfiguration-entitytypes
-    - ``p_AllowedStatistics``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-entitydetectorconfiguration.html#cfn-databrew-job-entitydetectorconfiguration-allowedstatistics
-    """
-    AWS_OBJECT_TYPE = "AWS::DataBrew::Job.EntityDetectorConfiguration"
-    
-    rp_EntityTypes: typing.List[TypeHint.intrinsic_str] = attr.ib(
-        default=None,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list)),
-        metadata={AttrMeta.PROPERTY_NAME: "EntityTypes"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-entitydetectorconfiguration.html#cfn-databrew-job-entitydetectorconfiguration-entitytypes"""
-    p_AllowedStatistics: typing.Union['PropJobAllowedStatistics', dict] = attr.ib(
-        default=None,
-        converter=PropJobAllowedStatistics.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropJobAllowedStatistics)),
-        metadata={AttrMeta.PROPERTY_NAME: "AllowedStatistics"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-entitydetectorconfiguration.html#cfn-databrew-job-entitydetectorconfiguration-allowedstatistics"""
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipestep.html#cfn-databrew-recipe-recipestep-conditionexpressions"""
 
 @attr.s
 class PropJobDataCatalogOutput(Property):
@@ -924,10 +948,9 @@ class PropJobDataCatalogOutput(Property):
         metadata={AttrMeta.PROPERTY_NAME: "CatalogId"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-datacatalogoutput.html#cfn-databrew-job-datacatalogoutput-catalogid"""
-    p_DatabaseOptions: typing.Union['PropJobDatabaseTableOutputOptions', dict] = attr.ib(
+    p_DatabaseOptions: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropJobDatabaseTableOutputOptions.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropJobDatabaseTableOutputOptions)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "DatabaseOptions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-datacatalogoutput.html#cfn-databrew-job-datacatalogoutput-databaseoptions"""
@@ -937,10 +960,9 @@ class PropJobDataCatalogOutput(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Overwrite"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-datacatalogoutput.html#cfn-databrew-job-datacatalogoutput-overwrite"""
-    p_S3Options: typing.Union['PropJobS3TableOutputOptions', dict] = attr.ib(
+    p_S3Options: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropJobS3TableOutputOptions.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropJobS3TableOutputOptions)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "S3Options"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-datacatalogoutput.html#cfn-databrew-job-datacatalogoutput-s3options"""
@@ -966,41 +988,12 @@ class PropRecipeSecondaryInput(Property):
         metadata={AttrMeta.PROPERTY_NAME: "DataCatalogInputDefinition"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-secondaryinput.html#cfn-databrew-recipe-secondaryinput-datacataloginputdefinition"""
-    p_S3InputDefinition: typing.Union['PropRecipeS3Location', dict] = attr.ib(
+    p_S3InputDefinition: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropRecipeS3Location.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropRecipeS3Location)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "S3InputDefinition"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-secondaryinput.html#cfn-databrew-recipe-secondaryinput-s3inputdefinition"""
-
-@attr.s
-class PropRecipeAction(Property):
-    """
-    AWS Object Type = "AWS::DataBrew::Recipe.Action"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-action.html
-
-    Property Document:
-    
-    - ``rp_Operation``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-action.html#cfn-databrew-recipe-action-operation
-    - ``p_Parameters``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-action.html#cfn-databrew-recipe-action-parameters
-    """
-    AWS_OBJECT_TYPE = "AWS::DataBrew::Recipe.Action"
-    
-    rp_Operation: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Operation"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-action.html#cfn-databrew-recipe-action-operation"""
-    p_Parameters: typing.Union['PropRecipeParameterMap', dict] = attr.ib(
-        default=None,
-        converter=PropRecipeParameterMap.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropRecipeParameterMap)),
-        metadata={AttrMeta.PROPERTY_NAME: "Parameters"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-action.html#cfn-databrew-recipe-action-parameters"""
 
 @attr.s
 class PropJobOutputFormatOptions(Property):
@@ -1015,119 +1008,12 @@ class PropJobOutputFormatOptions(Property):
     """
     AWS_OBJECT_TYPE = "AWS::DataBrew::Job.OutputFormatOptions"
     
-    p_Csv: typing.Union['PropJobCsvOutputOptions', dict] = attr.ib(
+    p_Csv: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropJobCsvOutputOptions.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropJobCsvOutputOptions)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "Csv"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-outputformatoptions.html#cfn-databrew-job-outputformatoptions-csv"""
-
-@attr.s
-class PropDatasetDatabaseInputDefinition(Property):
-    """
-    AWS Object Type = "AWS::DataBrew::Dataset.DatabaseInputDefinition"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-databaseinputdefinition.html
-
-    Property Document:
-    
-    - ``rp_GlueConnectionName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-databaseinputdefinition.html#cfn-databrew-dataset-databaseinputdefinition-glueconnectionname
-    - ``p_DatabaseTableName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-databaseinputdefinition.html#cfn-databrew-dataset-databaseinputdefinition-databasetablename
-    - ``p_QueryString``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-databaseinputdefinition.html#cfn-databrew-dataset-databaseinputdefinition-querystring
-    - ``p_TempDirectory``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-databaseinputdefinition.html#cfn-databrew-dataset-databaseinputdefinition-tempdirectory
-    """
-    AWS_OBJECT_TYPE = "AWS::DataBrew::Dataset.DatabaseInputDefinition"
-    
-    rp_GlueConnectionName: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "GlueConnectionName"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-databaseinputdefinition.html#cfn-databrew-dataset-databaseinputdefinition-glueconnectionname"""
-    p_DatabaseTableName: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "DatabaseTableName"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-databaseinputdefinition.html#cfn-databrew-dataset-databaseinputdefinition-databasetablename"""
-    p_QueryString: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "QueryString"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-databaseinputdefinition.html#cfn-databrew-dataset-databaseinputdefinition-querystring"""
-    p_TempDirectory: typing.Union['PropDatasetS3Location', dict] = attr.ib(
-        default=None,
-        converter=PropDatasetS3Location.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropDatasetS3Location)),
-        metadata={AttrMeta.PROPERTY_NAME: "TempDirectory"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-databaseinputdefinition.html#cfn-databrew-dataset-databaseinputdefinition-tempdirectory"""
-
-@attr.s
-class PropJobOutput(Property):
-    """
-    AWS Object Type = "AWS::DataBrew::Job.Output"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-output.html
-
-    Property Document:
-    
-    - ``rp_Location``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-output.html#cfn-databrew-job-output-location
-    - ``p_CompressionFormat``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-output.html#cfn-databrew-job-output-compressionformat
-    - ``p_Format``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-output.html#cfn-databrew-job-output-format
-    - ``p_FormatOptions``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-output.html#cfn-databrew-job-output-formatoptions
-    - ``p_MaxOutputFiles``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-output.html#cfn-databrew-job-output-maxoutputfiles
-    - ``p_Overwrite``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-output.html#cfn-databrew-job-output-overwrite
-    - ``p_PartitionColumns``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-output.html#cfn-databrew-job-output-partitioncolumns
-    """
-    AWS_OBJECT_TYPE = "AWS::DataBrew::Job.Output"
-    
-    rp_Location: typing.Union['PropJobS3Location', dict] = attr.ib(
-        default=None,
-        converter=PropJobS3Location.from_dict,
-        validator=attr.validators.instance_of(PropJobS3Location),
-        metadata={AttrMeta.PROPERTY_NAME: "Location"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-output.html#cfn-databrew-job-output-location"""
-    p_CompressionFormat: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "CompressionFormat"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-output.html#cfn-databrew-job-output-compressionformat"""
-    p_Format: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Format"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-output.html#cfn-databrew-job-output-format"""
-    p_FormatOptions: typing.Union['PropJobOutputFormatOptions', dict] = attr.ib(
-        default=None,
-        converter=PropJobOutputFormatOptions.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropJobOutputFormatOptions)),
-        metadata={AttrMeta.PROPERTY_NAME: "FormatOptions"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-output.html#cfn-databrew-job-output-formatoptions"""
-    p_MaxOutputFiles: int = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "MaxOutputFiles"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-output.html#cfn-databrew-job-output-maxoutputfiles"""
-    p_Overwrite: bool = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(bool)),
-        metadata={AttrMeta.PROPERTY_NAME: "Overwrite"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-output.html#cfn-databrew-job-output-overwrite"""
-    p_PartitionColumns: typing.List[TypeHint.intrinsic_str] = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "PartitionColumns"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-output.html#cfn-databrew-job-output-partitioncolumns"""
 
 @attr.s
 class PropDatasetDatasetParameter(Property):
@@ -1171,10 +1057,9 @@ class PropDatasetDatasetParameter(Property):
         metadata={AttrMeta.PROPERTY_NAME: "DatetimeOptions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-datasetparameter.html#cfn-databrew-dataset-datasetparameter-datetimeoptions"""
-    p_Filter: typing.Union['PropDatasetFilterExpression', dict] = attr.ib(
+    p_Filter: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropDatasetFilterExpression.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropDatasetFilterExpression)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "Filter"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-datasetparameter.html#cfn-databrew-dataset-datasetparameter-filter"""
@@ -1194,27 +1079,253 @@ class PropDatasetFormatOptions(Property):
     """
     AWS_OBJECT_TYPE = "AWS::DataBrew::Dataset.FormatOptions"
     
-    p_Csv: typing.Union['PropDatasetCsvOptions', dict] = attr.ib(
+    p_Csv: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropDatasetCsvOptions.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropDatasetCsvOptions)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "Csv"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-formatoptions.html#cfn-databrew-dataset-formatoptions-csv"""
-    p_Excel: typing.Union['PropDatasetExcelOptions', dict] = attr.ib(
+    p_Excel: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropDatasetExcelOptions.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropDatasetExcelOptions)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "Excel"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-formatoptions.html#cfn-databrew-dataset-formatoptions-excel"""
-    p_Json: typing.Union['PropDatasetJsonOptions', dict] = attr.ib(
+    p_Json: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropDatasetJsonOptions.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropDatasetJsonOptions)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "Json"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-formatoptions.html#cfn-databrew-dataset-formatoptions-json"""
+
+@attr.s
+class PropJobDatabaseOutput(Property):
+    """
+    AWS Object Type = "AWS::DataBrew::Job.DatabaseOutput"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-databaseoutput.html
+
+    Property Document:
+    
+    - ``rp_DatabaseOptions``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-databaseoutput.html#cfn-databrew-job-databaseoutput-databaseoptions
+    - ``rp_GlueConnectionName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-databaseoutput.html#cfn-databrew-job-databaseoutput-glueconnectionname
+    - ``p_DatabaseOutputMode``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-databaseoutput.html#cfn-databrew-job-databaseoutput-databaseoutputmode
+    """
+    AWS_OBJECT_TYPE = "AWS::DataBrew::Job.DatabaseOutput"
+    
+    rp_DatabaseOptions: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "DatabaseOptions"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-databaseoutput.html#cfn-databrew-job-databaseoutput-databaseoptions"""
+    rp_GlueConnectionName: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "GlueConnectionName"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-databaseoutput.html#cfn-databrew-job-databaseoutput-glueconnectionname"""
+    p_DatabaseOutputMode: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "DatabaseOutputMode"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-databaseoutput.html#cfn-databrew-job-databaseoutput-databaseoutputmode"""
+
+@attr.s
+class PropJobEntityDetectorConfiguration(Property):
+    """
+    AWS Object Type = "AWS::DataBrew::Job.EntityDetectorConfiguration"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-entitydetectorconfiguration.html
+
+    Property Document:
+    
+    - ``rp_EntityTypes``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-entitydetectorconfiguration.html#cfn-databrew-job-entitydetectorconfiguration-entitytypes
+    - ``p_AllowedStatistics``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-entitydetectorconfiguration.html#cfn-databrew-job-entitydetectorconfiguration-allowedstatistics
+    """
+    AWS_OBJECT_TYPE = "AWS::DataBrew::Job.EntityDetectorConfiguration"
+    
+    rp_EntityTypes: typing.List[TypeHint.intrinsic_str] = attr.ib(
+        default=None,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list)),
+        metadata={AttrMeta.PROPERTY_NAME: "EntityTypes"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-entitydetectorconfiguration.html#cfn-databrew-job-entitydetectorconfiguration-entitytypes"""
+    p_AllowedStatistics: typing.Union['PropJobAllowedStatistics', dict] = attr.ib(
+        default=None,
+        converter=PropJobAllowedStatistics.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropJobAllowedStatistics)),
+        metadata={AttrMeta.PROPERTY_NAME: "AllowedStatistics"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-entitydetectorconfiguration.html#cfn-databrew-job-entitydetectorconfiguration-allowedstatistics"""
+
+@attr.s
+class PropDatasetPathParameter(Property):
+    """
+    AWS Object Type = "AWS::DataBrew::Dataset.PathParameter"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-pathparameter.html
+
+    Property Document:
+    
+    - ``rp_DatasetParameter``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-pathparameter.html#cfn-databrew-dataset-pathparameter-datasetparameter
+    - ``rp_PathParameterName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-pathparameter.html#cfn-databrew-dataset-pathparameter-pathparametername
+    """
+    AWS_OBJECT_TYPE = "AWS::DataBrew::Dataset.PathParameter"
+    
+    rp_DatasetParameter: typing.Union['PropDatasetDatasetParameter', dict] = attr.ib(
+        default=None,
+        converter=PropDatasetDatasetParameter.from_dict,
+        validator=attr.validators.instance_of(PropDatasetDatasetParameter),
+        metadata={AttrMeta.PROPERTY_NAME: "DatasetParameter"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-pathparameter.html#cfn-databrew-dataset-pathparameter-datasetparameter"""
+    rp_PathParameterName: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "PathParameterName"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-pathparameter.html#cfn-databrew-dataset-pathparameter-pathparametername"""
+
+@attr.s
+class PropDatasetDatabaseInputDefinition(Property):
+    """
+    AWS Object Type = "AWS::DataBrew::Dataset.DatabaseInputDefinition"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-databaseinputdefinition.html
+
+    Property Document:
+    
+    - ``rp_GlueConnectionName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-databaseinputdefinition.html#cfn-databrew-dataset-databaseinputdefinition-glueconnectionname
+    - ``p_DatabaseTableName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-databaseinputdefinition.html#cfn-databrew-dataset-databaseinputdefinition-databasetablename
+    - ``p_QueryString``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-databaseinputdefinition.html#cfn-databrew-dataset-databaseinputdefinition-querystring
+    - ``p_TempDirectory``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-databaseinputdefinition.html#cfn-databrew-dataset-databaseinputdefinition-tempdirectory
+    """
+    AWS_OBJECT_TYPE = "AWS::DataBrew::Dataset.DatabaseInputDefinition"
+    
+    rp_GlueConnectionName: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "GlueConnectionName"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-databaseinputdefinition.html#cfn-databrew-dataset-databaseinputdefinition-glueconnectionname"""
+    p_DatabaseTableName: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "DatabaseTableName"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-databaseinputdefinition.html#cfn-databrew-dataset-databaseinputdefinition-databasetablename"""
+    p_QueryString: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "QueryString"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-databaseinputdefinition.html#cfn-databrew-dataset-databaseinputdefinition-querystring"""
+    p_TempDirectory: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "TempDirectory"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-databaseinputdefinition.html#cfn-databrew-dataset-databaseinputdefinition-tempdirectory"""
+
+@attr.s
+class PropJobOutput(Property):
+    """
+    AWS Object Type = "AWS::DataBrew::Job.Output"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-output.html
+
+    Property Document:
+    
+    - ``rp_Location``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-output.html#cfn-databrew-job-output-location
+    - ``p_CompressionFormat``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-output.html#cfn-databrew-job-output-compressionformat
+    - ``p_Format``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-output.html#cfn-databrew-job-output-format
+    - ``p_FormatOptions``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-output.html#cfn-databrew-job-output-formatoptions
+    - ``p_MaxOutputFiles``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-output.html#cfn-databrew-job-output-maxoutputfiles
+    - ``p_Overwrite``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-output.html#cfn-databrew-job-output-overwrite
+    - ``p_PartitionColumns``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-output.html#cfn-databrew-job-output-partitioncolumns
+    """
+    AWS_OBJECT_TYPE = "AWS::DataBrew::Job.Output"
+    
+    rp_Location: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "Location"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-output.html#cfn-databrew-job-output-location"""
+    p_CompressionFormat: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "CompressionFormat"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-output.html#cfn-databrew-job-output-compressionformat"""
+    p_Format: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "Format"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-output.html#cfn-databrew-job-output-format"""
+    p_FormatOptions: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "FormatOptions"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-output.html#cfn-databrew-job-output-formatoptions"""
+    p_MaxOutputFiles: int = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(int)),
+        metadata={AttrMeta.PROPERTY_NAME: "MaxOutputFiles"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-output.html#cfn-databrew-job-output-maxoutputfiles"""
+    p_Overwrite: bool = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(bool)),
+        metadata={AttrMeta.PROPERTY_NAME: "Overwrite"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-output.html#cfn-databrew-job-output-overwrite"""
+    p_PartitionColumns: typing.List[TypeHint.intrinsic_str] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "PartitionColumns"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-output.html#cfn-databrew-job-output-partitioncolumns"""
+
+@attr.s
+class PropDatasetPathOptions(Property):
+    """
+    AWS Object Type = "AWS::DataBrew::Dataset.PathOptions"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-pathoptions.html
+
+    Property Document:
+    
+    - ``p_FilesLimit``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-pathoptions.html#cfn-databrew-dataset-pathoptions-fileslimit
+    - ``p_LastModifiedDateCondition``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-pathoptions.html#cfn-databrew-dataset-pathoptions-lastmodifieddatecondition
+    - ``p_Parameters``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-pathoptions.html#cfn-databrew-dataset-pathoptions-parameters
+    """
+    AWS_OBJECT_TYPE = "AWS::DataBrew::Dataset.PathOptions"
+    
+    p_FilesLimit: typing.Union['PropDatasetFilesLimit', dict] = attr.ib(
+        default=None,
+        converter=PropDatasetFilesLimit.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDatasetFilesLimit)),
+        metadata={AttrMeta.PROPERTY_NAME: "FilesLimit"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-pathoptions.html#cfn-databrew-dataset-pathoptions-fileslimit"""
+    p_LastModifiedDateCondition: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "LastModifiedDateCondition"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-pathoptions.html#cfn-databrew-dataset-pathoptions-lastmodifieddatecondition"""
+    p_Parameters: typing.List[typing.Union['PropDatasetPathParameter', dict]] = attr.ib(
+        default=None,
+        converter=PropDatasetPathParameter.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDatasetPathParameter), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "Parameters"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-pathoptions.html#cfn-databrew-dataset-pathoptions-parameters"""
 
 @attr.s
 class PropJobStatisticsConfiguration(Property):
@@ -1966,41 +2077,6 @@ class PropRecipeRecipeParameters(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-viewframe"""
 
 @attr.s
-class PropJobDatabaseOutput(Property):
-    """
-    AWS Object Type = "AWS::DataBrew::Job.DatabaseOutput"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-databaseoutput.html
-
-    Property Document:
-    
-    - ``rp_DatabaseOptions``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-databaseoutput.html#cfn-databrew-job-databaseoutput-databaseoptions
-    - ``rp_GlueConnectionName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-databaseoutput.html#cfn-databrew-job-databaseoutput-glueconnectionname
-    - ``p_DatabaseOutputMode``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-databaseoutput.html#cfn-databrew-job-databaseoutput-databaseoutputmode
-    """
-    AWS_OBJECT_TYPE = "AWS::DataBrew::Job.DatabaseOutput"
-    
-    rp_DatabaseOptions: typing.Union['PropJobDatabaseTableOutputOptions', dict] = attr.ib(
-        default=None,
-        converter=PropJobDatabaseTableOutputOptions.from_dict,
-        validator=attr.validators.instance_of(PropJobDatabaseTableOutputOptions),
-        metadata={AttrMeta.PROPERTY_NAME: "DatabaseOptions"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-databaseoutput.html#cfn-databrew-job-databaseoutput-databaseoptions"""
-    rp_GlueConnectionName: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "GlueConnectionName"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-databaseoutput.html#cfn-databrew-job-databaseoutput-glueconnectionname"""
-    p_DatabaseOutputMode: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "DatabaseOutputMode"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-databaseoutput.html#cfn-databrew-job-databaseoutput-databaseoutputmode"""
-
-@attr.s
 class PropDatasetDataCatalogInputDefinition(Property):
     """
     AWS Object Type = "AWS::DataBrew::Dataset.DataCatalogInputDefinition"
@@ -2034,181 +2110,12 @@ class PropDatasetDataCatalogInputDefinition(Property):
         metadata={AttrMeta.PROPERTY_NAME: "TableName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-datacataloginputdefinition.html#cfn-databrew-dataset-datacataloginputdefinition-tablename"""
-    p_TempDirectory: typing.Union['PropDatasetS3Location', dict] = attr.ib(
+    p_TempDirectory: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropDatasetS3Location.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropDatasetS3Location)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "TempDirectory"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-datacataloginputdefinition.html#cfn-databrew-dataset-datacataloginputdefinition-tempdirectory"""
-
-@attr.s
-class PropJobColumnStatisticsConfiguration(Property):
-    """
-    AWS Object Type = "AWS::DataBrew::Job.ColumnStatisticsConfiguration"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-columnstatisticsconfiguration.html
-
-    Property Document:
-    
-    - ``rp_Statistics``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-columnstatisticsconfiguration.html#cfn-databrew-job-columnstatisticsconfiguration-statistics
-    - ``p_Selectors``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-columnstatisticsconfiguration.html#cfn-databrew-job-columnstatisticsconfiguration-selectors
-    """
-    AWS_OBJECT_TYPE = "AWS::DataBrew::Job.ColumnStatisticsConfiguration"
-    
-    rp_Statistics: typing.Union['PropJobStatisticsConfiguration', dict] = attr.ib(
-        default=None,
-        converter=PropJobStatisticsConfiguration.from_dict,
-        validator=attr.validators.instance_of(PropJobStatisticsConfiguration),
-        metadata={AttrMeta.PROPERTY_NAME: "Statistics"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-columnstatisticsconfiguration.html#cfn-databrew-job-columnstatisticsconfiguration-statistics"""
-    p_Selectors: typing.List[typing.Union['PropJobColumnSelector', dict]] = attr.ib(
-        default=None,
-        converter=PropJobColumnSelector.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropJobColumnSelector), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Selectors"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-columnstatisticsconfiguration.html#cfn-databrew-job-columnstatisticsconfiguration-selectors"""
-
-@attr.s
-class PropJobProfileConfiguration(Property):
-    """
-    AWS Object Type = "AWS::DataBrew::Job.ProfileConfiguration"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-profileconfiguration.html
-
-    Property Document:
-    
-    - ``p_ColumnStatisticsConfigurations``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-profileconfiguration.html#cfn-databrew-job-profileconfiguration-columnstatisticsconfigurations
-    - ``p_DatasetStatisticsConfiguration``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-profileconfiguration.html#cfn-databrew-job-profileconfiguration-datasetstatisticsconfiguration
-    - ``p_EntityDetectorConfiguration``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-profileconfiguration.html#cfn-databrew-job-profileconfiguration-entitydetectorconfiguration
-    - ``p_ProfileColumns``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-profileconfiguration.html#cfn-databrew-job-profileconfiguration-profilecolumns
-    """
-    AWS_OBJECT_TYPE = "AWS::DataBrew::Job.ProfileConfiguration"
-    
-    p_ColumnStatisticsConfigurations: typing.List[typing.Union['PropJobColumnStatisticsConfiguration', dict]] = attr.ib(
-        default=None,
-        converter=PropJobColumnStatisticsConfiguration.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropJobColumnStatisticsConfiguration), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "ColumnStatisticsConfigurations"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-profileconfiguration.html#cfn-databrew-job-profileconfiguration-columnstatisticsconfigurations"""
-    p_DatasetStatisticsConfiguration: typing.Union['PropJobStatisticsConfiguration', dict] = attr.ib(
-        default=None,
-        converter=PropJobStatisticsConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropJobStatisticsConfiguration)),
-        metadata={AttrMeta.PROPERTY_NAME: "DatasetStatisticsConfiguration"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-profileconfiguration.html#cfn-databrew-job-profileconfiguration-datasetstatisticsconfiguration"""
-    p_EntityDetectorConfiguration: typing.Union['PropJobEntityDetectorConfiguration', dict] = attr.ib(
-        default=None,
-        converter=PropJobEntityDetectorConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropJobEntityDetectorConfiguration)),
-        metadata={AttrMeta.PROPERTY_NAME: "EntityDetectorConfiguration"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-profileconfiguration.html#cfn-databrew-job-profileconfiguration-entitydetectorconfiguration"""
-    p_ProfileColumns: typing.List[typing.Union['PropJobColumnSelector', dict]] = attr.ib(
-        default=None,
-        converter=PropJobColumnSelector.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropJobColumnSelector), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "ProfileColumns"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-profileconfiguration.html#cfn-databrew-job-profileconfiguration-profilecolumns"""
-
-@attr.s
-class PropRecipeRecipeStep(Property):
-    """
-    AWS Object Type = "AWS::DataBrew::Recipe.RecipeStep"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipestep.html
-
-    Property Document:
-    
-    - ``rp_Action``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipestep.html#cfn-databrew-recipe-recipestep-action
-    - ``p_ConditionExpressions``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipestep.html#cfn-databrew-recipe-recipestep-conditionexpressions
-    """
-    AWS_OBJECT_TYPE = "AWS::DataBrew::Recipe.RecipeStep"
-    
-    rp_Action: typing.Union['PropRecipeAction', dict] = attr.ib(
-        default=None,
-        converter=PropRecipeAction.from_dict,
-        validator=attr.validators.instance_of(PropRecipeAction),
-        metadata={AttrMeta.PROPERTY_NAME: "Action"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipestep.html#cfn-databrew-recipe-recipestep-action"""
-    p_ConditionExpressions: typing.List[typing.Union['PropRecipeConditionExpression', dict]] = attr.ib(
-        default=None,
-        converter=PropRecipeConditionExpression.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropRecipeConditionExpression), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "ConditionExpressions"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipestep.html#cfn-databrew-recipe-recipestep-conditionexpressions"""
-
-@attr.s
-class PropDatasetPathParameter(Property):
-    """
-    AWS Object Type = "AWS::DataBrew::Dataset.PathParameter"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-pathparameter.html
-
-    Property Document:
-    
-    - ``rp_DatasetParameter``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-pathparameter.html#cfn-databrew-dataset-pathparameter-datasetparameter
-    - ``rp_PathParameterName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-pathparameter.html#cfn-databrew-dataset-pathparameter-pathparametername
-    """
-    AWS_OBJECT_TYPE = "AWS::DataBrew::Dataset.PathParameter"
-    
-    rp_DatasetParameter: typing.Union['PropDatasetDatasetParameter', dict] = attr.ib(
-        default=None,
-        converter=PropDatasetDatasetParameter.from_dict,
-        validator=attr.validators.instance_of(PropDatasetDatasetParameter),
-        metadata={AttrMeta.PROPERTY_NAME: "DatasetParameter"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-pathparameter.html#cfn-databrew-dataset-pathparameter-datasetparameter"""
-    rp_PathParameterName: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "PathParameterName"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-pathparameter.html#cfn-databrew-dataset-pathparameter-pathparametername"""
-
-@attr.s
-class PropDatasetPathOptions(Property):
-    """
-    AWS Object Type = "AWS::DataBrew::Dataset.PathOptions"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-pathoptions.html
-
-    Property Document:
-    
-    - ``p_FilesLimit``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-pathoptions.html#cfn-databrew-dataset-pathoptions-fileslimit
-    - ``p_LastModifiedDateCondition``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-pathoptions.html#cfn-databrew-dataset-pathoptions-lastmodifieddatecondition
-    - ``p_Parameters``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-pathoptions.html#cfn-databrew-dataset-pathoptions-parameters
-    """
-    AWS_OBJECT_TYPE = "AWS::DataBrew::Dataset.PathOptions"
-    
-    p_FilesLimit: typing.Union['PropDatasetFilesLimit', dict] = attr.ib(
-        default=None,
-        converter=PropDatasetFilesLimit.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropDatasetFilesLimit)),
-        metadata={AttrMeta.PROPERTY_NAME: "FilesLimit"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-pathoptions.html#cfn-databrew-dataset-pathoptions-fileslimit"""
-    p_LastModifiedDateCondition: typing.Union['PropDatasetFilterExpression', dict] = attr.ib(
-        default=None,
-        converter=PropDatasetFilterExpression.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropDatasetFilterExpression)),
-        metadata={AttrMeta.PROPERTY_NAME: "LastModifiedDateCondition"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-pathoptions.html#cfn-databrew-dataset-pathoptions-lastmodifieddatecondition"""
-    p_Parameters: typing.List[typing.Union['PropDatasetPathParameter', dict]] = attr.ib(
-        default=None,
-        converter=PropDatasetPathParameter.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDatasetPathParameter), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Parameters"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-pathoptions.html#cfn-databrew-dataset-pathoptions-parameters"""
 
 @attr.s
 class PropDatasetInput(Property):
@@ -2247,13 +2154,84 @@ class PropDatasetInput(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Metadata"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-input.html#cfn-databrew-dataset-input-metadata"""
-    p_S3InputDefinition: typing.Union['PropDatasetS3Location', dict] = attr.ib(
+    p_S3InputDefinition: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropDatasetS3Location.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropDatasetS3Location)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "S3InputDefinition"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-input.html#cfn-databrew-dataset-input-s3inputdefinition"""
+
+@attr.s
+class PropJobColumnStatisticsConfiguration(Property):
+    """
+    AWS Object Type = "AWS::DataBrew::Job.ColumnStatisticsConfiguration"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-columnstatisticsconfiguration.html
+
+    Property Document:
+    
+    - ``rp_Statistics``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-columnstatisticsconfiguration.html#cfn-databrew-job-columnstatisticsconfiguration-statistics
+    - ``p_Selectors``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-columnstatisticsconfiguration.html#cfn-databrew-job-columnstatisticsconfiguration-selectors
+    """
+    AWS_OBJECT_TYPE = "AWS::DataBrew::Job.ColumnStatisticsConfiguration"
+    
+    rp_Statistics: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "Statistics"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-columnstatisticsconfiguration.html#cfn-databrew-job-columnstatisticsconfiguration-statistics"""
+    p_Selectors: typing.List[typing.Union['PropJobColumnSelector', dict]] = attr.ib(
+        default=None,
+        converter=PropJobColumnSelector.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropJobColumnSelector), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "Selectors"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-columnstatisticsconfiguration.html#cfn-databrew-job-columnstatisticsconfiguration-selectors"""
+
+@attr.s
+class PropJobProfileConfiguration(Property):
+    """
+    AWS Object Type = "AWS::DataBrew::Job.ProfileConfiguration"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-profileconfiguration.html
+
+    Property Document:
+    
+    - ``p_ColumnStatisticsConfigurations``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-profileconfiguration.html#cfn-databrew-job-profileconfiguration-columnstatisticsconfigurations
+    - ``p_DatasetStatisticsConfiguration``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-profileconfiguration.html#cfn-databrew-job-profileconfiguration-datasetstatisticsconfiguration
+    - ``p_EntityDetectorConfiguration``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-profileconfiguration.html#cfn-databrew-job-profileconfiguration-entitydetectorconfiguration
+    - ``p_ProfileColumns``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-profileconfiguration.html#cfn-databrew-job-profileconfiguration-profilecolumns
+    """
+    AWS_OBJECT_TYPE = "AWS::DataBrew::Job.ProfileConfiguration"
+    
+    p_ColumnStatisticsConfigurations: typing.List[typing.Union['PropJobColumnStatisticsConfiguration', dict]] = attr.ib(
+        default=None,
+        converter=PropJobColumnStatisticsConfiguration.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropJobColumnStatisticsConfiguration), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "ColumnStatisticsConfigurations"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-profileconfiguration.html#cfn-databrew-job-profileconfiguration-columnstatisticsconfigurations"""
+    p_DatasetStatisticsConfiguration: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "DatasetStatisticsConfiguration"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-profileconfiguration.html#cfn-databrew-job-profileconfiguration-datasetstatisticsconfiguration"""
+    p_EntityDetectorConfiguration: typing.Union['PropJobEntityDetectorConfiguration', dict] = attr.ib(
+        default=None,
+        converter=PropJobEntityDetectorConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropJobEntityDetectorConfiguration)),
+        metadata={AttrMeta.PROPERTY_NAME: "EntityDetectorConfiguration"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-profileconfiguration.html#cfn-databrew-job-profileconfiguration-entitydetectorconfiguration"""
+    p_ProfileColumns: typing.List[typing.Union['PropJobColumnSelector', dict]] = attr.ib(
+        default=None,
+        converter=PropJobColumnSelector.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropJobColumnSelector), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "ProfileColumns"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-profileconfiguration.html#cfn-databrew-job-profileconfiguration-profilecolumns"""
 
 
 #--- Resource declaration ---
@@ -2278,27 +2256,58 @@ class Recipe(Resource):
     rp_Name: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Name"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Name",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-recipe.html#cfn-databrew-recipe-name"""
     rp_Steps: typing.List[typing.Union['PropRecipeRecipeStep', dict]] = attr.ib(
         default=None,
         converter=PropRecipeRecipeStep.from_list,
         validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropRecipeRecipeStep), iterable_validator=attr.validators.instance_of(list)),
-        metadata={AttrMeta.PROPERTY_NAME: "Steps"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Steps",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": True,
+                "Type": 'List',
+                "ItemType": 'RecipeStep',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-recipe.html#cfn-databrew-recipe-steps"""
     p_Description: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Description"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Description",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-recipe.html#cfn-databrew-recipe-description"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "Type": 'List',
+                "ItemType": 'Tag',
+                "DuplicatesAllowed": True,
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-recipe.html#cfn-databrew-recipe-tags"""
 
@@ -2327,40 +2336,84 @@ class Dataset(Resource):
         default=None,
         converter=PropDatasetInput.from_dict,
         validator=attr.validators.instance_of(PropDatasetInput),
-        metadata={AttrMeta.PROPERTY_NAME: "Input"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Input",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": True,
+                "Type": 'Input',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-dataset.html#cfn-databrew-dataset-input"""
     rp_Name: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Name"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Name",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-dataset.html#cfn-databrew-dataset-name"""
     p_Format: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Format"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Format",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-dataset.html#cfn-databrew-dataset-format"""
     p_FormatOptions: typing.Union['PropDatasetFormatOptions', dict] = attr.ib(
         default=None,
         converter=PropDatasetFormatOptions.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropDatasetFormatOptions)),
-        metadata={AttrMeta.PROPERTY_NAME: "FormatOptions"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "FormatOptions",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'FormatOptions',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-dataset.html#cfn-databrew-dataset-formatoptions"""
     p_PathOptions: typing.Union['PropDatasetPathOptions', dict] = attr.ib(
         default=None,
         converter=PropDatasetPathOptions.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropDatasetPathOptions)),
-        metadata={AttrMeta.PROPERTY_NAME: "PathOptions"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "PathOptions",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'PathOptions',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-dataset.html#cfn-databrew-dataset-pathoptions"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "Type": 'List',
+                "ItemType": 'Tag',
+                "DuplicatesAllowed": True,
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-dataset.html#cfn-databrew-dataset-tags"""
 
@@ -2387,33 +2440,71 @@ class Ruleset(Resource):
     rp_Name: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Name"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Name",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-ruleset.html#cfn-databrew-ruleset-name"""
     rp_Rules: typing.List[typing.Union['PropRulesetRule', dict]] = attr.ib(
         default=None,
         converter=PropRulesetRule.from_list,
         validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropRulesetRule), iterable_validator=attr.validators.instance_of(list)),
-        metadata={AttrMeta.PROPERTY_NAME: "Rules"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Rules",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": True,
+                "Type": 'List',
+                "ItemType": 'Rule',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-ruleset.html#cfn-databrew-ruleset-rules"""
     rp_TargetArn: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "TargetArn"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "TargetArn",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-ruleset.html#cfn-databrew-ruleset-targetarn"""
     p_Description: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Description"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Description",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-ruleset.html#cfn-databrew-ruleset-description"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'List',
+                "ItemType": 'Tag',
+                "DuplicatesAllowed": True,
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-ruleset.html#cfn-databrew-ruleset-tags"""
 
@@ -2441,39 +2532,83 @@ class Project(Resource):
     rp_DatasetName: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "DatasetName"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "DatasetName",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-project.html#cfn-databrew-project-datasetname"""
     rp_Name: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Name"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Name",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-project.html#cfn-databrew-project-name"""
     rp_RecipeName: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "RecipeName"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "RecipeName",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-project.html#cfn-databrew-project-recipename"""
     rp_RoleArn: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "RoleArn"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "RoleArn",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-project.html#cfn-databrew-project-rolearn"""
     p_Sample: typing.Union['PropProjectSample', dict] = attr.ib(
         default=None,
         converter=PropProjectSample.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropProjectSample)),
-        metadata={AttrMeta.PROPERTY_NAME: "Sample"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Sample",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'Sample',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-project.html#cfn-databrew-project-sample"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "Type": 'List',
+                "ItemType": 'Tag',
+                "DuplicatesAllowed": True,
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-project.html#cfn-databrew-project-tags"""
 
@@ -2515,130 +2650,276 @@ class Job(Resource):
     rp_Name: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Name"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Name",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-job.html#cfn-databrew-job-name"""
     rp_RoleArn: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "RoleArn"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "RoleArn",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-job.html#cfn-databrew-job-rolearn"""
     rp_Type: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Type"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Type",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-job.html#cfn-databrew-job-type"""
     p_DataCatalogOutputs: typing.List[typing.Union['PropJobDataCatalogOutput', dict]] = attr.ib(
         default=None,
         converter=PropJobDataCatalogOutput.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropJobDataCatalogOutput), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "DataCatalogOutputs"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "DataCatalogOutputs",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'List',
+                "ItemType": 'DataCatalogOutput',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-job.html#cfn-databrew-job-datacatalogoutputs"""
     p_DatabaseOutputs: typing.List[typing.Union['PropJobDatabaseOutput', dict]] = attr.ib(
         default=None,
         converter=PropJobDatabaseOutput.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropJobDatabaseOutput), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "DatabaseOutputs"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "DatabaseOutputs",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'List',
+                "ItemType": 'DatabaseOutput',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-job.html#cfn-databrew-job-databaseoutputs"""
     p_DatasetName: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "DatasetName"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "DatasetName",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-job.html#cfn-databrew-job-datasetname"""
     p_EncryptionKeyArn: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "EncryptionKeyArn"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "EncryptionKeyArn",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-job.html#cfn-databrew-job-encryptionkeyarn"""
     p_EncryptionMode: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "EncryptionMode"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "EncryptionMode",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-job.html#cfn-databrew-job-encryptionmode"""
     p_JobSample: typing.Union['PropJobJobSample', dict] = attr.ib(
         default=None,
         converter=PropJobJobSample.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropJobJobSample)),
-        metadata={AttrMeta.PROPERTY_NAME: "JobSample"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "JobSample",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'JobSample',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-job.html#cfn-databrew-job-jobsample"""
     p_LogSubscription: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "LogSubscription"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "LogSubscription",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-job.html#cfn-databrew-job-logsubscription"""
     p_MaxCapacity: int = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "MaxCapacity"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "MaxCapacity",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'Integer',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-job.html#cfn-databrew-job-maxcapacity"""
     p_MaxRetries: int = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "MaxRetries"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "MaxRetries",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'Integer',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-job.html#cfn-databrew-job-maxretries"""
     p_OutputLocation: typing.Union['PropJobOutputLocation', dict] = attr.ib(
         default=None,
         converter=PropJobOutputLocation.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropJobOutputLocation)),
-        metadata={AttrMeta.PROPERTY_NAME: "OutputLocation"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "OutputLocation",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'OutputLocation',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-job.html#cfn-databrew-job-outputlocation"""
     p_Outputs: typing.List[typing.Union['PropJobOutput', dict]] = attr.ib(
         default=None,
         converter=PropJobOutput.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropJobOutput), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Outputs"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Outputs",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'List',
+                "ItemType": 'Output',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-job.html#cfn-databrew-job-outputs"""
     p_ProfileConfiguration: typing.Union['PropJobProfileConfiguration', dict] = attr.ib(
         default=None,
         converter=PropJobProfileConfiguration.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropJobProfileConfiguration)),
-        metadata={AttrMeta.PROPERTY_NAME: "ProfileConfiguration"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ProfileConfiguration",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'ProfileConfiguration',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-job.html#cfn-databrew-job-profileconfiguration"""
     p_ProjectName: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "ProjectName"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ProjectName",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-job.html#cfn-databrew-job-projectname"""
     p_Recipe: typing.Union['PropJobRecipe', dict] = attr.ib(
         default=None,
         converter=PropJobRecipe.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropJobRecipe)),
-        metadata={AttrMeta.PROPERTY_NAME: "Recipe"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Recipe",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'Recipe',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-job.html#cfn-databrew-job-recipe"""
     p_Timeout: int = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "Timeout"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Timeout",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'Integer',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-job.html#cfn-databrew-job-timeout"""
     p_ValidationConfigurations: typing.List[typing.Union['PropJobValidationConfiguration', dict]] = attr.ib(
         default=None,
         converter=PropJobValidationConfiguration.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropJobValidationConfiguration), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "ValidationConfigurations"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ValidationConfigurations",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'List',
+                "ItemType": 'ValidationConfiguration',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-job.html#cfn-databrew-job-validationconfigurations"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "Type": 'List',
+                "ItemType": 'Tag',
+                "DuplicatesAllowed": True,
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-job.html#cfn-databrew-job-tags"""
 
@@ -2664,26 +2945,58 @@ class Schedule(Resource):
     rp_CronExpression: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "CronExpression"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "CronExpression",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-schedule.html#cfn-databrew-schedule-cronexpression"""
     rp_Name: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Name"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Name",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-schedule.html#cfn-databrew-schedule-name"""
     p_JobNames: typing.List[TypeHint.intrinsic_str] = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "JobNames"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "JobNames",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'List',
+                "PrimitiveItemType": 'String',
+                "DuplicatesAllowed": False,
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-schedule.html#cfn-databrew-schedule-jobnames"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "Type": 'List',
+                "ItemType": 'Tag',
+                "DuplicatesAllowed": True,
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-databrew-schedule.html#cfn-databrew-schedule-tags"""
 

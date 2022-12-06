@@ -15,6 +15,33 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
+class PropExperimentTemplateExperimentTemplateTargetFilter(Property):
+    """
+    AWS Object Type = "AWS::FIS::ExperimentTemplate.ExperimentTemplateTargetFilter"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fis-experimenttemplate-experimenttemplatetargetfilter.html
+
+    Property Document:
+    
+    - ``rp_Path``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fis-experimenttemplate-experimenttemplatetargetfilter.html#cfn-fis-experimenttemplate-experimenttemplatetargetfilter-path
+    - ``rp_Values``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fis-experimenttemplate-experimenttemplatetargetfilter.html#cfn-fis-experimenttemplate-experimenttemplatetargetfilter-values
+    """
+    AWS_OBJECT_TYPE = "AWS::FIS::ExperimentTemplate.ExperimentTemplateTargetFilter"
+    
+    rp_Path: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "Path"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fis-experimenttemplate-experimenttemplatetargetfilter.html#cfn-fis-experimenttemplate-experimenttemplatetargetfilter-path"""
+    rp_Values: typing.List[TypeHint.intrinsic_str] = attr.ib(
+        default=None,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list)),
+        metadata={AttrMeta.PROPERTY_NAME: "Values"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fis-experimenttemplate-experimenttemplatetargetfilter.html#cfn-fis-experimenttemplate-experimenttemplatetargetfilter-values"""
+
+@attr.s
 class PropExperimentTemplateExperimentTemplateStopCondition(Property):
     """
     AWS Object Type = "AWS::FIS::ExperimentTemplate.ExperimentTemplateStopCondition"
@@ -124,33 +151,6 @@ class PropExperimentTemplateExperimentTemplateAction(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fis-experimenttemplate-experimenttemplateaction.html#cfn-fis-experimenttemplate-experimenttemplateaction-targets"""
 
 @attr.s
-class PropExperimentTemplateExperimentTemplateTargetFilter(Property):
-    """
-    AWS Object Type = "AWS::FIS::ExperimentTemplate.ExperimentTemplateTargetFilter"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fis-experimenttemplate-experimenttemplatetargetfilter.html
-
-    Property Document:
-    
-    - ``rp_Path``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fis-experimenttemplate-experimenttemplatetargetfilter.html#cfn-fis-experimenttemplate-experimenttemplatetargetfilter-path
-    - ``rp_Values``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fis-experimenttemplate-experimenttemplatetargetfilter.html#cfn-fis-experimenttemplate-experimenttemplatetargetfilter-values
-    """
-    AWS_OBJECT_TYPE = "AWS::FIS::ExperimentTemplate.ExperimentTemplateTargetFilter"
-    
-    rp_Path: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Path"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fis-experimenttemplate-experimenttemplatetargetfilter.html#cfn-fis-experimenttemplate-experimenttemplatetargetfilter-path"""
-    rp_Values: typing.List[TypeHint.intrinsic_str] = attr.ib(
-        default=None,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list)),
-        metadata={AttrMeta.PROPERTY_NAME: "Values"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fis-experimenttemplate-experimenttemplatetargetfilter.html#cfn-fis-experimenttemplate-experimenttemplatetargetfilter-values"""
-
-@attr.s
 class PropExperimentTemplateExperimentTemplateTarget(Property):
     """
     AWS Object Type = "AWS::FIS::ExperimentTemplate.ExperimentTemplateTarget"
@@ -232,47 +232,100 @@ class ExperimentTemplate(Resource):
     rp_Description: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Description"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Description",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fis-experimenttemplate.html#cfn-fis-experimenttemplate-description"""
     rp_RoleArn: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "RoleArn"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "RoleArn",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fis-experimenttemplate.html#cfn-fis-experimenttemplate-rolearn"""
     rp_StopConditions: typing.List[typing.Union['PropExperimentTemplateExperimentTemplateStopCondition', dict]] = attr.ib(
         default=None,
         converter=PropExperimentTemplateExperimentTemplateStopCondition.from_list,
         validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropExperimentTemplateExperimentTemplateStopCondition), iterable_validator=attr.validators.instance_of(list)),
-        metadata={AttrMeta.PROPERTY_NAME: "StopConditions"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "StopConditions",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": True,
+                "Type": 'List',
+                "ItemType": 'ExperimentTemplateStopCondition',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fis-experimenttemplate.html#cfn-fis-experimenttemplate-stopconditions"""
     rp_Targets: typing.Union['PropExperimentTemplateExperimentTemplateTarget', dict] = attr.ib(
         default=None,
         converter=PropExperimentTemplateExperimentTemplateTarget.from_list,
         validator=attr.validators.instance_of(PropExperimentTemplateExperimentTemplateTarget),
-        metadata={AttrMeta.PROPERTY_NAME: "Targets"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Targets",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": True,
+                "Type": 'Map',
+                "ItemType": 'ExperimentTemplateTarget',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fis-experimenttemplate.html#cfn-fis-experimenttemplate-targets"""
     p_Actions: typing.Union['PropExperimentTemplateExperimentTemplateAction', dict] = attr.ib(
         default=None,
         converter=PropExperimentTemplateExperimentTemplateAction.from_list,
         validator=attr.validators.optional(attr.validators.instance_of(PropExperimentTemplateExperimentTemplateAction)),
-        metadata={AttrMeta.PROPERTY_NAME: "Actions"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Actions",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'Map',
+                "ItemType": 'ExperimentTemplateAction',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fis-experimenttemplate.html#cfn-fis-experimenttemplate-actions"""
     p_LogConfiguration: typing.Union['PropExperimentTemplateExperimentTemplateLogConfiguration', dict] = attr.ib(
         default=None,
         converter=PropExperimentTemplateExperimentTemplateLogConfiguration.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropExperimentTemplateExperimentTemplateLogConfiguration)),
-        metadata={AttrMeta.PROPERTY_NAME: "LogConfiguration"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "LogConfiguration",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'ExperimentTemplateLogConfiguration',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fis-experimenttemplate.html#cfn-fis-experimenttemplate-logconfiguration"""
     rp_Tags: typing.Dict[str, TypeHint.intrinsic_str] = attr.ib(
         default=None,
         validator=attr.validators.deep_mapping(key_validator=attr.validators.instance_of(str), value_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "Type": 'Map',
+                "PrimitiveItemType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-fis-experimenttemplate.html#cfn-fis-experimenttemplate-tags"""
 

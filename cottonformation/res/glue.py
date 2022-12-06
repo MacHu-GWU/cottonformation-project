@@ -151,40 +151,6 @@ class PropConnectionPhysicalConnectionRequirements(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-connection-physicalconnectionrequirements.html#cfn-glue-connection-physicalconnectionrequirements-subnetid"""
 
 @attr.s
-class PropSchemaVersionSchema(Property):
-    """
-    AWS Object Type = "AWS::Glue::SchemaVersion.Schema"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-schemaversion-schema.html
-
-    Property Document:
-    
-    - ``p_RegistryName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-schemaversion-schema.html#cfn-glue-schemaversion-schema-registryname
-    - ``p_SchemaArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-schemaversion-schema.html#cfn-glue-schemaversion-schema-schemaarn
-    - ``p_SchemaName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-schemaversion-schema.html#cfn-glue-schemaversion-schema-schemaname
-    """
-    AWS_OBJECT_TYPE = "AWS::Glue::SchemaVersion.Schema"
-    
-    p_RegistryName: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "RegistryName"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-schemaversion-schema.html#cfn-glue-schemaversion-schema-registryname"""
-    p_SchemaArn: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "SchemaArn"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-schemaversion-schema.html#cfn-glue-schemaversion-schema-schemaarn"""
-    p_SchemaName: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "SchemaName"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-schemaversion-schema.html#cfn-glue-schemaversion-schema-schemaname"""
-
-@attr.s
 class PropSchemaSchemaVersion(Property):
     """
     AWS Object Type = "AWS::Glue::Schema.SchemaVersion"
@@ -210,74 +176,6 @@ class PropSchemaSchemaVersion(Property):
         metadata={AttrMeta.PROPERTY_NAME: "VersionNumber"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-schema-schemaversion.html#cfn-glue-schema-schemaversion-versionnumber"""
-
-@attr.s
-class PropCrawlerSchedule(Property):
-    """
-    AWS Object Type = "AWS::Glue::Crawler.Schedule"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-schedule.html
-
-    Property Document:
-    
-    - ``p_ScheduleExpression``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-schedule.html#cfn-glue-crawler-schedule-scheduleexpression
-    """
-    AWS_OBJECT_TYPE = "AWS::Glue::Crawler.Schedule"
-    
-    p_ScheduleExpression: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "ScheduleExpression"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-schedule.html#cfn-glue-crawler-schedule-scheduleexpression"""
-
-@attr.s
-class PropTriggerCondition(Property):
-    """
-    AWS Object Type = "AWS::Glue::Trigger.Condition"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-condition.html
-
-    Property Document:
-    
-    - ``p_CrawlState``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-condition.html#cfn-glue-trigger-condition-crawlstate
-    - ``p_CrawlerName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-condition.html#cfn-glue-trigger-condition-crawlername
-    - ``p_JobName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-condition.html#cfn-glue-trigger-condition-jobname
-    - ``p_LogicalOperator``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-condition.html#cfn-glue-trigger-condition-logicaloperator
-    - ``p_State``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-condition.html#cfn-glue-trigger-condition-state
-    """
-    AWS_OBJECT_TYPE = "AWS::Glue::Trigger.Condition"
-    
-    p_CrawlState: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "CrawlState"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-condition.html#cfn-glue-trigger-condition-crawlstate"""
-    p_CrawlerName: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "CrawlerName"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-condition.html#cfn-glue-trigger-condition-crawlername"""
-    p_JobName: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "JobName"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-condition.html#cfn-glue-trigger-condition-jobname"""
-    p_LogicalOperator: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "LogicalOperator"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-condition.html#cfn-glue-trigger-condition-logicaloperator"""
-    p_State: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "State"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-condition.html#cfn-glue-trigger-condition-state"""
 
 @attr.s
 class PropDatabaseDatabaseIdentifier(Property):
@@ -339,60 +237,6 @@ class PropTableColumn(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Type"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-column.html#cfn-glue-table-column-type"""
-
-@attr.s
-class PropDataCatalogEncryptionSettingsEncryptionAtRest(Property):
-    """
-    AWS Object Type = "AWS::Glue::DataCatalogEncryptionSettings.EncryptionAtRest"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-datacatalogencryptionsettings-encryptionatrest.html
-
-    Property Document:
-    
-    - ``p_CatalogEncryptionMode``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-datacatalogencryptionsettings-encryptionatrest.html#cfn-glue-datacatalogencryptionsettings-encryptionatrest-catalogencryptionmode
-    - ``p_SseAwsKmsKeyId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-datacatalogencryptionsettings-encryptionatrest.html#cfn-glue-datacatalogencryptionsettings-encryptionatrest-sseawskmskeyid
-    """
-    AWS_OBJECT_TYPE = "AWS::Glue::DataCatalogEncryptionSettings.EncryptionAtRest"
-    
-    p_CatalogEncryptionMode: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "CatalogEncryptionMode"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-datacatalogencryptionsettings-encryptionatrest.html#cfn-glue-datacatalogencryptionsettings-encryptionatrest-catalogencryptionmode"""
-    p_SseAwsKmsKeyId: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "SseAwsKmsKeyId"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-datacatalogencryptionsettings-encryptionatrest.html#cfn-glue-datacatalogencryptionsettings-encryptionatrest-sseawskmskeyid"""
-
-@attr.s
-class PropCrawlerSchemaChangePolicy(Property):
-    """
-    AWS Object Type = "AWS::Glue::Crawler.SchemaChangePolicy"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-schemachangepolicy.html
-
-    Property Document:
-    
-    - ``p_DeleteBehavior``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-schemachangepolicy.html#cfn-glue-crawler-schemachangepolicy-deletebehavior
-    - ``p_UpdateBehavior``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-schemachangepolicy.html#cfn-glue-crawler-schemachangepolicy-updatebehavior
-    """
-    AWS_OBJECT_TYPE = "AWS::Glue::Crawler.SchemaChangePolicy"
-    
-    p_DeleteBehavior: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "DeleteBehavior"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-schemachangepolicy.html#cfn-glue-crawler-schemachangepolicy-deletebehavior"""
-    p_UpdateBehavior: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "UpdateBehavior"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-schemachangepolicy.html#cfn-glue-crawler-schemachangepolicy-updatebehavior"""
 
 @attr.s
 class PropMLTransformMLUserDataEncryption(Property):
@@ -511,6 +355,33 @@ class PropPartitionOrder(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-order.html#cfn-glue-partition-order-sortorder"""
 
 @attr.s
+class PropTriggerEventBatchingCondition(Property):
+    """
+    AWS Object Type = "AWS::Glue::Trigger.EventBatchingCondition"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-eventbatchingcondition.html
+
+    Property Document:
+    
+    - ``rp_BatchSize``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-eventbatchingcondition.html#cfn-glue-trigger-eventbatchingcondition-batchsize
+    - ``p_BatchWindow``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-eventbatchingcondition.html#cfn-glue-trigger-eventbatchingcondition-batchwindow
+    """
+    AWS_OBJECT_TYPE = "AWS::Glue::Trigger.EventBatchingCondition"
+    
+    rp_BatchSize: int = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(int),
+        metadata={AttrMeta.PROPERTY_NAME: "BatchSize"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-eventbatchingcondition.html#cfn-glue-trigger-eventbatchingcondition-batchsize"""
+    p_BatchWindow: int = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(int)),
+        metadata={AttrMeta.PROPERTY_NAME: "BatchWindow"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-eventbatchingcondition.html#cfn-glue-trigger-eventbatchingcondition-batchwindow"""
+
+@attr.s
 class PropClassifierGrokClassifier(Property):
     """
     AWS Object Type = "AWS::Glue::Classifier.GrokClassifier"
@@ -579,6 +450,549 @@ class PropSchemaRegistry(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-schema-registry.html#cfn-glue-schema-registry-name"""
 
 @attr.s
+class PropClassifierJsonClassifier(Property):
+    """
+    AWS Object Type = "AWS::Glue::Classifier.JsonClassifier"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-classifier-jsonclassifier.html
+
+    Property Document:
+    
+    - ``rp_JsonPath``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-classifier-jsonclassifier.html#cfn-glue-classifier-jsonclassifier-jsonpath
+    - ``p_Name``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-classifier-jsonclassifier.html#cfn-glue-classifier-jsonclassifier-name
+    """
+    AWS_OBJECT_TYPE = "AWS::Glue::Classifier.JsonClassifier"
+    
+    rp_JsonPath: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "JsonPath"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-classifier-jsonclassifier.html#cfn-glue-classifier-jsonclassifier-jsonpath"""
+    p_Name: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "Name"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-classifier-jsonclassifier.html#cfn-glue-classifier-jsonclassifier-name"""
+
+@attr.s
+class PropPartitionSerdeInfo(Property):
+    """
+    AWS Object Type = "AWS::Glue::Partition.SerdeInfo"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-serdeinfo.html
+
+    Property Document:
+    
+    - ``p_Name``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-serdeinfo.html#cfn-glue-partition-serdeinfo-name
+    - ``p_Parameters``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-serdeinfo.html#cfn-glue-partition-serdeinfo-parameters
+    - ``p_SerializationLibrary``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-serdeinfo.html#cfn-glue-partition-serdeinfo-serializationlibrary
+    """
+    AWS_OBJECT_TYPE = "AWS::Glue::Partition.SerdeInfo"
+    
+    p_Name: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "Name"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-serdeinfo.html#cfn-glue-partition-serdeinfo-name"""
+    p_Parameters: dict = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "Parameters"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-serdeinfo.html#cfn-glue-partition-serdeinfo-parameters"""
+    p_SerializationLibrary: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "SerializationLibrary"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-serdeinfo.html#cfn-glue-partition-serdeinfo-serializationlibrary"""
+
+@attr.s
+class PropJobConnectionsList(Property):
+    """
+    AWS Object Type = "AWS::Glue::Job.ConnectionsList"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-job-connectionslist.html
+
+    Property Document:
+    
+    - ``p_Connections``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-job-connectionslist.html#cfn-glue-job-connectionslist-connections
+    """
+    AWS_OBJECT_TYPE = "AWS::Glue::Job.ConnectionsList"
+    
+    p_Connections: typing.List[TypeHint.intrinsic_str] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "Connections"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-job-connectionslist.html#cfn-glue-job-connectionslist-connections"""
+
+@attr.s
+class PropCrawlerJdbcTarget(Property):
+    """
+    AWS Object Type = "AWS::Glue::Crawler.JdbcTarget"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-jdbctarget.html
+
+    Property Document:
+    
+    - ``p_ConnectionName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-jdbctarget.html#cfn-glue-crawler-jdbctarget-connectionname
+    - ``p_Exclusions``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-jdbctarget.html#cfn-glue-crawler-jdbctarget-exclusions
+    - ``p_Path``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-jdbctarget.html#cfn-glue-crawler-jdbctarget-path
+    """
+    AWS_OBJECT_TYPE = "AWS::Glue::Crawler.JdbcTarget"
+    
+    p_ConnectionName: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "ConnectionName"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-jdbctarget.html#cfn-glue-crawler-jdbctarget-connectionname"""
+    p_Exclusions: typing.List[TypeHint.intrinsic_str] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "Exclusions"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-jdbctarget.html#cfn-glue-crawler-jdbctarget-exclusions"""
+    p_Path: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "Path"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-jdbctarget.html#cfn-glue-crawler-jdbctarget-path"""
+
+@attr.s
+class PropTableSchemaId(Property):
+    """
+    AWS Object Type = "AWS::Glue::Table.SchemaId"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-schemaid.html
+
+    Property Document:
+    
+    - ``p_RegistryName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-schemaid.html#cfn-glue-table-schemaid-registryname
+    - ``p_SchemaArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-schemaid.html#cfn-glue-table-schemaid-schemaarn
+    - ``p_SchemaName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-schemaid.html#cfn-glue-table-schemaid-schemaname
+    """
+    AWS_OBJECT_TYPE = "AWS::Glue::Table.SchemaId"
+    
+    p_RegistryName: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "RegistryName"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-schemaid.html#cfn-glue-table-schemaid-registryname"""
+    p_SchemaArn: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "SchemaArn"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-schemaid.html#cfn-glue-table-schemaid-schemaarn"""
+    p_SchemaName: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "SchemaName"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-schemaid.html#cfn-glue-table-schemaid-schemaname"""
+
+@attr.s
+class PropCrawlerDynamoDBTarget(Property):
+    """
+    AWS Object Type = "AWS::Glue::Crawler.DynamoDBTarget"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-dynamodbtarget.html
+
+    Property Document:
+    
+    - ``p_Path``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-dynamodbtarget.html#cfn-glue-crawler-dynamodbtarget-path
+    """
+    AWS_OBJECT_TYPE = "AWS::Glue::Crawler.DynamoDBTarget"
+    
+    p_Path: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "Path"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-dynamodbtarget.html#cfn-glue-crawler-dynamodbtarget-path"""
+
+@attr.s
+class PropTriggerNotificationProperty(Property):
+    """
+    AWS Object Type = "AWS::Glue::Trigger.NotificationProperty"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-notificationproperty.html
+
+    Property Document:
+    
+    - ``p_NotifyDelayAfter``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-notificationproperty.html#cfn-glue-trigger-notificationproperty-notifydelayafter
+    """
+    AWS_OBJECT_TYPE = "AWS::Glue::Trigger.NotificationProperty"
+    
+    p_NotifyDelayAfter: int = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(int)),
+        metadata={AttrMeta.PROPERTY_NAME: "NotifyDelayAfter"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-notificationproperty.html#cfn-glue-trigger-notificationproperty-notifydelayafter"""
+
+@attr.s
+class PropClassifierXMLClassifier(Property):
+    """
+    AWS Object Type = "AWS::Glue::Classifier.XMLClassifier"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-classifier-xmlclassifier.html
+
+    Property Document:
+    
+    - ``rp_Classification``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-classifier-xmlclassifier.html#cfn-glue-classifier-xmlclassifier-classification
+    - ``rp_RowTag``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-classifier-xmlclassifier.html#cfn-glue-classifier-xmlclassifier-rowtag
+    - ``p_Name``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-classifier-xmlclassifier.html#cfn-glue-classifier-xmlclassifier-name
+    """
+    AWS_OBJECT_TYPE = "AWS::Glue::Classifier.XMLClassifier"
+    
+    rp_Classification: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "Classification"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-classifier-xmlclassifier.html#cfn-glue-classifier-xmlclassifier-classification"""
+    rp_RowTag: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "RowTag"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-classifier-xmlclassifier.html#cfn-glue-classifier-xmlclassifier-rowtag"""
+    p_Name: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "Name"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-classifier-xmlclassifier.html#cfn-glue-classifier-xmlclassifier-name"""
+
+@attr.s
+class PropCrawlerS3Target(Property):
+    """
+    AWS Object Type = "AWS::Glue::Crawler.S3Target"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-s3target.html
+
+    Property Document:
+    
+    - ``p_ConnectionName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-s3target.html#cfn-glue-crawler-s3target-connectionname
+    - ``p_DlqEventQueueArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-s3target.html#cfn-glue-crawler-s3target-dlqeventqueuearn
+    - ``p_EventQueueArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-s3target.html#cfn-glue-crawler-s3target-eventqueuearn
+    - ``p_Exclusions``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-s3target.html#cfn-glue-crawler-s3target-exclusions
+    - ``p_Path``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-s3target.html#cfn-glue-crawler-s3target-path
+    - ``p_SampleSize``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-s3target.html#cfn-glue-crawler-s3target-samplesize
+    """
+    AWS_OBJECT_TYPE = "AWS::Glue::Crawler.S3Target"
+    
+    p_ConnectionName: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "ConnectionName"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-s3target.html#cfn-glue-crawler-s3target-connectionname"""
+    p_DlqEventQueueArn: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "DlqEventQueueArn"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-s3target.html#cfn-glue-crawler-s3target-dlqeventqueuearn"""
+    p_EventQueueArn: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "EventQueueArn"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-s3target.html#cfn-glue-crawler-s3target-eventqueuearn"""
+    p_Exclusions: typing.List[TypeHint.intrinsic_str] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "Exclusions"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-s3target.html#cfn-glue-crawler-s3target-exclusions"""
+    p_Path: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "Path"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-s3target.html#cfn-glue-crawler-s3target-path"""
+    p_SampleSize: int = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(int)),
+        metadata={AttrMeta.PROPERTY_NAME: "SampleSize"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-s3target.html#cfn-glue-crawler-s3target-samplesize"""
+
+@attr.s
+class PropPartitionSchemaId(Property):
+    """
+    AWS Object Type = "AWS::Glue::Partition.SchemaId"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-schemaid.html
+
+    Property Document:
+    
+    - ``p_RegistryName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-schemaid.html#cfn-glue-partition-schemaid-registryname
+    - ``p_SchemaArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-schemaid.html#cfn-glue-partition-schemaid-schemaarn
+    - ``p_SchemaName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-schemaid.html#cfn-glue-partition-schemaid-schemaname
+    """
+    AWS_OBJECT_TYPE = "AWS::Glue::Partition.SchemaId"
+    
+    p_RegistryName: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "RegistryName"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-schemaid.html#cfn-glue-partition-schemaid-registryname"""
+    p_SchemaArn: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "SchemaArn"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-schemaid.html#cfn-glue-partition-schemaid-schemaarn"""
+    p_SchemaName: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "SchemaName"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-schemaid.html#cfn-glue-partition-schemaid-schemaname"""
+
+@attr.s
+class PropJobExecutionProperty(Property):
+    """
+    AWS Object Type = "AWS::Glue::Job.ExecutionProperty"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-job-executionproperty.html
+
+    Property Document:
+    
+    - ``p_MaxConcurrentRuns``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-job-executionproperty.html#cfn-glue-job-executionproperty-maxconcurrentruns
+    """
+    AWS_OBJECT_TYPE = "AWS::Glue::Job.ExecutionProperty"
+    
+    p_MaxConcurrentRuns: float = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(float)),
+        metadata={AttrMeta.PROPERTY_NAME: "MaxConcurrentRuns"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-job-executionproperty.html#cfn-glue-job-executionproperty-maxconcurrentruns"""
+
+@attr.s
+class PropCrawlerRecrawlPolicy(Property):
+    """
+    AWS Object Type = "AWS::Glue::Crawler.RecrawlPolicy"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-recrawlpolicy.html
+
+    Property Document:
+    
+    - ``p_RecrawlBehavior``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-recrawlpolicy.html#cfn-glue-crawler-recrawlpolicy-recrawlbehavior
+    """
+    AWS_OBJECT_TYPE = "AWS::Glue::Crawler.RecrawlPolicy"
+    
+    p_RecrawlBehavior: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "RecrawlBehavior"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-recrawlpolicy.html#cfn-glue-crawler-recrawlpolicy-recrawlbehavior"""
+
+@attr.s
+class PropSchemaVersionSchema(Property):
+    """
+    AWS Object Type = "AWS::Glue::SchemaVersion.Schema"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-schemaversion-schema.html
+
+    Property Document:
+    
+    - ``p_RegistryName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-schemaversion-schema.html#cfn-glue-schemaversion-schema-registryname
+    - ``p_SchemaArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-schemaversion-schema.html#cfn-glue-schemaversion-schema-schemaarn
+    - ``p_SchemaName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-schemaversion-schema.html#cfn-glue-schemaversion-schema-schemaname
+    """
+    AWS_OBJECT_TYPE = "AWS::Glue::SchemaVersion.Schema"
+    
+    p_RegistryName: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "RegistryName"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-schemaversion-schema.html#cfn-glue-schemaversion-schema-registryname"""
+    p_SchemaArn: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "SchemaArn"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-schemaversion-schema.html#cfn-glue-schemaversion-schema-schemaarn"""
+    p_SchemaName: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "SchemaName"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-schemaversion-schema.html#cfn-glue-schemaversion-schema-schemaname"""
+
+@attr.s
+class PropCrawlerSchedule(Property):
+    """
+    AWS Object Type = "AWS::Glue::Crawler.Schedule"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-schedule.html
+
+    Property Document:
+    
+    - ``p_ScheduleExpression``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-schedule.html#cfn-glue-crawler-schedule-scheduleexpression
+    """
+    AWS_OBJECT_TYPE = "AWS::Glue::Crawler.Schedule"
+    
+    p_ScheduleExpression: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "ScheduleExpression"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-schedule.html#cfn-glue-crawler-schedule-scheduleexpression"""
+
+@attr.s
+class PropTriggerCondition(Property):
+    """
+    AWS Object Type = "AWS::Glue::Trigger.Condition"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-condition.html
+
+    Property Document:
+    
+    - ``p_CrawlState``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-condition.html#cfn-glue-trigger-condition-crawlstate
+    - ``p_CrawlerName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-condition.html#cfn-glue-trigger-condition-crawlername
+    - ``p_JobName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-condition.html#cfn-glue-trigger-condition-jobname
+    - ``p_LogicalOperator``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-condition.html#cfn-glue-trigger-condition-logicaloperator
+    - ``p_State``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-condition.html#cfn-glue-trigger-condition-state
+    """
+    AWS_OBJECT_TYPE = "AWS::Glue::Trigger.Condition"
+    
+    p_CrawlState: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "CrawlState"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-condition.html#cfn-glue-trigger-condition-crawlstate"""
+    p_CrawlerName: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "CrawlerName"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-condition.html#cfn-glue-trigger-condition-crawlername"""
+    p_JobName: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "JobName"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-condition.html#cfn-glue-trigger-condition-jobname"""
+    p_LogicalOperator: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "LogicalOperator"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-condition.html#cfn-glue-trigger-condition-logicaloperator"""
+    p_State: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "State"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-condition.html#cfn-glue-trigger-condition-state"""
+
+@attr.s
+class PropDataCatalogEncryptionSettingsEncryptionAtRest(Property):
+    """
+    AWS Object Type = "AWS::Glue::DataCatalogEncryptionSettings.EncryptionAtRest"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-datacatalogencryptionsettings-encryptionatrest.html
+
+    Property Document:
+    
+    - ``p_CatalogEncryptionMode``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-datacatalogencryptionsettings-encryptionatrest.html#cfn-glue-datacatalogencryptionsettings-encryptionatrest-catalogencryptionmode
+    - ``p_SseAwsKmsKeyId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-datacatalogencryptionsettings-encryptionatrest.html#cfn-glue-datacatalogencryptionsettings-encryptionatrest-sseawskmskeyid
+    """
+    AWS_OBJECT_TYPE = "AWS::Glue::DataCatalogEncryptionSettings.EncryptionAtRest"
+    
+    p_CatalogEncryptionMode: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "CatalogEncryptionMode"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-datacatalogencryptionsettings-encryptionatrest.html#cfn-glue-datacatalogencryptionsettings-encryptionatrest-catalogencryptionmode"""
+    p_SseAwsKmsKeyId: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "SseAwsKmsKeyId"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-datacatalogencryptionsettings-encryptionatrest.html#cfn-glue-datacatalogencryptionsettings-encryptionatrest-sseawskmskeyid"""
+
+@attr.s
+class PropCrawlerSchemaChangePolicy(Property):
+    """
+    AWS Object Type = "AWS::Glue::Crawler.SchemaChangePolicy"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-schemachangepolicy.html
+
+    Property Document:
+    
+    - ``p_DeleteBehavior``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-schemachangepolicy.html#cfn-glue-crawler-schemachangepolicy-deletebehavior
+    - ``p_UpdateBehavior``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-schemachangepolicy.html#cfn-glue-crawler-schemachangepolicy-updatebehavior
+    """
+    AWS_OBJECT_TYPE = "AWS::Glue::Crawler.SchemaChangePolicy"
+    
+    p_DeleteBehavior: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "DeleteBehavior"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-schemachangepolicy.html#cfn-glue-crawler-schemachangepolicy-deletebehavior"""
+    p_UpdateBehavior: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "UpdateBehavior"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-schemachangepolicy.html#cfn-glue-crawler-schemachangepolicy-updatebehavior"""
+
+@attr.s
+class PropPartitionSchemaReference(Property):
+    """
+    AWS Object Type = "AWS::Glue::Partition.SchemaReference"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-schemareference.html
+
+    Property Document:
+    
+    - ``p_SchemaId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-schemareference.html#cfn-glue-partition-schemareference-schemaid
+    - ``p_SchemaVersionId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-schemareference.html#cfn-glue-partition-schemareference-schemaversionid
+    - ``p_SchemaVersionNumber``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-schemareference.html#cfn-glue-partition-schemareference-schemaversionnumber
+    """
+    AWS_OBJECT_TYPE = "AWS::Glue::Partition.SchemaReference"
+    
+    p_SchemaId: typing.Union['PropPartitionSchemaId', dict] = attr.ib(
+        default=None,
+        converter=PropPartitionSchemaId.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropPartitionSchemaId)),
+        metadata={AttrMeta.PROPERTY_NAME: "SchemaId"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-schemareference.html#cfn-glue-partition-schemareference-schemaid"""
+    p_SchemaVersionId: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "SchemaVersionId"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-schemareference.html#cfn-glue-partition-schemareference-schemaversionid"""
+    p_SchemaVersionNumber: int = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(int)),
+        metadata={AttrMeta.PROPERTY_NAME: "SchemaVersionNumber"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-schemareference.html#cfn-glue-partition-schemareference-schemaversionnumber"""
+
+@attr.s
 class PropSecurityConfigurationJobBookmarksEncryption(Property):
     """
     AWS Object Type = "AWS::Glue::SecurityConfiguration.JobBookmarksEncryption"
@@ -638,33 +1052,6 @@ class PropTableSerdeInfo(Property):
         metadata={AttrMeta.PROPERTY_NAME: "SerializationLibrary"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-serdeinfo.html#cfn-glue-table-serdeinfo-serializationlibrary"""
-
-@attr.s
-class PropClassifierJsonClassifier(Property):
-    """
-    AWS Object Type = "AWS::Glue::Classifier.JsonClassifier"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-classifier-jsonclassifier.html
-
-    Property Document:
-    
-    - ``rp_JsonPath``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-classifier-jsonclassifier.html#cfn-glue-classifier-jsonclassifier-jsonpath
-    - ``p_Name``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-classifier-jsonclassifier.html#cfn-glue-classifier-jsonclassifier-name
-    """
-    AWS_OBJECT_TYPE = "AWS::Glue::Classifier.JsonClassifier"
-    
-    rp_JsonPath: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "JsonPath"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-classifier-jsonclassifier.html#cfn-glue-classifier-jsonclassifier-jsonpath"""
-    p_Name: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Name"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-classifier-jsonclassifier.html#cfn-glue-classifier-jsonclassifier-name"""
 
 @attr.s
 class PropSecurityConfigurationS3Encryptions(Property):
@@ -746,40 +1133,6 @@ class PropMLTransformGlueTables(Property):
         metadata={AttrMeta.PROPERTY_NAME: "ConnectionName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-mltransform-inputrecordtables-gluetables.html#cfn-glue-mltransform-inputrecordtables-gluetables-connectionname"""
-
-@attr.s
-class PropPartitionSerdeInfo(Property):
-    """
-    AWS Object Type = "AWS::Glue::Partition.SerdeInfo"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-serdeinfo.html
-
-    Property Document:
-    
-    - ``p_Name``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-serdeinfo.html#cfn-glue-partition-serdeinfo-name
-    - ``p_Parameters``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-serdeinfo.html#cfn-glue-partition-serdeinfo-parameters
-    - ``p_SerializationLibrary``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-serdeinfo.html#cfn-glue-partition-serdeinfo-serializationlibrary
-    """
-    AWS_OBJECT_TYPE = "AWS::Glue::Partition.SerdeInfo"
-    
-    p_Name: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Name"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-serdeinfo.html#cfn-glue-partition-serdeinfo-name"""
-    p_Parameters: dict = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(dict)),
-        metadata={AttrMeta.PROPERTY_NAME: "Parameters"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-serdeinfo.html#cfn-glue-partition-serdeinfo-parameters"""
-    p_SerializationLibrary: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "SerializationLibrary"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-serdeinfo.html#cfn-glue-partition-serdeinfo-serializationlibrary"""
 
 @attr.s
 class PropSecurityConfigurationS3Encryption(Property):
@@ -884,26 +1237,6 @@ class PropMLTransformTransformEncryption(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-mltransform-transformencryption.html#cfn-glue-mltransform-transformencryption-taskrunsecurityconfigurationname"""
 
 @attr.s
-class PropJobConnectionsList(Property):
-    """
-    AWS Object Type = "AWS::Glue::Job.ConnectionsList"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-job-connectionslist.html
-
-    Property Document:
-    
-    - ``p_Connections``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-job-connectionslist.html#cfn-glue-job-connectionslist-connections
-    """
-    AWS_OBJECT_TYPE = "AWS::Glue::Job.ConnectionsList"
-    
-    p_Connections: typing.List[TypeHint.intrinsic_str] = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Connections"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-job-connectionslist.html#cfn-glue-job-connectionslist-connections"""
-
-@attr.s
 class PropSecurityConfigurationCloudWatchEncryption(Property):
     """
     AWS Object Type = "AWS::Glue::SecurityConfiguration.CloudWatchEncryption"
@@ -931,72 +1264,57 @@ class PropSecurityConfigurationCloudWatchEncryption(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-securityconfiguration-cloudwatchencryption.html#cfn-glue-securityconfiguration-cloudwatchencryption-kmskeyarn"""
 
 @attr.s
-class PropCrawlerJdbcTarget(Property):
+class PropCrawlerTargets(Property):
     """
-    AWS Object Type = "AWS::Glue::Crawler.JdbcTarget"
+    AWS Object Type = "AWS::Glue::Crawler.Targets"
 
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-jdbctarget.html
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-targets.html
 
     Property Document:
     
-    - ``p_ConnectionName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-jdbctarget.html#cfn-glue-crawler-jdbctarget-connectionname
-    - ``p_Exclusions``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-jdbctarget.html#cfn-glue-crawler-jdbctarget-exclusions
-    - ``p_Path``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-jdbctarget.html#cfn-glue-crawler-jdbctarget-path
+    - ``p_CatalogTargets``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-targets.html#cfn-glue-crawler-targets-catalogtargets
+    - ``p_DynamoDBTargets``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-targets.html#cfn-glue-crawler-targets-dynamodbtargets
+    - ``p_JdbcTargets``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-targets.html#cfn-glue-crawler-targets-jdbctargets
+    - ``p_MongoDBTargets``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-targets.html#cfn-glue-crawler-targets-mongodbtargets
+    - ``p_S3Targets``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-targets.html#cfn-glue-crawler-targets-s3targets
     """
-    AWS_OBJECT_TYPE = "AWS::Glue::Crawler.JdbcTarget"
+    AWS_OBJECT_TYPE = "AWS::Glue::Crawler.Targets"
     
-    p_ConnectionName: TypeHint.intrinsic_str = attr.ib(
+    p_CatalogTargets: typing.List[typing.Union['PropCrawlerCatalogTarget', dict]] = attr.ib(
         default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "ConnectionName"},
+        converter=PropCrawlerCatalogTarget.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropCrawlerCatalogTarget), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "CatalogTargets"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-jdbctarget.html#cfn-glue-crawler-jdbctarget-connectionname"""
-    p_Exclusions: typing.List[TypeHint.intrinsic_str] = attr.ib(
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-targets.html#cfn-glue-crawler-targets-catalogtargets"""
+    p_DynamoDBTargets: typing.List[typing.Union['PropCrawlerDynamoDBTarget', dict]] = attr.ib(
         default=None,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Exclusions"},
+        converter=PropCrawlerDynamoDBTarget.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropCrawlerDynamoDBTarget), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "DynamoDBTargets"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-jdbctarget.html#cfn-glue-crawler-jdbctarget-exclusions"""
-    p_Path: TypeHint.intrinsic_str = attr.ib(
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-targets.html#cfn-glue-crawler-targets-dynamodbtargets"""
+    p_JdbcTargets: typing.List[typing.Union['PropCrawlerJdbcTarget', dict]] = attr.ib(
         default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Path"},
+        converter=PropCrawlerJdbcTarget.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropCrawlerJdbcTarget), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "JdbcTargets"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-jdbctarget.html#cfn-glue-crawler-jdbctarget-path"""
-
-@attr.s
-class PropTableSchemaId(Property):
-    """
-    AWS Object Type = "AWS::Glue::Table.SchemaId"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-schemaid.html
-
-    Property Document:
-    
-    - ``p_RegistryName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-schemaid.html#cfn-glue-table-schemaid-registryname
-    - ``p_SchemaArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-schemaid.html#cfn-glue-table-schemaid-schemaarn
-    - ``p_SchemaName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-schemaid.html#cfn-glue-table-schemaid-schemaname
-    """
-    AWS_OBJECT_TYPE = "AWS::Glue::Table.SchemaId"
-    
-    p_RegistryName: TypeHint.intrinsic_str = attr.ib(
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-targets.html#cfn-glue-crawler-targets-jdbctargets"""
+    p_MongoDBTargets: typing.List[typing.Union['PropCrawlerMongoDBTarget', dict]] = attr.ib(
         default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "RegistryName"},
+        converter=PropCrawlerMongoDBTarget.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropCrawlerMongoDBTarget), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "MongoDBTargets"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-schemaid.html#cfn-glue-table-schemaid-registryname"""
-    p_SchemaArn: TypeHint.intrinsic_str = attr.ib(
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-targets.html#cfn-glue-crawler-targets-mongodbtargets"""
+    p_S3Targets: typing.List[typing.Union['PropCrawlerS3Target', dict]] = attr.ib(
         default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "SchemaArn"},
+        converter=PropCrawlerS3Target.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropCrawlerS3Target), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "S3Targets"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-schemaid.html#cfn-glue-table-schemaid-schemaarn"""
-    p_SchemaName: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "SchemaName"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-schemaid.html#cfn-glue-table-schemaid-schemaname"""
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-targets.html#cfn-glue-crawler-targets-s3targets"""
 
 @attr.s
 class PropTriggerPredicate(Property):
@@ -1088,26 +1406,6 @@ class PropPartitionColumn(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-column.html#cfn-glue-partition-column-type"""
 
 @attr.s
-class PropCrawlerDynamoDBTarget(Property):
-    """
-    AWS Object Type = "AWS::Glue::Crawler.DynamoDBTarget"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-dynamodbtarget.html
-
-    Property Document:
-    
-    - ``p_Path``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-dynamodbtarget.html#cfn-glue-crawler-dynamodbtarget-path
-    """
-    AWS_OBJECT_TYPE = "AWS::Glue::Crawler.DynamoDBTarget"
-    
-    p_Path: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Path"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-dynamodbtarget.html#cfn-glue-crawler-dynamodbtarget-path"""
-
-@attr.s
 class PropTableSkewedInfo(Property):
     """
     AWS Object Type = "AWS::Glue::Table.SkewedInfo"
@@ -1140,60 +1438,6 @@ class PropTableSkewedInfo(Property):
         metadata={AttrMeta.PROPERTY_NAME: "SkewedColumnValues"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-skewedinfo.html#cfn-glue-table-skewedinfo-skewedcolumnvalues"""
-
-@attr.s
-class PropTriggerNotificationProperty(Property):
-    """
-    AWS Object Type = "AWS::Glue::Trigger.NotificationProperty"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-notificationproperty.html
-
-    Property Document:
-    
-    - ``p_NotifyDelayAfter``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-notificationproperty.html#cfn-glue-trigger-notificationproperty-notifydelayafter
-    """
-    AWS_OBJECT_TYPE = "AWS::Glue::Trigger.NotificationProperty"
-    
-    p_NotifyDelayAfter: int = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "NotifyDelayAfter"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-trigger-notificationproperty.html#cfn-glue-trigger-notificationproperty-notifydelayafter"""
-
-@attr.s
-class PropClassifierXMLClassifier(Property):
-    """
-    AWS Object Type = "AWS::Glue::Classifier.XMLClassifier"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-classifier-xmlclassifier.html
-
-    Property Document:
-    
-    - ``rp_Classification``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-classifier-xmlclassifier.html#cfn-glue-classifier-xmlclassifier-classification
-    - ``rp_RowTag``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-classifier-xmlclassifier.html#cfn-glue-classifier-xmlclassifier-rowtag
-    - ``p_Name``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-classifier-xmlclassifier.html#cfn-glue-classifier-xmlclassifier-name
-    """
-    AWS_OBJECT_TYPE = "AWS::Glue::Classifier.XMLClassifier"
-    
-    rp_Classification: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Classification"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-classifier-xmlclassifier.html#cfn-glue-classifier-xmlclassifier-classification"""
-    rp_RowTag: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "RowTag"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-classifier-xmlclassifier.html#cfn-glue-classifier-xmlclassifier-rowtag"""
-    p_Name: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Name"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-classifier-xmlclassifier.html#cfn-glue-classifier-xmlclassifier-name"""
 
 @attr.s
 class PropMLTransformTransformParameters(Property):
@@ -1258,95 +1502,6 @@ class PropPartitionSkewedInfo(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-skewedinfo.html#cfn-glue-partition-skewedinfo-skewedcolumnvalues"""
 
 @attr.s
-class PropCrawlerS3Target(Property):
-    """
-    AWS Object Type = "AWS::Glue::Crawler.S3Target"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-s3target.html
-
-    Property Document:
-    
-    - ``p_ConnectionName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-s3target.html#cfn-glue-crawler-s3target-connectionname
-    - ``p_DlqEventQueueArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-s3target.html#cfn-glue-crawler-s3target-dlqeventqueuearn
-    - ``p_EventQueueArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-s3target.html#cfn-glue-crawler-s3target-eventqueuearn
-    - ``p_Exclusions``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-s3target.html#cfn-glue-crawler-s3target-exclusions
-    - ``p_Path``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-s3target.html#cfn-glue-crawler-s3target-path
-    - ``p_SampleSize``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-s3target.html#cfn-glue-crawler-s3target-samplesize
-    """
-    AWS_OBJECT_TYPE = "AWS::Glue::Crawler.S3Target"
-    
-    p_ConnectionName: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "ConnectionName"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-s3target.html#cfn-glue-crawler-s3target-connectionname"""
-    p_DlqEventQueueArn: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "DlqEventQueueArn"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-s3target.html#cfn-glue-crawler-s3target-dlqeventqueuearn"""
-    p_EventQueueArn: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "EventQueueArn"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-s3target.html#cfn-glue-crawler-s3target-eventqueuearn"""
-    p_Exclusions: typing.List[TypeHint.intrinsic_str] = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Exclusions"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-s3target.html#cfn-glue-crawler-s3target-exclusions"""
-    p_Path: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Path"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-s3target.html#cfn-glue-crawler-s3target-path"""
-    p_SampleSize: int = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "SampleSize"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-s3target.html#cfn-glue-crawler-s3target-samplesize"""
-
-@attr.s
-class PropPartitionSchemaId(Property):
-    """
-    AWS Object Type = "AWS::Glue::Partition.SchemaId"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-schemaid.html
-
-    Property Document:
-    
-    - ``p_RegistryName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-schemaid.html#cfn-glue-partition-schemaid-registryname
-    - ``p_SchemaArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-schemaid.html#cfn-glue-partition-schemaid-schemaarn
-    - ``p_SchemaName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-schemaid.html#cfn-glue-partition-schemaid-schemaname
-    """
-    AWS_OBJECT_TYPE = "AWS::Glue::Partition.SchemaId"
-    
-    p_RegistryName: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "RegistryName"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-schemaid.html#cfn-glue-partition-schemaid-registryname"""
-    p_SchemaArn: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "SchemaArn"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-schemaid.html#cfn-glue-partition-schemaid-schemaarn"""
-    p_SchemaName: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "SchemaName"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-schemaid.html#cfn-glue-partition-schemaid-schemaname"""
-
-@attr.s
 class PropJobNotificationProperty(Property):
     """
     AWS Object Type = "AWS::Glue::Job.NotificationProperty"
@@ -1365,46 +1520,6 @@ class PropJobNotificationProperty(Property):
         metadata={AttrMeta.PROPERTY_NAME: "NotifyDelayAfter"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-job-notificationproperty.html#cfn-glue-job-notificationproperty-notifydelayafter"""
-
-@attr.s
-class PropJobExecutionProperty(Property):
-    """
-    AWS Object Type = "AWS::Glue::Job.ExecutionProperty"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-job-executionproperty.html
-
-    Property Document:
-    
-    - ``p_MaxConcurrentRuns``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-job-executionproperty.html#cfn-glue-job-executionproperty-maxconcurrentruns
-    """
-    AWS_OBJECT_TYPE = "AWS::Glue::Job.ExecutionProperty"
-    
-    p_MaxConcurrentRuns: float = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(float)),
-        metadata={AttrMeta.PROPERTY_NAME: "MaxConcurrentRuns"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-job-executionproperty.html#cfn-glue-job-executionproperty-maxconcurrentruns"""
-
-@attr.s
-class PropCrawlerRecrawlPolicy(Property):
-    """
-    AWS Object Type = "AWS::Glue::Crawler.RecrawlPolicy"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-recrawlpolicy.html
-
-    Property Document:
-    
-    - ``p_RecrawlBehavior``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-recrawlpolicy.html#cfn-glue-crawler-recrawlpolicy-recrawlbehavior
-    """
-    AWS_OBJECT_TYPE = "AWS::Glue::Crawler.RecrawlPolicy"
-    
-    p_RecrawlBehavior: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "RecrawlBehavior"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-recrawlpolicy.html#cfn-glue-crawler-recrawlpolicy-recrawlbehavior"""
 
 @attr.s
 class PropTableSchemaReference(Property):
@@ -1532,34 +1647,6 @@ class PropConnectionConnectionInput(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-connection-connectioninput.html#cfn-glue-connection-connectioninput-physicalconnectionrequirements"""
 
 @attr.s
-class PropDatabasePrincipalPrivileges(Property):
-    """
-    AWS Object Type = "AWS::Glue::Database.PrincipalPrivileges"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-database-principalprivileges.html
-
-    Property Document:
-    
-    - ``p_Permissions``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-database-principalprivileges.html#cfn-glue-database-principalprivileges-permissions
-    - ``p_Principal``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-database-principalprivileges.html#cfn-glue-database-principalprivileges-principal
-    """
-    AWS_OBJECT_TYPE = "AWS::Glue::Database.PrincipalPrivileges"
-    
-    p_Permissions: typing.List[TypeHint.intrinsic_str] = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Permissions"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-database-principalprivileges.html#cfn-glue-database-principalprivileges-permissions"""
-    p_Principal: typing.Union['PropDatabaseDataLakePrincipal', dict] = attr.ib(
-        default=None,
-        converter=PropDatabaseDataLakePrincipal.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropDatabaseDataLakePrincipal)),
-        metadata={AttrMeta.PROPERTY_NAME: "Principal"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-database-principalprivileges.html#cfn-glue-database-principalprivileges-principal"""
-
-@attr.s
 class PropDataCatalogEncryptionSettingsDataCatalogEncryptionSettings(Property):
     """
     AWS Object Type = "AWS::Glue::DataCatalogEncryptionSettings.DataCatalogEncryptionSettings"
@@ -1626,41 +1713,6 @@ class PropSecurityConfigurationEncryptionConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-securityconfiguration-encryptionconfiguration.html#cfn-glue-securityconfiguration-encryptionconfiguration-s3encryptions"""
 
 @attr.s
-class PropPartitionSchemaReference(Property):
-    """
-    AWS Object Type = "AWS::Glue::Partition.SchemaReference"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-schemareference.html
-
-    Property Document:
-    
-    - ``p_SchemaId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-schemareference.html#cfn-glue-partition-schemareference-schemaid
-    - ``p_SchemaVersionId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-schemareference.html#cfn-glue-partition-schemareference-schemaversionid
-    - ``p_SchemaVersionNumber``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-schemareference.html#cfn-glue-partition-schemareference-schemaversionnumber
-    """
-    AWS_OBJECT_TYPE = "AWS::Glue::Partition.SchemaReference"
-    
-    p_SchemaId: typing.Union['PropPartitionSchemaId', dict] = attr.ib(
-        default=None,
-        converter=PropPartitionSchemaId.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropPartitionSchemaId)),
-        metadata={AttrMeta.PROPERTY_NAME: "SchemaId"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-schemareference.html#cfn-glue-partition-schemareference-schemaid"""
-    p_SchemaVersionId: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "SchemaVersionId"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-schemareference.html#cfn-glue-partition-schemareference-schemaversionid"""
-    p_SchemaVersionNumber: int = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "SchemaVersionNumber"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-schemareference.html#cfn-glue-partition-schemareference-schemaversionnumber"""
-
-@attr.s
 class PropMLTransformInputRecordTables(Property):
     """
     AWS Object Type = "AWS::Glue::MLTransform.InputRecordTables"
@@ -1680,59 +1732,6 @@ class PropMLTransformInputRecordTables(Property):
         metadata={AttrMeta.PROPERTY_NAME: "GlueTables"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-mltransform-inputrecordtables.html#cfn-glue-mltransform-inputrecordtables-gluetables"""
-
-@attr.s
-class PropCrawlerTargets(Property):
-    """
-    AWS Object Type = "AWS::Glue::Crawler.Targets"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-targets.html
-
-    Property Document:
-    
-    - ``p_CatalogTargets``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-targets.html#cfn-glue-crawler-targets-catalogtargets
-    - ``p_DynamoDBTargets``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-targets.html#cfn-glue-crawler-targets-dynamodbtargets
-    - ``p_JdbcTargets``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-targets.html#cfn-glue-crawler-targets-jdbctargets
-    - ``p_MongoDBTargets``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-targets.html#cfn-glue-crawler-targets-mongodbtargets
-    - ``p_S3Targets``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-targets.html#cfn-glue-crawler-targets-s3targets
-    """
-    AWS_OBJECT_TYPE = "AWS::Glue::Crawler.Targets"
-    
-    p_CatalogTargets: typing.List[typing.Union['PropCrawlerCatalogTarget', dict]] = attr.ib(
-        default=None,
-        converter=PropCrawlerCatalogTarget.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropCrawlerCatalogTarget), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "CatalogTargets"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-targets.html#cfn-glue-crawler-targets-catalogtargets"""
-    p_DynamoDBTargets: typing.List[typing.Union['PropCrawlerDynamoDBTarget', dict]] = attr.ib(
-        default=None,
-        converter=PropCrawlerDynamoDBTarget.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropCrawlerDynamoDBTarget), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "DynamoDBTargets"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-targets.html#cfn-glue-crawler-targets-dynamodbtargets"""
-    p_JdbcTargets: typing.List[typing.Union['PropCrawlerJdbcTarget', dict]] = attr.ib(
-        default=None,
-        converter=PropCrawlerJdbcTarget.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropCrawlerJdbcTarget), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "JdbcTargets"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-targets.html#cfn-glue-crawler-targets-jdbctargets"""
-    p_MongoDBTargets: typing.List[typing.Union['PropCrawlerMongoDBTarget', dict]] = attr.ib(
-        default=None,
-        converter=PropCrawlerMongoDBTarget.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropCrawlerMongoDBTarget), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "MongoDBTargets"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-targets.html#cfn-glue-crawler-targets-mongodbtargets"""
-    p_S3Targets: typing.List[typing.Union['PropCrawlerS3Target', dict]] = attr.ib(
-        default=None,
-        converter=PropCrawlerS3Target.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropCrawlerS3Target), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "S3Targets"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-crawler-targets.html#cfn-glue-crawler-targets-s3targets"""
 
 @attr.s
 class PropTriggerAction(Property):
@@ -2009,6 +2008,68 @@ class PropTableStorageDescriptor(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-storagedescriptor.html#cfn-glue-table-storagedescriptor-storedassubdirectories"""
 
 @attr.s
+class PropDatabasePrincipalPrivileges(Property):
+    """
+    AWS Object Type = "AWS::Glue::Database.PrincipalPrivileges"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-database-principalprivileges.html
+
+    Property Document:
+    
+    - ``p_Permissions``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-database-principalprivileges.html#cfn-glue-database-principalprivileges-permissions
+    - ``p_Principal``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-database-principalprivileges.html#cfn-glue-database-principalprivileges-principal
+    """
+    AWS_OBJECT_TYPE = "AWS::Glue::Database.PrincipalPrivileges"
+    
+    p_Permissions: typing.List[TypeHint.intrinsic_str] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "Permissions"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-database-principalprivileges.html#cfn-glue-database-principalprivileges-permissions"""
+    p_Principal: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "Principal"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-database-principalprivileges.html#cfn-glue-database-principalprivileges-principal"""
+
+@attr.s
+class PropPartitionPartitionInput(Property):
+    """
+    AWS Object Type = "AWS::Glue::Partition.PartitionInput"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-partitioninput.html
+
+    Property Document:
+    
+    - ``rp_Values``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-partitioninput.html#cfn-glue-partition-partitioninput-values
+    - ``p_Parameters``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-partitioninput.html#cfn-glue-partition-partitioninput-parameters
+    - ``p_StorageDescriptor``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-partitioninput.html#cfn-glue-partition-partitioninput-storagedescriptor
+    """
+    AWS_OBJECT_TYPE = "AWS::Glue::Partition.PartitionInput"
+    
+    rp_Values: typing.List[TypeHint.intrinsic_str] = attr.ib(
+        default=None,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list)),
+        metadata={AttrMeta.PROPERTY_NAME: "Values"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-partitioninput.html#cfn-glue-partition-partitioninput-values"""
+    p_Parameters: dict = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "Parameters"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-partitioninput.html#cfn-glue-partition-partitioninput-parameters"""
+    p_StorageDescriptor: typing.Union['PropPartitionStorageDescriptor', dict] = attr.ib(
+        default=None,
+        converter=PropPartitionStorageDescriptor.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropPartitionStorageDescriptor)),
+        metadata={AttrMeta.PROPERTY_NAME: "StorageDescriptor"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-partitioninput.html#cfn-glue-partition-partitioninput-storagedescriptor"""
+
+@attr.s
 class PropDatabaseDatabaseInput(Property):
     """
     AWS Object Type = "AWS::Glue::Database.DatabaseInput"
@@ -2057,48 +2118,12 @@ class PropDatabaseDatabaseInput(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Parameters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-database-databaseinput.html#cfn-glue-database-databaseinput-parameters"""
-    p_TargetDatabase: typing.Union['PropDatabaseDatabaseIdentifier', dict] = attr.ib(
+    p_TargetDatabase: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropDatabaseDatabaseIdentifier.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropDatabaseDatabaseIdentifier)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "TargetDatabase"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-database-databaseinput.html#cfn-glue-database-databaseinput-targetdatabase"""
-
-@attr.s
-class PropPartitionPartitionInput(Property):
-    """
-    AWS Object Type = "AWS::Glue::Partition.PartitionInput"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-partitioninput.html
-
-    Property Document:
-    
-    - ``rp_Values``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-partitioninput.html#cfn-glue-partition-partitioninput-values
-    - ``p_Parameters``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-partitioninput.html#cfn-glue-partition-partitioninput-parameters
-    - ``p_StorageDescriptor``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-partitioninput.html#cfn-glue-partition-partitioninput-storagedescriptor
-    """
-    AWS_OBJECT_TYPE = "AWS::Glue::Partition.PartitionInput"
-    
-    rp_Values: typing.List[TypeHint.intrinsic_str] = attr.ib(
-        default=None,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list)),
-        metadata={AttrMeta.PROPERTY_NAME: "Values"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-partitioninput.html#cfn-glue-partition-partitioninput-values"""
-    p_Parameters: dict = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(dict)),
-        metadata={AttrMeta.PROPERTY_NAME: "Parameters"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-partitioninput.html#cfn-glue-partition-partitioninput-parameters"""
-    p_StorageDescriptor: typing.Union['PropPartitionStorageDescriptor', dict] = attr.ib(
-        default=None,
-        converter=PropPartitionStorageDescriptor.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropPartitionStorageDescriptor)),
-        metadata={AttrMeta.PROPERTY_NAME: "StorageDescriptor"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-partition-partitioninput.html#cfn-glue-partition-partitioninput-storagedescriptor"""
 
 @attr.s
 class PropTableTableInput(Property):
@@ -2173,10 +2198,9 @@ class PropTableTableInput(Property):
         metadata={AttrMeta.PROPERTY_NAME: "TableType"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-tableinput.html#cfn-glue-table-tableinput-tabletype"""
-    p_TargetTable: typing.Union['PropTableTableIdentifier', dict] = attr.ib(
+    p_TargetTable: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropTableTableIdentifier.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropTableTableIdentifier)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "TargetTable"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-glue-table-tableinput.html#cfn-glue-table-tableinput-targettable"""
@@ -2227,91 +2251,198 @@ class DevEndpoint(Resource):
     rp_RoleArn: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "RoleArn"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "RoleArn",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html#cfn-glue-devendpoint-rolearn"""
     p_Arguments: dict = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(dict)),
-        metadata={AttrMeta.PROPERTY_NAME: "Arguments"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Arguments",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'Json',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html#cfn-glue-devendpoint-arguments"""
     p_EndpointName: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "EndpointName"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "EndpointName",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html#cfn-glue-devendpoint-endpointname"""
     p_ExtraJarsS3Path: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "ExtraJarsS3Path"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ExtraJarsS3Path",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html#cfn-glue-devendpoint-extrajarss3path"""
     p_ExtraPythonLibsS3Path: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "ExtraPythonLibsS3Path"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ExtraPythonLibsS3Path",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html#cfn-glue-devendpoint-extrapythonlibss3path"""
     p_GlueVersion: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "GlueVersion"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "GlueVersion",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html#cfn-glue-devendpoint-glueversion"""
     p_NumberOfNodes: int = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "NumberOfNodes"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "NumberOfNodes",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'Integer',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html#cfn-glue-devendpoint-numberofnodes"""
     p_NumberOfWorkers: int = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "NumberOfWorkers"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "NumberOfWorkers",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'Integer',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html#cfn-glue-devendpoint-numberofworkers"""
     p_PublicKey: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "PublicKey"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "PublicKey",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html#cfn-glue-devendpoint-publickey"""
     p_PublicKeys: typing.List[TypeHint.intrinsic_str] = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "PublicKeys"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "PublicKeys",
+            AttrMeta.DATA: {
+                "PrimitiveItemType": 'String',
+                "Type": 'List',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html#cfn-glue-devendpoint-publickeys"""
     p_SecurityConfiguration: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "SecurityConfiguration"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "SecurityConfiguration",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html#cfn-glue-devendpoint-securityconfiguration"""
     p_SecurityGroupIds: typing.List[TypeHint.intrinsic_str] = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "SecurityGroupIds"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "SecurityGroupIds",
+            AttrMeta.DATA: {
+                "PrimitiveItemType": 'String',
+                "Type": 'List',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html#cfn-glue-devendpoint-securitygroupids"""
     p_SubnetId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "SubnetId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "SubnetId",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html#cfn-glue-devendpoint-subnetid"""
     p_WorkerType: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "WorkerType"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "WorkerType",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html#cfn-glue-devendpoint-workertype"""
     p_Tags: dict = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(dict)),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'Json',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-devendpoint.html#cfn-glue-devendpoint-tags"""
 
@@ -2336,19 +2467,40 @@ class SchemaVersionMetadata(Resource):
     rp_Key: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Key"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Key",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-schemaversionmetadata.html#cfn-glue-schemaversionmetadata-key"""
     rp_SchemaVersionId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "SchemaVersionId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "SchemaVersionId",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-schemaversionmetadata.html#cfn-glue-schemaversionmetadata-schemaversionid"""
     rp_Value: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Value"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Value",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-schemaversionmetadata.html#cfn-glue-schemaversionmetadata-value"""
 
@@ -2384,81 +2536,172 @@ class MLTransform(Resource):
         default=None,
         converter=PropMLTransformInputRecordTables.from_dict,
         validator=attr.validators.instance_of(PropMLTransformInputRecordTables),
-        metadata={AttrMeta.PROPERTY_NAME: "InputRecordTables"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "InputRecordTables",
+            AttrMeta.DATA: {
+                "Type": 'InputRecordTables',
+                "Required": True,
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-mltransform.html#cfn-glue-mltransform-inputrecordtables"""
     rp_Role: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Role"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Role",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-mltransform.html#cfn-glue-mltransform-role"""
     rp_TransformParameters: typing.Union['PropMLTransformTransformParameters', dict] = attr.ib(
         default=None,
         converter=PropMLTransformTransformParameters.from_dict,
         validator=attr.validators.instance_of(PropMLTransformTransformParameters),
-        metadata={AttrMeta.PROPERTY_NAME: "TransformParameters"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "TransformParameters",
+            AttrMeta.DATA: {
+                "Type": 'TransformParameters',
+                "Required": True,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-mltransform.html#cfn-glue-mltransform-transformparameters"""
     p_Description: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Description"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Description",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-mltransform.html#cfn-glue-mltransform-description"""
     p_GlueVersion: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "GlueVersion"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "GlueVersion",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-mltransform.html#cfn-glue-mltransform-glueversion"""
     p_MaxCapacity: float = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(float)),
-        metadata={AttrMeta.PROPERTY_NAME: "MaxCapacity"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "MaxCapacity",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'Double',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-mltransform.html#cfn-glue-mltransform-maxcapacity"""
     p_MaxRetries: int = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "MaxRetries"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "MaxRetries",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'Integer',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-mltransform.html#cfn-glue-mltransform-maxretries"""
     p_Name: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Name"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Name",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-mltransform.html#cfn-glue-mltransform-name"""
     p_NumberOfWorkers: int = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "NumberOfWorkers"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "NumberOfWorkers",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'Integer',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-mltransform.html#cfn-glue-mltransform-numberofworkers"""
     p_Timeout: int = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "Timeout"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Timeout",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'Integer',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-mltransform.html#cfn-glue-mltransform-timeout"""
     p_TransformEncryption: typing.Union['PropMLTransformTransformEncryption', dict] = attr.ib(
         default=None,
         converter=PropMLTransformTransformEncryption.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropMLTransformTransformEncryption)),
-        metadata={AttrMeta.PROPERTY_NAME: "TransformEncryption"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "TransformEncryption",
+            AttrMeta.DATA: {
+                "Type": 'TransformEncryption',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-mltransform.html#cfn-glue-mltransform-transformencryption"""
     p_WorkerType: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "WorkerType"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "WorkerType",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-mltransform.html#cfn-glue-mltransform-workertype"""
     p_Tags: dict = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(dict)),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'Json',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-mltransform.html#cfn-glue-mltransform-tags"""
 
@@ -2482,14 +2725,28 @@ class Connection(Resource):
     rp_CatalogId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "CatalogId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "CatalogId",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-connection.html#cfn-glue-connection-catalogid"""
     rp_ConnectionInput: typing.Union['PropConnectionConnectionInput', dict] = attr.ib(
         default=None,
         converter=PropConnectionConnectionInput.from_dict,
         validator=attr.validators.instance_of(PropConnectionConnectionInput),
-        metadata={AttrMeta.PROPERTY_NAME: "ConnectionInput"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ConnectionInput",
+            AttrMeta.DATA: {
+                "Type": 'ConnectionInput',
+                "Required": True,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-connection.html#cfn-glue-connection-connectioninput"""
 
@@ -2515,26 +2772,54 @@ class Partition(Resource):
     rp_CatalogId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "CatalogId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "CatalogId",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-partition.html#cfn-glue-partition-catalogid"""
     rp_DatabaseName: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "DatabaseName"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "DatabaseName",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-partition.html#cfn-glue-partition-databasename"""
     rp_PartitionInput: typing.Union['PropPartitionPartitionInput', dict] = attr.ib(
         default=None,
         converter=PropPartitionPartitionInput.from_dict,
         validator=attr.validators.instance_of(PropPartitionPartitionInput),
-        metadata={AttrMeta.PROPERTY_NAME: "PartitionInput"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "PartitionInput",
+            AttrMeta.DATA: {
+                "Type": 'PartitionInput',
+                "Required": True,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-partition.html#cfn-glue-partition-partitioninput"""
     rp_TableName: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "TableName"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "TableName",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-partition.html#cfn-glue-partition-tablename"""
 
@@ -2552,6 +2837,7 @@ class Trigger(Resource):
     - ``rp_Actions``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-trigger.html#cfn-glue-trigger-actions
     - ``rp_Type``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-trigger.html#cfn-glue-trigger-type
     - ``p_Description``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-trigger.html#cfn-glue-trigger-description
+    - ``p_EventBatchingCondition``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-trigger.html#cfn-glue-trigger-eventbatchingcondition
     - ``p_Name``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-trigger.html#cfn-glue-trigger-name
     - ``p_Predicate``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-trigger.html#cfn-glue-trigger-predicate
     - ``p_Schedule``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-trigger.html#cfn-glue-trigger-schedule
@@ -2566,56 +2852,134 @@ class Trigger(Resource):
         default=None,
         converter=PropTriggerAction.from_list,
         validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropTriggerAction), iterable_validator=attr.validators.instance_of(list)),
-        metadata={AttrMeta.PROPERTY_NAME: "Actions"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Actions",
+            AttrMeta.DATA: {
+                "Type": 'List',
+                "Required": True,
+                "ItemType": 'Action',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-trigger.html#cfn-glue-trigger-actions"""
     rp_Type: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Type"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Type",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-trigger.html#cfn-glue-trigger-type"""
     p_Description: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Description"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Description",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-trigger.html#cfn-glue-trigger-description"""
+    p_EventBatchingCondition: typing.Union['PropTriggerEventBatchingCondition', dict] = attr.ib(
+        default=None,
+        converter=PropTriggerEventBatchingCondition.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropTriggerEventBatchingCondition)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "EventBatchingCondition",
+            AttrMeta.DATA: {
+                "Type": 'EventBatchingCondition',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-trigger.html#cfn-glue-trigger-eventbatchingcondition"""
     p_Name: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Name"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Name",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-trigger.html#cfn-glue-trigger-name"""
     p_Predicate: typing.Union['PropTriggerPredicate', dict] = attr.ib(
         default=None,
         converter=PropTriggerPredicate.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropTriggerPredicate)),
-        metadata={AttrMeta.PROPERTY_NAME: "Predicate"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Predicate",
+            AttrMeta.DATA: {
+                "Type": 'Predicate',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-trigger.html#cfn-glue-trigger-predicate"""
     p_Schedule: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Schedule"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Schedule",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-trigger.html#cfn-glue-trigger-schedule"""
     p_StartOnCreation: bool = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(bool)),
-        metadata={AttrMeta.PROPERTY_NAME: "StartOnCreation"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "StartOnCreation",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'Boolean',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-trigger.html#cfn-glue-trigger-startoncreation"""
     p_WorkflowName: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "WorkflowName"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "WorkflowName",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-trigger.html#cfn-glue-trigger-workflowname"""
     p_Tags: dict = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(dict)),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'Json',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-trigger.html#cfn-glue-trigger-tags"""
 
@@ -2640,13 +3004,27 @@ class SecurityConfiguration(Resource):
         default=None,
         converter=PropSecurityConfigurationEncryptionConfiguration.from_dict,
         validator=attr.validators.instance_of(PropSecurityConfigurationEncryptionConfiguration),
-        metadata={AttrMeta.PROPERTY_NAME: "EncryptionConfiguration"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "EncryptionConfiguration",
+            AttrMeta.DATA: {
+                "Type": 'EncryptionConfiguration',
+                "Required": True,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-securityconfiguration.html#cfn-glue-securityconfiguration-encryptionconfiguration"""
     rp_Name: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Name"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Name",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-securityconfiguration.html#cfn-glue-securityconfiguration-name"""
 
@@ -2671,13 +3049,27 @@ class SchemaVersion(Resource):
         default=None,
         converter=PropSchemaVersionSchema.from_dict,
         validator=attr.validators.instance_of(PropSchemaVersionSchema),
-        metadata={AttrMeta.PROPERTY_NAME: "Schema"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Schema",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "Type": 'Schema',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-schemaversion.html#cfn-glue-schemaversion-schema"""
     rp_SchemaDefinition: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "SchemaDefinition"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "SchemaDefinition",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-schemaversion.html#cfn-glue-schemaversion-schemadefinition"""
 
@@ -2706,14 +3098,28 @@ class DataCatalogEncryptionSettings(Resource):
     rp_CatalogId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "CatalogId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "CatalogId",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-datacatalogencryptionsettings.html#cfn-glue-datacatalogencryptionsettings-catalogid"""
     rp_DataCatalogEncryptionSettings: typing.Union['PropDataCatalogEncryptionSettingsDataCatalogEncryptionSettings', dict] = attr.ib(
         default=None,
         converter=PropDataCatalogEncryptionSettingsDataCatalogEncryptionSettings.from_dict,
         validator=attr.validators.instance_of(PropDataCatalogEncryptionSettingsDataCatalogEncryptionSettings),
-        metadata={AttrMeta.PROPERTY_NAME: "DataCatalogEncryptionSettings"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "DataCatalogEncryptionSettings",
+            AttrMeta.DATA: {
+                "Type": 'DataCatalogEncryptionSettings',
+                "Required": True,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-datacatalogencryptionsettings.html#cfn-glue-datacatalogencryptionsettings-datacatalogencryptionsettings"""
 
@@ -2730,6 +3136,7 @@ class Workflow(Resource):
     
     - ``p_DefaultRunProperties``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-workflow.html#cfn-glue-workflow-defaultrunproperties
     - ``p_Description``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-workflow.html#cfn-glue-workflow-description
+    - ``p_MaxConcurrentRuns``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-workflow.html#cfn-glue-workflow-maxconcurrentruns
     - ``p_Name``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-workflow.html#cfn-glue-workflow-name
     - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-workflow.html#cfn-glue-workflow-tags
     """
@@ -2739,25 +3146,66 @@ class Workflow(Resource):
     p_DefaultRunProperties: dict = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(dict)),
-        metadata={AttrMeta.PROPERTY_NAME: "DefaultRunProperties"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "DefaultRunProperties",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'Json',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-workflow.html#cfn-glue-workflow-defaultrunproperties"""
     p_Description: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Description"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Description",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-workflow.html#cfn-glue-workflow-description"""
+    p_MaxConcurrentRuns: int = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(int)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "MaxConcurrentRuns",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'Integer',
+                "UpdateType": 'Mutable',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-workflow.html#cfn-glue-workflow-maxconcurrentruns"""
     p_Name: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Name"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Name",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-workflow.html#cfn-glue-workflow-name"""
     p_Tags: dict = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(dict)),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'Json',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-workflow.html#cfn-glue-workflow-tags"""
 
@@ -2778,12 +3226,14 @@ class Job(Resource):
     - ``p_Connections``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html#cfn-glue-job-connections
     - ``p_DefaultArguments``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html#cfn-glue-job-defaultarguments
     - ``p_Description``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html#cfn-glue-job-description
+    - ``p_ExecutionClass``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html#cfn-glue-job-executionclass
     - ``p_ExecutionProperty``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html#cfn-glue-job-executionproperty
     - ``p_GlueVersion``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html#cfn-glue-job-glueversion
     - ``p_LogUri``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html#cfn-glue-job-loguri
     - ``p_MaxCapacity``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html#cfn-glue-job-maxcapacity
     - ``p_MaxRetries``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html#cfn-glue-job-maxretries
     - ``p_Name``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html#cfn-glue-job-name
+    - ``p_NonOverridableArguments``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html#cfn-glue-job-nonoverridablearguments
     - ``p_NotificationProperty``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html#cfn-glue-job-notificationproperty
     - ``p_NumberOfWorkers``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html#cfn-glue-job-numberofworkers
     - ``p_SecurityConfiguration``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html#cfn-glue-job-securityconfiguration
@@ -2798,112 +3248,264 @@ class Job(Resource):
         default=None,
         converter=PropJobJobCommand.from_dict,
         validator=attr.validators.instance_of(PropJobJobCommand),
-        metadata={AttrMeta.PROPERTY_NAME: "Command"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Command",
+            AttrMeta.DATA: {
+                "Type": 'JobCommand',
+                "Required": True,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html#cfn-glue-job-command"""
     rp_Role: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Role"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Role",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html#cfn-glue-job-role"""
     p_AllocatedCapacity: float = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(float)),
-        metadata={AttrMeta.PROPERTY_NAME: "AllocatedCapacity"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "AllocatedCapacity",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'Double',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html#cfn-glue-job-allocatedcapacity"""
     p_Connections: typing.Union['PropJobConnectionsList', dict] = attr.ib(
         default=None,
         converter=PropJobConnectionsList.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropJobConnectionsList)),
-        metadata={AttrMeta.PROPERTY_NAME: "Connections"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Connections",
+            AttrMeta.DATA: {
+                "Type": 'ConnectionsList',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html#cfn-glue-job-connections"""
     p_DefaultArguments: dict = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(dict)),
-        metadata={AttrMeta.PROPERTY_NAME: "DefaultArguments"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "DefaultArguments",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'Json',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html#cfn-glue-job-defaultarguments"""
     p_Description: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Description"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Description",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html#cfn-glue-job-description"""
+    p_ExecutionClass: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ExecutionClass",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Mutable',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html#cfn-glue-job-executionclass"""
     p_ExecutionProperty: typing.Union['PropJobExecutionProperty', dict] = attr.ib(
         default=None,
         converter=PropJobExecutionProperty.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropJobExecutionProperty)),
-        metadata={AttrMeta.PROPERTY_NAME: "ExecutionProperty"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ExecutionProperty",
+            AttrMeta.DATA: {
+                "Type": 'ExecutionProperty',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html#cfn-glue-job-executionproperty"""
     p_GlueVersion: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "GlueVersion"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "GlueVersion",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html#cfn-glue-job-glueversion"""
     p_LogUri: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "LogUri"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "LogUri",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html#cfn-glue-job-loguri"""
     p_MaxCapacity: float = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(float)),
-        metadata={AttrMeta.PROPERTY_NAME: "MaxCapacity"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "MaxCapacity",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'Double',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html#cfn-glue-job-maxcapacity"""
     p_MaxRetries: float = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(float)),
-        metadata={AttrMeta.PROPERTY_NAME: "MaxRetries"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "MaxRetries",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'Double',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html#cfn-glue-job-maxretries"""
     p_Name: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Name"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Name",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html#cfn-glue-job-name"""
+    p_NonOverridableArguments: dict = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "NonOverridableArguments",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'Json',
+                "UpdateType": 'Mutable',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html#cfn-glue-job-nonoverridablearguments"""
     p_NotificationProperty: typing.Union['PropJobNotificationProperty', dict] = attr.ib(
         default=None,
         converter=PropJobNotificationProperty.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropJobNotificationProperty)),
-        metadata={AttrMeta.PROPERTY_NAME: "NotificationProperty"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "NotificationProperty",
+            AttrMeta.DATA: {
+                "Type": 'NotificationProperty',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html#cfn-glue-job-notificationproperty"""
     p_NumberOfWorkers: int = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "NumberOfWorkers"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "NumberOfWorkers",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'Integer',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html#cfn-glue-job-numberofworkers"""
     p_SecurityConfiguration: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "SecurityConfiguration"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "SecurityConfiguration",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html#cfn-glue-job-securityconfiguration"""
     p_Timeout: int = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "Timeout"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Timeout",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'Integer',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html#cfn-glue-job-timeout"""
     p_WorkerType: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "WorkerType"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "WorkerType",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html#cfn-glue-job-workertype"""
     p_Tags: dict = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(dict)),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'Json',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-job.html#cfn-glue-job-tags"""
 
@@ -2927,14 +3529,28 @@ class Database(Resource):
     rp_CatalogId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "CatalogId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "CatalogId",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-database.html#cfn-glue-database-catalogid"""
     rp_DatabaseInput: typing.Union['PropDatabaseDatabaseInput', dict] = attr.ib(
         default=None,
         converter=PropDatabaseDatabaseInput.from_dict,
         validator=attr.validators.instance_of(PropDatabaseDatabaseInput),
-        metadata={AttrMeta.PROPERTY_NAME: "DatabaseInput"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "DatabaseInput",
+            AttrMeta.DATA: {
+                "Type": 'DatabaseInput',
+                "Required": True,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-database.html#cfn-glue-database-databaseinput"""
 
@@ -2969,83 +3585,175 @@ class Crawler(Resource):
     rp_Role: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Role"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Role",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-crawler.html#cfn-glue-crawler-role"""
     rp_Targets: typing.Union['PropCrawlerTargets', dict] = attr.ib(
         default=None,
         converter=PropCrawlerTargets.from_dict,
         validator=attr.validators.instance_of(PropCrawlerTargets),
-        metadata={AttrMeta.PROPERTY_NAME: "Targets"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Targets",
+            AttrMeta.DATA: {
+                "Type": 'Targets',
+                "Required": True,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-crawler.html#cfn-glue-crawler-targets"""
     p_Classifiers: typing.List[TypeHint.intrinsic_str] = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Classifiers"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Classifiers",
+            AttrMeta.DATA: {
+                "PrimitiveItemType": 'String',
+                "Type": 'List',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-crawler.html#cfn-glue-crawler-classifiers"""
     p_Configuration: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Configuration"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Configuration",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-crawler.html#cfn-glue-crawler-configuration"""
     p_CrawlerSecurityConfiguration: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "CrawlerSecurityConfiguration"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "CrawlerSecurityConfiguration",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-crawler.html#cfn-glue-crawler-crawlersecurityconfiguration"""
     p_DatabaseName: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "DatabaseName"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "DatabaseName",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-crawler.html#cfn-glue-crawler-databasename"""
     p_Description: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Description"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Description",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-crawler.html#cfn-glue-crawler-description"""
     p_Name: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Name"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Name",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-crawler.html#cfn-glue-crawler-name"""
     p_RecrawlPolicy: typing.Union['PropCrawlerRecrawlPolicy', dict] = attr.ib(
         default=None,
         converter=PropCrawlerRecrawlPolicy.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropCrawlerRecrawlPolicy)),
-        metadata={AttrMeta.PROPERTY_NAME: "RecrawlPolicy"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "RecrawlPolicy",
+            AttrMeta.DATA: {
+                "Type": 'RecrawlPolicy',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-crawler.html#cfn-glue-crawler-recrawlpolicy"""
     p_Schedule: typing.Union['PropCrawlerSchedule', dict] = attr.ib(
         default=None,
         converter=PropCrawlerSchedule.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropCrawlerSchedule)),
-        metadata={AttrMeta.PROPERTY_NAME: "Schedule"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Schedule",
+            AttrMeta.DATA: {
+                "Type": 'Schedule',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-crawler.html#cfn-glue-crawler-schedule"""
     p_SchemaChangePolicy: typing.Union['PropCrawlerSchemaChangePolicy', dict] = attr.ib(
         default=None,
         converter=PropCrawlerSchemaChangePolicy.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropCrawlerSchemaChangePolicy)),
-        metadata={AttrMeta.PROPERTY_NAME: "SchemaChangePolicy"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "SchemaChangePolicy",
+            AttrMeta.DATA: {
+                "Type": 'SchemaChangePolicy',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-crawler.html#cfn-glue-crawler-schemachangepolicy"""
     p_TablePrefix: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "TablePrefix"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "TablePrefix",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-crawler.html#cfn-glue-crawler-tableprefix"""
     p_Tags: dict = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(dict)),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'Json',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-crawler.html#cfn-glue-crawler-tags"""
 
@@ -3072,28 +3780,56 @@ class Classifier(Resource):
         default=None,
         converter=PropClassifierCsvClassifier.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropClassifierCsvClassifier)),
-        metadata={AttrMeta.PROPERTY_NAME: "CsvClassifier"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "CsvClassifier",
+            AttrMeta.DATA: {
+                "Type": 'CsvClassifier',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-classifier.html#cfn-glue-classifier-csvclassifier"""
     p_GrokClassifier: typing.Union['PropClassifierGrokClassifier', dict] = attr.ib(
         default=None,
         converter=PropClassifierGrokClassifier.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropClassifierGrokClassifier)),
-        metadata={AttrMeta.PROPERTY_NAME: "GrokClassifier"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "GrokClassifier",
+            AttrMeta.DATA: {
+                "Type": 'GrokClassifier',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-classifier.html#cfn-glue-classifier-grokclassifier"""
     p_JsonClassifier: typing.Union['PropClassifierJsonClassifier', dict] = attr.ib(
         default=None,
         converter=PropClassifierJsonClassifier.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropClassifierJsonClassifier)),
-        metadata={AttrMeta.PROPERTY_NAME: "JsonClassifier"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "JsonClassifier",
+            AttrMeta.DATA: {
+                "Type": 'JsonClassifier',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-classifier.html#cfn-glue-classifier-jsonclassifier"""
     p_XMLClassifier: typing.Union['PropClassifierXMLClassifier', dict] = attr.ib(
         default=None,
         converter=PropClassifierXMLClassifier.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropClassifierXMLClassifier)),
-        metadata={AttrMeta.PROPERTY_NAME: "XMLClassifier"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "XMLClassifier",
+            AttrMeta.DATA: {
+                "Type": 'XMLClassifier',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-classifier.html#cfn-glue-classifier-xmlclassifier"""
 
@@ -3123,52 +3859,109 @@ class Schema(Resource):
     rp_Compatibility: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Compatibility"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Compatibility",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-schema.html#cfn-glue-schema-compatibility"""
     rp_DataFormat: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "DataFormat"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "DataFormat",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-schema.html#cfn-glue-schema-dataformat"""
     rp_Name: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Name"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Name",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-schema.html#cfn-glue-schema-name"""
     rp_SchemaDefinition: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "SchemaDefinition"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "SchemaDefinition",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-schema.html#cfn-glue-schema-schemadefinition"""
     p_CheckpointVersion: typing.Union['PropSchemaSchemaVersion', dict] = attr.ib(
         default=None,
         converter=PropSchemaSchemaVersion.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropSchemaSchemaVersion)),
-        metadata={AttrMeta.PROPERTY_NAME: "CheckpointVersion"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "CheckpointVersion",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'SchemaVersion',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-schema.html#cfn-glue-schema-checkpointversion"""
     p_Description: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Description"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Description",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-schema.html#cfn-glue-schema-description"""
     p_Registry: typing.Union['PropSchemaRegistry', dict] = attr.ib(
         default=None,
         converter=PropSchemaRegistry.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropSchemaRegistry)),
-        metadata={AttrMeta.PROPERTY_NAME: "Registry"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Registry",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "Type": 'Registry',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-schema.html#cfn-glue-schema-registry"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'List',
+                "ItemType": 'Tag',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-schema.html#cfn-glue-schema-tags"""
 
@@ -3203,20 +3996,41 @@ class Table(Resource):
     rp_CatalogId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "CatalogId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "CatalogId",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-table.html#cfn-glue-table-catalogid"""
     rp_DatabaseName: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "DatabaseName"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "DatabaseName",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-table.html#cfn-glue-table-databasename"""
     rp_TableInput: typing.Union['PropTableTableInput', dict] = attr.ib(
         default=None,
         converter=PropTableTableInput.from_dict,
         validator=attr.validators.instance_of(PropTableTableInput),
-        metadata={AttrMeta.PROPERTY_NAME: "TableInput"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "TableInput",
+            AttrMeta.DATA: {
+                "Type": 'TableInput',
+                "Required": True,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-table.html#cfn-glue-table-tableinput"""
 
@@ -3241,20 +4055,42 @@ class Registry(Resource):
     rp_Name: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Name"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Name",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-registry.html#cfn-glue-registry-name"""
     p_Description: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Description"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Description",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-registry.html#cfn-glue-registry-description"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'List',
+                "ItemType": 'Tag',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-registry.html#cfn-glue-registry-tags"""
 

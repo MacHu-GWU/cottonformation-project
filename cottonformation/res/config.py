@@ -15,40 +15,6 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class PropConfigurationAggregatorOrganizationAggregationSource(Property):
-    """
-    AWS Object Type = "AWS::Config::ConfigurationAggregator.OrganizationAggregationSource"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configurationaggregator-organizationaggregationsource.html
-
-    Property Document:
-    
-    - ``rp_RoleArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configurationaggregator-organizationaggregationsource.html#cfn-config-configurationaggregator-organizationaggregationsource-rolearn
-    - ``p_AllAwsRegions``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configurationaggregator-organizationaggregationsource.html#cfn-config-configurationaggregator-organizationaggregationsource-allawsregions
-    - ``p_AwsRegions``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configurationaggregator-organizationaggregationsource.html#cfn-config-configurationaggregator-organizationaggregationsource-awsregions
-    """
-    AWS_OBJECT_TYPE = "AWS::Config::ConfigurationAggregator.OrganizationAggregationSource"
-    
-    rp_RoleArn: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "RoleArn"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configurationaggregator-organizationaggregationsource.html#cfn-config-configurationaggregator-organizationaggregationsource-rolearn"""
-    p_AllAwsRegions: bool = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(bool)),
-        metadata={AttrMeta.PROPERTY_NAME: "AllAwsRegions"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configurationaggregator-organizationaggregationsource.html#cfn-config-configurationaggregator-organizationaggregationsource-allawsregions"""
-    p_AwsRegions: typing.List[TypeHint.intrinsic_str] = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "AwsRegions"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configurationaggregator-organizationaggregationsource.html#cfn-config-configurationaggregator-organizationaggregationsource-awsregions"""
-
-@attr.s
 class PropDeliveryChannelConfigSnapshotDeliveryProperties(Property):
     """
     AWS Object Type = "AWS::Config::DeliveryChannel.ConfigSnapshotDeliveryProperties"
@@ -103,53 +69,6 @@ class PropConfigurationRecorderRecordingGroup(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configurationrecorder-recordinggroup.html#cfn-config-configurationrecorder-recordinggroup-resourcetypes"""
 
 @attr.s
-class PropRemediationConfigurationResourceValue(Property):
-    """
-    AWS Object Type = "AWS::Config::RemediationConfiguration.ResourceValue"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-remediationconfiguration-resourcevalue.html
-
-    Property Document:
-    
-    - ``p_Value``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-remediationconfiguration-resourcevalue.html#cfn-config-remediationconfiguration-resourcevalue-value
-    """
-    AWS_OBJECT_TYPE = "AWS::Config::RemediationConfiguration.ResourceValue"
-    
-    p_Value: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Value"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-remediationconfiguration-resourcevalue.html#cfn-config-remediationconfiguration-resourcevalue-value"""
-
-@attr.s
-class PropConformancePackConformancePackInputParameter(Property):
-    """
-    AWS Object Type = "AWS::Config::ConformancePack.ConformancePackInputParameter"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-conformancepack-conformancepackinputparameter.html
-
-    Property Document:
-    
-    - ``rp_ParameterName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-conformancepack-conformancepackinputparameter.html#cfn-config-conformancepack-conformancepackinputparameter-parametername
-    - ``rp_ParameterValue``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-conformancepack-conformancepackinputparameter.html#cfn-config-conformancepack-conformancepackinputparameter-parametervalue
-    """
-    AWS_OBJECT_TYPE = "AWS::Config::ConformancePack.ConformancePackInputParameter"
-    
-    rp_ParameterName: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "ParameterName"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-conformancepack-conformancepackinputparameter.html#cfn-config-conformancepack-conformancepackinputparameter-parametername"""
-    rp_ParameterValue: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "ParameterValue"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-conformancepack-conformancepackinputparameter.html#cfn-config-conformancepack-conformancepackinputparameter-parametervalue"""
-
-@attr.s
 class PropConfigurationAggregatorAccountAggregationSource(Property):
     """
     AWS Object Type = "AWS::Config::ConfigurationAggregator.AccountAggregationSource"
@@ -184,31 +103,38 @@ class PropConfigurationAggregatorAccountAggregationSource(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configurationaggregator-accountaggregationsource.html#cfn-config-configurationaggregator-accountaggregationsource-awsregions"""
 
 @attr.s
-class PropOrganizationConformancePackConformancePackInputParameter(Property):
+class PropConfigRuleCustomPolicyDetails(Property):
     """
-    AWS Object Type = "AWS::Config::OrganizationConformancePack.ConformancePackInputParameter"
+    AWS Object Type = "AWS::Config::ConfigRule.CustomPolicyDetails"
 
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-organizationconformancepack-conformancepackinputparameter.html
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configrule-custompolicydetails.html
 
     Property Document:
     
-    - ``rp_ParameterName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-organizationconformancepack-conformancepackinputparameter.html#cfn-config-organizationconformancepack-conformancepackinputparameter-parametername
-    - ``rp_ParameterValue``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-organizationconformancepack-conformancepackinputparameter.html#cfn-config-organizationconformancepack-conformancepackinputparameter-parametervalue
+    - ``p_EnableDebugLogDelivery``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configrule-custompolicydetails.html#cfn-config-configrule-custompolicydetails-enabledebuglogdelivery
+    - ``p_PolicyRuntime``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configrule-custompolicydetails.html#cfn-config-configrule-custompolicydetails-policyruntime
+    - ``p_PolicyText``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configrule-custompolicydetails.html#cfn-config-configrule-custompolicydetails-policytext
     """
-    AWS_OBJECT_TYPE = "AWS::Config::OrganizationConformancePack.ConformancePackInputParameter"
+    AWS_OBJECT_TYPE = "AWS::Config::ConfigRule.CustomPolicyDetails"
     
-    rp_ParameterName: TypeHint.intrinsic_str = attr.ib(
+    p_EnableDebugLogDelivery: bool = attr.ib(
         default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "ParameterName"},
+        validator=attr.validators.optional(attr.validators.instance_of(bool)),
+        metadata={AttrMeta.PROPERTY_NAME: "EnableDebugLogDelivery"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-organizationconformancepack-conformancepackinputparameter.html#cfn-config-organizationconformancepack-conformancepackinputparameter-parametername"""
-    rp_ParameterValue: TypeHint.intrinsic_str = attr.ib(
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configrule-custompolicydetails.html#cfn-config-configrule-custompolicydetails-enabledebuglogdelivery"""
+    p_PolicyRuntime: TypeHint.intrinsic_str = attr.ib(
         default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "ParameterValue"},
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "PolicyRuntime"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-organizationconformancepack-conformancepackinputparameter.html#cfn-config-organizationconformancepack-conformancepackinputparameter-parametervalue"""
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configrule-custompolicydetails.html#cfn-config-configrule-custompolicydetails-policyruntime"""
+    p_PolicyText: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "PolicyText"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configrule-custompolicydetails.html#cfn-config-configrule-custompolicydetails-policytext"""
 
 @attr.s
 class PropConfigRuleScope(Property):
@@ -348,26 +274,6 @@ class PropRemediationConfigurationSsmControls(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-remediationconfiguration-ssmcontrols.html#cfn-config-remediationconfiguration-ssmcontrols-errorpercentage"""
 
 @attr.s
-class PropRemediationConfigurationStaticValue(Property):
-    """
-    AWS Object Type = "AWS::Config::RemediationConfiguration.StaticValue"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-remediationconfiguration-staticvalue.html
-
-    Property Document:
-    
-    - ``p_Values``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-remediationconfiguration-staticvalue.html#cfn-config-remediationconfiguration-staticvalue-values
-    """
-    AWS_OBJECT_TYPE = "AWS::Config::RemediationConfiguration.StaticValue"
-    
-    p_Values: typing.List[TypeHint.intrinsic_str] = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Values"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-remediationconfiguration-staticvalue.html#cfn-config-remediationconfiguration-staticvalue-values"""
-
-@attr.s
 class PropOrganizationConfigRuleOrganizationCustomCodeRuleMetadata(Property):
     """
     AWS Object Type = "AWS::Config::OrganizationConfigRule.OrganizationCustomCodeRuleMetadata"
@@ -479,40 +385,6 @@ class PropRemediationConfigurationExecutionControls(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-remediationconfiguration-executioncontrols.html#cfn-config-remediationconfiguration-executioncontrols-ssmcontrols"""
 
 @attr.s
-class PropConfigRuleSourceDetail(Property):
-    """
-    AWS Object Type = "AWS::Config::ConfigRule.SourceDetail"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configrule-source-sourcedetails.html
-
-    Property Document:
-    
-    - ``rp_EventSource``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configrule-source-sourcedetails.html#cfn-config-configrule-source-sourcedetail-eventsource
-    - ``rp_MessageType``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configrule-source-sourcedetails.html#cfn-config-configrule-source-sourcedetail-messagetype
-    - ``p_MaximumExecutionFrequency``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configrule-source-sourcedetails.html#cfn-config-configrule-sourcedetail-maximumexecutionfrequency
-    """
-    AWS_OBJECT_TYPE = "AWS::Config::ConfigRule.SourceDetail"
-    
-    rp_EventSource: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "EventSource"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configrule-source-sourcedetails.html#cfn-config-configrule-source-sourcedetail-eventsource"""
-    rp_MessageType: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "MessageType"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configrule-source-sourcedetails.html#cfn-config-configrule-source-sourcedetail-messagetype"""
-    p_MaximumExecutionFrequency: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "MaximumExecutionFrequency"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configrule-source-sourcedetails.html#cfn-config-configrule-sourcedetail-maximumexecutionfrequency"""
-
-@attr.s
 class PropOrganizationConfigRuleOrganizationCustomRuleMetadata(Property):
     """
     AWS Object Type = "AWS::Config::OrganizationConfigRule.OrganizationCustomRuleMetadata"
@@ -589,6 +461,168 @@ class PropOrganizationConfigRuleOrganizationCustomRuleMetadata(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-organizationconfigrule-organizationcustomrulemetadata.html#cfn-config-organizationconfigrule-organizationcustomrulemetadata-tagvaluescope"""
 
 @attr.s
+class PropConfigurationAggregatorOrganizationAggregationSource(Property):
+    """
+    AWS Object Type = "AWS::Config::ConfigurationAggregator.OrganizationAggregationSource"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configurationaggregator-organizationaggregationsource.html
+
+    Property Document:
+    
+    - ``rp_RoleArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configurationaggregator-organizationaggregationsource.html#cfn-config-configurationaggregator-organizationaggregationsource-rolearn
+    - ``p_AllAwsRegions``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configurationaggregator-organizationaggregationsource.html#cfn-config-configurationaggregator-organizationaggregationsource-allawsregions
+    - ``p_AwsRegions``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configurationaggregator-organizationaggregationsource.html#cfn-config-configurationaggregator-organizationaggregationsource-awsregions
+    """
+    AWS_OBJECT_TYPE = "AWS::Config::ConfigurationAggregator.OrganizationAggregationSource"
+    
+    rp_RoleArn: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "RoleArn"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configurationaggregator-organizationaggregationsource.html#cfn-config-configurationaggregator-organizationaggregationsource-rolearn"""
+    p_AllAwsRegions: bool = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(bool)),
+        metadata={AttrMeta.PROPERTY_NAME: "AllAwsRegions"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configurationaggregator-organizationaggregationsource.html#cfn-config-configurationaggregator-organizationaggregationsource-allawsregions"""
+    p_AwsRegions: typing.List[TypeHint.intrinsic_str] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "AwsRegions"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configurationaggregator-organizationaggregationsource.html#cfn-config-configurationaggregator-organizationaggregationsource-awsregions"""
+
+@attr.s
+class PropRemediationConfigurationResourceValue(Property):
+    """
+    AWS Object Type = "AWS::Config::RemediationConfiguration.ResourceValue"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-remediationconfiguration-resourcevalue.html
+
+    Property Document:
+    
+    - ``p_Value``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-remediationconfiguration-resourcevalue.html#cfn-config-remediationconfiguration-resourcevalue-value
+    """
+    AWS_OBJECT_TYPE = "AWS::Config::RemediationConfiguration.ResourceValue"
+    
+    p_Value: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "Value"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-remediationconfiguration-resourcevalue.html#cfn-config-remediationconfiguration-resourcevalue-value"""
+
+@attr.s
+class PropConformancePackConformancePackInputParameter(Property):
+    """
+    AWS Object Type = "AWS::Config::ConformancePack.ConformancePackInputParameter"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-conformancepack-conformancepackinputparameter.html
+
+    Property Document:
+    
+    - ``rp_ParameterName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-conformancepack-conformancepackinputparameter.html#cfn-config-conformancepack-conformancepackinputparameter-parametername
+    - ``rp_ParameterValue``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-conformancepack-conformancepackinputparameter.html#cfn-config-conformancepack-conformancepackinputparameter-parametervalue
+    """
+    AWS_OBJECT_TYPE = "AWS::Config::ConformancePack.ConformancePackInputParameter"
+    
+    rp_ParameterName: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "ParameterName"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-conformancepack-conformancepackinputparameter.html#cfn-config-conformancepack-conformancepackinputparameter-parametername"""
+    rp_ParameterValue: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "ParameterValue"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-conformancepack-conformancepackinputparameter.html#cfn-config-conformancepack-conformancepackinputparameter-parametervalue"""
+
+@attr.s
+class PropOrganizationConformancePackConformancePackInputParameter(Property):
+    """
+    AWS Object Type = "AWS::Config::OrganizationConformancePack.ConformancePackInputParameter"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-organizationconformancepack-conformancepackinputparameter.html
+
+    Property Document:
+    
+    - ``rp_ParameterName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-organizationconformancepack-conformancepackinputparameter.html#cfn-config-organizationconformancepack-conformancepackinputparameter-parametername
+    - ``rp_ParameterValue``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-organizationconformancepack-conformancepackinputparameter.html#cfn-config-organizationconformancepack-conformancepackinputparameter-parametervalue
+    """
+    AWS_OBJECT_TYPE = "AWS::Config::OrganizationConformancePack.ConformancePackInputParameter"
+    
+    rp_ParameterName: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "ParameterName"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-organizationconformancepack-conformancepackinputparameter.html#cfn-config-organizationconformancepack-conformancepackinputparameter-parametername"""
+    rp_ParameterValue: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "ParameterValue"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-organizationconformancepack-conformancepackinputparameter.html#cfn-config-organizationconformancepack-conformancepackinputparameter-parametervalue"""
+
+@attr.s
+class PropRemediationConfigurationStaticValue(Property):
+    """
+    AWS Object Type = "AWS::Config::RemediationConfiguration.StaticValue"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-remediationconfiguration-staticvalue.html
+
+    Property Document:
+    
+    - ``p_Values``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-remediationconfiguration-staticvalue.html#cfn-config-remediationconfiguration-staticvalue-values
+    """
+    AWS_OBJECT_TYPE = "AWS::Config::RemediationConfiguration.StaticValue"
+    
+    p_Values: typing.List[TypeHint.intrinsic_str] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "Values"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-remediationconfiguration-staticvalue.html#cfn-config-remediationconfiguration-staticvalue-values"""
+
+@attr.s
+class PropConfigRuleSourceDetail(Property):
+    """
+    AWS Object Type = "AWS::Config::ConfigRule.SourceDetail"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configrule-source-sourcedetails.html
+
+    Property Document:
+    
+    - ``rp_EventSource``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configrule-source-sourcedetails.html#cfn-config-configrule-source-sourcedetail-eventsource
+    - ``rp_MessageType``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configrule-source-sourcedetails.html#cfn-config-configrule-source-sourcedetail-messagetype
+    - ``p_MaximumExecutionFrequency``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configrule-source-sourcedetails.html#cfn-config-configrule-sourcedetail-maximumexecutionfrequency
+    """
+    AWS_OBJECT_TYPE = "AWS::Config::ConfigRule.SourceDetail"
+    
+    rp_EventSource: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "EventSource"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configrule-source-sourcedetails.html#cfn-config-configrule-source-sourcedetail-eventsource"""
+    rp_MessageType: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "MessageType"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configrule-source-sourcedetails.html#cfn-config-configrule-source-sourcedetail-messagetype"""
+    p_MaximumExecutionFrequency: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "MaximumExecutionFrequency"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configrule-source-sourcedetails.html#cfn-config-configrule-sourcedetail-maximumexecutionfrequency"""
+
+@attr.s
 class PropRemediationConfigurationRemediationParameterValue(Property):
     """
     AWS Object Type = "AWS::Config::RemediationConfiguration.RemediationParameterValue"
@@ -627,8 +661,9 @@ class PropConfigRuleSource(Property):
     Property Document:
     
     - ``rp_Owner``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configrule-source.html#cfn-config-configrule-source-owner
-    - ``rp_SourceIdentifier``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configrule-source.html#cfn-config-configrule-source-sourceidentifier
+    - ``p_CustomPolicyDetails``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configrule-source.html#cfn-config-configrule-source-custompolicydetails
     - ``p_SourceDetails``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configrule-source.html#cfn-config-configrule-source-sourcedetails
+    - ``p_SourceIdentifier``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configrule-source.html#cfn-config-configrule-source-sourceidentifier
     """
     AWS_OBJECT_TYPE = "AWS::Config::ConfigRule.Source"
     
@@ -638,12 +673,13 @@ class PropConfigRuleSource(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Owner"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configrule-source.html#cfn-config-configrule-source-owner"""
-    rp_SourceIdentifier: TypeHint.intrinsic_str = attr.ib(
+    p_CustomPolicyDetails: typing.Union['PropConfigRuleCustomPolicyDetails', dict] = attr.ib(
         default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "SourceIdentifier"},
+        converter=PropConfigRuleCustomPolicyDetails.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropConfigRuleCustomPolicyDetails)),
+        metadata={AttrMeta.PROPERTY_NAME: "CustomPolicyDetails"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configrule-source.html#cfn-config-configrule-source-sourceidentifier"""
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configrule-source.html#cfn-config-configrule-source-custompolicydetails"""
     p_SourceDetails: typing.List[typing.Union['PropConfigRuleSourceDetail', dict]] = attr.ib(
         default=None,
         converter=PropConfigRuleSourceDetail.from_list,
@@ -651,6 +687,12 @@ class PropConfigRuleSource(Property):
         metadata={AttrMeta.PROPERTY_NAME: "SourceDetails"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configrule-source.html#cfn-config-configrule-source-sourcedetails"""
+    p_SourceIdentifier: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "SourceIdentifier"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-config-configrule-source.html#cfn-config-configrule-source-sourceidentifier"""
 
 
 #--- Resource declaration ---
@@ -677,38 +719,80 @@ class DeliveryChannel(Resource):
     rp_S3BucketName: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "S3BucketName"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "S3BucketName",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": True,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-deliverychannel.html#cfn-config-deliverychannel-s3bucketname"""
     p_ConfigSnapshotDeliveryProperties: typing.Union['PropDeliveryChannelConfigSnapshotDeliveryProperties', dict] = attr.ib(
         default=None,
         converter=PropDeliveryChannelConfigSnapshotDeliveryProperties.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropDeliveryChannelConfigSnapshotDeliveryProperties)),
-        metadata={AttrMeta.PROPERTY_NAME: "ConfigSnapshotDeliveryProperties"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ConfigSnapshotDeliveryProperties",
+            AttrMeta.DATA: {
+                "Required": False,
+                "Type": 'ConfigSnapshotDeliveryProperties',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-deliverychannel.html#cfn-config-deliverychannel-configsnapshotdeliveryproperties"""
     p_Name: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Name"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Name",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-deliverychannel.html#cfn-config-deliverychannel-name"""
     p_S3KeyPrefix: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "S3KeyPrefix"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "S3KeyPrefix",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-deliverychannel.html#cfn-config-deliverychannel-s3keyprefix"""
     p_S3KmsKeyArn: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "S3KmsKeyArn"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "S3KmsKeyArn",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-deliverychannel.html#cfn-config-deliverychannel-s3kmskeyarn"""
     p_SnsTopicARN: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "SnsTopicARN"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "SnsTopicARN",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-deliverychannel.html#cfn-config-deliverychannel-snstopicarn"""
 
@@ -735,34 +819,70 @@ class OrganizationConfigRule(Resource):
     rp_OrganizationConfigRuleName: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "OrganizationConfigRuleName"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "OrganizationConfigRuleName",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-organizationconfigrule.html#cfn-config-organizationconfigrule-organizationconfigrulename"""
     p_ExcludedAccounts: typing.List[TypeHint.intrinsic_str] = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "ExcludedAccounts"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ExcludedAccounts",
+            AttrMeta.DATA: {
+                "PrimitiveItemType": 'String',
+                "Type": 'List',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-organizationconfigrule.html#cfn-config-organizationconfigrule-excludedaccounts"""
     p_OrganizationCustomCodeRuleMetadata: typing.Union['PropOrganizationConfigRuleOrganizationCustomCodeRuleMetadata', dict] = attr.ib(
         default=None,
         converter=PropOrganizationConfigRuleOrganizationCustomCodeRuleMetadata.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropOrganizationConfigRuleOrganizationCustomCodeRuleMetadata)),
-        metadata={AttrMeta.PROPERTY_NAME: "OrganizationCustomCodeRuleMetadata"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "OrganizationCustomCodeRuleMetadata",
+            AttrMeta.DATA: {
+                "Type": 'OrganizationCustomCodeRuleMetadata',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-organizationconfigrule.html#cfn-config-organizationconfigrule-organizationcustomcoderulemetadata"""
     p_OrganizationCustomRuleMetadata: typing.Union['PropOrganizationConfigRuleOrganizationCustomRuleMetadata', dict] = attr.ib(
         default=None,
         converter=PropOrganizationConfigRuleOrganizationCustomRuleMetadata.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropOrganizationConfigRuleOrganizationCustomRuleMetadata)),
-        metadata={AttrMeta.PROPERTY_NAME: "OrganizationCustomRuleMetadata"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "OrganizationCustomRuleMetadata",
+            AttrMeta.DATA: {
+                "Type": 'OrganizationCustomRuleMetadata',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-organizationconfigrule.html#cfn-config-organizationconfigrule-organizationcustomrulemetadata"""
     p_OrganizationManagedRuleMetadata: typing.Union['PropOrganizationConfigRuleOrganizationManagedRuleMetadata', dict] = attr.ib(
         default=None,
         converter=PropOrganizationConfigRuleOrganizationManagedRuleMetadata.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropOrganizationConfigRuleOrganizationManagedRuleMetadata)),
-        metadata={AttrMeta.PROPERTY_NAME: "OrganizationManagedRuleMetadata"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "OrganizationManagedRuleMetadata",
+            AttrMeta.DATA: {
+                "Type": 'OrganizationManagedRuleMetadata',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-organizationconfigrule.html#cfn-config-organizationconfigrule-organizationmanagedrulemetadata"""
 
@@ -791,38 +911,80 @@ class ConfigRule(Resource):
         default=None,
         converter=PropConfigRuleSource.from_dict,
         validator=attr.validators.instance_of(PropConfigRuleSource),
-        metadata={AttrMeta.PROPERTY_NAME: "Source"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Source",
+            AttrMeta.DATA: {
+                "Required": True,
+                "Type": 'Source',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-configrule.html#cfn-config-configrule-source"""
     p_ConfigRuleName: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "ConfigRuleName"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ConfigRuleName",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-configrule.html#cfn-config-configrule-configrulename"""
     p_Description: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Description"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Description",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-configrule.html#cfn-config-configrule-description"""
     p_InputParameters: dict = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(dict)),
-        metadata={AttrMeta.PROPERTY_NAME: "InputParameters"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "InputParameters",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'Json',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-configrule.html#cfn-config-configrule-inputparameters"""
     p_MaximumExecutionFrequency: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "MaximumExecutionFrequency"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "MaximumExecutionFrequency",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-configrule.html#cfn-config-configrule-maximumexecutionfrequency"""
     p_Scope: typing.Union['PropConfigRuleScope', dict] = attr.ib(
         default=None,
         converter=PropConfigRuleScope.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropConfigRuleScope)),
-        metadata={AttrMeta.PROPERTY_NAME: "Scope"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Scope",
+            AttrMeta.DATA: {
+                "Required": False,
+                "Type": 'Scope',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-configrule.html#cfn-config-configrule-scope"""
 
@@ -863,26 +1025,56 @@ class StoredQuery(Resource):
     rp_QueryExpression: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "QueryExpression"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "QueryExpression",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-storedquery.html#cfn-config-storedquery-queryexpression"""
     rp_QueryName: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "QueryName"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "QueryName",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-storedquery.html#cfn-config-storedquery-queryname"""
     p_QueryDescription: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "QueryDescription"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "QueryDescription",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-storedquery.html#cfn-config-storedquery-querydescription"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'List',
+                "ItemType": 'Tag',
+                "DuplicatesAllowed": False,
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-storedquery.html#cfn-config-storedquery-tags"""
 
@@ -924,62 +1116,132 @@ class RemediationConfiguration(Resource):
     rp_ConfigRuleName: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "ConfigRuleName"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ConfigRuleName",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-remediationconfiguration.html#cfn-config-remediationconfiguration-configrulename"""
     rp_TargetId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "TargetId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "TargetId",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-remediationconfiguration.html#cfn-config-remediationconfiguration-targetid"""
     rp_TargetType: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "TargetType"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "TargetType",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-remediationconfiguration.html#cfn-config-remediationconfiguration-targettype"""
     p_Automatic: bool = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(bool)),
-        metadata={AttrMeta.PROPERTY_NAME: "Automatic"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Automatic",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'Boolean',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-remediationconfiguration.html#cfn-config-remediationconfiguration-automatic"""
     p_ExecutionControls: typing.Union['PropRemediationConfigurationExecutionControls', dict] = attr.ib(
         default=None,
         converter=PropRemediationConfigurationExecutionControls.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropRemediationConfigurationExecutionControls)),
-        metadata={AttrMeta.PROPERTY_NAME: "ExecutionControls"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ExecutionControls",
+            AttrMeta.DATA: {
+                "Type": 'ExecutionControls',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-remediationconfiguration.html#cfn-config-remediationconfiguration-executioncontrols"""
     p_MaximumAutomaticAttempts: int = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "MaximumAutomaticAttempts"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "MaximumAutomaticAttempts",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'Integer',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-remediationconfiguration.html#cfn-config-remediationconfiguration-maximumautomaticattempts"""
     p_Parameters: dict = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(dict)),
-        metadata={AttrMeta.PROPERTY_NAME: "Parameters"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Parameters",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'Json',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-remediationconfiguration.html#cfn-config-remediationconfiguration-parameters"""
     p_ResourceType: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "ResourceType"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ResourceType",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-remediationconfiguration.html#cfn-config-remediationconfiguration-resourcetype"""
     p_RetryAttemptSeconds: int = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "RetryAttemptSeconds"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "RetryAttemptSeconds",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'Integer',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-remediationconfiguration.html#cfn-config-remediationconfiguration-retryattemptseconds"""
     p_TargetVersion: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "TargetVersion"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "TargetVersion",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-remediationconfiguration.html#cfn-config-remediationconfiguration-targetversion"""
 
@@ -1006,27 +1268,59 @@ class ConfigurationAggregator(Resource):
         default=None,
         converter=PropConfigurationAggregatorAccountAggregationSource.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropConfigurationAggregatorAccountAggregationSource), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "AccountAggregationSources"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "AccountAggregationSources",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'List',
+                "ItemType": 'AccountAggregationSource',
+                "DuplicatesAllowed": True,
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-configurationaggregator.html#cfn-config-configurationaggregator-accountaggregationsources"""
     p_ConfigurationAggregatorName: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "ConfigurationAggregatorName"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ConfigurationAggregatorName",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-configurationaggregator.html#cfn-config-configurationaggregator-configurationaggregatorname"""
     p_OrganizationAggregationSource: typing.Union['PropConfigurationAggregatorOrganizationAggregationSource', dict] = attr.ib(
         default=None,
         converter=PropConfigurationAggregatorOrganizationAggregationSource.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropConfigurationAggregatorOrganizationAggregationSource)),
-        metadata={AttrMeta.PROPERTY_NAME: "OrganizationAggregationSource"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "OrganizationAggregationSource",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'OrganizationAggregationSource',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-configurationaggregator.html#cfn-config-configurationaggregator-organizationaggregationsource"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'List',
+                "ItemType": 'Tag',
+                "DuplicatesAllowed": False,
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-configurationaggregator.html#cfn-config-configurationaggregator-tags"""
 
@@ -1056,20 +1350,43 @@ class AggregationAuthorization(Resource):
     rp_AuthorizedAccountId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "AuthorizedAccountId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "AuthorizedAccountId",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-aggregationauthorization.html#cfn-config-aggregationauthorization-authorizedaccountid"""
     rp_AuthorizedAwsRegion: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "AuthorizedAwsRegion"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "AuthorizedAwsRegion",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-aggregationauthorization.html#cfn-config-aggregationauthorization-authorizedawsregion"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'List',
+                "ItemType": 'Tag',
+                "DuplicatesAllowed": False,
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-aggregationauthorization.html#cfn-config-aggregationauthorization-tags"""
 
@@ -1099,20 +1416,41 @@ class ConfigurationRecorder(Resource):
     rp_RoleARN: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "RoleARN"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "RoleARN",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": True,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-configurationrecorder.html#cfn-config-configurationrecorder-rolearn"""
     p_Name: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Name"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Name",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-configurationrecorder.html#cfn-config-configurationrecorder-name"""
     p_RecordingGroup: typing.Union['PropConfigurationRecorderRecordingGroup', dict] = attr.ib(
         default=None,
         converter=PropConfigurationRecorderRecordingGroup.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropConfigurationRecorderRecordingGroup)),
-        metadata={AttrMeta.PROPERTY_NAME: "RecordingGroup"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "RecordingGroup",
+            AttrMeta.DATA: {
+                "Required": False,
+                "Type": 'RecordingGroup',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-configurationrecorder.html#cfn-config-configurationrecorder-recordinggroup"""
 
@@ -1141,44 +1479,95 @@ class OrganizationConformancePack(Resource):
     rp_OrganizationConformancePackName: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "OrganizationConformancePackName"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "OrganizationConformancePackName",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-organizationconformancepack.html#cfn-config-organizationconformancepack-organizationconformancepackname"""
     p_ConformancePackInputParameters: typing.List[typing.Union['PropOrganizationConformancePackConformancePackInputParameter', dict]] = attr.ib(
         default=None,
         converter=PropOrganizationConformancePackConformancePackInputParameter.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropOrganizationConformancePackConformancePackInputParameter), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "ConformancePackInputParameters"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ConformancePackInputParameters",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'List',
+                "ItemType": 'ConformancePackInputParameter',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-organizationconformancepack.html#cfn-config-organizationconformancepack-conformancepackinputparameters"""
     p_DeliveryS3Bucket: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "DeliveryS3Bucket"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "DeliveryS3Bucket",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-organizationconformancepack.html#cfn-config-organizationconformancepack-deliverys3bucket"""
     p_DeliveryS3KeyPrefix: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "DeliveryS3KeyPrefix"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "DeliveryS3KeyPrefix",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-organizationconformancepack.html#cfn-config-organizationconformancepack-deliverys3keyprefix"""
     p_ExcludedAccounts: typing.List[TypeHint.intrinsic_str] = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "ExcludedAccounts"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ExcludedAccounts",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'List',
+                "PrimitiveItemType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-organizationconformancepack.html#cfn-config-organizationconformancepack-excludedaccounts"""
     p_TemplateBody: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "TemplateBody"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "TemplateBody",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-organizationconformancepack.html#cfn-config-organizationconformancepack-templatebody"""
     p_TemplateS3Uri: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "TemplateS3Uri"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "TemplateS3Uri",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-organizationconformancepack.html#cfn-config-organizationconformancepack-templates3uri"""
 
@@ -1199,6 +1588,7 @@ class ConformancePack(Resource):
     - ``p_DeliveryS3KeyPrefix``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-conformancepack.html#cfn-config-conformancepack-deliverys3keyprefix
     - ``p_TemplateBody``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-conformancepack.html#cfn-config-conformancepack-templatebody
     - ``p_TemplateS3Uri``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-conformancepack.html#cfn-config-conformancepack-templates3uri
+    - ``p_TemplateSSMDocumentDetails``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-conformancepack.html#cfn-config-conformancepack-templatessmdocumentdetails
     """
     AWS_OBJECT_TYPE = "AWS::Config::ConformancePack"
 
@@ -1206,39 +1596,95 @@ class ConformancePack(Resource):
     rp_ConformancePackName: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "ConformancePackName"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ConformancePackName",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-conformancepack.html#cfn-config-conformancepack-conformancepackname"""
     p_ConformancePackInputParameters: typing.List[typing.Union['PropConformancePackConformancePackInputParameter', dict]] = attr.ib(
         default=None,
         converter=PropConformancePackConformancePackInputParameter.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropConformancePackConformancePackInputParameter), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "ConformancePackInputParameters"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ConformancePackInputParameters",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'List',
+                "ItemType": 'ConformancePackInputParameter',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-conformancepack.html#cfn-config-conformancepack-conformancepackinputparameters"""
     p_DeliveryS3Bucket: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "DeliveryS3Bucket"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "DeliveryS3Bucket",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-conformancepack.html#cfn-config-conformancepack-deliverys3bucket"""
     p_DeliveryS3KeyPrefix: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "DeliveryS3KeyPrefix"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "DeliveryS3KeyPrefix",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-conformancepack.html#cfn-config-conformancepack-deliverys3keyprefix"""
     p_TemplateBody: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "TemplateBody"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "TemplateBody",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-conformancepack.html#cfn-config-conformancepack-templatebody"""
     p_TemplateS3Uri: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "TemplateS3Uri"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "TemplateS3Uri",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-conformancepack.html#cfn-config-conformancepack-templates3uri"""
+    p_TemplateSSMDocumentDetails: dict = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "TemplateSSMDocumentDetails",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'Json',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-config-conformancepack.html#cfn-config-conformancepack-templatessmdocumentdetails"""
 
     

@@ -42,73 +42,6 @@ class PropWebhookWebhookFilterRule(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-webhook-webhookfilterrule.html#cfn-codepipeline-webhook-webhookfilterrule-matchequals"""
 
 @attr.s
-class PropPipelineOutputArtifact(Property):
-    """
-    AWS Object Type = "AWS::CodePipeline::Pipeline.OutputArtifact"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions-outputartifacts.html
-
-    Property Document:
-    
-    - ``rp_Name``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions-outputartifacts.html#cfn-codepipeline-pipeline-stages-actions-outputartifacts-name
-    """
-    AWS_OBJECT_TYPE = "AWS::CodePipeline::Pipeline.OutputArtifact"
-    
-    rp_Name: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Name"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions-outputartifacts.html#cfn-codepipeline-pipeline-stages-actions-outputartifacts-name"""
-
-@attr.s
-class PropPipelineStageTransition(Property):
-    """
-    AWS Object Type = "AWS::CodePipeline::Pipeline.StageTransition"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-disableinboundstagetransitions.html
-
-    Property Document:
-    
-    - ``rp_Reason``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-disableinboundstagetransitions.html#cfn-codepipeline-pipeline-disableinboundstagetransitions-reason
-    - ``rp_StageName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-disableinboundstagetransitions.html#cfn-codepipeline-pipeline-disableinboundstagetransitions-stagename
-    """
-    AWS_OBJECT_TYPE = "AWS::CodePipeline::Pipeline.StageTransition"
-    
-    rp_Reason: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Reason"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-disableinboundstagetransitions.html#cfn-codepipeline-pipeline-disableinboundstagetransitions-reason"""
-    rp_StageName: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "StageName"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-disableinboundstagetransitions.html#cfn-codepipeline-pipeline-disableinboundstagetransitions-stagename"""
-
-@attr.s
-class PropPipelineInputArtifact(Property):
-    """
-    AWS Object Type = "AWS::CodePipeline::Pipeline.InputArtifact"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions-inputartifacts.html
-
-    Property Document:
-    
-    - ``rp_Name``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions-inputartifacts.html#cfn-codepipeline-pipeline-stages-actions-inputartifacts-name
-    """
-    AWS_OBJECT_TYPE = "AWS::CodePipeline::Pipeline.InputArtifact"
-    
-    rp_Name: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Name"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions-inputartifacts.html#cfn-codepipeline-pipeline-stages-actions-inputartifacts-name"""
-
-@attr.s
 class PropPipelineBlockerDeclaration(Property):
     """
     AWS Object Type = "AWS::CodePipeline::Pipeline.BlockerDeclaration"
@@ -326,6 +259,73 @@ class PropPipelineArtifactStore(Property):
         metadata={AttrMeta.PROPERTY_NAME: "EncryptionKey"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-artifactstore.html#cfn-codepipeline-pipeline-artifactstore-encryptionkey"""
+
+@attr.s
+class PropPipelineOutputArtifact(Property):
+    """
+    AWS Object Type = "AWS::CodePipeline::Pipeline.OutputArtifact"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions-outputartifacts.html
+
+    Property Document:
+    
+    - ``rp_Name``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions-outputartifacts.html#cfn-codepipeline-pipeline-stages-actions-outputartifacts-name
+    """
+    AWS_OBJECT_TYPE = "AWS::CodePipeline::Pipeline.OutputArtifact"
+    
+    rp_Name: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "Name"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions-outputartifacts.html#cfn-codepipeline-pipeline-stages-actions-outputartifacts-name"""
+
+@attr.s
+class PropPipelineStageTransition(Property):
+    """
+    AWS Object Type = "AWS::CodePipeline::Pipeline.StageTransition"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-disableinboundstagetransitions.html
+
+    Property Document:
+    
+    - ``rp_Reason``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-disableinboundstagetransitions.html#cfn-codepipeline-pipeline-disableinboundstagetransitions-reason
+    - ``rp_StageName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-disableinboundstagetransitions.html#cfn-codepipeline-pipeline-disableinboundstagetransitions-stagename
+    """
+    AWS_OBJECT_TYPE = "AWS::CodePipeline::Pipeline.StageTransition"
+    
+    rp_Reason: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "Reason"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-disableinboundstagetransitions.html#cfn-codepipeline-pipeline-disableinboundstagetransitions-reason"""
+    rp_StageName: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "StageName"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-disableinboundstagetransitions.html#cfn-codepipeline-pipeline-disableinboundstagetransitions-stagename"""
+
+@attr.s
+class PropPipelineInputArtifact(Property):
+    """
+    AWS Object Type = "AWS::CodePipeline::Pipeline.InputArtifact"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions-inputartifacts.html
+
+    Property Document:
+    
+    - ``rp_Name``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions-inputartifacts.html#cfn-codepipeline-pipeline-stages-actions-inputartifacts-name
+    """
+    AWS_OBJECT_TYPE = "AWS::CodePipeline::Pipeline.InputArtifact"
+    
+    rp_Name: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "Name"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codepipeline-pipeline-stages-actions-inputartifacts.html#cfn-codepipeline-pipeline-stages-actions-inputartifacts-name"""
 
 @attr.s
 class PropPipelineActionTypeId(Property):
@@ -565,54 +565,118 @@ class Pipeline(Resource):
     rp_RoleArn: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "RoleArn"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "RoleArn",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": True,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-pipeline.html#cfn-codepipeline-pipeline-rolearn"""
     rp_Stages: typing.List[typing.Union['PropPipelineStageDeclaration', dict]] = attr.ib(
         default=None,
         converter=PropPipelineStageDeclaration.from_list,
         validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropPipelineStageDeclaration), iterable_validator=attr.validators.instance_of(list)),
-        metadata={AttrMeta.PROPERTY_NAME: "Stages"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Stages",
+            AttrMeta.DATA: {
+                "DuplicatesAllowed": False,
+                "ItemType": 'StageDeclaration',
+                "Required": True,
+                "Type": 'List',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-pipeline.html#cfn-codepipeline-pipeline-stages"""
     p_ArtifactStore: typing.Union['PropPipelineArtifactStore', dict] = attr.ib(
         default=None,
         converter=PropPipelineArtifactStore.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropPipelineArtifactStore)),
-        metadata={AttrMeta.PROPERTY_NAME: "ArtifactStore"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ArtifactStore",
+            AttrMeta.DATA: {
+                "Required": False,
+                "Type": 'ArtifactStore',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-pipeline.html#cfn-codepipeline-pipeline-artifactstore"""
     p_ArtifactStores: typing.List[typing.Union['PropPipelineArtifactStoreMap', dict]] = attr.ib(
         default=None,
         converter=PropPipelineArtifactStoreMap.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropPipelineArtifactStoreMap), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "ArtifactStores"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ArtifactStores",
+            AttrMeta.DATA: {
+                "DuplicatesAllowed": False,
+                "ItemType": 'ArtifactStoreMap',
+                "Required": False,
+                "Type": 'List',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-pipeline.html#cfn-codepipeline-pipeline-artifactstores"""
     p_DisableInboundStageTransitions: typing.List[typing.Union['PropPipelineStageTransition', dict]] = attr.ib(
         default=None,
         converter=PropPipelineStageTransition.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropPipelineStageTransition), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "DisableInboundStageTransitions"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "DisableInboundStageTransitions",
+            AttrMeta.DATA: {
+                "DuplicatesAllowed": False,
+                "ItemType": 'StageTransition',
+                "Required": False,
+                "Type": 'List',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-pipeline.html#cfn-codepipeline-pipeline-disableinboundstagetransitions"""
     p_Name: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Name"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Name",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-pipeline.html#cfn-codepipeline-pipeline-name"""
     p_RestartExecutionOnUpdate: bool = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(bool)),
-        metadata={AttrMeta.PROPERTY_NAME: "RestartExecutionOnUpdate"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "RestartExecutionOnUpdate",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'Boolean',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-pipeline.html#cfn-codepipeline-pipeline-restartexecutiononupdate"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "DuplicatesAllowed": True,
+                "ItemType": 'Tag',
+                "Required": False,
+                "Type": 'List',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-pipeline.html#cfn-codepipeline-pipeline-tags"""
 
@@ -647,54 +711,114 @@ class CustomActionType(Resource):
     rp_Category: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Category"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Category",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": True,
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-category"""
     rp_InputArtifactDetails: typing.Union['PropCustomActionTypeArtifactDetails', dict] = attr.ib(
         default=None,
         converter=PropCustomActionTypeArtifactDetails.from_dict,
         validator=attr.validators.instance_of(PropCustomActionTypeArtifactDetails),
-        metadata={AttrMeta.PROPERTY_NAME: "InputArtifactDetails"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "InputArtifactDetails",
+            AttrMeta.DATA: {
+                "Required": True,
+                "Type": 'ArtifactDetails',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-inputartifactdetails"""
     rp_OutputArtifactDetails: typing.Union['PropCustomActionTypeArtifactDetails', dict] = attr.ib(
         default=None,
         converter=PropCustomActionTypeArtifactDetails.from_dict,
         validator=attr.validators.instance_of(PropCustomActionTypeArtifactDetails),
-        metadata={AttrMeta.PROPERTY_NAME: "OutputArtifactDetails"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "OutputArtifactDetails",
+            AttrMeta.DATA: {
+                "Required": True,
+                "Type": 'ArtifactDetails',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-outputartifactdetails"""
     rp_Provider: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Provider"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Provider",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": True,
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-provider"""
     rp_Version: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Version"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Version",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": True,
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-version"""
     p_ConfigurationProperties: typing.List[typing.Union['PropCustomActionTypeConfigurationProperties', dict]] = attr.ib(
         default=None,
         converter=PropCustomActionTypeConfigurationProperties.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropCustomActionTypeConfigurationProperties), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "ConfigurationProperties"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ConfigurationProperties",
+            AttrMeta.DATA: {
+                "DuplicatesAllowed": False,
+                "ItemType": 'ConfigurationProperties',
+                "Required": False,
+                "Type": 'List',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-configurationproperties"""
     p_Settings: typing.Union['PropCustomActionTypeSettings', dict] = attr.ib(
         default=None,
         converter=PropCustomActionTypeSettings.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropCustomActionTypeSettings)),
-        metadata={AttrMeta.PROPERTY_NAME: "Settings"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Settings",
+            AttrMeta.DATA: {
+                "Required": False,
+                "Type": 'Settings',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-settings"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "DuplicatesAllowed": True,
+                "ItemType": 'Tag',
+                "Required": False,
+                "Type": 'List',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-tags"""
 
@@ -724,51 +848,108 @@ class Webhook(Resource):
     rp_Authentication: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Authentication"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Authentication",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-webhook.html#cfn-codepipeline-webhook-authentication"""
     rp_AuthenticationConfiguration: typing.Union['PropWebhookWebhookAuthConfiguration', dict] = attr.ib(
         default=None,
         converter=PropWebhookWebhookAuthConfiguration.from_dict,
         validator=attr.validators.instance_of(PropWebhookWebhookAuthConfiguration),
-        metadata={AttrMeta.PROPERTY_NAME: "AuthenticationConfiguration"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "AuthenticationConfiguration",
+            AttrMeta.DATA: {
+                "Type": 'WebhookAuthConfiguration',
+                "Required": True,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-webhook.html#cfn-codepipeline-webhook-authenticationconfiguration"""
     rp_Filters: typing.List[typing.Union['PropWebhookWebhookFilterRule', dict]] = attr.ib(
         default=None,
         converter=PropWebhookWebhookFilterRule.from_list,
         validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropWebhookWebhookFilterRule), iterable_validator=attr.validators.instance_of(list)),
-        metadata={AttrMeta.PROPERTY_NAME: "Filters"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Filters",
+            AttrMeta.DATA: {
+                "Type": 'List',
+                "Required": True,
+                "ItemType": 'WebhookFilterRule',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-webhook.html#cfn-codepipeline-webhook-filters"""
     rp_TargetAction: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "TargetAction"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "TargetAction",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-webhook.html#cfn-codepipeline-webhook-targetaction"""
     rp_TargetPipeline: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "TargetPipeline"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "TargetPipeline",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-webhook.html#cfn-codepipeline-webhook-targetpipeline"""
     rp_TargetPipelineVersion: int = attr.ib(
         default=None,
         validator=attr.validators.instance_of(int),
-        metadata={AttrMeta.PROPERTY_NAME: "TargetPipelineVersion"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "TargetPipelineVersion",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'Integer',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-webhook.html#cfn-codepipeline-webhook-targetpipelineversion"""
     p_Name: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Name"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Name",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-webhook.html#cfn-codepipeline-webhook-name"""
     p_RegisterWithThirdParty: bool = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(bool)),
-        metadata={AttrMeta.PROPERTY_NAME: "RegisterWithThirdParty"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "RegisterWithThirdParty",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'Boolean',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-webhook.html#cfn-codepipeline-webhook-registerwiththirdparty"""
 

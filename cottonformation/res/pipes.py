@@ -1051,10 +1051,9 @@ class PropPipeNetworkConfiguration(Property):
     """
     AWS_OBJECT_TYPE = "AWS::Pipes::Pipe.NetworkConfiguration"
     
-    p_AwsvpcConfiguration: typing.Union['PropPipeAwsVpcConfiguration', dict] = attr.ib(
+    p_AwsvpcConfiguration: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropPipeAwsVpcConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropPipeAwsVpcConfiguration)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "AwsvpcConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-networkconfiguration.html#cfn-pipes-pipe-networkconfiguration-awsvpcconfiguration"""
@@ -1264,10 +1263,9 @@ class PropPipePipeTargetHttpParameters(Property):
     """
     AWS_OBJECT_TYPE = "AWS::Pipes::Pipe.PipeTargetHttpParameters"
     
-    p_HeaderParameters: typing.Union['PropPipeHeaderParametersMap', dict] = attr.ib(
+    p_HeaderParameters: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropPipeHeaderParametersMap.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropPipeHeaderParametersMap)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "HeaderParameters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipetargethttpparameters.html#cfn-pipes-pipe-pipetargethttpparameters-headerparameters"""
@@ -1277,10 +1275,9 @@ class PropPipePipeTargetHttpParameters(Property):
         metadata={AttrMeta.PROPERTY_NAME: "PathParameterValues"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipetargethttpparameters.html#cfn-pipes-pipe-pipetargethttpparameters-pathparametervalues"""
-    p_QueryStringParameters: typing.Union['PropPipeQueryStringParametersMap', dict] = attr.ib(
+    p_QueryStringParameters: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropPipeQueryStringParametersMap.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropPipeQueryStringParametersMap)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "QueryStringParameters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipetargethttpparameters.html#cfn-pipes-pipe-pipetargethttpparameters-querystringparameters"""
@@ -1300,10 +1297,9 @@ class PropPipePipeEnrichmentHttpParameters(Property):
     """
     AWS_OBJECT_TYPE = "AWS::Pipes::Pipe.PipeEnrichmentHttpParameters"
     
-    p_HeaderParameters: typing.Union['PropPipeHeaderParametersMap', dict] = attr.ib(
+    p_HeaderParameters: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropPipeHeaderParametersMap.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropPipeHeaderParametersMap)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "HeaderParameters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipeenrichmenthttpparameters.html#cfn-pipes-pipe-pipeenrichmenthttpparameters-headerparameters"""
@@ -1313,10 +1309,9 @@ class PropPipePipeEnrichmentHttpParameters(Property):
         metadata={AttrMeta.PROPERTY_NAME: "PathParameterValues"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipeenrichmenthttpparameters.html#cfn-pipes-pipe-pipeenrichmenthttpparameters-pathparametervalues"""
-    p_QueryStringParameters: typing.Union['PropPipeQueryStringParametersMap', dict] = attr.ib(
+    p_QueryStringParameters: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropPipeQueryStringParametersMap.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropPipeQueryStringParametersMap)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "QueryStringParameters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipeenrichmenthttpparameters.html#cfn-pipes-pipe-pipeenrichmenthttpparameters-querystringparameters"""
@@ -1353,10 +1348,9 @@ class PropPipeEcsTaskOverride(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Cpu"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-ecstaskoverride.html#cfn-pipes-pipe-ecstaskoverride-cpu"""
-    p_EphemeralStorage: typing.Union['PropPipeEcsEphemeralStorage', dict] = attr.ib(
+    p_EphemeralStorage: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropPipeEcsEphemeralStorage.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropPipeEcsEphemeralStorage)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "EphemeralStorage"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-ecstaskoverride.html#cfn-pipes-pipe-ecstaskoverride-ephemeralstorage"""
@@ -1476,10 +1470,9 @@ class PropPipePipeSourceSelfManagedKafkaParameters(Property):
         metadata={AttrMeta.PROPERTY_NAME: "StartingPosition"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipesourceselfmanagedkafkaparameters.html#cfn-pipes-pipe-pipesourceselfmanagedkafkaparameters-startingposition"""
-    p_Vpc: typing.Union['PropPipeSelfManagedKafkaAccessConfigurationVpc', dict] = attr.ib(
+    p_Vpc: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropPipeSelfManagedKafkaAccessConfigurationVpc.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropPipeSelfManagedKafkaAccessConfigurationVpc)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "Vpc"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipesourceselfmanagedkafkaparameters.html#cfn-pipes-pipe-pipesourceselfmanagedkafkaparameters-vpc"""
@@ -1498,10 +1491,9 @@ class PropPipePipeEnrichmentParameters(Property):
     """
     AWS_OBJECT_TYPE = "AWS::Pipes::Pipe.PipeEnrichmentParameters"
     
-    p_HttpParameters: typing.Union['PropPipePipeEnrichmentHttpParameters', dict] = attr.ib(
+    p_HttpParameters: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropPipePipeEnrichmentHttpParameters.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropPipePipeEnrichmentHttpParameters)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "HttpParameters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipeenrichmentparameters.html#cfn-pipes-pipe-pipeenrichmentparameters-httpparameters"""
@@ -1583,10 +1575,9 @@ class PropPipePipeTargetEcsTaskParameters(Property):
         metadata={AttrMeta.PROPERTY_NAME: "NetworkConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipetargetecstaskparameters.html#cfn-pipes-pipe-pipetargetecstaskparameters-networkconfiguration"""
-    p_Overrides: typing.Union['PropPipeEcsTaskOverride', dict] = attr.ib(
+    p_Overrides: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropPipeEcsTaskOverride.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropPipeEcsTaskOverride)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "Overrides"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipetargetecstaskparameters.html#cfn-pipes-pipe-pipetargetecstaskparameters-overrides"""
@@ -1667,17 +1658,15 @@ class PropPipePipeTargetBatchJobParameters(Property):
         metadata={AttrMeta.PROPERTY_NAME: "JobName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipetargetbatchjobparameters.html#cfn-pipes-pipe-pipetargetbatchjobparameters-jobname"""
-    p_ArrayProperties: typing.Union['PropPipeBatchArrayProperties', dict] = attr.ib(
+    p_ArrayProperties: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropPipeBatchArrayProperties.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropPipeBatchArrayProperties)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "ArrayProperties"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipetargetbatchjobparameters.html#cfn-pipes-pipe-pipetargetbatchjobparameters-arrayproperties"""
-    p_ContainerOverrides: typing.Union['PropPipeBatchContainerOverrides', dict] = attr.ib(
+    p_ContainerOverrides: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropPipeBatchContainerOverrides.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropPipeBatchContainerOverrides)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "ContainerOverrides"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipetargetbatchjobparameters.html#cfn-pipes-pipe-pipetargetbatchjobparameters-containeroverrides"""
@@ -1688,17 +1677,15 @@ class PropPipePipeTargetBatchJobParameters(Property):
         metadata={AttrMeta.PROPERTY_NAME: "DependsOn"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipetargetbatchjobparameters.html#cfn-pipes-pipe-pipetargetbatchjobparameters-dependson"""
-    p_Parameters: typing.Union['PropPipeBatchParametersMap', dict] = attr.ib(
+    p_Parameters: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropPipeBatchParametersMap.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropPipeBatchParametersMap)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "Parameters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipetargetbatchjobparameters.html#cfn-pipes-pipe-pipetargetbatchjobparameters-parameters"""
-    p_RetryStrategy: typing.Union['PropPipeBatchRetryStrategy', dict] = attr.ib(
+    p_RetryStrategy: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropPipeBatchRetryStrategy.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropPipeBatchRetryStrategy)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "RetryStrategy"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipetargetbatchjobparameters.html#cfn-pipes-pipe-pipetargetbatchjobparameters-retrystrategy"""
@@ -1727,38 +1714,33 @@ class PropPipePipeTargetParameters(Property):
     """
     AWS_OBJECT_TYPE = "AWS::Pipes::Pipe.PipeTargetParameters"
     
-    p_BatchJobParameters: typing.Union['PropPipePipeTargetBatchJobParameters', dict] = attr.ib(
+    p_BatchJobParameters: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropPipePipeTargetBatchJobParameters.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropPipePipeTargetBatchJobParameters)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "BatchJobParameters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipetargetparameters.html#cfn-pipes-pipe-pipetargetparameters-batchjobparameters"""
-    p_CloudWatchLogsParameters: typing.Union['PropPipePipeTargetCloudWatchLogsParameters', dict] = attr.ib(
+    p_CloudWatchLogsParameters: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropPipePipeTargetCloudWatchLogsParameters.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropPipePipeTargetCloudWatchLogsParameters)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "CloudWatchLogsParameters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipetargetparameters.html#cfn-pipes-pipe-pipetargetparameters-cloudwatchlogsparameters"""
-    p_EcsTaskParameters: typing.Union['PropPipePipeTargetEcsTaskParameters', dict] = attr.ib(
+    p_EcsTaskParameters: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropPipePipeTargetEcsTaskParameters.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropPipePipeTargetEcsTaskParameters)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "EcsTaskParameters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipetargetparameters.html#cfn-pipes-pipe-pipetargetparameters-ecstaskparameters"""
-    p_EventBridgeEventBusParameters: typing.Union['PropPipePipeTargetEventBridgeEventBusParameters', dict] = attr.ib(
+    p_EventBridgeEventBusParameters: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropPipePipeTargetEventBridgeEventBusParameters.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropPipePipeTargetEventBridgeEventBusParameters)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "EventBridgeEventBusParameters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipetargetparameters.html#cfn-pipes-pipe-pipetargetparameters-eventbridgeeventbusparameters"""
-    p_HttpParameters: typing.Union['PropPipePipeTargetHttpParameters', dict] = attr.ib(
+    p_HttpParameters: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropPipePipeTargetHttpParameters.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropPipePipeTargetHttpParameters)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "HttpParameters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipetargetparameters.html#cfn-pipes-pipe-pipetargetparameters-httpparameters"""
@@ -1768,45 +1750,39 @@ class PropPipePipeTargetParameters(Property):
         metadata={AttrMeta.PROPERTY_NAME: "InputTemplate"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipetargetparameters.html#cfn-pipes-pipe-pipetargetparameters-inputtemplate"""
-    p_KinesisStreamParameters: typing.Union['PropPipePipeTargetKinesisStreamParameters', dict] = attr.ib(
+    p_KinesisStreamParameters: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropPipePipeTargetKinesisStreamParameters.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropPipePipeTargetKinesisStreamParameters)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "KinesisStreamParameters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipetargetparameters.html#cfn-pipes-pipe-pipetargetparameters-kinesisstreamparameters"""
-    p_LambdaFunctionParameters: typing.Union['PropPipePipeTargetLambdaFunctionParameters', dict] = attr.ib(
+    p_LambdaFunctionParameters: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropPipePipeTargetLambdaFunctionParameters.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropPipePipeTargetLambdaFunctionParameters)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "LambdaFunctionParameters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipetargetparameters.html#cfn-pipes-pipe-pipetargetparameters-lambdafunctionparameters"""
-    p_RedshiftDataParameters: typing.Union['PropPipePipeTargetRedshiftDataParameters', dict] = attr.ib(
+    p_RedshiftDataParameters: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropPipePipeTargetRedshiftDataParameters.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropPipePipeTargetRedshiftDataParameters)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "RedshiftDataParameters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipetargetparameters.html#cfn-pipes-pipe-pipetargetparameters-redshiftdataparameters"""
-    p_SageMakerPipelineParameters: typing.Union['PropPipePipeTargetSageMakerPipelineParameters', dict] = attr.ib(
+    p_SageMakerPipelineParameters: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropPipePipeTargetSageMakerPipelineParameters.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropPipePipeTargetSageMakerPipelineParameters)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "SageMakerPipelineParameters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipetargetparameters.html#cfn-pipes-pipe-pipetargetparameters-sagemakerpipelineparameters"""
-    p_SqsQueueParameters: typing.Union['PropPipePipeTargetSqsQueueParameters', dict] = attr.ib(
+    p_SqsQueueParameters: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropPipePipeTargetSqsQueueParameters.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropPipePipeTargetSqsQueueParameters)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "SqsQueueParameters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipetargetparameters.html#cfn-pipes-pipe-pipetargetparameters-sqsqueueparameters"""
-    p_StepFunctionStateMachineParameters: typing.Union['PropPipePipeTargetStateMachineParameters', dict] = attr.ib(
+    p_StepFunctionStateMachineParameters: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropPipePipeTargetStateMachineParameters.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropPipePipeTargetStateMachineParameters)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "StepFunctionStateMachineParameters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipetargetparameters.html#cfn-pipes-pipe-pipetargetparameters-stepfunctionstatemachineparameters"""
@@ -1831,17 +1807,15 @@ class PropPipePipeSourceParameters(Property):
     """
     AWS_OBJECT_TYPE = "AWS::Pipes::Pipe.PipeSourceParameters"
     
-    p_ActiveMQBrokerParameters: typing.Union['PropPipePipeSourceActiveMQBrokerParameters', dict] = attr.ib(
+    p_ActiveMQBrokerParameters: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropPipePipeSourceActiveMQBrokerParameters.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropPipePipeSourceActiveMQBrokerParameters)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "ActiveMQBrokerParameters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipesourceparameters.html#cfn-pipes-pipe-pipesourceparameters-activemqbrokerparameters"""
-    p_DynamoDBStreamParameters: typing.Union['PropPipePipeSourceDynamoDBStreamParameters', dict] = attr.ib(
+    p_DynamoDBStreamParameters: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropPipePipeSourceDynamoDBStreamParameters.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropPipePipeSourceDynamoDBStreamParameters)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "DynamoDBStreamParameters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipesourceparameters.html#cfn-pipes-pipe-pipesourceparameters-dynamodbstreamparameters"""
@@ -1852,38 +1826,33 @@ class PropPipePipeSourceParameters(Property):
         metadata={AttrMeta.PROPERTY_NAME: "FilterCriteria"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipesourceparameters.html#cfn-pipes-pipe-pipesourceparameters-filtercriteria"""
-    p_KinesisStreamParameters: typing.Union['PropPipePipeSourceKinesisStreamParameters', dict] = attr.ib(
+    p_KinesisStreamParameters: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropPipePipeSourceKinesisStreamParameters.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropPipePipeSourceKinesisStreamParameters)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "KinesisStreamParameters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipesourceparameters.html#cfn-pipes-pipe-pipesourceparameters-kinesisstreamparameters"""
-    p_ManagedStreamingKafkaParameters: typing.Union['PropPipePipeSourceManagedStreamingKafkaParameters', dict] = attr.ib(
+    p_ManagedStreamingKafkaParameters: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropPipePipeSourceManagedStreamingKafkaParameters.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropPipePipeSourceManagedStreamingKafkaParameters)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "ManagedStreamingKafkaParameters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipesourceparameters.html#cfn-pipes-pipe-pipesourceparameters-managedstreamingkafkaparameters"""
-    p_RabbitMQBrokerParameters: typing.Union['PropPipePipeSourceRabbitMQBrokerParameters', dict] = attr.ib(
+    p_RabbitMQBrokerParameters: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropPipePipeSourceRabbitMQBrokerParameters.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropPipePipeSourceRabbitMQBrokerParameters)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "RabbitMQBrokerParameters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipesourceparameters.html#cfn-pipes-pipe-pipesourceparameters-rabbitmqbrokerparameters"""
-    p_SelfManagedKafkaParameters: typing.Union['PropPipePipeSourceSelfManagedKafkaParameters', dict] = attr.ib(
+    p_SelfManagedKafkaParameters: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropPipePipeSourceSelfManagedKafkaParameters.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropPipePipeSourceSelfManagedKafkaParameters)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "SelfManagedKafkaParameters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipesourceparameters.html#cfn-pipes-pipe-pipesourceparameters-selfmanagedkafkaparameters"""
-    p_SqsQueueParameters: typing.Union['PropPipePipeSourceSqsQueueParameters', dict] = attr.ib(
+    p_SqsQueueParameters: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropPipePipeSourceSqsQueueParameters.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropPipePipeSourceSqsQueueParameters)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "SqsQueueParameters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-pipes-pipe-pipesourceparameters.html#cfn-pipes-pipe-pipesourceparameters-sqsqueueparameters"""
@@ -1918,70 +1887,148 @@ class Pipe(Resource):
     rp_RoleArn: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "RoleArn"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "RoleArn",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pipes-pipe.html#cfn-pipes-pipe-rolearn"""
     rp_Source: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Source"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Source",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pipes-pipe.html#cfn-pipes-pipe-source"""
     rp_Target: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Target"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Target",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pipes-pipe.html#cfn-pipes-pipe-target"""
     p_Description: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Description"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Description",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pipes-pipe.html#cfn-pipes-pipe-description"""
     p_DesiredState: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "DesiredState"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "DesiredState",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pipes-pipe.html#cfn-pipes-pipe-desiredstate"""
     p_Enrichment: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Enrichment"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Enrichment",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pipes-pipe.html#cfn-pipes-pipe-enrichment"""
     p_EnrichmentParameters: typing.Union['PropPipePipeEnrichmentParameters', dict] = attr.ib(
         default=None,
         converter=PropPipePipeEnrichmentParameters.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropPipePipeEnrichmentParameters)),
-        metadata={AttrMeta.PROPERTY_NAME: "EnrichmentParameters"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "EnrichmentParameters",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'PipeEnrichmentParameters',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pipes-pipe.html#cfn-pipes-pipe-enrichmentparameters"""
     p_Name: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Name"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Name",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pipes-pipe.html#cfn-pipes-pipe-name"""
     p_SourceParameters: typing.Union['PropPipePipeSourceParameters', dict] = attr.ib(
         default=None,
         converter=PropPipePipeSourceParameters.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropPipePipeSourceParameters)),
-        metadata={AttrMeta.PROPERTY_NAME: "SourceParameters"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "SourceParameters",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'PipeSourceParameters',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pipes-pipe.html#cfn-pipes-pipe-sourceparameters"""
     p_TargetParameters: typing.Union['PropPipePipeTargetParameters', dict] = attr.ib(
         default=None,
         converter=PropPipePipeTargetParameters.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropPipePipeTargetParameters)),
-        metadata={AttrMeta.PROPERTY_NAME: "TargetParameters"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "TargetParameters",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'PipeTargetParameters',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pipes-pipe.html#cfn-pipes-pipe-targetparameters"""
     p_Tags: typing.Dict[str, TypeHint.intrinsic_str] = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.deep_mapping(key_validator=attr.validators.instance_of(str), value_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type))),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'Map',
+                "PrimitiveItemType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-pipes-pipe.html#cfn-pipes-pipe-tags"""
 

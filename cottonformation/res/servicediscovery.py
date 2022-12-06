@@ -15,40 +15,6 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class PropServiceHealthCheckConfig(Property):
-    """
-    AWS Object Type = "AWS::ServiceDiscovery::Service.HealthCheckConfig"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicediscovery-service-healthcheckconfig.html
-
-    Property Document:
-    
-    - ``rp_Type``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicediscovery-service-healthcheckconfig.html#cfn-servicediscovery-service-healthcheckconfig-type
-    - ``p_FailureThreshold``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicediscovery-service-healthcheckconfig.html#cfn-servicediscovery-service-healthcheckconfig-failurethreshold
-    - ``p_ResourcePath``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicediscovery-service-healthcheckconfig.html#cfn-servicediscovery-service-healthcheckconfig-resourcepath
-    """
-    AWS_OBJECT_TYPE = "AWS::ServiceDiscovery::Service.HealthCheckConfig"
-    
-    rp_Type: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Type"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicediscovery-service-healthcheckconfig.html#cfn-servicediscovery-service-healthcheckconfig-type"""
-    p_FailureThreshold: float = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(float)),
-        metadata={AttrMeta.PROPERTY_NAME: "FailureThreshold"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicediscovery-service-healthcheckconfig.html#cfn-servicediscovery-service-healthcheckconfig-failurethreshold"""
-    p_ResourcePath: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "ResourcePath"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicediscovery-service-healthcheckconfig.html#cfn-servicediscovery-service-healthcheckconfig-resourcepath"""
-
-@attr.s
 class PropPrivateDnsNamespaceSOA(Property):
     """
     AWS Object Type = "AWS::ServiceDiscovery::PrivateDnsNamespace.SOA"
@@ -110,6 +76,60 @@ class PropPrivateDnsNamespacePrivateDnsPropertiesMutable(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicediscovery-privatednsnamespace-privatednspropertiesmutable.html#cfn-servicediscovery-privatednsnamespace-privatednspropertiesmutable-soa"""
 
 @attr.s
+class PropPrivateDnsNamespaceProperties(Property):
+    """
+    AWS Object Type = "AWS::ServiceDiscovery::PrivateDnsNamespace.Properties"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicediscovery-privatednsnamespace-properties.html
+
+    Property Document:
+    
+    - ``p_DnsProperties``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicediscovery-privatednsnamespace-properties.html#cfn-servicediscovery-privatednsnamespace-properties-dnsproperties
+    """
+    AWS_OBJECT_TYPE = "AWS::ServiceDiscovery::PrivateDnsNamespace.Properties"
+    
+    p_DnsProperties: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "DnsProperties"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicediscovery-privatednsnamespace-properties.html#cfn-servicediscovery-privatednsnamespace-properties-dnsproperties"""
+
+@attr.s
+class PropServiceHealthCheckConfig(Property):
+    """
+    AWS Object Type = "AWS::ServiceDiscovery::Service.HealthCheckConfig"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicediscovery-service-healthcheckconfig.html
+
+    Property Document:
+    
+    - ``rp_Type``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicediscovery-service-healthcheckconfig.html#cfn-servicediscovery-service-healthcheckconfig-type
+    - ``p_FailureThreshold``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicediscovery-service-healthcheckconfig.html#cfn-servicediscovery-service-healthcheckconfig-failurethreshold
+    - ``p_ResourcePath``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicediscovery-service-healthcheckconfig.html#cfn-servicediscovery-service-healthcheckconfig-resourcepath
+    """
+    AWS_OBJECT_TYPE = "AWS::ServiceDiscovery::Service.HealthCheckConfig"
+    
+    rp_Type: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "Type"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicediscovery-service-healthcheckconfig.html#cfn-servicediscovery-service-healthcheckconfig-type"""
+    p_FailureThreshold: float = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(float)),
+        metadata={AttrMeta.PROPERTY_NAME: "FailureThreshold"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicediscovery-service-healthcheckconfig.html#cfn-servicediscovery-service-healthcheckconfig-failurethreshold"""
+    p_ResourcePath: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "ResourcePath"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicediscovery-service-healthcheckconfig.html#cfn-servicediscovery-service-healthcheckconfig-resourcepath"""
+
+@attr.s
 class PropServiceHealthCheckCustomConfig(Property):
     """
     AWS Object Type = "AWS::ServiceDiscovery::Service.HealthCheckCustomConfig"
@@ -157,6 +177,27 @@ class PropServiceDnsRecord(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicediscovery-service-dnsrecord.html#cfn-servicediscovery-service-dnsrecord-type"""
 
 @attr.s
+class PropPublicDnsNamespacePublicDnsPropertiesMutable(Property):
+    """
+    AWS Object Type = "AWS::ServiceDiscovery::PublicDnsNamespace.PublicDnsPropertiesMutable"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicediscovery-publicdnsnamespace-publicdnspropertiesmutable.html
+
+    Property Document:
+    
+    - ``p_SOA``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicediscovery-publicdnsnamespace-publicdnspropertiesmutable.html#cfn-servicediscovery-publicdnsnamespace-publicdnspropertiesmutable-soa
+    """
+    AWS_OBJECT_TYPE = "AWS::ServiceDiscovery::PublicDnsNamespace.PublicDnsPropertiesMutable"
+    
+    p_SOA: typing.Union['PropPublicDnsNamespaceSOA', dict] = attr.ib(
+        default=None,
+        converter=PropPublicDnsNamespaceSOA.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropPublicDnsNamespaceSOA)),
+        metadata={AttrMeta.PROPERTY_NAME: "SOA"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicediscovery-publicdnsnamespace-publicdnspropertiesmutable.html#cfn-servicediscovery-publicdnsnamespace-publicdnspropertiesmutable-soa"""
+
+@attr.s
 class PropServiceDnsConfig(Property):
     """
     AWS Object Type = "AWS::ServiceDiscovery::Service.DnsConfig"
@@ -192,48 +233,6 @@ class PropServiceDnsConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicediscovery-service-dnsconfig.html#cfn-servicediscovery-service-dnsconfig-routingpolicy"""
 
 @attr.s
-class PropPublicDnsNamespacePublicDnsPropertiesMutable(Property):
-    """
-    AWS Object Type = "AWS::ServiceDiscovery::PublicDnsNamespace.PublicDnsPropertiesMutable"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicediscovery-publicdnsnamespace-publicdnspropertiesmutable.html
-
-    Property Document:
-    
-    - ``p_SOA``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicediscovery-publicdnsnamespace-publicdnspropertiesmutable.html#cfn-servicediscovery-publicdnsnamespace-publicdnspropertiesmutable-soa
-    """
-    AWS_OBJECT_TYPE = "AWS::ServiceDiscovery::PublicDnsNamespace.PublicDnsPropertiesMutable"
-    
-    p_SOA: typing.Union['PropPublicDnsNamespaceSOA', dict] = attr.ib(
-        default=None,
-        converter=PropPublicDnsNamespaceSOA.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropPublicDnsNamespaceSOA)),
-        metadata={AttrMeta.PROPERTY_NAME: "SOA"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicediscovery-publicdnsnamespace-publicdnspropertiesmutable.html#cfn-servicediscovery-publicdnsnamespace-publicdnspropertiesmutable-soa"""
-
-@attr.s
-class PropPrivateDnsNamespaceProperties(Property):
-    """
-    AWS Object Type = "AWS::ServiceDiscovery::PrivateDnsNamespace.Properties"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicediscovery-privatednsnamespace-properties.html
-
-    Property Document:
-    
-    - ``p_DnsProperties``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicediscovery-privatednsnamespace-properties.html#cfn-servicediscovery-privatednsnamespace-properties-dnsproperties
-    """
-    AWS_OBJECT_TYPE = "AWS::ServiceDiscovery::PrivateDnsNamespace.Properties"
-    
-    p_DnsProperties: typing.Union['PropPrivateDnsNamespacePrivateDnsPropertiesMutable', dict] = attr.ib(
-        default=None,
-        converter=PropPrivateDnsNamespacePrivateDnsPropertiesMutable.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropPrivateDnsNamespacePrivateDnsPropertiesMutable)),
-        metadata={AttrMeta.PROPERTY_NAME: "DnsProperties"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicediscovery-privatednsnamespace-properties.html#cfn-servicediscovery-privatednsnamespace-properties-dnsproperties"""
-
-@attr.s
 class PropPublicDnsNamespaceProperties(Property):
     """
     AWS Object Type = "AWS::ServiceDiscovery::PublicDnsNamespace.Properties"
@@ -246,10 +245,9 @@ class PropPublicDnsNamespaceProperties(Property):
     """
     AWS_OBJECT_TYPE = "AWS::ServiceDiscovery::PublicDnsNamespace.Properties"
     
-    p_DnsProperties: typing.Union['PropPublicDnsNamespacePublicDnsPropertiesMutable', dict] = attr.ib(
+    p_DnsProperties: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropPublicDnsNamespacePublicDnsPropertiesMutable.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropPublicDnsNamespacePublicDnsPropertiesMutable)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "DnsProperties"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicediscovery-publicdnsnamespace-properties.html#cfn-servicediscovery-publicdnsnamespace-properties-dnsproperties"""
@@ -281,53 +279,110 @@ class Service(Resource):
     p_Description: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Description"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Description",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-service.html#cfn-servicediscovery-service-description"""
     p_DnsConfig: typing.Union['PropServiceDnsConfig', dict] = attr.ib(
         default=None,
         converter=PropServiceDnsConfig.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropServiceDnsConfig)),
-        metadata={AttrMeta.PROPERTY_NAME: "DnsConfig"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "DnsConfig",
+            AttrMeta.DATA: {
+                "Type": 'DnsConfig',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-service.html#cfn-servicediscovery-service-dnsconfig"""
     p_HealthCheckConfig: typing.Union['PropServiceHealthCheckConfig', dict] = attr.ib(
         default=None,
         converter=PropServiceHealthCheckConfig.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropServiceHealthCheckConfig)),
-        metadata={AttrMeta.PROPERTY_NAME: "HealthCheckConfig"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "HealthCheckConfig",
+            AttrMeta.DATA: {
+                "Type": 'HealthCheckConfig',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-service.html#cfn-servicediscovery-service-healthcheckconfig"""
     p_HealthCheckCustomConfig: typing.Union['PropServiceHealthCheckCustomConfig', dict] = attr.ib(
         default=None,
         converter=PropServiceHealthCheckCustomConfig.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropServiceHealthCheckCustomConfig)),
-        metadata={AttrMeta.PROPERTY_NAME: "HealthCheckCustomConfig"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "HealthCheckCustomConfig",
+            AttrMeta.DATA: {
+                "Type": 'HealthCheckCustomConfig',
+                "Required": False,
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-service.html#cfn-servicediscovery-service-healthcheckcustomconfig"""
     p_Name: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Name"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Name",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-service.html#cfn-servicediscovery-service-name"""
     p_NamespaceId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "NamespaceId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "NamespaceId",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-service.html#cfn-servicediscovery-service-namespaceid"""
     p_Type: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Type"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Type",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-service.html#cfn-servicediscovery-service-type"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "Type": 'List',
+                "Required": False,
+                "ItemType": 'Tag',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-service.html#cfn-servicediscovery-service-tags"""
 
@@ -368,27 +423,56 @@ class PublicDnsNamespace(Resource):
     rp_Name: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Name"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Name",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-publicdnsnamespace.html#cfn-servicediscovery-publicdnsnamespace-name"""
     p_Description: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Description"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Description",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-publicdnsnamespace.html#cfn-servicediscovery-publicdnsnamespace-description"""
     p_Properties: typing.Union['PropPublicDnsNamespaceProperties', dict] = attr.ib(
         default=None,
         converter=PropPublicDnsNamespaceProperties.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropPublicDnsNamespaceProperties)),
-        metadata={AttrMeta.PROPERTY_NAME: "Properties"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Properties",
+            AttrMeta.DATA: {
+                "Type": 'Properties',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-publicdnsnamespace.html#cfn-servicediscovery-publicdnsnamespace-properties"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "Type": 'List',
+                "Required": False,
+                "ItemType": 'Tag',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-publicdnsnamespace.html#cfn-servicediscovery-publicdnsnamespace-tags"""
 
@@ -428,19 +512,40 @@ class Instance(Resource):
     rp_InstanceAttributes: dict = attr.ib(
         default=None,
         validator=attr.validators.instance_of(dict),
-        metadata={AttrMeta.PROPERTY_NAME: "InstanceAttributes"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "InstanceAttributes",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'Json',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-instance.html#cfn-servicediscovery-instance-instanceattributes"""
     rp_ServiceId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "ServiceId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ServiceId",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-instance.html#cfn-servicediscovery-instance-serviceid"""
     p_InstanceId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "InstanceId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "InstanceId",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-instance.html#cfn-servicediscovery-instance-instanceid"""
 
@@ -465,20 +570,42 @@ class HttpNamespace(Resource):
     rp_Name: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Name"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Name",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-httpnamespace.html#cfn-servicediscovery-httpnamespace-name"""
     p_Description: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Description"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Description",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-httpnamespace.html#cfn-servicediscovery-httpnamespace-description"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "Type": 'List',
+                "Required": False,
+                "ItemType": 'Tag',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-httpnamespace.html#cfn-servicediscovery-httpnamespace-tags"""
 
@@ -515,33 +642,69 @@ class PrivateDnsNamespace(Resource):
     rp_Name: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Name"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Name",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-privatednsnamespace.html#cfn-servicediscovery-privatednsnamespace-name"""
     rp_Vpc: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Vpc"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Vpc",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-privatednsnamespace.html#cfn-servicediscovery-privatednsnamespace-vpc"""
     p_Description: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Description"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Description",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-privatednsnamespace.html#cfn-servicediscovery-privatednsnamespace-description"""
     p_Properties: typing.Union['PropPrivateDnsNamespaceProperties', dict] = attr.ib(
         default=None,
         converter=PropPrivateDnsNamespaceProperties.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropPrivateDnsNamespaceProperties)),
-        metadata={AttrMeta.PROPERTY_NAME: "Properties"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Properties",
+            AttrMeta.DATA: {
+                "Type": 'Properties',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-privatednsnamespace.html#cfn-servicediscovery-privatednsnamespace-properties"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "Type": 'List',
+                "Required": False,
+                "ItemType": 'Tag',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicediscovery-privatednsnamespace.html#cfn-servicediscovery-privatednsnamespace-tags"""
 

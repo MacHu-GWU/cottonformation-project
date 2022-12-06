@@ -15,17 +15,248 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class PropGraphQLApiTags(Property):
+class PropResolverLambdaConflictHandlerConfig(Property):
     """
-    AWS Object Type = "AWS::AppSync::GraphQLApi.Tags"
+    AWS Object Type = "AWS::AppSync::Resolver.LambdaConflictHandlerConfig"
 
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-tags.html
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-resolver-lambdaconflicthandlerconfig.html
 
     Property Document:
     
+    - ``p_LambdaConflictHandlerArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-resolver-lambdaconflicthandlerconfig.html#cfn-appsync-resolver-lambdaconflicthandlerconfig-lambdaconflicthandlerarn
     """
-    AWS_OBJECT_TYPE = "AWS::AppSync::GraphQLApi.Tags"
+    AWS_OBJECT_TYPE = "AWS::AppSync::Resolver.LambdaConflictHandlerConfig"
     
+    p_LambdaConflictHandlerArn: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "LambdaConflictHandlerArn"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-resolver-lambdaconflicthandlerconfig.html#cfn-appsync-resolver-lambdaconflicthandlerconfig-lambdaconflicthandlerarn"""
+
+@attr.s
+class PropGraphQLApiCognitoUserPoolConfig(Property):
+    """
+    AWS Object Type = "AWS::AppSync::GraphQLApi.CognitoUserPoolConfig"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-cognitouserpoolconfig.html
+
+    Property Document:
+    
+    - ``p_AppIdClientRegex``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-cognitouserpoolconfig.html#cfn-appsync-graphqlapi-cognitouserpoolconfig-appidclientregex
+    - ``p_AwsRegion``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-cognitouserpoolconfig.html#cfn-appsync-graphqlapi-cognitouserpoolconfig-awsregion
+    - ``p_UserPoolId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-cognitouserpoolconfig.html#cfn-appsync-graphqlapi-cognitouserpoolconfig-userpoolid
+    """
+    AWS_OBJECT_TYPE = "AWS::AppSync::GraphQLApi.CognitoUserPoolConfig"
+    
+    p_AppIdClientRegex: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "AppIdClientRegex"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-cognitouserpoolconfig.html#cfn-appsync-graphqlapi-cognitouserpoolconfig-appidclientregex"""
+    p_AwsRegion: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "AwsRegion"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-cognitouserpoolconfig.html#cfn-appsync-graphqlapi-cognitouserpoolconfig-awsregion"""
+    p_UserPoolId: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "UserPoolId"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-cognitouserpoolconfig.html#cfn-appsync-graphqlapi-cognitouserpoolconfig-userpoolid"""
+
+@attr.s
+class PropResolverAppSyncRuntime(Property):
+    """
+    AWS Object Type = "AWS::AppSync::Resolver.AppSyncRuntime"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-resolver-appsyncruntime.html
+
+    Property Document:
+    
+    - ``rp_Name``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-resolver-appsyncruntime.html#cfn-appsync-resolver-appsyncruntime-name
+    - ``rp_RuntimeVersion``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-resolver-appsyncruntime.html#cfn-appsync-resolver-appsyncruntime-runtimeversion
+    """
+    AWS_OBJECT_TYPE = "AWS::AppSync::Resolver.AppSyncRuntime"
+    
+    rp_Name: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "Name"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-resolver-appsyncruntime.html#cfn-appsync-resolver-appsyncruntime-name"""
+    rp_RuntimeVersion: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "RuntimeVersion"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-resolver-appsyncruntime.html#cfn-appsync-resolver-appsyncruntime-runtimeversion"""
+
+@attr.s
+class PropDataSourceAwsIamConfig(Property):
+    """
+    AWS Object Type = "AWS::AppSync::DataSource.AwsIamConfig"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-awsiamconfig.html
+
+    Property Document:
+    
+    - ``p_SigningRegion``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-awsiamconfig.html#cfn-appsync-datasource-awsiamconfig-signingregion
+    - ``p_SigningServiceName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-awsiamconfig.html#cfn-appsync-datasource-awsiamconfig-signingservicename
+    """
+    AWS_OBJECT_TYPE = "AWS::AppSync::DataSource.AwsIamConfig"
+    
+    p_SigningRegion: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "SigningRegion"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-awsiamconfig.html#cfn-appsync-datasource-awsiamconfig-signingregion"""
+    p_SigningServiceName: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "SigningServiceName"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-awsiamconfig.html#cfn-appsync-datasource-awsiamconfig-signingservicename"""
+
+@attr.s
+class PropDataSourceOpenSearchServiceConfig(Property):
+    """
+    AWS Object Type = "AWS::AppSync::DataSource.OpenSearchServiceConfig"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-opensearchserviceconfig.html
+
+    Property Document:
+    
+    - ``rp_AwsRegion``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-opensearchserviceconfig.html#cfn-appsync-datasource-opensearchserviceconfig-awsregion
+    - ``rp_Endpoint``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-opensearchserviceconfig.html#cfn-appsync-datasource-opensearchserviceconfig-endpoint
+    """
+    AWS_OBJECT_TYPE = "AWS::AppSync::DataSource.OpenSearchServiceConfig"
+    
+    rp_AwsRegion: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "AwsRegion"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-opensearchserviceconfig.html#cfn-appsync-datasource-opensearchserviceconfig-awsregion"""
+    rp_Endpoint: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "Endpoint"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-opensearchserviceconfig.html#cfn-appsync-datasource-opensearchserviceconfig-endpoint"""
+
+@attr.s
+class PropDataSourceAuthorizationConfig(Property):
+    """
+    AWS Object Type = "AWS::AppSync::DataSource.AuthorizationConfig"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-authorizationconfig.html
+
+    Property Document:
+    
+    - ``rp_AuthorizationType``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-authorizationconfig.html#cfn-appsync-datasource-authorizationconfig-authorizationtype
+    - ``p_AwsIamConfig``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-authorizationconfig.html#cfn-appsync-datasource-authorizationconfig-awsiamconfig
+    """
+    AWS_OBJECT_TYPE = "AWS::AppSync::DataSource.AuthorizationConfig"
+    
+    rp_AuthorizationType: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "AuthorizationType"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-authorizationconfig.html#cfn-appsync-datasource-authorizationconfig-authorizationtype"""
+    p_AwsIamConfig: typing.Union['PropDataSourceAwsIamConfig', dict] = attr.ib(
+        default=None,
+        converter=PropDataSourceAwsIamConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataSourceAwsIamConfig)),
+        metadata={AttrMeta.PROPERTY_NAME: "AwsIamConfig"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-authorizationconfig.html#cfn-appsync-datasource-authorizationconfig-awsiamconfig"""
+
+@attr.s
+class PropGraphQLApiLogConfig(Property):
+    """
+    AWS Object Type = "AWS::AppSync::GraphQLApi.LogConfig"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-logconfig.html
+
+    Property Document:
+    
+    - ``p_CloudWatchLogsRoleArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-logconfig.html#cfn-appsync-graphqlapi-logconfig-cloudwatchlogsrolearn
+    - ``p_ExcludeVerboseContent``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-logconfig.html#cfn-appsync-graphqlapi-logconfig-excludeverbosecontent
+    - ``p_FieldLogLevel``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-logconfig.html#cfn-appsync-graphqlapi-logconfig-fieldloglevel
+    """
+    AWS_OBJECT_TYPE = "AWS::AppSync::GraphQLApi.LogConfig"
+    
+    p_CloudWatchLogsRoleArn: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "CloudWatchLogsRoleArn"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-logconfig.html#cfn-appsync-graphqlapi-logconfig-cloudwatchlogsrolearn"""
+    p_ExcludeVerboseContent: bool = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(bool)),
+        metadata={AttrMeta.PROPERTY_NAME: "ExcludeVerboseContent"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-logconfig.html#cfn-appsync-graphqlapi-logconfig-excludeverbosecontent"""
+    p_FieldLogLevel: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "FieldLogLevel"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-logconfig.html#cfn-appsync-graphqlapi-logconfig-fieldloglevel"""
+
+@attr.s
+class PropFunctionConfigurationLambdaConflictHandlerConfig(Property):
+    """
+    AWS Object Type = "AWS::AppSync::FunctionConfiguration.LambdaConflictHandlerConfig"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-functionconfiguration-lambdaconflicthandlerconfig.html
+
+    Property Document:
+    
+    - ``p_LambdaConflictHandlerArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-functionconfiguration-lambdaconflicthandlerconfig.html#cfn-appsync-functionconfiguration-lambdaconflicthandlerconfig-lambdaconflicthandlerarn
+    """
+    AWS_OBJECT_TYPE = "AWS::AppSync::FunctionConfiguration.LambdaConflictHandlerConfig"
+    
+    p_LambdaConflictHandlerArn: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "LambdaConflictHandlerArn"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-functionconfiguration-lambdaconflicthandlerconfig.html#cfn-appsync-functionconfiguration-lambdaconflicthandlerconfig-lambdaconflicthandlerarn"""
+
+@attr.s
+class PropFunctionConfigurationAppSyncRuntime(Property):
+    """
+    AWS Object Type = "AWS::AppSync::FunctionConfiguration.AppSyncRuntime"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-functionconfiguration-appsyncruntime.html
+
+    Property Document:
+    
+    - ``rp_Name``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-functionconfiguration-appsyncruntime.html#cfn-appsync-functionconfiguration-appsyncruntime-name
+    - ``rp_RuntimeVersion``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-functionconfiguration-appsyncruntime.html#cfn-appsync-functionconfiguration-appsyncruntime-runtimeversion
+    """
+    AWS_OBJECT_TYPE = "AWS::AppSync::FunctionConfiguration.AppSyncRuntime"
+    
+    rp_Name: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "Name"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-functionconfiguration-appsyncruntime.html#cfn-appsync-functionconfiguration-appsyncruntime-name"""
+    rp_RuntimeVersion: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "RuntimeVersion"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-functionconfiguration-appsyncruntime.html#cfn-appsync-functionconfiguration-appsyncruntime-runtimeversion"""
 
 @attr.s
 class PropGraphQLApiLambdaAuthorizerConfig(Property):
@@ -60,26 +291,6 @@ class PropGraphQLApiLambdaAuthorizerConfig(Property):
         metadata={AttrMeta.PROPERTY_NAME: "IdentityValidationExpression"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-lambdaauthorizerconfig.html#cfn-appsync-graphqlapi-lambdaauthorizerconfig-identityvalidationexpression"""
-
-@attr.s
-class PropResolverLambdaConflictHandlerConfig(Property):
-    """
-    AWS Object Type = "AWS::AppSync::Resolver.LambdaConflictHandlerConfig"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-resolver-lambdaconflicthandlerconfig.html
-
-    Property Document:
-    
-    - ``p_LambdaConflictHandlerArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-resolver-lambdaconflicthandlerconfig.html#cfn-appsync-resolver-lambdaconflicthandlerconfig-lambdaconflicthandlerarn
-    """
-    AWS_OBJECT_TYPE = "AWS::AppSync::Resolver.LambdaConflictHandlerConfig"
-    
-    p_LambdaConflictHandlerArn: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "LambdaConflictHandlerArn"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-resolver-lambdaconflicthandlerconfig.html#cfn-appsync-resolver-lambdaconflicthandlerconfig-lambdaconflicthandlerarn"""
 
 @attr.s
 class PropResolverPipelineConfig(Property):
@@ -163,105 +374,32 @@ class PropDataSourceLambdaConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-lambdaconfig.html#cfn-appsync-datasource-lambdaconfig-lambdafunctionarn"""
 
 @attr.s
-class PropGraphQLApiCognitoUserPoolConfig(Property):
+class PropDataSourceHttpConfig(Property):
     """
-    AWS Object Type = "AWS::AppSync::GraphQLApi.CognitoUserPoolConfig"
+    AWS Object Type = "AWS::AppSync::DataSource.HttpConfig"
 
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-cognitouserpoolconfig.html
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-httpconfig.html
 
     Property Document:
     
-    - ``p_AppIdClientRegex``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-cognitouserpoolconfig.html#cfn-appsync-graphqlapi-cognitouserpoolconfig-appidclientregex
-    - ``p_AwsRegion``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-cognitouserpoolconfig.html#cfn-appsync-graphqlapi-cognitouserpoolconfig-awsregion
-    - ``p_UserPoolId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-cognitouserpoolconfig.html#cfn-appsync-graphqlapi-cognitouserpoolconfig-userpoolid
+    - ``rp_Endpoint``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-httpconfig.html#cfn-appsync-datasource-httpconfig-endpoint
+    - ``p_AuthorizationConfig``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-httpconfig.html#cfn-appsync-datasource-httpconfig-authorizationconfig
     """
-    AWS_OBJECT_TYPE = "AWS::AppSync::GraphQLApi.CognitoUserPoolConfig"
+    AWS_OBJECT_TYPE = "AWS::AppSync::DataSource.HttpConfig"
     
-    p_AppIdClientRegex: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "AppIdClientRegex"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-cognitouserpoolconfig.html#cfn-appsync-graphqlapi-cognitouserpoolconfig-appidclientregex"""
-    p_AwsRegion: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "AwsRegion"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-cognitouserpoolconfig.html#cfn-appsync-graphqlapi-cognitouserpoolconfig-awsregion"""
-    p_UserPoolId: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "UserPoolId"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-cognitouserpoolconfig.html#cfn-appsync-graphqlapi-cognitouserpoolconfig-userpoolid"""
-
-@attr.s
-class PropGraphQLApiAdditionalAuthenticationProviders(Property):
-    """
-    AWS Object Type = "AWS::AppSync::GraphQLApi.AdditionalAuthenticationProviders"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-additionalauthenticationproviders.html
-
-    Property Document:
-    
-    """
-    AWS_OBJECT_TYPE = "AWS::AppSync::GraphQLApi.AdditionalAuthenticationProviders"
-    
-
-@attr.s
-class PropDataSourceAwsIamConfig(Property):
-    """
-    AWS Object Type = "AWS::AppSync::DataSource.AwsIamConfig"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-awsiamconfig.html
-
-    Property Document:
-    
-    - ``p_SigningRegion``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-awsiamconfig.html#cfn-appsync-datasource-awsiamconfig-signingregion
-    - ``p_SigningServiceName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-awsiamconfig.html#cfn-appsync-datasource-awsiamconfig-signingservicename
-    """
-    AWS_OBJECT_TYPE = "AWS::AppSync::DataSource.AwsIamConfig"
-    
-    p_SigningRegion: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "SigningRegion"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-awsiamconfig.html#cfn-appsync-datasource-awsiamconfig-signingregion"""
-    p_SigningServiceName: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "SigningServiceName"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-awsiamconfig.html#cfn-appsync-datasource-awsiamconfig-signingservicename"""
-
-@attr.s
-class PropDataSourceOpenSearchServiceConfig(Property):
-    """
-    AWS Object Type = "AWS::AppSync::DataSource.OpenSearchServiceConfig"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-opensearchserviceconfig.html
-
-    Property Document:
-    
-    - ``rp_AwsRegion``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-opensearchserviceconfig.html#cfn-appsync-datasource-opensearchserviceconfig-awsregion
-    - ``rp_Endpoint``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-opensearchserviceconfig.html#cfn-appsync-datasource-opensearchserviceconfig-endpoint
-    """
-    AWS_OBJECT_TYPE = "AWS::AppSync::DataSource.OpenSearchServiceConfig"
-    
-    rp_AwsRegion: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "AwsRegion"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-opensearchserviceconfig.html#cfn-appsync-datasource-opensearchserviceconfig-awsregion"""
     rp_Endpoint: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
         metadata={AttrMeta.PROPERTY_NAME: "Endpoint"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-opensearchserviceconfig.html#cfn-appsync-datasource-opensearchserviceconfig-endpoint"""
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-httpconfig.html#cfn-appsync-datasource-httpconfig-endpoint"""
+    p_AuthorizationConfig: typing.Union['PropDataSourceAuthorizationConfig', dict] = attr.ib(
+        default=None,
+        converter=PropDataSourceAuthorizationConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataSourceAuthorizationConfig)),
+        metadata={AttrMeta.PROPERTY_NAME: "AuthorizationConfig"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-httpconfig.html#cfn-appsync-datasource-httpconfig-authorizationconfig"""
 
 @attr.s
 class PropGraphQLApiUserPoolConfig(Property):
@@ -305,34 +443,6 @@ class PropGraphQLApiUserPoolConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-userpoolconfig.html#cfn-appsync-graphqlapi-userpoolconfig-userpoolid"""
 
 @attr.s
-class PropDataSourceAuthorizationConfig(Property):
-    """
-    AWS Object Type = "AWS::AppSync::DataSource.AuthorizationConfig"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-authorizationconfig.html
-
-    Property Document:
-    
-    - ``rp_AuthorizationType``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-authorizationconfig.html#cfn-appsync-datasource-authorizationconfig-authorizationtype
-    - ``p_AwsIamConfig``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-authorizationconfig.html#cfn-appsync-datasource-authorizationconfig-awsiamconfig
-    """
-    AWS_OBJECT_TYPE = "AWS::AppSync::DataSource.AuthorizationConfig"
-    
-    rp_AuthorizationType: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "AuthorizationType"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-authorizationconfig.html#cfn-appsync-datasource-authorizationconfig-authorizationtype"""
-    p_AwsIamConfig: typing.Union['PropDataSourceAwsIamConfig', dict] = attr.ib(
-        default=None,
-        converter=PropDataSourceAwsIamConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropDataSourceAwsIamConfig)),
-        metadata={AttrMeta.PROPERTY_NAME: "AwsIamConfig"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-authorizationconfig.html#cfn-appsync-datasource-authorizationconfig-awsiamconfig"""
-
-@attr.s
 class PropResolverSyncConfig(Property):
     """
     AWS Object Type = "AWS::AppSync::Resolver.SyncConfig"
@@ -366,40 +476,6 @@ class PropResolverSyncConfig(Property):
         metadata={AttrMeta.PROPERTY_NAME: "LambdaConflictHandlerConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-resolver-syncconfig.html#cfn-appsync-resolver-syncconfig-lambdaconflicthandlerconfig"""
-
-@attr.s
-class PropGraphQLApiLogConfig(Property):
-    """
-    AWS Object Type = "AWS::AppSync::GraphQLApi.LogConfig"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-logconfig.html
-
-    Property Document:
-    
-    - ``p_CloudWatchLogsRoleArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-logconfig.html#cfn-appsync-graphqlapi-logconfig-cloudwatchlogsrolearn
-    - ``p_ExcludeVerboseContent``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-logconfig.html#cfn-appsync-graphqlapi-logconfig-excludeverbosecontent
-    - ``p_FieldLogLevel``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-logconfig.html#cfn-appsync-graphqlapi-logconfig-fieldloglevel
-    """
-    AWS_OBJECT_TYPE = "AWS::AppSync::GraphQLApi.LogConfig"
-    
-    p_CloudWatchLogsRoleArn: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "CloudWatchLogsRoleArn"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-logconfig.html#cfn-appsync-graphqlapi-logconfig-cloudwatchlogsrolearn"""
-    p_ExcludeVerboseContent: bool = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(bool)),
-        metadata={AttrMeta.PROPERTY_NAME: "ExcludeVerboseContent"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-logconfig.html#cfn-appsync-graphqlapi-logconfig-excludeverbosecontent"""
-    p_FieldLogLevel: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "FieldLogLevel"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-logconfig.html#cfn-appsync-graphqlapi-logconfig-fieldloglevel"""
 
 @attr.s
 class PropDataSourceRdsHttpEndpointConfig(Property):
@@ -475,70 +551,6 @@ class PropResolverCachingConfig(Property):
         metadata={AttrMeta.PROPERTY_NAME: "CachingKeys"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-resolver-cachingconfig.html#cfn-appsync-resolver-cachingconfig-cachingkeys"""
-
-@attr.s
-class PropGraphQLApiAdditionalAuthenticationProvider(Property):
-    """
-    AWS Object Type = "AWS::AppSync::GraphQLApi.AdditionalAuthenticationProvider"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-additionalauthenticationprovider.html
-
-    Property Document:
-    
-    - ``rp_AuthenticationType``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-additionalauthenticationprovider.html#cfn-appsync-graphqlapi-additionalauthenticationprovider-authenticationtype
-    - ``p_LambdaAuthorizerConfig``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-additionalauthenticationprovider.html#cfn-appsync-graphqlapi-additionalauthenticationprovider-lambdaauthorizerconfig
-    - ``p_OpenIDConnectConfig``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-additionalauthenticationprovider.html#cfn-appsync-graphqlapi-additionalauthenticationprovider-openidconnectconfig
-    - ``p_UserPoolConfig``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-additionalauthenticationprovider.html#cfn-appsync-graphqlapi-additionalauthenticationprovider-userpoolconfig
-    """
-    AWS_OBJECT_TYPE = "AWS::AppSync::GraphQLApi.AdditionalAuthenticationProvider"
-    
-    rp_AuthenticationType: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "AuthenticationType"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-additionalauthenticationprovider.html#cfn-appsync-graphqlapi-additionalauthenticationprovider-authenticationtype"""
-    p_LambdaAuthorizerConfig: typing.Union['PropGraphQLApiLambdaAuthorizerConfig', dict] = attr.ib(
-        default=None,
-        converter=PropGraphQLApiLambdaAuthorizerConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropGraphQLApiLambdaAuthorizerConfig)),
-        metadata={AttrMeta.PROPERTY_NAME: "LambdaAuthorizerConfig"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-additionalauthenticationprovider.html#cfn-appsync-graphqlapi-additionalauthenticationprovider-lambdaauthorizerconfig"""
-    p_OpenIDConnectConfig: typing.Union['PropGraphQLApiOpenIDConnectConfig', dict] = attr.ib(
-        default=None,
-        converter=PropGraphQLApiOpenIDConnectConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropGraphQLApiOpenIDConnectConfig)),
-        metadata={AttrMeta.PROPERTY_NAME: "OpenIDConnectConfig"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-additionalauthenticationprovider.html#cfn-appsync-graphqlapi-additionalauthenticationprovider-openidconnectconfig"""
-    p_UserPoolConfig: typing.Union['PropGraphQLApiCognitoUserPoolConfig', dict] = attr.ib(
-        default=None,
-        converter=PropGraphQLApiCognitoUserPoolConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropGraphQLApiCognitoUserPoolConfig)),
-        metadata={AttrMeta.PROPERTY_NAME: "UserPoolConfig"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-additionalauthenticationprovider.html#cfn-appsync-graphqlapi-additionalauthenticationprovider-userpoolconfig"""
-
-@attr.s
-class PropFunctionConfigurationLambdaConflictHandlerConfig(Property):
-    """
-    AWS Object Type = "AWS::AppSync::FunctionConfiguration.LambdaConflictHandlerConfig"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-functionconfiguration-lambdaconflicthandlerconfig.html
-
-    Property Document:
-    
-    - ``p_LambdaConflictHandlerArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-functionconfiguration-lambdaconflicthandlerconfig.html#cfn-appsync-functionconfiguration-lambdaconflicthandlerconfig-lambdaconflicthandlerarn
-    """
-    AWS_OBJECT_TYPE = "AWS::AppSync::FunctionConfiguration.LambdaConflictHandlerConfig"
-    
-    p_LambdaConflictHandlerArn: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "LambdaConflictHandlerArn"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-functionconfiguration-lambdaconflicthandlerconfig.html#cfn-appsync-functionconfiguration-lambdaconflicthandlerconfig-lambdaconflicthandlerarn"""
 
 @attr.s
 class PropDataSourceElasticsearchConfig(Property):
@@ -665,34 +677,6 @@ class PropFunctionConfigurationSyncConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-functionconfiguration-syncconfig.html#cfn-appsync-functionconfiguration-syncconfig-lambdaconflicthandlerconfig"""
 
 @attr.s
-class PropDataSourceHttpConfig(Property):
-    """
-    AWS Object Type = "AWS::AppSync::DataSource.HttpConfig"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-httpconfig.html
-
-    Property Document:
-    
-    - ``rp_Endpoint``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-httpconfig.html#cfn-appsync-datasource-httpconfig-endpoint
-    - ``p_AuthorizationConfig``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-httpconfig.html#cfn-appsync-datasource-httpconfig-authorizationconfig
-    """
-    AWS_OBJECT_TYPE = "AWS::AppSync::DataSource.HttpConfig"
-    
-    rp_Endpoint: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Endpoint"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-httpconfig.html#cfn-appsync-datasource-httpconfig-endpoint"""
-    p_AuthorizationConfig: typing.Union['PropDataSourceAuthorizationConfig', dict] = attr.ib(
-        default=None,
-        converter=PropDataSourceAuthorizationConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropDataSourceAuthorizationConfig)),
-        metadata={AttrMeta.PROPERTY_NAME: "AuthorizationConfig"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-httpconfig.html#cfn-appsync-datasource-httpconfig-authorizationconfig"""
-
-@attr.s
 class PropDataSourceDynamoDBConfig(Property):
     """
     AWS Object Type = "AWS::AppSync::DataSource.DynamoDBConfig"
@@ -741,6 +725,50 @@ class PropDataSourceDynamoDBConfig(Property):
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-dynamodbconfig.html#cfn-appsync-datasource-dynamodbconfig-versioned"""
 
+@attr.s
+class PropGraphQLApiAdditionalAuthenticationProvider(Property):
+    """
+    AWS Object Type = "AWS::AppSync::GraphQLApi.AdditionalAuthenticationProvider"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-additionalauthenticationprovider.html
+
+    Property Document:
+    
+    - ``rp_AuthenticationType``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-additionalauthenticationprovider.html#cfn-appsync-graphqlapi-additionalauthenticationprovider-authenticationtype
+    - ``p_LambdaAuthorizerConfig``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-additionalauthenticationprovider.html#cfn-appsync-graphqlapi-additionalauthenticationprovider-lambdaauthorizerconfig
+    - ``p_OpenIDConnectConfig``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-additionalauthenticationprovider.html#cfn-appsync-graphqlapi-additionalauthenticationprovider-openidconnectconfig
+    - ``p_UserPoolConfig``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-additionalauthenticationprovider.html#cfn-appsync-graphqlapi-additionalauthenticationprovider-userpoolconfig
+    """
+    AWS_OBJECT_TYPE = "AWS::AppSync::GraphQLApi.AdditionalAuthenticationProvider"
+    
+    rp_AuthenticationType: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "AuthenticationType"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-additionalauthenticationprovider.html#cfn-appsync-graphqlapi-additionalauthenticationprovider-authenticationtype"""
+    p_LambdaAuthorizerConfig: typing.Union['PropGraphQLApiLambdaAuthorizerConfig', dict] = attr.ib(
+        default=None,
+        converter=PropGraphQLApiLambdaAuthorizerConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropGraphQLApiLambdaAuthorizerConfig)),
+        metadata={AttrMeta.PROPERTY_NAME: "LambdaAuthorizerConfig"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-additionalauthenticationprovider.html#cfn-appsync-graphqlapi-additionalauthenticationprovider-lambdaauthorizerconfig"""
+    p_OpenIDConnectConfig: typing.Union['PropGraphQLApiOpenIDConnectConfig', dict] = attr.ib(
+        default=None,
+        converter=PropGraphQLApiOpenIDConnectConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropGraphQLApiOpenIDConnectConfig)),
+        metadata={AttrMeta.PROPERTY_NAME: "OpenIDConnectConfig"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-additionalauthenticationprovider.html#cfn-appsync-graphqlapi-additionalauthenticationprovider-openidconnectconfig"""
+    p_UserPoolConfig: typing.Union['PropGraphQLApiCognitoUserPoolConfig', dict] = attr.ib(
+        default=None,
+        converter=PropGraphQLApiCognitoUserPoolConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropGraphQLApiCognitoUserPoolConfig)),
+        metadata={AttrMeta.PROPERTY_NAME: "UserPoolConfig"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-graphqlapi-additionalauthenticationprovider.html#cfn-appsync-graphqlapi-additionalauthenticationprovider-userpoolconfig"""
+
 
 #--- Resource declaration ---
 
@@ -757,6 +785,8 @@ class Resolver(Resource):
     - ``rp_FieldName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-fieldname
     - ``rp_TypeName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-typename
     - ``p_CachingConfig``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-cachingconfig
+    - ``p_Code``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-code
+    - ``p_CodeS3Location``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-codes3location
     - ``p_DataSourceName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-datasourcename
     - ``p_Kind``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-kind
     - ``p_MaxBatchSize``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-maxbatchsize
@@ -765,6 +795,7 @@ class Resolver(Resource):
     - ``p_RequestMappingTemplateS3Location``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-requestmappingtemplates3location
     - ``p_ResponseMappingTemplate``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-responsemappingtemplate
     - ``p_ResponseMappingTemplateS3Location``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-responsemappingtemplates3location
+    - ``p_Runtime``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-runtime
     - ``p_SyncConfig``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-syncconfig
     """
     AWS_OBJECT_TYPE = "AWS::AppSync::Resolver"
@@ -773,82 +804,213 @@ class Resolver(Resource):
     rp_ApiId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "ApiId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ApiId",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-apiid"""
     rp_FieldName: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "FieldName"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "FieldName",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-fieldname"""
     rp_TypeName: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "TypeName"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "TypeName",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-typename"""
     p_CachingConfig: typing.Union['PropResolverCachingConfig', dict] = attr.ib(
         default=None,
         converter=PropResolverCachingConfig.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropResolverCachingConfig)),
-        metadata={AttrMeta.PROPERTY_NAME: "CachingConfig"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "CachingConfig",
+            AttrMeta.DATA: {
+                "Type": 'CachingConfig',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-cachingconfig"""
+    p_Code: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Code",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Mutable',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-code"""
+    p_CodeS3Location: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "CodeS3Location",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Mutable',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-codes3location"""
     p_DataSourceName: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "DataSourceName"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "DataSourceName",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-datasourcename"""
     p_Kind: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Kind"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Kind",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-kind"""
     p_MaxBatchSize: int = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "MaxBatchSize"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "MaxBatchSize",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'Integer',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-maxbatchsize"""
     p_PipelineConfig: typing.Union['PropResolverPipelineConfig', dict] = attr.ib(
         default=None,
         converter=PropResolverPipelineConfig.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropResolverPipelineConfig)),
-        metadata={AttrMeta.PROPERTY_NAME: "PipelineConfig"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "PipelineConfig",
+            AttrMeta.DATA: {
+                "Type": 'PipelineConfig',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-pipelineconfig"""
     p_RequestMappingTemplate: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "RequestMappingTemplate"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "RequestMappingTemplate",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-requestmappingtemplate"""
     p_RequestMappingTemplateS3Location: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "RequestMappingTemplateS3Location"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "RequestMappingTemplateS3Location",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-requestmappingtemplates3location"""
     p_ResponseMappingTemplate: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "ResponseMappingTemplate"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ResponseMappingTemplate",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-responsemappingtemplate"""
     p_ResponseMappingTemplateS3Location: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "ResponseMappingTemplateS3Location"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ResponseMappingTemplateS3Location",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-responsemappingtemplates3location"""
+    p_Runtime: typing.Union['PropResolverAppSyncRuntime', dict] = attr.ib(
+        default=None,
+        converter=PropResolverAppSyncRuntime.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropResolverAppSyncRuntime)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Runtime",
+            AttrMeta.DATA: {
+                "Type": 'AppSyncRuntime',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-runtime"""
     p_SyncConfig: typing.Union['PropResolverSyncConfig', dict] = attr.ib(
         default=None,
         converter=PropResolverSyncConfig.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropResolverSyncConfig)),
-        metadata={AttrMeta.PROPERTY_NAME: "SyncConfig"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "SyncConfig",
+            AttrMeta.DATA: {
+                "Type": 'SyncConfig',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-resolver.html#cfn-appsync-resolver-syncconfig"""
 
@@ -888,19 +1050,40 @@ class GraphQLSchema(Resource):
     rp_ApiId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "ApiId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ApiId",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlschema.html#cfn-appsync-graphqlschema-apiid"""
     p_Definition: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Definition"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Definition",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlschema.html#cfn-appsync-graphqlschema-definition"""
     p_DefinitionS3Location: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "DefinitionS3Location"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "DefinitionS3Location",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlschema.html#cfn-appsync-graphqlschema-definitions3location"""
 
@@ -931,61 +1114,126 @@ class GraphQLApi(Resource):
     rp_AuthenticationType: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "AuthenticationType"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "AuthenticationType",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlapi.html#cfn-appsync-graphqlapi-authenticationtype"""
     rp_Name: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Name"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Name",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlapi.html#cfn-appsync-graphqlapi-name"""
-    p_AdditionalAuthenticationProviders: typing.Union['PropGraphQLApiAdditionalAuthenticationProviders', dict] = attr.ib(
+    p_AdditionalAuthenticationProviders: typing.List[typing.Union['PropGraphQLApiAdditionalAuthenticationProvider', dict]] = attr.ib(
         default=None,
-        converter=PropGraphQLApiAdditionalAuthenticationProviders.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropGraphQLApiAdditionalAuthenticationProviders)),
-        metadata={AttrMeta.PROPERTY_NAME: "AdditionalAuthenticationProviders"},
+        converter=PropGraphQLApiAdditionalAuthenticationProvider.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropGraphQLApiAdditionalAuthenticationProvider), iterable_validator=attr.validators.instance_of(list))),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "AdditionalAuthenticationProviders",
+            AttrMeta.DATA: {
+                "Type": 'List',
+                "Required": False,
+                "ItemType": 'AdditionalAuthenticationProvider',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlapi.html#cfn-appsync-graphqlapi-additionalauthenticationproviders"""
     p_LambdaAuthorizerConfig: typing.Union['PropGraphQLApiLambdaAuthorizerConfig', dict] = attr.ib(
         default=None,
         converter=PropGraphQLApiLambdaAuthorizerConfig.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropGraphQLApiLambdaAuthorizerConfig)),
-        metadata={AttrMeta.PROPERTY_NAME: "LambdaAuthorizerConfig"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "LambdaAuthorizerConfig",
+            AttrMeta.DATA: {
+                "Type": 'LambdaAuthorizerConfig',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlapi.html#cfn-appsync-graphqlapi-lambdaauthorizerconfig"""
     p_LogConfig: typing.Union['PropGraphQLApiLogConfig', dict] = attr.ib(
         default=None,
         converter=PropGraphQLApiLogConfig.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropGraphQLApiLogConfig)),
-        metadata={AttrMeta.PROPERTY_NAME: "LogConfig"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "LogConfig",
+            AttrMeta.DATA: {
+                "Type": 'LogConfig',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlapi.html#cfn-appsync-graphqlapi-logconfig"""
     p_OpenIDConnectConfig: typing.Union['PropGraphQLApiOpenIDConnectConfig', dict] = attr.ib(
         default=None,
         converter=PropGraphQLApiOpenIDConnectConfig.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropGraphQLApiOpenIDConnectConfig)),
-        metadata={AttrMeta.PROPERTY_NAME: "OpenIDConnectConfig"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "OpenIDConnectConfig",
+            AttrMeta.DATA: {
+                "Type": 'OpenIDConnectConfig',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlapi.html#cfn-appsync-graphqlapi-openidconnectconfig"""
     p_UserPoolConfig: typing.Union['PropGraphQLApiUserPoolConfig', dict] = attr.ib(
         default=None,
         converter=PropGraphQLApiUserPoolConfig.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropGraphQLApiUserPoolConfig)),
-        metadata={AttrMeta.PROPERTY_NAME: "UserPoolConfig"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "UserPoolConfig",
+            AttrMeta.DATA: {
+                "Type": 'UserPoolConfig',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlapi.html#cfn-appsync-graphqlapi-userpoolconfig"""
     p_XrayEnabled: bool = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(bool)),
-        metadata={AttrMeta.PROPERTY_NAME: "XrayEnabled"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "XrayEnabled",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'Boolean',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlapi.html#cfn-appsync-graphqlapi-xrayenabled"""
-    p_Tags: typing.Union['PropGraphQLApiTags', dict] = attr.ib(
+    p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
-        converter=PropGraphQLApiTags.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropGraphQLApiTags)),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        converter=Tag.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "Type": 'List',
+                "Required": False,
+                "ItemType": 'Tag',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-graphqlapi.html#cfn-appsync-graphqlapi-tags"""
 
@@ -1026,25 +1274,53 @@ class ApiKey(Resource):
     rp_ApiId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "ApiId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ApiId",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-apikey.html#cfn-appsync-apikey-apiid"""
     p_ApiKeyId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "ApiKeyId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ApiKeyId",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-apikey.html#cfn-appsync-apikey-apikeyid"""
     p_Description: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Description"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Description",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-apikey.html#cfn-appsync-apikey-description"""
     p_Expires: float = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(float)),
-        metadata={AttrMeta.PROPERTY_NAME: "Expires"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Expires",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'Double',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-apikey.html#cfn-appsync-apikey-expires"""
 
@@ -1078,13 +1354,27 @@ class DomainNameApiAssociation(Resource):
     rp_ApiId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "ApiId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ApiId",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-domainnameapiassociation.html#cfn-appsync-domainnameapiassociation-apiid"""
     rp_DomainName: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "DomainName"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "DomainName",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-domainnameapiassociation.html#cfn-appsync-domainnameapiassociation-domainname"""
 
@@ -1106,14 +1396,17 @@ class FunctionConfiguration(Resource):
     
     - ``rp_ApiId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-functionconfiguration.html#cfn-appsync-functionconfiguration-apiid
     - ``rp_DataSourceName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-functionconfiguration.html#cfn-appsync-functionconfiguration-datasourcename
-    - ``rp_FunctionVersion``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-functionconfiguration.html#cfn-appsync-functionconfiguration-functionversion
     - ``rp_Name``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-functionconfiguration.html#cfn-appsync-functionconfiguration-name
+    - ``p_Code``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-functionconfiguration.html#cfn-appsync-functionconfiguration-code
+    - ``p_CodeS3Location``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-functionconfiguration.html#cfn-appsync-functionconfiguration-codes3location
     - ``p_Description``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-functionconfiguration.html#cfn-appsync-functionconfiguration-description
+    - ``p_FunctionVersion``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-functionconfiguration.html#cfn-appsync-functionconfiguration-functionversion
     - ``p_MaxBatchSize``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-functionconfiguration.html#cfn-appsync-functionconfiguration-maxbatchsize
     - ``p_RequestMappingTemplate``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-functionconfiguration.html#cfn-appsync-functionconfiguration-requestmappingtemplate
     - ``p_RequestMappingTemplateS3Location``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-functionconfiguration.html#cfn-appsync-functionconfiguration-requestmappingtemplates3location
     - ``p_ResponseMappingTemplate``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-functionconfiguration.html#cfn-appsync-functionconfiguration-responsemappingtemplate
     - ``p_ResponseMappingTemplateS3Location``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-functionconfiguration.html#cfn-appsync-functionconfiguration-responsemappingtemplates3location
+    - ``p_Runtime``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-functionconfiguration.html#cfn-appsync-functionconfiguration-runtime
     - ``p_SyncConfig``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-functionconfiguration.html#cfn-appsync-functionconfiguration-syncconfig
     """
     AWS_OBJECT_TYPE = "AWS::AppSync::FunctionConfiguration"
@@ -1122,68 +1415,185 @@ class FunctionConfiguration(Resource):
     rp_ApiId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "ApiId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ApiId",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-functionconfiguration.html#cfn-appsync-functionconfiguration-apiid"""
     rp_DataSourceName: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "DataSourceName"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "DataSourceName",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-functionconfiguration.html#cfn-appsync-functionconfiguration-datasourcename"""
-    rp_FunctionVersion: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "FunctionVersion"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-functionconfiguration.html#cfn-appsync-functionconfiguration-functionversion"""
     rp_Name: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Name"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Name",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-functionconfiguration.html#cfn-appsync-functionconfiguration-name"""
+    p_Code: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Code",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Mutable',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-functionconfiguration.html#cfn-appsync-functionconfiguration-code"""
+    p_CodeS3Location: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "CodeS3Location",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Mutable',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-functionconfiguration.html#cfn-appsync-functionconfiguration-codes3location"""
     p_Description: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Description"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Description",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-functionconfiguration.html#cfn-appsync-functionconfiguration-description"""
+    p_FunctionVersion: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "FunctionVersion",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Mutable',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-functionconfiguration.html#cfn-appsync-functionconfiguration-functionversion"""
     p_MaxBatchSize: int = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "MaxBatchSize"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "MaxBatchSize",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'Integer',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-functionconfiguration.html#cfn-appsync-functionconfiguration-maxbatchsize"""
     p_RequestMappingTemplate: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "RequestMappingTemplate"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "RequestMappingTemplate",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-functionconfiguration.html#cfn-appsync-functionconfiguration-requestmappingtemplate"""
     p_RequestMappingTemplateS3Location: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "RequestMappingTemplateS3Location"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "RequestMappingTemplateS3Location",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-functionconfiguration.html#cfn-appsync-functionconfiguration-requestmappingtemplates3location"""
     p_ResponseMappingTemplate: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "ResponseMappingTemplate"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ResponseMappingTemplate",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-functionconfiguration.html#cfn-appsync-functionconfiguration-responsemappingtemplate"""
     p_ResponseMappingTemplateS3Location: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "ResponseMappingTemplateS3Location"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ResponseMappingTemplateS3Location",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-functionconfiguration.html#cfn-appsync-functionconfiguration-responsemappingtemplates3location"""
+    p_Runtime: typing.Union['PropFunctionConfigurationAppSyncRuntime', dict] = attr.ib(
+        default=None,
+        converter=PropFunctionConfigurationAppSyncRuntime.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropFunctionConfigurationAppSyncRuntime)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Runtime",
+            AttrMeta.DATA: {
+                "Type": 'AppSyncRuntime',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-functionconfiguration.html#cfn-appsync-functionconfiguration-runtime"""
     p_SyncConfig: typing.Union['PropFunctionConfigurationSyncConfig', dict] = attr.ib(
         default=None,
         converter=PropFunctionConfigurationSyncConfig.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropFunctionConfigurationSyncConfig)),
-        metadata={AttrMeta.PROPERTY_NAME: "SyncConfig"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "SyncConfig",
+            AttrMeta.DATA: {
+                "Type": 'SyncConfig',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-functionconfiguration.html#cfn-appsync-functionconfiguration-syncconfig"""
 
@@ -1231,37 +1641,79 @@ class ApiCache(Resource):
     rp_ApiCachingBehavior: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "ApiCachingBehavior"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ApiCachingBehavior",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-apicache.html#cfn-appsync-apicache-apicachingbehavior"""
     rp_ApiId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "ApiId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ApiId",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-apicache.html#cfn-appsync-apicache-apiid"""
     rp_Ttl: float = attr.ib(
         default=None,
         validator=attr.validators.instance_of(float),
-        metadata={AttrMeta.PROPERTY_NAME: "Ttl"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Ttl",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'Double',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-apicache.html#cfn-appsync-apicache-ttl"""
     rp_Type: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Type"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Type",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-apicache.html#cfn-appsync-apicache-type"""
     p_AtRestEncryptionEnabled: bool = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(bool)),
-        metadata={AttrMeta.PROPERTY_NAME: "AtRestEncryptionEnabled"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "AtRestEncryptionEnabled",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'Boolean',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-apicache.html#cfn-appsync-apicache-atrestencryptionenabled"""
     p_TransitEncryptionEnabled: bool = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(bool)),
-        metadata={AttrMeta.PROPERTY_NAME: "TransitEncryptionEnabled"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "TransitEncryptionEnabled",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'Boolean',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-apicache.html#cfn-appsync-apicache-transitencryptionenabled"""
 
@@ -1286,19 +1738,40 @@ class DomainName(Resource):
     rp_CertificateArn: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "CertificateArn"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "CertificateArn",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-domainname.html#cfn-appsync-domainname-certificatearn"""
     rp_DomainName: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "DomainName"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "DomainName",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-domainname.html#cfn-appsync-domainname-domainname"""
     p_Description: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Description"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Description",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-domainname.html#cfn-appsync-domainname-description"""
 
@@ -1346,73 +1819,150 @@ class DataSource(Resource):
     rp_ApiId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "ApiId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ApiId",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html#cfn-appsync-datasource-apiid"""
     rp_Name: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Name"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Name",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html#cfn-appsync-datasource-name"""
     rp_Type: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Type"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Type",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html#cfn-appsync-datasource-type"""
     p_Description: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Description"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Description",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html#cfn-appsync-datasource-description"""
     p_DynamoDBConfig: typing.Union['PropDataSourceDynamoDBConfig', dict] = attr.ib(
         default=None,
         converter=PropDataSourceDynamoDBConfig.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropDataSourceDynamoDBConfig)),
-        metadata={AttrMeta.PROPERTY_NAME: "DynamoDBConfig"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "DynamoDBConfig",
+            AttrMeta.DATA: {
+                "Type": 'DynamoDBConfig',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html#cfn-appsync-datasource-dynamodbconfig"""
     p_ElasticsearchConfig: typing.Union['PropDataSourceElasticsearchConfig', dict] = attr.ib(
         default=None,
         converter=PropDataSourceElasticsearchConfig.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropDataSourceElasticsearchConfig)),
-        metadata={AttrMeta.PROPERTY_NAME: "ElasticsearchConfig"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ElasticsearchConfig",
+            AttrMeta.DATA: {
+                "Type": 'ElasticsearchConfig',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html#cfn-appsync-datasource-elasticsearchconfig"""
     p_HttpConfig: typing.Union['PropDataSourceHttpConfig', dict] = attr.ib(
         default=None,
         converter=PropDataSourceHttpConfig.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropDataSourceHttpConfig)),
-        metadata={AttrMeta.PROPERTY_NAME: "HttpConfig"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "HttpConfig",
+            AttrMeta.DATA: {
+                "Type": 'HttpConfig',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html#cfn-appsync-datasource-httpconfig"""
     p_LambdaConfig: typing.Union['PropDataSourceLambdaConfig', dict] = attr.ib(
         default=None,
         converter=PropDataSourceLambdaConfig.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropDataSourceLambdaConfig)),
-        metadata={AttrMeta.PROPERTY_NAME: "LambdaConfig"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "LambdaConfig",
+            AttrMeta.DATA: {
+                "Type": 'LambdaConfig',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html#cfn-appsync-datasource-lambdaconfig"""
     p_OpenSearchServiceConfig: typing.Union['PropDataSourceOpenSearchServiceConfig', dict] = attr.ib(
         default=None,
         converter=PropDataSourceOpenSearchServiceConfig.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropDataSourceOpenSearchServiceConfig)),
-        metadata={AttrMeta.PROPERTY_NAME: "OpenSearchServiceConfig"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "OpenSearchServiceConfig",
+            AttrMeta.DATA: {
+                "Type": 'OpenSearchServiceConfig',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html#cfn-appsync-datasource-opensearchserviceconfig"""
     p_RelationalDatabaseConfig: typing.Union['PropDataSourceRelationalDatabaseConfig', dict] = attr.ib(
         default=None,
         converter=PropDataSourceRelationalDatabaseConfig.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropDataSourceRelationalDatabaseConfig)),
-        metadata={AttrMeta.PROPERTY_NAME: "RelationalDatabaseConfig"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "RelationalDatabaseConfig",
+            AttrMeta.DATA: {
+                "Type": 'RelationalDatabaseConfig',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html#cfn-appsync-datasource-relationaldatabaseconfig"""
     p_ServiceRoleArn: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "ServiceRoleArn"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ServiceRoleArn",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html#cfn-appsync-datasource-servicerolearn"""
 

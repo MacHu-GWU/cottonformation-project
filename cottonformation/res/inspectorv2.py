@@ -69,6 +69,33 @@ class PropFilterPortRangeFilter(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-portrangefilter.html#cfn-inspectorv2-filter-portrangefilter-endinclusive"""
 
 @attr.s
+class PropFilterStringFilter(Property):
+    """
+    AWS Object Type = "AWS::InspectorV2::Filter.StringFilter"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-stringfilter.html
+
+    Property Document:
+    
+    - ``rp_Comparison``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-stringfilter.html#cfn-inspectorv2-filter-stringfilter-comparison
+    - ``rp_Value``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-stringfilter.html#cfn-inspectorv2-filter-stringfilter-value
+    """
+    AWS_OBJECT_TYPE = "AWS::InspectorV2::Filter.StringFilter"
+    
+    rp_Comparison: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "Comparison"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-stringfilter.html#cfn-inspectorv2-filter-stringfilter-comparison"""
+    rp_Value: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "Value"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-stringfilter.html#cfn-inspectorv2-filter-stringfilter-value"""
+
+@attr.s
 class PropFilterDateFilter(Property):
     """
     AWS Object Type = "AWS::InspectorV2::Filter.DateFilter"
@@ -130,33 +157,6 @@ class PropFilterMapFilter(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-mapfilter.html#cfn-inspectorv2-filter-mapfilter-value"""
 
 @attr.s
-class PropFilterStringFilter(Property):
-    """
-    AWS Object Type = "AWS::InspectorV2::Filter.StringFilter"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-stringfilter.html
-
-    Property Document:
-    
-    - ``rp_Comparison``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-stringfilter.html#cfn-inspectorv2-filter-stringfilter-comparison
-    - ``rp_Value``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-stringfilter.html#cfn-inspectorv2-filter-stringfilter-value
-    """
-    AWS_OBJECT_TYPE = "AWS::InspectorV2::Filter.StringFilter"
-    
-    rp_Comparison: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Comparison"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-stringfilter.html#cfn-inspectorv2-filter-stringfilter-comparison"""
-    rp_Value: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Value"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-stringfilter.html#cfn-inspectorv2-filter-stringfilter-value"""
-
-@attr.s
 class PropFilterPackageFilter(Property):
     """
     AWS Object Type = "AWS::InspectorV2::Filter.PackageFilter"
@@ -174,45 +174,39 @@ class PropFilterPackageFilter(Property):
     """
     AWS_OBJECT_TYPE = "AWS::InspectorV2::Filter.PackageFilter"
     
-    p_Architecture: typing.Union['PropFilterStringFilter', dict] = attr.ib(
+    p_Architecture: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropFilterStringFilter.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropFilterStringFilter)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "Architecture"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-packagefilter.html#cfn-inspectorv2-filter-packagefilter-architecture"""
-    p_Epoch: typing.Union['PropFilterNumberFilter', dict] = attr.ib(
+    p_Epoch: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropFilterNumberFilter.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropFilterNumberFilter)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "Epoch"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-packagefilter.html#cfn-inspectorv2-filter-packagefilter-epoch"""
-    p_Name: typing.Union['PropFilterStringFilter', dict] = attr.ib(
+    p_Name: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropFilterStringFilter.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropFilterStringFilter)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "Name"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-packagefilter.html#cfn-inspectorv2-filter-packagefilter-name"""
-    p_Release: typing.Union['PropFilterStringFilter', dict] = attr.ib(
+    p_Release: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropFilterStringFilter.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropFilterStringFilter)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "Release"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-packagefilter.html#cfn-inspectorv2-filter-packagefilter-release"""
-    p_SourceLayerHash: typing.Union['PropFilterStringFilter', dict] = attr.ib(
+    p_SourceLayerHash: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropFilterStringFilter.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropFilterStringFilter)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "SourceLayerHash"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-packagefilter.html#cfn-inspectorv2-filter-packagefilter-sourcelayerhash"""
-    p_Version: typing.Union['PropFilterStringFilter', dict] = attr.ib(
+    p_Version: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropFilterStringFilter.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropFilterStringFilter)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "Version"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-inspectorv2-filter-packagefilter.html#cfn-inspectorv2-filter-packagefilter-version"""
@@ -501,26 +495,54 @@ class Filter(Resource):
     rp_FilterAction: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "FilterAction"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "FilterAction",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-inspectorv2-filter.html#cfn-inspectorv2-filter-filteraction"""
     rp_FilterCriteria: typing.Union['PropFilterFilterCriteria', dict] = attr.ib(
         default=None,
         converter=PropFilterFilterCriteria.from_dict,
         validator=attr.validators.instance_of(PropFilterFilterCriteria),
-        metadata={AttrMeta.PROPERTY_NAME: "FilterCriteria"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "FilterCriteria",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": True,
+                "Type": 'FilterCriteria',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-inspectorv2-filter.html#cfn-inspectorv2-filter-filtercriteria"""
     rp_Name: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Name"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Name",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-inspectorv2-filter.html#cfn-inspectorv2-filter-name"""
     p_Description: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Description"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Description",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-inspectorv2-filter.html#cfn-inspectorv2-filter-description"""
 

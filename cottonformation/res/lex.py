@@ -15,26 +15,6 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class PropBotSlotValueRegexFilter(Property):
-    """
-    AWS Object Type = "AWS::Lex::Bot.SlotValueRegexFilter"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slotvalueregexfilter.html
-
-    Property Document:
-    
-    - ``rp_Pattern``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slotvalueregexfilter.html#cfn-lex-bot-slotvalueregexfilter-pattern
-    """
-    AWS_OBJECT_TYPE = "AWS::Lex::Bot.SlotValueRegexFilter"
-    
-    rp_Pattern: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Pattern"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slotvalueregexfilter.html#cfn-lex-bot-slotvalueregexfilter-pattern"""
-
-@attr.s
 class PropBotInputContext(Property):
     """
     AWS Object Type = "AWS::Lex::Bot.InputContext"
@@ -55,84 +35,58 @@ class PropBotInputContext(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-inputcontext.html#cfn-lex-bot-inputcontext-name"""
 
 @attr.s
-class PropBotVoiceSettings(Property):
+class PropBotCloudWatchLogGroupLogDestination(Property):
     """
-    AWS Object Type = "AWS::Lex::Bot.VoiceSettings"
+    AWS Object Type = "AWS::Lex::Bot.CloudWatchLogGroupLogDestination"
 
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-voicesettings.html
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-cloudwatchloggrouplogdestination.html
 
     Property Document:
     
-    - ``rp_VoiceId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-voicesettings.html#cfn-lex-bot-voicesettings-voiceid
+    - ``rp_CloudWatchLogGroupArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-cloudwatchloggrouplogdestination.html#cfn-lex-bot-cloudwatchloggrouplogdestination-cloudwatchloggrouparn
+    - ``rp_LogPrefix``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-cloudwatchloggrouplogdestination.html#cfn-lex-bot-cloudwatchloggrouplogdestination-logprefix
     """
-    AWS_OBJECT_TYPE = "AWS::Lex::Bot.VoiceSettings"
+    AWS_OBJECT_TYPE = "AWS::Lex::Bot.CloudWatchLogGroupLogDestination"
     
-    rp_VoiceId: TypeHint.intrinsic_str = attr.ib(
+    rp_CloudWatchLogGroupArn: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "VoiceId"},
+        metadata={AttrMeta.PROPERTY_NAME: "CloudWatchLogGroupArn"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-voicesettings.html#cfn-lex-bot-voicesettings-voiceid"""
-
-@attr.s
-class PropBotVersionBotVersionLocaleDetails(Property):
-    """
-    AWS Object Type = "AWS::Lex::BotVersion.BotVersionLocaleDetails"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-botversion-botversionlocaledetails.html
-
-    Property Document:
-    
-    - ``rp_SourceBotVersion``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-botversion-botversionlocaledetails.html#cfn-lex-botversion-botversionlocaledetails-sourcebotversion
-    """
-    AWS_OBJECT_TYPE = "AWS::Lex::BotVersion.BotVersionLocaleDetails"
-    
-    rp_SourceBotVersion: TypeHint.intrinsic_str = attr.ib(
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-cloudwatchloggrouplogdestination.html#cfn-lex-bot-cloudwatchloggrouplogdestination-cloudwatchloggrouparn"""
+    rp_LogPrefix: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "SourceBotVersion"},
+        metadata={AttrMeta.PROPERTY_NAME: "LogPrefix"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-botversion-botversionlocaledetails.html#cfn-lex-botversion-botversionlocaledetails-sourcebotversion"""
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-cloudwatchloggrouplogdestination.html#cfn-lex-bot-cloudwatchloggrouplogdestination-logprefix"""
 
 @attr.s
-class PropBotMultipleValuesSetting(Property):
+class PropBotAudioSpecification(Property):
     """
-    AWS Object Type = "AWS::Lex::Bot.MultipleValuesSetting"
+    AWS Object Type = "AWS::Lex::Bot.AudioSpecification"
 
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-multiplevaluessetting.html
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-audiospecification.html
 
     Property Document:
     
-    - ``p_AllowMultipleValues``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-multiplevaluessetting.html#cfn-lex-bot-multiplevaluessetting-allowmultiplevalues
+    - ``rp_EndTimeoutMs``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-audiospecification.html#cfn-lex-bot-audiospecification-endtimeoutms
+    - ``rp_MaxLengthMs``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-audiospecification.html#cfn-lex-bot-audiospecification-maxlengthms
     """
-    AWS_OBJECT_TYPE = "AWS::Lex::Bot.MultipleValuesSetting"
+    AWS_OBJECT_TYPE = "AWS::Lex::Bot.AudioSpecification"
     
-    p_AllowMultipleValues: bool = attr.ib(
+    rp_EndTimeoutMs: int = attr.ib(
         default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(bool)),
-        metadata={AttrMeta.PROPERTY_NAME: "AllowMultipleValues"},
+        validator=attr.validators.instance_of(int),
+        metadata={AttrMeta.PROPERTY_NAME: "EndTimeoutMs"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-multiplevaluessetting.html#cfn-lex-bot-multiplevaluessetting-allowmultiplevalues"""
-
-@attr.s
-class PropBotDialogCodeHookSetting(Property):
-    """
-    AWS Object Type = "AWS::Lex::Bot.DialogCodeHookSetting"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-dialogcodehooksetting.html
-
-    Property Document:
-    
-    - ``rp_Enabled``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-dialogcodehooksetting.html#cfn-lex-bot-dialogcodehooksetting-enabled
-    """
-    AWS_OBJECT_TYPE = "AWS::Lex::Bot.DialogCodeHookSetting"
-    
-    rp_Enabled: bool = attr.ib(
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-audiospecification.html#cfn-lex-bot-audiospecification-endtimeoutms"""
+    rp_MaxLengthMs: int = attr.ib(
         default=None,
-        validator=attr.validators.instance_of(bool),
-        metadata={AttrMeta.PROPERTY_NAME: "Enabled"},
+        validator=attr.validators.instance_of(int),
+        metadata={AttrMeta.PROPERTY_NAME: "MaxLengthMs"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-dialogcodehooksetting.html#cfn-lex-bot-dialogcodehooksetting-enabled"""
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-audiospecification.html#cfn-lex-bot-audiospecification-maxlengthms"""
 
 @attr.s
 class PropBotObfuscationSetting(Property):
@@ -180,6 +134,26 @@ class PropBotAliasCloudWatchLogGroupLogDestination(Property):
         metadata={AttrMeta.PROPERTY_NAME: "LogPrefix"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-botalias-cloudwatchloggrouplogdestination.html#cfn-lex-botalias-cloudwatchloggrouplogdestination-logprefix"""
+
+@attr.s
+class PropBotTextLogDestination(Property):
+    """
+    AWS Object Type = "AWS::Lex::Bot.TextLogDestination"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-textlogdestination.html
+
+    Property Document:
+    
+    - ``rp_CloudWatch``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-textlogdestination.html#cfn-lex-bot-textlogdestination-cloudwatch
+    """
+    AWS_OBJECT_TYPE = "AWS::Lex::Bot.TextLogDestination"
+    
+    rp_CloudWatch: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "CloudWatch"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-textlogdestination.html#cfn-lex-bot-textlogdestination-cloudwatch"""
 
 @attr.s
 class PropBotS3Location(Property):
@@ -290,60 +264,24 @@ class PropBotAliasLambdaCodeHook(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-botalias-lambdacodehook.html#cfn-lex-botalias-lambdacodehook-lambdaarn"""
 
 @attr.s
-class PropBotVersionBotVersionLocaleSpecification(Property):
+class PropBotAdvancedRecognitionSetting(Property):
     """
-    AWS Object Type = "AWS::Lex::BotVersion.BotVersionLocaleSpecification"
+    AWS Object Type = "AWS::Lex::Bot.AdvancedRecognitionSetting"
 
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-botversion-botversionlocalespecification.html
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-advancedrecognitionsetting.html
 
     Property Document:
     
-    - ``rp_BotVersionLocaleDetails``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-botversion-botversionlocalespecification.html#cfn-lex-botversion-botversionlocalespecification-botversionlocaledetails
-    - ``rp_LocaleId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-botversion-botversionlocalespecification.html#cfn-lex-botversion-botversionlocalespecification-localeid
+    - ``p_AudioRecognitionStrategy``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-advancedrecognitionsetting.html#cfn-lex-bot-advancedrecognitionsetting-audiorecognitionstrategy
     """
-    AWS_OBJECT_TYPE = "AWS::Lex::BotVersion.BotVersionLocaleSpecification"
+    AWS_OBJECT_TYPE = "AWS::Lex::Bot.AdvancedRecognitionSetting"
     
-    rp_BotVersionLocaleDetails: typing.Union['PropBotVersionBotVersionLocaleDetails', dict] = attr.ib(
+    p_AudioRecognitionStrategy: TypeHint.intrinsic_str = attr.ib(
         default=None,
-        converter=PropBotVersionBotVersionLocaleDetails.from_dict,
-        validator=attr.validators.instance_of(PropBotVersionBotVersionLocaleDetails),
-        metadata={AttrMeta.PROPERTY_NAME: "BotVersionLocaleDetails"},
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "AudioRecognitionStrategy"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-botversion-botversionlocalespecification.html#cfn-lex-botversion-botversionlocalespecification-botversionlocaledetails"""
-    rp_LocaleId: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "LocaleId"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-botversion-botversionlocalespecification.html#cfn-lex-botversion-botversionlocalespecification-localeid"""
-
-@attr.s
-class PropBotSlotValueSelectionSetting(Property):
-    """
-    AWS Object Type = "AWS::Lex::Bot.SlotValueSelectionSetting"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slotvalueselectionsetting.html
-
-    Property Document:
-    
-    - ``rp_ResolutionStrategy``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slotvalueselectionsetting.html#cfn-lex-bot-slotvalueselectionsetting-resolutionstrategy
-    - ``p_RegexFilter``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slotvalueselectionsetting.html#cfn-lex-bot-slotvalueselectionsetting-regexfilter
-    """
-    AWS_OBJECT_TYPE = "AWS::Lex::Bot.SlotValueSelectionSetting"
-    
-    rp_ResolutionStrategy: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "ResolutionStrategy"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slotvalueselectionsetting.html#cfn-lex-bot-slotvalueselectionsetting-resolutionstrategy"""
-    p_RegexFilter: typing.Union['PropBotSlotValueRegexFilter', dict] = attr.ib(
-        default=None,
-        converter=PropBotSlotValueRegexFilter.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropBotSlotValueRegexFilter)),
-        metadata={AttrMeta.PROPERTY_NAME: "RegexFilter"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slotvalueselectionsetting.html#cfn-lex-bot-slotvalueselectionsetting-regexfilter"""
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-advancedrecognitionsetting.html#cfn-lex-bot-advancedrecognitionsetting-audiorecognitionstrategy"""
 
 @attr.s
 class PropResourcePolicyPolicy(Property):
@@ -404,26 +342,6 @@ class PropBotPlainTextMessage(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Value"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-plaintextmessage.html#cfn-lex-bot-plaintextmessage-value"""
-
-@attr.s
-class PropBotSSMLMessage(Property):
-    """
-    AWS Object Type = "AWS::Lex::Bot.SSMLMessage"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-ssmlmessage.html
-
-    Property Document:
-    
-    - ``rp_Value``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-ssmlmessage.html#cfn-lex-bot-ssmlmessage-value
-    """
-    AWS_OBJECT_TYPE = "AWS::Lex::Bot.SSMLMessage"
-    
-    rp_Value: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Value"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-ssmlmessage.html#cfn-lex-bot-ssmlmessage-value"""
 
 @attr.s
 class PropBotKendraConfiguration(Property):
@@ -494,6 +412,26 @@ class PropBotGrammarSlotTypeSource(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-grammarslottypesource.html#cfn-lex-bot-grammarslottypesource-kmskeyarn"""
 
 @attr.s
+class PropBotTextInputSpecification(Property):
+    """
+    AWS Object Type = "AWS::Lex::Bot.TextInputSpecification"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-textinputspecification.html
+
+    Property Document:
+    
+    - ``rp_StartTimeoutMs``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-textinputspecification.html#cfn-lex-bot-textinputspecification-starttimeoutms
+    """
+    AWS_OBJECT_TYPE = "AWS::Lex::Bot.TextInputSpecification"
+    
+    rp_StartTimeoutMs: int = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(int),
+        metadata={AttrMeta.PROPERTY_NAME: "StartTimeoutMs"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-textinputspecification.html#cfn-lex-bot-textinputspecification-starttimeoutms"""
+
+@attr.s
 class PropBotAliasTextLogDestination(Property):
     """
     AWS Object Type = "AWS::Lex::BotAlias.TextLogDestination"
@@ -506,13 +444,482 @@ class PropBotAliasTextLogDestination(Property):
     """
     AWS_OBJECT_TYPE = "AWS::Lex::BotAlias.TextLogDestination"
     
-    rp_CloudWatch: typing.Union['PropBotAliasCloudWatchLogGroupLogDestination', dict] = attr.ib(
+    rp_CloudWatch: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropBotAliasCloudWatchLogGroupLogDestination.from_dict,
-        validator=attr.validators.instance_of(PropBotAliasCloudWatchLogGroupLogDestination),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "CloudWatch"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-botalias-textlogdestination.html#cfn-lex-botalias-textlogdestination-cloudwatch"""
+
+@attr.s
+class PropBotGrammarSlotTypeSetting(Property):
+    """
+    AWS Object Type = "AWS::Lex::Bot.GrammarSlotTypeSetting"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-grammarslottypesetting.html
+
+    Property Document:
+    
+    - ``p_Source``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-grammarslottypesetting.html#cfn-lex-bot-grammarslottypesetting-source
+    """
+    AWS_OBJECT_TYPE = "AWS::Lex::Bot.GrammarSlotTypeSetting"
+    
+    p_Source: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "Source"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-grammarslottypesetting.html#cfn-lex-bot-grammarslottypesetting-source"""
+
+@attr.s
+class PropBotTextLogSetting(Property):
+    """
+    AWS Object Type = "AWS::Lex::Bot.TextLogSetting"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-textlogsetting.html
+
+    Property Document:
+    
+    - ``rp_Destination``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-textlogsetting.html#cfn-lex-bot-textlogsetting-destination
+    - ``rp_Enabled``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-textlogsetting.html#cfn-lex-bot-textlogsetting-enabled
+    """
+    AWS_OBJECT_TYPE = "AWS::Lex::Bot.TextLogSetting"
+    
+    rp_Destination: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "Destination"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-textlogsetting.html#cfn-lex-bot-textlogsetting-destination"""
+    rp_Enabled: bool = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(bool),
+        metadata={AttrMeta.PROPERTY_NAME: "Enabled"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-textlogsetting.html#cfn-lex-bot-textlogsetting-enabled"""
+
+@attr.s
+class PropBotOutputContext(Property):
+    """
+    AWS Object Type = "AWS::Lex::Bot.OutputContext"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-outputcontext.html
+
+    Property Document:
+    
+    - ``rp_Name``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-outputcontext.html#cfn-lex-bot-outputcontext-name
+    - ``rp_TimeToLiveInSeconds``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-outputcontext.html#cfn-lex-bot-outputcontext-timetoliveinseconds
+    - ``rp_TurnsToLive``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-outputcontext.html#cfn-lex-bot-outputcontext-turnstolive
+    """
+    AWS_OBJECT_TYPE = "AWS::Lex::Bot.OutputContext"
+    
+    rp_Name: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "Name"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-outputcontext.html#cfn-lex-bot-outputcontext-name"""
+    rp_TimeToLiveInSeconds: int = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(int),
+        metadata={AttrMeta.PROPERTY_NAME: "TimeToLiveInSeconds"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-outputcontext.html#cfn-lex-bot-outputcontext-timetoliveinseconds"""
+    rp_TurnsToLive: int = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(int),
+        metadata={AttrMeta.PROPERTY_NAME: "TurnsToLive"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-outputcontext.html#cfn-lex-bot-outputcontext-turnstolive"""
+
+@attr.s
+class PropBotLambdaCodeHook(Property):
+    """
+    AWS Object Type = "AWS::Lex::Bot.LambdaCodeHook"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-lambdacodehook.html
+
+    Property Document:
+    
+    - ``rp_CodeHookInterfaceVersion``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-lambdacodehook.html#cfn-lex-bot-lambdacodehook-codehookinterfaceversion
+    - ``rp_LambdaArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-lambdacodehook.html#cfn-lex-bot-lambdacodehook-lambdaarn
+    """
+    AWS_OBJECT_TYPE = "AWS::Lex::Bot.LambdaCodeHook"
+    
+    rp_CodeHookInterfaceVersion: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "CodeHookInterfaceVersion"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-lambdacodehook.html#cfn-lex-bot-lambdacodehook-codehookinterfaceversion"""
+    rp_LambdaArn: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "LambdaArn"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-lambdacodehook.html#cfn-lex-bot-lambdacodehook-lambdaarn"""
+
+@attr.s
+class PropBotSlotValueRegexFilter(Property):
+    """
+    AWS Object Type = "AWS::Lex::Bot.SlotValueRegexFilter"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slotvalueregexfilter.html
+
+    Property Document:
+    
+    - ``rp_Pattern``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slotvalueregexfilter.html#cfn-lex-bot-slotvalueregexfilter-pattern
+    """
+    AWS_OBJECT_TYPE = "AWS::Lex::Bot.SlotValueRegexFilter"
+    
+    rp_Pattern: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "Pattern"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slotvalueregexfilter.html#cfn-lex-bot-slotvalueregexfilter-pattern"""
+
+@attr.s
+class PropBotAliasCodeHookSpecification(Property):
+    """
+    AWS Object Type = "AWS::Lex::BotAlias.CodeHookSpecification"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-botalias-codehookspecification.html
+
+    Property Document:
+    
+    - ``rp_LambdaCodeHook``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-botalias-codehookspecification.html#cfn-lex-botalias-codehookspecification-lambdacodehook
+    """
+    AWS_OBJECT_TYPE = "AWS::Lex::BotAlias.CodeHookSpecification"
+    
+    rp_LambdaCodeHook: typing.Union['PropBotAliasLambdaCodeHook', dict] = attr.ib(
+        default=None,
+        converter=PropBotAliasLambdaCodeHook.from_dict,
+        validator=attr.validators.instance_of(PropBotAliasLambdaCodeHook),
+        metadata={AttrMeta.PROPERTY_NAME: "LambdaCodeHook"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-botalias-codehookspecification.html#cfn-lex-botalias-codehookspecification-lambdacodehook"""
+
+@attr.s
+class PropBotCustomVocabularyItem(Property):
+    """
+    AWS Object Type = "AWS::Lex::Bot.CustomVocabularyItem"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-customvocabularyitem.html
+
+    Property Document:
+    
+    - ``rp_Phrase``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-customvocabularyitem.html#cfn-lex-bot-customvocabularyitem-phrase
+    - ``p_Weight``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-customvocabularyitem.html#cfn-lex-bot-customvocabularyitem-weight
+    """
+    AWS_OBJECT_TYPE = "AWS::Lex::Bot.CustomVocabularyItem"
+    
+    rp_Phrase: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "Phrase"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-customvocabularyitem.html#cfn-lex-bot-customvocabularyitem-phrase"""
+    p_Weight: int = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(int)),
+        metadata={AttrMeta.PROPERTY_NAME: "Weight"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-customvocabularyitem.html#cfn-lex-bot-customvocabularyitem-weight"""
+
+@attr.s
+class PropBotCustomVocabulary(Property):
+    """
+    AWS Object Type = "AWS::Lex::Bot.CustomVocabulary"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-customvocabulary.html
+
+    Property Document:
+    
+    - ``rp_CustomVocabularyItems``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-customvocabulary.html#cfn-lex-bot-customvocabulary-customvocabularyitems
+    """
+    AWS_OBJECT_TYPE = "AWS::Lex::Bot.CustomVocabulary"
+    
+    rp_CustomVocabularyItems: typing.List[typing.Union['PropBotCustomVocabularyItem', dict]] = attr.ib(
+        default=None,
+        converter=PropBotCustomVocabularyItem.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropBotCustomVocabularyItem), iterable_validator=attr.validators.instance_of(list)),
+        metadata={AttrMeta.PROPERTY_NAME: "CustomVocabularyItems"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-customvocabulary.html#cfn-lex-bot-customvocabulary-customvocabularyitems"""
+
+@attr.s
+class PropBotVoiceSettings(Property):
+    """
+    AWS Object Type = "AWS::Lex::Bot.VoiceSettings"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-voicesettings.html
+
+    Property Document:
+    
+    - ``rp_VoiceId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-voicesettings.html#cfn-lex-bot-voicesettings-voiceid
+    - ``p_Engine``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-voicesettings.html#cfn-lex-bot-voicesettings-engine
+    """
+    AWS_OBJECT_TYPE = "AWS::Lex::Bot.VoiceSettings"
+    
+    rp_VoiceId: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "VoiceId"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-voicesettings.html#cfn-lex-bot-voicesettings-voiceid"""
+    p_Engine: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "Engine"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-voicesettings.html#cfn-lex-bot-voicesettings-engine"""
+
+@attr.s
+class PropBotCodeHookSpecification(Property):
+    """
+    AWS Object Type = "AWS::Lex::Bot.CodeHookSpecification"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-codehookspecification.html
+
+    Property Document:
+    
+    - ``rp_LambdaCodeHook``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-codehookspecification.html#cfn-lex-bot-codehookspecification-lambdacodehook
+    """
+    AWS_OBJECT_TYPE = "AWS::Lex::Bot.CodeHookSpecification"
+    
+    rp_LambdaCodeHook: typing.Union['PropBotLambdaCodeHook', dict] = attr.ib(
+        default=None,
+        converter=PropBotLambdaCodeHook.from_dict,
+        validator=attr.validators.instance_of(PropBotLambdaCodeHook),
+        metadata={AttrMeta.PROPERTY_NAME: "LambdaCodeHook"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-codehookspecification.html#cfn-lex-bot-codehookspecification-lambdacodehook"""
+
+@attr.s
+class PropBotVersionBotVersionLocaleDetails(Property):
+    """
+    AWS Object Type = "AWS::Lex::BotVersion.BotVersionLocaleDetails"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-botversion-botversionlocaledetails.html
+
+    Property Document:
+    
+    - ``rp_SourceBotVersion``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-botversion-botversionlocaledetails.html#cfn-lex-botversion-botversionlocaledetails-sourcebotversion
+    """
+    AWS_OBJECT_TYPE = "AWS::Lex::BotVersion.BotVersionLocaleDetails"
+    
+    rp_SourceBotVersion: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "SourceBotVersion"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-botversion-botversionlocaledetails.html#cfn-lex-botversion-botversionlocaledetails-sourcebotversion"""
+
+@attr.s
+class PropBotBotAliasLocaleSettings(Property):
+    """
+    AWS Object Type = "AWS::Lex::Bot.BotAliasLocaleSettings"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-botaliaslocalesettings.html
+
+    Property Document:
+    
+    - ``rp_Enabled``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-botaliaslocalesettings.html#cfn-lex-bot-botaliaslocalesettings-enabled
+    - ``p_CodeHookSpecification``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-botaliaslocalesettings.html#cfn-lex-bot-botaliaslocalesettings-codehookspecification
+    """
+    AWS_OBJECT_TYPE = "AWS::Lex::Bot.BotAliasLocaleSettings"
+    
+    rp_Enabled: bool = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(bool),
+        metadata={AttrMeta.PROPERTY_NAME: "Enabled"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-botaliaslocalesettings.html#cfn-lex-bot-botaliaslocalesettings-enabled"""
+    p_CodeHookSpecification: typing.Union['PropBotCodeHookSpecification', dict] = attr.ib(
+        default=None,
+        converter=PropBotCodeHookSpecification.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropBotCodeHookSpecification)),
+        metadata={AttrMeta.PROPERTY_NAME: "CodeHookSpecification"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-botaliaslocalesettings.html#cfn-lex-bot-botaliaslocalesettings-codehookspecification"""
+
+@attr.s
+class PropBotMultipleValuesSetting(Property):
+    """
+    AWS Object Type = "AWS::Lex::Bot.MultipleValuesSetting"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-multiplevaluessetting.html
+
+    Property Document:
+    
+    - ``p_AllowMultipleValues``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-multiplevaluessetting.html#cfn-lex-bot-multiplevaluessetting-allowmultiplevalues
+    """
+    AWS_OBJECT_TYPE = "AWS::Lex::Bot.MultipleValuesSetting"
+    
+    p_AllowMultipleValues: bool = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(bool)),
+        metadata={AttrMeta.PROPERTY_NAME: "AllowMultipleValues"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-multiplevaluessetting.html#cfn-lex-bot-multiplevaluessetting-allowmultiplevalues"""
+
+@attr.s
+class PropBotExternalSourceSetting(Property):
+    """
+    AWS Object Type = "AWS::Lex::Bot.ExternalSourceSetting"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-externalsourcesetting.html
+
+    Property Document:
+    
+    - ``p_GrammarSlotTypeSetting``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-externalsourcesetting.html#cfn-lex-bot-externalsourcesetting-grammarslottypesetting
+    """
+    AWS_OBJECT_TYPE = "AWS::Lex::Bot.ExternalSourceSetting"
+    
+    p_GrammarSlotTypeSetting: typing.Union['PropBotGrammarSlotTypeSetting', dict] = attr.ib(
+        default=None,
+        converter=PropBotGrammarSlotTypeSetting.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropBotGrammarSlotTypeSetting)),
+        metadata={AttrMeta.PROPERTY_NAME: "GrammarSlotTypeSetting"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-externalsourcesetting.html#cfn-lex-bot-externalsourcesetting-grammarslottypesetting"""
+
+@attr.s
+class PropBotDialogCodeHookSetting(Property):
+    """
+    AWS Object Type = "AWS::Lex::Bot.DialogCodeHookSetting"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-dialogcodehooksetting.html
+
+    Property Document:
+    
+    - ``rp_Enabled``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-dialogcodehooksetting.html#cfn-lex-bot-dialogcodehooksetting-enabled
+    """
+    AWS_OBJECT_TYPE = "AWS::Lex::Bot.DialogCodeHookSetting"
+    
+    rp_Enabled: bool = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(bool),
+        metadata={AttrMeta.PROPERTY_NAME: "Enabled"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-dialogcodehooksetting.html#cfn-lex-bot-dialogcodehooksetting-enabled"""
+
+@attr.s
+class PropBotAllowedInputTypes(Property):
+    """
+    AWS Object Type = "AWS::Lex::Bot.AllowedInputTypes"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-allowedinputtypes.html
+
+    Property Document:
+    
+    - ``rp_AllowAudioInput``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-allowedinputtypes.html#cfn-lex-bot-allowedinputtypes-allowaudioinput
+    - ``rp_AllowDTMFInput``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-allowedinputtypes.html#cfn-lex-bot-allowedinputtypes-allowdtmfinput
+    """
+    AWS_OBJECT_TYPE = "AWS::Lex::Bot.AllowedInputTypes"
+    
+    rp_AllowAudioInput: bool = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(bool),
+        metadata={AttrMeta.PROPERTY_NAME: "AllowAudioInput"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-allowedinputtypes.html#cfn-lex-bot-allowedinputtypes-allowaudioinput"""
+    rp_AllowDTMFInput: bool = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(bool),
+        metadata={AttrMeta.PROPERTY_NAME: "AllowDTMFInput"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-allowedinputtypes.html#cfn-lex-bot-allowedinputtypes-allowdtmfinput"""
+
+@attr.s
+class PropBotVersionBotVersionLocaleSpecification(Property):
+    """
+    AWS Object Type = "AWS::Lex::BotVersion.BotVersionLocaleSpecification"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-botversion-botversionlocalespecification.html
+
+    Property Document:
+    
+    - ``rp_BotVersionLocaleDetails``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-botversion-botversionlocalespecification.html#cfn-lex-botversion-botversionlocalespecification-botversionlocaledetails
+    - ``rp_LocaleId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-botversion-botversionlocalespecification.html#cfn-lex-botversion-botversionlocalespecification-localeid
+    """
+    AWS_OBJECT_TYPE = "AWS::Lex::BotVersion.BotVersionLocaleSpecification"
+    
+    rp_BotVersionLocaleDetails: typing.Union['PropBotVersionBotVersionLocaleDetails', dict] = attr.ib(
+        default=None,
+        converter=PropBotVersionBotVersionLocaleDetails.from_dict,
+        validator=attr.validators.instance_of(PropBotVersionBotVersionLocaleDetails),
+        metadata={AttrMeta.PROPERTY_NAME: "BotVersionLocaleDetails"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-botversion-botversionlocalespecification.html#cfn-lex-botversion-botversionlocalespecification-botversionlocaledetails"""
+    rp_LocaleId: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "LocaleId"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-botversion-botversionlocalespecification.html#cfn-lex-botversion-botversionlocalespecification-localeid"""
+
+@attr.s
+class PropBotSSMLMessage(Property):
+    """
+    AWS Object Type = "AWS::Lex::Bot.SSMLMessage"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-ssmlmessage.html
+
+    Property Document:
+    
+    - ``rp_Value``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-ssmlmessage.html#cfn-lex-bot-ssmlmessage-value
+    """
+    AWS_OBJECT_TYPE = "AWS::Lex::Bot.SSMLMessage"
+    
+    rp_Value: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "Value"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-ssmlmessage.html#cfn-lex-bot-ssmlmessage-value"""
+
+@attr.s
+class PropBotDTMFSpecification(Property):
+    """
+    AWS Object Type = "AWS::Lex::Bot.DTMFSpecification"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-dtmfspecification.html
+
+    Property Document:
+    
+    - ``rp_DeletionCharacter``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-dtmfspecification.html#cfn-lex-bot-dtmfspecification-deletioncharacter
+    - ``rp_EndCharacter``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-dtmfspecification.html#cfn-lex-bot-dtmfspecification-endcharacter
+    - ``rp_EndTimeoutMs``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-dtmfspecification.html#cfn-lex-bot-dtmfspecification-endtimeoutms
+    - ``rp_MaxLength``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-dtmfspecification.html#cfn-lex-bot-dtmfspecification-maxlength
+    """
+    AWS_OBJECT_TYPE = "AWS::Lex::Bot.DTMFSpecification"
+    
+    rp_DeletionCharacter: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "DeletionCharacter"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-dtmfspecification.html#cfn-lex-bot-dtmfspecification-deletioncharacter"""
+    rp_EndCharacter: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "EndCharacter"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-dtmfspecification.html#cfn-lex-bot-dtmfspecification-endcharacter"""
+    rp_EndTimeoutMs: int = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(int),
+        metadata={AttrMeta.PROPERTY_NAME: "EndTimeoutMs"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-dtmfspecification.html#cfn-lex-bot-dtmfspecification-endtimeoutms"""
+    rp_MaxLength: int = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(int),
+        metadata={AttrMeta.PROPERTY_NAME: "MaxLength"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-dtmfspecification.html#cfn-lex-bot-dtmfspecification-maxlength"""
 
 @attr.s
 class PropBotSampleUtterance(Property):
@@ -535,25 +942,31 @@ class PropBotSampleUtterance(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-sampleutterance.html#cfn-lex-bot-sampleutterance-utterance"""
 
 @attr.s
-class PropBotGrammarSlotTypeSetting(Property):
+class PropBotBotAliasLocaleSettingsItem(Property):
     """
-    AWS Object Type = "AWS::Lex::Bot.GrammarSlotTypeSetting"
+    AWS Object Type = "AWS::Lex::Bot.BotAliasLocaleSettingsItem"
 
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-grammarslottypesetting.html
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-botaliaslocalesettingsitem.html
 
     Property Document:
     
-    - ``p_Source``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-grammarslottypesetting.html#cfn-lex-bot-grammarslottypesetting-source
+    - ``rp_BotAliasLocaleSetting``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-botaliaslocalesettingsitem.html#cfn-lex-bot-botaliaslocalesettingsitem-botaliaslocalesetting
+    - ``rp_LocaleId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-botaliaslocalesettingsitem.html#cfn-lex-bot-botaliaslocalesettingsitem-localeid
     """
-    AWS_OBJECT_TYPE = "AWS::Lex::Bot.GrammarSlotTypeSetting"
+    AWS_OBJECT_TYPE = "AWS::Lex::Bot.BotAliasLocaleSettingsItem"
     
-    p_Source: typing.Union['PropBotGrammarSlotTypeSource', dict] = attr.ib(
+    rp_BotAliasLocaleSetting: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropBotGrammarSlotTypeSource.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropBotGrammarSlotTypeSource)),
-        metadata={AttrMeta.PROPERTY_NAME: "Source"},
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "BotAliasLocaleSetting"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-grammarslottypesetting.html#cfn-lex-bot-grammarslottypesetting-source"""
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-botaliaslocalesettingsitem.html#cfn-lex-bot-botaliaslocalesettingsitem-botaliaslocalesetting"""
+    rp_LocaleId: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "LocaleId"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-botaliaslocalesettingsitem.html#cfn-lex-bot-botaliaslocalesettingsitem-localeid"""
 
 @attr.s
 class PropBotAliasS3BucketLogDestination(Property):
@@ -590,38 +1003,38 @@ class PropBotAliasS3BucketLogDestination(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-botalias-s3bucketlogdestination.html#cfn-lex-botalias-s3bucketlogdestination-kmskeyarn"""
 
 @attr.s
-class PropBotOutputContext(Property):
+class PropBotS3BucketLogDestination(Property):
     """
-    AWS Object Type = "AWS::Lex::Bot.OutputContext"
+    AWS Object Type = "AWS::Lex::Bot.S3BucketLogDestination"
 
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-outputcontext.html
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-s3bucketlogdestination.html
 
     Property Document:
     
-    - ``rp_Name``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-outputcontext.html#cfn-lex-bot-outputcontext-name
-    - ``rp_TimeToLiveInSeconds``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-outputcontext.html#cfn-lex-bot-outputcontext-timetoliveinseconds
-    - ``rp_TurnsToLive``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-outputcontext.html#cfn-lex-bot-outputcontext-turnstolive
+    - ``rp_LogPrefix``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-s3bucketlogdestination.html#cfn-lex-bot-s3bucketlogdestination-logprefix
+    - ``rp_S3BucketArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-s3bucketlogdestination.html#cfn-lex-bot-s3bucketlogdestination-s3bucketarn
+    - ``p_KmsKeyArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-s3bucketlogdestination.html#cfn-lex-bot-s3bucketlogdestination-kmskeyarn
     """
-    AWS_OBJECT_TYPE = "AWS::Lex::Bot.OutputContext"
+    AWS_OBJECT_TYPE = "AWS::Lex::Bot.S3BucketLogDestination"
     
-    rp_Name: TypeHint.intrinsic_str = attr.ib(
+    rp_LogPrefix: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Name"},
+        metadata={AttrMeta.PROPERTY_NAME: "LogPrefix"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-outputcontext.html#cfn-lex-bot-outputcontext-name"""
-    rp_TimeToLiveInSeconds: int = attr.ib(
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-s3bucketlogdestination.html#cfn-lex-bot-s3bucketlogdestination-logprefix"""
+    rp_S3BucketArn: TypeHint.intrinsic_str = attr.ib(
         default=None,
-        validator=attr.validators.instance_of(int),
-        metadata={AttrMeta.PROPERTY_NAME: "TimeToLiveInSeconds"},
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "S3BucketArn"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-outputcontext.html#cfn-lex-bot-outputcontext-timetoliveinseconds"""
-    rp_TurnsToLive: int = attr.ib(
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-s3bucketlogdestination.html#cfn-lex-bot-s3bucketlogdestination-s3bucketarn"""
+    p_KmsKeyArn: TypeHint.intrinsic_str = attr.ib(
         default=None,
-        validator=attr.validators.instance_of(int),
-        metadata={AttrMeta.PROPERTY_NAME: "TurnsToLive"},
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "KmsKeyArn"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-outputcontext.html#cfn-lex-bot-outputcontext-turnstolive"""
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-s3bucketlogdestination.html#cfn-lex-bot-s3bucketlogdestination-kmskeyarn"""
 
 @attr.s
 class PropBotCustomPayload(Property):
@@ -664,27 +1077,6 @@ class PropBotSampleValue(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-samplevalue.html#cfn-lex-bot-samplevalue-value"""
 
 @attr.s
-class PropBotAliasCodeHookSpecification(Property):
-    """
-    AWS Object Type = "AWS::Lex::BotAlias.CodeHookSpecification"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-botalias-codehookspecification.html
-
-    Property Document:
-    
-    - ``rp_LambdaCodeHook``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-botalias-codehookspecification.html#cfn-lex-botalias-codehookspecification-lambdacodehook
-    """
-    AWS_OBJECT_TYPE = "AWS::Lex::BotAlias.CodeHookSpecification"
-    
-    rp_LambdaCodeHook: typing.Union['PropBotAliasLambdaCodeHook', dict] = attr.ib(
-        default=None,
-        converter=PropBotAliasLambdaCodeHook.from_dict,
-        validator=attr.validators.instance_of(PropBotAliasLambdaCodeHook),
-        metadata={AttrMeta.PROPERTY_NAME: "LambdaCodeHook"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-botalias-codehookspecification.html#cfn-lex-botalias-codehookspecification-lambdacodehook"""
-
-@attr.s
 class PropBotAliasBotAliasLocaleSettings(Property):
     """
     AWS Object Type = "AWS::Lex::BotAlias.BotAliasLocaleSettings"
@@ -713,27 +1105,6 @@ class PropBotAliasBotAliasLocaleSettings(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-botalias-botaliaslocalesettings.html#cfn-lex-botalias-botaliaslocalesettings-codehookspecification"""
 
 @attr.s
-class PropBotAliasAudioLogDestination(Property):
-    """
-    AWS Object Type = "AWS::Lex::BotAlias.AudioLogDestination"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-botalias-audiologdestination.html
-
-    Property Document:
-    
-    - ``rp_S3Bucket``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-botalias-audiologdestination.html#cfn-lex-botalias-audiologdestination-s3bucket
-    """
-    AWS_OBJECT_TYPE = "AWS::Lex::BotAlias.AudioLogDestination"
-    
-    rp_S3Bucket: typing.Union['PropBotAliasS3BucketLogDestination', dict] = attr.ib(
-        default=None,
-        converter=PropBotAliasS3BucketLogDestination.from_dict,
-        validator=attr.validators.instance_of(PropBotAliasS3BucketLogDestination),
-        metadata={AttrMeta.PROPERTY_NAME: "S3Bucket"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-botalias-audiologdestination.html#cfn-lex-botalias-audiologdestination-s3bucket"""
-
-@attr.s
 class PropBotSlotDefaultValueSpecification(Property):
     """
     AWS Object Type = "AWS::Lex::Bot.SlotDefaultValueSpecification"
@@ -755,25 +1126,39 @@ class PropBotSlotDefaultValueSpecification(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slotdefaultvaluespecification.html#cfn-lex-bot-slotdefaultvaluespecification-defaultvaluelist"""
 
 @attr.s
-class PropBotExternalSourceSetting(Property):
+class PropBotSlotValueSelectionSetting(Property):
     """
-    AWS Object Type = "AWS::Lex::Bot.ExternalSourceSetting"
+    AWS Object Type = "AWS::Lex::Bot.SlotValueSelectionSetting"
 
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-externalsourcesetting.html
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slotvalueselectionsetting.html
 
     Property Document:
     
-    - ``p_GrammarSlotTypeSetting``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-externalsourcesetting.html#cfn-lex-bot-externalsourcesetting-grammarslottypesetting
+    - ``rp_ResolutionStrategy``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slotvalueselectionsetting.html#cfn-lex-bot-slotvalueselectionsetting-resolutionstrategy
+    - ``p_AdvancedRecognitionSetting``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slotvalueselectionsetting.html#cfn-lex-bot-slotvalueselectionsetting-advancedrecognitionsetting
+    - ``p_RegexFilter``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slotvalueselectionsetting.html#cfn-lex-bot-slotvalueselectionsetting-regexfilter
     """
-    AWS_OBJECT_TYPE = "AWS::Lex::Bot.ExternalSourceSetting"
+    AWS_OBJECT_TYPE = "AWS::Lex::Bot.SlotValueSelectionSetting"
     
-    p_GrammarSlotTypeSetting: typing.Union['PropBotGrammarSlotTypeSetting', dict] = attr.ib(
+    rp_ResolutionStrategy: TypeHint.intrinsic_str = attr.ib(
         default=None,
-        converter=PropBotGrammarSlotTypeSetting.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropBotGrammarSlotTypeSetting)),
-        metadata={AttrMeta.PROPERTY_NAME: "GrammarSlotTypeSetting"},
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "ResolutionStrategy"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-externalsourcesetting.html#cfn-lex-bot-externalsourcesetting-grammarslottypesetting"""
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slotvalueselectionsetting.html#cfn-lex-bot-slotvalueselectionsetting-resolutionstrategy"""
+    p_AdvancedRecognitionSetting: typing.Union['PropBotAdvancedRecognitionSetting', dict] = attr.ib(
+        default=None,
+        converter=PropBotAdvancedRecognitionSetting.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropBotAdvancedRecognitionSetting)),
+        metadata={AttrMeta.PROPERTY_NAME: "AdvancedRecognitionSetting"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slotvalueselectionsetting.html#cfn-lex-bot-slotvalueselectionsetting-advancedrecognitionsetting"""
+    p_RegexFilter: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "RegexFilter"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slotvalueselectionsetting.html#cfn-lex-bot-slotvalueselectionsetting-regexfilter"""
 
 @attr.s
 class PropBotImageResponseCard(Property):
@@ -818,34 +1203,6 @@ class PropBotImageResponseCard(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-imageresponsecard.html#cfn-lex-bot-imageresponsecard-subtitle"""
 
 @attr.s
-class PropBotAliasAudioLogSetting(Property):
-    """
-    AWS Object Type = "AWS::Lex::BotAlias.AudioLogSetting"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-botalias-audiologsetting.html
-
-    Property Document:
-    
-    - ``rp_Destination``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-botalias-audiologsetting.html#cfn-lex-botalias-audiologsetting-destination
-    - ``rp_Enabled``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-botalias-audiologsetting.html#cfn-lex-botalias-audiologsetting-enabled
-    """
-    AWS_OBJECT_TYPE = "AWS::Lex::BotAlias.AudioLogSetting"
-    
-    rp_Destination: typing.Union['PropBotAliasAudioLogDestination', dict] = attr.ib(
-        default=None,
-        converter=PropBotAliasAudioLogDestination.from_dict,
-        validator=attr.validators.instance_of(PropBotAliasAudioLogDestination),
-        metadata={AttrMeta.PROPERTY_NAME: "Destination"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-botalias-audiologsetting.html#cfn-lex-botalias-audiologsetting-destination"""
-    rp_Enabled: bool = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(bool),
-        metadata={AttrMeta.PROPERTY_NAME: "Enabled"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-botalias-audiologsetting.html#cfn-lex-botalias-audiologsetting-enabled"""
-
-@attr.s
 class PropBotSlotTypeValue(Property):
     """
     AWS Object Type = "AWS::Lex::Bot.SlotTypeValue"
@@ -888,10 +1245,9 @@ class PropBotAliasTextLogSetting(Property):
     """
     AWS_OBJECT_TYPE = "AWS::Lex::BotAlias.TextLogSetting"
     
-    rp_Destination: typing.Union['PropBotAliasTextLogDestination', dict] = attr.ib(
+    rp_Destination: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropBotAliasTextLogDestination.from_dict,
-        validator=attr.validators.instance_of(PropBotAliasTextLogDestination),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "Destination"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-botalias-textlogsetting.html#cfn-lex-botalias-textlogsetting-destination"""
@@ -901,6 +1257,89 @@ class PropBotAliasTextLogSetting(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Enabled"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-botalias-textlogsetting.html#cfn-lex-botalias-textlogsetting-enabled"""
+
+@attr.s
+class PropBotAudioAndDTMFInputSpecification(Property):
+    """
+    AWS Object Type = "AWS::Lex::Bot.AudioAndDTMFInputSpecification"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-audioanddtmfinputspecification.html
+
+    Property Document:
+    
+    - ``rp_StartTimeoutMs``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-audioanddtmfinputspecification.html#cfn-lex-bot-audioanddtmfinputspecification-starttimeoutms
+    - ``p_AudioSpecification``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-audioanddtmfinputspecification.html#cfn-lex-bot-audioanddtmfinputspecification-audiospecification
+    - ``p_DTMFSpecification``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-audioanddtmfinputspecification.html#cfn-lex-bot-audioanddtmfinputspecification-dtmfspecification
+    """
+    AWS_OBJECT_TYPE = "AWS::Lex::Bot.AudioAndDTMFInputSpecification"
+    
+    rp_StartTimeoutMs: int = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(int),
+        metadata={AttrMeta.PROPERTY_NAME: "StartTimeoutMs"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-audioanddtmfinputspecification.html#cfn-lex-bot-audioanddtmfinputspecification-starttimeoutms"""
+    p_AudioSpecification: typing.Union['PropBotAudioSpecification', dict] = attr.ib(
+        default=None,
+        converter=PropBotAudioSpecification.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropBotAudioSpecification)),
+        metadata={AttrMeta.PROPERTY_NAME: "AudioSpecification"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-audioanddtmfinputspecification.html#cfn-lex-bot-audioanddtmfinputspecification-audiospecification"""
+    p_DTMFSpecification: typing.Union['PropBotDTMFSpecification', dict] = attr.ib(
+        default=None,
+        converter=PropBotDTMFSpecification.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropBotDTMFSpecification)),
+        metadata={AttrMeta.PROPERTY_NAME: "DTMFSpecification"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-audioanddtmfinputspecification.html#cfn-lex-bot-audioanddtmfinputspecification-dtmfspecification"""
+
+@attr.s
+class PropBotAliasAudioLogDestination(Property):
+    """
+    AWS Object Type = "AWS::Lex::BotAlias.AudioLogDestination"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-botalias-audiologdestination.html
+
+    Property Document:
+    
+    - ``rp_S3Bucket``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-botalias-audiologdestination.html#cfn-lex-botalias-audiologdestination-s3bucket
+    """
+    AWS_OBJECT_TYPE = "AWS::Lex::BotAlias.AudioLogDestination"
+    
+    rp_S3Bucket: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "S3Bucket"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-botalias-audiologdestination.html#cfn-lex-botalias-audiologdestination-s3bucket"""
+
+@attr.s
+class PropBotAliasAudioLogSetting(Property):
+    """
+    AWS Object Type = "AWS::Lex::BotAlias.AudioLogSetting"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-botalias-audiologsetting.html
+
+    Property Document:
+    
+    - ``rp_Destination``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-botalias-audiologsetting.html#cfn-lex-botalias-audiologsetting-destination
+    - ``rp_Enabled``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-botalias-audiologsetting.html#cfn-lex-botalias-audiologsetting-enabled
+    """
+    AWS_OBJECT_TYPE = "AWS::Lex::BotAlias.AudioLogSetting"
+    
+    rp_Destination: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "Destination"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-botalias-audiologsetting.html#cfn-lex-botalias-audiologsetting-destination"""
+    rp_Enabled: bool = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(bool),
+        metadata={AttrMeta.PROPERTY_NAME: "Enabled"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-botalias-audiologsetting.html#cfn-lex-botalias-audiologsetting-enabled"""
 
 @attr.s
 class PropBotAliasBotAliasLocaleSettingsItem(Property):
@@ -916,10 +1355,9 @@ class PropBotAliasBotAliasLocaleSettingsItem(Property):
     """
     AWS_OBJECT_TYPE = "AWS::Lex::BotAlias.BotAliasLocaleSettingsItem"
     
-    rp_BotAliasLocaleSetting: typing.Union['PropBotAliasBotAliasLocaleSettings', dict] = attr.ib(
+    rp_BotAliasLocaleSetting: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropBotAliasBotAliasLocaleSettings.from_dict,
-        validator=attr.validators.instance_of(PropBotAliasBotAliasLocaleSettings),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "BotAliasLocaleSetting"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-botalias-botaliaslocalesettingsitem.html#cfn-lex-botalias-botaliaslocalesettingsitem-botaliaslocalesetting"""
@@ -929,6 +1367,26 @@ class PropBotAliasBotAliasLocaleSettingsItem(Property):
         metadata={AttrMeta.PROPERTY_NAME: "LocaleId"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-botalias-botaliaslocalesettingsitem.html#cfn-lex-botalias-botaliaslocalesettingsitem-localeid"""
+
+@attr.s
+class PropBotAudioLogDestination(Property):
+    """
+    AWS Object Type = "AWS::Lex::Bot.AudioLogDestination"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-audiologdestination.html
+
+    Property Document:
+    
+    - ``rp_S3Bucket``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-audiologdestination.html#cfn-lex-bot-audiologdestination-s3bucket
+    """
+    AWS_OBJECT_TYPE = "AWS::Lex::Bot.AudioLogDestination"
+    
+    rp_S3Bucket: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "S3Bucket"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-audiologdestination.html#cfn-lex-bot-audiologdestination-s3bucket"""
 
 @attr.s
 class PropBotSlotType(Property):
@@ -980,10 +1438,9 @@ class PropBotSlotType(Property):
         metadata={AttrMeta.PROPERTY_NAME: "SlotTypeValues"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slottype.html#cfn-lex-bot-slottype-slottypevalues"""
-    p_ValueSelectionSetting: typing.Union['PropBotSlotValueSelectionSetting', dict] = attr.ib(
+    p_ValueSelectionSetting: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropBotSlotValueSelectionSetting.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropBotSlotValueSelectionSetting)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "ValueSelectionSetting"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slottype.html#cfn-lex-bot-slottype-valueselectionsetting"""
@@ -1063,6 +1520,77 @@ class PropBotAliasConversationLogSettings(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-botalias-conversationlogsettings.html#cfn-lex-botalias-conversationlogsettings-textlogsettings"""
 
 @attr.s
+class PropBotPromptAttemptSpecification(Property):
+    """
+    AWS Object Type = "AWS::Lex::Bot.PromptAttemptSpecification"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-promptattemptspecification.html
+
+    Property Document:
+    
+    - ``rp_AllowedInputTypes``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-promptattemptspecification.html#cfn-lex-bot-promptattemptspecification-allowedinputtypes
+    - ``p_AllowInterrupt``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-promptattemptspecification.html#cfn-lex-bot-promptattemptspecification-allowinterrupt
+    - ``p_AudioAndDTMFInputSpecification``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-promptattemptspecification.html#cfn-lex-bot-promptattemptspecification-audioanddtmfinputspecification
+    - ``p_TextInputSpecification``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-promptattemptspecification.html#cfn-lex-bot-promptattemptspecification-textinputspecification
+    """
+    AWS_OBJECT_TYPE = "AWS::Lex::Bot.PromptAttemptSpecification"
+    
+    rp_AllowedInputTypes: typing.Union['PropBotAllowedInputTypes', dict] = attr.ib(
+        default=None,
+        converter=PropBotAllowedInputTypes.from_dict,
+        validator=attr.validators.instance_of(PropBotAllowedInputTypes),
+        metadata={AttrMeta.PROPERTY_NAME: "AllowedInputTypes"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-promptattemptspecification.html#cfn-lex-bot-promptattemptspecification-allowedinputtypes"""
+    p_AllowInterrupt: bool = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(bool)),
+        metadata={AttrMeta.PROPERTY_NAME: "AllowInterrupt"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-promptattemptspecification.html#cfn-lex-bot-promptattemptspecification-allowinterrupt"""
+    p_AudioAndDTMFInputSpecification: typing.Union['PropBotAudioAndDTMFInputSpecification', dict] = attr.ib(
+        default=None,
+        converter=PropBotAudioAndDTMFInputSpecification.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropBotAudioAndDTMFInputSpecification)),
+        metadata={AttrMeta.PROPERTY_NAME: "AudioAndDTMFInputSpecification"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-promptattemptspecification.html#cfn-lex-bot-promptattemptspecification-audioanddtmfinputspecification"""
+    p_TextInputSpecification: typing.Union['PropBotTextInputSpecification', dict] = attr.ib(
+        default=None,
+        converter=PropBotTextInputSpecification.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropBotTextInputSpecification)),
+        metadata={AttrMeta.PROPERTY_NAME: "TextInputSpecification"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-promptattemptspecification.html#cfn-lex-bot-promptattemptspecification-textinputspecification"""
+
+@attr.s
+class PropBotAudioLogSetting(Property):
+    """
+    AWS Object Type = "AWS::Lex::Bot.AudioLogSetting"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-audiologsetting.html
+
+    Property Document:
+    
+    - ``rp_Destination``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-audiologsetting.html#cfn-lex-bot-audiologsetting-destination
+    - ``rp_Enabled``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-audiologsetting.html#cfn-lex-bot-audiologsetting-enabled
+    """
+    AWS_OBJECT_TYPE = "AWS::Lex::Bot.AudioLogSetting"
+    
+    rp_Destination: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "Destination"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-audiologsetting.html#cfn-lex-bot-audiologsetting-destination"""
+    rp_Enabled: bool = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(bool),
+        metadata={AttrMeta.PROPERTY_NAME: "Enabled"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-audiologsetting.html#cfn-lex-bot-audiologsetting-enabled"""
+
+@attr.s
 class PropBotMessageGroup(Property):
     """
     AWS Object Type = "AWS::Lex::Bot.MessageGroup"
@@ -1127,6 +1655,35 @@ class PropBotFulfillmentUpdateResponseSpecification(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-fulfillmentupdateresponsespecification.html#cfn-lex-bot-fulfillmentupdateresponsespecification-allowinterrupt"""
 
 @attr.s
+class PropBotConversationLogSettings(Property):
+    """
+    AWS Object Type = "AWS::Lex::Bot.ConversationLogSettings"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-conversationlogsettings.html
+
+    Property Document:
+    
+    - ``p_AudioLogSettings``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-conversationlogsettings.html#cfn-lex-bot-conversationlogsettings-audiologsettings
+    - ``p_TextLogSettings``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-conversationlogsettings.html#cfn-lex-bot-conversationlogsettings-textlogsettings
+    """
+    AWS_OBJECT_TYPE = "AWS::Lex::Bot.ConversationLogSettings"
+    
+    p_AudioLogSettings: typing.List[typing.Union['PropBotAudioLogSetting', dict]] = attr.ib(
+        default=None,
+        converter=PropBotAudioLogSetting.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropBotAudioLogSetting), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "AudioLogSettings"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-conversationlogsettings.html#cfn-lex-bot-conversationlogsettings-audiologsettings"""
+    p_TextLogSettings: typing.List[typing.Union['PropBotTextLogSetting', dict]] = attr.ib(
+        default=None,
+        converter=PropBotTextLogSetting.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropBotTextLogSetting), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "TextLogSettings"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-conversationlogsettings.html#cfn-lex-bot-conversationlogsettings-textlogsettings"""
+
+@attr.s
 class PropBotStillWaitingResponseSpecification(Property):
     """
     AWS Object Type = "AWS::Lex::Bot.StillWaitingResponseSpecification"
@@ -1180,6 +1737,8 @@ class PropBotPromptSpecification(Property):
     - ``rp_MaxRetries``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-promptspecification.html#cfn-lex-bot-promptspecification-maxretries
     - ``rp_MessageGroupsList``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-promptspecification.html#cfn-lex-bot-promptspecification-messagegroupslist
     - ``p_AllowInterrupt``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-promptspecification.html#cfn-lex-bot-promptspecification-allowinterrupt
+    - ``p_MessageSelectionStrategy``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-promptspecification.html#cfn-lex-bot-promptspecification-messageselectionstrategy
+    - ``p_PromptAttemptsSpecification``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-promptspecification.html#cfn-lex-bot-promptspecification-promptattemptsspecification
     """
     AWS_OBJECT_TYPE = "AWS::Lex::Bot.PromptSpecification"
     
@@ -1202,6 +1761,62 @@ class PropBotPromptSpecification(Property):
         metadata={AttrMeta.PROPERTY_NAME: "AllowInterrupt"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-promptspecification.html#cfn-lex-bot-promptspecification-allowinterrupt"""
+    p_MessageSelectionStrategy: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "MessageSelectionStrategy"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-promptspecification.html#cfn-lex-bot-promptspecification-messageselectionstrategy"""
+    p_PromptAttemptsSpecification: typing.Union['PropBotPromptAttemptSpecification', dict] = attr.ib(
+        default=None,
+        converter=PropBotPromptAttemptSpecification.from_list,
+        validator=attr.validators.optional(attr.validators.instance_of(PropBotPromptAttemptSpecification)),
+        metadata={AttrMeta.PROPERTY_NAME: "PromptAttemptsSpecification"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-promptspecification.html#cfn-lex-bot-promptspecification-promptattemptsspecification"""
+
+@attr.s
+class PropBotTestBotAliasSettings(Property):
+    """
+    AWS Object Type = "AWS::Lex::Bot.TestBotAliasSettings"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-testbotaliassettings.html
+
+    Property Document:
+    
+    - ``p_BotAliasLocaleSettings``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-testbotaliassettings.html#cfn-lex-bot-testbotaliassettings-botaliaslocalesettings
+    - ``p_ConversationLogSettings``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-testbotaliassettings.html#cfn-lex-bot-testbotaliassettings-conversationlogsettings
+    - ``p_Description``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-testbotaliassettings.html#cfn-lex-bot-testbotaliassettings-description
+    - ``p_SentimentAnalysisSettings``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-testbotaliassettings.html#cfn-lex-bot-testbotaliassettings-sentimentanalysissettings
+    """
+    AWS_OBJECT_TYPE = "AWS::Lex::Bot.TestBotAliasSettings"
+    
+    p_BotAliasLocaleSettings: typing.List[typing.Union['PropBotBotAliasLocaleSettingsItem', dict]] = attr.ib(
+        default=None,
+        converter=PropBotBotAliasLocaleSettingsItem.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropBotBotAliasLocaleSettingsItem), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "BotAliasLocaleSettings"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-testbotaliassettings.html#cfn-lex-bot-testbotaliassettings-botaliaslocalesettings"""
+    p_ConversationLogSettings: typing.Union['PropBotConversationLogSettings', dict] = attr.ib(
+        default=None,
+        converter=PropBotConversationLogSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropBotConversationLogSettings)),
+        metadata={AttrMeta.PROPERTY_NAME: "ConversationLogSettings"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-testbotaliassettings.html#cfn-lex-bot-testbotaliassettings-conversationlogsettings"""
+    p_Description: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "Description"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-testbotaliassettings.html#cfn-lex-bot-testbotaliassettings-description"""
+    p_SentimentAnalysisSettings: dict = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "SentimentAnalysisSettings"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-testbotaliassettings.html#cfn-lex-bot-testbotaliassettings-sentimentanalysissettings"""
 
 @attr.s
 class PropBotFulfillmentStartResponseSpecification(Property):
@@ -1281,24 +1896,21 @@ class PropBotPostFulfillmentStatusSpecification(Property):
     """
     AWS_OBJECT_TYPE = "AWS::Lex::Bot.PostFulfillmentStatusSpecification"
     
-    p_FailureResponse: typing.Union['PropBotResponseSpecification', dict] = attr.ib(
+    p_FailureResponse: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropBotResponseSpecification.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropBotResponseSpecification)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "FailureResponse"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-postfulfillmentstatusspecification.html#cfn-lex-bot-postfulfillmentstatusspecification-failureresponse"""
-    p_SuccessResponse: typing.Union['PropBotResponseSpecification', dict] = attr.ib(
+    p_SuccessResponse: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropBotResponseSpecification.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropBotResponseSpecification)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "SuccessResponse"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-postfulfillmentstatusspecification.html#cfn-lex-bot-postfulfillmentstatusspecification-successresponse"""
-    p_TimeoutResponse: typing.Union['PropBotResponseSpecification', dict] = attr.ib(
+    p_TimeoutResponse: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropBotResponseSpecification.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropBotResponseSpecification)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "TimeoutResponse"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-postfulfillmentstatusspecification.html#cfn-lex-bot-postfulfillmentstatusspecification-timeoutresponse"""
@@ -1317,10 +1929,9 @@ class PropBotIntentClosingSetting(Property):
     """
     AWS_OBJECT_TYPE = "AWS::Lex::Bot.IntentClosingSetting"
     
-    rp_ClosingResponse: typing.Union['PropBotResponseSpecification', dict] = attr.ib(
+    rp_ClosingResponse: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropBotResponseSpecification.from_dict,
-        validator=attr.validators.instance_of(PropBotResponseSpecification),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "ClosingResponse"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-intentclosingsetting.html#cfn-lex-bot-intentclosingsetting-closingresponse"""
@@ -1353,10 +1964,9 @@ class PropBotFulfillmentUpdatesSpecification(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Active"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-fulfillmentupdatesspecification.html#cfn-lex-bot-fulfillmentupdatesspecification-active"""
-    p_StartResponse: typing.Union['PropBotFulfillmentStartResponseSpecification', dict] = attr.ib(
+    p_StartResponse: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropBotFulfillmentStartResponseSpecification.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropBotFulfillmentStartResponseSpecification)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "StartResponse"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-fulfillmentupdatesspecification.html#cfn-lex-bot-fulfillmentupdatesspecification-startresponse"""
@@ -1366,10 +1976,9 @@ class PropBotFulfillmentUpdatesSpecification(Property):
         metadata={AttrMeta.PROPERTY_NAME: "TimeoutInSeconds"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-fulfillmentupdatesspecification.html#cfn-lex-bot-fulfillmentupdatesspecification-timeoutinseconds"""
-    p_UpdateResponse: typing.Union['PropBotFulfillmentUpdateResponseSpecification', dict] = attr.ib(
+    p_UpdateResponse: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropBotFulfillmentUpdateResponseSpecification.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropBotFulfillmentUpdateResponseSpecification)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "UpdateResponse"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-fulfillmentupdatesspecification.html#cfn-lex-bot-fulfillmentupdatesspecification-updateresponse"""
@@ -1389,10 +1998,9 @@ class PropBotIntentConfirmationSetting(Property):
     """
     AWS_OBJECT_TYPE = "AWS::Lex::Bot.IntentConfirmationSetting"
     
-    rp_DeclinationResponse: typing.Union['PropBotResponseSpecification', dict] = attr.ib(
+    rp_DeclinationResponse: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropBotResponseSpecification.from_dict,
-        validator=attr.validators.instance_of(PropBotResponseSpecification),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "DeclinationResponse"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-intentconfirmationsetting.html#cfn-lex-bot-intentconfirmationsetting-declinationresponse"""
@@ -1411,6 +2019,42 @@ class PropBotIntentConfirmationSetting(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-intentconfirmationsetting.html#cfn-lex-bot-intentconfirmationsetting-isactive"""
 
 @attr.s
+class PropBotFulfillmentCodeHookSetting(Property):
+    """
+    AWS Object Type = "AWS::Lex::Bot.FulfillmentCodeHookSetting"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-fulfillmentcodehooksetting.html
+
+    Property Document:
+    
+    - ``rp_Enabled``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-fulfillmentcodehooksetting.html#cfn-lex-bot-fulfillmentcodehooksetting-enabled
+    - ``p_FulfillmentUpdatesSpecification``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-fulfillmentcodehooksetting.html#cfn-lex-bot-fulfillmentcodehooksetting-fulfillmentupdatesspecification
+    - ``p_PostFulfillmentStatusSpecification``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-fulfillmentcodehooksetting.html#cfn-lex-bot-fulfillmentcodehooksetting-postfulfillmentstatusspecification
+    """
+    AWS_OBJECT_TYPE = "AWS::Lex::Bot.FulfillmentCodeHookSetting"
+    
+    rp_Enabled: bool = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(bool),
+        metadata={AttrMeta.PROPERTY_NAME: "Enabled"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-fulfillmentcodehooksetting.html#cfn-lex-bot-fulfillmentcodehooksetting-enabled"""
+    p_FulfillmentUpdatesSpecification: typing.Union['PropBotFulfillmentUpdatesSpecification', dict] = attr.ib(
+        default=None,
+        converter=PropBotFulfillmentUpdatesSpecification.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropBotFulfillmentUpdatesSpecification)),
+        metadata={AttrMeta.PROPERTY_NAME: "FulfillmentUpdatesSpecification"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-fulfillmentcodehooksetting.html#cfn-lex-bot-fulfillmentcodehooksetting-fulfillmentupdatesspecification"""
+    p_PostFulfillmentStatusSpecification: typing.Union['PropBotPostFulfillmentStatusSpecification', dict] = attr.ib(
+        default=None,
+        converter=PropBotPostFulfillmentStatusSpecification.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropBotPostFulfillmentStatusSpecification)),
+        metadata={AttrMeta.PROPERTY_NAME: "PostFulfillmentStatusSpecification"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-fulfillmentcodehooksetting.html#cfn-lex-bot-fulfillmentcodehooksetting-postfulfillmentstatusspecification"""
+
+@attr.s
 class PropBotWaitAndContinueSpecification(Property):
     """
     AWS Object Type = "AWS::Lex::Bot.WaitAndContinueSpecification"
@@ -1426,17 +2070,15 @@ class PropBotWaitAndContinueSpecification(Property):
     """
     AWS_OBJECT_TYPE = "AWS::Lex::Bot.WaitAndContinueSpecification"
     
-    rp_ContinueResponse: typing.Union['PropBotResponseSpecification', dict] = attr.ib(
+    rp_ContinueResponse: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropBotResponseSpecification.from_dict,
-        validator=attr.validators.instance_of(PropBotResponseSpecification),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "ContinueResponse"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-waitandcontinuespecification.html#cfn-lex-bot-waitandcontinuespecification-continueresponse"""
-    rp_WaitingResponse: typing.Union['PropBotResponseSpecification', dict] = attr.ib(
+    rp_WaitingResponse: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropBotResponseSpecification.from_dict,
-        validator=attr.validators.instance_of(PropBotResponseSpecification),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "WaitingResponse"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-waitandcontinuespecification.html#cfn-lex-bot-waitandcontinuespecification-waitingresponse"""
@@ -1446,10 +2088,9 @@ class PropBotWaitAndContinueSpecification(Property):
         metadata={AttrMeta.PROPERTY_NAME: "IsActive"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-waitandcontinuespecification.html#cfn-lex-bot-waitandcontinuespecification-isactive"""
-    p_StillWaitingResponse: typing.Union['PropBotStillWaitingResponseSpecification', dict] = attr.ib(
+    p_StillWaitingResponse: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropBotStillWaitingResponseSpecification.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropBotStillWaitingResponseSpecification)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "StillWaitingResponse"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-waitandcontinuespecification.html#cfn-lex-bot-waitandcontinuespecification-stillwaitingresponse"""
@@ -1477,10 +2118,9 @@ class PropBotSlotValueElicitationSetting(Property):
         metadata={AttrMeta.PROPERTY_NAME: "SlotConstraint"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slotvalueelicitationsetting.html#cfn-lex-bot-slotvalueelicitationsetting-slotconstraint"""
-    p_DefaultValueSpecification: typing.Union['PropBotSlotDefaultValueSpecification', dict] = attr.ib(
+    p_DefaultValueSpecification: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropBotSlotDefaultValueSpecification.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropBotSlotDefaultValueSpecification)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "DefaultValueSpecification"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slotvalueelicitationsetting.html#cfn-lex-bot-slotvalueelicitationsetting-defaultvaluespecification"""
@@ -1536,10 +2176,9 @@ class PropBotSlot(Property):
         metadata={AttrMeta.PROPERTY_NAME: "SlotTypeName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slot.html#cfn-lex-bot-slot-slottypename"""
-    rp_ValueElicitationSetting: typing.Union['PropBotSlotValueElicitationSetting', dict] = attr.ib(
+    rp_ValueElicitationSetting: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropBotSlotValueElicitationSetting.from_dict,
-        validator=attr.validators.instance_of(PropBotSlotValueElicitationSetting),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "ValueElicitationSetting"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slot.html#cfn-lex-bot-slot-valueelicitationsetting"""
@@ -1563,42 +2202,6 @@ class PropBotSlot(Property):
         metadata={AttrMeta.PROPERTY_NAME: "ObfuscationSetting"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-slot.html#cfn-lex-bot-slot-obfuscationsetting"""
-
-@attr.s
-class PropBotFulfillmentCodeHookSetting(Property):
-    """
-    AWS Object Type = "AWS::Lex::Bot.FulfillmentCodeHookSetting"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-fulfillmentcodehooksetting.html
-
-    Property Document:
-    
-    - ``rp_Enabled``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-fulfillmentcodehooksetting.html#cfn-lex-bot-fulfillmentcodehooksetting-enabled
-    - ``p_FulfillmentUpdatesSpecification``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-fulfillmentcodehooksetting.html#cfn-lex-bot-fulfillmentcodehooksetting-fulfillmentupdatesspecification
-    - ``p_PostFulfillmentStatusSpecification``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-fulfillmentcodehooksetting.html#cfn-lex-bot-fulfillmentcodehooksetting-postfulfillmentstatusspecification
-    """
-    AWS_OBJECT_TYPE = "AWS::Lex::Bot.FulfillmentCodeHookSetting"
-    
-    rp_Enabled: bool = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(bool),
-        metadata={AttrMeta.PROPERTY_NAME: "Enabled"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-fulfillmentcodehooksetting.html#cfn-lex-bot-fulfillmentcodehooksetting-enabled"""
-    p_FulfillmentUpdatesSpecification: typing.Union['PropBotFulfillmentUpdatesSpecification', dict] = attr.ib(
-        default=None,
-        converter=PropBotFulfillmentUpdatesSpecification.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropBotFulfillmentUpdatesSpecification)),
-        metadata={AttrMeta.PROPERTY_NAME: "FulfillmentUpdatesSpecification"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-fulfillmentcodehooksetting.html#cfn-lex-bot-fulfillmentcodehooksetting-fulfillmentupdatesspecification"""
-    p_PostFulfillmentStatusSpecification: typing.Union['PropBotPostFulfillmentStatusSpecification', dict] = attr.ib(
-        default=None,
-        converter=PropBotPostFulfillmentStatusSpecification.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropBotPostFulfillmentStatusSpecification)),
-        metadata={AttrMeta.PROPERTY_NAME: "PostFulfillmentStatusSpecification"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-fulfillmentcodehooksetting.html#cfn-lex-bot-fulfillmentcodehooksetting-postfulfillmentstatusspecification"""
 
 @attr.s
 class PropBotIntent(Property):
@@ -1637,17 +2240,15 @@ class PropBotIntent(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Description"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-intent.html#cfn-lex-bot-intent-description"""
-    p_DialogCodeHook: typing.Union['PropBotDialogCodeHookSetting', dict] = attr.ib(
+    p_DialogCodeHook: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropBotDialogCodeHookSetting.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropBotDialogCodeHookSetting)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "DialogCodeHook"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-intent.html#cfn-lex-bot-intent-dialogcodehook"""
-    p_FulfillmentCodeHook: typing.Union['PropBotFulfillmentCodeHookSetting', dict] = attr.ib(
+    p_FulfillmentCodeHook: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropBotFulfillmentCodeHookSetting.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropBotFulfillmentCodeHookSetting)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "FulfillmentCodeHook"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-intent.html#cfn-lex-bot-intent-fulfillmentcodehook"""
@@ -1725,6 +2326,7 @@ class PropBotBotLocale(Property):
     
     - ``rp_LocaleId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-botlocale.html#cfn-lex-bot-botlocale-localeid
     - ``rp_NluConfidenceThreshold``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-botlocale.html#cfn-lex-bot-botlocale-nluconfidencethreshold
+    - ``p_CustomVocabulary``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-botlocale.html#cfn-lex-bot-botlocale-customvocabulary
     - ``p_Description``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-botlocale.html#cfn-lex-bot-botlocale-description
     - ``p_Intents``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-botlocale.html#cfn-lex-bot-botlocale-intents
     - ``p_SlotTypes``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-botlocale.html#cfn-lex-bot-botlocale-slottypes
@@ -1744,6 +2346,13 @@ class PropBotBotLocale(Property):
         metadata={AttrMeta.PROPERTY_NAME: "NluConfidenceThreshold"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-botlocale.html#cfn-lex-bot-botlocale-nluconfidencethreshold"""
+    p_CustomVocabulary: typing.Union['PropBotCustomVocabulary', dict] = attr.ib(
+        default=None,
+        converter=PropBotCustomVocabulary.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropBotCustomVocabulary)),
+        metadata={AttrMeta.PROPERTY_NAME: "CustomVocabulary"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lex-bot-botlocale.html#cfn-lex-bot-botlocale-customvocabulary"""
     p_Description: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
@@ -1793,6 +2402,7 @@ class Bot(Resource):
     - ``p_BotLocales``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lex-bot.html#cfn-lex-bot-botlocales
     - ``p_BotTags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lex-bot.html#cfn-lex-bot-bottags
     - ``p_Description``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lex-bot.html#cfn-lex-bot-description
+    - ``p_TestBotAliasSettings``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lex-bot.html#cfn-lex-bot-testbotaliassettings
     - ``p_TestBotAliasTags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lex-bot.html#cfn-lex-bot-testbotaliastags
     """
     AWS_OBJECT_TYPE = "AWS::Lex::Bot"
@@ -1801,65 +2411,155 @@ class Bot(Resource):
     rp_DataPrivacy: dict = attr.ib(
         default=None,
         validator=attr.validators.instance_of(dict),
-        metadata={AttrMeta.PROPERTY_NAME: "DataPrivacy"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "DataPrivacy",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": True,
+                "PrimitiveType": 'Json',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lex-bot.html#cfn-lex-bot-dataprivacy"""
     rp_IdleSessionTTLInSeconds: int = attr.ib(
         default=None,
         validator=attr.validators.instance_of(int),
-        metadata={AttrMeta.PROPERTY_NAME: "IdleSessionTTLInSeconds"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "IdleSessionTTLInSeconds",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": True,
+                "PrimitiveType": 'Integer',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lex-bot.html#cfn-lex-bot-idlesessionttlinseconds"""
     rp_Name: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Name"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Name",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lex-bot.html#cfn-lex-bot-name"""
     rp_RoleArn: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "RoleArn"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "RoleArn",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lex-bot.html#cfn-lex-bot-rolearn"""
     p_AutoBuildBotLocales: bool = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(bool)),
-        metadata={AttrMeta.PROPERTY_NAME: "AutoBuildBotLocales"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "AutoBuildBotLocales",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'Boolean',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lex-bot.html#cfn-lex-bot-autobuildbotlocales"""
     p_BotFileS3Location: typing.Union['PropBotS3Location', dict] = attr.ib(
         default=None,
         converter=PropBotS3Location.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropBotS3Location)),
-        metadata={AttrMeta.PROPERTY_NAME: "BotFileS3Location"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "BotFileS3Location",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'S3Location',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lex-bot.html#cfn-lex-bot-botfiles3location"""
     p_BotLocales: typing.List[typing.Union['PropBotBotLocale', dict]] = attr.ib(
         default=None,
         converter=PropBotBotLocale.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropBotBotLocale), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "BotLocales"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "BotLocales",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'List',
+                "ItemType": 'BotLocale',
+                "DuplicatesAllowed": False,
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lex-bot.html#cfn-lex-bot-botlocales"""
     p_BotTags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "BotTags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "BotTags",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'List',
+                "ItemType": 'Tag',
+                "DuplicatesAllowed": False,
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lex-bot.html#cfn-lex-bot-bottags"""
     p_Description: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Description"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Description",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lex-bot.html#cfn-lex-bot-description"""
+    p_TestBotAliasSettings: typing.Union['PropBotTestBotAliasSettings', dict] = attr.ib(
+        default=None,
+        converter=PropBotTestBotAliasSettings.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropBotTestBotAliasSettings)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "TestBotAliasSettings",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'TestBotAliasSettings',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lex-bot.html#cfn-lex-bot-testbotaliassettings"""
     p_TestBotAliasTags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "TestBotAliasTags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "TestBotAliasTags",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'List',
+                "ItemType": 'Tag',
+                "DuplicatesAllowed": False,
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lex-bot.html#cfn-lex-bot-testbotaliastags"""
 
@@ -1899,52 +2599,112 @@ class BotAlias(Resource):
     rp_BotAliasName: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "BotAliasName"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "BotAliasName",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lex-botalias.html#cfn-lex-botalias-botaliasname"""
     rp_BotId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "BotId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "BotId",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lex-botalias.html#cfn-lex-botalias-botid"""
     p_BotAliasLocaleSettings: typing.List[typing.Union['PropBotAliasBotAliasLocaleSettingsItem', dict]] = attr.ib(
         default=None,
         converter=PropBotAliasBotAliasLocaleSettingsItem.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropBotAliasBotAliasLocaleSettingsItem), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "BotAliasLocaleSettings"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "BotAliasLocaleSettings",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'List',
+                "ItemType": 'BotAliasLocaleSettingsItem',
+                "DuplicatesAllowed": False,
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lex-botalias.html#cfn-lex-botalias-botaliaslocalesettings"""
     p_BotAliasTags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "BotAliasTags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "BotAliasTags",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'List',
+                "ItemType": 'Tag',
+                "DuplicatesAllowed": False,
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lex-botalias.html#cfn-lex-botalias-botaliastags"""
     p_BotVersion: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "BotVersion"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "BotVersion",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lex-botalias.html#cfn-lex-botalias-botversion"""
     p_ConversationLogSettings: typing.Union['PropBotAliasConversationLogSettings', dict] = attr.ib(
         default=None,
         converter=PropBotAliasConversationLogSettings.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropBotAliasConversationLogSettings)),
-        metadata={AttrMeta.PROPERTY_NAME: "ConversationLogSettings"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ConversationLogSettings",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'ConversationLogSettings',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lex-botalias.html#cfn-lex-botalias-conversationlogsettings"""
     p_Description: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Description"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Description",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lex-botalias.html#cfn-lex-botalias-description"""
     p_SentimentAnalysisSettings: dict = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(dict)),
-        metadata={AttrMeta.PROPERTY_NAME: "SentimentAnalysisSettings"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "SentimentAnalysisSettings",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'Json',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lex-botalias.html#cfn-lex-botalias-sentimentanalysissettings"""
 
@@ -1984,13 +2744,27 @@ class ResourcePolicy(Resource):
         default=None,
         converter=PropResourcePolicyPolicy.from_dict,
         validator=attr.validators.instance_of(PropResourcePolicyPolicy),
-        metadata={AttrMeta.PROPERTY_NAME: "Policy"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Policy",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": True,
+                "Type": 'Policy',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lex-resourcepolicy.html#cfn-lex-resourcepolicy-policy"""
     rp_ResourceArn: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "ResourceArn"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ResourceArn",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lex-resourcepolicy.html#cfn-lex-resourcepolicy-resourcearn"""
 
@@ -2025,20 +2799,42 @@ class BotVersion(Resource):
     rp_BotId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "BotId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "BotId",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lex-botversion.html#cfn-lex-botversion-botid"""
     rp_BotVersionLocaleSpecification: typing.List[typing.Union['PropBotVersionBotVersionLocaleSpecification', dict]] = attr.ib(
         default=None,
         converter=PropBotVersionBotVersionLocaleSpecification.from_list,
         validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropBotVersionBotVersionLocaleSpecification), iterable_validator=attr.validators.instance_of(list)),
-        metadata={AttrMeta.PROPERTY_NAME: "BotVersionLocaleSpecification"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "BotVersionLocaleSpecification",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": True,
+                "Type": 'List',
+                "ItemType": 'BotVersionLocaleSpecification',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lex-botversion.html#cfn-lex-botversion-botversionlocalespecification"""
     p_Description: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Description"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Description",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lex-botversion.html#cfn-lex-botversion-description"""
 

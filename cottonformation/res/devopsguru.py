@@ -15,6 +15,60 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
+class PropResourceCollectionTagCollection(Property):
+    """
+    AWS Object Type = "AWS::DevOpsGuru::ResourceCollection.TagCollection"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsguru-resourcecollection-tagcollection.html
+
+    Property Document:
+    
+    - ``p_AppBoundaryKey``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsguru-resourcecollection-tagcollection.html#cfn-devopsguru-resourcecollection-tagcollection-appboundarykey
+    - ``p_TagValues``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsguru-resourcecollection-tagcollection.html#cfn-devopsguru-resourcecollection-tagcollection-tagvalues
+    """
+    AWS_OBJECT_TYPE = "AWS::DevOpsGuru::ResourceCollection.TagCollection"
+    
+    p_AppBoundaryKey: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "AppBoundaryKey"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsguru-resourcecollection-tagcollection.html#cfn-devopsguru-resourcecollection-tagcollection-appboundarykey"""
+    p_TagValues: typing.List[TypeHint.intrinsic_str] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "TagValues"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsguru-resourcecollection-tagcollection.html#cfn-devopsguru-resourcecollection-tagcollection-tagvalues"""
+
+@attr.s
+class PropNotificationChannelNotificationFilterConfig(Property):
+    """
+    AWS Object Type = "AWS::DevOpsGuru::NotificationChannel.NotificationFilterConfig"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsguru-notificationchannel-notificationfilterconfig.html
+
+    Property Document:
+    
+    - ``p_MessageTypes``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsguru-notificationchannel-notificationfilterconfig.html#cfn-devopsguru-notificationchannel-notificationfilterconfig-messagetypes
+    - ``p_Severities``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsguru-notificationchannel-notificationfilterconfig.html#cfn-devopsguru-notificationchannel-notificationfilterconfig-severities
+    """
+    AWS_OBJECT_TYPE = "AWS::DevOpsGuru::NotificationChannel.NotificationFilterConfig"
+    
+    p_MessageTypes: typing.List[TypeHint.intrinsic_str] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "MessageTypes"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsguru-notificationchannel-notificationfilterconfig.html#cfn-devopsguru-notificationchannel-notificationfilterconfig-messagetypes"""
+    p_Severities: typing.List[TypeHint.intrinsic_str] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "Severities"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsguru-notificationchannel-notificationfilterconfig.html#cfn-devopsguru-notificationchannel-notificationfilterconfig-severities"""
+
+@attr.s
 class PropNotificationChannelSnsChannelConfig(Property):
     """
     AWS Object Type = "AWS::DevOpsGuru::NotificationChannel.SnsChannelConfig"
@@ -63,14 +117,20 @@ class PropNotificationChannelNotificationChannelConfig(Property):
 
     Property Document:
     
+    - ``p_Filters``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsguru-notificationchannel-notificationchannelconfig.html#cfn-devopsguru-notificationchannel-notificationchannelconfig-filters
     - ``p_Sns``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsguru-notificationchannel-notificationchannelconfig.html#cfn-devopsguru-notificationchannel-notificationchannelconfig-sns
     """
     AWS_OBJECT_TYPE = "AWS::DevOpsGuru::NotificationChannel.NotificationChannelConfig"
     
-    p_Sns: typing.Union['PropNotificationChannelSnsChannelConfig', dict] = attr.ib(
+    p_Filters: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropNotificationChannelSnsChannelConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropNotificationChannelSnsChannelConfig)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "Filters"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsguru-notificationchannel-notificationchannelconfig.html#cfn-devopsguru-notificationchannel-notificationchannelconfig-filters"""
+    p_Sns: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "Sns"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsguru-notificationchannel-notificationchannelconfig.html#cfn-devopsguru-notificationchannel-notificationchannelconfig-sns"""
@@ -85,16 +145,23 @@ class PropResourceCollectionResourceCollectionFilter(Property):
     Property Document:
     
     - ``p_CloudFormation``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsguru-resourcecollection-resourcecollectionfilter.html#cfn-devopsguru-resourcecollection-resourcecollectionfilter-cloudformation
+    - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsguru-resourcecollection-resourcecollectionfilter.html#cfn-devopsguru-resourcecollection-resourcecollectionfilter-tags
     """
     AWS_OBJECT_TYPE = "AWS::DevOpsGuru::ResourceCollection.ResourceCollectionFilter"
     
-    p_CloudFormation: typing.Union['PropResourceCollectionCloudFormationCollectionFilter', dict] = attr.ib(
+    p_CloudFormation: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropResourceCollectionCloudFormationCollectionFilter.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropResourceCollectionCloudFormationCollectionFilter)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "CloudFormation"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsguru-resourcecollection-resourcecollectionfilter.html#cfn-devopsguru-resourcecollection-resourcecollectionfilter-cloudformation"""
+    p_Tags: typing.List[typing.Union['PropResourceCollectionTagCollection', dict]] = attr.ib(
+        default=None,
+        converter=PropResourceCollectionTagCollection.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropResourceCollectionTagCollection), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-devopsguru-resourcecollection-resourcecollectionfilter.html#cfn-devopsguru-resourcecollection-resourcecollectionfilter-tags"""
 
 
 #--- Resource declaration ---
@@ -117,7 +184,14 @@ class NotificationChannel(Resource):
         default=None,
         converter=PropNotificationChannelNotificationChannelConfig.from_dict,
         validator=attr.validators.instance_of(PropNotificationChannelNotificationChannelConfig),
-        metadata={AttrMeta.PROPERTY_NAME: "Config"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Config",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "Type": 'NotificationChannelConfig',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-devopsguru-notificationchannel.html#cfn-devopsguru-notificationchannel-config"""
 
@@ -146,7 +220,14 @@ class ResourceCollection(Resource):
         default=None,
         converter=PropResourceCollectionResourceCollectionFilter.from_dict,
         validator=attr.validators.instance_of(PropResourceCollectionResourceCollectionFilter),
-        metadata={AttrMeta.PROPERTY_NAME: "ResourceCollectionFilter"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ResourceCollectionFilter",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": True,
+                "Type": 'ResourceCollectionFilter',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-devopsguru-resourcecollection.html#cfn-devopsguru-resourcecollection-resourcecollectionfilter"""
 

@@ -15,6 +15,652 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
+class PropContinuousDeploymentPolicySessionStickinessConfig(Property):
+    """
+    AWS Object Type = "AWS::CloudFront::ContinuousDeploymentPolicy.SessionStickinessConfig"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-continuousdeploymentpolicy-sessionstickinessconfig.html
+
+    Property Document:
+    
+    - ``rp_IdleTTL``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-continuousdeploymentpolicy-sessionstickinessconfig.html#cfn-cloudfront-continuousdeploymentpolicy-sessionstickinessconfig-idlettl
+    - ``rp_MaximumTTL``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-continuousdeploymentpolicy-sessionstickinessconfig.html#cfn-cloudfront-continuousdeploymentpolicy-sessionstickinessconfig-maximumttl
+    """
+    AWS_OBJECT_TYPE = "AWS::CloudFront::ContinuousDeploymentPolicy.SessionStickinessConfig"
+    
+    rp_IdleTTL: int = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(int),
+        metadata={AttrMeta.PROPERTY_NAME: "IdleTTL"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-continuousdeploymentpolicy-sessionstickinessconfig.html#cfn-cloudfront-continuousdeploymentpolicy-sessionstickinessconfig-idlettl"""
+    rp_MaximumTTL: int = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(int),
+        metadata={AttrMeta.PROPERTY_NAME: "MaximumTTL"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-continuousdeploymentpolicy-sessionstickinessconfig.html#cfn-cloudfront-continuousdeploymentpolicy-sessionstickinessconfig-maximumttl"""
+
+@attr.s
+class PropResponseHeadersPolicyXSSProtection(Property):
+    """
+    AWS Object Type = "AWS::CloudFront::ResponseHeadersPolicy.XSSProtection"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-xssprotection.html
+
+    Property Document:
+    
+    - ``rp_Override``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-xssprotection.html#cfn-cloudfront-responseheaderspolicy-xssprotection-override
+    - ``rp_Protection``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-xssprotection.html#cfn-cloudfront-responseheaderspolicy-xssprotection-protection
+    - ``p_ModeBlock``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-xssprotection.html#cfn-cloudfront-responseheaderspolicy-xssprotection-modeblock
+    - ``p_ReportUri``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-xssprotection.html#cfn-cloudfront-responseheaderspolicy-xssprotection-reporturi
+    """
+    AWS_OBJECT_TYPE = "AWS::CloudFront::ResponseHeadersPolicy.XSSProtection"
+    
+    rp_Override: bool = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(bool),
+        metadata={AttrMeta.PROPERTY_NAME: "Override"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-xssprotection.html#cfn-cloudfront-responseheaderspolicy-xssprotection-override"""
+    rp_Protection: bool = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(bool),
+        metadata={AttrMeta.PROPERTY_NAME: "Protection"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-xssprotection.html#cfn-cloudfront-responseheaderspolicy-xssprotection-protection"""
+    p_ModeBlock: bool = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(bool)),
+        metadata={AttrMeta.PROPERTY_NAME: "ModeBlock"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-xssprotection.html#cfn-cloudfront-responseheaderspolicy-xssprotection-modeblock"""
+    p_ReportUri: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "ReportUri"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-xssprotection.html#cfn-cloudfront-responseheaderspolicy-xssprotection-reporturi"""
+
+@attr.s
+class PropStreamingDistributionS3Origin(Property):
+    """
+    AWS Object Type = "AWS::CloudFront::StreamingDistribution.S3Origin"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-s3origin.html
+
+    Property Document:
+    
+    - ``rp_DomainName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-s3origin.html#cfn-cloudfront-streamingdistribution-s3origin-domainname
+    - ``rp_OriginAccessIdentity``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-s3origin.html#cfn-cloudfront-streamingdistribution-s3origin-originaccessidentity
+    """
+    AWS_OBJECT_TYPE = "AWS::CloudFront::StreamingDistribution.S3Origin"
+    
+    rp_DomainName: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "DomainName"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-s3origin.html#cfn-cloudfront-streamingdistribution-s3origin-domainname"""
+    rp_OriginAccessIdentity: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "OriginAccessIdentity"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-s3origin.html#cfn-cloudfront-streamingdistribution-s3origin-originaccessidentity"""
+
+@attr.s
+class PropResponseHeadersPolicyServerTimingHeadersConfig(Property):
+    """
+    AWS Object Type = "AWS::CloudFront::ResponseHeadersPolicy.ServerTimingHeadersConfig"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-servertimingheadersconfig.html
+
+    Property Document:
+    
+    - ``rp_Enabled``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-servertimingheadersconfig.html#cfn-cloudfront-responseheaderspolicy-servertimingheadersconfig-enabled
+    - ``p_SamplingRate``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-servertimingheadersconfig.html#cfn-cloudfront-responseheaderspolicy-servertimingheadersconfig-samplingrate
+    """
+    AWS_OBJECT_TYPE = "AWS::CloudFront::ResponseHeadersPolicy.ServerTimingHeadersConfig"
+    
+    rp_Enabled: bool = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(bool),
+        metadata={AttrMeta.PROPERTY_NAME: "Enabled"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-servertimingheadersconfig.html#cfn-cloudfront-responseheaderspolicy-servertimingheadersconfig-enabled"""
+    p_SamplingRate: float = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(float)),
+        metadata={AttrMeta.PROPERTY_NAME: "SamplingRate"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-servertimingheadersconfig.html#cfn-cloudfront-responseheaderspolicy-servertimingheadersconfig-samplingrate"""
+
+@attr.s
+class PropContinuousDeploymentPolicySingleWeightConfig(Property):
+    """
+    AWS Object Type = "AWS::CloudFront::ContinuousDeploymentPolicy.SingleWeightConfig"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-continuousdeploymentpolicy-singleweightconfig.html
+
+    Property Document:
+    
+    - ``rp_Weight``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-continuousdeploymentpolicy-singleweightconfig.html#cfn-cloudfront-continuousdeploymentpolicy-singleweightconfig-weight
+    - ``p_SessionStickinessConfig``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-continuousdeploymentpolicy-singleweightconfig.html#cfn-cloudfront-continuousdeploymentpolicy-singleweightconfig-sessionstickinessconfig
+    """
+    AWS_OBJECT_TYPE = "AWS::CloudFront::ContinuousDeploymentPolicy.SingleWeightConfig"
+    
+    rp_Weight: float = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(float),
+        metadata={AttrMeta.PROPERTY_NAME: "Weight"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-continuousdeploymentpolicy-singleweightconfig.html#cfn-cloudfront-continuousdeploymentpolicy-singleweightconfig-weight"""
+    p_SessionStickinessConfig: typing.Union['PropContinuousDeploymentPolicySessionStickinessConfig', dict] = attr.ib(
+        default=None,
+        converter=PropContinuousDeploymentPolicySessionStickinessConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropContinuousDeploymentPolicySessionStickinessConfig)),
+        metadata={AttrMeta.PROPERTY_NAME: "SessionStickinessConfig"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-continuousdeploymentpolicy-singleweightconfig.html#cfn-cloudfront-continuousdeploymentpolicy-singleweightconfig-sessionstickinessconfig"""
+
+@attr.s
+class PropDistributionLegacyS3Origin(Property):
+    """
+    AWS Object Type = "AWS::CloudFront::Distribution.LegacyS3Origin"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-legacys3origin.html
+
+    Property Document:
+    
+    - ``rp_DNSName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-legacys3origin.html#cfn-cloudfront-distribution-legacys3origin-dnsname
+    - ``p_OriginAccessIdentity``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-legacys3origin.html#cfn-cloudfront-distribution-legacys3origin-originaccessidentity
+    """
+    AWS_OBJECT_TYPE = "AWS::CloudFront::Distribution.LegacyS3Origin"
+    
+    rp_DNSName: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "DNSName"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-legacys3origin.html#cfn-cloudfront-distribution-legacys3origin-dnsname"""
+    p_OriginAccessIdentity: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "OriginAccessIdentity"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-legacys3origin.html#cfn-cloudfront-distribution-legacys3origin-originaccessidentity"""
+
+@attr.s
+class PropDistributionCustomOriginConfig(Property):
+    """
+    AWS Object Type = "AWS::CloudFront::Distribution.CustomOriginConfig"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-customoriginconfig.html
+
+    Property Document:
+    
+    - ``rp_OriginProtocolPolicy``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-customoriginconfig.html#cfn-cloudfront-distribution-customoriginconfig-originprotocolpolicy
+    - ``p_HTTPPort``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-customoriginconfig.html#cfn-cloudfront-distribution-customoriginconfig-httpport
+    - ``p_HTTPSPort``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-customoriginconfig.html#cfn-cloudfront-distribution-customoriginconfig-httpsport
+    - ``p_OriginKeepaliveTimeout``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-customoriginconfig.html#cfn-cloudfront-distribution-customoriginconfig-originkeepalivetimeout
+    - ``p_OriginReadTimeout``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-customoriginconfig.html#cfn-cloudfront-distribution-customoriginconfig-originreadtimeout
+    - ``p_OriginSSLProtocols``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-customoriginconfig.html#cfn-cloudfront-distribution-customoriginconfig-originsslprotocols
+    """
+    AWS_OBJECT_TYPE = "AWS::CloudFront::Distribution.CustomOriginConfig"
+    
+    rp_OriginProtocolPolicy: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "OriginProtocolPolicy"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-customoriginconfig.html#cfn-cloudfront-distribution-customoriginconfig-originprotocolpolicy"""
+    p_HTTPPort: int = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(int)),
+        metadata={AttrMeta.PROPERTY_NAME: "HTTPPort"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-customoriginconfig.html#cfn-cloudfront-distribution-customoriginconfig-httpport"""
+    p_HTTPSPort: int = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(int)),
+        metadata={AttrMeta.PROPERTY_NAME: "HTTPSPort"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-customoriginconfig.html#cfn-cloudfront-distribution-customoriginconfig-httpsport"""
+    p_OriginKeepaliveTimeout: int = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(int)),
+        metadata={AttrMeta.PROPERTY_NAME: "OriginKeepaliveTimeout"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-customoriginconfig.html#cfn-cloudfront-distribution-customoriginconfig-originkeepalivetimeout"""
+    p_OriginReadTimeout: int = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(int)),
+        metadata={AttrMeta.PROPERTY_NAME: "OriginReadTimeout"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-customoriginconfig.html#cfn-cloudfront-distribution-customoriginconfig-originreadtimeout"""
+    p_OriginSSLProtocols: typing.List[TypeHint.intrinsic_str] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "OriginSSLProtocols"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-customoriginconfig.html#cfn-cloudfront-distribution-customoriginconfig-originsslprotocols"""
+
+@attr.s
+class PropDistributionViewerCertificate(Property):
+    """
+    AWS Object Type = "AWS::CloudFront::Distribution.ViewerCertificate"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-viewercertificate.html
+
+    Property Document:
+    
+    - ``p_AcmCertificateArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-viewercertificate.html#cfn-cloudfront-distribution-viewercertificate-acmcertificatearn
+    - ``p_CloudFrontDefaultCertificate``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-viewercertificate.html#cfn-cloudfront-distribution-viewercertificate-cloudfrontdefaultcertificate
+    - ``p_IamCertificateId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-viewercertificate.html#cfn-cloudfront-distribution-viewercertificate-iamcertificateid
+    - ``p_MinimumProtocolVersion``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-viewercertificate.html#cfn-cloudfront-distribution-viewercertificate-minimumprotocolversion
+    - ``p_SslSupportMethod``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-viewercertificate.html#cfn-cloudfront-distribution-viewercertificate-sslsupportmethod
+    """
+    AWS_OBJECT_TYPE = "AWS::CloudFront::Distribution.ViewerCertificate"
+    
+    p_AcmCertificateArn: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "AcmCertificateArn"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-viewercertificate.html#cfn-cloudfront-distribution-viewercertificate-acmcertificatearn"""
+    p_CloudFrontDefaultCertificate: bool = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(bool)),
+        metadata={AttrMeta.PROPERTY_NAME: "CloudFrontDefaultCertificate"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-viewercertificate.html#cfn-cloudfront-distribution-viewercertificate-cloudfrontdefaultcertificate"""
+    p_IamCertificateId: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "IamCertificateId"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-viewercertificate.html#cfn-cloudfront-distribution-viewercertificate-iamcertificateid"""
+    p_MinimumProtocolVersion: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "MinimumProtocolVersion"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-viewercertificate.html#cfn-cloudfront-distribution-viewercertificate-minimumprotocolversion"""
+    p_SslSupportMethod: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "SslSupportMethod"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-viewercertificate.html#cfn-cloudfront-distribution-viewercertificate-sslsupportmethod"""
+
+@attr.s
+class PropOriginAccessControlOriginAccessControlConfig(Property):
+    """
+    AWS Object Type = "AWS::CloudFront::OriginAccessControl.OriginAccessControlConfig"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-originaccesscontrol-originaccesscontrolconfig.html
+
+    Property Document:
+    
+    - ``rp_Name``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-originaccesscontrol-originaccesscontrolconfig.html#cfn-cloudfront-originaccesscontrol-originaccesscontrolconfig-name
+    - ``rp_OriginAccessControlOriginType``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-originaccesscontrol-originaccesscontrolconfig.html#cfn-cloudfront-originaccesscontrol-originaccesscontrolconfig-originaccesscontrolorigintype
+    - ``rp_SigningBehavior``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-originaccesscontrol-originaccesscontrolconfig.html#cfn-cloudfront-originaccesscontrol-originaccesscontrolconfig-signingbehavior
+    - ``rp_SigningProtocol``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-originaccesscontrol-originaccesscontrolconfig.html#cfn-cloudfront-originaccesscontrol-originaccesscontrolconfig-signingprotocol
+    - ``p_Description``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-originaccesscontrol-originaccesscontrolconfig.html#cfn-cloudfront-originaccesscontrol-originaccesscontrolconfig-description
+    """
+    AWS_OBJECT_TYPE = "AWS::CloudFront::OriginAccessControl.OriginAccessControlConfig"
+    
+    rp_Name: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "Name"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-originaccesscontrol-originaccesscontrolconfig.html#cfn-cloudfront-originaccesscontrol-originaccesscontrolconfig-name"""
+    rp_OriginAccessControlOriginType: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "OriginAccessControlOriginType"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-originaccesscontrol-originaccesscontrolconfig.html#cfn-cloudfront-originaccesscontrol-originaccesscontrolconfig-originaccesscontrolorigintype"""
+    rp_SigningBehavior: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "SigningBehavior"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-originaccesscontrol-originaccesscontrolconfig.html#cfn-cloudfront-originaccesscontrol-originaccesscontrolconfig-signingbehavior"""
+    rp_SigningProtocol: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "SigningProtocol"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-originaccesscontrol-originaccesscontrolconfig.html#cfn-cloudfront-originaccesscontrol-originaccesscontrolconfig-signingprotocol"""
+    p_Description: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "Description"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-originaccesscontrol-originaccesscontrolconfig.html#cfn-cloudfront-originaccesscontrol-originaccesscontrolconfig-description"""
+
+@attr.s
+class PropDistributionCustomErrorResponse(Property):
+    """
+    AWS Object Type = "AWS::CloudFront::Distribution.CustomErrorResponse"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-customerrorresponse.html
+
+    Property Document:
+    
+    - ``rp_ErrorCode``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-customerrorresponse.html#cfn-cloudfront-distribution-customerrorresponse-errorcode
+    - ``p_ErrorCachingMinTTL``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-customerrorresponse.html#cfn-cloudfront-distribution-customerrorresponse-errorcachingminttl
+    - ``p_ResponseCode``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-customerrorresponse.html#cfn-cloudfront-distribution-customerrorresponse-responsecode
+    - ``p_ResponsePagePath``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-customerrorresponse.html#cfn-cloudfront-distribution-customerrorresponse-responsepagepath
+    """
+    AWS_OBJECT_TYPE = "AWS::CloudFront::Distribution.CustomErrorResponse"
+    
+    rp_ErrorCode: int = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(int),
+        metadata={AttrMeta.PROPERTY_NAME: "ErrorCode"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-customerrorresponse.html#cfn-cloudfront-distribution-customerrorresponse-errorcode"""
+    p_ErrorCachingMinTTL: float = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(float)),
+        metadata={AttrMeta.PROPERTY_NAME: "ErrorCachingMinTTL"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-customerrorresponse.html#cfn-cloudfront-distribution-customerrorresponse-errorcachingminttl"""
+    p_ResponseCode: int = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(int)),
+        metadata={AttrMeta.PROPERTY_NAME: "ResponseCode"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-customerrorresponse.html#cfn-cloudfront-distribution-customerrorresponse-responsecode"""
+    p_ResponsePagePath: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "ResponsePagePath"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-customerrorresponse.html#cfn-cloudfront-distribution-customerrorresponse-responsepagepath"""
+
+@attr.s
+class PropDistributionOriginGroupMember(Property):
+    """
+    AWS Object Type = "AWS::CloudFront::Distribution.OriginGroupMember"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origingroupmember.html
+
+    Property Document:
+    
+    - ``rp_OriginId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origingroupmember.html#cfn-cloudfront-distribution-origingroupmember-originid
+    """
+    AWS_OBJECT_TYPE = "AWS::CloudFront::Distribution.OriginGroupMember"
+    
+    rp_OriginId: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "OriginId"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origingroupmember.html#cfn-cloudfront-distribution-origingroupmember-originid"""
+
+@attr.s
+class PropResponseHeadersPolicyAccessControlAllowHeaders(Property):
+    """
+    AWS Object Type = "AWS::CloudFront::ResponseHeadersPolicy.AccessControlAllowHeaders"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-accesscontrolallowheaders.html
+
+    Property Document:
+    
+    - ``rp_Items``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-accesscontrolallowheaders.html#cfn-cloudfront-responseheaderspolicy-accesscontrolallowheaders-items
+    """
+    AWS_OBJECT_TYPE = "AWS::CloudFront::ResponseHeadersPolicy.AccessControlAllowHeaders"
+    
+    rp_Items: typing.List[TypeHint.intrinsic_str] = attr.ib(
+        default=None,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list)),
+        metadata={AttrMeta.PROPERTY_NAME: "Items"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-accesscontrolallowheaders.html#cfn-cloudfront-responseheaderspolicy-accesscontrolallowheaders-items"""
+
+@attr.s
+class PropStreamingDistributionTrustedSigners(Property):
+    """
+    AWS Object Type = "AWS::CloudFront::StreamingDistribution.TrustedSigners"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-trustedsigners.html
+
+    Property Document:
+    
+    - ``rp_Enabled``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-trustedsigners.html#cfn-cloudfront-streamingdistribution-trustedsigners-enabled
+    - ``p_AwsAccountNumbers``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-trustedsigners.html#cfn-cloudfront-streamingdistribution-trustedsigners-awsaccountnumbers
+    """
+    AWS_OBJECT_TYPE = "AWS::CloudFront::StreamingDistribution.TrustedSigners"
+    
+    rp_Enabled: bool = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(bool),
+        metadata={AttrMeta.PROPERTY_NAME: "Enabled"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-trustedsigners.html#cfn-cloudfront-streamingdistribution-trustedsigners-enabled"""
+    p_AwsAccountNumbers: typing.List[TypeHint.intrinsic_str] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "AwsAccountNumbers"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-trustedsigners.html#cfn-cloudfront-streamingdistribution-trustedsigners-awsaccountnumbers"""
+
+@attr.s
+class PropResponseHeadersPolicyCustomHeader(Property):
+    """
+    AWS Object Type = "AWS::CloudFront::ResponseHeadersPolicy.CustomHeader"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-customheader.html
+
+    Property Document:
+    
+    - ``rp_Header``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-customheader.html#cfn-cloudfront-responseheaderspolicy-customheader-header
+    - ``rp_Override``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-customheader.html#cfn-cloudfront-responseheaderspolicy-customheader-override
+    - ``rp_Value``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-customheader.html#cfn-cloudfront-responseheaderspolicy-customheader-value
+    """
+    AWS_OBJECT_TYPE = "AWS::CloudFront::ResponseHeadersPolicy.CustomHeader"
+    
+    rp_Header: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "Header"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-customheader.html#cfn-cloudfront-responseheaderspolicy-customheader-header"""
+    rp_Override: bool = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(bool),
+        metadata={AttrMeta.PROPERTY_NAME: "Override"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-customheader.html#cfn-cloudfront-responseheaderspolicy-customheader-override"""
+    rp_Value: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "Value"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-customheader.html#cfn-cloudfront-responseheaderspolicy-customheader-value"""
+
+@attr.s
+class PropFunctionFunctionConfig(Property):
+    """
+    AWS Object Type = "AWS::CloudFront::Function.FunctionConfig"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-function-functionconfig.html
+
+    Property Document:
+    
+    - ``rp_Comment``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-function-functionconfig.html#cfn-cloudfront-function-functionconfig-comment
+    - ``rp_Runtime``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-function-functionconfig.html#cfn-cloudfront-function-functionconfig-runtime
+    """
+    AWS_OBJECT_TYPE = "AWS::CloudFront::Function.FunctionConfig"
+    
+    rp_Comment: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "Comment"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-function-functionconfig.html#cfn-cloudfront-function-functionconfig-comment"""
+    rp_Runtime: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "Runtime"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-function-functionconfig.html#cfn-cloudfront-function-functionconfig-runtime"""
+
+@attr.s
+class PropFunctionFunctionMetadata(Property):
+    """
+    AWS Object Type = "AWS::CloudFront::Function.FunctionMetadata"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-function-functionmetadata.html
+
+    Property Document:
+    
+    - ``p_FunctionARN``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-function-functionmetadata.html#cfn-cloudfront-function-functionmetadata-functionarn
+    """
+    AWS_OBJECT_TYPE = "AWS::CloudFront::Function.FunctionMetadata"
+    
+    p_FunctionARN: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "FunctionARN"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-function-functionmetadata.html#cfn-cloudfront-function-functionmetadata-functionarn"""
+
+@attr.s
+class PropDistributionS3OriginConfig(Property):
+    """
+    AWS Object Type = "AWS::CloudFront::Distribution.S3OriginConfig"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-s3originconfig.html
+
+    Property Document:
+    
+    - ``p_OriginAccessIdentity``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-s3originconfig.html#cfn-cloudfront-distribution-s3originconfig-originaccessidentity
+    """
+    AWS_OBJECT_TYPE = "AWS::CloudFront::Distribution.S3OriginConfig"
+    
+    p_OriginAccessIdentity: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "OriginAccessIdentity"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-s3originconfig.html#cfn-cloudfront-distribution-s3originconfig-originaccessidentity"""
+
+@attr.s
+class PropResponseHeadersPolicyCustomHeadersConfig(Property):
+    """
+    AWS Object Type = "AWS::CloudFront::ResponseHeadersPolicy.CustomHeadersConfig"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-customheadersconfig.html
+
+    Property Document:
+    
+    - ``rp_Items``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-customheadersconfig.html#cfn-cloudfront-responseheaderspolicy-customheadersconfig-items
+    """
+    AWS_OBJECT_TYPE = "AWS::CloudFront::ResponseHeadersPolicy.CustomHeadersConfig"
+    
+    rp_Items: typing.List[typing.Union['PropResponseHeadersPolicyCustomHeader', dict]] = attr.ib(
+        default=None,
+        converter=PropResponseHeadersPolicyCustomHeader.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropResponseHeadersPolicyCustomHeader), iterable_validator=attr.validators.instance_of(list)),
+        metadata={AttrMeta.PROPERTY_NAME: "Items"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-customheadersconfig.html#cfn-cloudfront-responseheaderspolicy-customheadersconfig-items"""
+
+@attr.s
+class PropDistributionLogging(Property):
+    """
+    AWS Object Type = "AWS::CloudFront::Distribution.Logging"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-logging.html
+
+    Property Document:
+    
+    - ``rp_Bucket``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-logging.html#cfn-cloudfront-distribution-logging-bucket
+    - ``p_IncludeCookies``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-logging.html#cfn-cloudfront-distribution-logging-includecookies
+    - ``p_Prefix``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-logging.html#cfn-cloudfront-distribution-logging-prefix
+    """
+    AWS_OBJECT_TYPE = "AWS::CloudFront::Distribution.Logging"
+    
+    rp_Bucket: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "Bucket"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-logging.html#cfn-cloudfront-distribution-logging-bucket"""
+    p_IncludeCookies: bool = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(bool)),
+        metadata={AttrMeta.PROPERTY_NAME: "IncludeCookies"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-logging.html#cfn-cloudfront-distribution-logging-includecookies"""
+    p_Prefix: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "Prefix"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-logging.html#cfn-cloudfront-distribution-logging-prefix"""
+
+@attr.s
+class PropOriginRequestPolicyHeadersConfig(Property):
+    """
+    AWS Object Type = "AWS::CloudFront::OriginRequestPolicy.HeadersConfig"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-originrequestpolicy-headersconfig.html
+
+    Property Document:
+    
+    - ``rp_HeaderBehavior``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-originrequestpolicy-headersconfig.html#cfn-cloudfront-originrequestpolicy-headersconfig-headerbehavior
+    - ``p_Headers``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-originrequestpolicy-headersconfig.html#cfn-cloudfront-originrequestpolicy-headersconfig-headers
+    """
+    AWS_OBJECT_TYPE = "AWS::CloudFront::OriginRequestPolicy.HeadersConfig"
+    
+    rp_HeaderBehavior: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "HeaderBehavior"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-originrequestpolicy-headersconfig.html#cfn-cloudfront-originrequestpolicy-headersconfig-headerbehavior"""
+    p_Headers: typing.List[TypeHint.intrinsic_str] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "Headers"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-originrequestpolicy-headersconfig.html#cfn-cloudfront-originrequestpolicy-headersconfig-headers"""
+
+@attr.s
+class PropDistributionFunctionAssociation(Property):
+    """
+    AWS Object Type = "AWS::CloudFront::Distribution.FunctionAssociation"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-functionassociation.html
+
+    Property Document:
+    
+    - ``p_EventType``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-functionassociation.html#cfn-cloudfront-distribution-functionassociation-eventtype
+    - ``p_FunctionARN``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-functionassociation.html#cfn-cloudfront-distribution-functionassociation-functionarn
+    """
+    AWS_OBJECT_TYPE = "AWS::CloudFront::Distribution.FunctionAssociation"
+    
+    p_EventType: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "EventType"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-functionassociation.html#cfn-cloudfront-distribution-functionassociation-eventtype"""
+    p_FunctionARN: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "FunctionARN"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-functionassociation.html#cfn-cloudfront-distribution-functionassociation-functionarn"""
+
+@attr.s
 class PropDistributionCookies(Property):
     """
     AWS Object Type = "AWS::CloudFront::Distribution.Cookies"
@@ -103,99 +749,31 @@ class PropKeyGroupKeyGroupConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-keygroup-keygroupconfig.html#cfn-cloudfront-keygroup-keygroupconfig-comment"""
 
 @attr.s
-class PropResponseHeadersPolicyXSSProtection(Property):
+class PropContinuousDeploymentPolicySingleHeaderConfig(Property):
     """
-    AWS Object Type = "AWS::CloudFront::ResponseHeadersPolicy.XSSProtection"
+    AWS Object Type = "AWS::CloudFront::ContinuousDeploymentPolicy.SingleHeaderConfig"
 
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-xssprotection.html
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-continuousdeploymentpolicy-singleheaderconfig.html
 
     Property Document:
     
-    - ``rp_Override``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-xssprotection.html#cfn-cloudfront-responseheaderspolicy-xssprotection-override
-    - ``rp_Protection``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-xssprotection.html#cfn-cloudfront-responseheaderspolicy-xssprotection-protection
-    - ``p_ModeBlock``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-xssprotection.html#cfn-cloudfront-responseheaderspolicy-xssprotection-modeblock
-    - ``p_ReportUri``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-xssprotection.html#cfn-cloudfront-responseheaderspolicy-xssprotection-reporturi
+    - ``rp_Header``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-continuousdeploymentpolicy-singleheaderconfig.html#cfn-cloudfront-continuousdeploymentpolicy-singleheaderconfig-header
+    - ``rp_Value``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-continuousdeploymentpolicy-singleheaderconfig.html#cfn-cloudfront-continuousdeploymentpolicy-singleheaderconfig-value
     """
-    AWS_OBJECT_TYPE = "AWS::CloudFront::ResponseHeadersPolicy.XSSProtection"
+    AWS_OBJECT_TYPE = "AWS::CloudFront::ContinuousDeploymentPolicy.SingleHeaderConfig"
     
-    rp_Override: bool = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(bool),
-        metadata={AttrMeta.PROPERTY_NAME: "Override"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-xssprotection.html#cfn-cloudfront-responseheaderspolicy-xssprotection-override"""
-    rp_Protection: bool = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(bool),
-        metadata={AttrMeta.PROPERTY_NAME: "Protection"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-xssprotection.html#cfn-cloudfront-responseheaderspolicy-xssprotection-protection"""
-    p_ModeBlock: bool = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(bool)),
-        metadata={AttrMeta.PROPERTY_NAME: "ModeBlock"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-xssprotection.html#cfn-cloudfront-responseheaderspolicy-xssprotection-modeblock"""
-    p_ReportUri: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "ReportUri"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-xssprotection.html#cfn-cloudfront-responseheaderspolicy-xssprotection-reporturi"""
-
-@attr.s
-class PropStreamingDistributionS3Origin(Property):
-    """
-    AWS Object Type = "AWS::CloudFront::StreamingDistribution.S3Origin"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-s3origin.html
-
-    Property Document:
-    
-    - ``rp_DomainName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-s3origin.html#cfn-cloudfront-streamingdistribution-s3origin-domainname
-    - ``rp_OriginAccessIdentity``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-s3origin.html#cfn-cloudfront-streamingdistribution-s3origin-originaccessidentity
-    """
-    AWS_OBJECT_TYPE = "AWS::CloudFront::StreamingDistribution.S3Origin"
-    
-    rp_DomainName: TypeHint.intrinsic_str = attr.ib(
+    rp_Header: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "DomainName"},
+        metadata={AttrMeta.PROPERTY_NAME: "Header"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-s3origin.html#cfn-cloudfront-streamingdistribution-s3origin-domainname"""
-    rp_OriginAccessIdentity: TypeHint.intrinsic_str = attr.ib(
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-continuousdeploymentpolicy-singleheaderconfig.html#cfn-cloudfront-continuousdeploymentpolicy-singleheaderconfig-header"""
+    rp_Value: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "OriginAccessIdentity"},
+        metadata={AttrMeta.PROPERTY_NAME: "Value"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-s3origin.html#cfn-cloudfront-streamingdistribution-s3origin-originaccessidentity"""
-
-@attr.s
-class PropDistributionLegacyS3Origin(Property):
-    """
-    AWS Object Type = "AWS::CloudFront::Distribution.LegacyS3Origin"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-legacys3origin.html
-
-    Property Document:
-    
-    - ``rp_DNSName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-legacys3origin.html#cfn-cloudfront-distribution-legacys3origin-dnsname
-    - ``p_OriginAccessIdentity``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-legacys3origin.html#cfn-cloudfront-distribution-legacys3origin-originaccessidentity
-    """
-    AWS_OBJECT_TYPE = "AWS::CloudFront::Distribution.LegacyS3Origin"
-    
-    rp_DNSName: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "DNSName"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-legacys3origin.html#cfn-cloudfront-distribution-legacys3origin-dnsname"""
-    p_OriginAccessIdentity: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "OriginAccessIdentity"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-legacys3origin.html#cfn-cloudfront-distribution-legacys3origin-originaccessidentity"""
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-continuousdeploymentpolicy-singleheaderconfig.html#cfn-cloudfront-continuousdeploymentpolicy-singleheaderconfig-value"""
 
 @attr.s
 class PropDistributionOriginCustomHeader(Property):
@@ -223,61 +801,6 @@ class PropDistributionOriginCustomHeader(Property):
         metadata={AttrMeta.PROPERTY_NAME: "HeaderValue"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origincustomheader.html#cfn-cloudfront-distribution-origincustomheader-headervalue"""
-
-@attr.s
-class PropDistributionCustomOriginConfig(Property):
-    """
-    AWS Object Type = "AWS::CloudFront::Distribution.CustomOriginConfig"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-customoriginconfig.html
-
-    Property Document:
-    
-    - ``rp_OriginProtocolPolicy``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-customoriginconfig.html#cfn-cloudfront-distribution-customoriginconfig-originprotocolpolicy
-    - ``p_HTTPPort``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-customoriginconfig.html#cfn-cloudfront-distribution-customoriginconfig-httpport
-    - ``p_HTTPSPort``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-customoriginconfig.html#cfn-cloudfront-distribution-customoriginconfig-httpsport
-    - ``p_OriginKeepaliveTimeout``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-customoriginconfig.html#cfn-cloudfront-distribution-customoriginconfig-originkeepalivetimeout
-    - ``p_OriginReadTimeout``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-customoriginconfig.html#cfn-cloudfront-distribution-customoriginconfig-originreadtimeout
-    - ``p_OriginSSLProtocols``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-customoriginconfig.html#cfn-cloudfront-distribution-customoriginconfig-originsslprotocols
-    """
-    AWS_OBJECT_TYPE = "AWS::CloudFront::Distribution.CustomOriginConfig"
-    
-    rp_OriginProtocolPolicy: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "OriginProtocolPolicy"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-customoriginconfig.html#cfn-cloudfront-distribution-customoriginconfig-originprotocolpolicy"""
-    p_HTTPPort: int = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "HTTPPort"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-customoriginconfig.html#cfn-cloudfront-distribution-customoriginconfig-httpport"""
-    p_HTTPSPort: int = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "HTTPSPort"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-customoriginconfig.html#cfn-cloudfront-distribution-customoriginconfig-httpsport"""
-    p_OriginKeepaliveTimeout: int = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "OriginKeepaliveTimeout"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-customoriginconfig.html#cfn-cloudfront-distribution-customoriginconfig-originkeepalivetimeout"""
-    p_OriginReadTimeout: int = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "OriginReadTimeout"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-customoriginconfig.html#cfn-cloudfront-distribution-customoriginconfig-originreadtimeout"""
-    p_OriginSSLProtocols: typing.List[TypeHint.intrinsic_str] = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "OriginSSLProtocols"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-customoriginconfig.html#cfn-cloudfront-distribution-customoriginconfig-originsslprotocols"""
 
 @attr.s
 class PropCloudFrontOriginAccessIdentityCloudFrontOriginAccessIdentityConfig(Property):
@@ -347,95 +870,6 @@ class PropDistributionGeoRestriction(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-georestriction.html#cfn-cloudfront-distribution-georestriction-locations"""
 
 @attr.s
-class PropDistributionViewerCertificate(Property):
-    """
-    AWS Object Type = "AWS::CloudFront::Distribution.ViewerCertificate"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-viewercertificate.html
-
-    Property Document:
-    
-    - ``p_AcmCertificateArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-viewercertificate.html#cfn-cloudfront-distribution-viewercertificate-acmcertificatearn
-    - ``p_CloudFrontDefaultCertificate``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-viewercertificate.html#cfn-cloudfront-distribution-viewercertificate-cloudfrontdefaultcertificate
-    - ``p_IamCertificateId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-viewercertificate.html#cfn-cloudfront-distribution-viewercertificate-iamcertificateid
-    - ``p_MinimumProtocolVersion``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-viewercertificate.html#cfn-cloudfront-distribution-viewercertificate-minimumprotocolversion
-    - ``p_SslSupportMethod``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-viewercertificate.html#cfn-cloudfront-distribution-viewercertificate-sslsupportmethod
-    """
-    AWS_OBJECT_TYPE = "AWS::CloudFront::Distribution.ViewerCertificate"
-    
-    p_AcmCertificateArn: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "AcmCertificateArn"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-viewercertificate.html#cfn-cloudfront-distribution-viewercertificate-acmcertificatearn"""
-    p_CloudFrontDefaultCertificate: bool = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(bool)),
-        metadata={AttrMeta.PROPERTY_NAME: "CloudFrontDefaultCertificate"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-viewercertificate.html#cfn-cloudfront-distribution-viewercertificate-cloudfrontdefaultcertificate"""
-    p_IamCertificateId: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "IamCertificateId"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-viewercertificate.html#cfn-cloudfront-distribution-viewercertificate-iamcertificateid"""
-    p_MinimumProtocolVersion: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "MinimumProtocolVersion"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-viewercertificate.html#cfn-cloudfront-distribution-viewercertificate-minimumprotocolversion"""
-    p_SslSupportMethod: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "SslSupportMethod"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-viewercertificate.html#cfn-cloudfront-distribution-viewercertificate-sslsupportmethod"""
-
-@attr.s
-class PropDistributionCustomErrorResponse(Property):
-    """
-    AWS Object Type = "AWS::CloudFront::Distribution.CustomErrorResponse"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-customerrorresponse.html
-
-    Property Document:
-    
-    - ``rp_ErrorCode``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-customerrorresponse.html#cfn-cloudfront-distribution-customerrorresponse-errorcode
-    - ``p_ErrorCachingMinTTL``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-customerrorresponse.html#cfn-cloudfront-distribution-customerrorresponse-errorcachingminttl
-    - ``p_ResponseCode``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-customerrorresponse.html#cfn-cloudfront-distribution-customerrorresponse-responsecode
-    - ``p_ResponsePagePath``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-customerrorresponse.html#cfn-cloudfront-distribution-customerrorresponse-responsepagepath
-    """
-    AWS_OBJECT_TYPE = "AWS::CloudFront::Distribution.CustomErrorResponse"
-    
-    rp_ErrorCode: int = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(int),
-        metadata={AttrMeta.PROPERTY_NAME: "ErrorCode"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-customerrorresponse.html#cfn-cloudfront-distribution-customerrorresponse-errorcode"""
-    p_ErrorCachingMinTTL: float = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(float)),
-        metadata={AttrMeta.PROPERTY_NAME: "ErrorCachingMinTTL"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-customerrorresponse.html#cfn-cloudfront-distribution-customerrorresponse-errorcachingminttl"""
-    p_ResponseCode: int = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "ResponseCode"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-customerrorresponse.html#cfn-cloudfront-distribution-customerrorresponse-responsecode"""
-    p_ResponsePagePath: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "ResponsePagePath"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-customerrorresponse.html#cfn-cloudfront-distribution-customerrorresponse-responsepagepath"""
-
-@attr.s
 class PropResponseHeadersPolicyAccessControlAllowMethods(Property):
     """
     AWS Object Type = "AWS::CloudFront::ResponseHeadersPolicy.AccessControlAllowMethods"
@@ -454,6 +888,26 @@ class PropResponseHeadersPolicyAccessControlAllowMethods(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Items"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-accesscontrolallowmethods.html#cfn-cloudfront-responseheaderspolicy-accesscontrolallowmethods-items"""
+
+@attr.s
+class PropMonitoringSubscriptionRealtimeMetricsSubscriptionConfig(Property):
+    """
+    AWS Object Type = "AWS::CloudFront::MonitoringSubscription.RealtimeMetricsSubscriptionConfig"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-monitoringsubscription-realtimemetricssubscriptionconfig.html
+
+    Property Document:
+    
+    - ``rp_RealtimeMetricsSubscriptionStatus``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-monitoringsubscription-realtimemetricssubscriptionconfig.html#cfn-cloudfront-monitoringsubscription-realtimemetricssubscriptionconfig-realtimemetricssubscriptionstatus
+    """
+    AWS_OBJECT_TYPE = "AWS::CloudFront::MonitoringSubscription.RealtimeMetricsSubscriptionConfig"
+    
+    rp_RealtimeMetricsSubscriptionStatus: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "RealtimeMetricsSubscriptionStatus"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-monitoringsubscription-realtimemetricssubscriptionconfig.html#cfn-cloudfront-monitoringsubscription-realtimemetricssubscriptionconfig-realtimemetricssubscriptionstatus"""
 
 @attr.s
 class PropStreamingDistributionLogging(Property):
@@ -578,73 +1032,6 @@ class PropOriginRequestPolicyCookiesConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-originrequestpolicy-cookiesconfig.html#cfn-cloudfront-originrequestpolicy-cookiesconfig-cookies"""
 
 @attr.s
-class PropDistributionOriginGroupMember(Property):
-    """
-    AWS Object Type = "AWS::CloudFront::Distribution.OriginGroupMember"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origingroupmember.html
-
-    Property Document:
-    
-    - ``rp_OriginId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origingroupmember.html#cfn-cloudfront-distribution-origingroupmember-originid
-    """
-    AWS_OBJECT_TYPE = "AWS::CloudFront::Distribution.OriginGroupMember"
-    
-    rp_OriginId: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "OriginId"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origingroupmember.html#cfn-cloudfront-distribution-origingroupmember-originid"""
-
-@attr.s
-class PropResponseHeadersPolicyAccessControlAllowHeaders(Property):
-    """
-    AWS Object Type = "AWS::CloudFront::ResponseHeadersPolicy.AccessControlAllowHeaders"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-accesscontrolallowheaders.html
-
-    Property Document:
-    
-    - ``rp_Items``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-accesscontrolallowheaders.html#cfn-cloudfront-responseheaderspolicy-accesscontrolallowheaders-items
-    """
-    AWS_OBJECT_TYPE = "AWS::CloudFront::ResponseHeadersPolicy.AccessControlAllowHeaders"
-    
-    rp_Items: typing.List[TypeHint.intrinsic_str] = attr.ib(
-        default=None,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list)),
-        metadata={AttrMeta.PROPERTY_NAME: "Items"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-accesscontrolallowheaders.html#cfn-cloudfront-responseheaderspolicy-accesscontrolallowheaders-items"""
-
-@attr.s
-class PropStreamingDistributionTrustedSigners(Property):
-    """
-    AWS Object Type = "AWS::CloudFront::StreamingDistribution.TrustedSigners"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-trustedsigners.html
-
-    Property Document:
-    
-    - ``rp_Enabled``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-trustedsigners.html#cfn-cloudfront-streamingdistribution-trustedsigners-enabled
-    - ``p_AwsAccountNumbers``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-trustedsigners.html#cfn-cloudfront-streamingdistribution-trustedsigners-awsaccountnumbers
-    """
-    AWS_OBJECT_TYPE = "AWS::CloudFront::StreamingDistribution.TrustedSigners"
-    
-    rp_Enabled: bool = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(bool),
-        metadata={AttrMeta.PROPERTY_NAME: "Enabled"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-trustedsigners.html#cfn-cloudfront-streamingdistribution-trustedsigners-enabled"""
-    p_AwsAccountNumbers: typing.List[TypeHint.intrinsic_str] = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "AwsAccountNumbers"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-streamingdistribution-trustedsigners.html#cfn-cloudfront-streamingdistribution-trustedsigners-awsaccountnumbers"""
-
-@attr.s
 class PropDistributionLegacyCustomOrigin(Property):
     """
     AWS Object Type = "AWS::CloudFront::Distribution.LegacyCustomOrigin"
@@ -718,61 +1105,6 @@ class PropResponseHeadersPolicyFrameOptions(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Override"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-frameoptions.html#cfn-cloudfront-responseheaderspolicy-frameoptions-override"""
-
-@attr.s
-class PropDistributionRestrictions(Property):
-    """
-    AWS Object Type = "AWS::CloudFront::Distribution.Restrictions"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-restrictions.html
-
-    Property Document:
-    
-    - ``rp_GeoRestriction``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-restrictions.html#cfn-cloudfront-distribution-restrictions-georestriction
-    """
-    AWS_OBJECT_TYPE = "AWS::CloudFront::Distribution.Restrictions"
-    
-    rp_GeoRestriction: typing.Union['PropDistributionGeoRestriction', dict] = attr.ib(
-        default=None,
-        converter=PropDistributionGeoRestriction.from_dict,
-        validator=attr.validators.instance_of(PropDistributionGeoRestriction),
-        metadata={AttrMeta.PROPERTY_NAME: "GeoRestriction"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-restrictions.html#cfn-cloudfront-distribution-restrictions-georestriction"""
-
-@attr.s
-class PropResponseHeadersPolicyCustomHeader(Property):
-    """
-    AWS Object Type = "AWS::CloudFront::ResponseHeadersPolicy.CustomHeader"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-customheader.html
-
-    Property Document:
-    
-    - ``rp_Header``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-customheader.html#cfn-cloudfront-responseheaderspolicy-customheader-header
-    - ``rp_Override``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-customheader.html#cfn-cloudfront-responseheaderspolicy-customheader-override
-    - ``rp_Value``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-customheader.html#cfn-cloudfront-responseheaderspolicy-customheader-value
-    """
-    AWS_OBJECT_TYPE = "AWS::CloudFront::ResponseHeadersPolicy.CustomHeader"
-    
-    rp_Header: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Header"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-customheader.html#cfn-cloudfront-responseheaderspolicy-customheader-header"""
-    rp_Override: bool = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(bool),
-        metadata={AttrMeta.PROPERTY_NAME: "Override"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-customheader.html#cfn-cloudfront-responseheaderspolicy-customheader-override"""
-    rp_Value: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Value"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-customheader.html#cfn-cloudfront-responseheaderspolicy-customheader-value"""
 
 @attr.s
 class PropResponseHeadersPolicyContentSecurityPolicy(Property):
@@ -870,33 +1202,6 @@ class PropDistributionStatusCodes(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-statuscodes.html#cfn-cloudfront-distribution-statuscodes-quantity"""
 
 @attr.s
-class PropFunctionFunctionConfig(Property):
-    """
-    AWS Object Type = "AWS::CloudFront::Function.FunctionConfig"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-function-functionconfig.html
-
-    Property Document:
-    
-    - ``rp_Comment``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-function-functionconfig.html#cfn-cloudfront-function-functionconfig-comment
-    - ``rp_Runtime``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-function-functionconfig.html#cfn-cloudfront-function-functionconfig-runtime
-    """
-    AWS_OBJECT_TYPE = "AWS::CloudFront::Function.FunctionConfig"
-    
-    rp_Comment: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Comment"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-function-functionconfig.html#cfn-cloudfront-function-functionconfig-comment"""
-    rp_Runtime: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Runtime"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-function-functionconfig.html#cfn-cloudfront-function-functionconfig-runtime"""
-
-@attr.s
 class PropOriginRequestPolicyQueryStringsConfig(Property):
     """
     AWS Object Type = "AWS::CloudFront::OriginRequestPolicy.QueryStringsConfig"
@@ -922,27 +1227,6 @@ class PropOriginRequestPolicyQueryStringsConfig(Property):
         metadata={AttrMeta.PROPERTY_NAME: "QueryStrings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-originrequestpolicy-querystringsconfig.html#cfn-cloudfront-originrequestpolicy-querystringsconfig-querystrings"""
-
-@attr.s
-class PropDistributionOriginGroupFailoverCriteria(Property):
-    """
-    AWS Object Type = "AWS::CloudFront::Distribution.OriginGroupFailoverCriteria"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origingroupfailovercriteria.html
-
-    Property Document:
-    
-    - ``rp_StatusCodes``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origingroupfailovercriteria.html#cfn-cloudfront-distribution-origingroupfailovercriteria-statuscodes
-    """
-    AWS_OBJECT_TYPE = "AWS::CloudFront::Distribution.OriginGroupFailoverCriteria"
-    
-    rp_StatusCodes: typing.Union['PropDistributionStatusCodes', dict] = attr.ib(
-        default=None,
-        converter=PropDistributionStatusCodes.from_dict,
-        validator=attr.validators.instance_of(PropDistributionStatusCodes),
-        metadata={AttrMeta.PROPERTY_NAME: "StatusCodes"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origingroupfailovercriteria.html#cfn-cloudfront-distribution-origingroupfailovercriteria-statuscodes"""
 
 @attr.s
 class PropDistributionForwardedValues(Property):
@@ -1028,26 +1312,6 @@ class PropResponseHeadersPolicyStrictTransportSecurity(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-stricttransportsecurity.html#cfn-cloudfront-responseheaderspolicy-stricttransportsecurity-preload"""
 
 @attr.s
-class PropFunctionFunctionMetadata(Property):
-    """
-    AWS Object Type = "AWS::CloudFront::Function.FunctionMetadata"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-function-functionmetadata.html
-
-    Property Document:
-    
-    - ``p_FunctionARN``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-function-functionmetadata.html#cfn-cloudfront-function-functionmetadata-functionarn
-    """
-    AWS_OBJECT_TYPE = "AWS::CloudFront::Function.FunctionMetadata"
-    
-    p_FunctionARN: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "FunctionARN"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-function-functionmetadata.html#cfn-cloudfront-function-functionmetadata-functionarn"""
-
-@attr.s
 class PropResponseHeadersPolicyAccessControlAllowOrigins(Property):
     """
     AWS Object Type = "AWS::CloudFront::ResponseHeadersPolicy.AccessControlAllowOrigins"
@@ -1115,24 +1379,25 @@ class PropDistributionOriginShield(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-originshield.html#cfn-cloudfront-distribution-originshield-originshieldregion"""
 
 @attr.s
-class PropDistributionS3OriginConfig(Property):
+class PropMonitoringSubscriptionMonitoringSubscription(Property):
     """
-    AWS Object Type = "AWS::CloudFront::Distribution.S3OriginConfig"
+    AWS Object Type = "AWS::CloudFront::MonitoringSubscription.MonitoringSubscription"
 
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-s3originconfig.html
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-monitoringsubscription-monitoringsubscription.html
 
     Property Document:
     
-    - ``p_OriginAccessIdentity``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-s3originconfig.html#cfn-cloudfront-distribution-s3originconfig-originaccessidentity
+    - ``p_RealtimeMetricsSubscriptionConfig``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-monitoringsubscription-monitoringsubscription.html#cfn-cloudfront-monitoringsubscription-monitoringsubscription-realtimemetricssubscriptionconfig
     """
-    AWS_OBJECT_TYPE = "AWS::CloudFront::Distribution.S3OriginConfig"
+    AWS_OBJECT_TYPE = "AWS::CloudFront::MonitoringSubscription.MonitoringSubscription"
     
-    p_OriginAccessIdentity: TypeHint.intrinsic_str = attr.ib(
+    p_RealtimeMetricsSubscriptionConfig: typing.Union['PropMonitoringSubscriptionRealtimeMetricsSubscriptionConfig', dict] = attr.ib(
         default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "OriginAccessIdentity"},
+        converter=PropMonitoringSubscriptionRealtimeMetricsSubscriptionConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropMonitoringSubscriptionRealtimeMetricsSubscriptionConfig)),
+        metadata={AttrMeta.PROPERTY_NAME: "RealtimeMetricsSubscriptionConfig"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-s3originconfig.html#cfn-cloudfront-distribution-s3originconfig-originaccessidentity"""
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-monitoringsubscription-monitoringsubscription.html#cfn-cloudfront-monitoringsubscription-monitoringsubscription-realtimemetricssubscriptionconfig"""
 
 @attr.s
 class PropRealtimeLogConfigKinesisStreamConfig(Property):
@@ -1162,27 +1427,6 @@ class PropRealtimeLogConfigKinesisStreamConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-realtimelogconfig-kinesisstreamconfig.html#cfn-cloudfront-realtimelogconfig-kinesisstreamconfig-streamarn"""
 
 @attr.s
-class PropResponseHeadersPolicyCustomHeadersConfig(Property):
-    """
-    AWS Object Type = "AWS::CloudFront::ResponseHeadersPolicy.CustomHeadersConfig"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-customheadersconfig.html
-
-    Property Document:
-    
-    - ``rp_Items``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-customheadersconfig.html#cfn-cloudfront-responseheaderspolicy-customheadersconfig-items
-    """
-    AWS_OBJECT_TYPE = "AWS::CloudFront::ResponseHeadersPolicy.CustomHeadersConfig"
-    
-    rp_Items: typing.List[typing.Union['PropResponseHeadersPolicyCustomHeader', dict]] = attr.ib(
-        default=None,
-        converter=PropResponseHeadersPolicyCustomHeader.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropResponseHeadersPolicyCustomHeader), iterable_validator=attr.validators.instance_of(list)),
-        metadata={AttrMeta.PROPERTY_NAME: "Items"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-customheadersconfig.html#cfn-cloudfront-responseheaderspolicy-customheadersconfig-items"""
-
-@attr.s
 class PropCachePolicyQueryStringsConfig(Property):
     """
     AWS Object Type = "AWS::CloudFront::CachePolicy.QueryStringsConfig"
@@ -1208,94 +1452,6 @@ class PropCachePolicyQueryStringsConfig(Property):
         metadata={AttrMeta.PROPERTY_NAME: "QueryStrings"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-cachepolicy-querystringsconfig.html#cfn-cloudfront-cachepolicy-querystringsconfig-querystrings"""
-
-@attr.s
-class PropDistributionLogging(Property):
-    """
-    AWS Object Type = "AWS::CloudFront::Distribution.Logging"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-logging.html
-
-    Property Document:
-    
-    - ``rp_Bucket``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-logging.html#cfn-cloudfront-distribution-logging-bucket
-    - ``p_IncludeCookies``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-logging.html#cfn-cloudfront-distribution-logging-includecookies
-    - ``p_Prefix``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-logging.html#cfn-cloudfront-distribution-logging-prefix
-    """
-    AWS_OBJECT_TYPE = "AWS::CloudFront::Distribution.Logging"
-    
-    rp_Bucket: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Bucket"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-logging.html#cfn-cloudfront-distribution-logging-bucket"""
-    p_IncludeCookies: bool = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(bool)),
-        metadata={AttrMeta.PROPERTY_NAME: "IncludeCookies"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-logging.html#cfn-cloudfront-distribution-logging-includecookies"""
-    p_Prefix: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Prefix"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-logging.html#cfn-cloudfront-distribution-logging-prefix"""
-
-@attr.s
-class PropOriginRequestPolicyHeadersConfig(Property):
-    """
-    AWS Object Type = "AWS::CloudFront::OriginRequestPolicy.HeadersConfig"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-originrequestpolicy-headersconfig.html
-
-    Property Document:
-    
-    - ``rp_HeaderBehavior``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-originrequestpolicy-headersconfig.html#cfn-cloudfront-originrequestpolicy-headersconfig-headerbehavior
-    - ``p_Headers``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-originrequestpolicy-headersconfig.html#cfn-cloudfront-originrequestpolicy-headersconfig-headers
-    """
-    AWS_OBJECT_TYPE = "AWS::CloudFront::OriginRequestPolicy.HeadersConfig"
-    
-    rp_HeaderBehavior: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "HeaderBehavior"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-originrequestpolicy-headersconfig.html#cfn-cloudfront-originrequestpolicy-headersconfig-headerbehavior"""
-    p_Headers: typing.List[TypeHint.intrinsic_str] = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Headers"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-originrequestpolicy-headersconfig.html#cfn-cloudfront-originrequestpolicy-headersconfig-headers"""
-
-@attr.s
-class PropDistributionFunctionAssociation(Property):
-    """
-    AWS Object Type = "AWS::CloudFront::Distribution.FunctionAssociation"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-functionassociation.html
-
-    Property Document:
-    
-    - ``p_EventType``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-functionassociation.html#cfn-cloudfront-distribution-functionassociation-eventtype
-    - ``p_FunctionARN``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-functionassociation.html#cfn-cloudfront-distribution-functionassociation-functionarn
-    """
-    AWS_OBJECT_TYPE = "AWS::CloudFront::Distribution.FunctionAssociation"
-    
-    p_EventType: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "EventType"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-functionassociation.html#cfn-cloudfront-distribution-functionassociation-eventtype"""
-    p_FunctionARN: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "FunctionARN"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-functionassociation.html#cfn-cloudfront-distribution-functionassociation-functionarn"""
 
 @attr.s
 class PropCachePolicyCookiesConfig(Property):
@@ -1481,72 +1637,6 @@ class PropRealtimeLogConfigEndPoint(Property):
         metadata={AttrMeta.PROPERTY_NAME: "StreamType"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-realtimelogconfig-endpoint.html#cfn-cloudfront-realtimelogconfig-endpoint-streamtype"""
-
-@attr.s
-class PropResponseHeadersPolicyCorsConfig(Property):
-    """
-    AWS Object Type = "AWS::CloudFront::ResponseHeadersPolicy.CorsConfig"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-corsconfig.html
-
-    Property Document:
-    
-    - ``rp_AccessControlAllowCredentials``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-corsconfig.html#cfn-cloudfront-responseheaderspolicy-corsconfig-accesscontrolallowcredentials
-    - ``rp_AccessControlAllowHeaders``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-corsconfig.html#cfn-cloudfront-responseheaderspolicy-corsconfig-accesscontrolallowheaders
-    - ``rp_AccessControlAllowMethods``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-corsconfig.html#cfn-cloudfront-responseheaderspolicy-corsconfig-accesscontrolallowmethods
-    - ``rp_AccessControlAllowOrigins``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-corsconfig.html#cfn-cloudfront-responseheaderspolicy-corsconfig-accesscontrolalloworigins
-    - ``rp_OriginOverride``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-corsconfig.html#cfn-cloudfront-responseheaderspolicy-corsconfig-originoverride
-    - ``p_AccessControlExposeHeaders``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-corsconfig.html#cfn-cloudfront-responseheaderspolicy-corsconfig-accesscontrolexposeheaders
-    - ``p_AccessControlMaxAgeSec``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-corsconfig.html#cfn-cloudfront-responseheaderspolicy-corsconfig-accesscontrolmaxagesec
-    """
-    AWS_OBJECT_TYPE = "AWS::CloudFront::ResponseHeadersPolicy.CorsConfig"
-    
-    rp_AccessControlAllowCredentials: bool = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(bool),
-        metadata={AttrMeta.PROPERTY_NAME: "AccessControlAllowCredentials"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-corsconfig.html#cfn-cloudfront-responseheaderspolicy-corsconfig-accesscontrolallowcredentials"""
-    rp_AccessControlAllowHeaders: typing.Union['PropResponseHeadersPolicyAccessControlAllowHeaders', dict] = attr.ib(
-        default=None,
-        converter=PropResponseHeadersPolicyAccessControlAllowHeaders.from_dict,
-        validator=attr.validators.instance_of(PropResponseHeadersPolicyAccessControlAllowHeaders),
-        metadata={AttrMeta.PROPERTY_NAME: "AccessControlAllowHeaders"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-corsconfig.html#cfn-cloudfront-responseheaderspolicy-corsconfig-accesscontrolallowheaders"""
-    rp_AccessControlAllowMethods: typing.Union['PropResponseHeadersPolicyAccessControlAllowMethods', dict] = attr.ib(
-        default=None,
-        converter=PropResponseHeadersPolicyAccessControlAllowMethods.from_dict,
-        validator=attr.validators.instance_of(PropResponseHeadersPolicyAccessControlAllowMethods),
-        metadata={AttrMeta.PROPERTY_NAME: "AccessControlAllowMethods"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-corsconfig.html#cfn-cloudfront-responseheaderspolicy-corsconfig-accesscontrolallowmethods"""
-    rp_AccessControlAllowOrigins: typing.Union['PropResponseHeadersPolicyAccessControlAllowOrigins', dict] = attr.ib(
-        default=None,
-        converter=PropResponseHeadersPolicyAccessControlAllowOrigins.from_dict,
-        validator=attr.validators.instance_of(PropResponseHeadersPolicyAccessControlAllowOrigins),
-        metadata={AttrMeta.PROPERTY_NAME: "AccessControlAllowOrigins"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-corsconfig.html#cfn-cloudfront-responseheaderspolicy-corsconfig-accesscontrolalloworigins"""
-    rp_OriginOverride: bool = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(bool),
-        metadata={AttrMeta.PROPERTY_NAME: "OriginOverride"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-corsconfig.html#cfn-cloudfront-responseheaderspolicy-corsconfig-originoverride"""
-    p_AccessControlExposeHeaders: typing.Union['PropResponseHeadersPolicyAccessControlExposeHeaders', dict] = attr.ib(
-        default=None,
-        converter=PropResponseHeadersPolicyAccessControlExposeHeaders.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropResponseHeadersPolicyAccessControlExposeHeaders)),
-        metadata={AttrMeta.PROPERTY_NAME: "AccessControlExposeHeaders"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-corsconfig.html#cfn-cloudfront-responseheaderspolicy-corsconfig-accesscontrolexposeheaders"""
-    p_AccessControlMaxAgeSec: int = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "AccessControlMaxAgeSec"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-corsconfig.html#cfn-cloudfront-responseheaderspolicy-corsconfig-accesscontrolmaxagesec"""
 
 @attr.s
 class PropStreamingDistributionStreamingDistributionConfig(Property):
@@ -1919,84 +2009,82 @@ class PropDistributionDefaultCacheBehavior(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-defaultcachebehavior.html#cfn-cloudfront-distribution-defaultcachebehavior-trustedsigners"""
 
 @attr.s
-class PropDistributionOrigin(Property):
+class PropDistributionRestrictions(Property):
     """
-    AWS Object Type = "AWS::CloudFront::Distribution.Origin"
+    AWS Object Type = "AWS::CloudFront::Distribution.Restrictions"
 
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origin.html
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-restrictions.html
 
     Property Document:
     
-    - ``rp_DomainName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origin.html#cfn-cloudfront-distribution-origin-domainname
-    - ``rp_Id``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origin.html#cfn-cloudfront-distribution-origin-id
-    - ``p_ConnectionAttempts``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origin.html#cfn-cloudfront-distribution-origin-connectionattempts
-    - ``p_ConnectionTimeout``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origin.html#cfn-cloudfront-distribution-origin-connectiontimeout
-    - ``p_CustomOriginConfig``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origin.html#cfn-cloudfront-distribution-origin-customoriginconfig
-    - ``p_OriginCustomHeaders``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origin.html#cfn-cloudfront-distribution-origin-origincustomheaders
-    - ``p_OriginPath``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origin.html#cfn-cloudfront-distribution-origin-originpath
-    - ``p_OriginShield``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origin.html#cfn-cloudfront-distribution-origin-originshield
-    - ``p_S3OriginConfig``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origin.html#cfn-cloudfront-distribution-origin-s3originconfig
+    - ``rp_GeoRestriction``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-restrictions.html#cfn-cloudfront-distribution-restrictions-georestriction
     """
-    AWS_OBJECT_TYPE = "AWS::CloudFront::Distribution.Origin"
+    AWS_OBJECT_TYPE = "AWS::CloudFront::Distribution.Restrictions"
     
-    rp_DomainName: TypeHint.intrinsic_str = attr.ib(
+    rp_GeoRestriction: typing.Union['PropDistributionGeoRestriction', dict] = attr.ib(
+        default=None,
+        converter=PropDistributionGeoRestriction.from_dict,
+        validator=attr.validators.instance_of(PropDistributionGeoRestriction),
+        metadata={AttrMeta.PROPERTY_NAME: "GeoRestriction"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-restrictions.html#cfn-cloudfront-distribution-restrictions-georestriction"""
+
+@attr.s
+class PropContinuousDeploymentPolicyTrafficConfig(Property):
+    """
+    AWS Object Type = "AWS::CloudFront::ContinuousDeploymentPolicy.TrafficConfig"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-continuousdeploymentpolicy-trafficconfig.html
+
+    Property Document:
+    
+    - ``rp_Type``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-continuousdeploymentpolicy-trafficconfig.html#cfn-cloudfront-continuousdeploymentpolicy-trafficconfig-type
+    - ``p_SingleHeaderConfig``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-continuousdeploymentpolicy-trafficconfig.html#cfn-cloudfront-continuousdeploymentpolicy-trafficconfig-singleheaderconfig
+    - ``p_SingleWeightConfig``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-continuousdeploymentpolicy-trafficconfig.html#cfn-cloudfront-continuousdeploymentpolicy-trafficconfig-singleweightconfig
+    """
+    AWS_OBJECT_TYPE = "AWS::CloudFront::ContinuousDeploymentPolicy.TrafficConfig"
+    
+    rp_Type: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "DomainName"},
+        metadata={AttrMeta.PROPERTY_NAME: "Type"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origin.html#cfn-cloudfront-distribution-origin-domainname"""
-    rp_Id: TypeHint.intrinsic_str = attr.ib(
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-continuousdeploymentpolicy-trafficconfig.html#cfn-cloudfront-continuousdeploymentpolicy-trafficconfig-type"""
+    p_SingleHeaderConfig: typing.Union['PropContinuousDeploymentPolicySingleHeaderConfig', dict] = attr.ib(
         default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Id"},
+        converter=PropContinuousDeploymentPolicySingleHeaderConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropContinuousDeploymentPolicySingleHeaderConfig)),
+        metadata={AttrMeta.PROPERTY_NAME: "SingleHeaderConfig"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origin.html#cfn-cloudfront-distribution-origin-id"""
-    p_ConnectionAttempts: int = attr.ib(
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-continuousdeploymentpolicy-trafficconfig.html#cfn-cloudfront-continuousdeploymentpolicy-trafficconfig-singleheaderconfig"""
+    p_SingleWeightConfig: typing.Union['PropContinuousDeploymentPolicySingleWeightConfig', dict] = attr.ib(
         default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "ConnectionAttempts"},
+        converter=PropContinuousDeploymentPolicySingleWeightConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropContinuousDeploymentPolicySingleWeightConfig)),
+        metadata={AttrMeta.PROPERTY_NAME: "SingleWeightConfig"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origin.html#cfn-cloudfront-distribution-origin-connectionattempts"""
-    p_ConnectionTimeout: int = attr.ib(
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-continuousdeploymentpolicy-trafficconfig.html#cfn-cloudfront-continuousdeploymentpolicy-trafficconfig-singleweightconfig"""
+
+@attr.s
+class PropDistributionOriginGroupFailoverCriteria(Property):
+    """
+    AWS Object Type = "AWS::CloudFront::Distribution.OriginGroupFailoverCriteria"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origingroupfailovercriteria.html
+
+    Property Document:
+    
+    - ``rp_StatusCodes``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origingroupfailovercriteria.html#cfn-cloudfront-distribution-origingroupfailovercriteria-statuscodes
+    """
+    AWS_OBJECT_TYPE = "AWS::CloudFront::Distribution.OriginGroupFailoverCriteria"
+    
+    rp_StatusCodes: typing.Union['PropDistributionStatusCodes', dict] = attr.ib(
         default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "ConnectionTimeout"},
+        converter=PropDistributionStatusCodes.from_dict,
+        validator=attr.validators.instance_of(PropDistributionStatusCodes),
+        metadata={AttrMeta.PROPERTY_NAME: "StatusCodes"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origin.html#cfn-cloudfront-distribution-origin-connectiontimeout"""
-    p_CustomOriginConfig: typing.Union['PropDistributionCustomOriginConfig', dict] = attr.ib(
-        default=None,
-        converter=PropDistributionCustomOriginConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropDistributionCustomOriginConfig)),
-        metadata={AttrMeta.PROPERTY_NAME: "CustomOriginConfig"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origin.html#cfn-cloudfront-distribution-origin-customoriginconfig"""
-    p_OriginCustomHeaders: typing.List[typing.Union['PropDistributionOriginCustomHeader', dict]] = attr.ib(
-        default=None,
-        converter=PropDistributionOriginCustomHeader.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDistributionOriginCustomHeader), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "OriginCustomHeaders"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origin.html#cfn-cloudfront-distribution-origin-origincustomheaders"""
-    p_OriginPath: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "OriginPath"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origin.html#cfn-cloudfront-distribution-origin-originpath"""
-    p_OriginShield: typing.Union['PropDistributionOriginShield', dict] = attr.ib(
-        default=None,
-        converter=PropDistributionOriginShield.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropDistributionOriginShield)),
-        metadata={AttrMeta.PROPERTY_NAME: "OriginShield"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origin.html#cfn-cloudfront-distribution-origin-originshield"""
-    p_S3OriginConfig: typing.Union['PropDistributionS3OriginConfig', dict] = attr.ib(
-        default=None,
-        converter=PropDistributionS3OriginConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropDistributionS3OriginConfig)),
-        metadata={AttrMeta.PROPERTY_NAME: "S3OriginConfig"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origin.html#cfn-cloudfront-distribution-origin-s3originconfig"""
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origingroupfailovercriteria.html#cfn-cloudfront-distribution-origingroupfailovercriteria-statuscodes"""
 
 @attr.s
 class PropResponseHeadersPolicySecurityHeadersConfig(Property):
@@ -2060,55 +2148,39 @@ class PropResponseHeadersPolicySecurityHeadersConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-securityheadersconfig.html#cfn-cloudfront-responseheaderspolicy-securityheadersconfig-xssprotection"""
 
 @attr.s
-class PropResponseHeadersPolicyResponseHeadersPolicyConfig(Property):
+class PropContinuousDeploymentPolicyContinuousDeploymentPolicyConfig(Property):
     """
-    AWS Object Type = "AWS::CloudFront::ResponseHeadersPolicy.ResponseHeadersPolicyConfig"
+    AWS Object Type = "AWS::CloudFront::ContinuousDeploymentPolicy.ContinuousDeploymentPolicyConfig"
 
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-responseheaderspolicyconfig.html
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-continuousdeploymentpolicy-continuousdeploymentpolicyconfig.html
 
     Property Document:
     
-    - ``rp_Name``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-responseheaderspolicyconfig.html#cfn-cloudfront-responseheaderspolicy-responseheaderspolicyconfig-name
-    - ``p_Comment``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-responseheaderspolicyconfig.html#cfn-cloudfront-responseheaderspolicy-responseheaderspolicyconfig-comment
-    - ``p_CorsConfig``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-responseheaderspolicyconfig.html#cfn-cloudfront-responseheaderspolicy-responseheaderspolicyconfig-corsconfig
-    - ``p_CustomHeadersConfig``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-responseheaderspolicyconfig.html#cfn-cloudfront-responseheaderspolicy-responseheaderspolicyconfig-customheadersconfig
-    - ``p_SecurityHeadersConfig``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-responseheaderspolicyconfig.html#cfn-cloudfront-responseheaderspolicy-responseheaderspolicyconfig-securityheadersconfig
+    - ``rp_Enabled``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-continuousdeploymentpolicy-continuousdeploymentpolicyconfig.html#cfn-cloudfront-continuousdeploymentpolicy-continuousdeploymentpolicyconfig-enabled
+    - ``rp_StagingDistributionDnsNames``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-continuousdeploymentpolicy-continuousdeploymentpolicyconfig.html#cfn-cloudfront-continuousdeploymentpolicy-continuousdeploymentpolicyconfig-stagingdistributiondnsnames
+    - ``p_TrafficConfig``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-continuousdeploymentpolicy-continuousdeploymentpolicyconfig.html#cfn-cloudfront-continuousdeploymentpolicy-continuousdeploymentpolicyconfig-trafficconfig
     """
-    AWS_OBJECT_TYPE = "AWS::CloudFront::ResponseHeadersPolicy.ResponseHeadersPolicyConfig"
+    AWS_OBJECT_TYPE = "AWS::CloudFront::ContinuousDeploymentPolicy.ContinuousDeploymentPolicyConfig"
     
-    rp_Name: TypeHint.intrinsic_str = attr.ib(
+    rp_Enabled: bool = attr.ib(
         default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Name"},
+        validator=attr.validators.instance_of(bool),
+        metadata={AttrMeta.PROPERTY_NAME: "Enabled"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-responseheaderspolicyconfig.html#cfn-cloudfront-responseheaderspolicy-responseheaderspolicyconfig-name"""
-    p_Comment: TypeHint.intrinsic_str = attr.ib(
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-continuousdeploymentpolicy-continuousdeploymentpolicyconfig.html#cfn-cloudfront-continuousdeploymentpolicy-continuousdeploymentpolicyconfig-enabled"""
+    rp_StagingDistributionDnsNames: typing.List[TypeHint.intrinsic_str] = attr.ib(
         default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Comment"},
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list)),
+        metadata={AttrMeta.PROPERTY_NAME: "StagingDistributionDnsNames"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-responseheaderspolicyconfig.html#cfn-cloudfront-responseheaderspolicy-responseheaderspolicyconfig-comment"""
-    p_CorsConfig: typing.Union['PropResponseHeadersPolicyCorsConfig', dict] = attr.ib(
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-continuousdeploymentpolicy-continuousdeploymentpolicyconfig.html#cfn-cloudfront-continuousdeploymentpolicy-continuousdeploymentpolicyconfig-stagingdistributiondnsnames"""
+    p_TrafficConfig: typing.Union['PropContinuousDeploymentPolicyTrafficConfig', dict] = attr.ib(
         default=None,
-        converter=PropResponseHeadersPolicyCorsConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropResponseHeadersPolicyCorsConfig)),
-        metadata={AttrMeta.PROPERTY_NAME: "CorsConfig"},
+        converter=PropContinuousDeploymentPolicyTrafficConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropContinuousDeploymentPolicyTrafficConfig)),
+        metadata={AttrMeta.PROPERTY_NAME: "TrafficConfig"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-responseheaderspolicyconfig.html#cfn-cloudfront-responseheaderspolicy-responseheaderspolicyconfig-corsconfig"""
-    p_CustomHeadersConfig: typing.Union['PropResponseHeadersPolicyCustomHeadersConfig', dict] = attr.ib(
-        default=None,
-        converter=PropResponseHeadersPolicyCustomHeadersConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropResponseHeadersPolicyCustomHeadersConfig)),
-        metadata={AttrMeta.PROPERTY_NAME: "CustomHeadersConfig"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-responseheaderspolicyconfig.html#cfn-cloudfront-responseheaderspolicy-responseheaderspolicyconfig-customheadersconfig"""
-    p_SecurityHeadersConfig: typing.Union['PropResponseHeadersPolicySecurityHeadersConfig', dict] = attr.ib(
-        default=None,
-        converter=PropResponseHeadersPolicySecurityHeadersConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropResponseHeadersPolicySecurityHeadersConfig)),
-        metadata={AttrMeta.PROPERTY_NAME: "SecurityHeadersConfig"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-responseheaderspolicyconfig.html#cfn-cloudfront-responseheaderspolicy-responseheaderspolicyconfig-securityheadersconfig"""
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-continuousdeploymentpolicy-continuousdeploymentpolicyconfig.html#cfn-cloudfront-continuousdeploymentpolicy-continuousdeploymentpolicyconfig-trafficconfig"""
 
 @attr.s
 class PropCachePolicyCachePolicyConfig(Property):
@@ -2181,10 +2253,9 @@ class PropDistributionOriginGroup(Property):
     """
     AWS_OBJECT_TYPE = "AWS::CloudFront::Distribution.OriginGroup"
     
-    rp_FailoverCriteria: typing.Union['PropDistributionOriginGroupFailoverCriteria', dict] = attr.ib(
+    rp_FailoverCriteria: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropDistributionOriginGroupFailoverCriteria.from_dict,
-        validator=attr.validators.instance_of(PropDistributionOriginGroupFailoverCriteria),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "FailoverCriteria"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origingroup.html#cfn-cloudfront-distribution-origingroup-failovercriteria"""
@@ -2194,10 +2265,9 @@ class PropDistributionOriginGroup(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Id"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origingroup.html#cfn-cloudfront-distribution-origingroup-id"""
-    rp_Members: typing.Union['PropDistributionOriginGroupMembers', dict] = attr.ib(
+    rp_Members: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropDistributionOriginGroupMembers.from_dict,
-        validator=attr.validators.instance_of(PropDistributionOriginGroupMembers),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "Members"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origingroup.html#cfn-cloudfront-distribution-origingroup-members"""
@@ -2231,6 +2301,218 @@ class PropDistributionOriginGroups(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origingroups.html#cfn-cloudfront-distribution-origingroups-items"""
 
 @attr.s
+class PropResponseHeadersPolicyCorsConfig(Property):
+    """
+    AWS Object Type = "AWS::CloudFront::ResponseHeadersPolicy.CorsConfig"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-corsconfig.html
+
+    Property Document:
+    
+    - ``rp_AccessControlAllowCredentials``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-corsconfig.html#cfn-cloudfront-responseheaderspolicy-corsconfig-accesscontrolallowcredentials
+    - ``rp_AccessControlAllowHeaders``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-corsconfig.html#cfn-cloudfront-responseheaderspolicy-corsconfig-accesscontrolallowheaders
+    - ``rp_AccessControlAllowMethods``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-corsconfig.html#cfn-cloudfront-responseheaderspolicy-corsconfig-accesscontrolallowmethods
+    - ``rp_AccessControlAllowOrigins``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-corsconfig.html#cfn-cloudfront-responseheaderspolicy-corsconfig-accesscontrolalloworigins
+    - ``rp_OriginOverride``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-corsconfig.html#cfn-cloudfront-responseheaderspolicy-corsconfig-originoverride
+    - ``p_AccessControlExposeHeaders``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-corsconfig.html#cfn-cloudfront-responseheaderspolicy-corsconfig-accesscontrolexposeheaders
+    - ``p_AccessControlMaxAgeSec``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-corsconfig.html#cfn-cloudfront-responseheaderspolicy-corsconfig-accesscontrolmaxagesec
+    """
+    AWS_OBJECT_TYPE = "AWS::CloudFront::ResponseHeadersPolicy.CorsConfig"
+    
+    rp_AccessControlAllowCredentials: bool = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(bool),
+        metadata={AttrMeta.PROPERTY_NAME: "AccessControlAllowCredentials"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-corsconfig.html#cfn-cloudfront-responseheaderspolicy-corsconfig-accesscontrolallowcredentials"""
+    rp_AccessControlAllowHeaders: typing.Union['PropResponseHeadersPolicyAccessControlAllowHeaders', dict] = attr.ib(
+        default=None,
+        converter=PropResponseHeadersPolicyAccessControlAllowHeaders.from_dict,
+        validator=attr.validators.instance_of(PropResponseHeadersPolicyAccessControlAllowHeaders),
+        metadata={AttrMeta.PROPERTY_NAME: "AccessControlAllowHeaders"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-corsconfig.html#cfn-cloudfront-responseheaderspolicy-corsconfig-accesscontrolallowheaders"""
+    rp_AccessControlAllowMethods: typing.Union['PropResponseHeadersPolicyAccessControlAllowMethods', dict] = attr.ib(
+        default=None,
+        converter=PropResponseHeadersPolicyAccessControlAllowMethods.from_dict,
+        validator=attr.validators.instance_of(PropResponseHeadersPolicyAccessControlAllowMethods),
+        metadata={AttrMeta.PROPERTY_NAME: "AccessControlAllowMethods"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-corsconfig.html#cfn-cloudfront-responseheaderspolicy-corsconfig-accesscontrolallowmethods"""
+    rp_AccessControlAllowOrigins: typing.Union['PropResponseHeadersPolicyAccessControlAllowOrigins', dict] = attr.ib(
+        default=None,
+        converter=PropResponseHeadersPolicyAccessControlAllowOrigins.from_dict,
+        validator=attr.validators.instance_of(PropResponseHeadersPolicyAccessControlAllowOrigins),
+        metadata={AttrMeta.PROPERTY_NAME: "AccessControlAllowOrigins"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-corsconfig.html#cfn-cloudfront-responseheaderspolicy-corsconfig-accesscontrolalloworigins"""
+    rp_OriginOverride: bool = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(bool),
+        metadata={AttrMeta.PROPERTY_NAME: "OriginOverride"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-corsconfig.html#cfn-cloudfront-responseheaderspolicy-corsconfig-originoverride"""
+    p_AccessControlExposeHeaders: typing.Union['PropResponseHeadersPolicyAccessControlExposeHeaders', dict] = attr.ib(
+        default=None,
+        converter=PropResponseHeadersPolicyAccessControlExposeHeaders.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropResponseHeadersPolicyAccessControlExposeHeaders)),
+        metadata={AttrMeta.PROPERTY_NAME: "AccessControlExposeHeaders"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-corsconfig.html#cfn-cloudfront-responseheaderspolicy-corsconfig-accesscontrolexposeheaders"""
+    p_AccessControlMaxAgeSec: int = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(int)),
+        metadata={AttrMeta.PROPERTY_NAME: "AccessControlMaxAgeSec"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-corsconfig.html#cfn-cloudfront-responseheaderspolicy-corsconfig-accesscontrolmaxagesec"""
+
+@attr.s
+class PropDistributionOrigin(Property):
+    """
+    AWS Object Type = "AWS::CloudFront::Distribution.Origin"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origin.html
+
+    Property Document:
+    
+    - ``rp_DomainName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origin.html#cfn-cloudfront-distribution-origin-domainname
+    - ``rp_Id``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origin.html#cfn-cloudfront-distribution-origin-id
+    - ``p_ConnectionAttempts``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origin.html#cfn-cloudfront-distribution-origin-connectionattempts
+    - ``p_ConnectionTimeout``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origin.html#cfn-cloudfront-distribution-origin-connectiontimeout
+    - ``p_CustomOriginConfig``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origin.html#cfn-cloudfront-distribution-origin-customoriginconfig
+    - ``p_OriginAccessControlId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origin.html#cfn-cloudfront-distribution-origin-originaccesscontrolid
+    - ``p_OriginCustomHeaders``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origin.html#cfn-cloudfront-distribution-origin-origincustomheaders
+    - ``p_OriginPath``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origin.html#cfn-cloudfront-distribution-origin-originpath
+    - ``p_OriginShield``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origin.html#cfn-cloudfront-distribution-origin-originshield
+    - ``p_S3OriginConfig``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origin.html#cfn-cloudfront-distribution-origin-s3originconfig
+    """
+    AWS_OBJECT_TYPE = "AWS::CloudFront::Distribution.Origin"
+    
+    rp_DomainName: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "DomainName"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origin.html#cfn-cloudfront-distribution-origin-domainname"""
+    rp_Id: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "Id"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origin.html#cfn-cloudfront-distribution-origin-id"""
+    p_ConnectionAttempts: int = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(int)),
+        metadata={AttrMeta.PROPERTY_NAME: "ConnectionAttempts"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origin.html#cfn-cloudfront-distribution-origin-connectionattempts"""
+    p_ConnectionTimeout: int = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(int)),
+        metadata={AttrMeta.PROPERTY_NAME: "ConnectionTimeout"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origin.html#cfn-cloudfront-distribution-origin-connectiontimeout"""
+    p_CustomOriginConfig: typing.Union['PropDistributionCustomOriginConfig', dict] = attr.ib(
+        default=None,
+        converter=PropDistributionCustomOriginConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDistributionCustomOriginConfig)),
+        metadata={AttrMeta.PROPERTY_NAME: "CustomOriginConfig"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origin.html#cfn-cloudfront-distribution-origin-customoriginconfig"""
+    p_OriginAccessControlId: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "OriginAccessControlId"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origin.html#cfn-cloudfront-distribution-origin-originaccesscontrolid"""
+    p_OriginCustomHeaders: typing.List[typing.Union['PropDistributionOriginCustomHeader', dict]] = attr.ib(
+        default=None,
+        converter=PropDistributionOriginCustomHeader.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDistributionOriginCustomHeader), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "OriginCustomHeaders"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origin.html#cfn-cloudfront-distribution-origin-origincustomheaders"""
+    p_OriginPath: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "OriginPath"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origin.html#cfn-cloudfront-distribution-origin-originpath"""
+    p_OriginShield: typing.Union['PropDistributionOriginShield', dict] = attr.ib(
+        default=None,
+        converter=PropDistributionOriginShield.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDistributionOriginShield)),
+        metadata={AttrMeta.PROPERTY_NAME: "OriginShield"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origin.html#cfn-cloudfront-distribution-origin-originshield"""
+    p_S3OriginConfig: typing.Union['PropDistributionS3OriginConfig', dict] = attr.ib(
+        default=None,
+        converter=PropDistributionS3OriginConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDistributionS3OriginConfig)),
+        metadata={AttrMeta.PROPERTY_NAME: "S3OriginConfig"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-origin.html#cfn-cloudfront-distribution-origin-s3originconfig"""
+
+@attr.s
+class PropResponseHeadersPolicyResponseHeadersPolicyConfig(Property):
+    """
+    AWS Object Type = "AWS::CloudFront::ResponseHeadersPolicy.ResponseHeadersPolicyConfig"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-responseheaderspolicyconfig.html
+
+    Property Document:
+    
+    - ``rp_Name``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-responseheaderspolicyconfig.html#cfn-cloudfront-responseheaderspolicy-responseheaderspolicyconfig-name
+    - ``p_Comment``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-responseheaderspolicyconfig.html#cfn-cloudfront-responseheaderspolicy-responseheaderspolicyconfig-comment
+    - ``p_CorsConfig``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-responseheaderspolicyconfig.html#cfn-cloudfront-responseheaderspolicy-responseheaderspolicyconfig-corsconfig
+    - ``p_CustomHeadersConfig``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-responseheaderspolicyconfig.html#cfn-cloudfront-responseheaderspolicy-responseheaderspolicyconfig-customheadersconfig
+    - ``p_SecurityHeadersConfig``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-responseheaderspolicyconfig.html#cfn-cloudfront-responseheaderspolicy-responseheaderspolicyconfig-securityheadersconfig
+    - ``p_ServerTimingHeadersConfig``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-responseheaderspolicyconfig.html#cfn-cloudfront-responseheaderspolicy-responseheaderspolicyconfig-servertimingheadersconfig
+    """
+    AWS_OBJECT_TYPE = "AWS::CloudFront::ResponseHeadersPolicy.ResponseHeadersPolicyConfig"
+    
+    rp_Name: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "Name"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-responseheaderspolicyconfig.html#cfn-cloudfront-responseheaderspolicy-responseheaderspolicyconfig-name"""
+    p_Comment: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "Comment"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-responseheaderspolicyconfig.html#cfn-cloudfront-responseheaderspolicy-responseheaderspolicyconfig-comment"""
+    p_CorsConfig: typing.Union['PropResponseHeadersPolicyCorsConfig', dict] = attr.ib(
+        default=None,
+        converter=PropResponseHeadersPolicyCorsConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropResponseHeadersPolicyCorsConfig)),
+        metadata={AttrMeta.PROPERTY_NAME: "CorsConfig"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-responseheaderspolicyconfig.html#cfn-cloudfront-responseheaderspolicy-responseheaderspolicyconfig-corsconfig"""
+    p_CustomHeadersConfig: typing.Union['PropResponseHeadersPolicyCustomHeadersConfig', dict] = attr.ib(
+        default=None,
+        converter=PropResponseHeadersPolicyCustomHeadersConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropResponseHeadersPolicyCustomHeadersConfig)),
+        metadata={AttrMeta.PROPERTY_NAME: "CustomHeadersConfig"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-responseheaderspolicyconfig.html#cfn-cloudfront-responseheaderspolicy-responseheaderspolicyconfig-customheadersconfig"""
+    p_SecurityHeadersConfig: typing.Union['PropResponseHeadersPolicySecurityHeadersConfig', dict] = attr.ib(
+        default=None,
+        converter=PropResponseHeadersPolicySecurityHeadersConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropResponseHeadersPolicySecurityHeadersConfig)),
+        metadata={AttrMeta.PROPERTY_NAME: "SecurityHeadersConfig"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-responseheaderspolicyconfig.html#cfn-cloudfront-responseheaderspolicy-responseheaderspolicyconfig-securityheadersconfig"""
+    p_ServerTimingHeadersConfig: typing.Union['PropResponseHeadersPolicyServerTimingHeadersConfig', dict] = attr.ib(
+        default=None,
+        converter=PropResponseHeadersPolicyServerTimingHeadersConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropResponseHeadersPolicyServerTimingHeadersConfig)),
+        metadata={AttrMeta.PROPERTY_NAME: "ServerTimingHeadersConfig"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-responseheaderspolicyconfig.html#cfn-cloudfront-responseheaderspolicy-responseheaderspolicyconfig-servertimingheadersconfig"""
+
+@attr.s
 class PropDistributionDistributionConfig(Property):
     """
     AWS Object Type = "AWS::CloudFront::Distribution.DistributionConfig"
@@ -2239,14 +2521,15 @@ class PropDistributionDistributionConfig(Property):
 
     Property Document:
     
+    - ``rp_DefaultCacheBehavior``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-defaultcachebehavior
     - ``rp_Enabled``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-enabled
     - ``p_Aliases``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-aliases
     - ``p_CNAMEs``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-cnames
     - ``p_CacheBehaviors``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-cachebehaviors
     - ``p_Comment``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-comment
+    - ``p_ContinuousDeploymentPolicyId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-continuousdeploymentpolicyid
     - ``p_CustomErrorResponses``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-customerrorresponses
     - ``p_CustomOrigin``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-customorigin
-    - ``p_DefaultCacheBehavior``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-defaultcachebehavior
     - ``p_DefaultRootObject``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-defaultrootobject
     - ``p_HttpVersion``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-httpversion
     - ``p_IPV6Enabled``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-ipv6enabled
@@ -2256,11 +2539,19 @@ class PropDistributionDistributionConfig(Property):
     - ``p_PriceClass``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-priceclass
     - ``p_Restrictions``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-restrictions
     - ``p_S3Origin``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-s3origin
+    - ``p_Staging``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-staging
     - ``p_ViewerCertificate``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-viewercertificate
     - ``p_WebACLId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-webaclid
     """
     AWS_OBJECT_TYPE = "AWS::CloudFront::Distribution.DistributionConfig"
     
+    rp_DefaultCacheBehavior: typing.Union['PropDistributionDefaultCacheBehavior', dict] = attr.ib(
+        default=None,
+        converter=PropDistributionDefaultCacheBehavior.from_dict,
+        validator=attr.validators.instance_of(PropDistributionDefaultCacheBehavior),
+        metadata={AttrMeta.PROPERTY_NAME: "DefaultCacheBehavior"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-defaultcachebehavior"""
     rp_Enabled: bool = attr.ib(
         default=None,
         validator=attr.validators.instance_of(bool),
@@ -2292,6 +2583,12 @@ class PropDistributionDistributionConfig(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Comment"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-comment"""
+    p_ContinuousDeploymentPolicyId: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "ContinuousDeploymentPolicyId"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-continuousdeploymentpolicyid"""
     p_CustomErrorResponses: typing.List[typing.Union['PropDistributionCustomErrorResponse', dict]] = attr.ib(
         default=None,
         converter=PropDistributionCustomErrorResponse.from_list,
@@ -2299,20 +2596,12 @@ class PropDistributionDistributionConfig(Property):
         metadata={AttrMeta.PROPERTY_NAME: "CustomErrorResponses"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-customerrorresponses"""
-    p_CustomOrigin: typing.Union['PropDistributionLegacyCustomOrigin', dict] = attr.ib(
+    p_CustomOrigin: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropDistributionLegacyCustomOrigin.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropDistributionLegacyCustomOrigin)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "CustomOrigin"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-customorigin"""
-    p_DefaultCacheBehavior: typing.Union['PropDistributionDefaultCacheBehavior', dict] = attr.ib(
-        default=None,
-        converter=PropDistributionDefaultCacheBehavior.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropDistributionDefaultCacheBehavior)),
-        metadata={AttrMeta.PROPERTY_NAME: "DefaultCacheBehavior"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-defaultcachebehavior"""
     p_DefaultRootObject: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
@@ -2365,13 +2654,18 @@ class PropDistributionDistributionConfig(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Restrictions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-restrictions"""
-    p_S3Origin: typing.Union['PropDistributionLegacyS3Origin', dict] = attr.ib(
+    p_S3Origin: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropDistributionLegacyS3Origin.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropDistributionLegacyS3Origin)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "S3Origin"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-s3origin"""
+    p_Staging: bool = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(bool)),
+        metadata={AttrMeta.PROPERTY_NAME: "Staging"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-distributionconfig.html#cfn-cloudfront-distribution-distributionconfig-staging"""
     p_ViewerCertificate: typing.Union['PropDistributionViewerCertificate', dict] = attr.ib(
         default=None,
         converter=PropDistributionViewerCertificate.from_dict,
@@ -2408,14 +2702,29 @@ class StreamingDistribution(Resource):
         default=None,
         converter=PropStreamingDistributionStreamingDistributionConfig.from_dict,
         validator=attr.validators.instance_of(PropStreamingDistributionStreamingDistributionConfig),
-        metadata={AttrMeta.PROPERTY_NAME: "StreamingDistributionConfig"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "StreamingDistributionConfig",
+            AttrMeta.DATA: {
+                "Type": 'StreamingDistributionConfig',
+                "Required": True,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-streamingdistribution.html#cfn-cloudfront-streamingdistribution-streamingdistributionconfig"""
     rp_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
         validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list)),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "Type": 'List',
+                "Required": True,
+                "ItemType": 'Tag',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-streamingdistribution.html#cfn-cloudfront-streamingdistribution-tags"""
 
@@ -2444,7 +2753,14 @@ class CachePolicy(Resource):
         default=None,
         converter=PropCachePolicyCachePolicyConfig.from_dict,
         validator=attr.validators.instance_of(PropCachePolicyCachePolicyConfig),
-        metadata={AttrMeta.PROPERTY_NAME: "CachePolicyConfig"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "CachePolicyConfig",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": True,
+                "Type": 'CachePolicyConfig',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-cachepolicy.html#cfn-cloudfront-cachepolicy-cachepolicyconfig"""
 
@@ -2479,14 +2795,30 @@ class Distribution(Resource):
         default=None,
         converter=PropDistributionDistributionConfig.from_dict,
         validator=attr.validators.instance_of(PropDistributionDistributionConfig),
-        metadata={AttrMeta.PROPERTY_NAME: "DistributionConfig"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "DistributionConfig",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": True,
+                "Type": 'DistributionConfig',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-distribution.html#cfn-cloudfront-distribution-distributionconfig"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'List',
+                "ItemType": 'Tag',
+                "DuplicatesAllowed": True,
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-distribution.html#cfn-cloudfront-distribution-tags"""
 
@@ -2522,26 +2854,54 @@ class Function(Resource):
     rp_Name: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Name"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Name",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-function.html#cfn-cloudfront-function-name"""
     p_AutoPublish: bool = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(bool)),
-        metadata={AttrMeta.PROPERTY_NAME: "AutoPublish"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "AutoPublish",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'Boolean',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-function.html#cfn-cloudfront-function-autopublish"""
     p_FunctionCode: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "FunctionCode"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "FunctionCode",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-function.html#cfn-cloudfront-function-functioncode"""
     p_FunctionConfig: typing.Union['PropFunctionFunctionConfig', dict] = attr.ib(
         default=None,
         converter=PropFunctionFunctionConfig.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropFunctionFunctionConfig)),
-        metadata={AttrMeta.PROPERTY_NAME: "FunctionConfig"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "FunctionConfig",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'FunctionConfig',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-function.html#cfn-cloudfront-function-functionconfig"""
 
@@ -2580,7 +2940,14 @@ class KeyGroup(Resource):
         default=None,
         converter=PropKeyGroupKeyGroupConfig.from_dict,
         validator=attr.validators.instance_of(PropKeyGroupKeyGroupConfig),
-        metadata={AttrMeta.PROPERTY_NAME: "KeyGroupConfig"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "KeyGroupConfig",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": True,
+                "Type": 'KeyGroupConfig',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-keygroup.html#cfn-cloudfront-keygroup-keygroupconfig"""
 
@@ -2594,6 +2961,42 @@ class KeyGroup(Resource):
     def rv_LastModifiedTime(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-keygroup.html#aws-resource-cloudfront-keygroup-return-values"""
         return GetAtt(resource=self, attr_name="LastModifiedTime")
+    
+
+@attr.s
+class OriginAccessControl(Resource):
+    """
+    AWS Object Type = "AWS::CloudFront::OriginAccessControl"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-originaccesscontrol.html
+
+    Property Document:
+    
+    - ``rp_OriginAccessControlConfig``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-originaccesscontrol.html#cfn-cloudfront-originaccesscontrol-originaccesscontrolconfig
+    """
+    AWS_OBJECT_TYPE = "AWS::CloudFront::OriginAccessControl"
+
+    
+    rp_OriginAccessControlConfig: typing.Union['PropOriginAccessControlOriginAccessControlConfig', dict] = attr.ib(
+        default=None,
+        converter=PropOriginAccessControlOriginAccessControlConfig.from_dict,
+        validator=attr.validators.instance_of(PropOriginAccessControlOriginAccessControlConfig),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "OriginAccessControlConfig",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": True,
+                "Type": 'OriginAccessControlConfig',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-originaccesscontrol.html#cfn-cloudfront-originaccesscontrol-originaccesscontrolconfig"""
+
+    
+    @property
+    def rv_Id(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-originaccesscontrol.html#aws-resource-cloudfront-originaccesscontrol-return-values"""
+        return GetAtt(resource=self, attr_name="Id")
     
 
 @attr.s
@@ -2614,7 +3017,14 @@ class CloudFrontOriginAccessIdentity(Resource):
         default=None,
         converter=PropCloudFrontOriginAccessIdentityCloudFrontOriginAccessIdentityConfig.from_dict,
         validator=attr.validators.instance_of(PropCloudFrontOriginAccessIdentityCloudFrontOriginAccessIdentityConfig),
-        metadata={AttrMeta.PROPERTY_NAME: "CloudFrontOriginAccessIdentityConfig"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "CloudFrontOriginAccessIdentityConfig",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": True,
+                "Type": 'CloudFrontOriginAccessIdentityConfig',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-cloudfrontoriginaccessidentity.html#cfn-cloudfront-cloudfrontoriginaccessidentity-cloudfrontoriginaccessidentityconfig"""
 
@@ -2651,25 +3061,57 @@ class RealtimeLogConfig(Resource):
         default=None,
         converter=PropRealtimeLogConfigEndPoint.from_list,
         validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropRealtimeLogConfigEndPoint), iterable_validator=attr.validators.instance_of(list)),
-        metadata={AttrMeta.PROPERTY_NAME: "EndPoints"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "EndPoints",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": True,
+                "Type": 'List',
+                "ItemType": 'EndPoint',
+                "DuplicatesAllowed": True,
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-realtimelogconfig.html#cfn-cloudfront-realtimelogconfig-endpoints"""
     rp_Fields: typing.List[TypeHint.intrinsic_str] = attr.ib(
         default=None,
         validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list)),
-        metadata={AttrMeta.PROPERTY_NAME: "Fields"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Fields",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": True,
+                "Type": 'List',
+                "PrimitiveItemType": 'String',
+                "DuplicatesAllowed": True,
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-realtimelogconfig.html#cfn-cloudfront-realtimelogconfig-fields"""
     rp_Name: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Name"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Name",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-realtimelogconfig.html#cfn-cloudfront-realtimelogconfig-name"""
     rp_SamplingRate: float = attr.ib(
         default=None,
         validator=attr.validators.instance_of(float),
-        metadata={AttrMeta.PROPERTY_NAME: "SamplingRate"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "SamplingRate",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": True,
+                "PrimitiveType": 'Double',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-realtimelogconfig.html#cfn-cloudfront-realtimelogconfig-samplingrate"""
 
@@ -2678,6 +3120,51 @@ class RealtimeLogConfig(Resource):
     def rv_Arn(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-realtimelogconfig.html#aws-resource-cloudfront-realtimelogconfig-return-values"""
         return GetAtt(resource=self, attr_name="Arn")
+    
+
+@attr.s
+class MonitoringSubscription(Resource):
+    """
+    AWS Object Type = "AWS::CloudFront::MonitoringSubscription"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-monitoringsubscription.html
+
+    Property Document:
+    
+    - ``rp_DistributionId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-monitoringsubscription.html#cfn-cloudfront-monitoringsubscription-distributionid
+    - ``rp_MonitoringSubscription``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-monitoringsubscription.html#cfn-cloudfront-monitoringsubscription-monitoringsubscription
+    """
+    AWS_OBJECT_TYPE = "AWS::CloudFront::MonitoringSubscription"
+
+    
+    rp_DistributionId: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "DistributionId",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-monitoringsubscription.html#cfn-cloudfront-monitoringsubscription-distributionid"""
+    rp_MonitoringSubscription: typing.Union['PropMonitoringSubscriptionMonitoringSubscription', dict] = attr.ib(
+        default=None,
+        converter=PropMonitoringSubscriptionMonitoringSubscription.from_dict,
+        validator=attr.validators.instance_of(PropMonitoringSubscriptionMonitoringSubscription),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "MonitoringSubscription",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": True,
+                "Type": 'MonitoringSubscription',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-monitoringsubscription.html#cfn-cloudfront-monitoringsubscription-monitoringsubscription"""
+
     
 
 @attr.s
@@ -2698,7 +3185,14 @@ class ResponseHeadersPolicy(Resource):
         default=None,
         converter=PropResponseHeadersPolicyResponseHeadersPolicyConfig.from_dict,
         validator=attr.validators.instance_of(PropResponseHeadersPolicyResponseHeadersPolicyConfig),
-        metadata={AttrMeta.PROPERTY_NAME: "ResponseHeadersPolicyConfig"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ResponseHeadersPolicyConfig",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": True,
+                "Type": 'ResponseHeadersPolicyConfig',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-responseheaderspolicy.html#cfn-cloudfront-responseheaderspolicy-responseheaderspolicyconfig"""
 
@@ -2732,7 +3226,14 @@ class OriginRequestPolicy(Resource):
         default=None,
         converter=PropOriginRequestPolicyOriginRequestPolicyConfig.from_dict,
         validator=attr.validators.instance_of(PropOriginRequestPolicyOriginRequestPolicyConfig),
-        metadata={AttrMeta.PROPERTY_NAME: "OriginRequestPolicyConfig"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "OriginRequestPolicyConfig",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": True,
+                "Type": 'OriginRequestPolicyConfig',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-originrequestpolicy.html#cfn-cloudfront-originrequestpolicy-originrequestpolicyconfig"""
 
@@ -2766,7 +3267,14 @@ class PublicKey(Resource):
         default=None,
         converter=PropPublicKeyPublicKeyConfig.from_dict,
         validator=attr.validators.instance_of(PropPublicKeyPublicKeyConfig),
-        metadata={AttrMeta.PROPERTY_NAME: "PublicKeyConfig"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "PublicKeyConfig",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": True,
+                "Type": 'PublicKeyConfig',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-publickey.html#cfn-cloudfront-publickey-publickeyconfig"""
 
@@ -2779,5 +3287,46 @@ class PublicKey(Resource):
     @property
     def rv_Id(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-publickey.html#aws-resource-cloudfront-publickey-return-values"""
+        return GetAtt(resource=self, attr_name="Id")
+    
+
+@attr.s
+class ContinuousDeploymentPolicy(Resource):
+    """
+    AWS Object Type = "AWS::CloudFront::ContinuousDeploymentPolicy"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-continuousdeploymentpolicy.html
+
+    Property Document:
+    
+    - ``rp_ContinuousDeploymentPolicyConfig``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-continuousdeploymentpolicy.html#cfn-cloudfront-continuousdeploymentpolicy-continuousdeploymentpolicyconfig
+    """
+    AWS_OBJECT_TYPE = "AWS::CloudFront::ContinuousDeploymentPolicy"
+
+    
+    rp_ContinuousDeploymentPolicyConfig: typing.Union['PropContinuousDeploymentPolicyContinuousDeploymentPolicyConfig', dict] = attr.ib(
+        default=None,
+        converter=PropContinuousDeploymentPolicyContinuousDeploymentPolicyConfig.from_dict,
+        validator=attr.validators.instance_of(PropContinuousDeploymentPolicyContinuousDeploymentPolicyConfig),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ContinuousDeploymentPolicyConfig",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": True,
+                "Type": 'ContinuousDeploymentPolicyConfig',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-continuousdeploymentpolicy.html#cfn-cloudfront-continuousdeploymentpolicy-continuousdeploymentpolicyconfig"""
+
+    
+    @property
+    def rv_LastModifiedTime(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-continuousdeploymentpolicy.html#aws-resource-cloudfront-continuousdeploymentpolicy-return-values"""
+        return GetAtt(resource=self, attr_name="LastModifiedTime")
+    
+    @property
+    def rv_Id(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-continuousdeploymentpolicy.html#aws-resource-cloudfront-continuousdeploymentpolicy-return-values"""
         return GetAtt(resource=self, attr_name="Id")
     

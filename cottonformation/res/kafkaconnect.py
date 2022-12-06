@@ -15,6 +15,53 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
+class PropConnectorWorkerConfiguration(Property):
+    """
+    AWS Object Type = "AWS::KafkaConnect::Connector.WorkerConfiguration"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-workerconfiguration.html
+
+    Property Document:
+    
+    - ``rp_Revision``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-workerconfiguration.html#cfn-kafkaconnect-connector-workerconfiguration-revision
+    - ``rp_WorkerConfigurationArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-workerconfiguration.html#cfn-kafkaconnect-connector-workerconfiguration-workerconfigurationarn
+    """
+    AWS_OBJECT_TYPE = "AWS::KafkaConnect::Connector.WorkerConfiguration"
+    
+    rp_Revision: int = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(int),
+        metadata={AttrMeta.PROPERTY_NAME: "Revision"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-workerconfiguration.html#cfn-kafkaconnect-connector-workerconfiguration-revision"""
+    rp_WorkerConfigurationArn: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "WorkerConfigurationArn"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-workerconfiguration.html#cfn-kafkaconnect-connector-workerconfiguration-workerconfigurationarn"""
+
+@attr.s
+class PropConnectorScaleInPolicy(Property):
+    """
+    AWS Object Type = "AWS::KafkaConnect::Connector.ScaleInPolicy"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-scaleinpolicy.html
+
+    Property Document:
+    
+    - ``rp_CpuUtilizationPercentage``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-scaleinpolicy.html#cfn-kafkaconnect-connector-scaleinpolicy-cpuutilizationpercentage
+    """
+    AWS_OBJECT_TYPE = "AWS::KafkaConnect::Connector.ScaleInPolicy"
+    
+    rp_CpuUtilizationPercentage: int = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(int),
+        metadata={AttrMeta.PROPERTY_NAME: "CpuUtilizationPercentage"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-scaleinpolicy.html#cfn-kafkaconnect-connector-scaleinpolicy-cpuutilizationpercentage"""
+
+@attr.s
 class PropConnectorFirehoseLogDelivery(Property):
     """
     AWS Object Type = "AWS::KafkaConnect::Connector.FirehoseLogDelivery"
@@ -101,53 +148,6 @@ class PropConnectorS3LogDelivery(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Prefix"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-s3logdelivery.html#cfn-kafkaconnect-connector-s3logdelivery-prefix"""
-
-@attr.s
-class PropConnectorWorkerConfiguration(Property):
-    """
-    AWS Object Type = "AWS::KafkaConnect::Connector.WorkerConfiguration"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-workerconfiguration.html
-
-    Property Document:
-    
-    - ``rp_Revision``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-workerconfiguration.html#cfn-kafkaconnect-connector-workerconfiguration-revision
-    - ``rp_WorkerConfigurationArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-workerconfiguration.html#cfn-kafkaconnect-connector-workerconfiguration-workerconfigurationarn
-    """
-    AWS_OBJECT_TYPE = "AWS::KafkaConnect::Connector.WorkerConfiguration"
-    
-    rp_Revision: int = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(int),
-        metadata={AttrMeta.PROPERTY_NAME: "Revision"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-workerconfiguration.html#cfn-kafkaconnect-connector-workerconfiguration-revision"""
-    rp_WorkerConfigurationArn: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "WorkerConfigurationArn"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-workerconfiguration.html#cfn-kafkaconnect-connector-workerconfiguration-workerconfigurationarn"""
-
-@attr.s
-class PropConnectorScaleInPolicy(Property):
-    """
-    AWS Object Type = "AWS::KafkaConnect::Connector.ScaleInPolicy"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-scaleinpolicy.html
-
-    Property Document:
-    
-    - ``rp_CpuUtilizationPercentage``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-scaleinpolicy.html#cfn-kafkaconnect-connector-scaleinpolicy-cpuutilizationpercentage
-    """
-    AWS_OBJECT_TYPE = "AWS::KafkaConnect::Connector.ScaleInPolicy"
-    
-    rp_CpuUtilizationPercentage: int = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(int),
-        metadata={AttrMeta.PROPERTY_NAME: "CpuUtilizationPercentage"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-scaleinpolicy.html#cfn-kafkaconnect-connector-scaleinpolicy-cpuutilizationpercentage"""
 
 @attr.s
 class PropConnectorKafkaClusterEncryptionInTransit(Property):
@@ -390,6 +390,61 @@ class PropConnectorAutoScaling(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-autoscaling.html#cfn-kafkaconnect-connector-autoscaling-scaleoutpolicy"""
 
 @attr.s
+class PropConnectorWorkerLogDelivery(Property):
+    """
+    AWS Object Type = "AWS::KafkaConnect::Connector.WorkerLogDelivery"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-workerlogdelivery.html
+
+    Property Document:
+    
+    - ``p_CloudWatchLogs``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-workerlogdelivery.html#cfn-kafkaconnect-connector-workerlogdelivery-cloudwatchlogs
+    - ``p_Firehose``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-workerlogdelivery.html#cfn-kafkaconnect-connector-workerlogdelivery-firehose
+    - ``p_S3``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-workerlogdelivery.html#cfn-kafkaconnect-connector-workerlogdelivery-s3
+    """
+    AWS_OBJECT_TYPE = "AWS::KafkaConnect::Connector.WorkerLogDelivery"
+    
+    p_CloudWatchLogs: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "CloudWatchLogs"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-workerlogdelivery.html#cfn-kafkaconnect-connector-workerlogdelivery-cloudwatchlogs"""
+    p_Firehose: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "Firehose"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-workerlogdelivery.html#cfn-kafkaconnect-connector-workerlogdelivery-firehose"""
+    p_S3: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "S3"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-workerlogdelivery.html#cfn-kafkaconnect-connector-workerlogdelivery-s3"""
+
+@attr.s
+class PropConnectorKafkaCluster(Property):
+    """
+    AWS Object Type = "AWS::KafkaConnect::Connector.KafkaCluster"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-kafkacluster.html
+
+    Property Document:
+    
+    - ``rp_ApacheKafkaCluster``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-kafkacluster.html#cfn-kafkaconnect-connector-kafkacluster-apachekafkacluster
+    """
+    AWS_OBJECT_TYPE = "AWS::KafkaConnect::Connector.KafkaCluster"
+    
+    rp_ApacheKafkaCluster: typing.Union['PropConnectorApacheKafkaCluster', dict] = attr.ib(
+        default=None,
+        converter=PropConnectorApacheKafkaCluster.from_dict,
+        validator=attr.validators.instance_of(PropConnectorApacheKafkaCluster),
+        metadata={AttrMeta.PROPERTY_NAME: "ApacheKafkaCluster"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-kafkacluster.html#cfn-kafkaconnect-connector-kafkacluster-apachekafkacluster"""
+
+@attr.s
 class PropConnectorCapacity(Property):
     """
     AWS Object Type = "AWS::KafkaConnect::Connector.Capacity"
@@ -417,64 +472,6 @@ class PropConnectorCapacity(Property):
         metadata={AttrMeta.PROPERTY_NAME: "ProvisionedCapacity"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-capacity.html#cfn-kafkaconnect-connector-capacity-provisionedcapacity"""
-
-@attr.s
-class PropConnectorWorkerLogDelivery(Property):
-    """
-    AWS Object Type = "AWS::KafkaConnect::Connector.WorkerLogDelivery"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-workerlogdelivery.html
-
-    Property Document:
-    
-    - ``p_CloudWatchLogs``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-workerlogdelivery.html#cfn-kafkaconnect-connector-workerlogdelivery-cloudwatchlogs
-    - ``p_Firehose``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-workerlogdelivery.html#cfn-kafkaconnect-connector-workerlogdelivery-firehose
-    - ``p_S3``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-workerlogdelivery.html#cfn-kafkaconnect-connector-workerlogdelivery-s3
-    """
-    AWS_OBJECT_TYPE = "AWS::KafkaConnect::Connector.WorkerLogDelivery"
-    
-    p_CloudWatchLogs: typing.Union['PropConnectorCloudWatchLogsLogDelivery', dict] = attr.ib(
-        default=None,
-        converter=PropConnectorCloudWatchLogsLogDelivery.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropConnectorCloudWatchLogsLogDelivery)),
-        metadata={AttrMeta.PROPERTY_NAME: "CloudWatchLogs"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-workerlogdelivery.html#cfn-kafkaconnect-connector-workerlogdelivery-cloudwatchlogs"""
-    p_Firehose: typing.Union['PropConnectorFirehoseLogDelivery', dict] = attr.ib(
-        default=None,
-        converter=PropConnectorFirehoseLogDelivery.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropConnectorFirehoseLogDelivery)),
-        metadata={AttrMeta.PROPERTY_NAME: "Firehose"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-workerlogdelivery.html#cfn-kafkaconnect-connector-workerlogdelivery-firehose"""
-    p_S3: typing.Union['PropConnectorS3LogDelivery', dict] = attr.ib(
-        default=None,
-        converter=PropConnectorS3LogDelivery.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropConnectorS3LogDelivery)),
-        metadata={AttrMeta.PROPERTY_NAME: "S3"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-workerlogdelivery.html#cfn-kafkaconnect-connector-workerlogdelivery-s3"""
-
-@attr.s
-class PropConnectorKafkaCluster(Property):
-    """
-    AWS Object Type = "AWS::KafkaConnect::Connector.KafkaCluster"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-kafkacluster.html
-
-    Property Document:
-    
-    - ``rp_ApacheKafkaCluster``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-kafkacluster.html#cfn-kafkaconnect-connector-kafkacluster-apachekafkacluster
-    """
-    AWS_OBJECT_TYPE = "AWS::KafkaConnect::Connector.KafkaCluster"
-    
-    rp_ApacheKafkaCluster: typing.Union['PropConnectorApacheKafkaCluster', dict] = attr.ib(
-        default=None,
-        converter=PropConnectorApacheKafkaCluster.from_dict,
-        validator=attr.validators.instance_of(PropConnectorApacheKafkaCluster),
-        metadata={AttrMeta.PROPERTY_NAME: "ApacheKafkaCluster"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kafkaconnect-connector-kafkacluster.html#cfn-kafkaconnect-connector-kafkacluster-apachekafkacluster"""
 
 @attr.s
 class PropConnectorLogDelivery(Property):
@@ -529,79 +526,166 @@ class Connector(Resource):
         default=None,
         converter=PropConnectorCapacity.from_dict,
         validator=attr.validators.instance_of(PropConnectorCapacity),
-        metadata={AttrMeta.PROPERTY_NAME: "Capacity"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Capacity",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": True,
+                "Type": 'Capacity',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kafkaconnect-connector.html#cfn-kafkaconnect-connector-capacity"""
     rp_ConnectorConfiguration: typing.Dict[str, TypeHint.intrinsic_str] = attr.ib(
         default=None,
         validator=attr.validators.deep_mapping(key_validator=attr.validators.instance_of(str), value_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "ConnectorConfiguration"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ConnectorConfiguration",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "Type": 'Map',
+                "PrimitiveItemType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kafkaconnect-connector.html#cfn-kafkaconnect-connector-connectorconfiguration"""
     rp_ConnectorName: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "ConnectorName"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ConnectorName",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kafkaconnect-connector.html#cfn-kafkaconnect-connector-connectorname"""
     rp_KafkaCluster: typing.Union['PropConnectorKafkaCluster', dict] = attr.ib(
         default=None,
         converter=PropConnectorKafkaCluster.from_dict,
         validator=attr.validators.instance_of(PropConnectorKafkaCluster),
-        metadata={AttrMeta.PROPERTY_NAME: "KafkaCluster"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "KafkaCluster",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "Type": 'KafkaCluster',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kafkaconnect-connector.html#cfn-kafkaconnect-connector-kafkacluster"""
     rp_KafkaClusterClientAuthentication: typing.Union['PropConnectorKafkaClusterClientAuthentication', dict] = attr.ib(
         default=None,
         converter=PropConnectorKafkaClusterClientAuthentication.from_dict,
         validator=attr.validators.instance_of(PropConnectorKafkaClusterClientAuthentication),
-        metadata={AttrMeta.PROPERTY_NAME: "KafkaClusterClientAuthentication"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "KafkaClusterClientAuthentication",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "Type": 'KafkaClusterClientAuthentication',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kafkaconnect-connector.html#cfn-kafkaconnect-connector-kafkaclusterclientauthentication"""
     rp_KafkaClusterEncryptionInTransit: typing.Union['PropConnectorKafkaClusterEncryptionInTransit', dict] = attr.ib(
         default=None,
         converter=PropConnectorKafkaClusterEncryptionInTransit.from_dict,
         validator=attr.validators.instance_of(PropConnectorKafkaClusterEncryptionInTransit),
-        metadata={AttrMeta.PROPERTY_NAME: "KafkaClusterEncryptionInTransit"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "KafkaClusterEncryptionInTransit",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "Type": 'KafkaClusterEncryptionInTransit',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kafkaconnect-connector.html#cfn-kafkaconnect-connector-kafkaclusterencryptionintransit"""
     rp_KafkaConnectVersion: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "KafkaConnectVersion"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "KafkaConnectVersion",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kafkaconnect-connector.html#cfn-kafkaconnect-connector-kafkaconnectversion"""
     rp_Plugins: typing.List[typing.Union['PropConnectorPlugin', dict]] = attr.ib(
         default=None,
         converter=PropConnectorPlugin.from_list,
         validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropConnectorPlugin), iterable_validator=attr.validators.instance_of(list)),
-        metadata={AttrMeta.PROPERTY_NAME: "Plugins"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Plugins",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "Type": 'List',
+                "ItemType": 'Plugin',
+                "DuplicatesAllowed": False,
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kafkaconnect-connector.html#cfn-kafkaconnect-connector-plugins"""
     rp_ServiceExecutionRoleArn: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "ServiceExecutionRoleArn"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ServiceExecutionRoleArn",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kafkaconnect-connector.html#cfn-kafkaconnect-connector-serviceexecutionrolearn"""
     p_ConnectorDescription: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "ConnectorDescription"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ConnectorDescription",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kafkaconnect-connector.html#cfn-kafkaconnect-connector-connectordescription"""
     p_LogDelivery: typing.Union['PropConnectorLogDelivery', dict] = attr.ib(
         default=None,
         converter=PropConnectorLogDelivery.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropConnectorLogDelivery)),
-        metadata={AttrMeta.PROPERTY_NAME: "LogDelivery"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "LogDelivery",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "Type": 'LogDelivery',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kafkaconnect-connector.html#cfn-kafkaconnect-connector-logdelivery"""
     p_WorkerConfiguration: typing.Union['PropConnectorWorkerConfiguration', dict] = attr.ib(
         default=None,
         converter=PropConnectorWorkerConfiguration.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropConnectorWorkerConfiguration)),
-        metadata={AttrMeta.PROPERTY_NAME: "WorkerConfiguration"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "WorkerConfiguration",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "Type": 'WorkerConfiguration',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kafkaconnect-connector.html#cfn-kafkaconnect-connector-workerconfiguration"""
 

@@ -140,20 +140,41 @@ class Skill(Resource):
         default=None,
         converter=PropSkillAuthenticationConfiguration.from_dict,
         validator=attr.validators.instance_of(PropSkillAuthenticationConfiguration),
-        metadata={AttrMeta.PROPERTY_NAME: "AuthenticationConfiguration"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "AuthenticationConfiguration",
+            AttrMeta.DATA: {
+                "Type": 'AuthenticationConfiguration',
+                "Required": True,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ask-skill.html#cfn-ask-skill-authenticationconfiguration"""
     rp_SkillPackage: typing.Union['PropSkillSkillPackage', dict] = attr.ib(
         default=None,
         converter=PropSkillSkillPackage.from_dict,
         validator=attr.validators.instance_of(PropSkillSkillPackage),
-        metadata={AttrMeta.PROPERTY_NAME: "SkillPackage"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "SkillPackage",
+            AttrMeta.DATA: {
+                "Type": 'SkillPackage',
+                "Required": True,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ask-skill.html#cfn-ask-skill-skillpackage"""
     rp_VendorId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "VendorId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "VendorId",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ask-skill.html#cfn-ask-skill-vendorid"""
 

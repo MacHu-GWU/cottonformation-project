@@ -15,6 +15,230 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
+class PropResourceDefinitionSecretsManagerSecretResourceData(Property):
+    """
+    AWS Object Type = "AWS::Greengrass::ResourceDefinition.SecretsManagerSecretResourceData"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-secretsmanagersecretresourcedata.html
+
+    Property Document:
+    
+    - ``rp_ARN``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-secretsmanagersecretresourcedata.html#cfn-greengrass-resourcedefinition-secretsmanagersecretresourcedata-arn
+    - ``p_AdditionalStagingLabelsToDownload``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-secretsmanagersecretresourcedata.html#cfn-greengrass-resourcedefinition-secretsmanagersecretresourcedata-additionalstaginglabelstodownload
+    """
+    AWS_OBJECT_TYPE = "AWS::Greengrass::ResourceDefinition.SecretsManagerSecretResourceData"
+    
+    rp_ARN: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "ARN"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-secretsmanagersecretresourcedata.html#cfn-greengrass-resourcedefinition-secretsmanagersecretresourcedata-arn"""
+    p_AdditionalStagingLabelsToDownload: typing.List[TypeHint.intrinsic_str] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "AdditionalStagingLabelsToDownload"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-secretsmanagersecretresourcedata.html#cfn-greengrass-resourcedefinition-secretsmanagersecretresourcedata-additionalstaginglabelstodownload"""
+
+@attr.s
+class PropLoggerDefinitionLogger(Property):
+    """
+    AWS Object Type = "AWS::Greengrass::LoggerDefinition.Logger"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-loggerdefinition-logger.html
+
+    Property Document:
+    
+    - ``rp_Component``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-loggerdefinition-logger.html#cfn-greengrass-loggerdefinition-logger-component
+    - ``rp_Id``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-loggerdefinition-logger.html#cfn-greengrass-loggerdefinition-logger-id
+    - ``rp_Level``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-loggerdefinition-logger.html#cfn-greengrass-loggerdefinition-logger-level
+    - ``rp_Type``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-loggerdefinition-logger.html#cfn-greengrass-loggerdefinition-logger-type
+    - ``p_Space``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-loggerdefinition-logger.html#cfn-greengrass-loggerdefinition-logger-space
+    """
+    AWS_OBJECT_TYPE = "AWS::Greengrass::LoggerDefinition.Logger"
+    
+    rp_Component: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "Component"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-loggerdefinition-logger.html#cfn-greengrass-loggerdefinition-logger-component"""
+    rp_Id: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "Id"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-loggerdefinition-logger.html#cfn-greengrass-loggerdefinition-logger-id"""
+    rp_Level: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "Level"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-loggerdefinition-logger.html#cfn-greengrass-loggerdefinition-logger-level"""
+    rp_Type: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "Type"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-loggerdefinition-logger.html#cfn-greengrass-loggerdefinition-logger-type"""
+    p_Space: int = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(int)),
+        metadata={AttrMeta.PROPERTY_NAME: "Space"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-loggerdefinition-logger.html#cfn-greengrass-loggerdefinition-logger-space"""
+
+@attr.s
+class PropResourceDefinitionVersionSecretsManagerSecretResourceData(Property):
+    """
+    AWS Object Type = "AWS::Greengrass::ResourceDefinitionVersion.SecretsManagerSecretResourceData"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-secretsmanagersecretresourcedata.html
+
+    Property Document:
+    
+    - ``rp_ARN``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-secretsmanagersecretresourcedata.html#cfn-greengrass-resourcedefinitionversion-secretsmanagersecretresourcedata-arn
+    - ``p_AdditionalStagingLabelsToDownload``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-secretsmanagersecretresourcedata.html#cfn-greengrass-resourcedefinitionversion-secretsmanagersecretresourcedata-additionalstaginglabelstodownload
+    """
+    AWS_OBJECT_TYPE = "AWS::Greengrass::ResourceDefinitionVersion.SecretsManagerSecretResourceData"
+    
+    rp_ARN: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "ARN"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-secretsmanagersecretresourcedata.html#cfn-greengrass-resourcedefinitionversion-secretsmanagersecretresourcedata-arn"""
+    p_AdditionalStagingLabelsToDownload: typing.List[TypeHint.intrinsic_str] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "AdditionalStagingLabelsToDownload"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-secretsmanagersecretresourcedata.html#cfn-greengrass-resourcedefinitionversion-secretsmanagersecretresourcedata-additionalstaginglabelstodownload"""
+
+@attr.s
+class PropCoreDefinitionVersionCore(Property):
+    """
+    AWS Object Type = "AWS::Greengrass::CoreDefinitionVersion.Core"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-coredefinitionversion-core.html
+
+    Property Document:
+    
+    - ``rp_CertificateArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-coredefinitionversion-core.html#cfn-greengrass-coredefinitionversion-core-certificatearn
+    - ``rp_Id``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-coredefinitionversion-core.html#cfn-greengrass-coredefinitionversion-core-id
+    - ``rp_ThingArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-coredefinitionversion-core.html#cfn-greengrass-coredefinitionversion-core-thingarn
+    - ``p_SyncShadow``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-coredefinitionversion-core.html#cfn-greengrass-coredefinitionversion-core-syncshadow
+    """
+    AWS_OBJECT_TYPE = "AWS::Greengrass::CoreDefinitionVersion.Core"
+    
+    rp_CertificateArn: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "CertificateArn"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-coredefinitionversion-core.html#cfn-greengrass-coredefinitionversion-core-certificatearn"""
+    rp_Id: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "Id"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-coredefinitionversion-core.html#cfn-greengrass-coredefinitionversion-core-id"""
+    rp_ThingArn: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "ThingArn"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-coredefinitionversion-core.html#cfn-greengrass-coredefinitionversion-core-thingarn"""
+    p_SyncShadow: bool = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(bool)),
+        metadata={AttrMeta.PROPERTY_NAME: "SyncShadow"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-coredefinitionversion-core.html#cfn-greengrass-coredefinitionversion-core-syncshadow"""
+
+@attr.s
+class PropFunctionDefinitionVersionRunAs(Property):
+    """
+    AWS Object Type = "AWS::Greengrass::FunctionDefinitionVersion.RunAs"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-runas.html
+
+    Property Document:
+    
+    - ``p_Gid``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-runas.html#cfn-greengrass-functiondefinitionversion-runas-gid
+    - ``p_Uid``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-runas.html#cfn-greengrass-functiondefinitionversion-runas-uid
+    """
+    AWS_OBJECT_TYPE = "AWS::Greengrass::FunctionDefinitionVersion.RunAs"
+    
+    p_Gid: int = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(int)),
+        metadata={AttrMeta.PROPERTY_NAME: "Gid"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-runas.html#cfn-greengrass-functiondefinitionversion-runas-gid"""
+    p_Uid: int = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(int)),
+        metadata={AttrMeta.PROPERTY_NAME: "Uid"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-runas.html#cfn-greengrass-functiondefinitionversion-runas-uid"""
+
+@attr.s
+class PropFunctionDefinitionResourceAccessPolicy(Property):
+    """
+    AWS Object Type = "AWS::Greengrass::FunctionDefinition.ResourceAccessPolicy"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-resourceaccesspolicy.html
+
+    Property Document:
+    
+    - ``rp_ResourceId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-resourceaccesspolicy.html#cfn-greengrass-functiondefinition-resourceaccesspolicy-resourceid
+    - ``p_Permission``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-resourceaccesspolicy.html#cfn-greengrass-functiondefinition-resourceaccesspolicy-permission
+    """
+    AWS_OBJECT_TYPE = "AWS::Greengrass::FunctionDefinition.ResourceAccessPolicy"
+    
+    rp_ResourceId: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "ResourceId"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-resourceaccesspolicy.html#cfn-greengrass-functiondefinition-resourceaccesspolicy-resourceid"""
+    p_Permission: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "Permission"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-resourceaccesspolicy.html#cfn-greengrass-functiondefinition-resourceaccesspolicy-permission"""
+
+@attr.s
+class PropResourceDefinitionVersionGroupOwnerSetting(Property):
+    """
+    AWS Object Type = "AWS::Greengrass::ResourceDefinitionVersion.GroupOwnerSetting"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-groupownersetting.html
+
+    Property Document:
+    
+    - ``rp_AutoAddGroupOwner``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-groupownersetting.html#cfn-greengrass-resourcedefinitionversion-groupownersetting-autoaddgroupowner
+    - ``p_GroupOwner``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-groupownersetting.html#cfn-greengrass-resourcedefinitionversion-groupownersetting-groupowner
+    """
+    AWS_OBJECT_TYPE = "AWS::Greengrass::ResourceDefinitionVersion.GroupOwnerSetting"
+    
+    rp_AutoAddGroupOwner: bool = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(bool),
+        metadata={AttrMeta.PROPERTY_NAME: "AutoAddGroupOwner"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-groupownersetting.html#cfn-greengrass-resourcedefinitionversion-groupownersetting-autoaddgroupowner"""
+    p_GroupOwner: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "GroupOwner"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-groupownersetting.html#cfn-greengrass-resourcedefinitionversion-groupownersetting-groupowner"""
+
+@attr.s
 class PropCoreDefinitionCore(Property):
     """
     AWS Object Type = "AWS::Greengrass::CoreDefinition.Core"
@@ -104,33 +328,6 @@ class PropLoggerDefinitionVersionLogger(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-loggerdefinitionversion-logger.html#cfn-greengrass-loggerdefinitionversion-logger-space"""
 
 @attr.s
-class PropResourceDefinitionSecretsManagerSecretResourceData(Property):
-    """
-    AWS Object Type = "AWS::Greengrass::ResourceDefinition.SecretsManagerSecretResourceData"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-secretsmanagersecretresourcedata.html
-
-    Property Document:
-    
-    - ``rp_ARN``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-secretsmanagersecretresourcedata.html#cfn-greengrass-resourcedefinition-secretsmanagersecretresourcedata-arn
-    - ``p_AdditionalStagingLabelsToDownload``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-secretsmanagersecretresourcedata.html#cfn-greengrass-resourcedefinition-secretsmanagersecretresourcedata-additionalstaginglabelstodownload
-    """
-    AWS_OBJECT_TYPE = "AWS::Greengrass::ResourceDefinition.SecretsManagerSecretResourceData"
-    
-    rp_ARN: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "ARN"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-secretsmanagersecretresourcedata.html#cfn-greengrass-resourcedefinition-secretsmanagersecretresourcedata-arn"""
-    p_AdditionalStagingLabelsToDownload: typing.List[TypeHint.intrinsic_str] = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "AdditionalStagingLabelsToDownload"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-secretsmanagersecretresourcedata.html#cfn-greengrass-resourcedefinition-secretsmanagersecretresourcedata-additionalstaginglabelstodownload"""
-
-@attr.s
 class PropResourceDefinitionResourceDownloadOwnerSetting(Property):
     """
     AWS Object Type = "AWS::Greengrass::ResourceDefinition.ResourceDownloadOwnerSetting"
@@ -158,52 +355,32 @@ class PropResourceDefinitionResourceDownloadOwnerSetting(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-resourcedownloadownersetting.html#cfn-greengrass-resourcedefinition-resourcedownloadownersetting-grouppermission"""
 
 @attr.s
-class PropLoggerDefinitionLogger(Property):
+class PropResourceDefinitionVersionLocalDeviceResourceData(Property):
     """
-    AWS Object Type = "AWS::Greengrass::LoggerDefinition.Logger"
+    AWS Object Type = "AWS::Greengrass::ResourceDefinitionVersion.LocalDeviceResourceData"
 
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-loggerdefinition-logger.html
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-localdeviceresourcedata.html
 
     Property Document:
     
-    - ``rp_Component``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-loggerdefinition-logger.html#cfn-greengrass-loggerdefinition-logger-component
-    - ``rp_Id``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-loggerdefinition-logger.html#cfn-greengrass-loggerdefinition-logger-id
-    - ``rp_Level``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-loggerdefinition-logger.html#cfn-greengrass-loggerdefinition-logger-level
-    - ``rp_Type``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-loggerdefinition-logger.html#cfn-greengrass-loggerdefinition-logger-type
-    - ``p_Space``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-loggerdefinition-logger.html#cfn-greengrass-loggerdefinition-logger-space
+    - ``rp_SourcePath``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-localdeviceresourcedata.html#cfn-greengrass-resourcedefinitionversion-localdeviceresourcedata-sourcepath
+    - ``p_GroupOwnerSetting``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-localdeviceresourcedata.html#cfn-greengrass-resourcedefinitionversion-localdeviceresourcedata-groupownersetting
     """
-    AWS_OBJECT_TYPE = "AWS::Greengrass::LoggerDefinition.Logger"
+    AWS_OBJECT_TYPE = "AWS::Greengrass::ResourceDefinitionVersion.LocalDeviceResourceData"
     
-    rp_Component: TypeHint.intrinsic_str = attr.ib(
+    rp_SourcePath: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Component"},
+        metadata={AttrMeta.PROPERTY_NAME: "SourcePath"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-loggerdefinition-logger.html#cfn-greengrass-loggerdefinition-logger-component"""
-    rp_Id: TypeHint.intrinsic_str = attr.ib(
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-localdeviceresourcedata.html#cfn-greengrass-resourcedefinitionversion-localdeviceresourcedata-sourcepath"""
+    p_GroupOwnerSetting: typing.Union['PropResourceDefinitionVersionGroupOwnerSetting', dict] = attr.ib(
         default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Id"},
+        converter=PropResourceDefinitionVersionGroupOwnerSetting.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropResourceDefinitionVersionGroupOwnerSetting)),
+        metadata={AttrMeta.PROPERTY_NAME: "GroupOwnerSetting"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-loggerdefinition-logger.html#cfn-greengrass-loggerdefinition-logger-id"""
-    rp_Level: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Level"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-loggerdefinition-logger.html#cfn-greengrass-loggerdefinition-logger-level"""
-    rp_Type: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Type"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-loggerdefinition-logger.html#cfn-greengrass-loggerdefinition-logger-type"""
-    p_Space: int = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "Space"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-loggerdefinition-logger.html#cfn-greengrass-loggerdefinition-logger-space"""
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-localdeviceresourcedata.html#cfn-greengrass-resourcedefinitionversion-localdeviceresourcedata-groupownersetting"""
 
 @attr.s
 class PropConnectorDefinitionConnector(Property):
@@ -238,33 +415,6 @@ class PropConnectorDefinitionConnector(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Parameters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-connectordefinition-connector.html#cfn-greengrass-connectordefinition-connector-parameters"""
-
-@attr.s
-class PropResourceDefinitionVersionSecretsManagerSecretResourceData(Property):
-    """
-    AWS Object Type = "AWS::Greengrass::ResourceDefinitionVersion.SecretsManagerSecretResourceData"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-secretsmanagersecretresourcedata.html
-
-    Property Document:
-    
-    - ``rp_ARN``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-secretsmanagersecretresourcedata.html#cfn-greengrass-resourcedefinitionversion-secretsmanagersecretresourcedata-arn
-    - ``p_AdditionalStagingLabelsToDownload``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-secretsmanagersecretresourcedata.html#cfn-greengrass-resourcedefinitionversion-secretsmanagersecretresourcedata-additionalstaginglabelstodownload
-    """
-    AWS_OBJECT_TYPE = "AWS::Greengrass::ResourceDefinitionVersion.SecretsManagerSecretResourceData"
-    
-    rp_ARN: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "ARN"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-secretsmanagersecretresourcedata.html#cfn-greengrass-resourcedefinitionversion-secretsmanagersecretresourcedata-arn"""
-    p_AdditionalStagingLabelsToDownload: typing.List[TypeHint.intrinsic_str] = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "AdditionalStagingLabelsToDownload"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-secretsmanagersecretresourcedata.html#cfn-greengrass-resourcedefinitionversion-secretsmanagersecretresourcedata-additionalstaginglabelstodownload"""
 
 @attr.s
 class PropSubscriptionDefinitionVersionSubscription(Property):
@@ -334,81 +484,12 @@ class PropResourceDefinitionSageMakerMachineLearningModelResourceData(Property):
         metadata={AttrMeta.PROPERTY_NAME: "SageMakerJobArn"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-sagemakermachinelearningmodelresourcedata.html#cfn-greengrass-resourcedefinition-sagemakermachinelearningmodelresourcedata-sagemakerjobarn"""
-    p_OwnerSetting: typing.Union['PropResourceDefinitionResourceDownloadOwnerSetting', dict] = attr.ib(
+    p_OwnerSetting: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropResourceDefinitionResourceDownloadOwnerSetting.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropResourceDefinitionResourceDownloadOwnerSetting)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "OwnerSetting"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-sagemakermachinelearningmodelresourcedata.html#cfn-greengrass-resourcedefinition-sagemakermachinelearningmodelresourcedata-ownersetting"""
-
-@attr.s
-class PropCoreDefinitionVersionCore(Property):
-    """
-    AWS Object Type = "AWS::Greengrass::CoreDefinitionVersion.Core"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-coredefinitionversion-core.html
-
-    Property Document:
-    
-    - ``rp_CertificateArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-coredefinitionversion-core.html#cfn-greengrass-coredefinitionversion-core-certificatearn
-    - ``rp_Id``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-coredefinitionversion-core.html#cfn-greengrass-coredefinitionversion-core-id
-    - ``rp_ThingArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-coredefinitionversion-core.html#cfn-greengrass-coredefinitionversion-core-thingarn
-    - ``p_SyncShadow``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-coredefinitionversion-core.html#cfn-greengrass-coredefinitionversion-core-syncshadow
-    """
-    AWS_OBJECT_TYPE = "AWS::Greengrass::CoreDefinitionVersion.Core"
-    
-    rp_CertificateArn: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "CertificateArn"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-coredefinitionversion-core.html#cfn-greengrass-coredefinitionversion-core-certificatearn"""
-    rp_Id: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Id"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-coredefinitionversion-core.html#cfn-greengrass-coredefinitionversion-core-id"""
-    rp_ThingArn: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "ThingArn"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-coredefinitionversion-core.html#cfn-greengrass-coredefinitionversion-core-thingarn"""
-    p_SyncShadow: bool = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(bool)),
-        metadata={AttrMeta.PROPERTY_NAME: "SyncShadow"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-coredefinitionversion-core.html#cfn-greengrass-coredefinitionversion-core-syncshadow"""
-
-@attr.s
-class PropFunctionDefinitionVersionRunAs(Property):
-    """
-    AWS Object Type = "AWS::Greengrass::FunctionDefinitionVersion.RunAs"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-runas.html
-
-    Property Document:
-    
-    - ``p_Gid``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-runas.html#cfn-greengrass-functiondefinitionversion-runas-gid
-    - ``p_Uid``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-runas.html#cfn-greengrass-functiondefinitionversion-runas-uid
-    """
-    AWS_OBJECT_TYPE = "AWS::Greengrass::FunctionDefinitionVersion.RunAs"
-    
-    p_Gid: int = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "Gid"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-runas.html#cfn-greengrass-functiondefinitionversion-runas-gid"""
-    p_Uid: int = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "Uid"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-runas.html#cfn-greengrass-functiondefinitionversion-runas-uid"""
 
 @attr.s
 class PropResourceDefinitionVersionResourceDownloadOwnerSetting(Property):
@@ -747,130 +828,6 @@ class PropCoreDefinitionCoreDefinitionVersion(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-coredefinition-coredefinitionversion.html#cfn-greengrass-coredefinition-coredefinitionversion-cores"""
 
 @attr.s
-class PropResourceDefinitionVersionS3MachineLearningModelResourceData(Property):
-    """
-    AWS Object Type = "AWS::Greengrass::ResourceDefinitionVersion.S3MachineLearningModelResourceData"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-s3machinelearningmodelresourcedata.html
-
-    Property Document:
-    
-    - ``rp_DestinationPath``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-s3machinelearningmodelresourcedata.html#cfn-greengrass-resourcedefinitionversion-s3machinelearningmodelresourcedata-destinationpath
-    - ``rp_S3Uri``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-s3machinelearningmodelresourcedata.html#cfn-greengrass-resourcedefinitionversion-s3machinelearningmodelresourcedata-s3uri
-    - ``p_OwnerSetting``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-s3machinelearningmodelresourcedata.html#cfn-greengrass-resourcedefinitionversion-s3machinelearningmodelresourcedata-ownersetting
-    """
-    AWS_OBJECT_TYPE = "AWS::Greengrass::ResourceDefinitionVersion.S3MachineLearningModelResourceData"
-    
-    rp_DestinationPath: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "DestinationPath"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-s3machinelearningmodelresourcedata.html#cfn-greengrass-resourcedefinitionversion-s3machinelearningmodelresourcedata-destinationpath"""
-    rp_S3Uri: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "S3Uri"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-s3machinelearningmodelresourcedata.html#cfn-greengrass-resourcedefinitionversion-s3machinelearningmodelresourcedata-s3uri"""
-    p_OwnerSetting: typing.Union['PropResourceDefinitionVersionResourceDownloadOwnerSetting', dict] = attr.ib(
-        default=None,
-        converter=PropResourceDefinitionVersionResourceDownloadOwnerSetting.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropResourceDefinitionVersionResourceDownloadOwnerSetting)),
-        metadata={AttrMeta.PROPERTY_NAME: "OwnerSetting"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-s3machinelearningmodelresourcedata.html#cfn-greengrass-resourcedefinitionversion-s3machinelearningmodelresourcedata-ownersetting"""
-
-@attr.s
-class PropResourceDefinitionLocalVolumeResourceData(Property):
-    """
-    AWS Object Type = "AWS::Greengrass::ResourceDefinition.LocalVolumeResourceData"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-localvolumeresourcedata.html
-
-    Property Document:
-    
-    - ``rp_DestinationPath``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-localvolumeresourcedata.html#cfn-greengrass-resourcedefinition-localvolumeresourcedata-destinationpath
-    - ``rp_SourcePath``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-localvolumeresourcedata.html#cfn-greengrass-resourcedefinition-localvolumeresourcedata-sourcepath
-    - ``p_GroupOwnerSetting``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-localvolumeresourcedata.html#cfn-greengrass-resourcedefinition-localvolumeresourcedata-groupownersetting
-    """
-    AWS_OBJECT_TYPE = "AWS::Greengrass::ResourceDefinition.LocalVolumeResourceData"
-    
-    rp_DestinationPath: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "DestinationPath"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-localvolumeresourcedata.html#cfn-greengrass-resourcedefinition-localvolumeresourcedata-destinationpath"""
-    rp_SourcePath: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "SourcePath"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-localvolumeresourcedata.html#cfn-greengrass-resourcedefinition-localvolumeresourcedata-sourcepath"""
-    p_GroupOwnerSetting: typing.Union['PropResourceDefinitionGroupOwnerSetting', dict] = attr.ib(
-        default=None,
-        converter=PropResourceDefinitionGroupOwnerSetting.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropResourceDefinitionGroupOwnerSetting)),
-        metadata={AttrMeta.PROPERTY_NAME: "GroupOwnerSetting"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-localvolumeresourcedata.html#cfn-greengrass-resourcedefinition-localvolumeresourcedata-groupownersetting"""
-
-@attr.s
-class PropFunctionDefinitionResourceAccessPolicy(Property):
-    """
-    AWS Object Type = "AWS::Greengrass::FunctionDefinition.ResourceAccessPolicy"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-resourceaccesspolicy.html
-
-    Property Document:
-    
-    - ``rp_ResourceId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-resourceaccesspolicy.html#cfn-greengrass-functiondefinition-resourceaccesspolicy-resourceid
-    - ``p_Permission``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-resourceaccesspolicy.html#cfn-greengrass-functiondefinition-resourceaccesspolicy-permission
-    """
-    AWS_OBJECT_TYPE = "AWS::Greengrass::FunctionDefinition.ResourceAccessPolicy"
-    
-    rp_ResourceId: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "ResourceId"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-resourceaccesspolicy.html#cfn-greengrass-functiondefinition-resourceaccesspolicy-resourceid"""
-    p_Permission: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Permission"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-resourceaccesspolicy.html#cfn-greengrass-functiondefinition-resourceaccesspolicy-permission"""
-
-@attr.s
-class PropResourceDefinitionVersionGroupOwnerSetting(Property):
-    """
-    AWS Object Type = "AWS::Greengrass::ResourceDefinitionVersion.GroupOwnerSetting"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-groupownersetting.html
-
-    Property Document:
-    
-    - ``rp_AutoAddGroupOwner``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-groupownersetting.html#cfn-greengrass-resourcedefinitionversion-groupownersetting-autoaddgroupowner
-    - ``p_GroupOwner``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-groupownersetting.html#cfn-greengrass-resourcedefinitionversion-groupownersetting-groupowner
-    """
-    AWS_OBJECT_TYPE = "AWS::Greengrass::ResourceDefinitionVersion.GroupOwnerSetting"
-    
-    rp_AutoAddGroupOwner: bool = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(bool),
-        metadata={AttrMeta.PROPERTY_NAME: "AutoAddGroupOwner"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-groupownersetting.html#cfn-greengrass-resourcedefinitionversion-groupownersetting-autoaddgroupowner"""
-    p_GroupOwner: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "GroupOwner"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-groupownersetting.html#cfn-greengrass-resourcedefinitionversion-groupownersetting-groupowner"""
-
-@attr.s
 class PropFunctionDefinitionVersionResourceAccessPolicy(Property):
     """
     AWS Object Type = "AWS::Greengrass::FunctionDefinitionVersion.ResourceAccessPolicy"
@@ -1007,83 +964,12 @@ class PropResourceDefinitionS3MachineLearningModelResourceData(Property):
         metadata={AttrMeta.PROPERTY_NAME: "S3Uri"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-s3machinelearningmodelresourcedata.html#cfn-greengrass-resourcedefinition-s3machinelearningmodelresourcedata-s3uri"""
-    p_OwnerSetting: typing.Union['PropResourceDefinitionResourceDownloadOwnerSetting', dict] = attr.ib(
+    p_OwnerSetting: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropResourceDefinitionResourceDownloadOwnerSetting.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropResourceDefinitionResourceDownloadOwnerSetting)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "OwnerSetting"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-s3machinelearningmodelresourcedata.html#cfn-greengrass-resourcedefinition-s3machinelearningmodelresourcedata-ownersetting"""
-
-@attr.s
-class PropSubscriptionDefinitionSubscriptionDefinitionVersion(Property):
-    """
-    AWS Object Type = "AWS::Greengrass::SubscriptionDefinition.SubscriptionDefinitionVersion"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-subscriptiondefinition-subscriptiondefinitionversion.html
-
-    Property Document:
-    
-    - ``rp_Subscriptions``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-subscriptiondefinition-subscriptiondefinitionversion.html#cfn-greengrass-subscriptiondefinition-subscriptiondefinitionversion-subscriptions
-    """
-    AWS_OBJECT_TYPE = "AWS::Greengrass::SubscriptionDefinition.SubscriptionDefinitionVersion"
-    
-    rp_Subscriptions: typing.List[typing.Union['PropSubscriptionDefinitionSubscription', dict]] = attr.ib(
-        default=None,
-        converter=PropSubscriptionDefinitionSubscription.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropSubscriptionDefinitionSubscription), iterable_validator=attr.validators.instance_of(list)),
-        metadata={AttrMeta.PROPERTY_NAME: "Subscriptions"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-subscriptiondefinition-subscriptiondefinitionversion.html#cfn-greengrass-subscriptiondefinition-subscriptiondefinitionversion-subscriptions"""
-
-@attr.s
-class PropResourceDefinitionVersionLocalDeviceResourceData(Property):
-    """
-    AWS Object Type = "AWS::Greengrass::ResourceDefinitionVersion.LocalDeviceResourceData"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-localdeviceresourcedata.html
-
-    Property Document:
-    
-    - ``rp_SourcePath``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-localdeviceresourcedata.html#cfn-greengrass-resourcedefinitionversion-localdeviceresourcedata-sourcepath
-    - ``p_GroupOwnerSetting``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-localdeviceresourcedata.html#cfn-greengrass-resourcedefinitionversion-localdeviceresourcedata-groupownersetting
-    """
-    AWS_OBJECT_TYPE = "AWS::Greengrass::ResourceDefinitionVersion.LocalDeviceResourceData"
-    
-    rp_SourcePath: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "SourcePath"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-localdeviceresourcedata.html#cfn-greengrass-resourcedefinitionversion-localdeviceresourcedata-sourcepath"""
-    p_GroupOwnerSetting: typing.Union['PropResourceDefinitionVersionGroupOwnerSetting', dict] = attr.ib(
-        default=None,
-        converter=PropResourceDefinitionVersionGroupOwnerSetting.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropResourceDefinitionVersionGroupOwnerSetting)),
-        metadata={AttrMeta.PROPERTY_NAME: "GroupOwnerSetting"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-localdeviceresourcedata.html#cfn-greengrass-resourcedefinitionversion-localdeviceresourcedata-groupownersetting"""
-
-@attr.s
-class PropFunctionDefinitionVersionDefaultConfig(Property):
-    """
-    AWS Object Type = "AWS::Greengrass::FunctionDefinitionVersion.DefaultConfig"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-defaultconfig.html
-
-    Property Document:
-    
-    - ``rp_Execution``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-defaultconfig.html#cfn-greengrass-functiondefinitionversion-defaultconfig-execution
-    """
-    AWS_OBJECT_TYPE = "AWS::Greengrass::FunctionDefinitionVersion.DefaultConfig"
-    
-    rp_Execution: typing.Union['PropFunctionDefinitionVersionExecution', dict] = attr.ib(
-        default=None,
-        converter=PropFunctionDefinitionVersionExecution.from_dict,
-        validator=attr.validators.instance_of(PropFunctionDefinitionVersionExecution),
-        metadata={AttrMeta.PROPERTY_NAME: "Execution"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-defaultconfig.html#cfn-greengrass-functiondefinitionversion-defaultconfig-execution"""
 
 @attr.s
 class PropConnectorDefinitionConnectorDefinitionVersion(Property):
@@ -1170,84 +1056,6 @@ class PropFunctionDefinitionExecution(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-execution.html#cfn-greengrass-functiondefinition-execution-runas"""
 
 @attr.s
-class PropResourceDefinitionVersionSageMakerMachineLearningModelResourceData(Property):
-    """
-    AWS Object Type = "AWS::Greengrass::ResourceDefinitionVersion.SageMakerMachineLearningModelResourceData"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-sagemakermachinelearningmodelresourcedata.html
-
-    Property Document:
-    
-    - ``rp_DestinationPath``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-sagemakermachinelearningmodelresourcedata.html#cfn-greengrass-resourcedefinitionversion-sagemakermachinelearningmodelresourcedata-destinationpath
-    - ``rp_SageMakerJobArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-sagemakermachinelearningmodelresourcedata.html#cfn-greengrass-resourcedefinitionversion-sagemakermachinelearningmodelresourcedata-sagemakerjobarn
-    - ``p_OwnerSetting``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-sagemakermachinelearningmodelresourcedata.html#cfn-greengrass-resourcedefinitionversion-sagemakermachinelearningmodelresourcedata-ownersetting
-    """
-    AWS_OBJECT_TYPE = "AWS::Greengrass::ResourceDefinitionVersion.SageMakerMachineLearningModelResourceData"
-    
-    rp_DestinationPath: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "DestinationPath"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-sagemakermachinelearningmodelresourcedata.html#cfn-greengrass-resourcedefinitionversion-sagemakermachinelearningmodelresourcedata-destinationpath"""
-    rp_SageMakerJobArn: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "SageMakerJobArn"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-sagemakermachinelearningmodelresourcedata.html#cfn-greengrass-resourcedefinitionversion-sagemakermachinelearningmodelresourcedata-sagemakerjobarn"""
-    p_OwnerSetting: typing.Union['PropResourceDefinitionVersionResourceDownloadOwnerSetting', dict] = attr.ib(
-        default=None,
-        converter=PropResourceDefinitionVersionResourceDownloadOwnerSetting.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropResourceDefinitionVersionResourceDownloadOwnerSetting)),
-        metadata={AttrMeta.PROPERTY_NAME: "OwnerSetting"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-sagemakermachinelearningmodelresourcedata.html#cfn-greengrass-resourcedefinitionversion-sagemakermachinelearningmodelresourcedata-ownersetting"""
-
-@attr.s
-class PropFunctionDefinitionEnvironment(Property):
-    """
-    AWS Object Type = "AWS::Greengrass::FunctionDefinition.Environment"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-environment.html
-
-    Property Document:
-    
-    - ``p_AccessSysfs``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-environment.html#cfn-greengrass-functiondefinition-environment-accesssysfs
-    - ``p_Execution``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-environment.html#cfn-greengrass-functiondefinition-environment-execution
-    - ``p_ResourceAccessPolicies``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-environment.html#cfn-greengrass-functiondefinition-environment-resourceaccesspolicies
-    - ``p_Variables``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-environment.html#cfn-greengrass-functiondefinition-environment-variables
-    """
-    AWS_OBJECT_TYPE = "AWS::Greengrass::FunctionDefinition.Environment"
-    
-    p_AccessSysfs: bool = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(bool)),
-        metadata={AttrMeta.PROPERTY_NAME: "AccessSysfs"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-environment.html#cfn-greengrass-functiondefinition-environment-accesssysfs"""
-    p_Execution: typing.Union['PropFunctionDefinitionExecution', dict] = attr.ib(
-        default=None,
-        converter=PropFunctionDefinitionExecution.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropFunctionDefinitionExecution)),
-        metadata={AttrMeta.PROPERTY_NAME: "Execution"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-environment.html#cfn-greengrass-functiondefinition-environment-execution"""
-    p_ResourceAccessPolicies: typing.List[typing.Union['PropFunctionDefinitionResourceAccessPolicy', dict]] = attr.ib(
-        default=None,
-        converter=PropFunctionDefinitionResourceAccessPolicy.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropFunctionDefinitionResourceAccessPolicy), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "ResourceAccessPolicies"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-environment.html#cfn-greengrass-functiondefinition-environment-resourceaccesspolicies"""
-    p_Variables: dict = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(dict)),
-        metadata={AttrMeta.PROPERTY_NAME: "Variables"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-environment.html#cfn-greengrass-functiondefinition-environment-variables"""
-
-@attr.s
 class PropFunctionDefinitionVersionEnvironment(Property):
     """
     AWS Object Type = "AWS::Greengrass::FunctionDefinitionVersion.Environment"
@@ -1291,57 +1099,73 @@ class PropFunctionDefinitionVersionEnvironment(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-environment.html#cfn-greengrass-functiondefinitionversion-environment-variables"""
 
 @attr.s
-class PropResourceDefinitionVersionResourceDataContainer(Property):
+class PropResourceDefinitionVersionS3MachineLearningModelResourceData(Property):
     """
-    AWS Object Type = "AWS::Greengrass::ResourceDefinitionVersion.ResourceDataContainer"
+    AWS Object Type = "AWS::Greengrass::ResourceDefinitionVersion.S3MachineLearningModelResourceData"
 
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-resourcedatacontainer.html
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-s3machinelearningmodelresourcedata.html
 
     Property Document:
     
-    - ``p_LocalDeviceResourceData``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-resourcedatacontainer.html#cfn-greengrass-resourcedefinitionversion-resourcedatacontainer-localdeviceresourcedata
-    - ``p_LocalVolumeResourceData``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-resourcedatacontainer.html#cfn-greengrass-resourcedefinitionversion-resourcedatacontainer-localvolumeresourcedata
-    - ``p_S3MachineLearningModelResourceData``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-resourcedatacontainer.html#cfn-greengrass-resourcedefinitionversion-resourcedatacontainer-s3machinelearningmodelresourcedata
-    - ``p_SageMakerMachineLearningModelResourceData``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-resourcedatacontainer.html#cfn-greengrass-resourcedefinitionversion-resourcedatacontainer-sagemakermachinelearningmodelresourcedata
-    - ``p_SecretsManagerSecretResourceData``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-resourcedatacontainer.html#cfn-greengrass-resourcedefinitionversion-resourcedatacontainer-secretsmanagersecretresourcedata
+    - ``rp_DestinationPath``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-s3machinelearningmodelresourcedata.html#cfn-greengrass-resourcedefinitionversion-s3machinelearningmodelresourcedata-destinationpath
+    - ``rp_S3Uri``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-s3machinelearningmodelresourcedata.html#cfn-greengrass-resourcedefinitionversion-s3machinelearningmodelresourcedata-s3uri
+    - ``p_OwnerSetting``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-s3machinelearningmodelresourcedata.html#cfn-greengrass-resourcedefinitionversion-s3machinelearningmodelresourcedata-ownersetting
     """
-    AWS_OBJECT_TYPE = "AWS::Greengrass::ResourceDefinitionVersion.ResourceDataContainer"
+    AWS_OBJECT_TYPE = "AWS::Greengrass::ResourceDefinitionVersion.S3MachineLearningModelResourceData"
     
-    p_LocalDeviceResourceData: typing.Union['PropResourceDefinitionVersionLocalDeviceResourceData', dict] = attr.ib(
+    rp_DestinationPath: TypeHint.intrinsic_str = attr.ib(
         default=None,
-        converter=PropResourceDefinitionVersionLocalDeviceResourceData.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropResourceDefinitionVersionLocalDeviceResourceData)),
-        metadata={AttrMeta.PROPERTY_NAME: "LocalDeviceResourceData"},
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "DestinationPath"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-resourcedatacontainer.html#cfn-greengrass-resourcedefinitionversion-resourcedatacontainer-localdeviceresourcedata"""
-    p_LocalVolumeResourceData: typing.Union['PropResourceDefinitionVersionLocalVolumeResourceData', dict] = attr.ib(
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-s3machinelearningmodelresourcedata.html#cfn-greengrass-resourcedefinitionversion-s3machinelearningmodelresourcedata-destinationpath"""
+    rp_S3Uri: TypeHint.intrinsic_str = attr.ib(
         default=None,
-        converter=PropResourceDefinitionVersionLocalVolumeResourceData.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropResourceDefinitionVersionLocalVolumeResourceData)),
-        metadata={AttrMeta.PROPERTY_NAME: "LocalVolumeResourceData"},
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "S3Uri"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-resourcedatacontainer.html#cfn-greengrass-resourcedefinitionversion-resourcedatacontainer-localvolumeresourcedata"""
-    p_S3MachineLearningModelResourceData: typing.Union['PropResourceDefinitionVersionS3MachineLearningModelResourceData', dict] = attr.ib(
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-s3machinelearningmodelresourcedata.html#cfn-greengrass-resourcedefinitionversion-s3machinelearningmodelresourcedata-s3uri"""
+    p_OwnerSetting: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropResourceDefinitionVersionS3MachineLearningModelResourceData.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropResourceDefinitionVersionS3MachineLearningModelResourceData)),
-        metadata={AttrMeta.PROPERTY_NAME: "S3MachineLearningModelResourceData"},
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "OwnerSetting"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-resourcedatacontainer.html#cfn-greengrass-resourcedefinitionversion-resourcedatacontainer-s3machinelearningmodelresourcedata"""
-    p_SageMakerMachineLearningModelResourceData: typing.Union['PropResourceDefinitionVersionSageMakerMachineLearningModelResourceData', dict] = attr.ib(
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-s3machinelearningmodelresourcedata.html#cfn-greengrass-resourcedefinitionversion-s3machinelearningmodelresourcedata-ownersetting"""
+
+@attr.s
+class PropResourceDefinitionLocalVolumeResourceData(Property):
+    """
+    AWS Object Type = "AWS::Greengrass::ResourceDefinition.LocalVolumeResourceData"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-localvolumeresourcedata.html
+
+    Property Document:
+    
+    - ``rp_DestinationPath``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-localvolumeresourcedata.html#cfn-greengrass-resourcedefinition-localvolumeresourcedata-destinationpath
+    - ``rp_SourcePath``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-localvolumeresourcedata.html#cfn-greengrass-resourcedefinition-localvolumeresourcedata-sourcepath
+    - ``p_GroupOwnerSetting``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-localvolumeresourcedata.html#cfn-greengrass-resourcedefinition-localvolumeresourcedata-groupownersetting
+    """
+    AWS_OBJECT_TYPE = "AWS::Greengrass::ResourceDefinition.LocalVolumeResourceData"
+    
+    rp_DestinationPath: TypeHint.intrinsic_str = attr.ib(
         default=None,
-        converter=PropResourceDefinitionVersionSageMakerMachineLearningModelResourceData.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropResourceDefinitionVersionSageMakerMachineLearningModelResourceData)),
-        metadata={AttrMeta.PROPERTY_NAME: "SageMakerMachineLearningModelResourceData"},
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "DestinationPath"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-resourcedatacontainer.html#cfn-greengrass-resourcedefinitionversion-resourcedatacontainer-sagemakermachinelearningmodelresourcedata"""
-    p_SecretsManagerSecretResourceData: typing.Union['PropResourceDefinitionVersionSecretsManagerSecretResourceData', dict] = attr.ib(
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-localvolumeresourcedata.html#cfn-greengrass-resourcedefinition-localvolumeresourcedata-destinationpath"""
+    rp_SourcePath: TypeHint.intrinsic_str = attr.ib(
         default=None,
-        converter=PropResourceDefinitionVersionSecretsManagerSecretResourceData.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropResourceDefinitionVersionSecretsManagerSecretResourceData)),
-        metadata={AttrMeta.PROPERTY_NAME: "SecretsManagerSecretResourceData"},
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "SourcePath"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-resourcedatacontainer.html#cfn-greengrass-resourcedefinitionversion-resourcedatacontainer-secretsmanagersecretresourcedata"""
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-localvolumeresourcedata.html#cfn-greengrass-resourcedefinition-localvolumeresourcedata-sourcepath"""
+    p_GroupOwnerSetting: typing.Union['PropResourceDefinitionGroupOwnerSetting', dict] = attr.ib(
+        default=None,
+        converter=PropResourceDefinitionGroupOwnerSetting.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropResourceDefinitionGroupOwnerSetting)),
+        metadata={AttrMeta.PROPERTY_NAME: "GroupOwnerSetting"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-localvolumeresourcedata.html#cfn-greengrass-resourcedefinition-localvolumeresourcedata-groupownersetting"""
 
 @attr.s
 class PropResourceDefinitionResourceDataContainer(Property):
@@ -1460,39 +1284,267 @@ class PropFunctionDefinitionVersionFunctionConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-functionconfiguration.html#cfn-greengrass-functiondefinitionversion-functionconfiguration-timeout"""
 
 @attr.s
-class PropResourceDefinitionVersionResourceInstance(Property):
+class PropSubscriptionDefinitionSubscriptionDefinitionVersion(Property):
     """
-    AWS Object Type = "AWS::Greengrass::ResourceDefinitionVersion.ResourceInstance"
+    AWS Object Type = "AWS::Greengrass::SubscriptionDefinition.SubscriptionDefinitionVersion"
 
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-resourceinstance.html
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-subscriptiondefinition-subscriptiondefinitionversion.html
 
     Property Document:
     
-    - ``rp_Id``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-resourceinstance.html#cfn-greengrass-resourcedefinitionversion-resourceinstance-id
-    - ``rp_Name``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-resourceinstance.html#cfn-greengrass-resourcedefinitionversion-resourceinstance-name
-    - ``rp_ResourceDataContainer``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-resourceinstance.html#cfn-greengrass-resourcedefinitionversion-resourceinstance-resourcedatacontainer
+    - ``rp_Subscriptions``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-subscriptiondefinition-subscriptiondefinitionversion.html#cfn-greengrass-subscriptiondefinition-subscriptiondefinitionversion-subscriptions
     """
-    AWS_OBJECT_TYPE = "AWS::Greengrass::ResourceDefinitionVersion.ResourceInstance"
+    AWS_OBJECT_TYPE = "AWS::Greengrass::SubscriptionDefinition.SubscriptionDefinitionVersion"
+    
+    rp_Subscriptions: typing.List[typing.Union['PropSubscriptionDefinitionSubscription', dict]] = attr.ib(
+        default=None,
+        converter=PropSubscriptionDefinitionSubscription.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropSubscriptionDefinitionSubscription), iterable_validator=attr.validators.instance_of(list)),
+        metadata={AttrMeta.PROPERTY_NAME: "Subscriptions"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-subscriptiondefinition-subscriptiondefinitionversion.html#cfn-greengrass-subscriptiondefinition-subscriptiondefinitionversion-subscriptions"""
+
+@attr.s
+class PropFunctionDefinitionVersionDefaultConfig(Property):
+    """
+    AWS Object Type = "AWS::Greengrass::FunctionDefinitionVersion.DefaultConfig"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-defaultconfig.html
+
+    Property Document:
+    
+    - ``rp_Execution``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-defaultconfig.html#cfn-greengrass-functiondefinitionversion-defaultconfig-execution
+    """
+    AWS_OBJECT_TYPE = "AWS::Greengrass::FunctionDefinitionVersion.DefaultConfig"
+    
+    rp_Execution: typing.Union['PropFunctionDefinitionVersionExecution', dict] = attr.ib(
+        default=None,
+        converter=PropFunctionDefinitionVersionExecution.from_dict,
+        validator=attr.validators.instance_of(PropFunctionDefinitionVersionExecution),
+        metadata={AttrMeta.PROPERTY_NAME: "Execution"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-defaultconfig.html#cfn-greengrass-functiondefinitionversion-defaultconfig-execution"""
+
+@attr.s
+class PropFunctionDefinitionVersionFunction(Property):
+    """
+    AWS Object Type = "AWS::Greengrass::FunctionDefinitionVersion.Function"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-function.html
+
+    Property Document:
+    
+    - ``rp_FunctionArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-function.html#cfn-greengrass-functiondefinitionversion-function-functionarn
+    - ``rp_FunctionConfiguration``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-function.html#cfn-greengrass-functiondefinitionversion-function-functionconfiguration
+    - ``rp_Id``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-function.html#cfn-greengrass-functiondefinitionversion-function-id
+    """
+    AWS_OBJECT_TYPE = "AWS::Greengrass::FunctionDefinitionVersion.Function"
+    
+    rp_FunctionArn: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "FunctionArn"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-function.html#cfn-greengrass-functiondefinitionversion-function-functionarn"""
+    rp_FunctionConfiguration: typing.Union['PropFunctionDefinitionVersionFunctionConfiguration', dict] = attr.ib(
+        default=None,
+        converter=PropFunctionDefinitionVersionFunctionConfiguration.from_dict,
+        validator=attr.validators.instance_of(PropFunctionDefinitionVersionFunctionConfiguration),
+        metadata={AttrMeta.PROPERTY_NAME: "FunctionConfiguration"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-function.html#cfn-greengrass-functiondefinitionversion-function-functionconfiguration"""
+    rp_Id: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "Id"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-function.html#cfn-greengrass-functiondefinitionversion-function-id"""
+
+@attr.s
+class PropResourceDefinitionVersionSageMakerMachineLearningModelResourceData(Property):
+    """
+    AWS Object Type = "AWS::Greengrass::ResourceDefinitionVersion.SageMakerMachineLearningModelResourceData"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-sagemakermachinelearningmodelresourcedata.html
+
+    Property Document:
+    
+    - ``rp_DestinationPath``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-sagemakermachinelearningmodelresourcedata.html#cfn-greengrass-resourcedefinitionversion-sagemakermachinelearningmodelresourcedata-destinationpath
+    - ``rp_SageMakerJobArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-sagemakermachinelearningmodelresourcedata.html#cfn-greengrass-resourcedefinitionversion-sagemakermachinelearningmodelresourcedata-sagemakerjobarn
+    - ``p_OwnerSetting``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-sagemakermachinelearningmodelresourcedata.html#cfn-greengrass-resourcedefinitionversion-sagemakermachinelearningmodelresourcedata-ownersetting
+    """
+    AWS_OBJECT_TYPE = "AWS::Greengrass::ResourceDefinitionVersion.SageMakerMachineLearningModelResourceData"
+    
+    rp_DestinationPath: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "DestinationPath"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-sagemakermachinelearningmodelresourcedata.html#cfn-greengrass-resourcedefinitionversion-sagemakermachinelearningmodelresourcedata-destinationpath"""
+    rp_SageMakerJobArn: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "SageMakerJobArn"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-sagemakermachinelearningmodelresourcedata.html#cfn-greengrass-resourcedefinitionversion-sagemakermachinelearningmodelresourcedata-sagemakerjobarn"""
+    p_OwnerSetting: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "OwnerSetting"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-sagemakermachinelearningmodelresourcedata.html#cfn-greengrass-resourcedefinitionversion-sagemakermachinelearningmodelresourcedata-ownersetting"""
+
+@attr.s
+class PropFunctionDefinitionEnvironment(Property):
+    """
+    AWS Object Type = "AWS::Greengrass::FunctionDefinition.Environment"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-environment.html
+
+    Property Document:
+    
+    - ``p_AccessSysfs``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-environment.html#cfn-greengrass-functiondefinition-environment-accesssysfs
+    - ``p_Execution``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-environment.html#cfn-greengrass-functiondefinition-environment-execution
+    - ``p_ResourceAccessPolicies``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-environment.html#cfn-greengrass-functiondefinition-environment-resourceaccesspolicies
+    - ``p_Variables``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-environment.html#cfn-greengrass-functiondefinition-environment-variables
+    """
+    AWS_OBJECT_TYPE = "AWS::Greengrass::FunctionDefinition.Environment"
+    
+    p_AccessSysfs: bool = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(bool)),
+        metadata={AttrMeta.PROPERTY_NAME: "AccessSysfs"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-environment.html#cfn-greengrass-functiondefinition-environment-accesssysfs"""
+    p_Execution: typing.Union['PropFunctionDefinitionExecution', dict] = attr.ib(
+        default=None,
+        converter=PropFunctionDefinitionExecution.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropFunctionDefinitionExecution)),
+        metadata={AttrMeta.PROPERTY_NAME: "Execution"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-environment.html#cfn-greengrass-functiondefinition-environment-execution"""
+    p_ResourceAccessPolicies: typing.List[typing.Union['PropFunctionDefinitionResourceAccessPolicy', dict]] = attr.ib(
+        default=None,
+        converter=PropFunctionDefinitionResourceAccessPolicy.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropFunctionDefinitionResourceAccessPolicy), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "ResourceAccessPolicies"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-environment.html#cfn-greengrass-functiondefinition-environment-resourceaccesspolicies"""
+    p_Variables: dict = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "Variables"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-environment.html#cfn-greengrass-functiondefinition-environment-variables"""
+
+@attr.s
+class PropFunctionDefinitionDefaultConfig(Property):
+    """
+    AWS Object Type = "AWS::Greengrass::FunctionDefinition.DefaultConfig"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-defaultconfig.html
+
+    Property Document:
+    
+    - ``rp_Execution``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-defaultconfig.html#cfn-greengrass-functiondefinition-defaultconfig-execution
+    """
+    AWS_OBJECT_TYPE = "AWS::Greengrass::FunctionDefinition.DefaultConfig"
+    
+    rp_Execution: typing.Union['PropFunctionDefinitionExecution', dict] = attr.ib(
+        default=None,
+        converter=PropFunctionDefinitionExecution.from_dict,
+        validator=attr.validators.instance_of(PropFunctionDefinitionExecution),
+        metadata={AttrMeta.PROPERTY_NAME: "Execution"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-defaultconfig.html#cfn-greengrass-functiondefinition-defaultconfig-execution"""
+
+@attr.s
+class PropResourceDefinitionResourceInstance(Property):
+    """
+    AWS Object Type = "AWS::Greengrass::ResourceDefinition.ResourceInstance"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-resourceinstance.html
+
+    Property Document:
+    
+    - ``rp_Id``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-resourceinstance.html#cfn-greengrass-resourcedefinition-resourceinstance-id
+    - ``rp_Name``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-resourceinstance.html#cfn-greengrass-resourcedefinition-resourceinstance-name
+    - ``rp_ResourceDataContainer``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-resourceinstance.html#cfn-greengrass-resourcedefinition-resourceinstance-resourcedatacontainer
+    """
+    AWS_OBJECT_TYPE = "AWS::Greengrass::ResourceDefinition.ResourceInstance"
     
     rp_Id: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
         metadata={AttrMeta.PROPERTY_NAME: "Id"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-resourceinstance.html#cfn-greengrass-resourcedefinitionversion-resourceinstance-id"""
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-resourceinstance.html#cfn-greengrass-resourcedefinition-resourceinstance-id"""
     rp_Name: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
         metadata={AttrMeta.PROPERTY_NAME: "Name"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-resourceinstance.html#cfn-greengrass-resourcedefinitionversion-resourceinstance-name"""
-    rp_ResourceDataContainer: typing.Union['PropResourceDefinitionVersionResourceDataContainer', dict] = attr.ib(
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-resourceinstance.html#cfn-greengrass-resourcedefinition-resourceinstance-name"""
+    rp_ResourceDataContainer: typing.Union['PropResourceDefinitionResourceDataContainer', dict] = attr.ib(
         default=None,
-        converter=PropResourceDefinitionVersionResourceDataContainer.from_dict,
-        validator=attr.validators.instance_of(PropResourceDefinitionVersionResourceDataContainer),
+        converter=PropResourceDefinitionResourceDataContainer.from_dict,
+        validator=attr.validators.instance_of(PropResourceDefinitionResourceDataContainer),
         metadata={AttrMeta.PROPERTY_NAME: "ResourceDataContainer"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-resourceinstance.html#cfn-greengrass-resourcedefinitionversion-resourceinstance-resourcedatacontainer"""
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-resourceinstance.html#cfn-greengrass-resourcedefinition-resourceinstance-resourcedatacontainer"""
+
+@attr.s
+class PropResourceDefinitionVersionResourceDataContainer(Property):
+    """
+    AWS Object Type = "AWS::Greengrass::ResourceDefinitionVersion.ResourceDataContainer"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-resourcedatacontainer.html
+
+    Property Document:
+    
+    - ``p_LocalDeviceResourceData``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-resourcedatacontainer.html#cfn-greengrass-resourcedefinitionversion-resourcedatacontainer-localdeviceresourcedata
+    - ``p_LocalVolumeResourceData``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-resourcedatacontainer.html#cfn-greengrass-resourcedefinitionversion-resourcedatacontainer-localvolumeresourcedata
+    - ``p_S3MachineLearningModelResourceData``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-resourcedatacontainer.html#cfn-greengrass-resourcedefinitionversion-resourcedatacontainer-s3machinelearningmodelresourcedata
+    - ``p_SageMakerMachineLearningModelResourceData``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-resourcedatacontainer.html#cfn-greengrass-resourcedefinitionversion-resourcedatacontainer-sagemakermachinelearningmodelresourcedata
+    - ``p_SecretsManagerSecretResourceData``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-resourcedatacontainer.html#cfn-greengrass-resourcedefinitionversion-resourcedatacontainer-secretsmanagersecretresourcedata
+    """
+    AWS_OBJECT_TYPE = "AWS::Greengrass::ResourceDefinitionVersion.ResourceDataContainer"
+    
+    p_LocalDeviceResourceData: typing.Union['PropResourceDefinitionVersionLocalDeviceResourceData', dict] = attr.ib(
+        default=None,
+        converter=PropResourceDefinitionVersionLocalDeviceResourceData.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropResourceDefinitionVersionLocalDeviceResourceData)),
+        metadata={AttrMeta.PROPERTY_NAME: "LocalDeviceResourceData"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-resourcedatacontainer.html#cfn-greengrass-resourcedefinitionversion-resourcedatacontainer-localdeviceresourcedata"""
+    p_LocalVolumeResourceData: typing.Union['PropResourceDefinitionVersionLocalVolumeResourceData', dict] = attr.ib(
+        default=None,
+        converter=PropResourceDefinitionVersionLocalVolumeResourceData.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropResourceDefinitionVersionLocalVolumeResourceData)),
+        metadata={AttrMeta.PROPERTY_NAME: "LocalVolumeResourceData"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-resourcedatacontainer.html#cfn-greengrass-resourcedefinitionversion-resourcedatacontainer-localvolumeresourcedata"""
+    p_S3MachineLearningModelResourceData: typing.Union['PropResourceDefinitionVersionS3MachineLearningModelResourceData', dict] = attr.ib(
+        default=None,
+        converter=PropResourceDefinitionVersionS3MachineLearningModelResourceData.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropResourceDefinitionVersionS3MachineLearningModelResourceData)),
+        metadata={AttrMeta.PROPERTY_NAME: "S3MachineLearningModelResourceData"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-resourcedatacontainer.html#cfn-greengrass-resourcedefinitionversion-resourcedatacontainer-s3machinelearningmodelresourcedata"""
+    p_SageMakerMachineLearningModelResourceData: typing.Union['PropResourceDefinitionVersionSageMakerMachineLearningModelResourceData', dict] = attr.ib(
+        default=None,
+        converter=PropResourceDefinitionVersionSageMakerMachineLearningModelResourceData.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropResourceDefinitionVersionSageMakerMachineLearningModelResourceData)),
+        metadata={AttrMeta.PROPERTY_NAME: "SageMakerMachineLearningModelResourceData"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-resourcedatacontainer.html#cfn-greengrass-resourcedefinitionversion-resourcedatacontainer-sagemakermachinelearningmodelresourcedata"""
+    p_SecretsManagerSecretResourceData: typing.Union['PropResourceDefinitionVersionSecretsManagerSecretResourceData', dict] = attr.ib(
+        default=None,
+        converter=PropResourceDefinitionVersionSecretsManagerSecretResourceData.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropResourceDefinitionVersionSecretsManagerSecretResourceData)),
+        metadata={AttrMeta.PROPERTY_NAME: "SecretsManagerSecretResourceData"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-resourcedatacontainer.html#cfn-greengrass-resourcedefinitionversion-resourcedatacontainer-secretsmanagersecretresourcedata"""
 
 @attr.s
 class PropFunctionDefinitionFunctionConfiguration(Property):
@@ -1558,95 +1610,60 @@ class PropFunctionDefinitionFunctionConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-functionconfiguration.html#cfn-greengrass-functiondefinition-functionconfiguration-timeout"""
 
 @attr.s
-class PropFunctionDefinitionVersionFunction(Property):
+class PropResourceDefinitionResourceDefinitionVersion(Property):
     """
-    AWS Object Type = "AWS::Greengrass::FunctionDefinitionVersion.Function"
+    AWS Object Type = "AWS::Greengrass::ResourceDefinition.ResourceDefinitionVersion"
 
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-function.html
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-resourcedefinitionversion.html
 
     Property Document:
     
-    - ``rp_FunctionArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-function.html#cfn-greengrass-functiondefinitionversion-function-functionarn
-    - ``rp_FunctionConfiguration``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-function.html#cfn-greengrass-functiondefinitionversion-function-functionconfiguration
-    - ``rp_Id``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-function.html#cfn-greengrass-functiondefinitionversion-function-id
+    - ``rp_Resources``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-resourcedefinitionversion.html#cfn-greengrass-resourcedefinition-resourcedefinitionversion-resources
     """
-    AWS_OBJECT_TYPE = "AWS::Greengrass::FunctionDefinitionVersion.Function"
+    AWS_OBJECT_TYPE = "AWS::Greengrass::ResourceDefinition.ResourceDefinitionVersion"
     
-    rp_FunctionArn: TypeHint.intrinsic_str = attr.ib(
+    rp_Resources: typing.List[typing.Union['PropResourceDefinitionResourceInstance', dict]] = attr.ib(
         default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "FunctionArn"},
+        converter=PropResourceDefinitionResourceInstance.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropResourceDefinitionResourceInstance), iterable_validator=attr.validators.instance_of(list)),
+        metadata={AttrMeta.PROPERTY_NAME: "Resources"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-function.html#cfn-greengrass-functiondefinitionversion-function-functionarn"""
-    rp_FunctionConfiguration: typing.Union['PropFunctionDefinitionVersionFunctionConfiguration', dict] = attr.ib(
-        default=None,
-        converter=PropFunctionDefinitionVersionFunctionConfiguration.from_dict,
-        validator=attr.validators.instance_of(PropFunctionDefinitionVersionFunctionConfiguration),
-        metadata={AttrMeta.PROPERTY_NAME: "FunctionConfiguration"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-function.html#cfn-greengrass-functiondefinitionversion-function-functionconfiguration"""
-    rp_Id: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Id"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinitionversion-function.html#cfn-greengrass-functiondefinitionversion-function-id"""
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-resourcedefinitionversion.html#cfn-greengrass-resourcedefinition-resourcedefinitionversion-resources"""
 
 @attr.s
-class PropFunctionDefinitionDefaultConfig(Property):
+class PropResourceDefinitionVersionResourceInstance(Property):
     """
-    AWS Object Type = "AWS::Greengrass::FunctionDefinition.DefaultConfig"
+    AWS Object Type = "AWS::Greengrass::ResourceDefinitionVersion.ResourceInstance"
 
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-defaultconfig.html
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-resourceinstance.html
 
     Property Document:
     
-    - ``rp_Execution``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-defaultconfig.html#cfn-greengrass-functiondefinition-defaultconfig-execution
+    - ``rp_Id``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-resourceinstance.html#cfn-greengrass-resourcedefinitionversion-resourceinstance-id
+    - ``rp_Name``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-resourceinstance.html#cfn-greengrass-resourcedefinitionversion-resourceinstance-name
+    - ``rp_ResourceDataContainer``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-resourceinstance.html#cfn-greengrass-resourcedefinitionversion-resourceinstance-resourcedatacontainer
     """
-    AWS_OBJECT_TYPE = "AWS::Greengrass::FunctionDefinition.DefaultConfig"
-    
-    rp_Execution: typing.Union['PropFunctionDefinitionExecution', dict] = attr.ib(
-        default=None,
-        converter=PropFunctionDefinitionExecution.from_dict,
-        validator=attr.validators.instance_of(PropFunctionDefinitionExecution),
-        metadata={AttrMeta.PROPERTY_NAME: "Execution"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-defaultconfig.html#cfn-greengrass-functiondefinition-defaultconfig-execution"""
-
-@attr.s
-class PropResourceDefinitionResourceInstance(Property):
-    """
-    AWS Object Type = "AWS::Greengrass::ResourceDefinition.ResourceInstance"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-resourceinstance.html
-
-    Property Document:
-    
-    - ``rp_Id``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-resourceinstance.html#cfn-greengrass-resourcedefinition-resourceinstance-id
-    - ``rp_Name``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-resourceinstance.html#cfn-greengrass-resourcedefinition-resourceinstance-name
-    - ``rp_ResourceDataContainer``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-resourceinstance.html#cfn-greengrass-resourcedefinition-resourceinstance-resourcedatacontainer
-    """
-    AWS_OBJECT_TYPE = "AWS::Greengrass::ResourceDefinition.ResourceInstance"
+    AWS_OBJECT_TYPE = "AWS::Greengrass::ResourceDefinitionVersion.ResourceInstance"
     
     rp_Id: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
         metadata={AttrMeta.PROPERTY_NAME: "Id"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-resourceinstance.html#cfn-greengrass-resourcedefinition-resourceinstance-id"""
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-resourceinstance.html#cfn-greengrass-resourcedefinitionversion-resourceinstance-id"""
     rp_Name: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
         metadata={AttrMeta.PROPERTY_NAME: "Name"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-resourceinstance.html#cfn-greengrass-resourcedefinition-resourceinstance-name"""
-    rp_ResourceDataContainer: typing.Union['PropResourceDefinitionResourceDataContainer', dict] = attr.ib(
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-resourceinstance.html#cfn-greengrass-resourcedefinitionversion-resourceinstance-name"""
+    rp_ResourceDataContainer: typing.Union['PropResourceDefinitionVersionResourceDataContainer', dict] = attr.ib(
         default=None,
-        converter=PropResourceDefinitionResourceDataContainer.from_dict,
-        validator=attr.validators.instance_of(PropResourceDefinitionResourceDataContainer),
+        converter=PropResourceDefinitionVersionResourceDataContainer.from_dict,
+        validator=attr.validators.instance_of(PropResourceDefinitionVersionResourceDataContainer),
         metadata={AttrMeta.PROPERTY_NAME: "ResourceDataContainer"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-resourceinstance.html#cfn-greengrass-resourcedefinition-resourceinstance-resourcedatacontainer"""
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinitionversion-resourceinstance.html#cfn-greengrass-resourcedefinitionversion-resourceinstance-resourcedatacontainer"""
 
 @attr.s
 class PropFunctionDefinitionFunction(Property):
@@ -1712,27 +1729,6 @@ class PropFunctionDefinitionFunctionDefinitionVersion(Property):
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-functiondefinition-functiondefinitionversion.html#cfn-greengrass-functiondefinition-functiondefinitionversion-defaultconfig"""
 
-@attr.s
-class PropResourceDefinitionResourceDefinitionVersion(Property):
-    """
-    AWS Object Type = "AWS::Greengrass::ResourceDefinition.ResourceDefinitionVersion"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-resourcedefinitionversion.html
-
-    Property Document:
-    
-    - ``rp_Resources``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-resourcedefinitionversion.html#cfn-greengrass-resourcedefinition-resourcedefinitionversion-resources
-    """
-    AWS_OBJECT_TYPE = "AWS::Greengrass::ResourceDefinition.ResourceDefinitionVersion"
-    
-    rp_Resources: typing.List[typing.Union['PropResourceDefinitionResourceInstance', dict]] = attr.ib(
-        default=None,
-        converter=PropResourceDefinitionResourceInstance.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropResourceDefinitionResourceInstance), iterable_validator=attr.validators.instance_of(list)),
-        metadata={AttrMeta.PROPERTY_NAME: "Resources"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-greengrass-resourcedefinition-resourcedefinitionversion.html#cfn-greengrass-resourcedefinition-resourcedefinitionversion-resources"""
-
 
 #--- Resource declaration ---
 
@@ -1754,14 +1750,29 @@ class ConnectorDefinitionVersion(Resource):
     rp_ConnectorDefinitionId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "ConnectorDefinitionId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ConnectorDefinitionId",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-connectordefinitionversion.html#cfn-greengrass-connectordefinitionversion-connectordefinitionid"""
     rp_Connectors: typing.List[typing.Union['PropConnectorDefinitionVersionConnector', dict]] = attr.ib(
         default=None,
         converter=PropConnectorDefinitionVersionConnector.from_list,
         validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropConnectorDefinitionVersionConnector), iterable_validator=attr.validators.instance_of(list)),
-        metadata={AttrMeta.PROPERTY_NAME: "Connectors"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Connectors",
+            AttrMeta.DATA: {
+                "Type": 'List',
+                "Required": True,
+                "ItemType": 'Connector',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-connectordefinitionversion.html#cfn-greengrass-connectordefinitionversion-connectors"""
 
@@ -1785,14 +1796,29 @@ class LoggerDefinitionVersion(Resource):
     rp_LoggerDefinitionId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "LoggerDefinitionId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "LoggerDefinitionId",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-loggerdefinitionversion.html#cfn-greengrass-loggerdefinitionversion-loggerdefinitionid"""
     rp_Loggers: typing.List[typing.Union['PropLoggerDefinitionVersionLogger', dict]] = attr.ib(
         default=None,
         converter=PropLoggerDefinitionVersionLogger.from_list,
         validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropLoggerDefinitionVersionLogger), iterable_validator=attr.validators.instance_of(list)),
-        metadata={AttrMeta.PROPERTY_NAME: "Loggers"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Loggers",
+            AttrMeta.DATA: {
+                "Type": 'List',
+                "Required": True,
+                "ItemType": 'Logger',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-loggerdefinitionversion.html#cfn-greengrass-loggerdefinitionversion-loggers"""
 
@@ -1817,21 +1843,43 @@ class FunctionDefinitionVersion(Resource):
     rp_FunctionDefinitionId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "FunctionDefinitionId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "FunctionDefinitionId",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-functiondefinitionversion.html#cfn-greengrass-functiondefinitionversion-functiondefinitionid"""
     rp_Functions: typing.List[typing.Union['PropFunctionDefinitionVersionFunction', dict]] = attr.ib(
         default=None,
         converter=PropFunctionDefinitionVersionFunction.from_list,
         validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropFunctionDefinitionVersionFunction), iterable_validator=attr.validators.instance_of(list)),
-        metadata={AttrMeta.PROPERTY_NAME: "Functions"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Functions",
+            AttrMeta.DATA: {
+                "Type": 'List',
+                "Required": True,
+                "ItemType": 'Function',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-functiondefinitionversion.html#cfn-greengrass-functiondefinitionversion-functions"""
     p_DefaultConfig: typing.Union['PropFunctionDefinitionVersionDefaultConfig', dict] = attr.ib(
         default=None,
         converter=PropFunctionDefinitionVersionDefaultConfig.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropFunctionDefinitionVersionDefaultConfig)),
-        metadata={AttrMeta.PROPERTY_NAME: "DefaultConfig"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "DefaultConfig",
+            AttrMeta.DATA: {
+                "Type": 'DefaultConfig',
+                "Required": False,
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-functiondefinitionversion.html#cfn-greengrass-functiondefinitionversion-defaultconfig"""
 
@@ -1856,20 +1904,41 @@ class ConnectorDefinition(Resource):
     rp_Name: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Name"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Name",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-connectordefinition.html#cfn-greengrass-connectordefinition-name"""
     p_InitialVersion: typing.Union['PropConnectorDefinitionConnectorDefinitionVersion', dict] = attr.ib(
         default=None,
         converter=PropConnectorDefinitionConnectorDefinitionVersion.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropConnectorDefinitionConnectorDefinitionVersion)),
-        metadata={AttrMeta.PROPERTY_NAME: "InitialVersion"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "InitialVersion",
+            AttrMeta.DATA: {
+                "Type": 'ConnectorDefinitionVersion',
+                "Required": False,
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-connectordefinition.html#cfn-greengrass-connectordefinition-initialversion"""
     p_Tags: dict = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(dict)),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'Json',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-connectordefinition.html#cfn-greengrass-connectordefinition-tags"""
 
@@ -1914,20 +1983,41 @@ class FunctionDefinition(Resource):
     rp_Name: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Name"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Name",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-functiondefinition.html#cfn-greengrass-functiondefinition-name"""
     p_InitialVersion: typing.Union['PropFunctionDefinitionFunctionDefinitionVersion', dict] = attr.ib(
         default=None,
         converter=PropFunctionDefinitionFunctionDefinitionVersion.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropFunctionDefinitionFunctionDefinitionVersion)),
-        metadata={AttrMeta.PROPERTY_NAME: "InitialVersion"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "InitialVersion",
+            AttrMeta.DATA: {
+                "Type": 'FunctionDefinitionVersion',
+                "Required": False,
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-functiondefinition.html#cfn-greengrass-functiondefinition-initialversion"""
     p_Tags: dict = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(dict)),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'Json',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-functiondefinition.html#cfn-greengrass-functiondefinition-tags"""
 
@@ -1972,20 +2062,41 @@ class LoggerDefinition(Resource):
     rp_Name: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Name"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Name",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-loggerdefinition.html#cfn-greengrass-loggerdefinition-name"""
     p_InitialVersion: typing.Union['PropLoggerDefinitionLoggerDefinitionVersion', dict] = attr.ib(
         default=None,
         converter=PropLoggerDefinitionLoggerDefinitionVersion.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropLoggerDefinitionLoggerDefinitionVersion)),
-        metadata={AttrMeta.PROPERTY_NAME: "InitialVersion"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "InitialVersion",
+            AttrMeta.DATA: {
+                "Type": 'LoggerDefinitionVersion',
+                "Required": False,
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-loggerdefinition.html#cfn-greengrass-loggerdefinition-initialversion"""
     p_Tags: dict = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(dict)),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'Json',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-loggerdefinition.html#cfn-greengrass-loggerdefinition-tags"""
 
@@ -2030,20 +2141,41 @@ class CoreDefinition(Resource):
     rp_Name: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Name"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Name",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-coredefinition.html#cfn-greengrass-coredefinition-name"""
     p_InitialVersion: typing.Union['PropCoreDefinitionCoreDefinitionVersion', dict] = attr.ib(
         default=None,
         converter=PropCoreDefinitionCoreDefinitionVersion.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropCoreDefinitionCoreDefinitionVersion)),
-        metadata={AttrMeta.PROPERTY_NAME: "InitialVersion"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "InitialVersion",
+            AttrMeta.DATA: {
+                "Type": 'CoreDefinitionVersion',
+                "Required": False,
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-coredefinition.html#cfn-greengrass-coredefinition-initialversion"""
     p_Tags: dict = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(dict)),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'Json',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-coredefinition.html#cfn-greengrass-coredefinition-tags"""
 
@@ -2087,14 +2219,29 @@ class DeviceDefinitionVersion(Resource):
     rp_DeviceDefinitionId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "DeviceDefinitionId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "DeviceDefinitionId",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-devicedefinitionversion.html#cfn-greengrass-devicedefinitionversion-devicedefinitionid"""
     rp_Devices: typing.List[typing.Union['PropDeviceDefinitionVersionDevice', dict]] = attr.ib(
         default=None,
         converter=PropDeviceDefinitionVersionDevice.from_list,
         validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDeviceDefinitionVersionDevice), iterable_validator=attr.validators.instance_of(list)),
-        metadata={AttrMeta.PROPERTY_NAME: "Devices"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Devices",
+            AttrMeta.DATA: {
+                "Type": 'List',
+                "Required": True,
+                "ItemType": 'Device',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-devicedefinitionversion.html#cfn-greengrass-devicedefinitionversion-devices"""
 
@@ -2119,20 +2266,41 @@ class ResourceDefinition(Resource):
     rp_Name: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Name"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Name",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-resourcedefinition.html#cfn-greengrass-resourcedefinition-name"""
     p_InitialVersion: typing.Union['PropResourceDefinitionResourceDefinitionVersion', dict] = attr.ib(
         default=None,
         converter=PropResourceDefinitionResourceDefinitionVersion.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropResourceDefinitionResourceDefinitionVersion)),
-        metadata={AttrMeta.PROPERTY_NAME: "InitialVersion"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "InitialVersion",
+            AttrMeta.DATA: {
+                "Type": 'ResourceDefinitionVersion',
+                "Required": False,
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-resourcedefinition.html#cfn-greengrass-resourcedefinition-initialversion"""
     p_Tags: dict = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(dict)),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'Json',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-resourcedefinition.html#cfn-greengrass-resourcedefinition-tags"""
 
@@ -2177,20 +2345,41 @@ class DeviceDefinition(Resource):
     rp_Name: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Name"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Name",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-devicedefinition.html#cfn-greengrass-devicedefinition-name"""
     p_InitialVersion: typing.Union['PropDeviceDefinitionDeviceDefinitionVersion', dict] = attr.ib(
         default=None,
         converter=PropDeviceDefinitionDeviceDefinitionVersion.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropDeviceDefinitionDeviceDefinitionVersion)),
-        metadata={AttrMeta.PROPERTY_NAME: "InitialVersion"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "InitialVersion",
+            AttrMeta.DATA: {
+                "Type": 'DeviceDefinitionVersion',
+                "Required": False,
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-devicedefinition.html#cfn-greengrass-devicedefinition-initialversion"""
     p_Tags: dict = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(dict)),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'Json',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-devicedefinition.html#cfn-greengrass-devicedefinition-tags"""
 
@@ -2236,26 +2425,54 @@ class Group(Resource):
     rp_Name: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Name"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Name",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-group.html#cfn-greengrass-group-name"""
     p_InitialVersion: typing.Union['PropGroupGroupVersion', dict] = attr.ib(
         default=None,
         converter=PropGroupGroupVersion.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropGroupGroupVersion)),
-        metadata={AttrMeta.PROPERTY_NAME: "InitialVersion"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "InitialVersion",
+            AttrMeta.DATA: {
+                "Type": 'GroupVersion',
+                "Required": False,
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-group.html#cfn-greengrass-group-initialversion"""
     p_RoleArn: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "RoleArn"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "RoleArn",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-group.html#cfn-greengrass-group-rolearn"""
     p_Tags: dict = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(dict)),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'Json',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-group.html#cfn-greengrass-group-tags"""
 
@@ -2309,14 +2526,29 @@ class SubscriptionDefinitionVersion(Resource):
     rp_SubscriptionDefinitionId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "SubscriptionDefinitionId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "SubscriptionDefinitionId",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-subscriptiondefinitionversion.html#cfn-greengrass-subscriptiondefinitionversion-subscriptiondefinitionid"""
     rp_Subscriptions: typing.List[typing.Union['PropSubscriptionDefinitionVersionSubscription', dict]] = attr.ib(
         default=None,
         converter=PropSubscriptionDefinitionVersionSubscription.from_list,
         validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropSubscriptionDefinitionVersionSubscription), iterable_validator=attr.validators.instance_of(list)),
-        metadata={AttrMeta.PROPERTY_NAME: "Subscriptions"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Subscriptions",
+            AttrMeta.DATA: {
+                "Type": 'List',
+                "Required": True,
+                "ItemType": 'Subscription',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-subscriptiondefinitionversion.html#cfn-greengrass-subscriptiondefinitionversion-subscriptions"""
 
@@ -2340,14 +2572,29 @@ class CoreDefinitionVersion(Resource):
     rp_CoreDefinitionId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "CoreDefinitionId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "CoreDefinitionId",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-coredefinitionversion.html#cfn-greengrass-coredefinitionversion-coredefinitionid"""
     rp_Cores: typing.List[typing.Union['PropCoreDefinitionVersionCore', dict]] = attr.ib(
         default=None,
         converter=PropCoreDefinitionVersionCore.from_list,
         validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropCoreDefinitionVersionCore), iterable_validator=attr.validators.instance_of(list)),
-        metadata={AttrMeta.PROPERTY_NAME: "Cores"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Cores",
+            AttrMeta.DATA: {
+                "Type": 'List',
+                "Required": True,
+                "ItemType": 'Core',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-coredefinitionversion.html#cfn-greengrass-coredefinitionversion-cores"""
 
@@ -2372,20 +2619,41 @@ class SubscriptionDefinition(Resource):
     rp_Name: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Name"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Name",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-subscriptiondefinition.html#cfn-greengrass-subscriptiondefinition-name"""
     p_InitialVersion: typing.Union['PropSubscriptionDefinitionSubscriptionDefinitionVersion', dict] = attr.ib(
         default=None,
         converter=PropSubscriptionDefinitionSubscriptionDefinitionVersion.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropSubscriptionDefinitionSubscriptionDefinitionVersion)),
-        metadata={AttrMeta.PROPERTY_NAME: "InitialVersion"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "InitialVersion",
+            AttrMeta.DATA: {
+                "Type": 'SubscriptionDefinitionVersion',
+                "Required": False,
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-subscriptiondefinition.html#cfn-greengrass-subscriptiondefinition-initialversion"""
     p_Tags: dict = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(dict)),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'Json',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-subscriptiondefinition.html#cfn-greengrass-subscriptiondefinition-tags"""
 
@@ -2429,14 +2697,29 @@ class ResourceDefinitionVersion(Resource):
     rp_ResourceDefinitionId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "ResourceDefinitionId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ResourceDefinitionId",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-resourcedefinitionversion.html#cfn-greengrass-resourcedefinitionversion-resourcedefinitionid"""
     rp_Resources: typing.List[typing.Union['PropResourceDefinitionVersionResourceInstance', dict]] = attr.ib(
         default=None,
         converter=PropResourceDefinitionVersionResourceInstance.from_list,
         validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropResourceDefinitionVersionResourceInstance), iterable_validator=attr.validators.instance_of(list)),
-        metadata={AttrMeta.PROPERTY_NAME: "Resources"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Resources",
+            AttrMeta.DATA: {
+                "Type": 'List',
+                "Required": True,
+                "ItemType": 'ResourceInstance',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-resourcedefinitionversion.html#cfn-greengrass-resourcedefinitionversion-resources"""
 
@@ -2466,49 +2749,105 @@ class GroupVersion(Resource):
     rp_GroupId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "GroupId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "GroupId",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-groupversion.html#cfn-greengrass-groupversion-groupid"""
     p_ConnectorDefinitionVersionArn: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "ConnectorDefinitionVersionArn"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ConnectorDefinitionVersionArn",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-groupversion.html#cfn-greengrass-groupversion-connectordefinitionversionarn"""
     p_CoreDefinitionVersionArn: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "CoreDefinitionVersionArn"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "CoreDefinitionVersionArn",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-groupversion.html#cfn-greengrass-groupversion-coredefinitionversionarn"""
     p_DeviceDefinitionVersionArn: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "DeviceDefinitionVersionArn"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "DeviceDefinitionVersionArn",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-groupversion.html#cfn-greengrass-groupversion-devicedefinitionversionarn"""
     p_FunctionDefinitionVersionArn: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "FunctionDefinitionVersionArn"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "FunctionDefinitionVersionArn",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-groupversion.html#cfn-greengrass-groupversion-functiondefinitionversionarn"""
     p_LoggerDefinitionVersionArn: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "LoggerDefinitionVersionArn"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "LoggerDefinitionVersionArn",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-groupversion.html#cfn-greengrass-groupversion-loggerdefinitionversionarn"""
     p_ResourceDefinitionVersionArn: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "ResourceDefinitionVersionArn"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ResourceDefinitionVersionArn",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-groupversion.html#cfn-greengrass-groupversion-resourcedefinitionversionarn"""
     p_SubscriptionDefinitionVersionArn: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "SubscriptionDefinitionVersionArn"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "SubscriptionDefinitionVersionArn",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-greengrass-groupversion.html#cfn-greengrass-groupversion-subscriptiondefinitionversionarn"""
 

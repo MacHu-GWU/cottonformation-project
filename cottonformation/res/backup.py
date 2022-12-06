@@ -103,40 +103,6 @@ class PropBackupPlanAdvancedBackupSettingResourceType(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-advancedbackupsettingresourcetype.html#cfn-backup-backupplan-advancedbackupsettingresourcetype-resourcetype"""
 
 @attr.s
-class PropBackupVaultLockConfigurationType(Property):
-    """
-    AWS Object Type = "AWS::Backup::BackupVault.LockConfigurationType"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupvault-lockconfigurationtype.html
-
-    Property Document:
-    
-    - ``rp_MinRetentionDays``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupvault-lockconfigurationtype.html#cfn-backup-backupvault-lockconfigurationtype-minretentiondays
-    - ``p_ChangeableForDays``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupvault-lockconfigurationtype.html#cfn-backup-backupvault-lockconfigurationtype-changeablefordays
-    - ``p_MaxRetentionDays``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupvault-lockconfigurationtype.html#cfn-backup-backupvault-lockconfigurationtype-maxretentiondays
-    """
-    AWS_OBJECT_TYPE = "AWS::Backup::BackupVault.LockConfigurationType"
-    
-    rp_MinRetentionDays: float = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(float),
-        metadata={AttrMeta.PROPERTY_NAME: "MinRetentionDays"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupvault-lockconfigurationtype.html#cfn-backup-backupvault-lockconfigurationtype-minretentiondays"""
-    p_ChangeableForDays: float = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(float)),
-        metadata={AttrMeta.PROPERTY_NAME: "ChangeableForDays"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupvault-lockconfigurationtype.html#cfn-backup-backupvault-lockconfigurationtype-changeablefordays"""
-    p_MaxRetentionDays: float = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(float)),
-        metadata={AttrMeta.PROPERTY_NAME: "MaxRetentionDays"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupvault-lockconfigurationtype.html#cfn-backup-backupvault-lockconfigurationtype-maxretentiondays"""
-
-@attr.s
 class PropBackupPlanLifecycleResourceType(Property):
     """
     AWS Object Type = "AWS::Backup::BackupPlan.LifecycleResourceType"
@@ -220,6 +186,40 @@ class PropBackupSelectionBackupSelectionResourceType(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-backupselectionresourcetype.html#cfn-backup-backupselection-backupselectionresourcetype-resources"""
 
 @attr.s
+class PropBackupVaultLockConfigurationType(Property):
+    """
+    AWS Object Type = "AWS::Backup::BackupVault.LockConfigurationType"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupvault-lockconfigurationtype.html
+
+    Property Document:
+    
+    - ``rp_MinRetentionDays``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupvault-lockconfigurationtype.html#cfn-backup-backupvault-lockconfigurationtype-minretentiondays
+    - ``p_ChangeableForDays``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupvault-lockconfigurationtype.html#cfn-backup-backupvault-lockconfigurationtype-changeablefordays
+    - ``p_MaxRetentionDays``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupvault-lockconfigurationtype.html#cfn-backup-backupvault-lockconfigurationtype-maxretentiondays
+    """
+    AWS_OBJECT_TYPE = "AWS::Backup::BackupVault.LockConfigurationType"
+    
+    rp_MinRetentionDays: float = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(float),
+        metadata={AttrMeta.PROPERTY_NAME: "MinRetentionDays"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupvault-lockconfigurationtype.html#cfn-backup-backupvault-lockconfigurationtype-minretentiondays"""
+    p_ChangeableForDays: float = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(float)),
+        metadata={AttrMeta.PROPERTY_NAME: "ChangeableForDays"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupvault-lockconfigurationtype.html#cfn-backup-backupvault-lockconfigurationtype-changeablefordays"""
+    p_MaxRetentionDays: float = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(float)),
+        metadata={AttrMeta.PROPERTY_NAME: "MaxRetentionDays"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupvault-lockconfigurationtype.html#cfn-backup-backupvault-lockconfigurationtype-maxretentiondays"""
+
+@attr.s
 class PropFrameworkControlInputParameter(Property):
     """
     AWS Object Type = "AWS::Backup::Framework.ControlInputParameter"
@@ -266,10 +266,9 @@ class PropBackupPlanCopyActionResourceType(Property):
         metadata={AttrMeta.PROPERTY_NAME: "DestinationBackupVaultArn"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-copyactionresourcetype.html#cfn-backup-backupplan-copyactionresourcetype-destinationbackupvaultarn"""
-    p_Lifecycle: typing.Union['PropBackupPlanLifecycleResourceType', dict] = attr.ib(
+    p_Lifecycle: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropBackupPlanLifecycleResourceType.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropBackupPlanLifecycleResourceType)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "Lifecycle"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-copyactionresourcetype.html#cfn-backup-backupplan-copyactionresourcetype-lifecycle"""
@@ -361,10 +360,9 @@ class PropBackupPlanBackupRuleResourceType(Property):
         metadata={AttrMeta.PROPERTY_NAME: "EnableContinuousBackup"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-backupruleresourcetype.html#cfn-backup-backupplan-backupruleresourcetype-enablecontinuousbackup"""
-    p_Lifecycle: typing.Union['PropBackupPlanLifecycleResourceType', dict] = attr.ib(
+    p_Lifecycle: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropBackupPlanLifecycleResourceType.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropBackupPlanLifecycleResourceType)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "Lifecycle"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-backupruleresourcetype.html#cfn-backup-backupplan-backupruleresourcetype-lifecycle"""
@@ -445,13 +443,28 @@ class BackupPlan(Resource):
         default=None,
         converter=PropBackupPlanBackupPlanResourceType.from_dict,
         validator=attr.validators.instance_of(PropBackupPlanBackupPlanResourceType),
-        metadata={AttrMeta.PROPERTY_NAME: "BackupPlan"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "BackupPlan",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": True,
+                "Type": 'BackupPlanResourceType',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-backupplan.html#cfn-backup-backupplan-backupplan"""
     p_BackupPlanTags: typing.Dict[str, TypeHint.intrinsic_str] = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.deep_mapping(key_validator=attr.validators.instance_of(str), value_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type))),
-        metadata={AttrMeta.PROPERTY_NAME: "BackupPlanTags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "BackupPlanTags",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'Map',
+                "PrimitiveItemType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-backupplan.html#cfn-backup-backupplan-backupplantags"""
 
@@ -493,26 +506,57 @@ class Framework(Resource):
         default=None,
         converter=PropFrameworkFrameworkControl.from_list,
         validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropFrameworkFrameworkControl), iterable_validator=attr.validators.instance_of(list)),
-        metadata={AttrMeta.PROPERTY_NAME: "FrameworkControls"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "FrameworkControls",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": True,
+                "Type": 'List',
+                "ItemType": 'FrameworkControl',
+                "DuplicatesAllowed": False,
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-framework.html#cfn-backup-framework-frameworkcontrols"""
     p_FrameworkDescription: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "FrameworkDescription"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "FrameworkDescription",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-framework.html#cfn-backup-framework-frameworkdescription"""
     p_FrameworkName: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "FrameworkName"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "FrameworkName",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-framework.html#cfn-backup-framework-frameworkname"""
     p_FrameworkTags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "FrameworkTags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "FrameworkTags",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'List',
+                "ItemType": 'Tag',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-framework.html#cfn-backup-framework-frameworktags"""
 
@@ -560,39 +604,82 @@ class BackupVault(Resource):
     rp_BackupVaultName: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "BackupVaultName"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "BackupVaultName",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-backupvault.html#cfn-backup-backupvault-backupvaultname"""
     p_AccessPolicy: dict = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(dict)),
-        metadata={AttrMeta.PROPERTY_NAME: "AccessPolicy"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "AccessPolicy",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'Json',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-backupvault.html#cfn-backup-backupvault-accesspolicy"""
     p_BackupVaultTags: typing.Dict[str, TypeHint.intrinsic_str] = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.deep_mapping(key_validator=attr.validators.instance_of(str), value_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type))),
-        metadata={AttrMeta.PROPERTY_NAME: "BackupVaultTags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "BackupVaultTags",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'Map',
+                "PrimitiveItemType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-backupvault.html#cfn-backup-backupvault-backupvaulttags"""
     p_EncryptionKeyArn: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "EncryptionKeyArn"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "EncryptionKeyArn",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-backupvault.html#cfn-backup-backupvault-encryptionkeyarn"""
     p_LockConfiguration: typing.Union['PropBackupVaultLockConfigurationType', dict] = attr.ib(
         default=None,
         converter=PropBackupVaultLockConfigurationType.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropBackupVaultLockConfigurationType)),
-        metadata={AttrMeta.PROPERTY_NAME: "LockConfiguration"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "LockConfiguration",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'LockConfigurationType',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-backupvault.html#cfn-backup-backupvault-lockconfiguration"""
     p_Notifications: typing.Union['PropBackupVaultNotificationObjectType', dict] = attr.ib(
         default=None,
         converter=PropBackupVaultNotificationObjectType.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropBackupVaultNotificationObjectType)),
-        metadata={AttrMeta.PROPERTY_NAME: "Notifications"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Notifications",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'NotificationObjectType',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-backupvault.html#cfn-backup-backupvault-notifications"""
 
@@ -629,32 +716,68 @@ class ReportPlan(Resource):
     rp_ReportDeliveryChannel: dict = attr.ib(
         default=None,
         validator=attr.validators.instance_of(dict),
-        metadata={AttrMeta.PROPERTY_NAME: "ReportDeliveryChannel"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ReportDeliveryChannel",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": True,
+                "PrimitiveType": 'Json',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-reportplan.html#cfn-backup-reportplan-reportdeliverychannel"""
     rp_ReportSetting: dict = attr.ib(
         default=None,
         validator=attr.validators.instance_of(dict),
-        metadata={AttrMeta.PROPERTY_NAME: "ReportSetting"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ReportSetting",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": True,
+                "PrimitiveType": 'Json',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-reportplan.html#cfn-backup-reportplan-reportsetting"""
     p_ReportPlanDescription: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "ReportPlanDescription"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ReportPlanDescription",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-reportplan.html#cfn-backup-reportplan-reportplandescription"""
     p_ReportPlanName: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "ReportPlanName"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ReportPlanName",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-reportplan.html#cfn-backup-reportplan-reportplanname"""
     p_ReportPlanTags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "ReportPlanTags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ReportPlanTags",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'List',
+                "ItemType": 'Tag',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-reportplan.html#cfn-backup-reportplan-reportplantags"""
 
@@ -683,14 +806,28 @@ class BackupSelection(Resource):
     rp_BackupPlanId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "BackupPlanId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "BackupPlanId",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-backupselection.html#cfn-backup-backupselection-backupplanid"""
     rp_BackupSelection: typing.Union['PropBackupSelectionBackupSelectionResourceType', dict] = attr.ib(
         default=None,
         converter=PropBackupSelectionBackupSelectionResourceType.from_dict,
         validator=attr.validators.instance_of(PropBackupSelectionBackupSelectionResourceType),
-        metadata={AttrMeta.PROPERTY_NAME: "BackupSelection"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "BackupSelection",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "Type": 'BackupSelectionResourceType',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-backupselection.html#cfn-backup-backupselection-backupselection"""
 

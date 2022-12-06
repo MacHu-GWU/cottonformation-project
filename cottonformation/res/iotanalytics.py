@@ -83,53 +83,6 @@ class PropPipelineDeviceShadowEnrich(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-deviceshadowenrich.html#cfn-iotanalytics-pipeline-deviceshadowenrich-next"""
 
 @attr.s
-class PropDatasetGlueConfiguration(Property):
-    """
-    AWS Object Type = "AWS::IoTAnalytics::Dataset.GlueConfiguration"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-glueconfiguration.html
-
-    Property Document:
-    
-    - ``rp_DatabaseName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-glueconfiguration.html#cfn-iotanalytics-dataset-glueconfiguration-databasename
-    - ``rp_TableName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-glueconfiguration.html#cfn-iotanalytics-dataset-glueconfiguration-tablename
-    """
-    AWS_OBJECT_TYPE = "AWS::IoTAnalytics::Dataset.GlueConfiguration"
-    
-    rp_DatabaseName: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "DatabaseName"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-glueconfiguration.html#cfn-iotanalytics-dataset-glueconfiguration-databasename"""
-    rp_TableName: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "TableName"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-glueconfiguration.html#cfn-iotanalytics-dataset-glueconfiguration-tablename"""
-
-@attr.s
-class PropDatasetDeltaTimeSessionWindowConfiguration(Property):
-    """
-    AWS Object Type = "AWS::IoTAnalytics::Dataset.DeltaTimeSessionWindowConfiguration"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-deltatimesessionwindowconfiguration.html
-
-    Property Document:
-    
-    - ``rp_TimeoutInMinutes``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-deltatimesessionwindowconfiguration.html#cfn-iotanalytics-dataset-deltatimesessionwindowconfiguration-timeoutinminutes
-    """
-    AWS_OBJECT_TYPE = "AWS::IoTAnalytics::Dataset.DeltaTimeSessionWindowConfiguration"
-    
-    rp_TimeoutInMinutes: int = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(int),
-        metadata={AttrMeta.PROPERTY_NAME: "TimeoutInMinutes"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-deltatimesessionwindowconfiguration.html#cfn-iotanalytics-dataset-deltatimesessionwindowconfiguration-timeoutinminutes"""
-
-@attr.s
 class PropDatasetOutputFileUriValue(Property):
     """
     AWS Object Type = "AWS::IoTAnalytics::Dataset.OutputFileUriValue"
@@ -150,40 +103,6 @@ class PropDatasetOutputFileUriValue(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-outputfileurivalue.html#cfn-iotanalytics-dataset-outputfileurivalue-filename"""
 
 @attr.s
-class PropPipelineSelectAttributes(Property):
-    """
-    AWS Object Type = "AWS::IoTAnalytics::Pipeline.SelectAttributes"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-selectattributes.html
-
-    Property Document:
-    
-    - ``rp_Attributes``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-selectattributes.html#cfn-iotanalytics-pipeline-selectattributes-attributes
-    - ``rp_Name``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-selectattributes.html#cfn-iotanalytics-pipeline-selectattributes-name
-    - ``p_Next``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-selectattributes.html#cfn-iotanalytics-pipeline-selectattributes-next
-    """
-    AWS_OBJECT_TYPE = "AWS::IoTAnalytics::Pipeline.SelectAttributes"
-    
-    rp_Attributes: typing.List[TypeHint.intrinsic_str] = attr.ib(
-        default=None,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list)),
-        metadata={AttrMeta.PROPERTY_NAME: "Attributes"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-selectattributes.html#cfn-iotanalytics-pipeline-selectattributes-attributes"""
-    rp_Name: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Name"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-selectattributes.html#cfn-iotanalytics-pipeline-selectattributes-name"""
-    p_Next: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Next"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-selectattributes.html#cfn-iotanalytics-pipeline-selectattributes-next"""
-
-@attr.s
 class PropDatastoreServiceManagedS3(Property):
     """
     AWS Object Type = "AWS::IoTAnalytics::Datastore.ServiceManagedS3"
@@ -195,55 +114,6 @@ class PropDatastoreServiceManagedS3(Property):
     """
     AWS_OBJECT_TYPE = "AWS::IoTAnalytics::Datastore.ServiceManagedS3"
     
-
-@attr.s
-class PropDatasetLateDataRuleConfiguration(Property):
-    """
-    AWS Object Type = "AWS::IoTAnalytics::Dataset.LateDataRuleConfiguration"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-latedataruleconfiguration.html
-
-    Property Document:
-    
-    - ``p_DeltaTimeSessionWindowConfiguration``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-latedataruleconfiguration.html#cfn-iotanalytics-dataset-latedataruleconfiguration-deltatimesessionwindowconfiguration
-    """
-    AWS_OBJECT_TYPE = "AWS::IoTAnalytics::Dataset.LateDataRuleConfiguration"
-    
-    p_DeltaTimeSessionWindowConfiguration: typing.Union['PropDatasetDeltaTimeSessionWindowConfiguration', dict] = attr.ib(
-        default=None,
-        converter=PropDatasetDeltaTimeSessionWindowConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropDatasetDeltaTimeSessionWindowConfiguration)),
-        metadata={AttrMeta.PROPERTY_NAME: "DeltaTimeSessionWindowConfiguration"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-latedataruleconfiguration.html#cfn-iotanalytics-dataset-latedataruleconfiguration-deltatimesessionwindowconfiguration"""
-
-@attr.s
-class PropDatasetLateDataRule(Property):
-    """
-    AWS Object Type = "AWS::IoTAnalytics::Dataset.LateDataRule"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-latedatarule.html
-
-    Property Document:
-    
-    - ``rp_RuleConfiguration``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-latedatarule.html#cfn-iotanalytics-dataset-latedatarule-ruleconfiguration
-    - ``p_RuleName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-latedatarule.html#cfn-iotanalytics-dataset-latedatarule-rulename
-    """
-    AWS_OBJECT_TYPE = "AWS::IoTAnalytics::Dataset.LateDataRule"
-    
-    rp_RuleConfiguration: typing.Union['PropDatasetLateDataRuleConfiguration', dict] = attr.ib(
-        default=None,
-        converter=PropDatasetLateDataRuleConfiguration.from_dict,
-        validator=attr.validators.instance_of(PropDatasetLateDataRuleConfiguration),
-        metadata={AttrMeta.PROPERTY_NAME: "RuleConfiguration"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-latedatarule.html#cfn-iotanalytics-dataset-latedatarule-ruleconfiguration"""
-    p_RuleName: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "RuleName"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-latedatarule.html#cfn-iotanalytics-dataset-latedatarule-rulename"""
 
 @attr.s
 class PropDatastoreRetentionPeriod(Property):
@@ -339,6 +209,368 @@ class PropPipelineRemoveAttributes(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Next"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-removeattributes.html#cfn-iotanalytics-pipeline-removeattributes-next"""
+
+@attr.s
+class PropChannelRetentionPeriod(Property):
+    """
+    AWS Object Type = "AWS::IoTAnalytics::Channel.RetentionPeriod"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-channel-retentionperiod.html
+
+    Property Document:
+    
+    - ``p_NumberOfDays``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-channel-retentionperiod.html#cfn-iotanalytics-channel-retentionperiod-numberofdays
+    - ``p_Unlimited``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-channel-retentionperiod.html#cfn-iotanalytics-channel-retentionperiod-unlimited
+    """
+    AWS_OBJECT_TYPE = "AWS::IoTAnalytics::Channel.RetentionPeriod"
+    
+    p_NumberOfDays: int = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(int)),
+        metadata={AttrMeta.PROPERTY_NAME: "NumberOfDays"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-channel-retentionperiod.html#cfn-iotanalytics-channel-retentionperiod-numberofdays"""
+    p_Unlimited: bool = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(bool)),
+        metadata={AttrMeta.PROPERTY_NAME: "Unlimited"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-channel-retentionperiod.html#cfn-iotanalytics-channel-retentionperiod-unlimited"""
+
+@attr.s
+class PropDatasetRetentionPeriod(Property):
+    """
+    AWS Object Type = "AWS::IoTAnalytics::Dataset.RetentionPeriod"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-retentionperiod.html
+
+    Property Document:
+    
+    - ``p_NumberOfDays``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-retentionperiod.html#cfn-iotanalytics-dataset-retentionperiod-numberofdays
+    - ``p_Unlimited``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-retentionperiod.html#cfn-iotanalytics-dataset-retentionperiod-unlimited
+    """
+    AWS_OBJECT_TYPE = "AWS::IoTAnalytics::Dataset.RetentionPeriod"
+    
+    p_NumberOfDays: int = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(int)),
+        metadata={AttrMeta.PROPERTY_NAME: "NumberOfDays"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-retentionperiod.html#cfn-iotanalytics-dataset-retentionperiod-numberofdays"""
+    p_Unlimited: bool = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(bool)),
+        metadata={AttrMeta.PROPERTY_NAME: "Unlimited"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-retentionperiod.html#cfn-iotanalytics-dataset-retentionperiod-unlimited"""
+
+@attr.s
+class PropDatastoreColumn(Property):
+    """
+    AWS Object Type = "AWS::IoTAnalytics::Datastore.Column"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-column.html
+
+    Property Document:
+    
+    - ``rp_Name``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-column.html#cfn-iotanalytics-datastore-column-name
+    - ``rp_Type``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-column.html#cfn-iotanalytics-datastore-column-type
+    """
+    AWS_OBJECT_TYPE = "AWS::IoTAnalytics::Datastore.Column"
+    
+    rp_Name: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "Name"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-column.html#cfn-iotanalytics-datastore-column-name"""
+    rp_Type: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "Type"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-column.html#cfn-iotanalytics-datastore-column-type"""
+
+@attr.s
+class PropDatasetVariable(Property):
+    """
+    AWS Object Type = "AWS::IoTAnalytics::Dataset.Variable"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-variable.html
+
+    Property Document:
+    
+    - ``rp_VariableName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-variable.html#cfn-iotanalytics-dataset-variable-variablename
+    - ``p_DatasetContentVersionValue``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-variable.html#cfn-iotanalytics-dataset-variable-datasetcontentversionvalue
+    - ``p_DoubleValue``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-variable.html#cfn-iotanalytics-dataset-variable-doublevalue
+    - ``p_OutputFileUriValue``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-variable.html#cfn-iotanalytics-dataset-variable-outputfileurivalue
+    - ``p_StringValue``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-variable.html#cfn-iotanalytics-dataset-variable-stringvalue
+    """
+    AWS_OBJECT_TYPE = "AWS::IoTAnalytics::Dataset.Variable"
+    
+    rp_VariableName: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "VariableName"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-variable.html#cfn-iotanalytics-dataset-variable-variablename"""
+    p_DatasetContentVersionValue: typing.Union['PropDatasetDatasetContentVersionValue', dict] = attr.ib(
+        default=None,
+        converter=PropDatasetDatasetContentVersionValue.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDatasetDatasetContentVersionValue)),
+        metadata={AttrMeta.PROPERTY_NAME: "DatasetContentVersionValue"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-variable.html#cfn-iotanalytics-dataset-variable-datasetcontentversionvalue"""
+    p_DoubleValue: float = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(float)),
+        metadata={AttrMeta.PROPERTY_NAME: "DoubleValue"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-variable.html#cfn-iotanalytics-dataset-variable-doublevalue"""
+    p_OutputFileUriValue: typing.Union['PropDatasetOutputFileUriValue', dict] = attr.ib(
+        default=None,
+        converter=PropDatasetOutputFileUriValue.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDatasetOutputFileUriValue)),
+        metadata={AttrMeta.PROPERTY_NAME: "OutputFileUriValue"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-variable.html#cfn-iotanalytics-dataset-variable-outputfileurivalue"""
+    p_StringValue: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "StringValue"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-variable.html#cfn-iotanalytics-dataset-variable-stringvalue"""
+
+@attr.s
+class PropDatasetDeltaTime(Property):
+    """
+    AWS Object Type = "AWS::IoTAnalytics::Dataset.DeltaTime"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-deltatime.html
+
+    Property Document:
+    
+    - ``rp_OffsetSeconds``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-deltatime.html#cfn-iotanalytics-dataset-deltatime-offsetseconds
+    - ``rp_TimeExpression``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-deltatime.html#cfn-iotanalytics-dataset-deltatime-timeexpression
+    """
+    AWS_OBJECT_TYPE = "AWS::IoTAnalytics::Dataset.DeltaTime"
+    
+    rp_OffsetSeconds: int = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(int),
+        metadata={AttrMeta.PROPERTY_NAME: "OffsetSeconds"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-deltatime.html#cfn-iotanalytics-dataset-deltatime-offsetseconds"""
+    rp_TimeExpression: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "TimeExpression"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-deltatime.html#cfn-iotanalytics-dataset-deltatime-timeexpression"""
+
+@attr.s
+class PropPipelineFilter(Property):
+    """
+    AWS Object Type = "AWS::IoTAnalytics::Pipeline.Filter"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-filter.html
+
+    Property Document:
+    
+    - ``rp_Filter``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-filter.html#cfn-iotanalytics-pipeline-filter-filter
+    - ``rp_Name``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-filter.html#cfn-iotanalytics-pipeline-filter-name
+    - ``p_Next``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-filter.html#cfn-iotanalytics-pipeline-filter-next
+    """
+    AWS_OBJECT_TYPE = "AWS::IoTAnalytics::Pipeline.Filter"
+    
+    rp_Filter: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "Filter"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-filter.html#cfn-iotanalytics-pipeline-filter-filter"""
+    rp_Name: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "Name"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-filter.html#cfn-iotanalytics-pipeline-filter-name"""
+    p_Next: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "Next"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-filter.html#cfn-iotanalytics-pipeline-filter-next"""
+
+@attr.s
+class PropPipelineMath(Property):
+    """
+    AWS Object Type = "AWS::IoTAnalytics::Pipeline.Math"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-math.html
+
+    Property Document:
+    
+    - ``rp_Attribute``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-math.html#cfn-iotanalytics-pipeline-math-attribute
+    - ``rp_Math``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-math.html#cfn-iotanalytics-pipeline-math-math
+    - ``rp_Name``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-math.html#cfn-iotanalytics-pipeline-math-name
+    - ``p_Next``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-math.html#cfn-iotanalytics-pipeline-math-next
+    """
+    AWS_OBJECT_TYPE = "AWS::IoTAnalytics::Pipeline.Math"
+    
+    rp_Attribute: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "Attribute"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-math.html#cfn-iotanalytics-pipeline-math-attribute"""
+    rp_Math: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "Math"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-math.html#cfn-iotanalytics-pipeline-math-math"""
+    rp_Name: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "Name"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-math.html#cfn-iotanalytics-pipeline-math-name"""
+    p_Next: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "Next"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-math.html#cfn-iotanalytics-pipeline-math-next"""
+
+@attr.s
+class PropDatastoreTimestampPartition(Property):
+    """
+    AWS Object Type = "AWS::IoTAnalytics::Datastore.TimestampPartition"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-timestamppartition.html
+
+    Property Document:
+    
+    - ``rp_AttributeName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-timestamppartition.html#cfn-iotanalytics-datastore-timestamppartition-attributename
+    - ``p_TimestampFormat``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-timestamppartition.html#cfn-iotanalytics-datastore-timestamppartition-timestampformat
+    """
+    AWS_OBJECT_TYPE = "AWS::IoTAnalytics::Datastore.TimestampPartition"
+    
+    rp_AttributeName: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "AttributeName"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-timestamppartition.html#cfn-iotanalytics-datastore-timestamppartition-attributename"""
+    p_TimestampFormat: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "TimestampFormat"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-timestamppartition.html#cfn-iotanalytics-datastore-timestamppartition-timestampformat"""
+
+@attr.s
+class PropDatasetGlueConfiguration(Property):
+    """
+    AWS Object Type = "AWS::IoTAnalytics::Dataset.GlueConfiguration"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-glueconfiguration.html
+
+    Property Document:
+    
+    - ``rp_DatabaseName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-glueconfiguration.html#cfn-iotanalytics-dataset-glueconfiguration-databasename
+    - ``rp_TableName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-glueconfiguration.html#cfn-iotanalytics-dataset-glueconfiguration-tablename
+    """
+    AWS_OBJECT_TYPE = "AWS::IoTAnalytics::Dataset.GlueConfiguration"
+    
+    rp_DatabaseName: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "DatabaseName"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-glueconfiguration.html#cfn-iotanalytics-dataset-glueconfiguration-databasename"""
+    rp_TableName: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "TableName"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-glueconfiguration.html#cfn-iotanalytics-dataset-glueconfiguration-tablename"""
+
+@attr.s
+class PropDatasetDeltaTimeSessionWindowConfiguration(Property):
+    """
+    AWS Object Type = "AWS::IoTAnalytics::Dataset.DeltaTimeSessionWindowConfiguration"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-deltatimesessionwindowconfiguration.html
+
+    Property Document:
+    
+    - ``rp_TimeoutInMinutes``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-deltatimesessionwindowconfiguration.html#cfn-iotanalytics-dataset-deltatimesessionwindowconfiguration-timeoutinminutes
+    """
+    AWS_OBJECT_TYPE = "AWS::IoTAnalytics::Dataset.DeltaTimeSessionWindowConfiguration"
+    
+    rp_TimeoutInMinutes: int = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(int),
+        metadata={AttrMeta.PROPERTY_NAME: "TimeoutInMinutes"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-deltatimesessionwindowconfiguration.html#cfn-iotanalytics-dataset-deltatimesessionwindowconfiguration-timeoutinminutes"""
+
+@attr.s
+class PropPipelineSelectAttributes(Property):
+    """
+    AWS Object Type = "AWS::IoTAnalytics::Pipeline.SelectAttributes"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-selectattributes.html
+
+    Property Document:
+    
+    - ``rp_Attributes``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-selectattributes.html#cfn-iotanalytics-pipeline-selectattributes-attributes
+    - ``rp_Name``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-selectattributes.html#cfn-iotanalytics-pipeline-selectattributes-name
+    - ``p_Next``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-selectattributes.html#cfn-iotanalytics-pipeline-selectattributes-next
+    """
+    AWS_OBJECT_TYPE = "AWS::IoTAnalytics::Pipeline.SelectAttributes"
+    
+    rp_Attributes: typing.List[TypeHint.intrinsic_str] = attr.ib(
+        default=None,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list)),
+        metadata={AttrMeta.PROPERTY_NAME: "Attributes"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-selectattributes.html#cfn-iotanalytics-pipeline-selectattributes-attributes"""
+    rp_Name: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "Name"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-selectattributes.html#cfn-iotanalytics-pipeline-selectattributes-name"""
+    p_Next: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "Next"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-selectattributes.html#cfn-iotanalytics-pipeline-selectattributes-next"""
+
+@attr.s
+class PropDatasetLateDataRuleConfiguration(Property):
+    """
+    AWS Object Type = "AWS::IoTAnalytics::Dataset.LateDataRuleConfiguration"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-latedataruleconfiguration.html
+
+    Property Document:
+    
+    - ``p_DeltaTimeSessionWindowConfiguration``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-latedataruleconfiguration.html#cfn-iotanalytics-dataset-latedataruleconfiguration-deltatimesessionwindowconfiguration
+    """
+    AWS_OBJECT_TYPE = "AWS::IoTAnalytics::Dataset.LateDataRuleConfiguration"
+    
+    p_DeltaTimeSessionWindowConfiguration: typing.Union['PropDatasetDeltaTimeSessionWindowConfiguration', dict] = attr.ib(
+        default=None,
+        converter=PropDatasetDeltaTimeSessionWindowConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDatasetDeltaTimeSessionWindowConfiguration)),
+        metadata={AttrMeta.PROPERTY_NAME: "DeltaTimeSessionWindowConfiguration"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-latedataruleconfiguration.html#cfn-iotanalytics-dataset-latedataruleconfiguration-deltatimesessionwindowconfiguration"""
 
 @attr.s
 class PropDatasetVersioningConfiguration(Property):
@@ -497,60 +729,6 @@ class PropPipelineDeviceRegistryEnrich(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-deviceregistryenrich.html#cfn-iotanalytics-pipeline-deviceregistryenrich-next"""
 
 @attr.s
-class PropChannelRetentionPeriod(Property):
-    """
-    AWS Object Type = "AWS::IoTAnalytics::Channel.RetentionPeriod"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-channel-retentionperiod.html
-
-    Property Document:
-    
-    - ``p_NumberOfDays``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-channel-retentionperiod.html#cfn-iotanalytics-channel-retentionperiod-numberofdays
-    - ``p_Unlimited``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-channel-retentionperiod.html#cfn-iotanalytics-channel-retentionperiod-unlimited
-    """
-    AWS_OBJECT_TYPE = "AWS::IoTAnalytics::Channel.RetentionPeriod"
-    
-    p_NumberOfDays: int = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "NumberOfDays"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-channel-retentionperiod.html#cfn-iotanalytics-channel-retentionperiod-numberofdays"""
-    p_Unlimited: bool = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(bool)),
-        metadata={AttrMeta.PROPERTY_NAME: "Unlimited"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-channel-retentionperiod.html#cfn-iotanalytics-channel-retentionperiod-unlimited"""
-
-@attr.s
-class PropDatasetRetentionPeriod(Property):
-    """
-    AWS Object Type = "AWS::IoTAnalytics::Dataset.RetentionPeriod"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-retentionperiod.html
-
-    Property Document:
-    
-    - ``p_NumberOfDays``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-retentionperiod.html#cfn-iotanalytics-dataset-retentionperiod-numberofdays
-    - ``p_Unlimited``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-retentionperiod.html#cfn-iotanalytics-dataset-retentionperiod-unlimited
-    """
-    AWS_OBJECT_TYPE = "AWS::IoTAnalytics::Dataset.RetentionPeriod"
-    
-    p_NumberOfDays: int = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "NumberOfDays"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-retentionperiod.html#cfn-iotanalytics-dataset-retentionperiod-numberofdays"""
-    p_Unlimited: bool = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(bool)),
-        metadata={AttrMeta.PROPERTY_NAME: "Unlimited"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-retentionperiod.html#cfn-iotanalytics-dataset-retentionperiod-unlimited"""
-
-@attr.s
 class PropDatasetS3DestinationConfiguration(Property):
     """
     AWS Object Type = "AWS::IoTAnalytics::Dataset.S3DestinationConfiguration"
@@ -606,6 +784,27 @@ class PropChannelServiceManagedS3(Property):
     
 
 @attr.s
+class PropDatastoreSchemaDefinition(Property):
+    """
+    AWS Object Type = "AWS::IoTAnalytics::Datastore.SchemaDefinition"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-schemadefinition.html
+
+    Property Document:
+    
+    - ``p_Columns``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-schemadefinition.html#cfn-iotanalytics-datastore-schemadefinition-columns
+    """
+    AWS_OBJECT_TYPE = "AWS::IoTAnalytics::Datastore.SchemaDefinition"
+    
+    p_Columns: typing.List[typing.Union['PropDatastoreColumn', dict]] = attr.ib(
+        default=None,
+        converter=PropDatastoreColumn.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDatastoreColumn), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "Columns"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-schemadefinition.html#cfn-iotanalytics-datastore-schemadefinition-columns"""
+
+@attr.s
 class PropPipelineLambda(Property):
     """
     AWS Object Type = "AWS::IoTAnalytics::Pipeline.Lambda"
@@ -647,110 +846,6 @@ class PropPipelineLambda(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-lambda.html#cfn-iotanalytics-pipeline-lambda-next"""
 
 @attr.s
-class PropDatastoreColumn(Property):
-    """
-    AWS Object Type = "AWS::IoTAnalytics::Datastore.Column"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-column.html
-
-    Property Document:
-    
-    - ``rp_Name``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-column.html#cfn-iotanalytics-datastore-column-name
-    - ``rp_Type``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-column.html#cfn-iotanalytics-datastore-column-type
-    """
-    AWS_OBJECT_TYPE = "AWS::IoTAnalytics::Datastore.Column"
-    
-    rp_Name: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Name"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-column.html#cfn-iotanalytics-datastore-column-name"""
-    rp_Type: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Type"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-column.html#cfn-iotanalytics-datastore-column-type"""
-
-@attr.s
-class PropDatasetVariable(Property):
-    """
-    AWS Object Type = "AWS::IoTAnalytics::Dataset.Variable"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-variable.html
-
-    Property Document:
-    
-    - ``rp_VariableName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-variable.html#cfn-iotanalytics-dataset-variable-variablename
-    - ``p_DatasetContentVersionValue``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-variable.html#cfn-iotanalytics-dataset-variable-datasetcontentversionvalue
-    - ``p_DoubleValue``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-variable.html#cfn-iotanalytics-dataset-variable-doublevalue
-    - ``p_OutputFileUriValue``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-variable.html#cfn-iotanalytics-dataset-variable-outputfileurivalue
-    - ``p_StringValue``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-variable.html#cfn-iotanalytics-dataset-variable-stringvalue
-    """
-    AWS_OBJECT_TYPE = "AWS::IoTAnalytics::Dataset.Variable"
-    
-    rp_VariableName: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "VariableName"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-variable.html#cfn-iotanalytics-dataset-variable-variablename"""
-    p_DatasetContentVersionValue: typing.Union['PropDatasetDatasetContentVersionValue', dict] = attr.ib(
-        default=None,
-        converter=PropDatasetDatasetContentVersionValue.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropDatasetDatasetContentVersionValue)),
-        metadata={AttrMeta.PROPERTY_NAME: "DatasetContentVersionValue"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-variable.html#cfn-iotanalytics-dataset-variable-datasetcontentversionvalue"""
-    p_DoubleValue: float = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(float)),
-        metadata={AttrMeta.PROPERTY_NAME: "DoubleValue"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-variable.html#cfn-iotanalytics-dataset-variable-doublevalue"""
-    p_OutputFileUriValue: typing.Union['PropDatasetOutputFileUriValue', dict] = attr.ib(
-        default=None,
-        converter=PropDatasetOutputFileUriValue.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropDatasetOutputFileUriValue)),
-        metadata={AttrMeta.PROPERTY_NAME: "OutputFileUriValue"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-variable.html#cfn-iotanalytics-dataset-variable-outputfileurivalue"""
-    p_StringValue: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "StringValue"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-variable.html#cfn-iotanalytics-dataset-variable-stringvalue"""
-
-@attr.s
-class PropDatasetDeltaTime(Property):
-    """
-    AWS Object Type = "AWS::IoTAnalytics::Dataset.DeltaTime"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-deltatime.html
-
-    Property Document:
-    
-    - ``rp_OffsetSeconds``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-deltatime.html#cfn-iotanalytics-dataset-deltatime-offsetseconds
-    - ``rp_TimeExpression``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-deltatime.html#cfn-iotanalytics-dataset-deltatime-timeexpression
-    """
-    AWS_OBJECT_TYPE = "AWS::IoTAnalytics::Dataset.DeltaTime"
-    
-    rp_OffsetSeconds: int = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(int),
-        metadata={AttrMeta.PROPERTY_NAME: "OffsetSeconds"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-deltatime.html#cfn-iotanalytics-dataset-deltatime-offsetseconds"""
-    rp_TimeExpression: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "TimeExpression"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-deltatime.html#cfn-iotanalytics-dataset-deltatime-timeexpression"""
-
-@attr.s
 class PropPipelineChannel(Property):
     """
     AWS Object Type = "AWS::IoTAnalytics::Pipeline.Channel"
@@ -783,40 +878,6 @@ class PropPipelineChannel(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Next"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-channel.html#cfn-iotanalytics-pipeline-channel-next"""
-
-@attr.s
-class PropPipelineFilter(Property):
-    """
-    AWS Object Type = "AWS::IoTAnalytics::Pipeline.Filter"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-filter.html
-
-    Property Document:
-    
-    - ``rp_Filter``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-filter.html#cfn-iotanalytics-pipeline-filter-filter
-    - ``rp_Name``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-filter.html#cfn-iotanalytics-pipeline-filter-name
-    - ``p_Next``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-filter.html#cfn-iotanalytics-pipeline-filter-next
-    """
-    AWS_OBJECT_TYPE = "AWS::IoTAnalytics::Pipeline.Filter"
-    
-    rp_Filter: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Filter"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-filter.html#cfn-iotanalytics-pipeline-filter-filter"""
-    rp_Name: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Name"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-filter.html#cfn-iotanalytics-pipeline-filter-name"""
-    p_Next: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Next"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-filter.html#cfn-iotanalytics-pipeline-filter-next"""
 
 @attr.s
 class PropDatasetIotEventsDestinationConfiguration(Property):
@@ -873,35 +934,6 @@ class PropDatastoreCustomerManagedS3Storage(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-customermanageds3storage.html#cfn-iotanalytics-datastore-customermanageds3storage-keyprefix"""
 
 @attr.s
-class PropChannelChannelStorage(Property):
-    """
-    AWS Object Type = "AWS::IoTAnalytics::Channel.ChannelStorage"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-channel-channelstorage.html
-
-    Property Document:
-    
-    - ``p_CustomerManagedS3``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-channel-channelstorage.html#cfn-iotanalytics-channel-channelstorage-customermanageds3
-    - ``p_ServiceManagedS3``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-channel-channelstorage.html#cfn-iotanalytics-channel-channelstorage-servicemanageds3
-    """
-    AWS_OBJECT_TYPE = "AWS::IoTAnalytics::Channel.ChannelStorage"
-    
-    p_CustomerManagedS3: typing.Union['PropChannelCustomerManagedS3', dict] = attr.ib(
-        default=None,
-        converter=PropChannelCustomerManagedS3.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropChannelCustomerManagedS3)),
-        metadata={AttrMeta.PROPERTY_NAME: "CustomerManagedS3"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-channel-channelstorage.html#cfn-iotanalytics-channel-channelstorage-customermanageds3"""
-    p_ServiceManagedS3: typing.Union['PropChannelServiceManagedS3', dict] = attr.ib(
-        default=None,
-        converter=PropChannelServiceManagedS3.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropChannelServiceManagedS3)),
-        metadata={AttrMeta.PROPERTY_NAME: "ServiceManagedS3"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-channel-channelstorage.html#cfn-iotanalytics-channel-channelstorage-servicemanageds3"""
-
-@attr.s
 class PropDatastorePartition(Property):
     """
     AWS Object Type = "AWS::IoTAnalytics::Datastore.Partition"
@@ -922,45 +954,33 @@ class PropDatastorePartition(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-partition.html#cfn-iotanalytics-datastore-partition-attributename"""
 
 @attr.s
-class PropPipelineMath(Property):
+class PropDatastoreDatastorePartition(Property):
     """
-    AWS Object Type = "AWS::IoTAnalytics::Pipeline.Math"
+    AWS Object Type = "AWS::IoTAnalytics::Datastore.DatastorePartition"
 
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-math.html
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-datastorepartition.html
 
     Property Document:
     
-    - ``rp_Attribute``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-math.html#cfn-iotanalytics-pipeline-math-attribute
-    - ``rp_Math``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-math.html#cfn-iotanalytics-pipeline-math-math
-    - ``rp_Name``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-math.html#cfn-iotanalytics-pipeline-math-name
-    - ``p_Next``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-math.html#cfn-iotanalytics-pipeline-math-next
+    - ``p_Partition``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-datastorepartition.html#cfn-iotanalytics-datastore-datastorepartition-partition
+    - ``p_TimestampPartition``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-datastorepartition.html#cfn-iotanalytics-datastore-datastorepartition-timestamppartition
     """
-    AWS_OBJECT_TYPE = "AWS::IoTAnalytics::Pipeline.Math"
+    AWS_OBJECT_TYPE = "AWS::IoTAnalytics::Datastore.DatastorePartition"
     
-    rp_Attribute: TypeHint.intrinsic_str = attr.ib(
+    p_Partition: typing.Union['PropDatastorePartition', dict] = attr.ib(
         default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Attribute"},
+        converter=PropDatastorePartition.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDatastorePartition)),
+        metadata={AttrMeta.PROPERTY_NAME: "Partition"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-math.html#cfn-iotanalytics-pipeline-math-attribute"""
-    rp_Math: TypeHint.intrinsic_str = attr.ib(
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-datastorepartition.html#cfn-iotanalytics-datastore-datastorepartition-partition"""
+    p_TimestampPartition: typing.Union['PropDatastoreTimestampPartition', dict] = attr.ib(
         default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Math"},
+        converter=PropDatastoreTimestampPartition.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDatastoreTimestampPartition)),
+        metadata={AttrMeta.PROPERTY_NAME: "TimestampPartition"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-math.html#cfn-iotanalytics-pipeline-math-math"""
-    rp_Name: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Name"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-math.html#cfn-iotanalytics-pipeline-math-name"""
-    p_Next: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Next"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-math.html#cfn-iotanalytics-pipeline-math-next"""
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-datastorepartition.html#cfn-iotanalytics-datastore-datastorepartition-timestamppartition"""
 
 @attr.s
 class PropDatasetResourceConfiguration(Property):
@@ -1044,33 +1064,6 @@ class PropPipelineAddAttributes(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-addattributes.html#cfn-iotanalytics-pipeline-addattributes-next"""
 
 @attr.s
-class PropDatastoreTimestampPartition(Property):
-    """
-    AWS Object Type = "AWS::IoTAnalytics::Datastore.TimestampPartition"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-timestamppartition.html
-
-    Property Document:
-    
-    - ``rp_AttributeName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-timestamppartition.html#cfn-iotanalytics-datastore-timestamppartition-attributename
-    - ``p_TimestampFormat``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-timestamppartition.html#cfn-iotanalytics-datastore-timestamppartition-timestampformat
-    """
-    AWS_OBJECT_TYPE = "AWS::IoTAnalytics::Datastore.TimestampPartition"
-    
-    rp_AttributeName: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "AttributeName"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-timestamppartition.html#cfn-iotanalytics-datastore-timestamppartition-attributename"""
-    p_TimestampFormat: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "TimestampFormat"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-timestamppartition.html#cfn-iotanalytics-datastore-timestamppartition-timestampformat"""
-
-@attr.s
 class PropDatastoreJsonConfiguration(Property):
     """
     AWS Object Type = "AWS::IoTAnalytics::Datastore.JsonConfiguration"
@@ -1105,6 +1098,112 @@ class PropDatasetFilter(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-filter.html#cfn-iotanalytics-dataset-filter-deltatime"""
 
 @attr.s
+class PropDatasetLateDataRule(Property):
+    """
+    AWS Object Type = "AWS::IoTAnalytics::Dataset.LateDataRule"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-latedatarule.html
+
+    Property Document:
+    
+    - ``rp_RuleConfiguration``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-latedatarule.html#cfn-iotanalytics-dataset-latedatarule-ruleconfiguration
+    - ``p_RuleName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-latedatarule.html#cfn-iotanalytics-dataset-latedatarule-rulename
+    """
+    AWS_OBJECT_TYPE = "AWS::IoTAnalytics::Dataset.LateDataRule"
+    
+    rp_RuleConfiguration: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "RuleConfiguration"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-latedatarule.html#cfn-iotanalytics-dataset-latedatarule-ruleconfiguration"""
+    p_RuleName: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "RuleName"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-latedatarule.html#cfn-iotanalytics-dataset-latedatarule-rulename"""
+
+@attr.s
+class PropDatasetDatasetContentDeliveryRuleDestination(Property):
+    """
+    AWS Object Type = "AWS::IoTAnalytics::Dataset.DatasetContentDeliveryRuleDestination"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-datasetcontentdeliveryruledestination.html
+
+    Property Document:
+    
+    - ``p_IotEventsDestinationConfiguration``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-datasetcontentdeliveryruledestination.html#cfn-iotanalytics-dataset-datasetcontentdeliveryruledestination-ioteventsdestinationconfiguration
+    - ``p_S3DestinationConfiguration``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-datasetcontentdeliveryruledestination.html#cfn-iotanalytics-dataset-datasetcontentdeliveryruledestination-s3destinationconfiguration
+    """
+    AWS_OBJECT_TYPE = "AWS::IoTAnalytics::Dataset.DatasetContentDeliveryRuleDestination"
+    
+    p_IotEventsDestinationConfiguration: typing.Union['PropDatasetIotEventsDestinationConfiguration', dict] = attr.ib(
+        default=None,
+        converter=PropDatasetIotEventsDestinationConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDatasetIotEventsDestinationConfiguration)),
+        metadata={AttrMeta.PROPERTY_NAME: "IotEventsDestinationConfiguration"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-datasetcontentdeliveryruledestination.html#cfn-iotanalytics-dataset-datasetcontentdeliveryruledestination-ioteventsdestinationconfiguration"""
+    p_S3DestinationConfiguration: typing.Union['PropDatasetS3DestinationConfiguration', dict] = attr.ib(
+        default=None,
+        converter=PropDatasetS3DestinationConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDatasetS3DestinationConfiguration)),
+        metadata={AttrMeta.PROPERTY_NAME: "S3DestinationConfiguration"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-datasetcontentdeliveryruledestination.html#cfn-iotanalytics-dataset-datasetcontentdeliveryruledestination-s3destinationconfiguration"""
+
+@attr.s
+class PropDatastoreParquetConfiguration(Property):
+    """
+    AWS Object Type = "AWS::IoTAnalytics::Datastore.ParquetConfiguration"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-parquetconfiguration.html
+
+    Property Document:
+    
+    - ``p_SchemaDefinition``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-parquetconfiguration.html#cfn-iotanalytics-datastore-parquetconfiguration-schemadefinition
+    """
+    AWS_OBJECT_TYPE = "AWS::IoTAnalytics::Datastore.ParquetConfiguration"
+    
+    p_SchemaDefinition: typing.Union['PropDatastoreSchemaDefinition', dict] = attr.ib(
+        default=None,
+        converter=PropDatastoreSchemaDefinition.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDatastoreSchemaDefinition)),
+        metadata={AttrMeta.PROPERTY_NAME: "SchemaDefinition"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-parquetconfiguration.html#cfn-iotanalytics-datastore-parquetconfiguration-schemadefinition"""
+
+@attr.s
+class PropChannelChannelStorage(Property):
+    """
+    AWS Object Type = "AWS::IoTAnalytics::Channel.ChannelStorage"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-channel-channelstorage.html
+
+    Property Document:
+    
+    - ``p_CustomerManagedS3``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-channel-channelstorage.html#cfn-iotanalytics-channel-channelstorage-customermanageds3
+    - ``p_ServiceManagedS3``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-channel-channelstorage.html#cfn-iotanalytics-channel-channelstorage-servicemanageds3
+    """
+    AWS_OBJECT_TYPE = "AWS::IoTAnalytics::Channel.ChannelStorage"
+    
+    p_CustomerManagedS3: typing.Union['PropChannelCustomerManagedS3', dict] = attr.ib(
+        default=None,
+        converter=PropChannelCustomerManagedS3.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelCustomerManagedS3)),
+        metadata={AttrMeta.PROPERTY_NAME: "CustomerManagedS3"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-channel-channelstorage.html#cfn-iotanalytics-channel-channelstorage-customermanageds3"""
+    p_ServiceManagedS3: typing.Union['PropChannelServiceManagedS3', dict] = attr.ib(
+        default=None,
+        converter=PropChannelServiceManagedS3.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelServiceManagedS3)),
+        metadata={AttrMeta.PROPERTY_NAME: "ServiceManagedS3"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-channel-channelstorage.html#cfn-iotanalytics-channel-channelstorage-servicemanageds3"""
+
+@attr.s
 class PropDatastoreIotSiteWiseMultiLayerStorage(Property):
     """
     AWS Object Type = "AWS::IoTAnalytics::Datastore.IotSiteWiseMultiLayerStorage"
@@ -1124,6 +1223,33 @@ class PropDatastoreIotSiteWiseMultiLayerStorage(Property):
         metadata={AttrMeta.PROPERTY_NAME: "CustomerManagedS3Storage"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-iotsitewisemultilayerstorage.html#cfn-iotanalytics-datastore-iotsitewisemultilayerstorage-customermanageds3storage"""
+
+@attr.s
+class PropDatasetDatasetContentDeliveryRule(Property):
+    """
+    AWS Object Type = "AWS::IoTAnalytics::Dataset.DatasetContentDeliveryRule"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-datasetcontentdeliveryrule.html
+
+    Property Document:
+    
+    - ``rp_Destination``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-datasetcontentdeliveryrule.html#cfn-iotanalytics-dataset-datasetcontentdeliveryrule-destination
+    - ``p_EntryName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-datasetcontentdeliveryrule.html#cfn-iotanalytics-dataset-datasetcontentdeliveryrule-entryname
+    """
+    AWS_OBJECT_TYPE = "AWS::IoTAnalytics::Dataset.DatasetContentDeliveryRule"
+    
+    rp_Destination: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "Destination"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-datasetcontentdeliveryrule.html#cfn-iotanalytics-dataset-datasetcontentdeliveryrule-destination"""
+    p_EntryName: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "EntryName"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-datasetcontentdeliveryrule.html#cfn-iotanalytics-dataset-datasetcontentdeliveryrule-entryname"""
 
 @attr.s
 class PropDatasetContainerAction(Property):
@@ -1197,112 +1323,25 @@ class PropDatasetQueryAction(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-queryaction.html#cfn-iotanalytics-dataset-queryaction-filters"""
 
 @attr.s
-class PropDatasetDatasetContentDeliveryRuleDestination(Property):
+class PropDatastoreDatastorePartitions(Property):
     """
-    AWS Object Type = "AWS::IoTAnalytics::Dataset.DatasetContentDeliveryRuleDestination"
+    AWS Object Type = "AWS::IoTAnalytics::Datastore.DatastorePartitions"
 
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-datasetcontentdeliveryruledestination.html
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-datastorepartitions.html
 
     Property Document:
     
-    - ``p_IotEventsDestinationConfiguration``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-datasetcontentdeliveryruledestination.html#cfn-iotanalytics-dataset-datasetcontentdeliveryruledestination-ioteventsdestinationconfiguration
-    - ``p_S3DestinationConfiguration``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-datasetcontentdeliveryruledestination.html#cfn-iotanalytics-dataset-datasetcontentdeliveryruledestination-s3destinationconfiguration
+    - ``p_Partitions``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-datastorepartitions.html#cfn-iotanalytics-datastore-datastorepartitions-partitions
     """
-    AWS_OBJECT_TYPE = "AWS::IoTAnalytics::Dataset.DatasetContentDeliveryRuleDestination"
+    AWS_OBJECT_TYPE = "AWS::IoTAnalytics::Datastore.DatastorePartitions"
     
-    p_IotEventsDestinationConfiguration: typing.Union['PropDatasetIotEventsDestinationConfiguration', dict] = attr.ib(
+    p_Partitions: typing.List[typing.Union['PropDatastoreDatastorePartition', dict]] = attr.ib(
         default=None,
-        converter=PropDatasetIotEventsDestinationConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropDatasetIotEventsDestinationConfiguration)),
-        metadata={AttrMeta.PROPERTY_NAME: "IotEventsDestinationConfiguration"},
+        converter=PropDatastoreDatastorePartition.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDatastoreDatastorePartition), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "Partitions"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-datasetcontentdeliveryruledestination.html#cfn-iotanalytics-dataset-datasetcontentdeliveryruledestination-ioteventsdestinationconfiguration"""
-    p_S3DestinationConfiguration: typing.Union['PropDatasetS3DestinationConfiguration', dict] = attr.ib(
-        default=None,
-        converter=PropDatasetS3DestinationConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropDatasetS3DestinationConfiguration)),
-        metadata={AttrMeta.PROPERTY_NAME: "S3DestinationConfiguration"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-datasetcontentdeliveryruledestination.html#cfn-iotanalytics-dataset-datasetcontentdeliveryruledestination-s3destinationconfiguration"""
-
-@attr.s
-class PropDatastoreSchemaDefinition(Property):
-    """
-    AWS Object Type = "AWS::IoTAnalytics::Datastore.SchemaDefinition"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-schemadefinition.html
-
-    Property Document:
-    
-    - ``p_Columns``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-schemadefinition.html#cfn-iotanalytics-datastore-schemadefinition-columns
-    """
-    AWS_OBJECT_TYPE = "AWS::IoTAnalytics::Datastore.SchemaDefinition"
-    
-    p_Columns: typing.List[typing.Union['PropDatastoreColumn', dict]] = attr.ib(
-        default=None,
-        converter=PropDatastoreColumn.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDatastoreColumn), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Columns"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-schemadefinition.html#cfn-iotanalytics-datastore-schemadefinition-columns"""
-
-@attr.s
-class PropDatastoreParquetConfiguration(Property):
-    """
-    AWS Object Type = "AWS::IoTAnalytics::Datastore.ParquetConfiguration"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-parquetconfiguration.html
-
-    Property Document:
-    
-    - ``p_SchemaDefinition``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-parquetconfiguration.html#cfn-iotanalytics-datastore-parquetconfiguration-schemadefinition
-    """
-    AWS_OBJECT_TYPE = "AWS::IoTAnalytics::Datastore.ParquetConfiguration"
-    
-    p_SchemaDefinition: typing.Union['PropDatastoreSchemaDefinition', dict] = attr.ib(
-        default=None,
-        converter=PropDatastoreSchemaDefinition.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropDatastoreSchemaDefinition)),
-        metadata={AttrMeta.PROPERTY_NAME: "SchemaDefinition"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-parquetconfiguration.html#cfn-iotanalytics-datastore-parquetconfiguration-schemadefinition"""
-
-@attr.s
-class PropDatastoreDatastoreStorage(Property):
-    """
-    AWS Object Type = "AWS::IoTAnalytics::Datastore.DatastoreStorage"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-datastorestorage.html
-
-    Property Document:
-    
-    - ``p_CustomerManagedS3``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-datastorestorage.html#cfn-iotanalytics-datastore-datastorestorage-customermanageds3
-    - ``p_IotSiteWiseMultiLayerStorage``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-datastorestorage.html#cfn-iotanalytics-datastore-datastorestorage-iotsitewisemultilayerstorage
-    - ``p_ServiceManagedS3``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-datastorestorage.html#cfn-iotanalytics-datastore-datastorestorage-servicemanageds3
-    """
-    AWS_OBJECT_TYPE = "AWS::IoTAnalytics::Datastore.DatastoreStorage"
-    
-    p_CustomerManagedS3: typing.Union['PropDatastoreCustomerManagedS3', dict] = attr.ib(
-        default=None,
-        converter=PropDatastoreCustomerManagedS3.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropDatastoreCustomerManagedS3)),
-        metadata={AttrMeta.PROPERTY_NAME: "CustomerManagedS3"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-datastorestorage.html#cfn-iotanalytics-datastore-datastorestorage-customermanageds3"""
-    p_IotSiteWiseMultiLayerStorage: typing.Union['PropDatastoreIotSiteWiseMultiLayerStorage', dict] = attr.ib(
-        default=None,
-        converter=PropDatastoreIotSiteWiseMultiLayerStorage.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropDatastoreIotSiteWiseMultiLayerStorage)),
-        metadata={AttrMeta.PROPERTY_NAME: "IotSiteWiseMultiLayerStorage"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-datastorestorage.html#cfn-iotanalytics-datastore-datastorestorage-iotsitewisemultilayerstorage"""
-    p_ServiceManagedS3: typing.Union['PropDatastoreServiceManagedS3', dict] = attr.ib(
-        default=None,
-        converter=PropDatastoreServiceManagedS3.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropDatastoreServiceManagedS3)),
-        metadata={AttrMeta.PROPERTY_NAME: "ServiceManagedS3"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-datastorestorage.html#cfn-iotanalytics-datastore-datastorestorage-servicemanageds3"""
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-datastorepartitions.html#cfn-iotanalytics-datastore-datastorepartitions-partitions"""
 
 @attr.s
 class PropDatasetTrigger(Property):
@@ -1427,35 +1466,6 @@ class PropPipelineActivity(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-activity.html#cfn-iotanalytics-pipeline-activity-selectattributes"""
 
 @attr.s
-class PropDatastoreDatastorePartition(Property):
-    """
-    AWS Object Type = "AWS::IoTAnalytics::Datastore.DatastorePartition"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-datastorepartition.html
-
-    Property Document:
-    
-    - ``p_Partition``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-datastorepartition.html#cfn-iotanalytics-datastore-datastorepartition-partition
-    - ``p_TimestampPartition``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-datastorepartition.html#cfn-iotanalytics-datastore-datastorepartition-timestamppartition
-    """
-    AWS_OBJECT_TYPE = "AWS::IoTAnalytics::Datastore.DatastorePartition"
-    
-    p_Partition: typing.Union['PropDatastorePartition', dict] = attr.ib(
-        default=None,
-        converter=PropDatastorePartition.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropDatastorePartition)),
-        metadata={AttrMeta.PROPERTY_NAME: "Partition"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-datastorepartition.html#cfn-iotanalytics-datastore-datastorepartition-partition"""
-    p_TimestampPartition: typing.Union['PropDatastoreTimestampPartition', dict] = attr.ib(
-        default=None,
-        converter=PropDatastoreTimestampPartition.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropDatastoreTimestampPartition)),
-        metadata={AttrMeta.PROPERTY_NAME: "TimestampPartition"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-datastorepartition.html#cfn-iotanalytics-datastore-datastorepartition-timestamppartition"""
-
-@attr.s
 class PropDatastoreFileFormatConfiguration(Property):
     """
     AWS Object Type = "AWS::IoTAnalytics::Datastore.FileFormatConfiguration"
@@ -1483,34 +1493,6 @@ class PropDatastoreFileFormatConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "ParquetConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-fileformatconfiguration.html#cfn-iotanalytics-datastore-fileformatconfiguration-parquetconfiguration"""
-
-@attr.s
-class PropDatasetDatasetContentDeliveryRule(Property):
-    """
-    AWS Object Type = "AWS::IoTAnalytics::Dataset.DatasetContentDeliveryRule"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-datasetcontentdeliveryrule.html
-
-    Property Document:
-    
-    - ``rp_Destination``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-datasetcontentdeliveryrule.html#cfn-iotanalytics-dataset-datasetcontentdeliveryrule-destination
-    - ``p_EntryName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-datasetcontentdeliveryrule.html#cfn-iotanalytics-dataset-datasetcontentdeliveryrule-entryname
-    """
-    AWS_OBJECT_TYPE = "AWS::IoTAnalytics::Dataset.DatasetContentDeliveryRule"
-    
-    rp_Destination: typing.Union['PropDatasetDatasetContentDeliveryRuleDestination', dict] = attr.ib(
-        default=None,
-        converter=PropDatasetDatasetContentDeliveryRuleDestination.from_dict,
-        validator=attr.validators.instance_of(PropDatasetDatasetContentDeliveryRuleDestination),
-        metadata={AttrMeta.PROPERTY_NAME: "Destination"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-datasetcontentdeliveryrule.html#cfn-iotanalytics-dataset-datasetcontentdeliveryrule-destination"""
-    p_EntryName: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "EntryName"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-datasetcontentdeliveryrule.html#cfn-iotanalytics-dataset-datasetcontentdeliveryrule-entryname"""
 
 @attr.s
 class PropDatasetAction(Property):
@@ -1549,25 +1531,41 @@ class PropDatasetAction(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-action.html#cfn-iotanalytics-dataset-action-queryaction"""
 
 @attr.s
-class PropDatastoreDatastorePartitions(Property):
+class PropDatastoreDatastoreStorage(Property):
     """
-    AWS Object Type = "AWS::IoTAnalytics::Datastore.DatastorePartitions"
+    AWS Object Type = "AWS::IoTAnalytics::Datastore.DatastoreStorage"
 
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-datastorepartitions.html
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-datastorestorage.html
 
     Property Document:
     
-    - ``p_Partitions``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-datastorepartitions.html#cfn-iotanalytics-datastore-datastorepartitions-partitions
+    - ``p_CustomerManagedS3``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-datastorestorage.html#cfn-iotanalytics-datastore-datastorestorage-customermanageds3
+    - ``p_IotSiteWiseMultiLayerStorage``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-datastorestorage.html#cfn-iotanalytics-datastore-datastorestorage-iotsitewisemultilayerstorage
+    - ``p_ServiceManagedS3``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-datastorestorage.html#cfn-iotanalytics-datastore-datastorestorage-servicemanageds3
     """
-    AWS_OBJECT_TYPE = "AWS::IoTAnalytics::Datastore.DatastorePartitions"
+    AWS_OBJECT_TYPE = "AWS::IoTAnalytics::Datastore.DatastoreStorage"
     
-    p_Partitions: typing.List[typing.Union['PropDatastoreDatastorePartition', dict]] = attr.ib(
+    p_CustomerManagedS3: typing.Union['PropDatastoreCustomerManagedS3', dict] = attr.ib(
         default=None,
-        converter=PropDatastoreDatastorePartition.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDatastoreDatastorePartition), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Partitions"},
+        converter=PropDatastoreCustomerManagedS3.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDatastoreCustomerManagedS3)),
+        metadata={AttrMeta.PROPERTY_NAME: "CustomerManagedS3"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-datastorepartitions.html#cfn-iotanalytics-datastore-datastorepartitions-partitions"""
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-datastorestorage.html#cfn-iotanalytics-datastore-datastorestorage-customermanageds3"""
+    p_IotSiteWiseMultiLayerStorage: typing.Union['PropDatastoreIotSiteWiseMultiLayerStorage', dict] = attr.ib(
+        default=None,
+        converter=PropDatastoreIotSiteWiseMultiLayerStorage.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDatastoreIotSiteWiseMultiLayerStorage)),
+        metadata={AttrMeta.PROPERTY_NAME: "IotSiteWiseMultiLayerStorage"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-datastorestorage.html#cfn-iotanalytics-datastore-datastorestorage-iotsitewisemultilayerstorage"""
+    p_ServiceManagedS3: typing.Union['PropDatastoreServiceManagedS3', dict] = attr.ib(
+        default=None,
+        converter=PropDatastoreServiceManagedS3.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDatastoreServiceManagedS3)),
+        metadata={AttrMeta.PROPERTY_NAME: "ServiceManagedS3"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-datastorestorage.html#cfn-iotanalytics-datastore-datastorestorage-servicemanageds3"""
 
 
 #--- Resource declaration ---
@@ -1592,28 +1590,58 @@ class Channel(Resource):
     p_ChannelName: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "ChannelName"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ChannelName",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotanalytics-channel.html#cfn-iotanalytics-channel-channelname"""
     p_ChannelStorage: typing.Union['PropChannelChannelStorage', dict] = attr.ib(
         default=None,
         converter=PropChannelChannelStorage.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropChannelChannelStorage)),
-        metadata={AttrMeta.PROPERTY_NAME: "ChannelStorage"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ChannelStorage",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'ChannelStorage',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotanalytics-channel.html#cfn-iotanalytics-channel-channelstorage"""
     p_RetentionPeriod: typing.Union['PropChannelRetentionPeriod', dict] = attr.ib(
         default=None,
         converter=PropChannelRetentionPeriod.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropChannelRetentionPeriod)),
-        metadata={AttrMeta.PROPERTY_NAME: "RetentionPeriod"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "RetentionPeriod",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'RetentionPeriod',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotanalytics-channel.html#cfn-iotanalytics-channel-retentionperiod"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'List',
+                "ItemType": 'Tag',
+                "DuplicatesAllowed": True,
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotanalytics-channel.html#cfn-iotanalytics-channel-tags"""
 
@@ -1646,42 +1674,86 @@ class Datastore(Resource):
     p_DatastoreName: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "DatastoreName"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "DatastoreName",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotanalytics-datastore.html#cfn-iotanalytics-datastore-datastorename"""
     p_DatastorePartitions: typing.Union['PropDatastoreDatastorePartitions', dict] = attr.ib(
         default=None,
         converter=PropDatastoreDatastorePartitions.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropDatastoreDatastorePartitions)),
-        metadata={AttrMeta.PROPERTY_NAME: "DatastorePartitions"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "DatastorePartitions",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'DatastorePartitions',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotanalytics-datastore.html#cfn-iotanalytics-datastore-datastorepartitions"""
     p_DatastoreStorage: typing.Union['PropDatastoreDatastoreStorage', dict] = attr.ib(
         default=None,
         converter=PropDatastoreDatastoreStorage.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropDatastoreDatastoreStorage)),
-        metadata={AttrMeta.PROPERTY_NAME: "DatastoreStorage"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "DatastoreStorage",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'DatastoreStorage',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotanalytics-datastore.html#cfn-iotanalytics-datastore-datastorestorage"""
     p_FileFormatConfiguration: typing.Union['PropDatastoreFileFormatConfiguration', dict] = attr.ib(
         default=None,
         converter=PropDatastoreFileFormatConfiguration.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropDatastoreFileFormatConfiguration)),
-        metadata={AttrMeta.PROPERTY_NAME: "FileFormatConfiguration"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "FileFormatConfiguration",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'FileFormatConfiguration',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotanalytics-datastore.html#cfn-iotanalytics-datastore-fileformatconfiguration"""
     p_RetentionPeriod: typing.Union['PropDatastoreRetentionPeriod', dict] = attr.ib(
         default=None,
         converter=PropDatastoreRetentionPeriod.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropDatastoreRetentionPeriod)),
-        metadata={AttrMeta.PROPERTY_NAME: "RetentionPeriod"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "RetentionPeriod",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'RetentionPeriod',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotanalytics-datastore.html#cfn-iotanalytics-datastore-retentionperiod"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'List',
+                "ItemType": 'Tag',
+                "DuplicatesAllowed": True,
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotanalytics-datastore.html#cfn-iotanalytics-datastore-tags"""
 
@@ -1717,55 +1789,121 @@ class Dataset(Resource):
         default=None,
         converter=PropDatasetAction.from_list,
         validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDatasetAction), iterable_validator=attr.validators.instance_of(list)),
-        metadata={AttrMeta.PROPERTY_NAME: "Actions"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Actions",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": True,
+                "Type": 'List',
+                "ItemType": 'Action',
+                "DuplicatesAllowed": True,
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotanalytics-dataset.html#cfn-iotanalytics-dataset-actions"""
     p_ContentDeliveryRules: typing.List[typing.Union['PropDatasetDatasetContentDeliveryRule', dict]] = attr.ib(
         default=None,
         converter=PropDatasetDatasetContentDeliveryRule.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDatasetDatasetContentDeliveryRule), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "ContentDeliveryRules"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ContentDeliveryRules",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'List',
+                "ItemType": 'DatasetContentDeliveryRule',
+                "DuplicatesAllowed": True,
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotanalytics-dataset.html#cfn-iotanalytics-dataset-contentdeliveryrules"""
     p_DatasetName: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "DatasetName"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "DatasetName",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotanalytics-dataset.html#cfn-iotanalytics-dataset-datasetname"""
     p_LateDataRules: typing.List[typing.Union['PropDatasetLateDataRule', dict]] = attr.ib(
         default=None,
         converter=PropDatasetLateDataRule.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDatasetLateDataRule), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "LateDataRules"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "LateDataRules",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'List',
+                "ItemType": 'LateDataRule',
+                "DuplicatesAllowed": True,
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotanalytics-dataset.html#cfn-iotanalytics-dataset-latedatarules"""
     p_RetentionPeriod: typing.Union['PropDatasetRetentionPeriod', dict] = attr.ib(
         default=None,
         converter=PropDatasetRetentionPeriod.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropDatasetRetentionPeriod)),
-        metadata={AttrMeta.PROPERTY_NAME: "RetentionPeriod"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "RetentionPeriod",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'RetentionPeriod',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotanalytics-dataset.html#cfn-iotanalytics-dataset-retentionperiod"""
     p_Triggers: typing.List[typing.Union['PropDatasetTrigger', dict]] = attr.ib(
         default=None,
         converter=PropDatasetTrigger.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDatasetTrigger), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Triggers"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Triggers",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'List',
+                "ItemType": 'Trigger',
+                "DuplicatesAllowed": True,
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotanalytics-dataset.html#cfn-iotanalytics-dataset-triggers"""
     p_VersioningConfiguration: typing.Union['PropDatasetVersioningConfiguration', dict] = attr.ib(
         default=None,
         converter=PropDatasetVersioningConfiguration.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropDatasetVersioningConfiguration)),
-        metadata={AttrMeta.PROPERTY_NAME: "VersioningConfiguration"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "VersioningConfiguration",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'VersioningConfiguration',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotanalytics-dataset.html#cfn-iotanalytics-dataset-versioningconfiguration"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'List',
+                "ItemType": 'Tag',
+                "DuplicatesAllowed": True,
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotanalytics-dataset.html#cfn-iotanalytics-dataset-tags"""
 
@@ -1796,20 +1934,45 @@ class Pipeline(Resource):
         default=None,
         converter=PropPipelineActivity.from_list,
         validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropPipelineActivity), iterable_validator=attr.validators.instance_of(list)),
-        metadata={AttrMeta.PROPERTY_NAME: "PipelineActivities"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "PipelineActivities",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": True,
+                "Type": 'List',
+                "ItemType": 'Activity',
+                "DuplicatesAllowed": True,
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotanalytics-pipeline.html#cfn-iotanalytics-pipeline-pipelineactivities"""
     p_PipelineName: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "PipelineName"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "PipelineName",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotanalytics-pipeline.html#cfn-iotanalytics-pipeline-pipelinename"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'List',
+                "ItemType": 'Tag',
+                "DuplicatesAllowed": True,
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotanalytics-pipeline.html#cfn-iotanalytics-pipeline-tags"""
 

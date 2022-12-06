@@ -35,6 +35,47 @@ class PropScheduledQuerySnsConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-scheduledquery-snsconfiguration.html#cfn-timestream-scheduledquery-snsconfiguration-topicarn"""
 
 @attr.s
+class PropScheduledQueryScheduleConfiguration(Property):
+    """
+    AWS Object Type = "AWS::Timestream::ScheduledQuery.ScheduleConfiguration"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-scheduledquery-scheduleconfiguration.html
+
+    Property Document:
+    
+    - ``rp_ScheduleExpression``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-scheduledquery-scheduleconfiguration.html#cfn-timestream-scheduledquery-scheduleconfiguration-scheduleexpression
+    """
+    AWS_OBJECT_TYPE = "AWS::Timestream::ScheduledQuery.ScheduleConfiguration"
+    
+    rp_ScheduleExpression: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "ScheduleExpression"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-scheduledquery-scheduleconfiguration.html#cfn-timestream-scheduledquery-scheduleconfiguration-scheduleexpression"""
+
+@attr.s
+class PropScheduledQueryNotificationConfiguration(Property):
+    """
+    AWS Object Type = "AWS::Timestream::ScheduledQuery.NotificationConfiguration"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-scheduledquery-notificationconfiguration.html
+
+    Property Document:
+    
+    - ``rp_SnsConfiguration``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-scheduledquery-notificationconfiguration.html#cfn-timestream-scheduledquery-notificationconfiguration-snsconfiguration
+    """
+    AWS_OBJECT_TYPE = "AWS::Timestream::ScheduledQuery.NotificationConfiguration"
+    
+    rp_SnsConfiguration: typing.Union['PropScheduledQuerySnsConfiguration', dict] = attr.ib(
+        default=None,
+        converter=PropScheduledQuerySnsConfiguration.from_dict,
+        validator=attr.validators.instance_of(PropScheduledQuerySnsConfiguration),
+        metadata={AttrMeta.PROPERTY_NAME: "SnsConfiguration"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-scheduledquery-notificationconfiguration.html#cfn-timestream-scheduledquery-notificationconfiguration-snsconfiguration"""
+
+@attr.s
 class PropScheduledQueryS3Configuration(Property):
     """
     AWS Object Type = "AWS::Timestream::ScheduledQuery.S3Configuration"
@@ -67,47 +108,6 @@ class PropScheduledQueryS3Configuration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "ObjectKeyPrefix"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-scheduledquery-s3configuration.html#cfn-timestream-scheduledquery-s3configuration-objectkeyprefix"""
-
-@attr.s
-class PropScheduledQueryScheduleConfiguration(Property):
-    """
-    AWS Object Type = "AWS::Timestream::ScheduledQuery.ScheduleConfiguration"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-scheduledquery-scheduleconfiguration.html
-
-    Property Document:
-    
-    - ``rp_ScheduleExpression``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-scheduledquery-scheduleconfiguration.html#cfn-timestream-scheduledquery-scheduleconfiguration-scheduleexpression
-    """
-    AWS_OBJECT_TYPE = "AWS::Timestream::ScheduledQuery.ScheduleConfiguration"
-    
-    rp_ScheduleExpression: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "ScheduleExpression"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-scheduledquery-scheduleconfiguration.html#cfn-timestream-scheduledquery-scheduleconfiguration-scheduleexpression"""
-
-@attr.s
-class PropScheduledQueryErrorReportConfiguration(Property):
-    """
-    AWS Object Type = "AWS::Timestream::ScheduledQuery.ErrorReportConfiguration"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-scheduledquery-errorreportconfiguration.html
-
-    Property Document:
-    
-    - ``rp_S3Configuration``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-scheduledquery-errorreportconfiguration.html#cfn-timestream-scheduledquery-errorreportconfiguration-s3configuration
-    """
-    AWS_OBJECT_TYPE = "AWS::Timestream::ScheduledQuery.ErrorReportConfiguration"
-    
-    rp_S3Configuration: typing.Union['PropScheduledQueryS3Configuration', dict] = attr.ib(
-        default=None,
-        converter=PropScheduledQueryS3Configuration.from_dict,
-        validator=attr.validators.instance_of(PropScheduledQueryS3Configuration),
-        metadata={AttrMeta.PROPERTY_NAME: "S3Configuration"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-scheduledquery-errorreportconfiguration.html#cfn-timestream-scheduledquery-errorreportconfiguration-s3configuration"""
 
 @attr.s
 class PropScheduledQueryDimensionMapping(Property):
@@ -171,6 +171,27 @@ class PropScheduledQueryMultiMeasureAttributeMapping(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-scheduledquery-multimeasureattributemapping.html#cfn-timestream-scheduledquery-multimeasureattributemapping-targetmultimeasureattributename"""
 
 @attr.s
+class PropScheduledQueryErrorReportConfiguration(Property):
+    """
+    AWS Object Type = "AWS::Timestream::ScheduledQuery.ErrorReportConfiguration"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-scheduledquery-errorreportconfiguration.html
+
+    Property Document:
+    
+    - ``rp_S3Configuration``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-scheduledquery-errorreportconfiguration.html#cfn-timestream-scheduledquery-errorreportconfiguration-s3configuration
+    """
+    AWS_OBJECT_TYPE = "AWS::Timestream::ScheduledQuery.ErrorReportConfiguration"
+    
+    rp_S3Configuration: typing.Union['PropScheduledQueryS3Configuration', dict] = attr.ib(
+        default=None,
+        converter=PropScheduledQueryS3Configuration.from_dict,
+        validator=attr.validators.instance_of(PropScheduledQueryS3Configuration),
+        metadata={AttrMeta.PROPERTY_NAME: "S3Configuration"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-scheduledquery-errorreportconfiguration.html#cfn-timestream-scheduledquery-errorreportconfiguration-s3configuration"""
+
+@attr.s
 class PropScheduledQueryMixedMeasureMapping(Property):
     """
     AWS Object Type = "AWS::Timestream::ScheduledQuery.MixedMeasureMapping"
@@ -218,27 +239,6 @@ class PropScheduledQueryMixedMeasureMapping(Property):
         metadata={AttrMeta.PROPERTY_NAME: "TargetMeasureName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-scheduledquery-mixedmeasuremapping.html#cfn-timestream-scheduledquery-mixedmeasuremapping-targetmeasurename"""
-
-@attr.s
-class PropScheduledQueryNotificationConfiguration(Property):
-    """
-    AWS Object Type = "AWS::Timestream::ScheduledQuery.NotificationConfiguration"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-scheduledquery-notificationconfiguration.html
-
-    Property Document:
-    
-    - ``rp_SnsConfiguration``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-scheduledquery-notificationconfiguration.html#cfn-timestream-scheduledquery-notificationconfiguration-snsconfiguration
-    """
-    AWS_OBJECT_TYPE = "AWS::Timestream::ScheduledQuery.NotificationConfiguration"
-    
-    rp_SnsConfiguration: typing.Union['PropScheduledQuerySnsConfiguration', dict] = attr.ib(
-        default=None,
-        converter=PropScheduledQuerySnsConfiguration.from_dict,
-        validator=attr.validators.instance_of(PropScheduledQuerySnsConfiguration),
-        metadata={AttrMeta.PROPERTY_NAME: "SnsConfiguration"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-scheduledquery-notificationconfiguration.html#cfn-timestream-scheduledquery-notificationconfiguration-snsconfiguration"""
 
 @attr.s
 class PropScheduledQueryMultiMeasureMappings(Property):
@@ -384,65 +384,136 @@ class ScheduledQuery(Resource):
         default=None,
         converter=PropScheduledQueryErrorReportConfiguration.from_dict,
         validator=attr.validators.instance_of(PropScheduledQueryErrorReportConfiguration),
-        metadata={AttrMeta.PROPERTY_NAME: "ErrorReportConfiguration"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ErrorReportConfiguration",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "Type": 'ErrorReportConfiguration',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-timestream-scheduledquery.html#cfn-timestream-scheduledquery-errorreportconfiguration"""
     rp_NotificationConfiguration: typing.Union['PropScheduledQueryNotificationConfiguration', dict] = attr.ib(
         default=None,
         converter=PropScheduledQueryNotificationConfiguration.from_dict,
         validator=attr.validators.instance_of(PropScheduledQueryNotificationConfiguration),
-        metadata={AttrMeta.PROPERTY_NAME: "NotificationConfiguration"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "NotificationConfiguration",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "Type": 'NotificationConfiguration',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-timestream-scheduledquery.html#cfn-timestream-scheduledquery-notificationconfiguration"""
     rp_QueryString: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "QueryString"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "QueryString",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-timestream-scheduledquery.html#cfn-timestream-scheduledquery-querystring"""
     rp_ScheduleConfiguration: typing.Union['PropScheduledQueryScheduleConfiguration', dict] = attr.ib(
         default=None,
         converter=PropScheduledQueryScheduleConfiguration.from_dict,
         validator=attr.validators.instance_of(PropScheduledQueryScheduleConfiguration),
-        metadata={AttrMeta.PROPERTY_NAME: "ScheduleConfiguration"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ScheduleConfiguration",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "Type": 'ScheduleConfiguration',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-timestream-scheduledquery.html#cfn-timestream-scheduledquery-scheduleconfiguration"""
     rp_ScheduledQueryExecutionRoleArn: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "ScheduledQueryExecutionRoleArn"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ScheduledQueryExecutionRoleArn",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-timestream-scheduledquery.html#cfn-timestream-scheduledquery-scheduledqueryexecutionrolearn"""
     p_ClientToken: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "ClientToken"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ClientToken",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-timestream-scheduledquery.html#cfn-timestream-scheduledquery-clienttoken"""
     p_KmsKeyId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "KmsKeyId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "KmsKeyId",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-timestream-scheduledquery.html#cfn-timestream-scheduledquery-kmskeyid"""
     p_ScheduledQueryName: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "ScheduledQueryName"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ScheduledQueryName",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-timestream-scheduledquery.html#cfn-timestream-scheduledquery-scheduledqueryname"""
     p_TargetConfiguration: typing.Union['PropScheduledQueryTargetConfiguration', dict] = attr.ib(
         default=None,
         converter=PropScheduledQueryTargetConfiguration.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropScheduledQueryTargetConfiguration)),
-        metadata={AttrMeta.PROPERTY_NAME: "TargetConfiguration"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "TargetConfiguration",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "Type": 'TargetConfiguration',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-timestream-scheduledquery.html#cfn-timestream-scheduledquery-targetconfiguration"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'List',
+                "ItemType": 'Tag',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-timestream-scheduledquery.html#cfn-timestream-scheduledquery-tags"""
 
@@ -512,20 +583,42 @@ class Database(Resource):
     p_DatabaseName: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "DatabaseName"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "DatabaseName",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-timestream-database.html#cfn-timestream-database-databasename"""
     p_KmsKeyId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "KmsKeyId"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "KmsKeyId",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-timestream-database.html#cfn-timestream-database-kmskeyid"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'List',
+                "ItemType": 'Tag',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-timestream-database.html#cfn-timestream-database-tags"""
 
@@ -557,32 +650,68 @@ class Table(Resource):
     rp_DatabaseName: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "DatabaseName"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "DatabaseName",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-timestream-table.html#cfn-timestream-table-databasename"""
     p_MagneticStoreWriteProperties: dict = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(dict)),
-        metadata={AttrMeta.PROPERTY_NAME: "MagneticStoreWriteProperties"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "MagneticStoreWriteProperties",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'Json',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-timestream-table.html#cfn-timestream-table-magneticstorewriteproperties"""
     p_RetentionProperties: dict = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(dict)),
-        metadata={AttrMeta.PROPERTY_NAME: "RetentionProperties"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "RetentionProperties",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'Json',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-timestream-table.html#cfn-timestream-table-retentionproperties"""
     p_TableName: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "TableName"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "TableName",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-timestream-table.html#cfn-timestream-table-tablename"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'List',
+                "ItemType": 'Tag',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-timestream-table.html#cfn-timestream-table-tags"""
 
