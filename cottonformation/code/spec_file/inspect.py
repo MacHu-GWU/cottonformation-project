@@ -163,3 +163,31 @@ def see_resource_types(spec_file_data: dict):
         value_list = list(value_set)
         value_list.sort()
         rprint(f"- {key}: {value_list}")
+
+
+def see_resource_tags(spec_file_data: dict):
+    resource_types: T.Dict[str, dict] = spec_file_data["ResourceTypes"]
+    # print(f"\nnumber of items in ResourceTypes = {len(resource_types)}")
+    common_tag_type = [
+        "List-None-Json",
+        "List-Tag-None"
+    ]
+    type_key_set = set()
+    for resource_type_name, resource_type_object in resource_types.items():
+        if "Properties" in resource_type_object:
+            properties = resource_type_object["Properties"]
+            for prop, dct in properties.items():
+                if prop == "Tags":
+                    type = dct.get("Type")
+                    item_type = dct.get("ItemType")
+                    primitive_type = dct.get("PrimitiveType")
+                    primitive_item_type = dct.get("PrimitiveItemType")
+                    key = f"{type}-{item_type}-{primitive_type}-{primitive_item_type}"
+                    type_key_set.add(key)
+                    if key not in common_tag_type:
+                        print(resource_type_name, key)
+
+    type_key_list = list(type_key_set)
+    type_key_list.sort()
+    print("\nvalid type key includes:")
+    rprint(type_key_list)
