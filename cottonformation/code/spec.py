@@ -381,6 +381,7 @@ class ResourceProperty:
     Documentation: str = attr.field(default=None)
     UpdateType: str = attr.field(default=None)
     DuplicatesAllowed: str = attr.field(default=None)
+    Data: dict = attr.field(default=None)
 
     @property
     def sort_key(self):
@@ -505,6 +506,7 @@ class CftSpec:
             resource_properties = list()
             for resource_property_name, resource_property_dct in resource_type_dct.get("Properties", {}).items():
                 # print(f"--- {resource_property_name} ---")
+                resource_property_dct["Data"] = resource_property_dct.copy()
                 resource_property_dct["Name"] = resource_property_name
                 resource_property_dct["SystemName"] = SystemName
                 resource_property_dct["ServiceName"] = ServiceName

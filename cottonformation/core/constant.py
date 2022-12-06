@@ -1,13 +1,12 @@
 # -*- coding: utf-8 -*-
 
-import enum
-
 
 class AttrMeta:
     """
     Attribute metadata field keys. For better attrs integration.
     """
     PROPERTY_NAME = "p_name"
+    DATA = "p_data"
 
 
 class IntrinsicFunction:

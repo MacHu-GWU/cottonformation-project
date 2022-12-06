@@ -19,7 +19,16 @@ class {{ res_type.ResourceName }}(Resource):
         converter={{ res_prop.converter }},
         {%- endif %}
         validator={{ res_prop.vali_def }},
-        metadata={AttrMeta.PROPERTY_NAME: "{{ res_prop.Name }}"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "{{ res_prop.Name }}",
+            AttrMeta.DATA: {
+                {%- for key, value in res_prop.Data.items() %}
+                {%- if key != "Documentation" %}
+                "{{ key }}": {{ value.__repr__() }},
+                {%- endif %}
+                {%- endfor %}
+            }
+        },
     )
     """Doc: {{ res_prop.Documentation }}"""
     {%- endfor %}
