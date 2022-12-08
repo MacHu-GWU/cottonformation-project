@@ -4,20 +4,30 @@ Release and Version History
 ==============================================================================
 
 
-1.0.0 (Next Milestone)
+Backlog
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Features and Improvements**
-
-- Before this version, :meth:`cottonformation.core.model.Resource.update_tags`` only works with List of Tag typed resource tags property. Due to the historical reason, the AWS CloudFormation resource tags type definition is not consistent. I added more logic to handle both old tag type and new tag type.
 
 **Minor Improvements**
 
 **Bugfixes**
 
 - Fix a bug that remove a resource that in a resource group will also remove the entire resource group. Logically, a resource group is a container of a resource, so resource group depends on the resource member. But practically resource, group should not be removed.
-- Special handler for appflow, some property are special type but not defined.
 
 **Miscellaneous**
+
+
+1.0.1 (2022-12-08)
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+**Features and Improvements**
+
+- First API Stable release!
+- Before this version, :meth:`cottonformation.core.model.Resource.update_tags`` only works with List of Tag typed resource tags property. Due to the historical reason, the AWS CloudFormation resource tags type definition is not consistent. I added more logic to handle both old tag type and new tag type.
+- Use `aws_cloudformation <https://pypi.org/project/aws-cloudformation/>`_ library to provide better deployment user experience.
+
+**Bugfixes**
+
+- Special handler for appflow, some property are special type but not defined.
 
 
 0.0.8 (2022-07-12)

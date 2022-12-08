@@ -21,8 +21,8 @@ def test():
     _ = cf.Env
     _ = cf.Stack
 
-    _ = cf.DeletionPolicy
-    _ = cf.UpdateReplacePolicy
+    _ = cf.DeletionPolicyEnum
+    _ = cf.UpdateReplacePolicyEnum
 
     _ = cf.Ref
     _ = cf.Base64

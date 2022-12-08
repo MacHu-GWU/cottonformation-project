@@ -52,18 +52,22 @@ class ResourceAttribute:
     CONDITION = "Condition"
 
 
-class DeletionPolicy:
+class DeletionPolicyEnum:
     """
     Ref: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html
+
+    .. versionadded:: 1.0.1
     """
     Delete = "Delete"
     Retain = "Retain"
     Snapshot = "Snapshot"
 
 
-class UpdateReplacePolicy:
+class UpdateReplacePolicyEnum:
     """
     https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-updatereplacepolicy.html
+
+    .. versionadded:: 1.0.1
     """
     Delete = "Delete"
     Retain = "Retain"
