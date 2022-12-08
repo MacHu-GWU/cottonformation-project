@@ -1,5 +1,5 @@
 attrs
 boto_session_manager>=1.1.1
-aws_cloudformation>=1.1.2
+aws_cloudformation>=1.2.1
 toposort>=1.6
 cfn_flip>=1.0.0

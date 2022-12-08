@@ -65,5 +65,6 @@ try:
     from .core.template import Template
     from .core.stack import Stack
     from .core.env import Env
+    from aws_cloudformation.stack import Parameter as ParameterValue
 except ImportError as e:
     pass

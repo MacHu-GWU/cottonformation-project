@@ -151,7 +151,10 @@ class Env:
         _is_master: bool = True,
     ):
         """
-        Depth-first.
+        Automatically upload nested stack template and update template url
+        in your CloudFormation code.
+
+        It's a depth-first-search.
         """
         stack_resource: Stack
         for stack_resource in template.Resources.values():
@@ -215,6 +218,7 @@ class Env:
         wait: bool = True,
         delays: T.Union[int, float] = DEFAULT_UPDATE_DELAYS,
         timeout: T.Union[int, float] = DEFAULT_UPDATE_TIMEOUT,
+        plan_nested_stack: bool = True,
         skip_plan: bool = False,
         skip_prompt: bool = False,
         change_set_delays: T.Union[int, float] = DEFAULT_CHANGE_SET_DELAYS,
@@ -306,6 +310,7 @@ class Env:
             wait=wait,
             delays=delays,
             timeout=timeout,
+            plan_nested_stack=plan_nested_stack,
             skip_plan=skip_plan,
             skip_prompt=skip_prompt,
             change_set_delays=change_set_delays,
