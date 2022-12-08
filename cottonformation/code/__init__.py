@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 """
-AWS CloudFormation resource specification is a machine readable json file
+AWS CloudFormation resource specification is a machine-readable json file
 that includes detailed information about AWS Resource, Property specification.
 
 The AWS Resource class declaration code is auto generated base on this file.

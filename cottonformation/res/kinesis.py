@@ -15,6 +15,26 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
+class PropStreamStreamModeDetails(Property):
+    """
+    AWS Object Type = "AWS::Kinesis::Stream.StreamModeDetails"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesis-stream-streammodedetails.html
+
+    Property Document:
+    
+    - ``rp_StreamMode``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesis-stream-streammodedetails.html#cfn-kinesis-stream-streammodedetails-streammode
+    """
+    AWS_OBJECT_TYPE = "AWS::Kinesis::Stream.StreamModeDetails"
+    
+    rp_StreamMode: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "StreamMode"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesis-stream-streammodedetails.html#cfn-kinesis-stream-streammodedetails-streammode"""
+
+@attr.s
 class PropStreamStreamEncryption(Property):
     """
     AWS Object Type = "AWS::Kinesis::Stream.StreamEncryption"
@@ -41,26 +61,6 @@ class PropStreamStreamEncryption(Property):
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesis-stream-streamencryption.html#cfn-kinesis-stream-streamencryption-keyid"""
 
-@attr.s
-class PropStreamStreamModeDetails(Property):
-    """
-    AWS Object Type = "AWS::Kinesis::Stream.StreamModeDetails"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesis-stream-streammodedetails.html
-
-    Property Document:
-    
-    - ``rp_StreamMode``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesis-stream-streammodedetails.html#cfn-kinesis-stream-streammodedetails-streammode
-    """
-    AWS_OBJECT_TYPE = "AWS::Kinesis::Stream.StreamModeDetails"
-    
-    rp_StreamMode: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "StreamMode"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-kinesis-stream-streammodedetails.html#cfn-kinesis-stream-streammodedetails-streammode"""
-
 
 #--- Resource declaration ---
 
@@ -86,40 +86,84 @@ class Stream(Resource):
     p_Name: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Name"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Name",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesis-stream.html#cfn-kinesis-stream-name"""
     p_RetentionPeriodHours: int = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "RetentionPeriodHours"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "RetentionPeriodHours",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'Integer',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesis-stream.html#cfn-kinesis-stream-retentionperiodhours"""
     p_ShardCount: int = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "ShardCount"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ShardCount",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'Integer',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesis-stream.html#cfn-kinesis-stream-shardcount"""
     p_StreamEncryption: typing.Union['PropStreamStreamEncryption', dict] = attr.ib(
         default=None,
         converter=PropStreamStreamEncryption.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropStreamStreamEncryption)),
-        metadata={AttrMeta.PROPERTY_NAME: "StreamEncryption"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "StreamEncryption",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'StreamEncryption',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesis-stream.html#cfn-kinesis-stream-streamencryption"""
     p_StreamModeDetails: typing.Union['PropStreamStreamModeDetails', dict] = attr.ib(
         default=None,
         converter=PropStreamStreamModeDetails.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropStreamStreamModeDetails)),
-        metadata={AttrMeta.PROPERTY_NAME: "StreamModeDetails"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "StreamModeDetails",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'StreamModeDetails',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesis-stream.html#cfn-kinesis-stream-streammodedetails"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'List',
+                "ItemType": 'Tag',
+                "DuplicatesAllowed": True,
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesis-stream.html#cfn-kinesis-stream-tags"""
 
@@ -148,13 +192,27 @@ class StreamConsumer(Resource):
     rp_ConsumerName: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "ConsumerName"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ConsumerName",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesis-streamconsumer.html#cfn-kinesis-streamconsumer-consumername"""
     rp_StreamARN: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "StreamARN"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "StreamARN",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kinesis-streamconsumer.html#cfn-kinesis-streamconsumer-streamarn"""
 

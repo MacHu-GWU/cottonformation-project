@@ -1,0 +1,1 @@
+This folder is a playground to explore the content, structure of the ``cft-spec.json`` file from the official `AWS CloudFormation resource specification <https://d1uauaxba7bl26.cloudfront.net/latest/gzip/CloudFormationResourceSpecification.json>`_ doc.

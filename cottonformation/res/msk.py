@@ -15,67 +15,6 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class PropClusterS3(Property):
-    """
-    AWS Object Type = "AWS::MSK::Cluster.S3"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-s3.html
-
-    Property Document:
-    
-    - ``rp_Enabled``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-s3.html#cfn-msk-cluster-s3-enabled
-    - ``p_Bucket``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-s3.html#cfn-msk-cluster-s3-bucket
-    - ``p_Prefix``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-s3.html#cfn-msk-cluster-s3-prefix
-    """
-    AWS_OBJECT_TYPE = "AWS::MSK::Cluster.S3"
-    
-    rp_Enabled: bool = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(bool),
-        metadata={AttrMeta.PROPERTY_NAME: "Enabled"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-s3.html#cfn-msk-cluster-s3-enabled"""
-    p_Bucket: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Bucket"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-s3.html#cfn-msk-cluster-s3-bucket"""
-    p_Prefix: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Prefix"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-s3.html#cfn-msk-cluster-s3-prefix"""
-
-@attr.s
-class PropClusterCloudWatchLogs(Property):
-    """
-    AWS Object Type = "AWS::MSK::Cluster.CloudWatchLogs"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-cloudwatchlogs.html
-
-    Property Document:
-    
-    - ``rp_Enabled``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-cloudwatchlogs.html#cfn-msk-cluster-cloudwatchlogs-enabled
-    - ``p_LogGroup``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-cloudwatchlogs.html#cfn-msk-cluster-cloudwatchlogs-loggroup
-    """
-    AWS_OBJECT_TYPE = "AWS::MSK::Cluster.CloudWatchLogs"
-    
-    rp_Enabled: bool = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(bool),
-        metadata={AttrMeta.PROPERTY_NAME: "Enabled"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-cloudwatchlogs.html#cfn-msk-cluster-cloudwatchlogs-enabled"""
-    p_LogGroup: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "LogGroup"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-cloudwatchlogs.html#cfn-msk-cluster-cloudwatchlogs-loggroup"""
-
-@attr.s
 class PropClusterPublicAccess(Property):
     """
     AWS Object Type = "AWS::MSK::Cluster.PublicAccess"
@@ -114,26 +53,6 @@ class PropClusterEncryptionAtRest(Property):
         metadata={AttrMeta.PROPERTY_NAME: "DataVolumeKMSKeyId"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-encryptionatrest.html#cfn-msk-cluster-encryptionatrest-datavolumekmskeyid"""
-
-@attr.s
-class PropClusterUnauthenticated(Property):
-    """
-    AWS Object Type = "AWS::MSK::Cluster.Unauthenticated"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-unauthenticated.html
-
-    Property Document:
-    
-    - ``rp_Enabled``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-unauthenticated.html#cfn-msk-cluster-unauthenticated-enabled
-    """
-    AWS_OBJECT_TYPE = "AWS::MSK::Cluster.Unauthenticated"
-    
-    rp_Enabled: bool = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(bool),
-        metadata={AttrMeta.PROPERTY_NAME: "Enabled"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-unauthenticated.html#cfn-msk-cluster-unauthenticated-enabled"""
 
 @attr.s
 class PropClusterEncryptionInTransit(Property):
@@ -219,6 +138,259 @@ class PropClusterEncryptionInfo(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-encryptioninfo.html#cfn-msk-cluster-encryptioninfo-encryptionintransit"""
 
 @attr.s
+class PropServerlessClusterIam(Property):
+    """
+    AWS Object Type = "AWS::MSK::ServerlessCluster.Iam"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-serverlesscluster-iam.html
+
+    Property Document:
+    
+    - ``rp_Enabled``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-serverlesscluster-iam.html#cfn-msk-serverlesscluster-iam-enabled
+    """
+    AWS_OBJECT_TYPE = "AWS::MSK::ServerlessCluster.Iam"
+    
+    rp_Enabled: bool = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(bool),
+        metadata={AttrMeta.PROPERTY_NAME: "Enabled"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-serverlesscluster-iam.html#cfn-msk-serverlesscluster-iam-enabled"""
+
+@attr.s
+class PropClusterJmxExporter(Property):
+    """
+    AWS Object Type = "AWS::MSK::Cluster.JmxExporter"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-jmxexporter.html
+
+    Property Document:
+    
+    - ``rp_EnabledInBroker``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-jmxexporter.html#cfn-msk-cluster-jmxexporter-enabledinbroker
+    """
+    AWS_OBJECT_TYPE = "AWS::MSK::Cluster.JmxExporter"
+    
+    rp_EnabledInBroker: bool = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(bool),
+        metadata={AttrMeta.PROPERTY_NAME: "EnabledInBroker"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-jmxexporter.html#cfn-msk-cluster-jmxexporter-enabledinbroker"""
+
+@attr.s
+class PropClusterNodeExporter(Property):
+    """
+    AWS Object Type = "AWS::MSK::Cluster.NodeExporter"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-nodeexporter.html
+
+    Property Document:
+    
+    - ``rp_EnabledInBroker``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-nodeexporter.html#cfn-msk-cluster-nodeexporter-enabledinbroker
+    """
+    AWS_OBJECT_TYPE = "AWS::MSK::Cluster.NodeExporter"
+    
+    rp_EnabledInBroker: bool = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(bool),
+        metadata={AttrMeta.PROPERTY_NAME: "EnabledInBroker"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-nodeexporter.html#cfn-msk-cluster-nodeexporter-enabledinbroker"""
+
+@attr.s
+class PropClusterFirehose(Property):
+    """
+    AWS Object Type = "AWS::MSK::Cluster.Firehose"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-firehose.html
+
+    Property Document:
+    
+    - ``rp_Enabled``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-firehose.html#cfn-msk-cluster-firehose-enabled
+    - ``p_DeliveryStream``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-firehose.html#cfn-msk-cluster-firehose-deliverystream
+    """
+    AWS_OBJECT_TYPE = "AWS::MSK::Cluster.Firehose"
+    
+    rp_Enabled: bool = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(bool),
+        metadata={AttrMeta.PROPERTY_NAME: "Enabled"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-firehose.html#cfn-msk-cluster-firehose-enabled"""
+    p_DeliveryStream: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "DeliveryStream"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-firehose.html#cfn-msk-cluster-firehose-deliverystream"""
+
+@attr.s
+class PropClusterTls(Property):
+    """
+    AWS Object Type = "AWS::MSK::Cluster.Tls"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-tls.html
+
+    Property Document:
+    
+    - ``p_CertificateAuthorityArnList``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-tls.html#cfn-msk-cluster-tls-certificateauthorityarnlist
+    - ``p_Enabled``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-tls.html#cfn-msk-cluster-tls-enabled
+    """
+    AWS_OBJECT_TYPE = "AWS::MSK::Cluster.Tls"
+    
+    p_CertificateAuthorityArnList: typing.List[TypeHint.intrinsic_str] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "CertificateAuthorityArnList"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-tls.html#cfn-msk-cluster-tls-certificateauthorityarnlist"""
+    p_Enabled: bool = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(bool)),
+        metadata={AttrMeta.PROPERTY_NAME: "Enabled"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-tls.html#cfn-msk-cluster-tls-enabled"""
+
+@attr.s
+class PropClusterS3(Property):
+    """
+    AWS Object Type = "AWS::MSK::Cluster.S3"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-s3.html
+
+    Property Document:
+    
+    - ``rp_Enabled``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-s3.html#cfn-msk-cluster-s3-enabled
+    - ``p_Bucket``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-s3.html#cfn-msk-cluster-s3-bucket
+    - ``p_Prefix``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-s3.html#cfn-msk-cluster-s3-prefix
+    """
+    AWS_OBJECT_TYPE = "AWS::MSK::Cluster.S3"
+    
+    rp_Enabled: bool = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(bool),
+        metadata={AttrMeta.PROPERTY_NAME: "Enabled"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-s3.html#cfn-msk-cluster-s3-enabled"""
+    p_Bucket: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "Bucket"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-s3.html#cfn-msk-cluster-s3-bucket"""
+    p_Prefix: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "Prefix"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-s3.html#cfn-msk-cluster-s3-prefix"""
+
+@attr.s
+class PropClusterCloudWatchLogs(Property):
+    """
+    AWS Object Type = "AWS::MSK::Cluster.CloudWatchLogs"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-cloudwatchlogs.html
+
+    Property Document:
+    
+    - ``rp_Enabled``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-cloudwatchlogs.html#cfn-msk-cluster-cloudwatchlogs-enabled
+    - ``p_LogGroup``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-cloudwatchlogs.html#cfn-msk-cluster-cloudwatchlogs-loggroup
+    """
+    AWS_OBJECT_TYPE = "AWS::MSK::Cluster.CloudWatchLogs"
+    
+    rp_Enabled: bool = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(bool),
+        metadata={AttrMeta.PROPERTY_NAME: "Enabled"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-cloudwatchlogs.html#cfn-msk-cluster-cloudwatchlogs-enabled"""
+    p_LogGroup: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "LogGroup"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-cloudwatchlogs.html#cfn-msk-cluster-cloudwatchlogs-loggroup"""
+
+@attr.s
+class PropClusterUnauthenticated(Property):
+    """
+    AWS Object Type = "AWS::MSK::Cluster.Unauthenticated"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-unauthenticated.html
+
+    Property Document:
+    
+    - ``rp_Enabled``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-unauthenticated.html#cfn-msk-cluster-unauthenticated-enabled
+    """
+    AWS_OBJECT_TYPE = "AWS::MSK::Cluster.Unauthenticated"
+    
+    rp_Enabled: bool = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(bool),
+        metadata={AttrMeta.PROPERTY_NAME: "Enabled"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-unauthenticated.html#cfn-msk-cluster-unauthenticated-enabled"""
+
+@attr.s
+class PropClusterBrokerLogs(Property):
+    """
+    AWS Object Type = "AWS::MSK::Cluster.BrokerLogs"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-brokerlogs.html
+
+    Property Document:
+    
+    - ``p_CloudWatchLogs``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-brokerlogs.html#cfn-msk-cluster-brokerlogs-cloudwatchlogs
+    - ``p_Firehose``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-brokerlogs.html#cfn-msk-cluster-brokerlogs-firehose
+    - ``p_S3``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-brokerlogs.html#cfn-msk-cluster-brokerlogs-s3
+    """
+    AWS_OBJECT_TYPE = "AWS::MSK::Cluster.BrokerLogs"
+    
+    p_CloudWatchLogs: typing.Union['PropClusterCloudWatchLogs', dict] = attr.ib(
+        default=None,
+        converter=PropClusterCloudWatchLogs.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropClusterCloudWatchLogs)),
+        metadata={AttrMeta.PROPERTY_NAME: "CloudWatchLogs"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-brokerlogs.html#cfn-msk-cluster-brokerlogs-cloudwatchlogs"""
+    p_Firehose: typing.Union['PropClusterFirehose', dict] = attr.ib(
+        default=None,
+        converter=PropClusterFirehose.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropClusterFirehose)),
+        metadata={AttrMeta.PROPERTY_NAME: "Firehose"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-brokerlogs.html#cfn-msk-cluster-brokerlogs-firehose"""
+    p_S3: typing.Union['PropClusterS3', dict] = attr.ib(
+        default=None,
+        converter=PropClusterS3.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropClusterS3)),
+        metadata={AttrMeta.PROPERTY_NAME: "S3"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-brokerlogs.html#cfn-msk-cluster-brokerlogs-s3"""
+
+@attr.s
+class PropClusterLoggingInfo(Property):
+    """
+    AWS Object Type = "AWS::MSK::Cluster.LoggingInfo"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-logginginfo.html
+
+    Property Document:
+    
+    - ``rp_BrokerLogs``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-logginginfo.html#cfn-msk-cluster-logginginfo-brokerlogs
+    """
+    AWS_OBJECT_TYPE = "AWS::MSK::Cluster.LoggingInfo"
+    
+    rp_BrokerLogs: typing.Union['PropClusterBrokerLogs', dict] = attr.ib(
+        default=None,
+        converter=PropClusterBrokerLogs.from_dict,
+        validator=attr.validators.instance_of(PropClusterBrokerLogs),
+        metadata={AttrMeta.PROPERTY_NAME: "BrokerLogs"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-logginginfo.html#cfn-msk-cluster-logginginfo-brokerlogs"""
+
+@attr.s
 class PropClusterIam(Property):
     """
     AWS Object Type = "AWS::MSK::Cluster.Iam"
@@ -286,24 +458,52 @@ class PropClusterScram(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-scram.html#cfn-msk-cluster-scram-enabled"""
 
 @attr.s
-class PropClusterJmxExporter(Property):
+class PropServerlessClusterSasl(Property):
     """
-    AWS Object Type = "AWS::MSK::Cluster.JmxExporter"
+    AWS Object Type = "AWS::MSK::ServerlessCluster.Sasl"
 
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-jmxexporter.html
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-serverlesscluster-sasl.html
 
     Property Document:
     
-    - ``rp_EnabledInBroker``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-jmxexporter.html#cfn-msk-cluster-jmxexporter-enabledinbroker
+    - ``rp_Iam``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-serverlesscluster-sasl.html#cfn-msk-serverlesscluster-sasl-iam
     """
-    AWS_OBJECT_TYPE = "AWS::MSK::Cluster.JmxExporter"
+    AWS_OBJECT_TYPE = "AWS::MSK::ServerlessCluster.Sasl"
     
-    rp_EnabledInBroker: bool = attr.ib(
+    rp_Iam: typing.Union['PropServerlessClusterIam', dict] = attr.ib(
         default=None,
-        validator=attr.validators.instance_of(bool),
-        metadata={AttrMeta.PROPERTY_NAME: "EnabledInBroker"},
+        converter=PropServerlessClusterIam.from_dict,
+        validator=attr.validators.instance_of(PropServerlessClusterIam),
+        metadata={AttrMeta.PROPERTY_NAME: "Iam"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-jmxexporter.html#cfn-msk-cluster-jmxexporter-enabledinbroker"""
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-serverlesscluster-sasl.html#cfn-msk-serverlesscluster-sasl-iam"""
+
+@attr.s
+class PropServerlessClusterVpcConfig(Property):
+    """
+    AWS Object Type = "AWS::MSK::ServerlessCluster.VpcConfig"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-serverlesscluster-vpcconfig.html
+
+    Property Document:
+    
+    - ``rp_SubnetIds``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-serverlesscluster-vpcconfig.html#cfn-msk-serverlesscluster-vpcconfig-subnetids
+    - ``p_SecurityGroups``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-serverlesscluster-vpcconfig.html#cfn-msk-serverlesscluster-vpcconfig-securitygroups
+    """
+    AWS_OBJECT_TYPE = "AWS::MSK::ServerlessCluster.VpcConfig"
+    
+    rp_SubnetIds: typing.List[TypeHint.intrinsic_str] = attr.ib(
+        default=None,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list)),
+        metadata={AttrMeta.PROPERTY_NAME: "SubnetIds"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-serverlesscluster-vpcconfig.html#cfn-msk-serverlesscluster-vpcconfig-subnetids"""
+    p_SecurityGroups: typing.List[TypeHint.intrinsic_str] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "SecurityGroups"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-serverlesscluster-vpcconfig.html#cfn-msk-serverlesscluster-vpcconfig-securitygroups"""
 
 @attr.s
 class PropClusterConnectivityInfo(Property):
@@ -325,26 +525,6 @@ class PropClusterConnectivityInfo(Property):
         metadata={AttrMeta.PROPERTY_NAME: "PublicAccess"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-connectivityinfo.html#cfn-msk-cluster-connectivityinfo-publicaccess"""
-
-@attr.s
-class PropClusterNodeExporter(Property):
-    """
-    AWS Object Type = "AWS::MSK::Cluster.NodeExporter"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-nodeexporter.html
-
-    Property Document:
-    
-    - ``rp_EnabledInBroker``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-nodeexporter.html#cfn-msk-cluster-nodeexporter-enabledinbroker
-    """
-    AWS_OBJECT_TYPE = "AWS::MSK::Cluster.NodeExporter"
-    
-    rp_EnabledInBroker: bool = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(bool),
-        metadata={AttrMeta.PROPERTY_NAME: "EnabledInBroker"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-nodeexporter.html#cfn-msk-cluster-nodeexporter-enabledinbroker"""
 
 @attr.s
 class PropClusterEBSStorageInfo(Property):
@@ -373,97 +553,6 @@ class PropClusterEBSStorageInfo(Property):
         metadata={AttrMeta.PROPERTY_NAME: "VolumeSize"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-ebsstorageinfo.html#cfn-msk-cluster-ebsstorageinfo-volumesize"""
-
-@attr.s
-class PropClusterFirehose(Property):
-    """
-    AWS Object Type = "AWS::MSK::Cluster.Firehose"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-firehose.html
-
-    Property Document:
-    
-    - ``rp_Enabled``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-firehose.html#cfn-msk-cluster-firehose-enabled
-    - ``p_DeliveryStream``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-firehose.html#cfn-msk-cluster-firehose-deliverystream
-    """
-    AWS_OBJECT_TYPE = "AWS::MSK::Cluster.Firehose"
-    
-    rp_Enabled: bool = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(bool),
-        metadata={AttrMeta.PROPERTY_NAME: "Enabled"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-firehose.html#cfn-msk-cluster-firehose-enabled"""
-    p_DeliveryStream: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "DeliveryStream"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-firehose.html#cfn-msk-cluster-firehose-deliverystream"""
-
-@attr.s
-class PropClusterTls(Property):
-    """
-    AWS Object Type = "AWS::MSK::Cluster.Tls"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-tls.html
-
-    Property Document:
-    
-    - ``p_CertificateAuthorityArnList``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-tls.html#cfn-msk-cluster-tls-certificateauthorityarnlist
-    - ``p_Enabled``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-tls.html#cfn-msk-cluster-tls-enabled
-    """
-    AWS_OBJECT_TYPE = "AWS::MSK::Cluster.Tls"
-    
-    p_CertificateAuthorityArnList: typing.List[TypeHint.intrinsic_str] = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "CertificateAuthorityArnList"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-tls.html#cfn-msk-cluster-tls-certificateauthorityarnlist"""
-    p_Enabled: bool = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(bool)),
-        metadata={AttrMeta.PROPERTY_NAME: "Enabled"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-tls.html#cfn-msk-cluster-tls-enabled"""
-
-@attr.s
-class PropClusterBrokerLogs(Property):
-    """
-    AWS Object Type = "AWS::MSK::Cluster.BrokerLogs"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-brokerlogs.html
-
-    Property Document:
-    
-    - ``p_CloudWatchLogs``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-brokerlogs.html#cfn-msk-cluster-brokerlogs-cloudwatchlogs
-    - ``p_Firehose``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-brokerlogs.html#cfn-msk-cluster-brokerlogs-firehose
-    - ``p_S3``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-brokerlogs.html#cfn-msk-cluster-brokerlogs-s3
-    """
-    AWS_OBJECT_TYPE = "AWS::MSK::Cluster.BrokerLogs"
-    
-    p_CloudWatchLogs: typing.Union['PropClusterCloudWatchLogs', dict] = attr.ib(
-        default=None,
-        converter=PropClusterCloudWatchLogs.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropClusterCloudWatchLogs)),
-        metadata={AttrMeta.PROPERTY_NAME: "CloudWatchLogs"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-brokerlogs.html#cfn-msk-cluster-brokerlogs-cloudwatchlogs"""
-    p_Firehose: typing.Union['PropClusterFirehose', dict] = attr.ib(
-        default=None,
-        converter=PropClusterFirehose.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropClusterFirehose)),
-        metadata={AttrMeta.PROPERTY_NAME: "Firehose"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-brokerlogs.html#cfn-msk-cluster-brokerlogs-firehose"""
-    p_S3: typing.Union['PropClusterS3', dict] = attr.ib(
-        default=None,
-        converter=PropClusterS3.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropClusterS3)),
-        metadata={AttrMeta.PROPERTY_NAME: "S3"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-brokerlogs.html#cfn-msk-cluster-brokerlogs-s3"""
 
 @attr.s
 class PropClusterPrometheus(Property):
@@ -495,27 +584,6 @@ class PropClusterPrometheus(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-prometheus.html#cfn-msk-cluster-prometheus-nodeexporter"""
 
 @attr.s
-class PropClusterLoggingInfo(Property):
-    """
-    AWS Object Type = "AWS::MSK::Cluster.LoggingInfo"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-logginginfo.html
-
-    Property Document:
-    
-    - ``rp_BrokerLogs``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-logginginfo.html#cfn-msk-cluster-logginginfo-brokerlogs
-    """
-    AWS_OBJECT_TYPE = "AWS::MSK::Cluster.LoggingInfo"
-    
-    rp_BrokerLogs: typing.Union['PropClusterBrokerLogs', dict] = attr.ib(
-        default=None,
-        converter=PropClusterBrokerLogs.from_dict,
-        validator=attr.validators.instance_of(PropClusterBrokerLogs),
-        metadata={AttrMeta.PROPERTY_NAME: "BrokerLogs"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-logginginfo.html#cfn-msk-cluster-logginginfo-brokerlogs"""
-
-@attr.s
 class PropClusterSasl(Property):
     """
     AWS Object Type = "AWS::MSK::Cluster.Sasl"
@@ -543,6 +611,27 @@ class PropClusterSasl(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Scram"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-sasl.html#cfn-msk-cluster-sasl-scram"""
+
+@attr.s
+class PropServerlessClusterClientAuthentication(Property):
+    """
+    AWS Object Type = "AWS::MSK::ServerlessCluster.ClientAuthentication"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-serverlesscluster-clientauthentication.html
+
+    Property Document:
+    
+    - ``rp_Sasl``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-serverlesscluster-clientauthentication.html#cfn-msk-serverlesscluster-clientauthentication-sasl
+    """
+    AWS_OBJECT_TYPE = "AWS::MSK::ServerlessCluster.ClientAuthentication"
+    
+    rp_Sasl: typing.Union['PropServerlessClusterSasl', dict] = attr.ib(
+        default=None,
+        converter=PropServerlessClusterSasl.from_dict,
+        validator=attr.validators.instance_of(PropServerlessClusterSasl),
+        metadata={AttrMeta.PROPERTY_NAME: "Sasl"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-serverlesscluster-clientauthentication.html#cfn-msk-serverlesscluster-clientauthentication-sasl"""
 
 @attr.s
 class PropClusterStorageInfo(Property):
@@ -701,13 +790,28 @@ class BatchScramSecret(Resource):
     rp_ClusterArn: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "ClusterArn"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ClusterArn",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-batchscramsecret.html#cfn-msk-batchscramsecret-clusterarn"""
     p_SecretArnList: typing.List[TypeHint.intrinsic_str] = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "SecretArnList"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "SecretArnList",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'List',
+                "PrimitiveItemType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-batchscramsecret.html#cfn-msk-batchscramsecret-secretarnlist"""
 
@@ -733,6 +837,7 @@ class Cluster(Resource):
     - ``p_EnhancedMonitoring``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html#cfn-msk-cluster-enhancedmonitoring
     - ``p_LoggingInfo``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html#cfn-msk-cluster-logginginfo
     - ``p_OpenMonitoring``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html#cfn-msk-cluster-openmonitoring
+    - ``p_StorageMode``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html#cfn-msk-cluster-storagemode
     - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html#cfn-msk-cluster-tags
     """
     AWS_OBJECT_TYPE = "AWS::MSK::Cluster"
@@ -742,78 +847,176 @@ class Cluster(Resource):
         default=None,
         converter=PropClusterBrokerNodeGroupInfo.from_dict,
         validator=attr.validators.instance_of(PropClusterBrokerNodeGroupInfo),
-        metadata={AttrMeta.PROPERTY_NAME: "BrokerNodeGroupInfo"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "BrokerNodeGroupInfo",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": True,
+                "Type": 'BrokerNodeGroupInfo',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html#cfn-msk-cluster-brokernodegroupinfo"""
     rp_ClusterName: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "ClusterName"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ClusterName",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html#cfn-msk-cluster-clustername"""
     rp_KafkaVersion: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "KafkaVersion"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "KafkaVersion",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html#cfn-msk-cluster-kafkaversion"""
     rp_NumberOfBrokerNodes: int = attr.ib(
         default=None,
         validator=attr.validators.instance_of(int),
-        metadata={AttrMeta.PROPERTY_NAME: "NumberOfBrokerNodes"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "NumberOfBrokerNodes",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": True,
+                "PrimitiveType": 'Integer',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html#cfn-msk-cluster-numberofbrokernodes"""
     p_ClientAuthentication: typing.Union['PropClusterClientAuthentication', dict] = attr.ib(
         default=None,
         converter=PropClusterClientAuthentication.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropClusterClientAuthentication)),
-        metadata={AttrMeta.PROPERTY_NAME: "ClientAuthentication"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ClientAuthentication",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'ClientAuthentication',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html#cfn-msk-cluster-clientauthentication"""
     p_ConfigurationInfo: typing.Union['PropClusterConfigurationInfo', dict] = attr.ib(
         default=None,
         converter=PropClusterConfigurationInfo.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropClusterConfigurationInfo)),
-        metadata={AttrMeta.PROPERTY_NAME: "ConfigurationInfo"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ConfigurationInfo",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'ConfigurationInfo',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html#cfn-msk-cluster-configurationinfo"""
     p_CurrentVersion: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "CurrentVersion"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "CurrentVersion",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html#cfn-msk-cluster-currentversion"""
     p_EncryptionInfo: typing.Union['PropClusterEncryptionInfo', dict] = attr.ib(
         default=None,
         converter=PropClusterEncryptionInfo.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropClusterEncryptionInfo)),
-        metadata={AttrMeta.PROPERTY_NAME: "EncryptionInfo"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "EncryptionInfo",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'EncryptionInfo',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html#cfn-msk-cluster-encryptioninfo"""
     p_EnhancedMonitoring: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "EnhancedMonitoring"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "EnhancedMonitoring",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html#cfn-msk-cluster-enhancedmonitoring"""
     p_LoggingInfo: typing.Union['PropClusterLoggingInfo', dict] = attr.ib(
         default=None,
         converter=PropClusterLoggingInfo.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropClusterLoggingInfo)),
-        metadata={AttrMeta.PROPERTY_NAME: "LoggingInfo"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "LoggingInfo",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'LoggingInfo',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html#cfn-msk-cluster-logginginfo"""
     p_OpenMonitoring: typing.Union['PropClusterOpenMonitoring', dict] = attr.ib(
         default=None,
         converter=PropClusterOpenMonitoring.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropClusterOpenMonitoring)),
-        metadata={AttrMeta.PROPERTY_NAME: "OpenMonitoring"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "OpenMonitoring",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'OpenMonitoring',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html#cfn-msk-cluster-openmonitoring"""
+    p_StorageMode: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "StorageMode",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html#cfn-msk-cluster-storagemode"""
     p_Tags: typing.Dict[str, TypeHint.intrinsic_str] = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.deep_mapping(key_validator=attr.validators.instance_of(str), value_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type))),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "Type": 'Map',
+                "PrimitiveItemType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html#cfn-msk-cluster-tags"""
 
@@ -821,6 +1024,88 @@ class Cluster(Resource):
     @property
     def rv_Arn(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-cluster.html#aws-resource-msk-cluster-return-values"""
+        return GetAtt(resource=self, attr_name="Arn")
+    
+
+@attr.s
+class ServerlessCluster(Resource):
+    """
+    AWS Object Type = "AWS::MSK::ServerlessCluster"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-serverlesscluster.html
+
+    Property Document:
+    
+    - ``rp_ClientAuthentication``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-serverlesscluster.html#cfn-msk-serverlesscluster-clientauthentication
+    - ``rp_ClusterName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-serverlesscluster.html#cfn-msk-serverlesscluster-clustername
+    - ``rp_VpcConfigs``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-serverlesscluster.html#cfn-msk-serverlesscluster-vpcconfigs
+    - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-serverlesscluster.html#cfn-msk-serverlesscluster-tags
+    """
+    AWS_OBJECT_TYPE = "AWS::MSK::ServerlessCluster"
+
+    
+    rp_ClientAuthentication: typing.Union['PropServerlessClusterClientAuthentication', dict] = attr.ib(
+        default=None,
+        converter=PropServerlessClusterClientAuthentication.from_dict,
+        validator=attr.validators.instance_of(PropServerlessClusterClientAuthentication),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ClientAuthentication",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "Type": 'ClientAuthentication',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-serverlesscluster.html#cfn-msk-serverlesscluster-clientauthentication"""
+    rp_ClusterName: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ClusterName",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-serverlesscluster.html#cfn-msk-serverlesscluster-clustername"""
+    rp_VpcConfigs: typing.List[typing.Union['PropServerlessClusterVpcConfig', dict]] = attr.ib(
+        default=None,
+        converter=PropServerlessClusterVpcConfig.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropServerlessClusterVpcConfig), iterable_validator=attr.validators.instance_of(list)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "VpcConfigs",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "Type": 'List',
+                "ItemType": 'VpcConfig',
+                "DuplicatesAllowed": False,
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-serverlesscluster.html#cfn-msk-serverlesscluster-vpcconfigs"""
+    p_Tags: typing.Dict[str, TypeHint.intrinsic_str] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.deep_mapping(key_validator=attr.validators.instance_of(str), value_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type))),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "Type": 'Map',
+                "PrimitiveItemType": 'String',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-serverlesscluster.html#cfn-msk-serverlesscluster-tags"""
+
+    
+    @property
+    def rv_Arn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-serverlesscluster.html#aws-resource-msk-serverlesscluster-return-values"""
         return GetAtt(resource=self, attr_name="Arn")
     
 
@@ -833,38 +1118,67 @@ class Configuration(Resource):
 
     Property Document:
     
+    - ``rp_Name``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-configuration.html#cfn-msk-configuration-name
     - ``rp_ServerProperties``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-configuration.html#cfn-msk-configuration-serverproperties
     - ``p_Description``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-configuration.html#cfn-msk-configuration-description
     - ``p_KafkaVersionsList``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-configuration.html#cfn-msk-configuration-kafkaversionslist
-    - ``p_Name``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-configuration.html#cfn-msk-configuration-name
     """
     AWS_OBJECT_TYPE = "AWS::MSK::Configuration"
 
     
+    rp_Name: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Name",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-configuration.html#cfn-msk-configuration-name"""
     rp_ServerProperties: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "ServerProperties"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ServerProperties",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-configuration.html#cfn-msk-configuration-serverproperties"""
     p_Description: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Description"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Description",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-configuration.html#cfn-msk-configuration-description"""
     p_KafkaVersionsList: typing.List[TypeHint.intrinsic_str] = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "KafkaVersionsList"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "KafkaVersionsList",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "Type": 'List',
+                "PrimitiveItemType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-configuration.html#cfn-msk-configuration-kafkaversionslist"""
-    p_Name: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Name"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-msk-configuration.html#cfn-msk-configuration-name"""
 
     
     @property

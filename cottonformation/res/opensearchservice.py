@@ -35,26 +35,6 @@ class PropDomainZoneAwarenessConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-zoneawarenessconfig.html#cfn-opensearchservice-domain-zoneawarenessconfig-availabilityzonecount"""
 
 @attr.s
-class PropDomainNodeToNodeEncryptionOptions(Property):
-    """
-    AWS Object Type = "AWS::OpenSearchService::Domain.NodeToNodeEncryptionOptions"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-nodetonodeencryptionoptions.html
-
-    Property Document:
-    
-    - ``p_Enabled``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-nodetonodeencryptionoptions.html#cfn-opensearchservice-domain-nodetonodeencryptionoptions-enabled
-    """
-    AWS_OBJECT_TYPE = "AWS::OpenSearchService::Domain.NodeToNodeEncryptionOptions"
-    
-    p_Enabled: bool = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(bool)),
-        metadata={AttrMeta.PROPERTY_NAME: "Enabled"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-nodetonodeencryptionoptions.html#cfn-opensearchservice-domain-nodetonodeencryptionoptions-enabled"""
-
-@attr.s
 class PropDomainSnapshotOptions(Property):
     """
     AWS Object Type = "AWS::OpenSearchService::Domain.SnapshotOptions"
@@ -85,6 +65,7 @@ class PropDomainEBSOptions(Property):
     
     - ``p_EBSEnabled``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-ebsoptions.html#cfn-opensearchservice-domain-ebsoptions-ebsenabled
     - ``p_Iops``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-ebsoptions.html#cfn-opensearchservice-domain-ebsoptions-iops
+    - ``p_Throughput``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-ebsoptions.html#cfn-opensearchservice-domain-ebsoptions-throughput
     - ``p_VolumeSize``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-ebsoptions.html#cfn-opensearchservice-domain-ebsoptions-volumesize
     - ``p_VolumeType``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-ebsoptions.html#cfn-opensearchservice-domain-ebsoptions-volumetype
     """
@@ -102,6 +83,12 @@ class PropDomainEBSOptions(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Iops"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-ebsoptions.html#cfn-opensearchservice-domain-ebsoptions-iops"""
+    p_Throughput: int = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(int)),
+        metadata={AttrMeta.PROPERTY_NAME: "Throughput"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-ebsoptions.html#cfn-opensearchservice-domain-ebsoptions-throughput"""
     p_VolumeSize: int = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(int)),
@@ -114,60 +101,6 @@ class PropDomainEBSOptions(Property):
         metadata={AttrMeta.PROPERTY_NAME: "VolumeType"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-ebsoptions.html#cfn-opensearchservice-domain-ebsoptions-volumetype"""
-
-@attr.s
-class PropDomainLogPublishingOption(Property):
-    """
-    AWS Object Type = "AWS::OpenSearchService::Domain.LogPublishingOption"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-logpublishingoption.html
-
-    Property Document:
-    
-    - ``p_CloudWatchLogsLogGroupArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-logpublishingoption.html#cfn-opensearchservice-domain-logpublishingoption-cloudwatchlogsloggrouparn
-    - ``p_Enabled``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-logpublishingoption.html#cfn-opensearchservice-domain-logpublishingoption-enabled
-    """
-    AWS_OBJECT_TYPE = "AWS::OpenSearchService::Domain.LogPublishingOption"
-    
-    p_CloudWatchLogsLogGroupArn: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "CloudWatchLogsLogGroupArn"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-logpublishingoption.html#cfn-opensearchservice-domain-logpublishingoption-cloudwatchlogsloggrouparn"""
-    p_Enabled: bool = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(bool)),
-        metadata={AttrMeta.PROPERTY_NAME: "Enabled"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-logpublishingoption.html#cfn-opensearchservice-domain-logpublishingoption-enabled"""
-
-@attr.s
-class PropDomainEncryptionAtRestOptions(Property):
-    """
-    AWS Object Type = "AWS::OpenSearchService::Domain.EncryptionAtRestOptions"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-encryptionatrestoptions.html
-
-    Property Document:
-    
-    - ``p_Enabled``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-encryptionatrestoptions.html#cfn-opensearchservice-domain-encryptionatrestoptions-enabled
-    - ``p_KmsKeyId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-encryptionatrestoptions.html#cfn-opensearchservice-domain-encryptionatrestoptions-kmskeyid
-    """
-    AWS_OBJECT_TYPE = "AWS::OpenSearchService::Domain.EncryptionAtRestOptions"
-    
-    p_Enabled: bool = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(bool)),
-        metadata={AttrMeta.PROPERTY_NAME: "Enabled"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-encryptionatrestoptions.html#cfn-opensearchservice-domain-encryptionatrestoptions-enabled"""
-    p_KmsKeyId: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "KmsKeyId"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-encryptionatrestoptions.html#cfn-opensearchservice-domain-encryptionatrestoptions-kmskeyid"""
 
 @attr.s
 class PropDomainDomainEndpointOptions(Property):
@@ -404,6 +337,80 @@ class PropDomainClusterConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-clusterconfig.html#cfn-opensearchservice-domain-clusterconfig-zoneawarenessenabled"""
 
 @attr.s
+class PropDomainNodeToNodeEncryptionOptions(Property):
+    """
+    AWS Object Type = "AWS::OpenSearchService::Domain.NodeToNodeEncryptionOptions"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-nodetonodeencryptionoptions.html
+
+    Property Document:
+    
+    - ``p_Enabled``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-nodetonodeencryptionoptions.html#cfn-opensearchservice-domain-nodetonodeencryptionoptions-enabled
+    """
+    AWS_OBJECT_TYPE = "AWS::OpenSearchService::Domain.NodeToNodeEncryptionOptions"
+    
+    p_Enabled: bool = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(bool)),
+        metadata={AttrMeta.PROPERTY_NAME: "Enabled"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-nodetonodeencryptionoptions.html#cfn-opensearchservice-domain-nodetonodeencryptionoptions-enabled"""
+
+@attr.s
+class PropDomainLogPublishingOption(Property):
+    """
+    AWS Object Type = "AWS::OpenSearchService::Domain.LogPublishingOption"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-logpublishingoption.html
+
+    Property Document:
+    
+    - ``p_CloudWatchLogsLogGroupArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-logpublishingoption.html#cfn-opensearchservice-domain-logpublishingoption-cloudwatchlogsloggrouparn
+    - ``p_Enabled``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-logpublishingoption.html#cfn-opensearchservice-domain-logpublishingoption-enabled
+    """
+    AWS_OBJECT_TYPE = "AWS::OpenSearchService::Domain.LogPublishingOption"
+    
+    p_CloudWatchLogsLogGroupArn: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "CloudWatchLogsLogGroupArn"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-logpublishingoption.html#cfn-opensearchservice-domain-logpublishingoption-cloudwatchlogsloggrouparn"""
+    p_Enabled: bool = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(bool)),
+        metadata={AttrMeta.PROPERTY_NAME: "Enabled"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-logpublishingoption.html#cfn-opensearchservice-domain-logpublishingoption-enabled"""
+
+@attr.s
+class PropDomainEncryptionAtRestOptions(Property):
+    """
+    AWS Object Type = "AWS::OpenSearchService::Domain.EncryptionAtRestOptions"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-encryptionatrestoptions.html
+
+    Property Document:
+    
+    - ``p_Enabled``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-encryptionatrestoptions.html#cfn-opensearchservice-domain-encryptionatrestoptions-enabled
+    - ``p_KmsKeyId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-encryptionatrestoptions.html#cfn-opensearchservice-domain-encryptionatrestoptions-kmskeyid
+    """
+    AWS_OBJECT_TYPE = "AWS::OpenSearchService::Domain.EncryptionAtRestOptions"
+    
+    p_Enabled: bool = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(bool)),
+        metadata={AttrMeta.PROPERTY_NAME: "Enabled"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-encryptionatrestoptions.html#cfn-opensearchservice-domain-encryptionatrestoptions-enabled"""
+    p_KmsKeyId: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "KmsKeyId"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-opensearchservice-domain-encryptionatrestoptions.html#cfn-opensearchservice-domain-encryptionatrestoptions-kmskeyid"""
+
+@attr.s
 class PropDomainAdvancedSecurityOptionsInput(Property):
     """
     AWS Object Type = "AWS::OpenSearchService::Domain.AdvancedSecurityOptionsInput"
@@ -472,102 +479,211 @@ class Domain(Resource):
     p_AccessPolicies: dict = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(dict)),
-        metadata={AttrMeta.PROPERTY_NAME: "AccessPolicies"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "AccessPolicies",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'Json',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opensearchservice-domain.html#cfn-opensearchservice-domain-accesspolicies"""
     p_AdvancedOptions: typing.Dict[str, TypeHint.intrinsic_str] = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.deep_mapping(key_validator=attr.validators.instance_of(str), value_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type))),
-        metadata={AttrMeta.PROPERTY_NAME: "AdvancedOptions"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "AdvancedOptions",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'Map',
+                "PrimitiveItemType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opensearchservice-domain.html#cfn-opensearchservice-domain-advancedoptions"""
     p_AdvancedSecurityOptions: typing.Union['PropDomainAdvancedSecurityOptionsInput', dict] = attr.ib(
         default=None,
         converter=PropDomainAdvancedSecurityOptionsInput.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropDomainAdvancedSecurityOptionsInput)),
-        metadata={AttrMeta.PROPERTY_NAME: "AdvancedSecurityOptions"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "AdvancedSecurityOptions",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'AdvancedSecurityOptionsInput',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opensearchservice-domain.html#cfn-opensearchservice-domain-advancedsecurityoptions"""
     p_ClusterConfig: typing.Union['PropDomainClusterConfig', dict] = attr.ib(
         default=None,
         converter=PropDomainClusterConfig.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropDomainClusterConfig)),
-        metadata={AttrMeta.PROPERTY_NAME: "ClusterConfig"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ClusterConfig",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'ClusterConfig',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opensearchservice-domain.html#cfn-opensearchservice-domain-clusterconfig"""
     p_CognitoOptions: typing.Union['PropDomainCognitoOptions', dict] = attr.ib(
         default=None,
         converter=PropDomainCognitoOptions.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropDomainCognitoOptions)),
-        metadata={AttrMeta.PROPERTY_NAME: "CognitoOptions"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "CognitoOptions",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'CognitoOptions',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opensearchservice-domain.html#cfn-opensearchservice-domain-cognitooptions"""
     p_DomainEndpointOptions: typing.Union['PropDomainDomainEndpointOptions', dict] = attr.ib(
         default=None,
         converter=PropDomainDomainEndpointOptions.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropDomainDomainEndpointOptions)),
-        metadata={AttrMeta.PROPERTY_NAME: "DomainEndpointOptions"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "DomainEndpointOptions",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'DomainEndpointOptions',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opensearchservice-domain.html#cfn-opensearchservice-domain-domainendpointoptions"""
     p_DomainName: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "DomainName"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "DomainName",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opensearchservice-domain.html#cfn-opensearchservice-domain-domainname"""
     p_EBSOptions: typing.Union['PropDomainEBSOptions', dict] = attr.ib(
         default=None,
         converter=PropDomainEBSOptions.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropDomainEBSOptions)),
-        metadata={AttrMeta.PROPERTY_NAME: "EBSOptions"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "EBSOptions",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'EBSOptions',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opensearchservice-domain.html#cfn-opensearchservice-domain-ebsoptions"""
     p_EncryptionAtRestOptions: typing.Union['PropDomainEncryptionAtRestOptions', dict] = attr.ib(
         default=None,
         converter=PropDomainEncryptionAtRestOptions.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropDomainEncryptionAtRestOptions)),
-        metadata={AttrMeta.PROPERTY_NAME: "EncryptionAtRestOptions"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "EncryptionAtRestOptions",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'EncryptionAtRestOptions',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opensearchservice-domain.html#cfn-opensearchservice-domain-encryptionatrestoptions"""
     p_EngineVersion: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "EngineVersion"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "EngineVersion",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opensearchservice-domain.html#cfn-opensearchservice-domain-engineversion"""
     p_LogPublishingOptions: typing.Union['PropDomainLogPublishingOption', dict] = attr.ib(
         default=None,
         converter=PropDomainLogPublishingOption.from_list,
         validator=attr.validators.optional(attr.validators.instance_of(PropDomainLogPublishingOption)),
-        metadata={AttrMeta.PROPERTY_NAME: "LogPublishingOptions"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "LogPublishingOptions",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'Map',
+                "ItemType": 'LogPublishingOption',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opensearchservice-domain.html#cfn-opensearchservice-domain-logpublishingoptions"""
     p_NodeToNodeEncryptionOptions: typing.Union['PropDomainNodeToNodeEncryptionOptions', dict] = attr.ib(
         default=None,
         converter=PropDomainNodeToNodeEncryptionOptions.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropDomainNodeToNodeEncryptionOptions)),
-        metadata={AttrMeta.PROPERTY_NAME: "NodeToNodeEncryptionOptions"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "NodeToNodeEncryptionOptions",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'NodeToNodeEncryptionOptions',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opensearchservice-domain.html#cfn-opensearchservice-domain-nodetonodeencryptionoptions"""
     p_SnapshotOptions: typing.Union['PropDomainSnapshotOptions', dict] = attr.ib(
         default=None,
         converter=PropDomainSnapshotOptions.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropDomainSnapshotOptions)),
-        metadata={AttrMeta.PROPERTY_NAME: "SnapshotOptions"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "SnapshotOptions",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'SnapshotOptions',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opensearchservice-domain.html#cfn-opensearchservice-domain-snapshotoptions"""
     p_VPCOptions: typing.Union['PropDomainVPCOptions', dict] = attr.ib(
         default=None,
         converter=PropDomainVPCOptions.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropDomainVPCOptions)),
-        metadata={AttrMeta.PROPERTY_NAME: "VPCOptions"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "VPCOptions",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'VPCOptions',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opensearchservice-domain.html#cfn-opensearchservice-domain-vpcoptions"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'List',
+                "ItemType": 'Tag',
+                "DuplicatesAllowed": False,
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-opensearchservice-domain.html#cfn-opensearchservice-domain-tags"""
 

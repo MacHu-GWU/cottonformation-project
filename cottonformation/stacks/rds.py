@@ -203,7 +203,7 @@ rds_stack = RdsStack(
 tpl = ctf.Template()
 tpl.add(rds_stack.pack1_public_db)
 tpl.add(rds_stack.pack2_private_db)
-tpl.batch_tagging(ProjectName=rds_stack.project_name, Stage=rds_stack.stage)
+tpl.batch_tagging(dict(ProjectName=rds_stack.project_name, Stage=rds_stack.stage))
 
 
 if __name__ == "__main__":

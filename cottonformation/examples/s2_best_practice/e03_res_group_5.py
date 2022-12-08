@@ -118,7 +118,7 @@ tpl.remove(iam_stack.rg2)
 #=============================================================================
 #                            New Code starts here
 #=============================================================================
-tpl.batch_tagging(ProjectName=iam_stack.project_name, Stage=iam_stack.stage)
+tpl.batch_tagging(dict(ProjectName=iam_stack.project_name, Stage=iam_stack.stage))
 
 
 if __name__ == "__main__":

@@ -5,6 +5,7 @@ This module implements the AWS Object used in CloudFormation template.
 """
 
 import typing
+import typing as T
 from typing import (
     Any,
     Optional,
@@ -19,6 +20,7 @@ import attr
 from attr import validators as vs
 
 from . import constant
+from .tagging import get_tags, update_tags
 
 
 class Validators:
@@ -33,9 +35,7 @@ class Validators:
     """
 
     def _test(self, inst, attr, value):
-        self.instance_of(
-            inst, attr, value, (int, str)
-        )
+        self.instance_of(inst, attr, value, (int, str))
 
     def instance_of(self, inst, attr, value, type_):
         """
@@ -56,8 +56,13 @@ class Validators:
             )
 
     def tag_key_or_value(self, inst, attr, value):
+        """
+        Validate if value represents a resource tag value.
+        """
         self.instance_of(
-            inst, attr, value,
+            inst,
+            attr,
+            value,
             (
                 str,
                 Parameter,
@@ -77,17 +82,19 @@ class Validators:
                 Select,
                 Sub,
                 If,
-            )
+            ),
         )
 
     def resource_condition(self, inst, attr, value):
         if value is not None:
             self.instance_of(
-                inst, attr, value,
+                inst,
+                attr,
+                value,
                 (
                     _BooleanCondition,
                     str,
-                )
+                ),
             )
 
 
@@ -98,15 +105,19 @@ class TypeHint:
     """
     Constant value hosting class for typehint
     """
-    intrinsic_str = Union[str, dict, 'IntrinsicFunction']
-    intrinsic_int = Union[int, dict, 'IntrinsicFunction']
+
+    intrinsic_str = Union[str, dict, "IntrinsicFunction"]
+    intrinsic_int = Union[int, dict, "IntrinsicFunction"]
     addable_obj = Union[
-        'Parameter', 'Resource', 'Output',
-        'Rule', 'Mapping', 'Condition', 'ResourceGroup',
+        "Parameter",
+        "Resource",
+        "Output",
+        "Rule",
+        "Mapping",
+        "Condition",
+        "ResourceGroup",
     ]
-    dependency_obj = Union[
-        str, 'Resource', 'Parameter', 'Mapping', 'Condition'
-    ]
+    dependency_obj = Union[str, "Resource", "Parameter", "Mapping", "Condition"]
 
 
 @attr.s
@@ -262,11 +273,7 @@ class _PropertyOrResource(AwsObject):
     @classmethod
     def from_list(
         cls,
-        list_of_dct_or_obj: Optional[
-            List[
-                Union['AwsObject', dict]
-            ]
-        ],
+        list_of_dct_or_obj: Optional[List[Union["AwsObject", dict]]],
     ):
         """
         Construct list of instance from list of dictionary data.
@@ -300,7 +307,9 @@ class Property(_PropertyOrResource):
 
 def ensure_list(obj):
     if not isinstance(obj, list):
-        return [obj, ]
+        return [
+            obj,
+        ]
     else:
         return obj
 
@@ -309,7 +318,10 @@ def ensure_list(obj):
 class Resource(_PropertyOrResource, _DictMember, _Dependency):
     """
     The base class for all AWS Resources.
+
+    .. versionadded:: 1.0.1
     """
+
     AWS_OBJECT_TYPE = None
     CLASS_TYPE = "5-Resource"
 
@@ -321,17 +333,25 @@ class Resource(_PropertyOrResource, _DictMember, _Dependency):
     ra_CreationPolicy: str = attr.ib(
         factory=dict,
         validator=None,
-        metadata={constant.AttrMeta.PROPERTY_NAME: constant.ResourceAttribute.CREATION_POLICY},
+        metadata={
+            constant.AttrMeta.PROPERTY_NAME: constant.ResourceAttribute.CREATION_POLICY
+        },
     )
     ra_DeletionPolicy: str = attr.ib(
         default=None,
         validator=None,
-        metadata={constant.AttrMeta.PROPERTY_NAME: constant.ResourceAttribute.DELETION_POLICY},
+        metadata={
+            constant.AttrMeta.PROPERTY_NAME: constant.ResourceAttribute.DELETION_POLICY
+        },
     )
-    ra_DependsOn: Union[TypeHint.dependency_obj, List[TypeHint.dependency_obj]] = attr.ib(
+    ra_DependsOn: Union[
+        TypeHint.dependency_obj, List[TypeHint.dependency_obj]
+    ] = attr.ib(
         factory=list,
         validator=vs.instance_of((str, _Dependency, list)),
-        metadata={constant.AttrMeta.PROPERTY_NAME: constant.ResourceAttribute.DEPENDS_ON},
+        metadata={
+            constant.AttrMeta.PROPERTY_NAME: constant.ResourceAttribute.DEPENDS_ON
+        },
     )
     ra_Metadata: dict = attr.ib(
         factory=dict,
@@ -340,16 +360,22 @@ class Resource(_PropertyOrResource, _DictMember, _Dependency):
     ra_UpdatePolicy: str = attr.ib(
         default=None,
         validator=None,
-        metadata={constant.AttrMeta.PROPERTY_NAME: constant.ResourceAttribute.UPDATE_POLICY},
+        metadata={
+            constant.AttrMeta.PROPERTY_NAME: constant.ResourceAttribute.UPDATE_POLICY
+        },
     )
     ra_UpdateReplacePolicy: str = attr.ib(
         default=None,
         validator=None,
-        metadata={constant.AttrMeta.PROPERTY_NAME: constant.ResourceAttribute.UPDATE_REPLACE_POLICY},
+        metadata={
+            constant.AttrMeta.PROPERTY_NAME: constant.ResourceAttribute.UPDATE_REPLACE_POLICY
+        },
     )
-    ra_Condition: Union['_BooleanCondition', str] = attr.ib(
+    ra_Condition: Union["_BooleanCondition", str] = attr.ib(
         default=None,
-        metadata={constant.AttrMeta.PROPERTY_NAME: constant.ResourceAttribute.CONDITION},
+        metadata={
+            constant.AttrMeta.PROPERTY_NAME: constant.ResourceAttribute.CONDITION
+        },
     )
 
     @ra_Condition.validator
@@ -358,6 +384,10 @@ class Resource(_PropertyOrResource, _DictMember, _Dependency):
 
     def __attrs_post_init__(self):
         self.ra_DependsOn = ensure_list(self.ra_DependsOn)
+
+        # the code below was the old code to maintain the dependencies
+        # relationship in metadata. After using toposort library,
+        # it no longer needed, but I keep the code here intentionally as a reference.
 
         # mt = constant.MetaData
         # if len(self.ra_DependsOn):
@@ -383,23 +413,27 @@ class Resource(_PropertyOrResource, _DictMember, _Dependency):
 
     @property
     def DependsOn(self) -> List[TypeHint.dependency_obj]:
+        """
+        Public API to access the dependencies AWS Objects.
+        """
         return self.ra_DependsOn
 
-    def ref(self) -> 'Ref':
+    def ref(self) -> "Ref":
+        """
+        Reference this Resource.
+        """
         return Ref(self)
 
     @property
     def tags_dict(self) -> OrderedDict:
-        self.p_Tags: List[Tag]
-        if self.p_Tags is None:
-            return OrderedDict()
-        dct = OrderedDict([
-            (t.p_Key, t.p_Value)
-            for t in self.p_Tags
-        ])
-        if len(self.p_Tags) != len(dct):
-            raise ValueError(f"duplicate key found in {self._ez_repr}")
-        return dct
+        """
+        Access the tag key value pairs as a Python dictionary.
+        """
+        tags = get_tags(self)
+        if self.p_Tags is not None:
+            if len(self.p_Tags) != len(tags):
+                raise ValueError(f"duplicate key found in {self._ez_repr}")
+        return tags
 
     @classmethod
     def support_tags(cls) -> bool:
@@ -411,41 +445,31 @@ class Resource(_PropertyOrResource, _DictMember, _Dependency):
 
     def update_tags(
         self,
-        overwrite_existing: bool = False,
-        **kwargs,
-    ):
+        tags: T.Dict[str, str],
+        mode_skip: bool = False,
+        mode_overwrite: bool = False,
+        mode_raise: bool = False,
+    ) -> T.Tuple[T.Dict[str, str], T.Dict[str, str]]:
         """
-        Update tags. overwrite flag can be used to decide whether you want to
-        the tag value if tag key already exists.
+        Update CloudFormation resource tags.
 
-        :param overwrite_existing: if True, it won't raise exception if try
-            to overwrite an existing tag key. Since we have ``**kwargs``
-            for arbitrary tag key value pair, we use a long name parameter
-            name to avoid naming collision.
+        :param tags: key value tags in python dictionary
+        :param mode_skip: if the key already exists, then skip it
+        :param mode_overwrite: if the key already exists, then overwrite it with new value
+        :param mode_raise: if the key already exists, then raise error
         """
-        if self.p_Tags is None:
-            existing_tags = OrderedDict()
-        else:
-            existing_tags = OrderedDict([
-                (tag.p_Key, tag)
-                for tag in self.p_Tags
-            ])
-
-        for k, v in kwargs.items():
-            if k not in existing_tags:
-                existing_tags[k] = Tag(p_Key=k, p_Value=v)
-            elif overwrite_existing:
-                existing_tags[k] = Tag(p_Key=k, p_Value=v)
-            else:
-                raise KeyError(
-                    f"{k!r} already exists in Tags! Maybe "
-                    f"you want to turn on the ``overwrite`` option."
-                )
-
-        if len(existing_tags):
-            self.p_Tags = list(existing_tags.values())
+        return update_tags(
+            res=self,
+            tags=tags,
+            mode_skip=mode_skip,
+            mode_overwrite=mode_overwrite,
+            mode_raise=mode_raise,
+        )
 
     def serialize(self) -> dict:
+        """
+        Serialize the resource into CloudFormation JSON dictionary.
+        """
         class_data = get_key_value_dict(self)
         attr_name_to_cf_name_mapper = self.get_attr_name_to_cf_name()
 
@@ -482,14 +506,12 @@ class Resource(_PropertyOrResource, _DictMember, _Dependency):
     @classmethod
     def deserialize(cls, data: dict):  # pragma: no cover
         """
-        TODO
+        TODO: not implemented yet
         """
         class_data = dict()
         cf_name_to_attr_name_mapper = cls.get_cf_name_to_attr_name()
         for k, v in data.items():
-            class_data = [
-                cf_name_to_attr_name_mapper
-            ]
+            class_data = [cf_name_to_attr_name_mapper]
 
     def eval(self, **kwargs) -> dict:
         return self.ref().serialize()
@@ -498,13 +520,17 @@ class Resource(_PropertyOrResource, _DictMember, _Dependency):
 @attr.s
 class Parameter(AwsObject, _DictMember, _Dependency):
     """
-    Reference:
+    Declare a CloudFormation parameter definition.
 
+    Reference:
 
     - Parameters: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html
     - AWS-specific parameter types: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html#aws-specific-parameter-types
     - SSM parameter types: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html#parameters-section-structure-grouping
+
+    .. versionadded:: 1.0.1
     """
+
     CLASS_TYPE = "1-Parameter"
 
     id: str = attr.ib(validator=vs.instance_of(str))
@@ -512,41 +538,26 @@ class Parameter(AwsObject, _DictMember, _Dependency):
     Default: str = attr.ib(
         default=None,
     )
-    NoEcho: bool = attr.ib(
-        default=None,
-        validator=vs.optional(vs.instance_of(bool))
-    )
+    NoEcho: bool = attr.ib(default=None, validator=vs.optional(vs.instance_of(bool)))
     AllowedValues: List[typing.Any] = attr.ib(
-        default=None,
-        validator=vs.optional(vs.instance_of(list))
+        default=None, validator=vs.optional(vs.instance_of(list))
     )
     AllowedPattern: str = attr.ib(
-        default=None,
-        validator=vs.optional(vs.instance_of(str))
+        default=None, validator=vs.optional(vs.instance_of(str))
     )
-    MaxLength: int = attr.ib(
-        default=None,
-        validator=vs.optional(vs.instance_of(int))
-    )
-    MinLength: int = attr.ib(
-        default=None,
-        validator=vs.optional(vs.instance_of(int))
-    )
+    MaxLength: int = attr.ib(default=None, validator=vs.optional(vs.instance_of(int)))
+    MinLength: int = attr.ib(default=None, validator=vs.optional(vs.instance_of(int)))
     MaxValue: str = attr.ib(
         default=None,
-        validator=vs.optional(vs.and_(vs.instance_of(int), vs.instance_of(float)))
+        validator=vs.optional(vs.and_(vs.instance_of(int), vs.instance_of(float))),
     )
     MinValue: str = attr.ib(
         default=None,
-        validator=vs.optional(vs.and_(vs.instance_of(int), vs.instance_of(float)))
+        validator=vs.optional(vs.and_(vs.instance_of(int), vs.instance_of(float))),
     )
-    Description: str = attr.ib(
-        default=None,
-        validator=vs.optional(vs.instance_of(str))
-    )
+    Description: str = attr.ib(default=None, validator=vs.optional(vs.instance_of(str)))
     ConstraintDescription: str = attr.ib(
-        default=None,
-        validator=vs.optional(vs.instance_of(str))
+        default=None, validator=vs.optional(vs.instance_of(str))
     )
     DependsOn: Union[TypeHint.dependency_obj, List[TypeHint.dependency_obj]] = attr.ib(
         factory=list,
@@ -579,7 +590,9 @@ class Parameter(AwsObject, _DictMember, _Dependency):
         List_AWS_EC2_AvailabilityZone_Name = "List<AWS::EC2::AvailabilityZone::Name>"
         List_AWS_EC2_Image_Id = "List<AWS::EC2::Image::Id>"
         List_AWS_EC2_Instance_Id = "List<AWS::EC2::Instance::Id>"
-        List_AWS_EC2_SecurityGroup_GroupName = "List<AWS::EC2::SecurityGroup::GroupName>"
+        List_AWS_EC2_SecurityGroup_GroupName = (
+            "List<AWS::EC2::SecurityGroup::GroupName>"
+        )
         List_AWS_EC2_SecurityGroup_Id = "List<AWS::EC2::SecurityGroup::Id>"
         List_AWS_EC2_Subnet_Id = "List<AWS::EC2::Subnet::Id>"
         List_AWS_EC2_Volume_Id = "List<AWS::EC2::Volume::Id>"
@@ -594,7 +607,7 @@ class Parameter(AwsObject, _DictMember, _Dependency):
             if not value.startswith("AWS::SSM::Parameter::"):
                 raise ValueError(f"{value} is not a Valid type for Parameter.Type")
 
-    def ref(self) -> 'Ref':
+    def ref(self) -> "Ref":
         return Ref(self)
 
     def serialize(self, **kwargs) -> typing.Any:
@@ -616,6 +629,16 @@ class Parameter(AwsObject, _DictMember, _Dependency):
 
 @attr.s
 class Export(AwsObject):
+    """
+    The export value object for cross stack reference.
+
+    Reference:
+
+    - https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-importvalue.html
+
+    .. versionadded:: 1.0.1
+    """
+
     Name: TypeHint.intrinsic_str = attr.ib(
         validator=vs.instance_of((str, dict, IntrinsicFunction))
     )
@@ -626,19 +649,24 @@ class Export(AwsObject):
 
 @attr.s
 class Output(AwsObject, _DictMember):
+    """
+    Declare a CloudFormation Output definition.
+
+    You can also explicitly define dependencies for output object.
+
+    .. versionadded:: 1.0.1
+    """
+
     CLASS_TYPE = "6-Output"
 
-    id: str = attr.ib(
-        validator=vs.instance_of(str)
-    )
+    id: str = attr.ib(validator=vs.instance_of(str))
     Value: typing.Any = attr.ib()
     Description: TypeHint.intrinsic_str = attr.ib(
         default=None,
-        validator=vs.optional(vs.instance_of((str, dict, IntrinsicFunction)))
+        validator=vs.optional(vs.instance_of((str, dict, IntrinsicFunction))),
     )
     Export: Export = attr.ib(
-        default=None,
-        validator=vs.optional(vs.instance_of(Export))
+        default=None, validator=vs.optional(vs.instance_of(Export))
     )
     DependsOn: Union[TypeHint.dependency_obj, List[TypeHint.dependency_obj]] = attr.ib(
         factory=list,
@@ -659,10 +687,17 @@ class Output(AwsObject, _DictMember):
 
 @attr.s(frozen=True)
 class Tag(Property):
+    """
+    The AWS Resource Tag object. Note that some AWS Resource use different
+    data structure to define resource tags.
+
+    .. versionadded:: 1.0.1
+    """
+
     p_Key: TypeHint.intrinsic_str = attr.ib(
         metadata={constant.AttrMeta.PROPERTY_NAME: "Key"},
     )
-    p_Value: Union[TypeHint.intrinsic_str, Parameter, 'ImportValue'] = attr.ib(
+    p_Value: Union[TypeHint.intrinsic_str, Parameter, "ImportValue"] = attr.ib(
         metadata={constant.AttrMeta.PROPERTY_NAME: "Value"},
     )
 
@@ -672,7 +707,8 @@ class Tag(Property):
         if isinstance(value, str) and len(value) > 128:
             raise ValueError(
                 f"invalid tag key, see aws doc about the limits "
-                f"{self._tag_naming_limits_doc_url}")
+                f"{self._tag_naming_limits_doc_url}"
+            )
 
     @p_Value.validator
     def check_p_Value(self, attribute, value):
@@ -683,7 +719,9 @@ class Tag(Property):
                 f"{self._tag_naming_limits_doc_url}"
             )
 
-    _tag_naming_limits_doc_url = "https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html#tag-conventions"
+    _tag_naming_limits_doc_url = (
+        "https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html#tag-conventions"
+    )
 
     def serialize(self, **kwargs) -> dict:
         return {
@@ -692,7 +730,7 @@ class Tag(Property):
         }
 
     @classmethod
-    def make_many(cls, dict_data: dict = None, **kwargs) -> List['Tag']:
+    def make_many(cls, dict_data: dict = None, **kwargs) -> List["Tag"]:
         """
         A factory method to make many tags.
 
@@ -705,10 +743,7 @@ class Tag(Property):
         else:
             dct = dict_data
         dct.update(kwargs)
-        return [
-            cls(p_Key=k, p_Value=v)
-            for k, v in dct.items()
-        ]
+        return [cls(p_Key=k, p_Value=v) for k, v in dct.items()]
 
 
 @attr.s
@@ -717,7 +752,10 @@ class Ref(IntrinsicFunction):
     Reference:
 
     - Ref: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-ref.html
+
+    .. versionadded:: 1.0.1
     """
+
     param_or_res: Union[str, Parameter, Resource] = attr.ib(
         validator=vs.instance_of((str, Parameter, Resource))
     )
@@ -728,6 +766,14 @@ class Ref(IntrinsicFunction):
 
 @attr.s
 class Base64(IntrinsicFunction):
+    """
+    Reference:
+
+    - https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-base64.html
+
+    .. versionadded:: 1.0.1
+    """
+
     value: TypeHint.intrinsic_str = attr.ib(
         validator=vs.instance_of(TypeCheck.intrinsic_str_type)
     )
@@ -742,7 +788,10 @@ class Cidr(IntrinsicFunction):
     Reference:
 
     - Fn::Cidr: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-cidr.html
+
+    .. versionadded:: 1.0.1
     """
+
     ip_block: TypeHint.intrinsic_str = attr.ib(
         validator=vs.instance_of(TypeCheck.intrinsic_str_type)
     )
@@ -769,7 +818,10 @@ class FindInMap(IntrinsicFunction):
     Reference:
 
     - Fn::FindInMap: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-findinmap.html
+
+    .. versionadded:: 1.0.1
     """
+
     map_name: TypeHint.intrinsic_str = attr.ib(
         validator=vs.instance_of(TypeCheck.intrinsic_str_type)
     )
@@ -796,8 +848,13 @@ class GetAtt(IntrinsicFunction):
     Reference:
 
     - Fn::GetAtt: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-getatt.html
+
+    .. versionadded:: 1.0.1
     """
-    resource: Union[str, Resource] = attr.field(validator=vs.instance_of((str, Resource)))
+
+    resource: Union[str, Resource] = attr.field(
+        validator=vs.instance_of((str, Resource))
+    )
     attr_name: str = attr.field(validator=vs.instance_of(str))
 
     def serialize(self, **kwargs) -> dict:
@@ -816,7 +873,10 @@ class GetAZs(IntrinsicFunction):
 
     - Fn::GetAZs: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-getavailabilityzones.html
     - Region and Az information: https://aws.amazon.com/about-aws/global-infrastructure/regions_az/
+
+    .. versionadded:: 1.0.1
     """
+
     region: TypeHint.intrinsic_str = attr.ib(
         default="",
         validator=vs.optional(vs.instance_of(TypeCheck.intrinsic_str_type)),
@@ -842,7 +902,10 @@ class ImportValue(IntrinsicFunction):
     Reference:
 
     - Fn::ImportValue: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-importvalue.html
+
+    .. versionadded:: 1.0.1
     """
+
     name: TypeHint.intrinsic_str = attr.ib(
         validator=vs.instance_of(TypeCheck.intrinsic_str_type)
     )
@@ -857,35 +920,39 @@ class Join(IntrinsicFunction):
     Reference:
 
     - Fn::Join: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-join.html
+
+    .. versionadded:: 1.0.1
     """
-    delimiter: Union[
-        str,
-        dict,
-        IntrinsicFunction,
-        Parameter,
-    ] = attr.ib(
-        validator=vs.instance_of((
-            str,
-            dict,
-            IntrinsicFunction,
-            Parameter,
-        ))
-    )
-    list_of_values: List[Union[
-        str,
-        dict,
-        IntrinsicFunction,
-        Parameter,
-        Resource,
-    ]] = attr.ib(
-        validator=vs.deep_iterable(
-            member_validator=vs.instance_of((
+
+    delimiter: Union[str, dict, IntrinsicFunction, Parameter,] = attr.ib(
+        validator=vs.instance_of(
+            (
                 str,
                 dict,
                 IntrinsicFunction,
                 Parameter,
-                Resource,
-            )),
+            )
+        )
+    )
+    list_of_values: List[
+        Union[
+            str,
+            dict,
+            IntrinsicFunction,
+            Parameter,
+            Resource,
+        ]
+    ] = attr.ib(
+        validator=vs.deep_iterable(
+            member_validator=vs.instance_of(
+                (
+                    str,
+                    dict,
+                    IntrinsicFunction,
+                    Parameter,
+                    Resource,
+                )
+            ),
             iterable_validator=vs.instance_of(list),
         )
     )
@@ -906,7 +973,7 @@ class Join(IntrinsicFunction):
         return {
             constant.IntrinsicFunction.JOIN: [
                 eval(self.delimiter),
-                [eval(value) for value in self.list_of_values]
+                [eval(value) for value in self.list_of_values],
             ]
         }
 
@@ -930,7 +997,10 @@ class Sub(IntrinsicFunction):
     Reference:
 
     - Fn::Sub: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-sub.html
+
+    .. versionadded:: 1.0.1
     """
+
     string: str = attr.ib(validator=vs.instance_of(str))
     data: dict = attr.ib(validator=vs.instance_of(dict))
 
@@ -1002,7 +1072,10 @@ class Select(IntrinsicFunction):
     Reference:
 
     - Fn::Select: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-select.html
+
+    .. versionadded:: 1.0.1
     """
+
     index: Union[int, str] = attr.ib(
         validator=vs.instance_of((int, str)),
         converter=int,
@@ -1015,7 +1088,7 @@ class Select(IntrinsicFunction):
         return {
             constant.IntrinsicFunction.SELECT: [
                 self.index,
-                serialize(self.list_of_objects)
+                serialize(self.list_of_objects),
             ]
         }
 
@@ -1026,7 +1099,10 @@ class Split(IntrinsicFunction):
     Reference:
 
     - Fn::Split: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-split.html
+
+    .. versionadded:: 1.0.1
     """
+
     delimiter: TypeHint.intrinsic_str = attr.ib(
         validator=vs.instance_of(TypeCheck.intrinsic_str_type)
     )
@@ -1038,18 +1114,24 @@ class Split(IntrinsicFunction):
         return {
             constant.IntrinsicFunction.SELECT: [
                 serialize(self.delimiter),
-                serialize(self.source_string)
+                serialize(self.source_string),
             ]
         }
 
 
 @attr.s
 class Mapping(AwsObject, _DictMember, _Dependency):
+    """
+    Reference:
+
+    - https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/mappings-section-structure.html
+
+    .. versionadded:: 1.0.1
+    """
+
     CLASS_TYPE = "2-Mapping"
 
-    id: str = attr.ib(
-        validator=vs.instance_of(str)
-    )
+    id: str = attr.ib(validator=vs.instance_of(str))
     DependsOn: Union[TypeHint.dependency_obj, List[TypeHint.dependency_obj]] = attr.ib(
         factory=list,
         validator=vs.optional(vs.instance_of((str, _Dependency, list))),
@@ -1064,9 +1146,10 @@ class Condition(AwsObject, _DictMember, _Dependency):
 
     - `Conditions <https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/conditions-section-structure.html>`_
     - `Conditions Functions <https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-conditions.html>`_
-    
-    .. versionadded:: 0.0.8
+
+    .. versionadded:: 1.0.1
     """
+
     CLASS_TYPE = "3-Condition"
 
     def ref(self) -> dict:
@@ -1084,6 +1167,7 @@ class _BooleanCondition(Condition):
     For example: ``Equals, Not, And, Or`` are boolean condition, But ``If``
     is not. Because it returns a value for Resource Property value assignment.
     """
+
     id: str = attr.ib(validator=vs.instance_of(str))
 
     def ref(self) -> dict:
@@ -1106,7 +1190,10 @@ class Equals(_BooleanCondition):
     Ref:
 
     - https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-conditions.html#intrinsic-function-reference-conditions-equals
+
+    .. versionadded:: 1.0.1
     """
+
     value_one: Union[AwsObject, typing.Any] = attr.ib()
     value_two: Union[AwsObject, typing.Any] = attr.ib()
 
@@ -1137,7 +1224,10 @@ class Not(_BooleanCondition):
     Ref:
 
     - https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-conditions.html#intrinsic-function-reference-conditions-not
+
+    .. versionadded:: 1.0.1
     """
+
     condition: Union[_BooleanCondition, dict] = attr.ib()
 
     def serialize(self, **kwargs) -> dict:
@@ -1159,11 +1249,14 @@ class And(_BooleanCondition):
     Ref:
 
     - https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-conditions.html#intrinsic-function-reference-conditions-and
+
+    .. versionadded:: 1.0.1
     """
+
     conditions: List[Union[_BooleanCondition, dict]] = attr.ib(
         validator=vs.deep_iterable(
             member_validator=vs.instance_of((_BooleanCondition, dict)),
-            iterable_validator=vs.instance_of(list)
+            iterable_validator=vs.instance_of(list),
         ),
     )
 
@@ -1176,8 +1269,7 @@ class And(_BooleanCondition):
     def serialize(self, **kwargs) -> dict:
         return {
             constant.ConditionFunction.AND: [
-                serialize(condition)
-                for condition in self.conditions
+                serialize(condition) for condition in self.conditions
             ]
         }
 
@@ -1193,11 +1285,14 @@ class Or(_BooleanCondition):
     Ref:
 
     - https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-conditions.html#intrinsic-function-reference-conditions-or
+
+    .. versionadded:: 1.0.1
     """
+
     conditions: List[Union[_BooleanCondition, dict]] = attr.ib(
         validator=vs.deep_iterable(
             member_validator=vs.instance_of((_BooleanCondition, dict)),
-            iterable_validator=vs.instance_of(list)
+            iterable_validator=vs.instance_of(list),
         ),
     )
 
@@ -1210,8 +1305,7 @@ class Or(_BooleanCondition):
     def serialize(self, **kwargs) -> dict:
         return {
             constant.ConditionFunction.OR: [
-                serialize(condition)
-                for condition in self.conditions
+                serialize(condition) for condition in self.conditions
             ]
         }
 
@@ -1227,7 +1321,10 @@ class If(Condition, _IntrinsicFunctionType):
     Ref:
 
     - Official Doc: https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-conditions.html#intrinsic-function-reference-conditions-if
+
+    .. versionadded:: 1.0.1
     """
+
     condition_name: Union[_BooleanCondition, str] = attr.ib(
         validator=vs.instance_of((_BooleanCondition, str))
     )
@@ -1268,11 +1365,17 @@ class If(Condition, _IntrinsicFunctionType):
 
 @attr.s
 class Rule(AwsObject, _DictMember):
+    """
+    Reference:
+
+    - https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/rules-section-structure.html
+
+    .. versionadded:: 1.0.1
+    """
+
     CLASS_TYPE = "4-Rule"
 
-    id: str = attr.ib(
-        validator=vs.instance_of(str)
-    )
+    id: str = attr.ib(validator=vs.instance_of(str))
 
     DependsOn: Union[TypeHint.dependency_obj, List[TypeHint.dependency_obj]] = attr.ib(
         factory=list,
@@ -1282,6 +1385,14 @@ class Rule(AwsObject, _DictMember):
 
 @attr.s
 class Transform(AwsObject, _ListMember):
+    """
+    Reference:
+
+    https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-section-structure.html
+
+    .. versionadded:: 1.0.1
+    """
+
     CLASS_TYPE = "7-Transform"
 
 
@@ -1290,13 +1401,13 @@ class ResourceGroup(AwsObject, _DictMember, _Dependency):
     """
     A custom container to group multiple :class:`AwsObject` together. So you
     can add / remove all item in resource group in one API call.
+
+    .. versionadded:: 1.0.1
     """
+
     CLASS_TYPE = "99-Resource-Group"
 
-    id: str = attr.ib(
-        default="__never_exists__",
-        validator=vs.instance_of(str)
-    )
+    id: str = attr.ib(default="__never_exists__", validator=vs.instance_of(str))
     DependsOn: Union[TypeHint.dependency_obj, List[TypeHint.dependency_obj]] = attr.ib(
         factory=list,
         validator=vs.optional(vs.instance_of((str, _Dependency, list))),
@@ -1380,7 +1491,7 @@ def get_id(
         return obj_or_id.id
 
 
-def serialize(obj: Union['AwsObject', dict, typing.Any]) -> typing.Any:
+def serialize(obj: Union["AwsObject", dict, typing.Any]) -> typing.Any:
     """
     A universal api that convert anything to json serializable python dictionary.
 
@@ -1389,22 +1500,16 @@ def serialize(obj: Union['AwsObject', dict, typing.Any]) -> typing.Any:
     if isinstance(obj, AwsObject):
         return obj.serialize()
     elif isinstance(obj, (list, tuple)):
-        return [
-            serialize(nested_obj)
-            for nested_obj in obj
-        ]
+        return [serialize(nested_obj) for nested_obj in obj]
     elif isinstance(obj, dict):
-        return {
-            key: serialize(nested_obj)
-            for key, nested_obj in obj.items()
-        }
+        return {key: serialize(nested_obj) for key, nested_obj in obj.items()}
     else:
         return obj
 
 
 def eval(
     obj: Union[
-        'AwsObject',
+        "AwsObject",
         dict,
         str,
         typing.Any,

@@ -30,7 +30,7 @@ def deploy_stack():
     tpl.add(stack.rg1_s3)
     tpl.add(stack.rg2_iam_role)
 
-    tpl.batch_tagging(ProjectName="DevJumpBox")
+    tpl.batch_tagging(dict(ProjectName="DevJumpBox"))
 
     p_tpl_json = Path(dir_here, "dev-jump-start-stack.json")
     p_tpl_yml = Path(dir_here, "dev-jump-start-stack.yml")

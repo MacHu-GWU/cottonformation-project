@@ -4,25 +4,48 @@
 AWS Environment and Deployment component.
 """
 
+import typing as T
 import sys
 import hashlib
-from typing import (
-    TYPE_CHECKING, Tuple, List,
-)
 
-if TYPE_CHECKING:
-    from boto_session_manager import BotoSesManager
+from aws_cloudformation import deploy_stack, remove_stack
+from aws_cloudformation.stack import Parameter
 
 from .template import Template
+from .console import get_s3_console_url
 from ..res.cloudformation import Stack
 
-DEFAULT_CFT_S3_PREFIX = "cloudformation/upload"
+if T.TYPE_CHECKING:
+    from boto_session_manager import BotoSesManager
+
+DEFAULT_S3_PREFIX_FOR_TEMPLATE = "cloudformation/template"
+DEFAULT_S3_PREFIX_FOR_STACK_POLICY = "cloudformation/policy"
+
+DEFAULT_UPDATE_DELAYS = 5
+DEFAULT_UPDATE_TIMEOUT = 60
+DEFAULT_CHANGE_SET_DELAYS = 5
+DEFAULT_CHANGE_SET_TIMEOUT = 60
 
 
-def md5_of_text(text):
+def md5_of_text(text: str) -> str:
+    """
+    Return md5 of text.
+    """
     md5 = hashlib.md5()
     md5.update(text.encode("utf-8"))
     return md5.hexdigest()
+
+
+def detect_template_type(template: str) -> str:
+    """
+    Detect whether CloudFormation template is JSON or YAML.
+
+    :return: "json" or "yaml"
+    """
+    if template.strip().startswith("{"):
+        return "json"
+    else:  # pragma: no cover
+        return "yaml"
 
 
 class Env:
@@ -63,59 +86,75 @@ class Env:
             aws_secret_access_key="your_secret_access_key",
             region_name="us-east-1",
         )
+
+    .. versionadded:: 1.0.1
     """
 
     def __init__(
         self,
-        bsm: 'BotoSesManager' = None
+        bsm: "BotoSesManager" = None,
+        is_us_gov_cloud: bool = False,
     ):
         if bsm is None:
             self.bsm = BotoSesManager()
         else:
             self.bsm = bsm
+        self.is_us_gov_cloud = is_us_gov_cloud
 
-        self.s3_client = self.bsm.get_client("s3")
-        self.cf_client = self.bsm.get_client("cloudformation")
+    @property
+    def s3_client(self):
+        return self.bsm.get_client("s3")
+
+    @property
+    def cf_client(self):
+        return self.bsm.get_client("cloudformation")
 
     def upload_template(
         self,
         template: Template,
-        bucket_name: str,
-        prefix: str = DEFAULT_CFT_S3_PREFIX,
-    ) -> Tuple[str, str]:
+        bucket: str,
+        prefix: str = DEFAULT_S3_PREFIX_FOR_TEMPLATE,
+    ) -> T.Tuple[str, str]:
         """
         Upload cloudformation template to s3 bucket and returns template url.
         It is a format like this https://s3.amazonaws.com/<s3-bucket-name>/<s3-key>
 
         :return: s3 url of the template file
+
+        .. versionadded:: 1.0.1
         """
-        tpl_content = template.to_json()
-        fname = md5_of_text(tpl_content)
-        ext = ".json"
+        template_body = template.to_json()
+        filename = md5_of_text(template_body)
+        template_type = detect_template_type(template_body)
         if prefix.endswith("/"):
             prefix = prefix[:-1]
-        s3_key = f"{prefix}/{fname}{ext}"
+        key = f"{prefix}/{filename}.{template_type}"
         self.s3_client.put_object(
-            Body=tpl_content,
-            Bucket=bucket_name,
-            Key=s3_key,
+            Bucket=bucket,
+            Key=key,
+            Body=template_body,
         )
-        template_url = "https://s3.amazonaws.com/{}/{}".format(bucket_name, s3_key)
-        s3_console_url = "https://s3.console.aws.amazon.com/s3/object/{}?prefix={}".format(
-            bucket_name, s3_key
+        template_url = "https://s3.amazonaws.com/{}/{}".format(bucket, key)
+        s3_console_url = get_s3_console_url(
+            bucket=bucket,
+            prefix=key,
+            is_us_gov_cloud=self.is_us_gov_cloud,
         )
         return template_url, s3_console_url
 
     def package(
         self,
         template: Template,
-        bucket_name: str,
-        prefix: str = DEFAULT_CFT_S3_PREFIX,
+        bucket: str,
+        prefix: str = DEFAULT_S3_PREFIX_FOR_TEMPLATE,
         verbose: bool = True,
         _is_master: bool = True,
     ):
         """
-        Depth-first.
+        Automatically upload nested stack template and update template url
+        in your CloudFormation code.
+
+        It's a depth-first-search.
         """
         stack_resource: Stack
         for stack_resource in template.Resources.values():
@@ -125,13 +164,13 @@ class Env:
             nested_template = template.NestedStack[stack_resource.id]
             self.package(
                 template=nested_template,
-                bucket_name=bucket_name,
+                bucket=bucket,
                 prefix=prefix,
                 verbose=verbose,
-                _is_master=False
+                _is_master=False,
             )
 
-            if bucket_name is None:
+            if bucket is None:
                 raise ValueError(
                     "Because you have a nested template, "
                     "you have to upload template to S3 bucket! "
@@ -139,7 +178,7 @@ class Env:
                 )
             nested_template_url, nested_template_s3_console_url = self.upload_template(
                 template=nested_template,
-                bucket_name=bucket_name,
+                bucket=bucket,
                 prefix=prefix,
             )
             stack_resource.rp_TemplateURL = nested_template_url
@@ -159,18 +198,81 @@ class Env:
 
     def deploy(
         self,
-        template: Template,
         stack_name: str,
-        bucket_name: str = None,
-        prefix: str = DEFAULT_CFT_S3_PREFIX,
-        stack_tags: dict = None,
-        stack_parameters: dict = None,
-        execution_role_arn: str = None,
+        template: Template,
+        use_previous_template: T.Optional[bool] = None,
+        bucket: T.Optional[str] = None,
+        prefix: T.Optional[str] = DEFAULT_S3_PREFIX_FOR_TEMPLATE,
+        parameters: T.List[Parameter] = None,
+        tags: dict = None,
+        execution_role_arn: T.Optional[str] = None,
         include_iam: bool = False,
+        include_named_iam: bool = False,
+        include_macro: bool = False,
+        stack_policy: T.Optional[str] = None,
+        prefix_stack_policy: T.Optional[str] = DEFAULT_S3_PREFIX_FOR_STACK_POLICY,
+        resource_types: T.Optional[T.List[str]] = None,
+        client_request_token: T.Optional[str] = None,
+        enable_termination_protection: T.Optional[bool] = None,
+        disable_rollback: T.Optional[bool] = None,
+        wait: bool = True,
+        delays: T.Union[int, float] = DEFAULT_UPDATE_DELAYS,
+        timeout: T.Union[int, float] = DEFAULT_UPDATE_TIMEOUT,
+        plan_nested_stack: bool = True,
+        skip_plan: bool = False,
+        skip_prompt: bool = False,
+        change_set_delays: T.Union[int, float] = DEFAULT_CHANGE_SET_DELAYS,
+        change_set_timeout: T.Union[int, float] = DEFAULT_CHANGE_SET_TIMEOUT,
         verbose: bool = True,
-    ) -> dict:
+    ):
         """
-        create / update a cloudformation
+        Deploy (create or update) an AWS CloudFormation stack. But way more powerful
+        than the original boto3 API.
+
+        Reference:
+
+        - Create Stack Boto3 API: https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudformation.html#CloudFormation.Client.create_stack
+        - Update Stack Boto3 API: https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudformation.html#CloudFormation.Client.update_stack
+
+        :param stack_name: the stack name or unique stack id
+        :param template: :class:`~cottonformation.core.template.Template` object
+        :param use_previous_template: see "Update Stack Boto3 API" link
+        :param bucket: default None; if given, automatically upload template to S3
+            before deployment. see :func:`~aws_cloudformation.better_boto.upload_template_to_s3`
+            for more details.
+        :param prefix: the s3 prefix where you want to upload the template to
+        :param parameters: see "Update Stack Boto3 API" link
+        :param tags: see "Update Stack Boto3 API" link
+        :param execution_role_arn: see "Update Stack Boto3 API" link
+        :param include_iam: see "Capacities" part in "Update Stack Boto3 API" link
+        :param include_named_iam: see "Capacities" part in "Update Stack Boto3 API" link
+        :param include_macro: see "Capacities" part in "Update Stack Boto3 API" link
+        :param stack_policy: Stack Policy JSON or Yaml body in text, or the
+            s3 uri pointing to a Stack Policy JSON template file.
+        :param prefix_stack_policy: see "Update Stack Boto3 API" link
+        :param resource_types: see "Update Stack Boto3 API" link
+        :param client_request_token: see "Update Stack Boto3 API" link
+        :param enable_termination_protection: see "Create Stack Boto3 API" link
+        :param disable_rollback: see "Update Stack Boto3 API" link
+        :param wait: default True; if True, then wait the create / update action
+            to success or fail; if False, then it is an async call and return immediately;
+            note that if you have skip_plan is False (using change set), you always
+            have to wait the change set creation to finish.
+        :param delays: how long it waits (in seconds) between two
+            "describe_stacks" api call to get the stack status
+        :param timeout: how long it will raise timeout error
+        :param skip_plan: default False; if False, force to use change set to
+            create / update; if True, then do create / update without change set.
+        :param skip_prompt: default False; if False, you have to enter "Yes"
+            in prompt to do deployment; if True, then execute the deployment directly.
+        :param change_set_delays: how long it waits (in seconds) between two
+            "describe_change_set" api call to get the change set status
+        :param change_set_timeout: how long it will raise timeout error
+        :param verbose: whether you want to log information to console
+
+        :return: Nothing
+
+        .. versionadded:: 1.0.1
         """
         stack_console_url = "https://console.aws.amazon.com/cloudformation/home?region={aws_region}#/stacks?filteringStatus=active&filteringText={stack_name}&viewNested=true&hideStacks=false&stackId=".format(
             aws_region=self.bsm.aws_region,
@@ -181,140 +283,117 @@ class Env:
 
         self.package(
             template=template,
-            bucket_name=bucket_name,
+            bucket=bucket,
             prefix=prefix,
-            verbose=verbose
+            verbose=verbose,
         )
 
-        # check if stack already exists
-        try:
-            res = self.cf_client.describe_stacks(
-                StackName=stack_name
-            )
-            if len(res["Stacks"]) == 1:
-                stack_exists_flag = True
-            else:
-                stack_exists_flag = False
-        except:
-            stack_exists_flag = False
-
-        # pre-process arguments
-        if stack_parameters is None:
-            stack_parameters = dict()
-
-        Parameters = [
-            {
-                "ParameterKey": key,
-                "ParameterValue": value,
-            }
-            for key, value in stack_parameters.items()
-        ]
-
-        if stack_tags is None:
-            stack_tags = dict()
-
-        Tags = [
-            {
-                "Key": key,
-                "Value": value
-            }
-            for key, value in stack_tags.items()
-        ]
-
-        Capabilities = list()
-        if include_iam:
-            Capabilities.append("CAPABILITY_NAMED_IAM")
-
-        # execute create_stack or update_stack
-        create_or_update_stack_kwargs = dict(
-            StackName=stack_name,
+        deploy_stack(
+            bsm=self.bsm,
+            stack_name=stack_name,
+            template=template.to_json(),
+            use_previous_template=use_previous_template,
+            bucket=bucket,
+            prefix=prefix,
+            parameters=parameters,
+            tags=tags,
+            execution_role_arn=execution_role_arn,
+            include_iam=include_iam,
+            include_named_iam=include_named_iam,
+            include_macro=include_macro,
+            stack_policy=stack_policy,
+            prefix_stack_policy=prefix_stack_policy,
+            resource_types=resource_types,
+            client_request_token=client_request_token,
+            enable_termination_protection=enable_termination_protection,
+            disable_rollback=disable_rollback,
+            wait=wait,
+            delays=delays,
+            timeout=timeout,
+            plan_nested_stack=plan_nested_stack,
+            skip_plan=skip_plan,
+            skip_prompt=skip_prompt,
+            change_set_delays=change_set_delays,
+            change_set_timeout=change_set_timeout,
+            verbose=verbose,
         )
-        if bucket_name:
-            template_url, s3_console_url = self.upload_template(template, bucket_name, prefix)
-            if verbose:
-                print(f"view raw cloudformation Template('{template.Description}') in console {s3_console_url}")
-            create_or_update_stack_kwargs["TemplateURL"] = template_url
-        else:
-            create_or_update_stack_kwargs["TemplateBody"] = template.to_json(human_readable=False)
-
-        if len(Capabilities):
-            create_or_update_stack_kwargs["Capabilities"] = Capabilities
-        if len(Parameters):
-            create_or_update_stack_kwargs["Parameters"] = Parameters
-        if len(Tags):
-            create_or_update_stack_kwargs["Tags"] = Tags
-        if execution_role_arn:
-            create_or_update_stack_kwargs["RoleARN"] = execution_role_arn
-
-        response: dict = None
-        if stack_exists_flag is True:  # run update_stack
-            update_stack_kwargs = create_or_update_stack_kwargs
-            update_stack_response = self.cf_client.update_stack(**update_stack_kwargs)
-            response = update_stack_response
-        else:  # run create_stack
-            create_stack_kwargs = create_or_update_stack_kwargs
-            create_stack_response = self.cf_client.create_stack(**create_stack_kwargs)
-            response = create_stack_response
-
-        return response
 
     def delete(
         self,
-        stack_name: str,
-        retain_resources: List[str] = None,
-        role_arn: str = None,
-        client_request_token: str = None,
+        stack_name: str = None,
+        retain_resources: T.Optional[T.List[str]] = None,
+        role_arn: T.Optional[bool] = None,
+        client_request_token: T.Optional[str] = None,
+        wait: bool = True,
+        delays: T.Union[int, float] = DEFAULT_UPDATE_DELAYS,
+        timeout: T.Union[int, float] = DEFAULT_UPDATE_TIMEOUT,
+        skip_prompt: bool = False,
         verbose: bool = True,
-    ) -> dict:
+    ):
         """
-        delete a cloudformation stack.
+        Delete an AWS CloudFormation Stack.
+
+        Reference:
+
+        - Delete Stack Boto3 API: https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/cloudformation.html#CloudFormation.Client.delete_stack
+
+        :param stack_name: the stack name or unique stack id
+        :param retain_resources: see "Delete Stack Boto3 API" link
+        :param role_arn: see "Delete Stack Boto3 API" link
+        :param client_request_token: see "Delete Stack Boto3 API" link
+        :param wait: default True; if True, then wait the delete action
+            to success or fail; if False, then it is an async call and return immediately.
+        :param delays: how long it waits (in seconds) between two
+            "describe_stacks" api call to get the stack status
+        :param timeout: how long it will raise timeout error
+        :param skip_prompt: default False; if False, you have to enter "Yes"
+            in prompt to do deletion; if True, then execute the deletion directly.
+        :param verbose: whether you want to log information to console
+
+        .. versionadded:: 1.0.1
         """
-        stack_console_url = "https://console.aws.amazon.com/cloudformation/home?region={aws_region}#/stacks?filteringStatus=active&filteringText={stack_name}&viewNested=true&hideStacks=false&stackId=".format(
-            aws_region=self.bsm.aws_region,
+        remove_stack(
+            bsm=self.bsm,
             stack_name=stack_name,
+            retain_resources=retain_resources,
+            role_arn=role_arn,
+            client_request_token=client_request_token,
+            wait=wait,
+            delays=delays,
+            timeout=timeout,
+            skip_prompt=skip_prompt,
+            verbose=verbose,
         )
-        if verbose:
-            print(f"open cloudformation console for status: {stack_console_url}")
-        kwargs = dict(
-            StackName=stack_name,
-            RetainResources=retain_resources,
-            RoleARN=role_arn,
-            ClientRequestToken=client_request_token,
-        )
-        kwargs = {
-            k: v
-            for k, v in kwargs.items()
-            if v is not None
-        }
-        response = self.cf_client.delete_stack(**kwargs)
-        return response
 
     def validate(
         self,
         template: Template,
-        bucket_name: str = None,
-        prefix: str = DEFAULT_CFT_S3_PREFIX,
-    ):
+        bucket: str = None,
+        prefix: str = DEFAULT_S3_PREFIX_FOR_TEMPLATE,
+    ) -> dict:
         """
         Validate if a :class:`~cottonformation.core.template.Template` object
         is valid.
+
+        TODO: not a stable API
 
         .. versionadded:: 0.0.8
         """
         template_body = template.to_json(human_readable=False)
         kwargs = dict()
         if sys.getsizeof(template_body) >= 51200:
-            if bucket_name is None:
+            if bucket is None:
                 raise ValueError(
                     "the body of Template is too large! you have to specify "
                     "``bucket_name`` argument to upload it to S3!"
                 )
             template_url, _ = self.upload_template(
                 template=template,
-                bucket_name=bucket_name,
+                bucket=bucket,
                 prefix=prefix,
             )
             kwargs["TemplateURL"] = template_url
         else:
             kwargs["TemplateBody"] = template_body
-        self.cf_client.validate_template(**kwargs)
+
+        return self.cf_client.validate_template(**kwargs)

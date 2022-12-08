@@ -15,51 +15,31 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class PropVirtualRouterPortMapping(Property):
+class PropVirtualNodeJsonFormatRef(Property):
     """
-    AWS Object Type = "AWS::AppMesh::VirtualRouter.PortMapping"
+    AWS Object Type = "AWS::AppMesh::VirtualNode.JsonFormatRef"
 
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualrouter-portmapping.html
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-jsonformatref.html
 
     Property Document:
     
-    - ``rp_Port``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualrouter-portmapping.html#cfn-appmesh-virtualrouter-portmapping-port
-    - ``rp_Protocol``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualrouter-portmapping.html#cfn-appmesh-virtualrouter-portmapping-protocol
+    - ``rp_Key``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-jsonformatref.html#cfn-appmesh-virtualnode-jsonformatref-key
+    - ``rp_Value``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-jsonformatref.html#cfn-appmesh-virtualnode-jsonformatref-value
     """
-    AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualRouter.PortMapping"
+    AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualNode.JsonFormatRef"
     
-    rp_Port: int = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(int),
-        metadata={AttrMeta.PROPERTY_NAME: "Port"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualrouter-portmapping.html#cfn-appmesh-virtualrouter-portmapping-port"""
-    rp_Protocol: TypeHint.intrinsic_str = attr.ib(
+    rp_Key: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Protocol"},
+        metadata={AttrMeta.PROPERTY_NAME: "Key"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualrouter-portmapping.html#cfn-appmesh-virtualrouter-portmapping-protocol"""
-
-@attr.s
-class PropVirtualNodeTlsValidationContextSdsTrust(Property):
-    """
-    AWS Object Type = "AWS::AppMesh::VirtualNode.TlsValidationContextSdsTrust"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-tlsvalidationcontextsdstrust.html
-
-    Property Document:
-    
-    - ``rp_SecretName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-tlsvalidationcontextsdstrust.html#cfn-appmesh-virtualnode-tlsvalidationcontextsdstrust-secretname
-    """
-    AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualNode.TlsValidationContextSdsTrust"
-    
-    rp_SecretName: TypeHint.intrinsic_str = attr.ib(
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-jsonformatref.html#cfn-appmesh-virtualnode-jsonformatref-key"""
+    rp_Value: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "SecretName"},
+        metadata={AttrMeta.PROPERTY_NAME: "Value"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-tlsvalidationcontextsdstrust.html#cfn-appmesh-virtualnode-tlsvalidationcontextsdstrust-secretname"""
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-jsonformatref.html#cfn-appmesh-virtualnode-jsonformatref-value"""
 
 @attr.s
 class PropGatewayRouteHttpQueryParameterMatch(Property):
@@ -82,33 +62,6 @@ class PropGatewayRouteHttpQueryParameterMatch(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-httpqueryparametermatch.html#cfn-appmesh-gatewayroute-httpqueryparametermatch-exact"""
 
 @attr.s
-class PropRouteDuration(Property):
-    """
-    AWS Object Type = "AWS::AppMesh::Route.Duration"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-duration.html
-
-    Property Document:
-    
-    - ``rp_Unit``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-duration.html#cfn-appmesh-route-duration-unit
-    - ``rp_Value``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-duration.html#cfn-appmesh-route-duration-value
-    """
-    AWS_OBJECT_TYPE = "AWS::AppMesh::Route.Duration"
-    
-    rp_Unit: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Unit"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-duration.html#cfn-appmesh-route-duration-unit"""
-    rp_Value: int = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(int),
-        metadata={AttrMeta.PROPERTY_NAME: "Value"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-duration.html#cfn-appmesh-route-duration-value"""
-
-@attr.s
 class PropRouteWeightedTarget(Property):
     """
     AWS Object Type = "AWS::AppMesh::Route.WeightedTarget"
@@ -119,6 +72,7 @@ class PropRouteWeightedTarget(Property):
     
     - ``rp_VirtualNode``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-weightedtarget.html#cfn-appmesh-route-weightedtarget-virtualnode
     - ``rp_Weight``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-weightedtarget.html#cfn-appmesh-route-weightedtarget-weight
+    - ``p_Port``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-weightedtarget.html#cfn-appmesh-route-weightedtarget-port
     """
     AWS_OBJECT_TYPE = "AWS::AppMesh::Route.WeightedTarget"
     
@@ -134,100 +88,12 @@ class PropRouteWeightedTarget(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Weight"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-weightedtarget.html#cfn-appmesh-route-weightedtarget-weight"""
-
-@attr.s
-class PropGatewayRouteHttpGatewayRoutePrefixRewrite(Property):
-    """
-    AWS Object Type = "AWS::AppMesh::GatewayRoute.HttpGatewayRoutePrefixRewrite"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-httpgatewayrouteprefixrewrite.html
-
-    Property Document:
-    
-    - ``p_DefaultPrefix``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-httpgatewayrouteprefixrewrite.html#cfn-appmesh-gatewayroute-httpgatewayrouteprefixrewrite-defaultprefix
-    - ``p_Value``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-httpgatewayrouteprefixrewrite.html#cfn-appmesh-gatewayroute-httpgatewayrouteprefixrewrite-value
-    """
-    AWS_OBJECT_TYPE = "AWS::AppMesh::GatewayRoute.HttpGatewayRoutePrefixRewrite"
-    
-    p_DefaultPrefix: TypeHint.intrinsic_str = attr.ib(
+    p_Port: int = attr.ib(
         default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "DefaultPrefix"},
+        validator=attr.validators.optional(attr.validators.instance_of(int)),
+        metadata={AttrMeta.PROPERTY_NAME: "Port"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-httpgatewayrouteprefixrewrite.html#cfn-appmesh-gatewayroute-httpgatewayrouteprefixrewrite-defaultprefix"""
-    p_Value: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Value"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-httpgatewayrouteprefixrewrite.html#cfn-appmesh-gatewayroute-httpgatewayrouteprefixrewrite-value"""
-
-@attr.s
-class PropVirtualGatewayVirtualGatewayListenerTlsAcmCertificate(Property):
-    """
-    AWS Object Type = "AWS::AppMesh::VirtualGateway.VirtualGatewayListenerTlsAcmCertificate"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistenertlsacmcertificate.html
-
-    Property Document:
-    
-    - ``rp_CertificateArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistenertlsacmcertificate.html#cfn-appmesh-virtualgateway-virtualgatewaylistenertlsacmcertificate-certificatearn
-    """
-    AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualGateway.VirtualGatewayListenerTlsAcmCertificate"
-    
-    rp_CertificateArn: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "CertificateArn"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistenertlsacmcertificate.html#cfn-appmesh-virtualgateway-virtualgatewaylistenertlsacmcertificate-certificatearn"""
-
-@attr.s
-class PropVirtualNodeFileAccessLog(Property):
-    """
-    AWS Object Type = "AWS::AppMesh::VirtualNode.FileAccessLog"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-fileaccesslog.html
-
-    Property Document:
-    
-    - ``rp_Path``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-fileaccesslog.html#cfn-appmesh-virtualnode-fileaccesslog-path
-    """
-    AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualNode.FileAccessLog"
-    
-    rp_Path: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Path"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-fileaccesslog.html#cfn-appmesh-virtualnode-fileaccesslog-path"""
-
-@attr.s
-class PropVirtualNodeAwsCloudMapInstanceAttribute(Property):
-    """
-    AWS Object Type = "AWS::AppMesh::VirtualNode.AwsCloudMapInstanceAttribute"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-awscloudmapinstanceattribute.html
-
-    Property Document:
-    
-    - ``rp_Key``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-awscloudmapinstanceattribute.html#cfn-appmesh-virtualnode-awscloudmapinstanceattribute-key
-    - ``rp_Value``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-awscloudmapinstanceattribute.html#cfn-appmesh-virtualnode-awscloudmapinstanceattribute-value
-    """
-    AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualNode.AwsCloudMapInstanceAttribute"
-    
-    rp_Key: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Key"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-awscloudmapinstanceattribute.html#cfn-appmesh-virtualnode-awscloudmapinstanceattribute-key"""
-    rp_Value: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Value"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-awscloudmapinstanceattribute.html#cfn-appmesh-virtualnode-awscloudmapinstanceattribute-value"""
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-weightedtarget.html#cfn-appmesh-route-weightedtarget-port"""
 
 @attr.s
 class PropVirtualGatewayVirtualGatewayTlsValidationContextFileTrust(Property):
@@ -258,9 +124,16 @@ class PropMeshMeshServiceDiscovery(Property):
 
     Property Document:
     
+    - ``p_IpPreference``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-mesh-meshservicediscovery.html#cfn-appmesh-mesh-meshservicediscovery-ippreference
     """
     AWS_OBJECT_TYPE = "AWS::AppMesh::Mesh.MeshServiceDiscovery"
     
+    p_IpPreference: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "IpPreference"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-mesh-meshservicediscovery.html#cfn-appmesh-mesh-meshservicediscovery-ippreference"""
 
 @attr.s
 class PropRouteHttpPathMatch(Property):
@@ -308,26 +181,6 @@ class PropVirtualGatewayVirtualGatewayHttp2ConnectionPool(Property):
         metadata={AttrMeta.PROPERTY_NAME: "MaxRequests"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayhttp2connectionpool.html#cfn-appmesh-virtualgateway-virtualgatewayhttp2connectionpool-maxrequests"""
-
-@attr.s
-class PropGatewayRouteGatewayRouteHostnameRewrite(Property):
-    """
-    AWS Object Type = "AWS::AppMesh::GatewayRoute.GatewayRouteHostnameRewrite"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-gatewayroutehostnamerewrite.html
-
-    Property Document:
-    
-    - ``p_DefaultTargetHostname``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-gatewayroutehostnamerewrite.html#cfn-appmesh-gatewayroute-gatewayroutehostnamerewrite-defaulttargethostname
-    """
-    AWS_OBJECT_TYPE = "AWS::AppMesh::GatewayRoute.GatewayRouteHostnameRewrite"
-    
-    p_DefaultTargetHostname: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "DefaultTargetHostname"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-gatewayroutehostnamerewrite.html#cfn-appmesh-gatewayroute-gatewayroutehostnamerewrite-defaulttargethostname"""
 
 @attr.s
 class PropVirtualNodePortMapping(Property):
@@ -397,32 +250,32 @@ class PropVirtualNodeListenerTlsSdsCertificate(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-listenertlssdscertificate.html#cfn-appmesh-virtualnode-listenertlssdscertificate-secretname"""
 
 @attr.s
-class PropGatewayRouteQueryParameter(Property):
+class PropVirtualNodeLoggingFormat(Property):
     """
-    AWS Object Type = "AWS::AppMesh::GatewayRoute.QueryParameter"
+    AWS Object Type = "AWS::AppMesh::VirtualNode.LoggingFormat"
 
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-queryparameter.html
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-loggingformat.html
 
     Property Document:
     
-    - ``rp_Name``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-queryparameter.html#cfn-appmesh-gatewayroute-queryparameter-name
-    - ``p_Match``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-queryparameter.html#cfn-appmesh-gatewayroute-queryparameter-match
+    - ``p_Json``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-loggingformat.html#cfn-appmesh-virtualnode-loggingformat-json
+    - ``p_Text``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-loggingformat.html#cfn-appmesh-virtualnode-loggingformat-text
     """
-    AWS_OBJECT_TYPE = "AWS::AppMesh::GatewayRoute.QueryParameter"
+    AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualNode.LoggingFormat"
     
-    rp_Name: TypeHint.intrinsic_str = attr.ib(
+    p_Json: typing.List[typing.Union['PropVirtualNodeJsonFormatRef', dict]] = attr.ib(
         default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Name"},
+        converter=PropVirtualNodeJsonFormatRef.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropVirtualNodeJsonFormatRef), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "Json"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-queryparameter.html#cfn-appmesh-gatewayroute-queryparameter-name"""
-    p_Match: typing.Union['PropGatewayRouteHttpQueryParameterMatch', dict] = attr.ib(
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-loggingformat.html#cfn-appmesh-virtualnode-loggingformat-json"""
+    p_Text: TypeHint.intrinsic_str = attr.ib(
         default=None,
-        converter=PropGatewayRouteHttpQueryParameterMatch.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropGatewayRouteHttpQueryParameterMatch)),
-        metadata={AttrMeta.PROPERTY_NAME: "Match"},
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "Text"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-queryparameter.html#cfn-appmesh-gatewayroute-queryparameter-match"""
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-loggingformat.html#cfn-appmesh-virtualnode-loggingformat-text"""
 
 @attr.s
 class PropVirtualGatewayVirtualGatewayGrpcConnectionPool(Property):
@@ -445,27 +298,6 @@ class PropVirtualGatewayVirtualGatewayGrpcConnectionPool(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaygrpcconnectionpool.html#cfn-appmesh-virtualgateway-virtualgatewaygrpcconnectionpool-maxrequests"""
 
 @attr.s
-class PropGatewayRouteGrpcGatewayRouteRewrite(Property):
-    """
-    AWS Object Type = "AWS::AppMesh::GatewayRoute.GrpcGatewayRouteRewrite"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-grpcgatewayrouterewrite.html
-
-    Property Document:
-    
-    - ``p_Hostname``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-grpcgatewayrouterewrite.html#cfn-appmesh-gatewayroute-grpcgatewayrouterewrite-hostname
-    """
-    AWS_OBJECT_TYPE = "AWS::AppMesh::GatewayRoute.GrpcGatewayRouteRewrite"
-    
-    p_Hostname: typing.Union['PropGatewayRouteGatewayRouteHostnameRewrite', dict] = attr.ib(
-        default=None,
-        converter=PropGatewayRouteGatewayRouteHostnameRewrite.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropGatewayRouteGatewayRouteHostnameRewrite)),
-        metadata={AttrMeta.PROPERTY_NAME: "Hostname"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-grpcgatewayrouterewrite.html#cfn-appmesh-gatewayroute-grpcgatewayrouterewrite-hostname"""
-
-@attr.s
 class PropVirtualNodeVirtualNodeTcpConnectionPool(Property):
     """
     AWS Object Type = "AWS::AppMesh::VirtualNode.VirtualNodeTcpConnectionPool"
@@ -484,6 +316,762 @@ class PropVirtualNodeVirtualNodeTcpConnectionPool(Property):
         metadata={AttrMeta.PROPERTY_NAME: "MaxConnections"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-virtualnodetcpconnectionpool.html#cfn-appmesh-virtualnode-virtualnodetcpconnectionpool-maxconnections"""
+
+@attr.s
+class PropGatewayRouteHttpGatewayRoutePathRewrite(Property):
+    """
+    AWS Object Type = "AWS::AppMesh::GatewayRoute.HttpGatewayRoutePathRewrite"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-httpgatewayroutepathrewrite.html
+
+    Property Document:
+    
+    - ``p_Exact``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-httpgatewayroutepathrewrite.html#cfn-appmesh-gatewayroute-httpgatewayroutepathrewrite-exact
+    """
+    AWS_OBJECT_TYPE = "AWS::AppMesh::GatewayRoute.HttpGatewayRoutePathRewrite"
+    
+    p_Exact: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "Exact"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-httpgatewayroutepathrewrite.html#cfn-appmesh-gatewayroute-httpgatewayroutepathrewrite-exact"""
+
+@attr.s
+class PropVirtualNodeVirtualNodeHttpConnectionPool(Property):
+    """
+    AWS Object Type = "AWS::AppMesh::VirtualNode.VirtualNodeHttpConnectionPool"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-virtualnodehttpconnectionpool.html
+
+    Property Document:
+    
+    - ``rp_MaxConnections``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-virtualnodehttpconnectionpool.html#cfn-appmesh-virtualnode-virtualnodehttpconnectionpool-maxconnections
+    - ``p_MaxPendingRequests``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-virtualnodehttpconnectionpool.html#cfn-appmesh-virtualnode-virtualnodehttpconnectionpool-maxpendingrequests
+    """
+    AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualNode.VirtualNodeHttpConnectionPool"
+    
+    rp_MaxConnections: int = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(int),
+        metadata={AttrMeta.PROPERTY_NAME: "MaxConnections"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-virtualnodehttpconnectionpool.html#cfn-appmesh-virtualnode-virtualnodehttpconnectionpool-maxconnections"""
+    p_MaxPendingRequests: int = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(int)),
+        metadata={AttrMeta.PROPERTY_NAME: "MaxPendingRequests"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-virtualnodehttpconnectionpool.html#cfn-appmesh-virtualnode-virtualnodehttpconnectionpool-maxpendingrequests"""
+
+@attr.s
+class PropVirtualServiceVirtualNodeServiceProvider(Property):
+    """
+    AWS Object Type = "AWS::AppMesh::VirtualService.VirtualNodeServiceProvider"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualservice-virtualnodeserviceprovider.html
+
+    Property Document:
+    
+    - ``rp_VirtualNodeName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualservice-virtualnodeserviceprovider.html#cfn-appmesh-virtualservice-virtualnodeserviceprovider-virtualnodename
+    """
+    AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualService.VirtualNodeServiceProvider"
+    
+    rp_VirtualNodeName: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "VirtualNodeName"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualservice-virtualnodeserviceprovider.html#cfn-appmesh-virtualservice-virtualnodeserviceprovider-virtualnodename"""
+
+@attr.s
+class PropRouteHttpQueryParameterMatch(Property):
+    """
+    AWS Object Type = "AWS::AppMesh::Route.HttpQueryParameterMatch"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httpqueryparametermatch.html
+
+    Property Document:
+    
+    - ``p_Exact``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httpqueryparametermatch.html#cfn-appmesh-route-httpqueryparametermatch-exact
+    """
+    AWS_OBJECT_TYPE = "AWS::AppMesh::Route.HttpQueryParameterMatch"
+    
+    p_Exact: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "Exact"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httpqueryparametermatch.html#cfn-appmesh-route-httpqueryparametermatch-exact"""
+
+@attr.s
+class PropVirtualGatewaySubjectAlternativeNameMatchers(Property):
+    """
+    AWS Object Type = "AWS::AppMesh::VirtualGateway.SubjectAlternativeNameMatchers"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-subjectalternativenamematchers.html
+
+    Property Document:
+    
+    - ``p_Exact``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-subjectalternativenamematchers.html#cfn-appmesh-virtualgateway-subjectalternativenamematchers-exact
+    """
+    AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualGateway.SubjectAlternativeNameMatchers"
+    
+    p_Exact: typing.List[TypeHint.intrinsic_str] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "Exact"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-subjectalternativenamematchers.html#cfn-appmesh-virtualgateway-subjectalternativenamematchers-exact"""
+
+@attr.s
+class PropRouteGrpcRouteAction(Property):
+    """
+    AWS Object Type = "AWS::AppMesh::Route.GrpcRouteAction"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcrouteaction.html
+
+    Property Document:
+    
+    - ``rp_WeightedTargets``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcrouteaction.html#cfn-appmesh-route-grpcrouteaction-weightedtargets
+    """
+    AWS_OBJECT_TYPE = "AWS::AppMesh::Route.GrpcRouteAction"
+    
+    rp_WeightedTargets: typing.List[typing.Union['PropRouteWeightedTarget', dict]] = attr.ib(
+        default=None,
+        converter=PropRouteWeightedTarget.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropRouteWeightedTarget), iterable_validator=attr.validators.instance_of(list)),
+        metadata={AttrMeta.PROPERTY_NAME: "WeightedTargets"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcrouteaction.html#cfn-appmesh-route-grpcrouteaction-weightedtargets"""
+
+@attr.s
+class PropVirtualServiceVirtualServiceProvider(Property):
+    """
+    AWS Object Type = "AWS::AppMesh::VirtualService.VirtualServiceProvider"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualservice-virtualserviceprovider.html
+
+    Property Document:
+    
+    - ``p_VirtualNode``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualservice-virtualserviceprovider.html#cfn-appmesh-virtualservice-virtualserviceprovider-virtualnode
+    - ``p_VirtualRouter``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualservice-virtualserviceprovider.html#cfn-appmesh-virtualservice-virtualserviceprovider-virtualrouter
+    """
+    AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualService.VirtualServiceProvider"
+    
+    p_VirtualNode: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "VirtualNode"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualservice-virtualserviceprovider.html#cfn-appmesh-virtualservice-virtualserviceprovider-virtualnode"""
+    p_VirtualRouter: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "VirtualRouter"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualservice-virtualserviceprovider.html#cfn-appmesh-virtualservice-virtualserviceprovider-virtualrouter"""
+
+@attr.s
+class PropVirtualNodeDnsServiceDiscovery(Property):
+    """
+    AWS Object Type = "AWS::AppMesh::VirtualNode.DnsServiceDiscovery"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-dnsservicediscovery.html
+
+    Property Document:
+    
+    - ``rp_Hostname``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-dnsservicediscovery.html#cfn-appmesh-virtualnode-dnsservicediscovery-hostname
+    - ``p_IpPreference``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-dnsservicediscovery.html#cfn-appmesh-virtualnode-dnsservicediscovery-ippreference
+    - ``p_ResponseType``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-dnsservicediscovery.html#cfn-appmesh-virtualnode-dnsservicediscovery-responsetype
+    """
+    AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualNode.DnsServiceDiscovery"
+    
+    rp_Hostname: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "Hostname"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-dnsservicediscovery.html#cfn-appmesh-virtualnode-dnsservicediscovery-hostname"""
+    p_IpPreference: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "IpPreference"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-dnsservicediscovery.html#cfn-appmesh-virtualnode-dnsservicediscovery-ippreference"""
+    p_ResponseType: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "ResponseType"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-dnsservicediscovery.html#cfn-appmesh-virtualnode-dnsservicediscovery-responsetype"""
+
+@attr.s
+class PropGatewayRouteGatewayRouteRangeMatch(Property):
+    """
+    AWS Object Type = "AWS::AppMesh::GatewayRoute.GatewayRouteRangeMatch"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-gatewayrouterangematch.html
+
+    Property Document:
+    
+    - ``rp_End``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-gatewayrouterangematch.html#cfn-appmesh-gatewayroute-gatewayrouterangematch-end
+    - ``rp_Start``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-gatewayrouterangematch.html#cfn-appmesh-gatewayroute-gatewayrouterangematch-start
+    """
+    AWS_OBJECT_TYPE = "AWS::AppMesh::GatewayRoute.GatewayRouteRangeMatch"
+    
+    rp_End: int = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(int),
+        metadata={AttrMeta.PROPERTY_NAME: "End"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-gatewayrouterangematch.html#cfn-appmesh-gatewayroute-gatewayrouterangematch-end"""
+    rp_Start: int = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(int),
+        metadata={AttrMeta.PROPERTY_NAME: "Start"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-gatewayrouterangematch.html#cfn-appmesh-gatewayroute-gatewayrouterangematch-start"""
+
+@attr.s
+class PropRouteTcpRouteAction(Property):
+    """
+    AWS Object Type = "AWS::AppMesh::Route.TcpRouteAction"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-tcprouteaction.html
+
+    Property Document:
+    
+    - ``rp_WeightedTargets``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-tcprouteaction.html#cfn-appmesh-route-tcprouteaction-weightedtargets
+    """
+    AWS_OBJECT_TYPE = "AWS::AppMesh::Route.TcpRouteAction"
+    
+    rp_WeightedTargets: typing.List[typing.Union['PropRouteWeightedTarget', dict]] = attr.ib(
+        default=None,
+        converter=PropRouteWeightedTarget.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropRouteWeightedTarget), iterable_validator=attr.validators.instance_of(list)),
+        metadata={AttrMeta.PROPERTY_NAME: "WeightedTargets"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-tcprouteaction.html#cfn-appmesh-route-tcprouteaction-weightedtargets"""
+
+@attr.s
+class PropRouteTcpRouteMatch(Property):
+    """
+    AWS Object Type = "AWS::AppMesh::Route.TcpRouteMatch"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-tcproutematch.html
+
+    Property Document:
+    
+    - ``p_Port``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-tcproutematch.html#cfn-appmesh-route-tcproutematch-port
+    """
+    AWS_OBJECT_TYPE = "AWS::AppMesh::Route.TcpRouteMatch"
+    
+    p_Port: int = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(int)),
+        metadata={AttrMeta.PROPERTY_NAME: "Port"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-tcproutematch.html#cfn-appmesh-route-tcproutematch-port"""
+
+@attr.s
+class PropVirtualNodeDuration(Property):
+    """
+    AWS Object Type = "AWS::AppMesh::VirtualNode.Duration"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-duration.html
+
+    Property Document:
+    
+    - ``rp_Unit``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-duration.html#cfn-appmesh-virtualnode-duration-unit
+    - ``rp_Value``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-duration.html#cfn-appmesh-virtualnode-duration-value
+    """
+    AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualNode.Duration"
+    
+    rp_Unit: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "Unit"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-duration.html#cfn-appmesh-virtualnode-duration-unit"""
+    rp_Value: int = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(int),
+        metadata={AttrMeta.PROPERTY_NAME: "Value"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-duration.html#cfn-appmesh-virtualnode-duration-value"""
+
+@attr.s
+class PropVirtualGatewayVirtualGatewayPortMapping(Property):
+    """
+    AWS Object Type = "AWS::AppMesh::VirtualGateway.VirtualGatewayPortMapping"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayportmapping.html
+
+    Property Document:
+    
+    - ``rp_Port``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayportmapping.html#cfn-appmesh-virtualgateway-virtualgatewayportmapping-port
+    - ``rp_Protocol``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayportmapping.html#cfn-appmesh-virtualgateway-virtualgatewayportmapping-protocol
+    """
+    AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualGateway.VirtualGatewayPortMapping"
+    
+    rp_Port: int = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(int),
+        metadata={AttrMeta.PROPERTY_NAME: "Port"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayportmapping.html#cfn-appmesh-virtualgateway-virtualgatewayportmapping-port"""
+    rp_Protocol: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "Protocol"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayportmapping.html#cfn-appmesh-virtualgateway-virtualgatewayportmapping-protocol"""
+
+@attr.s
+class PropVirtualNodeVirtualNodeHttp2ConnectionPool(Property):
+    """
+    AWS Object Type = "AWS::AppMesh::VirtualNode.VirtualNodeHttp2ConnectionPool"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-virtualnodehttp2connectionpool.html
+
+    Property Document:
+    
+    - ``rp_MaxRequests``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-virtualnodehttp2connectionpool.html#cfn-appmesh-virtualnode-virtualnodehttp2connectionpool-maxrequests
+    """
+    AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualNode.VirtualNodeHttp2ConnectionPool"
+    
+    rp_MaxRequests: int = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(int),
+        metadata={AttrMeta.PROPERTY_NAME: "MaxRequests"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-virtualnodehttp2connectionpool.html#cfn-appmesh-virtualnode-virtualnodehttp2connectionpool-maxrequests"""
+
+@attr.s
+class PropVirtualGatewayVirtualGatewayHealthCheckPolicy(Property):
+    """
+    AWS Object Type = "AWS::AppMesh::VirtualGateway.VirtualGatewayHealthCheckPolicy"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayhealthcheckpolicy.html
+
+    Property Document:
+    
+    - ``rp_HealthyThreshold``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayhealthcheckpolicy.html#cfn-appmesh-virtualgateway-virtualgatewayhealthcheckpolicy-healthythreshold
+    - ``rp_IntervalMillis``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayhealthcheckpolicy.html#cfn-appmesh-virtualgateway-virtualgatewayhealthcheckpolicy-intervalmillis
+    - ``rp_Protocol``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayhealthcheckpolicy.html#cfn-appmesh-virtualgateway-virtualgatewayhealthcheckpolicy-protocol
+    - ``rp_TimeoutMillis``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayhealthcheckpolicy.html#cfn-appmesh-virtualgateway-virtualgatewayhealthcheckpolicy-timeoutmillis
+    - ``rp_UnhealthyThreshold``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayhealthcheckpolicy.html#cfn-appmesh-virtualgateway-virtualgatewayhealthcheckpolicy-unhealthythreshold
+    - ``p_Path``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayhealthcheckpolicy.html#cfn-appmesh-virtualgateway-virtualgatewayhealthcheckpolicy-path
+    - ``p_Port``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayhealthcheckpolicy.html#cfn-appmesh-virtualgateway-virtualgatewayhealthcheckpolicy-port
+    """
+    AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualGateway.VirtualGatewayHealthCheckPolicy"
+    
+    rp_HealthyThreshold: int = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(int),
+        metadata={AttrMeta.PROPERTY_NAME: "HealthyThreshold"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayhealthcheckpolicy.html#cfn-appmesh-virtualgateway-virtualgatewayhealthcheckpolicy-healthythreshold"""
+    rp_IntervalMillis: int = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(int),
+        metadata={AttrMeta.PROPERTY_NAME: "IntervalMillis"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayhealthcheckpolicy.html#cfn-appmesh-virtualgateway-virtualgatewayhealthcheckpolicy-intervalmillis"""
+    rp_Protocol: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "Protocol"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayhealthcheckpolicy.html#cfn-appmesh-virtualgateway-virtualgatewayhealthcheckpolicy-protocol"""
+    rp_TimeoutMillis: int = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(int),
+        metadata={AttrMeta.PROPERTY_NAME: "TimeoutMillis"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayhealthcheckpolicy.html#cfn-appmesh-virtualgateway-virtualgatewayhealthcheckpolicy-timeoutmillis"""
+    rp_UnhealthyThreshold: int = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(int),
+        metadata={AttrMeta.PROPERTY_NAME: "UnhealthyThreshold"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayhealthcheckpolicy.html#cfn-appmesh-virtualgateway-virtualgatewayhealthcheckpolicy-unhealthythreshold"""
+    p_Path: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "Path"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayhealthcheckpolicy.html#cfn-appmesh-virtualgateway-virtualgatewayhealthcheckpolicy-path"""
+    p_Port: int = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(int)),
+        metadata={AttrMeta.PROPERTY_NAME: "Port"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayhealthcheckpolicy.html#cfn-appmesh-virtualgateway-virtualgatewayhealthcheckpolicy-port"""
+
+@attr.s
+class PropVirtualNodeTlsValidationContextAcmTrust(Property):
+    """
+    AWS Object Type = "AWS::AppMesh::VirtualNode.TlsValidationContextAcmTrust"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-tlsvalidationcontextacmtrust.html
+
+    Property Document:
+    
+    - ``rp_CertificateAuthorityArns``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-tlsvalidationcontextacmtrust.html#cfn-appmesh-virtualnode-tlsvalidationcontextacmtrust-certificateauthorityarns
+    """
+    AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualNode.TlsValidationContextAcmTrust"
+    
+    rp_CertificateAuthorityArns: typing.List[TypeHint.intrinsic_str] = attr.ib(
+        default=None,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list)),
+        metadata={AttrMeta.PROPERTY_NAME: "CertificateAuthorityArns"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-tlsvalidationcontextacmtrust.html#cfn-appmesh-virtualnode-tlsvalidationcontextacmtrust-certificateauthorityarns"""
+
+@attr.s
+class PropVirtualNodeSubjectAlternativeNameMatchers(Property):
+    """
+    AWS Object Type = "AWS::AppMesh::VirtualNode.SubjectAlternativeNameMatchers"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-subjectalternativenamematchers.html
+
+    Property Document:
+    
+    - ``p_Exact``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-subjectalternativenamematchers.html#cfn-appmesh-virtualnode-subjectalternativenamematchers-exact
+    """
+    AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualNode.SubjectAlternativeNameMatchers"
+    
+    p_Exact: typing.List[TypeHint.intrinsic_str] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "Exact"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-subjectalternativenamematchers.html#cfn-appmesh-virtualnode-subjectalternativenamematchers-exact"""
+
+@attr.s
+class PropVirtualNodeVirtualNodeGrpcConnectionPool(Property):
+    """
+    AWS Object Type = "AWS::AppMesh::VirtualNode.VirtualNodeGrpcConnectionPool"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-virtualnodegrpcconnectionpool.html
+
+    Property Document:
+    
+    - ``rp_MaxRequests``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-virtualnodegrpcconnectionpool.html#cfn-appmesh-virtualnode-virtualnodegrpcconnectionpool-maxrequests
+    """
+    AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualNode.VirtualNodeGrpcConnectionPool"
+    
+    rp_MaxRequests: int = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(int),
+        metadata={AttrMeta.PROPERTY_NAME: "MaxRequests"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-virtualnodegrpcconnectionpool.html#cfn-appmesh-virtualnode-virtualnodegrpcconnectionpool-maxrequests"""
+
+@attr.s
+class PropVirtualRouterPortMapping(Property):
+    """
+    AWS Object Type = "AWS::AppMesh::VirtualRouter.PortMapping"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualrouter-portmapping.html
+
+    Property Document:
+    
+    - ``rp_Port``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualrouter-portmapping.html#cfn-appmesh-virtualrouter-portmapping-port
+    - ``rp_Protocol``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualrouter-portmapping.html#cfn-appmesh-virtualrouter-portmapping-protocol
+    """
+    AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualRouter.PortMapping"
+    
+    rp_Port: int = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(int),
+        metadata={AttrMeta.PROPERTY_NAME: "Port"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualrouter-portmapping.html#cfn-appmesh-virtualrouter-portmapping-port"""
+    rp_Protocol: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "Protocol"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualrouter-portmapping.html#cfn-appmesh-virtualrouter-portmapping-protocol"""
+
+@attr.s
+class PropVirtualNodeTlsValidationContextSdsTrust(Property):
+    """
+    AWS Object Type = "AWS::AppMesh::VirtualNode.TlsValidationContextSdsTrust"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-tlsvalidationcontextsdstrust.html
+
+    Property Document:
+    
+    - ``rp_SecretName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-tlsvalidationcontextsdstrust.html#cfn-appmesh-virtualnode-tlsvalidationcontextsdstrust-secretname
+    """
+    AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualNode.TlsValidationContextSdsTrust"
+    
+    rp_SecretName: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "SecretName"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-tlsvalidationcontextsdstrust.html#cfn-appmesh-virtualnode-tlsvalidationcontextsdstrust-secretname"""
+
+@attr.s
+class PropRouteDuration(Property):
+    """
+    AWS Object Type = "AWS::AppMesh::Route.Duration"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-duration.html
+
+    Property Document:
+    
+    - ``rp_Unit``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-duration.html#cfn-appmesh-route-duration-unit
+    - ``rp_Value``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-duration.html#cfn-appmesh-route-duration-value
+    """
+    AWS_OBJECT_TYPE = "AWS::AppMesh::Route.Duration"
+    
+    rp_Unit: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "Unit"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-duration.html#cfn-appmesh-route-duration-unit"""
+    rp_Value: int = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(int),
+        metadata={AttrMeta.PROPERTY_NAME: "Value"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-duration.html#cfn-appmesh-route-duration-value"""
+
+@attr.s
+class PropGatewayRouteHttpGatewayRoutePrefixRewrite(Property):
+    """
+    AWS Object Type = "AWS::AppMesh::GatewayRoute.HttpGatewayRoutePrefixRewrite"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-httpgatewayrouteprefixrewrite.html
+
+    Property Document:
+    
+    - ``p_DefaultPrefix``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-httpgatewayrouteprefixrewrite.html#cfn-appmesh-gatewayroute-httpgatewayrouteprefixrewrite-defaultprefix
+    - ``p_Value``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-httpgatewayrouteprefixrewrite.html#cfn-appmesh-gatewayroute-httpgatewayrouteprefixrewrite-value
+    """
+    AWS_OBJECT_TYPE = "AWS::AppMesh::GatewayRoute.HttpGatewayRoutePrefixRewrite"
+    
+    p_DefaultPrefix: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "DefaultPrefix"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-httpgatewayrouteprefixrewrite.html#cfn-appmesh-gatewayroute-httpgatewayrouteprefixrewrite-defaultprefix"""
+    p_Value: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "Value"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-httpgatewayrouteprefixrewrite.html#cfn-appmesh-gatewayroute-httpgatewayrouteprefixrewrite-value"""
+
+@attr.s
+class PropVirtualGatewayVirtualGatewayListenerTlsAcmCertificate(Property):
+    """
+    AWS Object Type = "AWS::AppMesh::VirtualGateway.VirtualGatewayListenerTlsAcmCertificate"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistenertlsacmcertificate.html
+
+    Property Document:
+    
+    - ``rp_CertificateArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistenertlsacmcertificate.html#cfn-appmesh-virtualgateway-virtualgatewaylistenertlsacmcertificate-certificatearn
+    """
+    AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualGateway.VirtualGatewayListenerTlsAcmCertificate"
+    
+    rp_CertificateArn: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "CertificateArn"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistenertlsacmcertificate.html#cfn-appmesh-virtualgateway-virtualgatewaylistenertlsacmcertificate-certificatearn"""
+
+@attr.s
+class PropVirtualNodeAwsCloudMapInstanceAttribute(Property):
+    """
+    AWS Object Type = "AWS::AppMesh::VirtualNode.AwsCloudMapInstanceAttribute"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-awscloudmapinstanceattribute.html
+
+    Property Document:
+    
+    - ``rp_Key``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-awscloudmapinstanceattribute.html#cfn-appmesh-virtualnode-awscloudmapinstanceattribute-key
+    - ``rp_Value``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-awscloudmapinstanceattribute.html#cfn-appmesh-virtualnode-awscloudmapinstanceattribute-value
+    """
+    AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualNode.AwsCloudMapInstanceAttribute"
+    
+    rp_Key: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "Key"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-awscloudmapinstanceattribute.html#cfn-appmesh-virtualnode-awscloudmapinstanceattribute-key"""
+    rp_Value: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "Value"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-awscloudmapinstanceattribute.html#cfn-appmesh-virtualnode-awscloudmapinstanceattribute-value"""
+
+@attr.s
+class PropGatewayRouteHttpGatewayRouteHeaderMatch(Property):
+    """
+    AWS Object Type = "AWS::AppMesh::GatewayRoute.HttpGatewayRouteHeaderMatch"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-httpgatewayrouteheadermatch.html
+
+    Property Document:
+    
+    - ``p_Exact``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-httpgatewayrouteheadermatch.html#cfn-appmesh-gatewayroute-httpgatewayrouteheadermatch-exact
+    - ``p_Prefix``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-httpgatewayrouteheadermatch.html#cfn-appmesh-gatewayroute-httpgatewayrouteheadermatch-prefix
+    - ``p_Range``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-httpgatewayrouteheadermatch.html#cfn-appmesh-gatewayroute-httpgatewayrouteheadermatch-range
+    - ``p_Regex``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-httpgatewayrouteheadermatch.html#cfn-appmesh-gatewayroute-httpgatewayrouteheadermatch-regex
+    - ``p_Suffix``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-httpgatewayrouteheadermatch.html#cfn-appmesh-gatewayroute-httpgatewayrouteheadermatch-suffix
+    """
+    AWS_OBJECT_TYPE = "AWS::AppMesh::GatewayRoute.HttpGatewayRouteHeaderMatch"
+    
+    p_Exact: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "Exact"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-httpgatewayrouteheadermatch.html#cfn-appmesh-gatewayroute-httpgatewayrouteheadermatch-exact"""
+    p_Prefix: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "Prefix"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-httpgatewayrouteheadermatch.html#cfn-appmesh-gatewayroute-httpgatewayrouteheadermatch-prefix"""
+    p_Range: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "Range"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-httpgatewayrouteheadermatch.html#cfn-appmesh-gatewayroute-httpgatewayrouteheadermatch-range"""
+    p_Regex: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "Regex"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-httpgatewayrouteheadermatch.html#cfn-appmesh-gatewayroute-httpgatewayrouteheadermatch-regex"""
+    p_Suffix: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "Suffix"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-httpgatewayrouteheadermatch.html#cfn-appmesh-gatewayroute-httpgatewayrouteheadermatch-suffix"""
+
+@attr.s
+class PropGatewayRouteGatewayRouteHostnameRewrite(Property):
+    """
+    AWS Object Type = "AWS::AppMesh::GatewayRoute.GatewayRouteHostnameRewrite"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-gatewayroutehostnamerewrite.html
+
+    Property Document:
+    
+    - ``p_DefaultTargetHostname``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-gatewayroutehostnamerewrite.html#cfn-appmesh-gatewayroute-gatewayroutehostnamerewrite-defaulttargethostname
+    """
+    AWS_OBJECT_TYPE = "AWS::AppMesh::GatewayRoute.GatewayRouteHostnameRewrite"
+    
+    p_DefaultTargetHostname: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "DefaultTargetHostname"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-gatewayroutehostnamerewrite.html#cfn-appmesh-gatewayroute-gatewayroutehostnamerewrite-defaulttargethostname"""
+
+@attr.s
+class PropVirtualNodeTcpTimeout(Property):
+    """
+    AWS Object Type = "AWS::AppMesh::VirtualNode.TcpTimeout"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-tcptimeout.html
+
+    Property Document:
+    
+    - ``p_Idle``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-tcptimeout.html#cfn-appmesh-virtualnode-tcptimeout-idle
+    """
+    AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualNode.TcpTimeout"
+    
+    p_Idle: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "Idle"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-tcptimeout.html#cfn-appmesh-virtualnode-tcptimeout-idle"""
+
+@attr.s
+class PropGatewayRouteQueryParameter(Property):
+    """
+    AWS Object Type = "AWS::AppMesh::GatewayRoute.QueryParameter"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-queryparameter.html
+
+    Property Document:
+    
+    - ``rp_Name``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-queryparameter.html#cfn-appmesh-gatewayroute-queryparameter-name
+    - ``p_Match``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-queryparameter.html#cfn-appmesh-gatewayroute-queryparameter-match
+    """
+    AWS_OBJECT_TYPE = "AWS::AppMesh::GatewayRoute.QueryParameter"
+    
+    rp_Name: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "Name"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-queryparameter.html#cfn-appmesh-gatewayroute-queryparameter-name"""
+    p_Match: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "Match"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-queryparameter.html#cfn-appmesh-gatewayroute-queryparameter-match"""
+
+@attr.s
+class PropGatewayRouteGrpcGatewayRouteRewrite(Property):
+    """
+    AWS Object Type = "AWS::AppMesh::GatewayRoute.GrpcGatewayRouteRewrite"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-grpcgatewayrouterewrite.html
+
+    Property Document:
+    
+    - ``p_Hostname``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-grpcgatewayrouterewrite.html#cfn-appmesh-gatewayroute-grpcgatewayrouterewrite-hostname
+    """
+    AWS_OBJECT_TYPE = "AWS::AppMesh::GatewayRoute.GrpcGatewayRouteRewrite"
+    
+    p_Hostname: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "Hostname"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-grpcgatewayrouterewrite.html#cfn-appmesh-gatewayroute-grpcgatewayrouterewrite-hostname"""
+
+@attr.s
+class PropVirtualGatewaySubjectAlternativeNames(Property):
+    """
+    AWS Object Type = "AWS::AppMesh::VirtualGateway.SubjectAlternativeNames"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-subjectalternativenames.html
+
+    Property Document:
+    
+    - ``rp_Match``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-subjectalternativenames.html#cfn-appmesh-virtualgateway-subjectalternativenames-match
+    """
+    AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualGateway.SubjectAlternativeNames"
+    
+    rp_Match: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "Match"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-subjectalternativenames.html#cfn-appmesh-virtualgateway-subjectalternativenames-match"""
 
 @attr.s
 class PropVirtualNodeHealthCheck(Property):
@@ -559,6 +1147,7 @@ class PropVirtualNodeAwsCloudMapServiceDiscovery(Property):
     - ``rp_NamespaceName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-awscloudmapservicediscovery.html#cfn-appmesh-virtualnode-awscloudmapservicediscovery-namespacename
     - ``rp_ServiceName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-awscloudmapservicediscovery.html#cfn-appmesh-virtualnode-awscloudmapservicediscovery-servicename
     - ``p_Attributes``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-awscloudmapservicediscovery.html#cfn-appmesh-virtualnode-awscloudmapservicediscovery-attributes
+    - ``p_IpPreference``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-awscloudmapservicediscovery.html#cfn-appmesh-virtualnode-awscloudmapservicediscovery-ippreference
     """
     AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualNode.AwsCloudMapServiceDiscovery"
     
@@ -581,73 +1170,12 @@ class PropVirtualNodeAwsCloudMapServiceDiscovery(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Attributes"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-awscloudmapservicediscovery.html#cfn-appmesh-virtualnode-awscloudmapservicediscovery-attributes"""
-
-@attr.s
-class PropGatewayRouteHttpGatewayRoutePathRewrite(Property):
-    """
-    AWS Object Type = "AWS::AppMesh::GatewayRoute.HttpGatewayRoutePathRewrite"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-httpgatewayroutepathrewrite.html
-
-    Property Document:
-    
-    - ``p_Exact``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-httpgatewayroutepathrewrite.html#cfn-appmesh-gatewayroute-httpgatewayroutepathrewrite-exact
-    """
-    AWS_OBJECT_TYPE = "AWS::AppMesh::GatewayRoute.HttpGatewayRoutePathRewrite"
-    
-    p_Exact: TypeHint.intrinsic_str = attr.ib(
+    p_IpPreference: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Exact"},
+        metadata={AttrMeta.PROPERTY_NAME: "IpPreference"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-httpgatewayroutepathrewrite.html#cfn-appmesh-gatewayroute-httpgatewayroutepathrewrite-exact"""
-
-@attr.s
-class PropVirtualNodeVirtualNodeHttpConnectionPool(Property):
-    """
-    AWS Object Type = "AWS::AppMesh::VirtualNode.VirtualNodeHttpConnectionPool"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-virtualnodehttpconnectionpool.html
-
-    Property Document:
-    
-    - ``rp_MaxConnections``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-virtualnodehttpconnectionpool.html#cfn-appmesh-virtualnode-virtualnodehttpconnectionpool-maxconnections
-    - ``p_MaxPendingRequests``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-virtualnodehttpconnectionpool.html#cfn-appmesh-virtualnode-virtualnodehttpconnectionpool-maxpendingrequests
-    """
-    AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualNode.VirtualNodeHttpConnectionPool"
-    
-    rp_MaxConnections: int = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(int),
-        metadata={AttrMeta.PROPERTY_NAME: "MaxConnections"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-virtualnodehttpconnectionpool.html#cfn-appmesh-virtualnode-virtualnodehttpconnectionpool-maxconnections"""
-    p_MaxPendingRequests: int = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "MaxPendingRequests"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-virtualnodehttpconnectionpool.html#cfn-appmesh-virtualnode-virtualnodehttpconnectionpool-maxpendingrequests"""
-
-@attr.s
-class PropVirtualServiceVirtualNodeServiceProvider(Property):
-    """
-    AWS Object Type = "AWS::AppMesh::VirtualService.VirtualNodeServiceProvider"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualservice-virtualnodeserviceprovider.html
-
-    Property Document:
-    
-    - ``rp_VirtualNodeName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualservice-virtualnodeserviceprovider.html#cfn-appmesh-virtualservice-virtualnodeserviceprovider-virtualnodename
-    """
-    AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualService.VirtualNodeServiceProvider"
-    
-    rp_VirtualNodeName: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "VirtualNodeName"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualservice-virtualnodeserviceprovider.html#cfn-appmesh-virtualservice-virtualnodeserviceprovider-virtualnodename"""
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-awscloudmapservicediscovery.html#cfn-appmesh-virtualnode-awscloudmapservicediscovery-ippreference"""
 
 @attr.s
 class PropVirtualGatewayVirtualGatewayListenerTlsFileCertificate(Property):
@@ -677,26 +1205,6 @@ class PropVirtualGatewayVirtualGatewayListenerTlsFileCertificate(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistenertlsfilecertificate.html#cfn-appmesh-virtualgateway-virtualgatewaylistenertlsfilecertificate-privatekey"""
 
 @attr.s
-class PropRouteHttpQueryParameterMatch(Property):
-    """
-    AWS Object Type = "AWS::AppMesh::Route.HttpQueryParameterMatch"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httpqueryparametermatch.html
-
-    Property Document:
-    
-    - ``p_Exact``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httpqueryparametermatch.html#cfn-appmesh-route-httpqueryparametermatch-exact
-    """
-    AWS_OBJECT_TYPE = "AWS::AppMesh::Route.HttpQueryParameterMatch"
-    
-    p_Exact: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Exact"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httpqueryparametermatch.html#cfn-appmesh-route-httpqueryparametermatch-exact"""
-
-@attr.s
 class PropVirtualNodeListenerTlsFileCertificate(Property):
     """
     AWS Object Type = "AWS::AppMesh::VirtualNode.ListenerTlsFileCertificate"
@@ -724,103 +1232,6 @@ class PropVirtualNodeListenerTlsFileCertificate(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-listenertlsfilecertificate.html#cfn-appmesh-virtualnode-listenertlsfilecertificate-privatekey"""
 
 @attr.s
-class PropVirtualGatewaySubjectAlternativeNameMatchers(Property):
-    """
-    AWS Object Type = "AWS::AppMesh::VirtualGateway.SubjectAlternativeNameMatchers"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-subjectalternativenamematchers.html
-
-    Property Document:
-    
-    - ``p_Exact``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-subjectalternativenamematchers.html#cfn-appmesh-virtualgateway-subjectalternativenamematchers-exact
-    """
-    AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualGateway.SubjectAlternativeNameMatchers"
-    
-    p_Exact: typing.List[TypeHint.intrinsic_str] = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Exact"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-subjectalternativenamematchers.html#cfn-appmesh-virtualgateway-subjectalternativenamematchers-exact"""
-
-@attr.s
-class PropRouteGrpcRouteAction(Property):
-    """
-    AWS Object Type = "AWS::AppMesh::Route.GrpcRouteAction"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcrouteaction.html
-
-    Property Document:
-    
-    - ``rp_WeightedTargets``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcrouteaction.html#cfn-appmesh-route-grpcrouteaction-weightedtargets
-    """
-    AWS_OBJECT_TYPE = "AWS::AppMesh::Route.GrpcRouteAction"
-    
-    rp_WeightedTargets: typing.List[typing.Union['PropRouteWeightedTarget', dict]] = attr.ib(
-        default=None,
-        converter=PropRouteWeightedTarget.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropRouteWeightedTarget), iterable_validator=attr.validators.instance_of(list)),
-        metadata={AttrMeta.PROPERTY_NAME: "WeightedTargets"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcrouteaction.html#cfn-appmesh-route-grpcrouteaction-weightedtargets"""
-
-@attr.s
-class PropVirtualServiceVirtualServiceProvider(Property):
-    """
-    AWS Object Type = "AWS::AppMesh::VirtualService.VirtualServiceProvider"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualservice-virtualserviceprovider.html
-
-    Property Document:
-    
-    - ``p_VirtualNode``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualservice-virtualserviceprovider.html#cfn-appmesh-virtualservice-virtualserviceprovider-virtualnode
-    - ``p_VirtualRouter``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualservice-virtualserviceprovider.html#cfn-appmesh-virtualservice-virtualserviceprovider-virtualrouter
-    """
-    AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualService.VirtualServiceProvider"
-    
-    p_VirtualNode: typing.Union['PropVirtualServiceVirtualNodeServiceProvider', dict] = attr.ib(
-        default=None,
-        converter=PropVirtualServiceVirtualNodeServiceProvider.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropVirtualServiceVirtualNodeServiceProvider)),
-        metadata={AttrMeta.PROPERTY_NAME: "VirtualNode"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualservice-virtualserviceprovider.html#cfn-appmesh-virtualservice-virtualserviceprovider-virtualnode"""
-    p_VirtualRouter: typing.Union['PropVirtualServiceVirtualRouterServiceProvider', dict] = attr.ib(
-        default=None,
-        converter=PropVirtualServiceVirtualRouterServiceProvider.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropVirtualServiceVirtualRouterServiceProvider)),
-        metadata={AttrMeta.PROPERTY_NAME: "VirtualRouter"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualservice-virtualserviceprovider.html#cfn-appmesh-virtualservice-virtualserviceprovider-virtualrouter"""
-
-@attr.s
-class PropVirtualNodeDnsServiceDiscovery(Property):
-    """
-    AWS Object Type = "AWS::AppMesh::VirtualNode.DnsServiceDiscovery"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-dnsservicediscovery.html
-
-    Property Document:
-    
-    - ``rp_Hostname``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-dnsservicediscovery.html#cfn-appmesh-virtualnode-dnsservicediscovery-hostname
-    - ``p_ResponseType``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-dnsservicediscovery.html#cfn-appmesh-virtualnode-dnsservicediscovery-responsetype
-    """
-    AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualNode.DnsServiceDiscovery"
-    
-    rp_Hostname: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Hostname"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-dnsservicediscovery.html#cfn-appmesh-virtualnode-dnsservicediscovery-hostname"""
-    p_ResponseType: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "ResponseType"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-dnsservicediscovery.html#cfn-appmesh-virtualnode-dnsservicediscovery-responsetype"""
-
-@attr.s
 class PropVirtualNodeTlsValidationContextFileTrust(Property):
     """
     AWS Object Type = "AWS::AppMesh::VirtualNode.TlsValidationContextFileTrust"
@@ -841,52 +1252,45 @@ class PropVirtualNodeTlsValidationContextFileTrust(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-tlsvalidationcontextfiletrust.html#cfn-appmesh-virtualnode-tlsvalidationcontextfiletrust-certificatechain"""
 
 @attr.s
-class PropGatewayRouteGatewayRouteRangeMatch(Property):
+class PropVirtualNodeVirtualNodeConnectionPool(Property):
     """
-    AWS Object Type = "AWS::AppMesh::GatewayRoute.GatewayRouteRangeMatch"
+    AWS Object Type = "AWS::AppMesh::VirtualNode.VirtualNodeConnectionPool"
 
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-gatewayrouterangematch.html
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-virtualnodeconnectionpool.html
 
     Property Document:
     
-    - ``rp_End``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-gatewayrouterangematch.html#cfn-appmesh-gatewayroute-gatewayrouterangematch-end
-    - ``rp_Start``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-gatewayrouterangematch.html#cfn-appmesh-gatewayroute-gatewayrouterangematch-start
+    - ``p_GRPC``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-virtualnodeconnectionpool.html#cfn-appmesh-virtualnode-virtualnodeconnectionpool-grpc
+    - ``p_HTTP``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-virtualnodeconnectionpool.html#cfn-appmesh-virtualnode-virtualnodeconnectionpool-http
+    - ``p_HTTP2``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-virtualnodeconnectionpool.html#cfn-appmesh-virtualnode-virtualnodeconnectionpool-http2
+    - ``p_TCP``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-virtualnodeconnectionpool.html#cfn-appmesh-virtualnode-virtualnodeconnectionpool-tcp
     """
-    AWS_OBJECT_TYPE = "AWS::AppMesh::GatewayRoute.GatewayRouteRangeMatch"
+    AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualNode.VirtualNodeConnectionPool"
     
-    rp_End: int = attr.ib(
+    p_GRPC: typing.Optional[dict] = attr.ib(
         default=None,
-        validator=attr.validators.instance_of(int),
-        metadata={AttrMeta.PROPERTY_NAME: "End"},
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "GRPC"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-gatewayrouterangematch.html#cfn-appmesh-gatewayroute-gatewayrouterangematch-end"""
-    rp_Start: int = attr.ib(
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-virtualnodeconnectionpool.html#cfn-appmesh-virtualnode-virtualnodeconnectionpool-grpc"""
+    p_HTTP: typing.Optional[dict] = attr.ib(
         default=None,
-        validator=attr.validators.instance_of(int),
-        metadata={AttrMeta.PROPERTY_NAME: "Start"},
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "HTTP"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-gatewayrouterangematch.html#cfn-appmesh-gatewayroute-gatewayrouterangematch-start"""
-
-@attr.s
-class PropRouteTcpRouteAction(Property):
-    """
-    AWS Object Type = "AWS::AppMesh::Route.TcpRouteAction"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-tcprouteaction.html
-
-    Property Document:
-    
-    - ``rp_WeightedTargets``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-tcprouteaction.html#cfn-appmesh-route-tcprouteaction-weightedtargets
-    """
-    AWS_OBJECT_TYPE = "AWS::AppMesh::Route.TcpRouteAction"
-    
-    rp_WeightedTargets: typing.List[typing.Union['PropRouteWeightedTarget', dict]] = attr.ib(
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-virtualnodeconnectionpool.html#cfn-appmesh-virtualnode-virtualnodeconnectionpool-http"""
+    p_HTTP2: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropRouteWeightedTarget.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropRouteWeightedTarget), iterable_validator=attr.validators.instance_of(list)),
-        metadata={AttrMeta.PROPERTY_NAME: "WeightedTargets"},
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "HTTP2"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-tcprouteaction.html#cfn-appmesh-route-tcprouteaction-weightedtargets"""
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-virtualnodeconnectionpool.html#cfn-appmesh-virtualnode-virtualnodeconnectionpool-http2"""
+    p_TCP: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "TCP"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-virtualnodeconnectionpool.html#cfn-appmesh-virtualnode-virtualnodeconnectionpool-tcp"""
 
 @attr.s
 class PropVirtualRouterVirtualRouterListener(Property):
@@ -930,55 +1334,6 @@ class PropVirtualGatewayVirtualGatewayTlsValidationContextSdsTrust(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaytlsvalidationcontextsdstrust.html#cfn-appmesh-virtualgateway-virtualgatewaytlsvalidationcontextsdstrust-secretname"""
 
 @attr.s
-class PropRouteGrpcRetryPolicy(Property):
-    """
-    AWS Object Type = "AWS::AppMesh::Route.GrpcRetryPolicy"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcretrypolicy.html
-
-    Property Document:
-    
-    - ``rp_MaxRetries``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcretrypolicy.html#cfn-appmesh-route-grpcretrypolicy-maxretries
-    - ``rp_PerRetryTimeout``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcretrypolicy.html#cfn-appmesh-route-grpcretrypolicy-perretrytimeout
-    - ``p_GrpcRetryEvents``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcretrypolicy.html#cfn-appmesh-route-grpcretrypolicy-grpcretryevents
-    - ``p_HttpRetryEvents``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcretrypolicy.html#cfn-appmesh-route-grpcretrypolicy-httpretryevents
-    - ``p_TcpRetryEvents``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcretrypolicy.html#cfn-appmesh-route-grpcretrypolicy-tcpretryevents
-    """
-    AWS_OBJECT_TYPE = "AWS::AppMesh::Route.GrpcRetryPolicy"
-    
-    rp_MaxRetries: int = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(int),
-        metadata={AttrMeta.PROPERTY_NAME: "MaxRetries"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcretrypolicy.html#cfn-appmesh-route-grpcretrypolicy-maxretries"""
-    rp_PerRetryTimeout: typing.Union['PropRouteDuration', dict] = attr.ib(
-        default=None,
-        converter=PropRouteDuration.from_dict,
-        validator=attr.validators.instance_of(PropRouteDuration),
-        metadata={AttrMeta.PROPERTY_NAME: "PerRetryTimeout"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcretrypolicy.html#cfn-appmesh-route-grpcretrypolicy-perretrytimeout"""
-    p_GrpcRetryEvents: typing.List[TypeHint.intrinsic_str] = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "GrpcRetryEvents"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcretrypolicy.html#cfn-appmesh-route-grpcretrypolicy-grpcretryevents"""
-    p_HttpRetryEvents: typing.List[TypeHint.intrinsic_str] = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "HttpRetryEvents"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcretrypolicy.html#cfn-appmesh-route-grpcretrypolicy-httpretryevents"""
-    p_TcpRetryEvents: typing.List[TypeHint.intrinsic_str] = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "TcpRetryEvents"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcretrypolicy.html#cfn-appmesh-route-grpcretrypolicy-tcpretryevents"""
-
-@attr.s
 class PropVirtualNodeServiceDiscovery(Property):
     """
     AWS Object Type = "AWS::AppMesh::VirtualNode.ServiceDiscovery"
@@ -992,47 +1347,18 @@ class PropVirtualNodeServiceDiscovery(Property):
     """
     AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualNode.ServiceDiscovery"
     
-    p_AWSCloudMap: typing.Union['PropVirtualNodeAwsCloudMapServiceDiscovery', dict] = attr.ib(
+    p_AWSCloudMap: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropVirtualNodeAwsCloudMapServiceDiscovery.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropVirtualNodeAwsCloudMapServiceDiscovery)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "AWSCloudMap"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-servicediscovery.html#cfn-appmesh-virtualnode-servicediscovery-awscloudmap"""
-    p_DNS: typing.Union['PropVirtualNodeDnsServiceDiscovery', dict] = attr.ib(
+    p_DNS: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropVirtualNodeDnsServiceDiscovery.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropVirtualNodeDnsServiceDiscovery)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "DNS"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-servicediscovery.html#cfn-appmesh-virtualnode-servicediscovery-dns"""
-
-@attr.s
-class PropVirtualNodeDuration(Property):
-    """
-    AWS Object Type = "AWS::AppMesh::VirtualNode.Duration"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-duration.html
-
-    Property Document:
-    
-    - ``rp_Unit``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-duration.html#cfn-appmesh-virtualnode-duration-unit
-    - ``rp_Value``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-duration.html#cfn-appmesh-virtualnode-duration-value
-    """
-    AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualNode.Duration"
-    
-    rp_Unit: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Unit"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-duration.html#cfn-appmesh-virtualnode-duration-unit"""
-    rp_Value: int = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(int),
-        metadata={AttrMeta.PROPERTY_NAME: "Value"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-duration.html#cfn-appmesh-virtualnode-duration-value"""
 
 @attr.s
 class PropRouteHttpRetryPolicy(Property):
@@ -1056,10 +1382,9 @@ class PropRouteHttpRetryPolicy(Property):
         metadata={AttrMeta.PROPERTY_NAME: "MaxRetries"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httpretrypolicy.html#cfn-appmesh-route-httpretrypolicy-maxretries"""
-    rp_PerRetryTimeout: typing.Union['PropRouteDuration', dict] = attr.ib(
+    rp_PerRetryTimeout: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropRouteDuration.from_dict,
-        validator=attr.validators.instance_of(PropRouteDuration),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "PerRetryTimeout"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httpretrypolicy.html#cfn-appmesh-route-httpretrypolicy-perretrytimeout"""
@@ -1077,68 +1402,31 @@ class PropRouteHttpRetryPolicy(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httpretrypolicy.html#cfn-appmesh-route-httpretrypolicy-tcpretryevents"""
 
 @attr.s
-class PropVirtualGatewayVirtualGatewayPortMapping(Property):
+class PropVirtualGatewayJsonFormatRef(Property):
     """
-    AWS Object Type = "AWS::AppMesh::VirtualGateway.VirtualGatewayPortMapping"
+    AWS Object Type = "AWS::AppMesh::VirtualGateway.JsonFormatRef"
 
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayportmapping.html
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-jsonformatref.html
 
     Property Document:
     
-    - ``rp_Port``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayportmapping.html#cfn-appmesh-virtualgateway-virtualgatewayportmapping-port
-    - ``rp_Protocol``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayportmapping.html#cfn-appmesh-virtualgateway-virtualgatewayportmapping-protocol
+    - ``rp_Key``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-jsonformatref.html#cfn-appmesh-virtualgateway-jsonformatref-key
+    - ``rp_Value``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-jsonformatref.html#cfn-appmesh-virtualgateway-jsonformatref-value
     """
-    AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualGateway.VirtualGatewayPortMapping"
+    AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualGateway.JsonFormatRef"
     
-    rp_Port: int = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(int),
-        metadata={AttrMeta.PROPERTY_NAME: "Port"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayportmapping.html#cfn-appmesh-virtualgateway-virtualgatewayportmapping-port"""
-    rp_Protocol: TypeHint.intrinsic_str = attr.ib(
+    rp_Key: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Protocol"},
+        metadata={AttrMeta.PROPERTY_NAME: "Key"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayportmapping.html#cfn-appmesh-virtualgateway-virtualgatewayportmapping-protocol"""
-
-@attr.s
-class PropGatewayRouteHttpGatewayRouteRewrite(Property):
-    """
-    AWS Object Type = "AWS::AppMesh::GatewayRoute.HttpGatewayRouteRewrite"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-httpgatewayrouterewrite.html
-
-    Property Document:
-    
-    - ``p_Hostname``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-httpgatewayrouterewrite.html#cfn-appmesh-gatewayroute-httpgatewayrouterewrite-hostname
-    - ``p_Path``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-httpgatewayrouterewrite.html#cfn-appmesh-gatewayroute-httpgatewayrouterewrite-path
-    - ``p_Prefix``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-httpgatewayrouterewrite.html#cfn-appmesh-gatewayroute-httpgatewayrouterewrite-prefix
-    """
-    AWS_OBJECT_TYPE = "AWS::AppMesh::GatewayRoute.HttpGatewayRouteRewrite"
-    
-    p_Hostname: typing.Union['PropGatewayRouteGatewayRouteHostnameRewrite', dict] = attr.ib(
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-jsonformatref.html#cfn-appmesh-virtualgateway-jsonformatref-key"""
+    rp_Value: TypeHint.intrinsic_str = attr.ib(
         default=None,
-        converter=PropGatewayRouteGatewayRouteHostnameRewrite.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropGatewayRouteGatewayRouteHostnameRewrite)),
-        metadata={AttrMeta.PROPERTY_NAME: "Hostname"},
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "Value"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-httpgatewayrouterewrite.html#cfn-appmesh-gatewayroute-httpgatewayrouterewrite-hostname"""
-    p_Path: typing.Union['PropGatewayRouteHttpGatewayRoutePathRewrite', dict] = attr.ib(
-        default=None,
-        converter=PropGatewayRouteHttpGatewayRoutePathRewrite.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropGatewayRouteHttpGatewayRoutePathRewrite)),
-        metadata={AttrMeta.PROPERTY_NAME: "Path"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-httpgatewayrouterewrite.html#cfn-appmesh-gatewayroute-httpgatewayrouterewrite-path"""
-    p_Prefix: typing.Union['PropGatewayRouteHttpGatewayRoutePrefixRewrite', dict] = attr.ib(
-        default=None,
-        converter=PropGatewayRouteHttpGatewayRoutePrefixRewrite.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropGatewayRouteHttpGatewayRoutePrefixRewrite)),
-        metadata={AttrMeta.PROPERTY_NAME: "Prefix"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-httpgatewayrouterewrite.html#cfn-appmesh-gatewayroute-httpgatewayrouterewrite-prefix"""
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-jsonformatref.html#cfn-appmesh-virtualgateway-jsonformatref-value"""
 
 @attr.s
 class PropVirtualNodeListenerTlsAcmCertificate(Property):
@@ -1159,35 +1447,6 @@ class PropVirtualNodeListenerTlsAcmCertificate(Property):
         metadata={AttrMeta.PROPERTY_NAME: "CertificateArn"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-listenertlsacmcertificate.html#cfn-appmesh-virtualnode-listenertlsacmcertificate-certificatearn"""
-
-@attr.s
-class PropRouteGrpcTimeout(Property):
-    """
-    AWS Object Type = "AWS::AppMesh::Route.GrpcTimeout"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpctimeout.html
-
-    Property Document:
-    
-    - ``p_Idle``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpctimeout.html#cfn-appmesh-route-grpctimeout-idle
-    - ``p_PerRequest``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpctimeout.html#cfn-appmesh-route-grpctimeout-perrequest
-    """
-    AWS_OBJECT_TYPE = "AWS::AppMesh::Route.GrpcTimeout"
-    
-    p_Idle: typing.Union['PropRouteDuration', dict] = attr.ib(
-        default=None,
-        converter=PropRouteDuration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropRouteDuration)),
-        metadata={AttrMeta.PROPERTY_NAME: "Idle"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpctimeout.html#cfn-appmesh-route-grpctimeout-idle"""
-    p_PerRequest: typing.Union['PropRouteDuration', dict] = attr.ib(
-        default=None,
-        converter=PropRouteDuration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropRouteDuration)),
-        metadata={AttrMeta.PROPERTY_NAME: "PerRequest"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpctimeout.html#cfn-appmesh-route-grpctimeout-perrequest"""
 
 @attr.s
 class PropGatewayRouteGatewayRouteHostnameMatch(Property):
@@ -1217,26 +1476,6 @@ class PropGatewayRouteGatewayRouteHostnameMatch(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-gatewayroutehostnamematch.html#cfn-appmesh-gatewayroute-gatewayroutehostnamematch-suffix"""
 
 @attr.s
-class PropVirtualNodeVirtualNodeHttp2ConnectionPool(Property):
-    """
-    AWS Object Type = "AWS::AppMesh::VirtualNode.VirtualNodeHttp2ConnectionPool"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-virtualnodehttp2connectionpool.html
-
-    Property Document:
-    
-    - ``rp_MaxRequests``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-virtualnodehttp2connectionpool.html#cfn-appmesh-virtualnode-virtualnodehttp2connectionpool-maxrequests
-    """
-    AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualNode.VirtualNodeHttp2ConnectionPool"
-    
-    rp_MaxRequests: int = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(int),
-        metadata={AttrMeta.PROPERTY_NAME: "MaxRequests"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-virtualnodehttp2connectionpool.html#cfn-appmesh-virtualnode-virtualnodehttp2connectionpool-maxrequests"""
-
-@attr.s
 class PropVirtualNodeListenerTlsCertificate(Property):
     """
     AWS Object Type = "AWS::AppMesh::VirtualNode.ListenerTlsCertificate"
@@ -1251,68 +1490,24 @@ class PropVirtualNodeListenerTlsCertificate(Property):
     """
     AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualNode.ListenerTlsCertificate"
     
-    p_ACM: typing.Union['PropVirtualNodeListenerTlsAcmCertificate', dict] = attr.ib(
+    p_ACM: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropVirtualNodeListenerTlsAcmCertificate.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropVirtualNodeListenerTlsAcmCertificate)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "ACM"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-listenertlscertificate.html#cfn-appmesh-virtualnode-listenertlscertificate-acm"""
-    p_File: typing.Union['PropVirtualNodeListenerTlsFileCertificate', dict] = attr.ib(
+    p_File: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropVirtualNodeListenerTlsFileCertificate.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropVirtualNodeListenerTlsFileCertificate)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "File"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-listenertlscertificate.html#cfn-appmesh-virtualnode-listenertlscertificate-file"""
-    p_SDS: typing.Union['PropVirtualNodeListenerTlsSdsCertificate', dict] = attr.ib(
+    p_SDS: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropVirtualNodeListenerTlsSdsCertificate.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropVirtualNodeListenerTlsSdsCertificate)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "SDS"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-listenertlscertificate.html#cfn-appmesh-virtualnode-listenertlscertificate-sds"""
-
-@attr.s
-class PropRouteTcpTimeout(Property):
-    """
-    AWS Object Type = "AWS::AppMesh::Route.TcpTimeout"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-tcptimeout.html
-
-    Property Document:
-    
-    - ``p_Idle``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-tcptimeout.html#cfn-appmesh-route-tcptimeout-idle
-    """
-    AWS_OBJECT_TYPE = "AWS::AppMesh::Route.TcpTimeout"
-    
-    p_Idle: typing.Union['PropRouteDuration', dict] = attr.ib(
-        default=None,
-        converter=PropRouteDuration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropRouteDuration)),
-        metadata={AttrMeta.PROPERTY_NAME: "Idle"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-tcptimeout.html#cfn-appmesh-route-tcptimeout-idle"""
-
-@attr.s
-class PropVirtualGatewayVirtualGatewayFileAccessLog(Property):
-    """
-    AWS Object Type = "AWS::AppMesh::VirtualGateway.VirtualGatewayFileAccessLog"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayfileaccesslog.html
-
-    Property Document:
-    
-    - ``rp_Path``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayfileaccesslog.html#cfn-appmesh-virtualgateway-virtualgatewayfileaccesslog-path
-    """
-    AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualGateway.VirtualGatewayFileAccessLog"
-    
-    rp_Path: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Path"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayfileaccesslog.html#cfn-appmesh-virtualgateway-virtualgatewayfileaccesslog-path"""
 
 @attr.s
 class PropGatewayRouteGatewayRouteVirtualService(Property):
@@ -1348,17 +1543,15 @@ class PropRouteHttpTimeout(Property):
     """
     AWS_OBJECT_TYPE = "AWS::AppMesh::Route.HttpTimeout"
     
-    p_Idle: typing.Union['PropRouteDuration', dict] = attr.ib(
+    p_Idle: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropRouteDuration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropRouteDuration)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "Idle"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httptimeout.html#cfn-appmesh-route-httptimeout-idle"""
-    p_PerRequest: typing.Union['PropRouteDuration', dict] = attr.ib(
+    p_PerRequest: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropRouteDuration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropRouteDuration)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "PerRequest"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httptimeout.html#cfn-appmesh-route-httptimeout-perrequest"""
@@ -1376,10 +1569,9 @@ class PropVirtualServiceVirtualServiceSpec(Property):
     """
     AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualService.VirtualServiceSpec"
     
-    p_Provider: typing.Union['PropVirtualServiceVirtualServiceProvider', dict] = attr.ib(
+    p_Provider: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropVirtualServiceVirtualServiceProvider.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropVirtualServiceVirtualServiceProvider)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "Provider"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualservice-virtualservicespec.html#cfn-appmesh-virtualservice-virtualservicespec-provider"""
@@ -1427,17 +1619,15 @@ class PropVirtualNodeOutlierDetection(Property):
     """
     AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualNode.OutlierDetection"
     
-    rp_BaseEjectionDuration: typing.Union['PropVirtualNodeDuration', dict] = attr.ib(
+    rp_BaseEjectionDuration: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropVirtualNodeDuration.from_dict,
-        validator=attr.validators.instance_of(PropVirtualNodeDuration),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "BaseEjectionDuration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-outlierdetection.html#cfn-appmesh-virtualnode-outlierdetection-baseejectionduration"""
-    rp_Interval: typing.Union['PropVirtualNodeDuration', dict] = attr.ib(
+    rp_Interval: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropVirtualNodeDuration.from_dict,
-        validator=attr.validators.instance_of(PropVirtualNodeDuration),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "Interval"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-outlierdetection.html#cfn-appmesh-virtualnode-outlierdetection-interval"""
@@ -1453,68 +1643,6 @@ class PropVirtualNodeOutlierDetection(Property):
         metadata={AttrMeta.PROPERTY_NAME: "MaxServerErrors"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-outlierdetection.html#cfn-appmesh-virtualnode-outlierdetection-maxservererrors"""
-
-@attr.s
-class PropVirtualGatewayVirtualGatewayHealthCheckPolicy(Property):
-    """
-    AWS Object Type = "AWS::AppMesh::VirtualGateway.VirtualGatewayHealthCheckPolicy"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayhealthcheckpolicy.html
-
-    Property Document:
-    
-    - ``rp_HealthyThreshold``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayhealthcheckpolicy.html#cfn-appmesh-virtualgateway-virtualgatewayhealthcheckpolicy-healthythreshold
-    - ``rp_IntervalMillis``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayhealthcheckpolicy.html#cfn-appmesh-virtualgateway-virtualgatewayhealthcheckpolicy-intervalmillis
-    - ``rp_Protocol``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayhealthcheckpolicy.html#cfn-appmesh-virtualgateway-virtualgatewayhealthcheckpolicy-protocol
-    - ``rp_TimeoutMillis``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayhealthcheckpolicy.html#cfn-appmesh-virtualgateway-virtualgatewayhealthcheckpolicy-timeoutmillis
-    - ``rp_UnhealthyThreshold``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayhealthcheckpolicy.html#cfn-appmesh-virtualgateway-virtualgatewayhealthcheckpolicy-unhealthythreshold
-    - ``p_Path``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayhealthcheckpolicy.html#cfn-appmesh-virtualgateway-virtualgatewayhealthcheckpolicy-path
-    - ``p_Port``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayhealthcheckpolicy.html#cfn-appmesh-virtualgateway-virtualgatewayhealthcheckpolicy-port
-    """
-    AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualGateway.VirtualGatewayHealthCheckPolicy"
-    
-    rp_HealthyThreshold: int = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(int),
-        metadata={AttrMeta.PROPERTY_NAME: "HealthyThreshold"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayhealthcheckpolicy.html#cfn-appmesh-virtualgateway-virtualgatewayhealthcheckpolicy-healthythreshold"""
-    rp_IntervalMillis: int = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(int),
-        metadata={AttrMeta.PROPERTY_NAME: "IntervalMillis"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayhealthcheckpolicy.html#cfn-appmesh-virtualgateway-virtualgatewayhealthcheckpolicy-intervalmillis"""
-    rp_Protocol: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Protocol"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayhealthcheckpolicy.html#cfn-appmesh-virtualgateway-virtualgatewayhealthcheckpolicy-protocol"""
-    rp_TimeoutMillis: int = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(int),
-        metadata={AttrMeta.PROPERTY_NAME: "TimeoutMillis"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayhealthcheckpolicy.html#cfn-appmesh-virtualgateway-virtualgatewayhealthcheckpolicy-timeoutmillis"""
-    rp_UnhealthyThreshold: int = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(int),
-        metadata={AttrMeta.PROPERTY_NAME: "UnhealthyThreshold"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayhealthcheckpolicy.html#cfn-appmesh-virtualgateway-virtualgatewayhealthcheckpolicy-unhealthythreshold"""
-    p_Path: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Path"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayhealthcheckpolicy.html#cfn-appmesh-virtualgateway-virtualgatewayhealthcheckpolicy-path"""
-    p_Port: int = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "Port"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayhealthcheckpolicy.html#cfn-appmesh-virtualgateway-virtualgatewayhealthcheckpolicy-port"""
 
 @attr.s
 class PropGatewayRouteHttpPathMatch(Property):
@@ -1542,26 +1670,6 @@ class PropGatewayRouteHttpPathMatch(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Regex"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-httppathmatch.html#cfn-appmesh-gatewayroute-httppathmatch-regex"""
-
-@attr.s
-class PropVirtualNodeTlsValidationContextAcmTrust(Property):
-    """
-    AWS Object Type = "AWS::AppMesh::VirtualNode.TlsValidationContextAcmTrust"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-tlsvalidationcontextacmtrust.html
-
-    Property Document:
-    
-    - ``rp_CertificateAuthorityArns``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-tlsvalidationcontextacmtrust.html#cfn-appmesh-virtualnode-tlsvalidationcontextacmtrust-certificateauthorityarns
-    """
-    AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualNode.TlsValidationContextAcmTrust"
-    
-    rp_CertificateAuthorityArns: typing.List[TypeHint.intrinsic_str] = attr.ib(
-        default=None,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list)),
-        metadata={AttrMeta.PROPERTY_NAME: "CertificateAuthorityArns"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-tlsvalidationcontextacmtrust.html#cfn-appmesh-virtualnode-tlsvalidationcontextacmtrust-certificateauthorityarns"""
 
 @attr.s
 class PropMeshEgressFilter(Property):
@@ -1597,17 +1705,15 @@ class PropVirtualNodeClientTlsCertificate(Property):
     """
     AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualNode.ClientTlsCertificate"
     
-    p_File: typing.Union['PropVirtualNodeListenerTlsFileCertificate', dict] = attr.ib(
+    p_File: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropVirtualNodeListenerTlsFileCertificate.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropVirtualNodeListenerTlsFileCertificate)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "File"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-clienttlscertificate.html#cfn-appmesh-virtualnode-clienttlscertificate-file"""
-    p_SDS: typing.Union['PropVirtualNodeListenerTlsSdsCertificate', dict] = attr.ib(
+    p_SDS: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropVirtualNodeListenerTlsSdsCertificate.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropVirtualNodeListenerTlsSdsCertificate)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "SDS"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-clienttlscertificate.html#cfn-appmesh-virtualnode-clienttlscertificate-sds"""
@@ -1626,17 +1732,15 @@ class PropVirtualNodeListenerTlsValidationContextTrust(Property):
     """
     AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualNode.ListenerTlsValidationContextTrust"
     
-    p_File: typing.Union['PropVirtualNodeTlsValidationContextFileTrust', dict] = attr.ib(
+    p_File: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropVirtualNodeTlsValidationContextFileTrust.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropVirtualNodeTlsValidationContextFileTrust)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "File"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-listenertlsvalidationcontexttrust.html#cfn-appmesh-virtualnode-listenertlsvalidationcontexttrust-file"""
-    p_SDS: typing.Union['PropVirtualNodeTlsValidationContextSdsTrust', dict] = attr.ib(
+    p_SDS: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropVirtualNodeTlsValidationContextSdsTrust.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropVirtualNodeTlsValidationContextSdsTrust)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "SDS"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-listenertlsvalidationcontexttrust.html#cfn-appmesh-virtualnode-listenertlsvalidationcontexttrust-sds"""
@@ -1683,56 +1787,6 @@ class PropRouteHttpRouteAction(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httprouteaction.html#cfn-appmesh-route-httprouteaction-weightedtargets"""
 
 @attr.s
-class PropVirtualNodeAccessLog(Property):
-    """
-    AWS Object Type = "AWS::AppMesh::VirtualNode.AccessLog"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-accesslog.html
-
-    Property Document:
-    
-    - ``p_File``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-accesslog.html#cfn-appmesh-virtualnode-accesslog-file
-    """
-    AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualNode.AccessLog"
-    
-    p_File: typing.Union['PropVirtualNodeFileAccessLog', dict] = attr.ib(
-        default=None,
-        converter=PropVirtualNodeFileAccessLog.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropVirtualNodeFileAccessLog)),
-        metadata={AttrMeta.PROPERTY_NAME: "File"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-accesslog.html#cfn-appmesh-virtualnode-accesslog-file"""
-
-@attr.s
-class PropVirtualGatewayVirtualGatewayListenerTlsValidationContextTrust(Property):
-    """
-    AWS Object Type = "AWS::AppMesh::VirtualGateway.VirtualGatewayListenerTlsValidationContextTrust"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistenertlsvalidationcontexttrust.html
-
-    Property Document:
-    
-    - ``p_File``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistenertlsvalidationcontexttrust.html#cfn-appmesh-virtualgateway-virtualgatewaylistenertlsvalidationcontexttrust-file
-    - ``p_SDS``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistenertlsvalidationcontexttrust.html#cfn-appmesh-virtualgateway-virtualgatewaylistenertlsvalidationcontexttrust-sds
-    """
-    AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualGateway.VirtualGatewayListenerTlsValidationContextTrust"
-    
-    p_File: typing.Union['PropVirtualGatewayVirtualGatewayTlsValidationContextFileTrust', dict] = attr.ib(
-        default=None,
-        converter=PropVirtualGatewayVirtualGatewayTlsValidationContextFileTrust.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropVirtualGatewayVirtualGatewayTlsValidationContextFileTrust)),
-        metadata={AttrMeta.PROPERTY_NAME: "File"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistenertlsvalidationcontexttrust.html#cfn-appmesh-virtualgateway-virtualgatewaylistenertlsvalidationcontexttrust-file"""
-    p_SDS: typing.Union['PropVirtualGatewayVirtualGatewayTlsValidationContextSdsTrust', dict] = attr.ib(
-        default=None,
-        converter=PropVirtualGatewayVirtualGatewayTlsValidationContextSdsTrust.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropVirtualGatewayVirtualGatewayTlsValidationContextSdsTrust)),
-        metadata={AttrMeta.PROPERTY_NAME: "SDS"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistenertlsvalidationcontexttrust.html#cfn-appmesh-virtualgateway-virtualgatewaylistenertlsvalidationcontexttrust-sds"""
-
-@attr.s
 class PropVirtualGatewayVirtualGatewayListenerTlsSdsCertificate(Property):
     """
     AWS Object Type = "AWS::AppMesh::VirtualGateway.VirtualGatewayListenerTlsSdsCertificate"
@@ -1753,26 +1807,6 @@ class PropVirtualGatewayVirtualGatewayListenerTlsSdsCertificate(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistenertlssdscertificate.html#cfn-appmesh-virtualgateway-virtualgatewaylistenertlssdscertificate-secretname"""
 
 @attr.s
-class PropVirtualNodeSubjectAlternativeNameMatchers(Property):
-    """
-    AWS Object Type = "AWS::AppMesh::VirtualNode.SubjectAlternativeNameMatchers"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-subjectalternativenamematchers.html
-
-    Property Document:
-    
-    - ``p_Exact``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-subjectalternativenamematchers.html#cfn-appmesh-virtualnode-subjectalternativenamematchers-exact
-    """
-    AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualNode.SubjectAlternativeNameMatchers"
-    
-    p_Exact: typing.List[TypeHint.intrinsic_str] = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Exact"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-subjectalternativenamematchers.html#cfn-appmesh-virtualnode-subjectalternativenamematchers-exact"""
-
-@attr.s
 class PropVirtualNodeSubjectAlternativeNames(Property):
     """
     AWS Object Type = "AWS::AppMesh::VirtualNode.SubjectAlternativeNames"
@@ -1785,33 +1819,12 @@ class PropVirtualNodeSubjectAlternativeNames(Property):
     """
     AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualNode.SubjectAlternativeNames"
     
-    rp_Match: typing.Union['PropVirtualNodeSubjectAlternativeNameMatchers', dict] = attr.ib(
+    rp_Match: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropVirtualNodeSubjectAlternativeNameMatchers.from_dict,
-        validator=attr.validators.instance_of(PropVirtualNodeSubjectAlternativeNameMatchers),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "Match"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-subjectalternativenames.html#cfn-appmesh-virtualnode-subjectalternativenames-match"""
-
-@attr.s
-class PropVirtualNodeVirtualNodeGrpcConnectionPool(Property):
-    """
-    AWS Object Type = "AWS::AppMesh::VirtualNode.VirtualNodeGrpcConnectionPool"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-virtualnodegrpcconnectionpool.html
-
-    Property Document:
-    
-    - ``rp_MaxRequests``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-virtualnodegrpcconnectionpool.html#cfn-appmesh-virtualnode-virtualnodegrpcconnectionpool-maxrequests
-    """
-    AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualNode.VirtualNodeGrpcConnectionPool"
-    
-    rp_MaxRequests: int = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(int),
-        metadata={AttrMeta.PROPERTY_NAME: "MaxRequests"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-virtualnodegrpcconnectionpool.html#cfn-appmesh-virtualnode-virtualnodegrpcconnectionpool-maxrequests"""
 
 @attr.s
 class PropRouteMatchRange(Property):
@@ -1855,125 +1868,51 @@ class PropVirtualGatewayVirtualGatewayTlsValidationContextTrust(Property):
     """
     AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualGateway.VirtualGatewayTlsValidationContextTrust"
     
-    p_ACM: typing.Union['PropVirtualGatewayVirtualGatewayTlsValidationContextAcmTrust', dict] = attr.ib(
+    p_ACM: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropVirtualGatewayVirtualGatewayTlsValidationContextAcmTrust.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropVirtualGatewayVirtualGatewayTlsValidationContextAcmTrust)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "ACM"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaytlsvalidationcontexttrust.html#cfn-appmesh-virtualgateway-virtualgatewaytlsvalidationcontexttrust-acm"""
-    p_File: typing.Union['PropVirtualGatewayVirtualGatewayTlsValidationContextFileTrust', dict] = attr.ib(
+    p_File: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropVirtualGatewayVirtualGatewayTlsValidationContextFileTrust.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropVirtualGatewayVirtualGatewayTlsValidationContextFileTrust)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "File"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaytlsvalidationcontexttrust.html#cfn-appmesh-virtualgateway-virtualgatewaytlsvalidationcontexttrust-file"""
-    p_SDS: typing.Union['PropVirtualGatewayVirtualGatewayTlsValidationContextSdsTrust', dict] = attr.ib(
+    p_SDS: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropVirtualGatewayVirtualGatewayTlsValidationContextSdsTrust.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropVirtualGatewayVirtualGatewayTlsValidationContextSdsTrust)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "SDS"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaytlsvalidationcontexttrust.html#cfn-appmesh-virtualgateway-virtualgatewaytlsvalidationcontexttrust-sds"""
 
 @attr.s
-class PropRouteGrpcRouteMetadataMatchMethod(Property):
+class PropVirtualNodeFileAccessLog(Property):
     """
-    AWS Object Type = "AWS::AppMesh::Route.GrpcRouteMetadataMatchMethod"
+    AWS Object Type = "AWS::AppMesh::VirtualNode.FileAccessLog"
 
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcroutemetadatamatchmethod.html
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-fileaccesslog.html
 
     Property Document:
     
-    - ``p_Exact``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcroutemetadatamatchmethod.html#cfn-appmesh-route-grpcroutemetadatamatchmethod-exact
-    - ``p_Prefix``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcroutemetadatamatchmethod.html#cfn-appmesh-route-grpcroutemetadatamatchmethod-prefix
-    - ``p_Range``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcroutemetadatamatchmethod.html#cfn-appmesh-route-grpcroutemetadatamatchmethod-range
-    - ``p_Regex``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcroutemetadatamatchmethod.html#cfn-appmesh-route-grpcroutemetadatamatchmethod-regex
-    - ``p_Suffix``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcroutemetadatamatchmethod.html#cfn-appmesh-route-grpcroutemetadatamatchmethod-suffix
+    - ``rp_Path``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-fileaccesslog.html#cfn-appmesh-virtualnode-fileaccesslog-path
+    - ``p_Format``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-fileaccesslog.html#cfn-appmesh-virtualnode-fileaccesslog-format
     """
-    AWS_OBJECT_TYPE = "AWS::AppMesh::Route.GrpcRouteMetadataMatchMethod"
+    AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualNode.FileAccessLog"
     
-    p_Exact: TypeHint.intrinsic_str = attr.ib(
+    rp_Path: TypeHint.intrinsic_str = attr.ib(
         default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Exact"},
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "Path"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcroutemetadatamatchmethod.html#cfn-appmesh-route-grpcroutemetadatamatchmethod-exact"""
-    p_Prefix: TypeHint.intrinsic_str = attr.ib(
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-fileaccesslog.html#cfn-appmesh-virtualnode-fileaccesslog-path"""
+    p_Format: typing.Optional[dict] = attr.ib(
         default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Prefix"},
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "Format"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcroutemetadatamatchmethod.html#cfn-appmesh-route-grpcroutemetadatamatchmethod-prefix"""
-    p_Range: typing.Union['PropRouteMatchRange', dict] = attr.ib(
-        default=None,
-        converter=PropRouteMatchRange.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropRouteMatchRange)),
-        metadata={AttrMeta.PROPERTY_NAME: "Range"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcroutemetadatamatchmethod.html#cfn-appmesh-route-grpcroutemetadatamatchmethod-range"""
-    p_Regex: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Regex"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcroutemetadatamatchmethod.html#cfn-appmesh-route-grpcroutemetadatamatchmethod-regex"""
-    p_Suffix: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Suffix"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcroutemetadatamatchmethod.html#cfn-appmesh-route-grpcroutemetadatamatchmethod-suffix"""
-
-@attr.s
-class PropGatewayRouteHttpGatewayRouteHeaderMatch(Property):
-    """
-    AWS Object Type = "AWS::AppMesh::GatewayRoute.HttpGatewayRouteHeaderMatch"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-httpgatewayrouteheadermatch.html
-
-    Property Document:
-    
-    - ``p_Exact``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-httpgatewayrouteheadermatch.html#cfn-appmesh-gatewayroute-httpgatewayrouteheadermatch-exact
-    - ``p_Prefix``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-httpgatewayrouteheadermatch.html#cfn-appmesh-gatewayroute-httpgatewayrouteheadermatch-prefix
-    - ``p_Range``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-httpgatewayrouteheadermatch.html#cfn-appmesh-gatewayroute-httpgatewayrouteheadermatch-range
-    - ``p_Regex``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-httpgatewayrouteheadermatch.html#cfn-appmesh-gatewayroute-httpgatewayrouteheadermatch-regex
-    - ``p_Suffix``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-httpgatewayrouteheadermatch.html#cfn-appmesh-gatewayroute-httpgatewayrouteheadermatch-suffix
-    """
-    AWS_OBJECT_TYPE = "AWS::AppMesh::GatewayRoute.HttpGatewayRouteHeaderMatch"
-    
-    p_Exact: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Exact"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-httpgatewayrouteheadermatch.html#cfn-appmesh-gatewayroute-httpgatewayrouteheadermatch-exact"""
-    p_Prefix: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Prefix"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-httpgatewayrouteheadermatch.html#cfn-appmesh-gatewayroute-httpgatewayrouteheadermatch-prefix"""
-    p_Range: typing.Union['PropGatewayRouteGatewayRouteRangeMatch', dict] = attr.ib(
-        default=None,
-        converter=PropGatewayRouteGatewayRouteRangeMatch.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropGatewayRouteGatewayRouteRangeMatch)),
-        metadata={AttrMeta.PROPERTY_NAME: "Range"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-httpgatewayrouteheadermatch.html#cfn-appmesh-gatewayroute-httpgatewayrouteheadermatch-range"""
-    p_Regex: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Regex"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-httpgatewayrouteheadermatch.html#cfn-appmesh-gatewayroute-httpgatewayrouteheadermatch-regex"""
-    p_Suffix: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Suffix"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-httpgatewayrouteheadermatch.html#cfn-appmesh-gatewayroute-httpgatewayrouteheadermatch-suffix"""
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-fileaccesslog.html#cfn-appmesh-virtualnode-fileaccesslog-format"""
 
 @attr.s
 class PropRouteHeaderMatchMethod(Property):
@@ -2004,10 +1943,9 @@ class PropRouteHeaderMatchMethod(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Prefix"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-headermatchmethod.html#cfn-appmesh-route-headermatchmethod-prefix"""
-    p_Range: typing.Union['PropRouteMatchRange', dict] = attr.ib(
+    p_Range: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropRouteMatchRange.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropRouteMatchRange)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "Range"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-headermatchmethod.html#cfn-appmesh-route-headermatchmethod-range"""
@@ -2023,6 +1961,34 @@ class PropRouteHeaderMatchMethod(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Suffix"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-headermatchmethod.html#cfn-appmesh-route-headermatchmethod-suffix"""
+
+@attr.s
+class PropVirtualGatewayLoggingFormat(Property):
+    """
+    AWS Object Type = "AWS::AppMesh::VirtualGateway.LoggingFormat"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-loggingformat.html
+
+    Property Document:
+    
+    - ``p_Json``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-loggingformat.html#cfn-appmesh-virtualgateway-loggingformat-json
+    - ``p_Text``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-loggingformat.html#cfn-appmesh-virtualgateway-loggingformat-text
+    """
+    AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualGateway.LoggingFormat"
+    
+    p_Json: typing.List[typing.Union['PropVirtualGatewayJsonFormatRef', dict]] = attr.ib(
+        default=None,
+        converter=PropVirtualGatewayJsonFormatRef.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropVirtualGatewayJsonFormatRef), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "Json"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-loggingformat.html#cfn-appmesh-virtualgateway-loggingformat-json"""
+    p_Text: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "Text"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-loggingformat.html#cfn-appmesh-virtualgateway-loggingformat-text"""
 
 @attr.s
 class PropGatewayRouteHttpGatewayRouteHeader(Property):
@@ -2051,10 +2017,9 @@ class PropGatewayRouteHttpGatewayRouteHeader(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Invert"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-httpgatewayrouteheader.html#cfn-appmesh-gatewayroute-httpgatewayrouteheader-invert"""
-    p_Match: typing.Union['PropGatewayRouteHttpGatewayRouteHeaderMatch', dict] = attr.ib(
+    p_Match: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropGatewayRouteHttpGatewayRouteHeaderMatch.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropGatewayRouteHttpGatewayRouteHeaderMatch)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "Match"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-httpgatewayrouteheader.html#cfn-appmesh-gatewayroute-httpgatewayrouteheader-match"""
@@ -2073,10 +2038,9 @@ class PropVirtualNodeListenerTlsValidationContext(Property):
     """
     AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualNode.ListenerTlsValidationContext"
     
-    rp_Trust: typing.Union['PropVirtualNodeListenerTlsValidationContextTrust', dict] = attr.ib(
+    rp_Trust: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropVirtualNodeListenerTlsValidationContextTrust.from_dict,
-        validator=attr.validators.instance_of(PropVirtualNodeListenerTlsValidationContextTrust),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "Trust"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-listenertlsvalidationcontext.html#cfn-appmesh-virtualnode-listenertlsvalidationcontext-trust"""
@@ -2087,63 +2051,6 @@ class PropVirtualNodeListenerTlsValidationContext(Property):
         metadata={AttrMeta.PROPERTY_NAME: "SubjectAlternativeNames"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-listenertlsvalidationcontext.html#cfn-appmesh-virtualnode-listenertlsvalidationcontext-subjectalternativenames"""
-
-@attr.s
-class PropVirtualNodeTcpTimeout(Property):
-    """
-    AWS Object Type = "AWS::AppMesh::VirtualNode.TcpTimeout"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-tcptimeout.html
-
-    Property Document:
-    
-    - ``p_Idle``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-tcptimeout.html#cfn-appmesh-virtualnode-tcptimeout-idle
-    """
-    AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualNode.TcpTimeout"
-    
-    p_Idle: typing.Union['PropVirtualNodeDuration', dict] = attr.ib(
-        default=None,
-        converter=PropVirtualNodeDuration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropVirtualNodeDuration)),
-        metadata={AttrMeta.PROPERTY_NAME: "Idle"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-tcptimeout.html#cfn-appmesh-virtualnode-tcptimeout-idle"""
-
-@attr.s
-class PropVirtualNodeListenerTls(Property):
-    """
-    AWS Object Type = "AWS::AppMesh::VirtualNode.ListenerTls"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-listenertls.html
-
-    Property Document:
-    
-    - ``rp_Certificate``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-listenertls.html#cfn-appmesh-virtualnode-listenertls-certificate
-    - ``rp_Mode``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-listenertls.html#cfn-appmesh-virtualnode-listenertls-mode
-    - ``p_Validation``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-listenertls.html#cfn-appmesh-virtualnode-listenertls-validation
-    """
-    AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualNode.ListenerTls"
-    
-    rp_Certificate: typing.Union['PropVirtualNodeListenerTlsCertificate', dict] = attr.ib(
-        default=None,
-        converter=PropVirtualNodeListenerTlsCertificate.from_dict,
-        validator=attr.validators.instance_of(PropVirtualNodeListenerTlsCertificate),
-        metadata={AttrMeta.PROPERTY_NAME: "Certificate"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-listenertls.html#cfn-appmesh-virtualnode-listenertls-certificate"""
-    rp_Mode: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Mode"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-listenertls.html#cfn-appmesh-virtualnode-listenertls-mode"""
-    p_Validation: typing.Union['PropVirtualNodeListenerTlsValidationContext', dict] = attr.ib(
-        default=None,
-        converter=PropVirtualNodeListenerTlsValidationContext.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropVirtualNodeListenerTlsValidationContext)),
-        metadata={AttrMeta.PROPERTY_NAME: "Validation"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-listenertls.html#cfn-appmesh-virtualnode-listenertls-validation"""
 
 @attr.s
 class PropGatewayRouteGatewayRouteMetadataMatch(Property):
@@ -2174,10 +2081,9 @@ class PropGatewayRouteGatewayRouteMetadataMatch(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Prefix"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-gatewayroutemetadatamatch.html#cfn-appmesh-gatewayroute-gatewayroutemetadatamatch-prefix"""
-    p_Range: typing.Union['PropGatewayRouteGatewayRouteRangeMatch', dict] = attr.ib(
+    p_Range: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropGatewayRouteGatewayRouteRangeMatch.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropGatewayRouteGatewayRouteRangeMatch)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "Range"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-gatewayroutemetadatamatch.html#cfn-appmesh-gatewayroute-gatewayroutemetadatamatch-range"""
@@ -2195,43 +2101,6 @@ class PropGatewayRouteGatewayRouteMetadataMatch(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-gatewayroutemetadatamatch.html#cfn-appmesh-gatewayroute-gatewayroutemetadatamatch-suffix"""
 
 @attr.s
-class PropVirtualGatewayVirtualGatewayListenerTlsCertificate(Property):
-    """
-    AWS Object Type = "AWS::AppMesh::VirtualGateway.VirtualGatewayListenerTlsCertificate"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistenertlscertificate.html
-
-    Property Document:
-    
-    - ``p_ACM``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistenertlscertificate.html#cfn-appmesh-virtualgateway-virtualgatewaylistenertlscertificate-acm
-    - ``p_File``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistenertlscertificate.html#cfn-appmesh-virtualgateway-virtualgatewaylistenertlscertificate-file
-    - ``p_SDS``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistenertlscertificate.html#cfn-appmesh-virtualgateway-virtualgatewaylistenertlscertificate-sds
-    """
-    AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualGateway.VirtualGatewayListenerTlsCertificate"
-    
-    p_ACM: typing.Union['PropVirtualGatewayVirtualGatewayListenerTlsAcmCertificate', dict] = attr.ib(
-        default=None,
-        converter=PropVirtualGatewayVirtualGatewayListenerTlsAcmCertificate.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropVirtualGatewayVirtualGatewayListenerTlsAcmCertificate)),
-        metadata={AttrMeta.PROPERTY_NAME: "ACM"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistenertlscertificate.html#cfn-appmesh-virtualgateway-virtualgatewaylistenertlscertificate-acm"""
-    p_File: typing.Union['PropVirtualGatewayVirtualGatewayListenerTlsFileCertificate', dict] = attr.ib(
-        default=None,
-        converter=PropVirtualGatewayVirtualGatewayListenerTlsFileCertificate.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropVirtualGatewayVirtualGatewayListenerTlsFileCertificate)),
-        metadata={AttrMeta.PROPERTY_NAME: "File"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistenertlscertificate.html#cfn-appmesh-virtualgateway-virtualgatewaylistenertlscertificate-file"""
-    p_SDS: typing.Union['PropVirtualGatewayVirtualGatewayListenerTlsSdsCertificate', dict] = attr.ib(
-        default=None,
-        converter=PropVirtualGatewayVirtualGatewayListenerTlsSdsCertificate.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropVirtualGatewayVirtualGatewayListenerTlsSdsCertificate)),
-        metadata={AttrMeta.PROPERTY_NAME: "SDS"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistenertlscertificate.html#cfn-appmesh-virtualgateway-virtualgatewaylistenertlscertificate-sds"""
-
-@attr.s
 class PropVirtualGatewayVirtualGatewayConnectionPool(Property):
     """
     AWS Object Type = "AWS::AppMesh::VirtualGateway.VirtualGatewayConnectionPool"
@@ -2246,83 +2115,24 @@ class PropVirtualGatewayVirtualGatewayConnectionPool(Property):
     """
     AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualGateway.VirtualGatewayConnectionPool"
     
-    p_GRPC: typing.Union['PropVirtualGatewayVirtualGatewayGrpcConnectionPool', dict] = attr.ib(
+    p_GRPC: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropVirtualGatewayVirtualGatewayGrpcConnectionPool.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropVirtualGatewayVirtualGatewayGrpcConnectionPool)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "GRPC"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayconnectionpool.html#cfn-appmesh-virtualgateway-virtualgatewayconnectionpool-grpc"""
-    p_HTTP: typing.Union['PropVirtualGatewayVirtualGatewayHttpConnectionPool', dict] = attr.ib(
+    p_HTTP: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropVirtualGatewayVirtualGatewayHttpConnectionPool.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropVirtualGatewayVirtualGatewayHttpConnectionPool)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "HTTP"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayconnectionpool.html#cfn-appmesh-virtualgateway-virtualgatewayconnectionpool-http"""
-    p_HTTP2: typing.Union['PropVirtualGatewayVirtualGatewayHttp2ConnectionPool', dict] = attr.ib(
+    p_HTTP2: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropVirtualGatewayVirtualGatewayHttp2ConnectionPool.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropVirtualGatewayVirtualGatewayHttp2ConnectionPool)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "HTTP2"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayconnectionpool.html#cfn-appmesh-virtualgateway-virtualgatewayconnectionpool-http2"""
-
-@attr.s
-class PropVirtualGatewaySubjectAlternativeNames(Property):
-    """
-    AWS Object Type = "AWS::AppMesh::VirtualGateway.SubjectAlternativeNames"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-subjectalternativenames.html
-
-    Property Document:
-    
-    - ``rp_Match``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-subjectalternativenames.html#cfn-appmesh-virtualgateway-subjectalternativenames-match
-    """
-    AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualGateway.SubjectAlternativeNames"
-    
-    rp_Match: typing.Union['PropVirtualGatewaySubjectAlternativeNameMatchers', dict] = attr.ib(
-        default=None,
-        converter=PropVirtualGatewaySubjectAlternativeNameMatchers.from_dict,
-        validator=attr.validators.instance_of(PropVirtualGatewaySubjectAlternativeNameMatchers),
-        metadata={AttrMeta.PROPERTY_NAME: "Match"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-subjectalternativenames.html#cfn-appmesh-virtualgateway-subjectalternativenames-match"""
-
-@attr.s
-class PropRouteGrpcRouteMetadata(Property):
-    """
-    AWS Object Type = "AWS::AppMesh::Route.GrpcRouteMetadata"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcroutemetadata.html
-
-    Property Document:
-    
-    - ``rp_Name``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcroutemetadata.html#cfn-appmesh-route-grpcroutemetadata-name
-    - ``p_Invert``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcroutemetadata.html#cfn-appmesh-route-grpcroutemetadata-invert
-    - ``p_Match``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcroutemetadata.html#cfn-appmesh-route-grpcroutemetadata-match
-    """
-    AWS_OBJECT_TYPE = "AWS::AppMesh::Route.GrpcRouteMetadata"
-    
-    rp_Name: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Name"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcroutemetadata.html#cfn-appmesh-route-grpcroutemetadata-name"""
-    p_Invert: bool = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(bool)),
-        metadata={AttrMeta.PROPERTY_NAME: "Invert"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcroutemetadata.html#cfn-appmesh-route-grpcroutemetadata-invert"""
-    p_Match: typing.Union['PropRouteGrpcRouteMetadataMatchMethod', dict] = attr.ib(
-        default=None,
-        converter=PropRouteGrpcRouteMetadataMatchMethod.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropRouteGrpcRouteMetadataMatchMethod)),
-        metadata={AttrMeta.PROPERTY_NAME: "Match"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcroutemetadata.html#cfn-appmesh-route-grpcroutemetadata-match"""
 
 @attr.s
 class PropRouteQueryParameter(Property):
@@ -2344,34 +2154,12 @@ class PropRouteQueryParameter(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Name"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-queryparameter.html#cfn-appmesh-route-queryparameter-name"""
-    p_Match: typing.Union['PropRouteHttpQueryParameterMatch', dict] = attr.ib(
+    p_Match: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropRouteHttpQueryParameterMatch.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropRouteHttpQueryParameterMatch)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "Match"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-queryparameter.html#cfn-appmesh-route-queryparameter-match"""
-
-@attr.s
-class PropGatewayRouteGatewayRouteTarget(Property):
-    """
-    AWS Object Type = "AWS::AppMesh::GatewayRoute.GatewayRouteTarget"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-gatewayroutetarget.html
-
-    Property Document:
-    
-    - ``rp_VirtualService``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-gatewayroutetarget.html#cfn-appmesh-gatewayroute-gatewayroutetarget-virtualservice
-    """
-    AWS_OBJECT_TYPE = "AWS::AppMesh::GatewayRoute.GatewayRouteTarget"
-    
-    rp_VirtualService: typing.Union['PropGatewayRouteGatewayRouteVirtualService', dict] = attr.ib(
-        default=None,
-        converter=PropGatewayRouteGatewayRouteVirtualService.from_dict,
-        validator=attr.validators.instance_of(PropGatewayRouteGatewayRouteVirtualService),
-        metadata={AttrMeta.PROPERTY_NAME: "VirtualService"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-gatewayroutetarget.html#cfn-appmesh-gatewayroute-gatewayroutetarget-virtualservice"""
 
 @attr.s
 class PropVirtualNodeHttpTimeout(Property):
@@ -2387,17 +2175,15 @@ class PropVirtualNodeHttpTimeout(Property):
     """
     AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualNode.HttpTimeout"
     
-    p_Idle: typing.Union['PropVirtualNodeDuration', dict] = attr.ib(
+    p_Idle: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropVirtualNodeDuration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropVirtualNodeDuration)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "Idle"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-httptimeout.html#cfn-appmesh-virtualnode-httptimeout-idle"""
-    p_PerRequest: typing.Union['PropVirtualNodeDuration', dict] = attr.ib(
+    p_PerRequest: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropVirtualNodeDuration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropVirtualNodeDuration)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "PerRequest"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-httptimeout.html#cfn-appmesh-virtualnode-httptimeout-perrequest"""
@@ -2416,141 +2202,18 @@ class PropVirtualGatewayVirtualGatewayClientTlsCertificate(Property):
     """
     AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualGateway.VirtualGatewayClientTlsCertificate"
     
-    p_File: typing.Union['PropVirtualGatewayVirtualGatewayListenerTlsFileCertificate', dict] = attr.ib(
+    p_File: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropVirtualGatewayVirtualGatewayListenerTlsFileCertificate.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropVirtualGatewayVirtualGatewayListenerTlsFileCertificate)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "File"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayclienttlscertificate.html#cfn-appmesh-virtualgateway-virtualgatewayclienttlscertificate-file"""
-    p_SDS: typing.Union['PropVirtualGatewayVirtualGatewayListenerTlsSdsCertificate', dict] = attr.ib(
+    p_SDS: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropVirtualGatewayVirtualGatewayListenerTlsSdsCertificate.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropVirtualGatewayVirtualGatewayListenerTlsSdsCertificate)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "SDS"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayclienttlscertificate.html#cfn-appmesh-virtualgateway-virtualgatewayclienttlscertificate-sds"""
-
-@attr.s
-class PropVirtualGatewayVirtualGatewayListenerTlsValidationContext(Property):
-    """
-    AWS Object Type = "AWS::AppMesh::VirtualGateway.VirtualGatewayListenerTlsValidationContext"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistenertlsvalidationcontext.html
-
-    Property Document:
-    
-    - ``rp_Trust``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistenertlsvalidationcontext.html#cfn-appmesh-virtualgateway-virtualgatewaylistenertlsvalidationcontext-trust
-    - ``p_SubjectAlternativeNames``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistenertlsvalidationcontext.html#cfn-appmesh-virtualgateway-virtualgatewaylistenertlsvalidationcontext-subjectalternativenames
-    """
-    AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualGateway.VirtualGatewayListenerTlsValidationContext"
-    
-    rp_Trust: typing.Union['PropVirtualGatewayVirtualGatewayListenerTlsValidationContextTrust', dict] = attr.ib(
-        default=None,
-        converter=PropVirtualGatewayVirtualGatewayListenerTlsValidationContextTrust.from_dict,
-        validator=attr.validators.instance_of(PropVirtualGatewayVirtualGatewayListenerTlsValidationContextTrust),
-        metadata={AttrMeta.PROPERTY_NAME: "Trust"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistenertlsvalidationcontext.html#cfn-appmesh-virtualgateway-virtualgatewaylistenertlsvalidationcontext-trust"""
-    p_SubjectAlternativeNames: typing.Union['PropVirtualGatewaySubjectAlternativeNames', dict] = attr.ib(
-        default=None,
-        converter=PropVirtualGatewaySubjectAlternativeNames.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropVirtualGatewaySubjectAlternativeNames)),
-        metadata={AttrMeta.PROPERTY_NAME: "SubjectAlternativeNames"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistenertlsvalidationcontext.html#cfn-appmesh-virtualgateway-virtualgatewaylistenertlsvalidationcontext-subjectalternativenames"""
-
-@attr.s
-class PropVirtualRouterVirtualRouterSpec(Property):
-    """
-    AWS Object Type = "AWS::AppMesh::VirtualRouter.VirtualRouterSpec"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualrouter-virtualrouterspec.html
-
-    Property Document:
-    
-    - ``rp_Listeners``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualrouter-virtualrouterspec.html#cfn-appmesh-virtualrouter-virtualrouterspec-listeners
-    """
-    AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualRouter.VirtualRouterSpec"
-    
-    rp_Listeners: typing.List[typing.Union['PropVirtualRouterVirtualRouterListener', dict]] = attr.ib(
-        default=None,
-        converter=PropVirtualRouterVirtualRouterListener.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropVirtualRouterVirtualRouterListener), iterable_validator=attr.validators.instance_of(list)),
-        metadata={AttrMeta.PROPERTY_NAME: "Listeners"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualrouter-virtualrouterspec.html#cfn-appmesh-virtualrouter-virtualrouterspec-listeners"""
-
-@attr.s
-class PropVirtualGatewayVirtualGatewayListenerTls(Property):
-    """
-    AWS Object Type = "AWS::AppMesh::VirtualGateway.VirtualGatewayListenerTls"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistenertls.html
-
-    Property Document:
-    
-    - ``rp_Certificate``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistenertls.html#cfn-appmesh-virtualgateway-virtualgatewaylistenertls-certificate
-    - ``rp_Mode``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistenertls.html#cfn-appmesh-virtualgateway-virtualgatewaylistenertls-mode
-    - ``p_Validation``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistenertls.html#cfn-appmesh-virtualgateway-virtualgatewaylistenertls-validation
-    """
-    AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualGateway.VirtualGatewayListenerTls"
-    
-    rp_Certificate: typing.Union['PropVirtualGatewayVirtualGatewayListenerTlsCertificate', dict] = attr.ib(
-        default=None,
-        converter=PropVirtualGatewayVirtualGatewayListenerTlsCertificate.from_dict,
-        validator=attr.validators.instance_of(PropVirtualGatewayVirtualGatewayListenerTlsCertificate),
-        metadata={AttrMeta.PROPERTY_NAME: "Certificate"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistenertls.html#cfn-appmesh-virtualgateway-virtualgatewaylistenertls-certificate"""
-    rp_Mode: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Mode"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistenertls.html#cfn-appmesh-virtualgateway-virtualgatewaylistenertls-mode"""
-    p_Validation: typing.Union['PropVirtualGatewayVirtualGatewayListenerTlsValidationContext', dict] = attr.ib(
-        default=None,
-        converter=PropVirtualGatewayVirtualGatewayListenerTlsValidationContext.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropVirtualGatewayVirtualGatewayListenerTlsValidationContext)),
-        metadata={AttrMeta.PROPERTY_NAME: "Validation"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistenertls.html#cfn-appmesh-virtualgateway-virtualgatewaylistenertls-validation"""
-
-@attr.s
-class PropRouteGrpcRouteMatch(Property):
-    """
-    AWS Object Type = "AWS::AppMesh::Route.GrpcRouteMatch"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcroutematch.html
-
-    Property Document:
-    
-    - ``p_Metadata``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcroutematch.html#cfn-appmesh-route-grpcroutematch-metadata
-    - ``p_MethodName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcroutematch.html#cfn-appmesh-route-grpcroutematch-methodname
-    - ``p_ServiceName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcroutematch.html#cfn-appmesh-route-grpcroutematch-servicename
-    """
-    AWS_OBJECT_TYPE = "AWS::AppMesh::Route.GrpcRouteMatch"
-    
-    p_Metadata: typing.List[typing.Union['PropRouteGrpcRouteMetadata', dict]] = attr.ib(
-        default=None,
-        converter=PropRouteGrpcRouteMetadata.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropRouteGrpcRouteMetadata), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Metadata"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcroutematch.html#cfn-appmesh-route-grpcroutematch-metadata"""
-    p_MethodName: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "MethodName"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcroutematch.html#cfn-appmesh-route-grpcroutematch-methodname"""
-    p_ServiceName: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "ServiceName"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcroutematch.html#cfn-appmesh-route-grpcroutematch-servicename"""
 
 @attr.s
 class PropVirtualNodeGrpcTimeout(Property):
@@ -2566,160 +2229,66 @@ class PropVirtualNodeGrpcTimeout(Property):
     """
     AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualNode.GrpcTimeout"
     
-    p_Idle: typing.Union['PropVirtualNodeDuration', dict] = attr.ib(
+    p_Idle: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropVirtualNodeDuration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropVirtualNodeDuration)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "Idle"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-grpctimeout.html#cfn-appmesh-virtualnode-grpctimeout-idle"""
-    p_PerRequest: typing.Union['PropVirtualNodeDuration', dict] = attr.ib(
+    p_PerRequest: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropVirtualNodeDuration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropVirtualNodeDuration)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "PerRequest"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-grpctimeout.html#cfn-appmesh-virtualnode-grpctimeout-perrequest"""
 
 @attr.s
-class PropVirtualNodeVirtualNodeConnectionPool(Property):
+class PropRouteGrpcRetryPolicy(Property):
     """
-    AWS Object Type = "AWS::AppMesh::VirtualNode.VirtualNodeConnectionPool"
+    AWS Object Type = "AWS::AppMesh::Route.GrpcRetryPolicy"
 
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-virtualnodeconnectionpool.html
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcretrypolicy.html
 
     Property Document:
     
-    - ``p_GRPC``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-virtualnodeconnectionpool.html#cfn-appmesh-virtualnode-virtualnodeconnectionpool-grpc
-    - ``p_HTTP``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-virtualnodeconnectionpool.html#cfn-appmesh-virtualnode-virtualnodeconnectionpool-http
-    - ``p_HTTP2``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-virtualnodeconnectionpool.html#cfn-appmesh-virtualnode-virtualnodeconnectionpool-http2
-    - ``p_TCP``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-virtualnodeconnectionpool.html#cfn-appmesh-virtualnode-virtualnodeconnectionpool-tcp
+    - ``rp_MaxRetries``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcretrypolicy.html#cfn-appmesh-route-grpcretrypolicy-maxretries
+    - ``rp_PerRetryTimeout``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcretrypolicy.html#cfn-appmesh-route-grpcretrypolicy-perretrytimeout
+    - ``p_GrpcRetryEvents``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcretrypolicy.html#cfn-appmesh-route-grpcretrypolicy-grpcretryevents
+    - ``p_HttpRetryEvents``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcretrypolicy.html#cfn-appmesh-route-grpcretrypolicy-httpretryevents
+    - ``p_TcpRetryEvents``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcretrypolicy.html#cfn-appmesh-route-grpcretrypolicy-tcpretryevents
     """
-    AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualNode.VirtualNodeConnectionPool"
+    AWS_OBJECT_TYPE = "AWS::AppMesh::Route.GrpcRetryPolicy"
     
-    p_GRPC: typing.Union['PropVirtualNodeVirtualNodeGrpcConnectionPool', dict] = attr.ib(
+    rp_MaxRetries: int = attr.ib(
         default=None,
-        converter=PropVirtualNodeVirtualNodeGrpcConnectionPool.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropVirtualNodeVirtualNodeGrpcConnectionPool)),
-        metadata={AttrMeta.PROPERTY_NAME: "GRPC"},
+        validator=attr.validators.instance_of(int),
+        metadata={AttrMeta.PROPERTY_NAME: "MaxRetries"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-virtualnodeconnectionpool.html#cfn-appmesh-virtualnode-virtualnodeconnectionpool-grpc"""
-    p_HTTP: typing.Union['PropVirtualNodeVirtualNodeHttpConnectionPool', dict] = attr.ib(
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcretrypolicy.html#cfn-appmesh-route-grpcretrypolicy-maxretries"""
+    rp_PerRetryTimeout: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropVirtualNodeVirtualNodeHttpConnectionPool.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropVirtualNodeVirtualNodeHttpConnectionPool)),
-        metadata={AttrMeta.PROPERTY_NAME: "HTTP"},
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "PerRetryTimeout"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-virtualnodeconnectionpool.html#cfn-appmesh-virtualnode-virtualnodeconnectionpool-http"""
-    p_HTTP2: typing.Union['PropVirtualNodeVirtualNodeHttp2ConnectionPool', dict] = attr.ib(
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcretrypolicy.html#cfn-appmesh-route-grpcretrypolicy-perretrytimeout"""
+    p_GrpcRetryEvents: typing.List[TypeHint.intrinsic_str] = attr.ib(
         default=None,
-        converter=PropVirtualNodeVirtualNodeHttp2ConnectionPool.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropVirtualNodeVirtualNodeHttp2ConnectionPool)),
-        metadata={AttrMeta.PROPERTY_NAME: "HTTP2"},
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "GrpcRetryEvents"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-virtualnodeconnectionpool.html#cfn-appmesh-virtualnode-virtualnodeconnectionpool-http2"""
-    p_TCP: typing.Union['PropVirtualNodeVirtualNodeTcpConnectionPool', dict] = attr.ib(
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcretrypolicy.html#cfn-appmesh-route-grpcretrypolicy-grpcretryevents"""
+    p_HttpRetryEvents: typing.List[TypeHint.intrinsic_str] = attr.ib(
         default=None,
-        converter=PropVirtualNodeVirtualNodeTcpConnectionPool.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropVirtualNodeVirtualNodeTcpConnectionPool)),
-        metadata={AttrMeta.PROPERTY_NAME: "TCP"},
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "HttpRetryEvents"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-virtualnodeconnectionpool.html#cfn-appmesh-virtualnode-virtualnodeconnectionpool-tcp"""
-
-@attr.s
-class PropVirtualNodeLogging(Property):
-    """
-    AWS Object Type = "AWS::AppMesh::VirtualNode.Logging"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-logging.html
-
-    Property Document:
-    
-    - ``p_AccessLog``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-logging.html#cfn-appmesh-virtualnode-logging-accesslog
-    """
-    AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualNode.Logging"
-    
-    p_AccessLog: typing.Union['PropVirtualNodeAccessLog', dict] = attr.ib(
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcretrypolicy.html#cfn-appmesh-route-grpcretrypolicy-httpretryevents"""
+    p_TcpRetryEvents: typing.List[TypeHint.intrinsic_str] = attr.ib(
         default=None,
-        converter=PropVirtualNodeAccessLog.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropVirtualNodeAccessLog)),
-        metadata={AttrMeta.PROPERTY_NAME: "AccessLog"},
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "TcpRetryEvents"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-logging.html#cfn-appmesh-virtualnode-logging-accesslog"""
-
-@attr.s
-class PropRouteTcpRoute(Property):
-    """
-    AWS Object Type = "AWS::AppMesh::Route.TcpRoute"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-tcproute.html
-
-    Property Document:
-    
-    - ``rp_Action``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-tcproute.html#cfn-appmesh-route-tcproute-action
-    - ``p_Timeout``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-tcproute.html#cfn-appmesh-route-tcproute-timeout
-    """
-    AWS_OBJECT_TYPE = "AWS::AppMesh::Route.TcpRoute"
-    
-    rp_Action: typing.Union['PropRouteTcpRouteAction', dict] = attr.ib(
-        default=None,
-        converter=PropRouteTcpRouteAction.from_dict,
-        validator=attr.validators.instance_of(PropRouteTcpRouteAction),
-        metadata={AttrMeta.PROPERTY_NAME: "Action"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-tcproute.html#cfn-appmesh-route-tcproute-action"""
-    p_Timeout: typing.Union['PropRouteTcpTimeout', dict] = attr.ib(
-        default=None,
-        converter=PropRouteTcpTimeout.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropRouteTcpTimeout)),
-        metadata={AttrMeta.PROPERTY_NAME: "Timeout"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-tcproute.html#cfn-appmesh-route-tcproute-timeout"""
-
-@attr.s
-class PropVirtualGatewayVirtualGatewayListener(Property):
-    """
-    AWS Object Type = "AWS::AppMesh::VirtualGateway.VirtualGatewayListener"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistener.html
-
-    Property Document:
-    
-    - ``rp_PortMapping``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistener.html#cfn-appmesh-virtualgateway-virtualgatewaylistener-portmapping
-    - ``p_ConnectionPool``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistener.html#cfn-appmesh-virtualgateway-virtualgatewaylistener-connectionpool
-    - ``p_HealthCheck``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistener.html#cfn-appmesh-virtualgateway-virtualgatewaylistener-healthcheck
-    - ``p_TLS``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistener.html#cfn-appmesh-virtualgateway-virtualgatewaylistener-tls
-    """
-    AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualGateway.VirtualGatewayListener"
-    
-    rp_PortMapping: typing.Union['PropVirtualGatewayVirtualGatewayPortMapping', dict] = attr.ib(
-        default=None,
-        converter=PropVirtualGatewayVirtualGatewayPortMapping.from_dict,
-        validator=attr.validators.instance_of(PropVirtualGatewayVirtualGatewayPortMapping),
-        metadata={AttrMeta.PROPERTY_NAME: "PortMapping"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistener.html#cfn-appmesh-virtualgateway-virtualgatewaylistener-portmapping"""
-    p_ConnectionPool: typing.Union['PropVirtualGatewayVirtualGatewayConnectionPool', dict] = attr.ib(
-        default=None,
-        converter=PropVirtualGatewayVirtualGatewayConnectionPool.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropVirtualGatewayVirtualGatewayConnectionPool)),
-        metadata={AttrMeta.PROPERTY_NAME: "ConnectionPool"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistener.html#cfn-appmesh-virtualgateway-virtualgatewaylistener-connectionpool"""
-    p_HealthCheck: typing.Union['PropVirtualGatewayVirtualGatewayHealthCheckPolicy', dict] = attr.ib(
-        default=None,
-        converter=PropVirtualGatewayVirtualGatewayHealthCheckPolicy.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropVirtualGatewayVirtualGatewayHealthCheckPolicy)),
-        metadata={AttrMeta.PROPERTY_NAME: "HealthCheck"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistener.html#cfn-appmesh-virtualgateway-virtualgatewaylistener-healthcheck"""
-    p_TLS: typing.Union['PropVirtualGatewayVirtualGatewayListenerTls', dict] = attr.ib(
-        default=None,
-        converter=PropVirtualGatewayVirtualGatewayListenerTls.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropVirtualGatewayVirtualGatewayListenerTls)),
-        metadata={AttrMeta.PROPERTY_NAME: "TLS"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistener.html#cfn-appmesh-virtualgateway-virtualgatewaylistener-tls"""
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcretrypolicy.html#cfn-appmesh-route-grpcretrypolicy-tcpretryevents"""
 
 @attr.s
 class PropVirtualNodeTlsValidationContextTrust(Property):
@@ -2736,178 +2305,132 @@ class PropVirtualNodeTlsValidationContextTrust(Property):
     """
     AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualNode.TlsValidationContextTrust"
     
-    p_ACM: typing.Union['PropVirtualNodeTlsValidationContextAcmTrust', dict] = attr.ib(
+    p_ACM: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropVirtualNodeTlsValidationContextAcmTrust.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropVirtualNodeTlsValidationContextAcmTrust)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "ACM"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-tlsvalidationcontexttrust.html#cfn-appmesh-virtualnode-tlsvalidationcontexttrust-acm"""
-    p_File: typing.Union['PropVirtualNodeTlsValidationContextFileTrust', dict] = attr.ib(
+    p_File: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropVirtualNodeTlsValidationContextFileTrust.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropVirtualNodeTlsValidationContextFileTrust)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "File"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-tlsvalidationcontexttrust.html#cfn-appmesh-virtualnode-tlsvalidationcontexttrust-file"""
-    p_SDS: typing.Union['PropVirtualNodeTlsValidationContextSdsTrust', dict] = attr.ib(
+    p_SDS: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropVirtualNodeTlsValidationContextSdsTrust.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropVirtualNodeTlsValidationContextSdsTrust)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "SDS"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-tlsvalidationcontexttrust.html#cfn-appmesh-virtualnode-tlsvalidationcontexttrust-sds"""
 
 @attr.s
-class PropGatewayRouteGrpcGatewayRouteMetadata(Property):
+class PropGatewayRouteHttpGatewayRouteRewrite(Property):
     """
-    AWS Object Type = "AWS::AppMesh::GatewayRoute.GrpcGatewayRouteMetadata"
+    AWS Object Type = "AWS::AppMesh::GatewayRoute.HttpGatewayRouteRewrite"
 
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-grpcgatewayroutemetadata.html
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-httpgatewayrouterewrite.html
 
     Property Document:
     
-    - ``rp_Name``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-grpcgatewayroutemetadata.html#cfn-appmesh-gatewayroute-grpcgatewayroutemetadata-name
-    - ``p_Invert``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-grpcgatewayroutemetadata.html#cfn-appmesh-gatewayroute-grpcgatewayroutemetadata-invert
-    - ``p_Match``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-grpcgatewayroutemetadata.html#cfn-appmesh-gatewayroute-grpcgatewayroutemetadata-match
+    - ``p_Hostname``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-httpgatewayrouterewrite.html#cfn-appmesh-gatewayroute-httpgatewayrouterewrite-hostname
+    - ``p_Path``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-httpgatewayrouterewrite.html#cfn-appmesh-gatewayroute-httpgatewayrouterewrite-path
+    - ``p_Prefix``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-httpgatewayrouterewrite.html#cfn-appmesh-gatewayroute-httpgatewayrouterewrite-prefix
     """
-    AWS_OBJECT_TYPE = "AWS::AppMesh::GatewayRoute.GrpcGatewayRouteMetadata"
+    AWS_OBJECT_TYPE = "AWS::AppMesh::GatewayRoute.HttpGatewayRouteRewrite"
     
-    rp_Name: TypeHint.intrinsic_str = attr.ib(
+    p_Hostname: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "Hostname"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-httpgatewayrouterewrite.html#cfn-appmesh-gatewayroute-httpgatewayrouterewrite-hostname"""
+    p_Path: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "Path"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-httpgatewayrouterewrite.html#cfn-appmesh-gatewayroute-httpgatewayrouterewrite-path"""
+    p_Prefix: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "Prefix"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-httpgatewayrouterewrite.html#cfn-appmesh-gatewayroute-httpgatewayrouterewrite-prefix"""
+
+@attr.s
+class PropRouteGrpcTimeout(Property):
+    """
+    AWS Object Type = "AWS::AppMesh::Route.GrpcTimeout"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpctimeout.html
+
+    Property Document:
+    
+    - ``p_Idle``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpctimeout.html#cfn-appmesh-route-grpctimeout-idle
+    - ``p_PerRequest``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpctimeout.html#cfn-appmesh-route-grpctimeout-perrequest
+    """
+    AWS_OBJECT_TYPE = "AWS::AppMesh::Route.GrpcTimeout"
+    
+    p_Idle: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "Idle"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpctimeout.html#cfn-appmesh-route-grpctimeout-idle"""
+    p_PerRequest: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "PerRequest"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpctimeout.html#cfn-appmesh-route-grpctimeout-perrequest"""
+
+@attr.s
+class PropRouteTcpTimeout(Property):
+    """
+    AWS Object Type = "AWS::AppMesh::Route.TcpTimeout"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-tcptimeout.html
+
+    Property Document:
+    
+    - ``p_Idle``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-tcptimeout.html#cfn-appmesh-route-tcptimeout-idle
+    """
+    AWS_OBJECT_TYPE = "AWS::AppMesh::Route.TcpTimeout"
+    
+    p_Idle: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "Idle"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-tcptimeout.html#cfn-appmesh-route-tcptimeout-idle"""
+
+@attr.s
+class PropVirtualGatewayVirtualGatewayFileAccessLog(Property):
+    """
+    AWS Object Type = "AWS::AppMesh::VirtualGateway.VirtualGatewayFileAccessLog"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayfileaccesslog.html
+
+    Property Document:
+    
+    - ``rp_Path``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayfileaccesslog.html#cfn-appmesh-virtualgateway-virtualgatewayfileaccesslog-path
+    - ``p_Format``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayfileaccesslog.html#cfn-appmesh-virtualgateway-virtualgatewayfileaccesslog-format
+    """
+    AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualGateway.VirtualGatewayFileAccessLog"
+    
+    rp_Path: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Name"},
+        metadata={AttrMeta.PROPERTY_NAME: "Path"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-grpcgatewayroutemetadata.html#cfn-appmesh-gatewayroute-grpcgatewayroutemetadata-name"""
-    p_Invert: bool = attr.ib(
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayfileaccesslog.html#cfn-appmesh-virtualgateway-virtualgatewayfileaccesslog-path"""
+    p_Format: typing.Optional[dict] = attr.ib(
         default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(bool)),
-        metadata={AttrMeta.PROPERTY_NAME: "Invert"},
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "Format"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-grpcgatewayroutemetadata.html#cfn-appmesh-gatewayroute-grpcgatewayroutemetadata-invert"""
-    p_Match: typing.Union['PropGatewayRouteGatewayRouteMetadataMatch', dict] = attr.ib(
-        default=None,
-        converter=PropGatewayRouteGatewayRouteMetadataMatch.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropGatewayRouteGatewayRouteMetadataMatch)),
-        metadata={AttrMeta.PROPERTY_NAME: "Match"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-grpcgatewayroutemetadata.html#cfn-appmesh-gatewayroute-grpcgatewayroutemetadata-match"""
-
-@attr.s
-class PropGatewayRouteHttpGatewayRouteAction(Property):
-    """
-    AWS Object Type = "AWS::AppMesh::GatewayRoute.HttpGatewayRouteAction"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-httpgatewayrouteaction.html
-
-    Property Document:
-    
-    - ``rp_Target``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-httpgatewayrouteaction.html#cfn-appmesh-gatewayroute-httpgatewayrouteaction-target
-    - ``p_Rewrite``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-httpgatewayrouteaction.html#cfn-appmesh-gatewayroute-httpgatewayrouteaction-rewrite
-    """
-    AWS_OBJECT_TYPE = "AWS::AppMesh::GatewayRoute.HttpGatewayRouteAction"
-    
-    rp_Target: typing.Union['PropGatewayRouteGatewayRouteTarget', dict] = attr.ib(
-        default=None,
-        converter=PropGatewayRouteGatewayRouteTarget.from_dict,
-        validator=attr.validators.instance_of(PropGatewayRouteGatewayRouteTarget),
-        metadata={AttrMeta.PROPERTY_NAME: "Target"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-httpgatewayrouteaction.html#cfn-appmesh-gatewayroute-httpgatewayrouteaction-target"""
-    p_Rewrite: typing.Union['PropGatewayRouteHttpGatewayRouteRewrite', dict] = attr.ib(
-        default=None,
-        converter=PropGatewayRouteHttpGatewayRouteRewrite.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropGatewayRouteHttpGatewayRouteRewrite)),
-        metadata={AttrMeta.PROPERTY_NAME: "Rewrite"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-httpgatewayrouteaction.html#cfn-appmesh-gatewayroute-httpgatewayrouteaction-rewrite"""
-
-@attr.s
-class PropMeshMeshSpec(Property):
-    """
-    AWS Object Type = "AWS::AppMesh::Mesh.MeshSpec"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-mesh-meshspec.html
-
-    Property Document:
-    
-    - ``p_EgressFilter``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-mesh-meshspec.html#cfn-appmesh-mesh-meshspec-egressfilter
-    """
-    AWS_OBJECT_TYPE = "AWS::AppMesh::Mesh.MeshSpec"
-    
-    p_EgressFilter: typing.Union['PropMeshEgressFilter', dict] = attr.ib(
-        default=None,
-        converter=PropMeshEgressFilter.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropMeshEgressFilter)),
-        metadata={AttrMeta.PROPERTY_NAME: "EgressFilter"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-mesh-meshspec.html#cfn-appmesh-mesh-meshspec-egressfilter"""
-
-@attr.s
-class PropVirtualGatewayVirtualGatewayAccessLog(Property):
-    """
-    AWS Object Type = "AWS::AppMesh::VirtualGateway.VirtualGatewayAccessLog"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayaccesslog.html
-
-    Property Document:
-    
-    - ``p_File``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayaccesslog.html#cfn-appmesh-virtualgateway-virtualgatewayaccesslog-file
-    """
-    AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualGateway.VirtualGatewayAccessLog"
-    
-    p_File: typing.Union['PropVirtualGatewayVirtualGatewayFileAccessLog', dict] = attr.ib(
-        default=None,
-        converter=PropVirtualGatewayVirtualGatewayFileAccessLog.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropVirtualGatewayVirtualGatewayFileAccessLog)),
-        metadata={AttrMeta.PROPERTY_NAME: "File"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayaccesslog.html#cfn-appmesh-virtualgateway-virtualgatewayaccesslog-file"""
-
-@attr.s
-class PropRouteGrpcRoute(Property):
-    """
-    AWS Object Type = "AWS::AppMesh::Route.GrpcRoute"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcroute.html
-
-    Property Document:
-    
-    - ``rp_Action``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcroute.html#cfn-appmesh-route-grpcroute-action
-    - ``rp_Match``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcroute.html#cfn-appmesh-route-grpcroute-match
-    - ``p_RetryPolicy``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcroute.html#cfn-appmesh-route-grpcroute-retrypolicy
-    - ``p_Timeout``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcroute.html#cfn-appmesh-route-grpcroute-timeout
-    """
-    AWS_OBJECT_TYPE = "AWS::AppMesh::Route.GrpcRoute"
-    
-    rp_Action: typing.Union['PropRouteGrpcRouteAction', dict] = attr.ib(
-        default=None,
-        converter=PropRouteGrpcRouteAction.from_dict,
-        validator=attr.validators.instance_of(PropRouteGrpcRouteAction),
-        metadata={AttrMeta.PROPERTY_NAME: "Action"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcroute.html#cfn-appmesh-route-grpcroute-action"""
-    rp_Match: typing.Union['PropRouteGrpcRouteMatch', dict] = attr.ib(
-        default=None,
-        converter=PropRouteGrpcRouteMatch.from_dict,
-        validator=attr.validators.instance_of(PropRouteGrpcRouteMatch),
-        metadata={AttrMeta.PROPERTY_NAME: "Match"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcroute.html#cfn-appmesh-route-grpcroute-match"""
-    p_RetryPolicy: typing.Union['PropRouteGrpcRetryPolicy', dict] = attr.ib(
-        default=None,
-        converter=PropRouteGrpcRetryPolicy.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropRouteGrpcRetryPolicy)),
-        metadata={AttrMeta.PROPERTY_NAME: "RetryPolicy"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcroute.html#cfn-appmesh-route-grpcroute-retrypolicy"""
-    p_Timeout: typing.Union['PropRouteGrpcTimeout', dict] = attr.ib(
-        default=None,
-        converter=PropRouteGrpcTimeout.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropRouteGrpcTimeout)),
-        metadata={AttrMeta.PROPERTY_NAME: "Timeout"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcroute.html#cfn-appmesh-route-grpcroute-timeout"""
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayfileaccesslog.html#cfn-appmesh-virtualgateway-virtualgatewayfileaccesslog-format"""
 
 @attr.s
 class PropGatewayRouteHttpGatewayRouteMatch(Property):
@@ -2922,6 +2445,7 @@ class PropGatewayRouteHttpGatewayRouteMatch(Property):
     - ``p_Hostname``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-httpgatewayroutematch.html#cfn-appmesh-gatewayroute-httpgatewayroutematch-hostname
     - ``p_Method``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-httpgatewayroutematch.html#cfn-appmesh-gatewayroute-httpgatewayroutematch-method
     - ``p_Path``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-httpgatewayroutematch.html#cfn-appmesh-gatewayroute-httpgatewayroutematch-path
+    - ``p_Port``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-httpgatewayroutematch.html#cfn-appmesh-gatewayroute-httpgatewayroutematch-port
     - ``p_Prefix``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-httpgatewayroutematch.html#cfn-appmesh-gatewayroute-httpgatewayroutematch-prefix
     - ``p_QueryParameters``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-httpgatewayroutematch.html#cfn-appmesh-gatewayroute-httpgatewayroutematch-queryparameters
     """
@@ -2934,10 +2458,9 @@ class PropGatewayRouteHttpGatewayRouteMatch(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Headers"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-httpgatewayroutematch.html#cfn-appmesh-gatewayroute-httpgatewayroutematch-headers"""
-    p_Hostname: typing.Union['PropGatewayRouteGatewayRouteHostnameMatch', dict] = attr.ib(
+    p_Hostname: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropGatewayRouteGatewayRouteHostnameMatch.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropGatewayRouteGatewayRouteHostnameMatch)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "Hostname"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-httpgatewayroutematch.html#cfn-appmesh-gatewayroute-httpgatewayroutematch-hostname"""
@@ -2947,13 +2470,18 @@ class PropGatewayRouteHttpGatewayRouteMatch(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Method"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-httpgatewayroutematch.html#cfn-appmesh-gatewayroute-httpgatewayroutematch-method"""
-    p_Path: typing.Union['PropGatewayRouteHttpPathMatch', dict] = attr.ib(
+    p_Path: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropGatewayRouteHttpPathMatch.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropGatewayRouteHttpPathMatch)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "Path"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-httpgatewayroutematch.html#cfn-appmesh-gatewayroute-httpgatewayroutematch-path"""
+    p_Port: int = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(int)),
+        metadata={AttrMeta.PROPERTY_NAME: "Port"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-httpgatewayroutematch.html#cfn-appmesh-gatewayroute-httpgatewayroutematch-port"""
     p_Prefix: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
@@ -2995,13 +2523,452 @@ class PropRouteHttpRouteHeader(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Invert"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httprouteheader.html#cfn-appmesh-route-httprouteheader-invert"""
-    p_Match: typing.Union['PropRouteHeaderMatchMethod', dict] = attr.ib(
+    p_Match: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropRouteHeaderMatchMethod.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropRouteHeaderMatchMethod)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "Match"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httprouteheader.html#cfn-appmesh-route-httprouteheader-match"""
+
+@attr.s
+class PropVirtualGatewayVirtualGatewayListenerTlsValidationContextTrust(Property):
+    """
+    AWS Object Type = "AWS::AppMesh::VirtualGateway.VirtualGatewayListenerTlsValidationContextTrust"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistenertlsvalidationcontexttrust.html
+
+    Property Document:
+    
+    - ``p_File``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistenertlsvalidationcontexttrust.html#cfn-appmesh-virtualgateway-virtualgatewaylistenertlsvalidationcontexttrust-file
+    - ``p_SDS``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistenertlsvalidationcontexttrust.html#cfn-appmesh-virtualgateway-virtualgatewaylistenertlsvalidationcontexttrust-sds
+    """
+    AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualGateway.VirtualGatewayListenerTlsValidationContextTrust"
+    
+    p_File: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "File"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistenertlsvalidationcontexttrust.html#cfn-appmesh-virtualgateway-virtualgatewaylistenertlsvalidationcontexttrust-file"""
+    p_SDS: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "SDS"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistenertlsvalidationcontexttrust.html#cfn-appmesh-virtualgateway-virtualgatewaylistenertlsvalidationcontexttrust-sds"""
+
+@attr.s
+class PropRouteGrpcRouteMetadataMatchMethod(Property):
+    """
+    AWS Object Type = "AWS::AppMesh::Route.GrpcRouteMetadataMatchMethod"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcroutemetadatamatchmethod.html
+
+    Property Document:
+    
+    - ``p_Exact``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcroutemetadatamatchmethod.html#cfn-appmesh-route-grpcroutemetadatamatchmethod-exact
+    - ``p_Prefix``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcroutemetadatamatchmethod.html#cfn-appmesh-route-grpcroutemetadatamatchmethod-prefix
+    - ``p_Range``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcroutemetadatamatchmethod.html#cfn-appmesh-route-grpcroutemetadatamatchmethod-range
+    - ``p_Regex``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcroutemetadatamatchmethod.html#cfn-appmesh-route-grpcroutemetadatamatchmethod-regex
+    - ``p_Suffix``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcroutemetadatamatchmethod.html#cfn-appmesh-route-grpcroutemetadatamatchmethod-suffix
+    """
+    AWS_OBJECT_TYPE = "AWS::AppMesh::Route.GrpcRouteMetadataMatchMethod"
+    
+    p_Exact: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "Exact"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcroutemetadatamatchmethod.html#cfn-appmesh-route-grpcroutemetadatamatchmethod-exact"""
+    p_Prefix: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "Prefix"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcroutemetadatamatchmethod.html#cfn-appmesh-route-grpcroutemetadatamatchmethod-prefix"""
+    p_Range: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "Range"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcroutemetadatamatchmethod.html#cfn-appmesh-route-grpcroutemetadatamatchmethod-range"""
+    p_Regex: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "Regex"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcroutemetadatamatchmethod.html#cfn-appmesh-route-grpcroutemetadatamatchmethod-regex"""
+    p_Suffix: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "Suffix"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcroutemetadatamatchmethod.html#cfn-appmesh-route-grpcroutemetadatamatchmethod-suffix"""
+
+@attr.s
+class PropVirtualGatewayVirtualGatewayTlsValidationContext(Property):
+    """
+    AWS Object Type = "AWS::AppMesh::VirtualGateway.VirtualGatewayTlsValidationContext"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaytlsvalidationcontext.html
+
+    Property Document:
+    
+    - ``rp_Trust``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaytlsvalidationcontext.html#cfn-appmesh-virtualgateway-virtualgatewaytlsvalidationcontext-trust
+    - ``p_SubjectAlternativeNames``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaytlsvalidationcontext.html#cfn-appmesh-virtualgateway-virtualgatewaytlsvalidationcontext-subjectalternativenames
+    """
+    AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualGateway.VirtualGatewayTlsValidationContext"
+    
+    rp_Trust: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "Trust"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaytlsvalidationcontext.html#cfn-appmesh-virtualgateway-virtualgatewaytlsvalidationcontext-trust"""
+    p_SubjectAlternativeNames: typing.Union['PropVirtualGatewaySubjectAlternativeNames', dict] = attr.ib(
+        default=None,
+        converter=PropVirtualGatewaySubjectAlternativeNames.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropVirtualGatewaySubjectAlternativeNames)),
+        metadata={AttrMeta.PROPERTY_NAME: "SubjectAlternativeNames"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaytlsvalidationcontext.html#cfn-appmesh-virtualgateway-virtualgatewaytlsvalidationcontext-subjectalternativenames"""
+
+@attr.s
+class PropVirtualNodeListenerTls(Property):
+    """
+    AWS Object Type = "AWS::AppMesh::VirtualNode.ListenerTls"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-listenertls.html
+
+    Property Document:
+    
+    - ``rp_Certificate``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-listenertls.html#cfn-appmesh-virtualnode-listenertls-certificate
+    - ``rp_Mode``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-listenertls.html#cfn-appmesh-virtualnode-listenertls-mode
+    - ``p_Validation``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-listenertls.html#cfn-appmesh-virtualnode-listenertls-validation
+    """
+    AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualNode.ListenerTls"
+    
+    rp_Certificate: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "Certificate"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-listenertls.html#cfn-appmesh-virtualnode-listenertls-certificate"""
+    rp_Mode: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "Mode"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-listenertls.html#cfn-appmesh-virtualnode-listenertls-mode"""
+    p_Validation: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "Validation"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-listenertls.html#cfn-appmesh-virtualnode-listenertls-validation"""
+
+@attr.s
+class PropVirtualGatewayVirtualGatewayListenerTlsCertificate(Property):
+    """
+    AWS Object Type = "AWS::AppMesh::VirtualGateway.VirtualGatewayListenerTlsCertificate"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistenertlscertificate.html
+
+    Property Document:
+    
+    - ``p_ACM``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistenertlscertificate.html#cfn-appmesh-virtualgateway-virtualgatewaylistenertlscertificate-acm
+    - ``p_File``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistenertlscertificate.html#cfn-appmesh-virtualgateway-virtualgatewaylistenertlscertificate-file
+    - ``p_SDS``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistenertlscertificate.html#cfn-appmesh-virtualgateway-virtualgatewaylistenertlscertificate-sds
+    """
+    AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualGateway.VirtualGatewayListenerTlsCertificate"
+    
+    p_ACM: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "ACM"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistenertlscertificate.html#cfn-appmesh-virtualgateway-virtualgatewaylistenertlscertificate-acm"""
+    p_File: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "File"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistenertlscertificate.html#cfn-appmesh-virtualgateway-virtualgatewaylistenertlscertificate-file"""
+    p_SDS: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "SDS"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistenertlscertificate.html#cfn-appmesh-virtualgateway-virtualgatewaylistenertlscertificate-sds"""
+
+@attr.s
+class PropRouteGrpcRouteMetadata(Property):
+    """
+    AWS Object Type = "AWS::AppMesh::Route.GrpcRouteMetadata"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcroutemetadata.html
+
+    Property Document:
+    
+    - ``rp_Name``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcroutemetadata.html#cfn-appmesh-route-grpcroutemetadata-name
+    - ``p_Invert``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcroutemetadata.html#cfn-appmesh-route-grpcroutemetadata-invert
+    - ``p_Match``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcroutemetadata.html#cfn-appmesh-route-grpcroutemetadata-match
+    """
+    AWS_OBJECT_TYPE = "AWS::AppMesh::Route.GrpcRouteMetadata"
+    
+    rp_Name: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "Name"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcroutemetadata.html#cfn-appmesh-route-grpcroutemetadata-name"""
+    p_Invert: bool = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(bool)),
+        metadata={AttrMeta.PROPERTY_NAME: "Invert"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcroutemetadata.html#cfn-appmesh-route-grpcroutemetadata-invert"""
+    p_Match: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "Match"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcroutemetadata.html#cfn-appmesh-route-grpcroutemetadata-match"""
+
+@attr.s
+class PropGatewayRouteGatewayRouteTarget(Property):
+    """
+    AWS Object Type = "AWS::AppMesh::GatewayRoute.GatewayRouteTarget"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-gatewayroutetarget.html
+
+    Property Document:
+    
+    - ``rp_VirtualService``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-gatewayroutetarget.html#cfn-appmesh-gatewayroute-gatewayroutetarget-virtualservice
+    - ``p_Port``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-gatewayroutetarget.html#cfn-appmesh-gatewayroute-gatewayroutetarget-port
+    """
+    AWS_OBJECT_TYPE = "AWS::AppMesh::GatewayRoute.GatewayRouteTarget"
+    
+    rp_VirtualService: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "VirtualService"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-gatewayroutetarget.html#cfn-appmesh-gatewayroute-gatewayroutetarget-virtualservice"""
+    p_Port: int = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(int)),
+        metadata={AttrMeta.PROPERTY_NAME: "Port"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-gatewayroutetarget.html#cfn-appmesh-gatewayroute-gatewayroutetarget-port"""
+
+@attr.s
+class PropVirtualGatewayVirtualGatewayListenerTlsValidationContext(Property):
+    """
+    AWS Object Type = "AWS::AppMesh::VirtualGateway.VirtualGatewayListenerTlsValidationContext"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistenertlsvalidationcontext.html
+
+    Property Document:
+    
+    - ``rp_Trust``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistenertlsvalidationcontext.html#cfn-appmesh-virtualgateway-virtualgatewaylistenertlsvalidationcontext-trust
+    - ``p_SubjectAlternativeNames``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistenertlsvalidationcontext.html#cfn-appmesh-virtualgateway-virtualgatewaylistenertlsvalidationcontext-subjectalternativenames
+    """
+    AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualGateway.VirtualGatewayListenerTlsValidationContext"
+    
+    rp_Trust: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "Trust"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistenertlsvalidationcontext.html#cfn-appmesh-virtualgateway-virtualgatewaylistenertlsvalidationcontext-trust"""
+    p_SubjectAlternativeNames: typing.Union['PropVirtualGatewaySubjectAlternativeNames', dict] = attr.ib(
+        default=None,
+        converter=PropVirtualGatewaySubjectAlternativeNames.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropVirtualGatewaySubjectAlternativeNames)),
+        metadata={AttrMeta.PROPERTY_NAME: "SubjectAlternativeNames"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistenertlsvalidationcontext.html#cfn-appmesh-virtualgateway-virtualgatewaylistenertlsvalidationcontext-subjectalternativenames"""
+
+@attr.s
+class PropVirtualNodeTlsValidationContext(Property):
+    """
+    AWS Object Type = "AWS::AppMesh::VirtualNode.TlsValidationContext"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-tlsvalidationcontext.html
+
+    Property Document:
+    
+    - ``rp_Trust``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-tlsvalidationcontext.html#cfn-appmesh-virtualnode-tlsvalidationcontext-trust
+    - ``p_SubjectAlternativeNames``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-tlsvalidationcontext.html#cfn-appmesh-virtualnode-tlsvalidationcontext-subjectalternativenames
+    """
+    AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualNode.TlsValidationContext"
+    
+    rp_Trust: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "Trust"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-tlsvalidationcontext.html#cfn-appmesh-virtualnode-tlsvalidationcontext-trust"""
+    p_SubjectAlternativeNames: typing.Union['PropVirtualNodeSubjectAlternativeNames', dict] = attr.ib(
+        default=None,
+        converter=PropVirtualNodeSubjectAlternativeNames.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropVirtualNodeSubjectAlternativeNames)),
+        metadata={AttrMeta.PROPERTY_NAME: "SubjectAlternativeNames"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-tlsvalidationcontext.html#cfn-appmesh-virtualnode-tlsvalidationcontext-subjectalternativenames"""
+
+@attr.s
+class PropVirtualRouterVirtualRouterSpec(Property):
+    """
+    AWS Object Type = "AWS::AppMesh::VirtualRouter.VirtualRouterSpec"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualrouter-virtualrouterspec.html
+
+    Property Document:
+    
+    - ``rp_Listeners``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualrouter-virtualrouterspec.html#cfn-appmesh-virtualrouter-virtualrouterspec-listeners
+    """
+    AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualRouter.VirtualRouterSpec"
+    
+    rp_Listeners: typing.List[typing.Union['PropVirtualRouterVirtualRouterListener', dict]] = attr.ib(
+        default=None,
+        converter=PropVirtualRouterVirtualRouterListener.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropVirtualRouterVirtualRouterListener), iterable_validator=attr.validators.instance_of(list)),
+        metadata={AttrMeta.PROPERTY_NAME: "Listeners"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualrouter-virtualrouterspec.html#cfn-appmesh-virtualrouter-virtualrouterspec-listeners"""
+
+@attr.s
+class PropRouteGrpcRouteMatch(Property):
+    """
+    AWS Object Type = "AWS::AppMesh::Route.GrpcRouteMatch"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcroutematch.html
+
+    Property Document:
+    
+    - ``p_Metadata``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcroutematch.html#cfn-appmesh-route-grpcroutematch-metadata
+    - ``p_MethodName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcroutematch.html#cfn-appmesh-route-grpcroutematch-methodname
+    - ``p_Port``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcroutematch.html#cfn-appmesh-route-grpcroutematch-port
+    - ``p_ServiceName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcroutematch.html#cfn-appmesh-route-grpcroutematch-servicename
+    """
+    AWS_OBJECT_TYPE = "AWS::AppMesh::Route.GrpcRouteMatch"
+    
+    p_Metadata: typing.List[typing.Union['PropRouteGrpcRouteMetadata', dict]] = attr.ib(
+        default=None,
+        converter=PropRouteGrpcRouteMetadata.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropRouteGrpcRouteMetadata), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "Metadata"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcroutematch.html#cfn-appmesh-route-grpcroutematch-metadata"""
+    p_MethodName: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "MethodName"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcroutematch.html#cfn-appmesh-route-grpcroutematch-methodname"""
+    p_Port: int = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(int)),
+        metadata={AttrMeta.PROPERTY_NAME: "Port"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcroutematch.html#cfn-appmesh-route-grpcroutematch-port"""
+    p_ServiceName: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "ServiceName"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcroutematch.html#cfn-appmesh-route-grpcroutematch-servicename"""
+
+@attr.s
+class PropGatewayRouteGrpcGatewayRouteMetadata(Property):
+    """
+    AWS Object Type = "AWS::AppMesh::GatewayRoute.GrpcGatewayRouteMetadata"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-grpcgatewayroutemetadata.html
+
+    Property Document:
+    
+    - ``rp_Name``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-grpcgatewayroutemetadata.html#cfn-appmesh-gatewayroute-grpcgatewayroutemetadata-name
+    - ``p_Invert``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-grpcgatewayroutemetadata.html#cfn-appmesh-gatewayroute-grpcgatewayroutemetadata-invert
+    - ``p_Match``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-grpcgatewayroutemetadata.html#cfn-appmesh-gatewayroute-grpcgatewayroutemetadata-match
+    """
+    AWS_OBJECT_TYPE = "AWS::AppMesh::GatewayRoute.GrpcGatewayRouteMetadata"
+    
+    rp_Name: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "Name"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-grpcgatewayroutemetadata.html#cfn-appmesh-gatewayroute-grpcgatewayroutemetadata-name"""
+    p_Invert: bool = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(bool)),
+        metadata={AttrMeta.PROPERTY_NAME: "Invert"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-grpcgatewayroutemetadata.html#cfn-appmesh-gatewayroute-grpcgatewayroutemetadata-invert"""
+    p_Match: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "Match"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-grpcgatewayroutemetadata.html#cfn-appmesh-gatewayroute-grpcgatewayroutemetadata-match"""
+
+@attr.s
+class PropGatewayRouteHttpGatewayRouteAction(Property):
+    """
+    AWS Object Type = "AWS::AppMesh::GatewayRoute.HttpGatewayRouteAction"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-httpgatewayrouteaction.html
+
+    Property Document:
+    
+    - ``rp_Target``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-httpgatewayrouteaction.html#cfn-appmesh-gatewayroute-httpgatewayrouteaction-target
+    - ``p_Rewrite``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-httpgatewayrouteaction.html#cfn-appmesh-gatewayroute-httpgatewayrouteaction-rewrite
+    """
+    AWS_OBJECT_TYPE = "AWS::AppMesh::GatewayRoute.HttpGatewayRouteAction"
+    
+    rp_Target: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "Target"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-httpgatewayrouteaction.html#cfn-appmesh-gatewayroute-httpgatewayrouteaction-target"""
+    p_Rewrite: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "Rewrite"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-httpgatewayrouteaction.html#cfn-appmesh-gatewayroute-httpgatewayrouteaction-rewrite"""
+
+@attr.s
+class PropMeshMeshSpec(Property):
+    """
+    AWS Object Type = "AWS::AppMesh::Mesh.MeshSpec"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-mesh-meshspec.html
+
+    Property Document:
+    
+    - ``p_EgressFilter``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-mesh-meshspec.html#cfn-appmesh-mesh-meshspec-egressfilter
+    - ``p_ServiceDiscovery``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-mesh-meshspec.html#cfn-appmesh-mesh-meshspec-servicediscovery
+    """
+    AWS_OBJECT_TYPE = "AWS::AppMesh::Mesh.MeshSpec"
+    
+    p_EgressFilter: typing.Union['PropMeshEgressFilter', dict] = attr.ib(
+        default=None,
+        converter=PropMeshEgressFilter.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropMeshEgressFilter)),
+        metadata={AttrMeta.PROPERTY_NAME: "EgressFilter"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-mesh-meshspec.html#cfn-appmesh-mesh-meshspec-egressfilter"""
+    p_ServiceDiscovery: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "ServiceDiscovery"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-mesh-meshspec.html#cfn-appmesh-mesh-meshspec-servicediscovery"""
 
 @attr.s
 class PropGatewayRouteHttpGatewayRoute(Property):
@@ -3017,20 +2984,38 @@ class PropGatewayRouteHttpGatewayRoute(Property):
     """
     AWS_OBJECT_TYPE = "AWS::AppMesh::GatewayRoute.HttpGatewayRoute"
     
-    rp_Action: typing.Union['PropGatewayRouteHttpGatewayRouteAction', dict] = attr.ib(
+    rp_Action: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropGatewayRouteHttpGatewayRouteAction.from_dict,
-        validator=attr.validators.instance_of(PropGatewayRouteHttpGatewayRouteAction),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "Action"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-httpgatewayroute.html#cfn-appmesh-gatewayroute-httpgatewayroute-action"""
-    rp_Match: typing.Union['PropGatewayRouteHttpGatewayRouteMatch', dict] = attr.ib(
+    rp_Match: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropGatewayRouteHttpGatewayRouteMatch.from_dict,
-        validator=attr.validators.instance_of(PropGatewayRouteHttpGatewayRouteMatch),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "Match"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-httpgatewayroute.html#cfn-appmesh-gatewayroute-httpgatewayroute-match"""
+
+@attr.s
+class PropVirtualNodeAccessLog(Property):
+    """
+    AWS Object Type = "AWS::AppMesh::VirtualNode.AccessLog"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-accesslog.html
+
+    Property Document:
+    
+    - ``p_File``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-accesslog.html#cfn-appmesh-virtualnode-accesslog-file
+    """
+    AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualNode.AccessLog"
+    
+    p_File: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "File"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-accesslog.html#cfn-appmesh-virtualnode-accesslog-file"""
 
 @attr.s
 class PropVirtualNodeListenerTimeout(Property):
@@ -3048,63 +3033,30 @@ class PropVirtualNodeListenerTimeout(Property):
     """
     AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualNode.ListenerTimeout"
     
-    p_GRPC: typing.Union['PropVirtualNodeGrpcTimeout', dict] = attr.ib(
+    p_GRPC: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropVirtualNodeGrpcTimeout.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropVirtualNodeGrpcTimeout)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "GRPC"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-listenertimeout.html#cfn-appmesh-virtualnode-listenertimeout-grpc"""
-    p_HTTP: typing.Union['PropVirtualNodeHttpTimeout', dict] = attr.ib(
+    p_HTTP: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropVirtualNodeHttpTimeout.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropVirtualNodeHttpTimeout)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "HTTP"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-listenertimeout.html#cfn-appmesh-virtualnode-listenertimeout-http"""
-    p_HTTP2: typing.Union['PropVirtualNodeHttpTimeout', dict] = attr.ib(
+    p_HTTP2: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropVirtualNodeHttpTimeout.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropVirtualNodeHttpTimeout)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "HTTP2"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-listenertimeout.html#cfn-appmesh-virtualnode-listenertimeout-http2"""
-    p_TCP: typing.Union['PropVirtualNodeTcpTimeout', dict] = attr.ib(
+    p_TCP: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropVirtualNodeTcpTimeout.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropVirtualNodeTcpTimeout)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "TCP"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-listenertimeout.html#cfn-appmesh-virtualnode-listenertimeout-tcp"""
-
-@attr.s
-class PropVirtualGatewayVirtualGatewayTlsValidationContext(Property):
-    """
-    AWS Object Type = "AWS::AppMesh::VirtualGateway.VirtualGatewayTlsValidationContext"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaytlsvalidationcontext.html
-
-    Property Document:
-    
-    - ``rp_Trust``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaytlsvalidationcontext.html#cfn-appmesh-virtualgateway-virtualgatewaytlsvalidationcontext-trust
-    - ``p_SubjectAlternativeNames``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaytlsvalidationcontext.html#cfn-appmesh-virtualgateway-virtualgatewaytlsvalidationcontext-subjectalternativenames
-    """
-    AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualGateway.VirtualGatewayTlsValidationContext"
-    
-    rp_Trust: typing.Union['PropVirtualGatewayVirtualGatewayTlsValidationContextTrust', dict] = attr.ib(
-        default=None,
-        converter=PropVirtualGatewayVirtualGatewayTlsValidationContextTrust.from_dict,
-        validator=attr.validators.instance_of(PropVirtualGatewayVirtualGatewayTlsValidationContextTrust),
-        metadata={AttrMeta.PROPERTY_NAME: "Trust"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaytlsvalidationcontext.html#cfn-appmesh-virtualgateway-virtualgatewaytlsvalidationcontext-trust"""
-    p_SubjectAlternativeNames: typing.Union['PropVirtualGatewaySubjectAlternativeNames', dict] = attr.ib(
-        default=None,
-        converter=PropVirtualGatewaySubjectAlternativeNames.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropVirtualGatewaySubjectAlternativeNames)),
-        metadata={AttrMeta.PROPERTY_NAME: "SubjectAlternativeNames"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaytlsvalidationcontext.html#cfn-appmesh-virtualgateway-virtualgatewaytlsvalidationcontext-subjectalternativenames"""
 
 @attr.s
 class PropGatewayRouteGrpcGatewayRouteAction(Property):
@@ -3120,17 +3072,15 @@ class PropGatewayRouteGrpcGatewayRouteAction(Property):
     """
     AWS_OBJECT_TYPE = "AWS::AppMesh::GatewayRoute.GrpcGatewayRouteAction"
     
-    rp_Target: typing.Union['PropGatewayRouteGatewayRouteTarget', dict] = attr.ib(
+    rp_Target: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropGatewayRouteGatewayRouteTarget.from_dict,
-        validator=attr.validators.instance_of(PropGatewayRouteGatewayRouteTarget),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "Target"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-grpcgatewayrouteaction.html#cfn-appmesh-gatewayroute-grpcgatewayrouteaction-target"""
-    p_Rewrite: typing.Union['PropGatewayRouteGrpcGatewayRouteRewrite', dict] = attr.ib(
+    p_Rewrite: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropGatewayRouteGrpcGatewayRouteRewrite.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropGatewayRouteGrpcGatewayRouteRewrite)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "Rewrite"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-grpcgatewayrouteaction.html#cfn-appmesh-gatewayroute-grpcgatewayrouteaction-rewrite"""
@@ -3147,6 +3097,7 @@ class PropRouteHttpRouteMatch(Property):
     - ``p_Headers``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httproutematch.html#cfn-appmesh-route-httproutematch-headers
     - ``p_Method``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httproutematch.html#cfn-appmesh-route-httproutematch-method
     - ``p_Path``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httproutematch.html#cfn-appmesh-route-httproutematch-path
+    - ``p_Port``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httproutematch.html#cfn-appmesh-route-httproutematch-port
     - ``p_Prefix``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httproutematch.html#cfn-appmesh-route-httproutematch-prefix
     - ``p_QueryParameters``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httproutematch.html#cfn-appmesh-route-httproutematch-queryparameters
     - ``p_Scheme``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httproutematch.html#cfn-appmesh-route-httproutematch-scheme
@@ -3166,13 +3117,18 @@ class PropRouteHttpRouteMatch(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Method"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httproutematch.html#cfn-appmesh-route-httproutematch-method"""
-    p_Path: typing.Union['PropRouteHttpPathMatch', dict] = attr.ib(
+    p_Path: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropRouteHttpPathMatch.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropRouteHttpPathMatch)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "Path"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httproutematch.html#cfn-appmesh-route-httproutematch-path"""
+    p_Port: int = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(int)),
+        metadata={AttrMeta.PROPERTY_NAME: "Port"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httproutematch.html#cfn-appmesh-route-httproutematch-port"""
     p_Prefix: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
@@ -3204,14 +3160,14 @@ class PropGatewayRouteGrpcGatewayRouteMatch(Property):
     
     - ``p_Hostname``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-grpcgatewayroutematch.html#cfn-appmesh-gatewayroute-grpcgatewayroutematch-hostname
     - ``p_Metadata``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-grpcgatewayroutematch.html#cfn-appmesh-gatewayroute-grpcgatewayroutematch-metadata
+    - ``p_Port``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-grpcgatewayroutematch.html#cfn-appmesh-gatewayroute-grpcgatewayroutematch-port
     - ``p_ServiceName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-grpcgatewayroutematch.html#cfn-appmesh-gatewayroute-grpcgatewayroutematch-servicename
     """
     AWS_OBJECT_TYPE = "AWS::AppMesh::GatewayRoute.GrpcGatewayRouteMatch"
     
-    p_Hostname: typing.Union['PropGatewayRouteGatewayRouteHostnameMatch', dict] = attr.ib(
+    p_Hostname: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropGatewayRouteGatewayRouteHostnameMatch.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropGatewayRouteGatewayRouteHostnameMatch)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "Hostname"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-grpcgatewayroutematch.html#cfn-appmesh-gatewayroute-grpcgatewayroutematch-hostname"""
@@ -3222,6 +3178,12 @@ class PropGatewayRouteGrpcGatewayRouteMatch(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Metadata"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-grpcgatewayroutematch.html#cfn-appmesh-gatewayroute-grpcgatewayroutematch-metadata"""
+    p_Port: int = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(int)),
+        metadata={AttrMeta.PROPERTY_NAME: "Port"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-grpcgatewayroutematch.html#cfn-appmesh-gatewayroute-grpcgatewayroutematch-port"""
     p_ServiceName: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
@@ -3230,83 +3192,38 @@ class PropGatewayRouteGrpcGatewayRouteMatch(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-grpcgatewayroutematch.html#cfn-appmesh-gatewayroute-grpcgatewayroutematch-servicename"""
 
 @attr.s
-class PropGatewayRouteGrpcGatewayRoute(Property):
+class PropVirtualGatewayVirtualGatewayListenerTls(Property):
     """
-    AWS Object Type = "AWS::AppMesh::GatewayRoute.GrpcGatewayRoute"
+    AWS Object Type = "AWS::AppMesh::VirtualGateway.VirtualGatewayListenerTls"
 
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-grpcgatewayroute.html
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistenertls.html
 
     Property Document:
     
-    - ``rp_Action``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-grpcgatewayroute.html#cfn-appmesh-gatewayroute-grpcgatewayroute-action
-    - ``rp_Match``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-grpcgatewayroute.html#cfn-appmesh-gatewayroute-grpcgatewayroute-match
+    - ``rp_Certificate``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistenertls.html#cfn-appmesh-virtualgateway-virtualgatewaylistenertls-certificate
+    - ``rp_Mode``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistenertls.html#cfn-appmesh-virtualgateway-virtualgatewaylistenertls-mode
+    - ``p_Validation``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistenertls.html#cfn-appmesh-virtualgateway-virtualgatewaylistenertls-validation
     """
-    AWS_OBJECT_TYPE = "AWS::AppMesh::GatewayRoute.GrpcGatewayRoute"
+    AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualGateway.VirtualGatewayListenerTls"
     
-    rp_Action: typing.Union['PropGatewayRouteGrpcGatewayRouteAction', dict] = attr.ib(
+    rp_Certificate: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropGatewayRouteGrpcGatewayRouteAction.from_dict,
-        validator=attr.validators.instance_of(PropGatewayRouteGrpcGatewayRouteAction),
-        metadata={AttrMeta.PROPERTY_NAME: "Action"},
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "Certificate"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-grpcgatewayroute.html#cfn-appmesh-gatewayroute-grpcgatewayroute-action"""
-    rp_Match: typing.Union['PropGatewayRouteGrpcGatewayRouteMatch', dict] = attr.ib(
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistenertls.html#cfn-appmesh-virtualgateway-virtualgatewaylistenertls-certificate"""
+    rp_Mode: TypeHint.intrinsic_str = attr.ib(
         default=None,
-        converter=PropGatewayRouteGrpcGatewayRouteMatch.from_dict,
-        validator=attr.validators.instance_of(PropGatewayRouteGrpcGatewayRouteMatch),
-        metadata={AttrMeta.PROPERTY_NAME: "Match"},
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "Mode"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-grpcgatewayroute.html#cfn-appmesh-gatewayroute-grpcgatewayroute-match"""
-
-@attr.s
-class PropVirtualGatewayVirtualGatewayLogging(Property):
-    """
-    AWS Object Type = "AWS::AppMesh::VirtualGateway.VirtualGatewayLogging"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylogging.html
-
-    Property Document:
-    
-    - ``p_AccessLog``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylogging.html#cfn-appmesh-virtualgateway-virtualgatewaylogging-accesslog
-    """
-    AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualGateway.VirtualGatewayLogging"
-    
-    p_AccessLog: typing.Union['PropVirtualGatewayVirtualGatewayAccessLog', dict] = attr.ib(
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistenertls.html#cfn-appmesh-virtualgateway-virtualgatewaylistenertls-mode"""
+    p_Validation: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropVirtualGatewayVirtualGatewayAccessLog.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropVirtualGatewayVirtualGatewayAccessLog)),
-        metadata={AttrMeta.PROPERTY_NAME: "AccessLog"},
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "Validation"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylogging.html#cfn-appmesh-virtualgateway-virtualgatewaylogging-accesslog"""
-
-@attr.s
-class PropVirtualNodeTlsValidationContext(Property):
-    """
-    AWS Object Type = "AWS::AppMesh::VirtualNode.TlsValidationContext"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-tlsvalidationcontext.html
-
-    Property Document:
-    
-    - ``rp_Trust``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-tlsvalidationcontext.html#cfn-appmesh-virtualnode-tlsvalidationcontext-trust
-    - ``p_SubjectAlternativeNames``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-tlsvalidationcontext.html#cfn-appmesh-virtualnode-tlsvalidationcontext-subjectalternativenames
-    """
-    AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualNode.TlsValidationContext"
-    
-    rp_Trust: typing.Union['PropVirtualNodeTlsValidationContextTrust', dict] = attr.ib(
-        default=None,
-        converter=PropVirtualNodeTlsValidationContextTrust.from_dict,
-        validator=attr.validators.instance_of(PropVirtualNodeTlsValidationContextTrust),
-        metadata={AttrMeta.PROPERTY_NAME: "Trust"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-tlsvalidationcontext.html#cfn-appmesh-virtualnode-tlsvalidationcontext-trust"""
-    p_SubjectAlternativeNames: typing.Union['PropVirtualNodeSubjectAlternativeNames', dict] = attr.ib(
-        default=None,
-        converter=PropVirtualNodeSubjectAlternativeNames.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropVirtualNodeSubjectAlternativeNames)),
-        metadata={AttrMeta.PROPERTY_NAME: "SubjectAlternativeNames"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-tlsvalidationcontext.html#cfn-appmesh-virtualnode-tlsvalidationcontext-subjectalternativenames"""
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistenertls.html#cfn-appmesh-virtualgateway-virtualgatewaylistenertls-validation"""
 
 @attr.s
 class PropVirtualNodeListener(Property):
@@ -3333,10 +3250,9 @@ class PropVirtualNodeListener(Property):
         metadata={AttrMeta.PROPERTY_NAME: "PortMapping"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-listener.html#cfn-appmesh-virtualnode-listener-portmapping"""
-    p_ConnectionPool: typing.Union['PropVirtualNodeVirtualNodeConnectionPool', dict] = attr.ib(
+    p_ConnectionPool: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropVirtualNodeVirtualNodeConnectionPool.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropVirtualNodeVirtualNodeConnectionPool)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "ConnectionPool"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-listener.html#cfn-appmesh-virtualnode-listener-connectionpool"""
@@ -3354,17 +3270,15 @@ class PropVirtualNodeListener(Property):
         metadata={AttrMeta.PROPERTY_NAME: "OutlierDetection"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-listener.html#cfn-appmesh-virtualnode-listener-outlierdetection"""
-    p_TLS: typing.Union['PropVirtualNodeListenerTls', dict] = attr.ib(
+    p_TLS: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropVirtualNodeListenerTls.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropVirtualNodeListenerTls)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "TLS"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-listener.html#cfn-appmesh-virtualnode-listener-tls"""
-    p_Timeout: typing.Union['PropVirtualNodeListenerTimeout', dict] = attr.ib(
+    p_Timeout: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropVirtualNodeListenerTimeout.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropVirtualNodeListenerTimeout)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "Timeout"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-listener.html#cfn-appmesh-virtualnode-listener-timeout"""
@@ -3385,34 +3299,64 @@ class PropRouteHttpRoute(Property):
     """
     AWS_OBJECT_TYPE = "AWS::AppMesh::Route.HttpRoute"
     
-    rp_Action: typing.Union['PropRouteHttpRouteAction', dict] = attr.ib(
+    rp_Action: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropRouteHttpRouteAction.from_dict,
-        validator=attr.validators.instance_of(PropRouteHttpRouteAction),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "Action"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httproute.html#cfn-appmesh-route-httproute-action"""
-    rp_Match: typing.Union['PropRouteHttpRouteMatch', dict] = attr.ib(
+    rp_Match: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropRouteHttpRouteMatch.from_dict,
-        validator=attr.validators.instance_of(PropRouteHttpRouteMatch),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "Match"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httproute.html#cfn-appmesh-route-httproute-match"""
-    p_RetryPolicy: typing.Union['PropRouteHttpRetryPolicy', dict] = attr.ib(
+    p_RetryPolicy: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropRouteHttpRetryPolicy.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropRouteHttpRetryPolicy)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "RetryPolicy"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httproute.html#cfn-appmesh-route-httproute-retrypolicy"""
-    p_Timeout: typing.Union['PropRouteHttpTimeout', dict] = attr.ib(
+    p_Timeout: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropRouteHttpTimeout.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropRouteHttpTimeout)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "Timeout"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-httproute.html#cfn-appmesh-route-httproute-timeout"""
+
+@attr.s
+class PropRouteTcpRoute(Property):
+    """
+    AWS Object Type = "AWS::AppMesh::Route.TcpRoute"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-tcproute.html
+
+    Property Document:
+    
+    - ``rp_Action``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-tcproute.html#cfn-appmesh-route-tcproute-action
+    - ``p_Match``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-tcproute.html#cfn-appmesh-route-tcproute-match
+    - ``p_Timeout``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-tcproute.html#cfn-appmesh-route-tcproute-timeout
+    """
+    AWS_OBJECT_TYPE = "AWS::AppMesh::Route.TcpRoute"
+    
+    rp_Action: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "Action"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-tcproute.html#cfn-appmesh-route-tcproute-action"""
+    p_Match: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "Match"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-tcproute.html#cfn-appmesh-route-tcproute-match"""
+    p_Timeout: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "Timeout"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-tcproute.html#cfn-appmesh-route-tcproute-timeout"""
 
 @attr.s
 class PropVirtualGatewayVirtualGatewayClientPolicyTls(Property):
@@ -3430,17 +3374,15 @@ class PropVirtualGatewayVirtualGatewayClientPolicyTls(Property):
     """
     AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualGateway.VirtualGatewayClientPolicyTls"
     
-    rp_Validation: typing.Union['PropVirtualGatewayVirtualGatewayTlsValidationContext', dict] = attr.ib(
+    rp_Validation: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropVirtualGatewayVirtualGatewayTlsValidationContext.from_dict,
-        validator=attr.validators.instance_of(PropVirtualGatewayVirtualGatewayTlsValidationContext),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "Validation"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayclientpolicytls.html#cfn-appmesh-virtualgateway-virtualgatewayclientpolicytls-validation"""
-    p_Certificate: typing.Union['PropVirtualGatewayVirtualGatewayClientTlsCertificate', dict] = attr.ib(
+    p_Certificate: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropVirtualGatewayVirtualGatewayClientTlsCertificate.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropVirtualGatewayVirtualGatewayClientTlsCertificate)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "Certificate"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayclientpolicytls.html#cfn-appmesh-virtualgateway-virtualgatewayclientpolicytls-certificate"""
@@ -3458,6 +3400,67 @@ class PropVirtualGatewayVirtualGatewayClientPolicyTls(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayclientpolicytls.html#cfn-appmesh-virtualgateway-virtualgatewayclientpolicytls-ports"""
 
 @attr.s
+class PropVirtualGatewayVirtualGatewayAccessLog(Property):
+    """
+    AWS Object Type = "AWS::AppMesh::VirtualGateway.VirtualGatewayAccessLog"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayaccesslog.html
+
+    Property Document:
+    
+    - ``p_File``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayaccesslog.html#cfn-appmesh-virtualgateway-virtualgatewayaccesslog-file
+    """
+    AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualGateway.VirtualGatewayAccessLog"
+    
+    p_File: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "File"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayaccesslog.html#cfn-appmesh-virtualgateway-virtualgatewayaccesslog-file"""
+
+@attr.s
+class PropRouteGrpcRoute(Property):
+    """
+    AWS Object Type = "AWS::AppMesh::Route.GrpcRoute"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcroute.html
+
+    Property Document:
+    
+    - ``rp_Action``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcroute.html#cfn-appmesh-route-grpcroute-action
+    - ``rp_Match``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcroute.html#cfn-appmesh-route-grpcroute-match
+    - ``p_RetryPolicy``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcroute.html#cfn-appmesh-route-grpcroute-retrypolicy
+    - ``p_Timeout``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcroute.html#cfn-appmesh-route-grpcroute-timeout
+    """
+    AWS_OBJECT_TYPE = "AWS::AppMesh::Route.GrpcRoute"
+    
+    rp_Action: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "Action"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcroute.html#cfn-appmesh-route-grpcroute-action"""
+    rp_Match: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "Match"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcroute.html#cfn-appmesh-route-grpcroute-match"""
+    p_RetryPolicy: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "RetryPolicy"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcroute.html#cfn-appmesh-route-grpcroute-retrypolicy"""
+    p_Timeout: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "Timeout"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-grpcroute.html#cfn-appmesh-route-grpcroute-timeout"""
+
+@attr.s
 class PropVirtualNodeClientPolicyTls(Property):
     """
     AWS Object Type = "AWS::AppMesh::VirtualNode.ClientPolicyTls"
@@ -3473,17 +3476,15 @@ class PropVirtualNodeClientPolicyTls(Property):
     """
     AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualNode.ClientPolicyTls"
     
-    rp_Validation: typing.Union['PropVirtualNodeTlsValidationContext', dict] = attr.ib(
+    rp_Validation: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropVirtualNodeTlsValidationContext.from_dict,
-        validator=attr.validators.instance_of(PropVirtualNodeTlsValidationContext),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "Validation"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-clientpolicytls.html#cfn-appmesh-virtualnode-clientpolicytls-validation"""
-    p_Certificate: typing.Union['PropVirtualNodeClientTlsCertificate', dict] = attr.ib(
+    p_Certificate: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropVirtualNodeClientTlsCertificate.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropVirtualNodeClientTlsCertificate)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "Certificate"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-clientpolicytls.html#cfn-appmesh-virtualnode-clientpolicytls-certificate"""
@@ -3501,6 +3502,115 @@ class PropVirtualNodeClientPolicyTls(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-clientpolicytls.html#cfn-appmesh-virtualnode-clientpolicytls-ports"""
 
 @attr.s
+class PropGatewayRouteGrpcGatewayRoute(Property):
+    """
+    AWS Object Type = "AWS::AppMesh::GatewayRoute.GrpcGatewayRoute"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-grpcgatewayroute.html
+
+    Property Document:
+    
+    - ``rp_Action``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-grpcgatewayroute.html#cfn-appmesh-gatewayroute-grpcgatewayroute-action
+    - ``rp_Match``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-grpcgatewayroute.html#cfn-appmesh-gatewayroute-grpcgatewayroute-match
+    """
+    AWS_OBJECT_TYPE = "AWS::AppMesh::GatewayRoute.GrpcGatewayRoute"
+    
+    rp_Action: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "Action"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-grpcgatewayroute.html#cfn-appmesh-gatewayroute-grpcgatewayroute-action"""
+    rp_Match: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "Match"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-grpcgatewayroute.html#cfn-appmesh-gatewayroute-grpcgatewayroute-match"""
+
+@attr.s
+class PropVirtualGatewayVirtualGatewayLogging(Property):
+    """
+    AWS Object Type = "AWS::AppMesh::VirtualGateway.VirtualGatewayLogging"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylogging.html
+
+    Property Document:
+    
+    - ``p_AccessLog``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylogging.html#cfn-appmesh-virtualgateway-virtualgatewaylogging-accesslog
+    """
+    AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualGateway.VirtualGatewayLogging"
+    
+    p_AccessLog: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "AccessLog"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylogging.html#cfn-appmesh-virtualgateway-virtualgatewaylogging-accesslog"""
+
+@attr.s
+class PropVirtualNodeLogging(Property):
+    """
+    AWS Object Type = "AWS::AppMesh::VirtualNode.Logging"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-logging.html
+
+    Property Document:
+    
+    - ``p_AccessLog``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-logging.html#cfn-appmesh-virtualnode-logging-accesslog
+    """
+    AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualNode.Logging"
+    
+    p_AccessLog: typing.Union['PropVirtualNodeAccessLog', dict] = attr.ib(
+        default=None,
+        converter=PropVirtualNodeAccessLog.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropVirtualNodeAccessLog)),
+        metadata={AttrMeta.PROPERTY_NAME: "AccessLog"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-logging.html#cfn-appmesh-virtualnode-logging-accesslog"""
+
+@attr.s
+class PropVirtualGatewayVirtualGatewayListener(Property):
+    """
+    AWS Object Type = "AWS::AppMesh::VirtualGateway.VirtualGatewayListener"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistener.html
+
+    Property Document:
+    
+    - ``rp_PortMapping``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistener.html#cfn-appmesh-virtualgateway-virtualgatewaylistener-portmapping
+    - ``p_ConnectionPool``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistener.html#cfn-appmesh-virtualgateway-virtualgatewaylistener-connectionpool
+    - ``p_HealthCheck``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistener.html#cfn-appmesh-virtualgateway-virtualgatewaylistener-healthcheck
+    - ``p_TLS``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistener.html#cfn-appmesh-virtualgateway-virtualgatewaylistener-tls
+    """
+    AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualGateway.VirtualGatewayListener"
+    
+    rp_PortMapping: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "PortMapping"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistener.html#cfn-appmesh-virtualgateway-virtualgatewaylistener-portmapping"""
+    p_ConnectionPool: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "ConnectionPool"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistener.html#cfn-appmesh-virtualgateway-virtualgatewaylistener-connectionpool"""
+    p_HealthCheck: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "HealthCheck"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistener.html#cfn-appmesh-virtualgateway-virtualgatewaylistener-healthcheck"""
+    p_TLS: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "TLS"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaylistener.html#cfn-appmesh-virtualgateway-virtualgatewaylistener-tls"""
+
+@attr.s
 class PropGatewayRouteGatewayRouteSpec(Property):
     """
     AWS Object Type = "AWS::AppMesh::GatewayRoute.GatewayRouteSpec"
@@ -3516,24 +3626,21 @@ class PropGatewayRouteGatewayRouteSpec(Property):
     """
     AWS_OBJECT_TYPE = "AWS::AppMesh::GatewayRoute.GatewayRouteSpec"
     
-    p_GrpcRoute: typing.Union['PropGatewayRouteGrpcGatewayRoute', dict] = attr.ib(
+    p_GrpcRoute: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropGatewayRouteGrpcGatewayRoute.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropGatewayRouteGrpcGatewayRoute)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "GrpcRoute"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-gatewayroutespec.html#cfn-appmesh-gatewayroute-gatewayroutespec-grpcroute"""
-    p_Http2Route: typing.Union['PropGatewayRouteHttpGatewayRoute', dict] = attr.ib(
+    p_Http2Route: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropGatewayRouteHttpGatewayRoute.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropGatewayRouteHttpGatewayRoute)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "Http2Route"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-gatewayroutespec.html#cfn-appmesh-gatewayroute-gatewayroutespec-http2route"""
-    p_HttpRoute: typing.Union['PropGatewayRouteHttpGatewayRoute', dict] = attr.ib(
+    p_HttpRoute: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropGatewayRouteHttpGatewayRoute.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropGatewayRouteHttpGatewayRoute)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "HttpRoute"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-gatewayroute-gatewayroutespec.html#cfn-appmesh-gatewayroute-gatewayroutespec-httproute"""
@@ -3568,10 +3675,9 @@ class PropRouteRouteSpec(Property):
         metadata={AttrMeta.PROPERTY_NAME: "GrpcRoute"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-routespec.html#cfn-appmesh-route-routespec-grpcroute"""
-    p_Http2Route: typing.Union['PropRouteHttpRoute', dict] = attr.ib(
+    p_Http2Route: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropRouteHttpRoute.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropRouteHttpRoute)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "Http2Route"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-route-routespec.html#cfn-appmesh-route-routespec-http2route"""
@@ -3609,34 +3715,12 @@ class PropVirtualGatewayVirtualGatewayClientPolicy(Property):
     """
     AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualGateway.VirtualGatewayClientPolicy"
     
-    p_TLS: typing.Union['PropVirtualGatewayVirtualGatewayClientPolicyTls', dict] = attr.ib(
+    p_TLS: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropVirtualGatewayVirtualGatewayClientPolicyTls.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropVirtualGatewayVirtualGatewayClientPolicyTls)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "TLS"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayclientpolicy.html#cfn-appmesh-virtualgateway-virtualgatewayclientpolicy-tls"""
-
-@attr.s
-class PropVirtualGatewayVirtualGatewayBackendDefaults(Property):
-    """
-    AWS Object Type = "AWS::AppMesh::VirtualGateway.VirtualGatewayBackendDefaults"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaybackenddefaults.html
-
-    Property Document:
-    
-    - ``p_ClientPolicy``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaybackenddefaults.html#cfn-appmesh-virtualgateway-virtualgatewaybackenddefaults-clientpolicy
-    """
-    AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualGateway.VirtualGatewayBackendDefaults"
-    
-    p_ClientPolicy: typing.Union['PropVirtualGatewayVirtualGatewayClientPolicy', dict] = attr.ib(
-        default=None,
-        converter=PropVirtualGatewayVirtualGatewayClientPolicy.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropVirtualGatewayVirtualGatewayClientPolicy)),
-        metadata={AttrMeta.PROPERTY_NAME: "ClientPolicy"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaybackenddefaults.html#cfn-appmesh-virtualgateway-virtualgatewaybackenddefaults-clientpolicy"""
 
 @attr.s
 class PropVirtualNodeClientPolicy(Property):
@@ -3651,50 +3735,32 @@ class PropVirtualNodeClientPolicy(Property):
     """
     AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualNode.ClientPolicy"
     
-    p_TLS: typing.Union['PropVirtualNodeClientPolicyTls', dict] = attr.ib(
+    p_TLS: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropVirtualNodeClientPolicyTls.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropVirtualNodeClientPolicyTls)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "TLS"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-clientpolicy.html#cfn-appmesh-virtualnode-clientpolicy-tls"""
 
 @attr.s
-class PropVirtualGatewayVirtualGatewaySpec(Property):
+class PropVirtualGatewayVirtualGatewayBackendDefaults(Property):
     """
-    AWS Object Type = "AWS::AppMesh::VirtualGateway.VirtualGatewaySpec"
+    AWS Object Type = "AWS::AppMesh::VirtualGateway.VirtualGatewayBackendDefaults"
 
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayspec.html
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaybackenddefaults.html
 
     Property Document:
     
-    - ``rp_Listeners``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayspec.html#cfn-appmesh-virtualgateway-virtualgatewayspec-listeners
-    - ``p_BackendDefaults``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayspec.html#cfn-appmesh-virtualgateway-virtualgatewayspec-backenddefaults
-    - ``p_Logging``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayspec.html#cfn-appmesh-virtualgateway-virtualgatewayspec-logging
+    - ``p_ClientPolicy``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaybackenddefaults.html#cfn-appmesh-virtualgateway-virtualgatewaybackenddefaults-clientpolicy
     """
-    AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualGateway.VirtualGatewaySpec"
+    AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualGateway.VirtualGatewayBackendDefaults"
     
-    rp_Listeners: typing.List[typing.Union['PropVirtualGatewayVirtualGatewayListener', dict]] = attr.ib(
+    p_ClientPolicy: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropVirtualGatewayVirtualGatewayListener.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropVirtualGatewayVirtualGatewayListener), iterable_validator=attr.validators.instance_of(list)),
-        metadata={AttrMeta.PROPERTY_NAME: "Listeners"},
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "ClientPolicy"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayspec.html#cfn-appmesh-virtualgateway-virtualgatewayspec-listeners"""
-    p_BackendDefaults: typing.Union['PropVirtualGatewayVirtualGatewayBackendDefaults', dict] = attr.ib(
-        default=None,
-        converter=PropVirtualGatewayVirtualGatewayBackendDefaults.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropVirtualGatewayVirtualGatewayBackendDefaults)),
-        metadata={AttrMeta.PROPERTY_NAME: "BackendDefaults"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayspec.html#cfn-appmesh-virtualgateway-virtualgatewayspec-backenddefaults"""
-    p_Logging: typing.Union['PropVirtualGatewayVirtualGatewayLogging', dict] = attr.ib(
-        default=None,
-        converter=PropVirtualGatewayVirtualGatewayLogging.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropVirtualGatewayVirtualGatewayLogging)),
-        metadata={AttrMeta.PROPERTY_NAME: "Logging"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayspec.html#cfn-appmesh-virtualgateway-virtualgatewayspec-logging"""
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewaybackenddefaults.html#cfn-appmesh-virtualgateway-virtualgatewaybackenddefaults-clientpolicy"""
 
 @attr.s
 class PropVirtualNodeBackendDefaults(Property):
@@ -3746,6 +3812,41 @@ class PropVirtualNodeVirtualServiceBackend(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-virtualservicebackend.html#cfn-appmesh-virtualnode-virtualservicebackend-clientpolicy"""
 
 @attr.s
+class PropVirtualGatewayVirtualGatewaySpec(Property):
+    """
+    AWS Object Type = "AWS::AppMesh::VirtualGateway.VirtualGatewaySpec"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayspec.html
+
+    Property Document:
+    
+    - ``rp_Listeners``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayspec.html#cfn-appmesh-virtualgateway-virtualgatewayspec-listeners
+    - ``p_BackendDefaults``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayspec.html#cfn-appmesh-virtualgateway-virtualgatewayspec-backenddefaults
+    - ``p_Logging``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayspec.html#cfn-appmesh-virtualgateway-virtualgatewayspec-logging
+    """
+    AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualGateway.VirtualGatewaySpec"
+    
+    rp_Listeners: typing.List[typing.Union['PropVirtualGatewayVirtualGatewayListener', dict]] = attr.ib(
+        default=None,
+        converter=PropVirtualGatewayVirtualGatewayListener.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropVirtualGatewayVirtualGatewayListener), iterable_validator=attr.validators.instance_of(list)),
+        metadata={AttrMeta.PROPERTY_NAME: "Listeners"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayspec.html#cfn-appmesh-virtualgateway-virtualgatewayspec-listeners"""
+    p_BackendDefaults: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "BackendDefaults"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayspec.html#cfn-appmesh-virtualgateway-virtualgatewayspec-backenddefaults"""
+    p_Logging: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "Logging"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualgateway-virtualgatewayspec.html#cfn-appmesh-virtualgateway-virtualgatewayspec-logging"""
+
+@attr.s
 class PropVirtualNodeBackend(Property):
     """
     AWS Object Type = "AWS::AppMesh::VirtualNode.Backend"
@@ -3758,10 +3859,9 @@ class PropVirtualNodeBackend(Property):
     """
     AWS_OBJECT_TYPE = "AWS::AppMesh::VirtualNode.Backend"
     
-    p_VirtualService: typing.Union['PropVirtualNodeVirtualServiceBackend', dict] = attr.ib(
+    p_VirtualService: typing.Optional[dict] = attr.ib(
         default=None,
-        converter=PropVirtualNodeVirtualServiceBackend.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropVirtualNodeVirtualServiceBackend)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "VirtualService"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appmesh-virtualnode-backend.html#cfn-appmesh-virtualnode-backend-virtualservice"""
@@ -3844,39 +3944,82 @@ class Route(Resource):
     rp_MeshName: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "MeshName"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "MeshName",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-route.html#cfn-appmesh-route-meshname"""
     rp_Spec: typing.Union['PropRouteRouteSpec', dict] = attr.ib(
         default=None,
         converter=PropRouteRouteSpec.from_dict,
         validator=attr.validators.instance_of(PropRouteRouteSpec),
-        metadata={AttrMeta.PROPERTY_NAME: "Spec"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Spec",
+            AttrMeta.DATA: {
+                "Type": 'RouteSpec',
+                "Required": True,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-route.html#cfn-appmesh-route-spec"""
     rp_VirtualRouterName: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "VirtualRouterName"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "VirtualRouterName",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-route.html#cfn-appmesh-route-virtualroutername"""
     p_MeshOwner: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "MeshOwner"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "MeshOwner",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-route.html#cfn-appmesh-route-meshowner"""
     p_RouteName: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "RouteName"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "RouteName",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-route.html#cfn-appmesh-route-routename"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "Type": 'List',
+                "Required": False,
+                "ItemType": 'Tag',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-route.html#cfn-appmesh-route-tags"""
 
@@ -3938,33 +4081,69 @@ class VirtualNode(Resource):
     rp_MeshName: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "MeshName"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "MeshName",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualnode.html#cfn-appmesh-virtualnode-meshname"""
     rp_Spec: typing.Union['PropVirtualNodeVirtualNodeSpec', dict] = attr.ib(
         default=None,
         converter=PropVirtualNodeVirtualNodeSpec.from_dict,
         validator=attr.validators.instance_of(PropVirtualNodeVirtualNodeSpec),
-        metadata={AttrMeta.PROPERTY_NAME: "Spec"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Spec",
+            AttrMeta.DATA: {
+                "Type": 'VirtualNodeSpec',
+                "Required": True,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualnode.html#cfn-appmesh-virtualnode-spec"""
     p_MeshOwner: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "MeshOwner"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "MeshOwner",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualnode.html#cfn-appmesh-virtualnode-meshowner"""
     p_VirtualNodeName: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "VirtualNodeName"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "VirtualNodeName",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualnode.html#cfn-appmesh-virtualnode-virtualnodename"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "Type": 'List',
+                "Required": False,
+                "ItemType": 'Tag',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualnode.html#cfn-appmesh-virtualnode-tags"""
 
@@ -4021,33 +4200,69 @@ class VirtualRouter(Resource):
     rp_MeshName: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "MeshName"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "MeshName",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualrouter.html#cfn-appmesh-virtualrouter-meshname"""
     rp_Spec: typing.Union['PropVirtualRouterVirtualRouterSpec', dict] = attr.ib(
         default=None,
         converter=PropVirtualRouterVirtualRouterSpec.from_dict,
         validator=attr.validators.instance_of(PropVirtualRouterVirtualRouterSpec),
-        metadata={AttrMeta.PROPERTY_NAME: "Spec"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Spec",
+            AttrMeta.DATA: {
+                "Type": 'VirtualRouterSpec',
+                "Required": True,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualrouter.html#cfn-appmesh-virtualrouter-spec"""
     p_MeshOwner: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "MeshOwner"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "MeshOwner",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualrouter.html#cfn-appmesh-virtualrouter-meshowner"""
     p_VirtualRouterName: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "VirtualRouterName"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "VirtualRouterName",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualrouter.html#cfn-appmesh-virtualrouter-virtualroutername"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "Type": 'List',
+                "Required": False,
+                "ItemType": 'Tag',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualrouter.html#cfn-appmesh-virtualrouter-tags"""
 
@@ -4102,21 +4317,43 @@ class Mesh(Resource):
     p_MeshName: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "MeshName"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "MeshName",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-mesh.html#cfn-appmesh-mesh-meshname"""
     p_Spec: typing.Union['PropMeshMeshSpec', dict] = attr.ib(
         default=None,
         converter=PropMeshMeshSpec.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropMeshMeshSpec)),
-        metadata={AttrMeta.PROPERTY_NAME: "Spec"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Spec",
+            AttrMeta.DATA: {
+                "Type": 'MeshSpec',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-mesh.html#cfn-appmesh-mesh-spec"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "Type": 'List',
+                "Required": False,
+                "ItemType": 'Tag',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-mesh.html#cfn-appmesh-mesh-tags"""
 
@@ -4169,39 +4406,82 @@ class GatewayRoute(Resource):
     rp_MeshName: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "MeshName"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "MeshName",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-gatewayroute.html#cfn-appmesh-gatewayroute-meshname"""
     rp_Spec: typing.Union['PropGatewayRouteGatewayRouteSpec', dict] = attr.ib(
         default=None,
         converter=PropGatewayRouteGatewayRouteSpec.from_dict,
         validator=attr.validators.instance_of(PropGatewayRouteGatewayRouteSpec),
-        metadata={AttrMeta.PROPERTY_NAME: "Spec"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Spec",
+            AttrMeta.DATA: {
+                "Type": 'GatewayRouteSpec',
+                "Required": True,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-gatewayroute.html#cfn-appmesh-gatewayroute-spec"""
     rp_VirtualGatewayName: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "VirtualGatewayName"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "VirtualGatewayName",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-gatewayroute.html#cfn-appmesh-gatewayroute-virtualgatewayname"""
     p_GatewayRouteName: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "GatewayRouteName"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "GatewayRouteName",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-gatewayroute.html#cfn-appmesh-gatewayroute-gatewayroutename"""
     p_MeshOwner: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "MeshOwner"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "MeshOwner",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-gatewayroute.html#cfn-appmesh-gatewayroute-meshowner"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "Type": 'List',
+                "Required": False,
+                "ItemType": 'Tag',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-gatewayroute.html#cfn-appmesh-gatewayroute-tags"""
 
@@ -4263,33 +4543,69 @@ class VirtualGateway(Resource):
     rp_MeshName: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "MeshName"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "MeshName",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualgateway.html#cfn-appmesh-virtualgateway-meshname"""
     rp_Spec: typing.Union['PropVirtualGatewayVirtualGatewaySpec', dict] = attr.ib(
         default=None,
         converter=PropVirtualGatewayVirtualGatewaySpec.from_dict,
         validator=attr.validators.instance_of(PropVirtualGatewayVirtualGatewaySpec),
-        metadata={AttrMeta.PROPERTY_NAME: "Spec"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Spec",
+            AttrMeta.DATA: {
+                "Type": 'VirtualGatewaySpec',
+                "Required": True,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualgateway.html#cfn-appmesh-virtualgateway-spec"""
     p_MeshOwner: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "MeshOwner"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "MeshOwner",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualgateway.html#cfn-appmesh-virtualgateway-meshowner"""
     p_VirtualGatewayName: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "VirtualGatewayName"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "VirtualGatewayName",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualgateway.html#cfn-appmesh-virtualgateway-virtualgatewayname"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "Type": 'List',
+                "Required": False,
+                "ItemType": 'Tag',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualgateway.html#cfn-appmesh-virtualgateway-tags"""
 
@@ -4346,33 +4662,69 @@ class VirtualService(Resource):
     rp_MeshName: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "MeshName"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "MeshName",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualservice.html#cfn-appmesh-virtualservice-meshname"""
     rp_Spec: typing.Union['PropVirtualServiceVirtualServiceSpec', dict] = attr.ib(
         default=None,
         converter=PropVirtualServiceVirtualServiceSpec.from_dict,
         validator=attr.validators.instance_of(PropVirtualServiceVirtualServiceSpec),
-        metadata={AttrMeta.PROPERTY_NAME: "Spec"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Spec",
+            AttrMeta.DATA: {
+                "Type": 'VirtualServiceSpec',
+                "Required": True,
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualservice.html#cfn-appmesh-virtualservice-spec"""
     rp_VirtualServiceName: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "VirtualServiceName"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "VirtualServiceName",
+            AttrMeta.DATA: {
+                "Required": True,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualservice.html#cfn-appmesh-virtualservice-virtualservicename"""
     p_MeshOwner: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "MeshOwner"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "MeshOwner",
+            AttrMeta.DATA: {
+                "Required": False,
+                "PrimitiveType": 'String',
+                "UpdateType": 'Immutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualservice.html#cfn-appmesh-virtualservice-meshowner"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "Type": 'List',
+                "Required": False,
+                "ItemType": 'Tag',
+                "UpdateType": 'Mutable',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appmesh-virtualservice.html#cfn-appmesh-virtualservice-tags"""
 

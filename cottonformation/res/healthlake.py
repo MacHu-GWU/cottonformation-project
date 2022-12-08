@@ -106,34 +106,70 @@ class FHIRDatastore(Resource):
     rp_DatastoreTypeVersion: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "DatastoreTypeVersion"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "DatastoreTypeVersion",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-healthlake-fhirdatastore.html#cfn-healthlake-fhirdatastore-datastoretypeversion"""
     p_DatastoreName: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "DatastoreName"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "DatastoreName",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-healthlake-fhirdatastore.html#cfn-healthlake-fhirdatastore-datastorename"""
     p_PreloadDataConfig: typing.Union['PropFHIRDatastorePreloadDataConfig', dict] = attr.ib(
         default=None,
         converter=PropFHIRDatastorePreloadDataConfig.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropFHIRDatastorePreloadDataConfig)),
-        metadata={AttrMeta.PROPERTY_NAME: "PreloadDataConfig"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "PreloadDataConfig",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "Type": 'PreloadDataConfig',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-healthlake-fhirdatastore.html#cfn-healthlake-fhirdatastore-preloaddataconfig"""
     p_SseConfiguration: typing.Union['PropFHIRDatastoreSseConfiguration', dict] = attr.ib(
         default=None,
         converter=PropFHIRDatastoreSseConfiguration.from_dict,
         validator=attr.validators.optional(attr.validators.instance_of(PropFHIRDatastoreSseConfiguration)),
-        metadata={AttrMeta.PROPERTY_NAME: "SseConfiguration"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "SseConfiguration",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "Type": 'SseConfiguration',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-healthlake-fhirdatastore.html#cfn-healthlake-fhirdatastore-sseconfiguration"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'List',
+                "ItemType": 'Tag',
+            }
+        },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-healthlake-fhirdatastore.html#cfn-healthlake-fhirdatastore-tags"""
 

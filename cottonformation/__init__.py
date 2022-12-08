@@ -32,21 +32,43 @@ __fingerprint_of_license_file = "e5834e80c86c4898dd9f1462a2349cbf"
 
 
 try:
-    from .core import constant, helpers, exc
-    from .core.constant import DeletionPolicy, UpdateReplacePolicy
+    from .core import (
+        constant,
+        helpers,
+        exc,
+    )
+    from .core.constant import DeletionPolicyEnum, UpdateReplacePolicyEnum
     from .core.model import (
         # data model
-        Parameter, Property, Resource, Output, Export,
-        Rule, Mapping, Condition, Transform,
-        ResourceGroup, Tag,
-
+        Parameter,
+        Property,
+        Resource,
+        Output,
+        Export,
+        Rule,
+        Mapping,
+        Condition,
+        Transform,
+        ResourceGroup,
+        Tag,
         # intrinsic function
-        Ref, Base64, Cidr, FindInMap, GetAtt, GetAZs,
-        ImportValue, Join, Select, Split, Sub,
-
+        Ref,
+        Base64,
+        Cidr,
+        FindInMap,
+        GetAtt,
+        GetAZs,
+        ImportValue,
+        Join,
+        Select,
+        Split,
+        Sub,
         # condition function
-        Equals, If, Not, And, Or,
-
+        Equals,
+        If,
+        Not,
+        And,
+        Or,
         # pseudo parameter
         AWS_ACCOUNT_ID,
         AWS_NOTIFICATION_ARNS,
@@ -61,5 +83,10 @@ try:
     from .core.template import Template
     from .core.stack import Stack
     from .core.env import Env
-except ImportError as e:
+except ImportError as e:  # pragma: no cover
+    pass
+
+try:
+    from aws_cloudformation.stack import Parameter as ParameterValue
+except ImportError as e:  # pragma: no cover
     pass

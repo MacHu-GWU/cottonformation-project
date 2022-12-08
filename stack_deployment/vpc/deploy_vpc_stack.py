@@ -29,7 +29,7 @@ tpl.add(vpc_stack.rg2_subnet)
 tpl.add(vpc_stack.rg3_route)
 tpl.add(vpc_stack.rg4_security_group)
 
-tpl.batch_tagging(ProjectName=vpc_stack.project_name, Stage=vpc_stack.stage)
+tpl.batch_tagging(dict(ProjectName=vpc_stack.project_name, Stage=vpc_stack.stage))
 
 if __name__ == "__main__":
     boto_ses = boto3.session.Session(profile_name="aws_sanhe_dev1_us_east_2")
