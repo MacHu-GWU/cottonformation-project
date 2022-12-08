@@ -8,11 +8,14 @@ Release and Version History
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Features and Improvements**
 
+- Before this version, :meth:`cottonformation.core.model.Resource.update_tags`` only works with List of Tag typed resource tags property. Due to the historical reason, the AWS CloudFormation resource tags type definition is not consistent. I added more logic to handle both old tag type and new tag type.
+
 **Minor Improvements**
 
 **Bugfixes**
 
-- fix a bug that remove a resource that in a resource group will also remove the entire resource group. Logically, a resource group is a container of a resource, so resource group depends on the resource member. But practically resource, group should not be removed.
+- Fix a bug that remove a resource that in a resource group will also remove the entire resource group. Logically, a resource group is a container of a resource, so resource group depends on the resource member. But practically resource, group should not be removed.
+- Special handler for appflow, some property are special type but not defined.
 
 **Miscellaneous**
 

@@ -10,11 +10,12 @@ from typing import (
     TYPE_CHECKING, Tuple, List,
 )
 
-if TYPE_CHECKING:
-    from boto_session_manager import BotoSesManager
-
+from aws_cloudformation import deploy_stack, remove_stack
 from .template import Template
 from ..res.cloudformation import Stack
+
+if TYPE_CHECKING:
+    from boto_session_manager import BotoSesManager
 
 DEFAULT_CFT_S3_PREFIX = "cloudformation/upload"
 
