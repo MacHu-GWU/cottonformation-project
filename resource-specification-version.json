@@ -4,6 +4,10 @@
         {
             "cottonformation": "1.0.1",
             "cloudformation": "100.0.0"
+        },
+        {
+            "cottonformation": "1.1.1",
+            "cloudformation": "100.0.0"
         }
     ]
 }
