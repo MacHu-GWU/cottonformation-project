@@ -69,6 +69,87 @@ class PropComponentTypeRelationship(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-componenttype-relationship.html#cfn-iottwinmaker-componenttype-relationship-targetcomponenttypeid"""
 
 @attr.s
+class PropComponentTypeRelationshipValue(Property):
+    """
+    AWS Object Type = "AWS::IoTTwinMaker::ComponentType.RelationshipValue"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-componenttype-relationshipvalue.html
+
+    Property Document:
+    
+    - ``p_TargetComponentName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-componenttype-relationshipvalue.html#cfn-iottwinmaker-componenttype-relationshipvalue-targetcomponentname
+    - ``p_TargetEntityId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-componenttype-relationshipvalue.html#cfn-iottwinmaker-componenttype-relationshipvalue-targetentityid
+    """
+    AWS_OBJECT_TYPE = "AWS::IoTTwinMaker::ComponentType.RelationshipValue"
+    
+    p_TargetComponentName: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "TargetComponentName"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-componenttype-relationshipvalue.html#cfn-iottwinmaker-componenttype-relationshipvalue-targetcomponentname"""
+    p_TargetEntityId: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "TargetEntityId"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-componenttype-relationshipvalue.html#cfn-iottwinmaker-componenttype-relationshipvalue-targetentityid"""
+
+@attr.s
+class PropEntityRelationship(Property):
+    """
+    AWS Object Type = "AWS::IoTTwinMaker::Entity.Relationship"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-relationship.html
+
+    Property Document:
+    
+    - ``p_RelationshipType``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-relationship.html#cfn-iottwinmaker-entity-relationship-relationshiptype
+    - ``p_TargetComponentTypeId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-relationship.html#cfn-iottwinmaker-entity-relationship-targetcomponenttypeid
+    """
+    AWS_OBJECT_TYPE = "AWS::IoTTwinMaker::Entity.Relationship"
+    
+    p_RelationshipType: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "RelationshipType"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-relationship.html#cfn-iottwinmaker-entity-relationship-relationshiptype"""
+    p_TargetComponentTypeId: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "TargetComponentTypeId"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-relationship.html#cfn-iottwinmaker-entity-relationship-targetcomponenttypeid"""
+
+@attr.s
+class PropEntityError(Property):
+    """
+    AWS Object Type = "AWS::IoTTwinMaker::Entity.Error"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-error.html
+
+    Property Document:
+    
+    - ``p_Code``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-error.html#cfn-iottwinmaker-entity-error-code
+    - ``p_Message``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-error.html#cfn-iottwinmaker-entity-error-message
+    """
+    AWS_OBJECT_TYPE = "AWS::IoTTwinMaker::Entity.Error"
+    
+    p_Code: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "Code"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-error.html#cfn-iottwinmaker-entity-error-code"""
+    p_Message: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "Message"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-error.html#cfn-iottwinmaker-entity-error-message"""
+
+@attr.s
 class PropComponentTypeDataValue(Property):
     """
     AWS Object Type = "AWS::IoTTwinMaker::ComponentType.DataValue"
@@ -131,9 +212,10 @@ class PropComponentTypeDataValue(Property):
         metadata={AttrMeta.PROPERTY_NAME: "MapValue"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-componenttype-datavalue.html#cfn-iottwinmaker-componenttype-datavalue-mapvalue"""
-    p_RelationshipValue: dict = attr.ib(
+    p_RelationshipValue: typing.Union['PropComponentTypeRelationshipValue', dict] = attr.ib(
         default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        converter=PropComponentTypeRelationshipValue.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropComponentTypeRelationshipValue)),
         metadata={AttrMeta.PROPERTY_NAME: "RelationshipValue"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-componenttype-datavalue.html#cfn-iottwinmaker-componenttype-datavalue-relationshipvalue"""
@@ -143,6 +225,33 @@ class PropComponentTypeDataValue(Property):
         metadata={AttrMeta.PROPERTY_NAME: "StringValue"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-componenttype-datavalue.html#cfn-iottwinmaker-componenttype-datavalue-stringvalue"""
+
+@attr.s
+class PropEntityRelationshipValue(Property):
+    """
+    AWS Object Type = "AWS::IoTTwinMaker::Entity.RelationshipValue"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-relationshipvalue.html
+
+    Property Document:
+    
+    - ``p_TargetComponentName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-relationshipvalue.html#cfn-iottwinmaker-entity-relationshipvalue-targetcomponentname
+    - ``p_TargetEntityId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-relationshipvalue.html#cfn-iottwinmaker-entity-relationshipvalue-targetentityid
+    """
+    AWS_OBJECT_TYPE = "AWS::IoTTwinMaker::Entity.RelationshipValue"
+    
+    p_TargetComponentName: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "TargetComponentName"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-relationshipvalue.html#cfn-iottwinmaker-entity-relationshipvalue-targetcomponentname"""
+    p_TargetEntityId: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "TargetEntityId"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-relationshipvalue.html#cfn-iottwinmaker-entity-relationshipvalue-targetentityid"""
 
 @attr.s
 class PropEntityStatus(Property):
@@ -158,9 +267,10 @@ class PropEntityStatus(Property):
     """
     AWS_OBJECT_TYPE = "AWS::IoTTwinMaker::Entity.Status"
     
-    p_Error: dict = attr.ib(
+    p_Error: typing.Union['PropEntityError', dict] = attr.ib(
         default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        converter=PropEntityError.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropEntityError)),
         metadata={AttrMeta.PROPERTY_NAME: "Error"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-status.html#cfn-iottwinmaker-entity-status-error"""
@@ -197,6 +307,33 @@ class PropComponentTypePropertyGroup(Property):
         metadata={AttrMeta.PROPERTY_NAME: "PropertyNames"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-componenttype-propertygroup.html#cfn-iottwinmaker-componenttype-propertygroup-propertynames"""
+
+@attr.s
+class PropComponentTypeError(Property):
+    """
+    AWS Object Type = "AWS::IoTTwinMaker::ComponentType.Error"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-componenttype-error.html
+
+    Property Document:
+    
+    - ``p_Code``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-componenttype-error.html#cfn-iottwinmaker-componenttype-error-code
+    - ``p_Message``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-componenttype-error.html#cfn-iottwinmaker-componenttype-error-message
+    """
+    AWS_OBJECT_TYPE = "AWS::IoTTwinMaker::ComponentType.Error"
+    
+    p_Code: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "Code"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-componenttype-error.html#cfn-iottwinmaker-componenttype-error-code"""
+    p_Message: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "Message"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-componenttype-error.html#cfn-iottwinmaker-componenttype-error-message"""
 
 @attr.s
 class PropComponentTypeLambdaFunction(Property):
@@ -281,9 +418,10 @@ class PropEntityDataValue(Property):
         metadata={AttrMeta.PROPERTY_NAME: "MapValue"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-datavalue.html#cfn-iottwinmaker-entity-datavalue-mapvalue"""
-    p_RelationshipValue: dict = attr.ib(
+    p_RelationshipValue: typing.Union['PropEntityRelationshipValue', dict] = attr.ib(
         default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        converter=PropEntityRelationshipValue.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropEntityRelationshipValue)),
         metadata={AttrMeta.PROPERTY_NAME: "RelationshipValue"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-datavalue.html#cfn-iottwinmaker-entity-datavalue-relationshipvalue"""
@@ -293,6 +431,56 @@ class PropEntityDataValue(Property):
         metadata={AttrMeta.PROPERTY_NAME: "StringValue"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-datavalue.html#cfn-iottwinmaker-entity-datavalue-stringvalue"""
+
+@attr.s
+class PropEntityDataType(Property):
+    """
+    AWS Object Type = "AWS::IoTTwinMaker::Entity.DataType"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-datatype.html
+
+    Property Document:
+    
+    - ``p_AllowedValues``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-datatype.html#cfn-iottwinmaker-entity-datatype-allowedvalues
+    - ``p_NestedType``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-datatype.html#cfn-iottwinmaker-entity-datatype-nestedtype
+    - ``p_Relationship``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-datatype.html#cfn-iottwinmaker-entity-datatype-relationship
+    - ``p_Type``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-datatype.html#cfn-iottwinmaker-entity-datatype-type
+    - ``p_UnitOfMeasure``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-datatype.html#cfn-iottwinmaker-entity-datatype-unitofmeasure
+    """
+    AWS_OBJECT_TYPE = "AWS::IoTTwinMaker::Entity.DataType"
+    
+    p_AllowedValues: typing.List[typing.Union['PropEntityDataValue', dict]] = attr.ib(
+        default=None,
+        converter=PropEntityDataValue.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropEntityDataValue), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "AllowedValues"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-datatype.html#cfn-iottwinmaker-entity-datatype-allowedvalues"""
+    p_NestedType: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "NestedType"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-datatype.html#cfn-iottwinmaker-entity-datatype-nestedtype"""
+    p_Relationship: typing.Union['PropEntityRelationship', dict] = attr.ib(
+        default=None,
+        converter=PropEntityRelationship.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropEntityRelationship)),
+        metadata={AttrMeta.PROPERTY_NAME: "Relationship"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-datatype.html#cfn-iottwinmaker-entity-datatype-relationship"""
+    p_Type: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "Type"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-datatype.html#cfn-iottwinmaker-entity-datatype-type"""
+    p_UnitOfMeasure: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "UnitOfMeasure"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-datatype.html#cfn-iottwinmaker-entity-datatype-unitofmeasure"""
 
 @attr.s
 class PropComponentTypeDataType(Property):
@@ -345,31 +533,32 @@ class PropComponentTypeDataType(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-componenttype-datatype.html#cfn-iottwinmaker-componenttype-datatype-unitofmeasure"""
 
 @attr.s
-class PropEntityProperty(Property):
+class PropComponentTypeStatus(Property):
     """
-    AWS Object Type = "AWS::IoTTwinMaker::Entity.Property"
+    AWS Object Type = "AWS::IoTTwinMaker::ComponentType.Status"
 
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-property.html
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-componenttype-status.html
 
     Property Document:
     
-    - ``p_Definition``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-property.html#cfn-iottwinmaker-entity-property-definition
-    - ``p_Value``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-property.html#cfn-iottwinmaker-entity-property-value
+    - ``p_Error``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-componenttype-status.html#cfn-iottwinmaker-componenttype-status-error
+    - ``p_State``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-componenttype-status.html#cfn-iottwinmaker-componenttype-status-state
     """
-    AWS_OBJECT_TYPE = "AWS::IoTTwinMaker::Entity.Property"
+    AWS_OBJECT_TYPE = "AWS::IoTTwinMaker::ComponentType.Status"
     
-    p_Definition: dict = attr.ib(
+    p_Error: typing.Union['PropComponentTypeError', dict] = attr.ib(
         default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(dict)),
-        metadata={AttrMeta.PROPERTY_NAME: "Definition"},
+        converter=PropComponentTypeError.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropComponentTypeError)),
+        metadata={AttrMeta.PROPERTY_NAME: "Error"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-property.html#cfn-iottwinmaker-entity-property-definition"""
-    p_Value: typing.Optional[dict] = attr.ib(
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-componenttype-status.html#cfn-iottwinmaker-componenttype-status-error"""
+    p_State: TypeHint.intrinsic_str = attr.ib(
         default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(dict)),
-        metadata={AttrMeta.PROPERTY_NAME: "Value"},
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "State"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-property.html#cfn-iottwinmaker-entity-property-value"""
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-componenttype-status.html#cfn-iottwinmaker-componenttype-status-state"""
 
 @attr.s
 class PropComponentTypeDataConnector(Property):
@@ -399,69 +588,88 @@ class PropComponentTypeDataConnector(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-componenttype-dataconnector.html#cfn-iottwinmaker-componenttype-dataconnector-lambda"""
 
 @attr.s
-class PropEntityComponent(Property):
+class PropEntityDefinition(Property):
     """
-    AWS Object Type = "AWS::IoTTwinMaker::Entity.Component"
+    AWS Object Type = "AWS::IoTTwinMaker::Entity.Definition"
 
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-component.html
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-definition.html
 
     Property Document:
     
-    - ``p_ComponentName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-component.html#cfn-iottwinmaker-entity-component-componentname
-    - ``p_ComponentTypeId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-component.html#cfn-iottwinmaker-entity-component-componenttypeid
-    - ``p_DefinedIn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-component.html#cfn-iottwinmaker-entity-component-definedin
-    - ``p_Description``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-component.html#cfn-iottwinmaker-entity-component-description
-    - ``p_Properties``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-component.html#cfn-iottwinmaker-entity-component-properties
-    - ``p_PropertyGroups``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-component.html#cfn-iottwinmaker-entity-component-propertygroups
-    - ``p_Status``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-component.html#cfn-iottwinmaker-entity-component-status
+    - ``p_Configuration``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-definition.html#cfn-iottwinmaker-entity-definition-configuration
+    - ``p_DataType``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-definition.html#cfn-iottwinmaker-entity-definition-datatype
+    - ``p_DefaultValue``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-definition.html#cfn-iottwinmaker-entity-definition-defaultvalue
+    - ``p_IsExternalId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-definition.html#cfn-iottwinmaker-entity-definition-isexternalid
+    - ``p_IsFinal``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-definition.html#cfn-iottwinmaker-entity-definition-isfinal
+    - ``p_IsImported``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-definition.html#cfn-iottwinmaker-entity-definition-isimported
+    - ``p_IsInherited``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-definition.html#cfn-iottwinmaker-entity-definition-isinherited
+    - ``p_IsRequiredInEntity``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-definition.html#cfn-iottwinmaker-entity-definition-isrequiredinentity
+    - ``p_IsStoredExternally``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-definition.html#cfn-iottwinmaker-entity-definition-isstoredexternally
+    - ``p_IsTimeSeries``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-definition.html#cfn-iottwinmaker-entity-definition-istimeseries
     """
-    AWS_OBJECT_TYPE = "AWS::IoTTwinMaker::Entity.Component"
+    AWS_OBJECT_TYPE = "AWS::IoTTwinMaker::Entity.Definition"
     
-    p_ComponentName: TypeHint.intrinsic_str = attr.ib(
+    p_Configuration: typing.Dict[str, TypeHint.intrinsic_str] = attr.ib(
         default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "ComponentName"},
+        validator=attr.validators.optional(attr.validators.deep_mapping(key_validator=attr.validators.instance_of(str), value_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type))),
+        metadata={AttrMeta.PROPERTY_NAME: "Configuration"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-component.html#cfn-iottwinmaker-entity-component-componentname"""
-    p_ComponentTypeId: TypeHint.intrinsic_str = attr.ib(
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-definition.html#cfn-iottwinmaker-entity-definition-configuration"""
+    p_DataType: typing.Union['PropEntityDataType', dict] = attr.ib(
         default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "ComponentTypeId"},
+        converter=PropEntityDataType.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropEntityDataType)),
+        metadata={AttrMeta.PROPERTY_NAME: "DataType"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-component.html#cfn-iottwinmaker-entity-component-componenttypeid"""
-    p_DefinedIn: TypeHint.intrinsic_str = attr.ib(
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-definition.html#cfn-iottwinmaker-entity-definition-datatype"""
+    p_DefaultValue: typing.Optional[dict] = attr.ib(
         default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "DefinedIn"},
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "DefaultValue"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-component.html#cfn-iottwinmaker-entity-component-definedin"""
-    p_Description: TypeHint.intrinsic_str = attr.ib(
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-definition.html#cfn-iottwinmaker-entity-definition-defaultvalue"""
+    p_IsExternalId: bool = attr.ib(
         default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Description"},
+        validator=attr.validators.optional(attr.validators.instance_of(bool)),
+        metadata={AttrMeta.PROPERTY_NAME: "IsExternalId"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-component.html#cfn-iottwinmaker-entity-component-description"""
-    p_Properties: typing.Union['PropEntityProperty', dict] = attr.ib(
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-definition.html#cfn-iottwinmaker-entity-definition-isexternalid"""
+    p_IsFinal: bool = attr.ib(
         default=None,
-        converter=PropEntityProperty.from_list,
-        validator=attr.validators.optional(attr.validators.instance_of(PropEntityProperty)),
-        metadata={AttrMeta.PROPERTY_NAME: "Properties"},
+        validator=attr.validators.optional(attr.validators.instance_of(bool)),
+        metadata={AttrMeta.PROPERTY_NAME: "IsFinal"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-component.html#cfn-iottwinmaker-entity-component-properties"""
-    p_PropertyGroups: typing.Union['PropEntityPropertyGroup', dict] = attr.ib(
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-definition.html#cfn-iottwinmaker-entity-definition-isfinal"""
+    p_IsImported: bool = attr.ib(
         default=None,
-        converter=PropEntityPropertyGroup.from_list,
-        validator=attr.validators.optional(attr.validators.instance_of(PropEntityPropertyGroup)),
-        metadata={AttrMeta.PROPERTY_NAME: "PropertyGroups"},
+        validator=attr.validators.optional(attr.validators.instance_of(bool)),
+        metadata={AttrMeta.PROPERTY_NAME: "IsImported"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-component.html#cfn-iottwinmaker-entity-component-propertygroups"""
-    p_Status: typing.Union['PropEntityStatus', dict] = attr.ib(
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-definition.html#cfn-iottwinmaker-entity-definition-isimported"""
+    p_IsInherited: bool = attr.ib(
         default=None,
-        converter=PropEntityStatus.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropEntityStatus)),
-        metadata={AttrMeta.PROPERTY_NAME: "Status"},
+        validator=attr.validators.optional(attr.validators.instance_of(bool)),
+        metadata={AttrMeta.PROPERTY_NAME: "IsInherited"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-component.html#cfn-iottwinmaker-entity-component-status"""
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-definition.html#cfn-iottwinmaker-entity-definition-isinherited"""
+    p_IsRequiredInEntity: bool = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(bool)),
+        metadata={AttrMeta.PROPERTY_NAME: "IsRequiredInEntity"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-definition.html#cfn-iottwinmaker-entity-definition-isrequiredinentity"""
+    p_IsStoredExternally: bool = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(bool)),
+        metadata={AttrMeta.PROPERTY_NAME: "IsStoredExternally"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-definition.html#cfn-iottwinmaker-entity-definition-isstoredexternally"""
+    p_IsTimeSeries: bool = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(bool)),
+        metadata={AttrMeta.PROPERTY_NAME: "IsTimeSeries"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-definition.html#cfn-iottwinmaker-entity-definition-istimeseries"""
 
 @attr.s
 class PropComponentTypeFunction(Property):
@@ -560,8 +768,194 @@ class PropComponentTypePropertyDefinition(Property):
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-componenttype-propertydefinition.html#cfn-iottwinmaker-componenttype-propertydefinition-istimeseries"""
 
+@attr.s
+class PropEntityProperty(Property):
+    """
+    AWS Object Type = "AWS::IoTTwinMaker::Entity.Property"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-property.html
+
+    Property Document:
+    
+    - ``p_Definition``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-property.html#cfn-iottwinmaker-entity-property-definition
+    - ``p_Value``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-property.html#cfn-iottwinmaker-entity-property-value
+    """
+    AWS_OBJECT_TYPE = "AWS::IoTTwinMaker::Entity.Property"
+    
+    p_Definition: typing.Union['PropEntityDefinition', dict] = attr.ib(
+        default=None,
+        converter=PropEntityDefinition.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropEntityDefinition)),
+        metadata={AttrMeta.PROPERTY_NAME: "Definition"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-property.html#cfn-iottwinmaker-entity-property-definition"""
+    p_Value: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "Value"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-property.html#cfn-iottwinmaker-entity-property-value"""
+
+@attr.s
+class PropEntityComponent(Property):
+    """
+    AWS Object Type = "AWS::IoTTwinMaker::Entity.Component"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-component.html
+
+    Property Document:
+    
+    - ``p_ComponentName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-component.html#cfn-iottwinmaker-entity-component-componentname
+    - ``p_ComponentTypeId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-component.html#cfn-iottwinmaker-entity-component-componenttypeid
+    - ``p_DefinedIn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-component.html#cfn-iottwinmaker-entity-component-definedin
+    - ``p_Description``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-component.html#cfn-iottwinmaker-entity-component-description
+    - ``p_Properties``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-component.html#cfn-iottwinmaker-entity-component-properties
+    - ``p_PropertyGroups``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-component.html#cfn-iottwinmaker-entity-component-propertygroups
+    - ``p_Status``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-component.html#cfn-iottwinmaker-entity-component-status
+    """
+    AWS_OBJECT_TYPE = "AWS::IoTTwinMaker::Entity.Component"
+    
+    p_ComponentName: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "ComponentName"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-component.html#cfn-iottwinmaker-entity-component-componentname"""
+    p_ComponentTypeId: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "ComponentTypeId"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-component.html#cfn-iottwinmaker-entity-component-componenttypeid"""
+    p_DefinedIn: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "DefinedIn"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-component.html#cfn-iottwinmaker-entity-component-definedin"""
+    p_Description: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "Description"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-component.html#cfn-iottwinmaker-entity-component-description"""
+    p_Properties: typing.Union['PropEntityProperty', dict] = attr.ib(
+        default=None,
+        converter=PropEntityProperty.from_list,
+        validator=attr.validators.optional(attr.validators.instance_of(PropEntityProperty)),
+        metadata={AttrMeta.PROPERTY_NAME: "Properties"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-component.html#cfn-iottwinmaker-entity-component-properties"""
+    p_PropertyGroups: typing.Union['PropEntityPropertyGroup', dict] = attr.ib(
+        default=None,
+        converter=PropEntityPropertyGroup.from_list,
+        validator=attr.validators.optional(attr.validators.instance_of(PropEntityPropertyGroup)),
+        metadata={AttrMeta.PROPERTY_NAME: "PropertyGroups"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-component.html#cfn-iottwinmaker-entity-component-propertygroups"""
+    p_Status: typing.Union['PropEntityStatus', dict] = attr.ib(
+        default=None,
+        converter=PropEntityStatus.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropEntityStatus)),
+        metadata={AttrMeta.PROPERTY_NAME: "Status"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iottwinmaker-entity-component.html#cfn-iottwinmaker-entity-component-status"""
+
 
 #--- Resource declaration ---
+
+@attr.s
+class SyncJob(Resource):
+    """
+    AWS Object Type = "AWS::IoTTwinMaker::SyncJob"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iottwinmaker-syncjob.html
+
+    Property Document:
+    
+    - ``rp_SyncRole``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iottwinmaker-syncjob.html#cfn-iottwinmaker-syncjob-syncrole
+    - ``rp_SyncSource``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iottwinmaker-syncjob.html#cfn-iottwinmaker-syncjob-syncsource
+    - ``rp_WorkspaceId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iottwinmaker-syncjob.html#cfn-iottwinmaker-syncjob-workspaceid
+    - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iottwinmaker-syncjob.html#cfn-iottwinmaker-syncjob-tags
+    """
+    AWS_OBJECT_TYPE = "AWS::IoTTwinMaker::SyncJob"
+
+    
+    rp_SyncRole: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "SyncRole",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iottwinmaker-syncjob.html#cfn-iottwinmaker-syncjob-syncrole"""
+    rp_SyncSource: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "SyncSource",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iottwinmaker-syncjob.html#cfn-iottwinmaker-syncjob-syncsource"""
+    rp_WorkspaceId: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "WorkspaceId",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iottwinmaker-syncjob.html#cfn-iottwinmaker-syncjob-workspaceid"""
+    p_Tags: typing.Dict[str, TypeHint.intrinsic_str] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.deep_mapping(key_validator=attr.validators.instance_of(str), value_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type))),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "Type": 'Map',
+                "PrimitiveItemType": 'String',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iottwinmaker-syncjob.html#cfn-iottwinmaker-syncjob-tags"""
+
+    
+    @property
+    def rv_CreationDateTime(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iottwinmaker-syncjob.html#aws-resource-iottwinmaker-syncjob-return-values"""
+        return GetAtt(resource=self, attr_name="CreationDateTime")
+    
+    @property
+    def rv_State(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iottwinmaker-syncjob.html#aws-resource-iottwinmaker-syncjob-return-values"""
+        return GetAtt(resource=self, attr_name="State")
+    
+    @property
+    def rv_UpdateDateTime(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iottwinmaker-syncjob.html#aws-resource-iottwinmaker-syncjob-return-values"""
+        return GetAtt(resource=self, attr_name="UpdateDateTime")
+    
+    @property
+    def rv_Arn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iottwinmaker-syncjob.html#aws-resource-iottwinmaker-syncjob-return-values"""
+        return GetAtt(resource=self, attr_name="Arn")
+    
 
 @attr.s
 class Workspace(Resource):
@@ -650,11 +1044,6 @@ class Workspace(Resource):
 
     
     @property
-    def rv_Arn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iottwinmaker-workspace.html#aws-resource-iottwinmaker-workspace-return-values"""
-        return GetAtt(resource=self, attr_name="Arn")
-    
-    @property
     def rv_CreationDateTime(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iottwinmaker-workspace.html#aws-resource-iottwinmaker-workspace-return-values"""
         return GetAtt(resource=self, attr_name="CreationDateTime")
@@ -663,6 +1052,11 @@ class Workspace(Resource):
     def rv_UpdateDateTime(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iottwinmaker-workspace.html#aws-resource-iottwinmaker-workspace-return-values"""
         return GetAtt(resource=self, attr_name="UpdateDateTime")
+    
+    @property
+    def rv_Arn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iottwinmaker-workspace.html#aws-resource-iottwinmaker-workspace-return-values"""
+        return GetAtt(resource=self, attr_name="Arn")
     
 
 @attr.s
@@ -768,11 +1162,6 @@ class Scene(Resource):
 
     
     @property
-    def rv_Arn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iottwinmaker-scene.html#aws-resource-iottwinmaker-scene-return-values"""
-        return GetAtt(resource=self, attr_name="Arn")
-    
-    @property
     def rv_CreationDateTime(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iottwinmaker-scene.html#aws-resource-iottwinmaker-scene-return-values"""
         return GetAtt(resource=self, attr_name="CreationDateTime")
@@ -781,6 +1170,11 @@ class Scene(Resource):
     def rv_UpdateDateTime(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iottwinmaker-scene.html#aws-resource-iottwinmaker-scene-return-values"""
         return GetAtt(resource=self, attr_name="UpdateDateTime")
+    
+    @property
+    def rv_Arn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iottwinmaker-scene.html#aws-resource-iottwinmaker-scene-return-values"""
+        return GetAtt(resource=self, attr_name="Arn")
     
 
 @attr.s
@@ -934,9 +1328,9 @@ class ComponentType(Resource):
 
     
     @property
-    def rv_Arn(self) -> GetAtt:
+    def rv_Status(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iottwinmaker-componenttype.html#aws-resource-iottwinmaker-componenttype-return-values"""
-        return GetAtt(resource=self, attr_name="Arn")
+        return GetAtt(resource=self, attr_name="Status")
     
     @property
     def rv_CreationDateTime(self) -> GetAtt:
@@ -944,19 +1338,44 @@ class ComponentType(Resource):
         return GetAtt(resource=self, attr_name="CreationDateTime")
     
     @property
-    def rv_UpdateDateTime(self) -> GetAtt:
+    def rv_StatusErrorMessage(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iottwinmaker-componenttype.html#aws-resource-iottwinmaker-componenttype-return-values"""
-        return GetAtt(resource=self, attr_name="UpdateDateTime")
-    
-    @property
-    def rv_IsAbstract(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iottwinmaker-componenttype.html#aws-resource-iottwinmaker-componenttype-return-values"""
-        return GetAtt(resource=self, attr_name="IsAbstract")
+        return GetAtt(resource=self, attr_name="Status.Error.Message")
     
     @property
     def rv_IsSchemaInitialized(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iottwinmaker-componenttype.html#aws-resource-iottwinmaker-componenttype-return-values"""
         return GetAtt(resource=self, attr_name="IsSchemaInitialized")
+    
+    @property
+    def rv_StatusState(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iottwinmaker-componenttype.html#aws-resource-iottwinmaker-componenttype-return-values"""
+        return GetAtt(resource=self, attr_name="Status.State")
+    
+    @property
+    def rv_StatusError(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iottwinmaker-componenttype.html#aws-resource-iottwinmaker-componenttype-return-values"""
+        return GetAtt(resource=self, attr_name="Status.Error")
+    
+    @property
+    def rv_UpdateDateTime(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iottwinmaker-componenttype.html#aws-resource-iottwinmaker-componenttype-return-values"""
+        return GetAtt(resource=self, attr_name="UpdateDateTime")
+    
+    @property
+    def rv_StatusErrorCode(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iottwinmaker-componenttype.html#aws-resource-iottwinmaker-componenttype-return-values"""
+        return GetAtt(resource=self, attr_name="Status.Error.Code")
+    
+    @property
+    def rv_Arn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iottwinmaker-componenttype.html#aws-resource-iottwinmaker-componenttype-return-values"""
+        return GetAtt(resource=self, attr_name="Arn")
+    
+    @property
+    def rv_IsAbstract(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iottwinmaker-componenttype.html#aws-resource-iottwinmaker-componenttype-return-values"""
+        return GetAtt(resource=self, attr_name="IsAbstract")
     
 
 @attr.s
@@ -1076,14 +1495,9 @@ class Entity(Resource):
 
     
     @property
-    def rv_HasChildEntities(self) -> GetAtt:
+    def rv_Status(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iottwinmaker-entity.html#aws-resource-iottwinmaker-entity-return-values"""
-        return GetAtt(resource=self, attr_name="HasChildEntities")
-    
-    @property
-    def rv_Arn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iottwinmaker-entity.html#aws-resource-iottwinmaker-entity-return-values"""
-        return GetAtt(resource=self, attr_name="Arn")
+        return GetAtt(resource=self, attr_name="Status")
     
     @property
     def rv_CreationDateTime(self) -> GetAtt:
@@ -1091,7 +1505,37 @@ class Entity(Resource):
         return GetAtt(resource=self, attr_name="CreationDateTime")
     
     @property
+    def rv_StatusErrorMessage(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iottwinmaker-entity.html#aws-resource-iottwinmaker-entity-return-values"""
+        return GetAtt(resource=self, attr_name="Status.Error.Message")
+    
+    @property
+    def rv_HasChildEntities(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iottwinmaker-entity.html#aws-resource-iottwinmaker-entity-return-values"""
+        return GetAtt(resource=self, attr_name="HasChildEntities")
+    
+    @property
+    def rv_StatusState(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iottwinmaker-entity.html#aws-resource-iottwinmaker-entity-return-values"""
+        return GetAtt(resource=self, attr_name="Status.State")
+    
+    @property
+    def rv_StatusError(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iottwinmaker-entity.html#aws-resource-iottwinmaker-entity-return-values"""
+        return GetAtt(resource=self, attr_name="Status.Error")
+    
+    @property
     def rv_UpdateDateTime(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iottwinmaker-entity.html#aws-resource-iottwinmaker-entity-return-values"""
         return GetAtt(resource=self, attr_name="UpdateDateTime")
+    
+    @property
+    def rv_StatusErrorCode(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iottwinmaker-entity.html#aws-resource-iottwinmaker-entity-return-values"""
+        return GetAtt(resource=self, attr_name="Status.Error.Code")
+    
+    @property
+    def rv_Arn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iottwinmaker-entity.html#aws-resource-iottwinmaker-entity-return-values"""
+        return GetAtt(resource=self, attr_name="Arn")
     

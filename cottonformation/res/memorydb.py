@@ -41,6 +41,33 @@ class PropClusterEndpoint(Property):
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-memorydb-cluster-endpoint.html#cfn-memorydb-cluster-endpoint-port"""
 
+@attr.s
+class PropUserAuthenticationMode(Property):
+    """
+    AWS Object Type = "AWS::MemoryDB::User.AuthenticationMode"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-memorydb-user-authenticationmode.html
+
+    Property Document:
+    
+    - ``p_Passwords``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-memorydb-user-authenticationmode.html#cfn-memorydb-user-authenticationmode-passwords
+    - ``p_Type``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-memorydb-user-authenticationmode.html#cfn-memorydb-user-authenticationmode-type
+    """
+    AWS_OBJECT_TYPE = "AWS::MemoryDB::User.AuthenticationMode"
+    
+    p_Passwords: typing.List[TypeHint.intrinsic_str] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "Passwords"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-memorydb-user-authenticationmode.html#cfn-memorydb-user-authenticationmode-passwords"""
+    p_Type: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "Type"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-memorydb-user-authenticationmode.html#cfn-memorydb-user-authenticationmode-type"""
+
 
 #--- Resource declaration ---
 
@@ -241,15 +268,16 @@ class User(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-memorydb-user.html#cfn-memorydb-user-accessstring"""
-    rp_AuthenticationMode: dict = attr.ib(
+    rp_AuthenticationMode: typing.Union['PropUserAuthenticationMode', dict] = attr.ib(
         default=None,
-        validator=attr.validators.instance_of(dict),
+        converter=PropUserAuthenticationMode.from_dict,
+        validator=attr.validators.instance_of(PropUserAuthenticationMode),
         metadata={
             AttrMeta.PROPERTY_NAME: "AuthenticationMode",
             AttrMeta.DATA: {
                 "UpdateType": 'Mutable',
                 "Required": True,
-                "PrimitiveType": 'Json',
+                "Type": 'AuthenticationMode',
             }
         },
     )
@@ -391,6 +419,7 @@ class Cluster(Resource):
     - ``rp_ClusterName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-memorydb-cluster.html#cfn-memorydb-cluster-clustername
     - ``rp_NodeType``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-memorydb-cluster.html#cfn-memorydb-cluster-nodetype
     - ``p_AutoMinorVersionUpgrade``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-memorydb-cluster.html#cfn-memorydb-cluster-autominorversionupgrade
+    - ``p_ClusterEndpoint``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-memorydb-cluster.html#cfn-memorydb-cluster-clusterendpoint
     - ``p_DataTiering``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-memorydb-cluster.html#cfn-memorydb-cluster-datatiering
     - ``p_Description``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-memorydb-cluster.html#cfn-memorydb-cluster-description
     - ``p_EngineVersion``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-memorydb-cluster.html#cfn-memorydb-cluster-engineversion
@@ -467,6 +496,20 @@ class Cluster(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-memorydb-cluster.html#cfn-memorydb-cluster-autominorversionupgrade"""
+    p_ClusterEndpoint: typing.Union['PropClusterEndpoint', dict] = attr.ib(
+        default=None,
+        converter=PropClusterEndpoint.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropClusterEndpoint)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ClusterEndpoint",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'Endpoint',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-memorydb-cluster.html#cfn-memorydb-cluster-clusterendpoint"""
     p_DataTiering: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
@@ -742,16 +785,6 @@ class Cluster(Resource):
         return GetAtt(resource=self, attr_name="Status")
     
     @property
-    def rv_ParameterGroupStatus(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-memorydb-cluster.html#aws-resource-memorydb-cluster-return-values"""
-        return GetAtt(resource=self, attr_name="ParameterGroupStatus")
-    
-    @property
-    def rv_ARN(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-memorydb-cluster.html#aws-resource-memorydb-cluster-return-values"""
-        return GetAtt(resource=self, attr_name="ARN")
-    
-    @property
     def rv_ClusterEndpointAddress(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-memorydb-cluster.html#aws-resource-memorydb-cluster-return-values"""
         return GetAtt(resource=self, attr_name="ClusterEndpoint.Address")
@@ -760,4 +793,14 @@ class Cluster(Resource):
     def rv_ClusterEndpointPort(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-memorydb-cluster.html#aws-resource-memorydb-cluster-return-values"""
         return GetAtt(resource=self, attr_name="ClusterEndpoint.Port")
+    
+    @property
+    def rv_ParameterGroupStatus(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-memorydb-cluster.html#aws-resource-memorydb-cluster-return-values"""
+        return GetAtt(resource=self, attr_name="ParameterGroupStatus")
+    
+    @property
+    def rv_ARN(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-memorydb-cluster.html#aws-resource-memorydb-cluster-return-values"""
+        return GetAtt(resource=self, attr_name="ARN")
     

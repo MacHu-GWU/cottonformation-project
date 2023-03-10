@@ -235,6 +235,7 @@ class ReadinessCheck(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Tag',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -273,6 +274,7 @@ class RecoveryGroup(Resource):
                 "Required": False,
                 "Type": 'List',
                 "PrimitiveItemType": 'String',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -301,6 +303,7 @@ class RecoveryGroup(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Tag',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -352,6 +355,7 @@ class Cell(Resource):
                 "Required": False,
                 "Type": 'List',
                 "PrimitiveItemType": 'String',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -367,6 +371,7 @@ class Cell(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Tag',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -374,14 +379,14 @@ class Cell(Resource):
 
     
     @property
-    def rv_CellArn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53recoveryreadiness-cell.html#aws-resource-route53recoveryreadiness-cell-return-values"""
-        return GetAtt(resource=self, attr_name="CellArn")
-    
-    @property
     def rv_ParentReadinessScopes(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53recoveryreadiness-cell.html#aws-resource-route53recoveryreadiness-cell-return-values"""
         return GetAtt(resource=self, attr_name="ParentReadinessScopes")
+    
+    @property
+    def rv_CellArn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53recoveryreadiness-cell.html#aws-resource-route53recoveryreadiness-cell-return-values"""
+        return GetAtt(resource=self, attr_name="CellArn")
     
 
 @attr.s
@@ -425,6 +430,7 @@ class ResourceSet(Resource):
                 "Required": True,
                 "Type": 'List',
                 "ItemType": 'Resource',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -453,6 +459,7 @@ class ResourceSet(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Tag',
+                "DuplicatesAllowed": True,
             }
         },
     )

@@ -258,6 +258,7 @@ class InstanceAccessControlAttributeConfiguration(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'AccessControlAttribute',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -325,6 +326,7 @@ class PermissionSet(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'CustomerManagedPolicyReference',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -365,6 +367,7 @@ class PermissionSet(Resource):
                 "Required": False,
                 "Type": 'List',
                 "PrimitiveItemType": 'String',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -420,6 +423,7 @@ class PermissionSet(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Tag',
+                "DuplicatesAllowed": True,
             }
         },
     )

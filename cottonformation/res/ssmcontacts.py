@@ -182,6 +182,7 @@ class Contact(Resource):
                 "Required": True,
                 "Type": 'List',
                 "ItemType": 'Stage',
+                "DuplicatesAllowed": True,
             }
         },
     )

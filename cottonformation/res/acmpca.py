@@ -1285,6 +1285,7 @@ class CertificateAuthority(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Tag',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -1292,14 +1293,14 @@ class CertificateAuthority(Resource):
 
     
     @property
-    def rv_Arn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-acmpca-certificateauthority.html#aws-resource-acmpca-certificateauthority-return-values"""
-        return GetAtt(resource=self, attr_name="Arn")
-    
-    @property
     def rv_CertificateSigningRequest(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-acmpca-certificateauthority.html#aws-resource-acmpca-certificateauthority-return-values"""
         return GetAtt(resource=self, attr_name="CertificateSigningRequest")
+    
+    @property
+    def rv_Arn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-acmpca-certificateauthority.html#aws-resource-acmpca-certificateauthority-return-values"""
+        return GetAtt(resource=self, attr_name="Arn")
     
 
 @attr.s
@@ -1496,14 +1497,14 @@ class Certificate(Resource):
 
     
     @property
-    def rv_Certificate(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-acmpca-certificate.html#aws-resource-acmpca-certificate-return-values"""
-        return GetAtt(resource=self, attr_name="Certificate")
-    
-    @property
     def rv_Arn(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-acmpca-certificate.html#aws-resource-acmpca-certificate-return-values"""
         return GetAtt(resource=self, attr_name="Arn")
+    
+    @property
+    def rv_Certificate(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-acmpca-certificate.html#aws-resource-acmpca-certificate-return-values"""
+        return GetAtt(resource=self, attr_name="Certificate")
     
 
 @attr.s
@@ -1533,6 +1534,7 @@ class Permission(Resource):
                 "Required": True,
                 "Type": 'List',
                 "PrimitiveItemType": 'String',
+                "DuplicatesAllowed": True,
             }
         },
     )

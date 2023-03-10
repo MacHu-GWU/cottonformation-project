@@ -15,6 +15,33 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
+class PropFHIRDatastoreCreatedAt(Property):
+    """
+    AWS Object Type = "AWS::HealthLake::FHIRDatastore.CreatedAt"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-healthlake-fhirdatastore-createdat.html
+
+    Property Document:
+    
+    - ``rp_Nanos``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-healthlake-fhirdatastore-createdat.html#cfn-healthlake-fhirdatastore-createdat-nanos
+    - ``rp_Seconds``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-healthlake-fhirdatastore-createdat.html#cfn-healthlake-fhirdatastore-createdat-seconds
+    """
+    AWS_OBJECT_TYPE = "AWS::HealthLake::FHIRDatastore.CreatedAt"
+    
+    rp_Nanos: int = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(int),
+        metadata={AttrMeta.PROPERTY_NAME: "Nanos"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-healthlake-fhirdatastore-createdat.html#cfn-healthlake-fhirdatastore-createdat-nanos"""
+    rp_Seconds: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "Seconds"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-healthlake-fhirdatastore-createdat.html#cfn-healthlake-fhirdatastore-createdat-seconds"""
+
+@attr.s
 class PropFHIRDatastorePreloadDataConfig(Property):
     """
     AWS Object Type = "AWS::HealthLake::FHIRDatastore.PreloadDataConfig"
@@ -168,6 +195,7 @@ class FHIRDatastore(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Tag',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -180,9 +208,9 @@ class FHIRDatastore(Resource):
         return GetAtt(resource=self, attr_name="DatastoreArn")
     
     @property
-    def rv_DatastoreEndpoint(self) -> GetAtt:
+    def rv_CreatedAtNanos(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-healthlake-fhirdatastore.html#aws-resource-healthlake-fhirdatastore-return-values"""
-        return GetAtt(resource=self, attr_name="DatastoreEndpoint")
+        return GetAtt(resource=self, attr_name="CreatedAt.Nanos")
     
     @property
     def rv_DatastoreId(self) -> GetAtt:
@@ -190,7 +218,22 @@ class FHIRDatastore(Resource):
         return GetAtt(resource=self, attr_name="DatastoreId")
     
     @property
+    def rv_CreatedAt(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-healthlake-fhirdatastore.html#aws-resource-healthlake-fhirdatastore-return-values"""
+        return GetAtt(resource=self, attr_name="CreatedAt")
+    
+    @property
     def rv_DatastoreStatus(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-healthlake-fhirdatastore.html#aws-resource-healthlake-fhirdatastore-return-values"""
         return GetAtt(resource=self, attr_name="DatastoreStatus")
+    
+    @property
+    def rv_DatastoreEndpoint(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-healthlake-fhirdatastore.html#aws-resource-healthlake-fhirdatastore-return-values"""
+        return GetAtt(resource=self, attr_name="DatastoreEndpoint")
+    
+    @property
+    def rv_CreatedAtSeconds(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-healthlake-fhirdatastore.html#aws-resource-healthlake-fhirdatastore-return-values"""
+        return GetAtt(resource=self, attr_name="CreatedAt.Seconds")
     

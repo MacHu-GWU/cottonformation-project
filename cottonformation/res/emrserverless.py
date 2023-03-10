@@ -96,6 +96,26 @@ class PropApplicationNetworkConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emrserverless-application-networkconfiguration.html#cfn-emrserverless-application-networkconfiguration-subnetids"""
 
 @attr.s
+class PropApplicationImageConfigurationInput(Property):
+    """
+    AWS Object Type = "AWS::EMRServerless::Application.ImageConfigurationInput"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emrserverless-application-imageconfigurationinput.html
+
+    Property Document:
+    
+    - ``p_ImageUri``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emrserverless-application-imageconfigurationinput.html#cfn-emrserverless-application-imageconfigurationinput-imageuri
+    """
+    AWS_OBJECT_TYPE = "AWS::EMRServerless::Application.ImageConfigurationInput"
+    
+    p_ImageUri: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "ImageUri"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emrserverless-application-imageconfigurationinput.html#cfn-emrserverless-application-imageconfigurationinput-imageuri"""
+
+@attr.s
 class PropApplicationMaximumAllowedResources(Property):
     """
     AWS Object Type = "AWS::EMRServerless::Application.MaximumAllowedResources"
@@ -128,6 +148,26 @@ class PropApplicationMaximumAllowedResources(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Disk"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emrserverless-application-maximumallowedresources.html#cfn-emrserverless-application-maximumallowedresources-disk"""
+
+@attr.s
+class PropApplicationWorkerTypeSpecificationInput(Property):
+    """
+    AWS Object Type = "AWS::EMRServerless::Application.WorkerTypeSpecificationInput"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emrserverless-application-workertypespecificationinput.html
+
+    Property Document:
+    
+    - ``p_ImageConfiguration``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emrserverless-application-workertypespecificationinput.html#cfn-emrserverless-application-workertypespecificationinput-imageconfiguration
+    """
+    AWS_OBJECT_TYPE = "AWS::EMRServerless::Application.WorkerTypeSpecificationInput"
+    
+    p_ImageConfiguration: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "ImageConfiguration"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-emrserverless-application-workertypespecificationinput.html#cfn-emrserverless-application-workertypespecificationinput-imageconfiguration"""
 
 @attr.s
 class PropApplicationInitialCapacityConfig(Property):
@@ -225,12 +265,15 @@ class Application(Resource):
     
     - ``rp_ReleaseLabel``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emrserverless-application.html#cfn-emrserverless-application-releaselabel
     - ``rp_Type``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emrserverless-application.html#cfn-emrserverless-application-type
+    - ``p_Architecture``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emrserverless-application.html#cfn-emrserverless-application-architecture
     - ``p_AutoStartConfiguration``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emrserverless-application.html#cfn-emrserverless-application-autostartconfiguration
     - ``p_AutoStopConfiguration``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emrserverless-application.html#cfn-emrserverless-application-autostopconfiguration
+    - ``p_ImageConfiguration``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emrserverless-application.html#cfn-emrserverless-application-imageconfiguration
     - ``p_InitialCapacity``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emrserverless-application.html#cfn-emrserverless-application-initialcapacity
     - ``p_MaximumCapacity``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emrserverless-application.html#cfn-emrserverless-application-maximumcapacity
     - ``p_Name``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emrserverless-application.html#cfn-emrserverless-application-name
     - ``p_NetworkConfiguration``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emrserverless-application.html#cfn-emrserverless-application-networkconfiguration
+    - ``p_WorkerTypeSpecifications``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emrserverless-application.html#cfn-emrserverless-application-workertypespecifications
     - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emrserverless-application.html#cfn-emrserverless-application-tags
     """
     AWS_OBJECT_TYPE = "AWS::EMRServerless::Application"
@@ -262,6 +305,19 @@ class Application(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emrserverless-application.html#cfn-emrserverless-application-type"""
+    p_Architecture: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Architecture",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emrserverless-application.html#cfn-emrserverless-application-architecture"""
     p_AutoStartConfiguration: typing.Union['PropApplicationAutoStartConfiguration', dict] = attr.ib(
         default=None,
         converter=PropApplicationAutoStartConfiguration.from_dict,
@@ -290,6 +346,20 @@ class Application(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emrserverless-application.html#cfn-emrserverless-application-autostopconfiguration"""
+    p_ImageConfiguration: typing.Union['PropApplicationImageConfigurationInput', dict] = attr.ib(
+        default=None,
+        converter=PropApplicationImageConfigurationInput.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropApplicationImageConfigurationInput)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ImageConfiguration",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'ImageConfigurationInput',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emrserverless-application.html#cfn-emrserverless-application-imageconfiguration"""
     p_InitialCapacity: typing.List[typing.Union['PropApplicationInitialCapacityConfigKeyValuePair', dict]] = attr.ib(
         default=None,
         converter=PropApplicationInitialCapacityConfigKeyValuePair.from_list,
@@ -347,6 +417,21 @@ class Application(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emrserverless-application.html#cfn-emrserverless-application-networkconfiguration"""
+    p_WorkerTypeSpecifications: typing.Union['PropApplicationWorkerTypeSpecificationInput', dict] = attr.ib(
+        default=None,
+        converter=PropApplicationWorkerTypeSpecificationInput.from_list,
+        validator=attr.validators.optional(attr.validators.instance_of(PropApplicationWorkerTypeSpecificationInput)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "WorkerTypeSpecifications",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'Map',
+                "ItemType": 'WorkerTypeSpecificationInput',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-emrserverless-application.html#cfn-emrserverless-application-workertypespecifications"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,

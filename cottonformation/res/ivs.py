@@ -187,11 +187,6 @@ class Channel(Resource):
 
     
     @property
-    def rv_Arn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ivs-channel.html#aws-resource-ivs-channel-return-values"""
-        return GetAtt(resource=self, attr_name="Arn")
-    
-    @property
     def rv_PlaybackUrl(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ivs-channel.html#aws-resource-ivs-channel-return-values"""
         return GetAtt(resource=self, attr_name="PlaybackUrl")
@@ -200,6 +195,11 @@ class Channel(Resource):
     def rv_IngestEndpoint(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ivs-channel.html#aws-resource-ivs-channel-return-values"""
         return GetAtt(resource=self, attr_name="IngestEndpoint")
+    
+    @property
+    def rv_Arn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ivs-channel.html#aws-resource-ivs-channel-return-values"""
+        return GetAtt(resource=self, attr_name="Arn")
     
 
 @attr.s
@@ -211,26 +211,13 @@ class PlaybackKeyPair(Resource):
 
     Property Document:
     
-    - ``rp_PublicKeyMaterial``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ivs-playbackkeypair.html#cfn-ivs-playbackkeypair-publickeymaterial
     - ``p_Name``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ivs-playbackkeypair.html#cfn-ivs-playbackkeypair-name
+    - ``p_PublicKeyMaterial``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ivs-playbackkeypair.html#cfn-ivs-playbackkeypair-publickeymaterial
     - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ivs-playbackkeypair.html#cfn-ivs-playbackkeypair-tags
     """
     AWS_OBJECT_TYPE = "AWS::IVS::PlaybackKeyPair"
 
     
-    rp_PublicKeyMaterial: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "PublicKeyMaterial",
-            AttrMeta.DATA: {
-                "UpdateType": 'Immutable',
-                "Required": True,
-                "PrimitiveType": 'String',
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ivs-playbackkeypair.html#cfn-ivs-playbackkeypair-publickeymaterial"""
     p_Name: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
@@ -244,6 +231,19 @@ class PlaybackKeyPair(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ivs-playbackkeypair.html#cfn-ivs-playbackkeypair-name"""
+    p_PublicKeyMaterial: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "PublicKeyMaterial",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ivs-playbackkeypair.html#cfn-ivs-playbackkeypair-publickeymaterial"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
@@ -364,14 +364,14 @@ class RecordingConfiguration(Resource):
 
     
     @property
-    def rv_Arn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ivs-recordingconfiguration.html#aws-resource-ivs-recordingconfiguration-return-values"""
-        return GetAtt(resource=self, attr_name="Arn")
-    
-    @property
     def rv_State(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ivs-recordingconfiguration.html#aws-resource-ivs-recordingconfiguration-return-values"""
         return GetAtt(resource=self, attr_name="State")
+    
+    @property
+    def rv_Arn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ivs-recordingconfiguration.html#aws-resource-ivs-recordingconfiguration-return-values"""
+        return GetAtt(resource=self, attr_name="Arn")
     
 
 @attr.s
@@ -421,12 +421,12 @@ class StreamKey(Resource):
 
     
     @property
-    def rv_Arn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ivs-streamkey.html#aws-resource-ivs-streamkey-return-values"""
-        return GetAtt(resource=self, attr_name="Arn")
-    
-    @property
     def rv_Value(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ivs-streamkey.html#aws-resource-ivs-streamkey-return-values"""
         return GetAtt(resource=self, attr_name="Value")
+    
+    @property
+    def rv_Arn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ivs-streamkey.html#aws-resource-ivs-streamkey-return-values"""
+        return GetAtt(resource=self, attr_name="Arn")
     

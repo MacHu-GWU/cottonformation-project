@@ -337,9 +337,9 @@ class ConfigurationTemplate(Resource):
         metadata={
             AttrMeta.PROPERTY_NAME: "ApplicationName",
             AttrMeta.DATA: {
-                "PrimitiveType": 'String',
-                "Required": True,
                 "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
             }
         },
     )
@@ -350,9 +350,9 @@ class ConfigurationTemplate(Resource):
         metadata={
             AttrMeta.PROPERTY_NAME: "Description",
             AttrMeta.DATA: {
-                "PrimitiveType": 'String',
-                "Required": False,
                 "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'String',
             }
         },
     )
@@ -363,9 +363,9 @@ class ConfigurationTemplate(Resource):
         metadata={
             AttrMeta.PROPERTY_NAME: "EnvironmentId",
             AttrMeta.DATA: {
-                "PrimitiveType": 'String',
-                "Required": False,
                 "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'String',
             }
         },
     )
@@ -377,11 +377,11 @@ class ConfigurationTemplate(Resource):
         metadata={
             AttrMeta.PROPERTY_NAME: "OptionSettings",
             AttrMeta.DATA: {
-                "DuplicatesAllowed": True,
-                "ItemType": 'ConfigurationOptionSetting',
+                "UpdateType": 'Mutable',
                 "Required": False,
                 "Type": 'List',
-                "UpdateType": 'Mutable',
+                "ItemType": 'ConfigurationOptionSetting',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -392,9 +392,9 @@ class ConfigurationTemplate(Resource):
         metadata={
             AttrMeta.PROPERTY_NAME: "PlatformArn",
             AttrMeta.DATA: {
-                "PrimitiveType": 'String',
-                "Required": False,
                 "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'String',
             }
         },
     )
@@ -405,9 +405,9 @@ class ConfigurationTemplate(Resource):
         metadata={
             AttrMeta.PROPERTY_NAME: "SolutionStackName",
             AttrMeta.DATA: {
-                "PrimitiveType": 'String',
-                "Required": False,
                 "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'String',
             }
         },
     )
@@ -419,14 +419,19 @@ class ConfigurationTemplate(Resource):
         metadata={
             AttrMeta.PROPERTY_NAME: "SourceConfiguration",
             AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
                 "Required": False,
                 "Type": 'SourceConfiguration',
-                "UpdateType": 'Immutable',
             }
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticbeanstalk-configurationtemplate.html#cfn-elasticbeanstalk-configurationtemplate-sourceconfiguration"""
 
+    
+    @property
+    def rv_TemplateName(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticbeanstalk-configurationtemplate.html#aws-resource-elasticbeanstalk-configurationtemplate-return-values"""
+        return GetAtt(resource=self, attr_name="TemplateName")
     
 
 @attr.s

@@ -2911,6 +2911,7 @@ class Studio(Resource):
                 "Required": True,
                 "Type": 'List',
                 "PrimitiveItemType": 'String',
+                "DuplicatesAllowed": True,
             }
         },
     )

@@ -23,16 +23,58 @@ class PropVpcAttachmentVpcOptions(Property):
 
     Property Document:
     
+    - ``p_ApplianceModeSupport``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-vpcattachment-vpcoptions.html#cfn-networkmanager-vpcattachment-vpcoptions-appliancemodesupport
     - ``p_Ipv6Support``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-vpcattachment-vpcoptions.html#cfn-networkmanager-vpcattachment-vpcoptions-ipv6support
     """
     AWS_OBJECT_TYPE = "AWS::NetworkManager::VpcAttachment.VpcOptions"
     
+    p_ApplianceModeSupport: bool = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(bool)),
+        metadata={AttrMeta.PROPERTY_NAME: "ApplianceModeSupport"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-vpcattachment-vpcoptions.html#cfn-networkmanager-vpcattachment-vpcoptions-appliancemodesupport"""
     p_Ipv6Support: bool = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(bool)),
         metadata={AttrMeta.PROPERTY_NAME: "Ipv6Support"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-vpcattachment-vpcoptions.html#cfn-networkmanager-vpcattachment-vpcoptions-ipv6support"""
+
+@attr.s
+class PropVpcAttachmentProposedSegmentChange(Property):
+    """
+    AWS Object Type = "AWS::NetworkManager::VpcAttachment.ProposedSegmentChange"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-vpcattachment-proposedsegmentchange.html
+
+    Property Document:
+    
+    - ``p_AttachmentPolicyRuleNumber``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-vpcattachment-proposedsegmentchange.html#cfn-networkmanager-vpcattachment-proposedsegmentchange-attachmentpolicyrulenumber
+    - ``p_SegmentName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-vpcattachment-proposedsegmentchange.html#cfn-networkmanager-vpcattachment-proposedsegmentchange-segmentname
+    - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-vpcattachment-proposedsegmentchange.html#cfn-networkmanager-vpcattachment-proposedsegmentchange-tags
+    """
+    AWS_OBJECT_TYPE = "AWS::NetworkManager::VpcAttachment.ProposedSegmentChange"
+    
+    p_AttachmentPolicyRuleNumber: int = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(int)),
+        metadata={AttrMeta.PROPERTY_NAME: "AttachmentPolicyRuleNumber"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-vpcattachment-proposedsegmentchange.html#cfn-networkmanager-vpcattachment-proposedsegmentchange-attachmentpolicyrulenumber"""
+    p_SegmentName: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "SegmentName"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-vpcattachment-proposedsegmentchange.html#cfn-networkmanager-vpcattachment-proposedsegmentchange-segmentname"""
+    p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
+        default=None,
+        converter=Tag.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-vpcattachment-proposedsegmentchange.html#cfn-networkmanager-vpcattachment-proposedsegmentchange-tags"""
 
 @attr.s
 class PropLinkBandwidth(Property):
@@ -60,6 +102,41 @@ class PropLinkBandwidth(Property):
         metadata={AttrMeta.PROPERTY_NAME: "UploadSpeed"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-link-bandwidth.html#cfn-networkmanager-link-bandwidth-uploadspeed"""
+
+@attr.s
+class PropTransitGatewayRouteTableAttachmentProposedSegmentChange(Property):
+    """
+    AWS Object Type = "AWS::NetworkManager::TransitGatewayRouteTableAttachment.ProposedSegmentChange"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-transitgatewayroutetableattachment-proposedsegmentchange.html
+
+    Property Document:
+    
+    - ``p_AttachmentPolicyRuleNumber``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-transitgatewayroutetableattachment-proposedsegmentchange.html#cfn-networkmanager-transitgatewayroutetableattachment-proposedsegmentchange-attachmentpolicyrulenumber
+    - ``p_SegmentName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-transitgatewayroutetableattachment-proposedsegmentchange.html#cfn-networkmanager-transitgatewayroutetableattachment-proposedsegmentchange-segmentname
+    - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-transitgatewayroutetableattachment-proposedsegmentchange.html#cfn-networkmanager-transitgatewayroutetableattachment-proposedsegmentchange-tags
+    """
+    AWS_OBJECT_TYPE = "AWS::NetworkManager::TransitGatewayRouteTableAttachment.ProposedSegmentChange"
+    
+    p_AttachmentPolicyRuleNumber: int = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(int)),
+        metadata={AttrMeta.PROPERTY_NAME: "AttachmentPolicyRuleNumber"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-transitgatewayroutetableattachment-proposedsegmentchange.html#cfn-networkmanager-transitgatewayroutetableattachment-proposedsegmentchange-attachmentpolicyrulenumber"""
+    p_SegmentName: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "SegmentName"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-transitgatewayroutetableattachment-proposedsegmentchange.html#cfn-networkmanager-transitgatewayroutetableattachment-proposedsegmentchange-segmentname"""
+    p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
+        default=None,
+        converter=Tag.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-transitgatewayroutetableattachment-proposedsegmentchange.html#cfn-networkmanager-transitgatewayroutetableattachment-proposedsegmentchange-tags"""
 
 @attr.s
 class PropCoreNetworkCoreNetworkSegment(Property):
@@ -114,6 +191,82 @@ class PropConnectPeerBgpOptions(Property):
         metadata={AttrMeta.PROPERTY_NAME: "PeerAsn"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-connectpeer-bgpoptions.html#cfn-networkmanager-connectpeer-bgpoptions-peerasn"""
+
+@attr.s
+class PropConnectPeerConnectPeerBgpConfiguration(Property):
+    """
+    AWS Object Type = "AWS::NetworkManager::ConnectPeer.ConnectPeerBgpConfiguration"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-connectpeer-connectpeerbgpconfiguration.html
+
+    Property Document:
+    
+    - ``p_CoreNetworkAddress``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-connectpeer-connectpeerbgpconfiguration.html#cfn-networkmanager-connectpeer-connectpeerbgpconfiguration-corenetworkaddress
+    - ``p_CoreNetworkAsn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-connectpeer-connectpeerbgpconfiguration.html#cfn-networkmanager-connectpeer-connectpeerbgpconfiguration-corenetworkasn
+    - ``p_PeerAddress``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-connectpeer-connectpeerbgpconfiguration.html#cfn-networkmanager-connectpeer-connectpeerbgpconfiguration-peeraddress
+    - ``p_PeerAsn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-connectpeer-connectpeerbgpconfiguration.html#cfn-networkmanager-connectpeer-connectpeerbgpconfiguration-peerasn
+    """
+    AWS_OBJECT_TYPE = "AWS::NetworkManager::ConnectPeer.ConnectPeerBgpConfiguration"
+    
+    p_CoreNetworkAddress: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "CoreNetworkAddress"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-connectpeer-connectpeerbgpconfiguration.html#cfn-networkmanager-connectpeer-connectpeerbgpconfiguration-corenetworkaddress"""
+    p_CoreNetworkAsn: float = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(float)),
+        metadata={AttrMeta.PROPERTY_NAME: "CoreNetworkAsn"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-connectpeer-connectpeerbgpconfiguration.html#cfn-networkmanager-connectpeer-connectpeerbgpconfiguration-corenetworkasn"""
+    p_PeerAddress: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "PeerAddress"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-connectpeer-connectpeerbgpconfiguration.html#cfn-networkmanager-connectpeer-connectpeerbgpconfiguration-peeraddress"""
+    p_PeerAsn: float = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(float)),
+        metadata={AttrMeta.PROPERTY_NAME: "PeerAsn"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-connectpeer-connectpeerbgpconfiguration.html#cfn-networkmanager-connectpeer-connectpeerbgpconfiguration-peerasn"""
+
+@attr.s
+class PropConnectAttachmentProposedSegmentChange(Property):
+    """
+    AWS Object Type = "AWS::NetworkManager::ConnectAttachment.ProposedSegmentChange"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-connectattachment-proposedsegmentchange.html
+
+    Property Document:
+    
+    - ``p_AttachmentPolicyRuleNumber``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-connectattachment-proposedsegmentchange.html#cfn-networkmanager-connectattachment-proposedsegmentchange-attachmentpolicyrulenumber
+    - ``p_SegmentName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-connectattachment-proposedsegmentchange.html#cfn-networkmanager-connectattachment-proposedsegmentchange-segmentname
+    - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-connectattachment-proposedsegmentchange.html#cfn-networkmanager-connectattachment-proposedsegmentchange-tags
+    """
+    AWS_OBJECT_TYPE = "AWS::NetworkManager::ConnectAttachment.ProposedSegmentChange"
+    
+    p_AttachmentPolicyRuleNumber: int = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(int)),
+        metadata={AttrMeta.PROPERTY_NAME: "AttachmentPolicyRuleNumber"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-connectattachment-proposedsegmentchange.html#cfn-networkmanager-connectattachment-proposedsegmentchange-attachmentpolicyrulenumber"""
+    p_SegmentName: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "SegmentName"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-connectattachment-proposedsegmentchange.html#cfn-networkmanager-connectattachment-proposedsegmentchange-segmentname"""
+    p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
+        default=None,
+        converter=Tag.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-connectattachment-proposedsegmentchange.html#cfn-networkmanager-connectattachment-proposedsegmentchange-tags"""
 
 @attr.s
 class PropCoreNetworkCoreNetworkEdge(Property):
@@ -184,6 +337,55 @@ class PropDeviceLocation(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-device-location.html#cfn-networkmanager-device-location-longitude"""
 
 @attr.s
+class PropConnectPeerConnectPeerConfiguration(Property):
+    """
+    AWS Object Type = "AWS::NetworkManager::ConnectPeer.ConnectPeerConfiguration"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-connectpeer-connectpeerconfiguration.html
+
+    Property Document:
+    
+    - ``p_BgpConfigurations``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-connectpeer-connectpeerconfiguration.html#cfn-networkmanager-connectpeer-connectpeerconfiguration-bgpconfigurations
+    - ``p_CoreNetworkAddress``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-connectpeer-connectpeerconfiguration.html#cfn-networkmanager-connectpeer-connectpeerconfiguration-corenetworkaddress
+    - ``p_InsideCidrBlocks``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-connectpeer-connectpeerconfiguration.html#cfn-networkmanager-connectpeer-connectpeerconfiguration-insidecidrblocks
+    - ``p_PeerAddress``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-connectpeer-connectpeerconfiguration.html#cfn-networkmanager-connectpeer-connectpeerconfiguration-peeraddress
+    - ``p_Protocol``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-connectpeer-connectpeerconfiguration.html#cfn-networkmanager-connectpeer-connectpeerconfiguration-protocol
+    """
+    AWS_OBJECT_TYPE = "AWS::NetworkManager::ConnectPeer.ConnectPeerConfiguration"
+    
+    p_BgpConfigurations: typing.List[typing.Union['PropConnectPeerConnectPeerBgpConfiguration', dict]] = attr.ib(
+        default=None,
+        converter=PropConnectPeerConnectPeerBgpConfiguration.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropConnectPeerConnectPeerBgpConfiguration), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "BgpConfigurations"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-connectpeer-connectpeerconfiguration.html#cfn-networkmanager-connectpeer-connectpeerconfiguration-bgpconfigurations"""
+    p_CoreNetworkAddress: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "CoreNetworkAddress"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-connectpeer-connectpeerconfiguration.html#cfn-networkmanager-connectpeer-connectpeerconfiguration-corenetworkaddress"""
+    p_InsideCidrBlocks: typing.List[TypeHint.intrinsic_str] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "InsideCidrBlocks"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-connectpeer-connectpeerconfiguration.html#cfn-networkmanager-connectpeer-connectpeerconfiguration-insidecidrblocks"""
+    p_PeerAddress: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "PeerAddress"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-connectpeer-connectpeerconfiguration.html#cfn-networkmanager-connectpeer-connectpeerconfiguration-peeraddress"""
+    p_Protocol: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "Protocol"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-connectpeer-connectpeerconfiguration.html#cfn-networkmanager-connectpeer-connectpeerconfiguration-protocol"""
+
+@attr.s
 class PropConnectAttachmentConnectAttachmentOptions(Property):
     """
     AWS Object Type = "AWS::NetworkManager::ConnectAttachment.ConnectAttachmentOptions"
@@ -202,6 +404,41 @@ class PropConnectAttachmentConnectAttachmentOptions(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Protocol"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-connectattachment-connectattachmentoptions.html#cfn-networkmanager-connectattachment-connectattachmentoptions-protocol"""
+
+@attr.s
+class PropSiteToSiteVpnAttachmentProposedSegmentChange(Property):
+    """
+    AWS Object Type = "AWS::NetworkManager::SiteToSiteVpnAttachment.ProposedSegmentChange"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-sitetositevpnattachment-proposedsegmentchange.html
+
+    Property Document:
+    
+    - ``p_AttachmentPolicyRuleNumber``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-sitetositevpnattachment-proposedsegmentchange.html#cfn-networkmanager-sitetositevpnattachment-proposedsegmentchange-attachmentpolicyrulenumber
+    - ``p_SegmentName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-sitetositevpnattachment-proposedsegmentchange.html#cfn-networkmanager-sitetositevpnattachment-proposedsegmentchange-segmentname
+    - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-sitetositevpnattachment-proposedsegmentchange.html#cfn-networkmanager-sitetositevpnattachment-proposedsegmentchange-tags
+    """
+    AWS_OBJECT_TYPE = "AWS::NetworkManager::SiteToSiteVpnAttachment.ProposedSegmentChange"
+    
+    p_AttachmentPolicyRuleNumber: int = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(int)),
+        metadata={AttrMeta.PROPERTY_NAME: "AttachmentPolicyRuleNumber"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-sitetositevpnattachment-proposedsegmentchange.html#cfn-networkmanager-sitetositevpnattachment-proposedsegmentchange-attachmentpolicyrulenumber"""
+    p_SegmentName: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "SegmentName"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-sitetositevpnattachment-proposedsegmentchange.html#cfn-networkmanager-sitetositevpnattachment-proposedsegmentchange-segmentname"""
+    p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
+        default=None,
+        converter=Tag.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkmanager-sitetositevpnattachment-proposedsegmentchange.html#cfn-networkmanager-sitetositevpnattachment-proposedsegmentchange-tags"""
 
 @attr.s
 class PropSiteLocation(Property):
@@ -350,6 +587,7 @@ class Link(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Tag',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -448,63 +686,63 @@ class ConnectAttachment(Resource):
 
     Property Document:
     
-    - ``p_CoreNetworkId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-connectattachment.html#cfn-networkmanager-connectattachment-corenetworkid
-    - ``p_EdgeLocation``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-connectattachment.html#cfn-networkmanager-connectattachment-edgelocation
-    - ``p_Options``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-connectattachment.html#cfn-networkmanager-connectattachment-options
-    - ``p_TransportAttachmentId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-connectattachment.html#cfn-networkmanager-connectattachment-transportattachmentid
+    - ``rp_CoreNetworkId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-connectattachment.html#cfn-networkmanager-connectattachment-corenetworkid
+    - ``rp_EdgeLocation``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-connectattachment.html#cfn-networkmanager-connectattachment-edgelocation
+    - ``rp_Options``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-connectattachment.html#cfn-networkmanager-connectattachment-options
+    - ``rp_TransportAttachmentId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-connectattachment.html#cfn-networkmanager-connectattachment-transportattachmentid
     - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-connectattachment.html#cfn-networkmanager-connectattachment-tags
     """
     AWS_OBJECT_TYPE = "AWS::NetworkManager::ConnectAttachment"
 
     
-    p_CoreNetworkId: TypeHint.intrinsic_str = attr.ib(
+    rp_CoreNetworkId: TypeHint.intrinsic_str = attr.ib(
         default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
         metadata={
             AttrMeta.PROPERTY_NAME: "CoreNetworkId",
             AttrMeta.DATA: {
                 "UpdateType": 'Immutable',
-                "Required": False,
+                "Required": True,
                 "PrimitiveType": 'String',
             }
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-connectattachment.html#cfn-networkmanager-connectattachment-corenetworkid"""
-    p_EdgeLocation: TypeHint.intrinsic_str = attr.ib(
+    rp_EdgeLocation: TypeHint.intrinsic_str = attr.ib(
         default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
         metadata={
             AttrMeta.PROPERTY_NAME: "EdgeLocation",
             AttrMeta.DATA: {
                 "UpdateType": 'Immutable',
-                "Required": False,
+                "Required": True,
                 "PrimitiveType": 'String',
             }
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-connectattachment.html#cfn-networkmanager-connectattachment-edgelocation"""
-    p_Options: typing.Union['PropConnectAttachmentConnectAttachmentOptions', dict] = attr.ib(
+    rp_Options: typing.Union['PropConnectAttachmentConnectAttachmentOptions', dict] = attr.ib(
         default=None,
         converter=PropConnectAttachmentConnectAttachmentOptions.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropConnectAttachmentConnectAttachmentOptions)),
+        validator=attr.validators.instance_of(PropConnectAttachmentConnectAttachmentOptions),
         metadata={
             AttrMeta.PROPERTY_NAME: "Options",
             AttrMeta.DATA: {
                 "UpdateType": 'Immutable',
-                "Required": False,
+                "Required": True,
                 "Type": 'ConnectAttachmentOptions',
             }
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-connectattachment.html#cfn-networkmanager-connectattachment-options"""
-    p_TransportAttachmentId: TypeHint.intrinsic_str = attr.ib(
+    rp_TransportAttachmentId: TypeHint.intrinsic_str = attr.ib(
         default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
         metadata={
             AttrMeta.PROPERTY_NAME: "TransportAttachmentId",
             AttrMeta.DATA: {
                 "UpdateType": 'Immutable',
-                "Required": False,
+                "Required": True,
                 "PrimitiveType": 'String',
             }
         },
@@ -521,6 +759,7 @@ class ConnectAttachment(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Tag',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -528,39 +767,19 @@ class ConnectAttachment(Resource):
 
     
     @property
-    def rv_CoreNetworkArn(self) -> GetAtt:
+    def rv_ProposedSegmentChange(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-connectattachment.html#aws-resource-networkmanager-connectattachment-return-values"""
-        return GetAtt(resource=self, attr_name="CoreNetworkArn")
+        return GetAtt(resource=self, attr_name="ProposedSegmentChange")
     
     @property
-    def rv_AttachmentId(self) -> GetAtt:
+    def rv_ProposedSegmentChangeTags(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-connectattachment.html#aws-resource-networkmanager-connectattachment-return-values"""
-        return GetAtt(resource=self, attr_name="AttachmentId")
-    
-    @property
-    def rv_OwnerAccountId(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-connectattachment.html#aws-resource-networkmanager-connectattachment-return-values"""
-        return GetAtt(resource=self, attr_name="OwnerAccountId")
+        return GetAtt(resource=self, attr_name="ProposedSegmentChange.Tags")
     
     @property
     def rv_AttachmentType(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-connectattachment.html#aws-resource-networkmanager-connectattachment-return-values"""
         return GetAtt(resource=self, attr_name="AttachmentType")
-    
-    @property
-    def rv_State(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-connectattachment.html#aws-resource-networkmanager-connectattachment-return-values"""
-        return GetAtt(resource=self, attr_name="State")
-    
-    @property
-    def rv_ResourceArn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-connectattachment.html#aws-resource-networkmanager-connectattachment-return-values"""
-        return GetAtt(resource=self, attr_name="ResourceArn")
-    
-    @property
-    def rv_AttachmentPolicyRuleNumber(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-connectattachment.html#aws-resource-networkmanager-connectattachment-return-values"""
-        return GetAtt(resource=self, attr_name="AttachmentPolicyRuleNumber")
     
     @property
     def rv_SegmentName(self) -> GetAtt:
@@ -576,6 +795,288 @@ class ConnectAttachment(Resource):
     def rv_UpdatedAt(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-connectattachment.html#aws-resource-networkmanager-connectattachment-return-values"""
         return GetAtt(resource=self, attr_name="UpdatedAt")
+    
+    @property
+    def rv_AttachmentId(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-connectattachment.html#aws-resource-networkmanager-connectattachment-return-values"""
+        return GetAtt(resource=self, attr_name="AttachmentId")
+    
+    @property
+    def rv_CoreNetworkArn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-connectattachment.html#aws-resource-networkmanager-connectattachment-return-values"""
+        return GetAtt(resource=self, attr_name="CoreNetworkArn")
+    
+    @property
+    def rv_ResourceArn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-connectattachment.html#aws-resource-networkmanager-connectattachment-return-values"""
+        return GetAtt(resource=self, attr_name="ResourceArn")
+    
+    @property
+    def rv_ProposedSegmentChangeSegmentName(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-connectattachment.html#aws-resource-networkmanager-connectattachment-return-values"""
+        return GetAtt(resource=self, attr_name="ProposedSegmentChange.SegmentName")
+    
+    @property
+    def rv_State(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-connectattachment.html#aws-resource-networkmanager-connectattachment-return-values"""
+        return GetAtt(resource=self, attr_name="State")
+    
+    @property
+    def rv_ProposedSegmentChangeAttachmentPolicyRuleNumber(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-connectattachment.html#aws-resource-networkmanager-connectattachment-return-values"""
+        return GetAtt(resource=self, attr_name="ProposedSegmentChange.AttachmentPolicyRuleNumber")
+    
+    @property
+    def rv_OwnerAccountId(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-connectattachment.html#aws-resource-networkmanager-connectattachment-return-values"""
+        return GetAtt(resource=self, attr_name="OwnerAccountId")
+    
+    @property
+    def rv_AttachmentPolicyRuleNumber(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-connectattachment.html#aws-resource-networkmanager-connectattachment-return-values"""
+        return GetAtt(resource=self, attr_name="AttachmentPolicyRuleNumber")
+    
+
+@attr.s
+class TransitGatewayRouteTableAttachment(Resource):
+    """
+    AWS Object Type = "AWS::NetworkManager::TransitGatewayRouteTableAttachment"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-transitgatewayroutetableattachment.html
+
+    Property Document:
+    
+    - ``rp_PeeringId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-transitgatewayroutetableattachment.html#cfn-networkmanager-transitgatewayroutetableattachment-peeringid
+    - ``rp_TransitGatewayRouteTableArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-transitgatewayroutetableattachment.html#cfn-networkmanager-transitgatewayroutetableattachment-transitgatewayroutetablearn
+    - ``p_ProposedSegmentChange``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-transitgatewayroutetableattachment.html#cfn-networkmanager-transitgatewayroutetableattachment-proposedsegmentchange
+    - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-transitgatewayroutetableattachment.html#cfn-networkmanager-transitgatewayroutetableattachment-tags
+    """
+    AWS_OBJECT_TYPE = "AWS::NetworkManager::TransitGatewayRouteTableAttachment"
+
+    
+    rp_PeeringId: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "PeeringId",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-transitgatewayroutetableattachment.html#cfn-networkmanager-transitgatewayroutetableattachment-peeringid"""
+    rp_TransitGatewayRouteTableArn: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "TransitGatewayRouteTableArn",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-transitgatewayroutetableattachment.html#cfn-networkmanager-transitgatewayroutetableattachment-transitgatewayroutetablearn"""
+    p_ProposedSegmentChange: typing.Union['PropTransitGatewayRouteTableAttachmentProposedSegmentChange', dict] = attr.ib(
+        default=None,
+        converter=PropTransitGatewayRouteTableAttachmentProposedSegmentChange.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropTransitGatewayRouteTableAttachmentProposedSegmentChange)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ProposedSegmentChange",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'ProposedSegmentChange',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-transitgatewayroutetableattachment.html#cfn-networkmanager-transitgatewayroutetableattachment-proposedsegmentchange"""
+    p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
+        default=None,
+        converter=Tag.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'List',
+                "ItemType": 'Tag',
+                "DuplicatesAllowed": False,
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-transitgatewayroutetableattachment.html#cfn-networkmanager-transitgatewayroutetableattachment-tags"""
+
+    
+    @property
+    def rv_ResourceArn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-transitgatewayroutetableattachment.html#aws-resource-networkmanager-transitgatewayroutetableattachment-return-values"""
+        return GetAtt(resource=self, attr_name="ResourceArn")
+    
+    @property
+    def rv_CoreNetworkId(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-transitgatewayroutetableattachment.html#aws-resource-networkmanager-transitgatewayroutetableattachment-return-values"""
+        return GetAtt(resource=self, attr_name="CoreNetworkId")
+    
+    @property
+    def rv_AttachmentType(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-transitgatewayroutetableattachment.html#aws-resource-networkmanager-transitgatewayroutetableattachment-return-values"""
+        return GetAtt(resource=self, attr_name="AttachmentType")
+    
+    @property
+    def rv_SegmentName(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-transitgatewayroutetableattachment.html#aws-resource-networkmanager-transitgatewayroutetableattachment-return-values"""
+        return GetAtt(resource=self, attr_name="SegmentName")
+    
+    @property
+    def rv_State(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-transitgatewayroutetableattachment.html#aws-resource-networkmanager-transitgatewayroutetableattachment-return-values"""
+        return GetAtt(resource=self, attr_name="State")
+    
+    @property
+    def rv_CreatedAt(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-transitgatewayroutetableattachment.html#aws-resource-networkmanager-transitgatewayroutetableattachment-return-values"""
+        return GetAtt(resource=self, attr_name="CreatedAt")
+    
+    @property
+    def rv_OwnerAccountId(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-transitgatewayroutetableattachment.html#aws-resource-networkmanager-transitgatewayroutetableattachment-return-values"""
+        return GetAtt(resource=self, attr_name="OwnerAccountId")
+    
+    @property
+    def rv_UpdatedAt(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-transitgatewayroutetableattachment.html#aws-resource-networkmanager-transitgatewayroutetableattachment-return-values"""
+        return GetAtt(resource=self, attr_name="UpdatedAt")
+    
+    @property
+    def rv_AttachmentId(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-transitgatewayroutetableattachment.html#aws-resource-networkmanager-transitgatewayroutetableattachment-return-values"""
+        return GetAtt(resource=self, attr_name="AttachmentId")
+    
+    @property
+    def rv_CoreNetworkArn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-transitgatewayroutetableattachment.html#aws-resource-networkmanager-transitgatewayroutetableattachment-return-values"""
+        return GetAtt(resource=self, attr_name="CoreNetworkArn")
+    
+    @property
+    def rv_EdgeLocation(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-transitgatewayroutetableattachment.html#aws-resource-networkmanager-transitgatewayroutetableattachment-return-values"""
+        return GetAtt(resource=self, attr_name="EdgeLocation")
+    
+    @property
+    def rv_AttachmentPolicyRuleNumber(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-transitgatewayroutetableattachment.html#aws-resource-networkmanager-transitgatewayroutetableattachment-return-values"""
+        return GetAtt(resource=self, attr_name="AttachmentPolicyRuleNumber")
+    
+
+@attr.s
+class TransitGatewayPeering(Resource):
+    """
+    AWS Object Type = "AWS::NetworkManager::TransitGatewayPeering"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-transitgatewaypeering.html
+
+    Property Document:
+    
+    - ``rp_CoreNetworkId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-transitgatewaypeering.html#cfn-networkmanager-transitgatewaypeering-corenetworkid
+    - ``rp_TransitGatewayArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-transitgatewaypeering.html#cfn-networkmanager-transitgatewaypeering-transitgatewayarn
+    - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-transitgatewaypeering.html#cfn-networkmanager-transitgatewaypeering-tags
+    """
+    AWS_OBJECT_TYPE = "AWS::NetworkManager::TransitGatewayPeering"
+
+    
+    rp_CoreNetworkId: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "CoreNetworkId",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-transitgatewaypeering.html#cfn-networkmanager-transitgatewaypeering-corenetworkid"""
+    rp_TransitGatewayArn: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "TransitGatewayArn",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-transitgatewaypeering.html#cfn-networkmanager-transitgatewaypeering-transitgatewayarn"""
+    p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
+        default=None,
+        converter=Tag.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'List',
+                "ItemType": 'Tag',
+                "DuplicatesAllowed": False,
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-transitgatewaypeering.html#cfn-networkmanager-transitgatewaypeering-tags"""
+
+    
+    @property
+    def rv_ResourceArn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-transitgatewaypeering.html#aws-resource-networkmanager-transitgatewaypeering-return-values"""
+        return GetAtt(resource=self, attr_name="ResourceArn")
+    
+    @property
+    def rv_PeeringType(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-transitgatewaypeering.html#aws-resource-networkmanager-transitgatewaypeering-return-values"""
+        return GetAtt(resource=self, attr_name="PeeringType")
+    
+    @property
+    def rv_State(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-transitgatewaypeering.html#aws-resource-networkmanager-transitgatewaypeering-return-values"""
+        return GetAtt(resource=self, attr_name="State")
+    
+    @property
+    def rv_CreatedAt(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-transitgatewaypeering.html#aws-resource-networkmanager-transitgatewaypeering-return-values"""
+        return GetAtt(resource=self, attr_name="CreatedAt")
+    
+    @property
+    def rv_PeeringId(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-transitgatewaypeering.html#aws-resource-networkmanager-transitgatewaypeering-return-values"""
+        return GetAtt(resource=self, attr_name="PeeringId")
+    
+    @property
+    def rv_TransitGatewayPeeringAttachmentId(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-transitgatewaypeering.html#aws-resource-networkmanager-transitgatewaypeering-return-values"""
+        return GetAtt(resource=self, attr_name="TransitGatewayPeeringAttachmentId")
+    
+    @property
+    def rv_OwnerAccountId(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-transitgatewaypeering.html#aws-resource-networkmanager-transitgatewaypeering-return-values"""
+        return GetAtt(resource=self, attr_name="OwnerAccountId")
+    
+    @property
+    def rv_CoreNetworkArn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-transitgatewaypeering.html#aws-resource-networkmanager-transitgatewaypeering-return-values"""
+        return GetAtt(resource=self, attr_name="CoreNetworkArn")
+    
+    @property
+    def rv_EdgeLocation(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-transitgatewaypeering.html#aws-resource-networkmanager-transitgatewaypeering-return-values"""
+        return GetAtt(resource=self, attr_name="EdgeLocation")
     
 
 @attr.s
@@ -645,16 +1146,57 @@ class ConnectPeer(Resource):
 
     Property Document:
     
+    - ``rp_ConnectAttachmentId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-connectpeer.html#cfn-networkmanager-connectpeer-connectattachmentid
+    - ``rp_InsideCidrBlocks``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-connectpeer.html#cfn-networkmanager-connectpeer-insidecidrblocks
+    - ``rp_PeerAddress``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-connectpeer.html#cfn-networkmanager-connectpeer-peeraddress
     - ``p_BgpOptions``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-connectpeer.html#cfn-networkmanager-connectpeer-bgpoptions
-    - ``p_ConnectAttachmentId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-connectpeer.html#cfn-networkmanager-connectpeer-connectattachmentid
     - ``p_CoreNetworkAddress``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-connectpeer.html#cfn-networkmanager-connectpeer-corenetworkaddress
-    - ``p_InsideCidrBlocks``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-connectpeer.html#cfn-networkmanager-connectpeer-insidecidrblocks
-    - ``p_PeerAddress``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-connectpeer.html#cfn-networkmanager-connectpeer-peeraddress
     - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-connectpeer.html#cfn-networkmanager-connectpeer-tags
     """
     AWS_OBJECT_TYPE = "AWS::NetworkManager::ConnectPeer"
 
     
+    rp_ConnectAttachmentId: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ConnectAttachmentId",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-connectpeer.html#cfn-networkmanager-connectpeer-connectattachmentid"""
+    rp_InsideCidrBlocks: typing.List[TypeHint.intrinsic_str] = attr.ib(
+        default=None,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "InsideCidrBlocks",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "Type": 'List',
+                "PrimitiveItemType": 'String',
+                "DuplicatesAllowed": True,
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-connectpeer.html#cfn-networkmanager-connectpeer-insidecidrblocks"""
+    rp_PeerAddress: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "PeerAddress",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-connectpeer.html#cfn-networkmanager-connectpeer-peeraddress"""
     p_BgpOptions: typing.Union['PropConnectPeerBgpOptions', dict] = attr.ib(
         default=None,
         converter=PropConnectPeerBgpOptions.from_dict,
@@ -669,19 +1211,6 @@ class ConnectPeer(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-connectpeer.html#cfn-networkmanager-connectpeer-bgpoptions"""
-    p_ConnectAttachmentId: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "ConnectAttachmentId",
-            AttrMeta.DATA: {
-                "UpdateType": 'Immutable',
-                "Required": False,
-                "PrimitiveType": 'String',
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-connectpeer.html#cfn-networkmanager-connectpeer-connectattachmentid"""
     p_CoreNetworkAddress: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
@@ -695,33 +1224,6 @@ class ConnectPeer(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-connectpeer.html#cfn-networkmanager-connectpeer-corenetworkaddress"""
-    p_InsideCidrBlocks: typing.List[TypeHint.intrinsic_str] = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "InsideCidrBlocks",
-            AttrMeta.DATA: {
-                "UpdateType": 'Immutable',
-                "Required": False,
-                "Type": 'List',
-                "PrimitiveItemType": 'String',
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-connectpeer.html#cfn-networkmanager-connectpeer-insidecidrblocks"""
-    p_PeerAddress: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "PeerAddress",
-            AttrMeta.DATA: {
-                "UpdateType": 'Immutable',
-                "Required": False,
-                "PrimitiveType": 'String',
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-connectpeer.html#cfn-networkmanager-connectpeer-peeraddress"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
@@ -733,6 +1235,7 @@ class ConnectPeer(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Tag',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -740,19 +1243,24 @@ class ConnectPeer(Resource):
 
     
     @property
+    def rv_ConfigurationBgpConfigurations(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-connectpeer.html#aws-resource-networkmanager-connectpeer-return-values"""
+        return GetAtt(resource=self, attr_name="Configuration.BgpConfigurations")
+    
+    @property
     def rv_CoreNetworkId(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-connectpeer.html#aws-resource-networkmanager-connectpeer-return-values"""
         return GetAtt(resource=self, attr_name="CoreNetworkId")
     
     @property
-    def rv_ConnectPeerId(self) -> GetAtt:
+    def rv_ConfigurationInsideCidrBlocks(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-connectpeer.html#aws-resource-networkmanager-connectpeer-return-values"""
-        return GetAtt(resource=self, attr_name="ConnectPeerId")
+        return GetAtt(resource=self, attr_name="Configuration.InsideCidrBlocks")
     
     @property
-    def rv_EdgeLocation(self) -> GetAtt:
+    def rv_Configuration(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-connectpeer.html#aws-resource-networkmanager-connectpeer-return-values"""
-        return GetAtt(resource=self, attr_name="EdgeLocation")
+        return GetAtt(resource=self, attr_name="Configuration")
     
     @property
     def rv_State(self) -> GetAtt:
@@ -764,6 +1272,31 @@ class ConnectPeer(Resource):
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-connectpeer.html#aws-resource-networkmanager-connectpeer-return-values"""
         return GetAtt(resource=self, attr_name="CreatedAt")
     
+    @property
+    def rv_ConnectPeerId(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-connectpeer.html#aws-resource-networkmanager-connectpeer-return-values"""
+        return GetAtt(resource=self, attr_name="ConnectPeerId")
+    
+    @property
+    def rv_ConfigurationCoreNetworkAddress(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-connectpeer.html#aws-resource-networkmanager-connectpeer-return-values"""
+        return GetAtt(resource=self, attr_name="Configuration.CoreNetworkAddress")
+    
+    @property
+    def rv_ConfigurationProtocol(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-connectpeer.html#aws-resource-networkmanager-connectpeer-return-values"""
+        return GetAtt(resource=self, attr_name="Configuration.Protocol")
+    
+    @property
+    def rv_ConfigurationPeerAddress(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-connectpeer.html#aws-resource-networkmanager-connectpeer-return-values"""
+        return GetAtt(resource=self, attr_name="Configuration.PeerAddress")
+    
+    @property
+    def rv_EdgeLocation(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-connectpeer.html#aws-resource-networkmanager-connectpeer-return-values"""
+        return GetAtt(resource=self, attr_name="EdgeLocation")
+    
 
 @attr.s
 class SiteToSiteVpnAttachment(Resource):
@@ -774,34 +1307,34 @@ class SiteToSiteVpnAttachment(Resource):
 
     Property Document:
     
-    - ``p_CoreNetworkId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-sitetositevpnattachment.html#cfn-networkmanager-sitetositevpnattachment-corenetworkid
-    - ``p_VpnConnectionArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-sitetositevpnattachment.html#cfn-networkmanager-sitetositevpnattachment-vpnconnectionarn
+    - ``rp_CoreNetworkId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-sitetositevpnattachment.html#cfn-networkmanager-sitetositevpnattachment-corenetworkid
+    - ``rp_VpnConnectionArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-sitetositevpnattachment.html#cfn-networkmanager-sitetositevpnattachment-vpnconnectionarn
     - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-sitetositevpnattachment.html#cfn-networkmanager-sitetositevpnattachment-tags
     """
     AWS_OBJECT_TYPE = "AWS::NetworkManager::SiteToSiteVpnAttachment"
 
     
-    p_CoreNetworkId: TypeHint.intrinsic_str = attr.ib(
+    rp_CoreNetworkId: TypeHint.intrinsic_str = attr.ib(
         default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
         metadata={
             AttrMeta.PROPERTY_NAME: "CoreNetworkId",
             AttrMeta.DATA: {
                 "UpdateType": 'Immutable',
-                "Required": False,
+                "Required": True,
                 "PrimitiveType": 'String',
             }
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-sitetositevpnattachment.html#cfn-networkmanager-sitetositevpnattachment-corenetworkid"""
-    p_VpnConnectionArn: TypeHint.intrinsic_str = attr.ib(
+    rp_VpnConnectionArn: TypeHint.intrinsic_str = attr.ib(
         default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
         metadata={
             AttrMeta.PROPERTY_NAME: "VpnConnectionArn",
             AttrMeta.DATA: {
                 "UpdateType": 'Immutable',
-                "Required": False,
+                "Required": True,
                 "PrimitiveType": 'String',
             }
         },
@@ -818,6 +1351,7 @@ class SiteToSiteVpnAttachment(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Tag',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -825,44 +1359,19 @@ class SiteToSiteVpnAttachment(Resource):
 
     
     @property
-    def rv_CoreNetworkArn(self) -> GetAtt:
+    def rv_ProposedSegmentChange(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-sitetositevpnattachment.html#aws-resource-networkmanager-sitetositevpnattachment-return-values"""
-        return GetAtt(resource=self, attr_name="CoreNetworkArn")
+        return GetAtt(resource=self, attr_name="ProposedSegmentChange")
     
     @property
-    def rv_AttachmentId(self) -> GetAtt:
+    def rv_ProposedSegmentChangeTags(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-sitetositevpnattachment.html#aws-resource-networkmanager-sitetositevpnattachment-return-values"""
-        return GetAtt(resource=self, attr_name="AttachmentId")
-    
-    @property
-    def rv_OwnerAccountId(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-sitetositevpnattachment.html#aws-resource-networkmanager-sitetositevpnattachment-return-values"""
-        return GetAtt(resource=self, attr_name="OwnerAccountId")
+        return GetAtt(resource=self, attr_name="ProposedSegmentChange.Tags")
     
     @property
     def rv_AttachmentType(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-sitetositevpnattachment.html#aws-resource-networkmanager-sitetositevpnattachment-return-values"""
         return GetAtt(resource=self, attr_name="AttachmentType")
-    
-    @property
-    def rv_State(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-sitetositevpnattachment.html#aws-resource-networkmanager-sitetositevpnattachment-return-values"""
-        return GetAtt(resource=self, attr_name="State")
-    
-    @property
-    def rv_EdgeLocation(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-sitetositevpnattachment.html#aws-resource-networkmanager-sitetositevpnattachment-return-values"""
-        return GetAtt(resource=self, attr_name="EdgeLocation")
-    
-    @property
-    def rv_ResourceArn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-sitetositevpnattachment.html#aws-resource-networkmanager-sitetositevpnattachment-return-values"""
-        return GetAtt(resource=self, attr_name="ResourceArn")
-    
-    @property
-    def rv_AttachmentPolicyRuleNumber(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-sitetositevpnattachment.html#aws-resource-networkmanager-sitetositevpnattachment-return-values"""
-        return GetAtt(resource=self, attr_name="AttachmentPolicyRuleNumber")
     
     @property
     def rv_SegmentName(self) -> GetAtt:
@@ -878,6 +1387,51 @@ class SiteToSiteVpnAttachment(Resource):
     def rv_UpdatedAt(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-sitetositevpnattachment.html#aws-resource-networkmanager-sitetositevpnattachment-return-values"""
         return GetAtt(resource=self, attr_name="UpdatedAt")
+    
+    @property
+    def rv_AttachmentId(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-sitetositevpnattachment.html#aws-resource-networkmanager-sitetositevpnattachment-return-values"""
+        return GetAtt(resource=self, attr_name="AttachmentId")
+    
+    @property
+    def rv_CoreNetworkArn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-sitetositevpnattachment.html#aws-resource-networkmanager-sitetositevpnattachment-return-values"""
+        return GetAtt(resource=self, attr_name="CoreNetworkArn")
+    
+    @property
+    def rv_ResourceArn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-sitetositevpnattachment.html#aws-resource-networkmanager-sitetositevpnattachment-return-values"""
+        return GetAtt(resource=self, attr_name="ResourceArn")
+    
+    @property
+    def rv_ProposedSegmentChangeSegmentName(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-sitetositevpnattachment.html#aws-resource-networkmanager-sitetositevpnattachment-return-values"""
+        return GetAtt(resource=self, attr_name="ProposedSegmentChange.SegmentName")
+    
+    @property
+    def rv_State(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-sitetositevpnattachment.html#aws-resource-networkmanager-sitetositevpnattachment-return-values"""
+        return GetAtt(resource=self, attr_name="State")
+    
+    @property
+    def rv_ProposedSegmentChangeAttachmentPolicyRuleNumber(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-sitetositevpnattachment.html#aws-resource-networkmanager-sitetositevpnattachment-return-values"""
+        return GetAtt(resource=self, attr_name="ProposedSegmentChange.AttachmentPolicyRuleNumber")
+    
+    @property
+    def rv_OwnerAccountId(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-sitetositevpnattachment.html#aws-resource-networkmanager-sitetositevpnattachment-return-values"""
+        return GetAtt(resource=self, attr_name="OwnerAccountId")
+    
+    @property
+    def rv_EdgeLocation(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-sitetositevpnattachment.html#aws-resource-networkmanager-sitetositevpnattachment-return-values"""
+        return GetAtt(resource=self, attr_name="EdgeLocation")
+    
+    @property
+    def rv_AttachmentPolicyRuleNumber(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-sitetositevpnattachment.html#aws-resource-networkmanager-sitetositevpnattachment-return-values"""
+        return GetAtt(resource=self, attr_name="AttachmentPolicyRuleNumber")
     
 
 @attr.s
@@ -1018,6 +1572,7 @@ class Device(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Tag',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -1044,28 +1599,56 @@ class VpcAttachment(Resource):
 
     Property Document:
     
-    - ``p_CoreNetworkId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-vpcattachment.html#cfn-networkmanager-vpcattachment-corenetworkid
+    - ``rp_CoreNetworkId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-vpcattachment.html#cfn-networkmanager-vpcattachment-corenetworkid
+    - ``rp_SubnetArns``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-vpcattachment.html#cfn-networkmanager-vpcattachment-subnetarns
+    - ``rp_VpcArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-vpcattachment.html#cfn-networkmanager-vpcattachment-vpcarn
     - ``p_Options``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-vpcattachment.html#cfn-networkmanager-vpcattachment-options
-    - ``p_SubnetArns``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-vpcattachment.html#cfn-networkmanager-vpcattachment-subnetarns
-    - ``p_VpcArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-vpcattachment.html#cfn-networkmanager-vpcattachment-vpcarn
     - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-vpcattachment.html#cfn-networkmanager-vpcattachment-tags
     """
     AWS_OBJECT_TYPE = "AWS::NetworkManager::VpcAttachment"
 
     
-    p_CoreNetworkId: TypeHint.intrinsic_str = attr.ib(
+    rp_CoreNetworkId: TypeHint.intrinsic_str = attr.ib(
         default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
         metadata={
             AttrMeta.PROPERTY_NAME: "CoreNetworkId",
             AttrMeta.DATA: {
                 "UpdateType": 'Immutable',
-                "Required": False,
+                "Required": True,
                 "PrimitiveType": 'String',
             }
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-vpcattachment.html#cfn-networkmanager-vpcattachment-corenetworkid"""
+    rp_SubnetArns: typing.List[TypeHint.intrinsic_str] = attr.ib(
+        default=None,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "SubnetArns",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": True,
+                "Type": 'List',
+                "PrimitiveItemType": 'String',
+                "DuplicatesAllowed": True,
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-vpcattachment.html#cfn-networkmanager-vpcattachment-subnetarns"""
+    rp_VpcArn: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "VpcArn",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-vpcattachment.html#cfn-networkmanager-vpcattachment-vpcarn"""
     p_Options: typing.Union['PropVpcAttachmentVpcOptions', dict] = attr.ib(
         default=None,
         converter=PropVpcAttachmentVpcOptions.from_dict,
@@ -1080,33 +1663,6 @@ class VpcAttachment(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-vpcattachment.html#cfn-networkmanager-vpcattachment-options"""
-    p_SubnetArns: typing.List[TypeHint.intrinsic_str] = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "SubnetArns",
-            AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
-                "Required": False,
-                "Type": 'List',
-                "PrimitiveItemType": 'String',
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-vpcattachment.html#cfn-networkmanager-vpcattachment-subnetarns"""
-    p_VpcArn: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "VpcArn",
-            AttrMeta.DATA: {
-                "UpdateType": 'Immutable',
-                "Required": False,
-                "PrimitiveType": 'String',
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-vpcattachment.html#cfn-networkmanager-vpcattachment-vpcarn"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
@@ -1118,6 +1674,7 @@ class VpcAttachment(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Tag',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -1125,44 +1682,19 @@ class VpcAttachment(Resource):
 
     
     @property
-    def rv_CoreNetworkArn(self) -> GetAtt:
+    def rv_ProposedSegmentChange(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-vpcattachment.html#aws-resource-networkmanager-vpcattachment-return-values"""
-        return GetAtt(resource=self, attr_name="CoreNetworkArn")
+        return GetAtt(resource=self, attr_name="ProposedSegmentChange")
     
     @property
-    def rv_AttachmentId(self) -> GetAtt:
+    def rv_ProposedSegmentChangeTags(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-vpcattachment.html#aws-resource-networkmanager-vpcattachment-return-values"""
-        return GetAtt(resource=self, attr_name="AttachmentId")
-    
-    @property
-    def rv_OwnerAccountId(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-vpcattachment.html#aws-resource-networkmanager-vpcattachment-return-values"""
-        return GetAtt(resource=self, attr_name="OwnerAccountId")
+        return GetAtt(resource=self, attr_name="ProposedSegmentChange.Tags")
     
     @property
     def rv_AttachmentType(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-vpcattachment.html#aws-resource-networkmanager-vpcattachment-return-values"""
         return GetAtt(resource=self, attr_name="AttachmentType")
-    
-    @property
-    def rv_State(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-vpcattachment.html#aws-resource-networkmanager-vpcattachment-return-values"""
-        return GetAtt(resource=self, attr_name="State")
-    
-    @property
-    def rv_EdgeLocation(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-vpcattachment.html#aws-resource-networkmanager-vpcattachment-return-values"""
-        return GetAtt(resource=self, attr_name="EdgeLocation")
-    
-    @property
-    def rv_ResourceArn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-vpcattachment.html#aws-resource-networkmanager-vpcattachment-return-values"""
-        return GetAtt(resource=self, attr_name="ResourceArn")
-    
-    @property
-    def rv_AttachmentPolicyRuleNumber(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-vpcattachment.html#aws-resource-networkmanager-vpcattachment-return-values"""
-        return GetAtt(resource=self, attr_name="AttachmentPolicyRuleNumber")
     
     @property
     def rv_SegmentName(self) -> GetAtt:
@@ -1178,6 +1710,51 @@ class VpcAttachment(Resource):
     def rv_UpdatedAt(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-vpcattachment.html#aws-resource-networkmanager-vpcattachment-return-values"""
         return GetAtt(resource=self, attr_name="UpdatedAt")
+    
+    @property
+    def rv_AttachmentId(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-vpcattachment.html#aws-resource-networkmanager-vpcattachment-return-values"""
+        return GetAtt(resource=self, attr_name="AttachmentId")
+    
+    @property
+    def rv_CoreNetworkArn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-vpcattachment.html#aws-resource-networkmanager-vpcattachment-return-values"""
+        return GetAtt(resource=self, attr_name="CoreNetworkArn")
+    
+    @property
+    def rv_ResourceArn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-vpcattachment.html#aws-resource-networkmanager-vpcattachment-return-values"""
+        return GetAtt(resource=self, attr_name="ResourceArn")
+    
+    @property
+    def rv_ProposedSegmentChangeSegmentName(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-vpcattachment.html#aws-resource-networkmanager-vpcattachment-return-values"""
+        return GetAtt(resource=self, attr_name="ProposedSegmentChange.SegmentName")
+    
+    @property
+    def rv_State(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-vpcattachment.html#aws-resource-networkmanager-vpcattachment-return-values"""
+        return GetAtt(resource=self, attr_name="State")
+    
+    @property
+    def rv_ProposedSegmentChangeAttachmentPolicyRuleNumber(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-vpcattachment.html#aws-resource-networkmanager-vpcattachment-return-values"""
+        return GetAtt(resource=self, attr_name="ProposedSegmentChange.AttachmentPolicyRuleNumber")
+    
+    @property
+    def rv_OwnerAccountId(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-vpcattachment.html#aws-resource-networkmanager-vpcattachment-return-values"""
+        return GetAtt(resource=self, attr_name="OwnerAccountId")
+    
+    @property
+    def rv_EdgeLocation(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-vpcattachment.html#aws-resource-networkmanager-vpcattachment-return-values"""
+        return GetAtt(resource=self, attr_name="EdgeLocation")
+    
+    @property
+    def rv_AttachmentPolicyRuleNumber(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-vpcattachment.html#aws-resource-networkmanager-vpcattachment-return-values"""
+        return GetAtt(resource=self, attr_name="AttachmentPolicyRuleNumber")
     
 
 @attr.s
@@ -1247,6 +1824,7 @@ class CoreNetwork(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Tag',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -1259,9 +1837,9 @@ class CoreNetwork(Resource):
         return GetAtt(resource=self, attr_name="CoreNetworkId")
     
     @property
-    def rv_CoreNetworkArn(self) -> GetAtt:
+    def rv_State(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-corenetwork.html#aws-resource-networkmanager-corenetwork-return-values"""
-        return GetAtt(resource=self, attr_name="CoreNetworkArn")
+        return GetAtt(resource=self, attr_name="State")
     
     @property
     def rv_CreatedAt(self) -> GetAtt:
@@ -1269,14 +1847,14 @@ class CoreNetwork(Resource):
         return GetAtt(resource=self, attr_name="CreatedAt")
     
     @property
-    def rv_State(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-corenetwork.html#aws-resource-networkmanager-corenetwork-return-values"""
-        return GetAtt(resource=self, attr_name="State")
-    
-    @property
     def rv_Segments(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-corenetwork.html#aws-resource-networkmanager-corenetwork-return-values"""
         return GetAtt(resource=self, attr_name="Segments")
+    
+    @property
+    def rv_OwnerAccount(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-corenetwork.html#aws-resource-networkmanager-corenetwork-return-values"""
+        return GetAtt(resource=self, attr_name="OwnerAccount")
     
     @property
     def rv_Edges(self) -> GetAtt:
@@ -1284,9 +1862,9 @@ class CoreNetwork(Resource):
         return GetAtt(resource=self, attr_name="Edges")
     
     @property
-    def rv_OwnerAccount(self) -> GetAtt:
+    def rv_CoreNetworkArn(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-corenetwork.html#aws-resource-networkmanager-corenetwork-return-values"""
-        return GetAtt(resource=self, attr_name="OwnerAccount")
+        return GetAtt(resource=self, attr_name="CoreNetworkArn")
     
 
 @attr.s
@@ -1328,6 +1906,7 @@ class GlobalNetwork(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Tag',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -1335,14 +1914,14 @@ class GlobalNetwork(Resource):
 
     
     @property
-    def rv_Arn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-globalnetwork.html#aws-resource-networkmanager-globalnetwork-return-values"""
-        return GetAtt(resource=self, attr_name="Arn")
-    
-    @property
     def rv_Id(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-globalnetwork.html#aws-resource-networkmanager-globalnetwork-return-values"""
         return GetAtt(resource=self, attr_name="Id")
+    
+    @property
+    def rv_Arn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-globalnetwork.html#aws-resource-networkmanager-globalnetwork-return-values"""
+        return GetAtt(resource=self, attr_name="Arn")
     
 
 @attr.s
@@ -1457,6 +2036,7 @@ class Site(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Tag',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -1464,12 +2044,12 @@ class Site(Resource):
 
     
     @property
-    def rv_SiteArn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-site.html#aws-resource-networkmanager-site-return-values"""
-        return GetAtt(resource=self, attr_name="SiteArn")
-    
-    @property
     def rv_SiteId(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-site.html#aws-resource-networkmanager-site-return-values"""
         return GetAtt(resource=self, attr_name="SiteId")
+    
+    @property
+    def rv_SiteArn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkmanager-site.html#aws-resource-networkmanager-site-return-values"""
+        return GetAtt(resource=self, attr_name="SiteArn")
     

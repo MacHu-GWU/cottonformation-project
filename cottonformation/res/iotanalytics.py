@@ -103,19 +103,6 @@ class PropDatasetOutputFileUriValue(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-outputfileurivalue.html#cfn-iotanalytics-dataset-outputfileurivalue-filename"""
 
 @attr.s
-class PropDatastoreServiceManagedS3(Property):
-    """
-    AWS Object Type = "AWS::IoTAnalytics::Datastore.ServiceManagedS3"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-servicemanageds3.html
-
-    Property Document:
-    
-    """
-    AWS_OBJECT_TYPE = "AWS::IoTAnalytics::Datastore.ServiceManagedS3"
-    
-
-@attr.s
 class PropDatastoreRetentionPeriod(Property):
     """
     AWS Object Type = "AWS::IoTAnalytics::Datastore.RetentionPeriod"
@@ -401,6 +388,34 @@ class PropPipelineFilter(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Next"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-filter.html#cfn-iotanalytics-pipeline-filter-next"""
+
+@attr.s
+class PropChannelChannelStorage(Property):
+    """
+    AWS Object Type = "AWS::IoTAnalytics::Channel.ChannelStorage"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-channel-channelstorage.html
+
+    Property Document:
+    
+    - ``p_CustomerManagedS3``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-channel-channelstorage.html#cfn-iotanalytics-channel-channelstorage-customermanageds3
+    - ``p_ServiceManagedS3``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-channel-channelstorage.html#cfn-iotanalytics-channel-channelstorage-servicemanageds3
+    """
+    AWS_OBJECT_TYPE = "AWS::IoTAnalytics::Channel.ChannelStorage"
+    
+    p_CustomerManagedS3: typing.Union['PropChannelCustomerManagedS3', dict] = attr.ib(
+        default=None,
+        converter=PropChannelCustomerManagedS3.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropChannelCustomerManagedS3)),
+        metadata={AttrMeta.PROPERTY_NAME: "CustomerManagedS3"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-channel-channelstorage.html#cfn-iotanalytics-channel-channelstorage-customermanageds3"""
+    p_ServiceManagedS3: dict = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "ServiceManagedS3"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-channel-channelstorage.html#cfn-iotanalytics-channel-channelstorage-servicemanageds3"""
 
 @attr.s
 class PropPipelineMath(Property):
@@ -771,19 +786,6 @@ class PropDatasetS3DestinationConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-dataset-s3destinationconfiguration.html#cfn-iotanalytics-dataset-s3destinationconfiguration-glueconfiguration"""
 
 @attr.s
-class PropChannelServiceManagedS3(Property):
-    """
-    AWS Object Type = "AWS::IoTAnalytics::Channel.ServiceManagedS3"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-channel-servicemanageds3.html
-
-    Property Document:
-    
-    """
-    AWS_OBJECT_TYPE = "AWS::IoTAnalytics::Channel.ServiceManagedS3"
-    
-
-@attr.s
 class PropDatastoreSchemaDefinition(Property):
     """
     AWS Object Type = "AWS::IoTAnalytics::Datastore.SchemaDefinition"
@@ -1064,19 +1066,6 @@ class PropPipelineAddAttributes(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-pipeline-addattributes.html#cfn-iotanalytics-pipeline-addattributes-next"""
 
 @attr.s
-class PropDatastoreJsonConfiguration(Property):
-    """
-    AWS Object Type = "AWS::IoTAnalytics::Datastore.JsonConfiguration"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-jsonconfiguration.html
-
-    Property Document:
-    
-    """
-    AWS_OBJECT_TYPE = "AWS::IoTAnalytics::Datastore.JsonConfiguration"
-    
-
-@attr.s
 class PropDatasetFilter(Property):
     """
     AWS Object Type = "AWS::IoTAnalytics::Dataset.Filter"
@@ -1173,35 +1162,6 @@ class PropDatastoreParquetConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "SchemaDefinition"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-parquetconfiguration.html#cfn-iotanalytics-datastore-parquetconfiguration-schemadefinition"""
-
-@attr.s
-class PropChannelChannelStorage(Property):
-    """
-    AWS Object Type = "AWS::IoTAnalytics::Channel.ChannelStorage"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-channel-channelstorage.html
-
-    Property Document:
-    
-    - ``p_CustomerManagedS3``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-channel-channelstorage.html#cfn-iotanalytics-channel-channelstorage-customermanageds3
-    - ``p_ServiceManagedS3``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-channel-channelstorage.html#cfn-iotanalytics-channel-channelstorage-servicemanageds3
-    """
-    AWS_OBJECT_TYPE = "AWS::IoTAnalytics::Channel.ChannelStorage"
-    
-    p_CustomerManagedS3: typing.Union['PropChannelCustomerManagedS3', dict] = attr.ib(
-        default=None,
-        converter=PropChannelCustomerManagedS3.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropChannelCustomerManagedS3)),
-        metadata={AttrMeta.PROPERTY_NAME: "CustomerManagedS3"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-channel-channelstorage.html#cfn-iotanalytics-channel-channelstorage-customermanageds3"""
-    p_ServiceManagedS3: typing.Union['PropChannelServiceManagedS3', dict] = attr.ib(
-        default=None,
-        converter=PropChannelServiceManagedS3.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropChannelServiceManagedS3)),
-        metadata={AttrMeta.PROPERTY_NAME: "ServiceManagedS3"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-channel-channelstorage.html#cfn-iotanalytics-channel-channelstorage-servicemanageds3"""
 
 @attr.s
 class PropDatastoreIotSiteWiseMultiLayerStorage(Property):
@@ -1479,10 +1439,9 @@ class PropDatastoreFileFormatConfiguration(Property):
     """
     AWS_OBJECT_TYPE = "AWS::IoTAnalytics::Datastore.FileFormatConfiguration"
     
-    p_JsonConfiguration: typing.Union['PropDatastoreJsonConfiguration', dict] = attr.ib(
+    p_JsonConfiguration: dict = attr.ib(
         default=None,
-        converter=PropDatastoreJsonConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropDatastoreJsonConfiguration)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "JsonConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-fileformatconfiguration.html#cfn-iotanalytics-datastore-fileformatconfiguration-jsonconfiguration"""
@@ -1559,10 +1518,9 @@ class PropDatastoreDatastoreStorage(Property):
         metadata={AttrMeta.PROPERTY_NAME: "IotSiteWiseMultiLayerStorage"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-datastorestorage.html#cfn-iotanalytics-datastore-datastorestorage-iotsitewisemultilayerstorage"""
-    p_ServiceManagedS3: typing.Union['PropDatastoreServiceManagedS3', dict] = attr.ib(
+    p_ServiceManagedS3: dict = attr.ib(
         default=None,
-        converter=PropDatastoreServiceManagedS3.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropDatastoreServiceManagedS3)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "ServiceManagedS3"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotanalytics-datastore-datastorestorage.html#cfn-iotanalytics-datastore-datastorestorage-servicemanageds3"""

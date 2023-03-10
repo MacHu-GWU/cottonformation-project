@@ -330,6 +330,7 @@ class RobotApplication(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'SourceConfig',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -670,6 +671,7 @@ class SimulationApplication(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'SourceConfig',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -691,12 +693,12 @@ class SimulationApplication(Resource):
 
     
     @property
-    def rv_Arn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-simulationapplication.html#aws-resource-robomaker-simulationapplication-return-values"""
-        return GetAtt(resource=self, attr_name="Arn")
-    
-    @property
     def rv_CurrentRevisionId(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-simulationapplication.html#aws-resource-robomaker-simulationapplication-return-values"""
         return GetAtt(resource=self, attr_name="CurrentRevisionId")
+    
+    @property
+    def rv_Arn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-robomaker-simulationapplication.html#aws-resource-robomaker-simulationapplication-return-values"""
+        return GetAtt(resource=self, attr_name="Arn")
     

@@ -15,6 +15,33 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
+class PropNetworkAnalyzerConfigurationTraceContent(Property):
+    """
+    AWS Object Type = "AWS::IoTWireless::NetworkAnalyzerConfiguration.TraceContent"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-networkanalyzerconfiguration-tracecontent.html
+
+    Property Document:
+    
+    - ``p_LogLevel``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-networkanalyzerconfiguration-tracecontent.html#cfn-iotwireless-networkanalyzerconfiguration-tracecontent-loglevel
+    - ``p_WirelessDeviceFrameInfo``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-networkanalyzerconfiguration-tracecontent.html#cfn-iotwireless-networkanalyzerconfiguration-tracecontent-wirelessdeviceframeinfo
+    """
+    AWS_OBJECT_TYPE = "AWS::IoTWireless::NetworkAnalyzerConfiguration.TraceContent"
+    
+    p_LogLevel: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "LogLevel"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-networkanalyzerconfiguration-tracecontent.html#cfn-iotwireless-networkanalyzerconfiguration-tracecontent-loglevel"""
+    p_WirelessDeviceFrameInfo: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "WirelessDeviceFrameInfo"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-networkanalyzerconfiguration-tracecontent.html#cfn-iotwireless-networkanalyzerconfiguration-tracecontent-wirelessdeviceframeinfo"""
+
+@attr.s
 class PropWirelessDeviceSessionKeysAbpV10x(Property):
     """
     AWS Object Type = "AWS::IoTWireless::WirelessDevice.SessionKeysAbpV10x"
@@ -268,6 +295,40 @@ class PropWirelessDeviceSessionKeysAbpV11(Property):
         metadata={AttrMeta.PROPERTY_NAME: "SNwkSIntKey"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-wirelessdevice-sessionkeysabpv11.html#cfn-iotwireless-wirelessdevice-sessionkeysabpv11-snwksintkey"""
+
+@attr.s
+class PropPartnerAccountSidewalkAccountInfoWithFingerprint(Property):
+    """
+    AWS Object Type = "AWS::IoTWireless::PartnerAccount.SidewalkAccountInfoWithFingerprint"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-partneraccount-sidewalkaccountinfowithfingerprint.html
+
+    Property Document:
+    
+    - ``p_AmazonId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-partneraccount-sidewalkaccountinfowithfingerprint.html#cfn-iotwireless-partneraccount-sidewalkaccountinfowithfingerprint-amazonid
+    - ``p_Arn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-partneraccount-sidewalkaccountinfowithfingerprint.html#cfn-iotwireless-partneraccount-sidewalkaccountinfowithfingerprint-arn
+    - ``p_Fingerprint``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-partneraccount-sidewalkaccountinfowithfingerprint.html#cfn-iotwireless-partneraccount-sidewalkaccountinfowithfingerprint-fingerprint
+    """
+    AWS_OBJECT_TYPE = "AWS::IoTWireless::PartnerAccount.SidewalkAccountInfoWithFingerprint"
+    
+    p_AmazonId: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "AmazonId"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-partneraccount-sidewalkaccountinfowithfingerprint.html#cfn-iotwireless-partneraccount-sidewalkaccountinfowithfingerprint-amazonid"""
+    p_Arn: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "Arn"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-partneraccount-sidewalkaccountinfowithfingerprint.html#cfn-iotwireless-partneraccount-sidewalkaccountinfowithfingerprint-arn"""
+    p_Fingerprint: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "Fingerprint"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotwireless-partneraccount-sidewalkaccountinfowithfingerprint.html#cfn-iotwireless-partneraccount-sidewalkaccountinfowithfingerprint-fingerprint"""
 
 @attr.s
 class PropDeviceProfileLoRaWANDeviceProfile(Property):
@@ -891,44 +952,9 @@ class ServiceProfile(Resource):
 
     
     @property
-    def rv_LoRaWANUlRate(self) -> GetAtt:
+    def rv_LoRaWANDrMin(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-serviceprofile.html#aws-resource-iotwireless-serviceprofile-return-values"""
-        return GetAtt(resource=self, attr_name="LoRaWAN.UlRate")
-    
-    @property
-    def rv_LoRaWANUlBucketSize(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-serviceprofile.html#aws-resource-iotwireless-serviceprofile-return-values"""
-        return GetAtt(resource=self, attr_name="LoRaWAN.UlBucketSize")
-    
-    @property
-    def rv_LoRaWANUlRatePolicy(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-serviceprofile.html#aws-resource-iotwireless-serviceprofile-return-values"""
-        return GetAtt(resource=self, attr_name="LoRaWAN.UlRatePolicy")
-    
-    @property
-    def rv_LoRaWANDlRate(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-serviceprofile.html#aws-resource-iotwireless-serviceprofile-return-values"""
-        return GetAtt(resource=self, attr_name="LoRaWAN.DlRate")
-    
-    @property
-    def rv_LoRaWANDlBucketSize(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-serviceprofile.html#aws-resource-iotwireless-serviceprofile-return-values"""
-        return GetAtt(resource=self, attr_name="LoRaWAN.DlBucketSize")
-    
-    @property
-    def rv_LoRaWANDlRatePolicy(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-serviceprofile.html#aws-resource-iotwireless-serviceprofile-return-values"""
-        return GetAtt(resource=self, attr_name="LoRaWAN.DlRatePolicy")
-    
-    @property
-    def rv_LoRaWANDevStatusReqFreq(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-serviceprofile.html#aws-resource-iotwireless-serviceprofile-return-values"""
-        return GetAtt(resource=self, attr_name="LoRaWAN.DevStatusReqFreq")
-    
-    @property
-    def rv_LoRaWANReportDevStatusBattery(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-serviceprofile.html#aws-resource-iotwireless-serviceprofile-return-values"""
-        return GetAtt(resource=self, attr_name="LoRaWAN.ReportDevStatusBattery")
+        return GetAtt(resource=self, attr_name="LoRaWAN.DrMin")
     
     @property
     def rv_LoRaWANReportDevStatusMargin(self) -> GetAtt:
@@ -936,44 +962,9 @@ class ServiceProfile(Resource):
         return GetAtt(resource=self, attr_name="LoRaWAN.ReportDevStatusMargin")
     
     @property
-    def rv_LoRaWANDrMin(self) -> GetAtt:
+    def rv_LoRaWANUlRatePolicy(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-serviceprofile.html#aws-resource-iotwireless-serviceprofile-return-values"""
-        return GetAtt(resource=self, attr_name="LoRaWAN.DrMin")
-    
-    @property
-    def rv_LoRaWANDrMax(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-serviceprofile.html#aws-resource-iotwireless-serviceprofile-return-values"""
-        return GetAtt(resource=self, attr_name="LoRaWAN.DrMax")
-    
-    @property
-    def rv_LoRaWANChannelMask(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-serviceprofile.html#aws-resource-iotwireless-serviceprofile-return-values"""
-        return GetAtt(resource=self, attr_name="LoRaWAN.ChannelMask")
-    
-    @property
-    def rv_LoRaWANPrAllowed(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-serviceprofile.html#aws-resource-iotwireless-serviceprofile-return-values"""
-        return GetAtt(resource=self, attr_name="LoRaWAN.PrAllowed")
-    
-    @property
-    def rv_LoRaWANHrAllowed(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-serviceprofile.html#aws-resource-iotwireless-serviceprofile-return-values"""
-        return GetAtt(resource=self, attr_name="LoRaWAN.HrAllowed")
-    
-    @property
-    def rv_LoRaWANRaAllowed(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-serviceprofile.html#aws-resource-iotwireless-serviceprofile-return-values"""
-        return GetAtt(resource=self, attr_name="LoRaWAN.RaAllowed")
-    
-    @property
-    def rv_LoRaWANNwkGeoLoc(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-serviceprofile.html#aws-resource-iotwireless-serviceprofile-return-values"""
-        return GetAtt(resource=self, attr_name="LoRaWAN.NwkGeoLoc")
-    
-    @property
-    def rv_LoRaWANTargetPer(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-serviceprofile.html#aws-resource-iotwireless-serviceprofile-return-values"""
-        return GetAtt(resource=self, attr_name="LoRaWAN.TargetPer")
+        return GetAtt(resource=self, attr_name="LoRaWAN.UlRatePolicy")
     
     @property
     def rv_LoRaWANMinGwDiversity(self) -> GetAtt:
@@ -981,14 +972,84 @@ class ServiceProfile(Resource):
         return GetAtt(resource=self, attr_name="LoRaWAN.MinGwDiversity")
     
     @property
-    def rv_Arn(self) -> GetAtt:
+    def rv_LoRaWANTargetPer(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-serviceprofile.html#aws-resource-iotwireless-serviceprofile-return-values"""
-        return GetAtt(resource=self, attr_name="Arn")
+        return GetAtt(resource=self, attr_name="LoRaWAN.TargetPer")
+    
+    @property
+    def rv_LoRaWANChannelMask(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-serviceprofile.html#aws-resource-iotwireless-serviceprofile-return-values"""
+        return GetAtt(resource=self, attr_name="LoRaWAN.ChannelMask")
+    
+    @property
+    def rv_LoRaWANReportDevStatusBattery(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-serviceprofile.html#aws-resource-iotwireless-serviceprofile-return-values"""
+        return GetAtt(resource=self, attr_name="LoRaWAN.ReportDevStatusBattery")
+    
+    @property
+    def rv_LoRaWANDlRate(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-serviceprofile.html#aws-resource-iotwireless-serviceprofile-return-values"""
+        return GetAtt(resource=self, attr_name="LoRaWAN.DlRate")
+    
+    @property
+    def rv_LoRaWANDlRatePolicy(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-serviceprofile.html#aws-resource-iotwireless-serviceprofile-return-values"""
+        return GetAtt(resource=self, attr_name="LoRaWAN.DlRatePolicy")
+    
+    @property
+    def rv_LoRaWANHrAllowed(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-serviceprofile.html#aws-resource-iotwireless-serviceprofile-return-values"""
+        return GetAtt(resource=self, attr_name="LoRaWAN.HrAllowed")
+    
+    @property
+    def rv_LoRaWANDlBucketSize(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-serviceprofile.html#aws-resource-iotwireless-serviceprofile-return-values"""
+        return GetAtt(resource=self, attr_name="LoRaWAN.DlBucketSize")
+    
+    @property
+    def rv_LoRaWANDrMax(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-serviceprofile.html#aws-resource-iotwireless-serviceprofile-return-values"""
+        return GetAtt(resource=self, attr_name="LoRaWAN.DrMax")
+    
+    @property
+    def rv_LoRaWANUlBucketSize(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-serviceprofile.html#aws-resource-iotwireless-serviceprofile-return-values"""
+        return GetAtt(resource=self, attr_name="LoRaWAN.UlBucketSize")
+    
+    @property
+    def rv_LoRaWANRaAllowed(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-serviceprofile.html#aws-resource-iotwireless-serviceprofile-return-values"""
+        return GetAtt(resource=self, attr_name="LoRaWAN.RaAllowed")
+    
+    @property
+    def rv_LoRaWANUlRate(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-serviceprofile.html#aws-resource-iotwireless-serviceprofile-return-values"""
+        return GetAtt(resource=self, attr_name="LoRaWAN.UlRate")
+    
+    @property
+    def rv_LoRaWANNwkGeoLoc(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-serviceprofile.html#aws-resource-iotwireless-serviceprofile-return-values"""
+        return GetAtt(resource=self, attr_name="LoRaWAN.NwkGeoLoc")
+    
+    @property
+    def rv_LoRaWANDevStatusReqFreq(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-serviceprofile.html#aws-resource-iotwireless-serviceprofile-return-values"""
+        return GetAtt(resource=self, attr_name="LoRaWAN.DevStatusReqFreq")
+    
+    @property
+    def rv_LoRaWANPrAllowed(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-serviceprofile.html#aws-resource-iotwireless-serviceprofile-return-values"""
+        return GetAtt(resource=self, attr_name="LoRaWAN.PrAllowed")
     
     @property
     def rv_Id(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-serviceprofile.html#aws-resource-iotwireless-serviceprofile-return-values"""
         return GetAtt(resource=self, attr_name="Id")
+    
+    @property
+    def rv_Arn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-serviceprofile.html#aws-resource-iotwireless-serviceprofile-return-values"""
+        return GetAtt(resource=self, attr_name="Arn")
     
 
 @attr.s
@@ -1123,11 +1184,6 @@ class WirelessDevice(Resource):
 
     
     @property
-    def rv_Arn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-wirelessdevice.html#aws-resource-iotwireless-wirelessdevice-return-values"""
-        return GetAtt(resource=self, attr_name="Arn")
-    
-    @property
     def rv_Id(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-wirelessdevice.html#aws-resource-iotwireless-wirelessdevice-return-values"""
         return GetAtt(resource=self, attr_name="Id")
@@ -1136,6 +1192,11 @@ class WirelessDevice(Resource):
     def rv_ThingName(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-wirelessdevice.html#aws-resource-iotwireless-wirelessdevice-return-values"""
         return GetAtt(resource=self, attr_name="ThingName")
+    
+    @property
+    def rv_Arn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-wirelessdevice.html#aws-resource-iotwireless-wirelessdevice-return-values"""
+        return GetAtt(resource=self, attr_name="Arn")
     
 
 @attr.s
@@ -1200,14 +1261,14 @@ class DeviceProfile(Resource):
 
     
     @property
-    def rv_Arn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-deviceprofile.html#aws-resource-iotwireless-deviceprofile-return-values"""
-        return GetAtt(resource=self, attr_name="Arn")
-    
-    @property
     def rv_Id(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-deviceprofile.html#aws-resource-iotwireless-deviceprofile-return-values"""
         return GetAtt(resource=self, attr_name="Id")
+    
+    @property
+    def rv_Arn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-deviceprofile.html#aws-resource-iotwireless-deviceprofile-return-values"""
+        return GetAtt(resource=self, attr_name="Arn")
     
 
 @attr.s
@@ -1314,9 +1375,19 @@ class MulticastGroup(Resource):
 
     
     @property
+    def rv_Status(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-multicastgroup.html#aws-resource-iotwireless-multicastgroup-return-values"""
+        return GetAtt(resource=self, attr_name="Status")
+    
+    @property
     def rv_LoRaWANNumberOfDevicesRequested(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-multicastgroup.html#aws-resource-iotwireless-multicastgroup-return-values"""
         return GetAtt(resource=self, attr_name="LoRaWAN.NumberOfDevicesRequested")
+    
+    @property
+    def rv_Id(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-multicastgroup.html#aws-resource-iotwireless-multicastgroup-return-values"""
+        return GetAtt(resource=self, attr_name="Id")
     
     @property
     def rv_LoRaWANNumberOfDevicesInGroup(self) -> GetAtt:
@@ -1327,16 +1398,6 @@ class MulticastGroup(Resource):
     def rv_Arn(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-multicastgroup.html#aws-resource-iotwireless-multicastgroup-return-values"""
         return GetAtt(resource=self, attr_name="Arn")
-    
-    @property
-    def rv_Id(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-multicastgroup.html#aws-resource-iotwireless-multicastgroup-return-values"""
-        return GetAtt(resource=self, attr_name="Id")
-    
-    @property
-    def rv_Status(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-multicastgroup.html#aws-resource-iotwireless-multicastgroup-return-values"""
-        return GetAtt(resource=self, attr_name="Status")
     
 
 @attr.s
@@ -1384,15 +1445,16 @@ class NetworkAnalyzerConfiguration(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-networkanalyzerconfiguration.html#cfn-iotwireless-networkanalyzerconfiguration-description"""
-    p_TraceContent: dict = attr.ib(
+    p_TraceContent: typing.Union['PropNetworkAnalyzerConfigurationTraceContent', dict] = attr.ib(
         default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        converter=PropNetworkAnalyzerConfigurationTraceContent.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropNetworkAnalyzerConfigurationTraceContent)),
         metadata={
             AttrMeta.PROPERTY_NAME: "TraceContent",
             AttrMeta.DATA: {
                 "UpdateType": 'Mutable',
                 "Required": False,
-                "PrimitiveType": 'Json',
+                "Type": 'TraceContent',
             }
         },
     )
@@ -1407,6 +1469,7 @@ class NetworkAnalyzerConfiguration(Resource):
                 "Required": False,
                 "Type": 'List',
                 "PrimitiveItemType": 'String',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -1421,6 +1484,7 @@ class NetworkAnalyzerConfiguration(Resource):
                 "Required": False,
                 "Type": 'List',
                 "PrimitiveItemType": 'String',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -1567,14 +1631,14 @@ class WirelessGateway(Resource):
 
     
     @property
-    def rv_Arn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-wirelessgateway.html#aws-resource-iotwireless-wirelessgateway-return-values"""
-        return GetAtt(resource=self, attr_name="Arn")
-    
-    @property
     def rv_Id(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-wirelessgateway.html#aws-resource-iotwireless-wirelessgateway-return-values"""
         return GetAtt(resource=self, attr_name="Id")
+    
+    @property
+    def rv_Arn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-wirelessgateway.html#aws-resource-iotwireless-wirelessgateway-return-values"""
+        return GetAtt(resource=self, attr_name="Arn")
     
 
 @attr.s
@@ -1737,14 +1801,14 @@ class FuotaTask(Resource):
 
     
     @property
+    def rv_FuotaTaskStatus(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-fuotatask.html#aws-resource-iotwireless-fuotatask-return-values"""
+        return GetAtt(resource=self, attr_name="FuotaTaskStatus")
+    
+    @property
     def rv_LoRaWANStartTime(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-fuotatask.html#aws-resource-iotwireless-fuotatask-return-values"""
         return GetAtt(resource=self, attr_name="LoRaWAN.StartTime")
-    
-    @property
-    def rv_Arn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-fuotatask.html#aws-resource-iotwireless-fuotatask-return-values"""
-        return GetAtt(resource=self, attr_name="Arn")
     
     @property
     def rv_Id(self) -> GetAtt:
@@ -1752,9 +1816,9 @@ class FuotaTask(Resource):
         return GetAtt(resource=self, attr_name="Id")
     
     @property
-    def rv_FuotaTaskStatus(self) -> GetAtt:
+    def rv_Arn(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-fuotatask.html#aws-resource-iotwireless-fuotatask-return-values"""
-        return GetAtt(resource=self, attr_name="FuotaTaskStatus")
+        return GetAtt(resource=self, attr_name="Arn")
     
 
 @attr.s
@@ -1875,10 +1939,10 @@ class PartnerAccount(Resource):
     Property Document:
     
     - ``p_AccountLinked``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-partneraccount.html#cfn-iotwireless-partneraccount-accountlinked
-    - ``p_Fingerprint``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-partneraccount.html#cfn-iotwireless-partneraccount-fingerprint
     - ``p_PartnerAccountId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-partneraccount.html#cfn-iotwireless-partneraccount-partneraccountid
     - ``p_PartnerType``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-partneraccount.html#cfn-iotwireless-partneraccount-partnertype
     - ``p_Sidewalk``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-partneraccount.html#cfn-iotwireless-partneraccount-sidewalk
+    - ``p_SidewalkResponse``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-partneraccount.html#cfn-iotwireless-partneraccount-sidewalkresponse
     - ``p_SidewalkUpdate``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-partneraccount.html#cfn-iotwireless-partneraccount-sidewalkupdate
     - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-partneraccount.html#cfn-iotwireless-partneraccount-tags
     """
@@ -1898,19 +1962,6 @@ class PartnerAccount(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-partneraccount.html#cfn-iotwireless-partneraccount-accountlinked"""
-    p_Fingerprint: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "Fingerprint",
-            AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
-                "Required": False,
-                "PrimitiveType": 'String',
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-partneraccount.html#cfn-iotwireless-partneraccount-fingerprint"""
     p_PartnerAccountId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
@@ -1951,6 +2002,20 @@ class PartnerAccount(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-partneraccount.html#cfn-iotwireless-partneraccount-sidewalk"""
+    p_SidewalkResponse: typing.Union['PropPartnerAccountSidewalkAccountInfoWithFingerprint', dict] = attr.ib(
+        default=None,
+        converter=PropPartnerAccountSidewalkAccountInfoWithFingerprint.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropPartnerAccountSidewalkAccountInfoWithFingerprint)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "SidewalkResponse",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'SidewalkAccountInfoWithFingerprint',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-partneraccount.html#cfn-iotwireless-partneraccount-sidewalkresponse"""
     p_SidewalkUpdate: typing.Union['PropPartnerAccountSidewalkUpdateAccount', dict] = attr.ib(
         default=None,
         converter=PropPartnerAccountSidewalkUpdateAccount.from_dict,
@@ -1982,6 +2047,11 @@ class PartnerAccount(Resource):
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-partneraccount.html#cfn-iotwireless-partneraccount-tags"""
 
+    
+    @property
+    def rv_Fingerprint(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotwireless-partneraccount.html#aws-resource-iotwireless-partneraccount-return-values"""
+        return GetAtt(resource=self, attr_name="Fingerprint")
     
     @property
     def rv_Arn(self) -> GetAtt:

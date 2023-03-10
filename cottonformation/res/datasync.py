@@ -545,9 +545,9 @@ class LocationNFS(Resource):
     Property Document:
     
     - ``rp_OnPremConfig``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationnfs.html#cfn-datasync-locationnfs-onpremconfig
-    - ``rp_ServerHostname``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationnfs.html#cfn-datasync-locationnfs-serverhostname
-    - ``rp_Subdirectory``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationnfs.html#cfn-datasync-locationnfs-subdirectory
     - ``p_MountOptions``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationnfs.html#cfn-datasync-locationnfs-mountoptions
+    - ``p_ServerHostname``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationnfs.html#cfn-datasync-locationnfs-serverhostname
+    - ``p_Subdirectory``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationnfs.html#cfn-datasync-locationnfs-subdirectory
     - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationnfs.html#cfn-datasync-locationnfs-tags
     """
     AWS_OBJECT_TYPE = "AWS::DataSync::LocationNFS"
@@ -567,32 +567,6 @@ class LocationNFS(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationnfs.html#cfn-datasync-locationnfs-onpremconfig"""
-    rp_ServerHostname: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "ServerHostname",
-            AttrMeta.DATA: {
-                "UpdateType": 'Immutable',
-                "Required": True,
-                "PrimitiveType": 'String',
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationnfs.html#cfn-datasync-locationnfs-serverhostname"""
-    rp_Subdirectory: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "Subdirectory",
-            AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
-                "Required": True,
-                "PrimitiveType": 'String',
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationnfs.html#cfn-datasync-locationnfs-subdirectory"""
     p_MountOptions: typing.Union['PropLocationNFSMountOptions', dict] = attr.ib(
         default=None,
         converter=PropLocationNFSMountOptions.from_dict,
@@ -607,6 +581,32 @@ class LocationNFS(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationnfs.html#cfn-datasync-locationnfs-mountoptions"""
+    p_ServerHostname: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ServerHostname",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationnfs.html#cfn-datasync-locationnfs-serverhostname"""
+    p_Subdirectory: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Subdirectory",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationnfs.html#cfn-datasync-locationnfs-subdirectory"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
@@ -626,14 +626,14 @@ class LocationNFS(Resource):
 
     
     @property
-    def rv_LocationArn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationnfs.html#aws-resource-datasync-locationnfs-return-values"""
-        return GetAtt(resource=self, attr_name="LocationArn")
-    
-    @property
     def rv_LocationUri(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationnfs.html#aws-resource-datasync-locationnfs-return-values"""
         return GetAtt(resource=self, attr_name="LocationUri")
+    
+    @property
+    def rv_LocationArn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationnfs.html#aws-resource-datasync-locationnfs-return-values"""
+        return GetAtt(resource=self, attr_name="LocationArn")
     
 
 @attr.s
@@ -672,6 +672,7 @@ class LocationHDFS(Resource):
                 "Required": True,
                 "Type": 'List',
                 "PrimitiveItemType": 'String',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -700,6 +701,7 @@ class LocationHDFS(Resource):
                 "Required": True,
                 "Type": 'List',
                 "ItemType": 'NameNode',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -841,14 +843,14 @@ class LocationHDFS(Resource):
 
     
     @property
-    def rv_LocationArn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationhdfs.html#aws-resource-datasync-locationhdfs-return-values"""
-        return GetAtt(resource=self, attr_name="LocationArn")
-    
-    @property
     def rv_LocationUri(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationhdfs.html#aws-resource-datasync-locationhdfs-return-values"""
         return GetAtt(resource=self, attr_name="LocationUri")
+    
+    @property
+    def rv_LocationArn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationhdfs.html#aws-resource-datasync-locationhdfs-return-values"""
+        return GetAtt(resource=self, attr_name="LocationArn")
     
 
 @attr.s
@@ -860,29 +862,15 @@ class LocationFSxONTAP(Resource):
 
     Property Document:
     
-    - ``rp_Protocol``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationfsxontap.html#cfn-datasync-locationfsxontap-protocol
     - ``rp_SecurityGroupArns``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationfsxontap.html#cfn-datasync-locationfsxontap-securitygrouparns
     - ``rp_StorageVirtualMachineArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationfsxontap.html#cfn-datasync-locationfsxontap-storagevirtualmachinearn
+    - ``p_Protocol``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationfsxontap.html#cfn-datasync-locationfsxontap-protocol
     - ``p_Subdirectory``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationfsxontap.html#cfn-datasync-locationfsxontap-subdirectory
     - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationfsxontap.html#cfn-datasync-locationfsxontap-tags
     """
     AWS_OBJECT_TYPE = "AWS::DataSync::LocationFSxONTAP"
 
     
-    rp_Protocol: typing.Union['PropLocationFSxONTAPProtocol', dict] = attr.ib(
-        default=None,
-        converter=PropLocationFSxONTAPProtocol.from_dict,
-        validator=attr.validators.instance_of(PropLocationFSxONTAPProtocol),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "Protocol",
-            AttrMeta.DATA: {
-                "UpdateType": 'Immutable',
-                "Required": True,
-                "Type": 'Protocol',
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationfsxontap.html#cfn-datasync-locationfsxontap-protocol"""
     rp_SecurityGroupArns: typing.List[TypeHint.intrinsic_str] = attr.ib(
         default=None,
         validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list)),
@@ -893,6 +881,7 @@ class LocationFSxONTAP(Resource):
                 "Required": True,
                 "Type": 'List',
                 "PrimitiveItemType": 'String',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -910,6 +899,20 @@ class LocationFSxONTAP(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationfsxontap.html#cfn-datasync-locationfsxontap-storagevirtualmachinearn"""
+    p_Protocol: typing.Union['PropLocationFSxONTAPProtocol', dict] = attr.ib(
+        default=None,
+        converter=PropLocationFSxONTAPProtocol.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropLocationFSxONTAPProtocol)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Protocol",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "Type": 'Protocol',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationfsxontap.html#cfn-datasync-locationfsxontap-protocol"""
     p_Subdirectory: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
@@ -942,6 +945,11 @@ class LocationFSxONTAP(Resource):
 
     
     @property
+    def rv_LocationUri(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationfsxontap.html#aws-resource-datasync-locationfsxontap-return-values"""
+        return GetAtt(resource=self, attr_name="LocationUri")
+    
+    @property
     def rv_FsxFilesystemArn(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationfsxontap.html#aws-resource-datasync-locationfsxontap-return-values"""
         return GetAtt(resource=self, attr_name="FsxFilesystemArn")
@@ -950,11 +958,6 @@ class LocationFSxONTAP(Resource):
     def rv_LocationArn(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationfsxontap.html#aws-resource-datasync-locationfsxontap-return-values"""
         return GetAtt(resource=self, attr_name="LocationArn")
-    
-    @property
-    def rv_LocationUri(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationfsxontap.html#aws-resource-datasync-locationfsxontap-return-values"""
-        return GetAtt(resource=self, attr_name="LocationUri")
     
 
 @attr.s
@@ -966,7 +969,7 @@ class Agent(Resource):
 
     Property Document:
     
-    - ``rp_ActivationKey``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-agent.html#cfn-datasync-agent-activationkey
+    - ``p_ActivationKey``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-agent.html#cfn-datasync-agent-activationkey
     - ``p_AgentName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-agent.html#cfn-datasync-agent-agentname
     - ``p_SecurityGroupArns``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-agent.html#cfn-datasync-agent-securitygrouparns
     - ``p_SubnetArns``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-agent.html#cfn-datasync-agent-subnetarns
@@ -976,14 +979,14 @@ class Agent(Resource):
     AWS_OBJECT_TYPE = "AWS::DataSync::Agent"
 
     
-    rp_ActivationKey: TypeHint.intrinsic_str = attr.ib(
+    p_ActivationKey: TypeHint.intrinsic_str = attr.ib(
         default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
         metadata={
             AttrMeta.PROPERTY_NAME: "ActivationKey",
             AttrMeta.DATA: {
                 "UpdateType": 'Immutable',
-                "Required": True,
+                "Required": False,
                 "PrimitiveType": 'String',
             }
         },
@@ -1012,6 +1015,7 @@ class Agent(Resource):
                 "Required": False,
                 "Type": 'List',
                 "PrimitiveItemType": 'String',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -1026,6 +1030,7 @@ class Agent(Resource):
                 "Required": False,
                 "Type": 'List',
                 "PrimitiveItemType": 'String',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -1062,14 +1067,14 @@ class Agent(Resource):
 
     
     @property
-    def rv_EndpointType(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-agent.html#aws-resource-datasync-agent-return-values"""
-        return GetAtt(resource=self, attr_name="EndpointType")
-    
-    @property
     def rv_AgentArn(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-agent.html#aws-resource-datasync-agent-return-values"""
         return GetAtt(resource=self, attr_name="AgentArn")
+    
+    @property
+    def rv_EndpointType(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-agent.html#aws-resource-datasync-agent-return-values"""
+        return GetAtt(resource=self, attr_name="EndpointType")
     
 
 @attr.s
@@ -1082,8 +1087,8 @@ class LocationEFS(Resource):
     Property Document:
     
     - ``rp_Ec2Config``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationefs.html#cfn-datasync-locationefs-ec2config
-    - ``rp_EfsFilesystemArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationefs.html#cfn-datasync-locationefs-efsfilesystemarn
     - ``p_AccessPointArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationefs.html#cfn-datasync-locationefs-accesspointarn
+    - ``p_EfsFilesystemArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationefs.html#cfn-datasync-locationefs-efsfilesystemarn
     - ``p_FileSystemAccessRoleArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationefs.html#cfn-datasync-locationefs-filesystemaccessrolearn
     - ``p_InTransitEncryption``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationefs.html#cfn-datasync-locationefs-intransitencryption
     - ``p_Subdirectory``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationefs.html#cfn-datasync-locationefs-subdirectory
@@ -1106,19 +1111,6 @@ class LocationEFS(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationefs.html#cfn-datasync-locationefs-ec2config"""
-    rp_EfsFilesystemArn: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "EfsFilesystemArn",
-            AttrMeta.DATA: {
-                "UpdateType": 'Immutable',
-                "Required": True,
-                "PrimitiveType": 'String',
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationefs.html#cfn-datasync-locationefs-efsfilesystemarn"""
     p_AccessPointArn: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
@@ -1132,6 +1124,19 @@ class LocationEFS(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationefs.html#cfn-datasync-locationefs-accesspointarn"""
+    p_EfsFilesystemArn: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "EfsFilesystemArn",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationefs.html#cfn-datasync-locationefs-efsfilesystemarn"""
     p_FileSystemAccessRoleArn: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
@@ -1190,14 +1195,14 @@ class LocationEFS(Resource):
 
     
     @property
-    def rv_LocationArn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationefs.html#aws-resource-datasync-locationefs-return-values"""
-        return GetAtt(resource=self, attr_name="LocationArn")
-    
-    @property
     def rv_LocationUri(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationefs.html#aws-resource-datasync-locationefs-return-values"""
         return GetAtt(resource=self, attr_name="LocationUri")
+    
+    @property
+    def rv_LocationArn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationefs.html#aws-resource-datasync-locationefs-return-values"""
+        return GetAtt(resource=self, attr_name="LocationArn")
     
 
 @attr.s
@@ -1209,27 +1214,14 @@ class LocationFSxLustre(Resource):
 
     Property Document:
     
-    - ``rp_FsxFilesystemArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationfsxlustre.html#cfn-datasync-locationfsxlustre-fsxfilesystemarn
     - ``rp_SecurityGroupArns``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationfsxlustre.html#cfn-datasync-locationfsxlustre-securitygrouparns
+    - ``p_FsxFilesystemArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationfsxlustre.html#cfn-datasync-locationfsxlustre-fsxfilesystemarn
     - ``p_Subdirectory``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationfsxlustre.html#cfn-datasync-locationfsxlustre-subdirectory
     - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationfsxlustre.html#cfn-datasync-locationfsxlustre-tags
     """
     AWS_OBJECT_TYPE = "AWS::DataSync::LocationFSxLustre"
 
     
-    rp_FsxFilesystemArn: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "FsxFilesystemArn",
-            AttrMeta.DATA: {
-                "UpdateType": 'Immutable',
-                "Required": True,
-                "PrimitiveType": 'String',
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationfsxlustre.html#cfn-datasync-locationfsxlustre-fsxfilesystemarn"""
     rp_SecurityGroupArns: typing.List[TypeHint.intrinsic_str] = attr.ib(
         default=None,
         validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list)),
@@ -1240,10 +1232,24 @@ class LocationFSxLustre(Resource):
                 "Required": True,
                 "Type": 'List',
                 "PrimitiveItemType": 'String',
+                "DuplicatesAllowed": True,
             }
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationfsxlustre.html#cfn-datasync-locationfsxlustre-securitygrouparns"""
+    p_FsxFilesystemArn: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "FsxFilesystemArn",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationfsxlustre.html#cfn-datasync-locationfsxlustre-fsxfilesystemarn"""
     p_Subdirectory: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
@@ -1276,14 +1282,14 @@ class LocationFSxLustre(Resource):
 
     
     @property
-    def rv_LocationArn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationfsxlustre.html#aws-resource-datasync-locationfsxlustre-return-values"""
-        return GetAtt(resource=self, attr_name="LocationArn")
-    
-    @property
     def rv_LocationUri(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationfsxlustre.html#aws-resource-datasync-locationfsxlustre-return-values"""
         return GetAtt(resource=self, attr_name="LocationUri")
+    
+    @property
+    def rv_LocationArn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationfsxlustre.html#aws-resource-datasync-locationfsxlustre-return-values"""
+        return GetAtt(resource=self, attr_name="LocationArn")
     
 
 @attr.s
@@ -1295,43 +1301,17 @@ class LocationFSxWindows(Resource):
 
     Property Document:
     
-    - ``rp_FsxFilesystemArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationfsxwindows.html#cfn-datasync-locationfsxwindows-fsxfilesystemarn
-    - ``rp_Password``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationfsxwindows.html#cfn-datasync-locationfsxwindows-password
     - ``rp_SecurityGroupArns``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationfsxwindows.html#cfn-datasync-locationfsxwindows-securitygrouparns
     - ``rp_User``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationfsxwindows.html#cfn-datasync-locationfsxwindows-user
     - ``p_Domain``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationfsxwindows.html#cfn-datasync-locationfsxwindows-domain
+    - ``p_FsxFilesystemArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationfsxwindows.html#cfn-datasync-locationfsxwindows-fsxfilesystemarn
+    - ``p_Password``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationfsxwindows.html#cfn-datasync-locationfsxwindows-password
     - ``p_Subdirectory``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationfsxwindows.html#cfn-datasync-locationfsxwindows-subdirectory
     - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationfsxwindows.html#cfn-datasync-locationfsxwindows-tags
     """
     AWS_OBJECT_TYPE = "AWS::DataSync::LocationFSxWindows"
 
     
-    rp_FsxFilesystemArn: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "FsxFilesystemArn",
-            AttrMeta.DATA: {
-                "UpdateType": 'Immutable',
-                "Required": True,
-                "PrimitiveType": 'String',
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationfsxwindows.html#cfn-datasync-locationfsxwindows-fsxfilesystemarn"""
-    rp_Password: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "Password",
-            AttrMeta.DATA: {
-                "UpdateType": 'Immutable',
-                "Required": True,
-                "PrimitiveType": 'String',
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationfsxwindows.html#cfn-datasync-locationfsxwindows-password"""
     rp_SecurityGroupArns: typing.List[TypeHint.intrinsic_str] = attr.ib(
         default=None,
         validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list)),
@@ -1342,6 +1322,7 @@ class LocationFSxWindows(Resource):
                 "Required": True,
                 "Type": 'List',
                 "PrimitiveItemType": 'String',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -1372,6 +1353,32 @@ class LocationFSxWindows(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationfsxwindows.html#cfn-datasync-locationfsxwindows-domain"""
+    p_FsxFilesystemArn: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "FsxFilesystemArn",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationfsxwindows.html#cfn-datasync-locationfsxwindows-fsxfilesystemarn"""
+    p_Password: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Password",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationfsxwindows.html#cfn-datasync-locationfsxwindows-password"""
     p_Subdirectory: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
@@ -1404,14 +1411,14 @@ class LocationFSxWindows(Resource):
 
     
     @property
-    def rv_LocationArn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationfsxwindows.html#aws-resource-datasync-locationfsxwindows-return-values"""
-        return GetAtt(resource=self, attr_name="LocationArn")
-    
-    @property
     def rv_LocationUri(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationfsxwindows.html#aws-resource-datasync-locationfsxwindows-return-values"""
         return GetAtt(resource=self, attr_name="LocationUri")
+    
+    @property
+    def rv_LocationArn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationfsxwindows.html#aws-resource-datasync-locationfsxwindows-return-values"""
+        return GetAtt(resource=self, attr_name="LocationArn")
     
 
 @attr.s
@@ -1423,8 +1430,8 @@ class LocationS3(Resource):
 
     Property Document:
     
-    - ``rp_S3BucketArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locations3.html#cfn-datasync-locations3-s3bucketarn
     - ``rp_S3Config``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locations3.html#cfn-datasync-locations3-s3config
+    - ``p_S3BucketArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locations3.html#cfn-datasync-locations3-s3bucketarn
     - ``p_S3StorageClass``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locations3.html#cfn-datasync-locations3-s3storageclass
     - ``p_Subdirectory``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locations3.html#cfn-datasync-locations3-subdirectory
     - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locations3.html#cfn-datasync-locations3-tags
@@ -1432,19 +1439,6 @@ class LocationS3(Resource):
     AWS_OBJECT_TYPE = "AWS::DataSync::LocationS3"
 
     
-    rp_S3BucketArn: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "S3BucketArn",
-            AttrMeta.DATA: {
-                "UpdateType": 'Immutable',
-                "Required": True,
-                "PrimitiveType": 'String',
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locations3.html#cfn-datasync-locations3-s3bucketarn"""
     rp_S3Config: typing.Union['PropLocationS3S3Config', dict] = attr.ib(
         default=None,
         converter=PropLocationS3S3Config.from_dict,
@@ -1459,6 +1453,19 @@ class LocationS3(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locations3.html#cfn-datasync-locations3-s3config"""
+    p_S3BucketArn: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "S3BucketArn",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locations3.html#cfn-datasync-locations3-s3bucketarn"""
     p_S3StorageClass: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
@@ -1504,14 +1511,14 @@ class LocationS3(Resource):
 
     
     @property
-    def rv_LocationArn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locations3.html#aws-resource-datasync-locations3-return-values"""
-        return GetAtt(resource=self, attr_name="LocationArn")
-    
-    @property
     def rv_LocationUri(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locations3.html#aws-resource-datasync-locations3-return-values"""
         return GetAtt(resource=self, attr_name="LocationUri")
+    
+    @property
+    def rv_LocationArn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locations3.html#aws-resource-datasync-locations3-return-values"""
+        return GetAtt(resource=self, attr_name="LocationArn")
     
 
 @attr.s
@@ -1586,6 +1593,7 @@ class Task(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'FilterRule',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -1601,6 +1609,7 @@ class Task(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'FilterRule',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -1665,21 +1674,6 @@ class Task(Resource):
 
     
     @property
-    def rv_TaskArn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-task.html#aws-resource-datasync-task-return-values"""
-        return GetAtt(resource=self, attr_name="TaskArn")
-    
-    @property
-    def rv_ErrorCode(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-task.html#aws-resource-datasync-task-return-values"""
-        return GetAtt(resource=self, attr_name="ErrorCode")
-    
-    @property
-    def rv_ErrorDetail(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-task.html#aws-resource-datasync-task-return-values"""
-        return GetAtt(resource=self, attr_name="ErrorDetail")
-    
-    @property
     def rv_Status(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-task.html#aws-resource-datasync-task-return-values"""
         return GetAtt(resource=self, attr_name="Status")
@@ -1694,6 +1688,11 @@ class Task(Resource):
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-task.html#aws-resource-datasync-task-return-values"""
         return GetAtt(resource=self, attr_name="DestinationNetworkInterfaceArns")
     
+    @property
+    def rv_TaskArn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-task.html#aws-resource-datasync-task-return-values"""
+        return GetAtt(resource=self, attr_name="TaskArn")
+    
 
 @attr.s
 class LocationObjectStorage(Resource):
@@ -1705,10 +1704,11 @@ class LocationObjectStorage(Resource):
     Property Document:
     
     - ``rp_AgentArns``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationobjectstorage.html#cfn-datasync-locationobjectstorage-agentarns
-    - ``rp_BucketName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationobjectstorage.html#cfn-datasync-locationobjectstorage-bucketname
-    - ``rp_ServerHostname``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationobjectstorage.html#cfn-datasync-locationobjectstorage-serverhostname
     - ``p_AccessKey``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationobjectstorage.html#cfn-datasync-locationobjectstorage-accesskey
+    - ``p_BucketName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationobjectstorage.html#cfn-datasync-locationobjectstorage-bucketname
     - ``p_SecretKey``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationobjectstorage.html#cfn-datasync-locationobjectstorage-secretkey
+    - ``p_ServerCertificate``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationobjectstorage.html#cfn-datasync-locationobjectstorage-servercertificate
+    - ``p_ServerHostname``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationobjectstorage.html#cfn-datasync-locationobjectstorage-serverhostname
     - ``p_ServerPort``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationobjectstorage.html#cfn-datasync-locationobjectstorage-serverport
     - ``p_ServerProtocol``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationobjectstorage.html#cfn-datasync-locationobjectstorage-serverprotocol
     - ``p_Subdirectory``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationobjectstorage.html#cfn-datasync-locationobjectstorage-subdirectory
@@ -1727,36 +1727,11 @@ class LocationObjectStorage(Resource):
                 "Required": True,
                 "Type": 'List',
                 "PrimitiveItemType": 'String',
+                "DuplicatesAllowed": True,
             }
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationobjectstorage.html#cfn-datasync-locationobjectstorage-agentarns"""
-    rp_BucketName: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "BucketName",
-            AttrMeta.DATA: {
-                "UpdateType": 'Immutable',
-                "Required": True,
-                "PrimitiveType": 'String',
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationobjectstorage.html#cfn-datasync-locationobjectstorage-bucketname"""
-    rp_ServerHostname: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "ServerHostname",
-            AttrMeta.DATA: {
-                "UpdateType": 'Immutable',
-                "Required": True,
-                "PrimitiveType": 'String',
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationobjectstorage.html#cfn-datasync-locationobjectstorage-serverhostname"""
     p_AccessKey: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
@@ -1770,6 +1745,19 @@ class LocationObjectStorage(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationobjectstorage.html#cfn-datasync-locationobjectstorage-accesskey"""
+    p_BucketName: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "BucketName",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationobjectstorage.html#cfn-datasync-locationobjectstorage-bucketname"""
     p_SecretKey: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
@@ -1783,6 +1771,32 @@ class LocationObjectStorage(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationobjectstorage.html#cfn-datasync-locationobjectstorage-secretkey"""
+    p_ServerCertificate: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ServerCertificate",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationobjectstorage.html#cfn-datasync-locationobjectstorage-servercertificate"""
+    p_ServerHostname: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ServerHostname",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationobjectstorage.html#cfn-datasync-locationobjectstorage-serverhostname"""
     p_ServerPort: int = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(int)),
@@ -1841,14 +1855,14 @@ class LocationObjectStorage(Resource):
 
     
     @property
-    def rv_LocationArn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationobjectstorage.html#aws-resource-datasync-locationobjectstorage-return-values"""
-        return GetAtt(resource=self, attr_name="LocationArn")
-    
-    @property
     def rv_LocationUri(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationobjectstorage.html#aws-resource-datasync-locationobjectstorage-return-values"""
         return GetAtt(resource=self, attr_name="LocationUri")
+    
+    @property
+    def rv_LocationArn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationobjectstorage.html#aws-resource-datasync-locationobjectstorage-return-values"""
+        return GetAtt(resource=self, attr_name="LocationArn")
     
 
 @attr.s
@@ -1860,28 +1874,15 @@ class LocationFSxOpenZFS(Resource):
 
     Property Document:
     
-    - ``rp_FsxFilesystemArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationfsxopenzfs.html#cfn-datasync-locationfsxopenzfs-fsxfilesystemarn
     - ``rp_Protocol``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationfsxopenzfs.html#cfn-datasync-locationfsxopenzfs-protocol
     - ``rp_SecurityGroupArns``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationfsxopenzfs.html#cfn-datasync-locationfsxopenzfs-securitygrouparns
+    - ``p_FsxFilesystemArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationfsxopenzfs.html#cfn-datasync-locationfsxopenzfs-fsxfilesystemarn
     - ``p_Subdirectory``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationfsxopenzfs.html#cfn-datasync-locationfsxopenzfs-subdirectory
     - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationfsxopenzfs.html#cfn-datasync-locationfsxopenzfs-tags
     """
     AWS_OBJECT_TYPE = "AWS::DataSync::LocationFSxOpenZFS"
 
     
-    rp_FsxFilesystemArn: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "FsxFilesystemArn",
-            AttrMeta.DATA: {
-                "UpdateType": 'Immutable',
-                "Required": True,
-                "PrimitiveType": 'String',
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationfsxopenzfs.html#cfn-datasync-locationfsxopenzfs-fsxfilesystemarn"""
     rp_Protocol: typing.Union['PropLocationFSxOpenZFSProtocol', dict] = attr.ib(
         default=None,
         converter=PropLocationFSxOpenZFSProtocol.from_dict,
@@ -1906,10 +1907,24 @@ class LocationFSxOpenZFS(Resource):
                 "Required": True,
                 "Type": 'List',
                 "PrimitiveItemType": 'String',
+                "DuplicatesAllowed": True,
             }
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationfsxopenzfs.html#cfn-datasync-locationfsxopenzfs-securitygrouparns"""
+    p_FsxFilesystemArn: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "FsxFilesystemArn",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationfsxopenzfs.html#cfn-datasync-locationfsxopenzfs-fsxfilesystemarn"""
     p_Subdirectory: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
@@ -1942,14 +1957,14 @@ class LocationFSxOpenZFS(Resource):
 
     
     @property
-    def rv_LocationArn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationfsxopenzfs.html#aws-resource-datasync-locationfsxopenzfs-return-values"""
-        return GetAtt(resource=self, attr_name="LocationArn")
-    
-    @property
     def rv_LocationUri(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationfsxopenzfs.html#aws-resource-datasync-locationfsxopenzfs-return-values"""
         return GetAtt(resource=self, attr_name="LocationUri")
+    
+    @property
+    def rv_LocationArn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationfsxopenzfs.html#aws-resource-datasync-locationfsxopenzfs-return-values"""
+        return GetAtt(resource=self, attr_name="LocationArn")
     
 
 @attr.s
@@ -1962,12 +1977,12 @@ class LocationSMB(Resource):
     Property Document:
     
     - ``rp_AgentArns``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationsmb.html#cfn-datasync-locationsmb-agentarns
-    - ``rp_Password``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationsmb.html#cfn-datasync-locationsmb-password
-    - ``rp_ServerHostname``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationsmb.html#cfn-datasync-locationsmb-serverhostname
-    - ``rp_Subdirectory``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationsmb.html#cfn-datasync-locationsmb-subdirectory
     - ``rp_User``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationsmb.html#cfn-datasync-locationsmb-user
     - ``p_Domain``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationsmb.html#cfn-datasync-locationsmb-domain
     - ``p_MountOptions``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationsmb.html#cfn-datasync-locationsmb-mountoptions
+    - ``p_Password``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationsmb.html#cfn-datasync-locationsmb-password
+    - ``p_ServerHostname``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationsmb.html#cfn-datasync-locationsmb-serverhostname
+    - ``p_Subdirectory``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationsmb.html#cfn-datasync-locationsmb-subdirectory
     - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationsmb.html#cfn-datasync-locationsmb-tags
     """
     AWS_OBJECT_TYPE = "AWS::DataSync::LocationSMB"
@@ -1983,49 +1998,11 @@ class LocationSMB(Resource):
                 "Required": True,
                 "Type": 'List',
                 "PrimitiveItemType": 'String',
+                "DuplicatesAllowed": True,
             }
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationsmb.html#cfn-datasync-locationsmb-agentarns"""
-    rp_Password: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "Password",
-            AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
-                "Required": True,
-                "PrimitiveType": 'String',
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationsmb.html#cfn-datasync-locationsmb-password"""
-    rp_ServerHostname: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "ServerHostname",
-            AttrMeta.DATA: {
-                "UpdateType": 'Immutable',
-                "Required": True,
-                "PrimitiveType": 'String',
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationsmb.html#cfn-datasync-locationsmb-serverhostname"""
-    rp_Subdirectory: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "Subdirectory",
-            AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
-                "Required": True,
-                "PrimitiveType": 'String',
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationsmb.html#cfn-datasync-locationsmb-subdirectory"""
     rp_User: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
@@ -2066,6 +2043,45 @@ class LocationSMB(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationsmb.html#cfn-datasync-locationsmb-mountoptions"""
+    p_Password: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Password",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationsmb.html#cfn-datasync-locationsmb-password"""
+    p_ServerHostname: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ServerHostname",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationsmb.html#cfn-datasync-locationsmb-serverhostname"""
+    p_Subdirectory: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Subdirectory",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationsmb.html#cfn-datasync-locationsmb-subdirectory"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
@@ -2085,12 +2101,12 @@ class LocationSMB(Resource):
 
     
     @property
-    def rv_LocationArn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationsmb.html#aws-resource-datasync-locationsmb-return-values"""
-        return GetAtt(resource=self, attr_name="LocationArn")
-    
-    @property
     def rv_LocationUri(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationsmb.html#aws-resource-datasync-locationsmb-return-values"""
         return GetAtt(resource=self, attr_name="LocationUri")
+    
+    @property
+    def rv_LocationArn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-datasync-locationsmb.html#aws-resource-datasync-locationsmb-return-values"""
+        return GetAtt(resource=self, attr_name="LocationArn")
     

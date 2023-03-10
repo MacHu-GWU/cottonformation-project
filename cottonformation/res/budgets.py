@@ -690,6 +690,7 @@ class BudgetsAction(Resource):
                 "Required": True,
                 "Type": 'List',
                 "ItemType": 'Subscriber',
+                "DuplicatesAllowed": True,
             }
         },
     )

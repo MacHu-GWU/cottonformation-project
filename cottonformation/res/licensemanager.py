@@ -415,14 +415,14 @@ class License(Resource):
 
     
     @property
-    def rv_LicenseArn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-licensemanager-license.html#aws-resource-licensemanager-license-return-values"""
-        return GetAtt(resource=self, attr_name="LicenseArn")
-    
-    @property
     def rv_Version(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-licensemanager-license.html#aws-resource-licensemanager-license-return-values"""
         return GetAtt(resource=self, attr_name="Version")
+    
+    @property
+    def rv_LicenseArn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-licensemanager-license.html#aws-resource-licensemanager-license-return-values"""
+        return GetAtt(resource=self, attr_name="LicenseArn")
     
 
 @attr.s

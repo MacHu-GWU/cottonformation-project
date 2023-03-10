@@ -714,9 +714,9 @@ class CustomActionType(Resource):
         metadata={
             AttrMeta.PROPERTY_NAME: "Category",
             AttrMeta.DATA: {
-                "PrimitiveType": 'String',
-                "Required": True,
                 "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
             }
         },
     )
@@ -728,9 +728,9 @@ class CustomActionType(Resource):
         metadata={
             AttrMeta.PROPERTY_NAME: "InputArtifactDetails",
             AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
                 "Required": True,
                 "Type": 'ArtifactDetails',
-                "UpdateType": 'Immutable',
             }
         },
     )
@@ -742,9 +742,9 @@ class CustomActionType(Resource):
         metadata={
             AttrMeta.PROPERTY_NAME: "OutputArtifactDetails",
             AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
                 "Required": True,
                 "Type": 'ArtifactDetails',
-                "UpdateType": 'Immutable',
             }
         },
     )
@@ -755,9 +755,9 @@ class CustomActionType(Resource):
         metadata={
             AttrMeta.PROPERTY_NAME: "Provider",
             AttrMeta.DATA: {
-                "PrimitiveType": 'String',
-                "Required": True,
                 "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
             }
         },
     )
@@ -768,9 +768,9 @@ class CustomActionType(Resource):
         metadata={
             AttrMeta.PROPERTY_NAME: "Version",
             AttrMeta.DATA: {
-                "PrimitiveType": 'String',
-                "Required": True,
                 "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
             }
         },
     )
@@ -782,11 +782,11 @@ class CustomActionType(Resource):
         metadata={
             AttrMeta.PROPERTY_NAME: "ConfigurationProperties",
             AttrMeta.DATA: {
-                "DuplicatesAllowed": False,
-                "ItemType": 'ConfigurationProperties',
+                "UpdateType": 'Immutable',
                 "Required": False,
                 "Type": 'List',
-                "UpdateType": 'Immutable',
+                "ItemType": 'ConfigurationProperties',
+                "DuplicatesAllowed": False,
             }
         },
     )
@@ -798,9 +798,9 @@ class CustomActionType(Resource):
         metadata={
             AttrMeta.PROPERTY_NAME: "Settings",
             AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
                 "Required": False,
                 "Type": 'Settings',
-                "UpdateType": 'Immutable',
             }
         },
     )
@@ -812,16 +812,21 @@ class CustomActionType(Resource):
         metadata={
             AttrMeta.PROPERTY_NAME: "Tags",
             AttrMeta.DATA: {
-                "DuplicatesAllowed": True,
-                "ItemType": 'Tag',
+                "UpdateType": 'Mutable',
                 "Required": False,
                 "Type": 'List',
-                "UpdateType": 'Mutable',
+                "ItemType": 'Tag',
+                "DuplicatesAllowed": True,
             }
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#cfn-codepipeline-customactiontype-tags"""
 
+    
+    @property
+    def rv_Id(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codepipeline-customactiontype.html#aws-resource-codepipeline-customactiontype-return-values"""
+        return GetAtt(resource=self, attr_name="Id")
     
 
 @attr.s

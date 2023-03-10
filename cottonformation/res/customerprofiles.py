@@ -756,6 +756,7 @@ class Integration(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'ObjectTypeMapping',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -784,6 +785,7 @@ class Integration(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Tag',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -791,14 +793,14 @@ class Integration(Resource):
 
     
     @property
-    def rv_CreatedAt(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-customerprofiles-integration.html#aws-resource-customerprofiles-integration-return-values"""
-        return GetAtt(resource=self, attr_name="CreatedAt")
-    
-    @property
     def rv_LastUpdatedAt(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-customerprofiles-integration.html#aws-resource-customerprofiles-integration-return-values"""
         return GetAtt(resource=self, attr_name="LastUpdatedAt")
+    
+    @property
+    def rv_CreatedAt(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-customerprofiles-integration.html#aws-resource-customerprofiles-integration-return-values"""
+        return GetAtt(resource=self, attr_name="CreatedAt")
     
 
 @attr.s
@@ -900,6 +902,7 @@ class ObjectType(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'FieldMap',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -915,6 +918,7 @@ class ObjectType(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'KeyMap',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -956,6 +960,7 @@ class ObjectType(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Tag',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -963,14 +968,14 @@ class ObjectType(Resource):
 
     
     @property
-    def rv_CreatedAt(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-customerprofiles-objecttype.html#aws-resource-customerprofiles-objecttype-return-values"""
-        return GetAtt(resource=self, attr_name="CreatedAt")
-    
-    @property
     def rv_LastUpdatedAt(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-customerprofiles-objecttype.html#aws-resource-customerprofiles-objecttype-return-values"""
         return GetAtt(resource=self, attr_name="LastUpdatedAt")
+    
+    @property
+    def rv_CreatedAt(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-customerprofiles-objecttype.html#aws-resource-customerprofiles-objecttype-return-values"""
+        return GetAtt(resource=self, attr_name="CreatedAt")
     
 
 @attr.s
@@ -1054,6 +1059,7 @@ class Domain(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Tag',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -1061,12 +1067,12 @@ class Domain(Resource):
 
     
     @property
-    def rv_CreatedAt(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-customerprofiles-domain.html#aws-resource-customerprofiles-domain-return-values"""
-        return GetAtt(resource=self, attr_name="CreatedAt")
-    
-    @property
     def rv_LastUpdatedAt(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-customerprofiles-domain.html#aws-resource-customerprofiles-domain-return-values"""
         return GetAtt(resource=self, attr_name="LastUpdatedAt")
+    
+    @property
+    def rv_CreatedAt(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-customerprofiles-domain.html#aws-resource-customerprofiles-domain-return-values"""
+        return GetAtt(resource=self, attr_name="CreatedAt")
     

@@ -162,9 +162,9 @@ class Tracker(Resource):
         return GetAtt(resource=self, attr_name="CreateTime")
     
     @property
-    def rv_TrackerArn(self) -> GetAtt:
+    def rv_UpdateTime(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-location-tracker.html#aws-resource-location-tracker-return-values"""
-        return GetAtt(resource=self, attr_name="TrackerArn")
+        return GetAtt(resource=self, attr_name="UpdateTime")
     
     @property
     def rv_Arn(self) -> GetAtt:
@@ -172,9 +172,9 @@ class Tracker(Resource):
         return GetAtt(resource=self, attr_name="Arn")
     
     @property
-    def rv_UpdateTime(self) -> GetAtt:
+    def rv_TrackerArn(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-location-tracker.html#aws-resource-location-tracker-return-values"""
-        return GetAtt(resource=self, attr_name="UpdateTime")
+        return GetAtt(resource=self, attr_name="TrackerArn")
     
 
 @attr.s
@@ -189,8 +189,6 @@ class GeofenceCollection(Resource):
     - ``rp_CollectionName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-location-geofencecollection.html#cfn-location-geofencecollection-collectionname
     - ``p_Description``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-location-geofencecollection.html#cfn-location-geofencecollection-description
     - ``p_KmsKeyId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-location-geofencecollection.html#cfn-location-geofencecollection-kmskeyid
-    - ``p_PricingPlan``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-location-geofencecollection.html#cfn-location-geofencecollection-pricingplan
-    - ``p_PricingPlanDataSource``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-location-geofencecollection.html#cfn-location-geofencecollection-pricingplandatasource
     """
     AWS_OBJECT_TYPE = "AWS::Location::GeofenceCollection"
 
@@ -234,43 +232,12 @@ class GeofenceCollection(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-location-geofencecollection.html#cfn-location-geofencecollection-kmskeyid"""
-    p_PricingPlan: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "PricingPlan",
-            AttrMeta.DATA: {
-                "UpdateType": 'Immutable',
-                "Required": False,
-                "PrimitiveType": 'String',
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-location-geofencecollection.html#cfn-location-geofencecollection-pricingplan"""
-    p_PricingPlanDataSource: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "PricingPlanDataSource",
-            AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
-                "Required": False,
-                "PrimitiveType": 'String',
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-location-geofencecollection.html#cfn-location-geofencecollection-pricingplandatasource"""
 
     
     @property
     def rv_CollectionArn(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-location-geofencecollection.html#aws-resource-location-geofencecollection-return-values"""
         return GetAtt(resource=self, attr_name="CollectionArn")
-    
-    @property
-    def rv_Arn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-location-geofencecollection.html#aws-resource-location-geofencecollection-return-values"""
-        return GetAtt(resource=self, attr_name="Arn")
     
     @property
     def rv_CreateTime(self) -> GetAtt:
@@ -281,6 +248,11 @@ class GeofenceCollection(Resource):
     def rv_UpdateTime(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-location-geofencecollection.html#aws-resource-location-geofencecollection-return-values"""
         return GetAtt(resource=self, attr_name="UpdateTime")
+    
+    @property
+    def rv_Arn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-location-geofencecollection.html#aws-resource-location-geofencecollection-return-values"""
+        return GetAtt(resource=self, attr_name="Arn")
     
 
 @attr.s
@@ -399,16 +371,6 @@ class RouteCalculator(Resource):
 
     
     @property
-    def rv_CalculatorArn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-location-routecalculator.html#aws-resource-location-routecalculator-return-values"""
-        return GetAtt(resource=self, attr_name="CalculatorArn")
-    
-    @property
-    def rv_Arn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-location-routecalculator.html#aws-resource-location-routecalculator-return-values"""
-        return GetAtt(resource=self, attr_name="Arn")
-    
-    @property
     def rv_CreateTime(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-location-routecalculator.html#aws-resource-location-routecalculator-return-values"""
         return GetAtt(resource=self, attr_name="CreateTime")
@@ -417,6 +379,16 @@ class RouteCalculator(Resource):
     def rv_UpdateTime(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-location-routecalculator.html#aws-resource-location-routecalculator-return-values"""
         return GetAtt(resource=self, attr_name="UpdateTime")
+    
+    @property
+    def rv_CalculatorArn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-location-routecalculator.html#aws-resource-location-routecalculator-return-values"""
+        return GetAtt(resource=self, attr_name="CalculatorArn")
+    
+    @property
+    def rv_Arn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-location-routecalculator.html#aws-resource-location-routecalculator-return-values"""
+        return GetAtt(resource=self, attr_name="Arn")
     
 
 @attr.s
@@ -497,14 +469,9 @@ class Map(Resource):
         return GetAtt(resource=self, attr_name="CreateTime")
     
     @property
-    def rv_DataSource(self) -> GetAtt:
+    def rv_UpdateTime(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-location-map.html#aws-resource-location-map-return-values"""
-        return GetAtt(resource=self, attr_name="DataSource")
-    
-    @property
-    def rv_MapArn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-location-map.html#aws-resource-location-map-return-values"""
-        return GetAtt(resource=self, attr_name="MapArn")
+        return GetAtt(resource=self, attr_name="UpdateTime")
     
     @property
     def rv_Arn(self) -> GetAtt:
@@ -512,9 +479,14 @@ class Map(Resource):
         return GetAtt(resource=self, attr_name="Arn")
     
     @property
-    def rv_UpdateTime(self) -> GetAtt:
+    def rv_MapArn(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-location-map.html#aws-resource-location-map-return-values"""
-        return GetAtt(resource=self, attr_name="UpdateTime")
+        return GetAtt(resource=self, attr_name="MapArn")
+    
+    @property
+    def rv_DataSource(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-location-map.html#aws-resource-location-map-return-values"""
+        return GetAtt(resource=self, attr_name="DataSource")
     
 
 @attr.s
@@ -604,22 +576,22 @@ class PlaceIndex(Resource):
 
     
     @property
-    def rv_CreateTime(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-location-placeindex.html#aws-resource-location-placeindex-return-values"""
-        return GetAtt(resource=self, attr_name="CreateTime")
-    
-    @property
     def rv_IndexArn(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-location-placeindex.html#aws-resource-location-placeindex-return-values"""
         return GetAtt(resource=self, attr_name="IndexArn")
     
     @property
-    def rv_Arn(self) -> GetAtt:
+    def rv_CreateTime(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-location-placeindex.html#aws-resource-location-placeindex-return-values"""
-        return GetAtt(resource=self, attr_name="Arn")
+        return GetAtt(resource=self, attr_name="CreateTime")
     
     @property
     def rv_UpdateTime(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-location-placeindex.html#aws-resource-location-placeindex-return-values"""
         return GetAtt(resource=self, attr_name="UpdateTime")
+    
+    @property
+    def rv_Arn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-location-placeindex.html#aws-resource-location-placeindex-return-values"""
+        return GetAtt(resource=self, attr_name="Arn")
     

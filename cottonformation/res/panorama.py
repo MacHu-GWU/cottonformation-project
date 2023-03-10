@@ -115,6 +115,7 @@ class Package(Resource):
     Property Document:
     
     - ``rp_PackageName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-panorama-package.html#cfn-panorama-package-packagename
+    - ``p_StorageLocation``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-panorama-package.html#cfn-panorama-package-storagelocation
     - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-panorama-package.html#cfn-panorama-package-tags
     """
     AWS_OBJECT_TYPE = "AWS::Panorama::Package"
@@ -133,6 +134,20 @@ class Package(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-panorama-package.html#cfn-panorama-package-packagename"""
+    p_StorageLocation: typing.Union['PropPackageStorageLocation', dict] = attr.ib(
+        default=None,
+        converter=PropPackageStorageLocation.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropPackageStorageLocation)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "StorageLocation",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'StorageLocation',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-panorama-package.html#cfn-panorama-package-storagelocation"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
@@ -150,6 +165,26 @@ class Package(Resource):
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-panorama-package.html#cfn-panorama-package-tags"""
 
+    
+    @property
+    def rv_CreatedTime(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-panorama-package.html#aws-resource-panorama-package-return-values"""
+        return GetAtt(resource=self, attr_name="CreatedTime")
+    
+    @property
+    def rv_StorageLocationManifestPrefixLocation(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-panorama-package.html#aws-resource-panorama-package-return-values"""
+        return GetAtt(resource=self, attr_name="StorageLocation.ManifestPrefixLocation")
+    
+    @property
+    def rv_StorageLocationGeneratedPrefixLocation(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-panorama-package.html#aws-resource-panorama-package-return-values"""
+        return GetAtt(resource=self, attr_name="StorageLocation.GeneratedPrefixLocation")
+    
+    @property
+    def rv_StorageLocationBinaryPrefixLocation(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-panorama-package.html#aws-resource-panorama-package-return-values"""
+        return GetAtt(resource=self, attr_name="StorageLocation.BinaryPrefixLocation")
     
     @property
     def rv_PackageId(self) -> GetAtt:
@@ -170,26 +205,6 @@ class Package(Resource):
     def rv_StorageLocationRepoPrefixLocation(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-panorama-package.html#aws-resource-panorama-package-return-values"""
         return GetAtt(resource=self, attr_name="StorageLocation.RepoPrefixLocation")
-    
-    @property
-    def rv_StorageLocationGeneratedPrefixLocation(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-panorama-package.html#aws-resource-panorama-package-return-values"""
-        return GetAtt(resource=self, attr_name="StorageLocation.GeneratedPrefixLocation")
-    
-    @property
-    def rv_StorageLocationBinaryPrefixLocation(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-panorama-package.html#aws-resource-panorama-package-return-values"""
-        return GetAtt(resource=self, attr_name="StorageLocation.BinaryPrefixLocation")
-    
-    @property
-    def rv_StorageLocationManifestPrefixLocation(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-panorama-package.html#aws-resource-panorama-package-return-values"""
-        return GetAtt(resource=self, attr_name="StorageLocation.ManifestPrefixLocation")
-    
-    @property
-    def rv_CreatedTime(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-panorama-package.html#aws-resource-panorama-package-return-values"""
-        return GetAtt(resource=self, attr_name="CreatedTime")
     
 
 @attr.s
@@ -292,6 +307,21 @@ class PackageVersion(Resource):
 
     
     @property
+    def rv_Status(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-panorama-packageversion.html#aws-resource-panorama-packageversion-return-values"""
+        return GetAtt(resource=self, attr_name="Status")
+    
+    @property
+    def rv_PackageName(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-panorama-packageversion.html#aws-resource-panorama-packageversion-return-values"""
+        return GetAtt(resource=self, attr_name="PackageName")
+    
+    @property
+    def rv_StatusDescription(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-panorama-packageversion.html#aws-resource-panorama-packageversion-return-values"""
+        return GetAtt(resource=self, attr_name="StatusDescription")
+    
+    @property
     def rv_PackageArn(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-panorama-packageversion.html#aws-resource-panorama-packageversion-return-values"""
         return GetAtt(resource=self, attr_name="PackageArn")
@@ -300,21 +330,6 @@ class PackageVersion(Resource):
     def rv_IsLatestPatch(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-panorama-packageversion.html#aws-resource-panorama-packageversion-return-values"""
         return GetAtt(resource=self, attr_name="IsLatestPatch")
-    
-    @property
-    def rv_PackageName(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-panorama-packageversion.html#aws-resource-panorama-packageversion-return-values"""
-        return GetAtt(resource=self, attr_name="PackageName")
-    
-    @property
-    def rv_Status(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-panorama-packageversion.html#aws-resource-panorama-packageversion-return-values"""
-        return GetAtt(resource=self, attr_name="Status")
-    
-    @property
-    def rv_StatusDescription(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-panorama-packageversion.html#aws-resource-panorama-packageversion-return-values"""
-        return GetAtt(resource=self, attr_name="StatusDescription")
     
     @property
     def rv_RegisteredTime(self) -> GetAtt:
@@ -488,19 +503,19 @@ class ApplicationInstance(Resource):
         return GetAtt(resource=self, attr_name="DefaultRuntimeContextDeviceName")
     
     @property
-    def rv_ApplicationInstanceId(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-panorama-applicationinstance.html#aws-resource-panorama-applicationinstance-return-values"""
-        return GetAtt(resource=self, attr_name="ApplicationInstanceId")
-    
-    @property
     def rv_Status(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-panorama-applicationinstance.html#aws-resource-panorama-applicationinstance-return-values"""
         return GetAtt(resource=self, attr_name="Status")
     
     @property
-    def rv_HealthStatus(self) -> GetAtt:
+    def rv_ApplicationInstanceId(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-panorama-applicationinstance.html#aws-resource-panorama-applicationinstance-return-values"""
-        return GetAtt(resource=self, attr_name="HealthStatus")
+        return GetAtt(resource=self, attr_name="ApplicationInstanceId")
+    
+    @property
+    def rv_CreatedTime(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-panorama-applicationinstance.html#aws-resource-panorama-applicationinstance-return-values"""
+        return GetAtt(resource=self, attr_name="CreatedTime")
     
     @property
     def rv_StatusDescription(self) -> GetAtt:
@@ -508,9 +523,9 @@ class ApplicationInstance(Resource):
         return GetAtt(resource=self, attr_name="StatusDescription")
     
     @property
-    def rv_CreatedTime(self) -> GetAtt:
+    def rv_HealthStatus(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-panorama-applicationinstance.html#aws-resource-panorama-applicationinstance-return-values"""
-        return GetAtt(resource=self, attr_name="CreatedTime")
+        return GetAtt(resource=self, attr_name="HealthStatus")
     
     @property
     def rv_LastUpdatedTime(self) -> GetAtt:

@@ -35,6 +35,33 @@ class PropGatewayGreengrass(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-gateway-greengrass.html#cfn-iotsitewise-gateway-greengrass-grouparn"""
 
 @attr.s
+class PropPortalAlarms(Property):
+    """
+    AWS Object Type = "AWS::IoTSiteWise::Portal.Alarms"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-portal-alarms.html
+
+    Property Document:
+    
+    - ``p_AlarmRoleArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-portal-alarms.html#cfn-iotsitewise-portal-alarms-alarmrolearn
+    - ``p_NotificationLambdaArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-portal-alarms.html#cfn-iotsitewise-portal-alarms-notificationlambdaarn
+    """
+    AWS_OBJECT_TYPE = "AWS::IoTSiteWise::Portal.Alarms"
+    
+    p_AlarmRoleArn: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "AlarmRoleArn"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-portal-alarms.html#cfn-iotsitewise-portal-alarms-alarmrolearn"""
+    p_NotificationLambdaArn: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "NotificationLambdaArn"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotsitewise-portal-alarms.html#cfn-iotsitewise-portal-alarms-notificationlambdaarn"""
+
+@attr.s
 class PropGatewayGreengrassV2(Property):
     """
     AWS Object Type = "AWS::IoTSiteWise::Gateway.GreengrassV2"
@@ -749,6 +776,7 @@ class AssetModel(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'AssetModelCompositeModel',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -777,6 +805,7 @@ class AssetModel(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'AssetModelHierarchy',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -792,6 +821,7 @@ class AssetModel(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'AssetModelProperty',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -807,6 +837,7 @@ class AssetModel(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Tag',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -893,6 +924,7 @@ class Asset(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'AssetHierarchy',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -908,6 +940,7 @@ class Asset(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'AssetProperty',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -931,14 +964,14 @@ class Asset(Resource):
 
     
     @property
-    def rv_AssetId(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-asset.html#aws-resource-iotsitewise-asset-return-values"""
-        return GetAtt(resource=self, attr_name="AssetId")
-    
-    @property
     def rv_AssetArn(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-asset.html#aws-resource-iotsitewise-asset-return-values"""
         return GetAtt(resource=self, attr_name="AssetArn")
+    
+    @property
+    def rv_AssetId(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-asset.html#aws-resource-iotsitewise-asset-return-values"""
+        return GetAtt(resource=self, attr_name="AssetId")
     
 
 @attr.s
@@ -1100,15 +1133,16 @@ class Portal(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-portal.html#cfn-iotsitewise-portal-rolearn"""
-    p_Alarms: dict = attr.ib(
+    p_Alarms: typing.Union['PropPortalAlarms', dict] = attr.ib(
         default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        converter=PropPortalAlarms.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropPortalAlarms)),
         metadata={
             AttrMeta.PROPERTY_NAME: "Alarms",
             AttrMeta.DATA: {
                 "UpdateType": 'Mutable',
                 "Required": False,
-                "PrimitiveType": 'Json',
+                "Type": 'Alarms',
             }
         },
     )
@@ -1176,9 +1210,9 @@ class Portal(Resource):
         return GetAtt(resource=self, attr_name="PortalArn")
     
     @property
-    def rv_PortalClientId(self) -> GetAtt:
+    def rv_PortalStartUrl(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-portal.html#aws-resource-iotsitewise-portal-return-values"""
-        return GetAtt(resource=self, attr_name="PortalClientId")
+        return GetAtt(resource=self, attr_name="PortalStartUrl")
     
     @property
     def rv_PortalId(self) -> GetAtt:
@@ -1186,9 +1220,9 @@ class Portal(Resource):
         return GetAtt(resource=self, attr_name="PortalId")
     
     @property
-    def rv_PortalStartUrl(self) -> GetAtt:
+    def rv_PortalClientId(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-portal.html#aws-resource-iotsitewise-portal-return-values"""
-        return GetAtt(resource=self, attr_name="PortalStartUrl")
+        return GetAtt(resource=self, attr_name="PortalClientId")
     
 
 @attr.s
@@ -1251,14 +1285,14 @@ class AccessPolicy(Resource):
 
     
     @property
-    def rv_AccessPolicyId(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-accesspolicy.html#aws-resource-iotsitewise-accesspolicy-return-values"""
-        return GetAtt(resource=self, attr_name="AccessPolicyId")
-    
-    @property
     def rv_AccessPolicyArn(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-accesspolicy.html#aws-resource-iotsitewise-accesspolicy-return-values"""
         return GetAtt(resource=self, attr_name="AccessPolicyArn")
+    
+    @property
+    def rv_AccessPolicyId(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-accesspolicy.html#aws-resource-iotsitewise-accesspolicy-return-values"""
+        return GetAtt(resource=self, attr_name="AccessPolicyId")
     
 
 @attr.s
@@ -1352,14 +1386,14 @@ class Project(Resource):
 
     
     @property
-    def rv_ProjectId(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-project.html#aws-resource-iotsitewise-project-return-values"""
-        return GetAtt(resource=self, attr_name="ProjectId")
-    
-    @property
     def rv_ProjectArn(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-project.html#aws-resource-iotsitewise-project-return-values"""
         return GetAtt(resource=self, attr_name="ProjectArn")
+    
+    @property
+    def rv_ProjectId(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotsitewise-project.html#aws-resource-iotsitewise-project-return-values"""
+        return GetAtt(resource=self, attr_name="ProjectId")
     
 
 @attr.s

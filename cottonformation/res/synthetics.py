@@ -505,14 +505,14 @@ class Canary(Resource):
 
     
     @property
-    def rv_Id(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html#aws-resource-synthetics-canary-return-values"""
-        return GetAtt(resource=self, attr_name="Id")
-    
-    @property
     def rv_State(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html#aws-resource-synthetics-canary-return-values"""
         return GetAtt(resource=self, attr_name="State")
+    
+    @property
+    def rv_Id(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-synthetics-canary.html#aws-resource-synthetics-canary-return-values"""
+        return GetAtt(resource=self, attr_name="Id")
     
 
 @attr.s

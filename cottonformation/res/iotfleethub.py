@@ -92,9 +92,9 @@ class Application(Resource):
 
     
     @property
-    def rv_ApplicationId(self) -> GetAtt:
+    def rv_ApplicationUrl(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotfleethub-application.html#aws-resource-iotfleethub-application-return-values"""
-        return GetAtt(resource=self, attr_name="ApplicationId")
+        return GetAtt(resource=self, attr_name="ApplicationUrl")
     
     @property
     def rv_ApplicationArn(self) -> GetAtt:
@@ -102,24 +102,9 @@ class Application(Resource):
         return GetAtt(resource=self, attr_name="ApplicationArn")
     
     @property
-    def rv_ApplicationUrl(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotfleethub-application.html#aws-resource-iotfleethub-application-return-values"""
-        return GetAtt(resource=self, attr_name="ApplicationUrl")
-    
-    @property
     def rv_ApplicationState(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotfleethub-application.html#aws-resource-iotfleethub-application-return-values"""
         return GetAtt(resource=self, attr_name="ApplicationState")
-    
-    @property
-    def rv_ApplicationCreationDate(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotfleethub-application.html#aws-resource-iotfleethub-application-return-values"""
-        return GetAtt(resource=self, attr_name="ApplicationCreationDate")
-    
-    @property
-    def rv_ApplicationLastUpdateDate(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotfleethub-application.html#aws-resource-iotfleethub-application-return-values"""
-        return GetAtt(resource=self, attr_name="ApplicationLastUpdateDate")
     
     @property
     def rv_SsoClientId(self) -> GetAtt:
@@ -127,7 +112,22 @@ class Application(Resource):
         return GetAtt(resource=self, attr_name="SsoClientId")
     
     @property
+    def rv_ApplicationId(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotfleethub-application.html#aws-resource-iotfleethub-application-return-values"""
+        return GetAtt(resource=self, attr_name="ApplicationId")
+    
+    @property
+    def rv_ApplicationLastUpdateDate(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotfleethub-application.html#aws-resource-iotfleethub-application-return-values"""
+        return GetAtt(resource=self, attr_name="ApplicationLastUpdateDate")
+    
+    @property
     def rv_ErrorMessage(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotfleethub-application.html#aws-resource-iotfleethub-application-return-values"""
         return GetAtt(resource=self, attr_name="ErrorMessage")
+    
+    @property
+    def rv_ApplicationCreationDate(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotfleethub-application.html#aws-resource-iotfleethub-application-return-values"""
+        return GetAtt(resource=self, attr_name="ApplicationCreationDate")
     

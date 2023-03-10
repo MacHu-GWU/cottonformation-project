@@ -120,14 +120,14 @@ class ReplicaKey(Resource):
 
     
     @property
-    def rv_Arn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kms-replicakey.html#aws-resource-kms-replicakey-return-values"""
-        return GetAtt(resource=self, attr_name="Arn")
-    
-    @property
     def rv_KeyId(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kms-replicakey.html#aws-resource-kms-replicakey-return-values"""
         return GetAtt(resource=self, attr_name="KeyId")
+    
+    @property
+    def rv_Arn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kms-replicakey.html#aws-resource-kms-replicakey-return-values"""
+        return GetAtt(resource=self, attr_name="Arn")
     
 
 @attr.s
@@ -319,12 +319,12 @@ class Key(Resource):
 
     
     @property
-    def rv_Arn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kms-key.html#aws-resource-kms-key-return-values"""
-        return GetAtt(resource=self, attr_name="Arn")
-    
-    @property
     def rv_KeyId(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kms-key.html#aws-resource-kms-key-return-values"""
         return GetAtt(resource=self, attr_name="KeyId")
+    
+    @property
+    def rv_Arn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-kms-key.html#aws-resource-kms-key-return-values"""
+        return GetAtt(resource=self, attr_name="Arn")
     

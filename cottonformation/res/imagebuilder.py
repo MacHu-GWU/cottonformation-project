@@ -239,6 +239,33 @@ class PropContainerRecipeComponentParameter(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-containerrecipe-componentparameter.html#cfn-imagebuilder-containerrecipe-componentparameter-value"""
 
 @attr.s
+class PropImagePipelineEcrConfiguration(Property):
+    """
+    AWS Object Type = "AWS::ImageBuilder::ImagePipeline.EcrConfiguration"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-imagepipeline-ecrconfiguration.html
+
+    Property Document:
+    
+    - ``p_ContainerTags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-imagepipeline-ecrconfiguration.html#cfn-imagebuilder-imagepipeline-ecrconfiguration-containertags
+    - ``p_RepositoryName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-imagepipeline-ecrconfiguration.html#cfn-imagebuilder-imagepipeline-ecrconfiguration-repositoryname
+    """
+    AWS_OBJECT_TYPE = "AWS::ImageBuilder::ImagePipeline.EcrConfiguration"
+    
+    p_ContainerTags: typing.List[TypeHint.intrinsic_str] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "ContainerTags"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-imagepipeline-ecrconfiguration.html#cfn-imagebuilder-imagepipeline-ecrconfiguration-containertags"""
+    p_RepositoryName: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "RepositoryName"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-imagepipeline-ecrconfiguration.html#cfn-imagebuilder-imagepipeline-ecrconfiguration-repositoryname"""
+
+@attr.s
 class PropContainerRecipeInstanceBlockDeviceMapping(Property):
     """
     AWS Object Type = "AWS::ImageBuilder::ContainerRecipe.InstanceBlockDeviceMapping"
@@ -278,6 +305,34 @@ class PropContainerRecipeInstanceBlockDeviceMapping(Property):
         metadata={AttrMeta.PROPERTY_NAME: "VirtualName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-containerrecipe-instanceblockdevicemapping.html#cfn-imagebuilder-containerrecipe-instanceblockdevicemapping-virtualname"""
+
+@attr.s
+class PropImagePipelineImageScanningConfiguration(Property):
+    """
+    AWS Object Type = "AWS::ImageBuilder::ImagePipeline.ImageScanningConfiguration"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-imagepipeline-imagescanningconfiguration.html
+
+    Property Document:
+    
+    - ``p_EcrConfiguration``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-imagepipeline-imagescanningconfiguration.html#cfn-imagebuilder-imagepipeline-imagescanningconfiguration-ecrconfiguration
+    - ``p_ImageScanningEnabled``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-imagepipeline-imagescanningconfiguration.html#cfn-imagebuilder-imagepipeline-imagescanningconfiguration-imagescanningenabled
+    """
+    AWS_OBJECT_TYPE = "AWS::ImageBuilder::ImagePipeline.ImageScanningConfiguration"
+    
+    p_EcrConfiguration: typing.Union['PropImagePipelineEcrConfiguration', dict] = attr.ib(
+        default=None,
+        converter=PropImagePipelineEcrConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropImagePipelineEcrConfiguration)),
+        metadata={AttrMeta.PROPERTY_NAME: "EcrConfiguration"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-imagepipeline-imagescanningconfiguration.html#cfn-imagebuilder-imagepipeline-imagescanningconfiguration-ecrconfiguration"""
+    p_ImageScanningEnabled: bool = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(bool)),
+        metadata={AttrMeta.PROPERTY_NAME: "ImageScanningEnabled"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-imagepipeline-imagescanningconfiguration.html#cfn-imagebuilder-imagepipeline-imagescanningconfiguration-imagescanningenabled"""
 
 @attr.s
 class PropContainerRecipeInstanceConfiguration(Property):
@@ -402,6 +457,33 @@ class PropImageRecipeEbsInstanceBlockDeviceSpecification(Property):
         metadata={AttrMeta.PROPERTY_NAME: "VolumeType"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-imagerecipe-ebsinstanceblockdevicespecification.html#cfn-imagebuilder-imagerecipe-ebsinstanceblockdevicespecification-volumetype"""
+
+@attr.s
+class PropImageEcrConfiguration(Property):
+    """
+    AWS Object Type = "AWS::ImageBuilder::Image.EcrConfiguration"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-image-ecrconfiguration.html
+
+    Property Document:
+    
+    - ``p_ContainerTags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-image-ecrconfiguration.html#cfn-imagebuilder-image-ecrconfiguration-containertags
+    - ``p_RepositoryName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-image-ecrconfiguration.html#cfn-imagebuilder-image-ecrconfiguration-repositoryname
+    """
+    AWS_OBJECT_TYPE = "AWS::ImageBuilder::Image.EcrConfiguration"
+    
+    p_ContainerTags: typing.List[TypeHint.intrinsic_str] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "ContainerTags"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-image-ecrconfiguration.html#cfn-imagebuilder-image-ecrconfiguration-containertags"""
+    p_RepositoryName: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "RepositoryName"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-image-ecrconfiguration.html#cfn-imagebuilder-image-ecrconfiguration-repositoryname"""
 
 @attr.s
 class PropImageRecipeInstanceBlockDeviceMapping(Property):
@@ -787,6 +869,34 @@ class PropDistributionConfigurationLaunchPermissionConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-distributionconfiguration-launchpermissionconfiguration.html#cfn-imagebuilder-distributionconfiguration-launchpermissionconfiguration-userids"""
 
 @attr.s
+class PropImageImageScanningConfiguration(Property):
+    """
+    AWS Object Type = "AWS::ImageBuilder::Image.ImageScanningConfiguration"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-image-imagescanningconfiguration.html
+
+    Property Document:
+    
+    - ``p_EcrConfiguration``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-image-imagescanningconfiguration.html#cfn-imagebuilder-image-imagescanningconfiguration-ecrconfiguration
+    - ``p_ImageScanningEnabled``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-image-imagescanningconfiguration.html#cfn-imagebuilder-image-imagescanningconfiguration-imagescanningenabled
+    """
+    AWS_OBJECT_TYPE = "AWS::ImageBuilder::Image.ImageScanningConfiguration"
+    
+    p_EcrConfiguration: typing.Union['PropImageEcrConfiguration', dict] = attr.ib(
+        default=None,
+        converter=PropImageEcrConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropImageEcrConfiguration)),
+        metadata={AttrMeta.PROPERTY_NAME: "EcrConfiguration"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-image-imagescanningconfiguration.html#cfn-imagebuilder-image-imagescanningconfiguration-ecrconfiguration"""
+    p_ImageScanningEnabled: bool = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(bool)),
+        metadata={AttrMeta.PROPERTY_NAME: "ImageScanningEnabled"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-imagebuilder-image-imagescanningconfiguration.html#cfn-imagebuilder-image-imagescanningconfiguration-imagescanningenabled"""
+
+@attr.s
 class PropDistributionConfigurationContainerDistributionConfiguration(Property):
     """
     AWS Object Type = "AWS::ImageBuilder::DistributionConfiguration.ContainerDistributionConfiguration"
@@ -1083,6 +1193,7 @@ class Component(Resource):
                 "Required": False,
                 "Type": 'List',
                 "PrimitiveItemType": 'String',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -1117,16 +1228,6 @@ class Component(Resource):
 
     
     @property
-    def rv_Arn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-component.html#aws-resource-imagebuilder-component-return-values"""
-        return GetAtt(resource=self, attr_name="Arn")
-    
-    @property
-    def rv_Name(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-component.html#aws-resource-imagebuilder-component-return-values"""
-        return GetAtt(resource=self, attr_name="Name")
-    
-    @property
     def rv_Type(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-component.html#aws-resource-imagebuilder-component-return-values"""
         return GetAtt(resource=self, attr_name="Type")
@@ -1135,6 +1236,16 @@ class Component(Resource):
     def rv_Encrypted(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-component.html#aws-resource-imagebuilder-component-return-values"""
         return GetAtt(resource=self, attr_name="Encrypted")
+    
+    @property
+    def rv_Arn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-component.html#aws-resource-imagebuilder-component-return-values"""
+        return GetAtt(resource=self, attr_name="Arn")
+    
+    @property
+    def rv_Name(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-component.html#aws-resource-imagebuilder-component-return-values"""
+        return GetAtt(resource=self, attr_name="Name")
     
 
 @attr.s
@@ -1153,6 +1264,7 @@ class ImagePipeline(Resource):
     - ``p_DistributionConfigurationArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-imagepipeline.html#cfn-imagebuilder-imagepipeline-distributionconfigurationarn
     - ``p_EnhancedImageMetadataEnabled``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-imagepipeline.html#cfn-imagebuilder-imagepipeline-enhancedimagemetadataenabled
     - ``p_ImageRecipeArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-imagepipeline.html#cfn-imagebuilder-imagepipeline-imagerecipearn
+    - ``p_ImageScanningConfiguration``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-imagepipeline.html#cfn-imagebuilder-imagepipeline-imagescanningconfiguration
     - ``p_ImageTestsConfiguration``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-imagepipeline.html#cfn-imagebuilder-imagepipeline-imagetestsconfiguration
     - ``p_Schedule``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-imagepipeline.html#cfn-imagebuilder-imagepipeline-schedule
     - ``p_Status``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-imagepipeline.html#cfn-imagebuilder-imagepipeline-status
@@ -1252,6 +1364,20 @@ class ImagePipeline(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-imagepipeline.html#cfn-imagebuilder-imagepipeline-imagerecipearn"""
+    p_ImageScanningConfiguration: typing.Union['PropImagePipelineImageScanningConfiguration', dict] = attr.ib(
+        default=None,
+        converter=PropImagePipelineImageScanningConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropImagePipelineImageScanningConfiguration)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ImageScanningConfiguration",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'ImageScanningConfiguration',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-imagepipeline.html#cfn-imagebuilder-imagepipeline-imagescanningconfiguration"""
     p_ImageTestsConfiguration: typing.Union['PropImagePipelineImageTestsConfiguration', dict] = attr.ib(
         default=None,
         converter=PropImagePipelineImageTestsConfiguration.from_dict,
@@ -1359,6 +1485,7 @@ class ContainerRecipe(Resource):
                 "Required": True,
                 "Type": 'List',
                 "ItemType": 'ComponentConfiguration',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -1594,6 +1721,7 @@ class ImageRecipe(Resource):
                 "Required": True,
                 "Type": 'List',
                 "ItemType": 'ComponentConfiguration',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -1662,6 +1790,7 @@ class ImageRecipe(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'InstanceBlockDeviceMapping',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -1808,6 +1937,7 @@ class InfrastructureConfiguration(Resource):
                 "Required": False,
                 "Type": 'List',
                 "PrimitiveItemType": 'String',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -1863,6 +1993,7 @@ class InfrastructureConfiguration(Resource):
                 "Required": False,
                 "Type": 'List',
                 "PrimitiveItemType": 'String',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -1961,6 +2092,7 @@ class DistributionConfiguration(Resource):
                 "Required": True,
                 "Type": 'List',
                 "ItemType": 'Distribution',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -2032,6 +2164,7 @@ class Image(Resource):
     - ``p_DistributionConfigurationArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-image.html#cfn-imagebuilder-image-distributionconfigurationarn
     - ``p_EnhancedImageMetadataEnabled``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-image.html#cfn-imagebuilder-image-enhancedimagemetadataenabled
     - ``p_ImageRecipeArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-image.html#cfn-imagebuilder-image-imagerecipearn
+    - ``p_ImageScanningConfiguration``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-image.html#cfn-imagebuilder-image-imagescanningconfiguration
     - ``p_ImageTestsConfiguration``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-image.html#cfn-imagebuilder-image-imagetestsconfiguration
     - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-image.html#cfn-imagebuilder-image-tags
     """
@@ -2103,6 +2236,20 @@ class Image(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-image.html#cfn-imagebuilder-image-imagerecipearn"""
+    p_ImageScanningConfiguration: typing.Union['PropImageImageScanningConfiguration', dict] = attr.ib(
+        default=None,
+        converter=PropImageImageScanningConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropImageImageScanningConfiguration)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ImageScanningConfiguration",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "Type": 'ImageScanningConfiguration',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-image.html#cfn-imagebuilder-image-imagescanningconfiguration"""
     p_ImageTestsConfiguration: typing.Union['PropImageImageTestsConfiguration', dict] = attr.ib(
         default=None,
         converter=PropImageImageTestsConfiguration.from_dict,
@@ -2134,16 +2281,6 @@ class Image(Resource):
 
     
     @property
-    def rv_Arn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-image.html#aws-resource-imagebuilder-image-return-values"""
-        return GetAtt(resource=self, attr_name="Arn")
-    
-    @property
-    def rv_Name(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-image.html#aws-resource-imagebuilder-image-return-values"""
-        return GetAtt(resource=self, attr_name="Name")
-    
-    @property
     def rv_ImageId(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-image.html#aws-resource-imagebuilder-image-return-values"""
         return GetAtt(resource=self, attr_name="ImageId")
@@ -2152,4 +2289,14 @@ class Image(Resource):
     def rv_ImageUri(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-image.html#aws-resource-imagebuilder-image-return-values"""
         return GetAtt(resource=self, attr_name="ImageUri")
+    
+    @property
+    def rv_Arn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-image.html#aws-resource-imagebuilder-image-return-values"""
+        return GetAtt(resource=self, attr_name="Arn")
+    
+    @property
+    def rv_Name(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-imagebuilder-image.html#aws-resource-imagebuilder-image-return-values"""
+        return GetAtt(resource=self, attr_name="Name")
     

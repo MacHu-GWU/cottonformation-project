@@ -15,19 +15,6 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class PropTagAssociationTableWildcard(Property):
-    """
-    AWS Object Type = "AWS::LakeFormation::TagAssociation.TableWildcard"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-tagassociation-tablewildcard.html
-
-    Property Document:
-    
-    """
-    AWS_OBJECT_TYPE = "AWS::LakeFormation::TagAssociation.TableWildcard"
-    
-
-@attr.s
 class PropPrincipalPermissionsDataLocationResource(Property):
     """
     AWS Object Type = "AWS::LakeFormation::PrincipalPermissions.DataLocationResource"
@@ -250,13 +237,53 @@ class PropTagAssociationTableResource(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Name"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-tagassociation-tableresource.html#cfn-lakeformation-tagassociation-tableresource-name"""
-    p_TableWildcard: typing.Union['PropTagAssociationTableWildcard', dict] = attr.ib(
+    p_TableWildcard: dict = attr.ib(
         default=None,
-        converter=PropTagAssociationTableWildcard.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropTagAssociationTableWildcard)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "TableWildcard"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-tagassociation-tableresource.html#cfn-lakeformation-tagassociation-tableresource-tablewildcard"""
+
+@attr.s
+class PropPrincipalPermissionsTableResource(Property):
+    """
+    AWS Object Type = "AWS::LakeFormation::PrincipalPermissions.TableResource"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-principalpermissions-tableresource.html
+
+    Property Document:
+    
+    - ``rp_CatalogId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-principalpermissions-tableresource.html#cfn-lakeformation-principalpermissions-tableresource-catalogid
+    - ``rp_DatabaseName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-principalpermissions-tableresource.html#cfn-lakeformation-principalpermissions-tableresource-databasename
+    - ``p_Name``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-principalpermissions-tableresource.html#cfn-lakeformation-principalpermissions-tableresource-name
+    - ``p_TableWildcard``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-principalpermissions-tableresource.html#cfn-lakeformation-principalpermissions-tableresource-tablewildcard
+    """
+    AWS_OBJECT_TYPE = "AWS::LakeFormation::PrincipalPermissions.TableResource"
+    
+    rp_CatalogId: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "CatalogId"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-principalpermissions-tableresource.html#cfn-lakeformation-principalpermissions-tableresource-catalogid"""
+    rp_DatabaseName: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "DatabaseName"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-principalpermissions-tableresource.html#cfn-lakeformation-principalpermissions-tableresource-databasename"""
+    p_Name: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "Name"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-principalpermissions-tableresource.html#cfn-lakeformation-principalpermissions-tableresource-name"""
+    p_TableWildcard: dict = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "TableWildcard"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-principalpermissions-tableresource.html#cfn-lakeformation-principalpermissions-tableresource-tablewildcard"""
 
 @attr.s
 class PropPrincipalPermissionsColumnWildcard(Property):
@@ -304,19 +331,6 @@ class PropPrincipalPermissionsDatabaseResource(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Name"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-principalpermissions-databaseresource.html#cfn-lakeformation-principalpermissions-databaseresource-name"""
-
-@attr.s
-class PropTagAssociationCatalogResource(Property):
-    """
-    AWS Object Type = "AWS::LakeFormation::TagAssociation.CatalogResource"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-tagassociation-catalogresource.html
-
-    Property Document:
-    
-    """
-    AWS_OBJECT_TYPE = "AWS::LakeFormation::TagAssociation.CatalogResource"
-    
 
 @attr.s
 class PropPrincipalPermissionsTableWithColumnsResource(Property):
@@ -469,19 +483,6 @@ class PropPermissionsDataLocationResource(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-permissions-datalocationresource.html#cfn-lakeformation-permissions-datalocationresource-s3resource"""
 
 @attr.s
-class PropPrincipalPermissionsCatalogResource(Property):
-    """
-    AWS Object Type = "AWS::LakeFormation::PrincipalPermissions.CatalogResource"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-principalpermissions-catalogresource.html
-
-    Property Document:
-    
-    """
-    AWS_OBJECT_TYPE = "AWS::LakeFormation::PrincipalPermissions.CatalogResource"
-    
-
-@attr.s
 class PropPermissionsTableWildcard(Property):
     """
     AWS Object Type = "AWS::LakeFormation::Permissions.TableWildcard"
@@ -561,19 +562,6 @@ class PropDataCellsFilterRowFilter(Property):
         metadata={AttrMeta.PROPERTY_NAME: "FilterExpression"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-datacellsfilter-rowfilter.html#cfn-lakeformation-datacellsfilter-rowfilter-filterexpression"""
-
-@attr.s
-class PropPrincipalPermissionsTableWildcard(Property):
-    """
-    AWS Object Type = "AWS::LakeFormation::PrincipalPermissions.TableWildcard"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-principalpermissions-tablewildcard.html
-
-    Property Document:
-    
-    """
-    AWS_OBJECT_TYPE = "AWS::LakeFormation::PrincipalPermissions.TableWildcard"
-    
 
 @attr.s
 class PropDataCellsFilterColumnWildcard(Property):
@@ -742,7 +730,7 @@ class PropTagAssociationResource(Property):
     """
     AWS_OBJECT_TYPE = "AWS::LakeFormation::TagAssociation.Resource"
     
-    p_Catalog: typing.Optional[dict] = attr.ib(
+    p_Catalog: dict = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "Catalog"},
@@ -766,48 +754,6 @@ class PropTagAssociationResource(Property):
         metadata={AttrMeta.PROPERTY_NAME: "TableWithColumns"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-tagassociation-resource.html#cfn-lakeformation-tagassociation-resource-tablewithcolumns"""
-
-@attr.s
-class PropPrincipalPermissionsTableResource(Property):
-    """
-    AWS Object Type = "AWS::LakeFormation::PrincipalPermissions.TableResource"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-principalpermissions-tableresource.html
-
-    Property Document:
-    
-    - ``rp_CatalogId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-principalpermissions-tableresource.html#cfn-lakeformation-principalpermissions-tableresource-catalogid
-    - ``rp_DatabaseName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-principalpermissions-tableresource.html#cfn-lakeformation-principalpermissions-tableresource-databasename
-    - ``p_Name``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-principalpermissions-tableresource.html#cfn-lakeformation-principalpermissions-tableresource-name
-    - ``p_TableWildcard``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-principalpermissions-tableresource.html#cfn-lakeformation-principalpermissions-tableresource-tablewildcard
-    """
-    AWS_OBJECT_TYPE = "AWS::LakeFormation::PrincipalPermissions.TableResource"
-    
-    rp_CatalogId: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "CatalogId"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-principalpermissions-tableresource.html#cfn-lakeformation-principalpermissions-tableresource-catalogid"""
-    rp_DatabaseName: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "DatabaseName"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-principalpermissions-tableresource.html#cfn-lakeformation-principalpermissions-tableresource-databasename"""
-    p_Name: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Name"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-principalpermissions-tableresource.html#cfn-lakeformation-principalpermissions-tableresource-name"""
-    p_TableWildcard: typing.Union['PropPrincipalPermissionsTableWildcard', dict] = attr.ib(
-        default=None,
-        converter=PropPrincipalPermissionsTableWildcard.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropPrincipalPermissionsTableWildcard)),
-        metadata={AttrMeta.PROPERTY_NAME: "TableWildcard"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lakeformation-principalpermissions-tableresource.html#cfn-lakeformation-principalpermissions-tableresource-tablewildcard"""
 
 @attr.s
 class PropPermissionsTableResource(Property):
@@ -871,7 +817,7 @@ class PropPrincipalPermissionsResource(Property):
     """
     AWS_OBJECT_TYPE = "AWS::LakeFormation::PrincipalPermissions.Resource"
     
-    p_Catalog: typing.Optional[dict] = attr.ib(
+    p_Catalog: dict = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "Catalog"},
@@ -1008,6 +954,7 @@ class Tag(Resource):
                 "Required": True,
                 "Type": 'List',
                 "PrimitiveItemType": 'String',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -1160,6 +1107,7 @@ class PrincipalPermissions(Resource):
                 "Required": True,
                 "Type": 'List',
                 "PrimitiveItemType": 'String',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -1174,6 +1122,7 @@ class PrincipalPermissions(Resource):
                 "Required": True,
                 "Type": 'List',
                 "PrimitiveItemType": 'String',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -1222,14 +1171,14 @@ class PrincipalPermissions(Resource):
 
     
     @property
-    def rv_PrincipalIdentifier(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lakeformation-principalpermissions.html#aws-resource-lakeformation-principalpermissions-return-values"""
-        return GetAtt(resource=self, attr_name="PrincipalIdentifier")
-    
-    @property
     def rv_ResourceIdentifier(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lakeformation-principalpermissions.html#aws-resource-lakeformation-principalpermissions-return-values"""
         return GetAtt(resource=self, attr_name="ResourceIdentifier")
+    
+    @property
+    def rv_PrincipalIdentifier(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lakeformation-principalpermissions.html#aws-resource-lakeformation-principalpermissions-return-values"""
+        return GetAtt(resource=self, attr_name="PrincipalIdentifier")
     
 
 @attr.s
@@ -1258,6 +1207,7 @@ class TagAssociation(Resource):
                 "Required": True,
                 "Type": 'List',
                 "ItemType": 'LFTagPair',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -1447,6 +1397,7 @@ class DataCellsFilter(Resource):
                 "Required": False,
                 "Type": 'List',
                 "PrimitiveItemType": 'String',
+                "DuplicatesAllowed": True,
             }
         },
     )

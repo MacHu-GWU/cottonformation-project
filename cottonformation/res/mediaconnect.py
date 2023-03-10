@@ -322,8 +322,12 @@ class PropFlowSource(Property):
     - ``p_MinLatency``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-source.html#cfn-mediaconnect-flow-source-minlatency
     - ``p_Name``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-source.html#cfn-mediaconnect-flow-source-name
     - ``p_Protocol``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-source.html#cfn-mediaconnect-flow-source-protocol
+    - ``p_SenderControlPort``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-source.html#cfn-mediaconnect-flow-source-sendercontrolport
+    - ``p_SenderIpAddress``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-source.html#cfn-mediaconnect-flow-source-senderipaddress
     - ``p_SourceArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-source.html#cfn-mediaconnect-flow-source-sourcearn
     - ``p_SourceIngestPort``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-source.html#cfn-mediaconnect-flow-source-sourceingestport
+    - ``p_SourceListenerAddress``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-source.html#cfn-mediaconnect-flow-source-sourcelisteneraddress
+    - ``p_SourceListenerPort``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-source.html#cfn-mediaconnect-flow-source-sourcelistenerport
     - ``p_StreamId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-source.html#cfn-mediaconnect-flow-source-streamid
     - ``p_VpcInterfaceName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-source.html#cfn-mediaconnect-flow-source-vpcinterfacename
     - ``p_WhitelistCidr``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-source.html#cfn-mediaconnect-flow-source-whitelistcidr
@@ -390,6 +394,18 @@ class PropFlowSource(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Protocol"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-source.html#cfn-mediaconnect-flow-source-protocol"""
+    p_SenderControlPort: int = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(int)),
+        metadata={AttrMeta.PROPERTY_NAME: "SenderControlPort"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-source.html#cfn-mediaconnect-flow-source-sendercontrolport"""
+    p_SenderIpAddress: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "SenderIpAddress"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-source.html#cfn-mediaconnect-flow-source-senderipaddress"""
     p_SourceArn: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
@@ -402,6 +418,18 @@ class PropFlowSource(Property):
         metadata={AttrMeta.PROPERTY_NAME: "SourceIngestPort"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-source.html#cfn-mediaconnect-flow-source-sourceingestport"""
+    p_SourceListenerAddress: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "SourceListenerAddress"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-source.html#cfn-mediaconnect-flow-source-sourcelisteneraddress"""
+    p_SourceListenerPort: int = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(int)),
+        metadata={AttrMeta.PROPERTY_NAME: "SourceListenerPort"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-source.html#cfn-mediaconnect-flow-source-sourcelistenerport"""
     p_StreamId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
@@ -422,6 +450,26 @@ class PropFlowSource(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-source.html#cfn-mediaconnect-flow-source-whitelistcidr"""
 
 @attr.s
+class PropFlowSourcePriority(Property):
+    """
+    AWS Object Type = "AWS::MediaConnect::Flow.SourcePriority"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-sourcepriority.html
+
+    Property Document:
+    
+    - ``rp_PrimarySource``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-sourcepriority.html#cfn-mediaconnect-flow-sourcepriority-primarysource
+    """
+    AWS_OBJECT_TYPE = "AWS::MediaConnect::Flow.SourcePriority"
+    
+    rp_PrimarySource: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "PrimarySource"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-sourcepriority.html#cfn-mediaconnect-flow-sourcepriority-primarysource"""
+
+@attr.s
 class PropFlowFailoverConfig(Property):
     """
     AWS Object Type = "AWS::MediaConnect::Flow.FailoverConfig"
@@ -430,17 +478,32 @@ class PropFlowFailoverConfig(Property):
 
     Property Document:
     
+    - ``p_FailoverMode``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-failoverconfig.html#cfn-mediaconnect-flow-failoverconfig-failovermode
     - ``p_RecoveryWindow``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-failoverconfig.html#cfn-mediaconnect-flow-failoverconfig-recoverywindow
+    - ``p_SourcePriority``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-failoverconfig.html#cfn-mediaconnect-flow-failoverconfig-sourcepriority
     - ``p_State``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-failoverconfig.html#cfn-mediaconnect-flow-failoverconfig-state
     """
     AWS_OBJECT_TYPE = "AWS::MediaConnect::Flow.FailoverConfig"
     
+    p_FailoverMode: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "FailoverMode"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-failoverconfig.html#cfn-mediaconnect-flow-failoverconfig-failovermode"""
     p_RecoveryWindow: int = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(int)),
         metadata={AttrMeta.PROPERTY_NAME: "RecoveryWindow"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-failoverconfig.html#cfn-mediaconnect-flow-failoverconfig-recoverywindow"""
+    p_SourcePriority: typing.Union['PropFlowSourcePriority', dict] = attr.ib(
+        default=None,
+        converter=PropFlowSourcePriority.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropFlowSourcePriority)),
+        metadata={AttrMeta.PROPERTY_NAME: "SourcePriority"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-mediaconnect-flow-failoverconfig.html#cfn-mediaconnect-flow-failoverconfig-sourcepriority"""
     p_State: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
@@ -520,6 +583,7 @@ class FlowEntitlement(Resource):
                 "Required": True,
                 "Type": 'List',
                 "PrimitiveItemType": 'String',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -757,14 +821,14 @@ class FlowSource(Resource):
 
     
     @property
-    def rv_SourceArn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowsource.html#aws-resource-mediaconnect-flowsource-return-values"""
-        return GetAtt(resource=self, attr_name="SourceArn")
-    
-    @property
     def rv_IngestIp(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowsource.html#aws-resource-mediaconnect-flowsource-return-values"""
         return GetAtt(resource=self, attr_name="IngestIp")
+    
+    @property
+    def rv_SourceArn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flowsource.html#aws-resource-mediaconnect-flowsource-return-values"""
+        return GetAtt(resource=self, attr_name="SourceArn")
     
     @property
     def rv_SourceIngestPort(self) -> GetAtt:
@@ -839,6 +903,7 @@ class FlowVpcInterface(Resource):
                 "Required": True,
                 "Type": 'List',
                 "PrimitiveItemType": 'String',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -927,6 +992,7 @@ class FlowOutput(Resource):
                 "Required": False,
                 "Type": 'List',
                 "PrimitiveItemType": 'String',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -1158,19 +1224,14 @@ class Flow(Resource):
 
     
     @property
-    def rv_FlowArn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flow.html#aws-resource-mediaconnect-flow-return-values"""
-        return GetAtt(resource=self, attr_name="FlowArn")
-    
-    @property
     def rv_FlowAvailabilityZone(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flow.html#aws-resource-mediaconnect-flow-return-values"""
         return GetAtt(resource=self, attr_name="FlowAvailabilityZone")
     
     @property
-    def rv_SourceSourceArn(self) -> GetAtt:
+    def rv_SourceSourceIngestPort(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flow.html#aws-resource-mediaconnect-flow-return-values"""
-        return GetAtt(resource=self, attr_name="Source.SourceArn")
+        return GetAtt(resource=self, attr_name="Source.SourceIngestPort")
     
     @property
     def rv_SourceIngestIp(self) -> GetAtt:
@@ -1178,7 +1239,12 @@ class Flow(Resource):
         return GetAtt(resource=self, attr_name="Source.IngestIp")
     
     @property
-    def rv_SourceSourceIngestPort(self) -> GetAtt:
+    def rv_SourceSourceArn(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flow.html#aws-resource-mediaconnect-flow-return-values"""
-        return GetAtt(resource=self, attr_name="Source.SourceIngestPort")
+        return GetAtt(resource=self, attr_name="Source.SourceArn")
+    
+    @property
+    def rv_FlowArn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediaconnect-flow.html#aws-resource-mediaconnect-flow-return-values"""
+        return GetAtt(resource=self, attr_name="FlowArn")
     

@@ -15,6 +15,54 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
+class PropReportPlanReportSetting(Property):
+    """
+    AWS Object Type = "AWS::Backup::ReportPlan.ReportSetting"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-reportplan-reportsetting.html
+
+    Property Document:
+    
+    - ``rp_ReportTemplate``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-reportplan-reportsetting.html#cfn-backup-reportplan-reportsetting-reporttemplate
+    - ``p_Accounts``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-reportplan-reportsetting.html#cfn-backup-reportplan-reportsetting-accounts
+    - ``p_FrameworkArns``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-reportplan-reportsetting.html#cfn-backup-reportplan-reportsetting-frameworkarns
+    - ``p_OrganizationUnits``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-reportplan-reportsetting.html#cfn-backup-reportplan-reportsetting-organizationunits
+    - ``p_Regions``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-reportplan-reportsetting.html#cfn-backup-reportplan-reportsetting-regions
+    """
+    AWS_OBJECT_TYPE = "AWS::Backup::ReportPlan.ReportSetting"
+    
+    rp_ReportTemplate: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "ReportTemplate"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-reportplan-reportsetting.html#cfn-backup-reportplan-reportsetting-reporttemplate"""
+    p_Accounts: typing.List[TypeHint.intrinsic_str] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "Accounts"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-reportplan-reportsetting.html#cfn-backup-reportplan-reportsetting-accounts"""
+    p_FrameworkArns: typing.List[TypeHint.intrinsic_str] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "FrameworkArns"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-reportplan-reportsetting.html#cfn-backup-reportplan-reportsetting-frameworkarns"""
+    p_OrganizationUnits: typing.List[TypeHint.intrinsic_str] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "OrganizationUnits"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-reportplan-reportsetting.html#cfn-backup-reportplan-reportsetting-organizationunits"""
+    p_Regions: typing.List[TypeHint.intrinsic_str] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "Regions"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-reportplan-reportsetting.html#cfn-backup-reportplan-reportsetting-regions"""
+
+@attr.s
 class PropBackupSelectionConditionResourceType(Property):
     """
     AWS Object Type = "AWS::Backup::BackupSelection.ConditionResourceType"
@@ -76,6 +124,40 @@ class PropBackupVaultNotificationObjectType(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupvault-notificationobjecttype.html#cfn-backup-backupvault-notificationobjecttype-snstopicarn"""
 
 @attr.s
+class PropReportPlanReportDeliveryChannel(Property):
+    """
+    AWS Object Type = "AWS::Backup::ReportPlan.ReportDeliveryChannel"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-reportplan-reportdeliverychannel.html
+
+    Property Document:
+    
+    - ``rp_S3BucketName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-reportplan-reportdeliverychannel.html#cfn-backup-reportplan-reportdeliverychannel-s3bucketname
+    - ``p_Formats``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-reportplan-reportdeliverychannel.html#cfn-backup-reportplan-reportdeliverychannel-formats
+    - ``p_S3KeyPrefix``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-reportplan-reportdeliverychannel.html#cfn-backup-reportplan-reportdeliverychannel-s3keyprefix
+    """
+    AWS_OBJECT_TYPE = "AWS::Backup::ReportPlan.ReportDeliveryChannel"
+    
+    rp_S3BucketName: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "S3BucketName"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-reportplan-reportdeliverychannel.html#cfn-backup-reportplan-reportdeliverychannel-s3bucketname"""
+    p_Formats: typing.List[TypeHint.intrinsic_str] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "Formats"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-reportplan-reportdeliverychannel.html#cfn-backup-reportplan-reportdeliverychannel-formats"""
+    p_S3KeyPrefix: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "S3KeyPrefix"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-reportplan-reportdeliverychannel.html#cfn-backup-reportplan-reportdeliverychannel-s3keyprefix"""
+
+@attr.s
 class PropBackupPlanAdvancedBackupSettingResourceType(Property):
     """
     AWS Object Type = "AWS::Backup::BackupPlan.AdvancedBackupSettingResourceType"
@@ -130,60 +212,31 @@ class PropBackupPlanLifecycleResourceType(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupplan-lifecycleresourcetype.html#cfn-backup-backupplan-lifecycleresourcetype-movetocoldstorageafterdays"""
 
 @attr.s
-class PropBackupSelectionBackupSelectionResourceType(Property):
+class PropBackupSelectionConditionParameter(Property):
     """
-    AWS Object Type = "AWS::Backup::BackupSelection.BackupSelectionResourceType"
+    AWS Object Type = "AWS::Backup::BackupSelection.ConditionParameter"
 
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-backupselectionresourcetype.html
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-conditionparameter.html
 
     Property Document:
     
-    - ``rp_IamRoleArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-backupselectionresourcetype.html#cfn-backup-backupselection-backupselectionresourcetype-iamrolearn
-    - ``rp_SelectionName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-backupselectionresourcetype.html#cfn-backup-backupselection-backupselectionresourcetype-selectionname
-    - ``p_Conditions``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-backupselectionresourcetype.html#cfn-backup-backupselection-backupselectionresourcetype-conditions
-    - ``p_ListOfTags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-backupselectionresourcetype.html#cfn-backup-backupselection-backupselectionresourcetype-listoftags
-    - ``p_NotResources``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-backupselectionresourcetype.html#cfn-backup-backupselection-backupselectionresourcetype-notresources
-    - ``p_Resources``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-backupselectionresourcetype.html#cfn-backup-backupselection-backupselectionresourcetype-resources
+    - ``p_ConditionKey``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-conditionparameter.html#cfn-backup-backupselection-conditionparameter-conditionkey
+    - ``p_ConditionValue``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-conditionparameter.html#cfn-backup-backupselection-conditionparameter-conditionvalue
     """
-    AWS_OBJECT_TYPE = "AWS::Backup::BackupSelection.BackupSelectionResourceType"
+    AWS_OBJECT_TYPE = "AWS::Backup::BackupSelection.ConditionParameter"
     
-    rp_IamRoleArn: TypeHint.intrinsic_str = attr.ib(
+    p_ConditionKey: TypeHint.intrinsic_str = attr.ib(
         default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "IamRoleArn"},
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "ConditionKey"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-backupselectionresourcetype.html#cfn-backup-backupselection-backupselectionresourcetype-iamrolearn"""
-    rp_SelectionName: TypeHint.intrinsic_str = attr.ib(
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-conditionparameter.html#cfn-backup-backupselection-conditionparameter-conditionkey"""
+    p_ConditionValue: TypeHint.intrinsic_str = attr.ib(
         default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "SelectionName"},
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "ConditionValue"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-backupselectionresourcetype.html#cfn-backup-backupselection-backupselectionresourcetype-selectionname"""
-    p_Conditions: dict = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(dict)),
-        metadata={AttrMeta.PROPERTY_NAME: "Conditions"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-backupselectionresourcetype.html#cfn-backup-backupselection-backupselectionresourcetype-conditions"""
-    p_ListOfTags: typing.List[typing.Union['PropBackupSelectionConditionResourceType', dict]] = attr.ib(
-        default=None,
-        converter=PropBackupSelectionConditionResourceType.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropBackupSelectionConditionResourceType), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "ListOfTags"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-backupselectionresourcetype.html#cfn-backup-backupselection-backupselectionresourcetype-listoftags"""
-    p_NotResources: typing.List[TypeHint.intrinsic_str] = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "NotResources"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-backupselectionresourcetype.html#cfn-backup-backupselection-backupselectionresourcetype-notresources"""
-    p_Resources: typing.List[TypeHint.intrinsic_str] = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Resources"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-backupselectionresourcetype.html#cfn-backup-backupselection-backupselectionresourcetype-resources"""
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-conditionparameter.html#cfn-backup-backupselection-conditionparameter-conditionvalue"""
 
 @attr.s
 class PropBackupVaultLockConfigurationType(Property):
@@ -200,24 +253,59 @@ class PropBackupVaultLockConfigurationType(Property):
     """
     AWS_OBJECT_TYPE = "AWS::Backup::BackupVault.LockConfigurationType"
     
-    rp_MinRetentionDays: float = attr.ib(
+    rp_MinRetentionDays: int = attr.ib(
         default=None,
-        validator=attr.validators.instance_of(float),
+        validator=attr.validators.instance_of(int),
         metadata={AttrMeta.PROPERTY_NAME: "MinRetentionDays"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupvault-lockconfigurationtype.html#cfn-backup-backupvault-lockconfigurationtype-minretentiondays"""
-    p_ChangeableForDays: float = attr.ib(
+    p_ChangeableForDays: int = attr.ib(
         default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(float)),
+        validator=attr.validators.optional(attr.validators.instance_of(int)),
         metadata={AttrMeta.PROPERTY_NAME: "ChangeableForDays"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupvault-lockconfigurationtype.html#cfn-backup-backupvault-lockconfigurationtype-changeablefordays"""
-    p_MaxRetentionDays: float = attr.ib(
+    p_MaxRetentionDays: int = attr.ib(
         default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(float)),
+        validator=attr.validators.optional(attr.validators.instance_of(int)),
         metadata={AttrMeta.PROPERTY_NAME: "MaxRetentionDays"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupvault-lockconfigurationtype.html#cfn-backup-backupvault-lockconfigurationtype-maxretentiondays"""
+
+@attr.s
+class PropFrameworkControlScope(Property):
+    """
+    AWS Object Type = "AWS::Backup::Framework.ControlScope"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-framework-controlscope.html
+
+    Property Document:
+    
+    - ``p_ComplianceResourceIds``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-framework-controlscope.html#cfn-backup-framework-controlscope-complianceresourceids
+    - ``p_ComplianceResourceTypes``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-framework-controlscope.html#cfn-backup-framework-controlscope-complianceresourcetypes
+    - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-framework-controlscope.html#cfn-backup-framework-controlscope-tags
+    """
+    AWS_OBJECT_TYPE = "AWS::Backup::Framework.ControlScope"
+    
+    p_ComplianceResourceIds: typing.List[TypeHint.intrinsic_str] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "ComplianceResourceIds"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-framework-controlscope.html#cfn-backup-framework-controlscope-complianceresourceids"""
+    p_ComplianceResourceTypes: typing.List[TypeHint.intrinsic_str] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "ComplianceResourceTypes"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-framework-controlscope.html#cfn-backup-framework-controlscope-complianceresourcetypes"""
+    p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
+        default=None,
+        converter=Tag.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-framework-controlscope.html#cfn-backup-framework-controlscope-tags"""
 
 @attr.s
 class PropFrameworkControlInputParameter(Property):
@@ -301,12 +389,115 @@ class PropFrameworkFrameworkControl(Property):
         metadata={AttrMeta.PROPERTY_NAME: "ControlInputParameters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-framework-frameworkcontrol.html#cfn-backup-framework-frameworkcontrol-controlinputparameters"""
-    p_ControlScope: dict = attr.ib(
+    p_ControlScope: typing.Union['PropFrameworkControlScope', dict] = attr.ib(
         default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        converter=PropFrameworkControlScope.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropFrameworkControlScope)),
         metadata={AttrMeta.PROPERTY_NAME: "ControlScope"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-framework-frameworkcontrol.html#cfn-backup-framework-frameworkcontrol-controlscope"""
+
+@attr.s
+class PropBackupSelectionConditions(Property):
+    """
+    AWS Object Type = "AWS::Backup::BackupSelection.Conditions"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-conditions.html
+
+    Property Document:
+    
+    - ``p_StringEquals``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-conditions.html#cfn-backup-backupselection-conditions-stringequals
+    - ``p_StringLike``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-conditions.html#cfn-backup-backupselection-conditions-stringlike
+    - ``p_StringNotEquals``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-conditions.html#cfn-backup-backupselection-conditions-stringnotequals
+    - ``p_StringNotLike``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-conditions.html#cfn-backup-backupselection-conditions-stringnotlike
+    """
+    AWS_OBJECT_TYPE = "AWS::Backup::BackupSelection.Conditions"
+    
+    p_StringEquals: typing.List[typing.Union['PropBackupSelectionConditionParameter', dict]] = attr.ib(
+        default=None,
+        converter=PropBackupSelectionConditionParameter.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropBackupSelectionConditionParameter), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "StringEquals"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-conditions.html#cfn-backup-backupselection-conditions-stringequals"""
+    p_StringLike: typing.List[typing.Union['PropBackupSelectionConditionParameter', dict]] = attr.ib(
+        default=None,
+        converter=PropBackupSelectionConditionParameter.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropBackupSelectionConditionParameter), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "StringLike"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-conditions.html#cfn-backup-backupselection-conditions-stringlike"""
+    p_StringNotEquals: typing.List[typing.Union['PropBackupSelectionConditionParameter', dict]] = attr.ib(
+        default=None,
+        converter=PropBackupSelectionConditionParameter.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropBackupSelectionConditionParameter), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "StringNotEquals"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-conditions.html#cfn-backup-backupselection-conditions-stringnotequals"""
+    p_StringNotLike: typing.List[typing.Union['PropBackupSelectionConditionParameter', dict]] = attr.ib(
+        default=None,
+        converter=PropBackupSelectionConditionParameter.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropBackupSelectionConditionParameter), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "StringNotLike"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-conditions.html#cfn-backup-backupselection-conditions-stringnotlike"""
+
+@attr.s
+class PropBackupSelectionBackupSelectionResourceType(Property):
+    """
+    AWS Object Type = "AWS::Backup::BackupSelection.BackupSelectionResourceType"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-backupselectionresourcetype.html
+
+    Property Document:
+    
+    - ``rp_IamRoleArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-backupselectionresourcetype.html#cfn-backup-backupselection-backupselectionresourcetype-iamrolearn
+    - ``rp_SelectionName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-backupselectionresourcetype.html#cfn-backup-backupselection-backupselectionresourcetype-selectionname
+    - ``p_Conditions``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-backupselectionresourcetype.html#cfn-backup-backupselection-backupselectionresourcetype-conditions
+    - ``p_ListOfTags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-backupselectionresourcetype.html#cfn-backup-backupselection-backupselectionresourcetype-listoftags
+    - ``p_NotResources``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-backupselectionresourcetype.html#cfn-backup-backupselection-backupselectionresourcetype-notresources
+    - ``p_Resources``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-backupselectionresourcetype.html#cfn-backup-backupselection-backupselectionresourcetype-resources
+    """
+    AWS_OBJECT_TYPE = "AWS::Backup::BackupSelection.BackupSelectionResourceType"
+    
+    rp_IamRoleArn: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "IamRoleArn"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-backupselectionresourcetype.html#cfn-backup-backupselection-backupselectionresourcetype-iamrolearn"""
+    rp_SelectionName: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "SelectionName"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-backupselectionresourcetype.html#cfn-backup-backupselection-backupselectionresourcetype-selectionname"""
+    p_Conditions: typing.Union['PropBackupSelectionConditions', dict] = attr.ib(
+        default=None,
+        converter=PropBackupSelectionConditions.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropBackupSelectionConditions)),
+        metadata={AttrMeta.PROPERTY_NAME: "Conditions"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-backupselectionresourcetype.html#cfn-backup-backupselection-backupselectionresourcetype-conditions"""
+    p_ListOfTags: typing.List[typing.Union['PropBackupSelectionConditionResourceType', dict]] = attr.ib(
+        default=None,
+        converter=PropBackupSelectionConditionResourceType.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropBackupSelectionConditionResourceType), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "ListOfTags"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-backupselectionresourcetype.html#cfn-backup-backupselection-backupselectionresourcetype-listoftags"""
+    p_NotResources: typing.List[TypeHint.intrinsic_str] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "NotResources"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-backupselectionresourcetype.html#cfn-backup-backupselection-backupselectionresourcetype-notresources"""
+    p_Resources: typing.List[TypeHint.intrinsic_str] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "Resources"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-backup-backupselection-backupselectionresourcetype.html#cfn-backup-backupselection-backupselectionresourcetype-resources"""
 
 @attr.s
 class PropBackupPlanBackupRuleResourceType(Property):
@@ -470,9 +661,9 @@ class BackupPlan(Resource):
 
     
     @property
-    def rv_BackupPlanArn(self) -> GetAtt:
+    def rv_VersionId(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-backupplan.html#aws-resource-backup-backupplan-return-values"""
-        return GetAtt(resource=self, attr_name="BackupPlanArn")
+        return GetAtt(resource=self, attr_name="VersionId")
     
     @property
     def rv_BackupPlanId(self) -> GetAtt:
@@ -480,9 +671,9 @@ class BackupPlan(Resource):
         return GetAtt(resource=self, attr_name="BackupPlanId")
     
     @property
-    def rv_VersionId(self) -> GetAtt:
+    def rv_BackupPlanArn(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-backupplan.html#aws-resource-backup-backupplan-return-values"""
-        return GetAtt(resource=self, attr_name="VersionId")
+        return GetAtt(resource=self, attr_name="BackupPlanArn")
     
 
 @attr.s
@@ -555,21 +746,12 @@ class Framework(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Tag',
+                "DuplicatesAllowed": True,
             }
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-framework.html#cfn-backup-framework-frameworktags"""
 
-    
-    @property
-    def rv_FrameworkArn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-framework.html#aws-resource-backup-framework-return-values"""
-        return GetAtt(resource=self, attr_name="FrameworkArn")
-    
-    @property
-    def rv_DeploymentStatus(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-framework.html#aws-resource-backup-framework-return-values"""
-        return GetAtt(resource=self, attr_name="DeploymentStatus")
     
     @property
     def rv_CreationTime(self) -> GetAtt:
@@ -580,6 +762,16 @@ class Framework(Resource):
     def rv_FrameworkStatus(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-framework.html#aws-resource-backup-framework-return-values"""
         return GetAtt(resource=self, attr_name="FrameworkStatus")
+    
+    @property
+    def rv_DeploymentStatus(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-framework.html#aws-resource-backup-framework-return-values"""
+        return GetAtt(resource=self, attr_name="DeploymentStatus")
+    
+    @property
+    def rv_FrameworkArn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-framework.html#aws-resource-backup-framework-return-values"""
+        return GetAtt(resource=self, attr_name="FrameworkArn")
     
 
 @attr.s
@@ -713,28 +905,30 @@ class ReportPlan(Resource):
     AWS_OBJECT_TYPE = "AWS::Backup::ReportPlan"
 
     
-    rp_ReportDeliveryChannel: dict = attr.ib(
+    rp_ReportDeliveryChannel: typing.Union['PropReportPlanReportDeliveryChannel', dict] = attr.ib(
         default=None,
-        validator=attr.validators.instance_of(dict),
+        converter=PropReportPlanReportDeliveryChannel.from_dict,
+        validator=attr.validators.instance_of(PropReportPlanReportDeliveryChannel),
         metadata={
             AttrMeta.PROPERTY_NAME: "ReportDeliveryChannel",
             AttrMeta.DATA: {
                 "UpdateType": 'Mutable',
                 "Required": True,
-                "PrimitiveType": 'Json',
+                "Type": 'ReportDeliveryChannel',
             }
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-reportplan.html#cfn-backup-reportplan-reportdeliverychannel"""
-    rp_ReportSetting: dict = attr.ib(
+    rp_ReportSetting: typing.Union['PropReportPlanReportSetting', dict] = attr.ib(
         default=None,
-        validator=attr.validators.instance_of(dict),
+        converter=PropReportPlanReportSetting.from_dict,
+        validator=attr.validators.instance_of(PropReportPlanReportSetting),
         metadata={
             AttrMeta.PROPERTY_NAME: "ReportSetting",
             AttrMeta.DATA: {
                 "UpdateType": 'Mutable',
                 "Required": True,
-                "PrimitiveType": 'Json',
+                "Type": 'ReportSetting',
             }
         },
     )
@@ -776,6 +970,7 @@ class ReportPlan(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Tag',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -833,14 +1028,14 @@ class BackupSelection(Resource):
 
     
     @property
-    def rv_Id(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-backupselection.html#aws-resource-backup-backupselection-return-values"""
-        return GetAtt(resource=self, attr_name="Id")
-    
-    @property
     def rv_BackupPlanId(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-backupselection.html#aws-resource-backup-backupselection-return-values"""
         return GetAtt(resource=self, attr_name="BackupPlanId")
+    
+    @property
+    def rv_Id(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-backup-backupselection.html#aws-resource-backup-backupselection-return-values"""
+        return GetAtt(resource=self, attr_name="Id")
     
     @property
     def rv_SelectionId(self) -> GetAtt:

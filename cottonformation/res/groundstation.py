@@ -673,6 +673,7 @@ class Config(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Tag',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -685,14 +686,14 @@ class Config(Resource):
         return GetAtt(resource=self, attr_name="Type")
     
     @property
-    def rv_Arn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-groundstation-config.html#aws-resource-groundstation-config-return-values"""
-        return GetAtt(resource=self, attr_name="Arn")
-    
-    @property
     def rv_Id(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-groundstation-config.html#aws-resource-groundstation-config-return-values"""
         return GetAtt(resource=self, attr_name="Id")
+    
+    @property
+    def rv_Arn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-groundstation-config.html#aws-resource-groundstation-config-return-values"""
+        return GetAtt(resource=self, attr_name="Arn")
     
 
 @attr.s
@@ -705,6 +706,8 @@ class DataflowEndpointGroup(Resource):
     Property Document:
     
     - ``rp_EndpointDetails``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-groundstation-dataflowendpointgroup.html#cfn-groundstation-dataflowendpointgroup-endpointdetails
+    - ``p_ContactPostPassDurationSeconds``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-groundstation-dataflowendpointgroup.html#cfn-groundstation-dataflowendpointgroup-contactpostpassdurationseconds
+    - ``p_ContactPrePassDurationSeconds``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-groundstation-dataflowendpointgroup.html#cfn-groundstation-dataflowendpointgroup-contactprepassdurationseconds
     - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-groundstation-dataflowendpointgroup.html#cfn-groundstation-dataflowendpointgroup-tags
     """
     AWS_OBJECT_TYPE = "AWS::GroundStation::DataflowEndpointGroup"
@@ -721,10 +724,37 @@ class DataflowEndpointGroup(Resource):
                 "Required": True,
                 "Type": 'List',
                 "ItemType": 'EndpointDetails',
+                "DuplicatesAllowed": True,
             }
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-groundstation-dataflowendpointgroup.html#cfn-groundstation-dataflowendpointgroup-endpointdetails"""
+    p_ContactPostPassDurationSeconds: int = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(int)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ContactPostPassDurationSeconds",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'Integer',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-groundstation-dataflowendpointgroup.html#cfn-groundstation-dataflowendpointgroup-contactpostpassdurationseconds"""
+    p_ContactPrePassDurationSeconds: int = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(int)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ContactPrePassDurationSeconds",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'Integer',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-groundstation-dataflowendpointgroup.html#cfn-groundstation-dataflowendpointgroup-contactprepassdurationseconds"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
@@ -736,6 +766,7 @@ class DataflowEndpointGroup(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Tag',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -784,6 +815,7 @@ class MissionProfile(Resource):
                 "Required": True,
                 "Type": 'List',
                 "ItemType": 'DataflowEdge',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -864,11 +896,17 @@ class MissionProfile(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Tag',
+                "DuplicatesAllowed": True,
             }
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-groundstation-missionprofile.html#cfn-groundstation-missionprofile-tags"""
 
+    
+    @property
+    def rv_Region(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-groundstation-missionprofile.html#aws-resource-groundstation-missionprofile-return-values"""
+        return GetAtt(resource=self, attr_name="Region")
     
     @property
     def rv_Id(self) -> GetAtt:
@@ -879,9 +917,4 @@ class MissionProfile(Resource):
     def rv_Arn(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-groundstation-missionprofile.html#aws-resource-groundstation-missionprofile-return-values"""
         return GetAtt(resource=self, attr_name="Arn")
-    
-    @property
-    def rv_Region(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-groundstation-missionprofile.html#aws-resource-groundstation-missionprofile-return-values"""
-        return GetAtt(resource=self, attr_name="Region")
     

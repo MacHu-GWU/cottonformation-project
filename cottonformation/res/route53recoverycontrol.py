@@ -237,6 +237,7 @@ class SafetyRule(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Tag',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -244,14 +245,14 @@ class SafetyRule(Resource):
 
     
     @property
-    def rv_SafetyRuleArn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53recoverycontrol-safetyrule.html#aws-resource-route53recoverycontrol-safetyrule-return-values"""
-        return GetAtt(resource=self, attr_name="SafetyRuleArn")
-    
-    @property
     def rv_Status(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53recoverycontrol-safetyrule.html#aws-resource-route53recoverycontrol-safetyrule-return-values"""
         return GetAtt(resource=self, attr_name="Status")
+    
+    @property
+    def rv_SafetyRuleArn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53recoverycontrol-safetyrule.html#aws-resource-route53recoverycontrol-safetyrule-return-values"""
+        return GetAtt(resource=self, attr_name="SafetyRuleArn")
     
 
 @attr.s
@@ -263,20 +264,20 @@ class Cluster(Resource):
 
     Property Document:
     
-    - ``p_Name``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53recoverycontrol-cluster.html#cfn-route53recoverycontrol-cluster-name
+    - ``rp_Name``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53recoverycontrol-cluster.html#cfn-route53recoverycontrol-cluster-name
     - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53recoverycontrol-cluster.html#cfn-route53recoverycontrol-cluster-tags
     """
     AWS_OBJECT_TYPE = "AWS::Route53RecoveryControl::Cluster"
 
     
-    p_Name: TypeHint.intrinsic_str = attr.ib(
+    rp_Name: TypeHint.intrinsic_str = attr.ib(
         default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
         metadata={
             AttrMeta.PROPERTY_NAME: "Name",
             AttrMeta.DATA: {
                 "UpdateType": 'Immutable',
-                "Required": False,
+                "Required": True,
                 "PrimitiveType": 'String',
             }
         },
@@ -293,6 +294,7 @@ class Cluster(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Tag',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -373,14 +375,14 @@ class RoutingControl(Resource):
 
     
     @property
-    def rv_RoutingControlArn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53recoverycontrol-routingcontrol.html#aws-resource-route53recoverycontrol-routingcontrol-return-values"""
-        return GetAtt(resource=self, attr_name="RoutingControlArn")
-    
-    @property
     def rv_Status(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53recoverycontrol-routingcontrol.html#aws-resource-route53recoverycontrol-routingcontrol-return-values"""
         return GetAtt(resource=self, attr_name="Status")
+    
+    @property
+    def rv_RoutingControlArn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53recoverycontrol-routingcontrol.html#aws-resource-route53recoverycontrol-routingcontrol-return-values"""
+        return GetAtt(resource=self, attr_name="RoutingControlArn")
     
 
 @attr.s
@@ -436,6 +438,7 @@ class ControlPanel(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Tag',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -443,14 +446,14 @@ class ControlPanel(Resource):
 
     
     @property
-    def rv_ControlPanelArn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53recoverycontrol-controlpanel.html#aws-resource-route53recoverycontrol-controlpanel-return-values"""
-        return GetAtt(resource=self, attr_name="ControlPanelArn")
-    
-    @property
     def rv_Status(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53recoverycontrol-controlpanel.html#aws-resource-route53recoverycontrol-controlpanel-return-values"""
         return GetAtt(resource=self, attr_name="Status")
+    
+    @property
+    def rv_ControlPanelArn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53recoverycontrol-controlpanel.html#aws-resource-route53recoverycontrol-controlpanel-return-values"""
+        return GetAtt(resource=self, attr_name="ControlPanelArn")
     
     @property
     def rv_DefaultControlPanel(self) -> GetAtt:

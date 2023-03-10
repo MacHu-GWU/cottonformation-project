@@ -171,6 +171,95 @@ class PropCloudFormationProductProvisioningArtifactProperties(Property):
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicecatalog-cloudformationproduct-provisioningartifactproperties.html#cfn-servicecatalog-cloudformationproduct-provisioningartifactproperties-name"""
 
+@attr.s
+class PropCloudFormationProductCodeStarParameters(Property):
+    """
+    AWS Object Type = "AWS::ServiceCatalog::CloudFormationProduct.CodeStarParameters"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicecatalog-cloudformationproduct-codestarparameters.html
+
+    Property Document:
+    
+    - ``rp_ArtifactPath``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicecatalog-cloudformationproduct-codestarparameters.html#cfn-servicecatalog-cloudformationproduct-codestarparameters-artifactpath
+    - ``rp_Branch``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicecatalog-cloudformationproduct-codestarparameters.html#cfn-servicecatalog-cloudformationproduct-codestarparameters-branch
+    - ``rp_ConnectionArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicecatalog-cloudformationproduct-codestarparameters.html#cfn-servicecatalog-cloudformationproduct-codestarparameters-connectionarn
+    - ``rp_Repository``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicecatalog-cloudformationproduct-codestarparameters.html#cfn-servicecatalog-cloudformationproduct-codestarparameters-repository
+    """
+    AWS_OBJECT_TYPE = "AWS::ServiceCatalog::CloudFormationProduct.CodeStarParameters"
+    
+    rp_ArtifactPath: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "ArtifactPath"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicecatalog-cloudformationproduct-codestarparameters.html#cfn-servicecatalog-cloudformationproduct-codestarparameters-artifactpath"""
+    rp_Branch: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "Branch"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicecatalog-cloudformationproduct-codestarparameters.html#cfn-servicecatalog-cloudformationproduct-codestarparameters-branch"""
+    rp_ConnectionArn: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "ConnectionArn"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicecatalog-cloudformationproduct-codestarparameters.html#cfn-servicecatalog-cloudformationproduct-codestarparameters-connectionarn"""
+    rp_Repository: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "Repository"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicecatalog-cloudformationproduct-codestarparameters.html#cfn-servicecatalog-cloudformationproduct-codestarparameters-repository"""
+
+@attr.s
+class PropCloudFormationProductConnectionParameters(Property):
+    """
+    AWS Object Type = "AWS::ServiceCatalog::CloudFormationProduct.ConnectionParameters"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicecatalog-cloudformationproduct-sourceconnection-connectionparameters.html
+
+    Property Document:
+    
+    - ``p_CodeStar``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicecatalog-cloudformationproduct-sourceconnection-connectionparameters.html#cfn-servicecatalog-cloudformationproduct-sourceconnection-connectionparameters-codestar
+    """
+    AWS_OBJECT_TYPE = "AWS::ServiceCatalog::CloudFormationProduct.ConnectionParameters"
+    
+    p_CodeStar: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "CodeStar"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicecatalog-cloudformationproduct-sourceconnection-connectionparameters.html#cfn-servicecatalog-cloudformationproduct-sourceconnection-connectionparameters-codestar"""
+
+@attr.s
+class PropCloudFormationProductSourceConnection(Property):
+    """
+    AWS Object Type = "AWS::ServiceCatalog::CloudFormationProduct.SourceConnection"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicecatalog-cloudformationproduct-sourceconnection.html
+
+    Property Document:
+    
+    - ``rp_ConnectionParameters``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicecatalog-cloudformationproduct-sourceconnection.html#cfn-servicecatalog-cloudformationproduct-sourceconnection-connectionparameters
+    - ``rp_Type``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicecatalog-cloudformationproduct-sourceconnection.html#cfn-servicecatalog-cloudformationproduct-sourceconnection-type
+    """
+    AWS_OBJECT_TYPE = "AWS::ServiceCatalog::CloudFormationProduct.SourceConnection"
+    
+    rp_ConnectionParameters: typing.Union['PropCloudFormationProductConnectionParameters', dict] = attr.ib(
+        default=None,
+        converter=PropCloudFormationProductConnectionParameters.from_dict,
+        validator=attr.validators.instance_of(PropCloudFormationProductConnectionParameters),
+        metadata={AttrMeta.PROPERTY_NAME: "ConnectionParameters"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicecatalog-cloudformationproduct-sourceconnection.html#cfn-servicecatalog-cloudformationproduct-sourceconnection-connectionparameters"""
+    rp_Type: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "Type"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-servicecatalog-cloudformationproduct-sourceconnection.html#cfn-servicecatalog-cloudformationproduct-sourceconnection-type"""
+
 
 #--- Resource declaration ---
 
@@ -401,11 +490,12 @@ class CloudFormationProduct(Resource):
     
     - ``rp_Name``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-name
     - ``rp_Owner``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-owner
-    - ``rp_ProvisioningArtifactParameters``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-provisioningartifactparameters
     - ``p_AcceptLanguage``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-acceptlanguage
     - ``p_Description``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-description
     - ``p_Distributor``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-distributor
+    - ``p_ProvisioningArtifactParameters``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-provisioningartifactparameters
     - ``p_ReplaceProvisioningArtifacts``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-replaceprovisioningartifacts
+    - ``p_SourceConnection``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-sourceconnection
     - ``p_SupportDescription``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-supportdescription
     - ``p_SupportEmail``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-supportemail
     - ``p_SupportUrl``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-supporturl
@@ -440,21 +530,6 @@ class CloudFormationProduct(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-owner"""
-    rp_ProvisioningArtifactParameters: typing.List[typing.Union['PropCloudFormationProductProvisioningArtifactProperties', dict]] = attr.ib(
-        default=None,
-        converter=PropCloudFormationProductProvisioningArtifactProperties.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropCloudFormationProductProvisioningArtifactProperties), iterable_validator=attr.validators.instance_of(list)),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "ProvisioningArtifactParameters",
-            AttrMeta.DATA: {
-                "Type": 'List',
-                "Required": True,
-                "ItemType": 'ProvisioningArtifactProperties',
-                "UpdateType": 'Mutable',
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-provisioningartifactparameters"""
     p_AcceptLanguage: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
@@ -494,6 +569,21 @@ class CloudFormationProduct(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-distributor"""
+    p_ProvisioningArtifactParameters: typing.List[typing.Union['PropCloudFormationProductProvisioningArtifactProperties', dict]] = attr.ib(
+        default=None,
+        converter=PropCloudFormationProductProvisioningArtifactProperties.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropCloudFormationProductProvisioningArtifactProperties), iterable_validator=attr.validators.instance_of(list))),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ProvisioningArtifactParameters",
+            AttrMeta.DATA: {
+                "Type": 'List',
+                "Required": False,
+                "ItemType": 'ProvisioningArtifactProperties',
+                "UpdateType": 'Mutable',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-provisioningartifactparameters"""
     p_ReplaceProvisioningArtifacts: bool = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(bool)),
@@ -507,6 +597,20 @@ class CloudFormationProduct(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-replaceprovisioningartifacts"""
+    p_SourceConnection: typing.Union['PropCloudFormationProductSourceConnection', dict] = attr.ib(
+        default=None,
+        converter=PropCloudFormationProductSourceConnection.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropCloudFormationProductSourceConnection)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "SourceConnection",
+            AttrMeta.DATA: {
+                "Type": 'SourceConnection',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationproduct.html#cfn-servicecatalog-cloudformationproduct-sourceconnection"""
     p_SupportDescription: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
@@ -724,6 +828,7 @@ class ServiceAction(Resource):
                 "Required": True,
                 "Type": 'List',
                 "ItemType": 'DefinitionParameter',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -1029,6 +1134,7 @@ class CloudFormationProvisionedProduct(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'ProvisioningParameter',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -1058,11 +1164,22 @@ class CloudFormationProvisionedProduct(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Tag',
+                "DuplicatesAllowed": True,
             }
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationprovisionedproduct.html#cfn-servicecatalog-cloudformationprovisionedproduct-tags"""
 
+    
+    @property
+    def rv_CloudformationStackArn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationprovisionedproduct.html#aws-resource-servicecatalog-cloudformationprovisionedproduct-return-values"""
+        return GetAtt(resource=self, attr_name="CloudformationStackArn")
+    
+    @property
+    def rv_Outputs(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationprovisionedproduct.html#aws-resource-servicecatalog-cloudformationprovisionedproduct-return-values"""
+        return GetAtt(resource=self, attr_name="Outputs")
     
     @property
     def rv_ProvisionedProductId(self) -> GetAtt:
@@ -1073,11 +1190,6 @@ class CloudFormationProvisionedProduct(Resource):
     def rv_RecordId(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationprovisionedproduct.html#aws-resource-servicecatalog-cloudformationprovisionedproduct-return-values"""
         return GetAtt(resource=self, attr_name="RecordId")
-    
-    @property
-    def rv_CloudformationStackArn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalog-cloudformationprovisionedproduct.html#aws-resource-servicecatalog-cloudformationprovisionedproduct-return-values"""
-        return GetAtt(resource=self, attr_name="CloudformationStackArn")
     
 
 @attr.s

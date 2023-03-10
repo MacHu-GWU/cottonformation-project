@@ -26,6 +26,7 @@ class PropDBClusterScalingConfiguration(Property):
     - ``p_AutoPause``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbcluster-scalingconfiguration.html#cfn-rds-dbcluster-scalingconfiguration-autopause
     - ``p_MaxCapacity``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbcluster-scalingconfiguration.html#cfn-rds-dbcluster-scalingconfiguration-maxcapacity
     - ``p_MinCapacity``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbcluster-scalingconfiguration.html#cfn-rds-dbcluster-scalingconfiguration-mincapacity
+    - ``p_SecondsBeforeTimeout``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbcluster-scalingconfiguration.html#cfn-rds-dbcluster-scalingconfiguration-secondsbeforetimeout
     - ``p_SecondsUntilAutoPause``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbcluster-scalingconfiguration.html#cfn-rds-dbcluster-scalingconfiguration-secondsuntilautopause
     - ``p_TimeoutAction``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbcluster-scalingconfiguration.html#cfn-rds-dbcluster-scalingconfiguration-timeoutaction
     """
@@ -49,6 +50,12 @@ class PropDBClusterScalingConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "MinCapacity"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbcluster-scalingconfiguration.html#cfn-rds-dbcluster-scalingconfiguration-mincapacity"""
+    p_SecondsBeforeTimeout: int = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(int)),
+        metadata={AttrMeta.PROPERTY_NAME: "SecondsBeforeTimeout"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbcluster-scalingconfiguration.html#cfn-rds-dbcluster-scalingconfiguration-secondsbeforetimeout"""
     p_SecondsUntilAutoPause: int = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(int)),
@@ -61,6 +68,33 @@ class PropDBClusterScalingConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "TimeoutAction"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbcluster-scalingconfiguration.html#cfn-rds-dbcluster-scalingconfiguration-timeoutaction"""
+
+@attr.s
+class PropDBInstanceCertificateDetails(Property):
+    """
+    AWS Object Type = "AWS::RDS::DBInstance.CertificateDetails"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbinstance-certificatedetails.html
+
+    Property Document:
+    
+    - ``p_CAIdentifier``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbinstance-certificatedetails.html#cfn-rds-dbinstance-certificatedetails-caidentifier
+    - ``p_ValidTill``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbinstance-certificatedetails.html#cfn-rds-dbinstance-certificatedetails-validtill
+    """
+    AWS_OBJECT_TYPE = "AWS::RDS::DBInstance.CertificateDetails"
+    
+    p_CAIdentifier: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "CAIdentifier"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbinstance-certificatedetails.html#cfn-rds-dbinstance-certificatedetails-caidentifier"""
+    p_ValidTill: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "ValidTill"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbinstance-certificatedetails.html#cfn-rds-dbinstance-certificatedetails-validtill"""
 
 @attr.s
 class PropDBSecurityGroupIngress(Property):
@@ -140,10 +174,10 @@ class PropDBProxyAuthFormat(Property):
     Property Document:
     
     - ``p_AuthScheme``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbproxy-authformat.html#cfn-rds-dbproxy-authformat-authscheme
+    - ``p_ClientPasswordAuthType``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbproxy-authformat.html#cfn-rds-dbproxy-authformat-clientpasswordauthtype
     - ``p_Description``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbproxy-authformat.html#cfn-rds-dbproxy-authformat-description
     - ``p_IAMAuth``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbproxy-authformat.html#cfn-rds-dbproxy-authformat-iamauth
     - ``p_SecretArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbproxy-authformat.html#cfn-rds-dbproxy-authformat-secretarn
-    - ``p_UserName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbproxy-authformat.html#cfn-rds-dbproxy-authformat-username
     """
     AWS_OBJECT_TYPE = "AWS::RDS::DBProxy.AuthFormat"
     
@@ -153,6 +187,12 @@ class PropDBProxyAuthFormat(Property):
         metadata={AttrMeta.PROPERTY_NAME: "AuthScheme"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbproxy-authformat.html#cfn-rds-dbproxy-authformat-authscheme"""
+    p_ClientPasswordAuthType: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "ClientPasswordAuthType"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbproxy-authformat.html#cfn-rds-dbproxy-authformat-clientpasswordauthtype"""
     p_Description: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
@@ -171,12 +211,60 @@ class PropDBProxyAuthFormat(Property):
         metadata={AttrMeta.PROPERTY_NAME: "SecretArn"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbproxy-authformat.html#cfn-rds-dbproxy-authformat-secretarn"""
-    p_UserName: TypeHint.intrinsic_str = attr.ib(
+
+@attr.s
+class PropDBInstanceMasterUserSecret(Property):
+    """
+    AWS Object Type = "AWS::RDS::DBInstance.MasterUserSecret"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbinstance-masterusersecret.html
+
+    Property Document:
+    
+    - ``p_KmsKeyId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbinstance-masterusersecret.html#cfn-rds-dbinstance-masterusersecret-kmskeyid
+    - ``p_SecretArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbinstance-masterusersecret.html#cfn-rds-dbinstance-masterusersecret-secretarn
+    """
+    AWS_OBJECT_TYPE = "AWS::RDS::DBInstance.MasterUserSecret"
+    
+    p_KmsKeyId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "UserName"},
+        metadata={AttrMeta.PROPERTY_NAME: "KmsKeyId"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbproxy-authformat.html#cfn-rds-dbproxy-authformat-username"""
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbinstance-masterusersecret.html#cfn-rds-dbinstance-masterusersecret-kmskeyid"""
+    p_SecretArn: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "SecretArn"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbinstance-masterusersecret.html#cfn-rds-dbinstance-masterusersecret-secretarn"""
+
+@attr.s
+class PropDBClusterEndpoint(Property):
+    """
+    AWS Object Type = "AWS::RDS::DBCluster.Endpoint"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbcluster-endpoint.html
+
+    Property Document:
+    
+    - ``p_Address``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbcluster-endpoint.html#cfn-rds-dbcluster-endpoint-address
+    - ``p_Port``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbcluster-endpoint.html#cfn-rds-dbcluster-endpoint-port
+    """
+    AWS_OBJECT_TYPE = "AWS::RDS::DBCluster.Endpoint"
+    
+    p_Address: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "Address"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbcluster-endpoint.html#cfn-rds-dbcluster-endpoint-address"""
+    p_Port: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "Port"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbcluster-endpoint.html#cfn-rds-dbcluster-endpoint-port"""
 
 @attr.s
 class PropDBInstanceEndpoint(Property):
@@ -360,6 +448,33 @@ class PropDBInstanceProcessorFeature(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Value"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbinstance-processorfeature.html#cfn-rds-dbinstance-processorfeature-value"""
+
+@attr.s
+class PropDBClusterMasterUserSecret(Property):
+    """
+    AWS Object Type = "AWS::RDS::DBCluster.MasterUserSecret"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbcluster-masterusersecret.html
+
+    Property Document:
+    
+    - ``p_KmsKeyId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbcluster-masterusersecret.html#cfn-rds-dbcluster-masterusersecret-kmskeyid
+    - ``p_SecretArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbcluster-masterusersecret.html#cfn-rds-dbcluster-masterusersecret-secretarn
+    """
+    AWS_OBJECT_TYPE = "AWS::RDS::DBCluster.MasterUserSecret"
+    
+    p_KmsKeyId: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "KmsKeyId"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbcluster-masterusersecret.html#cfn-rds-dbcluster-masterusersecret-kmskeyid"""
+    p_SecretArn: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "SecretArn"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rds-dbcluster-masterusersecret.html#cfn-rds-dbcluster-masterusersecret-secretarn"""
 
 @attr.s
 class PropDBProxyEndpointTagFormat(Property):
@@ -773,7 +888,6 @@ class DBCluster(Resource):
 
     Property Document:
     
-    - ``rp_Engine``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-engine
     - ``p_AllocatedStorage``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-allocatedstorage
     - ``p_AssociatedRoles``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-associatedroles
     - ``p_AutoMinorVersionUpgrade``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-autominorversionupgrade
@@ -786,6 +900,7 @@ class DBCluster(Resource):
     - ``p_DBClusterParameterGroupName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-dbclusterparametergroupname
     - ``p_DBInstanceParameterGroupName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-dbinstanceparametergroupname
     - ``p_DBSubnetGroupName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-dbsubnetgroupname
+    - ``p_DBSystemId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-dbsystemid
     - ``p_DatabaseName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-databasename
     - ``p_DeletionProtection``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-deletionprotection
     - ``p_Domain``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-domain
@@ -793,12 +908,15 @@ class DBCluster(Resource):
     - ``p_EnableCloudwatchLogsExports``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-enablecloudwatchlogsexports
     - ``p_EnableHttpEndpoint``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-enablehttpendpoint
     - ``p_EnableIAMDatabaseAuthentication``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-enableiamdatabaseauthentication
+    - ``p_Engine``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-engine
     - ``p_EngineMode``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-enginemode
     - ``p_EngineVersion``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-engineversion
     - ``p_GlobalClusterIdentifier``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-globalclusteridentifier
     - ``p_Iops``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-iops
     - ``p_KmsKeyId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-kmskeyid
+    - ``p_ManageMasterUserPassword``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-managemasteruserpassword
     - ``p_MasterUserPassword``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-masteruserpassword
+    - ``p_MasterUserSecret``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-masterusersecret
     - ``p_MasterUsername``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-masterusername
     - ``p_MonitoringInterval``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-monitoringinterval
     - ``p_MonitoringRoleArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-monitoringrolearn
@@ -826,19 +944,6 @@ class DBCluster(Resource):
     AWS_OBJECT_TYPE = "AWS::RDS::DBCluster"
 
     
-    rp_Engine: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "Engine",
-            AttrMeta.DATA: {
-                "UpdateType": 'Conditional',
-                "Required": True,
-                "PrimitiveType": 'String',
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-engine"""
     p_AllocatedStorage: int = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(int)),
@@ -1000,6 +1105,19 @@ class DBCluster(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-dbsubnetgroupname"""
+    p_DBSystemId: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "DBSystemId",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-dbsystemid"""
     p_DatabaseName: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
@@ -1093,6 +1211,19 @@ class DBCluster(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-enableiamdatabaseauthentication"""
+    p_Engine: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Engine",
+            AttrMeta.DATA: {
+                "UpdateType": 'Conditional',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-engine"""
     p_EngineMode: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
@@ -1158,6 +1289,19 @@ class DBCluster(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-kmskeyid"""
+    p_ManageMasterUserPassword: bool = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(bool)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ManageMasterUserPassword",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'Boolean',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-managemasteruserpassword"""
     p_MasterUserPassword: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
@@ -1171,6 +1315,20 @@ class DBCluster(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-masteruserpassword"""
+    p_MasterUserSecret: typing.Union['PropDBClusterMasterUserSecret', dict] = attr.ib(
+        default=None,
+        converter=PropDBClusterMasterUserSecret.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDBClusterMasterUserSecret)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "MasterUserSecret",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'MasterUserSecret',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#cfn-rds-dbcluster-masterusersecret"""
     p_MasterUsername: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
@@ -1480,9 +1638,14 @@ class DBCluster(Resource):
 
     
     @property
-    def rv_ReadEndpointAddress(self) -> GetAtt:
+    def rv_EndpointAddress(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#aws-resource-rds-dbcluster-return-values"""
-        return GetAtt(resource=self, attr_name="ReadEndpoint.Address")
+        return GetAtt(resource=self, attr_name="Endpoint.Address")
+    
+    @property
+    def rv_Endpoint(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#aws-resource-rds-dbcluster-return-values"""
+        return GetAtt(resource=self, attr_name="Endpoint")
     
     @property
     def rv_DBClusterArn(self) -> GetAtt:
@@ -1490,14 +1653,24 @@ class DBCluster(Resource):
         return GetAtt(resource=self, attr_name="DBClusterArn")
     
     @property
-    def rv_EndpointAddress(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#aws-resource-rds-dbcluster-return-values"""
-        return GetAtt(resource=self, attr_name="Endpoint.Address")
-    
-    @property
     def rv_EndpointPort(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#aws-resource-rds-dbcluster-return-values"""
         return GetAtt(resource=self, attr_name="Endpoint.Port")
+    
+    @property
+    def rv_ReadEndpointAddress(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#aws-resource-rds-dbcluster-return-values"""
+        return GetAtt(resource=self, attr_name="ReadEndpoint.Address")
+    
+    @property
+    def rv_DBClusterResourceId(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#aws-resource-rds-dbcluster-return-values"""
+        return GetAtt(resource=self, attr_name="DBClusterResourceId")
+    
+    @property
+    def rv_MasterUserSecretSecretArn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbcluster.html#aws-resource-rds-dbcluster-return-values"""
+        return GetAtt(resource=self, attr_name="MasterUserSecret.SecretArn")
     
 
 @attr.s
@@ -1637,10 +1810,13 @@ class DBInstance(Resource):
     - ``p_AvailabilityZone``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-availabilityzone
     - ``p_BackupRetentionPeriod``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-backupretentionperiod
     - ``p_CACertificateIdentifier``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-cacertificateidentifier
+    - ``p_CertificateDetails``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-certificatedetails
+    - ``p_CertificateRotationRestart``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-certificaterotationrestart
     - ``p_CharacterSetName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-charactersetname
     - ``p_CopyTagsToSnapshot``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-copytagstosnapshot
     - ``p_CustomIAMInstanceProfile``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-customiaminstanceprofile
     - ``p_DBClusterIdentifier``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-dbclusteridentifier
+    - ``p_DBClusterSnapshotIdentifier``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-dbclustersnapshotidentifier
     - ``p_DBInstanceClass``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-dbinstanceclass
     - ``p_DBInstanceIdentifier``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-dbinstanceidentifier
     - ``p_DBName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-dbname
@@ -1655,12 +1831,15 @@ class DBInstance(Resource):
     - ``p_EnableCloudwatchLogsExports``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-enablecloudwatchlogsexports
     - ``p_EnableIAMDatabaseAuthentication``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-enableiamdatabaseauthentication
     - ``p_EnablePerformanceInsights``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-enableperformanceinsights
+    - ``p_Endpoint``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-endpoint
     - ``p_Engine``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-engine
     - ``p_EngineVersion``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-engineversion
     - ``p_Iops``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-iops
     - ``p_KmsKeyId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-kmskeyid
     - ``p_LicenseModel``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-licensemodel
+    - ``p_ManageMasterUserPassword``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-managemasteruserpassword
     - ``p_MasterUserPassword``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-masteruserpassword
+    - ``p_MasterUserSecret``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-masterusersecret
     - ``p_MasterUsername``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-masterusername
     - ``p_MaxAllocatedStorage``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-maxallocatedstorage
     - ``p_MonitoringInterval``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-monitoringinterval
@@ -1678,13 +1857,17 @@ class DBInstance(Resource):
     - ``p_PromotionTier``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-promotiontier
     - ``p_PubliclyAccessible``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-publiclyaccessible
     - ``p_ReplicaMode``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-replicamode
+    - ``p_RestoreTime``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-restoretime
+    - ``p_SourceDBInstanceAutomatedBackupsArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-sourcedbinstanceautomatedbackupsarn
     - ``p_SourceDBInstanceIdentifier``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-sourcedbinstanceidentifier
+    - ``p_SourceDbiResourceId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-sourcedbiresourceid
     - ``p_SourceRegion``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-sourceregion
     - ``p_StorageEncrypted``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-storageencrypted
     - ``p_StorageThroughput``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-storagethroughput
     - ``p_StorageType``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-storagetype
     - ``p_Timezone``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-timezone
     - ``p_UseDefaultProcessorFeatures``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-usedefaultprocessorfeatures
+    - ``p_UseLatestRestorableTime``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-uselatestrestorabletime
     - ``p_VPCSecurityGroups``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-vpcsecuritygroups
     - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-tags
     """
@@ -1728,6 +1911,7 @@ class DBInstance(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'DBInstanceRole',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -1738,7 +1922,7 @@ class DBInstance(Resource):
         metadata={
             AttrMeta.PROPERTY_NAME: "AutoMinorVersionUpgrade",
             AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
+                "UpdateType": 'Conditional',
                 "Required": False,
                 "PrimitiveType": 'Boolean',
             }
@@ -1751,7 +1935,7 @@ class DBInstance(Resource):
         metadata={
             AttrMeta.PROPERTY_NAME: "AvailabilityZone",
             AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
+                "UpdateType": 'Conditional',
                 "Required": False,
                 "PrimitiveType": 'String',
             }
@@ -1764,7 +1948,7 @@ class DBInstance(Resource):
         metadata={
             AttrMeta.PROPERTY_NAME: "BackupRetentionPeriod",
             AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
+                "UpdateType": 'Conditional',
                 "Required": False,
                 "PrimitiveType": 'Integer',
             }
@@ -1784,6 +1968,33 @@ class DBInstance(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-cacertificateidentifier"""
+    p_CertificateDetails: typing.Union['PropDBInstanceCertificateDetails', dict] = attr.ib(
+        default=None,
+        converter=PropDBInstanceCertificateDetails.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDBInstanceCertificateDetails)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "CertificateDetails",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'CertificateDetails',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-certificatedetails"""
+    p_CertificateRotationRestart: bool = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(bool)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "CertificateRotationRestart",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'Boolean',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-certificaterotationrestart"""
     p_CharacterSetName: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
@@ -1836,6 +2047,19 @@ class DBInstance(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-dbclusteridentifier"""
+    p_DBClusterSnapshotIdentifier: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "DBClusterSnapshotIdentifier",
+            AttrMeta.DATA: {
+                "UpdateType": 'Conditional',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-dbclustersnapshotidentifier"""
     p_DBInstanceClass: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
@@ -1881,7 +2105,7 @@ class DBInstance(Resource):
         metadata={
             AttrMeta.PROPERTY_NAME: "DBParameterGroupName",
             AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
+                "UpdateType": 'Conditional',
                 "Required": False,
                 "PrimitiveType": 'String',
             }
@@ -1909,7 +2133,7 @@ class DBInstance(Resource):
         metadata={
             AttrMeta.PROPERTY_NAME: "DBSnapshotIdentifier",
             AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
+                "UpdateType": 'Conditional',
                 "Required": False,
                 "PrimitiveType": 'String',
             }
@@ -1991,6 +2215,7 @@ class DBInstance(Resource):
                 "Required": False,
                 "Type": 'List',
                 "PrimitiveItemType": 'String',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -2021,13 +2246,27 @@ class DBInstance(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-enableperformanceinsights"""
+    p_Endpoint: typing.Union['PropDBInstanceEndpoint', dict] = attr.ib(
+        default=None,
+        converter=PropDBInstanceEndpoint.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDBInstanceEndpoint)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Endpoint",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'Endpoint',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-endpoint"""
     p_Engine: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
         metadata={
             AttrMeta.PROPERTY_NAME: "Engine",
             AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
+                "UpdateType": 'Conditional',
                 "Required": False,
                 "PrimitiveType": 'String',
             }
@@ -2086,6 +2325,19 @@ class DBInstance(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-licensemodel"""
+    p_ManageMasterUserPassword: bool = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(bool)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ManageMasterUserPassword",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'Boolean',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-managemasteruserpassword"""
     p_MasterUserPassword: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
@@ -2099,6 +2351,20 @@ class DBInstance(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-masteruserpassword"""
+    p_MasterUserSecret: typing.Union['PropDBInstanceMasterUserSecret', dict] = attr.ib(
+        default=None,
+        converter=PropDBInstanceMasterUserSecret.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDBInstanceMasterUserSecret)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "MasterUserSecret",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'MasterUserSecret',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-masterusersecret"""
     p_MasterUsername: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
@@ -2157,7 +2423,7 @@ class DBInstance(Resource):
         metadata={
             AttrMeta.PROPERTY_NAME: "MultiAZ",
             AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
+                "UpdateType": 'Conditional',
                 "Required": False,
                 "PrimitiveType": 'Boolean',
             }
@@ -2209,7 +2475,7 @@ class DBInstance(Resource):
         metadata={
             AttrMeta.PROPERTY_NAME: "PerformanceInsightsKMSKeyId",
             AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
+                "UpdateType": 'Conditional',
                 "Required": False,
                 "PrimitiveType": 'String',
             }
@@ -2261,7 +2527,7 @@ class DBInstance(Resource):
         metadata={
             AttrMeta.PROPERTY_NAME: "PreferredMaintenanceWindow",
             AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
+                "UpdateType": 'Conditional',
                 "Required": False,
                 "PrimitiveType": 'String',
             }
@@ -2279,6 +2545,7 @@ class DBInstance(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'ProcessorFeature',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -2322,19 +2589,58 @@ class DBInstance(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-replicamode"""
+    p_RestoreTime: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "RestoreTime",
+            AttrMeta.DATA: {
+                "UpdateType": 'Conditional',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-restoretime"""
+    p_SourceDBInstanceAutomatedBackupsArn: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "SourceDBInstanceAutomatedBackupsArn",
+            AttrMeta.DATA: {
+                "UpdateType": 'Conditional',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-sourcedbinstanceautomatedbackupsarn"""
     p_SourceDBInstanceIdentifier: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
         metadata={
             AttrMeta.PROPERTY_NAME: "SourceDBInstanceIdentifier",
             AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
+                "UpdateType": 'Conditional',
                 "Required": False,
                 "PrimitiveType": 'String',
             }
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-sourcedbinstanceidentifier"""
+    p_SourceDbiResourceId: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "SourceDbiResourceId",
+            AttrMeta.DATA: {
+                "UpdateType": 'Conditional',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-sourcedbiresourceid"""
     p_SourceRegion: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
@@ -2380,7 +2686,7 @@ class DBInstance(Resource):
         metadata={
             AttrMeta.PROPERTY_NAME: "StorageType",
             AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
+                "UpdateType": 'Conditional',
                 "Required": False,
                 "PrimitiveType": 'String',
             }
@@ -2413,6 +2719,19 @@ class DBInstance(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-usedefaultprocessorfeatures"""
+    p_UseLatestRestorableTime: bool = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(bool)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "UseLatestRestorableTime",
+            AttrMeta.DATA: {
+                "UpdateType": 'Conditional',
+                "Required": False,
+                "PrimitiveType": 'Boolean',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#cfn-rds-dbinstance-uselatestrestorabletime"""
     p_VPCSecurityGroups: typing.List[TypeHint.intrinsic_str] = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
@@ -2447,19 +2766,29 @@ class DBInstance(Resource):
 
     
     @property
-    def rv_DBInstanceArn(self) -> GetAtt:
+    def rv_DBSystemId(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#aws-resource-rds-dbinstance-return-values"""
-        return GetAtt(resource=self, attr_name="DBInstanceArn")
-    
-    @property
-    def rv_DbiResourceId(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#aws-resource-rds-dbinstance-return-values"""
-        return GetAtt(resource=self, attr_name="DbiResourceId")
+        return GetAtt(resource=self, attr_name="DBSystemId")
     
     @property
     def rv_EndpointAddress(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#aws-resource-rds-dbinstance-return-values"""
         return GetAtt(resource=self, attr_name="Endpoint.Address")
+    
+    @property
+    def rv_DBInstanceArn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#aws-resource-rds-dbinstance-return-values"""
+        return GetAtt(resource=self, attr_name="DBInstanceArn")
+    
+    @property
+    def rv_CertificateDetailsValidTill(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#aws-resource-rds-dbinstance-return-values"""
+        return GetAtt(resource=self, attr_name="CertificateDetails.ValidTill")
+    
+    @property
+    def rv_CertificateDetailsCAIdentifier(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#aws-resource-rds-dbinstance-return-values"""
+        return GetAtt(resource=self, attr_name="CertificateDetails.CAIdentifier")
     
     @property
     def rv_EndpointPort(self) -> GetAtt:
@@ -2470,6 +2799,16 @@ class DBInstance(Resource):
     def rv_EndpointHostedZoneId(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#aws-resource-rds-dbinstance-return-values"""
         return GetAtt(resource=self, attr_name="Endpoint.HostedZoneId")
+    
+    @property
+    def rv_DbiResourceId(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#aws-resource-rds-dbinstance-return-values"""
+        return GetAtt(resource=self, attr_name="DbiResourceId")
+    
+    @property
+    def rv_MasterUserSecretSecretArn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbinstance.html#aws-resource-rds-dbinstance-return-values"""
+        return GetAtt(resource=self, attr_name="MasterUserSecret.SecretArn")
     
 
 @attr.s
@@ -2631,6 +2970,7 @@ class DBClusterParameterGroup(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Tag',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -2707,6 +3047,7 @@ class OptionGroup(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'OptionConfiguration',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -2735,6 +3076,7 @@ class OptionGroup(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Tag',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -2870,6 +3212,7 @@ class DBProxy(Resource):
                 "Required": True,
                 "Type": 'List',
                 "ItemType": 'AuthFormat',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -2923,6 +3266,7 @@ class DBProxy(Resource):
                 "Required": True,
                 "Type": 'List',
                 "PrimitiveItemType": 'String',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -2976,6 +3320,7 @@ class DBProxy(Resource):
                 "Required": False,
                 "Type": 'List',
                 "PrimitiveItemType": 'String',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -2991,16 +3336,12 @@ class DBProxy(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'TagFormat',
+                "DuplicatesAllowed": True,
             }
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxy.html#cfn-rds-dbproxy-tags"""
 
-    
-    @property
-    def rv_DBProxyArn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxy.html#aws-resource-rds-dbproxy-return-values"""
-        return GetAtt(resource=self, attr_name="DBProxyArn")
     
     @property
     def rv_Endpoint(self) -> GetAtt:
@@ -3011,6 +3352,11 @@ class DBProxy(Resource):
     def rv_VpcId(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxy.html#aws-resource-rds-dbproxy-return-values"""
         return GetAtt(resource=self, attr_name="VpcId")
+    
+    @property
+    def rv_DBProxyArn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxy.html#aws-resource-rds-dbproxy-return-values"""
+        return GetAtt(resource=self, attr_name="DBProxyArn")
     
 
 @attr.s
@@ -3081,6 +3427,7 @@ class DBProxyTargetGroup(Resource):
                 "Required": False,
                 "Type": 'List',
                 "PrimitiveItemType": 'String',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -3095,6 +3442,7 @@ class DBProxyTargetGroup(Resource):
                 "Required": False,
                 "Type": 'List',
                 "PrimitiveItemType": 'String',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -3162,6 +3510,7 @@ class DBProxyEndpoint(Resource):
                 "Required": True,
                 "Type": 'List',
                 "PrimitiveItemType": 'String',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -3172,7 +3521,7 @@ class DBProxyEndpoint(Resource):
         metadata={
             AttrMeta.PROPERTY_NAME: "TargetRole",
             AttrMeta.DATA: {
-                "UpdateType": 'Immutable',
+                "UpdateType": 'Mutable',
                 "Required": False,
                 "PrimitiveType": 'String',
             }
@@ -3189,6 +3538,7 @@ class DBProxyEndpoint(Resource):
                 "Required": False,
                 "Type": 'List',
                 "PrimitiveItemType": 'String',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -3204,6 +3554,7 @@ class DBProxyEndpoint(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'TagFormat',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -3216,6 +3567,11 @@ class DBProxyEndpoint(Resource):
         return GetAtt(resource=self, attr_name="DBProxyEndpointArn")
     
     @property
+    def rv_IsDefault(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxyendpoint.html#aws-resource-rds-dbproxyendpoint-return-values"""
+        return GetAtt(resource=self, attr_name="IsDefault")
+    
+    @property
     def rv_VpcId(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxyendpoint.html#aws-resource-rds-dbproxyendpoint-return-values"""
         return GetAtt(resource=self, attr_name="VpcId")
@@ -3224,9 +3580,4 @@ class DBProxyEndpoint(Resource):
     def rv_Endpoint(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxyendpoint.html#aws-resource-rds-dbproxyendpoint-return-values"""
         return GetAtt(resource=self, attr_name="Endpoint")
-    
-    @property
-    def rv_IsDefault(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rds-dbproxyendpoint.html#aws-resource-rds-dbproxyendpoint-return-values"""
-        return GetAtt(resource=self, attr_name="IsDefault")
     

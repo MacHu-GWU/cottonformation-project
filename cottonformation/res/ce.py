@@ -191,14 +191,14 @@ class CostCategory(Resource):
 
     
     @property
-    def rv_Arn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ce-costcategory.html#aws-resource-ce-costcategory-return-values"""
-        return GetAtt(resource=self, attr_name="Arn")
-    
-    @property
     def rv_EffectiveStart(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ce-costcategory.html#aws-resource-ce-costcategory-return-values"""
         return GetAtt(resource=self, attr_name="EffectiveStart")
+    
+    @property
+    def rv_Arn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ce-costcategory.html#aws-resource-ce-costcategory-return-values"""
+        return GetAtt(resource=self, attr_name="Arn")
     
 
 @attr.s
@@ -282,6 +282,7 @@ class AnomalyMonitor(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'ResourceTag',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -289,9 +290,9 @@ class AnomalyMonitor(Resource):
 
     
     @property
-    def rv_MonitorArn(self) -> GetAtt:
+    def rv_LastUpdatedDate(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ce-anomalymonitor.html#aws-resource-ce-anomalymonitor-return-values"""
-        return GetAtt(resource=self, attr_name="MonitorArn")
+        return GetAtt(resource=self, attr_name="LastUpdatedDate")
     
     @property
     def rv_CreationDate(self) -> GetAtt:
@@ -304,9 +305,9 @@ class AnomalyMonitor(Resource):
         return GetAtt(resource=self, attr_name="LastEvaluatedDate")
     
     @property
-    def rv_LastUpdatedDate(self) -> GetAtt:
+    def rv_MonitorArn(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ce-anomalymonitor.html#aws-resource-ce-anomalymonitor-return-values"""
-        return GetAtt(resource=self, attr_name="LastUpdatedDate")
+        return GetAtt(resource=self, attr_name="MonitorArn")
     
     @property
     def rv_DimensionalValueCount(self) -> GetAtt:
@@ -327,8 +328,9 @@ class AnomalySubscription(Resource):
     - ``rp_MonitorArnList``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ce-anomalysubscription.html#cfn-ce-anomalysubscription-monitorarnlist
     - ``rp_Subscribers``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ce-anomalysubscription.html#cfn-ce-anomalysubscription-subscribers
     - ``rp_SubscriptionName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ce-anomalysubscription.html#cfn-ce-anomalysubscription-subscriptionname
-    - ``rp_Threshold``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ce-anomalysubscription.html#cfn-ce-anomalysubscription-threshold
     - ``p_ResourceTags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ce-anomalysubscription.html#cfn-ce-anomalysubscription-resourcetags
+    - ``p_Threshold``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ce-anomalysubscription.html#cfn-ce-anomalysubscription-threshold
+    - ``p_ThresholdExpression``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ce-anomalysubscription.html#cfn-ce-anomalysubscription-thresholdexpression
     """
     AWS_OBJECT_TYPE = "AWS::CE::AnomalySubscription"
 
@@ -356,6 +358,7 @@ class AnomalySubscription(Resource):
                 "Required": True,
                 "Type": 'List',
                 "PrimitiveItemType": 'String',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -371,6 +374,7 @@ class AnomalySubscription(Resource):
                 "Required": True,
                 "Type": 'List',
                 "ItemType": 'Subscriber',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -388,19 +392,6 @@ class AnomalySubscription(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ce-anomalysubscription.html#cfn-ce-anomalysubscription-subscriptionname"""
-    rp_Threshold: float = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(float),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "Threshold",
-            AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
-                "Required": True,
-                "PrimitiveType": 'Double',
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ce-anomalysubscription.html#cfn-ce-anomalysubscription-threshold"""
     p_ResourceTags: typing.List[typing.Union['PropAnomalySubscriptionResourceTag', dict]] = attr.ib(
         default=None,
         converter=PropAnomalySubscriptionResourceTag.from_list,
@@ -412,19 +403,46 @@ class AnomalySubscription(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'ResourceTag',
+                "DuplicatesAllowed": True,
             }
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ce-anomalysubscription.html#cfn-ce-anomalysubscription-resourcetags"""
+    p_Threshold: float = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(float)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Threshold",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'Double',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ce-anomalysubscription.html#cfn-ce-anomalysubscription-threshold"""
+    p_ThresholdExpression: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ThresholdExpression",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ce-anomalysubscription.html#cfn-ce-anomalysubscription-thresholdexpression"""
 
-    
-    @property
-    def rv_SubscriptionArn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ce-anomalysubscription.html#aws-resource-ce-anomalysubscription-return-values"""
-        return GetAtt(resource=self, attr_name="SubscriptionArn")
     
     @property
     def rv_AccountId(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ce-anomalysubscription.html#aws-resource-ce-anomalysubscription-return-values"""
         return GetAtt(resource=self, attr_name="AccountId")
+    
+    @property
+    def rv_SubscriptionArn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ce-anomalysubscription.html#aws-resource-ce-anomalysubscription-return-values"""
+        return GetAtt(resource=self, attr_name="SubscriptionArn")
     

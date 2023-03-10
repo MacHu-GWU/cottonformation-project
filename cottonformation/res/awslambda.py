@@ -402,6 +402,33 @@ class PropEventSourceMappingDestinationConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventsourcemapping-destinationconfig.html#cfn-lambda-eventsourcemapping-destinationconfig-onfailure"""
 
 @attr.s
+class PropFunctionSnapStartResponse(Property):
+    """
+    AWS Object Type = "AWS::Lambda::Function.SnapStartResponse"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-snapstartresponse.html
+
+    Property Document:
+    
+    - ``p_ApplyOn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-snapstartresponse.html#cfn-lambda-function-snapstartresponse-applyon
+    - ``p_OptimizationStatus``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-snapstartresponse.html#cfn-lambda-function-snapstartresponse-optimizationstatus
+    """
+    AWS_OBJECT_TYPE = "AWS::Lambda::Function.SnapStartResponse"
+    
+    p_ApplyOn: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "ApplyOn"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-snapstartresponse.html#cfn-lambda-function-snapstartresponse-applyon"""
+    p_OptimizationStatus: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "OptimizationStatus"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-snapstartresponse.html#cfn-lambda-function-snapstartresponse-optimizationstatus"""
+
+@attr.s
 class PropAliasProvisionedConcurrencyConfiguration(Property):
     """
     AWS Object Type = "AWS::Lambda::Alias.ProvisionedConcurrencyConfiguration"
@@ -645,6 +672,33 @@ class PropFunctionEnvironment(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-environment.html#cfn-lambda-function-environment-variables"""
 
 @attr.s
+class PropFunctionRuntimeManagementConfig(Property):
+    """
+    AWS Object Type = "AWS::Lambda::Function.RuntimeManagementConfig"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-runtimemanagementconfig.html
+
+    Property Document:
+    
+    - ``rp_UpdateRuntimeOn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-runtimemanagementconfig.html#cfn-lambda-function-runtimemanagementconfig-updateruntimeon
+    - ``p_RuntimeVersionArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-runtimemanagementconfig.html#cfn-lambda-function-runtimemanagementconfig-runtimeversionarn
+    """
+    AWS_OBJECT_TYPE = "AWS::Lambda::Function.RuntimeManagementConfig"
+    
+    rp_UpdateRuntimeOn: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "UpdateRuntimeOn"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-runtimemanagementconfig.html#cfn-lambda-function-runtimemanagementconfig-updateruntimeon"""
+    p_RuntimeVersionArn: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "RuntimeVersionArn"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-runtimemanagementconfig.html#cfn-lambda-function-runtimemanagementconfig-runtimeversionarn"""
+
+@attr.s
 class PropEventSourceMappingFilterCriteria(Property):
     """
     AWS Object Type = "AWS::Lambda::EventSourceMapping.FilterCriteria"
@@ -686,6 +740,40 @@ class PropFunctionSnapStart(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-function-snapstart.html#cfn-lambda-function-snapstart-applyon"""
 
 @attr.s
+class PropEventSourceMappingDocumentDBEventSourceConfig(Property):
+    """
+    AWS Object Type = "AWS::Lambda::EventSourceMapping.DocumentDBEventSourceConfig"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventsourcemapping-documentdbeventsourceconfig.html
+
+    Property Document:
+    
+    - ``p_CollectionName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventsourcemapping-documentdbeventsourceconfig.html#cfn-lambda-eventsourcemapping-documentdbeventsourceconfig-collectionname
+    - ``p_DatabaseName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventsourcemapping-documentdbeventsourceconfig.html#cfn-lambda-eventsourcemapping-documentdbeventsourceconfig-databasename
+    - ``p_FullDocument``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventsourcemapping-documentdbeventsourceconfig.html#cfn-lambda-eventsourcemapping-documentdbeventsourceconfig-fulldocument
+    """
+    AWS_OBJECT_TYPE = "AWS::Lambda::EventSourceMapping.DocumentDBEventSourceConfig"
+    
+    p_CollectionName: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "CollectionName"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventsourcemapping-documentdbeventsourceconfig.html#cfn-lambda-eventsourcemapping-documentdbeventsourceconfig-collectionname"""
+    p_DatabaseName: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "DatabaseName"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventsourcemapping-documentdbeventsourceconfig.html#cfn-lambda-eventsourcemapping-documentdbeventsourceconfig-databasename"""
+    p_FullDocument: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "FullDocument"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventsourcemapping-documentdbeventsourceconfig.html#cfn-lambda-eventsourcemapping-documentdbeventsourceconfig-fulldocument"""
+
+@attr.s
 class PropCodeSigningConfigAllowedPublishers(Property):
     """
     AWS Object Type = "AWS::Lambda::CodeSigningConfig.AllowedPublishers"
@@ -704,6 +792,26 @@ class PropCodeSigningConfigAllowedPublishers(Property):
         metadata={AttrMeta.PROPERTY_NAME: "SigningProfileVersionArns"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-codesigningconfig-allowedpublishers.html#cfn-lambda-codesigningconfig-allowedpublishers-signingprofileversionarns"""
+
+@attr.s
+class PropEventSourceMappingScalingConfig(Property):
+    """
+    AWS Object Type = "AWS::Lambda::EventSourceMapping.ScalingConfig"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventsourcemapping-scalingconfig.html
+
+    Property Document:
+    
+    - ``p_MaximumConcurrency``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventsourcemapping-scalingconfig.html#cfn-lambda-eventsourcemapping-scalingconfig-maximumconcurrency
+    """
+    AWS_OBJECT_TYPE = "AWS::Lambda::EventSourceMapping.ScalingConfig"
+    
+    p_MaximumConcurrency: int = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(int)),
+        metadata={AttrMeta.PROPERTY_NAME: "MaximumConcurrency"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lambda-eventsourcemapping-scalingconfig.html#cfn-lambda-eventsourcemapping-scalingconfig-maximumconcurrency"""
 
 @attr.s
 class PropEventSourceMappingSelfManagedEventSource(Property):
@@ -1217,6 +1325,7 @@ class Function(Resource):
     - ``p_PackageType``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-packagetype
     - ``p_ReservedConcurrentExecutions``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-reservedconcurrentexecutions
     - ``p_Runtime``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-runtime
+    - ``p_RuntimeManagementConfig``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-runtimemanagementconfig
     - ``p_SnapStart``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-snapstart
     - ``p_Timeout``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-timeout
     - ``p_TracingConfig``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-tracingconfig
@@ -1347,6 +1456,7 @@ class Function(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'FileSystemConfig',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -1471,6 +1581,20 @@ class Function(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-runtime"""
+    p_RuntimeManagementConfig: typing.Union['PropFunctionRuntimeManagementConfig', dict] = attr.ib(
+        default=None,
+        converter=PropFunctionRuntimeManagementConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropFunctionRuntimeManagementConfig)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "RuntimeManagementConfig",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'RuntimeManagementConfig',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-runtimemanagementconfig"""
     p_SnapStart: typing.Union['PropFunctionSnapStart', dict] = attr.ib(
         default=None,
         converter=PropFunctionSnapStart.from_dict,
@@ -1543,6 +1667,21 @@ class Function(Resource):
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#cfn-lambda-function-tags"""
 
+    
+    @property
+    def rv_SnapStartResponseOptimizationStatus(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#aws-resource-lambda-function-return-values"""
+        return GetAtt(resource=self, attr_name="SnapStartResponse.OptimizationStatus")
+    
+    @property
+    def rv_SnapStartResponseApplyOn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#aws-resource-lambda-function-return-values"""
+        return GetAtt(resource=self, attr_name="SnapStartResponse.ApplyOn")
+    
+    @property
+    def rv_SnapStartResponse(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-function.html#aws-resource-lambda-function-return-values"""
+        return GetAtt(resource=self, attr_name="SnapStartResponse")
     
     @property
     def rv_Arn(self) -> GetAtt:
@@ -1692,6 +1831,7 @@ class EventSourceMapping(Resource):
     - ``p_BatchSize``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-batchsize
     - ``p_BisectBatchOnFunctionError``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-bisectbatchonfunctionerror
     - ``p_DestinationConfig``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-destinationconfig
+    - ``p_DocumentDBEventSourceConfig``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-documentdbeventsourceconfig
     - ``p_Enabled``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-enabled
     - ``p_EventSourceArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-eventsourcearn
     - ``p_FilterCriteria``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-filtercriteria
@@ -1701,6 +1841,7 @@ class EventSourceMapping(Resource):
     - ``p_MaximumRetryAttempts``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-maximumretryattempts
     - ``p_ParallelizationFactor``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-parallelizationfactor
     - ``p_Queues``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-queues
+    - ``p_ScalingConfig``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-scalingconfig
     - ``p_SelfManagedEventSource``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-selfmanagedeventsource
     - ``p_SelfManagedKafkaEventSourceConfig``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-selfmanagedkafkaeventsourceconfig
     - ``p_SourceAccessConfigurations``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-sourceaccessconfigurations
@@ -1779,6 +1920,20 @@ class EventSourceMapping(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-destinationconfig"""
+    p_DocumentDBEventSourceConfig: typing.Union['PropEventSourceMappingDocumentDBEventSourceConfig', dict] = attr.ib(
+        default=None,
+        converter=PropEventSourceMappingDocumentDBEventSourceConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropEventSourceMappingDocumentDBEventSourceConfig)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "DocumentDBEventSourceConfig",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'DocumentDBEventSourceConfig',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-documentdbeventsourceconfig"""
     p_Enabled: bool = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(bool)),
@@ -1901,6 +2056,20 @@ class EventSourceMapping(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-queues"""
+    p_ScalingConfig: typing.Union['PropEventSourceMappingScalingConfig', dict] = attr.ib(
+        default=None,
+        converter=PropEventSourceMappingScalingConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropEventSourceMappingScalingConfig)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ScalingConfig",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'ScalingConfig',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lambda-eventsourcemapping.html#cfn-lambda-eventsourcemapping-scalingconfig"""
     p_SelfManagedEventSource: typing.Union['PropEventSourceMappingSelfManagedEventSource', dict] = attr.ib(
         default=None,
         converter=PropEventSourceMappingSelfManagedEventSource.from_dict,

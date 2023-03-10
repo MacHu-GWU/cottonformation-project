@@ -211,6 +211,47 @@ class PropScheduledActionResizeClusterMessage(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-redshift-scheduledaction-resizeclustermessage.html#cfn-redshift-scheduledaction-resizeclustermessage-numberofnodes"""
 
 @attr.s
+class PropEndpointAccessNetworkInterface(Property):
+    """
+    AWS Object Type = "AWS::Redshift::EndpointAccess.NetworkInterface"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-redshift-endpointaccess-networkinterface.html
+
+    Property Document:
+    
+    - ``p_AvailabilityZone``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-redshift-endpointaccess-networkinterface.html#cfn-redshift-endpointaccess-networkinterface-availabilityzone
+    - ``p_NetworkInterfaceId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-redshift-endpointaccess-networkinterface.html#cfn-redshift-endpointaccess-networkinterface-networkinterfaceid
+    - ``p_PrivateIpAddress``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-redshift-endpointaccess-networkinterface.html#cfn-redshift-endpointaccess-networkinterface-privateipaddress
+    - ``p_SubnetId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-redshift-endpointaccess-networkinterface.html#cfn-redshift-endpointaccess-networkinterface-subnetid
+    """
+    AWS_OBJECT_TYPE = "AWS::Redshift::EndpointAccess.NetworkInterface"
+    
+    p_AvailabilityZone: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "AvailabilityZone"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-redshift-endpointaccess-networkinterface.html#cfn-redshift-endpointaccess-networkinterface-availabilityzone"""
+    p_NetworkInterfaceId: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "NetworkInterfaceId"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-redshift-endpointaccess-networkinterface.html#cfn-redshift-endpointaccess-networkinterface-networkinterfaceid"""
+    p_PrivateIpAddress: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "PrivateIpAddress"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-redshift-endpointaccess-networkinterface.html#cfn-redshift-endpointaccess-networkinterface-privateipaddress"""
+    p_SubnetId: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "SubnetId"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-redshift-endpointaccess-networkinterface.html#cfn-redshift-endpointaccess-networkinterface-subnetid"""
+
+@attr.s
 class PropScheduledActionScheduledActionType(Property):
     """
     AWS Object Type = "AWS::Redshift::ScheduledAction.ScheduledActionType"
@@ -244,6 +285,41 @@ class PropScheduledActionScheduledActionType(Property):
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-redshift-scheduledaction-scheduledactiontype.html#cfn-redshift-scheduledaction-scheduledactiontype-resumecluster"""
 
+@attr.s
+class PropEndpointAccessVpcEndpoint(Property):
+    """
+    AWS Object Type = "AWS::Redshift::EndpointAccess.VpcEndpoint"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-redshift-endpointaccess-vpcendpoint.html
+
+    Property Document:
+    
+    - ``p_NetworkInterfaces``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-redshift-endpointaccess-vpcendpoint.html#cfn-redshift-endpointaccess-vpcendpoint-networkinterfaces
+    - ``p_VpcEndpointId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-redshift-endpointaccess-vpcendpoint.html#cfn-redshift-endpointaccess-vpcendpoint-vpcendpointid
+    - ``p_VpcId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-redshift-endpointaccess-vpcendpoint.html#cfn-redshift-endpointaccess-vpcendpoint-vpcid
+    """
+    AWS_OBJECT_TYPE = "AWS::Redshift::EndpointAccess.VpcEndpoint"
+    
+    p_NetworkInterfaces: typing.List[typing.Union['PropEndpointAccessNetworkInterface', dict]] = attr.ib(
+        default=None,
+        converter=PropEndpointAccessNetworkInterface.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropEndpointAccessNetworkInterface), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "NetworkInterfaces"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-redshift-endpointaccess-vpcendpoint.html#cfn-redshift-endpointaccess-vpcendpoint-networkinterfaces"""
+    p_VpcEndpointId: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "VpcEndpointId"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-redshift-endpointaccess-vpcendpoint.html#cfn-redshift-endpointaccess-vpcendpoint-vpcendpointid"""
+    p_VpcId: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "VpcId"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-redshift-endpointaccess-vpcendpoint.html#cfn-redshift-endpointaccess-vpcendpoint-vpcid"""
+
 
 #--- Resource declaration ---
 
@@ -261,8 +337,6 @@ class EndpointAccess(Resource):
     - ``rp_SubnetGroupName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-endpointaccess.html#cfn-redshift-endpointaccess-subnetgroupname
     - ``rp_VpcSecurityGroupIds``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-endpointaccess.html#cfn-redshift-endpointaccess-vpcsecuritygroupids
     - ``p_ResourceOwner``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-endpointaccess.html#cfn-redshift-endpointaccess-resourceowner
-    - ``p_VpcEndpoint``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-endpointaccess.html#cfn-redshift-endpointaccess-vpcendpoint
-    - ``p_VpcSecurityGroups``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-endpointaccess.html#cfn-redshift-endpointaccess-vpcsecuritygroups
     """
     AWS_OBJECT_TYPE = "AWS::Redshift::EndpointAccess"
 
@@ -316,6 +390,7 @@ class EndpointAccess(Resource):
                 "Required": True,
                 "Type": 'List',
                 "PrimitiveItemType": 'String',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -333,40 +408,7 @@ class EndpointAccess(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-endpointaccess.html#cfn-redshift-endpointaccess-resourceowner"""
-    p_VpcEndpoint: dict = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(dict)),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "VpcEndpoint",
-            AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
-                "Required": False,
-                "PrimitiveType": 'Json',
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-endpointaccess.html#cfn-redshift-endpointaccess-vpcendpoint"""
-    p_VpcSecurityGroups: typing.List[typing.Union['PropEndpointAccessVpcSecurityGroup', dict]] = attr.ib(
-        default=None,
-        converter=PropEndpointAccessVpcSecurityGroup.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropEndpointAccessVpcSecurityGroup), iterable_validator=attr.validators.instance_of(list))),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "VpcSecurityGroups",
-            AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
-                "Required": False,
-                "Type": 'List',
-                "ItemType": 'VpcSecurityGroup',
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-endpointaccess.html#cfn-redshift-endpointaccess-vpcsecuritygroups"""
 
-    
-    @property
-    def rv_Address(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-endpointaccess.html#aws-resource-redshift-endpointaccess-return-values"""
-        return GetAtt(resource=self, attr_name="Address")
     
     @property
     def rv_EndpointStatus(self) -> GetAtt:
@@ -374,14 +416,183 @@ class EndpointAccess(Resource):
         return GetAtt(resource=self, attr_name="EndpointStatus")
     
     @property
-    def rv_EndpointCreateTime(self) -> GetAtt:
+    def rv_VpcEndpoint(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-endpointaccess.html#aws-resource-redshift-endpointaccess-return-values"""
-        return GetAtt(resource=self, attr_name="EndpointCreateTime")
+        return GetAtt(resource=self, attr_name="VpcEndpoint")
+    
+    @property
+    def rv_Address(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-endpointaccess.html#aws-resource-redshift-endpointaccess-return-values"""
+        return GetAtt(resource=self, attr_name="Address")
     
     @property
     def rv_Port(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-endpointaccess.html#aws-resource-redshift-endpointaccess-return-values"""
         return GetAtt(resource=self, attr_name="Port")
+    
+    @property
+    def rv_EndpointCreateTime(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-endpointaccess.html#aws-resource-redshift-endpointaccess-return-values"""
+        return GetAtt(resource=self, attr_name="EndpointCreateTime")
+    
+    @property
+    def rv_VpcEndpointVpcId(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-endpointaccess.html#aws-resource-redshift-endpointaccess-return-values"""
+        return GetAtt(resource=self, attr_name="VpcEndpoint.VpcId")
+    
+    @property
+    def rv_VpcEndpointNetworkInterfaces(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-endpointaccess.html#aws-resource-redshift-endpointaccess-return-values"""
+        return GetAtt(resource=self, attr_name="VpcEndpoint.NetworkInterfaces")
+    
+    @property
+    def rv_VpcSecurityGroups(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-endpointaccess.html#aws-resource-redshift-endpointaccess-return-values"""
+        return GetAtt(resource=self, attr_name="VpcSecurityGroups")
+    
+    @property
+    def rv_VpcEndpointVpcEndpointId(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-endpointaccess.html#aws-resource-redshift-endpointaccess-return-values"""
+        return GetAtt(resource=self, attr_name="VpcEndpoint.VpcEndpointId")
+    
+
+@attr.s
+class ScheduledAction(Resource):
+    """
+    AWS Object Type = "AWS::Redshift::ScheduledAction"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-scheduledaction.html
+
+    Property Document:
+    
+    - ``rp_ScheduledActionName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-scheduledaction.html#cfn-redshift-scheduledaction-scheduledactionname
+    - ``p_Enable``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-scheduledaction.html#cfn-redshift-scheduledaction-enable
+    - ``p_EndTime``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-scheduledaction.html#cfn-redshift-scheduledaction-endtime
+    - ``p_IamRole``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-scheduledaction.html#cfn-redshift-scheduledaction-iamrole
+    - ``p_Schedule``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-scheduledaction.html#cfn-redshift-scheduledaction-schedule
+    - ``p_ScheduledActionDescription``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-scheduledaction.html#cfn-redshift-scheduledaction-scheduledactiondescription
+    - ``p_StartTime``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-scheduledaction.html#cfn-redshift-scheduledaction-starttime
+    - ``p_TargetAction``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-scheduledaction.html#cfn-redshift-scheduledaction-targetaction
+    """
+    AWS_OBJECT_TYPE = "AWS::Redshift::ScheduledAction"
+
+    
+    rp_ScheduledActionName: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ScheduledActionName",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-scheduledaction.html#cfn-redshift-scheduledaction-scheduledactionname"""
+    p_Enable: bool = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(bool)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Enable",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'Boolean',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-scheduledaction.html#cfn-redshift-scheduledaction-enable"""
+    p_EndTime: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "EndTime",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-scheduledaction.html#cfn-redshift-scheduledaction-endtime"""
+    p_IamRole: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "IamRole",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-scheduledaction.html#cfn-redshift-scheduledaction-iamrole"""
+    p_Schedule: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Schedule",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-scheduledaction.html#cfn-redshift-scheduledaction-schedule"""
+    p_ScheduledActionDescription: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ScheduledActionDescription",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-scheduledaction.html#cfn-redshift-scheduledaction-scheduledactiondescription"""
+    p_StartTime: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "StartTime",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-scheduledaction.html#cfn-redshift-scheduledaction-starttime"""
+    p_TargetAction: typing.Union['PropScheduledActionScheduledActionType', dict] = attr.ib(
+        default=None,
+        converter=PropScheduledActionScheduledActionType.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropScheduledActionScheduledActionType)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "TargetAction",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'ScheduledActionType',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-scheduledaction.html#cfn-redshift-scheduledaction-targetaction"""
+
+    
+    @property
+    def rv_State(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-scheduledaction.html#aws-resource-redshift-scheduledaction-return-values"""
+        return GetAtt(resource=self, attr_name="State")
+    
+    @property
+    def rv_NextInvocations(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-scheduledaction.html#aws-resource-redshift-scheduledaction-return-values"""
+        return GetAtt(resource=self, attr_name="NextInvocations")
     
 
 @attr.s
@@ -417,6 +628,7 @@ class Cluster(Resource):
     - ``p_DestinationRegion``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-destinationregion
     - ``p_ElasticIp``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-elasticip
     - ``p_Encrypted``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-encrypted
+    - ``p_Endpoint``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-endpoint
     - ``p_EnhancedVpcRouting``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-enhancedvpcrouting
     - ``p_HsmClientCertificateIdentifier``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-hsmclientcertificateidentifier
     - ``p_HsmConfigurationIdentifier``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-hsmconfigurationidentifier
@@ -758,6 +970,20 @@ class Cluster(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-encrypted"""
+    p_Endpoint: typing.Union['PropClusterEndpoint', dict] = attr.ib(
+        default=None,
+        converter=PropClusterEndpoint.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropClusterEndpoint)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Endpoint",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'Endpoint',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#cfn-redshift-cluster-endpoint"""
     p_EnhancedVpcRouting: bool = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(bool)),
@@ -807,6 +1033,7 @@ class Cluster(Resource):
                 "Required": False,
                 "Type": 'List',
                 "PrimitiveItemType": 'String',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -1067,9 +1294,9 @@ class Cluster(Resource):
 
     
     @property
-    def rv_Id(self) -> GetAtt:
+    def rv_EndpointAddress(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#aws-resource-redshift-cluster-return-values"""
-        return GetAtt(resource=self, attr_name="Id")
+        return GetAtt(resource=self, attr_name="Endpoint.Address")
     
     @property
     def rv_EndpointPort(self) -> GetAtt:
@@ -1077,153 +1304,14 @@ class Cluster(Resource):
         return GetAtt(resource=self, attr_name="Endpoint.Port")
     
     @property
-    def rv_EndpointAddress(self) -> GetAtt:
+    def rv_Id(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#aws-resource-redshift-cluster-return-values"""
-        return GetAtt(resource=self, attr_name="Endpoint.Address")
+        return GetAtt(resource=self, attr_name="Id")
     
     @property
     def rv_DeferMaintenanceIdentifier(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-cluster.html#aws-resource-redshift-cluster-return-values"""
         return GetAtt(resource=self, attr_name="DeferMaintenanceIdentifier")
-    
-
-@attr.s
-class ScheduledAction(Resource):
-    """
-    AWS Object Type = "AWS::Redshift::ScheduledAction"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-scheduledaction.html
-
-    Property Document:
-    
-    - ``rp_ScheduledActionName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-scheduledaction.html#cfn-redshift-scheduledaction-scheduledactionname
-    - ``p_Enable``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-scheduledaction.html#cfn-redshift-scheduledaction-enable
-    - ``p_EndTime``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-scheduledaction.html#cfn-redshift-scheduledaction-endtime
-    - ``p_IamRole``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-scheduledaction.html#cfn-redshift-scheduledaction-iamrole
-    - ``p_Schedule``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-scheduledaction.html#cfn-redshift-scheduledaction-schedule
-    - ``p_ScheduledActionDescription``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-scheduledaction.html#cfn-redshift-scheduledaction-scheduledactiondescription
-    - ``p_StartTime``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-scheduledaction.html#cfn-redshift-scheduledaction-starttime
-    - ``p_TargetAction``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-scheduledaction.html#cfn-redshift-scheduledaction-targetaction
-    """
-    AWS_OBJECT_TYPE = "AWS::Redshift::ScheduledAction"
-
-    
-    rp_ScheduledActionName: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "ScheduledActionName",
-            AttrMeta.DATA: {
-                "UpdateType": 'Immutable',
-                "Required": True,
-                "PrimitiveType": 'String',
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-scheduledaction.html#cfn-redshift-scheduledaction-scheduledactionname"""
-    p_Enable: bool = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(bool)),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "Enable",
-            AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
-                "Required": False,
-                "PrimitiveType": 'Boolean',
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-scheduledaction.html#cfn-redshift-scheduledaction-enable"""
-    p_EndTime: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "EndTime",
-            AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
-                "Required": False,
-                "PrimitiveType": 'String',
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-scheduledaction.html#cfn-redshift-scheduledaction-endtime"""
-    p_IamRole: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "IamRole",
-            AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
-                "Required": False,
-                "PrimitiveType": 'String',
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-scheduledaction.html#cfn-redshift-scheduledaction-iamrole"""
-    p_Schedule: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "Schedule",
-            AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
-                "Required": False,
-                "PrimitiveType": 'String',
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-scheduledaction.html#cfn-redshift-scheduledaction-schedule"""
-    p_ScheduledActionDescription: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "ScheduledActionDescription",
-            AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
-                "Required": False,
-                "PrimitiveType": 'String',
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-scheduledaction.html#cfn-redshift-scheduledaction-scheduledactiondescription"""
-    p_StartTime: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "StartTime",
-            AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
-                "Required": False,
-                "PrimitiveType": 'String',
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-scheduledaction.html#cfn-redshift-scheduledaction-starttime"""
-    p_TargetAction: typing.Union['PropScheduledActionScheduledActionType', dict] = attr.ib(
-        default=None,
-        converter=PropScheduledActionScheduledActionType.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropScheduledActionScheduledActionType)),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "TargetAction",
-            AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
-                "Required": False,
-                "Type": 'ScheduledActionType',
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-scheduledaction.html#cfn-redshift-scheduledaction-targetaction"""
-
-    
-    @property
-    def rv_State(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-scheduledaction.html#aws-resource-redshift-scheduledaction-return-values"""
-        return GetAtt(resource=self, attr_name="State")
-    
-    @property
-    def rv_NextInvocations(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-scheduledaction.html#aws-resource-redshift-scheduledaction-return-values"""
-        return GetAtt(resource=self, attr_name="NextInvocations")
     
 
 @attr.s
@@ -1237,6 +1325,7 @@ class ClusterParameterGroup(Resource):
     
     - ``rp_Description``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clusterparametergroup.html#cfn-redshift-clusterparametergroup-description
     - ``rp_ParameterGroupFamily``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clusterparametergroup.html#cfn-redshift-clusterparametergroup-parametergroupfamily
+    - ``p_ParameterGroupName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clusterparametergroup.html#cfn-redshift-clusterparametergroup-parametergroupname
     - ``p_Parameters``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clusterparametergroup.html#cfn-redshift-clusterparametergroup-parameters
     - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clusterparametergroup.html#cfn-redshift-clusterparametergroup-tags
     """
@@ -1269,6 +1358,19 @@ class ClusterParameterGroup(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clusterparametergroup.html#cfn-redshift-clusterparametergroup-parametergroupfamily"""
+    p_ParameterGroupName: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ParameterGroupName",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clusterparametergroup.html#cfn-redshift-clusterparametergroup-parametergroupname"""
     p_Parameters: typing.List[typing.Union['PropClusterParameterGroupParameter', dict]] = attr.ib(
         default=None,
         converter=PropClusterParameterGroupParameter.from_list,
@@ -1280,6 +1382,7 @@ class ClusterParameterGroup(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Parameter',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -1295,16 +1398,12 @@ class ClusterParameterGroup(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Tag',
+                "DuplicatesAllowed": True,
             }
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clusterparametergroup.html#cfn-redshift-clusterparametergroup-tags"""
 
-    
-    @property
-    def rv_ParameterGroupName(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-clusterparametergroup.html#aws-resource-redshift-clusterparametergroup-return-values"""
-        return GetAtt(resource=self, attr_name="ParameterGroupName")
     
 
 @attr.s
@@ -1346,6 +1445,7 @@ class ClusterSubnetGroup(Resource):
                 "Required": True,
                 "Type": 'List',
                 "PrimitiveItemType": 'String',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -1361,6 +1461,7 @@ class ClusterSubnetGroup(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Tag',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -1518,6 +1619,7 @@ class EventSubscription(Resource):
                 "Required": False,
                 "Type": 'List',
                 "PrimitiveItemType": 'String',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -1546,6 +1648,7 @@ class EventSubscription(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Tag',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -1553,9 +1656,9 @@ class EventSubscription(Resource):
 
     
     @property
-    def rv_CustomerAwsId(self) -> GetAtt:
+    def rv_Status(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-eventsubscription.html#aws-resource-redshift-eventsubscription-return-values"""
-        return GetAtt(resource=self, attr_name="CustomerAwsId")
+        return GetAtt(resource=self, attr_name="Status")
     
     @property
     def rv_CustSubscriptionId(self) -> GetAtt:
@@ -1563,14 +1666,9 @@ class EventSubscription(Resource):
         return GetAtt(resource=self, attr_name="CustSubscriptionId")
     
     @property
-    def rv_Status(self) -> GetAtt:
+    def rv_EventCategoriesList(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-eventsubscription.html#aws-resource-redshift-eventsubscription-return-values"""
-        return GetAtt(resource=self, attr_name="Status")
-    
-    @property
-    def rv_SubscriptionCreationTime(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-eventsubscription.html#aws-resource-redshift-eventsubscription-return-values"""
-        return GetAtt(resource=self, attr_name="SubscriptionCreationTime")
+        return GetAtt(resource=self, attr_name="EventCategoriesList")
     
     @property
     def rv_SourceIdsList(self) -> GetAtt:
@@ -1578,9 +1676,14 @@ class EventSubscription(Resource):
         return GetAtt(resource=self, attr_name="SourceIdsList")
     
     @property
-    def rv_EventCategoriesList(self) -> GetAtt:
+    def rv_SubscriptionCreationTime(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-eventsubscription.html#aws-resource-redshift-eventsubscription-return-values"""
-        return GetAtt(resource=self, attr_name="EventCategoriesList")
+        return GetAtt(resource=self, attr_name="SubscriptionCreationTime")
+    
+    @property
+    def rv_CustomerAwsId(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-eventsubscription.html#aws-resource-redshift-eventsubscription-return-values"""
+        return GetAtt(resource=self, attr_name="CustomerAwsId")
     
 
 @attr.s
@@ -1721,6 +1824,7 @@ class EndpointAuthorization(Resource):
                 "Required": False,
                 "Type": 'List',
                 "PrimitiveItemType": 'String',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -1728,9 +1832,9 @@ class EndpointAuthorization(Resource):
 
     
     @property
-    def rv_Grantor(self) -> GetAtt:
+    def rv_Status(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-endpointauthorization.html#aws-resource-redshift-endpointauthorization-return-values"""
-        return GetAtt(resource=self, attr_name="Grantor")
+        return GetAtt(resource=self, attr_name="Status")
     
     @property
     def rv_Grantee(self) -> GetAtt:
@@ -1738,24 +1842,19 @@ class EndpointAuthorization(Resource):
         return GetAtt(resource=self, attr_name="Grantee")
     
     @property
+    def rv_Grantor(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-endpointauthorization.html#aws-resource-redshift-endpointauthorization-return-values"""
+        return GetAtt(resource=self, attr_name="Grantor")
+    
+    @property
+    def rv_EndpointCount(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-endpointauthorization.html#aws-resource-redshift-endpointauthorization-return-values"""
+        return GetAtt(resource=self, attr_name="EndpointCount")
+    
+    @property
     def rv_AuthorizeTime(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-endpointauthorization.html#aws-resource-redshift-endpointauthorization-return-values"""
         return GetAtt(resource=self, attr_name="AuthorizeTime")
-    
-    @property
-    def rv_ClusterStatus(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-endpointauthorization.html#aws-resource-redshift-endpointauthorization-return-values"""
-        return GetAtt(resource=self, attr_name="ClusterStatus")
-    
-    @property
-    def rv_Status(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-endpointauthorization.html#aws-resource-redshift-endpointauthorization-return-values"""
-        return GetAtt(resource=self, attr_name="Status")
-    
-    @property
-    def rv_AllowedAllVPCs(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-endpointauthorization.html#aws-resource-redshift-endpointauthorization-return-values"""
-        return GetAtt(resource=self, attr_name="AllowedAllVPCs")
     
     @property
     def rv_AllowedVPCs(self) -> GetAtt:
@@ -1763,7 +1862,12 @@ class EndpointAuthorization(Resource):
         return GetAtt(resource=self, attr_name="AllowedVPCs")
     
     @property
-    def rv_EndpointCount(self) -> GetAtt:
+    def rv_AllowedAllVPCs(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-endpointauthorization.html#aws-resource-redshift-endpointauthorization-return-values"""
-        return GetAtt(resource=self, attr_name="EndpointCount")
+        return GetAtt(resource=self, attr_name="AllowedAllVPCs")
+    
+    @property
+    def rv_ClusterStatus(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-redshift-endpointauthorization.html#aws-resource-redshift-endpointauthorization-return-values"""
+        return GetAtt(resource=self, attr_name="ClusterStatus")
     

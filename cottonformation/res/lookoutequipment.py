@@ -14,6 +14,150 @@ from ..core.constant import AttrMeta
 
 #--- Property declaration ---
 
+@attr.s
+class PropInferenceSchedulerS3OutputConfiguration(Property):
+    """
+    AWS Object Type = "AWS::LookoutEquipment::InferenceScheduler.S3OutputConfiguration"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutequipment-inferencescheduler-s3outputconfiguration.html
+
+    Property Document:
+    
+    - ``rp_Bucket``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutequipment-inferencescheduler-s3outputconfiguration.html#cfn-lookoutequipment-inferencescheduler-s3outputconfiguration-bucket
+    - ``p_Prefix``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutequipment-inferencescheduler-s3outputconfiguration.html#cfn-lookoutequipment-inferencescheduler-s3outputconfiguration-prefix
+    """
+    AWS_OBJECT_TYPE = "AWS::LookoutEquipment::InferenceScheduler.S3OutputConfiguration"
+    
+    rp_Bucket: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "Bucket"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutequipment-inferencescheduler-s3outputconfiguration.html#cfn-lookoutequipment-inferencescheduler-s3outputconfiguration-bucket"""
+    p_Prefix: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "Prefix"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutequipment-inferencescheduler-s3outputconfiguration.html#cfn-lookoutequipment-inferencescheduler-s3outputconfiguration-prefix"""
+
+@attr.s
+class PropInferenceSchedulerInputNameConfiguration(Property):
+    """
+    AWS Object Type = "AWS::LookoutEquipment::InferenceScheduler.InputNameConfiguration"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutequipment-inferencescheduler-inputnameconfiguration.html
+
+    Property Document:
+    
+    - ``p_ComponentTimestampDelimiter``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutequipment-inferencescheduler-inputnameconfiguration.html#cfn-lookoutequipment-inferencescheduler-inputnameconfiguration-componenttimestampdelimiter
+    - ``p_TimestampFormat``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutequipment-inferencescheduler-inputnameconfiguration.html#cfn-lookoutequipment-inferencescheduler-inputnameconfiguration-timestampformat
+    """
+    AWS_OBJECT_TYPE = "AWS::LookoutEquipment::InferenceScheduler.InputNameConfiguration"
+    
+    p_ComponentTimestampDelimiter: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "ComponentTimestampDelimiter"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutequipment-inferencescheduler-inputnameconfiguration.html#cfn-lookoutequipment-inferencescheduler-inputnameconfiguration-componenttimestampdelimiter"""
+    p_TimestampFormat: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "TimestampFormat"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutequipment-inferencescheduler-inputnameconfiguration.html#cfn-lookoutequipment-inferencescheduler-inputnameconfiguration-timestampformat"""
+
+@attr.s
+class PropInferenceSchedulerS3InputConfiguration(Property):
+    """
+    AWS Object Type = "AWS::LookoutEquipment::InferenceScheduler.S3InputConfiguration"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutequipment-inferencescheduler-s3inputconfiguration.html
+
+    Property Document:
+    
+    - ``rp_Bucket``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutequipment-inferencescheduler-s3inputconfiguration.html#cfn-lookoutequipment-inferencescheduler-s3inputconfiguration-bucket
+    - ``p_Prefix``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutequipment-inferencescheduler-s3inputconfiguration.html#cfn-lookoutequipment-inferencescheduler-s3inputconfiguration-prefix
+    """
+    AWS_OBJECT_TYPE = "AWS::LookoutEquipment::InferenceScheduler.S3InputConfiguration"
+    
+    rp_Bucket: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "Bucket"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutequipment-inferencescheduler-s3inputconfiguration.html#cfn-lookoutequipment-inferencescheduler-s3inputconfiguration-bucket"""
+    p_Prefix: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "Prefix"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutequipment-inferencescheduler-s3inputconfiguration.html#cfn-lookoutequipment-inferencescheduler-s3inputconfiguration-prefix"""
+
+@attr.s
+class PropInferenceSchedulerDataInputConfiguration(Property):
+    """
+    AWS Object Type = "AWS::LookoutEquipment::InferenceScheduler.DataInputConfiguration"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutequipment-inferencescheduler-datainputconfiguration.html
+
+    Property Document:
+    
+    - ``rp_S3InputConfiguration``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutequipment-inferencescheduler-datainputconfiguration.html#cfn-lookoutequipment-inferencescheduler-datainputconfiguration-s3inputconfiguration
+    - ``p_InferenceInputNameConfiguration``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutequipment-inferencescheduler-datainputconfiguration.html#cfn-lookoutequipment-inferencescheduler-datainputconfiguration-inferenceinputnameconfiguration
+    - ``p_InputTimeZoneOffset``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutequipment-inferencescheduler-datainputconfiguration.html#cfn-lookoutequipment-inferencescheduler-datainputconfiguration-inputtimezoneoffset
+    """
+    AWS_OBJECT_TYPE = "AWS::LookoutEquipment::InferenceScheduler.DataInputConfiguration"
+    
+    rp_S3InputConfiguration: typing.Union['PropInferenceSchedulerS3InputConfiguration', dict] = attr.ib(
+        default=None,
+        converter=PropInferenceSchedulerS3InputConfiguration.from_dict,
+        validator=attr.validators.instance_of(PropInferenceSchedulerS3InputConfiguration),
+        metadata={AttrMeta.PROPERTY_NAME: "S3InputConfiguration"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutequipment-inferencescheduler-datainputconfiguration.html#cfn-lookoutequipment-inferencescheduler-datainputconfiguration-s3inputconfiguration"""
+    p_InferenceInputNameConfiguration: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "InferenceInputNameConfiguration"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutequipment-inferencescheduler-datainputconfiguration.html#cfn-lookoutequipment-inferencescheduler-datainputconfiguration-inferenceinputnameconfiguration"""
+    p_InputTimeZoneOffset: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "InputTimeZoneOffset"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutequipment-inferencescheduler-datainputconfiguration.html#cfn-lookoutequipment-inferencescheduler-datainputconfiguration-inputtimezoneoffset"""
+
+@attr.s
+class PropInferenceSchedulerDataOutputConfiguration(Property):
+    """
+    AWS Object Type = "AWS::LookoutEquipment::InferenceScheduler.DataOutputConfiguration"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutequipment-inferencescheduler-dataoutputconfiguration.html
+
+    Property Document:
+    
+    - ``rp_S3OutputConfiguration``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutequipment-inferencescheduler-dataoutputconfiguration.html#cfn-lookoutequipment-inferencescheduler-dataoutputconfiguration-s3outputconfiguration
+    - ``p_KmsKeyId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutequipment-inferencescheduler-dataoutputconfiguration.html#cfn-lookoutequipment-inferencescheduler-dataoutputconfiguration-kmskeyid
+    """
+    AWS_OBJECT_TYPE = "AWS::LookoutEquipment::InferenceScheduler.DataOutputConfiguration"
+    
+    rp_S3OutputConfiguration: typing.Union['PropInferenceSchedulerS3OutputConfiguration', dict] = attr.ib(
+        default=None,
+        converter=PropInferenceSchedulerS3OutputConfiguration.from_dict,
+        validator=attr.validators.instance_of(PropInferenceSchedulerS3OutputConfiguration),
+        metadata={AttrMeta.PROPERTY_NAME: "S3OutputConfiguration"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutequipment-inferencescheduler-dataoutputconfiguration.html#cfn-lookoutequipment-inferencescheduler-dataoutputconfiguration-s3outputconfiguration"""
+    p_KmsKeyId: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "KmsKeyId"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lookoutequipment-inferencescheduler-dataoutputconfiguration.html#cfn-lookoutequipment-inferencescheduler-dataoutputconfiguration-kmskeyid"""
+
 
 #--- Resource declaration ---
 
@@ -39,28 +183,30 @@ class InferenceScheduler(Resource):
     AWS_OBJECT_TYPE = "AWS::LookoutEquipment::InferenceScheduler"
 
     
-    rp_DataInputConfiguration: dict = attr.ib(
+    rp_DataInputConfiguration: typing.Union['PropInferenceSchedulerDataInputConfiguration', dict] = attr.ib(
         default=None,
-        validator=attr.validators.instance_of(dict),
+        converter=PropInferenceSchedulerDataInputConfiguration.from_dict,
+        validator=attr.validators.instance_of(PropInferenceSchedulerDataInputConfiguration),
         metadata={
             AttrMeta.PROPERTY_NAME: "DataInputConfiguration",
             AttrMeta.DATA: {
                 "UpdateType": 'Mutable',
                 "Required": True,
-                "PrimitiveType": 'Json',
+                "Type": 'DataInputConfiguration',
             }
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lookoutequipment-inferencescheduler.html#cfn-lookoutequipment-inferencescheduler-datainputconfiguration"""
-    rp_DataOutputConfiguration: dict = attr.ib(
+    rp_DataOutputConfiguration: typing.Union['PropInferenceSchedulerDataOutputConfiguration', dict] = attr.ib(
         default=None,
-        validator=attr.validators.instance_of(dict),
+        converter=PropInferenceSchedulerDataOutputConfiguration.from_dict,
+        validator=attr.validators.instance_of(PropInferenceSchedulerDataOutputConfiguration),
         metadata={
             AttrMeta.PROPERTY_NAME: "DataOutputConfiguration",
             AttrMeta.DATA: {
                 "UpdateType": 'Mutable',
                 "Required": True,
-                "PrimitiveType": 'Json',
+                "Type": 'DataOutputConfiguration',
             }
         },
     )

@@ -157,6 +157,47 @@ class PropGameSessionQueueFilterConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-gamesessionqueue-filterconfiguration.html#cfn-gamelift-gamesessionqueue-filterconfiguration-allowedlocations"""
 
 @attr.s
+class PropBuildStorageLocation(Property):
+    """
+    AWS Object Type = "AWS::GameLift::Build.StorageLocation"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-build-storagelocation.html
+
+    Property Document:
+    
+    - ``rp_Bucket``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-build-storagelocation.html#cfn-gamelift-build-storagelocation-bucket
+    - ``rp_Key``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-build-storagelocation.html#cfn-gamelift-build-storagelocation-key
+    - ``rp_RoleArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-build-storagelocation.html#cfn-gamelift-build-storagelocation-rolearn
+    - ``p_ObjectVersion``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-build-storagelocation.html#cfn-gamelift-build-storagelocation-objectversion
+    """
+    AWS_OBJECT_TYPE = "AWS::GameLift::Build.StorageLocation"
+    
+    rp_Bucket: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "Bucket"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-build-storagelocation.html#cfn-gamelift-build-storagelocation-bucket"""
+    rp_Key: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "Key"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-build-storagelocation.html#cfn-gamelift-build-storagelocation-key"""
+    rp_RoleArn: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "RoleArn"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-build-storagelocation.html#cfn-gamelift-build-storagelocation-rolearn"""
+    p_ObjectVersion: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "ObjectVersion"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-build-storagelocation.html#cfn-gamelift-build-storagelocation-objectversion"""
+
+@attr.s
 class PropFleetAnywhereConfiguration(Property):
     """
     AWS Object Type = "AWS::GameLift::Fleet.AnywhereConfiguration"
@@ -236,47 +277,6 @@ class PropFleetLocationCapacity(Property):
         metadata={AttrMeta.PROPERTY_NAME: "MinSize"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-fleet-locationcapacity.html#cfn-gamelift-fleet-locationcapacity-minsize"""
-
-@attr.s
-class PropBuildS3Location(Property):
-    """
-    AWS Object Type = "AWS::GameLift::Build.S3Location"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-build-storagelocation.html
-
-    Property Document:
-    
-    - ``rp_Bucket``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-build-storagelocation.html#cfn-gamelift-build-storage-bucket
-    - ``rp_Key``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-build-storagelocation.html#cfn-gamelift-build-storage-key
-    - ``rp_RoleArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-build-storagelocation.html#cfn-gamelift-build-storage-rolearn
-    - ``p_ObjectVersion``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-build-storagelocation.html#cfn-gamelift-build-object-verison
-    """
-    AWS_OBJECT_TYPE = "AWS::GameLift::Build.S3Location"
-    
-    rp_Bucket: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Bucket"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-build-storagelocation.html#cfn-gamelift-build-storage-bucket"""
-    rp_Key: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Key"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-build-storagelocation.html#cfn-gamelift-build-storage-key"""
-    rp_RoleArn: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "RoleArn"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-build-storagelocation.html#cfn-gamelift-build-storage-rolearn"""
-    p_ObjectVersion: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "ObjectVersion"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-gamelift-build-storagelocation.html#cfn-gamelift-build-object-verison"""
 
 @attr.s
 class PropAliasRoutingStrategy(Property):
@@ -689,9 +689,9 @@ class Build(Resource):
         metadata={
             AttrMeta.PROPERTY_NAME: "Name",
             AttrMeta.DATA: {
-                "PrimitiveType": 'String',
-                "Required": False,
                 "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'String',
             }
         },
     )
@@ -702,23 +702,23 @@ class Build(Resource):
         metadata={
             AttrMeta.PROPERTY_NAME: "OperatingSystem",
             AttrMeta.DATA: {
-                "PrimitiveType": 'String',
-                "Required": False,
                 "UpdateType": 'Immutable',
+                "Required": False,
+                "PrimitiveType": 'String',
             }
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-build.html#cfn-gamelift-build-operatingsystem"""
-    p_StorageLocation: typing.Union['PropBuildS3Location', dict] = attr.ib(
+    p_StorageLocation: typing.Union['PropBuildStorageLocation', dict] = attr.ib(
         default=None,
-        converter=PropBuildS3Location.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropBuildS3Location)),
+        converter=PropBuildStorageLocation.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropBuildStorageLocation)),
         metadata={
             AttrMeta.PROPERTY_NAME: "StorageLocation",
             AttrMeta.DATA: {
-                "Required": False,
-                "Type": 'S3Location',
                 "UpdateType": 'Immutable',
+                "Required": False,
+                "Type": 'StorageLocation',
             }
         },
     )
@@ -729,14 +729,19 @@ class Build(Resource):
         metadata={
             AttrMeta.PROPERTY_NAME: "Version",
             AttrMeta.DATA: {
-                "PrimitiveType": 'String',
-                "Required": False,
                 "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'String',
             }
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-build.html#cfn-gamelift-build-version"""
 
+    
+    @property
+    def rv_BuildId(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-build.html#aws-resource-gamelift-build-return-values"""
+        return GetAtt(resource=self, attr_name="BuildId")
     
 
 @attr.s
@@ -925,6 +930,7 @@ class GameServerGroup(Resource):
                 "Required": True,
                 "Type": 'List',
                 "ItemType": 'InstanceDefinition',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -1045,6 +1051,7 @@ class GameServerGroup(Resource):
                 "Required": False,
                 "Type": 'List',
                 "PrimitiveItemType": 'String',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -1060,6 +1067,7 @@ class GameServerGroup(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Tag',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -1124,14 +1132,16 @@ class Fleet(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-gamelift-fleet.html#cfn-gamelift-fleet-name"""
-    p_AnywhereConfiguration: TypeHint.intrinsic_str = attr.ib(
+    p_AnywhereConfiguration: typing.Union['PropFleetAnywhereConfiguration', dict] = attr.ib(
         default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        converter=PropFleetAnywhereConfiguration.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropFleetAnywhereConfiguration)),
         metadata={
             AttrMeta.PROPERTY_NAME: "AnywhereConfiguration",
             AttrMeta.DATA: {
                 "UpdateType": 'Mutable',
                 "Required": False,
+                "Type": 'AnywhereConfiguration',
             }
         },
     )
@@ -1213,6 +1223,7 @@ class Fleet(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'IpPermission',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -1267,6 +1278,7 @@ class Fleet(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'LocationConfiguration',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -1294,6 +1306,7 @@ class Fleet(Resource):
                 "Required": False,
                 "Type": 'List',
                 "PrimitiveItemType": 'String',
+                "DuplicatesAllowed": True,
             }
         },
     )

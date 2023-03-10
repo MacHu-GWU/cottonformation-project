@@ -15,6 +15,61 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
+class PropResponsePlanPagerDutyIncidentConfiguration(Property):
+    """
+    AWS Object Type = "AWS::SSMIncidents::ResponsePlan.PagerDutyIncidentConfiguration"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmincidents-responseplan-pagerdutyincidentconfiguration.html
+
+    Property Document:
+    
+    - ``rp_ServiceId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmincidents-responseplan-pagerdutyincidentconfiguration.html#cfn-ssmincidents-responseplan-pagerdutyincidentconfiguration-serviceid
+    """
+    AWS_OBJECT_TYPE = "AWS::SSMIncidents::ResponsePlan.PagerDutyIncidentConfiguration"
+    
+    rp_ServiceId: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "ServiceId"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmincidents-responseplan-pagerdutyincidentconfiguration.html#cfn-ssmincidents-responseplan-pagerdutyincidentconfiguration-serviceid"""
+
+@attr.s
+class PropResponsePlanPagerDutyConfiguration(Property):
+    """
+    AWS Object Type = "AWS::SSMIncidents::ResponsePlan.PagerDutyConfiguration"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmincidents-responseplan-pagerdutyconfiguration.html
+
+    Property Document:
+    
+    - ``rp_Name``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmincidents-responseplan-pagerdutyconfiguration.html#cfn-ssmincidents-responseplan-pagerdutyconfiguration-name
+    - ``rp_PagerDutyIncidentConfiguration``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmincidents-responseplan-pagerdutyconfiguration.html#cfn-ssmincidents-responseplan-pagerdutyconfiguration-pagerdutyincidentconfiguration
+    - ``rp_SecretId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmincidents-responseplan-pagerdutyconfiguration.html#cfn-ssmincidents-responseplan-pagerdutyconfiguration-secretid
+    """
+    AWS_OBJECT_TYPE = "AWS::SSMIncidents::ResponsePlan.PagerDutyConfiguration"
+    
+    rp_Name: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "Name"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmincidents-responseplan-pagerdutyconfiguration.html#cfn-ssmincidents-responseplan-pagerdutyconfiguration-name"""
+    rp_PagerDutyIncidentConfiguration: typing.Union['PropResponsePlanPagerDutyIncidentConfiguration', dict] = attr.ib(
+        default=None,
+        converter=PropResponsePlanPagerDutyIncidentConfiguration.from_dict,
+        validator=attr.validators.instance_of(PropResponsePlanPagerDutyIncidentConfiguration),
+        metadata={AttrMeta.PROPERTY_NAME: "PagerDutyIncidentConfiguration"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmincidents-responseplan-pagerdutyconfiguration.html#cfn-ssmincidents-responseplan-pagerdutyconfiguration-pagerdutyincidentconfiguration"""
+    rp_SecretId: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "SecretId"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmincidents-responseplan-pagerdutyconfiguration.html#cfn-ssmincidents-responseplan-pagerdutyconfiguration-secretid"""
+
+@attr.s
 class PropResponsePlanDynamicSsmParameterValue(Property):
     """
     AWS Object Type = "AWS::SSMIncidents::ResponsePlan.DynamicSsmParameterValue"
@@ -179,6 +234,27 @@ class PropResponsePlanIncidentTemplate(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmincidents-responseplan-incidenttemplate.html#cfn-ssmincidents-responseplan-incidenttemplate-summary"""
 
 @attr.s
+class PropResponsePlanIntegration(Property):
+    """
+    AWS Object Type = "AWS::SSMIncidents::ResponsePlan.Integration"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmincidents-responseplan-integration.html
+
+    Property Document:
+    
+    - ``rp_PagerDutyConfiguration``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmincidents-responseplan-integration.html#cfn-ssmincidents-responseplan-integration-pagerdutyconfiguration
+    """
+    AWS_OBJECT_TYPE = "AWS::SSMIncidents::ResponsePlan.Integration"
+    
+    rp_PagerDutyConfiguration: typing.Union['PropResponsePlanPagerDutyConfiguration', dict] = attr.ib(
+        default=None,
+        converter=PropResponsePlanPagerDutyConfiguration.from_dict,
+        validator=attr.validators.instance_of(PropResponsePlanPagerDutyConfiguration),
+        metadata={AttrMeta.PROPERTY_NAME: "PagerDutyConfiguration"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ssmincidents-responseplan-integration.html#cfn-ssmincidents-responseplan-integration-pagerdutyconfiguration"""
+
+@attr.s
 class PropResponsePlanDynamicSsmParameter(Property):
     """
     AWS Object Type = "AWS::SSMIncidents::ResponsePlan.DynamicSsmParameter"
@@ -325,6 +401,7 @@ class ReplicationSet(Resource):
     
     - ``rp_Regions``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssmincidents-replicationset.html#cfn-ssmincidents-replicationset-regions
     - ``p_DeletionProtected``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssmincidents-replicationset.html#cfn-ssmincidents-replicationset-deletionprotected
+    - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssmincidents-replicationset.html#cfn-ssmincidents-replicationset-tags
     """
     AWS_OBJECT_TYPE = "AWS::SSMIncidents::ReplicationSet"
 
@@ -358,6 +435,22 @@ class ReplicationSet(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssmincidents-replicationset.html#cfn-ssmincidents-replicationset-deletionprotected"""
+    p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
+        default=None,
+        converter=Tag.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Tags",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'List',
+                "ItemType": 'Tag',
+                "DuplicatesAllowed": False,
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssmincidents-replicationset.html#cfn-ssmincidents-replicationset-tags"""
 
     
     @property
@@ -381,6 +474,7 @@ class ResponsePlan(Resource):
     - ``p_ChatChannel``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssmincidents-responseplan.html#cfn-ssmincidents-responseplan-chatchannel
     - ``p_DisplayName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssmincidents-responseplan.html#cfn-ssmincidents-responseplan-displayname
     - ``p_Engagements``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssmincidents-responseplan.html#cfn-ssmincidents-responseplan-engagements
+    - ``p_Integrations``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssmincidents-responseplan.html#cfn-ssmincidents-responseplan-integrations
     - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssmincidents-responseplan.html#cfn-ssmincidents-responseplan-tags
     """
     AWS_OBJECT_TYPE = "AWS::SSMIncidents::ResponsePlan"
@@ -471,6 +565,22 @@ class ResponsePlan(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssmincidents-responseplan.html#cfn-ssmincidents-responseplan-engagements"""
+    p_Integrations: typing.List[typing.Union['PropResponsePlanIntegration', dict]] = attr.ib(
+        default=None,
+        converter=PropResponsePlanIntegration.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropResponsePlanIntegration), iterable_validator=attr.validators.instance_of(list))),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Integrations",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'List',
+                "ItemType": 'Integration',
+                "DuplicatesAllowed": False,
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssmincidents-responseplan.html#cfn-ssmincidents-responseplan-integrations"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,

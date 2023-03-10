@@ -153,6 +153,11 @@ class ConnectionAlias(Resource):
 
     
     @property
+    def rv_ConnectionAliasState(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-connectionalias.html#aws-resource-workspaces-connectionalias-return-values"""
+        return GetAtt(resource=self, attr_name="ConnectionAliasState")
+    
+    @property
     def rv_Associations(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-connectionalias.html#aws-resource-workspaces-connectionalias-return-values"""
         return GetAtt(resource=self, attr_name="Associations")
@@ -161,11 +166,6 @@ class ConnectionAlias(Resource):
     def rv_AliasId(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-connectionalias.html#aws-resource-workspaces-connectionalias-return-values"""
         return GetAtt(resource=self, attr_name="AliasId")
-    
-    @property
-    def rv_ConnectionAliasState(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-workspaces-connectionalias.html#aws-resource-workspaces-connectionalias-return-values"""
-        return GetAtt(resource=self, attr_name="ConnectionAliasState")
     
 
 @attr.s

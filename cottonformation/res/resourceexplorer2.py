@@ -112,6 +112,7 @@ class View(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'IncludedProperty',
+                "DuplicatesAllowed": True,
             }
         },
     )

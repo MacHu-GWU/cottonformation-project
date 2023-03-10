@@ -635,6 +635,7 @@ class Application(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'ComponentMonitoringSetting',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -650,6 +651,7 @@ class Application(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'CustomComponent',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -678,6 +680,7 @@ class Application(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'LogPatternSet',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -719,6 +722,7 @@ class Application(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Tag',
+                "DuplicatesAllowed": True,
             }
         },
     )

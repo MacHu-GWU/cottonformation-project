@@ -774,11 +774,6 @@ class EntityType(Resource):
 
     
     @property
-    def rv_Arn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-frauddetector-entitytype.html#aws-resource-frauddetector-entitytype-return-values"""
-        return GetAtt(resource=self, attr_name="Arn")
-    
-    @property
     def rv_CreatedTime(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-frauddetector-entitytype.html#aws-resource-frauddetector-entitytype-return-values"""
         return GetAtt(resource=self, attr_name="CreatedTime")
@@ -787,6 +782,11 @@ class EntityType(Resource):
     def rv_LastUpdatedTime(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-frauddetector-entitytype.html#aws-resource-frauddetector-entitytype-return-values"""
         return GetAtt(resource=self, attr_name="LastUpdatedTime")
+    
+    @property
+    def rv_Arn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-frauddetector-entitytype.html#aws-resource-frauddetector-entitytype-return-values"""
+        return GetAtt(resource=self, attr_name="Arn")
     
 
 @attr.s
@@ -850,11 +850,6 @@ class Outcome(Resource):
 
     
     @property
-    def rv_Arn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-frauddetector-outcome.html#aws-resource-frauddetector-outcome-return-values"""
-        return GetAtt(resource=self, attr_name="Arn")
-    
-    @property
     def rv_CreatedTime(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-frauddetector-outcome.html#aws-resource-frauddetector-outcome-return-values"""
         return GetAtt(resource=self, attr_name="CreatedTime")
@@ -863,6 +858,11 @@ class Outcome(Resource):
     def rv_LastUpdatedTime(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-frauddetector-outcome.html#aws-resource-frauddetector-outcome-return-values"""
         return GetAtt(resource=self, attr_name="LastUpdatedTime")
+    
+    @property
+    def rv_Arn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-frauddetector-outcome.html#aws-resource-frauddetector-outcome-return-values"""
+        return GetAtt(resource=self, attr_name="Arn")
     
 
 @attr.s
@@ -1003,9 +1003,9 @@ class Detector(Resource):
 
     
     @property
-    def rv_DetectorVersionId(self) -> GetAtt:
+    def rv_CreatedTime(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-frauddetector-detector.html#aws-resource-frauddetector-detector-return-values"""
-        return GetAtt(resource=self, attr_name="DetectorVersionId")
+        return GetAtt(resource=self, attr_name="CreatedTime")
     
     @property
     def rv_EventTypeArn(self) -> GetAtt:
@@ -1013,14 +1013,19 @@ class Detector(Resource):
         return GetAtt(resource=self, attr_name="EventType.Arn")
     
     @property
-    def rv_EventTypeCreatedTime(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-frauddetector-detector.html#aws-resource-frauddetector-detector-return-values"""
-        return GetAtt(resource=self, attr_name="EventType.CreatedTime")
-    
-    @property
     def rv_EventTypeLastUpdatedTime(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-frauddetector-detector.html#aws-resource-frauddetector-detector-return-values"""
         return GetAtt(resource=self, attr_name="EventType.LastUpdatedTime")
+    
+    @property
+    def rv_LastUpdatedTime(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-frauddetector-detector.html#aws-resource-frauddetector-detector-return-values"""
+        return GetAtt(resource=self, attr_name="LastUpdatedTime")
+    
+    @property
+    def rv_EventTypeCreatedTime(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-frauddetector-detector.html#aws-resource-frauddetector-detector-return-values"""
+        return GetAtt(resource=self, attr_name="EventType.CreatedTime")
     
     @property
     def rv_Arn(self) -> GetAtt:
@@ -1028,14 +1033,9 @@ class Detector(Resource):
         return GetAtt(resource=self, attr_name="Arn")
     
     @property
-    def rv_CreatedTime(self) -> GetAtt:
+    def rv_DetectorVersionId(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-frauddetector-detector.html#aws-resource-frauddetector-detector-return-values"""
-        return GetAtt(resource=self, attr_name="CreatedTime")
-    
-    @property
-    def rv_LastUpdatedTime(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-frauddetector-detector.html#aws-resource-frauddetector-detector-return-values"""
-        return GetAtt(resource=self, attr_name="LastUpdatedTime")
+        return GetAtt(resource=self, attr_name="DetectorVersionId")
     
 
 @attr.s
@@ -1099,11 +1099,6 @@ class Label(Resource):
 
     
     @property
-    def rv_Arn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-frauddetector-label.html#aws-resource-frauddetector-label-return-values"""
-        return GetAtt(resource=self, attr_name="Arn")
-    
-    @property
     def rv_CreatedTime(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-frauddetector-label.html#aws-resource-frauddetector-label-return-values"""
         return GetAtt(resource=self, attr_name="CreatedTime")
@@ -1112,6 +1107,11 @@ class Label(Resource):
     def rv_LastUpdatedTime(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-frauddetector-label.html#aws-resource-frauddetector-label-return-values"""
         return GetAtt(resource=self, attr_name="LastUpdatedTime")
+    
+    @property
+    def rv_Arn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-frauddetector-label.html#aws-resource-frauddetector-label-return-values"""
+        return GetAtt(resource=self, attr_name="Arn")
     
 
 @attr.s
@@ -1231,11 +1231,6 @@ class Variable(Resource):
 
     
     @property
-    def rv_Arn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-frauddetector-variable.html#aws-resource-frauddetector-variable-return-values"""
-        return GetAtt(resource=self, attr_name="Arn")
-    
-    @property
     def rv_CreatedTime(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-frauddetector-variable.html#aws-resource-frauddetector-variable-return-values"""
         return GetAtt(resource=self, attr_name="CreatedTime")
@@ -1244,6 +1239,11 @@ class Variable(Resource):
     def rv_LastUpdatedTime(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-frauddetector-variable.html#aws-resource-frauddetector-variable-return-values"""
         return GetAtt(resource=self, attr_name="LastUpdatedTime")
+    
+    @property
+    def rv_Arn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-frauddetector-variable.html#aws-resource-frauddetector-variable-return-values"""
+        return GetAtt(resource=self, attr_name="Arn")
     
 
 @attr.s
@@ -1358,11 +1358,6 @@ class EventType(Resource):
 
     
     @property
-    def rv_Arn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-frauddetector-eventtype.html#aws-resource-frauddetector-eventtype-return-values"""
-        return GetAtt(resource=self, attr_name="Arn")
-    
-    @property
     def rv_CreatedTime(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-frauddetector-eventtype.html#aws-resource-frauddetector-eventtype-return-values"""
         return GetAtt(resource=self, attr_name="CreatedTime")
@@ -1371,4 +1366,9 @@ class EventType(Resource):
     def rv_LastUpdatedTime(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-frauddetector-eventtype.html#aws-resource-frauddetector-eventtype-return-values"""
         return GetAtt(resource=self, attr_name="LastUpdatedTime")
+    
+    @property
+    def rv_Arn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-frauddetector-eventtype.html#aws-resource-frauddetector-eventtype-return-values"""
+        return GetAtt(resource=self, attr_name="Arn")
     

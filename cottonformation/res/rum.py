@@ -63,6 +63,26 @@ class PropAppMonitorMetricDefinition(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rum-appmonitor-metricdefinition.html#cfn-rum-appmonitor-metricdefinition-valuekey"""
 
 @attr.s
+class PropAppMonitorCustomEvents(Property):
+    """
+    AWS Object Type = "AWS::RUM::AppMonitor.CustomEvents"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rum-appmonitor-customevents.html
+
+    Property Document:
+    
+    - ``p_Status``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rum-appmonitor-customevents.html#cfn-rum-appmonitor-customevents-status
+    """
+    AWS_OBJECT_TYPE = "AWS::RUM::AppMonitor.CustomEvents"
+    
+    p_Status: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "Status"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rum-appmonitor-customevents.html#cfn-rum-appmonitor-customevents-status"""
+
+@attr.s
 class PropAppMonitorMetricDestination(Property):
     """
     AWS Object Type = "AWS::RUM::AppMonitor.MetricDestination"
@@ -203,6 +223,7 @@ class AppMonitor(Resource):
     - ``rp_Domain``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rum-appmonitor.html#cfn-rum-appmonitor-domain
     - ``rp_Name``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rum-appmonitor.html#cfn-rum-appmonitor-name
     - ``p_AppMonitorConfiguration``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rum-appmonitor.html#cfn-rum-appmonitor-appmonitorconfiguration
+    - ``p_CustomEvents``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rum-appmonitor.html#cfn-rum-appmonitor-customevents
     - ``p_CwLogEnabled``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rum-appmonitor.html#cfn-rum-appmonitor-cwlogenabled
     - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rum-appmonitor.html#cfn-rum-appmonitor-tags
     """
@@ -249,6 +270,20 @@ class AppMonitor(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rum-appmonitor.html#cfn-rum-appmonitor-appmonitorconfiguration"""
+    p_CustomEvents: typing.Union['PropAppMonitorCustomEvents', dict] = attr.ib(
+        default=None,
+        converter=PropAppMonitorCustomEvents.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropAppMonitorCustomEvents)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "CustomEvents",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'CustomEvents',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rum-appmonitor.html#cfn-rum-appmonitor-customevents"""
     p_CwLogEnabled: bool = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(bool)),
@@ -279,4 +314,9 @@ class AppMonitor(Resource):
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rum-appmonitor.html#cfn-rum-appmonitor-tags"""
 
+    
+    @property
+    def rv_Id(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rum-appmonitor.html#aws-resource-rum-appmonitor-return-values"""
+        return GetAtt(resource=self, attr_name="Id")
     

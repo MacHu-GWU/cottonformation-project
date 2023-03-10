@@ -310,6 +310,7 @@ class PropServiceCodeConfigurationValues(Property):
     - ``rp_Runtime``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apprunner-service-codeconfigurationvalues.html#cfn-apprunner-service-codeconfigurationvalues-runtime
     - ``p_BuildCommand``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apprunner-service-codeconfigurationvalues.html#cfn-apprunner-service-codeconfigurationvalues-buildcommand
     - ``p_Port``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apprunner-service-codeconfigurationvalues.html#cfn-apprunner-service-codeconfigurationvalues-port
+    - ``p_RuntimeEnvironmentSecrets``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apprunner-service-codeconfigurationvalues.html#cfn-apprunner-service-codeconfigurationvalues-runtimeenvironmentsecrets
     - ``p_RuntimeEnvironmentVariables``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apprunner-service-codeconfigurationvalues.html#cfn-apprunner-service-codeconfigurationvalues-runtimeenvironmentvariables
     - ``p_StartCommand``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apprunner-service-codeconfigurationvalues.html#cfn-apprunner-service-codeconfigurationvalues-startcommand
     """
@@ -333,6 +334,13 @@ class PropServiceCodeConfigurationValues(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Port"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apprunner-service-codeconfigurationvalues.html#cfn-apprunner-service-codeconfigurationvalues-port"""
+    p_RuntimeEnvironmentSecrets: typing.List[typing.Union['PropServiceKeyValuePair', dict]] = attr.ib(
+        default=None,
+        converter=PropServiceKeyValuePair.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropServiceKeyValuePair), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "RuntimeEnvironmentSecrets"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apprunner-service-codeconfigurationvalues.html#cfn-apprunner-service-codeconfigurationvalues-runtimeenvironmentsecrets"""
     p_RuntimeEnvironmentVariables: typing.List[typing.Union['PropServiceKeyValuePair', dict]] = attr.ib(
         default=None,
         converter=PropServiceKeyValuePair.from_list,
@@ -384,6 +392,7 @@ class PropServiceImageConfiguration(Property):
     Property Document:
     
     - ``p_Port``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apprunner-service-imageconfiguration.html#cfn-apprunner-service-imageconfiguration-port
+    - ``p_RuntimeEnvironmentSecrets``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apprunner-service-imageconfiguration.html#cfn-apprunner-service-imageconfiguration-runtimeenvironmentsecrets
     - ``p_RuntimeEnvironmentVariables``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apprunner-service-imageconfiguration.html#cfn-apprunner-service-imageconfiguration-runtimeenvironmentvariables
     - ``p_StartCommand``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apprunner-service-imageconfiguration.html#cfn-apprunner-service-imageconfiguration-startcommand
     """
@@ -395,6 +404,13 @@ class PropServiceImageConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Port"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apprunner-service-imageconfiguration.html#cfn-apprunner-service-imageconfiguration-port"""
+    p_RuntimeEnvironmentSecrets: typing.List[typing.Union['PropServiceKeyValuePair', dict]] = attr.ib(
+        default=None,
+        converter=PropServiceKeyValuePair.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropServiceKeyValuePair), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "RuntimeEnvironmentSecrets"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-apprunner-service-imageconfiguration.html#cfn-apprunner-service-imageconfiguration-runtimeenvironmentsecrets"""
     p_RuntimeEnvironmentVariables: typing.List[typing.Union['PropServiceKeyValuePair', dict]] = attr.ib(
         default=None,
         converter=PropServiceKeyValuePair.from_list,
@@ -655,6 +671,7 @@ class VpcConnector(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Tag',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -726,6 +743,7 @@ class ObservabilityConfiguration(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Tag',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -733,14 +751,14 @@ class ObservabilityConfiguration(Resource):
 
     
     @property
-    def rv_ObservabilityConfigurationArn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apprunner-observabilityconfiguration.html#aws-resource-apprunner-observabilityconfiguration-return-values"""
-        return GetAtt(resource=self, attr_name="ObservabilityConfigurationArn")
-    
-    @property
     def rv_ObservabilityConfigurationRevision(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apprunner-observabilityconfiguration.html#aws-resource-apprunner-observabilityconfiguration-return-values"""
         return GetAtt(resource=self, attr_name="ObservabilityConfigurationRevision")
+    
+    @property
+    def rv_ObservabilityConfigurationArn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apprunner-observabilityconfiguration.html#aws-resource-apprunner-observabilityconfiguration-return-values"""
+        return GetAtt(resource=self, attr_name="ObservabilityConfigurationArn")
     
     @property
     def rv_Latest(self) -> GetAtt:
@@ -816,16 +834,12 @@ class VpcIngressConnection(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Tag',
+                "DuplicatesAllowed": True,
             }
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apprunner-vpcingressconnection.html#cfn-apprunner-vpcingressconnection-tags"""
 
-    
-    @property
-    def rv_VpcIngressConnectionArn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apprunner-vpcingressconnection.html#aws-resource-apprunner-vpcingressconnection-return-values"""
-        return GetAtt(resource=self, attr_name="VpcIngressConnectionArn")
     
     @property
     def rv_Status(self) -> GetAtt:
@@ -836,6 +850,11 @@ class VpcIngressConnection(Resource):
     def rv_DomainName(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apprunner-vpcingressconnection.html#aws-resource-apprunner-vpcingressconnection-return-values"""
         return GetAtt(resource=self, attr_name="DomainName")
+    
+    @property
+    def rv_VpcIngressConnectionArn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apprunner-vpcingressconnection.html#aws-resource-apprunner-vpcingressconnection-return-values"""
+        return GetAtt(resource=self, attr_name="VpcIngressConnectionArn")
     
 
 @attr.s
@@ -981,6 +1000,7 @@ class Service(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Tag',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -988,14 +1008,9 @@ class Service(Resource):
 
     
     @property
-    def rv_ServiceId(self) -> GetAtt:
+    def rv_Status(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apprunner-service.html#aws-resource-apprunner-service-return-values"""
-        return GetAtt(resource=self, attr_name="ServiceId")
-    
-    @property
-    def rv_ServiceArn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apprunner-service.html#aws-resource-apprunner-service-return-values"""
-        return GetAtt(resource=self, attr_name="ServiceArn")
+        return GetAtt(resource=self, attr_name="Status")
     
     @property
     def rv_ServiceUrl(self) -> GetAtt:
@@ -1003,7 +1018,12 @@ class Service(Resource):
         return GetAtt(resource=self, attr_name="ServiceUrl")
     
     @property
-    def rv_Status(self) -> GetAtt:
+    def rv_ServiceArn(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apprunner-service.html#aws-resource-apprunner-service-return-values"""
-        return GetAtt(resource=self, attr_name="Status")
+        return GetAtt(resource=self, attr_name="ServiceArn")
+    
+    @property
+    def rv_ServiceId(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apprunner-service.html#aws-resource-apprunner-service-return-values"""
+        return GetAtt(resource=self, attr_name="ServiceId")
     

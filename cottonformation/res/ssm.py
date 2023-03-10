@@ -1282,14 +1282,14 @@ class ResourcePolicy(Resource):
 
     
     @property
-    def rv_PolicyId(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-resourcepolicy.html#aws-resource-ssm-resourcepolicy-return-values"""
-        return GetAtt(resource=self, attr_name="PolicyId")
-    
-    @property
     def rv_PolicyHash(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-resourcepolicy.html#aws-resource-ssm-resourcepolicy-return-values"""
         return GetAtt(resource=self, attr_name="PolicyHash")
+    
+    @property
+    def rv_PolicyId(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-resourcepolicy.html#aws-resource-ssm-resourcepolicy-return-values"""
+        return GetAtt(resource=self, attr_name="PolicyId")
     
 
 @attr.s
@@ -1914,6 +1914,7 @@ class Document(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'AttachmentsSource',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -1968,6 +1969,7 @@ class Document(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'DocumentRequires',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -2022,6 +2024,7 @@ class Document(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Tag',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -2121,6 +2124,7 @@ class Association(Resource):
                 "Required": False,
                 "Type": 'List',
                 "PrimitiveItemType": 'String',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -2204,16 +2208,15 @@ class Association(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ssm-association.html#cfn-ssm-association-outputlocation"""
-    p_Parameters: typing.Dict[str, dict] = attr.ib(
+    p_Parameters: dict = attr.ib(
         default=None,
-        validator=attr.validators.optional(attr.validators.deep_mapping(key_validator=attr.validators.instance_of(str), value_validator=attr.validators.instance_of(dict))),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={
             AttrMeta.PROPERTY_NAME: "Parameters",
             AttrMeta.DATA: {
                 "UpdateType": 'Mutable',
                 "Required": False,
-                "Type": 'Map',
-                "PrimitiveItemType": 'Json',
+                "PrimitiveType": 'Json',
             }
         },
     )
@@ -2268,6 +2271,7 @@ class Association(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Target',
+                "DuplicatesAllowed": True,
             }
         },
     )

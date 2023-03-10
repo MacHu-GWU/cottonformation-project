@@ -204,6 +204,26 @@ class PropGlobalTableSSESpecification(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-ssespecification.html#cfn-dynamodb-globaltable-ssespecification-ssetype"""
 
 @attr.s
+class PropGlobalTableKinesisStreamSpecification(Property):
+    """
+    AWS Object Type = "AWS::DynamoDB::GlobalTable.KinesisStreamSpecification"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-kinesisstreamspecification.html
+
+    Property Document:
+    
+    - ``rp_StreamArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-kinesisstreamspecification.html#cfn-dynamodb-globaltable-kinesisstreamspecification-streamarn
+    """
+    AWS_OBJECT_TYPE = "AWS::DynamoDB::GlobalTable.KinesisStreamSpecification"
+    
+    rp_StreamArn: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "StreamArn"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-kinesisstreamspecification.html#cfn-dynamodb-globaltable-kinesisstreamspecification-streamarn"""
+
+@attr.s
 class PropGlobalTableContributorInsightsSpecification(Property):
     """
     AWS Object Type = "AWS::DynamoDB::GlobalTable.ContributorInsightsSpecification"
@@ -948,7 +968,9 @@ class PropGlobalTableReplicaSpecification(Property):
     
     - ``rp_Region``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-replicaspecification.html#cfn-dynamodb-globaltable-replicaspecification-region
     - ``p_ContributorInsightsSpecification``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-replicaspecification.html#cfn-dynamodb-globaltable-replicaspecification-contributorinsightsspecification
+    - ``p_DeletionProtectionEnabled``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-replicaspecification.html#cfn-dynamodb-globaltable-replicaspecification-deletionprotectionenabled
     - ``p_GlobalSecondaryIndexes``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-replicaspecification.html#cfn-dynamodb-globaltable-replicaspecification-globalsecondaryindexes
+    - ``p_KinesisStreamSpecification``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-replicaspecification.html#cfn-dynamodb-globaltable-replicaspecification-kinesisstreamspecification
     - ``p_PointInTimeRecoverySpecification``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-replicaspecification.html#cfn-dynamodb-globaltable-replicaspecification-pointintimerecoveryspecification
     - ``p_ReadProvisionedThroughputSettings``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-replicaspecification.html#cfn-dynamodb-globaltable-replicaspecification-readprovisionedthroughputsettings
     - ``p_SSESpecification``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-replicaspecification.html#cfn-dynamodb-globaltable-replicaspecification-ssespecification
@@ -970,6 +992,12 @@ class PropGlobalTableReplicaSpecification(Property):
         metadata={AttrMeta.PROPERTY_NAME: "ContributorInsightsSpecification"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-replicaspecification.html#cfn-dynamodb-globaltable-replicaspecification-contributorinsightsspecification"""
+    p_DeletionProtectionEnabled: bool = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(bool)),
+        metadata={AttrMeta.PROPERTY_NAME: "DeletionProtectionEnabled"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-replicaspecification.html#cfn-dynamodb-globaltable-replicaspecification-deletionprotectionenabled"""
     p_GlobalSecondaryIndexes: typing.List[typing.Union['PropGlobalTableReplicaGlobalSecondaryIndexSpecification', dict]] = attr.ib(
         default=None,
         converter=PropGlobalTableReplicaGlobalSecondaryIndexSpecification.from_list,
@@ -977,6 +1005,13 @@ class PropGlobalTableReplicaSpecification(Property):
         metadata={AttrMeta.PROPERTY_NAME: "GlobalSecondaryIndexes"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-replicaspecification.html#cfn-dynamodb-globaltable-replicaspecification-globalsecondaryindexes"""
+    p_KinesisStreamSpecification: typing.Union['PropGlobalTableKinesisStreamSpecification', dict] = attr.ib(
+        default=None,
+        converter=PropGlobalTableKinesisStreamSpecification.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropGlobalTableKinesisStreamSpecification)),
+        metadata={AttrMeta.PROPERTY_NAME: "KinesisStreamSpecification"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-dynamodb-globaltable-replicaspecification.html#cfn-dynamodb-globaltable-replicaspecification-kinesisstreamspecification"""
     p_PointInTimeRecoverySpecification: typing.Union['PropGlobalTablePointInTimeRecoverySpecification', dict] = attr.ib(
         default=None,
         converter=PropGlobalTablePointInTimeRecoverySpecification.from_dict,
@@ -1028,6 +1063,7 @@ class Table(Resource):
     - ``p_AttributeDefinitions``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-attributedefinitions
     - ``p_BillingMode``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-billingmode
     - ``p_ContributorInsightsSpecification``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-contributorinsightsspecification
+    - ``p_DeletionProtectionEnabled``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-deletionprotectionenabled
     - ``p_GlobalSecondaryIndexes``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-globalsecondaryindexes
     - ``p_ImportSourceSpecification``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-importsourcespecification
     - ``p_KinesisStreamSpecification``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-kinesisstreamspecification
@@ -1053,9 +1089,9 @@ class Table(Resource):
             AttrMeta.DATA: {
                 "UpdateType": 'Immutable',
                 "Required": True,
-                "Type": 'List',
                 "DuplicatesAllowed": False,
                 "ItemType": 'KeySchema',
+                "Type": 'List',
             }
         },
     )
@@ -1103,6 +1139,19 @@ class Table(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-contributorinsightsspecification"""
+    p_DeletionProtectionEnabled: bool = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(bool)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "DeletionProtectionEnabled",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'Boolean',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-table.html#cfn-dynamodb-table-deletionprotectionenabled"""
     p_GlobalSecondaryIndexes: typing.List[typing.Union['PropTableGlobalSecondaryIndex', dict]] = attr.ib(
         default=None,
         converter=PropTableGlobalSecondaryIndex.from_list,
@@ -1477,6 +1526,11 @@ class GlobalTable(Resource):
 
     
     @property
+    def rv_TableId(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-globaltable.html#aws-resource-dynamodb-globaltable-return-values"""
+        return GetAtt(resource=self, attr_name="TableId")
+    
+    @property
     def rv_Arn(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-globaltable.html#aws-resource-dynamodb-globaltable-return-values"""
         return GetAtt(resource=self, attr_name="Arn")
@@ -1485,9 +1539,4 @@ class GlobalTable(Resource):
     def rv_StreamArn(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-globaltable.html#aws-resource-dynamodb-globaltable-return-values"""
         return GetAtt(resource=self, attr_name="StreamArn")
-    
-    @property
-    def rv_TableId(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-dynamodb-globaltable.html#aws-resource-dynamodb-globaltable-return-values"""
-        return GetAtt(resource=self, attr_name="TableId")
     

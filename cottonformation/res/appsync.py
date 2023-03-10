@@ -402,6 +402,26 @@ class PropDataSourceHttpConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-httpconfig.html#cfn-appsync-datasource-httpconfig-authorizationconfig"""
 
 @attr.s
+class PropDataSourceEventBridgeConfig(Property):
+    """
+    AWS Object Type = "AWS::AppSync::DataSource.EventBridgeConfig"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-eventbridgeconfig.html
+
+    Property Document:
+    
+    - ``rp_EventBusArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-eventbridgeconfig.html#cfn-appsync-datasource-eventbridgeconfig-eventbusarn
+    """
+    AWS_OBJECT_TYPE = "AWS::AppSync::DataSource.EventBridgeConfig"
+    
+    rp_EventBusArn: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "EventBusArn"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-appsync-datasource-eventbridgeconfig.html#cfn-appsync-datasource-eventbridgeconfig-eventbusarn"""
+
+@attr.s
 class PropGraphQLApiUserPoolConfig(Property):
     """
     AWS Object Type = "AWS::AppSync::GraphQLApi.UserPoolConfig"
@@ -1777,14 +1797,14 @@ class DomainName(Resource):
 
     
     @property
-    def rv_DomainName(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-domainname.html#aws-resource-appsync-domainname-return-values"""
-        return GetAtt(resource=self, attr_name="DomainName")
-    
-    @property
     def rv_AppSyncDomainName(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-domainname.html#aws-resource-appsync-domainname-return-values"""
         return GetAtt(resource=self, attr_name="AppSyncDomainName")
+    
+    @property
+    def rv_DomainName(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-domainname.html#aws-resource-appsync-domainname-return-values"""
+        return GetAtt(resource=self, attr_name="DomainName")
     
     @property
     def rv_HostedZoneId(self) -> GetAtt:
@@ -1807,6 +1827,7 @@ class DataSource(Resource):
     - ``p_Description``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html#cfn-appsync-datasource-description
     - ``p_DynamoDBConfig``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html#cfn-appsync-datasource-dynamodbconfig
     - ``p_ElasticsearchConfig``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html#cfn-appsync-datasource-elasticsearchconfig
+    - ``p_EventBridgeConfig``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html#cfn-appsync-datasource-eventbridgeconfig
     - ``p_HttpConfig``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html#cfn-appsync-datasource-httpconfig
     - ``p_LambdaConfig``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html#cfn-appsync-datasource-lambdaconfig
     - ``p_OpenSearchServiceConfig``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html#cfn-appsync-datasource-opensearchserviceconfig
@@ -1896,6 +1917,20 @@ class DataSource(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html#cfn-appsync-datasource-elasticsearchconfig"""
+    p_EventBridgeConfig: typing.Union['PropDataSourceEventBridgeConfig', dict] = attr.ib(
+        default=None,
+        converter=PropDataSourceEventBridgeConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropDataSourceEventBridgeConfig)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "EventBridgeConfig",
+            AttrMeta.DATA: {
+                "Type": 'EventBridgeConfig',
+                "Required": False,
+                "UpdateType": 'Mutable',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-appsync-datasource.html#cfn-appsync-datasource-eventbridgeconfig"""
     p_HttpConfig: typing.Union['PropDataSourceHttpConfig', dict] = attr.ib(
         default=None,
         converter=PropDataSourceHttpConfig.from_dict,

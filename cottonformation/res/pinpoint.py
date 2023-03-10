@@ -2516,6 +2516,7 @@ class InAppTemplate(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'InAppMessageContent',
+                "DuplicatesAllowed": True,
             }
         },
     )

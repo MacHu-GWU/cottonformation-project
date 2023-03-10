@@ -704,15 +704,16 @@ class Nodegroup(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-nodegroup.html#cfn-eks-nodegroup-instancetypes"""
-    p_Labels: dict = attr.ib(
+    p_Labels: typing.Dict[str, TypeHint.intrinsic_str] = attr.ib(
         default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        validator=attr.validators.optional(attr.validators.deep_mapping(key_validator=attr.validators.instance_of(str), value_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type))),
         metadata={
             AttrMeta.PROPERTY_NAME: "Labels",
             AttrMeta.DATA: {
                 "UpdateType": 'Mutable',
                 "Required": False,
-                "PrimitiveType": 'Json',
+                "Type": 'Map',
+                "PrimitiveItemType": 'String',
             }
         },
     )
@@ -796,6 +797,7 @@ class Nodegroup(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Taint',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -827,15 +829,16 @@ class Nodegroup(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-nodegroup.html#cfn-eks-nodegroup-version"""
-    p_Tags: dict = attr.ib(
+    p_Tags: typing.Dict[str, TypeHint.intrinsic_str] = attr.ib(
         default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        validator=attr.validators.optional(attr.validators.deep_mapping(key_validator=attr.validators.instance_of(str), value_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type))),
         metadata={
             AttrMeta.PROPERTY_NAME: "Tags",
             AttrMeta.DATA: {
                 "UpdateType": 'Mutable',
                 "Required": False,
-                "PrimitiveType": 'Json',
+                "Type": 'Map',
+                "PrimitiveItemType": 'String',
             }
         },
     )
@@ -843,14 +846,14 @@ class Nodegroup(Resource):
 
     
     @property
-    def rv_ClusterName(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-nodegroup.html#aws-resource-eks-nodegroup-return-values"""
-        return GetAtt(resource=self, attr_name="ClusterName")
-    
-    @property
     def rv_NodegroupName(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-nodegroup.html#aws-resource-eks-nodegroup-return-values"""
         return GetAtt(resource=self, attr_name="NodegroupName")
+    
+    @property
+    def rv_ClusterName(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-nodegroup.html#aws-resource-eks-nodegroup-return-values"""
+        return GetAtt(resource=self, attr_name="ClusterName")
     
     @property
     def rv_Id(self) -> GetAtt:
@@ -923,6 +926,7 @@ class Cluster(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'EncryptionConfig',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -1014,29 +1018,9 @@ class Cluster(Resource):
 
     
     @property
-    def rv_KubernetesNetworkConfigServiceIpv6Cidr(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-cluster.html#aws-resource-eks-cluster-return-values"""
-        return GetAtt(resource=self, attr_name="KubernetesNetworkConfig.ServiceIpv6Cidr")
-    
-    @property
-    def rv_Id(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-cluster.html#aws-resource-eks-cluster-return-values"""
-        return GetAtt(resource=self, attr_name="Id")
-    
-    @property
-    def rv_Arn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-cluster.html#aws-resource-eks-cluster-return-values"""
-        return GetAtt(resource=self, attr_name="Arn")
-    
-    @property
     def rv_Endpoint(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-cluster.html#aws-resource-eks-cluster-return-values"""
         return GetAtt(resource=self, attr_name="Endpoint")
-    
-    @property
-    def rv_CertificateAuthorityData(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-cluster.html#aws-resource-eks-cluster-return-values"""
-        return GetAtt(resource=self, attr_name="CertificateAuthorityData")
     
     @property
     def rv_ClusterSecurityGroupId(self) -> GetAtt:
@@ -1047,6 +1031,26 @@ class Cluster(Resource):
     def rv_EncryptionConfigKeyArn(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-cluster.html#aws-resource-eks-cluster-return-values"""
         return GetAtt(resource=self, attr_name="EncryptionConfigKeyArn")
+    
+    @property
+    def rv_Id(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-cluster.html#aws-resource-eks-cluster-return-values"""
+        return GetAtt(resource=self, attr_name="Id")
+    
+    @property
+    def rv_CertificateAuthorityData(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-cluster.html#aws-resource-eks-cluster-return-values"""
+        return GetAtt(resource=self, attr_name="CertificateAuthorityData")
+    
+    @property
+    def rv_Arn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-cluster.html#aws-resource-eks-cluster-return-values"""
+        return GetAtt(resource=self, attr_name="Arn")
+    
+    @property
+    def rv_KubernetesNetworkConfigServiceIpv6Cidr(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-cluster.html#aws-resource-eks-cluster-return-values"""
+        return GetAtt(resource=self, attr_name="KubernetesNetworkConfig.ServiceIpv6Cidr")
     
     @property
     def rv_OpenIdConnectIssuerUrl(self) -> GetAtt:
@@ -1110,6 +1114,7 @@ class FargateProfile(Resource):
                 "Required": True,
                 "Type": 'List',
                 "ItemType": 'Selector',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -1137,6 +1142,7 @@ class FargateProfile(Resource):
                 "Required": False,
                 "Type": 'List',
                 "PrimitiveItemType": 'String',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -1177,6 +1183,8 @@ class Addon(Resource):
     - ``rp_AddonName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-addon.html#cfn-eks-addon-addonname
     - ``rp_ClusterName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-addon.html#cfn-eks-addon-clustername
     - ``p_AddonVersion``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-addon.html#cfn-eks-addon-addonversion
+    - ``p_ConfigurationValues``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-addon.html#cfn-eks-addon-configurationvalues
+    - ``p_PreserveOnDelete``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-addon.html#cfn-eks-addon-preserveondelete
     - ``p_ResolveConflicts``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-addon.html#cfn-eks-addon-resolveconflicts
     - ``p_ServiceAccountRoleArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-addon.html#cfn-eks-addon-serviceaccountrolearn
     - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-addon.html#cfn-eks-addon-tags
@@ -1223,6 +1231,32 @@ class Addon(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-addon.html#cfn-eks-addon-addonversion"""
+    p_ConfigurationValues: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ConfigurationValues",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'String',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-addon.html#cfn-eks-addon-configurationvalues"""
+    p_PreserveOnDelete: bool = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(bool)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "PreserveOnDelete",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "PrimitiveType": 'Boolean',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-eks-addon.html#cfn-eks-addon-preserveondelete"""
     p_ResolveConflicts: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),

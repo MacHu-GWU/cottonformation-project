@@ -62,6 +62,33 @@ class PropInstanceMonthlyTransfer(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-instance-monthlytransfer.html#cfn-lightsail-instance-monthlytransfer-gbpermonthallocated"""
 
 @attr.s
+class PropDiskLocation(Property):
+    """
+    AWS Object Type = "AWS::Lightsail::Disk.Location"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-disk-location.html
+
+    Property Document:
+    
+    - ``p_AvailabilityZone``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-disk-location.html#cfn-lightsail-disk-location-availabilityzone
+    - ``p_RegionName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-disk-location.html#cfn-lightsail-disk-location-regionname
+    """
+    AWS_OBJECT_TYPE = "AWS::Lightsail::Disk.Location"
+    
+    p_AvailabilityZone: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "AvailabilityZone"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-disk-location.html#cfn-lightsail-disk-location-availabilityzone"""
+    p_RegionName: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "RegionName"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-lightsail-disk-location.html#cfn-lightsail-disk-location-regionname"""
+
+@attr.s
 class PropDistributionHeaderObject(Property):
     """
     AWS Object Type = "AWS::Lightsail::Distribution.HeaderObject"
@@ -1299,14 +1326,14 @@ class Certificate(Resource):
 
     
     @property
-    def rv_CertificateArn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-certificate.html#aws-resource-lightsail-certificate-return-values"""
-        return GetAtt(resource=self, attr_name="CertificateArn")
-    
-    @property
     def rv_Status(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-certificate.html#aws-resource-lightsail-certificate-return-values"""
         return GetAtt(resource=self, attr_name="Status")
+    
+    @property
+    def rv_CertificateArn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-certificate.html#aws-resource-lightsail-certificate-return-values"""
+        return GetAtt(resource=self, attr_name="CertificateArn")
     
 
 @attr.s
@@ -1626,14 +1653,14 @@ class Distribution(Resource):
 
     
     @property
-    def rv_DistributionArn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-distribution.html#aws-resource-lightsail-distribution-return-values"""
-        return GetAtt(resource=self, attr_name="DistributionArn")
-    
-    @property
     def rv_Status(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-distribution.html#aws-resource-lightsail-distribution-return-values"""
         return GetAtt(resource=self, attr_name="Status")
+    
+    @property
+    def rv_DistributionArn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-distribution.html#aws-resource-lightsail-distribution-return-values"""
+        return GetAtt(resource=self, attr_name="DistributionArn")
     
     @property
     def rv_AbleToUpdateBundle(self) -> GetAtt:
@@ -1768,14 +1795,14 @@ class Bucket(Resource):
         return GetAtt(resource=self, attr_name="BucketArn")
     
     @property
-    def rv_Url(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-bucket.html#aws-resource-lightsail-bucket-return-values"""
-        return GetAtt(resource=self, attr_name="Url")
-    
-    @property
     def rv_AbleToUpdateBundle(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-bucket.html#aws-resource-lightsail-bucket-return-values"""
         return GetAtt(resource=self, attr_name="AbleToUpdateBundle")
+    
+    @property
+    def rv_Url(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-bucket.html#aws-resource-lightsail-bucket-return-values"""
+        return GetAtt(resource=self, attr_name="Url")
     
 
 @attr.s
@@ -1794,7 +1821,9 @@ class Instance(Resource):
     - ``p_AvailabilityZone``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-instance.html#cfn-lightsail-instance-availabilityzone
     - ``p_Hardware``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-instance.html#cfn-lightsail-instance-hardware
     - ``p_KeyPairName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-instance.html#cfn-lightsail-instance-keypairname
+    - ``p_Location``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-instance.html#cfn-lightsail-instance-location
     - ``p_Networking``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-instance.html#cfn-lightsail-instance-networking
+    - ``p_State``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-instance.html#cfn-lightsail-instance-state
     - ``p_UserData``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-instance.html#cfn-lightsail-instance-userdata
     - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-instance.html#cfn-lightsail-instance-tags
     """
@@ -1851,6 +1880,7 @@ class Instance(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'AddOn',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -1895,6 +1925,20 @@ class Instance(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-instance.html#cfn-lightsail-instance-keypairname"""
+    p_Location: typing.Union['PropInstanceLocation', dict] = attr.ib(
+        default=None,
+        converter=PropInstanceLocation.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropInstanceLocation)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Location",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'Location',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-instance.html#cfn-lightsail-instance-location"""
     p_Networking: typing.Union['PropInstanceNetworking', dict] = attr.ib(
         default=None,
         converter=PropInstanceNetworking.from_dict,
@@ -1909,6 +1953,20 @@ class Instance(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-instance.html#cfn-lightsail-instance-networking"""
+    p_State: typing.Union['PropInstanceState', dict] = attr.ib(
+        default=None,
+        converter=PropInstanceState.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropInstanceState)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "State",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'State',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-instance.html#cfn-lightsail-instance-state"""
     p_UserData: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
@@ -1941,14 +1999,19 @@ class Instance(Resource):
 
     
     @property
-    def rv_SupportCode(self) -> GetAtt:
+    def rv_SshKeyName(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-instance.html#aws-resource-lightsail-instance-return-values"""
-        return GetAtt(resource=self, attr_name="SupportCode")
+        return GetAtt(resource=self, attr_name="SshKeyName")
     
     @property
-    def rv_ResourceType(self) -> GetAtt:
+    def rv_NetworkingMonthlyTransferGbPerMonthAllocated(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-instance.html#aws-resource-lightsail-instance-return-values"""
-        return GetAtt(resource=self, attr_name="ResourceType")
+        return GetAtt(resource=self, attr_name="Networking.MonthlyTransfer.GbPerMonthAllocated")
+    
+    @property
+    def rv_HardwareCpuCount(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-instance.html#aws-resource-lightsail-instance-return-values"""
+        return GetAtt(resource=self, attr_name="Hardware.CpuCount")
     
     @property
     def rv_IsStaticIp(self) -> GetAtt:
@@ -1961,6 +2024,21 @@ class Instance(Resource):
         return GetAtt(resource=self, attr_name="PrivateIpAddress")
     
     @property
+    def rv_UserName(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-instance.html#aws-resource-lightsail-instance-return-values"""
+        return GetAtt(resource=self, attr_name="UserName")
+    
+    @property
+    def rv_ResourceType(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-instance.html#aws-resource-lightsail-instance-return-values"""
+        return GetAtt(resource=self, attr_name="ResourceType")
+    
+    @property
+    def rv_LocationRegionName(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-instance.html#aws-resource-lightsail-instance-return-values"""
+        return GetAtt(resource=self, attr_name="Location.RegionName")
+    
+    @property
     def rv_PublicIpAddress(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-instance.html#aws-resource-lightsail-instance-return-values"""
         return GetAtt(resource=self, attr_name="PublicIpAddress")
@@ -1971,24 +2049,14 @@ class Instance(Resource):
         return GetAtt(resource=self, attr_name="Location.AvailabilityZone")
     
     @property
-    def rv_LocationRegionName(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-instance.html#aws-resource-lightsail-instance-return-values"""
-        return GetAtt(resource=self, attr_name="Location.RegionName")
-    
-    @property
-    def rv_HardwareCpuCount(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-instance.html#aws-resource-lightsail-instance-return-values"""
-        return GetAtt(resource=self, attr_name="Hardware.CpuCount")
-    
-    @property
-    def rv_HardwareRamSizeInGb(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-instance.html#aws-resource-lightsail-instance-return-values"""
-        return GetAtt(resource=self, attr_name="Hardware.RamSizeInGb")
-    
-    @property
     def rv_StateCode(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-instance.html#aws-resource-lightsail-instance-return-values"""
         return GetAtt(resource=self, attr_name="State.Code")
+    
+    @property
+    def rv_SupportCode(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-instance.html#aws-resource-lightsail-instance-return-values"""
+        return GetAtt(resource=self, attr_name="SupportCode")
     
     @property
     def rv_StateName(self) -> GetAtt:
@@ -1996,24 +2064,14 @@ class Instance(Resource):
         return GetAtt(resource=self, attr_name="State.Name")
     
     @property
-    def rv_NetworkingMonthlyTransferGbPerMonthAllocated(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-instance.html#aws-resource-lightsail-instance-return-values"""
-        return GetAtt(resource=self, attr_name="Networking.MonthlyTransfer.GbPerMonthAllocated")
-    
-    @property
-    def rv_UserName(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-instance.html#aws-resource-lightsail-instance-return-values"""
-        return GetAtt(resource=self, attr_name="UserName")
-    
-    @property
-    def rv_SshKeyName(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-instance.html#aws-resource-lightsail-instance-return-values"""
-        return GetAtt(resource=self, attr_name="SshKeyName")
-    
-    @property
     def rv_InstanceArn(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-instance.html#aws-resource-lightsail-instance-return-values"""
         return GetAtt(resource=self, attr_name="InstanceArn")
+    
+    @property
+    def rv_HardwareRamSizeInGb(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-instance.html#aws-resource-lightsail-instance-return-values"""
+        return GetAtt(resource=self, attr_name="Hardware.RamSizeInGb")
     
 
 @attr.s
@@ -2302,14 +2360,14 @@ class LoadBalancerTlsCertificate(Resource):
 
     
     @property
-    def rv_LoadBalancerTlsCertificateArn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-loadbalancertlscertificate.html#aws-resource-lightsail-loadbalancertlscertificate-return-values"""
-        return GetAtt(resource=self, attr_name="LoadBalancerTlsCertificateArn")
-    
-    @property
     def rv_Status(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-loadbalancertlscertificate.html#aws-resource-lightsail-loadbalancertlscertificate-return-values"""
         return GetAtt(resource=self, attr_name="Status")
+    
+    @property
+    def rv_LoadBalancerTlsCertificateArn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-loadbalancertlscertificate.html#aws-resource-lightsail-loadbalancertlscertificate-return-values"""
+        return GetAtt(resource=self, attr_name="LoadBalancerTlsCertificateArn")
     
 
 @attr.s
@@ -2367,6 +2425,7 @@ class Disk(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'AddOn',
+                "DuplicatesAllowed": True,
             }
         },
     )
@@ -2403,24 +2462,9 @@ class Disk(Resource):
 
     
     @property
-    def rv_DiskArn(self) -> GetAtt:
+    def rv_Path(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-disk.html#aws-resource-lightsail-disk-return-values"""
-        return GetAtt(resource=self, attr_name="DiskArn")
-    
-    @property
-    def rv_SupportCode(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-disk.html#aws-resource-lightsail-disk-return-values"""
-        return GetAtt(resource=self, attr_name="SupportCode")
-    
-    @property
-    def rv_ResourceType(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-disk.html#aws-resource-lightsail-disk-return-values"""
-        return GetAtt(resource=self, attr_name="ResourceType")
-    
-    @property
-    def rv_State(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-disk.html#aws-resource-lightsail-disk-return-values"""
-        return GetAtt(resource=self, attr_name="State")
+        return GetAtt(resource=self, attr_name="Path")
     
     @property
     def rv_AttachmentState(self) -> GetAtt:
@@ -2428,9 +2472,19 @@ class Disk(Resource):
         return GetAtt(resource=self, attr_name="AttachmentState")
     
     @property
-    def rv_Iops(self) -> GetAtt:
+    def rv_LocationAvailabilityZone(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-disk.html#aws-resource-lightsail-disk-return-values"""
-        return GetAtt(resource=self, attr_name="Iops")
+        return GetAtt(resource=self, attr_name="Location.AvailabilityZone")
+    
+    @property
+    def rv_SupportCode(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-disk.html#aws-resource-lightsail-disk-return-values"""
+        return GetAtt(resource=self, attr_name="SupportCode")
+    
+    @property
+    def rv_State(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-disk.html#aws-resource-lightsail-disk-return-values"""
+        return GetAtt(resource=self, attr_name="State")
     
     @property
     def rv_IsAttached(self) -> GetAtt:
@@ -2438,14 +2492,34 @@ class Disk(Resource):
         return GetAtt(resource=self, attr_name="IsAttached")
     
     @property
-    def rv_Path(self) -> GetAtt:
+    def rv_ResourceType(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-disk.html#aws-resource-lightsail-disk-return-values"""
-        return GetAtt(resource=self, attr_name="Path")
+        return GetAtt(resource=self, attr_name="ResourceType")
+    
+    @property
+    def rv_DiskArn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-disk.html#aws-resource-lightsail-disk-return-values"""
+        return GetAtt(resource=self, attr_name="DiskArn")
     
     @property
     def rv_AttachedTo(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-disk.html#aws-resource-lightsail-disk-return-values"""
         return GetAtt(resource=self, attr_name="AttachedTo")
+    
+    @property
+    def rv_Iops(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-disk.html#aws-resource-lightsail-disk-return-values"""
+        return GetAtt(resource=self, attr_name="Iops")
+    
+    @property
+    def rv_Location(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-disk.html#aws-resource-lightsail-disk-return-values"""
+        return GetAtt(resource=self, attr_name="Location")
+    
+    @property
+    def rv_LocationRegionName(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-disk.html#aws-resource-lightsail-disk-return-values"""
+        return GetAtt(resource=self, attr_name="Location.RegionName")
     
 
 @attr.s
@@ -2623,6 +2697,11 @@ class StaticIp(Resource):
 
     
     @property
+    def rv_StaticIpArn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-staticip.html#aws-resource-lightsail-staticip-return-values"""
+        return GetAtt(resource=self, attr_name="StaticIpArn")
+    
+    @property
     def rv_IsAttached(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-staticip.html#aws-resource-lightsail-staticip-return-values"""
         return GetAtt(resource=self, attr_name="IsAttached")
@@ -2631,9 +2710,4 @@ class StaticIp(Resource):
     def rv_IpAddress(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-staticip.html#aws-resource-lightsail-staticip-return-values"""
         return GetAtt(resource=self, attr_name="IpAddress")
-    
-    @property
-    def rv_StaticIpArn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-lightsail-staticip.html#aws-resource-lightsail-staticip-return-values"""
-        return GetAtt(resource=self, attr_name="StaticIpArn")
     
