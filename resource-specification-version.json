@@ -2,7 +2,7 @@
     "description": "this file stores the mapping relationship between cottonformation sematic version and cloudformation specification version",
     "mapping": [
         {
-            "cottonformation": "1.0,1",
+            "cottonformation": "1.0.1",
             "cloudformation": "100.0.0"
         }
     ]
