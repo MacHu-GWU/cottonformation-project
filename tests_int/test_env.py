@@ -9,7 +9,7 @@ from cottonformation.tests.stacks.iam_stack import (
     make_tpl_3,
     make_tpl_4,
 )
-from aws_cloudformation import describe_live_stack
+from aws_cloudformation import better_boto
 
 
 env = cf.Env(bsm)
@@ -53,7 +53,7 @@ def test_case_1():
         )
 
     def inspect_output():
-        stack = describe_live_stack(bsm=bsm, name=stack_name)
+        stack = better_boto.describe_live_stack(bsm=bsm, name=stack_name)
         print(stack.outputs["Policy222Arn"])
 
 
@@ -79,16 +79,16 @@ def test_case_1():
             plan_nested_stack=True,
         )
 
-    # delete_it()
-    # deployment_1()
-    # deployment_2()
-    # inspect_output()
-    # deployment_3()
-    # deployment_4()
-    # delete_it()
+    delete_it()
+    deployment_1()
+    deployment_2()
+    inspect_output()
+    deployment_3()
+    deployment_4()
+    delete_it()
 
 
 if __name__ == "__main__":
-    from aws_cloudformation.tests import run_cov_test
+    from cottonformation.tests import run_cov_test
 
     run_cov_test(__file__, "cottonformation.core.env")

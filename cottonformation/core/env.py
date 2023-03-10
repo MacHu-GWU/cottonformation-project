@@ -8,6 +8,7 @@ import typing as T
 import sys
 import hashlib
 
+from func_args import NOTHING
 from aws_cloudformation import deploy_stack, remove_stack
 from aws_cloudformation.stack import Parameter
 
@@ -200,24 +201,30 @@ class Env:
         self,
         stack_name: str,
         template: Template,
-        use_previous_template: T.Optional[bool] = None,
-        bucket: T.Optional[str] = None,
+        use_previous_template: T.Optional[bool] = NOTHING,
+        bucket: T.Optional[str] = NOTHING,
         prefix: T.Optional[str] = DEFAULT_S3_PREFIX_FOR_TEMPLATE,
-        parameters: T.List[Parameter] = None,
-        tags: dict = None,
-        execution_role_arn: T.Optional[str] = None,
-        include_iam: bool = False,
-        include_named_iam: bool = False,
-        include_macro: bool = False,
-        stack_policy: T.Optional[str] = None,
+        parameters: T.Optional[T.List[Parameter]] = NOTHING,
+        tags: T.Optional[T.Dict[str, str]] = NOTHING,
+        execution_role_arn: T.Optional[str] = NOTHING,
+        include_iam: T.Optional[bool] = NOTHING,
+        include_named_iam: T.Optional[bool] = NOTHING,
+        include_macro: T.Optional[bool] = NOTHING,
+        stack_policy: T.Optional[str] = NOTHING,
         prefix_stack_policy: T.Optional[str] = DEFAULT_S3_PREFIX_FOR_STACK_POLICY,
-        resource_types: T.Optional[T.List[str]] = None,
-        client_request_token: T.Optional[str] = None,
-        enable_termination_protection: T.Optional[bool] = None,
-        disable_rollback: T.Optional[bool] = None,
+        resource_types: T.Optional[T.List[str]] = NOTHING,
+        client_request_token: T.Optional[str] = NOTHING,
+        enable_termination_protection: T.Optional[bool] = NOTHING,
+        disable_rollback: T.Optional[bool] = NOTHING,
+        rollback_configuration: T.Optional[dict] = NOTHING,
+        notification_arns: T.Optional[T.List[str]] = NOTHING,
+        on_failure_do_nothing: T.Optional[bool] = NOTHING,
+        on_failure_rollback: T.Optional[bool] = NOTHING,
+        on_failure_delete: T.Optional[bool] = NOTHING,
         wait: bool = True,
         delays: T.Union[int, float] = DEFAULT_UPDATE_DELAYS,
         timeout: T.Union[int, float] = DEFAULT_UPDATE_TIMEOUT,
+        wait_until_exec_stopped_on_failure: bool = False,
         plan_nested_stack: bool = True,
         skip_plan: bool = False,
         skip_prompt: bool = False,
@@ -253,7 +260,16 @@ class Env:
         :param resource_types: see "Update Stack Boto3 API" link
         :param client_request_token: see "Update Stack Boto3 API" link
         :param enable_termination_protection: see "Create Stack Boto3 API" link
-        :param disable_rollback: see "Update Stack Boto3 API" link
+        :param disable_rollback: see "Create Stack Boto3 API" link
+        :param rollback_configuration: see "Create Stack Boto3 API" link
+        :param notification_arns: see "Create Stack Boto3 API" link
+        :param on_failure_do_nothing: only used when you create stack directly,
+            not using change set. If you set skip_plan = True, then this parameter
+            will be ignored.
+        :param on_failure_rollback: only used when you create stack directly,
+            not using change set.
+        :param on_failure_delete: only used when you create stack directly,
+            this arg will be ignored if it is an update, or using change set.
         :param wait: default True; if True, then wait the create / update action
             to success or fail; if False, then it is an async call and return immediately;
             note that if you have skip_plan is False (using change set), you always
@@ -261,6 +277,13 @@ class Env:
         :param delays: how long it waits (in seconds) between two
             "describe_stacks" api call to get the stack status
         :param timeout: how long it will raise timeout error
+        :param wait_until_exec_stopped_on_failure: if False, it will raise an
+            :class:`~aws_cloudformation.exc.DeployStackFailedError` exception immediately
+            when there is an error and the stack starting to roll back. Note that
+            the stack will take some time to reach stopped status after it failed,
+            you may not to run another deploy immediately. if True, it will raise
+            the exception after the stack reaching ``stopped`` status.
+        :param plan_nested_stack: do you want to plan change set for nested stack?
         :param skip_plan: default False; if False, force to use change set to
             create / update; if True, then do create / update without change set.
         :param skip_prompt: default False; if False, you have to enter "Yes"
@@ -307,9 +330,15 @@ class Env:
             client_request_token=client_request_token,
             enable_termination_protection=enable_termination_protection,
             disable_rollback=disable_rollback,
+            rollback_configuration=rollback_configuration,
+            notification_arns=notification_arns,
+            on_failure_do_nothing=on_failure_do_nothing,
+            on_failure_rollback=on_failure_rollback,
+            on_failure_delete=on_failure_delete,
             wait=wait,
             delays=delays,
             timeout=timeout,
+            wait_until_exec_stopped_on_failure=wait_until_exec_stopped_on_failure,
             plan_nested_stack=plan_nested_stack,
             skip_plan=skip_plan,
             skip_prompt=skip_prompt,
@@ -327,6 +356,7 @@ class Env:
         wait: bool = True,
         delays: T.Union[int, float] = DEFAULT_UPDATE_DELAYS,
         timeout: T.Union[int, float] = DEFAULT_UPDATE_TIMEOUT,
+        wait_until_exec_stopped_on_failure: bool = False,
         skip_prompt: bool = False,
         verbose: bool = True,
     ):
@@ -346,6 +376,12 @@ class Env:
         :param delays: how long it waits (in seconds) between two
             "describe_stacks" api call to get the stack status
         :param timeout: how long it will raise timeout error
+        :param wait_until_exec_stopped_on_failure: if False, it will raise an
+            :class:`~aws_cloudformation.exc.DeleteStackFailedError` exception immediately
+            when there is an error and the stack starting to roll back. Note that
+            the stack will take some time to reach stopped status after it failed,
+            you may not to run another deploy immediately. if True, it will raise
+            the exception after the stack reaching ``stopped`` status.
         :param skip_prompt: default False; if False, you have to enter "Yes"
             in prompt to do deletion; if True, then execute the deletion directly.
         :param verbose: whether you want to log information to console
@@ -361,6 +397,7 @@ class Env:
             wait=wait,
             delays=delays,
             timeout=timeout,
+            wait_until_exec_stopped_on_failure=wait_until_exec_stopped_on_failure,
             skip_prompt=skip_prompt,
             verbose=verbose,
         )
