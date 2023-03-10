@@ -349,10 +349,10 @@ class Env:
 
     def delete(
         self,
-        stack_name: str = None,
-        retain_resources: T.Optional[T.List[str]] = None,
-        role_arn: T.Optional[bool] = None,
-        client_request_token: T.Optional[str] = None,
+        stack_name: str,
+        retain_resources: T.Optional[T.List[str]] = NOTHING,
+        role_arn: T.Optional[bool] = NOTHING,
+        client_request_token: T.Optional[str] = NOTHING,
         wait: bool = True,
         delays: T.Union[int, float] = DEFAULT_UPDATE_DELAYS,
         timeout: T.Union[int, float] = DEFAULT_UPDATE_TIMEOUT,
