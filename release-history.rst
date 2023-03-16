@@ -17,28 +17,6 @@ Backlog
 **Miscellaneous**
 
 
-1.1.2 (2023-03-16)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-**Features and Improvements**
-
-- :meth`~cottonformation.core.env.Env.deploy` now return a ``DeployStackResponse`` object
-
-**Miscellaneous**
-
-- depends on ``aws-cloudformation>=1.3.2``
-
-
-1.1.1 (2023-03-10)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-**Features and Improvements**
-
-- support full list of boto3 ``create_stack`` and ``update_stack`` arguments
-
-**Miscellaneous**
-
-- depends on ``aws-cloudformation>=1.3.1``
-
-
 1.0.1 (2022-12-08)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Features and Improvements**
