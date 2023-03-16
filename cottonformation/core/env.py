@@ -311,7 +311,7 @@ class Env:
             verbose=verbose,
         )
 
-        deploy_stack(
+        return deploy_stack(
             bsm=self.bsm,
             stack_name=stack_name,
             template=template.to_json(),
