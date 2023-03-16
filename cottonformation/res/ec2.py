@@ -442,40 +442,6 @@ class PropInstanceNoDevice(Property):
     
 
 @attr.s
-class PropTransitGatewayMulticastDomainOptions(Property):
-    """
-    AWS Object Type = "AWS::EC2::TransitGatewayMulticastDomain.Options"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-transitgatewaymulticastdomain-options.html
-
-    Property Document:
-    
-    - ``p_AutoAcceptSharedAssociations``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-transitgatewaymulticastdomain-options.html#cfn-ec2-transitgatewaymulticastdomain-options-autoacceptsharedassociations
-    - ``p_Igmpv2Support``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-transitgatewaymulticastdomain-options.html#cfn-ec2-transitgatewaymulticastdomain-options-igmpv2support
-    - ``p_StaticSourcesSupport``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-transitgatewaymulticastdomain-options.html#cfn-ec2-transitgatewaymulticastdomain-options-staticsourcessupport
-    """
-    AWS_OBJECT_TYPE = "AWS::EC2::TransitGatewayMulticastDomain.Options"
-    
-    p_AutoAcceptSharedAssociations: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "AutoAcceptSharedAssociations"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-transitgatewaymulticastdomain-options.html#cfn-ec2-transitgatewaymulticastdomain-options-autoacceptsharedassociations"""
-    p_Igmpv2Support: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Igmpv2Support"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-transitgatewaymulticastdomain-options.html#cfn-ec2-transitgatewaymulticastdomain-options-igmpv2support"""
-    p_StaticSourcesSupport: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "StaticSourcesSupport"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-transitgatewaymulticastdomain-options.html#cfn-ec2-transitgatewaymulticastdomain-options-staticsourcessupport"""
-
-@attr.s
 class PropNetworkInsightsAnalysisAnalysisLoadBalancerListener(Property):
     """
     AWS Object Type = "AWS::EC2::NetworkInsightsAnalysis.AnalysisLoadBalancerListener"
@@ -693,40 +659,6 @@ class PropNetworkInsightsAnalysisAnalysisRouteTableRoute(Property):
         metadata={AttrMeta.PROPERTY_NAME: "instanceId"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysisroutetableroute.html#cfn-ec2-networkinsightsanalysis-analysisroutetableroute-instanceid"""
-
-@attr.s
-class PropTransitGatewayVpcAttachmentOptions(Property):
-    """
-    AWS Object Type = "AWS::EC2::TransitGatewayVpcAttachment.Options"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-transitgatewayvpcattachment-options.html
-
-    Property Document:
-    
-    - ``p_ApplianceModeSupport``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-transitgatewayvpcattachment-options.html#cfn-ec2-transitgatewayvpcattachment-options-appliancemodesupport
-    - ``p_DnsSupport``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-transitgatewayvpcattachment-options.html#cfn-ec2-transitgatewayvpcattachment-options-dnssupport
-    - ``p_Ipv6Support``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-transitgatewayvpcattachment-options.html#cfn-ec2-transitgatewayvpcattachment-options-ipv6support
-    """
-    AWS_OBJECT_TYPE = "AWS::EC2::TransitGatewayVpcAttachment.Options"
-    
-    p_ApplianceModeSupport: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "ApplianceModeSupport"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-transitgatewayvpcattachment-options.html#cfn-ec2-transitgatewayvpcattachment-options-appliancemodesupport"""
-    p_DnsSupport: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "DnsSupport"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-transitgatewayvpcattachment-options.html#cfn-ec2-transitgatewayvpcattachment-options-dnssupport"""
-    p_Ipv6Support: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Ipv6Support"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-transitgatewayvpcattachment-options.html#cfn-ec2-transitgatewayvpcattachment-options-ipv6support"""
 
 @attr.s
 class PropCapacityReservationFleetInstanceTypeSpecification(Property):
@@ -1529,40 +1461,6 @@ class PropLaunchTemplatePlacement(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-launchtemplatedata-placement.html#cfn-ec2-launchtemplate-launchtemplatedata-placement-tenancy"""
 
 @attr.s
-class PropFlowLogDestinationOptions(Property):
-    """
-    AWS Object Type = "AWS::EC2::FlowLog.DestinationOptions"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-flowlog-destinationoptions.html
-
-    Property Document:
-    
-    - ``rp_FileFormat``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-flowlog-destinationoptions.html#cfn-ec2-flowlog-destinationoptions-fileformat
-    - ``rp_HiveCompatiblePartitions``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-flowlog-destinationoptions.html#cfn-ec2-flowlog-destinationoptions-hivecompatiblepartitions
-    - ``rp_PerHourPartition``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-flowlog-destinationoptions.html#cfn-ec2-flowlog-destinationoptions-perhourpartition
-    """
-    AWS_OBJECT_TYPE = "AWS::EC2::FlowLog.DestinationOptions"
-    
-    rp_FileFormat: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "FileFormat"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-flowlog-destinationoptions.html#cfn-ec2-flowlog-destinationoptions-fileformat"""
-    rp_HiveCompatiblePartitions: bool = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(bool),
-        metadata={AttrMeta.PROPERTY_NAME: "HiveCompatiblePartitions"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-flowlog-destinationoptions.html#cfn-ec2-flowlog-destinationoptions-hivecompatiblepartitions"""
-    rp_PerHourPartition: bool = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(bool),
-        metadata={AttrMeta.PROPERTY_NAME: "PerHourPartition"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-flowlog-destinationoptions.html#cfn-ec2-flowlog-destinationoptions-perhourpartition"""
-
-@attr.s
 class PropEC2FleetMemoryMiBRequest(Property):
     """
     AWS Object Type = "AWS::EC2::EC2Fleet.MemoryMiBRequest"
@@ -2296,26 +2194,6 @@ class PropSpotFleetTotalLocalStorageGBRequest(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-totallocalstoragegbrequest.html#cfn-ec2-spotfleet-totallocalstoragegbrequest-min"""
 
 @attr.s
-class PropIPAMResourceDiscoveryIpamOperatingRegion(Property):
-    """
-    AWS Object Type = "AWS::EC2::IPAMResourceDiscovery.IpamOperatingRegion"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ipamresourcediscovery-ipamoperatingregion.html
-
-    Property Document:
-    
-    - ``rp_RegionName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ipamresourcediscovery-ipamoperatingregion.html#cfn-ec2-ipamresourcediscovery-ipamoperatingregion-regionname
-    """
-    AWS_OBJECT_TYPE = "AWS::EC2::IPAMResourceDiscovery.IpamOperatingRegion"
-    
-    rp_RegionName: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "RegionName"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ipamresourcediscovery-ipamoperatingregion.html#cfn-ec2-ipamresourcediscovery-ipamoperatingregion-regionname"""
-
-@attr.s
 class PropInstanceElasticGpuSpecification(Property):
     """
     AWS Object Type = "AWS::EC2::Instance.ElasticGpuSpecification"
@@ -2382,40 +2260,6 @@ class PropSpotFleetIamInstanceProfileSpecification(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Arn"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-spotfleet-iaminstanceprofilespecification.html#cfn-ec2-spotfleet-iaminstanceprofilespecification-arn"""
-
-@attr.s
-class PropTransitGatewayAttachmentOptions(Property):
-    """
-    AWS Object Type = "AWS::EC2::TransitGatewayAttachment.Options"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-transitgatewayattachment-options.html
-
-    Property Document:
-    
-    - ``p_ApplianceModeSupport``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-transitgatewayattachment-options.html#cfn-ec2-transitgatewayattachment-options-appliancemodesupport
-    - ``p_DnsSupport``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-transitgatewayattachment-options.html#cfn-ec2-transitgatewayattachment-options-dnssupport
-    - ``p_Ipv6Support``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-transitgatewayattachment-options.html#cfn-ec2-transitgatewayattachment-options-ipv6support
-    """
-    AWS_OBJECT_TYPE = "AWS::EC2::TransitGatewayAttachment.Options"
-    
-    p_ApplianceModeSupport: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "ApplianceModeSupport"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-transitgatewayattachment-options.html#cfn-ec2-transitgatewayattachment-options-appliancemodesupport"""
-    p_DnsSupport: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "DnsSupport"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-transitgatewayattachment-options.html#cfn-ec2-transitgatewayattachment-options-dnssupport"""
-    p_Ipv6Support: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Ipv6Support"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-transitgatewayattachment-options.html#cfn-ec2-transitgatewayattachment-options-ipv6support"""
 
 @attr.s
 class PropEC2FleetCapacityReservationOptionsRequest(Property):
@@ -3077,33 +2921,6 @@ class PropLaunchTemplateLicenseSpecification(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-launchtemplate-licensespecification.html#cfn-ec2-launchtemplate-licensespecification-licenseconfigurationarn"""
 
 @attr.s
-class PropTransitGatewayPeeringAttachmentPeeringAttachmentStatus(Property):
-    """
-    AWS Object Type = "AWS::EC2::TransitGatewayPeeringAttachment.PeeringAttachmentStatus"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-transitgatewaypeeringattachment-peeringattachmentstatus.html
-
-    Property Document:
-    
-    - ``p_Code``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-transitgatewaypeeringattachment-peeringattachmentstatus.html#cfn-ec2-transitgatewaypeeringattachment-peeringattachmentstatus-code
-    - ``p_Message``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-transitgatewaypeeringattachment-peeringattachmentstatus.html#cfn-ec2-transitgatewaypeeringattachment-peeringattachmentstatus-message
-    """
-    AWS_OBJECT_TYPE = "AWS::EC2::TransitGatewayPeeringAttachment.PeeringAttachmentStatus"
-    
-    p_Code: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Code"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-transitgatewaypeeringattachment-peeringattachmentstatus.html#cfn-ec2-transitgatewaypeeringattachment-peeringattachmentstatus-code"""
-    p_Message: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Message"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-transitgatewaypeeringattachment-peeringattachmentstatus.html#cfn-ec2-transitgatewaypeeringattachment-peeringattachmentstatus-message"""
-
-@attr.s
 class PropLaunchTemplateHibernationOptions(Property):
     """
     AWS Object Type = "AWS::EC2::LaunchTemplate.HibernationOptions"
@@ -3492,40 +3309,6 @@ class PropNetworkInsightsAnalysisAnalysisSecurityGroupRule(Property):
         metadata={AttrMeta.PROPERTY_NAME: "SecurityGroupId"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-analysissecuritygrouprule.html#cfn-ec2-networkinsightsanalysis-analysissecuritygrouprule-securitygroupid"""
-
-@attr.s
-class PropSubnetPrivateDnsNameOptionsOnLaunch(Property):
-    """
-    AWS Object Type = "AWS::EC2::Subnet.PrivateDnsNameOptionsOnLaunch"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-subnet-privatednsnameoptionsonlaunch.html
-
-    Property Document:
-    
-    - ``p_EnableResourceNameDnsAAAARecord``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-subnet-privatednsnameoptionsonlaunch.html#cfn-ec2-subnet-privatednsnameoptionsonlaunch-enableresourcenamednsaaaarecord
-    - ``p_EnableResourceNameDnsARecord``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-subnet-privatednsnameoptionsonlaunch.html#cfn-ec2-subnet-privatednsnameoptionsonlaunch-enableresourcenamednsarecord
-    - ``p_HostnameType``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-subnet-privatednsnameoptionsonlaunch.html#cfn-ec2-subnet-privatednsnameoptionsonlaunch-hostnametype
-    """
-    AWS_OBJECT_TYPE = "AWS::EC2::Subnet.PrivateDnsNameOptionsOnLaunch"
-    
-    p_EnableResourceNameDnsAAAARecord: bool = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(bool)),
-        metadata={AttrMeta.PROPERTY_NAME: "EnableResourceNameDnsAAAARecord"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-subnet-privatednsnameoptionsonlaunch.html#cfn-ec2-subnet-privatednsnameoptionsonlaunch-enableresourcenamednsaaaarecord"""
-    p_EnableResourceNameDnsARecord: bool = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(bool)),
-        metadata={AttrMeta.PROPERTY_NAME: "EnableResourceNameDnsARecord"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-subnet-privatednsnameoptionsonlaunch.html#cfn-ec2-subnet-privatednsnameoptionsonlaunch-enableresourcenamednsarecord"""
-    p_HostnameType: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "HostnameType"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-subnet-privatednsnameoptionsonlaunch.html#cfn-ec2-subnet-privatednsnameoptionsonlaunch-hostnametype"""
 
 @attr.s
 class PropLaunchTemplateIpv4PrefixSpecification(Property):
@@ -4386,8 +4169,6 @@ class PropNetworkInsightsAnalysisAdditionalDetail(Property):
     
     - ``p_AdditionalDetailType``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-additionaldetail.html#cfn-ec2-networkinsightsanalysis-additionaldetail-additionaldetailtype
     - ``p_Component``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-additionaldetail.html#cfn-ec2-networkinsightsanalysis-additionaldetail-component
-    - ``p_LoadBalancers``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-additionaldetail.html#cfn-ec2-networkinsightsanalysis-additionaldetail-loadbalancers
-    - ``p_ServiceName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-additionaldetail.html#cfn-ec2-networkinsightsanalysis-additionaldetail-servicename
     """
     AWS_OBJECT_TYPE = "AWS::EC2::NetworkInsightsAnalysis.AdditionalDetail"
     
@@ -4403,19 +4184,6 @@ class PropNetworkInsightsAnalysisAdditionalDetail(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Component"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-additionaldetail.html#cfn-ec2-networkinsightsanalysis-additionaldetail-component"""
-    p_LoadBalancers: typing.List[typing.Union['PropNetworkInsightsAnalysisAnalysisComponent', dict]] = attr.ib(
-        default=None,
-        converter=PropNetworkInsightsAnalysisAnalysisComponent.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropNetworkInsightsAnalysisAnalysisComponent), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "LoadBalancers"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-additionaldetail.html#cfn-ec2-networkinsightsanalysis-additionaldetail-loadbalancers"""
-    p_ServiceName: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "ServiceName"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-additionaldetail.html#cfn-ec2-networkinsightsanalysis-additionaldetail-servicename"""
 
 @attr.s
 class PropNetworkInsightsAnalysisAnalysisPacketHeader(Property):
@@ -6189,7 +5957,6 @@ class PropNetworkInsightsAnalysisPathComponent(Property):
     - ``p_RouteTableRoute``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-routetableroute
     - ``p_SecurityGroupRule``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-securitygrouprule
     - ``p_SequenceNumber``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-sequencenumber
-    - ``p_ServiceName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-servicename
     - ``p_SourceVpc``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-sourcevpc
     - ``p_Subnet``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-subnet
     - ``p_TransitGateway``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-transitgateway
@@ -6266,12 +6033,6 @@ class PropNetworkInsightsAnalysisPathComponent(Property):
         metadata={AttrMeta.PROPERTY_NAME: "SequenceNumber"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-sequencenumber"""
-    p_ServiceName: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "ServiceName"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-networkinsightsanalysis-pathcomponent.html#cfn-ec2-networkinsightsanalysis-pathcomponent-servicename"""
     p_SourceVpc: typing.Optional[dict] = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(dict)),
@@ -6898,11 +6659,6 @@ class CapacityReservation(Resource):
         return GetAtt(resource=self, attr_name="Tenancy")
     
     @property
-    def rv_AvailableInstanceCount(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-capacityreservation.html#aws-resource-ec2-capacityreservation-return-values"""
-        return GetAtt(resource=self, attr_name="AvailableInstanceCount")
-    
-    @property
     def rv_AvailabilityZone(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-capacityreservation.html#aws-resource-ec2-capacityreservation-return-values"""
         return GetAtt(resource=self, attr_name="AvailabilityZone")
@@ -6911,6 +6667,11 @@ class CapacityReservation(Resource):
     def rv_TotalInstanceCount(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-capacityreservation.html#aws-resource-ec2-capacityreservation-return-values"""
         return GetAtt(resource=self, attr_name="TotalInstanceCount")
+    
+    @property
+    def rv_AvailableInstanceCount(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-capacityreservation.html#aws-resource-ec2-capacityreservation-return-values"""
+        return GetAtt(resource=self, attr_name="AvailableInstanceCount")
     
     @property
     def rv_Id(self) -> GetAtt:
@@ -7021,42 +6782,13 @@ class IPAM(Resource):
 
     Property Document:
     
-    - ``p_DefaultResourceDiscoveryAssociationId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipam.html#cfn-ec2-ipam-defaultresourcediscoveryassociationid
-    - ``p_DefaultResourceDiscoveryId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipam.html#cfn-ec2-ipam-defaultresourcediscoveryid
     - ``p_Description``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipam.html#cfn-ec2-ipam-description
     - ``p_OperatingRegions``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipam.html#cfn-ec2-ipam-operatingregions
-    - ``p_ResourceDiscoveryAssociationCount``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipam.html#cfn-ec2-ipam-resourcediscoveryassociationcount
     - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipam.html#cfn-ec2-ipam-tags
     """
     AWS_OBJECT_TYPE = "AWS::EC2::IPAM"
 
     
-    p_DefaultResourceDiscoveryAssociationId: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "DefaultResourceDiscoveryAssociationId",
-            AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
-                "Required": False,
-                "PrimitiveType": 'String',
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipam.html#cfn-ec2-ipam-defaultresourcediscoveryassociationid"""
-    p_DefaultResourceDiscoveryId: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "DefaultResourceDiscoveryId",
-            AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
-                "Required": False,
-                "PrimitiveType": 'String',
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipam.html#cfn-ec2-ipam-defaultresourcediscoveryid"""
     p_Description: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
@@ -7086,19 +6818,6 @@ class IPAM(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipam.html#cfn-ec2-ipam-operatingregions"""
-    p_ResourceDiscoveryAssociationCount: int = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "ResourceDiscoveryAssociationCount",
-            AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
-                "Required": False,
-                "PrimitiveType": 'Integer',
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipam.html#cfn-ec2-ipam-resourcediscoveryassociationcount"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
@@ -7123,14 +6842,14 @@ class IPAM(Resource):
         return GetAtt(resource=self, attr_name="IpamId")
     
     @property
-    def rv_ScopeCount(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipam.html#aws-resource-ec2-ipam-return-values"""
-        return GetAtt(resource=self, attr_name="ScopeCount")
-    
-    @property
     def rv_Arn(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipam.html#aws-resource-ec2-ipam-return-values"""
         return GetAtt(resource=self, attr_name="Arn")
+    
+    @property
+    def rv_PublicDefaultScopeId(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipam.html#aws-resource-ec2-ipam-return-values"""
+        return GetAtt(resource=self, attr_name="PublicDefaultScopeId")
     
     @property
     def rv_PrivateDefaultScopeId(self) -> GetAtt:
@@ -7138,103 +6857,9 @@ class IPAM(Resource):
         return GetAtt(resource=self, attr_name="PrivateDefaultScopeId")
     
     @property
-    def rv_PublicDefaultScopeId(self) -> GetAtt:
+    def rv_ScopeCount(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipam.html#aws-resource-ec2-ipam-return-values"""
-        return GetAtt(resource=self, attr_name="PublicDefaultScopeId")
-    
-
-@attr.s
-class IPAMResourceDiscovery(Resource):
-    """
-    AWS Object Type = "AWS::EC2::IPAMResourceDiscovery"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipamresourcediscovery.html
-
-    Property Document:
-    
-    - ``p_Description``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipamresourcediscovery.html#cfn-ec2-ipamresourcediscovery-description
-    - ``p_OperatingRegions``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipamresourcediscovery.html#cfn-ec2-ipamresourcediscovery-operatingregions
-    - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipamresourcediscovery.html#cfn-ec2-ipamresourcediscovery-tags
-    """
-    AWS_OBJECT_TYPE = "AWS::EC2::IPAMResourceDiscovery"
-
-    
-    p_Description: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "Description",
-            AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
-                "Required": False,
-                "PrimitiveType": 'String',
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipamresourcediscovery.html#cfn-ec2-ipamresourcediscovery-description"""
-    p_OperatingRegions: typing.List[typing.Union['PropIPAMResourceDiscoveryIpamOperatingRegion', dict]] = attr.ib(
-        default=None,
-        converter=PropIPAMResourceDiscoveryIpamOperatingRegion.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropIPAMResourceDiscoveryIpamOperatingRegion), iterable_validator=attr.validators.instance_of(list))),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "OperatingRegions",
-            AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
-                "Required": False,
-                "Type": 'List',
-                "ItemType": 'IpamOperatingRegion',
-                "DuplicatesAllowed": False,
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipamresourcediscovery.html#cfn-ec2-ipamresourcediscovery-operatingregions"""
-    p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
-        default=None,
-        converter=Tag.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "Tags",
-            AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
-                "Required": False,
-                "Type": 'List',
-                "ItemType": 'Tag',
-                "DuplicatesAllowed": False,
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipamresourcediscovery.html#cfn-ec2-ipamresourcediscovery-tags"""
-
-    
-    @property
-    def rv_IsDefault(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipamresourcediscovery.html#aws-resource-ec2-ipamresourcediscovery-return-values"""
-        return GetAtt(resource=self, attr_name="IsDefault")
-    
-    @property
-    def rv_OwnerId(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipamresourcediscovery.html#aws-resource-ec2-ipamresourcediscovery-return-values"""
-        return GetAtt(resource=self, attr_name="OwnerId")
-    
-    @property
-    def rv_State(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipamresourcediscovery.html#aws-resource-ec2-ipamresourcediscovery-return-values"""
-        return GetAtt(resource=self, attr_name="State")
-    
-    @property
-    def rv_IpamResourceDiscoveryRegion(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipamresourcediscovery.html#aws-resource-ec2-ipamresourcediscovery-return-values"""
-        return GetAtt(resource=self, attr_name="IpamResourceDiscoveryRegion")
-    
-    @property
-    def rv_IpamResourceDiscoveryArn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipamresourcediscovery.html#aws-resource-ec2-ipamresourcediscovery-return-values"""
-        return GetAtt(resource=self, attr_name="IpamResourceDiscoveryArn")
-    
-    @property
-    def rv_IpamResourceDiscoveryId(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipamresourcediscovery.html#aws-resource-ec2-ipamresourcediscovery-return-values"""
-        return GetAtt(resource=self, attr_name="IpamResourceDiscoveryId")
+        return GetAtt(resource=self, attr_name="ScopeCount")
     
 
 @attr.s
@@ -7551,16 +7176,15 @@ class TransitGatewayAttachment(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayattachment.html#cfn-ec2-transitgatewayattachment-vpcid"""
-    p_Options: typing.Union['PropTransitGatewayAttachmentOptions', dict] = attr.ib(
+    p_Options: dict = attr.ib(
         default=None,
-        converter=PropTransitGatewayAttachmentOptions.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropTransitGatewayAttachmentOptions)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={
             AttrMeta.PROPERTY_NAME: "Options",
             AttrMeta.DATA: {
                 "UpdateType": 'Mutable',
                 "Required": False,
-                "Type": 'Options',
+                "PrimitiveType": 'Json',
             }
         },
     )
@@ -7652,14 +7276,14 @@ class TransitGatewayMulticastDomainAssociation(Resource):
         return GetAtt(resource=self, attr_name="ResourceId")
     
     @property
-    def rv_State(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewaymulticastdomainassociation.html#aws-resource-ec2-transitgatewaymulticastdomainassociation-return-values"""
-        return GetAtt(resource=self, attr_name="State")
-    
-    @property
     def rv_ResourceType(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewaymulticastdomainassociation.html#aws-resource-ec2-transitgatewaymulticastdomainassociation-return-values"""
         return GetAtt(resource=self, attr_name="ResourceType")
+    
+    @property
+    def rv_State(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewaymulticastdomainassociation.html#aws-resource-ec2-transitgatewaymulticastdomainassociation-return-values"""
+        return GetAtt(resource=self, attr_name="State")
     
 
 @attr.s
@@ -7895,7 +7519,6 @@ class CustomerGateway(Resource):
     - ``rp_BgpAsn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-customergateway.html#cfn-ec2-customergateway-bgpasn
     - ``rp_IpAddress``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-customergateway.html#cfn-ec2-customergateway-ipaddress
     - ``rp_Type``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-customergateway.html#cfn-ec2-customergateway-type
-    - ``p_DeviceName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-customergateway.html#cfn-ec2-customergateway-devicename
     - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-customergateway.html#cfn-ec2-customergateway-tags
     """
     AWS_OBJECT_TYPE = "AWS::EC2::CustomerGateway"
@@ -7940,19 +7563,6 @@ class CustomerGateway(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-customergateway.html#cfn-ec2-customergateway-type"""
-    p_DeviceName: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "DeviceName",
-            AttrMeta.DATA: {
-                "UpdateType": 'Immutable',
-                "Required": False,
-                "PrimitiveType": 'String',
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-customergateway.html#cfn-ec2-customergateway-devicename"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
@@ -8115,9 +7725,9 @@ class IPAMScope(Resource):
         return GetAtt(resource=self, attr_name="IpamScopeId")
     
     @property
-    def rv_IsDefault(self) -> GetAtt:
+    def rv_Arn(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipamscope.html#aws-resource-ec2-ipamscope-return-values"""
-        return GetAtt(resource=self, attr_name="IsDefault")
+        return GetAtt(resource=self, attr_name="Arn")
     
     @property
     def rv_IpamArn(self) -> GetAtt:
@@ -8130,14 +7740,14 @@ class IPAMScope(Resource):
         return GetAtt(resource=self, attr_name="IpamScopeType")
     
     @property
+    def rv_IsDefault(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipamscope.html#aws-resource-ec2-ipamscope-return-values"""
+        return GetAtt(resource=self, attr_name="IsDefault")
+    
+    @property
     def rv_PoolCount(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipamscope.html#aws-resource-ec2-ipamscope-return-values"""
         return GetAtt(resource=self, attr_name="PoolCount")
-    
-    @property
-    def rv_Arn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipamscope.html#aws-resource-ec2-ipamscope-return-values"""
-        return GetAtt(resource=self, attr_name="Arn")
     
 
 @attr.s
@@ -8149,27 +7759,12 @@ class PlacementGroup(Resource):
 
     Property Document:
     
-    - ``p_PartitionCount``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-placementgroup.html#cfn-ec2-placementgroup-partitioncount
     - ``p_SpreadLevel``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-placementgroup.html#cfn-ec2-placementgroup-spreadlevel
     - ``p_Strategy``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-placementgroup.html#cfn-ec2-placementgroup-strategy
-    - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-placementgroup.html#cfn-ec2-placementgroup-tags
     """
     AWS_OBJECT_TYPE = "AWS::EC2::PlacementGroup"
 
     
-    p_PartitionCount: int = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "PartitionCount",
-            AttrMeta.DATA: {
-                "UpdateType": 'Immutable',
-                "Required": False,
-                "PrimitiveType": 'Integer',
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-placementgroup.html#cfn-ec2-placementgroup-partitioncount"""
     p_SpreadLevel: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
@@ -8196,22 +7791,6 @@ class PlacementGroup(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-placementgroup.html#cfn-ec2-placementgroup-strategy"""
-    p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
-        default=None,
-        converter=Tag.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "Tags",
-            AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
-                "Required": False,
-                "Type": 'List',
-                "ItemType": 'Tag',
-                "DuplicatesAllowed": False,
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-placementgroup.html#cfn-ec2-placementgroup-tags"""
 
     
     @property
@@ -8348,12 +7927,12 @@ class VPNConnectionRoute(Resource):
     """
     AWS Object Type = "AWS::EC2::VPNConnectionRoute"
 
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpnconnectionroute.html
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-connection-route.html
 
     Property Document:
     
-    - ``rp_DestinationCidrBlock``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpnconnectionroute.html#cfn-ec2-vpnconnectionroute-destinationcidrblock
-    - ``rp_VpnConnectionId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpnconnectionroute.html#cfn-ec2-vpnconnectionroute-vpnconnectionid
+    - ``rp_DestinationCidrBlock``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-connection-route.html#cfn-ec2-vpnconnectionroute-cidrblock
+    - ``rp_VpnConnectionId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-connection-route.html#cfn-ec2-vpnconnectionroute-connectionid
     """
     AWS_OBJECT_TYPE = "AWS::EC2::VPNConnectionRoute"
 
@@ -8364,26 +7943,26 @@ class VPNConnectionRoute(Resource):
         metadata={
             AttrMeta.PROPERTY_NAME: "DestinationCidrBlock",
             AttrMeta.DATA: {
-                "UpdateType": 'Immutable',
-                "Required": True,
                 "PrimitiveType": 'String',
+                "Required": True,
+                "UpdateType": 'Immutable',
             }
         },
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpnconnectionroute.html#cfn-ec2-vpnconnectionroute-destinationcidrblock"""
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-connection-route.html#cfn-ec2-vpnconnectionroute-cidrblock"""
     rp_VpnConnectionId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
         metadata={
             AttrMeta.PROPERTY_NAME: "VpnConnectionId",
             AttrMeta.DATA: {
-                "UpdateType": 'Immutable',
-                "Required": True,
                 "PrimitiveType": 'String',
+                "Required": True,
+                "UpdateType": 'Immutable',
             }
         },
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpnconnectionroute.html#cfn-ec2-vpnconnectionroute-vpnconnectionid"""
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpn-connection-route.html#cfn-ec2-vpnconnectionroute-connectionid"""
 
     
 
@@ -8446,74 +8025,6 @@ class NetworkInterfacePermission(Resource):
     
 
 @attr.s
-class IPAMPoolCidr(Resource):
-    """
-    AWS Object Type = "AWS::EC2::IPAMPoolCidr"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipampoolcidr.html
-
-    Property Document:
-    
-    - ``rp_IpamPoolId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipampoolcidr.html#cfn-ec2-ipampoolcidr-ipampoolid
-    - ``p_Cidr``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipampoolcidr.html#cfn-ec2-ipampoolcidr-cidr
-    - ``p_NetmaskLength``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipampoolcidr.html#cfn-ec2-ipampoolcidr-netmasklength
-    """
-    AWS_OBJECT_TYPE = "AWS::EC2::IPAMPoolCidr"
-
-    
-    rp_IpamPoolId: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "IpamPoolId",
-            AttrMeta.DATA: {
-                "UpdateType": 'Immutable',
-                "Required": True,
-                "PrimitiveType": 'String',
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipampoolcidr.html#cfn-ec2-ipampoolcidr-ipampoolid"""
-    p_Cidr: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "Cidr",
-            AttrMeta.DATA: {
-                "UpdateType": 'Immutable',
-                "Required": False,
-                "PrimitiveType": 'String',
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipampoolcidr.html#cfn-ec2-ipampoolcidr-cidr"""
-    p_NetmaskLength: int = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "NetmaskLength",
-            AttrMeta.DATA: {
-                "UpdateType": 'Immutable',
-                "Required": False,
-                "PrimitiveType": 'Integer',
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipampoolcidr.html#cfn-ec2-ipampoolcidr-netmasklength"""
-
-    
-    @property
-    def rv_IpamPoolCidrId(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipampoolcidr.html#aws-resource-ec2-ipampoolcidr-return-values"""
-        return GetAtt(resource=self, attr_name="IpamPoolCidrId")
-    
-    @property
-    def rv_State(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipampoolcidr.html#aws-resource-ec2-ipampoolcidr-return-values"""
-        return GetAtt(resource=self, attr_name="State")
-    
-
-@attr.s
 class TransitGatewayMulticastGroupMember(Resource):
     """
     AWS Object Type = "AWS::EC2::TransitGatewayMulticastGroupMember"
@@ -8571,14 +8082,34 @@ class TransitGatewayMulticastGroupMember(Resource):
 
     
     @property
-    def rv_GroupMember(self) -> GetAtt:
+    def rv_TransitGatewayAttachmentId(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewaymulticastgroupmember.html#aws-resource-ec2-transitgatewaymulticastgroupmember-return-values"""
-        return GetAtt(resource=self, attr_name="GroupMember")
+        return GetAtt(resource=self, attr_name="TransitGatewayAttachmentId")
+    
+    @property
+    def rv_SubnetId(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewaymulticastgroupmember.html#aws-resource-ec2-transitgatewaymulticastgroupmember-return-values"""
+        return GetAtt(resource=self, attr_name="SubnetId")
     
     @property
     def rv_ResourceId(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewaymulticastgroupmember.html#aws-resource-ec2-transitgatewaymulticastgroupmember-return-values"""
         return GetAtt(resource=self, attr_name="ResourceId")
+    
+    @property
+    def rv_ResourceType(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewaymulticastgroupmember.html#aws-resource-ec2-transitgatewaymulticastgroupmember-return-values"""
+        return GetAtt(resource=self, attr_name="ResourceType")
+    
+    @property
+    def rv_GroupMember(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewaymulticastgroupmember.html#aws-resource-ec2-transitgatewaymulticastgroupmember-return-values"""
+        return GetAtt(resource=self, attr_name="GroupMember")
+    
+    @property
+    def rv_GroupSource(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewaymulticastgroupmember.html#aws-resource-ec2-transitgatewaymulticastgroupmember-return-values"""
+        return GetAtt(resource=self, attr_name="GroupSource")
     
     @property
     def rv_MemberType(self) -> GetAtt:
@@ -8589,26 +8120,6 @@ class TransitGatewayMulticastGroupMember(Resource):
     def rv_SourceType(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewaymulticastgroupmember.html#aws-resource-ec2-transitgatewaymulticastgroupmember-return-values"""
         return GetAtt(resource=self, attr_name="SourceType")
-    
-    @property
-    def rv_ResourceType(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewaymulticastgroupmember.html#aws-resource-ec2-transitgatewaymulticastgroupmember-return-values"""
-        return GetAtt(resource=self, attr_name="ResourceType")
-    
-    @property
-    def rv_SubnetId(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewaymulticastgroupmember.html#aws-resource-ec2-transitgatewaymulticastgroupmember-return-values"""
-        return GetAtt(resource=self, attr_name="SubnetId")
-    
-    @property
-    def rv_GroupSource(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewaymulticastgroupmember.html#aws-resource-ec2-transitgatewaymulticastgroupmember-return-values"""
-        return GetAtt(resource=self, attr_name="GroupSource")
-    
-    @property
-    def rv_TransitGatewayAttachmentId(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewaymulticastgroupmember.html#aws-resource-ec2-transitgatewaymulticastgroupmember-return-values"""
-        return GetAtt(resource=self, attr_name="TransitGatewayAttachmentId")
     
 
 @attr.s
@@ -8926,14 +8437,14 @@ class LocalGatewayRouteTableVPCAssociation(Resource):
         return GetAtt(resource=self, attr_name="LocalGatewayId")
     
     @property
-    def rv_State(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-localgatewayroutetablevpcassociation.html#aws-resource-ec2-localgatewayroutetablevpcassociation-return-values"""
-        return GetAtt(resource=self, attr_name="State")
-    
-    @property
     def rv_LocalGatewayRouteTableVpcAssociationId(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-localgatewayroutetablevpcassociation.html#aws-resource-ec2-localgatewayroutetablevpcassociation-return-values"""
         return GetAtt(resource=self, attr_name="LocalGatewayRouteTableVpcAssociationId")
+    
+    @property
+    def rv_State(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-localgatewayroutetablevpcassociation.html#aws-resource-ec2-localgatewayroutetablevpcassociation-return-values"""
+        return GetAtt(resource=self, attr_name="State")
     
 
 @attr.s
@@ -9063,7 +8574,7 @@ class NetworkInterface(Resource):
         metadata={
             AttrMeta.PROPERTY_NAME: "PrivateIpAddresses",
             AttrMeta.DATA: {
-                "UpdateType": 'Conditional',
+                "UpdateType": 'Mutable',
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'PrivateIpAddressSpecification',
@@ -9117,14 +8628,14 @@ class NetworkInterface(Resource):
 
     
     @property
-    def rv_SecondaryPrivateIpAddresses(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinterface.html#aws-resource-ec2-networkinterface-return-values"""
-        return GetAtt(resource=self, attr_name="SecondaryPrivateIpAddresses")
-    
-    @property
     def rv_PrimaryPrivateIpAddress(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinterface.html#aws-resource-ec2-networkinterface-return-values"""
         return GetAtt(resource=self, attr_name="PrimaryPrivateIpAddress")
+    
+    @property
+    def rv_SecondaryPrivateIpAddresses(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinterface.html#aws-resource-ec2-networkinterface-return-values"""
+        return GetAtt(resource=self, attr_name="SecondaryPrivateIpAddresses")
     
     @property
     def rv_Id(self) -> GetAtt:
@@ -9190,14 +8701,34 @@ class TransitGatewayMulticastGroupSource(Resource):
 
     
     @property
-    def rv_GroupMember(self) -> GetAtt:
+    def rv_TransitGatewayAttachmentId(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewaymulticastgroupsource.html#aws-resource-ec2-transitgatewaymulticastgroupsource-return-values"""
-        return GetAtt(resource=self, attr_name="GroupMember")
+        return GetAtt(resource=self, attr_name="TransitGatewayAttachmentId")
+    
+    @property
+    def rv_SubnetId(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewaymulticastgroupsource.html#aws-resource-ec2-transitgatewaymulticastgroupsource-return-values"""
+        return GetAtt(resource=self, attr_name="SubnetId")
     
     @property
     def rv_ResourceId(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewaymulticastgroupsource.html#aws-resource-ec2-transitgatewaymulticastgroupsource-return-values"""
         return GetAtt(resource=self, attr_name="ResourceId")
+    
+    @property
+    def rv_ResourceType(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewaymulticastgroupsource.html#aws-resource-ec2-transitgatewaymulticastgroupsource-return-values"""
+        return GetAtt(resource=self, attr_name="ResourceType")
+    
+    @property
+    def rv_GroupMember(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewaymulticastgroupsource.html#aws-resource-ec2-transitgatewaymulticastgroupsource-return-values"""
+        return GetAtt(resource=self, attr_name="GroupMember")
+    
+    @property
+    def rv_GroupSource(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewaymulticastgroupsource.html#aws-resource-ec2-transitgatewaymulticastgroupsource-return-values"""
+        return GetAtt(resource=self, attr_name="GroupSource")
     
     @property
     def rv_MemberType(self) -> GetAtt:
@@ -9208,26 +8739,6 @@ class TransitGatewayMulticastGroupSource(Resource):
     def rv_SourceType(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewaymulticastgroupsource.html#aws-resource-ec2-transitgatewaymulticastgroupsource-return-values"""
         return GetAtt(resource=self, attr_name="SourceType")
-    
-    @property
-    def rv_ResourceType(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewaymulticastgroupsource.html#aws-resource-ec2-transitgatewaymulticastgroupsource-return-values"""
-        return GetAtt(resource=self, attr_name="ResourceType")
-    
-    @property
-    def rv_SubnetId(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewaymulticastgroupsource.html#aws-resource-ec2-transitgatewaymulticastgroupsource-return-values"""
-        return GetAtt(resource=self, attr_name="SubnetId")
-    
-    @property
-    def rv_GroupSource(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewaymulticastgroupsource.html#aws-resource-ec2-transitgatewaymulticastgroupsource-return-values"""
-        return GetAtt(resource=self, attr_name="GroupSource")
-    
-    @property
-    def rv_TransitGatewayAttachmentId(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewaymulticastgroupsource.html#aws-resource-ec2-transitgatewaymulticastgroupsource-return-values"""
-        return GetAtt(resource=self, attr_name="TransitGatewayAttachmentId")
     
 
 @attr.s
@@ -9328,11 +8839,7 @@ class NatGateway(Resource):
     - ``rp_SubnetId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-natgateway.html#cfn-ec2-natgateway-subnetid
     - ``p_AllocationId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-natgateway.html#cfn-ec2-natgateway-allocationid
     - ``p_ConnectivityType``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-natgateway.html#cfn-ec2-natgateway-connectivitytype
-    - ``p_MaxDrainDurationSeconds``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-natgateway.html#cfn-ec2-natgateway-maxdraindurationseconds
     - ``p_PrivateIpAddress``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-natgateway.html#cfn-ec2-natgateway-privateipaddress
-    - ``p_SecondaryAllocationIds``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-natgateway.html#cfn-ec2-natgateway-secondaryallocationids
-    - ``p_SecondaryPrivateIpAddressCount``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-natgateway.html#cfn-ec2-natgateway-secondaryprivateipaddresscount
-    - ``p_SecondaryPrivateIpAddresses``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-natgateway.html#cfn-ec2-natgateway-secondaryprivateipaddresses
     - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-natgateway.html#cfn-ec2-natgateway-tags
     """
     AWS_OBJECT_TYPE = "AWS::EC2::NatGateway"
@@ -9377,19 +8884,6 @@ class NatGateway(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-natgateway.html#cfn-ec2-natgateway-connectivitytype"""
-    p_MaxDrainDurationSeconds: int = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "MaxDrainDurationSeconds",
-            AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
-                "Required": False,
-                "PrimitiveType": 'Integer',
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-natgateway.html#cfn-ec2-natgateway-maxdraindurationseconds"""
     p_PrivateIpAddress: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
@@ -9403,49 +8897,6 @@ class NatGateway(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-natgateway.html#cfn-ec2-natgateway-privateipaddress"""
-    p_SecondaryAllocationIds: typing.List[TypeHint.intrinsic_str] = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "SecondaryAllocationIds",
-            AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
-                "Required": False,
-                "Type": 'List',
-                "PrimitiveItemType": 'String',
-                "DuplicatesAllowed": False,
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-natgateway.html#cfn-ec2-natgateway-secondaryallocationids"""
-    p_SecondaryPrivateIpAddressCount: int = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "SecondaryPrivateIpAddressCount",
-            AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
-                "Required": False,
-                "PrimitiveType": 'Integer',
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-natgateway.html#cfn-ec2-natgateway-secondaryprivateipaddresscount"""
-    p_SecondaryPrivateIpAddresses: typing.List[TypeHint.intrinsic_str] = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "SecondaryPrivateIpAddresses",
-            AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
-                "Required": False,
-                "Type": 'List',
-                "PrimitiveItemType": 'String',
-                "DuplicatesAllowed": False,
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-natgateway.html#cfn-ec2-natgateway-secondaryprivateipaddresses"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
@@ -9696,7 +9147,6 @@ class PrefixList(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Entry',
-                "DuplicatesAllowed": True,
             }
         },
     )
@@ -9712,7 +9162,6 @@ class PrefixList(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Tag',
-                "DuplicatesAllowed": True,
             }
         },
     )
@@ -9720,14 +9169,14 @@ class PrefixList(Resource):
 
     
     @property
-    def rv_OwnerId(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-prefixlist.html#aws-resource-ec2-prefixlist-return-values"""
-        return GetAtt(resource=self, attr_name="OwnerId")
-    
-    @property
     def rv_PrefixListId(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-prefixlist.html#aws-resource-ec2-prefixlist-return-values"""
         return GetAtt(resource=self, attr_name="PrefixListId")
+    
+    @property
+    def rv_OwnerId(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-prefixlist.html#aws-resource-ec2-prefixlist-return-values"""
+        return GetAtt(resource=self, attr_name="OwnerId")
     
     @property
     def rv_Version(self) -> GetAtt:
@@ -9769,16 +9218,15 @@ class TransitGatewayMulticastDomain(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewaymulticastdomain.html#cfn-ec2-transitgatewaymulticastdomain-transitgatewayid"""
-    p_Options: typing.Union['PropTransitGatewayMulticastDomainOptions', dict] = attr.ib(
+    p_Options: dict = attr.ib(
         default=None,
-        converter=PropTransitGatewayMulticastDomainOptions.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropTransitGatewayMulticastDomainOptions)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={
             AttrMeta.PROPERTY_NAME: "Options",
             AttrMeta.DATA: {
                 "UpdateType": 'Mutable',
                 "Required": False,
-                "Type": 'Options',
+                "PrimitiveType": 'Json',
             }
         },
     )
@@ -9794,12 +9242,16 @@ class TransitGatewayMulticastDomain(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Tag',
-                "DuplicatesAllowed": True,
             }
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewaymulticastdomain.html#cfn-ec2-transitgatewaymulticastdomain-tags"""
 
+    
+    @property
+    def rv_TransitGatewayMulticastDomainId(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewaymulticastdomain.html#aws-resource-ec2-transitgatewaymulticastdomain-return-values"""
+        return GetAtt(resource=self, attr_name="TransitGatewayMulticastDomainId")
     
     @property
     def rv_TransitGatewayMulticastDomainArn(self) -> GetAtt:
@@ -9815,11 +9267,6 @@ class TransitGatewayMulticastDomain(Resource):
     def rv_CreationTime(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewaymulticastdomain.html#aws-resource-ec2-transitgatewaymulticastdomain-return-values"""
         return GetAtt(resource=self, attr_name="CreationTime")
-    
-    @property
-    def rv_TransitGatewayMulticastDomainId(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewaymulticastdomain.html#aws-resource-ec2-transitgatewaymulticastdomain-return-values"""
-        return GetAtt(resource=self, attr_name="TransitGatewayMulticastDomainId")
     
 
 @attr.s
@@ -9877,7 +9324,6 @@ class NetworkInsightsAnalysis(Resource):
                 "Required": False,
                 "Type": 'List',
                 "PrimitiveItemType": 'String',
-                "DuplicatesAllowed": True,
             }
         },
     )
@@ -9893,7 +9339,6 @@ class NetworkInsightsAnalysis(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Tag',
-                "DuplicatesAllowed": False,
             }
         },
     )
@@ -9901,49 +9346,9 @@ class NetworkInsightsAnalysis(Resource):
 
     
     @property
-    def rv_Status(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightsanalysis.html#aws-resource-ec2-networkinsightsanalysis-return-values"""
-        return GetAtt(resource=self, attr_name="Status")
-    
-    @property
-    def rv_ReturnPathComponents(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightsanalysis.html#aws-resource-ec2-networkinsightsanalysis-return-values"""
-        return GetAtt(resource=self, attr_name="ReturnPathComponents")
-    
-    @property
-    def rv_StartDate(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightsanalysis.html#aws-resource-ec2-networkinsightsanalysis-return-values"""
-        return GetAtt(resource=self, attr_name="StartDate")
-    
-    @property
     def rv_NetworkInsightsAnalysisId(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightsanalysis.html#aws-resource-ec2-networkinsightsanalysis-return-values"""
         return GetAtt(resource=self, attr_name="NetworkInsightsAnalysisId")
-    
-    @property
-    def rv_AlternatePathHints(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightsanalysis.html#aws-resource-ec2-networkinsightsanalysis-return-values"""
-        return GetAtt(resource=self, attr_name="AlternatePathHints")
-    
-    @property
-    def rv_Explanations(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightsanalysis.html#aws-resource-ec2-networkinsightsanalysis-return-values"""
-        return GetAtt(resource=self, attr_name="Explanations")
-    
-    @property
-    def rv_NetworkPathFound(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightsanalysis.html#aws-resource-ec2-networkinsightsanalysis-return-values"""
-        return GetAtt(resource=self, attr_name="NetworkPathFound")
-    
-    @property
-    def rv_SuggestedAccounts(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightsanalysis.html#aws-resource-ec2-networkinsightsanalysis-return-values"""
-        return GetAtt(resource=self, attr_name="SuggestedAccounts")
-    
-    @property
-    def rv_ForwardPathComponents(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightsanalysis.html#aws-resource-ec2-networkinsightsanalysis-return-values"""
-        return GetAtt(resource=self, attr_name="ForwardPathComponents")
     
     @property
     def rv_NetworkInsightsAnalysisArn(self) -> GetAtt:
@@ -9951,9 +9356,49 @@ class NetworkInsightsAnalysis(Resource):
         return GetAtt(resource=self, attr_name="NetworkInsightsAnalysisArn")
     
     @property
+    def rv_StartDate(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightsanalysis.html#aws-resource-ec2-networkinsightsanalysis-return-values"""
+        return GetAtt(resource=self, attr_name="StartDate")
+    
+    @property
+    def rv_Status(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightsanalysis.html#aws-resource-ec2-networkinsightsanalysis-return-values"""
+        return GetAtt(resource=self, attr_name="Status")
+    
+    @property
     def rv_StatusMessage(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightsanalysis.html#aws-resource-ec2-networkinsightsanalysis-return-values"""
         return GetAtt(resource=self, attr_name="StatusMessage")
+    
+    @property
+    def rv_NetworkPathFound(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightsanalysis.html#aws-resource-ec2-networkinsightsanalysis-return-values"""
+        return GetAtt(resource=self, attr_name="NetworkPathFound")
+    
+    @property
+    def rv_ForwardPathComponents(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightsanalysis.html#aws-resource-ec2-networkinsightsanalysis-return-values"""
+        return GetAtt(resource=self, attr_name="ForwardPathComponents")
+    
+    @property
+    def rv_ReturnPathComponents(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightsanalysis.html#aws-resource-ec2-networkinsightsanalysis-return-values"""
+        return GetAtt(resource=self, attr_name="ReturnPathComponents")
+    
+    @property
+    def rv_Explanations(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightsanalysis.html#aws-resource-ec2-networkinsightsanalysis-return-values"""
+        return GetAtt(resource=self, attr_name="Explanations")
+    
+    @property
+    def rv_SuggestedAccounts(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightsanalysis.html#aws-resource-ec2-networkinsightsanalysis-return-values"""
+        return GetAtt(resource=self, attr_name="SuggestedAccounts")
+    
+    @property
+    def rv_AlternatePathHints(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightsanalysis.html#aws-resource-ec2-networkinsightsanalysis-return-values"""
+        return GetAtt(resource=self, attr_name="AlternatePathHints")
     
 
 @attr.s
@@ -9983,7 +9428,6 @@ class NetworkInsightsAccessScope(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'AccessScopePathRequest',
-                "DuplicatesAllowed": True,
             }
         },
     )
@@ -9999,7 +9443,6 @@ class NetworkInsightsAccessScope(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'AccessScopePathRequest',
-                "DuplicatesAllowed": True,
             }
         },
     )
@@ -10015,7 +9458,6 @@ class NetworkInsightsAccessScope(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Tag',
-                "DuplicatesAllowed": True,
             }
         },
     )
@@ -10023,14 +9465,9 @@ class NetworkInsightsAccessScope(Resource):
 
     
     @property
-    def rv_UpdatedDate(self) -> GetAtt:
+    def rv_NetworkInsightsAccessScopeId(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightsaccessscope.html#aws-resource-ec2-networkinsightsaccessscope-return-values"""
-        return GetAtt(resource=self, attr_name="UpdatedDate")
-    
-    @property
-    def rv_CreatedDate(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightsaccessscope.html#aws-resource-ec2-networkinsightsaccessscope-return-values"""
-        return GetAtt(resource=self, attr_name="CreatedDate")
+        return GetAtt(resource=self, attr_name="NetworkInsightsAccessScopeId")
     
     @property
     def rv_NetworkInsightsAccessScopeArn(self) -> GetAtt:
@@ -10038,9 +9475,14 @@ class NetworkInsightsAccessScope(Resource):
         return GetAtt(resource=self, attr_name="NetworkInsightsAccessScopeArn")
     
     @property
-    def rv_NetworkInsightsAccessScopeId(self) -> GetAtt:
+    def rv_CreatedDate(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightsaccessscope.html#aws-resource-ec2-networkinsightsaccessscope-return-values"""
-        return GetAtt(resource=self, attr_name="NetworkInsightsAccessScopeId")
+        return GetAtt(resource=self, attr_name="CreatedDate")
+    
+    @property
+    def rv_UpdatedDate(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightsaccessscope.html#aws-resource-ec2-networkinsightsaccessscope-return-values"""
+        return GetAtt(resource=self, attr_name="UpdatedDate")
     
 
 @attr.s
@@ -10334,11 +9776,6 @@ class EnclaveCertificateIamRoleAssociation(Resource):
 
     
     @property
-    def rv_EncryptionKmsKeyId(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-enclavecertificateiamroleassociation.html#aws-resource-ec2-enclavecertificateiamroleassociation-return-values"""
-        return GetAtt(resource=self, attr_name="EncryptionKmsKeyId")
-    
-    @property
     def rv_CertificateS3BucketName(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-enclavecertificateiamroleassociation.html#aws-resource-ec2-enclavecertificateiamroleassociation-return-values"""
         return GetAtt(resource=self, attr_name="CertificateS3BucketName")
@@ -10347,6 +9784,11 @@ class EnclaveCertificateIamRoleAssociation(Resource):
     def rv_CertificateS3ObjectKey(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-enclavecertificateiamroleassociation.html#aws-resource-ec2-enclavecertificateiamroleassociation-return-values"""
         return GetAtt(resource=self, attr_name="CertificateS3ObjectKey")
+    
+    @property
+    def rv_EncryptionKmsKeyId(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-enclavecertificateiamroleassociation.html#aws-resource-ec2-enclavecertificateiamroleassociation-return-values"""
+        return GetAtt(resource=self, attr_name="EncryptionKmsKeyId")
     
 
 @attr.s
@@ -10403,12 +9845,16 @@ class TransitGatewayConnect(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Tag',
-                "DuplicatesAllowed": True,
             }
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayconnect.html#cfn-ec2-transitgatewayconnect-tags"""
 
+    
+    @property
+    def rv_TransitGatewayAttachmentId(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayconnect.html#aws-resource-ec2-transitgatewayconnect-return-values"""
+        return GetAtt(resource=self, attr_name="TransitGatewayAttachmentId")
     
     @property
     def rv_TransitGatewayId(self) -> GetAtt:
@@ -10424,11 +9870,6 @@ class TransitGatewayConnect(Resource):
     def rv_CreationTime(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayconnect.html#aws-resource-ec2-transitgatewayconnect-return-values"""
         return GetAtt(resource=self, attr_name="CreationTime")
-    
-    @property
-    def rv_TransitGatewayAttachmentId(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayconnect.html#aws-resource-ec2-transitgatewayconnect-return-values"""
-        return GetAtt(resource=self, attr_name="TransitGatewayAttachmentId")
     
 
 @attr.s
@@ -10723,7 +10164,6 @@ class TransitGateway(Resource):
                 "Required": False,
                 "Type": 'List',
                 "PrimitiveItemType": 'String',
-                "DuplicatesAllowed": True,
             }
         },
     )
@@ -10919,98 +10359,26 @@ class CapacityReservationFleet(Resource):
     
 
 @attr.s
-class NetworkPerformanceMetricSubscription(Resource):
-    """
-    AWS Object Type = "AWS::EC2::NetworkPerformanceMetricSubscription"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkperformancemetricsubscription.html
-
-    Property Document:
-    
-    - ``rp_Destination``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkperformancemetricsubscription.html#cfn-ec2-networkperformancemetricsubscription-destination
-    - ``rp_Metric``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkperformancemetricsubscription.html#cfn-ec2-networkperformancemetricsubscription-metric
-    - ``rp_Source``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkperformancemetricsubscription.html#cfn-ec2-networkperformancemetricsubscription-source
-    - ``rp_Statistic``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkperformancemetricsubscription.html#cfn-ec2-networkperformancemetricsubscription-statistic
-    """
-    AWS_OBJECT_TYPE = "AWS::EC2::NetworkPerformanceMetricSubscription"
-
-    
-    rp_Destination: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "Destination",
-            AttrMeta.DATA: {
-                "UpdateType": 'Immutable',
-                "Required": True,
-                "PrimitiveType": 'String',
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkperformancemetricsubscription.html#cfn-ec2-networkperformancemetricsubscription-destination"""
-    rp_Metric: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "Metric",
-            AttrMeta.DATA: {
-                "UpdateType": 'Immutable',
-                "Required": True,
-                "PrimitiveType": 'String',
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkperformancemetricsubscription.html#cfn-ec2-networkperformancemetricsubscription-metric"""
-    rp_Source: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "Source",
-            AttrMeta.DATA: {
-                "UpdateType": 'Immutable',
-                "Required": True,
-                "PrimitiveType": 'String',
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkperformancemetricsubscription.html#cfn-ec2-networkperformancemetricsubscription-source"""
-    rp_Statistic: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "Statistic",
-            AttrMeta.DATA: {
-                "UpdateType": 'Immutable',
-                "Required": True,
-                "PrimitiveType": 'String',
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkperformancemetricsubscription.html#cfn-ec2-networkperformancemetricsubscription-statistic"""
-
-    
-
-@attr.s
 class Volume(Resource):
     """
     AWS Object Type = "AWS::EC2::Volume"
 
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-volume.html
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ebs-volume.html
 
     Property Document:
     
-    - ``rp_AvailabilityZone``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-volume.html#cfn-ec2-volume-availabilityzone
-    - ``p_AutoEnableIO``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-volume.html#cfn-ec2-volume-autoenableio
-    - ``p_Encrypted``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-volume.html#cfn-ec2-volume-encrypted
-    - ``p_Iops``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-volume.html#cfn-ec2-volume-iops
-    - ``p_KmsKeyId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-volume.html#cfn-ec2-volume-kmskeyid
-    - ``p_MultiAttachEnabled``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-volume.html#cfn-ec2-volume-multiattachenabled
-    - ``p_OutpostArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-volume.html#cfn-ec2-volume-outpostarn
-    - ``p_Size``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-volume.html#cfn-ec2-volume-size
-    - ``p_SnapshotId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-volume.html#cfn-ec2-volume-snapshotid
-    - ``p_Throughput``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-volume.html#cfn-ec2-volume-throughput
-    - ``p_VolumeType``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-volume.html#cfn-ec2-volume-volumetype
-    - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-volume.html#cfn-ec2-volume-tags
+    - ``rp_AvailabilityZone``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ebs-volume.html#cfn-ec2-ebs-volume-availabilityzone
+    - ``p_AutoEnableIO``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ebs-volume.html#cfn-ec2-ebs-volume-autoenableio
+    - ``p_Encrypted``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ebs-volume.html#cfn-ec2-ebs-volume-encrypted
+    - ``p_Iops``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ebs-volume.html#cfn-ec2-ebs-volume-iops
+    - ``p_KmsKeyId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ebs-volume.html#cfn-ec2-ebs-volume-kmskeyid
+    - ``p_MultiAttachEnabled``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ebs-volume.html#cfn-ec2-ebs-volume-multiattachenabled
+    - ``p_OutpostArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ebs-volume.html#cfn-ec2-ebs-volume-outpostarn
+    - ``p_Size``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ebs-volume.html#cfn-ec2-ebs-volume-size
+    - ``p_SnapshotId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ebs-volume.html#cfn-ec2-ebs-volume-snapshotid
+    - ``p_Throughput``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ebs-volume.html#cfn-ec2-ebs-volume-throughput
+    - ``p_VolumeType``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ebs-volume.html#cfn-ec2-ebs-volume-volumetype
+    - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ebs-volume.html#cfn-ec2-ebs-volume-tags
     """
     AWS_OBJECT_TYPE = "AWS::EC2::Volume"
 
@@ -11021,143 +10389,143 @@ class Volume(Resource):
         metadata={
             AttrMeta.PROPERTY_NAME: "AvailabilityZone",
             AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
-                "Required": True,
                 "PrimitiveType": 'String',
+                "Required": True,
+                "UpdateType": 'Mutable',
             }
         },
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-volume.html#cfn-ec2-volume-availabilityzone"""
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ebs-volume.html#cfn-ec2-ebs-volume-availabilityzone"""
     p_AutoEnableIO: bool = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(bool)),
         metadata={
             AttrMeta.PROPERTY_NAME: "AutoEnableIO",
             AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
-                "Required": False,
                 "PrimitiveType": 'Boolean',
+                "Required": False,
+                "UpdateType": 'Mutable',
             }
         },
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-volume.html#cfn-ec2-volume-autoenableio"""
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ebs-volume.html#cfn-ec2-ebs-volume-autoenableio"""
     p_Encrypted: bool = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(bool)),
         metadata={
             AttrMeta.PROPERTY_NAME: "Encrypted",
             AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
-                "Required": False,
                 "PrimitiveType": 'Boolean',
+                "Required": False,
+                "UpdateType": 'Mutable',
             }
         },
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-volume.html#cfn-ec2-volume-encrypted"""
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ebs-volume.html#cfn-ec2-ebs-volume-encrypted"""
     p_Iops: int = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(int)),
         metadata={
             AttrMeta.PROPERTY_NAME: "Iops",
             AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
-                "Required": False,
                 "PrimitiveType": 'Integer',
+                "Required": False,
+                "UpdateType": 'Mutable',
             }
         },
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-volume.html#cfn-ec2-volume-iops"""
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ebs-volume.html#cfn-ec2-ebs-volume-iops"""
     p_KmsKeyId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
         metadata={
             AttrMeta.PROPERTY_NAME: "KmsKeyId",
             AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
-                "Required": False,
                 "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Mutable',
             }
         },
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-volume.html#cfn-ec2-volume-kmskeyid"""
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ebs-volume.html#cfn-ec2-ebs-volume-kmskeyid"""
     p_MultiAttachEnabled: bool = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(bool)),
         metadata={
             AttrMeta.PROPERTY_NAME: "MultiAttachEnabled",
             AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
-                "Required": False,
                 "PrimitiveType": 'Boolean',
+                "Required": False,
+                "UpdateType": 'Mutable',
             }
         },
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-volume.html#cfn-ec2-volume-multiattachenabled"""
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ebs-volume.html#cfn-ec2-ebs-volume-multiattachenabled"""
     p_OutpostArn: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
         metadata={
             AttrMeta.PROPERTY_NAME: "OutpostArn",
             AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
-                "Required": False,
                 "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Mutable',
             }
         },
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-volume.html#cfn-ec2-volume-outpostarn"""
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ebs-volume.html#cfn-ec2-ebs-volume-outpostarn"""
     p_Size: int = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(int)),
         metadata={
             AttrMeta.PROPERTY_NAME: "Size",
             AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
-                "Required": False,
                 "PrimitiveType": 'Integer',
+                "Required": False,
+                "UpdateType": 'Mutable',
             }
         },
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-volume.html#cfn-ec2-volume-size"""
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ebs-volume.html#cfn-ec2-ebs-volume-size"""
     p_SnapshotId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
         metadata={
             AttrMeta.PROPERTY_NAME: "SnapshotId",
             AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
-                "Required": False,
                 "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Mutable',
             }
         },
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-volume.html#cfn-ec2-volume-snapshotid"""
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ebs-volume.html#cfn-ec2-ebs-volume-snapshotid"""
     p_Throughput: int = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(int)),
         metadata={
             AttrMeta.PROPERTY_NAME: "Throughput",
             AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
-                "Required": False,
                 "PrimitiveType": 'Integer',
+                "Required": False,
+                "UpdateType": 'Mutable',
             }
         },
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-volume.html#cfn-ec2-volume-throughput"""
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ebs-volume.html#cfn-ec2-ebs-volume-throughput"""
     p_VolumeType: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
         metadata={
             AttrMeta.PROPERTY_NAME: "VolumeType",
             AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
-                "Required": False,
                 "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Mutable',
             }
         },
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-volume.html#cfn-ec2-volume-volumetype"""
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ebs-volume.html#cfn-ec2-ebs-volume-volumetype"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
@@ -11165,21 +10533,16 @@ class Volume(Resource):
         metadata={
             AttrMeta.PROPERTY_NAME: "Tags",
             AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
+                "DuplicatesAllowed": True,
+                "ItemType": 'Tag',
                 "Required": False,
                 "Type": 'List',
-                "ItemType": 'Tag',
-                "DuplicatesAllowed": True,
+                "UpdateType": 'Mutable',
             }
         },
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-volume.html#cfn-ec2-volume-tags"""
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-ebs-volume.html#cfn-ec2-ebs-volume-tags"""
 
-    
-    @property
-    def rv_VolumeId(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-volume.html#aws-resource-ec2-volume-return-values"""
-        return GetAtt(resource=self, attr_name="VolumeId")
     
 
 @attr.s
@@ -11254,14 +10617,14 @@ class LocalGatewayRoute(Resource):
 
     
     @property
-    def rv_Type(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-localgatewayroute.html#aws-resource-ec2-localgatewayroute-return-values"""
-        return GetAtt(resource=self, attr_name="Type")
-    
-    @property
     def rv_State(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-localgatewayroute.html#aws-resource-ec2-localgatewayroute-return-values"""
         return GetAtt(resource=self, attr_name="State")
+    
+    @property
+    def rv_Type(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-localgatewayroute.html#aws-resource-ec2-localgatewayroute-return-values"""
+        return GetAtt(resource=self, attr_name="Type")
     
 
 @attr.s
@@ -11340,16 +10703,15 @@ class TransitGatewayVpcAttachment(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewayvpcattachment.html#cfn-ec2-transitgatewayvpcattachment-addsubnetids"""
-    p_Options: typing.Union['PropTransitGatewayVpcAttachmentOptions', dict] = attr.ib(
+    p_Options: dict = attr.ib(
         default=None,
-        converter=PropTransitGatewayVpcAttachmentOptions.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropTransitGatewayVpcAttachmentOptions)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={
             AttrMeta.PROPERTY_NAME: "Options",
             AttrMeta.DATA: {
                 "UpdateType": 'Mutable',
                 "Required": False,
-                "Type": 'Options',
+                "PrimitiveType": 'Json',
             }
         },
     )
@@ -11606,16 +10968,15 @@ class FlowLog(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-flowlog.html#cfn-ec2-flowlog-deliverlogspermissionarn"""
-    p_DestinationOptions: typing.Union['PropFlowLogDestinationOptions', dict] = attr.ib(
+    p_DestinationOptions: dict = attr.ib(
         default=None,
-        converter=PropFlowLogDestinationOptions.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropFlowLogDestinationOptions)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={
             AttrMeta.PROPERTY_NAME: "DestinationOptions",
             AttrMeta.DATA: {
                 "UpdateType": 'Immutable',
                 "Required": False,
-                "Type": 'DestinationOptions',
+                "PrimitiveType": 'Json',
             }
         },
     )
@@ -11831,7 +11192,7 @@ class Subnet(Resource):
         metadata={
             AttrMeta.PROPERTY_NAME: "Ipv6CidrBlock",
             AttrMeta.DATA: {
-                "UpdateType": 'Conditional',
+                "UpdateType": 'Mutable',
                 "Required": False,
                 "PrimitiveType": 'String',
             }
@@ -11877,16 +11238,15 @@ class Subnet(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet.html#cfn-ec2-subnet-outpostarn"""
-    p_PrivateDnsNameOptionsOnLaunch: typing.Union['PropSubnetPrivateDnsNameOptionsOnLaunch', dict] = attr.ib(
+    p_PrivateDnsNameOptionsOnLaunch: dict = attr.ib(
         default=None,
-        converter=PropSubnetPrivateDnsNameOptionsOnLaunch.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropSubnetPrivateDnsNameOptionsOnLaunch)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={
             AttrMeta.PROPERTY_NAME: "PrivateDnsNameOptionsOnLaunch",
             AttrMeta.DATA: {
                 "UpdateType": 'Mutable',
                 "Required": False,
-                "Type": 'PrivateDnsNameOptionsOnLaunch',
+                "PrimitiveType": 'Json',
             }
         },
     )
@@ -11920,11 +11280,6 @@ class Subnet(Resource):
         return GetAtt(resource=self, attr_name="NetworkAclAssociationId")
     
     @property
-    def rv_OutpostArn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet.html#aws-resource-ec2-subnet-return-values"""
-        return GetAtt(resource=self, attr_name="OutpostArn")
-    
-    @property
     def rv_AvailabilityZone(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet.html#aws-resource-ec2-subnet-return-values"""
         return GetAtt(resource=self, attr_name="AvailabilityZone")
@@ -11938,6 +11293,11 @@ class Subnet(Resource):
     def rv_Ipv6CidrBlocks(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet.html#aws-resource-ec2-subnet-return-values"""
         return GetAtt(resource=self, attr_name="Ipv6CidrBlocks")
+    
+    @property
+    def rv_OutpostArn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-subnet.html#aws-resource-ec2-subnet-return-values"""
+        return GetAtt(resource=self, attr_name="OutpostArn")
     
 
 @attr.s
@@ -11987,9 +11347,9 @@ class CarrierGateway(Resource):
 
     
     @property
-    def rv_OwnerId(self) -> GetAtt:
+    def rv_CarrierGatewayId(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-carriergateway.html#aws-resource-ec2-carriergateway-return-values"""
-        return GetAtt(resource=self, attr_name="OwnerId")
+        return GetAtt(resource=self, attr_name="CarrierGatewayId")
     
     @property
     def rv_State(self) -> GetAtt:
@@ -11997,9 +11357,9 @@ class CarrierGateway(Resource):
         return GetAtt(resource=self, attr_name="State")
     
     @property
-    def rv_CarrierGatewayId(self) -> GetAtt:
+    def rv_OwnerId(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-carriergateway.html#aws-resource-ec2-carriergateway-return-values"""
-        return GetAtt(resource=self, attr_name="CarrierGatewayId")
+        return GetAtt(resource=self, attr_name="OwnerId")
     
 
 @attr.s
@@ -12641,92 +12001,6 @@ class Instance(Resource):
     
 
 @attr.s
-class LocalGatewayRouteTableVirtualInterfaceGroupAssociation(Resource):
-    """
-    AWS Object Type = "AWS::EC2::LocalGatewayRouteTableVirtualInterfaceGroupAssociation"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-localgatewayroutetablevirtualinterfacegroupassociation.html
-
-    Property Document:
-    
-    - ``rp_LocalGatewayRouteTableId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-localgatewayroutetablevirtualinterfacegroupassociation.html#cfn-ec2-localgatewayroutetablevirtualinterfacegroupassociation-localgatewayroutetableid
-    - ``rp_LocalGatewayVirtualInterfaceGroupId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-localgatewayroutetablevirtualinterfacegroupassociation.html#cfn-ec2-localgatewayroutetablevirtualinterfacegroupassociation-localgatewayvirtualinterfacegroupid
-    - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-localgatewayroutetablevirtualinterfacegroupassociation.html#cfn-ec2-localgatewayroutetablevirtualinterfacegroupassociation-tags
-    """
-    AWS_OBJECT_TYPE = "AWS::EC2::LocalGatewayRouteTableVirtualInterfaceGroupAssociation"
-
-    
-    rp_LocalGatewayRouteTableId: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "LocalGatewayRouteTableId",
-            AttrMeta.DATA: {
-                "UpdateType": 'Immutable',
-                "Required": True,
-                "PrimitiveType": 'String',
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-localgatewayroutetablevirtualinterfacegroupassociation.html#cfn-ec2-localgatewayroutetablevirtualinterfacegroupassociation-localgatewayroutetableid"""
-    rp_LocalGatewayVirtualInterfaceGroupId: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "LocalGatewayVirtualInterfaceGroupId",
-            AttrMeta.DATA: {
-                "UpdateType": 'Immutable',
-                "Required": True,
-                "PrimitiveType": 'String',
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-localgatewayroutetablevirtualinterfacegroupassociation.html#cfn-ec2-localgatewayroutetablevirtualinterfacegroupassociation-localgatewayvirtualinterfacegroupid"""
-    p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
-        default=None,
-        converter=Tag.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "Tags",
-            AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
-                "Required": False,
-                "Type": 'List',
-                "ItemType": 'Tag',
-                "DuplicatesAllowed": False,
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-localgatewayroutetablevirtualinterfacegroupassociation.html#cfn-ec2-localgatewayroutetablevirtualinterfacegroupassociation-tags"""
-
-    
-    @property
-    def rv_OwnerId(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-localgatewayroutetablevirtualinterfacegroupassociation.html#aws-resource-ec2-localgatewayroutetablevirtualinterfacegroupassociation-return-values"""
-        return GetAtt(resource=self, attr_name="OwnerId")
-    
-    @property
-    def rv_LocalGatewayId(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-localgatewayroutetablevirtualinterfacegroupassociation.html#aws-resource-ec2-localgatewayroutetablevirtualinterfacegroupassociation-return-values"""
-        return GetAtt(resource=self, attr_name="LocalGatewayId")
-    
-    @property
-    def rv_State(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-localgatewayroutetablevirtualinterfacegroupassociation.html#aws-resource-ec2-localgatewayroutetablevirtualinterfacegroupassociation-return-values"""
-        return GetAtt(resource=self, attr_name="State")
-    
-    @property
-    def rv_LocalGatewayRouteTableVirtualInterfaceGroupAssociationId(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-localgatewayroutetablevirtualinterfacegroupassociation.html#aws-resource-ec2-localgatewayroutetablevirtualinterfacegroupassociation-return-values"""
-        return GetAtt(resource=self, attr_name="LocalGatewayRouteTableVirtualInterfaceGroupAssociationId")
-    
-    @property
-    def rv_LocalGatewayRouteTableArn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-localgatewayroutetablevirtualinterfacegroupassociation.html#aws-resource-ec2-localgatewayroutetablevirtualinterfacegroupassociation-return-values"""
-        return GetAtt(resource=self, attr_name="LocalGatewayRouteTableArn")
-    
-
-@attr.s
 class IPAMPool(Resource):
     """
     AWS Object Type = "AWS::EC2::IPAMPool"
@@ -12746,7 +12020,6 @@ class IPAMPool(Resource):
     - ``p_Description``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipampool.html#cfn-ec2-ipampool-description
     - ``p_Locale``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipampool.html#cfn-ec2-ipampool-locale
     - ``p_ProvisionedCidrs``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipampool.html#cfn-ec2-ipampool-provisionedcidrs
-    - ``p_PublicIpSource``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipampool.html#cfn-ec2-ipampool-publicipsource
     - ``p_PubliclyAdvertisable``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipampool.html#cfn-ec2-ipampool-publiclyadvertisable
     - ``p_SourceIpamPoolId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipampool.html#cfn-ec2-ipampool-sourceipampoolid
     - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipampool.html#cfn-ec2-ipampool-tags
@@ -12903,19 +12176,6 @@ class IPAMPool(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipampool.html#cfn-ec2-ipampool-provisionedcidrs"""
-    p_PublicIpSource: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "PublicIpSource",
-            AttrMeta.DATA: {
-                "UpdateType": 'Immutable',
-                "Required": False,
-                "PrimitiveType": 'String',
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipampool.html#cfn-ec2-ipampool-publicipsource"""
     p_PubliclyAdvertisable: bool = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(bool)),
@@ -12966,6 +12226,21 @@ class IPAMPool(Resource):
         return GetAtt(resource=self, attr_name="IpamPoolId")
     
     @property
+    def rv_Arn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipampool.html#aws-resource-ec2-ipampool-return-values"""
+        return GetAtt(resource=self, attr_name="Arn")
+    
+    @property
+    def rv_IpamScopeArn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipampool.html#aws-resource-ec2-ipampool-return-values"""
+        return GetAtt(resource=self, attr_name="IpamScopeArn")
+    
+    @property
+    def rv_IpamScopeType(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipampool.html#aws-resource-ec2-ipampool-return-values"""
+        return GetAtt(resource=self, attr_name="IpamScopeType")
+    
+    @property
     def rv_IpamArn(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipampool.html#aws-resource-ec2-ipampool-return-values"""
         return GetAtt(resource=self, attr_name="IpamArn")
@@ -12981,110 +12256,9 @@ class IPAMPool(Resource):
         return GetAtt(resource=self, attr_name="State")
     
     @property
-    def rv_IpamScopeArn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipampool.html#aws-resource-ec2-ipampool-return-values"""
-        return GetAtt(resource=self, attr_name="IpamScopeArn")
-    
-    @property
-    def rv_IpamScopeType(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipampool.html#aws-resource-ec2-ipampool-return-values"""
-        return GetAtt(resource=self, attr_name="IpamScopeType")
-    
-    @property
-    def rv_Arn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipampool.html#aws-resource-ec2-ipampool-return-values"""
-        return GetAtt(resource=self, attr_name="Arn")
-    
-    @property
     def rv_StateMessage(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipampool.html#aws-resource-ec2-ipampool-return-values"""
         return GetAtt(resource=self, attr_name="StateMessage")
-    
-
-@attr.s
-class LocalGatewayRouteTable(Resource):
-    """
-    AWS Object Type = "AWS::EC2::LocalGatewayRouteTable"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-localgatewayroutetable.html
-
-    Property Document:
-    
-    - ``rp_LocalGatewayId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-localgatewayroutetable.html#cfn-ec2-localgatewayroutetable-localgatewayid
-    - ``p_Mode``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-localgatewayroutetable.html#cfn-ec2-localgatewayroutetable-mode
-    - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-localgatewayroutetable.html#cfn-ec2-localgatewayroutetable-tags
-    """
-    AWS_OBJECT_TYPE = "AWS::EC2::LocalGatewayRouteTable"
-
-    
-    rp_LocalGatewayId: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "LocalGatewayId",
-            AttrMeta.DATA: {
-                "UpdateType": 'Immutable',
-                "Required": True,
-                "PrimitiveType": 'String',
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-localgatewayroutetable.html#cfn-ec2-localgatewayroutetable-localgatewayid"""
-    p_Mode: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "Mode",
-            AttrMeta.DATA: {
-                "UpdateType": 'Immutable',
-                "Required": False,
-                "PrimitiveType": 'String',
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-localgatewayroutetable.html#cfn-ec2-localgatewayroutetable-mode"""
-    p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
-        default=None,
-        converter=Tag.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "Tags",
-            AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
-                "Required": False,
-                "Type": 'List',
-                "ItemType": 'Tag',
-                "DuplicatesAllowed": False,
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-localgatewayroutetable.html#cfn-ec2-localgatewayroutetable-tags"""
-
-    
-    @property
-    def rv_OwnerId(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-localgatewayroutetable.html#aws-resource-ec2-localgatewayroutetable-return-values"""
-        return GetAtt(resource=self, attr_name="OwnerId")
-    
-    @property
-    def rv_State(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-localgatewayroutetable.html#aws-resource-ec2-localgatewayroutetable-return-values"""
-        return GetAtt(resource=self, attr_name="State")
-    
-    @property
-    def rv_OutpostArn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-localgatewayroutetable.html#aws-resource-ec2-localgatewayroutetable-return-values"""
-        return GetAtt(resource=self, attr_name="OutpostArn")
-    
-    @property
-    def rv_LocalGatewayRouteTableId(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-localgatewayroutetable.html#aws-resource-ec2-localgatewayroutetable-return-values"""
-        return GetAtt(resource=self, attr_name="LocalGatewayRouteTableId")
-    
-    @property
-    def rv_LocalGatewayRouteTableArn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-localgatewayroutetable.html#aws-resource-ec2-localgatewayroutetable-return-values"""
-        return GetAtt(resource=self, attr_name="LocalGatewayRouteTableArn")
     
 
 @attr.s
@@ -13096,9 +12270,9 @@ class NetworkInsightsPath(Resource):
 
     Property Document:
     
+    - ``rp_Destination``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightspath.html#cfn-ec2-networkinsightspath-destination
     - ``rp_Protocol``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightspath.html#cfn-ec2-networkinsightspath-protocol
     - ``rp_Source``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightspath.html#cfn-ec2-networkinsightspath-source
-    - ``p_Destination``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightspath.html#cfn-ec2-networkinsightspath-destination
     - ``p_DestinationIp``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightspath.html#cfn-ec2-networkinsightspath-destinationip
     - ``p_DestinationPort``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightspath.html#cfn-ec2-networkinsightspath-destinationport
     - ``p_SourceIp``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightspath.html#cfn-ec2-networkinsightspath-sourceip
@@ -13107,6 +12281,19 @@ class NetworkInsightsPath(Resource):
     AWS_OBJECT_TYPE = "AWS::EC2::NetworkInsightsPath"
 
     
+    rp_Destination: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Destination",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightspath.html#cfn-ec2-networkinsightspath-destination"""
     rp_Protocol: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
@@ -13133,19 +12320,6 @@ class NetworkInsightsPath(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightspath.html#cfn-ec2-networkinsightspath-source"""
-    p_Destination: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "Destination",
-            AttrMeta.DATA: {
-                "UpdateType": 'Immutable',
-                "Required": False,
-                "PrimitiveType": 'String',
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightspath.html#cfn-ec2-networkinsightspath-destination"""
     p_DestinationIp: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
@@ -13196,7 +12370,6 @@ class NetworkInsightsPath(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Tag',
-                "DuplicatesAllowed": True,
             }
         },
     )
@@ -13204,14 +12377,14 @@ class NetworkInsightsPath(Resource):
 
     
     @property
-    def rv_SourceArn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightspath.html#aws-resource-ec2-networkinsightspath-return-values"""
-        return GetAtt(resource=self, attr_name="SourceArn")
-    
-    @property
     def rv_NetworkInsightsPathId(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightspath.html#aws-resource-ec2-networkinsightspath-return-values"""
         return GetAtt(resource=self, attr_name="NetworkInsightsPathId")
+    
+    @property
+    def rv_NetworkInsightsPathArn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightspath.html#aws-resource-ec2-networkinsightspath-return-values"""
+        return GetAtt(resource=self, attr_name="NetworkInsightsPathArn")
     
     @property
     def rv_CreatedDate(self) -> GetAtt:
@@ -13219,9 +12392,9 @@ class NetworkInsightsPath(Resource):
         return GetAtt(resource=self, attr_name="CreatedDate")
     
     @property
-    def rv_NetworkInsightsPathArn(self) -> GetAtt:
+    def rv_SourceArn(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightspath.html#aws-resource-ec2-networkinsightspath-return-values"""
-        return GetAtt(resource=self, attr_name="NetworkInsightsPathArn")
+        return GetAtt(resource=self, attr_name="SourceArn")
     
     @property
     def rv_DestinationArn(self) -> GetAtt:
@@ -13576,9 +12749,9 @@ class VPCEndpointService(Resource):
         metadata={
             AttrMeta.PROPERTY_NAME: "AcceptanceRequired",
             AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
                 "Required": False,
                 "PrimitiveType": 'Boolean',
+                "UpdateType": 'Mutable',
             }
         },
     )
@@ -13589,9 +12762,9 @@ class VPCEndpointService(Resource):
         metadata={
             AttrMeta.PROPERTY_NAME: "ContributorInsightsEnabled",
             AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
                 "Required": False,
                 "PrimitiveType": 'Boolean',
+                "UpdateType": 'Mutable',
             }
         },
     )
@@ -13602,11 +12775,10 @@ class VPCEndpointService(Resource):
         metadata={
             AttrMeta.PROPERTY_NAME: "GatewayLoadBalancerArns",
             AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
-                "Required": False,
-                "Type": 'List',
                 "PrimitiveItemType": 'String',
-                "DuplicatesAllowed": True,
+                "Type": 'List',
+                "Required": False,
+                "UpdateType": 'Mutable',
             }
         },
     )
@@ -13617,11 +12789,10 @@ class VPCEndpointService(Resource):
         metadata={
             AttrMeta.PROPERTY_NAME: "NetworkLoadBalancerArns",
             AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
-                "Required": False,
-                "Type": 'List',
                 "PrimitiveItemType": 'String',
-                "DuplicatesAllowed": True,
+                "Type": 'List',
+                "Required": False,
+                "UpdateType": 'Mutable',
             }
         },
     )
@@ -13632,19 +12803,14 @@ class VPCEndpointService(Resource):
         metadata={
             AttrMeta.PROPERTY_NAME: "PayerResponsibility",
             AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
                 "Required": False,
                 "PrimitiveType": 'String',
+                "UpdateType": 'Mutable',
             }
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpointservice.html#cfn-ec2-vpcendpointservice-payerresponsibility"""
 
-    
-    @property
-    def rv_ServiceId(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpcendpointservice.html#aws-resource-ec2-vpcendpointservice-return-values"""
-        return GetAtt(resource=self, attr_name="ServiceId")
     
 
 @attr.s
@@ -13686,22 +12852,11 @@ class NetworkInsightsAccessScopeAnalysis(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Tag',
-                "DuplicatesAllowed": True,
             }
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightsaccessscopeanalysis.html#cfn-ec2-networkinsightsaccessscopeanalysis-tags"""
 
-    
-    @property
-    def rv_Status(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightsaccessscopeanalysis.html#aws-resource-ec2-networkinsightsaccessscopeanalysis-return-values"""
-        return GetAtt(resource=self, attr_name="Status")
-    
-    @property
-    def rv_StartDate(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightsaccessscopeanalysis.html#aws-resource-ec2-networkinsightsaccessscopeanalysis-return-values"""
-        return GetAtt(resource=self, attr_name="StartDate")
     
     @property
     def rv_NetworkInsightsAccessScopeAnalysisId(self) -> GetAtt:
@@ -13714,14 +12869,24 @@ class NetworkInsightsAccessScopeAnalysis(Resource):
         return GetAtt(resource=self, attr_name="NetworkInsightsAccessScopeAnalysisArn")
     
     @property
+    def rv_Status(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightsaccessscopeanalysis.html#aws-resource-ec2-networkinsightsaccessscopeanalysis-return-values"""
+        return GetAtt(resource=self, attr_name="Status")
+    
+    @property
+    def rv_StatusMessage(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightsaccessscopeanalysis.html#aws-resource-ec2-networkinsightsaccessscopeanalysis-return-values"""
+        return GetAtt(resource=self, attr_name="StatusMessage")
+    
+    @property
+    def rv_StartDate(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightsaccessscopeanalysis.html#aws-resource-ec2-networkinsightsaccessscopeanalysis-return-values"""
+        return GetAtt(resource=self, attr_name="StartDate")
+    
+    @property
     def rv_EndDate(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightsaccessscopeanalysis.html#aws-resource-ec2-networkinsightsaccessscopeanalysis-return-values"""
         return GetAtt(resource=self, attr_name="EndDate")
-    
-    @property
-    def rv_AnalyzedEniCount(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightsaccessscopeanalysis.html#aws-resource-ec2-networkinsightsaccessscopeanalysis-return-values"""
-        return GetAtt(resource=self, attr_name="AnalyzedEniCount")
     
     @property
     def rv_FindingsFound(self) -> GetAtt:
@@ -13729,9 +12894,9 @@ class NetworkInsightsAccessScopeAnalysis(Resource):
         return GetAtt(resource=self, attr_name="FindingsFound")
     
     @property
-    def rv_StatusMessage(self) -> GetAtt:
+    def rv_AnalyzedEniCount(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-networkinsightsaccessscopeanalysis.html#aws-resource-ec2-networkinsightsaccessscopeanalysis-return-values"""
-        return GetAtt(resource=self, attr_name="StatusMessage")
+        return GetAtt(resource=self, attr_name="AnalyzedEniCount")
     
 
 @attr.s
@@ -14802,14 +13967,14 @@ class KeyPair(Resource):
 
     
     @property
-    def rv_KeyPairId(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-keypair.html#aws-resource-ec2-keypair-return-values"""
-        return GetAtt(resource=self, attr_name="KeyPairId")
-    
-    @property
     def rv_KeyFingerprint(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-keypair.html#aws-resource-ec2-keypair-return-values"""
         return GetAtt(resource=self, attr_name="KeyFingerprint")
+    
+    @property
+    def rv_KeyPairId(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-keypair.html#aws-resource-ec2-keypair-return-values"""
+        return GetAtt(resource=self, attr_name="KeyPairId")
     
 
 @attr.s
@@ -14996,7 +14161,7 @@ class VPC(Resource):
         metadata={
             AttrMeta.PROPERTY_NAME: "InstanceTenancy",
             AttrMeta.DATA: {
-                "UpdateType": 'Conditional',
+                "UpdateType": 'Mutable',
                 "Required": False,
                 "PrimitiveType": 'String',
             }
@@ -15053,14 +14218,14 @@ class VPC(Resource):
         return GetAtt(resource=self, attr_name="VpcId")
     
     @property
-    def rv_CidrBlockAssociations(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc.html#aws-resource-ec2-vpc-return-values"""
-        return GetAtt(resource=self, attr_name="CidrBlockAssociations")
-    
-    @property
     def rv_CidrBlock(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc.html#aws-resource-ec2-vpc-return-values"""
         return GetAtt(resource=self, attr_name="CidrBlock")
+    
+    @property
+    def rv_CidrBlockAssociations(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc.html#aws-resource-ec2-vpc-return-values"""
+        return GetAtt(resource=self, attr_name="CidrBlockAssociations")
     
     @property
     def rv_DefaultNetworkAcl(self) -> GetAtt:
@@ -15068,14 +14233,14 @@ class VPC(Resource):
         return GetAtt(resource=self, attr_name="DefaultNetworkAcl")
     
     @property
-    def rv_Ipv6CidrBlocks(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc.html#aws-resource-ec2-vpc-return-values"""
-        return GetAtt(resource=self, attr_name="Ipv6CidrBlocks")
-    
-    @property
     def rv_DefaultSecurityGroup(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc.html#aws-resource-ec2-vpc-return-values"""
         return GetAtt(resource=self, attr_name="DefaultSecurityGroup")
+    
+    @property
+    def rv_Ipv6CidrBlocks(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpc.html#aws-resource-ec2-vpc-return-values"""
+        return GetAtt(resource=self, attr_name="Ipv6CidrBlocks")
     
 
 @attr.s
@@ -15378,17 +14543,11 @@ class TransitGatewayPeeringAttachment(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Tag',
-                "DuplicatesAllowed": True,
             }
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewaypeeringattachment.html#cfn-ec2-transitgatewaypeeringattachment-tags"""
 
-    
-    @property
-    def rv_Status(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewaypeeringattachment.html#aws-resource-ec2-transitgatewaypeeringattachment-return-values"""
-        return GetAtt(resource=self, attr_name="Status")
     
     @property
     def rv_State(self) -> GetAtt:
@@ -15399,16 +14558,6 @@ class TransitGatewayPeeringAttachment(Resource):
     def rv_CreationTime(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewaypeeringattachment.html#aws-resource-ec2-transitgatewaypeeringattachment-return-values"""
         return GetAtt(resource=self, attr_name="CreationTime")
-    
-    @property
-    def rv_StatusMessage(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewaypeeringattachment.html#aws-resource-ec2-transitgatewaypeeringattachment-return-values"""
-        return GetAtt(resource=self, attr_name="Status.Message")
-    
-    @property
-    def rv_StatusCode(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-transitgatewaypeeringattachment.html#aws-resource-ec2-transitgatewaypeeringattachment-return-values"""
-        return GetAtt(resource=self, attr_name="Status.Code")
     
     @property
     def rv_TransitGatewayAttachmentId(self) -> GetAtt:
@@ -15926,105 +15075,4 @@ class VPCCidrBlock(Resource):
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-vpccidrblock.html#cfn-ec2-vpccidrblock-ipv6pool"""
 
-    
-
-@attr.s
-class IPAMResourceDiscoveryAssociation(Resource):
-    """
-    AWS Object Type = "AWS::EC2::IPAMResourceDiscoveryAssociation"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipamresourcediscoveryassociation.html
-
-    Property Document:
-    
-    - ``rp_IpamId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipamresourcediscoveryassociation.html#cfn-ec2-ipamresourcediscoveryassociation-ipamid
-    - ``rp_IpamResourceDiscoveryId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipamresourcediscoveryassociation.html#cfn-ec2-ipamresourcediscoveryassociation-ipamresourcediscoveryid
-    - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipamresourcediscoveryassociation.html#cfn-ec2-ipamresourcediscoveryassociation-tags
-    """
-    AWS_OBJECT_TYPE = "AWS::EC2::IPAMResourceDiscoveryAssociation"
-
-    
-    rp_IpamId: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "IpamId",
-            AttrMeta.DATA: {
-                "UpdateType": 'Immutable',
-                "Required": True,
-                "PrimitiveType": 'String',
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipamresourcediscoveryassociation.html#cfn-ec2-ipamresourcediscoveryassociation-ipamid"""
-    rp_IpamResourceDiscoveryId: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "IpamResourceDiscoveryId",
-            AttrMeta.DATA: {
-                "UpdateType": 'Immutable',
-                "Required": True,
-                "PrimitiveType": 'String',
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipamresourcediscoveryassociation.html#cfn-ec2-ipamresourcediscoveryassociation-ipamresourcediscoveryid"""
-    p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
-        default=None,
-        converter=Tag.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "Tags",
-            AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
-                "Required": False,
-                "Type": 'List',
-                "ItemType": 'Tag',
-                "DuplicatesAllowed": False,
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipamresourcediscoveryassociation.html#cfn-ec2-ipamresourcediscoveryassociation-tags"""
-
-    
-    @property
-    def rv_IsDefault(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipamresourcediscoveryassociation.html#aws-resource-ec2-ipamresourcediscoveryassociation-return-values"""
-        return GetAtt(resource=self, attr_name="IsDefault")
-    
-    @property
-    def rv_ResourceDiscoveryStatus(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipamresourcediscoveryassociation.html#aws-resource-ec2-ipamresourcediscoveryassociation-return-values"""
-        return GetAtt(resource=self, attr_name="ResourceDiscoveryStatus")
-    
-    @property
-    def rv_OwnerId(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipamresourcediscoveryassociation.html#aws-resource-ec2-ipamresourcediscoveryassociation-return-values"""
-        return GetAtt(resource=self, attr_name="OwnerId")
-    
-    @property
-    def rv_IpamArn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipamresourcediscoveryassociation.html#aws-resource-ec2-ipamresourcediscoveryassociation-return-values"""
-        return GetAtt(resource=self, attr_name="IpamArn")
-    
-    @property
-    def rv_IpamResourceDiscoveryAssociationId(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipamresourcediscoveryassociation.html#aws-resource-ec2-ipamresourcediscoveryassociation-return-values"""
-        return GetAtt(resource=self, attr_name="IpamResourceDiscoveryAssociationId")
-    
-    @property
-    def rv_IpamResourceDiscoveryAssociationArn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipamresourcediscoveryassociation.html#aws-resource-ec2-ipamresourcediscoveryassociation-return-values"""
-        return GetAtt(resource=self, attr_name="IpamResourceDiscoveryAssociationArn")
-    
-    @property
-    def rv_State(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipamresourcediscoveryassociation.html#aws-resource-ec2-ipamresourcediscoveryassociation-return-values"""
-        return GetAtt(resource=self, attr_name="State")
-    
-    @property
-    def rv_IpamRegion(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ec2-ipamresourcediscoveryassociation.html#aws-resource-ec2-ipamresourcediscoveryassociation-return-values"""
-        return GetAtt(resource=self, attr_name="IpamRegion")
     

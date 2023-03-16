@@ -62,33 +62,6 @@ class PropStudioComponentScriptParameterKeyValue(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-nimblestudio-studiocomponent-scriptparameterkeyvalue.html#cfn-nimblestudio-studiocomponent-scriptparameterkeyvalue-value"""
 
 @attr.s
-class PropStreamingImageStreamingImageEncryptionConfiguration(Property):
-    """
-    AWS Object Type = "AWS::NimbleStudio::StreamingImage.StreamingImageEncryptionConfiguration"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-nimblestudio-streamingimage-streamingimageencryptionconfiguration.html
-
-    Property Document:
-    
-    - ``rp_KeyType``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-nimblestudio-streamingimage-streamingimageencryptionconfiguration.html#cfn-nimblestudio-streamingimage-streamingimageencryptionconfiguration-keytype
-    - ``p_KeyArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-nimblestudio-streamingimage-streamingimageencryptionconfiguration.html#cfn-nimblestudio-streamingimage-streamingimageencryptionconfiguration-keyarn
-    """
-    AWS_OBJECT_TYPE = "AWS::NimbleStudio::StreamingImage.StreamingImageEncryptionConfiguration"
-    
-    rp_KeyType: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "KeyType"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-nimblestudio-streamingimage-streamingimageencryptionconfiguration.html#cfn-nimblestudio-streamingimage-streamingimageencryptionconfiguration-keytype"""
-    p_KeyArn: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "KeyArn"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-nimblestudio-streamingimage-streamingimageencryptionconfiguration.html#cfn-nimblestudio-streamingimage-streamingimageencryptionconfiguration-keyarn"""
-
-@attr.s
 class PropStudioComponentActiveDirectoryComputerAttribute(Property):
     """
     AWS Object Type = "AWS::NimbleStudio::StudioComponent.ActiveDirectoryComputerAttribute"
@@ -191,40 +164,6 @@ class PropStudioComponentSharedFileSystemConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-nimblestudio-studiocomponent-sharedfilesystemconfiguration.html#cfn-nimblestudio-studiocomponent-sharedfilesystemconfiguration-windowsmountdrive"""
 
 @attr.s
-class PropLaunchProfileVolumeConfiguration(Property):
-    """
-    AWS Object Type = "AWS::NimbleStudio::LaunchProfile.VolumeConfiguration"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-nimblestudio-launchprofile-volumeconfiguration.html
-
-    Property Document:
-    
-    - ``p_Iops``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-nimblestudio-launchprofile-volumeconfiguration.html#cfn-nimblestudio-launchprofile-volumeconfiguration-iops
-    - ``p_Size``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-nimblestudio-launchprofile-volumeconfiguration.html#cfn-nimblestudio-launchprofile-volumeconfiguration-size
-    - ``p_Throughput``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-nimblestudio-launchprofile-volumeconfiguration.html#cfn-nimblestudio-launchprofile-volumeconfiguration-throughput
-    """
-    AWS_OBJECT_TYPE = "AWS::NimbleStudio::LaunchProfile.VolumeConfiguration"
-    
-    p_Iops: float = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(float)),
-        metadata={AttrMeta.PROPERTY_NAME: "Iops"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-nimblestudio-launchprofile-volumeconfiguration.html#cfn-nimblestudio-launchprofile-volumeconfiguration-iops"""
-    p_Size: float = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(float)),
-        metadata={AttrMeta.PROPERTY_NAME: "Size"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-nimblestudio-launchprofile-volumeconfiguration.html#cfn-nimblestudio-launchprofile-volumeconfiguration-size"""
-    p_Throughput: float = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(float)),
-        metadata={AttrMeta.PROPERTY_NAME: "Throughput"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-nimblestudio-launchprofile-volumeconfiguration.html#cfn-nimblestudio-launchprofile-volumeconfiguration-throughput"""
-
-@attr.s
 class PropLaunchProfileStreamingSessionStorageRoot(Property):
     """
     AWS Object Type = "AWS::NimbleStudio::LaunchProfile.StreamingSessionStorageRoot"
@@ -250,33 +189,6 @@ class PropLaunchProfileStreamingSessionStorageRoot(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Windows"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-nimblestudio-launchprofile-streamingsessionstorageroot.html#cfn-nimblestudio-launchprofile-streamingsessionstorageroot-windows"""
-
-@attr.s
-class PropLaunchProfileStreamConfigurationSessionBackup(Property):
-    """
-    AWS Object Type = "AWS::NimbleStudio::LaunchProfile.StreamConfigurationSessionBackup"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-nimblestudio-launchprofile-streamconfigurationsessionbackup.html
-
-    Property Document:
-    
-    - ``p_MaxBackupsToRetain``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-nimblestudio-launchprofile-streamconfigurationsessionbackup.html#cfn-nimblestudio-launchprofile-streamconfigurationsessionbackup-maxbackupstoretain
-    - ``p_Mode``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-nimblestudio-launchprofile-streamconfigurationsessionbackup.html#cfn-nimblestudio-launchprofile-streamconfigurationsessionbackup-mode
-    """
-    AWS_OBJECT_TYPE = "AWS::NimbleStudio::LaunchProfile.StreamConfigurationSessionBackup"
-    
-    p_MaxBackupsToRetain: float = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(float)),
-        metadata={AttrMeta.PROPERTY_NAME: "MaxBackupsToRetain"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-nimblestudio-launchprofile-streamconfigurationsessionbackup.html#cfn-nimblestudio-launchprofile-streamconfigurationsessionbackup-maxbackupstoretain"""
-    p_Mode: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Mode"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-nimblestudio-launchprofile-streamconfigurationsessionbackup.html#cfn-nimblestudio-launchprofile-streamconfigurationsessionbackup-mode"""
 
 @attr.s
 class PropStudioStudioEncryptionConfiguration(Property):
@@ -420,13 +332,9 @@ class PropLaunchProfileStreamConfiguration(Property):
     - ``rp_ClipboardMode``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-nimblestudio-launchprofile-streamconfiguration.html#cfn-nimblestudio-launchprofile-streamconfiguration-clipboardmode
     - ``rp_Ec2InstanceTypes``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-nimblestudio-launchprofile-streamconfiguration.html#cfn-nimblestudio-launchprofile-streamconfiguration-ec2instancetypes
     - ``rp_StreamingImageIds``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-nimblestudio-launchprofile-streamconfiguration.html#cfn-nimblestudio-launchprofile-streamconfiguration-streamingimageids
-    - ``p_AutomaticTerminationMode``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-nimblestudio-launchprofile-streamconfiguration.html#cfn-nimblestudio-launchprofile-streamconfiguration-automaticterminationmode
     - ``p_MaxSessionLengthInMinutes``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-nimblestudio-launchprofile-streamconfiguration.html#cfn-nimblestudio-launchprofile-streamconfiguration-maxsessionlengthinminutes
     - ``p_MaxStoppedSessionLengthInMinutes``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-nimblestudio-launchprofile-streamconfiguration.html#cfn-nimblestudio-launchprofile-streamconfiguration-maxstoppedsessionlengthinminutes
-    - ``p_SessionBackup``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-nimblestudio-launchprofile-streamconfiguration.html#cfn-nimblestudio-launchprofile-streamconfiguration-sessionbackup
-    - ``p_SessionPersistenceMode``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-nimblestudio-launchprofile-streamconfiguration.html#cfn-nimblestudio-launchprofile-streamconfiguration-sessionpersistencemode
     - ``p_SessionStorage``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-nimblestudio-launchprofile-streamconfiguration.html#cfn-nimblestudio-launchprofile-streamconfiguration-sessionstorage
-    - ``p_VolumeConfiguration``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-nimblestudio-launchprofile-streamconfiguration.html#cfn-nimblestudio-launchprofile-streamconfiguration-volumeconfiguration
     """
     AWS_OBJECT_TYPE = "AWS::NimbleStudio::LaunchProfile.StreamConfiguration"
     
@@ -448,12 +356,6 @@ class PropLaunchProfileStreamConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "StreamingImageIds"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-nimblestudio-launchprofile-streamconfiguration.html#cfn-nimblestudio-launchprofile-streamconfiguration-streamingimageids"""
-    p_AutomaticTerminationMode: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "AutomaticTerminationMode"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-nimblestudio-launchprofile-streamconfiguration.html#cfn-nimblestudio-launchprofile-streamconfiguration-automaticterminationmode"""
     p_MaxSessionLengthInMinutes: float = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(float)),
@@ -466,31 +368,12 @@ class PropLaunchProfileStreamConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "MaxStoppedSessionLengthInMinutes"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-nimblestudio-launchprofile-streamconfiguration.html#cfn-nimblestudio-launchprofile-streamconfiguration-maxstoppedsessionlengthinminutes"""
-    p_SessionBackup: typing.Optional[dict] = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(dict)),
-        metadata={AttrMeta.PROPERTY_NAME: "SessionBackup"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-nimblestudio-launchprofile-streamconfiguration.html#cfn-nimblestudio-launchprofile-streamconfiguration-sessionbackup"""
-    p_SessionPersistenceMode: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "SessionPersistenceMode"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-nimblestudio-launchprofile-streamconfiguration.html#cfn-nimblestudio-launchprofile-streamconfiguration-sessionpersistencemode"""
     p_SessionStorage: typing.Optional[dict] = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "SessionStorage"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-nimblestudio-launchprofile-streamconfiguration.html#cfn-nimblestudio-launchprofile-streamconfiguration-sessionstorage"""
-    p_VolumeConfiguration: typing.Union['PropLaunchProfileVolumeConfiguration', dict] = attr.ib(
-        default=None,
-        converter=PropLaunchProfileVolumeConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropLaunchProfileVolumeConfiguration)),
-        metadata={AttrMeta.PROPERTY_NAME: "VolumeConfiguration"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-nimblestudio-launchprofile-streamconfiguration.html#cfn-nimblestudio-launchprofile-streamconfiguration-volumeconfiguration"""
 
 @attr.s
 class PropStudioComponentStudioComponentConfiguration(Property):
@@ -627,6 +510,11 @@ class StreamingImage(Resource):
 
     
     @property
+    def rv_EulaIds(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-nimblestudio-streamingimage.html#aws-resource-nimblestudio-streamingimage-return-values"""
+        return GetAtt(resource=self, attr_name="EulaIds")
+    
+    @property
     def rv_Owner(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-nimblestudio-streamingimage.html#aws-resource-nimblestudio-streamingimage-return-values"""
         return GetAtt(resource=self, attr_name="Owner")
@@ -635,26 +523,6 @@ class StreamingImage(Resource):
     def rv_Platform(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-nimblestudio-streamingimage.html#aws-resource-nimblestudio-streamingimage-return-values"""
         return GetAtt(resource=self, attr_name="Platform")
-    
-    @property
-    def rv_EncryptionConfiguration(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-nimblestudio-streamingimage.html#aws-resource-nimblestudio-streamingimage-return-values"""
-        return GetAtt(resource=self, attr_name="EncryptionConfiguration")
-    
-    @property
-    def rv_EulaIds(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-nimblestudio-streamingimage.html#aws-resource-nimblestudio-streamingimage-return-values"""
-        return GetAtt(resource=self, attr_name="EulaIds")
-    
-    @property
-    def rv_EncryptionConfigurationKeyArn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-nimblestudio-streamingimage.html#aws-resource-nimblestudio-streamingimage-return-values"""
-        return GetAtt(resource=self, attr_name="EncryptionConfiguration.KeyArn")
-    
-    @property
-    def rv_EncryptionConfigurationKeyType(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-nimblestudio-streamingimage.html#aws-resource-nimblestudio-streamingimage-return-values"""
-        return GetAtt(resource=self, attr_name="EncryptionConfiguration.KeyType")
     
     @property
     def rv_StreamingImageId(self) -> GetAtt:
@@ -693,7 +561,6 @@ class LaunchProfile(Resource):
                 "Required": True,
                 "Type": 'List',
                 "PrimitiveItemType": 'String',
-                "DuplicatesAllowed": True,
             }
         },
     )
@@ -708,7 +575,6 @@ class LaunchProfile(Resource):
                 "Required": True,
                 "Type": 'List',
                 "PrimitiveItemType": 'String',
-                "DuplicatesAllowed": True,
             }
         },
     )
@@ -750,7 +616,6 @@ class LaunchProfile(Resource):
                 "Required": True,
                 "Type": 'List',
                 "PrimitiveItemType": 'String',
-                "DuplicatesAllowed": True,
             }
         },
     )
@@ -1078,11 +943,6 @@ class Studio(Resource):
         return GetAtt(resource=self, attr_name="HomeRegion")
     
     @property
-    def rv_StudioUrl(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-nimblestudio-studio.html#aws-resource-nimblestudio-studio-return-values"""
-        return GetAtt(resource=self, attr_name="StudioUrl")
-    
-    @property
     def rv_SsoClientId(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-nimblestudio-studio.html#aws-resource-nimblestudio-studio-return-values"""
         return GetAtt(resource=self, attr_name="SsoClientId")
@@ -1091,4 +951,9 @@ class Studio(Resource):
     def rv_StudioId(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-nimblestudio-studio.html#aws-resource-nimblestudio-studio-return-values"""
         return GetAtt(resource=self, attr_name="StudioId")
+    
+    @property
+    def rv_StudioUrl(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-nimblestudio-studio.html#aws-resource-nimblestudio-studio-return-values"""
+        return GetAtt(resource=self, attr_name="StudioUrl")
     

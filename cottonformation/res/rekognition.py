@@ -15,6 +15,33 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
+class PropStreamProcessorPoint(Property):
+    """
+    AWS Object Type = "AWS::Rekognition::StreamProcessor.Point"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rekognition-streamprocessor-point.html
+
+    Property Document:
+    
+    - ``rp_X``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rekognition-streamprocessor-point.html#cfn-rekognition-streamprocessor-x
+    - ``rp_Y``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rekognition-streamprocessor-point.html#cfn-rekognition-streamprocessor-y
+    """
+    AWS_OBJECT_TYPE = "AWS::Rekognition::StreamProcessor.Point"
+    
+    rp_X: int = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(int),
+        metadata={AttrMeta.PROPERTY_NAME: "X"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rekognition-streamprocessor-point.html#cfn-rekognition-streamprocessor-x"""
+    rp_Y: int = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(int),
+        metadata={AttrMeta.PROPERTY_NAME: "Y"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rekognition-streamprocessor-point.html#cfn-rekognition-streamprocessor-y"""
+
+@attr.s
 class PropStreamProcessorKinesisDataStream(Property):
     """
     AWS Object Type = "AWS::Rekognition::StreamProcessor.KinesisDataStream"
@@ -121,6 +148,27 @@ class PropStreamProcessorBoundingBox(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Width"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rekognition-streamprocessor-boundingbox.html#cfn-rekognition-streamprocessor-boundingbox-width"""
+
+@attr.s
+class PropStreamProcessorPolygon(Property):
+    """
+    AWS Object Type = "AWS::Rekognition::StreamProcessor.Polygon"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rekognition-streamprocessor-polygon.html
+
+    Property Document:
+    
+    - ``rp_Polygon``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rekognition-streamprocessor-polygon.html#cfn-rekognition-streamprocessor-polygon
+    """
+    AWS_OBJECT_TYPE = "AWS::Rekognition::StreamProcessor.Polygon"
+    
+    rp_Polygon: typing.List[typing.Union['PropStreamProcessorPoint', dict]] = attr.ib(
+        default=None,
+        converter=PropStreamProcessorPoint.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropStreamProcessorPoint), iterable_validator=attr.validators.instance_of(list)),
+        metadata={AttrMeta.PROPERTY_NAME: "Polygon"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-rekognition-streamprocessor-polygon.html#cfn-rekognition-streamprocessor-polygon"""
 
 @attr.s
 class PropStreamProcessorConnectedHomeSettings(Property):
@@ -471,15 +519,18 @@ class StreamProcessor(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rekognition-streamprocessor.html#cfn-rekognition-streamprocessor-notificationchannel"""
-    p_PolygonRegionsOfInterest: dict = attr.ib(
+    p_PolygonRegionsOfInterest: typing.List[typing.Union['PropStreamProcessorPolygon', dict]] = attr.ib(
         default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        converter=PropStreamProcessorPolygon.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropStreamProcessorPolygon), iterable_validator=attr.validators.instance_of(list))),
         metadata={
             AttrMeta.PROPERTY_NAME: "PolygonRegionsOfInterest",
             AttrMeta.DATA: {
                 "UpdateType": 'Immutable',
                 "Required": False,
-                "PrimitiveType": 'Json',
+                "Type": 'List',
+                "ItemType": 'Polygon',
+                "DuplicatesAllowed": False,
             }
         },
     )
@@ -517,14 +568,14 @@ class StreamProcessor(Resource):
 
     
     @property
-    def rv_Status(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rekognition-streamprocessor.html#aws-resource-rekognition-streamprocessor-return-values"""
-        return GetAtt(resource=self, attr_name="Status")
-    
-    @property
     def rv_Arn(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rekognition-streamprocessor.html#aws-resource-rekognition-streamprocessor-return-values"""
         return GetAtt(resource=self, attr_name="Arn")
+    
+    @property
+    def rv_Status(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-rekognition-streamprocessor.html#aws-resource-rekognition-streamprocessor-return-values"""
+        return GetAtt(resource=self, attr_name="Status")
     
     @property
     def rv_StatusMessage(self) -> GetAtt:

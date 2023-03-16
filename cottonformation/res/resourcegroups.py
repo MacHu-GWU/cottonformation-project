@@ -205,7 +205,6 @@ class Group(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'ConfigurationItem',
-                "DuplicatesAllowed": True,
             }
         },
     )
@@ -247,7 +246,6 @@ class Group(Resource):
                 "Required": False,
                 "Type": 'List',
                 "PrimitiveItemType": 'String',
-                "DuplicatesAllowed": True,
             }
         },
     )
@@ -263,7 +261,6 @@ class Group(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Tag',
-                "DuplicatesAllowed": True,
             }
         },
     )

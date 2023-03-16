@@ -35,31 +35,81 @@ class PropBucketAbortIncompleteMultipartUpload(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3outposts-bucket-abortincompletemultipartupload.html#cfn-s3outposts-bucket-abortincompletemultipartupload-daysafterinitiation"""
 
 @attr.s
-class PropBucketFilterTag(Property):
+class PropBucketRule(Property):
     """
-    AWS Object Type = "AWS::S3Outposts::Bucket.FilterTag"
+    AWS Object Type = "AWS::S3Outposts::Bucket.Rule"
 
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3outposts-bucket-filtertag.html
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3outposts-bucket-rule.html
 
     Property Document:
     
-    - ``rp_Key``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3outposts-bucket-filtertag.html#cfn-s3outposts-bucket-filtertag-key
-    - ``rp_Value``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3outposts-bucket-filtertag.html#cfn-s3outposts-bucket-filtertag-value
+    - ``p_AbortIncompleteMultipartUpload``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3outposts-bucket-rule.html#cfn-s3outposts-bucket-rule-abortincompletemultipartupload
+    - ``p_ExpirationDate``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3outposts-bucket-rule.html#cfn-s3outposts-bucket-rule-expirationdate
+    - ``p_ExpirationInDays``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3outposts-bucket-rule.html#cfn-s3outposts-bucket-rule-expirationindays
+    - ``p_Filter``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3outposts-bucket-rule.html#cfn-s3outposts-bucket-rule-filter
+    - ``p_Id``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3outposts-bucket-rule.html#cfn-s3outposts-bucket-rule-id
+    - ``p_Status``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3outposts-bucket-rule.html#cfn-s3outposts-bucket-rule-status
     """
-    AWS_OBJECT_TYPE = "AWS::S3Outposts::Bucket.FilterTag"
+    AWS_OBJECT_TYPE = "AWS::S3Outposts::Bucket.Rule"
     
-    rp_Key: TypeHint.intrinsic_str = attr.ib(
+    p_AbortIncompleteMultipartUpload: typing.Union['PropBucketAbortIncompleteMultipartUpload', dict] = attr.ib(
         default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Key"},
+        converter=PropBucketAbortIncompleteMultipartUpload.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropBucketAbortIncompleteMultipartUpload)),
+        metadata={AttrMeta.PROPERTY_NAME: "AbortIncompleteMultipartUpload"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3outposts-bucket-filtertag.html#cfn-s3outposts-bucket-filtertag-key"""
-    rp_Value: TypeHint.intrinsic_str = attr.ib(
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3outposts-bucket-rule.html#cfn-s3outposts-bucket-rule-abortincompletemultipartupload"""
+    p_ExpirationDate: TypeHint.intrinsic_str = attr.ib(
         default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Value"},
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "ExpirationDate"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3outposts-bucket-filtertag.html#cfn-s3outposts-bucket-filtertag-value"""
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3outposts-bucket-rule.html#cfn-s3outposts-bucket-rule-expirationdate"""
+    p_ExpirationInDays: int = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(int)),
+        metadata={AttrMeta.PROPERTY_NAME: "ExpirationInDays"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3outposts-bucket-rule.html#cfn-s3outposts-bucket-rule-expirationindays"""
+    p_Filter: dict = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "Filter"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3outposts-bucket-rule.html#cfn-s3outposts-bucket-rule-filter"""
+    p_Id: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "Id"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3outposts-bucket-rule.html#cfn-s3outposts-bucket-rule-id"""
+    p_Status: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "Status"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3outposts-bucket-rule.html#cfn-s3outposts-bucket-rule-status"""
+
+@attr.s
+class PropBucketLifecycleConfiguration(Property):
+    """
+    AWS Object Type = "AWS::S3Outposts::Bucket.LifecycleConfiguration"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3outposts-bucket-lifecycleconfiguration.html
+
+    Property Document:
+    
+    - ``rp_Rules``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3outposts-bucket-lifecycleconfiguration.html#cfn-s3outposts-bucket-lifecycleconfiguration-rules
+    """
+    AWS_OBJECT_TYPE = "AWS::S3Outposts::Bucket.LifecycleConfiguration"
+    
+    rp_Rules: typing.List[typing.Union['PropBucketRule', dict]] = attr.ib(
+        default=None,
+        converter=PropBucketRule.from_list,
+        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropBucketRule), iterable_validator=attr.validators.instance_of(list)),
+        metadata={AttrMeta.PROPERTY_NAME: "Rules"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3outposts-bucket-lifecycleconfiguration.html#cfn-s3outposts-bucket-lifecycleconfiguration-rules"""
 
 @attr.s
 class PropAccessPointVpcConfiguration(Property):
@@ -100,146 +150,6 @@ class PropEndpointNetworkInterface(Property):
         metadata={AttrMeta.PROPERTY_NAME: "NetworkInterfaceId"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3outposts-endpoint-networkinterface.html#cfn-s3outposts-endpoint-networkinterface-networkinterfaceid"""
-
-@attr.s
-class PropBucketFilterAndOperator(Property):
-    """
-    AWS Object Type = "AWS::S3Outposts::Bucket.FilterAndOperator"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3outposts-bucket-filterandoperator.html
-
-    Property Document:
-    
-    - ``p_Prefix``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3outposts-bucket-filterandoperator.html#cfn-s3outposts-bucket-filterandoperator-prefix
-    - ``rp_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3outposts-bucket-filterandoperator.html#cfn-s3outposts-bucket-filterandoperator-tags
-    """
-    AWS_OBJECT_TYPE = "AWS::S3Outposts::Bucket.FilterAndOperator"
-    
-    p_Prefix: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Prefix"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3outposts-bucket-filterandoperator.html#cfn-s3outposts-bucket-filterandoperator-prefix"""
-    rp_Tags: typing.List[typing.Union['PropBucketFilterTag', dict]] = attr.ib(
-        default=None,
-        converter=PropBucketFilterTag.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropBucketFilterTag), iterable_validator=attr.validators.instance_of(list)),
-        metadata={AttrMeta.PROPERTY_NAME: "Tags"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3outposts-bucket-filterandoperator.html#cfn-s3outposts-bucket-filterandoperator-tags"""
-
-@attr.s
-class PropBucketFilter(Property):
-    """
-    AWS Object Type = "AWS::S3Outposts::Bucket.Filter"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3outposts-bucket-filter.html
-
-    Property Document:
-    
-    - ``p_AndOperator``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3outposts-bucket-filter.html#cfn-s3outposts-bucket-filter-andoperator
-    - ``p_Prefix``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3outposts-bucket-filter.html#cfn-s3outposts-bucket-filter-prefix
-    - ``p_Tag``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3outposts-bucket-filter.html#cfn-s3outposts-bucket-filter-tag
-    """
-    AWS_OBJECT_TYPE = "AWS::S3Outposts::Bucket.Filter"
-    
-    p_AndOperator: typing.Optional[dict] = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(dict)),
-        metadata={AttrMeta.PROPERTY_NAME: "AndOperator"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3outposts-bucket-filter.html#cfn-s3outposts-bucket-filter-andoperator"""
-    p_Prefix: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Prefix"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3outposts-bucket-filter.html#cfn-s3outposts-bucket-filter-prefix"""
-    p_Tag: typing.Optional[dict] = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(dict)),
-        metadata={AttrMeta.PROPERTY_NAME: "Tag"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3outposts-bucket-filter.html#cfn-s3outposts-bucket-filter-tag"""
-
-@attr.s
-class PropBucketRule(Property):
-    """
-    AWS Object Type = "AWS::S3Outposts::Bucket.Rule"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3outposts-bucket-rule.html
-
-    Property Document:
-    
-    - ``rp_Status``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3outposts-bucket-rule.html#cfn-s3outposts-bucket-rule-status
-    - ``p_AbortIncompleteMultipartUpload``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3outposts-bucket-rule.html#cfn-s3outposts-bucket-rule-abortincompletemultipartupload
-    - ``p_ExpirationDate``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3outposts-bucket-rule.html#cfn-s3outposts-bucket-rule-expirationdate
-    - ``p_ExpirationInDays``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3outposts-bucket-rule.html#cfn-s3outposts-bucket-rule-expirationindays
-    - ``p_Filter``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3outposts-bucket-rule.html#cfn-s3outposts-bucket-rule-filter
-    - ``p_Id``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3outposts-bucket-rule.html#cfn-s3outposts-bucket-rule-id
-    """
-    AWS_OBJECT_TYPE = "AWS::S3Outposts::Bucket.Rule"
-    
-    rp_Status: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Status"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3outposts-bucket-rule.html#cfn-s3outposts-bucket-rule-status"""
-    p_AbortIncompleteMultipartUpload: typing.Union['PropBucketAbortIncompleteMultipartUpload', dict] = attr.ib(
-        default=None,
-        converter=PropBucketAbortIncompleteMultipartUpload.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropBucketAbortIncompleteMultipartUpload)),
-        metadata={AttrMeta.PROPERTY_NAME: "AbortIncompleteMultipartUpload"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3outposts-bucket-rule.html#cfn-s3outposts-bucket-rule-abortincompletemultipartupload"""
-    p_ExpirationDate: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "ExpirationDate"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3outposts-bucket-rule.html#cfn-s3outposts-bucket-rule-expirationdate"""
-    p_ExpirationInDays: int = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "ExpirationInDays"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3outposts-bucket-rule.html#cfn-s3outposts-bucket-rule-expirationindays"""
-    p_Filter: typing.Union['PropBucketFilter', dict] = attr.ib(
-        default=None,
-        converter=PropBucketFilter.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropBucketFilter)),
-        metadata={AttrMeta.PROPERTY_NAME: "Filter"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3outposts-bucket-rule.html#cfn-s3outposts-bucket-rule-filter"""
-    p_Id: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Id"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3outposts-bucket-rule.html#cfn-s3outposts-bucket-rule-id"""
-
-@attr.s
-class PropBucketLifecycleConfiguration(Property):
-    """
-    AWS Object Type = "AWS::S3Outposts::Bucket.LifecycleConfiguration"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3outposts-bucket-lifecycleconfiguration.html
-
-    Property Document:
-    
-    - ``rp_Rules``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3outposts-bucket-lifecycleconfiguration.html#cfn-s3outposts-bucket-lifecycleconfiguration-rules
-    """
-    AWS_OBJECT_TYPE = "AWS::S3Outposts::Bucket.LifecycleConfiguration"
-    
-    rp_Rules: typing.List[typing.Union['PropBucketRule', dict]] = attr.ib(
-        default=None,
-        converter=PropBucketRule.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropBucketRule), iterable_validator=attr.validators.instance_of(list)),
-        metadata={AttrMeta.PROPERTY_NAME: "Rules"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3outposts-bucket-lifecycleconfiguration.html#cfn-s3outposts-bucket-lifecycleconfiguration-rules"""
 
 
 #--- Resource declaration ---
@@ -330,19 +240,9 @@ class Endpoint(Resource):
 
     
     @property
-    def rv_Status(self) -> GetAtt:
+    def rv_Arn(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3outposts-endpoint.html#aws-resource-s3outposts-endpoint-return-values"""
-        return GetAtt(resource=self, attr_name="Status")
-    
-    @property
-    def rv_NetworkInterfaces(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3outposts-endpoint.html#aws-resource-s3outposts-endpoint-return-values"""
-        return GetAtt(resource=self, attr_name="NetworkInterfaces")
-    
-    @property
-    def rv_CreationTime(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3outposts-endpoint.html#aws-resource-s3outposts-endpoint-return-values"""
-        return GetAtt(resource=self, attr_name="CreationTime")
+        return GetAtt(resource=self, attr_name="Arn")
     
     @property
     def rv_CidrBlock(self) -> GetAtt:
@@ -350,14 +250,24 @@ class Endpoint(Resource):
         return GetAtt(resource=self, attr_name="CidrBlock")
     
     @property
+    def rv_CreationTime(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3outposts-endpoint.html#aws-resource-s3outposts-endpoint-return-values"""
+        return GetAtt(resource=self, attr_name="CreationTime")
+    
+    @property
     def rv_Id(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3outposts-endpoint.html#aws-resource-s3outposts-endpoint-return-values"""
         return GetAtt(resource=self, attr_name="Id")
     
     @property
-    def rv_Arn(self) -> GetAtt:
+    def rv_NetworkInterfaces(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3outposts-endpoint.html#aws-resource-s3outposts-endpoint-return-values"""
-        return GetAtt(resource=self, attr_name="Arn")
+        return GetAtt(resource=self, attr_name="NetworkInterfaces")
+    
+    @property
+    def rv_Status(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3outposts-endpoint.html#aws-resource-s3outposts-endpoint-return-values"""
+        return GetAtt(resource=self, attr_name="Status")
     
 
 @attr.s

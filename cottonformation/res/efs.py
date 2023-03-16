@@ -288,14 +288,14 @@ class MountTarget(Resource):
 
     
     @property
-    def rv_IpAddress(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-mounttarget.html#aws-resource-efs-mounttarget-return-values"""
-        return GetAtt(resource=self, attr_name="IpAddress")
-    
-    @property
     def rv_Id(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-mounttarget.html#aws-resource-efs-mounttarget-return-values"""
         return GetAtt(resource=self, attr_name="Id")
+    
+    @property
+    def rv_IpAddress(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-efs-mounttarget.html#aws-resource-efs-mounttarget-return-values"""
+        return GetAtt(resource=self, attr_name="IpAddress")
     
 
 @attr.s

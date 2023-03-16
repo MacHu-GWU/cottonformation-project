@@ -2338,7 +2338,7 @@ class ApiMapping(Resource):
             AttrMeta.DATA: {
                 "Required": True,
                 "PrimitiveType": 'String',
-                "UpdateType": 'Mutable',
+                "UpdateType": 'Immutable',
             }
         },
     )

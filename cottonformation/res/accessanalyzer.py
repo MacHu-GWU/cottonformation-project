@@ -147,7 +147,6 @@ class Analyzer(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'ArchiveRule',
-                "DuplicatesAllowed": True,
             }
         },
     )

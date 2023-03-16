@@ -42,82 +42,6 @@ class PropFindingsFilterFindingsFilterListItem(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-macie-findingsfilter-findingsfilterlistitem.html#cfn-macie-findingsfilter-findingsfilterlistitem-name"""
 
 @attr.s
-class PropFindingsFilterCriterionAdditionalProperties(Property):
-    """
-    AWS Object Type = "AWS::Macie::FindingsFilter.CriterionAdditionalProperties"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-macie-findingsfilter-criterionadditionalproperties.html
-
-    Property Document:
-    
-    - ``p_eq``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-macie-findingsfilter-criterionadditionalproperties.html#cfn-macie-findingsfilter-criterionadditionalproperties-eq
-    - ``p_gt``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-macie-findingsfilter-criterionadditionalproperties.html#cfn-macie-findingsfilter-criterionadditionalproperties-gt
-    - ``p_gte``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-macie-findingsfilter-criterionadditionalproperties.html#cfn-macie-findingsfilter-criterionadditionalproperties-gte
-    - ``p_lt``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-macie-findingsfilter-criterionadditionalproperties.html#cfn-macie-findingsfilter-criterionadditionalproperties-lt
-    - ``p_lte``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-macie-findingsfilter-criterionadditionalproperties.html#cfn-macie-findingsfilter-criterionadditionalproperties-lte
-    - ``p_neq``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-macie-findingsfilter-criterionadditionalproperties.html#cfn-macie-findingsfilter-criterionadditionalproperties-neq
-    """
-    AWS_OBJECT_TYPE = "AWS::Macie::FindingsFilter.CriterionAdditionalProperties"
-    
-    p_eq: typing.List[TypeHint.intrinsic_str] = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "eq"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-macie-findingsfilter-criterionadditionalproperties.html#cfn-macie-findingsfilter-criterionadditionalproperties-eq"""
-    p_gt: int = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "gt"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-macie-findingsfilter-criterionadditionalproperties.html#cfn-macie-findingsfilter-criterionadditionalproperties-gt"""
-    p_gte: int = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "gte"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-macie-findingsfilter-criterionadditionalproperties.html#cfn-macie-findingsfilter-criterionadditionalproperties-gte"""
-    p_lt: int = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "lt"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-macie-findingsfilter-criterionadditionalproperties.html#cfn-macie-findingsfilter-criterionadditionalproperties-lt"""
-    p_lte: int = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "lte"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-macie-findingsfilter-criterionadditionalproperties.html#cfn-macie-findingsfilter-criterionadditionalproperties-lte"""
-    p_neq: typing.List[TypeHint.intrinsic_str] = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "neq"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-macie-findingsfilter-criterionadditionalproperties.html#cfn-macie-findingsfilter-criterionadditionalproperties-neq"""
-
-@attr.s
-class PropFindingsFilterFindingCriteria(Property):
-    """
-    AWS Object Type = "AWS::Macie::FindingsFilter.FindingCriteria"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-macie-findingsfilter-findingcriteria.html
-
-    Property Document:
-    
-    - ``p_Criterion``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-macie-findingsfilter-findingcriteria.html#cfn-macie-findingsfilter-findingcriteria-criterion
-    """
-    AWS_OBJECT_TYPE = "AWS::Macie::FindingsFilter.FindingCriteria"
-    
-    p_Criterion: typing.Union['PropFindingsFilterCriterionAdditionalProperties', dict] = attr.ib(
-        default=None,
-        converter=PropFindingsFilterCriterionAdditionalProperties.from_list,
-        validator=attr.validators.optional(attr.validators.instance_of(PropFindingsFilterCriterionAdditionalProperties)),
-        metadata={AttrMeta.PROPERTY_NAME: "Criterion"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-macie-findingsfilter-findingcriteria.html#cfn-macie-findingsfilter-findingcriteria-criterion"""
-
-@attr.s
 class PropAllowListS3WordsList(Property):
     """
     AWS Object Type = "AWS::Macie::AllowList.S3WordsList"
@@ -143,6 +67,19 @@ class PropAllowListS3WordsList(Property):
         metadata={AttrMeta.PROPERTY_NAME: "ObjectKey"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-macie-allowlist-s3wordslist.html#cfn-macie-allowlist-s3wordslist-objectkey"""
+
+@attr.s
+class PropFindingsFilterCriterion(Property):
+    """
+    AWS Object Type = "AWS::Macie::FindingsFilter.Criterion"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-macie-findingsfilter-criterion.html
+
+    Property Document:
+    
+    """
+    AWS_OBJECT_TYPE = "AWS::Macie::FindingsFilter.Criterion"
+    
 
 @attr.s
 class PropAllowListCriteria(Property):
@@ -171,6 +108,27 @@ class PropAllowListCriteria(Property):
         metadata={AttrMeta.PROPERTY_NAME: "S3WordsList"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-macie-allowlist-criteria.html#cfn-macie-allowlist-criteria-s3wordslist"""
+
+@attr.s
+class PropFindingsFilterFindingCriteria(Property):
+    """
+    AWS Object Type = "AWS::Macie::FindingsFilter.FindingCriteria"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-macie-findingsfilter-findingcriteria.html
+
+    Property Document:
+    
+    - ``p_Criterion``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-macie-findingsfilter-findingcriteria.html#cfn-macie-findingsfilter-findingcriteria-criterion
+    """
+    AWS_OBJECT_TYPE = "AWS::Macie::FindingsFilter.FindingCriteria"
+    
+    p_Criterion: typing.Union['PropFindingsFilterCriterion', dict] = attr.ib(
+        default=None,
+        converter=PropFindingsFilterCriterion.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropFindingsFilterCriterion)),
+        metadata={AttrMeta.PROPERTY_NAME: "Criterion"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-macie-findingsfilter-findingcriteria.html#cfn-macie-findingsfilter-findingcriteria-criterion"""
 
 
 #--- Resource declaration ---
@@ -219,14 +177,14 @@ class Session(Resource):
 
     
     @property
-    def rv_ServiceRole(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-macie-session.html#aws-resource-macie-session-return-values"""
-        return GetAtt(resource=self, attr_name="ServiceRole")
-    
-    @property
     def rv_AwsAccountId(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-macie-session.html#aws-resource-macie-session-return-values"""
         return GetAtt(resource=self, attr_name="AwsAccountId")
+    
+    @property
+    def rv_ServiceRole(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-macie-session.html#aws-resource-macie-session-return-values"""
+        return GetAtt(resource=self, attr_name="ServiceRole")
     
 
 @attr.s
@@ -297,17 +255,11 @@ class AllowList(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Tag',
-                "DuplicatesAllowed": True,
             }
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-macie-allowlist.html#cfn-macie-allowlist-tags"""
 
-    
-    @property
-    def rv_Status(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-macie-allowlist.html#aws-resource-macie-allowlist-return-values"""
-        return GetAtt(resource=self, attr_name="Status")
     
     @property
     def rv_Id(self) -> GetAtt:
@@ -318,6 +270,11 @@ class AllowList(Resource):
     def rv_Arn(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-macie-allowlist.html#aws-resource-macie-allowlist-return-values"""
         return GetAtt(resource=self, attr_name="Arn")
+    
+    @property
+    def rv_Status(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-macie-allowlist.html#aws-resource-macie-allowlist-return-values"""
+        return GetAtt(resource=self, attr_name="Status")
     
 
 @attr.s
@@ -490,7 +447,6 @@ class CustomDataIdentifier(Resource):
                 "Required": False,
                 "Type": 'List',
                 "PrimitiveItemType": 'String',
-                "DuplicatesAllowed": True,
             }
         },
     )
@@ -505,7 +461,6 @@ class CustomDataIdentifier(Resource):
                 "Required": False,
                 "Type": 'List',
                 "PrimitiveItemType": 'String',
-                "DuplicatesAllowed": True,
             }
         },
     )

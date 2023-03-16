@@ -1101,7 +1101,6 @@ class DomainName(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Tag',
-                "DuplicatesAllowed": True,
             }
         },
     )
@@ -1109,14 +1108,9 @@ class DomainName(Resource):
 
     
     @property
-    def rv_RegionalHostedZoneId(self) -> GetAtt:
+    def rv_DistributionDomainName(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainname.html#aws-resource-apigateway-domainname-return-values"""
-        return GetAtt(resource=self, attr_name="RegionalHostedZoneId")
-    
-    @property
-    def rv_RegionalDomainName(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainname.html#aws-resource-apigateway-domainname-return-values"""
-        return GetAtt(resource=self, attr_name="RegionalDomainName")
+        return GetAtt(resource=self, attr_name="DistributionDomainName")
     
     @property
     def rv_DistributionHostedZoneId(self) -> GetAtt:
@@ -1124,9 +1118,14 @@ class DomainName(Resource):
         return GetAtt(resource=self, attr_name="DistributionHostedZoneId")
     
     @property
-    def rv_DistributionDomainName(self) -> GetAtt:
+    def rv_RegionalDomainName(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainname.html#aws-resource-apigateway-domainname-return-values"""
-        return GetAtt(resource=self, attr_name="DistributionDomainName")
+        return GetAtt(resource=self, attr_name="RegionalDomainName")
+    
+    @property
+    def rv_RegionalHostedZoneId(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-domainname.html#aws-resource-apigateway-domainname-return-values"""
+        return GetAtt(resource=self, attr_name="RegionalHostedZoneId")
     
 
 @attr.s
@@ -2337,7 +2336,6 @@ class BasePathMapping(Resource):
     
     - ``rp_DomainName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-basepathmapping.html#cfn-apigateway-basepathmapping-domainname
     - ``p_BasePath``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-basepathmapping.html#cfn-apigateway-basepathmapping-basepath
-    - ``p_Id``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-basepathmapping.html#cfn-apigateway-basepathmapping-id
     - ``p_RestApiId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-basepathmapping.html#cfn-apigateway-basepathmapping-restapiid
     - ``p_Stage``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-basepathmapping.html#cfn-apigateway-basepathmapping-stage
     """
@@ -2370,19 +2368,6 @@ class BasePathMapping(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-basepathmapping.html#cfn-apigateway-basepathmapping-basepath"""
-    p_Id: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "Id",
-            AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
-                "Required": False,
-                "PrimitiveType": 'String',
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-basepathmapping.html#cfn-apigateway-basepathmapping-id"""
     p_RestApiId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
@@ -2777,9 +2762,9 @@ class RestApi(Resource):
         metadata={
             AttrMeta.PROPERTY_NAME: "ApiKeySourceType",
             AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
-                "Required": False,
                 "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Mutable',
             }
         },
     )
@@ -2790,11 +2775,11 @@ class RestApi(Resource):
         metadata={
             AttrMeta.PROPERTY_NAME: "BinaryMediaTypes",
             AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
+                "DuplicatesAllowed": False,
+                "PrimitiveItemType": 'String',
                 "Required": False,
                 "Type": 'List',
-                "PrimitiveItemType": 'String',
-                "DuplicatesAllowed": False,
+                "UpdateType": 'Mutable',
             }
         },
     )
@@ -2805,9 +2790,9 @@ class RestApi(Resource):
         metadata={
             AttrMeta.PROPERTY_NAME: "Body",
             AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
-                "Required": False,
                 "PrimitiveType": 'Json',
+                "Required": False,
+                "UpdateType": 'Mutable',
             }
         },
     )
@@ -2819,9 +2804,9 @@ class RestApi(Resource):
         metadata={
             AttrMeta.PROPERTY_NAME: "BodyS3Location",
             AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
                 "Required": False,
                 "Type": 'S3Location',
+                "UpdateType": 'Mutable',
             }
         },
     )
@@ -2832,9 +2817,9 @@ class RestApi(Resource):
         metadata={
             AttrMeta.PROPERTY_NAME: "CloneFrom",
             AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
-                "Required": False,
                 "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Mutable',
             }
         },
     )
@@ -2845,9 +2830,9 @@ class RestApi(Resource):
         metadata={
             AttrMeta.PROPERTY_NAME: "Description",
             AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
-                "Required": False,
                 "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Mutable',
             }
         },
     )
@@ -2858,9 +2843,9 @@ class RestApi(Resource):
         metadata={
             AttrMeta.PROPERTY_NAME: "DisableExecuteApiEndpoint",
             AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
-                "Required": False,
                 "PrimitiveType": 'Boolean',
+                "Required": False,
+                "UpdateType": 'Mutable',
             }
         },
     )
@@ -2872,9 +2857,9 @@ class RestApi(Resource):
         metadata={
             AttrMeta.PROPERTY_NAME: "EndpointConfiguration",
             AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
                 "Required": False,
                 "Type": 'EndpointConfiguration',
+                "UpdateType": 'Mutable',
             }
         },
     )
@@ -2885,9 +2870,9 @@ class RestApi(Resource):
         metadata={
             AttrMeta.PROPERTY_NAME: "FailOnWarnings",
             AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
-                "Required": False,
                 "PrimitiveType": 'Boolean',
+                "Required": False,
+                "UpdateType": 'Mutable',
             }
         },
     )
@@ -2898,9 +2883,9 @@ class RestApi(Resource):
         metadata={
             AttrMeta.PROPERTY_NAME: "MinimumCompressionSize",
             AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
-                "Required": False,
                 "PrimitiveType": 'Integer',
+                "Required": False,
+                "UpdateType": 'Mutable',
             }
         },
     )
@@ -2911,9 +2896,9 @@ class RestApi(Resource):
         metadata={
             AttrMeta.PROPERTY_NAME: "Mode",
             AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
-                "Required": False,
                 "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Mutable',
             }
         },
     )
@@ -2924,9 +2909,9 @@ class RestApi(Resource):
         metadata={
             AttrMeta.PROPERTY_NAME: "Name",
             AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
-                "Required": False,
                 "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Mutable',
             }
         },
     )
@@ -2937,10 +2922,11 @@ class RestApi(Resource):
         metadata={
             AttrMeta.PROPERTY_NAME: "Parameters",
             AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
+                "DuplicatesAllowed": False,
+                "PrimitiveItemType": 'String',
                 "Required": False,
                 "Type": 'Map',
-                "PrimitiveItemType": 'String',
+                "UpdateType": 'Mutable',
             }
         },
     )
@@ -2951,9 +2937,9 @@ class RestApi(Resource):
         metadata={
             AttrMeta.PROPERTY_NAME: "Policy",
             AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
-                "Required": False,
                 "PrimitiveType": 'Json',
+                "Required": False,
+                "UpdateType": 'Mutable',
             }
         },
     )
@@ -2965,11 +2951,11 @@ class RestApi(Resource):
         metadata={
             AttrMeta.PROPERTY_NAME: "Tags",
             AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
+                "DuplicatesAllowed": True,
+                "ItemType": 'Tag',
                 "Required": False,
                 "Type": 'List',
-                "ItemType": 'Tag',
-                "DuplicatesAllowed": True,
+                "UpdateType": 'Mutable',
             }
         },
     )
@@ -2980,11 +2966,6 @@ class RestApi(Resource):
     def rv_RootResourceId(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#aws-resource-apigateway-restapi-return-values"""
         return GetAtt(resource=self, attr_name="RootResourceId")
-    
-    @property
-    def rv_RestApiId(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-restapi.html#aws-resource-apigateway-restapi-return-values"""
-        return GetAtt(resource=self, attr_name="RestApiId")
     
 
 @attr.s
@@ -3010,9 +2991,9 @@ class VpcLink(Resource):
         metadata={
             AttrMeta.PROPERTY_NAME: "Name",
             AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
                 "Required": True,
                 "PrimitiveType": 'String',
+                "UpdateType": 'Mutable',
             }
         },
     )
@@ -3023,11 +3004,10 @@ class VpcLink(Resource):
         metadata={
             AttrMeta.PROPERTY_NAME: "TargetArns",
             AttrMeta.DATA: {
-                "UpdateType": 'Immutable',
-                "Required": True,
-                "Type": 'List',
                 "PrimitiveItemType": 'String',
-                "DuplicatesAllowed": True,
+                "Type": 'List',
+                "Required": True,
+                "UpdateType": 'Immutable',
             }
         },
     )
@@ -3038,9 +3018,9 @@ class VpcLink(Resource):
         metadata={
             AttrMeta.PROPERTY_NAME: "Description",
             AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
                 "Required": False,
                 "PrimitiveType": 'String',
+                "UpdateType": 'Mutable',
             }
         },
     )
@@ -3052,19 +3032,13 @@ class VpcLink(Resource):
         metadata={
             AttrMeta.PROPERTY_NAME: "Tags",
             AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
-                "Required": False,
                 "Type": 'List',
+                "Required": False,
                 "ItemType": 'Tag',
-                "DuplicatesAllowed": False,
+                "UpdateType": 'Mutable',
             }
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-vpclink.html#cfn-apigateway-vpclink-tags"""
 
-    
-    @property
-    def rv_VpcLinkId(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-apigateway-vpclink.html#aws-resource-apigateway-vpclink-return-values"""
-        return GetAtt(resource=self, attr_name="VpcLinkId")
     

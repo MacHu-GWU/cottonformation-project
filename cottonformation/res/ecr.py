@@ -116,54 +116,6 @@ class PropRepositoryImageScanningConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-repository-imagescanningconfiguration.html#cfn-ecr-repository-imagescanningconfiguration-scanonpush"""
 
 @attr.s
-class PropPublicRepositoryRepositoryCatalogData(Property):
-    """
-    AWS Object Type = "AWS::ECR::PublicRepository.RepositoryCatalogData"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-publicrepository-repositorycatalogdata.html
-
-    Property Document:
-    
-    - ``p_AboutText``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-publicrepository-repositorycatalogdata.html#cfn-ecr-publicrepository-repositorycatalogdata-abouttext
-    - ``p_Architectures``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-publicrepository-repositorycatalogdata.html#cfn-ecr-publicrepository-repositorycatalogdata-architectures
-    - ``p_OperatingSystems``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-publicrepository-repositorycatalogdata.html#cfn-ecr-publicrepository-repositorycatalogdata-operatingsystems
-    - ``p_RepositoryDescription``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-publicrepository-repositorycatalogdata.html#cfn-ecr-publicrepository-repositorycatalogdata-repositorydescription
-    - ``p_UsageText``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-publicrepository-repositorycatalogdata.html#cfn-ecr-publicrepository-repositorycatalogdata-usagetext
-    """
-    AWS_OBJECT_TYPE = "AWS::ECR::PublicRepository.RepositoryCatalogData"
-    
-    p_AboutText: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "AboutText"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-publicrepository-repositorycatalogdata.html#cfn-ecr-publicrepository-repositorycatalogdata-abouttext"""
-    p_Architectures: typing.List[TypeHint.intrinsic_str] = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Architectures"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-publicrepository-repositorycatalogdata.html#cfn-ecr-publicrepository-repositorycatalogdata-architectures"""
-    p_OperatingSystems: typing.List[TypeHint.intrinsic_str] = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "OperatingSystems"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-publicrepository-repositorycatalogdata.html#cfn-ecr-publicrepository-repositorycatalogdata-operatingsystems"""
-    p_RepositoryDescription: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "RepositoryDescription"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-publicrepository-repositorycatalogdata.html#cfn-ecr-publicrepository-repositorycatalogdata-repositorydescription"""
-    p_UsageText: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "UsageText"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ecr-publicrepository-repositorycatalogdata.html#cfn-ecr-publicrepository-repositorycatalogdata-usagetext"""
-
-@attr.s
 class PropReplicationConfigurationRepositoryFilter(Property):
     """
     AWS Object Type = "AWS::ECR::ReplicationConfiguration.RepositoryFilter"
@@ -363,14 +315,14 @@ class Repository(Resource):
 
     
     @property
-    def rv_RepositoryUri(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#aws-resource-ecr-repository-return-values"""
-        return GetAtt(resource=self, attr_name="RepositoryUri")
-    
-    @property
     def rv_Arn(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#aws-resource-ecr-repository-return-values"""
         return GetAtt(resource=self, attr_name="Arn")
+    
+    @property
+    def rv_RepositoryUri(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ecr-repository.html#aws-resource-ecr-repository-return-values"""
+        return GetAtt(resource=self, attr_name="RepositoryUri")
     
 
 @attr.s
@@ -461,16 +413,15 @@ class PublicRepository(Resource):
     AWS_OBJECT_TYPE = "AWS::ECR::PublicRepository"
 
     
-    p_RepositoryCatalogData: typing.Union['PropPublicRepositoryRepositoryCatalogData', dict] = attr.ib(
+    p_RepositoryCatalogData: dict = attr.ib(
         default=None,
-        converter=PropPublicRepositoryRepositoryCatalogData.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropPublicRepositoryRepositoryCatalogData)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={
             AttrMeta.PROPERTY_NAME: "RepositoryCatalogData",
             AttrMeta.DATA: {
                 "UpdateType": 'Mutable',
                 "Required": False,
-                "Type": 'RepositoryCatalogData',
+                "PrimitiveType": 'Json',
             }
         },
     )

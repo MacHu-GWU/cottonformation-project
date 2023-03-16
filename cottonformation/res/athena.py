@@ -238,7 +238,6 @@ class DataCatalog(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Tag',
-                "DuplicatesAllowed": True,
             }
         },
     )
@@ -342,7 +341,6 @@ class WorkGroup(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Tag',
-                "DuplicatesAllowed": True,
             }
         },
     )
@@ -350,14 +348,14 @@ class WorkGroup(Resource):
 
     
     @property
-    def rv_CreationTime(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-athena-workgroup.html#aws-resource-athena-workgroup-return-values"""
-        return GetAtt(resource=self, attr_name="CreationTime")
-    
-    @property
     def rv_WorkGroupConfigurationEngineVersionEffectiveEngineVersion(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-athena-workgroup.html#aws-resource-athena-workgroup-return-values"""
         return GetAtt(resource=self, attr_name="WorkGroupConfiguration.EngineVersion.EffectiveEngineVersion")
+    
+    @property
+    def rv_CreationTime(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-athena-workgroup.html#aws-resource-athena-workgroup-return-values"""
+        return GetAtt(resource=self, attr_name="CreationTime")
     
 
 @attr.s

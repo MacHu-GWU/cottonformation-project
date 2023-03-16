@@ -144,14 +144,14 @@ class ResourceAssociation(Resource):
 
     
     @property
-    def rv_ResourceArn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalogappregistry-resourceassociation.html#aws-resource-servicecatalogappregistry-resourceassociation-return-values"""
-        return GetAtt(resource=self, attr_name="ResourceArn")
-    
-    @property
     def rv_ApplicationArn(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalogappregistry-resourceassociation.html#aws-resource-servicecatalogappregistry-resourceassociation-return-values"""
         return GetAtt(resource=self, attr_name="ApplicationArn")
+    
+    @property
+    def rv_ResourceArn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-servicecatalogappregistry-resourceassociation.html#aws-resource-servicecatalogappregistry-resourceassociation-return-values"""
+        return GetAtt(resource=self, attr_name="ResourceArn")
     
     @property
     def rv_Id(self) -> GetAtt:

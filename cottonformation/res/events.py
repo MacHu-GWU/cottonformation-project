@@ -1258,9 +1258,9 @@ class Endpoint(Resource):
     Property Document:
     
     - ``rp_EventBuses``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-endpoint.html#cfn-events-endpoint-eventbuses
+    - ``rp_Name``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-endpoint.html#cfn-events-endpoint-name
     - ``rp_RoutingConfig``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-endpoint.html#cfn-events-endpoint-routingconfig
     - ``p_Description``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-endpoint.html#cfn-events-endpoint-description
-    - ``p_Name``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-endpoint.html#cfn-events-endpoint-name
     - ``p_ReplicationConfig``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-endpoint.html#cfn-events-endpoint-replicationconfig
     - ``p_RoleArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-endpoint.html#cfn-events-endpoint-rolearn
     """
@@ -1278,11 +1278,23 @@ class Endpoint(Resource):
                 "Required": True,
                 "Type": 'List',
                 "ItemType": 'EndpointEventBus',
-                "DuplicatesAllowed": True,
             }
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-endpoint.html#cfn-events-endpoint-eventbuses"""
+    rp_Name: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Name",
+            AttrMeta.DATA: {
+                "UpdateType": 'Immutable',
+                "Required": True,
+                "PrimitiveType": 'String',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-endpoint.html#cfn-events-endpoint-name"""
     rp_RoutingConfig: typing.Union['PropEndpointRoutingConfig', dict] = attr.ib(
         default=None,
         converter=PropEndpointRoutingConfig.from_dict,
@@ -1310,19 +1322,6 @@ class Endpoint(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-endpoint.html#cfn-events-endpoint-description"""
-    p_Name: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "Name",
-            AttrMeta.DATA: {
-                "UpdateType": 'Immutable',
-                "Required": False,
-                "PrimitiveType": 'String',
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-endpoint.html#cfn-events-endpoint-name"""
     p_ReplicationConfig: typing.Union['PropEndpointReplicationConfig', dict] = attr.ib(
         default=None,
         converter=PropEndpointReplicationConfig.from_dict,
@@ -1353,6 +1352,21 @@ class Endpoint(Resource):
 
     
     @property
+    def rv_Arn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-endpoint.html#aws-resource-events-endpoint-return-values"""
+        return GetAtt(resource=self, attr_name="Arn")
+    
+    @property
+    def rv_EndpointId(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-endpoint.html#aws-resource-events-endpoint-return-values"""
+        return GetAtt(resource=self, attr_name="EndpointId")
+    
+    @property
+    def rv_EndpointUrl(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-endpoint.html#aws-resource-events-endpoint-return-values"""
+        return GetAtt(resource=self, attr_name="EndpointUrl")
+    
+    @property
     def rv_State(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-endpoint.html#aws-resource-events-endpoint-return-values"""
         return GetAtt(resource=self, attr_name="State")
@@ -1361,21 +1375,6 @@ class Endpoint(Resource):
     def rv_StateReason(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-endpoint.html#aws-resource-events-endpoint-return-values"""
         return GetAtt(resource=self, attr_name="StateReason")
-    
-    @property
-    def rv_EndpointId(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-endpoint.html#aws-resource-events-endpoint-return-values"""
-        return GetAtt(resource=self, attr_name="EndpointId")
-    
-    @property
-    def rv_Arn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-endpoint.html#aws-resource-events-endpoint-return-values"""
-        return GetAtt(resource=self, attr_name="Arn")
-    
-    @property
-    def rv_EndpointUrl(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-endpoint.html#aws-resource-events-endpoint-return-values"""
-        return GetAtt(resource=self, attr_name="EndpointUrl")
     
 
 @attr.s
@@ -1705,6 +1704,11 @@ class Archive(Resource):
 
     
     @property
+    def rv_ArchiveName(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-archive.html#aws-resource-events-archive-return-values"""
+        return GetAtt(resource=self, attr_name="ArchiveName")
+    
+    @property
     def rv_Arn(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-archive.html#aws-resource-events-archive-return-values"""
         return GetAtt(resource=self, attr_name="Arn")
@@ -1783,14 +1787,14 @@ class Connection(Resource):
 
     
     @property
-    def rv_SecretArn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-connection.html#aws-resource-events-connection-return-values"""
-        return GetAtt(resource=self, attr_name="SecretArn")
-    
-    @property
     def rv_Arn(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-connection.html#aws-resource-events-connection-return-values"""
         return GetAtt(resource=self, attr_name="Arn")
+    
+    @property
+    def rv_SecretArn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-events-connection.html#aws-resource-events-connection-return-values"""
+        return GetAtt(resource=self, attr_name="SecretArn")
     
 
 @attr.s

@@ -14,108 +14,6 @@ from ..core.constant import AttrMeta
 
 #--- Property declaration ---
 
-@attr.s
-class PropDatasetEncryptionConfig(Property):
-    """
-    AWS Object Type = "AWS::Forecast::Dataset.EncryptionConfig"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-forecast-dataset-encryptionconfig.html
-
-    Property Document:
-    
-    - ``p_KmsKeyArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-forecast-dataset-encryptionconfig.html#cfn-forecast-dataset-encryptionconfig-kmskeyarn
-    - ``p_RoleArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-forecast-dataset-encryptionconfig.html#cfn-forecast-dataset-encryptionconfig-rolearn
-    """
-    AWS_OBJECT_TYPE = "AWS::Forecast::Dataset.EncryptionConfig"
-    
-    p_KmsKeyArn: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "KmsKeyArn"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-forecast-dataset-encryptionconfig.html#cfn-forecast-dataset-encryptionconfig-kmskeyarn"""
-    p_RoleArn: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "RoleArn"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-forecast-dataset-encryptionconfig.html#cfn-forecast-dataset-encryptionconfig-rolearn"""
-
-@attr.s
-class PropDatasetTagsItems(Property):
-    """
-    AWS Object Type = "AWS::Forecast::Dataset.TagsItems"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-forecast-dataset-tagsitems.html
-
-    Property Document:
-    
-    - ``rp_Key``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-forecast-dataset-tagsitems.html#cfn-forecast-dataset-tagsitems-key
-    - ``rp_Value``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-forecast-dataset-tagsitems.html#cfn-forecast-dataset-tagsitems-value
-    """
-    AWS_OBJECT_TYPE = "AWS::Forecast::Dataset.TagsItems"
-    
-    rp_Key: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Key"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-forecast-dataset-tagsitems.html#cfn-forecast-dataset-tagsitems-key"""
-    rp_Value: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Value"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-forecast-dataset-tagsitems.html#cfn-forecast-dataset-tagsitems-value"""
-
-@attr.s
-class PropDatasetAttributesItems(Property):
-    """
-    AWS Object Type = "AWS::Forecast::Dataset.AttributesItems"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-forecast-dataset-attributesitems.html
-
-    Property Document:
-    
-    - ``p_AttributeName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-forecast-dataset-attributesitems.html#cfn-forecast-dataset-attributesitems-attributename
-    - ``p_AttributeType``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-forecast-dataset-attributesitems.html#cfn-forecast-dataset-attributesitems-attributetype
-    """
-    AWS_OBJECT_TYPE = "AWS::Forecast::Dataset.AttributesItems"
-    
-    p_AttributeName: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "AttributeName"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-forecast-dataset-attributesitems.html#cfn-forecast-dataset-attributesitems-attributename"""
-    p_AttributeType: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "AttributeType"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-forecast-dataset-attributesitems.html#cfn-forecast-dataset-attributesitems-attributetype"""
-
-@attr.s
-class PropDatasetSchema(Property):
-    """
-    AWS Object Type = "AWS::Forecast::Dataset.Schema"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-forecast-dataset-schema.html
-
-    Property Document:
-    
-    - ``p_Attributes``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-forecast-dataset-schema.html#cfn-forecast-dataset-schema-attributes
-    """
-    AWS_OBJECT_TYPE = "AWS::Forecast::Dataset.Schema"
-    
-    p_Attributes: typing.List[typing.Union['PropDatasetAttributesItems', dict]] = attr.ib(
-        default=None,
-        converter=PropDatasetAttributesItems.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDatasetAttributesItems), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Attributes"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-forecast-dataset-schema.html#cfn-forecast-dataset-schema-attributes"""
-
 
 #--- Resource declaration ---
 
@@ -172,7 +70,6 @@ class DatasetGroup(Resource):
                 "Required": False,
                 "Type": 'List',
                 "PrimitiveItemType": 'String',
-                "DuplicatesAllowed": True,
             }
         },
     )
@@ -188,7 +85,6 @@ class DatasetGroup(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Tag',
-                "DuplicatesAllowed": True,
             }
         },
     )
@@ -260,16 +156,15 @@ class Dataset(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-forecast-dataset.html#cfn-forecast-dataset-domain"""
-    rp_Schema: typing.Union['PropDatasetSchema', dict] = attr.ib(
+    rp_Schema: dict = attr.ib(
         default=None,
-        converter=PropDatasetSchema.from_dict,
-        validator=attr.validators.instance_of(PropDatasetSchema),
+        validator=attr.validators.instance_of(dict),
         metadata={
             AttrMeta.PROPERTY_NAME: "Schema",
             AttrMeta.DATA: {
                 "UpdateType": 'Mutable',
                 "Required": True,
-                "Type": 'Schema',
+                "PrimitiveType": 'Json',
             }
         },
     )
@@ -287,32 +182,29 @@ class Dataset(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-forecast-dataset.html#cfn-forecast-dataset-datafrequency"""
-    p_EncryptionConfig: typing.Union['PropDatasetEncryptionConfig', dict] = attr.ib(
+    p_EncryptionConfig: dict = attr.ib(
         default=None,
-        converter=PropDatasetEncryptionConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropDatasetEncryptionConfig)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={
             AttrMeta.PROPERTY_NAME: "EncryptionConfig",
             AttrMeta.DATA: {
                 "UpdateType": 'Mutable',
                 "Required": False,
-                "Type": 'EncryptionConfig',
+                "PrimitiveType": 'Json',
             }
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-forecast-dataset.html#cfn-forecast-dataset-encryptionconfig"""
-    p_Tags: typing.List[typing.Union['PropDatasetTagsItems', dict]] = attr.ib(
+    p_Tags: typing.List[dict] = attr.ib(
         default=None,
-        converter=PropDatasetTagsItems.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDatasetTagsItems), iterable_validator=attr.validators.instance_of(list))),
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(dict), iterable_validator=attr.validators.instance_of(list))),
         metadata={
             AttrMeta.PROPERTY_NAME: "Tags",
             AttrMeta.DATA: {
                 "UpdateType": 'Mutable',
                 "Required": False,
                 "Type": 'List',
-                "ItemType": 'TagsItems',
-                "DuplicatesAllowed": True,
+                "PrimitiveItemType": 'Json',
             }
         },
     )

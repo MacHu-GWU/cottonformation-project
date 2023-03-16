@@ -87,7 +87,6 @@ class PropResolverEndpointIpAddressRequest(Property):
     
     - ``rp_SubnetId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53resolver-resolverendpoint-ipaddressrequest.html#cfn-route53resolver-resolverendpoint-ipaddressrequest-subnetid
     - ``p_Ip``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53resolver-resolverendpoint-ipaddressrequest.html#cfn-route53resolver-resolverendpoint-ipaddressrequest-ip
-    - ``p_Ipv6``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53resolver-resolverendpoint-ipaddressrequest.html#cfn-route53resolver-resolverendpoint-ipaddressrequest-ipv6
     """
     AWS_OBJECT_TYPE = "AWS::Route53Resolver::ResolverEndpoint.IpAddressRequest"
     
@@ -103,12 +102,6 @@ class PropResolverEndpointIpAddressRequest(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Ip"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53resolver-resolverendpoint-ipaddressrequest.html#cfn-route53resolver-resolverendpoint-ipaddressrequest-ip"""
-    p_Ipv6: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Ipv6"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53resolver-resolverendpoint-ipaddressrequest.html#cfn-route53resolver-resolverendpoint-ipaddressrequest-ipv6"""
 
 @attr.s
 class PropResolverRuleTargetAddress(Property):
@@ -119,24 +112,17 @@ class PropResolverRuleTargetAddress(Property):
 
     Property Document:
     
-    - ``p_Ip``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53resolver-resolverrule-targetaddress.html#cfn-route53resolver-resolverrule-targetaddress-ip
-    - ``p_Ipv6``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53resolver-resolverrule-targetaddress.html#cfn-route53resolver-resolverrule-targetaddress-ipv6
+    - ``rp_Ip``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53resolver-resolverrule-targetaddress.html#cfn-route53resolver-resolverrule-targetaddress-ip
     - ``p_Port``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53resolver-resolverrule-targetaddress.html#cfn-route53resolver-resolverrule-targetaddress-port
     """
     AWS_OBJECT_TYPE = "AWS::Route53Resolver::ResolverRule.TargetAddress"
     
-    p_Ip: TypeHint.intrinsic_str = attr.ib(
+    rp_Ip: TypeHint.intrinsic_str = attr.ib(
         default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
         metadata={AttrMeta.PROPERTY_NAME: "Ip"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53resolver-resolverrule-targetaddress.html#cfn-route53resolver-resolverrule-targetaddress-ip"""
-    p_Ipv6: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Ipv6"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-route53resolver-resolverrule-targetaddress.html#cfn-route53resolver-resolverrule-targetaddress-ipv6"""
     p_Port: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
@@ -191,9 +177,9 @@ class ResolverQueryLoggingConfig(Resource):
 
     
     @property
-    def rv_Status(self) -> GetAtt:
+    def rv_Id(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverqueryloggingconfig.html#aws-resource-route53resolver-resolverqueryloggingconfig-return-values"""
-        return GetAtt(resource=self, attr_name="Status")
+        return GetAtt(resource=self, attr_name="Id")
     
     @property
     def rv_OwnerId(self) -> GetAtt:
@@ -201,14 +187,9 @@ class ResolverQueryLoggingConfig(Resource):
         return GetAtt(resource=self, attr_name="OwnerId")
     
     @property
-    def rv_AssociationCount(self) -> GetAtt:
+    def rv_Status(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverqueryloggingconfig.html#aws-resource-route53resolver-resolverqueryloggingconfig-return-values"""
-        return GetAtt(resource=self, attr_name="AssociationCount")
-    
-    @property
-    def rv_CreationTime(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverqueryloggingconfig.html#aws-resource-route53resolver-resolverqueryloggingconfig-return-values"""
-        return GetAtt(resource=self, attr_name="CreationTime")
+        return GetAtt(resource=self, attr_name="Status")
     
     @property
     def rv_ShareStatus(self) -> GetAtt:
@@ -216,9 +197,9 @@ class ResolverQueryLoggingConfig(Resource):
         return GetAtt(resource=self, attr_name="ShareStatus")
     
     @property
-    def rv_Id(self) -> GetAtt:
+    def rv_AssociationCount(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverqueryloggingconfig.html#aws-resource-route53resolver-resolverqueryloggingconfig-return-values"""
-        return GetAtt(resource=self, attr_name="Id")
+        return GetAtt(resource=self, attr_name="AssociationCount")
     
     @property
     def rv_Arn(self) -> GetAtt:
@@ -229,6 +210,11 @@ class ResolverQueryLoggingConfig(Resource):
     def rv_CreatorRequestId(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverqueryloggingconfig.html#aws-resource-route53resolver-resolverqueryloggingconfig-return-values"""
         return GetAtt(resource=self, attr_name="CreatorRequestId")
+    
+    @property
+    def rv_CreationTime(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverqueryloggingconfig.html#aws-resource-route53resolver-resolverqueryloggingconfig-return-values"""
+        return GetAtt(resource=self, attr_name="CreationTime")
     
 
 @attr.s
@@ -334,26 +320,6 @@ class FirewallRuleGroupAssociation(Resource):
 
     
     @property
-    def rv_Status(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-firewallrulegroupassociation.html#aws-resource-route53resolver-firewallrulegroupassociation-return-values"""
-        return GetAtt(resource=self, attr_name="Status")
-    
-    @property
-    def rv_CreationTime(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-firewallrulegroupassociation.html#aws-resource-route53resolver-firewallrulegroupassociation-return-values"""
-        return GetAtt(resource=self, attr_name="CreationTime")
-    
-    @property
-    def rv_ManagedOwnerName(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-firewallrulegroupassociation.html#aws-resource-route53resolver-firewallrulegroupassociation-return-values"""
-        return GetAtt(resource=self, attr_name="ManagedOwnerName")
-    
-    @property
-    def rv_ModificationTime(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-firewallrulegroupassociation.html#aws-resource-route53resolver-firewallrulegroupassociation-return-values"""
-        return GetAtt(resource=self, attr_name="ModificationTime")
-    
-    @property
     def rv_Id(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-firewallrulegroupassociation.html#aws-resource-route53resolver-firewallrulegroupassociation-return-values"""
         return GetAtt(resource=self, attr_name="Id")
@@ -364,14 +330,34 @@ class FirewallRuleGroupAssociation(Resource):
         return GetAtt(resource=self, attr_name="Arn")
     
     @property
-    def rv_CreatorRequestId(self) -> GetAtt:
+    def rv_ManagedOwnerName(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-firewallrulegroupassociation.html#aws-resource-route53resolver-firewallrulegroupassociation-return-values"""
-        return GetAtt(resource=self, attr_name="CreatorRequestId")
+        return GetAtt(resource=self, attr_name="ManagedOwnerName")
+    
+    @property
+    def rv_Status(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-firewallrulegroupassociation.html#aws-resource-route53resolver-firewallrulegroupassociation-return-values"""
+        return GetAtt(resource=self, attr_name="Status")
     
     @property
     def rv_StatusMessage(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-firewallrulegroupassociation.html#aws-resource-route53resolver-firewallrulegroupassociation-return-values"""
         return GetAtt(resource=self, attr_name="StatusMessage")
+    
+    @property
+    def rv_CreatorRequestId(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-firewallrulegroupassociation.html#aws-resource-route53resolver-firewallrulegroupassociation-return-values"""
+        return GetAtt(resource=self, attr_name="CreatorRequestId")
+    
+    @property
+    def rv_CreationTime(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-firewallrulegroupassociation.html#aws-resource-route53resolver-firewallrulegroupassociation-return-values"""
+        return GetAtt(resource=self, attr_name="CreationTime")
+    
+    @property
+    def rv_ModificationTime(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-firewallrulegroupassociation.html#aws-resource-route53resolver-firewallrulegroupassociation-return-values"""
+        return GetAtt(resource=self, attr_name="ModificationTime")
     
 
 @attr.s
@@ -418,14 +404,14 @@ class ResolverQueryLoggingConfigAssociation(Resource):
 
     
     @property
+    def rv_Id(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverqueryloggingconfigassociation.html#aws-resource-route53resolver-resolverqueryloggingconfigassociation-return-values"""
+        return GetAtt(resource=self, attr_name="Id")
+    
+    @property
     def rv_Status(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverqueryloggingconfigassociation.html#aws-resource-route53resolver-resolverqueryloggingconfigassociation-return-values"""
         return GetAtt(resource=self, attr_name="Status")
-    
-    @property
-    def rv_CreationTime(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverqueryloggingconfigassociation.html#aws-resource-route53resolver-resolverqueryloggingconfigassociation-return-values"""
-        return GetAtt(resource=self, attr_name="CreationTime")
     
     @property
     def rv_Error(self) -> GetAtt:
@@ -433,14 +419,14 @@ class ResolverQueryLoggingConfigAssociation(Resource):
         return GetAtt(resource=self, attr_name="Error")
     
     @property
-    def rv_Id(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverqueryloggingconfigassociation.html#aws-resource-route53resolver-resolverqueryloggingconfigassociation-return-values"""
-        return GetAtt(resource=self, attr_name="Id")
-    
-    @property
     def rv_ErrorMessage(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverqueryloggingconfigassociation.html#aws-resource-route53resolver-resolverqueryloggingconfigassociation-return-values"""
         return GetAtt(resource=self, attr_name="ErrorMessage")
+    
+    @property
+    def rv_CreationTime(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverqueryloggingconfigassociation.html#aws-resource-route53resolver-resolverqueryloggingconfigassociation-return-values"""
+        return GetAtt(resource=self, attr_name="CreationTime")
     
 
 @attr.s
@@ -487,6 +473,11 @@ class ResolverConfig(Resource):
 
     
     @property
+    def rv_Id(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverconfig.html#aws-resource-route53resolver-resolverconfig-return-values"""
+        return GetAtt(resource=self, attr_name="Id")
+    
+    @property
     def rv_OwnerId(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverconfig.html#aws-resource-route53resolver-resolverconfig-return-values"""
         return GetAtt(resource=self, attr_name="OwnerId")
@@ -495,11 +486,6 @@ class ResolverConfig(Resource):
     def rv_AutodefinedReverse(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverconfig.html#aws-resource-route53resolver-resolverconfig-return-values"""
         return GetAtt(resource=self, attr_name="AutodefinedReverse")
-    
-    @property
-    def rv_Id(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverconfig.html#aws-resource-route53resolver-resolverconfig-return-values"""
-        return GetAtt(resource=self, attr_name="Id")
     
 
 @attr.s
@@ -532,9 +518,9 @@ class ResolverDNSSECConfig(Resource):
 
     
     @property
-    def rv_ValidationStatus(self) -> GetAtt:
+    def rv_Id(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverdnssecconfig.html#aws-resource-route53resolver-resolverdnssecconfig-return-values"""
-        return GetAtt(resource=self, attr_name="ValidationStatus")
+        return GetAtt(resource=self, attr_name="Id")
     
     @property
     def rv_OwnerId(self) -> GetAtt:
@@ -542,9 +528,9 @@ class ResolverDNSSECConfig(Resource):
         return GetAtt(resource=self, attr_name="OwnerId")
     
     @property
-    def rv_Id(self) -> GetAtt:
+    def rv_ValidationStatus(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverdnssecconfig.html#aws-resource-route53resolver-resolverdnssecconfig-return-values"""
-        return GetAtt(resource=self, attr_name="Id")
+        return GetAtt(resource=self, attr_name="ValidationStatus")
     
 
 @attr.s
@@ -624,26 +610,6 @@ class FirewallDomainList(Resource):
 
     
     @property
-    def rv_Status(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-firewalldomainlist.html#aws-resource-route53resolver-firewalldomainlist-return-values"""
-        return GetAtt(resource=self, attr_name="Status")
-    
-    @property
-    def rv_CreationTime(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-firewalldomainlist.html#aws-resource-route53resolver-firewalldomainlist-return-values"""
-        return GetAtt(resource=self, attr_name="CreationTime")
-    
-    @property
-    def rv_ManagedOwnerName(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-firewalldomainlist.html#aws-resource-route53resolver-firewalldomainlist-return-values"""
-        return GetAtt(resource=self, attr_name="ManagedOwnerName")
-    
-    @property
-    def rv_ModificationTime(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-firewalldomainlist.html#aws-resource-route53resolver-firewalldomainlist-return-values"""
-        return GetAtt(resource=self, attr_name="ModificationTime")
-    
-    @property
     def rv_Id(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-firewalldomainlist.html#aws-resource-route53resolver-firewalldomainlist-return-values"""
         return GetAtt(resource=self, attr_name="Id")
@@ -654,9 +620,14 @@ class FirewallDomainList(Resource):
         return GetAtt(resource=self, attr_name="Arn")
     
     @property
-    def rv_CreatorRequestId(self) -> GetAtt:
+    def rv_DomainCount(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-firewalldomainlist.html#aws-resource-route53resolver-firewalldomainlist-return-values"""
-        return GetAtt(resource=self, attr_name="CreatorRequestId")
+        return GetAtt(resource=self, attr_name="DomainCount")
+    
+    @property
+    def rv_Status(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-firewalldomainlist.html#aws-resource-route53resolver-firewalldomainlist-return-values"""
+        return GetAtt(resource=self, attr_name="Status")
     
     @property
     def rv_StatusMessage(self) -> GetAtt:
@@ -664,9 +635,24 @@ class FirewallDomainList(Resource):
         return GetAtt(resource=self, attr_name="StatusMessage")
     
     @property
-    def rv_DomainCount(self) -> GetAtt:
+    def rv_ManagedOwnerName(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-firewalldomainlist.html#aws-resource-route53resolver-firewalldomainlist-return-values"""
-        return GetAtt(resource=self, attr_name="DomainCount")
+        return GetAtt(resource=self, attr_name="ManagedOwnerName")
+    
+    @property
+    def rv_CreatorRequestId(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-firewalldomainlist.html#aws-resource-route53resolver-firewalldomainlist-return-values"""
+        return GetAtt(resource=self, attr_name="CreatorRequestId")
+    
+    @property
+    def rv_CreationTime(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-firewalldomainlist.html#aws-resource-route53resolver-firewalldomainlist-return-values"""
+        return GetAtt(resource=self, attr_name="CreationTime")
+    
+    @property
+    def rv_ModificationTime(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-firewalldomainlist.html#aws-resource-route53resolver-firewalldomainlist-return-values"""
+        return GetAtt(resource=self, attr_name="ModificationTime")
     
 
 @attr.s
@@ -694,7 +680,7 @@ class ResolverRule(Resource):
         metadata={
             AttrMeta.PROPERTY_NAME: "DomainName",
             AttrMeta.DATA: {
-                "UpdateType": 'Conditional',
+                "UpdateType": 'Immutable',
                 "Required": True,
                 "PrimitiveType": 'String',
             }
@@ -785,14 +771,9 @@ class ResolverRule(Resource):
         return GetAtt(resource=self, attr_name="DomainName")
     
     @property
-    def rv_ResolverRuleId(self) -> GetAtt:
+    def rv_Name(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverrule.html#aws-resource-route53resolver-resolverrule-return-values"""
-        return GetAtt(resource=self, attr_name="ResolverRuleId")
-    
-    @property
-    def rv_Arn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverrule.html#aws-resource-route53resolver-resolverrule-return-values"""
-        return GetAtt(resource=self, attr_name="Arn")
+        return GetAtt(resource=self, attr_name="Name")
     
     @property
     def rv_TargetIps(self) -> GetAtt:
@@ -800,9 +781,14 @@ class ResolverRule(Resource):
         return GetAtt(resource=self, attr_name="TargetIps")
     
     @property
-    def rv_Name(self) -> GetAtt:
+    def rv_Arn(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverrule.html#aws-resource-route53resolver-resolverrule-return-values"""
-        return GetAtt(resource=self, attr_name="Name")
+        return GetAtt(resource=self, attr_name="Arn")
+    
+    @property
+    def rv_ResolverRuleId(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverrule.html#aws-resource-route53resolver-resolverrule-return-values"""
+        return GetAtt(resource=self, attr_name="ResolverRuleId")
     
 
 @attr.s
@@ -869,36 +855,6 @@ class FirewallRuleGroup(Resource):
 
     
     @property
-    def rv_RuleCount(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-firewallrulegroup.html#aws-resource-route53resolver-firewallrulegroup-return-values"""
-        return GetAtt(resource=self, attr_name="RuleCount")
-    
-    @property
-    def rv_Status(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-firewallrulegroup.html#aws-resource-route53resolver-firewallrulegroup-return-values"""
-        return GetAtt(resource=self, attr_name="Status")
-    
-    @property
-    def rv_OwnerId(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-firewallrulegroup.html#aws-resource-route53resolver-firewallrulegroup-return-values"""
-        return GetAtt(resource=self, attr_name="OwnerId")
-    
-    @property
-    def rv_CreationTime(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-firewallrulegroup.html#aws-resource-route53resolver-firewallrulegroup-return-values"""
-        return GetAtt(resource=self, attr_name="CreationTime")
-    
-    @property
-    def rv_ShareStatus(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-firewallrulegroup.html#aws-resource-route53resolver-firewallrulegroup-return-values"""
-        return GetAtt(resource=self, attr_name="ShareStatus")
-    
-    @property
-    def rv_ModificationTime(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-firewallrulegroup.html#aws-resource-route53resolver-firewallrulegroup-return-values"""
-        return GetAtt(resource=self, attr_name="ModificationTime")
-    
-    @property
     def rv_Id(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-firewallrulegroup.html#aws-resource-route53resolver-firewallrulegroup-return-values"""
         return GetAtt(resource=self, attr_name="Id")
@@ -909,14 +865,44 @@ class FirewallRuleGroup(Resource):
         return GetAtt(resource=self, attr_name="Arn")
     
     @property
-    def rv_CreatorRequestId(self) -> GetAtt:
+    def rv_RuleCount(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-firewallrulegroup.html#aws-resource-route53resolver-firewallrulegroup-return-values"""
-        return GetAtt(resource=self, attr_name="CreatorRequestId")
+        return GetAtt(resource=self, attr_name="RuleCount")
+    
+    @property
+    def rv_Status(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-firewallrulegroup.html#aws-resource-route53resolver-firewallrulegroup-return-values"""
+        return GetAtt(resource=self, attr_name="Status")
     
     @property
     def rv_StatusMessage(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-firewallrulegroup.html#aws-resource-route53resolver-firewallrulegroup-return-values"""
         return GetAtt(resource=self, attr_name="StatusMessage")
+    
+    @property
+    def rv_OwnerId(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-firewallrulegroup.html#aws-resource-route53resolver-firewallrulegroup-return-values"""
+        return GetAtt(resource=self, attr_name="OwnerId")
+    
+    @property
+    def rv_ShareStatus(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-firewallrulegroup.html#aws-resource-route53resolver-firewallrulegroup-return-values"""
+        return GetAtt(resource=self, attr_name="ShareStatus")
+    
+    @property
+    def rv_CreatorRequestId(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-firewallrulegroup.html#aws-resource-route53resolver-firewallrulegroup-return-values"""
+        return GetAtt(resource=self, attr_name="CreatorRequestId")
+    
+    @property
+    def rv_CreationTime(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-firewallrulegroup.html#aws-resource-route53resolver-firewallrulegroup-return-values"""
+        return GetAtt(resource=self, attr_name="CreationTime")
+    
+    @property
+    def rv_ModificationTime(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-firewallrulegroup.html#aws-resource-route53resolver-firewallrulegroup-return-values"""
+        return GetAtt(resource=self, attr_name="ModificationTime")
     
 
 @attr.s
@@ -1010,9 +996,6 @@ class ResolverEndpoint(Resource):
     - ``rp_IpAddresses``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverendpoint.html#cfn-route53resolver-resolverendpoint-ipaddresses
     - ``rp_SecurityGroupIds``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverendpoint.html#cfn-route53resolver-resolverendpoint-securitygroupids
     - ``p_Name``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverendpoint.html#cfn-route53resolver-resolverendpoint-name
-    - ``p_OutpostArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverendpoint.html#cfn-route53resolver-resolverendpoint-outpostarn
-    - ``p_PreferredInstanceType``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverendpoint.html#cfn-route53resolver-resolverendpoint-preferredinstancetype
-    - ``p_ResolverEndpointType``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverendpoint.html#cfn-route53resolver-resolverendpoint-resolverendpointtype
     - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverendpoint.html#cfn-route53resolver-resolverendpoint-tags
     """
     AWS_OBJECT_TYPE = "AWS::Route53Resolver::ResolverEndpoint"
@@ -1073,45 +1056,6 @@ class ResolverEndpoint(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverendpoint.html#cfn-route53resolver-resolverendpoint-name"""
-    p_OutpostArn: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "OutpostArn",
-            AttrMeta.DATA: {
-                "Required": False,
-                "PrimitiveType": 'String',
-                "UpdateType": 'Immutable',
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverendpoint.html#cfn-route53resolver-resolverendpoint-outpostarn"""
-    p_PreferredInstanceType: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "PreferredInstanceType",
-            AttrMeta.DATA: {
-                "Required": False,
-                "PrimitiveType": 'String',
-                "UpdateType": 'Immutable',
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverendpoint.html#cfn-route53resolver-resolverendpoint-preferredinstancetype"""
-    p_ResolverEndpointType: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "ResolverEndpointType",
-            AttrMeta.DATA: {
-                "Required": False,
-                "PrimitiveType": 'String',
-                "UpdateType": 'Mutable',
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverendpoint.html#cfn-route53resolver-resolverendpoint-resolverendpointtype"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
@@ -1138,21 +1082,6 @@ class ResolverEndpoint(Resource):
     def rv_IpAddressCount(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverendpoint.html#aws-resource-route53resolver-resolverendpoint-return-values"""
         return GetAtt(resource=self, attr_name="IpAddressCount")
-    
-    @property
-    def rv_OutpostArn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverendpoint.html#aws-resource-route53resolver-resolverendpoint-return-values"""
-        return GetAtt(resource=self, attr_name="OutpostArn")
-    
-    @property
-    def rv_PreferredInstanceType(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverendpoint.html#aws-resource-route53resolver-resolverendpoint-return-values"""
-        return GetAtt(resource=self, attr_name="PreferredInstanceType")
-    
-    @property
-    def rv_ResolverEndpointType(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-route53resolver-resolverendpoint.html#aws-resource-route53resolver-resolverendpoint-return-values"""
-        return GetAtt(resource=self, attr_name="ResolverEndpointType")
     
     @property
     def rv_Arn(self) -> GetAtt:

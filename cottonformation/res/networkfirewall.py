@@ -367,26 +367,6 @@ class PropFirewallPolicyStatelessRuleGroupReference(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-firewallpolicy-statelessrulegroupreference.html#cfn-networkfirewall-firewallpolicy-statelessrulegroupreference-resourcearn"""
 
 @attr.s
-class PropRuleGroupIPSetReference(Property):
-    """
-    AWS Object Type = "AWS::NetworkFirewall::RuleGroup.IPSetReference"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-ipsetreference.html
-
-    Property Document:
-    
-    - ``p_ReferenceArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-ipsetreference.html#cfn-networkfirewall-rulegroup-ipsetreference-referencearn
-    """
-    AWS_OBJECT_TYPE = "AWS::NetworkFirewall::RuleGroup.IPSetReference"
-    
-    p_ReferenceArn: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "ReferenceArn"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-ipsetreference.html#cfn-networkfirewall-rulegroup-ipsetreference-referencearn"""
-
-@attr.s
 class PropFirewallPolicyStatefulRuleGroupReference(Property):
     """
     AWS Object Type = "AWS::NetworkFirewall::FirewallPolicy.StatefulRuleGroupReference"
@@ -430,7 +410,6 @@ class PropFirewallSubnetMapping(Property):
     Property Document:
     
     - ``rp_SubnetId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-firewall-subnetmapping.html#cfn-networkfirewall-firewall-subnetmapping-subnetid
-    - ``p_IPAddressType``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-firewall-subnetmapping.html#cfn-networkfirewall-firewall-subnetmapping-ipaddresstype
     """
     AWS_OBJECT_TYPE = "AWS::NetworkFirewall::Firewall.SubnetMapping"
     
@@ -440,12 +419,6 @@ class PropFirewallSubnetMapping(Property):
         metadata={AttrMeta.PROPERTY_NAME: "SubnetId"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-firewall-subnetmapping.html#cfn-networkfirewall-firewall-subnetmapping-subnetid"""
-    p_IPAddressType: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "IPAddressType"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-firewall-subnetmapping.html#cfn-networkfirewall-firewall-subnetmapping-ipaddresstype"""
 
 @attr.s
 class PropFirewallPolicyDimension(Property):
@@ -518,7 +491,6 @@ class PropFirewallPolicyStatefulEngineOptions(Property):
     Property Document:
     
     - ``p_RuleOrder``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-firewallpolicy-statefulengineoptions.html#cfn-networkfirewall-firewallpolicy-statefulengineoptions-ruleorder
-    - ``p_StreamExceptionPolicy``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-firewallpolicy-statefulengineoptions.html#cfn-networkfirewall-firewallpolicy-statefulengineoptions-streamexceptionpolicy
     """
     AWS_OBJECT_TYPE = "AWS::NetworkFirewall::FirewallPolicy.StatefulEngineOptions"
     
@@ -528,12 +500,6 @@ class PropFirewallPolicyStatefulEngineOptions(Property):
         metadata={AttrMeta.PROPERTY_NAME: "RuleOrder"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-firewallpolicy-statefulengineoptions.html#cfn-networkfirewall-firewallpolicy-statefulengineoptions-ruleorder"""
-    p_StreamExceptionPolicy: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "StreamExceptionPolicy"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-firewallpolicy-statefulengineoptions.html#cfn-networkfirewall-firewallpolicy-statefulengineoptions-streamexceptionpolicy"""
 
 @attr.s
 class PropRuleGroupActionDefinition(Property):
@@ -576,27 +542,6 @@ class PropFirewallPolicyPublishMetricAction(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Dimensions"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-firewallpolicy-publishmetricaction.html#cfn-networkfirewall-firewallpolicy-publishmetricaction-dimensions"""
-
-@attr.s
-class PropRuleGroupReferenceSets(Property):
-    """
-    AWS Object Type = "AWS::NetworkFirewall::RuleGroup.ReferenceSets"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-referencesets.html
-
-    Property Document:
-    
-    - ``p_IPSetReferences``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-referencesets.html#cfn-networkfirewall-rulegroup-referencesets-ipsetreferences
-    """
-    AWS_OBJECT_TYPE = "AWS::NetworkFirewall::RuleGroup.ReferenceSets"
-    
-    p_IPSetReferences: typing.Union['PropRuleGroupIPSetReference', dict] = attr.ib(
-        default=None,
-        converter=PropRuleGroupIPSetReference.from_list,
-        validator=attr.validators.optional(attr.validators.instance_of(PropRuleGroupIPSetReference)),
-        metadata={AttrMeta.PROPERTY_NAME: "IPSetReferences"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-referencesets.html#cfn-networkfirewall-rulegroup-referencesets-ipsetreferences"""
 
 @attr.s
 class PropRuleGroupMatchAttributes(Property):
@@ -1005,7 +950,6 @@ class PropRuleGroupRuleGroup(Property):
     Property Document:
     
     - ``rp_RulesSource``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-rulegroup.html#cfn-networkfirewall-rulegroup-rulegroup-rulessource
-    - ``p_ReferenceSets``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-rulegroup.html#cfn-networkfirewall-rulegroup-rulegroup-referencesets
     - ``p_RuleVariables``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-rulegroup.html#cfn-networkfirewall-rulegroup-rulegroup-rulevariables
     - ``p_StatefulRuleOptions``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-rulegroup.html#cfn-networkfirewall-rulegroup-rulegroup-statefulruleoptions
     """
@@ -1018,13 +962,6 @@ class PropRuleGroupRuleGroup(Property):
         metadata={AttrMeta.PROPERTY_NAME: "RulesSource"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-rulegroup.html#cfn-networkfirewall-rulegroup-rulegroup-rulessource"""
-    p_ReferenceSets: typing.Union['PropRuleGroupReferenceSets', dict] = attr.ib(
-        default=None,
-        converter=PropRuleGroupReferenceSets.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropRuleGroupReferenceSets)),
-        metadata={AttrMeta.PROPERTY_NAME: "ReferenceSets"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-networkfirewall-rulegroup-rulegroup.html#cfn-networkfirewall-rulegroup-rulegroup-referencesets"""
     p_RuleVariables: typing.Union['PropRuleGroupRuleVariables', dict] = attr.ib(
         default=None,
         converter=PropRuleGroupRuleVariables.from_dict,
@@ -1282,14 +1219,14 @@ class Firewall(Resource):
         return GetAtt(resource=self, attr_name="FirewallArn")
     
     @property
-    def rv_EndpointIds(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkfirewall-firewall.html#aws-resource-networkfirewall-firewall-return-values"""
-        return GetAtt(resource=self, attr_name="EndpointIds")
-    
-    @property
     def rv_FirewallId(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkfirewall-firewall.html#aws-resource-networkfirewall-firewall-return-values"""
         return GetAtt(resource=self, attr_name="FirewallId")
+    
+    @property
+    def rv_EndpointIds(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkfirewall-firewall.html#aws-resource-networkfirewall-firewall-return-values"""
+        return GetAtt(resource=self, attr_name="EndpointIds")
     
 
 @attr.s
@@ -1455,12 +1392,12 @@ class RuleGroup(Resource):
 
     
     @property
-    def rv_RuleGroupId(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkfirewall-rulegroup.html#aws-resource-networkfirewall-rulegroup-return-values"""
-        return GetAtt(resource=self, attr_name="RuleGroupId")
-    
-    @property
     def rv_RuleGroupArn(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkfirewall-rulegroup.html#aws-resource-networkfirewall-rulegroup-return-values"""
         return GetAtt(resource=self, attr_name="RuleGroupArn")
+    
+    @property
+    def rv_RuleGroupId(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-networkfirewall-rulegroup.html#aws-resource-networkfirewall-rulegroup-return-values"""
+        return GetAtt(resource=self, attr_name="RuleGroupId")
     

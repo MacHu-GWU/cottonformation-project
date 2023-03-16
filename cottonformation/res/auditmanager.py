@@ -255,7 +255,6 @@ class Assessment(Resource):
     
     - ``p_AssessmentReportsDestination``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-auditmanager-assessment.html#cfn-auditmanager-assessment-assessmentreportsdestination
     - ``p_AwsAccount``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-auditmanager-assessment.html#cfn-auditmanager-assessment-awsaccount
-    - ``p_Delegations``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-auditmanager-assessment.html#cfn-auditmanager-assessment-delegations
     - ``p_Description``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-auditmanager-assessment.html#cfn-auditmanager-assessment-description
     - ``p_FrameworkId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-auditmanager-assessment.html#cfn-auditmanager-assessment-frameworkid
     - ``p_Name``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-auditmanager-assessment.html#cfn-auditmanager-assessment-name
@@ -295,22 +294,6 @@ class Assessment(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-auditmanager-assessment.html#cfn-auditmanager-assessment-awsaccount"""
-    p_Delegations: typing.List[typing.Union['PropAssessmentDelegation', dict]] = attr.ib(
-        default=None,
-        converter=PropAssessmentDelegation.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropAssessmentDelegation), iterable_validator=attr.validators.instance_of(list))),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "Delegations",
-            AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
-                "Required": False,
-                "Type": 'List',
-                "ItemType": 'Delegation',
-                "DuplicatesAllowed": True,
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-auditmanager-assessment.html#cfn-auditmanager-assessment-delegations"""
     p_Description: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
@@ -361,7 +344,6 @@ class Assessment(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Role',
-                "DuplicatesAllowed": True,
             }
         },
     )
@@ -404,7 +386,6 @@ class Assessment(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Tag',
-                "DuplicatesAllowed": True,
             }
         },
     )
@@ -417,12 +398,17 @@ class Assessment(Resource):
         return GetAtt(resource=self, attr_name="AssessmentId")
     
     @property
-    def rv_CreationTime(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-auditmanager-assessment.html#aws-resource-auditmanager-assessment-return-values"""
-        return GetAtt(resource=self, attr_name="CreationTime")
-    
-    @property
     def rv_Arn(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-auditmanager-assessment.html#aws-resource-auditmanager-assessment-return-values"""
         return GetAtt(resource=self, attr_name="Arn")
+    
+    @property
+    def rv_Delegations(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-auditmanager-assessment.html#aws-resource-auditmanager-assessment-return-values"""
+        return GetAtt(resource=self, attr_name="Delegations")
+    
+    @property
+    def rv_CreationTime(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-auditmanager-assessment.html#aws-resource-auditmanager-assessment-return-values"""
+        return GetAtt(resource=self, attr_name="CreationTime")
     

@@ -15,6 +15,46 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
+class PropApplicationS3Location(Property):
+    """
+    AWS Object Type = "AWS::M2::Application.S3Location"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-m2-application-s3location.html
+
+    Property Document:
+    
+    - ``rp_S3Location``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-m2-application-s3location.html#cfn-m2-application-s3location
+    """
+    AWS_OBJECT_TYPE = "AWS::M2::Application.S3Location"
+    
+    rp_S3Location: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "S3Location"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-m2-application-s3location.html#cfn-m2-application-s3location"""
+
+@attr.s
+class PropApplicationContent(Property):
+    """
+    AWS Object Type = "AWS::M2::Application.Content"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-m2-application-content.html
+
+    Property Document:
+    
+    - ``rp_S3Location``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-m2-application-content.html#cfn-m2-application-content
+    """
+    AWS_OBJECT_TYPE = "AWS::M2::Application.Content"
+    
+    rp_S3Location: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "S3Location"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-m2-application-content.html#cfn-m2-application-content"""
+
+@attr.s
 class PropEnvironmentFsxStorageConfiguration(Property):
     """
     AWS Object Type = "AWS::M2::Environment.FsxStorageConfiguration"
@@ -109,15 +149,17 @@ class PropApplicationDefinition(Property):
     """
     AWS_OBJECT_TYPE = "AWS::M2::Application.Definition"
     
-    p_Content: TypeHint.intrinsic_str = attr.ib(
+    p_Content: typing.Union['PropApplicationContent', dict] = attr.ib(
         default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        converter=PropApplicationContent.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropApplicationContent)),
         metadata={AttrMeta.PROPERTY_NAME: "Content"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-m2-application-definition.html#cfn-m2-application-definition-content"""
-    p_S3Location: TypeHint.intrinsic_str = attr.ib(
+    p_S3Location: typing.Union['PropApplicationS3Location', dict] = attr.ib(
         default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        converter=PropApplicationS3Location.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropApplicationS3Location)),
         metadata={AttrMeta.PROPERTY_NAME: "S3Location"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-m2-application-definition.html#cfn-m2-application-definition-s3location"""
@@ -158,7 +200,6 @@ class Application(Resource):
     - ``rp_EngineType``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-m2-application.html#cfn-m2-application-enginetype
     - ``rp_Name``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-m2-application.html#cfn-m2-application-name
     - ``p_Description``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-m2-application.html#cfn-m2-application-description
-    - ``p_KmsKeyId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-m2-application.html#cfn-m2-application-kmskeyid
     - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-m2-application.html#cfn-m2-application-tags
     """
     AWS_OBJECT_TYPE = "AWS::M2::Application"
@@ -217,19 +258,6 @@ class Application(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-m2-application.html#cfn-m2-application-description"""
-    p_KmsKeyId: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "KmsKeyId",
-            AttrMeta.DATA: {
-                "UpdateType": 'Immutable',
-                "Required": False,
-                "PrimitiveType": 'String',
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-m2-application.html#cfn-m2-application-kmskeyid"""
     p_Tags: typing.Dict[str, TypeHint.intrinsic_str] = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.deep_mapping(key_validator=attr.validators.instance_of(str), value_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type))),
@@ -272,7 +300,6 @@ class Environment(Resource):
     - ``p_Description``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-m2-environment.html#cfn-m2-environment-description
     - ``p_EngineVersion``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-m2-environment.html#cfn-m2-environment-engineversion
     - ``p_HighAvailabilityConfig``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-m2-environment.html#cfn-m2-environment-highavailabilityconfig
-    - ``p_KmsKeyId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-m2-environment.html#cfn-m2-environment-kmskeyid
     - ``p_PreferredMaintenanceWindow``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-m2-environment.html#cfn-m2-environment-preferredmaintenancewindow
     - ``p_PubliclyAccessible``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-m2-environment.html#cfn-m2-environment-publiclyaccessible
     - ``p_SecurityGroupIds``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-m2-environment.html#cfn-m2-environment-securitygroupids
@@ -362,19 +389,6 @@ class Environment(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-m2-environment.html#cfn-m2-environment-highavailabilityconfig"""
-    p_KmsKeyId: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "KmsKeyId",
-            AttrMeta.DATA: {
-                "UpdateType": 'Immutable',
-                "Required": False,
-                "PrimitiveType": 'String',
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-m2-environment.html#cfn-m2-environment-kmskeyid"""
     p_PreferredMaintenanceWindow: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
@@ -411,7 +425,6 @@ class Environment(Resource):
                 "Required": False,
                 "Type": 'List',
                 "PrimitiveItemType": 'String',
-                "DuplicatesAllowed": True,
             }
         },
     )
@@ -427,7 +440,6 @@ class Environment(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'StorageConfiguration',
-                "DuplicatesAllowed": True,
             }
         },
     )
@@ -442,7 +454,6 @@ class Environment(Resource):
                 "Required": False,
                 "Type": 'List',
                 "PrimitiveItemType": 'String',
-                "DuplicatesAllowed": True,
             }
         },
     )
@@ -464,12 +475,12 @@ class Environment(Resource):
 
     
     @property
-    def rv_EnvironmentId(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-m2-environment.html#aws-resource-m2-environment-return-values"""
-        return GetAtt(resource=self, attr_name="EnvironmentId")
-    
-    @property
     def rv_EnvironmentArn(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-m2-environment.html#aws-resource-m2-environment-return-values"""
         return GetAtt(resource=self, attr_name="EnvironmentArn")
+    
+    @property
+    def rv_EnvironmentId(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-m2-environment.html#aws-resource-m2-environment-return-values"""
+        return GetAtt(resource=self, attr_name="EnvironmentId")
     

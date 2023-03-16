@@ -109,6 +109,19 @@ class PropStateMachineTracingConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stepfunctions-statemachine-tracingconfiguration.html#cfn-stepfunctions-statemachine-tracingconfiguration-enabled"""
 
 @attr.s
+class PropStateMachineDefinition(Property):
+    """
+    AWS Object Type = "AWS::StepFunctions::StateMachine.Definition"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-stepfunctions-statemachine-definition.html
+
+    Property Document:
+    
+    """
+    AWS_OBJECT_TYPE = "AWS::StepFunctions::StateMachine.Definition"
+    
+
+@attr.s
 class PropStateMachineS3Location(Property):
     """
     AWS Object Type = "AWS::StepFunctions::StateMachine.S3Location"
@@ -237,15 +250,16 @@ class StateMachine(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-stepfunctions-statemachine.html#cfn-stepfunctions-statemachine-rolearn"""
-    p_Definition: dict = attr.ib(
+    p_Definition: typing.Union['PropStateMachineDefinition', dict] = attr.ib(
         default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        converter=PropStateMachineDefinition.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropStateMachineDefinition)),
         metadata={
             AttrMeta.PROPERTY_NAME: "Definition",
             AttrMeta.DATA: {
                 "UpdateType": 'Mutable',
                 "Required": False,
-                "PrimitiveType": 'Json',
+                "Type": 'Definition',
             }
         },
     )

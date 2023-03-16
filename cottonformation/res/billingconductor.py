@@ -102,26 +102,6 @@ class PropCustomLineItemCustomLineItemPercentageChargeDetails(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-billingconductor-customlineitem-customlineitempercentagechargedetails.html#cfn-billingconductor-customlineitem-customlineitempercentagechargedetails-childassociatedresources"""
 
 @attr.s
-class PropPricingRuleFreeTier(Property):
-    """
-    AWS Object Type = "AWS::BillingConductor::PricingRule.FreeTier"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-billingconductor-pricingrule-freetier.html
-
-    Property Document:
-    
-    - ``rp_Activated``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-billingconductor-pricingrule-freetier.html#cfn-billingconductor-pricingrule-freetier-activated
-    """
-    AWS_OBJECT_TYPE = "AWS::BillingConductor::PricingRule.FreeTier"
-    
-    rp_Activated: bool = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(bool),
-        metadata={AttrMeta.PROPERTY_NAME: "Activated"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-billingconductor-pricingrule-freetier.html#cfn-billingconductor-pricingrule-freetier-activated"""
-
-@attr.s
 class PropCustomLineItemBillingPeriodRange(Property):
     """
     AWS Object Type = "AWS::BillingConductor::CustomLineItem.BillingPeriodRange"
@@ -147,27 +127,6 @@ class PropCustomLineItemBillingPeriodRange(Property):
         metadata={AttrMeta.PROPERTY_NAME: "InclusiveStartBillingPeriod"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-billingconductor-customlineitem-billingperiodrange.html#cfn-billingconductor-customlineitem-billingperiodrange-inclusivestartbillingperiod"""
-
-@attr.s
-class PropPricingRuleTiering(Property):
-    """
-    AWS Object Type = "AWS::BillingConductor::PricingRule.Tiering"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-billingconductor-pricingrule-tiering.html
-
-    Property Document:
-    
-    - ``p_FreeTier``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-billingconductor-pricingrule-tiering.html#cfn-billingconductor-pricingrule-tiering-freetier
-    """
-    AWS_OBJECT_TYPE = "AWS::BillingConductor::PricingRule.Tiering"
-    
-    p_FreeTier: typing.Union['PropPricingRuleFreeTier', dict] = attr.ib(
-        default=None,
-        converter=PropPricingRuleFreeTier.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropPricingRuleFreeTier)),
-        metadata={AttrMeta.PROPERTY_NAME: "FreeTier"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-billingconductor-pricingrule-tiering.html#cfn-billingconductor-pricingrule-tiering-freetier"""
 
 @attr.s
 class PropCustomLineItemCustomLineItemChargeDetails(Property):
@@ -259,7 +218,6 @@ class PricingPlan(Resource):
                 "Required": False,
                 "Type": 'List',
                 "PrimitiveItemType": 'String',
-                "DuplicatesAllowed": True,
             }
         },
     )
@@ -283,6 +241,11 @@ class PricingPlan(Resource):
 
     
     @property
+    def rv_Arn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-billingconductor-pricingplan.html#aws-resource-billingconductor-pricingplan-return-values"""
+        return GetAtt(resource=self, attr_name="Arn")
+    
+    @property
     def rv_Size(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-billingconductor-pricingplan.html#aws-resource-billingconductor-pricingplan-return-values"""
         return GetAtt(resource=self, attr_name="Size")
@@ -296,11 +259,6 @@ class PricingPlan(Resource):
     def rv_LastModifiedTime(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-billingconductor-pricingplan.html#aws-resource-billingconductor-pricingplan-return-values"""
         return GetAtt(resource=self, attr_name="LastModifiedTime")
-    
-    @property
-    def rv_Arn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-billingconductor-pricingplan.html#aws-resource-billingconductor-pricingplan-return-values"""
-        return GetAtt(resource=self, attr_name="Arn")
     
 
 @attr.s
@@ -408,14 +366,9 @@ class CustomLineItem(Resource):
 
     
     @property
-    def rv_CurrencyCode(self) -> GetAtt:
+    def rv_Arn(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-billingconductor-customlineitem.html#aws-resource-billingconductor-customlineitem-return-values"""
-        return GetAtt(resource=self, attr_name="CurrencyCode")
-    
-    @property
-    def rv_ProductCode(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-billingconductor-customlineitem.html#aws-resource-billingconductor-customlineitem-return-values"""
-        return GetAtt(resource=self, attr_name="ProductCode")
+        return GetAtt(resource=self, attr_name="Arn")
     
     @property
     def rv_CreationTime(self) -> GetAtt:
@@ -428,14 +381,19 @@ class CustomLineItem(Resource):
         return GetAtt(resource=self, attr_name="LastModifiedTime")
     
     @property
-    def rv_Arn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-billingconductor-customlineitem.html#aws-resource-billingconductor-customlineitem-return-values"""
-        return GetAtt(resource=self, attr_name="Arn")
-    
-    @property
     def rv_AssociationSize(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-billingconductor-customlineitem.html#aws-resource-billingconductor-customlineitem-return-values"""
         return GetAtt(resource=self, attr_name="AssociationSize")
+    
+    @property
+    def rv_ProductCode(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-billingconductor-customlineitem.html#aws-resource-billingconductor-customlineitem-return-values"""
+        return GetAtt(resource=self, attr_name="ProductCode")
+    
+    @property
+    def rv_CurrencyCode(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-billingconductor-customlineitem.html#aws-resource-billingconductor-customlineitem-return-values"""
+        return GetAtt(resource=self, attr_name="CurrencyCode")
     
 
 @attr.s
@@ -543,14 +501,19 @@ class BillingGroup(Resource):
 
     
     @property
-    def rv_Status(self) -> GetAtt:
+    def rv_Arn(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-billingconductor-billinggroup.html#aws-resource-billingconductor-billinggroup-return-values"""
-        return GetAtt(resource=self, attr_name="Status")
+        return GetAtt(resource=self, attr_name="Arn")
     
     @property
     def rv_Size(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-billingconductor-billinggroup.html#aws-resource-billingconductor-billinggroup-return-values"""
         return GetAtt(resource=self, attr_name="Size")
+    
+    @property
+    def rv_Status(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-billingconductor-billinggroup.html#aws-resource-billingconductor-billinggroup-return-values"""
+        return GetAtt(resource=self, attr_name="Status")
     
     @property
     def rv_StatusReason(self) -> GetAtt:
@@ -567,11 +530,6 @@ class BillingGroup(Resource):
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-billingconductor-billinggroup.html#aws-resource-billingconductor-billinggroup-return-values"""
         return GetAtt(resource=self, attr_name="LastModifiedTime")
     
-    @property
-    def rv_Arn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-billingconductor-billinggroup.html#aws-resource-billingconductor-billinggroup-return-values"""
-        return GetAtt(resource=self, attr_name="Arn")
-    
 
 @attr.s
 class PricingRule(Resource):
@@ -582,21 +540,31 @@ class PricingRule(Resource):
 
     Property Document:
     
+    - ``rp_ModifierPercentage``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-billingconductor-pricingrule.html#cfn-billingconductor-pricingrule-modifierpercentage
     - ``rp_Name``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-billingconductor-pricingrule.html#cfn-billingconductor-pricingrule-name
     - ``rp_Scope``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-billingconductor-pricingrule.html#cfn-billingconductor-pricingrule-scope
     - ``rp_Type``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-billingconductor-pricingrule.html#cfn-billingconductor-pricingrule-type
     - ``p_BillingEntity``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-billingconductor-pricingrule.html#cfn-billingconductor-pricingrule-billingentity
     - ``p_Description``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-billingconductor-pricingrule.html#cfn-billingconductor-pricingrule-description
-    - ``p_ModifierPercentage``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-billingconductor-pricingrule.html#cfn-billingconductor-pricingrule-modifierpercentage
-    - ``p_Operation``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-billingconductor-pricingrule.html#cfn-billingconductor-pricingrule-operation
     - ``p_Service``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-billingconductor-pricingrule.html#cfn-billingconductor-pricingrule-service
-    - ``p_Tiering``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-billingconductor-pricingrule.html#cfn-billingconductor-pricingrule-tiering
-    - ``p_UsageType``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-billingconductor-pricingrule.html#cfn-billingconductor-pricingrule-usagetype
     - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-billingconductor-pricingrule.html#cfn-billingconductor-pricingrule-tags
     """
     AWS_OBJECT_TYPE = "AWS::BillingConductor::PricingRule"
 
     
+    rp_ModifierPercentage: float = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(float),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "ModifierPercentage",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": True,
+                "PrimitiveType": 'Double',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-billingconductor-pricingrule.html#cfn-billingconductor-pricingrule-modifierpercentage"""
     rp_Name: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
@@ -662,32 +630,6 @@ class PricingRule(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-billingconductor-pricingrule.html#cfn-billingconductor-pricingrule-description"""
-    p_ModifierPercentage: float = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(float)),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "ModifierPercentage",
-            AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
-                "Required": False,
-                "PrimitiveType": 'Double',
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-billingconductor-pricingrule.html#cfn-billingconductor-pricingrule-modifierpercentage"""
-    p_Operation: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "Operation",
-            AttrMeta.DATA: {
-                "UpdateType": 'Immutable',
-                "Required": False,
-                "PrimitiveType": 'String',
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-billingconductor-pricingrule.html#cfn-billingconductor-pricingrule-operation"""
     p_Service: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
@@ -701,33 +643,6 @@ class PricingRule(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-billingconductor-pricingrule.html#cfn-billingconductor-pricingrule-service"""
-    p_Tiering: typing.Union['PropPricingRuleTiering', dict] = attr.ib(
-        default=None,
-        converter=PropPricingRuleTiering.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropPricingRuleTiering)),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "Tiering",
-            AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
-                "Required": False,
-                "Type": 'Tiering',
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-billingconductor-pricingrule.html#cfn-billingconductor-pricingrule-tiering"""
-    p_UsageType: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "UsageType",
-            AttrMeta.DATA: {
-                "UpdateType": 'Immutable',
-                "Required": False,
-                "PrimitiveType": 'String',
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-billingconductor-pricingrule.html#cfn-billingconductor-pricingrule-usagetype"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
@@ -747,6 +662,16 @@ class PricingRule(Resource):
 
     
     @property
+    def rv_Arn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-billingconductor-pricingrule.html#aws-resource-billingconductor-pricingrule-return-values"""
+        return GetAtt(resource=self, attr_name="Arn")
+    
+    @property
+    def rv_AssociatedPricingPlanCount(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-billingconductor-pricingrule.html#aws-resource-billingconductor-pricingrule-return-values"""
+        return GetAtt(resource=self, attr_name="AssociatedPricingPlanCount")
+    
+    @property
     def rv_CreationTime(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-billingconductor-pricingrule.html#aws-resource-billingconductor-pricingrule-return-values"""
         return GetAtt(resource=self, attr_name="CreationTime")
@@ -755,14 +680,4 @@ class PricingRule(Resource):
     def rv_LastModifiedTime(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-billingconductor-pricingrule.html#aws-resource-billingconductor-pricingrule-return-values"""
         return GetAtt(resource=self, attr_name="LastModifiedTime")
-    
-    @property
-    def rv_AssociatedPricingPlanCount(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-billingconductor-pricingrule.html#aws-resource-billingconductor-pricingrule-return-values"""
-        return GetAtt(resource=self, attr_name="AssociatedPricingPlanCount")
-    
-    @property
-    def rv_Arn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-billingconductor-pricingrule.html#aws-resource-billingconductor-pricingrule-return-values"""
-        return GetAtt(resource=self, attr_name="Arn")
     

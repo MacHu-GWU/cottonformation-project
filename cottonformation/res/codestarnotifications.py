@@ -189,16 +189,15 @@ class NotificationRule(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codestarnotifications-notificationrule.html#cfn-codestarnotifications-notificationrule-targetaddress"""
-    p_Tags: typing.Dict[str, TypeHint.intrinsic_str] = attr.ib(
+    p_Tags: dict = attr.ib(
         default=None,
-        validator=attr.validators.optional(attr.validators.deep_mapping(key_validator=attr.validators.instance_of(str), value_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type))),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={
             AttrMeta.PROPERTY_NAME: "Tags",
             AttrMeta.DATA: {
                 "UpdateType": 'Mutable',
                 "Required": False,
-                "Type": 'Map',
-                "PrimitiveItemType": 'String',
+                "PrimitiveType": 'Json',
             }
         },
     )

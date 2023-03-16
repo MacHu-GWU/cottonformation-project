@@ -424,19 +424,9 @@ class Environment(Resource):
 
     
     @property
-    def rv_LoggingConfigurationTaskLogsCloudWatchLogGroupArn(self) -> GetAtt:
+    def rv_Arn(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mwaa-environment.html#aws-resource-mwaa-environment-return-values"""
-        return GetAtt(resource=self, attr_name="LoggingConfiguration.TaskLogs.CloudWatchLogGroupArn")
-    
-    @property
-    def rv_LoggingConfigurationWebserverLogsCloudWatchLogGroupArn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mwaa-environment.html#aws-resource-mwaa-environment-return-values"""
-        return GetAtt(resource=self, attr_name="LoggingConfiguration.WebserverLogs.CloudWatchLogGroupArn")
-    
-    @property
-    def rv_LoggingConfigurationDagProcessingLogsCloudWatchLogGroupArn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mwaa-environment.html#aws-resource-mwaa-environment-return-values"""
-        return GetAtt(resource=self, attr_name="LoggingConfiguration.DagProcessingLogs.CloudWatchLogGroupArn")
+        return GetAtt(resource=self, attr_name="Arn")
     
     @property
     def rv_WebserverUrl(self) -> GetAtt:
@@ -444,17 +434,27 @@ class Environment(Resource):
         return GetAtt(resource=self, attr_name="WebserverUrl")
     
     @property
+    def rv_LoggingConfigurationDagProcessingLogsCloudWatchLogGroupArn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mwaa-environment.html#aws-resource-mwaa-environment-return-values"""
+        return GetAtt(resource=self, attr_name="LoggingConfiguration.DagProcessingLogs.CloudWatchLogGroupArn")
+    
+    @property
     def rv_LoggingConfigurationSchedulerLogsCloudWatchLogGroupArn(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mwaa-environment.html#aws-resource-mwaa-environment-return-values"""
         return GetAtt(resource=self, attr_name="LoggingConfiguration.SchedulerLogs.CloudWatchLogGroupArn")
     
     @property
-    def rv_Arn(self) -> GetAtt:
+    def rv_LoggingConfigurationWebserverLogsCloudWatchLogGroupArn(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mwaa-environment.html#aws-resource-mwaa-environment-return-values"""
-        return GetAtt(resource=self, attr_name="Arn")
+        return GetAtt(resource=self, attr_name="LoggingConfiguration.WebserverLogs.CloudWatchLogGroupArn")
     
     @property
     def rv_LoggingConfigurationWorkerLogsCloudWatchLogGroupArn(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mwaa-environment.html#aws-resource-mwaa-environment-return-values"""
         return GetAtt(resource=self, attr_name="LoggingConfiguration.WorkerLogs.CloudWatchLogGroupArn")
+    
+    @property
+    def rv_LoggingConfigurationTaskLogsCloudWatchLogGroupArn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mwaa-environment.html#aws-resource-mwaa-environment-return-values"""
+        return GetAtt(resource=self, attr_name="LoggingConfiguration.TaskLogs.CloudWatchLogGroupArn")
     

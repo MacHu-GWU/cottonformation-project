@@ -224,14 +224,24 @@ class Environment(Resource):
 
     
     @property
+    def rv_EnvironmentId(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-finspace-environment.html#aws-resource-finspace-environment-return-values"""
+        return GetAtt(resource=self, attr_name="EnvironmentId")
+    
+    @property
+    def rv_AwsAccountId(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-finspace-environment.html#aws-resource-finspace-environment-return-values"""
+        return GetAtt(resource=self, attr_name="AwsAccountId")
+    
+    @property
     def rv_Status(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-finspace-environment.html#aws-resource-finspace-environment-return-values"""
         return GetAtt(resource=self, attr_name="Status")
     
     @property
-    def rv_EnvironmentId(self) -> GetAtt:
+    def rv_EnvironmentUrl(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-finspace-environment.html#aws-resource-finspace-environment-return-values"""
-        return GetAtt(resource=self, attr_name="EnvironmentId")
+        return GetAtt(resource=self, attr_name="EnvironmentUrl")
     
     @property
     def rv_EnvironmentArn(self) -> GetAtt:
@@ -242,16 +252,6 @@ class Environment(Resource):
     def rv_SageMakerStudioDomainUrl(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-finspace-environment.html#aws-resource-finspace-environment-return-values"""
         return GetAtt(resource=self, attr_name="SageMakerStudioDomainUrl")
-    
-    @property
-    def rv_EnvironmentUrl(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-finspace-environment.html#aws-resource-finspace-environment-return-values"""
-        return GetAtt(resource=self, attr_name="EnvironmentUrl")
-    
-    @property
-    def rv_AwsAccountId(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-finspace-environment.html#aws-resource-finspace-environment-return-values"""
-        return GetAtt(resource=self, attr_name="AwsAccountId")
     
     @property
     def rv_DedicatedServiceAccountId(self) -> GetAtt:

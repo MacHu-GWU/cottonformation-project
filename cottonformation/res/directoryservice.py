@@ -206,12 +206,12 @@ class SimpleAD(Resource):
     Property Document:
     
     - ``rp_Name``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-simplead.html#cfn-directoryservice-simplead-name
+    - ``rp_Password``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-simplead.html#cfn-directoryservice-simplead-password
     - ``rp_Size``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-simplead.html#cfn-directoryservice-simplead-size
     - ``rp_VpcSettings``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-simplead.html#cfn-directoryservice-simplead-vpcsettings
     - ``p_CreateAlias``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-simplead.html#cfn-directoryservice-simplead-createalias
     - ``p_Description``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-simplead.html#cfn-directoryservice-simplead-description
     - ``p_EnableSso``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-simplead.html#cfn-directoryservice-simplead-enablesso
-    - ``p_Password``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-simplead.html#cfn-directoryservice-simplead-password
     - ``p_ShortName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-simplead.html#cfn-directoryservice-simplead-shortname
     """
     AWS_OBJECT_TYPE = "AWS::DirectoryService::SimpleAD"
@@ -223,22 +223,35 @@ class SimpleAD(Resource):
         metadata={
             AttrMeta.PROPERTY_NAME: "Name",
             AttrMeta.DATA: {
-                "UpdateType": 'Immutable',
-                "Required": True,
                 "PrimitiveType": 'String',
+                "Required": True,
+                "UpdateType": 'Immutable',
             }
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-simplead.html#cfn-directoryservice-simplead-name"""
+    rp_Password: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "Password",
+            AttrMeta.DATA: {
+                "PrimitiveType": 'String',
+                "Required": True,
+                "UpdateType": 'Immutable',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-simplead.html#cfn-directoryservice-simplead-password"""
     rp_Size: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
         metadata={
             AttrMeta.PROPERTY_NAME: "Size",
             AttrMeta.DATA: {
-                "UpdateType": 'Immutable',
-                "Required": True,
                 "PrimitiveType": 'String',
+                "Required": True,
+                "UpdateType": 'Immutable',
             }
         },
     )
@@ -250,9 +263,9 @@ class SimpleAD(Resource):
         metadata={
             AttrMeta.PROPERTY_NAME: "VpcSettings",
             AttrMeta.DATA: {
-                "UpdateType": 'Immutable',
                 "Required": True,
                 "Type": 'VpcSettings',
+                "UpdateType": 'Immutable',
             }
         },
     )
@@ -263,9 +276,9 @@ class SimpleAD(Resource):
         metadata={
             AttrMeta.PROPERTY_NAME: "CreateAlias",
             AttrMeta.DATA: {
-                "UpdateType": 'Immutable',
-                "Required": False,
                 "PrimitiveType": 'Boolean',
+                "Required": False,
+                "UpdateType": 'Immutable',
             }
         },
     )
@@ -276,9 +289,9 @@ class SimpleAD(Resource):
         metadata={
             AttrMeta.PROPERTY_NAME: "Description",
             AttrMeta.DATA: {
-                "UpdateType": 'Immutable',
-                "Required": False,
                 "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Immutable',
             }
         },
     )
@@ -289,45 +302,27 @@ class SimpleAD(Resource):
         metadata={
             AttrMeta.PROPERTY_NAME: "EnableSso",
             AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
-                "Required": False,
                 "PrimitiveType": 'Boolean',
+                "Required": False,
+                "UpdateType": 'Mutable',
             }
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-simplead.html#cfn-directoryservice-simplead-enablesso"""
-    p_Password: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "Password",
-            AttrMeta.DATA: {
-                "UpdateType": 'Immutable',
-                "Required": False,
-                "PrimitiveType": 'String',
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-simplead.html#cfn-directoryservice-simplead-password"""
     p_ShortName: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
         metadata={
             AttrMeta.PROPERTY_NAME: "ShortName",
             AttrMeta.DATA: {
-                "UpdateType": 'Immutable',
-                "Required": False,
                 "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Immutable',
             }
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-simplead.html#cfn-directoryservice-simplead-shortname"""
 
-    
-    @property
-    def rv_DirectoryId(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-directoryservice-simplead.html#aws-resource-directoryservice-simplead-return-values"""
-        return GetAtt(resource=self, attr_name="DirectoryId")
     
     @property
     def rv_Alias(self) -> GetAtt:

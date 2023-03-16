@@ -1525,14 +1525,14 @@ class ListenerRule(Resource):
 
     
     @property
-    def rv_IsDefault(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listenerrule.html#aws-resource-elasticloadbalancingv2-listenerrule-return-values"""
-        return GetAtt(resource=self, attr_name="IsDefault")
-    
-    @property
     def rv_RuleArn(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listenerrule.html#aws-resource-elasticloadbalancingv2-listenerrule-return-values"""
         return GetAtt(resource=self, attr_name="RuleArn")
+    
+    @property
+    def rv_IsDefault(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-listenerrule.html#aws-resource-elasticloadbalancingv2-listenerrule-return-values"""
+        return GetAtt(resource=self, attr_name="IsDefault")
     
 
 @attr.s
@@ -1573,9 +1573,9 @@ class TargetGroup(Resource):
         metadata={
             AttrMeta.PROPERTY_NAME: "HealthCheckEnabled",
             AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
-                "Required": False,
                 "PrimitiveType": 'Boolean',
+                "Required": False,
+                "UpdateType": 'Mutable',
             }
         },
     )
@@ -1586,9 +1586,9 @@ class TargetGroup(Resource):
         metadata={
             AttrMeta.PROPERTY_NAME: "HealthCheckIntervalSeconds",
             AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
-                "Required": False,
                 "PrimitiveType": 'Integer',
+                "Required": False,
+                "UpdateType": 'Mutable',
             }
         },
     )
@@ -1599,9 +1599,9 @@ class TargetGroup(Resource):
         metadata={
             AttrMeta.PROPERTY_NAME: "HealthCheckPath",
             AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
-                "Required": False,
                 "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Mutable',
             }
         },
     )
@@ -1612,9 +1612,9 @@ class TargetGroup(Resource):
         metadata={
             AttrMeta.PROPERTY_NAME: "HealthCheckPort",
             AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
-                "Required": False,
                 "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Mutable',
             }
         },
     )
@@ -1625,9 +1625,9 @@ class TargetGroup(Resource):
         metadata={
             AttrMeta.PROPERTY_NAME: "HealthCheckProtocol",
             AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
-                "Required": False,
                 "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Mutable',
             }
         },
     )
@@ -1638,9 +1638,9 @@ class TargetGroup(Resource):
         metadata={
             AttrMeta.PROPERTY_NAME: "HealthCheckTimeoutSeconds",
             AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
-                "Required": False,
                 "PrimitiveType": 'Integer',
+                "Required": False,
+                "UpdateType": 'Mutable',
             }
         },
     )
@@ -1651,9 +1651,9 @@ class TargetGroup(Resource):
         metadata={
             AttrMeta.PROPERTY_NAME: "HealthyThresholdCount",
             AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
-                "Required": False,
                 "PrimitiveType": 'Integer',
+                "Required": False,
+                "UpdateType": 'Mutable',
             }
         },
     )
@@ -1664,9 +1664,9 @@ class TargetGroup(Resource):
         metadata={
             AttrMeta.PROPERTY_NAME: "IpAddressType",
             AttrMeta.DATA: {
-                "UpdateType": 'Immutable',
-                "Required": False,
                 "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Immutable',
             }
         },
     )
@@ -1678,9 +1678,9 @@ class TargetGroup(Resource):
         metadata={
             AttrMeta.PROPERTY_NAME: "Matcher",
             AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
                 "Required": False,
                 "Type": 'Matcher',
+                "UpdateType": 'Mutable',
             }
         },
     )
@@ -1691,9 +1691,9 @@ class TargetGroup(Resource):
         metadata={
             AttrMeta.PROPERTY_NAME: "Name",
             AttrMeta.DATA: {
-                "UpdateType": 'Immutable',
-                "Required": False,
                 "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Immutable',
             }
         },
     )
@@ -1704,9 +1704,9 @@ class TargetGroup(Resource):
         metadata={
             AttrMeta.PROPERTY_NAME: "Port",
             AttrMeta.DATA: {
-                "UpdateType": 'Immutable',
-                "Required": False,
                 "PrimitiveType": 'Integer',
+                "Required": False,
+                "UpdateType": 'Immutable',
             }
         },
     )
@@ -1717,9 +1717,9 @@ class TargetGroup(Resource):
         metadata={
             AttrMeta.PROPERTY_NAME: "Protocol",
             AttrMeta.DATA: {
-                "UpdateType": 'Immutable',
-                "Required": False,
                 "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Immutable',
             }
         },
     )
@@ -1730,9 +1730,9 @@ class TargetGroup(Resource):
         metadata={
             AttrMeta.PROPERTY_NAME: "ProtocolVersion",
             AttrMeta.DATA: {
-                "UpdateType": 'Immutable',
-                "Required": False,
                 "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Immutable',
             }
         },
     )
@@ -1744,11 +1744,11 @@ class TargetGroup(Resource):
         metadata={
             AttrMeta.PROPERTY_NAME: "TargetGroupAttributes",
             AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
+                "DuplicatesAllowed": False,
+                "ItemType": 'TargetGroupAttribute',
                 "Required": False,
                 "Type": 'List',
-                "ItemType": 'TargetGroupAttribute',
-                "DuplicatesAllowed": False,
+                "UpdateType": 'Mutable',
             }
         },
     )
@@ -1759,9 +1759,9 @@ class TargetGroup(Resource):
         metadata={
             AttrMeta.PROPERTY_NAME: "TargetType",
             AttrMeta.DATA: {
-                "UpdateType": 'Immutable',
-                "Required": False,
                 "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Immutable',
             }
         },
     )
@@ -1773,11 +1773,11 @@ class TargetGroup(Resource):
         metadata={
             AttrMeta.PROPERTY_NAME: "Targets",
             AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
+                "DuplicatesAllowed": False,
+                "ItemType": 'TargetDescription',
                 "Required": False,
                 "Type": 'List',
-                "ItemType": 'TargetDescription',
-                "DuplicatesAllowed": False,
+                "UpdateType": 'Mutable',
             }
         },
     )
@@ -1788,9 +1788,9 @@ class TargetGroup(Resource):
         metadata={
             AttrMeta.PROPERTY_NAME: "UnhealthyThresholdCount",
             AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
-                "Required": False,
                 "PrimitiveType": 'Integer',
+                "Required": False,
+                "UpdateType": 'Mutable',
             }
         },
     )
@@ -1801,9 +1801,9 @@ class TargetGroup(Resource):
         metadata={
             AttrMeta.PROPERTY_NAME: "VpcId",
             AttrMeta.DATA: {
-                "UpdateType": 'Immutable',
-                "Required": False,
                 "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Immutable',
             }
         },
     )
@@ -1815,21 +1815,16 @@ class TargetGroup(Resource):
         metadata={
             AttrMeta.PROPERTY_NAME: "Tags",
             AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
+                "DuplicatesAllowed": True,
+                "ItemType": 'Tag',
                 "Required": False,
                 "Type": 'List',
-                "ItemType": 'Tag',
-                "DuplicatesAllowed": True,
+                "UpdateType": 'Mutable',
             }
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#cfn-elasticloadbalancingv2-targetgroup-tags"""
 
-    
-    @property
-    def rv_TargetGroupArn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-elasticloadbalancingv2-targetgroup.html#aws-resource-elasticloadbalancingv2-targetgroup-return-values"""
-        return GetAtt(resource=self, attr_name="TargetGroupArn")
     
     @property
     def rv_LoadBalancerArns(self) -> GetAtt:
@@ -1906,7 +1901,6 @@ class Listener(Resource):
                 "Required": False,
                 "Type": 'List',
                 "PrimitiveItemType": 'String',
-                "DuplicatesAllowed": True,
             }
         },
     )

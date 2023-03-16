@@ -185,26 +185,6 @@ class PropHookVersionLoggingConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudformation-hookversion-loggingconfig.html#cfn-cloudformation-hookversion-loggingconfig-logrolearn"""
 
 @attr.s
-class PropStackSetManagedExecution(Property):
-    """
-    AWS Object Type = "AWS::CloudFormation::StackSet.ManagedExecution"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudformation-stackset-managedexecution.html
-
-    Property Document:
-    
-    - ``p_Active``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudformation-stackset-managedexecution.html#cfn-cloudformation-stackset-managedexecution-active
-    """
-    AWS_OBJECT_TYPE = "AWS::CloudFormation::StackSet.ManagedExecution"
-    
-    p_Active: bool = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(bool)),
-        metadata={AttrMeta.PROPERTY_NAME: "Active"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudformation-stackset-managedexecution.html#cfn-cloudformation-stackset-managedexecution-active"""
-
-@attr.s
 class PropStackSetParameter(Property):
     """
     AWS Object Type = "AWS::CloudFormation::StackSet.Parameter"
@@ -432,16 +412,15 @@ class StackSet(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-stackset.html#cfn-cloudformation-stackset-executionrolename"""
-    p_ManagedExecution: typing.Union['PropStackSetManagedExecution', dict] = attr.ib(
+    p_ManagedExecution: dict = attr.ib(
         default=None,
-        converter=PropStackSetManagedExecution.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropStackSetManagedExecution)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={
             AttrMeta.PROPERTY_NAME: "ManagedExecution",
             AttrMeta.DATA: {
                 "UpdateType": 'Mutable',
                 "Required": False,
-                "Type": 'ManagedExecution',
+                "PrimitiveType": 'Json',
             }
         },
     )
@@ -960,9 +939,9 @@ class PublicTypeVersion(Resource):
 
     
     @property
-    def rv_PublicTypeArn(self) -> GetAtt:
+    def rv_TypeVersionArn(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-publictypeversion.html#aws-resource-cloudformation-publictypeversion-return-values"""
-        return GetAtt(resource=self, attr_name="PublicTypeArn")
+        return GetAtt(resource=self, attr_name="TypeVersionArn")
     
     @property
     def rv_PublisherId(self) -> GetAtt:
@@ -970,9 +949,9 @@ class PublicTypeVersion(Resource):
         return GetAtt(resource=self, attr_name="PublisherId")
     
     @property
-    def rv_TypeVersionArn(self) -> GetAtt:
+    def rv_PublicTypeArn(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-publictypeversion.html#aws-resource-cloudformation-publictypeversion-return-values"""
-        return GetAtt(resource=self, attr_name="TypeVersionArn")
+        return GetAtt(resource=self, attr_name="PublicTypeArn")
     
 
 @attr.s
@@ -1048,21 +1027,6 @@ class HookVersion(Resource):
 
     
     @property
-    def rv_VersionId(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-hookversion.html#aws-resource-cloudformation-hookversion-return-values"""
-        return GetAtt(resource=self, attr_name="VersionId")
-    
-    @property
-    def rv_IsDefaultVersion(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-hookversion.html#aws-resource-cloudformation-hookversion-return-values"""
-        return GetAtt(resource=self, attr_name="IsDefaultVersion")
-    
-    @property
-    def rv_Visibility(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-hookversion.html#aws-resource-cloudformation-hookversion-return-values"""
-        return GetAtt(resource=self, attr_name="Visibility")
-    
-    @property
     def rv_Arn(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-hookversion.html#aws-resource-cloudformation-hookversion-return-values"""
         return GetAtt(resource=self, attr_name="Arn")
@@ -1071,6 +1035,21 @@ class HookVersion(Resource):
     def rv_TypeArn(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-hookversion.html#aws-resource-cloudformation-hookversion-return-values"""
         return GetAtt(resource=self, attr_name="TypeArn")
+    
+    @property
+    def rv_IsDefaultVersion(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-hookversion.html#aws-resource-cloudformation-hookversion-return-values"""
+        return GetAtt(resource=self, attr_name="IsDefaultVersion")
+    
+    @property
+    def rv_VersionId(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-hookversion.html#aws-resource-cloudformation-hookversion-return-values"""
+        return GetAtt(resource=self, attr_name="VersionId")
+    
+    @property
+    def rv_Visibility(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-hookversion.html#aws-resource-cloudformation-hookversion-return-values"""
+        return GetAtt(resource=self, attr_name="Visibility")
     
 
 @attr.s
@@ -1146,26 +1125,6 @@ class ResourceVersion(Resource):
 
     
     @property
-    def rv_VersionId(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-resourceversion.html#aws-resource-cloudformation-resourceversion-return-values"""
-        return GetAtt(resource=self, attr_name="VersionId")
-    
-    @property
-    def rv_ProvisioningType(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-resourceversion.html#aws-resource-cloudformation-resourceversion-return-values"""
-        return GetAtt(resource=self, attr_name="ProvisioningType")
-    
-    @property
-    def rv_IsDefaultVersion(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-resourceversion.html#aws-resource-cloudformation-resourceversion-return-values"""
-        return GetAtt(resource=self, attr_name="IsDefaultVersion")
-    
-    @property
-    def rv_Visibility(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-resourceversion.html#aws-resource-cloudformation-resourceversion-return-values"""
-        return GetAtt(resource=self, attr_name="Visibility")
-    
-    @property
     def rv_Arn(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-resourceversion.html#aws-resource-cloudformation-resourceversion-return-values"""
         return GetAtt(resource=self, attr_name="Arn")
@@ -1174,6 +1133,26 @@ class ResourceVersion(Resource):
     def rv_TypeArn(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-resourceversion.html#aws-resource-cloudformation-resourceversion-return-values"""
         return GetAtt(resource=self, attr_name="TypeArn")
+    
+    @property
+    def rv_IsDefaultVersion(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-resourceversion.html#aws-resource-cloudformation-resourceversion-return-values"""
+        return GetAtt(resource=self, attr_name="IsDefaultVersion")
+    
+    @property
+    def rv_ProvisioningType(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-resourceversion.html#aws-resource-cloudformation-resourceversion-return-values"""
+        return GetAtt(resource=self, attr_name="ProvisioningType")
+    
+    @property
+    def rv_VersionId(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-resourceversion.html#aws-resource-cloudformation-resourceversion-return-values"""
+        return GetAtt(resource=self, attr_name="VersionId")
+    
+    @property
+    def rv_Visibility(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-resourceversion.html#aws-resource-cloudformation-resourceversion-return-values"""
+        return GetAtt(resource=self, attr_name="Visibility")
     
 
 @attr.s
@@ -1462,9 +1441,9 @@ class Publisher(Resource):
         return GetAtt(resource=self, attr_name="PublisherId")
     
     @property
-    def rv_IdentityProvider(self) -> GetAtt:
+    def rv_PublisherStatus(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-publisher.html#aws-resource-cloudformation-publisher-return-values"""
-        return GetAtt(resource=self, attr_name="IdentityProvider")
+        return GetAtt(resource=self, attr_name="PublisherStatus")
     
     @property
     def rv_PublisherProfile(self) -> GetAtt:
@@ -1472,9 +1451,9 @@ class Publisher(Resource):
         return GetAtt(resource=self, attr_name="PublisherProfile")
     
     @property
-    def rv_PublisherStatus(self) -> GetAtt:
+    def rv_IdentityProvider(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-publisher.html#aws-resource-cloudformation-publisher-return-values"""
-        return GetAtt(resource=self, attr_name="PublisherStatus")
+        return GetAtt(resource=self, attr_name="IdentityProvider")
     
 
 @attr.s
@@ -1663,6 +1642,31 @@ class ModuleVersion(Resource):
 
     
     @property
+    def rv_Arn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-moduleversion.html#aws-resource-cloudformation-moduleversion-return-values"""
+        return GetAtt(resource=self, attr_name="Arn")
+    
+    @property
+    def rv_Description(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-moduleversion.html#aws-resource-cloudformation-moduleversion-return-values"""
+        return GetAtt(resource=self, attr_name="Description")
+    
+    @property
+    def rv_DocumentationUrl(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-moduleversion.html#aws-resource-cloudformation-moduleversion-return-values"""
+        return GetAtt(resource=self, attr_name="DocumentationUrl")
+    
+    @property
+    def rv_IsDefaultVersion(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-moduleversion.html#aws-resource-cloudformation-moduleversion-return-values"""
+        return GetAtt(resource=self, attr_name="IsDefaultVersion")
+    
+    @property
+    def rv_Schema(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-moduleversion.html#aws-resource-cloudformation-moduleversion-return-values"""
+        return GetAtt(resource=self, attr_name="Schema")
+    
+    @property
     def rv_TimeCreated(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-moduleversion.html#aws-resource-cloudformation-moduleversion-return-values"""
         return GetAtt(resource=self, attr_name="TimeCreated")
@@ -1673,32 +1677,7 @@ class ModuleVersion(Resource):
         return GetAtt(resource=self, attr_name="VersionId")
     
     @property
-    def rv_Description(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-moduleversion.html#aws-resource-cloudformation-moduleversion-return-values"""
-        return GetAtt(resource=self, attr_name="Description")
-    
-    @property
-    def rv_Schema(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-moduleversion.html#aws-resource-cloudformation-moduleversion-return-values"""
-        return GetAtt(resource=self, attr_name="Schema")
-    
-    @property
-    def rv_IsDefaultVersion(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-moduleversion.html#aws-resource-cloudformation-moduleversion-return-values"""
-        return GetAtt(resource=self, attr_name="IsDefaultVersion")
-    
-    @property
     def rv_Visibility(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-moduleversion.html#aws-resource-cloudformation-moduleversion-return-values"""
         return GetAtt(resource=self, attr_name="Visibility")
-    
-    @property
-    def rv_Arn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-moduleversion.html#aws-resource-cloudformation-moduleversion-return-values"""
-        return GetAtt(resource=self, attr_name="Arn")
-    
-    @property
-    def rv_DocumentationUrl(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudformation-moduleversion.html#aws-resource-cloudformation-moduleversion-return-values"""
-        return GetAtt(resource=self, attr_name="DocumentationUrl")
     

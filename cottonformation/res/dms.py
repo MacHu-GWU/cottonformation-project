@@ -1921,7 +1921,7 @@ class EventSubscription(Resource):
                 "Type": 'List',
                 "Required": False,
                 "ItemType": 'Tag',
-                "UpdateType": 'Mutable',
+                "UpdateType": 'Immutable',
             }
         },
     )
@@ -2653,7 +2653,7 @@ class ReplicationTask(Resource):
                 "Type": 'List',
                 "Required": False,
                 "ItemType": 'Tag',
-                "UpdateType": 'Mutable',
+                "UpdateType": 'Immutable',
             }
         },
     )
@@ -2882,7 +2882,7 @@ class ReplicationInstance(Resource):
                 "Type": 'List',
                 "Required": False,
                 "ItemType": 'Tag',
-                "UpdateType": 'Mutable',
+                "UpdateType": 'Immutable',
             }
         },
     )

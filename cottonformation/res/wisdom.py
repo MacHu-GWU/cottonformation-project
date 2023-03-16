@@ -90,11 +90,11 @@ class PropKnowledgeBaseSourceConfiguration(Property):
 
     Property Document:
     
-    - ``rp_AppIntegrations``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wisdom-knowledgebase-sourceconfiguration.html#cfn-wisdom-knowledgebase-sourceconfiguration-appintegrations
+    - ``p_AppIntegrations``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-wisdom-knowledgebase-sourceconfiguration.html#cfn-wisdom-knowledgebase-sourceconfiguration-appintegrations
     """
     AWS_OBJECT_TYPE = "AWS::Wisdom::KnowledgeBase.SourceConfiguration"
     
-    rp_AppIntegrations: typing.Optional[dict] = attr.ib(
+    p_AppIntegrations: typing.Optional[dict] = attr.ib(
         default=None,
         validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "AppIntegrations"},

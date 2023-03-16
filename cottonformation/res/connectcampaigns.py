@@ -15,6 +15,40 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
+class PropCampaignOutboundCallConfig(Property):
+    """
+    AWS Object Type = "AWS::ConnectCampaigns::Campaign.OutboundCallConfig"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connectcampaigns-campaign-outboundcallconfig.html
+
+    Property Document:
+    
+    - ``rp_ConnectContactFlowArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connectcampaigns-campaign-outboundcallconfig.html#cfn-connectcampaigns-campaign-outboundcallconfig-connectcontactflowarn
+    - ``rp_ConnectQueueArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connectcampaigns-campaign-outboundcallconfig.html#cfn-connectcampaigns-campaign-outboundcallconfig-connectqueuearn
+    - ``p_ConnectSourcePhoneNumber``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connectcampaigns-campaign-outboundcallconfig.html#cfn-connectcampaigns-campaign-outboundcallconfig-connectsourcephonenumber
+    """
+    AWS_OBJECT_TYPE = "AWS::ConnectCampaigns::Campaign.OutboundCallConfig"
+    
+    rp_ConnectContactFlowArn: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "ConnectContactFlowArn"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connectcampaigns-campaign-outboundcallconfig.html#cfn-connectcampaigns-campaign-outboundcallconfig-connectcontactflowarn"""
+    rp_ConnectQueueArn: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "ConnectQueueArn"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connectcampaigns-campaign-outboundcallconfig.html#cfn-connectcampaigns-campaign-outboundcallconfig-connectqueuearn"""
+    p_ConnectSourcePhoneNumber: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        metadata={AttrMeta.PROPERTY_NAME: "ConnectSourcePhoneNumber"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connectcampaigns-campaign-outboundcallconfig.html#cfn-connectcampaigns-campaign-outboundcallconfig-connectsourcephonenumber"""
+
+@attr.s
 class PropCampaignProgressiveDialerConfig(Property):
     """
     AWS Object Type = "AWS::ConnectCampaigns::Campaign.ProgressiveDialerConfig"
@@ -33,26 +67,6 @@ class PropCampaignProgressiveDialerConfig(Property):
         metadata={AttrMeta.PROPERTY_NAME: "BandwidthAllocation"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connectcampaigns-campaign-progressivedialerconfig.html#cfn-connectcampaigns-campaign-progressivedialerconfig-bandwidthallocation"""
-
-@attr.s
-class PropCampaignAnswerMachineDetectionConfig(Property):
-    """
-    AWS Object Type = "AWS::ConnectCampaigns::Campaign.AnswerMachineDetectionConfig"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connectcampaigns-campaign-answermachinedetectionconfig.html
-
-    Property Document:
-    
-    - ``rp_EnableAnswerMachineDetection``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connectcampaigns-campaign-answermachinedetectionconfig.html#cfn-connectcampaigns-campaign-answermachinedetectionconfig-enableanswermachinedetection
-    """
-    AWS_OBJECT_TYPE = "AWS::ConnectCampaigns::Campaign.AnswerMachineDetectionConfig"
-    
-    rp_EnableAnswerMachineDetection: bool = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(bool),
-        metadata={AttrMeta.PROPERTY_NAME: "EnableAnswerMachineDetection"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connectcampaigns-campaign-answermachinedetectionconfig.html#cfn-connectcampaigns-campaign-answermachinedetectionconfig-enableanswermachinedetection"""
 
 @attr.s
 class PropCampaignPredictiveDialerConfig(Property):
@@ -102,48 +116,6 @@ class PropCampaignDialerConfig(Property):
         metadata={AttrMeta.PROPERTY_NAME: "ProgressiveDialerConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connectcampaigns-campaign-dialerconfig.html#cfn-connectcampaigns-campaign-dialerconfig-progressivedialerconfig"""
-
-@attr.s
-class PropCampaignOutboundCallConfig(Property):
-    """
-    AWS Object Type = "AWS::ConnectCampaigns::Campaign.OutboundCallConfig"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connectcampaigns-campaign-outboundcallconfig.html
-
-    Property Document:
-    
-    - ``rp_ConnectContactFlowArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connectcampaigns-campaign-outboundcallconfig.html#cfn-connectcampaigns-campaign-outboundcallconfig-connectcontactflowarn
-    - ``rp_ConnectQueueArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connectcampaigns-campaign-outboundcallconfig.html#cfn-connectcampaigns-campaign-outboundcallconfig-connectqueuearn
-    - ``p_AnswerMachineDetectionConfig``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connectcampaigns-campaign-outboundcallconfig.html#cfn-connectcampaigns-campaign-outboundcallconfig-answermachinedetectionconfig
-    - ``p_ConnectSourcePhoneNumber``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connectcampaigns-campaign-outboundcallconfig.html#cfn-connectcampaigns-campaign-outboundcallconfig-connectsourcephonenumber
-    """
-    AWS_OBJECT_TYPE = "AWS::ConnectCampaigns::Campaign.OutboundCallConfig"
-    
-    rp_ConnectContactFlowArn: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "ConnectContactFlowArn"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connectcampaigns-campaign-outboundcallconfig.html#cfn-connectcampaigns-campaign-outboundcallconfig-connectcontactflowarn"""
-    rp_ConnectQueueArn: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "ConnectQueueArn"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connectcampaigns-campaign-outboundcallconfig.html#cfn-connectcampaigns-campaign-outboundcallconfig-connectqueuearn"""
-    p_AnswerMachineDetectionConfig: typing.Union['PropCampaignAnswerMachineDetectionConfig', dict] = attr.ib(
-        default=None,
-        converter=PropCampaignAnswerMachineDetectionConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropCampaignAnswerMachineDetectionConfig)),
-        metadata={AttrMeta.PROPERTY_NAME: "AnswerMachineDetectionConfig"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connectcampaigns-campaign-outboundcallconfig.html#cfn-connectcampaigns-campaign-outboundcallconfig-answermachinedetectionconfig"""
-    p_ConnectSourcePhoneNumber: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "ConnectSourcePhoneNumber"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-connectcampaigns-campaign-outboundcallconfig.html#cfn-connectcampaigns-campaign-outboundcallconfig-connectsourcephonenumber"""
 
 
 #--- Resource declaration ---

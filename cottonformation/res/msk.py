@@ -15,26 +15,6 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class PropClusterVpcConnectivityIam(Property):
-    """
-    AWS Object Type = "AWS::MSK::Cluster.VpcConnectivityIam"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-vpcconnectivityiam.html
-
-    Property Document:
-    
-    - ``rp_Enabled``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-vpcconnectivityiam.html#cfn-msk-cluster-vpcconnectivityiam-enabled
-    """
-    AWS_OBJECT_TYPE = "AWS::MSK::Cluster.VpcConnectivityIam"
-    
-    rp_Enabled: bool = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(bool),
-        metadata={AttrMeta.PROPERTY_NAME: "Enabled"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-vpcconnectivityiam.html#cfn-msk-cluster-vpcconnectivityiam-enabled"""
-
-@attr.s
 class PropClusterPublicAccess(Property):
     """
     AWS Object Type = "AWS::MSK::Cluster.PublicAccess"
@@ -178,26 +158,6 @@ class PropServerlessClusterIam(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-serverlesscluster-iam.html#cfn-msk-serverlesscluster-iam-enabled"""
 
 @attr.s
-class PropClusterVpcConnectivityTls(Property):
-    """
-    AWS Object Type = "AWS::MSK::Cluster.VpcConnectivityTls"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-vpcconnectivitytls.html
-
-    Property Document:
-    
-    - ``rp_Enabled``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-vpcconnectivitytls.html#cfn-msk-cluster-vpcconnectivitytls-enabled
-    """
-    AWS_OBJECT_TYPE = "AWS::MSK::Cluster.VpcConnectivityTls"
-    
-    rp_Enabled: bool = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(bool),
-        metadata={AttrMeta.PROPERTY_NAME: "Enabled"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-vpcconnectivitytls.html#cfn-msk-cluster-vpcconnectivitytls-enabled"""
-
-@attr.s
 class PropClusterJmxExporter(Property):
     """
     AWS Object Type = "AWS::MSK::Cluster.JmxExporter"
@@ -236,26 +196,6 @@ class PropClusterNodeExporter(Property):
         metadata={AttrMeta.PROPERTY_NAME: "EnabledInBroker"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-nodeexporter.html#cfn-msk-cluster-nodeexporter-enabledinbroker"""
-
-@attr.s
-class PropClusterVpcConnectivityScram(Property):
-    """
-    AWS Object Type = "AWS::MSK::Cluster.VpcConnectivityScram"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-vpcconnectivityscram.html
-
-    Property Document:
-    
-    - ``rp_Enabled``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-vpcconnectivityscram.html#cfn-msk-cluster-vpcconnectivityscram-enabled
-    """
-    AWS_OBJECT_TYPE = "AWS::MSK::Cluster.VpcConnectivityScram"
-    
-    rp_Enabled: bool = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(bool),
-        metadata={AttrMeta.PROPERTY_NAME: "Enabled"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-vpcconnectivityscram.html#cfn-msk-cluster-vpcconnectivityscram-enabled"""
 
 @attr.s
 class PropClusterFirehose(Property):
@@ -566,6 +506,27 @@ class PropServerlessClusterVpcConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-serverlesscluster-vpcconfig.html#cfn-msk-serverlesscluster-vpcconfig-securitygroups"""
 
 @attr.s
+class PropClusterConnectivityInfo(Property):
+    """
+    AWS Object Type = "AWS::MSK::Cluster.ConnectivityInfo"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-connectivityinfo.html
+
+    Property Document:
+    
+    - ``p_PublicAccess``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-connectivityinfo.html#cfn-msk-cluster-connectivityinfo-publicaccess
+    """
+    AWS_OBJECT_TYPE = "AWS::MSK::Cluster.ConnectivityInfo"
+    
+    p_PublicAccess: typing.Union['PropClusterPublicAccess', dict] = attr.ib(
+        default=None,
+        converter=PropClusterPublicAccess.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropClusterPublicAccess)),
+        metadata={AttrMeta.PROPERTY_NAME: "PublicAccess"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-connectivityinfo.html#cfn-msk-cluster-connectivityinfo-publicaccess"""
+
+@attr.s
 class PropClusterEBSStorageInfo(Property):
     """
     AWS Object Type = "AWS::MSK::Cluster.EBSStorageInfo"
@@ -592,35 +553,6 @@ class PropClusterEBSStorageInfo(Property):
         metadata={AttrMeta.PROPERTY_NAME: "VolumeSize"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-ebsstorageinfo.html#cfn-msk-cluster-ebsstorageinfo-volumesize"""
-
-@attr.s
-class PropClusterVpcConnectivitySasl(Property):
-    """
-    AWS Object Type = "AWS::MSK::Cluster.VpcConnectivitySasl"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-vpcconnectivitysasl.html
-
-    Property Document:
-    
-    - ``p_Iam``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-vpcconnectivitysasl.html#cfn-msk-cluster-vpcconnectivitysasl-iam
-    - ``p_Scram``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-vpcconnectivitysasl.html#cfn-msk-cluster-vpcconnectivitysasl-scram
-    """
-    AWS_OBJECT_TYPE = "AWS::MSK::Cluster.VpcConnectivitySasl"
-    
-    p_Iam: typing.Union['PropClusterVpcConnectivityIam', dict] = attr.ib(
-        default=None,
-        converter=PropClusterVpcConnectivityIam.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropClusterVpcConnectivityIam)),
-        metadata={AttrMeta.PROPERTY_NAME: "Iam"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-vpcconnectivitysasl.html#cfn-msk-cluster-vpcconnectivitysasl-iam"""
-    p_Scram: typing.Union['PropClusterVpcConnectivityScram', dict] = attr.ib(
-        default=None,
-        converter=PropClusterVpcConnectivityScram.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropClusterVpcConnectivityScram)),
-        metadata={AttrMeta.PROPERTY_NAME: "Scram"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-vpcconnectivitysasl.html#cfn-msk-cluster-vpcconnectivitysasl-scram"""
 
 @attr.s
 class PropClusterPrometheus(Property):
@@ -681,35 +613,6 @@ class PropClusterSasl(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-sasl.html#cfn-msk-cluster-sasl-scram"""
 
 @attr.s
-class PropClusterVpcConnectivityClientAuthentication(Property):
-    """
-    AWS Object Type = "AWS::MSK::Cluster.VpcConnectivityClientAuthentication"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-vpcconnectivityclientauthentication.html
-
-    Property Document:
-    
-    - ``p_Sasl``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-vpcconnectivityclientauthentication.html#cfn-msk-cluster-vpcconnectivityclientauthentication-sasl
-    - ``p_Tls``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-vpcconnectivityclientauthentication.html#cfn-msk-cluster-vpcconnectivityclientauthentication-tls
-    """
-    AWS_OBJECT_TYPE = "AWS::MSK::Cluster.VpcConnectivityClientAuthentication"
-    
-    p_Sasl: typing.Union['PropClusterVpcConnectivitySasl', dict] = attr.ib(
-        default=None,
-        converter=PropClusterVpcConnectivitySasl.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropClusterVpcConnectivitySasl)),
-        metadata={AttrMeta.PROPERTY_NAME: "Sasl"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-vpcconnectivityclientauthentication.html#cfn-msk-cluster-vpcconnectivityclientauthentication-sasl"""
-    p_Tls: typing.Union['PropClusterVpcConnectivityTls', dict] = attr.ib(
-        default=None,
-        converter=PropClusterVpcConnectivityTls.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropClusterVpcConnectivityTls)),
-        metadata={AttrMeta.PROPERTY_NAME: "Tls"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-vpcconnectivityclientauthentication.html#cfn-msk-cluster-vpcconnectivityclientauthentication-tls"""
-
-@attr.s
 class PropServerlessClusterClientAuthentication(Property):
     """
     AWS Object Type = "AWS::MSK::ServerlessCluster.ClientAuthentication"
@@ -729,56 +632,6 @@ class PropServerlessClusterClientAuthentication(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Sasl"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-serverlesscluster-clientauthentication.html#cfn-msk-serverlesscluster-clientauthentication-sasl"""
-
-@attr.s
-class PropClusterVpcConnectivity(Property):
-    """
-    AWS Object Type = "AWS::MSK::Cluster.VpcConnectivity"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-vpcconnectivity.html
-
-    Property Document:
-    
-    - ``p_ClientAuthentication``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-vpcconnectivity.html#cfn-msk-cluster-vpcconnectivity-clientauthentication
-    """
-    AWS_OBJECT_TYPE = "AWS::MSK::Cluster.VpcConnectivity"
-    
-    p_ClientAuthentication: typing.Union['PropClusterVpcConnectivityClientAuthentication', dict] = attr.ib(
-        default=None,
-        converter=PropClusterVpcConnectivityClientAuthentication.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropClusterVpcConnectivityClientAuthentication)),
-        metadata={AttrMeta.PROPERTY_NAME: "ClientAuthentication"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-vpcconnectivity.html#cfn-msk-cluster-vpcconnectivity-clientauthentication"""
-
-@attr.s
-class PropClusterConnectivityInfo(Property):
-    """
-    AWS Object Type = "AWS::MSK::Cluster.ConnectivityInfo"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-connectivityinfo.html
-
-    Property Document:
-    
-    - ``p_PublicAccess``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-connectivityinfo.html#cfn-msk-cluster-connectivityinfo-publicaccess
-    - ``p_VpcConnectivity``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-connectivityinfo.html#cfn-msk-cluster-connectivityinfo-vpcconnectivity
-    """
-    AWS_OBJECT_TYPE = "AWS::MSK::Cluster.ConnectivityInfo"
-    
-    p_PublicAccess: typing.Union['PropClusterPublicAccess', dict] = attr.ib(
-        default=None,
-        converter=PropClusterPublicAccess.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropClusterPublicAccess)),
-        metadata={AttrMeta.PROPERTY_NAME: "PublicAccess"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-connectivityinfo.html#cfn-msk-cluster-connectivityinfo-publicaccess"""
-    p_VpcConnectivity: typing.Union['PropClusterVpcConnectivity', dict] = attr.ib(
-        default=None,
-        converter=PropClusterVpcConnectivity.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropClusterVpcConnectivity)),
-        metadata={AttrMeta.PROPERTY_NAME: "VpcConnectivity"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-msk-cluster-connectivityinfo.html#cfn-msk-cluster-connectivityinfo-vpcconnectivity"""
 
 @attr.s
 class PropClusterStorageInfo(Property):
@@ -957,7 +810,6 @@ class BatchScramSecret(Resource):
                 "Required": False,
                 "Type": 'List',
                 "PrimitiveItemType": 'String',
-                "DuplicatesAllowed": True,
             }
         },
     )
@@ -1323,7 +1175,6 @@ class Configuration(Resource):
                 "Required": False,
                 "Type": 'List',
                 "PrimitiveItemType": 'String',
-                "DuplicatesAllowed": True,
             }
         },
     )

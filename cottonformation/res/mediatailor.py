@@ -237,7 +237,6 @@ class PlaybackConfiguration(Resource):
     - ``p_CdnConfiguration``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediatailor-playbackconfiguration.html#cfn-mediatailor-playbackconfiguration-cdnconfiguration
     - ``p_ConfigurationAliases``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediatailor-playbackconfiguration.html#cfn-mediatailor-playbackconfiguration-configurationaliases
     - ``p_DashConfiguration``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediatailor-playbackconfiguration.html#cfn-mediatailor-playbackconfiguration-dashconfiguration
-    - ``p_HlsConfiguration``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediatailor-playbackconfiguration.html#cfn-mediatailor-playbackconfiguration-hlsconfiguration
     - ``p_LivePreRollConfiguration``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediatailor-playbackconfiguration.html#cfn-mediatailor-playbackconfiguration-liveprerollconfiguration
     - ``p_ManifestProcessingRules``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediatailor-playbackconfiguration.html#cfn-mediatailor-playbackconfiguration-manifestprocessingrules
     - ``p_PersonalizationThresholdSeconds``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediatailor-playbackconfiguration.html#cfn-mediatailor-playbackconfiguration-personalizationthresholdseconds
@@ -357,20 +356,6 @@ class PlaybackConfiguration(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediatailor-playbackconfiguration.html#cfn-mediatailor-playbackconfiguration-dashconfiguration"""
-    p_HlsConfiguration: typing.Union['PropPlaybackConfigurationHlsConfiguration', dict] = attr.ib(
-        default=None,
-        converter=PropPlaybackConfigurationHlsConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropPlaybackConfigurationHlsConfiguration)),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "HlsConfiguration",
-            AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
-                "Required": False,
-                "Type": 'HlsConfiguration',
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediatailor-playbackconfiguration.html#cfn-mediatailor-playbackconfiguration-hlsconfiguration"""
     p_LivePreRollConfiguration: typing.Union['PropPlaybackConfigurationLivePreRollConfiguration', dict] = attr.ib(
         default=None,
         converter=PropPlaybackConfigurationLivePreRollConfiguration.from_dict,
@@ -457,9 +442,9 @@ class PlaybackConfiguration(Resource):
 
     
     @property
-    def rv_HlsConfigurationManifestEndpointPrefix(self) -> GetAtt:
+    def rv_DashConfigurationManifestEndpointPrefix(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediatailor-playbackconfiguration.html#aws-resource-mediatailor-playbackconfiguration-return-values"""
-        return GetAtt(resource=self, attr_name="HlsConfiguration.ManifestEndpointPrefix")
+        return GetAtt(resource=self, attr_name="DashConfiguration.ManifestEndpointPrefix")
     
     @property
     def rv_SessionInitializationEndpointPrefix(self) -> GetAtt:
@@ -467,9 +452,9 @@ class PlaybackConfiguration(Resource):
         return GetAtt(resource=self, attr_name="SessionInitializationEndpointPrefix")
     
     @property
-    def rv_DashConfigurationManifestEndpointPrefix(self) -> GetAtt:
+    def rv_HlsConfigurationManifestEndpointPrefix(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-mediatailor-playbackconfiguration.html#aws-resource-mediatailor-playbackconfiguration-return-values"""
-        return GetAtt(resource=self, attr_name="DashConfiguration.ManifestEndpointPrefix")
+        return GetAtt(resource=self, attr_name="HlsConfiguration.ManifestEndpointPrefix")
     
     @property
     def rv_PlaybackConfigurationArn(self) -> GetAtt:

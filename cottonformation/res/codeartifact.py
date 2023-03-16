@@ -84,12 +84,16 @@ class Domain(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Tag',
-                "DuplicatesAllowed": True,
             }
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codeartifact-domain.html#cfn-codeartifact-domain-tags"""
 
+    
+    @property
+    def rv_Name(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codeartifact-domain.html#aws-resource-codeartifact-domain-return-values"""
+        return GetAtt(resource=self, attr_name="Name")
     
     @property
     def rv_Owner(self) -> GetAtt:
@@ -105,11 +109,6 @@ class Domain(Resource):
     def rv_Arn(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codeartifact-domain.html#aws-resource-codeartifact-domain-return-values"""
         return GetAtt(resource=self, attr_name="Arn")
-    
-    @property
-    def rv_Name(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codeartifact-domain.html#aws-resource-codeartifact-domain-return-values"""
-        return GetAtt(resource=self, attr_name="Name")
     
 
 @attr.s
@@ -195,7 +194,6 @@ class Repository(Resource):
                 "Required": False,
                 "Type": 'List',
                 "PrimitiveItemType": 'String',
-                "DuplicatesAllowed": True,
             }
         },
     )
@@ -223,7 +221,6 @@ class Repository(Resource):
                 "Required": False,
                 "Type": 'List',
                 "PrimitiveItemType": 'String',
-                "DuplicatesAllowed": True,
             }
         },
     )
@@ -239,7 +236,6 @@ class Repository(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Tag',
-                "DuplicatesAllowed": True,
             }
         },
     )
@@ -247,14 +243,14 @@ class Repository(Resource):
 
     
     @property
+    def rv_Name(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codeartifact-repository.html#aws-resource-codeartifact-repository-return-values"""
+        return GetAtt(resource=self, attr_name="Name")
+    
+    @property
     def rv_DomainName(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codeartifact-repository.html#aws-resource-codeartifact-repository-return-values"""
         return GetAtt(resource=self, attr_name="DomainName")
-    
-    @property
-    def rv_Arn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codeartifact-repository.html#aws-resource-codeartifact-repository-return-values"""
-        return GetAtt(resource=self, attr_name="Arn")
     
     @property
     def rv_DomainOwner(self) -> GetAtt:
@@ -262,7 +258,7 @@ class Repository(Resource):
         return GetAtt(resource=self, attr_name="DomainOwner")
     
     @property
-    def rv_Name(self) -> GetAtt:
+    def rv_Arn(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codeartifact-repository.html#aws-resource-codeartifact-repository-return-values"""
-        return GetAtt(resource=self, attr_name="Name")
+        return GetAtt(resource=self, attr_name="Arn")
     

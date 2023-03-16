@@ -98,7 +98,6 @@ class SigningProfile(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Tag',
-                "DuplicatesAllowed": True,
             }
         },
     )
@@ -106,14 +105,14 @@ class SigningProfile(Resource):
 
     
     @property
-    def rv_ProfileVersionArn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-signer-signingprofile.html#aws-resource-signer-signingprofile-return-values"""
-        return GetAtt(resource=self, attr_name="ProfileVersionArn")
-    
-    @property
     def rv_ProfileName(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-signer-signingprofile.html#aws-resource-signer-signingprofile-return-values"""
         return GetAtt(resource=self, attr_name="ProfileName")
+    
+    @property
+    def rv_ProfileVersion(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-signer-signingprofile.html#aws-resource-signer-signingprofile-return-values"""
+        return GetAtt(resource=self, attr_name="ProfileVersion")
     
     @property
     def rv_Arn(self) -> GetAtt:
@@ -121,9 +120,9 @@ class SigningProfile(Resource):
         return GetAtt(resource=self, attr_name="Arn")
     
     @property
-    def rv_ProfileVersion(self) -> GetAtt:
+    def rv_ProfileVersionArn(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-signer-signingprofile.html#aws-resource-signer-signingprofile-return-values"""
-        return GetAtt(resource=self, attr_name="ProfileVersion")
+        return GetAtt(resource=self, attr_name="ProfileVersionArn")
     
 
 @attr.s

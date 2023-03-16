@@ -2561,7 +2561,6 @@ class DataSource(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Tag',
-                "DuplicatesAllowed": True,
             }
         },
     )
@@ -2679,7 +2678,6 @@ class Index(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'DocumentMetadataConfiguration',
-                "DuplicatesAllowed": True,
             }
         },
     )
@@ -2722,7 +2720,6 @@ class Index(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'UserTokenConfiguration',
-                "DuplicatesAllowed": True,
             }
         },
     )
@@ -2738,7 +2735,6 @@ class Index(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Tag',
-                "DuplicatesAllowed": True,
             }
         },
     )
@@ -2866,7 +2862,6 @@ class Faq(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Tag',
-                "DuplicatesAllowed": True,
             }
         },
     )

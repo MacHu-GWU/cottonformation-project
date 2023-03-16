@@ -1061,7 +1061,6 @@ class ContactList(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Topic',
-                "DuplicatesAllowed": True,
             }
         },
     )
@@ -1077,7 +1076,6 @@ class ContactList(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Tag',
-                "DuplicatesAllowed": True,
             }
         },
     )
@@ -1611,9 +1609,9 @@ class EmailIdentity(Resource):
 
     
     @property
-    def rv_DkimDNSTokenValue1(self) -> GetAtt:
+    def rv_DkimDNSTokenName1(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-emailidentity.html#aws-resource-ses-emailidentity-return-values"""
-        return GetAtt(resource=self, attr_name="DkimDNSTokenValue1")
+        return GetAtt(resource=self, attr_name="DkimDNSTokenName1")
     
     @property
     def rv_DkimDNSTokenName2(self) -> GetAtt:
@@ -1626,9 +1624,9 @@ class EmailIdentity(Resource):
         return GetAtt(resource=self, attr_name="DkimDNSTokenName3")
     
     @property
-    def rv_DkimDNSTokenName1(self) -> GetAtt:
+    def rv_DkimDNSTokenValue1(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-ses-emailidentity.html#aws-resource-ses-emailidentity-return-values"""
-        return GetAtt(resource=self, attr_name="DkimDNSTokenName1")
+        return GetAtt(resource=self, attr_name="DkimDNSTokenValue1")
     
     @property
     def rv_DkimDNSTokenValue2(self) -> GetAtt:

@@ -306,6 +306,32 @@ class PropDatasetFilterValue(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-filtervalue.html#cfn-databrew-dataset-filtervalue-valuereference"""
 
 @attr.s
+class PropJobParameterMap(Property):
+    """
+    AWS Object Type = "AWS::DataBrew::Job.ParameterMap"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-parametermap.html
+
+    Property Document:
+    
+    """
+    AWS_OBJECT_TYPE = "AWS::DataBrew::Job.ParameterMap"
+    
+
+@attr.s
+class PropRecipeParameterMap(Property):
+    """
+    AWS Object Type = "AWS::DataBrew::Recipe.ParameterMap"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-parametermap.html
+
+    Property Document:
+    
+    """
+    AWS_OBJECT_TYPE = "AWS::DataBrew::Recipe.ParameterMap"
+    
+
+@attr.s
 class PropProjectSample(Property):
     """
     AWS Object Type = "AWS::DataBrew::Project.Sample"
@@ -454,6 +480,33 @@ class PropRulesetSubstitutionValue(Property):
         metadata={AttrMeta.PROPERTY_NAME: "ValueReference"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-ruleset-substitutionvalue.html#cfn-databrew-ruleset-substitutionvalue-valuereference"""
+
+@attr.s
+class PropRecipeAction(Property):
+    """
+    AWS Object Type = "AWS::DataBrew::Recipe.Action"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-action.html
+
+    Property Document:
+    
+    - ``rp_Operation``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-action.html#cfn-databrew-recipe-action-operation
+    - ``p_Parameters``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-action.html#cfn-databrew-recipe-action-parameters
+    """
+    AWS_OBJECT_TYPE = "AWS::DataBrew::Recipe.Action"
+    
+    rp_Operation: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "Operation"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-action.html#cfn-databrew-recipe-action-operation"""
+    p_Parameters: typing.Optional[dict] = attr.ib(
+        default=None,
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        metadata={AttrMeta.PROPERTY_NAME: "Parameters"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-action.html#cfn-databrew-recipe-action-parameters"""
 
 @attr.s
 class PropJobCsvOutputOptions(Property):
@@ -610,9 +663,9 @@ class PropJobStatisticOverride(Property):
     """
     AWS_OBJECT_TYPE = "AWS::DataBrew::Job.StatisticOverride"
     
-    rp_Parameters: typing.Dict[str, TypeHint.intrinsic_str] = attr.ib(
+    rp_Parameters: typing.Optional[dict] = attr.ib(
         default=None,
-        validator=attr.validators.deep_mapping(key_validator=attr.validators.instance_of(str), value_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "Parameters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-statisticoverride.html#cfn-databrew-job-statisticoverride-parameters"""
@@ -831,6 +884,35 @@ class PropDatasetS3Location(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-s3location.html#cfn-databrew-dataset-s3location-key"""
 
 @attr.s
+class PropRecipeRecipeStep(Property):
+    """
+    AWS Object Type = "AWS::DataBrew::Recipe.RecipeStep"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipestep.html
+
+    Property Document:
+    
+    - ``rp_Action``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipestep.html#cfn-databrew-recipe-recipestep-action
+    - ``p_ConditionExpressions``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipestep.html#cfn-databrew-recipe-recipestep-conditionexpressions
+    """
+    AWS_OBJECT_TYPE = "AWS::DataBrew::Recipe.RecipeStep"
+    
+    rp_Action: typing.Union['PropRecipeAction', dict] = attr.ib(
+        default=None,
+        converter=PropRecipeAction.from_dict,
+        validator=attr.validators.instance_of(PropRecipeAction),
+        metadata={AttrMeta.PROPERTY_NAME: "Action"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipestep.html#cfn-databrew-recipe-recipestep-action"""
+    p_ConditionExpressions: typing.List[typing.Union['PropRecipeConditionExpression', dict]] = attr.ib(
+        default=None,
+        converter=PropRecipeConditionExpression.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropRecipeConditionExpression), iterable_validator=attr.validators.instance_of(list))),
+        metadata={AttrMeta.PROPERTY_NAME: "ConditionExpressions"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipestep.html#cfn-databrew-recipe-recipestep-conditionexpressions"""
+
+@attr.s
 class PropJobDataCatalogOutput(Property):
     """
     AWS Object Type = "AWS::DataBrew::Job.DataCatalogOutput"
@@ -1015,34 +1097,6 @@ class PropDatasetFormatOptions(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Json"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-dataset-formatoptions.html#cfn-databrew-dataset-formatoptions-json"""
-
-@attr.s
-class PropRecipeInput(Property):
-    """
-    AWS Object Type = "AWS::DataBrew::Recipe.Input"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-input.html
-
-    Property Document:
-    
-    - ``p_DataCatalogInputDefinition``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-input.html#cfn-databrew-recipe-input-datacataloginputdefinition
-    - ``p_S3InputDefinition``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-input.html#cfn-databrew-recipe-input-s3inputdefinition
-    """
-    AWS_OBJECT_TYPE = "AWS::DataBrew::Recipe.Input"
-    
-    p_DataCatalogInputDefinition: typing.Union['PropRecipeDataCatalogInputDefinition', dict] = attr.ib(
-        default=None,
-        converter=PropRecipeDataCatalogInputDefinition.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropRecipeDataCatalogInputDefinition)),
-        metadata={AttrMeta.PROPERTY_NAME: "DataCatalogInputDefinition"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-input.html#cfn-databrew-recipe-input-datacataloginputdefinition"""
-    p_S3InputDefinition: typing.Optional[dict] = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(dict)),
-        metadata={AttrMeta.PROPERTY_NAME: "S3InputDefinition"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-input.html#cfn-databrew-recipe-input-s3inputdefinition"""
 
 @attr.s
 class PropJobDatabaseOutput(Property):
@@ -1588,10 +1642,9 @@ class PropRecipeRecipeParameters(Property):
         metadata={AttrMeta.PROPERTY_NAME: "IncludeInSplit"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-includeinsplit"""
-    p_Input: typing.Union['PropRecipeInput', dict] = attr.ib(
+    p_Input: dict = attr.ib(
         default=None,
-        converter=PropRecipeInput.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropRecipeInput)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "Input"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipeparameters.html#cfn-databrew-recipe-recipeparameters-input"""
@@ -2180,62 +2233,6 @@ class PropJobProfileConfiguration(Property):
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-job-profileconfiguration.html#cfn-databrew-job-profileconfiguration-profilecolumns"""
 
-@attr.s
-class PropRecipeAction(Property):
-    """
-    AWS Object Type = "AWS::DataBrew::Recipe.Action"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-action.html
-
-    Property Document:
-    
-    - ``rp_Operation``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-action.html#cfn-databrew-recipe-action-operation
-    - ``p_Parameters``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-action.html#cfn-databrew-recipe-action-parameters
-    """
-    AWS_OBJECT_TYPE = "AWS::DataBrew::Recipe.Action"
-    
-    rp_Operation: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Operation"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-action.html#cfn-databrew-recipe-action-operation"""
-    p_Parameters: typing.Optional[dict] = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(dict)),
-        metadata={AttrMeta.PROPERTY_NAME: "Parameters"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-action.html#cfn-databrew-recipe-action-parameters"""
-
-@attr.s
-class PropRecipeRecipeStep(Property):
-    """
-    AWS Object Type = "AWS::DataBrew::Recipe.RecipeStep"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipestep.html
-
-    Property Document:
-    
-    - ``rp_Action``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipestep.html#cfn-databrew-recipe-recipestep-action
-    - ``p_ConditionExpressions``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipestep.html#cfn-databrew-recipe-recipestep-conditionexpressions
-    """
-    AWS_OBJECT_TYPE = "AWS::DataBrew::Recipe.RecipeStep"
-    
-    rp_Action: typing.Union['PropRecipeAction', dict] = attr.ib(
-        default=None,
-        converter=PropRecipeAction.from_dict,
-        validator=attr.validators.instance_of(PropRecipeAction),
-        metadata={AttrMeta.PROPERTY_NAME: "Action"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipestep.html#cfn-databrew-recipe-recipestep-action"""
-    p_ConditionExpressions: typing.List[typing.Union['PropRecipeConditionExpression', dict]] = attr.ib(
-        default=None,
-        converter=PropRecipeConditionExpression.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropRecipeConditionExpression), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "ConditionExpressions"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-databrew-recipe-recipestep.html#cfn-databrew-recipe-recipestep-conditionexpressions"""
-
 
 #--- Resource declaration ---
 
@@ -2280,7 +2277,6 @@ class Recipe(Resource):
                 "Required": True,
                 "Type": 'List',
                 "ItemType": 'RecipeStep',
-                "DuplicatesAllowed": True,
             }
         },
     )
@@ -2465,7 +2461,6 @@ class Ruleset(Resource):
                 "Required": True,
                 "Type": 'List',
                 "ItemType": 'Rule',
-                "DuplicatesAllowed": True,
             }
         },
     )
@@ -2702,7 +2697,6 @@ class Job(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'DataCatalogOutput',
-                "DuplicatesAllowed": True,
             }
         },
     )
@@ -2718,7 +2712,6 @@ class Job(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'DatabaseOutput',
-                "DuplicatesAllowed": True,
             }
         },
     )
@@ -2840,7 +2833,6 @@ class Job(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Output',
-                "DuplicatesAllowed": True,
             }
         },
     )
@@ -2910,7 +2902,6 @@ class Job(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'ValidationConfiguration',
-                "DuplicatesAllowed": True,
             }
         },
     )

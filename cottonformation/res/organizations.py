@@ -18,63 +18,6 @@ from ..core.constant import AttrMeta
 #--- Resource declaration ---
 
 @attr.s
-class ResourcePolicy(Resource):
-    """
-    AWS Object Type = "AWS::Organizations::ResourcePolicy"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-organizations-resourcepolicy.html
-
-    Property Document:
-    
-    - ``rp_Content``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-organizations-resourcepolicy.html#cfn-organizations-resourcepolicy-content
-    - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-organizations-resourcepolicy.html#cfn-organizations-resourcepolicy-tags
-    """
-    AWS_OBJECT_TYPE = "AWS::Organizations::ResourcePolicy"
-
-    
-    rp_Content: dict = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(dict),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "Content",
-            AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
-                "Required": True,
-                "PrimitiveType": 'Json',
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-organizations-resourcepolicy.html#cfn-organizations-resourcepolicy-content"""
-    p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
-        default=None,
-        converter=Tag.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "Tags",
-            AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
-                "Required": False,
-                "Type": 'List',
-                "ItemType": 'Tag',
-                "DuplicatesAllowed": False,
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-organizations-resourcepolicy.html#cfn-organizations-resourcepolicy-tags"""
-
-    
-    @property
-    def rv_Id(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-organizations-resourcepolicy.html#aws-resource-organizations-resourcepolicy-return-values"""
-        return GetAtt(resource=self, attr_name="Id")
-    
-    @property
-    def rv_Arn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-organizations-resourcepolicy.html#aws-resource-organizations-resourcepolicy-return-values"""
-        return GetAtt(resource=self, attr_name="Arn")
-    
-
-@attr.s
 class OrganizationalUnit(Resource):
     """
     AWS Object Type = "AWS::Organizations::OrganizationalUnit"
@@ -135,14 +78,14 @@ class OrganizationalUnit(Resource):
 
     
     @property
-    def rv_Id(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-organizations-organizationalunit.html#aws-resource-organizations-organizationalunit-return-values"""
-        return GetAtt(resource=self, attr_name="Id")
-    
-    @property
     def rv_Arn(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-organizations-organizationalunit.html#aws-resource-organizations-organizationalunit-return-values"""
         return GetAtt(resource=self, attr_name="Arn")
+    
+    @property
+    def rv_Id(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-organizations-organizationalunit.html#aws-resource-organizations-organizationalunit-return-values"""
+        return GetAtt(resource=self, attr_name="Id")
     
 
 @attr.s
@@ -164,15 +107,15 @@ class Policy(Resource):
     AWS_OBJECT_TYPE = "AWS::Organizations::Policy"
 
     
-    rp_Content: dict = attr.ib(
+    rp_Content: TypeHint.intrinsic_str = attr.ib(
         default=None,
-        validator=attr.validators.instance_of(dict),
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
         metadata={
             AttrMeta.PROPERTY_NAME: "Content",
             AttrMeta.DATA: {
                 "UpdateType": 'Mutable',
                 "Required": True,
-                "PrimitiveType": 'Json',
+                "PrimitiveType": 'String',
             }
         },
     )
@@ -356,21 +299,6 @@ class Account(Resource):
 
     
     @property
-    def rv_JoinedMethod(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-organizations-account.html#aws-resource-organizations-account-return-values"""
-        return GetAtt(resource=self, attr_name="JoinedMethod")
-    
-    @property
-    def rv_Status(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-organizations-account.html#aws-resource-organizations-account-return-values"""
-        return GetAtt(resource=self, attr_name="Status")
-    
-    @property
-    def rv_JoinedTimestamp(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-organizations-account.html#aws-resource-organizations-account-return-values"""
-        return GetAtt(resource=self, attr_name="JoinedTimestamp")
-    
-    @property
     def rv_AccountId(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-organizations-account.html#aws-resource-organizations-account-return-values"""
         return GetAtt(resource=self, attr_name="AccountId")
@@ -379,4 +307,19 @@ class Account(Resource):
     def rv_Arn(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-organizations-account.html#aws-resource-organizations-account-return-values"""
         return GetAtt(resource=self, attr_name="Arn")
+    
+    @property
+    def rv_JoinedMethod(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-organizations-account.html#aws-resource-organizations-account-return-values"""
+        return GetAtt(resource=self, attr_name="JoinedMethod")
+    
+    @property
+    def rv_JoinedTimestamp(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-organizations-account.html#aws-resource-organizations-account-return-values"""
+        return GetAtt(resource=self, attr_name="JoinedTimestamp")
+    
+    @property
+    def rv_Status(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-organizations-account.html#aws-resource-organizations-account-return-values"""
+        return GetAtt(resource=self, attr_name="Status")
     

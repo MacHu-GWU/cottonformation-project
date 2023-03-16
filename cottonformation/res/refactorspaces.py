@@ -219,17 +219,11 @@ class Environment(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Tag',
-                "DuplicatesAllowed": True,
             }
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-refactorspaces-environment.html#cfn-refactorspaces-environment-tags"""
 
-    
-    @property
-    def rv_TransitGatewayId(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-refactorspaces-environment.html#aws-resource-refactorspaces-environment-return-values"""
-        return GetAtt(resource=self, attr_name="TransitGatewayId")
     
     @property
     def rv_EnvironmentIdentifier(self) -> GetAtt:
@@ -240,6 +234,11 @@ class Environment(Resource):
     def rv_Arn(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-refactorspaces-environment.html#aws-resource-refactorspaces-environment-return-values"""
         return GetAtt(resource=self, attr_name="Arn")
+    
+    @property
+    def rv_TransitGatewayId(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-refactorspaces-environment.html#aws-resource-refactorspaces-environment-return-values"""
+        return GetAtt(resource=self, attr_name="TransitGatewayId")
     
 
 @attr.s
@@ -381,7 +380,6 @@ class Service(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Tag',
-                "DuplicatesAllowed": True,
             }
         },
     )
@@ -389,14 +387,14 @@ class Service(Resource):
 
     
     @property
-    def rv_ServiceIdentifier(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-refactorspaces-service.html#aws-resource-refactorspaces-service-return-values"""
-        return GetAtt(resource=self, attr_name="ServiceIdentifier")
-    
-    @property
     def rv_Arn(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-refactorspaces-service.html#aws-resource-refactorspaces-service-return-values"""
         return GetAtt(resource=self, attr_name="Arn")
+    
+    @property
+    def rv_ServiceIdentifier(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-refactorspaces-service.html#aws-resource-refactorspaces-service-return-values"""
+        return GetAtt(resource=self, attr_name="ServiceIdentifier")
     
 
 @attr.s
@@ -510,7 +508,6 @@ class Route(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Tag',
-                "DuplicatesAllowed": True,
             }
         },
     )
@@ -518,9 +515,9 @@ class Route(Resource):
 
     
     @property
-    def rv_RouteIdentifier(self) -> GetAtt:
+    def rv_PathResourceToId(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-refactorspaces-route.html#aws-resource-refactorspaces-route-return-values"""
-        return GetAtt(resource=self, attr_name="RouteIdentifier")
+        return GetAtt(resource=self, attr_name="PathResourceToId")
     
     @property
     def rv_Arn(self) -> GetAtt:
@@ -528,9 +525,9 @@ class Route(Resource):
         return GetAtt(resource=self, attr_name="Arn")
     
     @property
-    def rv_PathResourceToId(self) -> GetAtt:
+    def rv_RouteIdentifier(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-refactorspaces-route.html#aws-resource-refactorspaces-route-return-values"""
-        return GetAtt(resource=self, attr_name="PathResourceToId")
+        return GetAtt(resource=self, attr_name="RouteIdentifier")
     
 
 @attr.s
@@ -629,7 +626,6 @@ class Application(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Tag',
-                "DuplicatesAllowed": True,
             }
         },
     )
@@ -637,24 +633,9 @@ class Application(Resource):
 
     
     @property
-    def rv_NlbArn(self) -> GetAtt:
+    def rv_Arn(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-refactorspaces-application.html#aws-resource-refactorspaces-application-return-values"""
-        return GetAtt(resource=self, attr_name="NlbArn")
-    
-    @property
-    def rv_ProxyUrl(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-refactorspaces-application.html#aws-resource-refactorspaces-application-return-values"""
-        return GetAtt(resource=self, attr_name="ProxyUrl")
-    
-    @property
-    def rv_NlbName(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-refactorspaces-application.html#aws-resource-refactorspaces-application-return-values"""
-        return GetAtt(resource=self, attr_name="NlbName")
-    
-    @property
-    def rv_StageName(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-refactorspaces-application.html#aws-resource-refactorspaces-application-return-values"""
-        return GetAtt(resource=self, attr_name="StageName")
+        return GetAtt(resource=self, attr_name="Arn")
     
     @property
     def rv_ApiGatewayId(self) -> GetAtt:
@@ -667,12 +648,27 @@ class Application(Resource):
         return GetAtt(resource=self, attr_name="VpcLinkId")
     
     @property
+    def rv_NlbArn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-refactorspaces-application.html#aws-resource-refactorspaces-application-return-values"""
+        return GetAtt(resource=self, attr_name="NlbArn")
+    
+    @property
+    def rv_NlbName(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-refactorspaces-application.html#aws-resource-refactorspaces-application-return-values"""
+        return GetAtt(resource=self, attr_name="NlbName")
+    
+    @property
     def rv_ApplicationIdentifier(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-refactorspaces-application.html#aws-resource-refactorspaces-application-return-values"""
         return GetAtt(resource=self, attr_name="ApplicationIdentifier")
     
     @property
-    def rv_Arn(self) -> GetAtt:
+    def rv_StageName(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-refactorspaces-application.html#aws-resource-refactorspaces-application-return-values"""
-        return GetAtt(resource=self, attr_name="Arn")
+        return GetAtt(resource=self, attr_name="StageName")
+    
+    @property
+    def rv_ProxyUrl(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-refactorspaces-application.html#aws-resource-refactorspaces-application-return-values"""
+        return GetAtt(resource=self, attr_name="ProxyUrl")
     

@@ -162,14 +162,14 @@ class Stream(Resource):
 
     
     @property
-    def rv_Id(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-qldb-stream.html#aws-resource-qldb-stream-return-values"""
-        return GetAtt(resource=self, attr_name="Id")
-    
-    @property
     def rv_Arn(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-qldb-stream.html#aws-resource-qldb-stream-return-values"""
         return GetAtt(resource=self, attr_name="Arn")
+    
+    @property
+    def rv_Id(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-qldb-stream.html#aws-resource-qldb-stream-return-values"""
+        return GetAtt(resource=self, attr_name="Id")
     
 
 @attr.s

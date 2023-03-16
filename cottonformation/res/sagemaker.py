@@ -15,26 +15,6 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class PropFeatureGroupOnlineStoreSecurityConfig(Property):
-    """
-    AWS Object Type = "AWS::SageMaker::FeatureGroup.OnlineStoreSecurityConfig"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-featuregroup-onlinestoresecurityconfig.html
-
-    Property Document:
-    
-    - ``p_KmsKeyId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-featuregroup-onlinestoresecurityconfig.html#cfn-sagemaker-featuregroup-onlinestoresecurityconfig-kmskeyid
-    """
-    AWS_OBJECT_TYPE = "AWS::SageMaker::FeatureGroup.OnlineStoreSecurityConfig"
-    
-    p_KmsKeyId: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "KmsKeyId"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-featuregroup-onlinestoresecurityconfig.html#cfn-sagemaker-featuregroup-onlinestoresecurityconfig-kmskeyid"""
-
-@attr.s
 class PropModelBiasJobDefinitionClusterConfig(Property):
     """
     AWS Object Type = "AWS::SageMaker::ModelBiasJobDefinition.ClusterConfig"
@@ -141,40 +121,6 @@ class PropEndpointAlarm(Property):
         metadata={AttrMeta.PROPERTY_NAME: "AlarmName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpoint-alarm.html#cfn-sagemaker-endpoint-alarm-alarmname"""
-
-@attr.s
-class PropSpaceResourceSpec(Property):
-    """
-    AWS Object Type = "AWS::SageMaker::Space.ResourceSpec"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-space-resourcespec.html
-
-    Property Document:
-    
-    - ``p_InstanceType``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-space-resourcespec.html#cfn-sagemaker-space-resourcespec-instancetype
-    - ``p_SageMakerImageArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-space-resourcespec.html#cfn-sagemaker-space-resourcespec-sagemakerimagearn
-    - ``p_SageMakerImageVersionArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-space-resourcespec.html#cfn-sagemaker-space-resourcespec-sagemakerimageversionarn
-    """
-    AWS_OBJECT_TYPE = "AWS::SageMaker::Space.ResourceSpec"
-    
-    p_InstanceType: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "InstanceType"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-space-resourcespec.html#cfn-sagemaker-space-resourcespec-instancetype"""
-    p_SageMakerImageArn: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "SageMakerImageArn"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-space-resourcespec.html#cfn-sagemaker-space-resourcespec-sagemakerimagearn"""
-    p_SageMakerImageVersionArn: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "SageMakerImageVersionArn"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-space-resourcespec.html#cfn-sagemaker-space-resourcespec-sagemakerimageversionarn"""
 
 @attr.s
 class PropModelBiasJobDefinitionMonitoringResources(Property):
@@ -318,26 +264,6 @@ class PropWorkteamOidcMemberDefinition(Property):
         metadata={AttrMeta.PROPERTY_NAME: "OidcGroups"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-workteam-oidcmemberdefinition.html#cfn-sagemaker-workteam-oidcmemberdefinition-oidcgroups"""
-
-@attr.s
-class PropModelCardSecurityConfig(Property):
-    """
-    AWS Object Type = "AWS::SageMaker::ModelCard.SecurityConfig"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-securityconfig.html
-
-    Property Document:
-    
-    - ``p_KmsKeyId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-securityconfig.html#cfn-sagemaker-modelcard-securityconfig-kmskeyid
-    """
-    AWS_OBJECT_TYPE = "AWS::SageMaker::ModelCard.SecurityConfig"
-    
-    p_KmsKeyId: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "KmsKeyId"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-securityconfig.html#cfn-sagemaker-modelcard-securityconfig-kmskeyid"""
 
 @attr.s
 class PropMonitoringScheduleMonitoringExecutionSummary(Property):
@@ -618,26 +544,6 @@ class PropModelExplainabilityJobDefinitionStoppingCondition(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-stoppingcondition.html#cfn-sagemaker-modelexplainabilityjobdefinition-stoppingcondition-maxruntimeinseconds"""
 
 @attr.s
-class PropSpaceJupyterServerAppSettings(Property):
-    """
-    AWS Object Type = "AWS::SageMaker::Space.JupyterServerAppSettings"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-space-jupyterserverappsettings.html
-
-    Property Document:
-    
-    - ``p_DefaultResourceSpec``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-space-jupyterserverappsettings.html#cfn-sagemaker-space-jupyterserverappsettings-defaultresourcespec
-    """
-    AWS_OBJECT_TYPE = "AWS::SageMaker::Space.JupyterServerAppSettings"
-    
-    p_DefaultResourceSpec: typing.Optional[dict] = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(dict)),
-        metadata={AttrMeta.PROPERTY_NAME: "DefaultResourceSpec"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-space-jupyterserverappsettings.html#cfn-sagemaker-space-jupyterserverappsettings-defaultresourcespec"""
-
-@attr.s
 class PropMonitoringScheduleVpcConfig(Property):
     """
     AWS Object Type = "AWS::SageMaker::MonitoringSchedule.VpcConfig"
@@ -663,40 +569,6 @@ class PropMonitoringScheduleVpcConfig(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Subnets"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-vpcconfig.html#cfn-sagemaker-monitoringschedule-vpcconfig-subnets"""
-
-@attr.s
-class PropModelCardTrainingMetric(Property):
-    """
-    AWS Object Type = "AWS::SageMaker::ModelCard.TrainingMetric"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-trainingmetric.html
-
-    Property Document:
-    
-    - ``rp_Name``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-trainingmetric.html#cfn-sagemaker-modelcard-trainingmetric-name
-    - ``rp_Value``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-trainingmetric.html#cfn-sagemaker-modelcard-trainingmetric-value
-    - ``p_Notes``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-trainingmetric.html#cfn-sagemaker-modelcard-trainingmetric-notes
-    """
-    AWS_OBJECT_TYPE = "AWS::SageMaker::ModelCard.TrainingMetric"
-    
-    rp_Name: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Name"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-trainingmetric.html#cfn-sagemaker-modelcard-trainingmetric-name"""
-    rp_Value: float = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(float),
-        metadata={AttrMeta.PROPERTY_NAME: "Value"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-trainingmetric.html#cfn-sagemaker-modelcard-trainingmetric-value"""
-    p_Notes: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Notes"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-trainingmetric.html#cfn-sagemaker-modelcard-trainingmetric-notes"""
 
 @attr.s
 class PropModelPackageUserContext(Property):
@@ -781,6 +653,19 @@ class PropMonitoringScheduleMonitoringAppSpecification(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-monitoringappspecification.html#cfn-sagemaker-monitoringschedule-monitoringappspecification-recordpreprocessorsourceuri"""
 
 @attr.s
+class PropModelPackageEnvironment(Property):
+    """
+    AWS Object Type = "AWS::SageMaker::ModelPackage.Environment"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-environment.html
+
+    Property Document:
+    
+    """
+    AWS_OBJECT_TYPE = "AWS::SageMaker::ModelPackage.Environment"
+    
+
+@attr.s
 class PropModelExplainabilityJobDefinitionS3Output(Property):
     """
     AWS Object Type = "AWS::SageMaker::ModelExplainabilityJobDefinition.S3Output"
@@ -860,33 +745,6 @@ class PropEndpointConfigClarifyFeatureType(Property):
     """
     AWS_OBJECT_TYPE = "AWS::SageMaker::EndpointConfig.ClarifyFeatureType"
     
-
-@attr.s
-class PropFeatureGroupS3StorageConfig(Property):
-    """
-    AWS Object Type = "AWS::SageMaker::FeatureGroup.S3StorageConfig"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-featuregroup-s3storageconfig.html
-
-    Property Document:
-    
-    - ``rp_S3Uri``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-featuregroup-s3storageconfig.html#cfn-sagemaker-featuregroup-s3storageconfig-s3uri
-    - ``p_KmsKeyId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-featuregroup-s3storageconfig.html#cfn-sagemaker-featuregroup-s3storageconfig-kmskeyid
-    """
-    AWS_OBJECT_TYPE = "AWS::SageMaker::FeatureGroup.S3StorageConfig"
-    
-    rp_S3Uri: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "S3Uri"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-featuregroup-s3storageconfig.html#cfn-sagemaker-featuregroup-s3storageconfig-s3uri"""
-    p_KmsKeyId: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "KmsKeyId"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-featuregroup-s3storageconfig.html#cfn-sagemaker-featuregroup-s3storageconfig-kmskeyid"""
 
 @attr.s
 class PropModelPackageSourceAlgorithm(Property):
@@ -1004,40 +862,6 @@ class PropDataQualityJobDefinitionDataQualityAppSpecification(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-dataqualityappspecification.html#cfn-sagemaker-dataqualityjobdefinition-dataqualityappspecification-recordpreprocessorsourceuri"""
 
 @attr.s
-class PropModelCardUserContext(Property):
-    """
-    AWS Object Type = "AWS::SageMaker::ModelCard.UserContext"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-usercontext.html
-
-    Property Document:
-    
-    - ``p_DomainId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-usercontext.html#cfn-sagemaker-modelcard-usercontext-domainid
-    - ``p_UserProfileArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-usercontext.html#cfn-sagemaker-modelcard-usercontext-userprofilearn
-    - ``p_UserProfileName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-usercontext.html#cfn-sagemaker-modelcard-usercontext-userprofilename
-    """
-    AWS_OBJECT_TYPE = "AWS::SageMaker::ModelCard.UserContext"
-    
-    p_DomainId: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "DomainId"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-usercontext.html#cfn-sagemaker-modelcard-usercontext-domainid"""
-    p_UserProfileArn: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "UserProfileArn"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-usercontext.html#cfn-sagemaker-modelcard-usercontext-userprofilearn"""
-    p_UserProfileName: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "UserProfileName"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-usercontext.html#cfn-sagemaker-modelcard-usercontext-userprofilename"""
-
-@attr.s
 class PropUserProfileCustomImage(Property):
     """
     AWS Object Type = "AWS::SageMaker::UserProfile.CustomImage"
@@ -1090,74 +914,6 @@ class PropDataQualityJobDefinitionCsv(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Header"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-csv.html#cfn-sagemaker-dataqualityjobdefinition-csv-header"""
-
-@attr.s
-class PropModelCardInferenceEnvironment(Property):
-    """
-    AWS Object Type = "AWS::SageMaker::ModelCard.InferenceEnvironment"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-inferenceenvironment.html
-
-    Property Document:
-    
-    - ``p_ContainerImage``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-inferenceenvironment.html#cfn-sagemaker-modelcard-inferenceenvironment-containerimage
-    """
-    AWS_OBJECT_TYPE = "AWS::SageMaker::ModelCard.InferenceEnvironment"
-    
-    p_ContainerImage: typing.List[TypeHint.intrinsic_str] = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "ContainerImage"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-inferenceenvironment.html#cfn-sagemaker-modelcard-inferenceenvironment-containerimage"""
-
-@attr.s
-class PropModelCardIntendedUses(Property):
-    """
-    AWS Object Type = "AWS::SageMaker::ModelCard.IntendedUses"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-intendeduses.html
-
-    Property Document:
-    
-    - ``p_ExplanationsForRiskRating``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-intendeduses.html#cfn-sagemaker-modelcard-intendeduses-explanationsforriskrating
-    - ``p_FactorsAffectingModelEfficiency``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-intendeduses.html#cfn-sagemaker-modelcard-intendeduses-factorsaffectingmodelefficiency
-    - ``p_IntendedUses``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-intendeduses.html#cfn-sagemaker-modelcard-intendeduses-intendeduses
-    - ``p_PurposeOfModel``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-intendeduses.html#cfn-sagemaker-modelcard-intendeduses-purposeofmodel
-    - ``p_RiskRating``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-intendeduses.html#cfn-sagemaker-modelcard-intendeduses-riskrating
-    """
-    AWS_OBJECT_TYPE = "AWS::SageMaker::ModelCard.IntendedUses"
-    
-    p_ExplanationsForRiskRating: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "ExplanationsForRiskRating"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-intendeduses.html#cfn-sagemaker-modelcard-intendeduses-explanationsforriskrating"""
-    p_FactorsAffectingModelEfficiency: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "FactorsAffectingModelEfficiency"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-intendeduses.html#cfn-sagemaker-modelcard-intendeduses-factorsaffectingmodelefficiency"""
-    p_IntendedUses: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "IntendedUses"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-intendeduses.html#cfn-sagemaker-modelcard-intendeduses-intendeduses"""
-    p_PurposeOfModel: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "PurposeOfModel"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-intendeduses.html#cfn-sagemaker-modelcard-intendeduses-purposeofmodel"""
-    p_RiskRating: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "RiskRating"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-intendeduses.html#cfn-sagemaker-modelcard-intendeduses-riskrating"""
 
 @attr.s
 class PropModelPackageDriftCheckExplainability(Property):
@@ -1331,33 +1087,6 @@ class PropMonitoringScheduleEndpointInput(Property):
         metadata={AttrMeta.PROPERTY_NAME: "S3InputMode"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-endpointinput.html#cfn-sagemaker-monitoringschedule-endpointinput-s3inputmode"""
-
-@attr.s
-class PropModelCardTrainingHyperParameter(Property):
-    """
-    AWS Object Type = "AWS::SageMaker::ModelCard.TrainingHyperParameter"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-traininghyperparameter.html
-
-    Property Document:
-    
-    - ``rp_Name``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-traininghyperparameter.html#cfn-sagemaker-modelcard-traininghyperparameter-name
-    - ``rp_Value``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-traininghyperparameter.html#cfn-sagemaker-modelcard-traininghyperparameter-value
-    """
-    AWS_OBJECT_TYPE = "AWS::SageMaker::ModelCard.TrainingHyperParameter"
-    
-    rp_Name: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Name"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-traininghyperparameter.html#cfn-sagemaker-modelcard-traininghyperparameter-name"""
-    rp_Value: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Value"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-traininghyperparameter.html#cfn-sagemaker-modelcard-traininghyperparameter-value"""
 
 @attr.s
 class PropModelBiasJobDefinitionEndpointInput(Property):
@@ -1565,90 +1294,6 @@ class PropModelQualityJobDefinitionModelQualityAppSpecification(Property):
         metadata={AttrMeta.PROPERTY_NAME: "RecordPreprocessorSourceUri"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-modelqualityappspecification.html#cfn-sagemaker-modelqualityjobdefinition-modelqualityappspecification-recordpreprocessorsourceuri"""
-
-@attr.s
-class PropModelCardModelOverview(Property):
-    """
-    AWS Object Type = "AWS::SageMaker::ModelCard.ModelOverview"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-modeloverview.html
-
-    Property Document:
-    
-    - ``p_AlgorithmType``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-modeloverview.html#cfn-sagemaker-modelcard-modeloverview-algorithmtype
-    - ``p_InferenceEnvironment``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-modeloverview.html#cfn-sagemaker-modelcard-modeloverview-inferenceenvironment
-    - ``p_ModelArtifact``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-modeloverview.html#cfn-sagemaker-modelcard-modeloverview-modelartifact
-    - ``p_ModelCreator``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-modeloverview.html#cfn-sagemaker-modelcard-modeloverview-modelcreator
-    - ``p_ModelDescription``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-modeloverview.html#cfn-sagemaker-modelcard-modeloverview-modeldescription
-    - ``p_ModelId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-modeloverview.html#cfn-sagemaker-modelcard-modeloverview-modelid
-    - ``p_ModelName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-modeloverview.html#cfn-sagemaker-modelcard-modeloverview-modelname
-    - ``p_ModelOwner``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-modeloverview.html#cfn-sagemaker-modelcard-modeloverview-modelowner
-    - ``p_ModelVersion``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-modeloverview.html#cfn-sagemaker-modelcard-modeloverview-modelversion
-    - ``p_ProblemType``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-modeloverview.html#cfn-sagemaker-modelcard-modeloverview-problemtype
-    """
-    AWS_OBJECT_TYPE = "AWS::SageMaker::ModelCard.ModelOverview"
-    
-    p_AlgorithmType: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "AlgorithmType"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-modeloverview.html#cfn-sagemaker-modelcard-modeloverview-algorithmtype"""
-    p_InferenceEnvironment: typing.Union['PropModelCardInferenceEnvironment', dict] = attr.ib(
-        default=None,
-        converter=PropModelCardInferenceEnvironment.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropModelCardInferenceEnvironment)),
-        metadata={AttrMeta.PROPERTY_NAME: "InferenceEnvironment"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-modeloverview.html#cfn-sagemaker-modelcard-modeloverview-inferenceenvironment"""
-    p_ModelArtifact: typing.List[TypeHint.intrinsic_str] = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "ModelArtifact"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-modeloverview.html#cfn-sagemaker-modelcard-modeloverview-modelartifact"""
-    p_ModelCreator: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "ModelCreator"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-modeloverview.html#cfn-sagemaker-modelcard-modeloverview-modelcreator"""
-    p_ModelDescription: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "ModelDescription"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-modeloverview.html#cfn-sagemaker-modelcard-modeloverview-modeldescription"""
-    p_ModelId: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "ModelId"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-modeloverview.html#cfn-sagemaker-modelcard-modeloverview-modelid"""
-    p_ModelName: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "ModelName"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-modeloverview.html#cfn-sagemaker-modelcard-modeloverview-modelname"""
-    p_ModelOwner: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "ModelOwner"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-modeloverview.html#cfn-sagemaker-modelcard-modeloverview-modelowner"""
-    p_ModelVersion: float = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(float)),
-        metadata={AttrMeta.PROPERTY_NAME: "ModelVersion"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-modeloverview.html#cfn-sagemaker-modelcard-modeloverview-modelversion"""
-    p_ProblemType: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "ProblemType"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-modeloverview.html#cfn-sagemaker-modelcard-modeloverview-problemtype"""
 
 @attr.s
 class PropDataQualityJobDefinitionDatasetFormat(Property):
@@ -1889,33 +1534,6 @@ class PropMonitoringScheduleStoppingCondition(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-stoppingcondition.html#cfn-sagemaker-monitoringschedule-stoppingcondition-maxruntimeinseconds"""
 
 @attr.s
-class PropFeatureGroupOnlineStoreConfig(Property):
-    """
-    AWS Object Type = "AWS::SageMaker::FeatureGroup.OnlineStoreConfig"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-featuregroup-onlinestoreconfig.html
-
-    Property Document:
-    
-    - ``p_EnableOnlineStore``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-featuregroup-onlinestoreconfig.html#cfn-sagemaker-featuregroup-onlinestoreconfig-enableonlinestore
-    - ``p_SecurityConfig``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-featuregroup-onlinestoreconfig.html#cfn-sagemaker-featuregroup-onlinestoreconfig-securityconfig
-    """
-    AWS_OBJECT_TYPE = "AWS::SageMaker::FeatureGroup.OnlineStoreConfig"
-    
-    p_EnableOnlineStore: bool = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(bool)),
-        metadata={AttrMeta.PROPERTY_NAME: "EnableOnlineStore"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-featuregroup-onlinestoreconfig.html#cfn-sagemaker-featuregroup-onlinestoreconfig-enableonlinestore"""
-    p_SecurityConfig: typing.Optional[dict] = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(dict)),
-        metadata={AttrMeta.PROPERTY_NAME: "SecurityConfig"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-featuregroup-onlinestoreconfig.html#cfn-sagemaker-featuregroup-onlinestoreconfig-securityconfig"""
-
-@attr.s
 class PropModelInferenceExecutionConfig(Property):
     """
     AWS Object Type = "AWS::SageMaker::Model.InferenceExecutionConfig"
@@ -2071,26 +1689,6 @@ class PropModelPackageDriftCheckBias(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-driftcheckbias.html#cfn-sagemaker-modelpackage-driftcheckbias-pretrainingconstraints"""
 
 @attr.s
-class PropModelPackageModelInput(Property):
-    """
-    AWS Object Type = "AWS::SageMaker::ModelPackage.ModelInput"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-modelinput.html
-
-    Property Document:
-    
-    - ``rp_DataInputConfig``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-modelinput.html#cfn-sagemaker-modelpackage-modelinput-datainputconfig
-    """
-    AWS_OBJECT_TYPE = "AWS::SageMaker::ModelPackage.ModelInput"
-    
-    rp_DataInputConfig: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "DataInputConfig"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-modelinput.html#cfn-sagemaker-modelpackage-modelinput-datainputconfig"""
-
-@attr.s
 class PropEndpointAutoRollbackConfig(Property):
     """
     AWS Object Type = "AWS::SageMaker::Endpoint.AutoRollbackConfig"
@@ -2112,61 +1710,6 @@ class PropEndpointAutoRollbackConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpoint-autorollbackconfig.html#cfn-sagemaker-endpoint-autorollbackconfig-alarms"""
 
 @attr.s
-class PropModelCardMetricDataItems(Property):
-    """
-    AWS Object Type = "AWS::SageMaker::ModelCard.MetricDataItems"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-metricdataitems.html
-
-    Property Document:
-    
-    - ``rp_Name``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-metricdataitems.html#cfn-sagemaker-modelcard-metricdataitems-name
-    - ``rp_Type``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-metricdataitems.html#cfn-sagemaker-modelcard-metricdataitems-type
-    - ``rp_Value``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-metricdataitems.html#cfn-sagemaker-modelcard-metricdataitems-value
-    - ``p_Notes``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-metricdataitems.html#cfn-sagemaker-modelcard-metricdataitems-notes
-    - ``p_XAxisName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-metricdataitems.html#cfn-sagemaker-modelcard-metricdataitems-xaxisname
-    - ``p_YAxisName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-metricdataitems.html#cfn-sagemaker-modelcard-metricdataitems-yaxisname
-    """
-    AWS_OBJECT_TYPE = "AWS::SageMaker::ModelCard.MetricDataItems"
-    
-    rp_Name: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Name"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-metricdataitems.html#cfn-sagemaker-modelcard-metricdataitems-name"""
-    rp_Type: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Type"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-metricdataitems.html#cfn-sagemaker-modelcard-metricdataitems-type"""
-    rp_Value: dict = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(dict),
-        metadata={AttrMeta.PROPERTY_NAME: "Value"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-metricdataitems.html#cfn-sagemaker-modelcard-metricdataitems-value"""
-    p_Notes: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Notes"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-metricdataitems.html#cfn-sagemaker-modelcard-metricdataitems-notes"""
-    p_XAxisName: typing.List[TypeHint.intrinsic_str] = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "XAxisName"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-metricdataitems.html#cfn-sagemaker-modelcard-metricdataitems-xaxisname"""
-    p_YAxisName: typing.List[TypeHint.intrinsic_str] = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "YAxisName"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-metricdataitems.html#cfn-sagemaker-modelcard-metricdataitems-yaxisname"""
-
-@attr.s
 class PropModelMultiModelConfig(Property):
     """
     AWS Object Type = "AWS::SageMaker::Model.MultiModelConfig"
@@ -2185,47 +1728,6 @@ class PropModelMultiModelConfig(Property):
         metadata={AttrMeta.PROPERTY_NAME: "ModelCacheSetting"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-model-containerdefinition-multimodelconfig.html#cfn-sagemaker-model-containerdefinition-multimodelconfig-modelcachesetting"""
-
-@attr.s
-class PropPipelineS3Location(Property):
-    """
-    AWS Object Type = "AWS::SageMaker::Pipeline.S3Location"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-pipeline-s3location.html
-
-    Property Document:
-    
-    - ``rp_Bucket``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-pipeline-s3location.html#cfn-sagemaker-pipeline-s3location-bucket
-    - ``rp_Key``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-pipeline-s3location.html#cfn-sagemaker-pipeline-s3location-key
-    - ``p_ETag``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-pipeline-s3location.html#cfn-sagemaker-pipeline-s3location-etag
-    - ``p_Version``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-pipeline-s3location.html#cfn-sagemaker-pipeline-s3location-version
-    """
-    AWS_OBJECT_TYPE = "AWS::SageMaker::Pipeline.S3Location"
-    
-    rp_Bucket: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Bucket"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-pipeline-s3location.html#cfn-sagemaker-pipeline-s3location-bucket"""
-    rp_Key: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Key"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-pipeline-s3location.html#cfn-sagemaker-pipeline-s3location-key"""
-    p_ETag: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "ETag"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-pipeline-s3location.html#cfn-sagemaker-pipeline-s3location-etag"""
-    p_Version: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Version"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-pipeline-s3location.html#cfn-sagemaker-pipeline-s3location-version"""
 
 @attr.s
 class PropModelBiasJobDefinitionS3Output(Property):
@@ -2287,33 +1789,6 @@ class PropDeviceFleetEdgeOutputConfig(Property):
         metadata={AttrMeta.PROPERTY_NAME: "KmsKeyId"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-devicefleet-edgeoutputconfig.html#cfn-sagemaker-devicefleet-edgeoutputconfig-kmskeyid"""
-
-@attr.s
-class PropProjectProvisioningParameter(Property):
-    """
-    AWS Object Type = "AWS::SageMaker::Project.ProvisioningParameter"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-project-provisioningparameter.html
-
-    Property Document:
-    
-    - ``rp_Key``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-project-provisioningparameter.html#cfn-sagemaker-project-provisioningparameter-key
-    - ``rp_Value``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-project-provisioningparameter.html#cfn-sagemaker-project-provisioningparameter-value
-    """
-    AWS_OBJECT_TYPE = "AWS::SageMaker::Project.ProvisioningParameter"
-    
-    rp_Key: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Key"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-project-provisioningparameter.html#cfn-sagemaker-project-provisioningparameter-key"""
-    rp_Value: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Value"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-project-provisioningparameter.html#cfn-sagemaker-project-provisioningparameter-value"""
 
 @attr.s
 class PropModelExplainabilityJobDefinitionModelExplainabilityAppSpecification(Property):
@@ -2505,40 +1980,6 @@ class PropMonitoringScheduleJson(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-json.html#cfn-sagemaker-monitoringschedule-json-line"""
 
 @attr.s
-class PropFeatureGroupDataCatalogConfig(Property):
-    """
-    AWS Object Type = "AWS::SageMaker::FeatureGroup.DataCatalogConfig"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-featuregroup-datacatalogconfig.html
-
-    Property Document:
-    
-    - ``rp_Catalog``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-featuregroup-datacatalogconfig.html#cfn-sagemaker-featuregroup-datacatalogconfig-catalog
-    - ``rp_Database``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-featuregroup-datacatalogconfig.html#cfn-sagemaker-featuregroup-datacatalogconfig-database
-    - ``rp_TableName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-featuregroup-datacatalogconfig.html#cfn-sagemaker-featuregroup-datacatalogconfig-tablename
-    """
-    AWS_OBJECT_TYPE = "AWS::SageMaker::FeatureGroup.DataCatalogConfig"
-    
-    rp_Catalog: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Catalog"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-featuregroup-datacatalogconfig.html#cfn-sagemaker-featuregroup-datacatalogconfig-catalog"""
-    rp_Database: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Database"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-featuregroup-datacatalogconfig.html#cfn-sagemaker-featuregroup-datacatalogconfig-database"""
-    rp_TableName: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "TableName"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-featuregroup-datacatalogconfig.html#cfn-sagemaker-featuregroup-datacatalogconfig-tablename"""
-
-@attr.s
 class PropUserProfileJupyterServerAppSettings(Property):
     """
     AWS Object Type = "AWS::SageMaker::UserProfile.JupyterServerAppSettings"
@@ -2557,33 +1998,6 @@ class PropUserProfileJupyterServerAppSettings(Property):
         metadata={AttrMeta.PROPERTY_NAME: "DefaultResourceSpec"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-userprofile-jupyterserverappsettings.html#cfn-sagemaker-userprofile-jupyterserverappsettings-defaultresourcespec"""
-
-@attr.s
-class PropPipelinePipelineDefinition(Property):
-    """
-    AWS Object Type = "AWS::SageMaker::Pipeline.PipelineDefinition"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-pipeline-pipelinedefinition.html
-
-    Property Document:
-    
-    - ``p_PipelineDefinitionBody``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-pipeline-pipelinedefinition.html#cfn-sagemaker-pipeline-pipelinedefinition-pipelinedefinitionbody
-    - ``p_PipelineDefinitionS3Location``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-pipeline-pipelinedefinition.html#cfn-sagemaker-pipeline-pipelinedefinition-pipelinedefinitions3location
-    """
-    AWS_OBJECT_TYPE = "AWS::SageMaker::Pipeline.PipelineDefinition"
-    
-    p_PipelineDefinitionBody: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "PipelineDefinitionBody"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-pipeline-pipelinedefinition.html#cfn-sagemaker-pipeline-pipelinedefinition-pipelinedefinitionbody"""
-    p_PipelineDefinitionS3Location: typing.Optional[dict] = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(dict)),
-        metadata={AttrMeta.PROPERTY_NAME: "PipelineDefinitionS3Location"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-pipeline-pipelinedefinition.html#cfn-sagemaker-pipeline-pipelinedefinition-pipelinedefinitions3location"""
 
 @attr.s
 class PropDeviceDevice(Property):
@@ -2618,40 +2032,6 @@ class PropDeviceDevice(Property):
         metadata={AttrMeta.PROPERTY_NAME: "IotThingName"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-device-device.html#cfn-sagemaker-device-device-iotthingname"""
-
-@attr.s
-class PropModelCardBusinessDetails(Property):
-    """
-    AWS Object Type = "AWS::SageMaker::ModelCard.BusinessDetails"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-businessdetails.html
-
-    Property Document:
-    
-    - ``p_BusinessProblem``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-businessdetails.html#cfn-sagemaker-modelcard-businessdetails-businessproblem
-    - ``p_BusinessStakeholders``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-businessdetails.html#cfn-sagemaker-modelcard-businessdetails-businessstakeholders
-    - ``p_LineOfBusiness``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-businessdetails.html#cfn-sagemaker-modelcard-businessdetails-lineofbusiness
-    """
-    AWS_OBJECT_TYPE = "AWS::SageMaker::ModelCard.BusinessDetails"
-    
-    p_BusinessProblem: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "BusinessProblem"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-businessdetails.html#cfn-sagemaker-modelcard-businessdetails-businessproblem"""
-    p_BusinessStakeholders: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "BusinessStakeholders"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-businessdetails.html#cfn-sagemaker-modelcard-businessdetails-businessstakeholders"""
-    p_LineOfBusiness: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "LineOfBusiness"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-businessdetails.html#cfn-sagemaker-modelcard-businessdetails-lineofbusiness"""
 
 @attr.s
 class PropModelPackageSourceAlgorithmSpecification(Property):
@@ -2919,40 +2299,6 @@ class PropModelBiasJobDefinitionModelBiasAppSpecification(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-modelbiasappspecification.html#cfn-sagemaker-modelbiasjobdefinition-modelbiasappspecification-environment"""
 
 @attr.s
-class PropModelCardAdditionalInformation(Property):
-    """
-    AWS Object Type = "AWS::SageMaker::ModelCard.AdditionalInformation"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-additionalinformation.html
-
-    Property Document:
-    
-    - ``p_CaveatsAndRecommendations``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-additionalinformation.html#cfn-sagemaker-modelcard-additionalinformation-caveatsandrecommendations
-    - ``p_CustomDetails``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-additionalinformation.html#cfn-sagemaker-modelcard-additionalinformation-customdetails
-    - ``p_EthicalConsiderations``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-additionalinformation.html#cfn-sagemaker-modelcard-additionalinformation-ethicalconsiderations
-    """
-    AWS_OBJECT_TYPE = "AWS::SageMaker::ModelCard.AdditionalInformation"
-    
-    p_CaveatsAndRecommendations: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "CaveatsAndRecommendations"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-additionalinformation.html#cfn-sagemaker-modelcard-additionalinformation-caveatsandrecommendations"""
-    p_CustomDetails: typing.Dict[str, TypeHint.intrinsic_str] = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.deep_mapping(key_validator=attr.validators.instance_of(str), value_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type))),
-        metadata={AttrMeta.PROPERTY_NAME: "CustomDetails"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-additionalinformation.html#cfn-sagemaker-modelcard-additionalinformation-customdetails"""
-    p_EthicalConsiderations: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "EthicalConsiderations"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-additionalinformation.html#cfn-sagemaker-modelcard-additionalinformation-ethicalconsiderations"""
-
-@attr.s
 class PropMonitoringScheduleClusterConfig(Property):
     """
     AWS Object Type = "AWS::SageMaker::MonitoringSchedule.ClusterConfig"
@@ -2992,60 +2338,6 @@ class PropMonitoringScheduleClusterConfig(Property):
         metadata={AttrMeta.PROPERTY_NAME: "VolumeKmsKeyId"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-clusterconfig.html#cfn-sagemaker-monitoringschedule-clusterconfig-volumekmskeyid"""
-
-@attr.s
-class PropModelCardFunction(Property):
-    """
-    AWS Object Type = "AWS::SageMaker::ModelCard.Function"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-function.html
-
-    Property Document:
-    
-    - ``p_Condition``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-function.html#cfn-sagemaker-modelcard-function-condition
-    - ``p_Facet``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-function.html#cfn-sagemaker-modelcard-function-facet
-    - ``p_Function``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-function.html#cfn-sagemaker-modelcard-function-function
-    """
-    AWS_OBJECT_TYPE = "AWS::SageMaker::ModelCard.Function"
-    
-    p_Condition: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Condition"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-function.html#cfn-sagemaker-modelcard-function-condition"""
-    p_Facet: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Facet"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-function.html#cfn-sagemaker-modelcard-function-facet"""
-    p_Function: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Function"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-function.html#cfn-sagemaker-modelcard-function-function"""
-
-@attr.s
-class PropPipelineParallelismConfiguration(Property):
-    """
-    AWS Object Type = "AWS::SageMaker::Pipeline.ParallelismConfiguration"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-pipeline-parallelismconfiguration.html
-
-    Property Document:
-    
-    - ``rp_MaxParallelExecutionSteps``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-pipeline-parallelismconfiguration.html#cfn-sagemaker-pipeline-parallelismconfiguration-maxparallelexecutionsteps
-    """
-    AWS_OBJECT_TYPE = "AWS::SageMaker::Pipeline.ParallelismConfiguration"
-    
-    rp_MaxParallelExecutionSteps: int = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(int),
-        metadata={AttrMeta.PROPERTY_NAME: "MaxParallelExecutionSteps"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-pipeline-parallelismconfiguration.html#cfn-sagemaker-pipeline-parallelismconfiguration-maxparallelexecutionsteps"""
 
 @attr.s
 class PropModelBiasJobDefinitionMonitoringGroundTruthS3Input(Property):
@@ -3438,26 +2730,6 @@ class PropUserProfileSharingSettings(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-userprofile-sharingsettings.html#cfn-sagemaker-userprofile-sharingsettings-s3outputpath"""
 
 @attr.s
-class PropModelCardTrainingEnvironment(Property):
-    """
-    AWS Object Type = "AWS::SageMaker::ModelCard.TrainingEnvironment"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-trainingenvironment.html
-
-    Property Document:
-    
-    - ``p_ContainerImage``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-trainingenvironment.html#cfn-sagemaker-modelcard-trainingenvironment-containerimage
-    """
-    AWS_OBJECT_TYPE = "AWS::SageMaker::ModelCard.TrainingEnvironment"
-    
-    p_ContainerImage: typing.List[TypeHint.intrinsic_str] = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "ContainerImage"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-trainingenvironment.html#cfn-sagemaker-modelcard-trainingenvironment-containerimage"""
-
-@attr.s
 class PropMonitoringScheduleScheduleConfig(Property):
     """
     AWS Object Type = "AWS::SageMaker::MonitoringSchedule.ScheduleConfig"
@@ -3685,33 +2957,6 @@ class PropDataQualityJobDefinitionVpcConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-dataqualityjobdefinition-vpcconfig.html#cfn-sagemaker-dataqualityjobdefinition-vpcconfig-subnets"""
 
 @attr.s
-class PropProjectServiceCatalogProvisionedProductDetails(Property):
-    """
-    AWS Object Type = "AWS::SageMaker::Project.ServiceCatalogProvisionedProductDetails"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-project-servicecatalogprovisionedproductdetails.html
-
-    Property Document:
-    
-    - ``p_ProvisionedProductId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-project-servicecatalogprovisionedproductdetails.html#cfn-sagemaker-project-servicecatalogprovisionedproductdetails-provisionedproductid
-    - ``p_ProvisionedProductStatusMessage``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-project-servicecatalogprovisionedproductdetails.html#cfn-sagemaker-project-servicecatalogprovisionedproductdetails-provisionedproductstatusmessage
-    """
-    AWS_OBJECT_TYPE = "AWS::SageMaker::Project.ServiceCatalogProvisionedProductDetails"
-    
-    p_ProvisionedProductId: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "ProvisionedProductId"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-project-servicecatalogprovisionedproductdetails.html#cfn-sagemaker-project-servicecatalogprovisionedproductdetails-provisionedproductid"""
-    p_ProvisionedProductStatusMessage: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "ProvisionedProductStatusMessage"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-project-servicecatalogprovisionedproductdetails.html#cfn-sagemaker-project-servicecatalogprovisionedproductdetails-provisionedproductstatusmessage"""
-
-@attr.s
 class PropModelPackageMetadataProperties(Property):
     """
     AWS Object Type = "AWS::SageMaker::ModelPackage.MetadataProperties"
@@ -3908,9 +3153,10 @@ class PropModelPackageModelPackageContainerDefinition(Property):
         metadata={AttrMeta.PROPERTY_NAME: "ContainerHostname"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-modelpackagecontainerdefinition.html#cfn-sagemaker-modelpackage-modelpackagecontainerdefinition-containerhostname"""
-    p_Environment: typing.Dict[str, TypeHint.intrinsic_str] = attr.ib(
+    p_Environment: typing.Union['PropModelPackageEnvironment', dict] = attr.ib(
         default=None,
-        validator=attr.validators.optional(attr.validators.deep_mapping(key_validator=attr.validators.instance_of(str), value_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type))),
+        converter=PropModelPackageEnvironment.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropModelPackageEnvironment)),
         metadata={AttrMeta.PROPERTY_NAME: "Environment"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-modelpackagecontainerdefinition.html#cfn-sagemaker-modelpackage-modelpackagecontainerdefinition-environment"""
@@ -3938,10 +3184,9 @@ class PropModelPackageModelPackageContainerDefinition(Property):
         metadata={AttrMeta.PROPERTY_NAME: "ModelDataUrl"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-modelpackagecontainerdefinition.html#cfn-sagemaker-modelpackage-modelpackagecontainerdefinition-modeldataurl"""
-    p_ModelInput: typing.Union['PropModelPackageModelInput', dict] = attr.ib(
+    p_ModelInput: dict = attr.ib(
         default=None,
-        converter=PropModelPackageModelInput.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropModelPackageModelInput)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "ModelInput"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-modelpackagecontainerdefinition.html#cfn-sagemaker-modelpackage-modelpackagecontainerdefinition-modelinput"""
@@ -4004,40 +3249,6 @@ class PropEndpointConfigServerlessConfig(Property):
         metadata={AttrMeta.PROPERTY_NAME: "MemorySizeInMB"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-productionvariant-serverlessconfig.html#cfn-sagemaker-endpointconfig-productionvariant-serverlessconfig-memorysizeinmb"""
-
-@attr.s
-class PropSpaceCustomImage(Property):
-    """
-    AWS Object Type = "AWS::SageMaker::Space.CustomImage"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-space-customimage.html
-
-    Property Document:
-    
-    - ``rp_AppImageConfigName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-space-customimage.html#cfn-sagemaker-space-customimage-appimageconfigname
-    - ``rp_ImageName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-space-customimage.html#cfn-sagemaker-space-customimage-imagename
-    - ``p_ImageVersionNumber``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-space-customimage.html#cfn-sagemaker-space-customimage-imageversionnumber
-    """
-    AWS_OBJECT_TYPE = "AWS::SageMaker::Space.CustomImage"
-    
-    rp_AppImageConfigName: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "AppImageConfigName"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-space-customimage.html#cfn-sagemaker-space-customimage-appimageconfigname"""
-    rp_ImageName: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "ImageName"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-space-customimage.html#cfn-sagemaker-space-customimage-imagename"""
-    p_ImageVersionNumber: int = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "ImageVersionNumber"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-space-customimage.html#cfn-sagemaker-space-customimage-imageversionnumber"""
 
 @attr.s
 class PropEndpointConfigAsyncInferenceClientConfig(Property):
@@ -4126,34 +3337,6 @@ class PropModelPackageBias(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Report"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-bias.html#cfn-sagemaker-modelpackage-bias-report"""
-
-@attr.s
-class PropModelCardObjectiveFunction(Property):
-    """
-    AWS Object Type = "AWS::SageMaker::ModelCard.ObjectiveFunction"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-objectivefunction.html
-
-    Property Document:
-    
-    - ``p_Function``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-objectivefunction.html#cfn-sagemaker-modelcard-objectivefunction-function
-    - ``p_Notes``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-objectivefunction.html#cfn-sagemaker-modelcard-objectivefunction-notes
-    """
-    AWS_OBJECT_TYPE = "AWS::SageMaker::ModelCard.ObjectiveFunction"
-    
-    p_Function: typing.Union['PropModelCardFunction', dict] = attr.ib(
-        default=None,
-        converter=PropModelCardFunction.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropModelCardFunction)),
-        metadata={AttrMeta.PROPERTY_NAME: "Function"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-objectivefunction.html#cfn-sagemaker-modelcard-objectivefunction-function"""
-    p_Notes: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Notes"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-objectivefunction.html#cfn-sagemaker-modelcard-objectivefunction-notes"""
 
 @attr.s
 class PropModelQualityJobDefinitionS3Output(Property):
@@ -4777,34 +3960,6 @@ class PropModelPackageDriftCheckModelDataQuality(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-driftcheckmodeldataquality.html#cfn-sagemaker-modelpackage-driftcheckmodeldataquality-statistics"""
 
 @attr.s
-class PropModelCardMetricGroup(Property):
-    """
-    AWS Object Type = "AWS::SageMaker::ModelCard.MetricGroup"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-metricgroup.html
-
-    Property Document:
-    
-    - ``rp_MetricData``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-metricgroup.html#cfn-sagemaker-modelcard-metricgroup-metricdata
-    - ``rp_Name``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-metricgroup.html#cfn-sagemaker-modelcard-metricgroup-name
-    """
-    AWS_OBJECT_TYPE = "AWS::SageMaker::ModelCard.MetricGroup"
-    
-    rp_MetricData: typing.List[typing.Union['PropModelCardMetricDataItems', dict]] = attr.ib(
-        default=None,
-        converter=PropModelCardMetricDataItems.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropModelCardMetricDataItems), iterable_validator=attr.validators.instance_of(list)),
-        metadata={AttrMeta.PROPERTY_NAME: "MetricData"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-metricgroup.html#cfn-sagemaker-modelcard-metricgroup-metricdata"""
-    rp_Name: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Name"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-metricgroup.html#cfn-sagemaker-modelcard-metricgroup-name"""
-
-@attr.s
 class PropEndpointTrafficRoutingConfig(Property):
     """
     AWS Object Type = "AWS::SageMaker::Endpoint.TrafficRoutingConfig"
@@ -4928,49 +4083,6 @@ class PropMonitoringScheduleDatasetFormat(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Parquet"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-monitoringschedule-datasetformat.html#cfn-sagemaker-monitoringschedule-datasetformat-parquet"""
-
-@attr.s
-class PropFeatureGroupOfflineStoreConfig(Property):
-    """
-    AWS Object Type = "AWS::SageMaker::FeatureGroup.OfflineStoreConfig"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-featuregroup-offlinestoreconfig.html
-
-    Property Document:
-    
-    - ``rp_S3StorageConfig``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-featuregroup-offlinestoreconfig.html#cfn-sagemaker-featuregroup-offlinestoreconfig-s3storageconfig
-    - ``p_DataCatalogConfig``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-featuregroup-offlinestoreconfig.html#cfn-sagemaker-featuregroup-offlinestoreconfig-datacatalogconfig
-    - ``p_DisableGlueTableCreation``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-featuregroup-offlinestoreconfig.html#cfn-sagemaker-featuregroup-offlinestoreconfig-disablegluetablecreation
-    - ``p_TableFormat``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-featuregroup-offlinestoreconfig.html#cfn-sagemaker-featuregroup-offlinestoreconfig-tableformat
-    """
-    AWS_OBJECT_TYPE = "AWS::SageMaker::FeatureGroup.OfflineStoreConfig"
-    
-    rp_S3StorageConfig: typing.Union['PropFeatureGroupS3StorageConfig', dict] = attr.ib(
-        default=None,
-        converter=PropFeatureGroupS3StorageConfig.from_dict,
-        validator=attr.validators.instance_of(PropFeatureGroupS3StorageConfig),
-        metadata={AttrMeta.PROPERTY_NAME: "S3StorageConfig"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-featuregroup-offlinestoreconfig.html#cfn-sagemaker-featuregroup-offlinestoreconfig-s3storageconfig"""
-    p_DataCatalogConfig: typing.Union['PropFeatureGroupDataCatalogConfig', dict] = attr.ib(
-        default=None,
-        converter=PropFeatureGroupDataCatalogConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropFeatureGroupDataCatalogConfig)),
-        metadata={AttrMeta.PROPERTY_NAME: "DataCatalogConfig"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-featuregroup-offlinestoreconfig.html#cfn-sagemaker-featuregroup-offlinestoreconfig-datacatalogconfig"""
-    p_DisableGlueTableCreation: bool = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(bool)),
-        metadata={AttrMeta.PROPERTY_NAME: "DisableGlueTableCreation"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-featuregroup-offlinestoreconfig.html#cfn-sagemaker-featuregroup-offlinestoreconfig-disablegluetablecreation"""
-    p_TableFormat: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "TableFormat"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-featuregroup-offlinestoreconfig.html#cfn-sagemaker-featuregroup-offlinestoreconfig-tableformat"""
 
 @attr.s
 class PropModelQualityJobDefinitionMonitoringResources(Property):
@@ -5310,104 +4422,6 @@ class PropModelExplainabilityJobDefinitionDatasetFormat(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Parquet"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelexplainabilityjobdefinition-datasetformat.html#cfn-sagemaker-modelexplainabilityjobdefinition-datasetformat-parquet"""
-
-@attr.s
-class PropProjectServiceCatalogProvisioningDetails(Property):
-    """
-    AWS Object Type = "AWS::SageMaker::Project.ServiceCatalogProvisioningDetails"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-project-servicecatalogprovisioningdetails.html
-
-    Property Document:
-    
-    - ``rp_ProductId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-project-servicecatalogprovisioningdetails.html#cfn-sagemaker-project-servicecatalogprovisioningdetails-productid
-    - ``p_PathId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-project-servicecatalogprovisioningdetails.html#cfn-sagemaker-project-servicecatalogprovisioningdetails-pathid
-    - ``p_ProvisioningArtifactId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-project-servicecatalogprovisioningdetails.html#cfn-sagemaker-project-servicecatalogprovisioningdetails-provisioningartifactid
-    - ``p_ProvisioningParameters``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-project-servicecatalogprovisioningdetails.html#cfn-sagemaker-project-servicecatalogprovisioningdetails-provisioningparameters
-    """
-    AWS_OBJECT_TYPE = "AWS::SageMaker::Project.ServiceCatalogProvisioningDetails"
-    
-    rp_ProductId: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "ProductId"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-project-servicecatalogprovisioningdetails.html#cfn-sagemaker-project-servicecatalogprovisioningdetails-productid"""
-    p_PathId: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "PathId"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-project-servicecatalogprovisioningdetails.html#cfn-sagemaker-project-servicecatalogprovisioningdetails-pathid"""
-    p_ProvisioningArtifactId: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "ProvisioningArtifactId"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-project-servicecatalogprovisioningdetails.html#cfn-sagemaker-project-servicecatalogprovisioningdetails-provisioningartifactid"""
-    p_ProvisioningParameters: typing.List[typing.Union['PropProjectProvisioningParameter', dict]] = attr.ib(
-        default=None,
-        converter=PropProjectProvisioningParameter.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropProjectProvisioningParameter), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "ProvisioningParameters"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-project-servicecatalogprovisioningdetails.html#cfn-sagemaker-project-servicecatalogprovisioningdetails-provisioningparameters"""
-
-@attr.s
-class PropModelCardEvaluationDetail(Property):
-    """
-    AWS Object Type = "AWS::SageMaker::ModelCard.EvaluationDetail"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-evaluationdetail.html
-
-    Property Document:
-    
-    - ``rp_Name``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-evaluationdetail.html#cfn-sagemaker-modelcard-evaluationdetail-name
-    - ``p_Datasets``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-evaluationdetail.html#cfn-sagemaker-modelcard-evaluationdetail-datasets
-    - ``p_EvaluationJobArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-evaluationdetail.html#cfn-sagemaker-modelcard-evaluationdetail-evaluationjobarn
-    - ``p_EvaluationObservation``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-evaluationdetail.html#cfn-sagemaker-modelcard-evaluationdetail-evaluationobservation
-    - ``p_Metadata``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-evaluationdetail.html#cfn-sagemaker-modelcard-evaluationdetail-metadata
-    - ``p_MetricGroups``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-evaluationdetail.html#cfn-sagemaker-modelcard-evaluationdetail-metricgroups
-    """
-    AWS_OBJECT_TYPE = "AWS::SageMaker::ModelCard.EvaluationDetail"
-    
-    rp_Name: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Name"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-evaluationdetail.html#cfn-sagemaker-modelcard-evaluationdetail-name"""
-    p_Datasets: typing.List[TypeHint.intrinsic_str] = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Datasets"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-evaluationdetail.html#cfn-sagemaker-modelcard-evaluationdetail-datasets"""
-    p_EvaluationJobArn: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "EvaluationJobArn"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-evaluationdetail.html#cfn-sagemaker-modelcard-evaluationdetail-evaluationjobarn"""
-    p_EvaluationObservation: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "EvaluationObservation"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-evaluationdetail.html#cfn-sagemaker-modelcard-evaluationdetail-evaluationobservation"""
-    p_Metadata: typing.Dict[str, TypeHint.intrinsic_str] = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.deep_mapping(key_validator=attr.validators.instance_of(str), value_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type))),
-        metadata={AttrMeta.PROPERTY_NAME: "Metadata"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-evaluationdetail.html#cfn-sagemaker-modelcard-evaluationdetail-metadata"""
-    p_MetricGroups: typing.List[typing.Union['PropModelCardMetricGroup', dict]] = attr.ib(
-        default=None,
-        converter=PropModelCardMetricGroup.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropModelCardMetricGroup), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "MetricGroups"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-evaluationdetail.html#cfn-sagemaker-modelcard-evaluationdetail-metricgroups"""
 
 @attr.s
 class PropModelBiasJobDefinitionNetworkConfig(Property):
@@ -5877,34 +4891,6 @@ class PropEndpointConfigAsyncInferenceConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpointconfig-asyncinferenceconfig.html#cfn-sagemaker-endpointconfig-asyncinferenceconfig-clientconfig"""
 
 @attr.s
-class PropSpaceKernelGatewayAppSettings(Property):
-    """
-    AWS Object Type = "AWS::SageMaker::Space.KernelGatewayAppSettings"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-space-kernelgatewayappsettings.html
-
-    Property Document:
-    
-    - ``p_CustomImages``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-space-kernelgatewayappsettings.html#cfn-sagemaker-space-kernelgatewayappsettings-customimages
-    - ``p_DefaultResourceSpec``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-space-kernelgatewayappsettings.html#cfn-sagemaker-space-kernelgatewayappsettings-defaultresourcespec
-    """
-    AWS_OBJECT_TYPE = "AWS::SageMaker::Space.KernelGatewayAppSettings"
-    
-    p_CustomImages: typing.List[typing.Union['PropSpaceCustomImage', dict]] = attr.ib(
-        default=None,
-        converter=PropSpaceCustomImage.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropSpaceCustomImage), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "CustomImages"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-space-kernelgatewayappsettings.html#cfn-sagemaker-space-kernelgatewayappsettings-customimages"""
-    p_DefaultResourceSpec: typing.Optional[dict] = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(dict)),
-        metadata={AttrMeta.PROPERTY_NAME: "DefaultResourceSpec"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-space-kernelgatewayappsettings.html#cfn-sagemaker-space-kernelgatewayappsettings-defaultresourcespec"""
-
-@attr.s
 class PropDomainRSessionAppSettings(Property):
     """
     AWS Object Type = "AWS::SageMaker::Domain.RSessionAppSettings"
@@ -6152,102 +5138,6 @@ class PropModelBiasJobDefinitionDatasetFormat(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelbiasjobdefinition-datasetformat.html#cfn-sagemaker-modelbiasjobdefinition-datasetformat-parquet"""
 
 @attr.s
-class PropSpaceSpaceSettings(Property):
-    """
-    AWS Object Type = "AWS::SageMaker::Space.SpaceSettings"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-space-spacesettings.html
-
-    Property Document:
-    
-    - ``p_JupyterServerAppSettings``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-space-spacesettings.html#cfn-sagemaker-space-spacesettings-jupyterserverappsettings
-    - ``p_KernelGatewayAppSettings``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-space-spacesettings.html#cfn-sagemaker-space-spacesettings-kernelgatewayappsettings
-    """
-    AWS_OBJECT_TYPE = "AWS::SageMaker::Space.SpaceSettings"
-    
-    p_JupyterServerAppSettings: typing.Union['PropSpaceJupyterServerAppSettings', dict] = attr.ib(
-        default=None,
-        converter=PropSpaceJupyterServerAppSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropSpaceJupyterServerAppSettings)),
-        metadata={AttrMeta.PROPERTY_NAME: "JupyterServerAppSettings"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-space-spacesettings.html#cfn-sagemaker-space-spacesettings-jupyterserverappsettings"""
-    p_KernelGatewayAppSettings: typing.Union['PropSpaceKernelGatewayAppSettings', dict] = attr.ib(
-        default=None,
-        converter=PropSpaceKernelGatewayAppSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropSpaceKernelGatewayAppSettings)),
-        metadata={AttrMeta.PROPERTY_NAME: "KernelGatewayAppSettings"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-space-spacesettings.html#cfn-sagemaker-space-spacesettings-kernelgatewayappsettings"""
-
-@attr.s
-class PropModelCardTrainingJobDetails(Property):
-    """
-    AWS Object Type = "AWS::SageMaker::ModelCard.TrainingJobDetails"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-trainingjobdetails.html
-
-    Property Document:
-    
-    - ``p_HyperParameters``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-trainingjobdetails.html#cfn-sagemaker-modelcard-trainingjobdetails-hyperparameters
-    - ``p_TrainingArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-trainingjobdetails.html#cfn-sagemaker-modelcard-trainingjobdetails-trainingarn
-    - ``p_TrainingDatasets``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-trainingjobdetails.html#cfn-sagemaker-modelcard-trainingjobdetails-trainingdatasets
-    - ``p_TrainingEnvironment``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-trainingjobdetails.html#cfn-sagemaker-modelcard-trainingjobdetails-trainingenvironment
-    - ``p_TrainingMetrics``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-trainingjobdetails.html#cfn-sagemaker-modelcard-trainingjobdetails-trainingmetrics
-    - ``p_UserProvidedHyperParameters``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-trainingjobdetails.html#cfn-sagemaker-modelcard-trainingjobdetails-userprovidedhyperparameters
-    - ``p_UserProvidedTrainingMetrics``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-trainingjobdetails.html#cfn-sagemaker-modelcard-trainingjobdetails-userprovidedtrainingmetrics
-    """
-    AWS_OBJECT_TYPE = "AWS::SageMaker::ModelCard.TrainingJobDetails"
-    
-    p_HyperParameters: typing.List[typing.Union['PropModelCardTrainingHyperParameter', dict]] = attr.ib(
-        default=None,
-        converter=PropModelCardTrainingHyperParameter.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropModelCardTrainingHyperParameter), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "HyperParameters"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-trainingjobdetails.html#cfn-sagemaker-modelcard-trainingjobdetails-hyperparameters"""
-    p_TrainingArn: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "TrainingArn"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-trainingjobdetails.html#cfn-sagemaker-modelcard-trainingjobdetails-trainingarn"""
-    p_TrainingDatasets: typing.List[TypeHint.intrinsic_str] = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "TrainingDatasets"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-trainingjobdetails.html#cfn-sagemaker-modelcard-trainingjobdetails-trainingdatasets"""
-    p_TrainingEnvironment: typing.Union['PropModelCardTrainingEnvironment', dict] = attr.ib(
-        default=None,
-        converter=PropModelCardTrainingEnvironment.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropModelCardTrainingEnvironment)),
-        metadata={AttrMeta.PROPERTY_NAME: "TrainingEnvironment"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-trainingjobdetails.html#cfn-sagemaker-modelcard-trainingjobdetails-trainingenvironment"""
-    p_TrainingMetrics: typing.List[typing.Union['PropModelCardTrainingMetric', dict]] = attr.ib(
-        default=None,
-        converter=PropModelCardTrainingMetric.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropModelCardTrainingMetric), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "TrainingMetrics"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-trainingjobdetails.html#cfn-sagemaker-modelcard-trainingjobdetails-trainingmetrics"""
-    p_UserProvidedHyperParameters: typing.List[typing.Union['PropModelCardTrainingHyperParameter', dict]] = attr.ib(
-        default=None,
-        converter=PropModelCardTrainingHyperParameter.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropModelCardTrainingHyperParameter), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "UserProvidedHyperParameters"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-trainingjobdetails.html#cfn-sagemaker-modelcard-trainingjobdetails-userprovidedhyperparameters"""
-    p_UserProvidedTrainingMetrics: typing.List[typing.Union['PropModelCardTrainingMetric', dict]] = attr.ib(
-        default=None,
-        converter=PropModelCardTrainingMetric.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropModelCardTrainingMetric), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "UserProvidedTrainingMetrics"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-trainingjobdetails.html#cfn-sagemaker-modelcard-trainingjobdetails-userprovidedtrainingmetrics"""
-
-@attr.s
 class PropModelQualityJobDefinitionNetworkConfig(Property):
     """
     AWS Object Type = "AWS::SageMaker::ModelQualityJobDefinition.NetworkConfig"
@@ -6281,49 +5171,6 @@ class PropModelQualityJobDefinitionNetworkConfig(Property):
         metadata={AttrMeta.PROPERTY_NAME: "VpcConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelqualityjobdefinition-networkconfig.html#cfn-sagemaker-modelqualityjobdefinition-networkconfig-vpcconfig"""
-
-@attr.s
-class PropDomainDefaultSpaceSettings(Property):
-    """
-    AWS Object Type = "AWS::SageMaker::Domain.DefaultSpaceSettings"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-defaultspacesettings.html
-
-    Property Document:
-    
-    - ``p_ExecutionRole``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-defaultspacesettings.html#cfn-sagemaker-domain-defaultspacesettings-executionrole
-    - ``p_JupyterServerAppSettings``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-defaultspacesettings.html#cfn-sagemaker-domain-defaultspacesettings-jupyterserverappsettings
-    - ``p_KernelGatewayAppSettings``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-defaultspacesettings.html#cfn-sagemaker-domain-defaultspacesettings-kernelgatewayappsettings
-    - ``p_SecurityGroups``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-defaultspacesettings.html#cfn-sagemaker-domain-defaultspacesettings-securitygroups
-    """
-    AWS_OBJECT_TYPE = "AWS::SageMaker::Domain.DefaultSpaceSettings"
-    
-    p_ExecutionRole: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "ExecutionRole"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-defaultspacesettings.html#cfn-sagemaker-domain-defaultspacesettings-executionrole"""
-    p_JupyterServerAppSettings: typing.Union['PropDomainJupyterServerAppSettings', dict] = attr.ib(
-        default=None,
-        converter=PropDomainJupyterServerAppSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropDomainJupyterServerAppSettings)),
-        metadata={AttrMeta.PROPERTY_NAME: "JupyterServerAppSettings"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-defaultspacesettings.html#cfn-sagemaker-domain-defaultspacesettings-jupyterserverappsettings"""
-    p_KernelGatewayAppSettings: typing.Union['PropDomainKernelGatewayAppSettings', dict] = attr.ib(
-        default=None,
-        converter=PropDomainKernelGatewayAppSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropDomainKernelGatewayAppSettings)),
-        metadata={AttrMeta.PROPERTY_NAME: "KernelGatewayAppSettings"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-defaultspacesettings.html#cfn-sagemaker-domain-defaultspacesettings-kernelgatewayappsettings"""
-    p_SecurityGroups: typing.List[TypeHint.intrinsic_str] = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "SecurityGroups"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-domain-defaultspacesettings.html#cfn-sagemaker-domain-defaultspacesettings-securitygroups"""
 
 @attr.s
 class PropModelExplainabilityJobDefinitionNetworkConfig(Property):
@@ -6612,9 +5459,10 @@ class PropModelPackageTransformJobDefinition(Property):
         metadata={AttrMeta.PROPERTY_NAME: "BatchStrategy"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-transformjobdefinition.html#cfn-sagemaker-modelpackage-transformjobdefinition-batchstrategy"""
-    p_Environment: typing.Dict[str, TypeHint.intrinsic_str] = attr.ib(
+    p_Environment: typing.Union['PropModelPackageEnvironment', dict] = attr.ib(
         default=None,
-        validator=attr.validators.optional(attr.validators.deep_mapping(key_validator=attr.validators.instance_of(str), value_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type))),
+        converter=PropModelPackageEnvironment.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropModelPackageEnvironment)),
         metadata={AttrMeta.PROPERTY_NAME: "Environment"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-transformjobdefinition.html#cfn-sagemaker-modelpackage-transformjobdefinition-environment"""
@@ -6806,42 +5654,6 @@ class PropEndpointDeploymentConfig(Property):
         metadata={AttrMeta.PROPERTY_NAME: "AutoRollbackConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-endpoint-deploymentconfig.html#cfn-sagemaker-endpoint-deploymentconfig-autorollbackconfiguration"""
-
-@attr.s
-class PropModelCardTrainingDetails(Property):
-    """
-    AWS Object Type = "AWS::SageMaker::ModelCard.TrainingDetails"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-trainingdetails.html
-
-    Property Document:
-    
-    - ``p_ObjectiveFunction``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-trainingdetails.html#cfn-sagemaker-modelcard-trainingdetails-objectivefunction
-    - ``p_TrainingJobDetails``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-trainingdetails.html#cfn-sagemaker-modelcard-trainingdetails-trainingjobdetails
-    - ``p_TrainingObservations``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-trainingdetails.html#cfn-sagemaker-modelcard-trainingdetails-trainingobservations
-    """
-    AWS_OBJECT_TYPE = "AWS::SageMaker::ModelCard.TrainingDetails"
-    
-    p_ObjectiveFunction: typing.Union['PropModelCardObjectiveFunction', dict] = attr.ib(
-        default=None,
-        converter=PropModelCardObjectiveFunction.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropModelCardObjectiveFunction)),
-        metadata={AttrMeta.PROPERTY_NAME: "ObjectiveFunction"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-trainingdetails.html#cfn-sagemaker-modelcard-trainingdetails-objectivefunction"""
-    p_TrainingJobDetails: typing.Union['PropModelCardTrainingJobDetails', dict] = attr.ib(
-        default=None,
-        converter=PropModelCardTrainingJobDetails.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropModelCardTrainingJobDetails)),
-        metadata={AttrMeta.PROPERTY_NAME: "TrainingJobDetails"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-trainingdetails.html#cfn-sagemaker-modelcard-trainingdetails-trainingjobdetails"""
-    p_TrainingObservations: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "TrainingObservations"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-trainingdetails.html#cfn-sagemaker-modelcard-trainingdetails-trainingobservations"""
 
 @attr.s
 class PropEndpointConfigExplainerConfig(Property):
@@ -7226,67 +6038,6 @@ class PropModelPackageValidationProfile(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelpackage-validationprofile.html#cfn-sagemaker-modelpackage-validationprofile-transformjobdefinition"""
 
 @attr.s
-class PropModelCardContent(Property):
-    """
-    AWS Object Type = "AWS::SageMaker::ModelCard.Content"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-content.html
-
-    Property Document:
-    
-    - ``p_AdditionalInformation``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-content.html#cfn-sagemaker-modelcard-content-additionalinformation
-    - ``p_BusinessDetails``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-content.html#cfn-sagemaker-modelcard-content-businessdetails
-    - ``p_EvaluationDetails``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-content.html#cfn-sagemaker-modelcard-content-evaluationdetails
-    - ``p_IntendedUses``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-content.html#cfn-sagemaker-modelcard-content-intendeduses
-    - ``p_ModelOverview``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-content.html#cfn-sagemaker-modelcard-content-modeloverview
-    - ``p_TrainingDetails``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-content.html#cfn-sagemaker-modelcard-content-trainingdetails
-    """
-    AWS_OBJECT_TYPE = "AWS::SageMaker::ModelCard.Content"
-    
-    p_AdditionalInformation: typing.Union['PropModelCardAdditionalInformation', dict] = attr.ib(
-        default=None,
-        converter=PropModelCardAdditionalInformation.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropModelCardAdditionalInformation)),
-        metadata={AttrMeta.PROPERTY_NAME: "AdditionalInformation"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-content.html#cfn-sagemaker-modelcard-content-additionalinformation"""
-    p_BusinessDetails: typing.Union['PropModelCardBusinessDetails', dict] = attr.ib(
-        default=None,
-        converter=PropModelCardBusinessDetails.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropModelCardBusinessDetails)),
-        metadata={AttrMeta.PROPERTY_NAME: "BusinessDetails"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-content.html#cfn-sagemaker-modelcard-content-businessdetails"""
-    p_EvaluationDetails: typing.List[typing.Union['PropModelCardEvaluationDetail', dict]] = attr.ib(
-        default=None,
-        converter=PropModelCardEvaluationDetail.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropModelCardEvaluationDetail), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "EvaluationDetails"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-content.html#cfn-sagemaker-modelcard-content-evaluationdetails"""
-    p_IntendedUses: typing.Union['PropModelCardIntendedUses', dict] = attr.ib(
-        default=None,
-        converter=PropModelCardIntendedUses.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropModelCardIntendedUses)),
-        metadata={AttrMeta.PROPERTY_NAME: "IntendedUses"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-content.html#cfn-sagemaker-modelcard-content-intendeduses"""
-    p_ModelOverview: typing.Union['PropModelCardModelOverview', dict] = attr.ib(
-        default=None,
-        converter=PropModelCardModelOverview.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropModelCardModelOverview)),
-        metadata={AttrMeta.PROPERTY_NAME: "ModelOverview"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-content.html#cfn-sagemaker-modelcard-content-modeloverview"""
-    p_TrainingDetails: typing.Union['PropModelCardTrainingDetails', dict] = attr.ib(
-        default=None,
-        converter=PropModelCardTrainingDetails.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropModelCardTrainingDetails)),
-        metadata={AttrMeta.PROPERTY_NAME: "TrainingDetails"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-sagemaker-modelcard-content.html#cfn-sagemaker-modelcard-content-trainingdetails"""
-
-@attr.s
 class PropModelExplainabilityJobDefinitionModelExplainabilityJobInput(Property):
     """
     AWS Object Type = "AWS::SageMaker::ModelExplainabilityJobDefinition.ModelExplainabilityJobInput"
@@ -7433,14 +6184,14 @@ class ImageVersion(Resource):
 
     
     @property
+    def rv_ImageArn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-imageversion.html#aws-resource-sagemaker-imageversion-return-values"""
+        return GetAtt(resource=self, attr_name="ImageArn")
+    
+    @property
     def rv_ImageVersionArn(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-imageversion.html#aws-resource-sagemaker-imageversion-return-values"""
         return GetAtt(resource=self, attr_name="ImageVersionArn")
-    
-    @property
-    def rv_Version(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-imageversion.html#aws-resource-sagemaker-imageversion-return-values"""
-        return GetAtt(resource=self, attr_name="Version")
     
     @property
     def rv_ContainerImage(self) -> GetAtt:
@@ -7448,9 +6199,9 @@ class ImageVersion(Resource):
         return GetAtt(resource=self, attr_name="ContainerImage")
     
     @property
-    def rv_ImageArn(self) -> GetAtt:
+    def rv_Version(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-imageversion.html#aws-resource-sagemaker-imageversion-return-values"""
-        return GetAtt(resource=self, attr_name="ImageArn")
+        return GetAtt(resource=self, attr_name="Version")
     
 
 @attr.s
@@ -7543,30 +6294,28 @@ class FeatureGroup(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-featuregroup.html#cfn-sagemaker-featuregroup-description"""
-    p_OfflineStoreConfig: typing.Union['PropFeatureGroupOfflineStoreConfig', dict] = attr.ib(
+    p_OfflineStoreConfig: dict = attr.ib(
         default=None,
-        converter=PropFeatureGroupOfflineStoreConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropFeatureGroupOfflineStoreConfig)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={
             AttrMeta.PROPERTY_NAME: "OfflineStoreConfig",
             AttrMeta.DATA: {
                 "UpdateType": 'Immutable',
                 "Required": False,
-                "Type": 'OfflineStoreConfig',
+                "PrimitiveType": 'Json',
             }
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-featuregroup.html#cfn-sagemaker-featuregroup-offlinestoreconfig"""
-    p_OnlineStoreConfig: typing.Union['PropFeatureGroupOnlineStoreConfig', dict] = attr.ib(
+    p_OnlineStoreConfig: dict = attr.ib(
         default=None,
-        converter=PropFeatureGroupOnlineStoreConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropFeatureGroupOnlineStoreConfig)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={
             AttrMeta.PROPERTY_NAME: "OnlineStoreConfig",
             AttrMeta.DATA: {
                 "UpdateType": 'Immutable',
                 "Required": False,
-                "Type": 'OnlineStoreConfig',
+                "PrimitiveType": 'Json',
             }
         },
     )
@@ -7775,7 +6524,6 @@ class DataQualityJobDefinition(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Tag',
-                "DuplicatesAllowed": True,
             }
         },
     )
@@ -7791,87 +6539,6 @@ class DataQualityJobDefinition(Resource):
     def rv_CreationTime(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-dataqualityjobdefinition.html#aws-resource-sagemaker-dataqualityjobdefinition-return-values"""
         return GetAtt(resource=self, attr_name="CreationTime")
-    
-
-@attr.s
-class Space(Resource):
-    """
-    AWS Object Type = "AWS::SageMaker::Space"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-space.html
-
-    Property Document:
-    
-    - ``rp_DomainId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-space.html#cfn-sagemaker-space-domainid
-    - ``rp_SpaceName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-space.html#cfn-sagemaker-space-spacename
-    - ``p_SpaceSettings``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-space.html#cfn-sagemaker-space-spacesettings
-    - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-space.html#cfn-sagemaker-space-tags
-    """
-    AWS_OBJECT_TYPE = "AWS::SageMaker::Space"
-
-    
-    rp_DomainId: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "DomainId",
-            AttrMeta.DATA: {
-                "UpdateType": 'Immutable',
-                "Required": True,
-                "PrimitiveType": 'String',
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-space.html#cfn-sagemaker-space-domainid"""
-    rp_SpaceName: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "SpaceName",
-            AttrMeta.DATA: {
-                "UpdateType": 'Immutable',
-                "Required": True,
-                "PrimitiveType": 'String',
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-space.html#cfn-sagemaker-space-spacename"""
-    p_SpaceSettings: typing.Union['PropSpaceSpaceSettings', dict] = attr.ib(
-        default=None,
-        converter=PropSpaceSpaceSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropSpaceSpaceSettings)),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "SpaceSettings",
-            AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
-                "Required": False,
-                "Type": 'SpaceSettings',
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-space.html#cfn-sagemaker-space-spacesettings"""
-    p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
-        default=None,
-        converter=Tag.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "Tags",
-            AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
-                "Required": False,
-                "Type": 'List',
-                "ItemType": 'Tag',
-                "DuplicatesAllowed": True,
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-space.html#cfn-sagemaker-space-tags"""
-
-    
-    @property
-    def rv_SpaceArn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-space.html#aws-resource-sagemaker-space-return-values"""
-        return GetAtt(resource=self, attr_name="SpaceArn")
     
 
 @attr.s
@@ -7985,7 +6652,6 @@ class MonitoringSchedule(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Tag',
-                "DuplicatesAllowed": True,
             }
         },
     )
@@ -8075,7 +6741,6 @@ class ModelPackageGroup(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Tag',
-                "DuplicatesAllowed": True,
             }
         },
     )
@@ -8270,7 +6935,6 @@ class ModelBiasJobDefinition(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Tag',
-                "DuplicatesAllowed": True,
             }
         },
     )
@@ -8460,7 +7124,6 @@ class ModelQualityJobDefinition(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Tag',
-                "DuplicatesAllowed": True,
             }
         },
     )
@@ -8816,16 +7479,15 @@ class Pipeline(Resource):
     AWS_OBJECT_TYPE = "AWS::SageMaker::Pipeline"
 
     
-    rp_PipelineDefinition: typing.Union['PropPipelinePipelineDefinition', dict] = attr.ib(
+    rp_PipelineDefinition: dict = attr.ib(
         default=None,
-        converter=PropPipelinePipelineDefinition.from_dict,
-        validator=attr.validators.instance_of(PropPipelinePipelineDefinition),
+        validator=attr.validators.instance_of(dict),
         metadata={
             AttrMeta.PROPERTY_NAME: "PipelineDefinition",
             AttrMeta.DATA: {
                 "UpdateType": 'Mutable',
                 "Required": True,
-                "Type": 'PipelineDefinition',
+                "PrimitiveType": 'Json',
             }
         },
     )
@@ -8856,16 +7518,15 @@ class Pipeline(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-pipeline.html#cfn-sagemaker-pipeline-rolearn"""
-    p_ParallelismConfiguration: typing.Union['PropPipelineParallelismConfiguration', dict] = attr.ib(
+    p_ParallelismConfiguration: dict = attr.ib(
         default=None,
-        converter=PropPipelineParallelismConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropPipelineParallelismConfiguration)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={
             AttrMeta.PROPERTY_NAME: "ParallelismConfiguration",
             AttrMeta.DATA: {
                 "UpdateType": 'Mutable',
                 "Required": False,
-                "Type": 'ParallelismConfiguration',
+                "PrimitiveType": 'Json',
             }
         },
     )
@@ -9373,7 +8034,6 @@ class ModelExplainabilityJobDefinition(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Tag',
-                "DuplicatesAllowed": True,
             }
         },
     )
@@ -9406,7 +8066,6 @@ class EndpointConfig(Resource):
     - ``p_EndpointConfigName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpointconfig.html#cfn-sagemaker-endpointconfig-endpointconfigname
     - ``p_ExplainerConfig``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpointconfig.html#cfn-sagemaker-endpointconfig-explainerconfig
     - ``p_KmsKeyId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpointconfig.html#cfn-sagemaker-endpointconfig-kmskeyid
-    - ``p_ShadowProductionVariants``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpointconfig.html#cfn-sagemaker-endpointconfig-shadowproductionvariants
     - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpointconfig.html#cfn-sagemaker-endpointconfig-tags
     """
     AWS_OBJECT_TYPE = "AWS::SageMaker::EndpointConfig"
@@ -9495,21 +8154,6 @@ class EndpointConfig(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpointconfig.html#cfn-sagemaker-endpointconfig-kmskeyid"""
-    p_ShadowProductionVariants: typing.List[typing.Union['PropEndpointConfigProductionVariant', dict]] = attr.ib(
-        default=None,
-        converter=PropEndpointConfigProductionVariant.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropEndpointConfigProductionVariant), iterable_validator=attr.validators.instance_of(list))),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "ShadowProductionVariants",
-            AttrMeta.DATA: {
-                "Type": 'List',
-                "Required": False,
-                "ItemType": 'ProductionVariant',
-                "UpdateType": 'Immutable',
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-endpointconfig.html#cfn-sagemaker-endpointconfig-shadowproductionvariants"""
     p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
         default=None,
         converter=Tag.from_list,
@@ -9723,7 +8367,6 @@ class ModelPackage(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'AdditionalInferenceSpecificationDefinition',
-                "DuplicatesAllowed": True,
             }
         },
     )
@@ -9739,7 +8382,6 @@ class ModelPackage(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'AdditionalInferenceSpecificationDefinition',
-                "DuplicatesAllowed": True,
             }
         },
     )
@@ -10079,7 +8721,6 @@ class ModelPackage(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Tag',
-                "DuplicatesAllowed": True,
             }
         },
     )
@@ -10087,9 +8728,9 @@ class ModelPackage(Resource):
 
     
     @property
-    def rv_ModelPackageStatus(self) -> GetAtt:
+    def rv_ModelPackageArn(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelpackage.html#aws-resource-sagemaker-modelpackage-return-values"""
-        return GetAtt(resource=self, attr_name="ModelPackageStatus")
+        return GetAtt(resource=self, attr_name="ModelPackageArn")
     
     @property
     def rv_CreationTime(self) -> GetAtt:
@@ -10097,9 +8738,9 @@ class ModelPackage(Resource):
         return GetAtt(resource=self, attr_name="CreationTime")
     
     @property
-    def rv_ModelPackageArn(self) -> GetAtt:
+    def rv_ModelPackageStatus(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelpackage.html#aws-resource-sagemaker-modelpackage-return-values"""
-        return GetAtt(resource=self, attr_name="ModelPackageArn")
+        return GetAtt(resource=self, attr_name="ModelPackageStatus")
     
 
 @attr.s
@@ -10166,182 +8807,6 @@ class CodeRepository(Resource):
     def rv_CodeRepositoryName(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-coderepository.html#aws-resource-sagemaker-coderepository-return-values"""
         return GetAtt(resource=self, attr_name="CodeRepositoryName")
-    
-
-@attr.s
-class ModelCard(Resource):
-    """
-    AWS Object Type = "AWS::SageMaker::ModelCard"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelcard.html
-
-    Property Document:
-    
-    - ``rp_Content``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelcard.html#cfn-sagemaker-modelcard-content
-    - ``rp_ModelCardName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelcard.html#cfn-sagemaker-modelcard-modelcardname
-    - ``rp_ModelCardStatus``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelcard.html#cfn-sagemaker-modelcard-modelcardstatus
-    - ``p_CreatedBy``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelcard.html#cfn-sagemaker-modelcard-createdby
-    - ``p_LastModifiedBy``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelcard.html#cfn-sagemaker-modelcard-lastmodifiedby
-    - ``p_SecurityConfig``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelcard.html#cfn-sagemaker-modelcard-securityconfig
-    - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelcard.html#cfn-sagemaker-modelcard-tags
-    """
-    AWS_OBJECT_TYPE = "AWS::SageMaker::ModelCard"
-
-    
-    rp_Content: typing.Union['PropModelCardContent', dict] = attr.ib(
-        default=None,
-        converter=PropModelCardContent.from_dict,
-        validator=attr.validators.instance_of(PropModelCardContent),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "Content",
-            AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
-                "Required": True,
-                "Type": 'Content',
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelcard.html#cfn-sagemaker-modelcard-content"""
-    rp_ModelCardName: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "ModelCardName",
-            AttrMeta.DATA: {
-                "UpdateType": 'Immutable',
-                "Required": True,
-                "PrimitiveType": 'String',
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelcard.html#cfn-sagemaker-modelcard-modelcardname"""
-    rp_ModelCardStatus: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "ModelCardStatus",
-            AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
-                "Required": True,
-                "PrimitiveType": 'String',
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelcard.html#cfn-sagemaker-modelcard-modelcardstatus"""
-    p_CreatedBy: typing.Union['PropModelCardUserContext', dict] = attr.ib(
-        default=None,
-        converter=PropModelCardUserContext.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropModelCardUserContext)),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "CreatedBy",
-            AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
-                "Required": False,
-                "Type": 'UserContext',
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelcard.html#cfn-sagemaker-modelcard-createdby"""
-    p_LastModifiedBy: typing.Union['PropModelCardUserContext', dict] = attr.ib(
-        default=None,
-        converter=PropModelCardUserContext.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropModelCardUserContext)),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "LastModifiedBy",
-            AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
-                "Required": False,
-                "Type": 'UserContext',
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelcard.html#cfn-sagemaker-modelcard-lastmodifiedby"""
-    p_SecurityConfig: typing.Union['PropModelCardSecurityConfig', dict] = attr.ib(
-        default=None,
-        converter=PropModelCardSecurityConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropModelCardSecurityConfig)),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "SecurityConfig",
-            AttrMeta.DATA: {
-                "UpdateType": 'Immutable',
-                "Required": False,
-                "Type": 'SecurityConfig',
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelcard.html#cfn-sagemaker-modelcard-securityconfig"""
-    p_Tags: typing.List[typing.Union[Tag, dict]] = attr.ib(
-        default=None,
-        converter=Tag.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(Tag), iterable_validator=attr.validators.instance_of(list))),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "Tags",
-            AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
-                "Required": False,
-                "Type": 'List',
-                "ItemType": 'Tag',
-                "DuplicatesAllowed": True,
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelcard.html#cfn-sagemaker-modelcard-tags"""
-
-    
-    @property
-    def rv_LastModifiedByUserProfileArn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelcard.html#aws-resource-sagemaker-modelcard-return-values"""
-        return GetAtt(resource=self, attr_name="LastModifiedBy.UserProfileArn")
-    
-    @property
-    def rv_CreatedByDomainId(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelcard.html#aws-resource-sagemaker-modelcard-return-values"""
-        return GetAtt(resource=self, attr_name="CreatedBy.DomainId")
-    
-    @property
-    def rv_ModelCardArn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelcard.html#aws-resource-sagemaker-modelcard-return-values"""
-        return GetAtt(resource=self, attr_name="ModelCardArn")
-    
-    @property
-    def rv_CreatedByUserProfileName(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelcard.html#aws-resource-sagemaker-modelcard-return-values"""
-        return GetAtt(resource=self, attr_name="CreatedBy.UserProfileName")
-    
-    @property
-    def rv_CreationTime(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelcard.html#aws-resource-sagemaker-modelcard-return-values"""
-        return GetAtt(resource=self, attr_name="CreationTime")
-    
-    @property
-    def rv_LastModifiedTime(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelcard.html#aws-resource-sagemaker-modelcard-return-values"""
-        return GetAtt(resource=self, attr_name="LastModifiedTime")
-    
-    @property
-    def rv_LastModifiedByDomainId(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelcard.html#aws-resource-sagemaker-modelcard-return-values"""
-        return GetAtt(resource=self, attr_name="LastModifiedBy.DomainId")
-    
-    @property
-    def rv_ModelCardVersion(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelcard.html#aws-resource-sagemaker-modelcard-return-values"""
-        return GetAtt(resource=self, attr_name="ModelCardVersion")
-    
-    @property
-    def rv_ModelCardProcessingStatus(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelcard.html#aws-resource-sagemaker-modelcard-return-values"""
-        return GetAtt(resource=self, attr_name="ModelCardProcessingStatus")
-    
-    @property
-    def rv_LastModifiedByUserProfileName(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelcard.html#aws-resource-sagemaker-modelcard-return-values"""
-        return GetAtt(resource=self, attr_name="LastModifiedBy.UserProfileName")
-    
-    @property
-    def rv_CreatedByUserProfileArn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-modelcard.html#aws-resource-sagemaker-modelcard-return-values"""
-        return GetAtt(resource=self, attr_name="CreatedBy.UserProfileArn")
     
 
 @attr.s
@@ -10566,7 +9031,6 @@ class DeviceFleet(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Tag',
-                "DuplicatesAllowed": True,
             }
         },
     )
@@ -10699,7 +9163,6 @@ class Domain(Resource):
     - ``rp_VpcId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-domain.html#cfn-sagemaker-domain-vpcid
     - ``p_AppNetworkAccessType``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-domain.html#cfn-sagemaker-domain-appnetworkaccesstype
     - ``p_AppSecurityGroupManagement``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-domain.html#cfn-sagemaker-domain-appsecuritygroupmanagement
-    - ``p_DefaultSpaceSettings``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-domain.html#cfn-sagemaker-domain-defaultspacesettings
     - ``p_DomainSettings``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-domain.html#cfn-sagemaker-domain-domainsettings
     - ``p_KmsKeyId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-domain.html#cfn-sagemaker-domain-kmskeyid
     - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-domain.html#cfn-sagemaker-domain-tags
@@ -10794,27 +9257,13 @@ class Domain(Resource):
         metadata={
             AttrMeta.PROPERTY_NAME: "AppSecurityGroupManagement",
             AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
+                "UpdateType": 'Immutable',
                 "Required": False,
                 "PrimitiveType": 'String',
             }
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-domain.html#cfn-sagemaker-domain-appsecuritygroupmanagement"""
-    p_DefaultSpaceSettings: typing.Union['PropDomainDefaultSpaceSettings', dict] = attr.ib(
-        default=None,
-        converter=PropDomainDefaultSpaceSettings.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropDomainDefaultSpaceSettings)),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "DefaultSpaceSettings",
-            AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
-                "Required": False,
-                "Type": 'DefaultSpaceSettings',
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-domain.html#cfn-sagemaker-domain-defaultspacesettings"""
     p_DomainSettings: typing.Union['PropDomainDomainSettings', dict] = attr.ib(
         default=None,
         converter=PropDomainDomainSettings.from_dict,
@@ -10861,26 +9310,6 @@ class Domain(Resource):
 
     
     @property
-    def rv_HomeEfsFileSystemId(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-domain.html#aws-resource-sagemaker-domain-return-values"""
-        return GetAtt(resource=self, attr_name="HomeEfsFileSystemId")
-    
-    @property
-    def rv_DomainId(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-domain.html#aws-resource-sagemaker-domain-return-values"""
-        return GetAtt(resource=self, attr_name="DomainId")
-    
-    @property
-    def rv_SecurityGroupIdForDomainBoundary(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-domain.html#aws-resource-sagemaker-domain-return-values"""
-        return GetAtt(resource=self, attr_name="SecurityGroupIdForDomainBoundary")
-    
-    @property
-    def rv_SingleSignOnManagedApplicationInstanceId(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-domain.html#aws-resource-sagemaker-domain-return-values"""
-        return GetAtt(resource=self, attr_name="SingleSignOnManagedApplicationInstanceId")
-    
-    @property
     def rv_DomainArn(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-domain.html#aws-resource-sagemaker-domain-return-values"""
         return GetAtt(resource=self, attr_name="DomainArn")
@@ -10889,6 +9318,26 @@ class Domain(Resource):
     def rv_Url(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-domain.html#aws-resource-sagemaker-domain-return-values"""
         return GetAtt(resource=self, attr_name="Url")
+    
+    @property
+    def rv_DomainId(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-domain.html#aws-resource-sagemaker-domain-return-values"""
+        return GetAtt(resource=self, attr_name="DomainId")
+    
+    @property
+    def rv_HomeEfsFileSystemId(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-domain.html#aws-resource-sagemaker-domain-return-values"""
+        return GetAtt(resource=self, attr_name="HomeEfsFileSystemId")
+    
+    @property
+    def rv_SingleSignOnManagedApplicationInstanceId(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-domain.html#aws-resource-sagemaker-domain-return-values"""
+        return GetAtt(resource=self, attr_name="SingleSignOnManagedApplicationInstanceId")
+    
+    @property
+    def rv_SecurityGroupIdForDomainBoundary(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-domain.html#aws-resource-sagemaker-domain-return-values"""
+        return GetAtt(resource=self, attr_name="SecurityGroupIdForDomainBoundary")
     
 
 @attr.s
@@ -10921,16 +9370,15 @@ class Project(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-project.html#cfn-sagemaker-project-projectname"""
-    rp_ServiceCatalogProvisioningDetails: typing.Union['PropProjectServiceCatalogProvisioningDetails', dict] = attr.ib(
+    rp_ServiceCatalogProvisioningDetails: dict = attr.ib(
         default=None,
-        converter=PropProjectServiceCatalogProvisioningDetails.from_dict,
-        validator=attr.validators.instance_of(PropProjectServiceCatalogProvisioningDetails),
+        validator=attr.validators.instance_of(dict),
         metadata={
             AttrMeta.PROPERTY_NAME: "ServiceCatalogProvisioningDetails",
             AttrMeta.DATA: {
                 "UpdateType": 'Immutable',
                 "Required": True,
-                "Type": 'ServiceCatalogProvisioningDetails',
+                "PrimitiveType": 'Json',
             }
         },
     )
@@ -10959,7 +9407,6 @@ class Project(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Tag',
-                "DuplicatesAllowed": True,
             }
         },
     )
@@ -10972,21 +9419,6 @@ class Project(Resource):
         return GetAtt(resource=self, attr_name="ProjectArn")
     
     @property
-    def rv_ProjectStatus(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-project.html#aws-resource-sagemaker-project-return-values"""
-        return GetAtt(resource=self, attr_name="ProjectStatus")
-    
-    @property
-    def rv_ServiceCatalogProvisionedProductDetailsProvisionedProductStatusMessage(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-project.html#aws-resource-sagemaker-project-return-values"""
-        return GetAtt(resource=self, attr_name="ServiceCatalogProvisionedProductDetails.ProvisionedProductStatusMessage")
-    
-    @property
-    def rv_ServiceCatalogProvisionedProductDetailsProvisionedProductId(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-project.html#aws-resource-sagemaker-project-return-values"""
-        return GetAtt(resource=self, attr_name="ServiceCatalogProvisionedProductDetails.ProvisionedProductId")
-    
-    @property
     def rv_ProjectId(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-project.html#aws-resource-sagemaker-project-return-values"""
         return GetAtt(resource=self, attr_name="ProjectId")
@@ -10997,9 +9429,9 @@ class Project(Resource):
         return GetAtt(resource=self, attr_name="CreationTime")
     
     @property
-    def rv_ServiceCatalogProvisionedProductDetails(self) -> GetAtt:
+    def rv_ProjectStatus(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sagemaker-project.html#aws-resource-sagemaker-project-return-values"""
-        return GetAtt(resource=self, attr_name="ServiceCatalogProvisionedProductDetails")
+        return GetAtt(resource=self, attr_name="ProjectStatus")
     
 
 @attr.s
@@ -11083,7 +9515,6 @@ class Image(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Tag',
-                "DuplicatesAllowed": True,
             }
         },
     )
@@ -11150,7 +9581,6 @@ class Device(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Tag',
-                "DuplicatesAllowed": True,
             }
         },
     )

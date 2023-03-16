@@ -172,7 +172,6 @@ class Accelerator(Resource):
                 "Required": False,
                 "Type": 'List',
                 "PrimitiveItemType": 'String',
-                "DuplicatesAllowed": True,
             }
         },
     )
@@ -188,7 +187,6 @@ class Accelerator(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Tag',
-                "DuplicatesAllowed": True,
             }
         },
     )
@@ -196,14 +194,19 @@ class Accelerator(Resource):
 
     
     @property
+    def rv_DnsName(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-globalaccelerator-accelerator.html#aws-resource-globalaccelerator-accelerator-return-values"""
+        return GetAtt(resource=self, attr_name="DnsName")
+    
+    @property
     def rv_Ipv4Addresses(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-globalaccelerator-accelerator.html#aws-resource-globalaccelerator-accelerator-return-values"""
         return GetAtt(resource=self, attr_name="Ipv4Addresses")
     
     @property
-    def rv_DnsName(self) -> GetAtt:
+    def rv_Ipv6Addresses(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-globalaccelerator-accelerator.html#aws-resource-globalaccelerator-accelerator-return-values"""
-        return GetAtt(resource=self, attr_name="DnsName")
+        return GetAtt(resource=self, attr_name="Ipv6Addresses")
     
     @property
     def rv_DualStackDnsName(self) -> GetAtt:
@@ -214,11 +217,6 @@ class Accelerator(Resource):
     def rv_AcceleratorArn(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-globalaccelerator-accelerator.html#aws-resource-globalaccelerator-accelerator-return-values"""
         return GetAtt(resource=self, attr_name="AcceleratorArn")
-    
-    @property
-    def rv_Ipv6Addresses(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-globalaccelerator-accelerator.html#aws-resource-globalaccelerator-accelerator-return-values"""
-        return GetAtt(resource=self, attr_name="Ipv6Addresses")
     
 
 @attr.s
@@ -262,7 +260,6 @@ class Listener(Resource):
                 "Required": True,
                 "Type": 'List',
                 "ItemType": 'PortRange',
-                "DuplicatesAllowed": True,
             }
         },
     )
@@ -361,7 +358,6 @@ class EndpointGroup(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'EndpointConfiguration',
-                "DuplicatesAllowed": True,
             }
         },
     )
@@ -429,7 +425,6 @@ class EndpointGroup(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'PortOverride',
-                "DuplicatesAllowed": True,
             }
         },
     )

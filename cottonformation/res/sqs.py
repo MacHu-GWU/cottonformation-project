@@ -306,6 +306,11 @@ class Queue(Resource):
 
     
     @property
+    def rv_QueueUrl(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sqs-queue.html#aws-resource-sqs-queue-return-values"""
+        return GetAtt(resource=self, attr_name="QueueUrl")
+    
+    @property
     def rv_Arn(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sqs-queue.html#aws-resource-sqs-queue-return-values"""
         return GetAtt(resource=self, attr_name="Arn")
@@ -314,9 +319,4 @@ class Queue(Resource):
     def rv_QueueName(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sqs-queue.html#aws-resource-sqs-queue-return-values"""
         return GetAtt(resource=self, attr_name="QueueName")
-    
-    @property
-    def rv_QueueUrl(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-sqs-queue.html#aws-resource-sqs-queue-return-values"""
-        return GetAtt(resource=self, attr_name="QueueUrl")
     

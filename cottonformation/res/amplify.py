@@ -541,6 +541,11 @@ class App(Resource):
         return GetAtt(resource=self, attr_name="AppId")
     
     @property
+    def rv_AppName(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-app.html#aws-resource-amplify-app-return-values"""
+        return GetAtt(resource=self, attr_name="AppName")
+    
+    @property
     def rv_Arn(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-app.html#aws-resource-amplify-app-return-values"""
         return GetAtt(resource=self, attr_name="Arn")
@@ -549,11 +554,6 @@ class App(Resource):
     def rv_DefaultDomain(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-app.html#aws-resource-amplify-app-return-values"""
         return GetAtt(resource=self, attr_name="DefaultDomain")
-    
-    @property
-    def rv_AppName(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-app.html#aws-resource-amplify-app-return-values"""
-        return GetAtt(resource=self, attr_name="AppName")
     
 
 @attr.s
@@ -661,26 +661,6 @@ class Domain(Resource):
 
     
     @property
-    def rv_AutoSubDomainIAMRole(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-domain.html#aws-resource-amplify-domain-return-values"""
-        return GetAtt(resource=self, attr_name="AutoSubDomainIAMRole")
-    
-    @property
-    def rv_DomainName(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-domain.html#aws-resource-amplify-domain-return-values"""
-        return GetAtt(resource=self, attr_name="DomainName")
-    
-    @property
-    def rv_EnableAutoSubDomain(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-domain.html#aws-resource-amplify-domain-return-values"""
-        return GetAtt(resource=self, attr_name="EnableAutoSubDomain")
-    
-    @property
-    def rv_StatusReason(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-domain.html#aws-resource-amplify-domain-return-values"""
-        return GetAtt(resource=self, attr_name="StatusReason")
-    
-    @property
     def rv_Arn(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-domain.html#aws-resource-amplify-domain-return-values"""
         return GetAtt(resource=self, attr_name="Arn")
@@ -691,14 +671,34 @@ class Domain(Resource):
         return GetAtt(resource=self, attr_name="AutoSubDomainCreationPatterns")
     
     @property
-    def rv_DomainStatus(self) -> GetAtt:
+    def rv_AutoSubDomainIAMRole(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-domain.html#aws-resource-amplify-domain-return-values"""
-        return GetAtt(resource=self, attr_name="DomainStatus")
+        return GetAtt(resource=self, attr_name="AutoSubDomainIAMRole")
     
     @property
     def rv_CertificateRecord(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-domain.html#aws-resource-amplify-domain-return-values"""
         return GetAtt(resource=self, attr_name="CertificateRecord")
+    
+    @property
+    def rv_DomainName(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-domain.html#aws-resource-amplify-domain-return-values"""
+        return GetAtt(resource=self, attr_name="DomainName")
+    
+    @property
+    def rv_DomainStatus(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-domain.html#aws-resource-amplify-domain-return-values"""
+        return GetAtt(resource=self, attr_name="DomainStatus")
+    
+    @property
+    def rv_EnableAutoSubDomain(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-domain.html#aws-resource-amplify-domain-return-values"""
+        return GetAtt(resource=self, attr_name="EnableAutoSubDomain")
+    
+    @property
+    def rv_StatusReason(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-domain.html#aws-resource-amplify-domain-return-values"""
+        return GetAtt(resource=self, attr_name="StatusReason")
     
 
 @attr.s
@@ -906,12 +906,12 @@ class Branch(Resource):
 
     
     @property
-    def rv_BranchName(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-branch.html#aws-resource-amplify-branch-return-values"""
-        return GetAtt(resource=self, attr_name="BranchName")
-    
-    @property
     def rv_Arn(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-branch.html#aws-resource-amplify-branch-return-values"""
         return GetAtt(resource=self, attr_name="Arn")
+    
+    @property
+    def rv_BranchName(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-amplify-branch.html#aws-resource-amplify-branch-return-values"""
+        return GetAtt(resource=self, attr_name="BranchName")
     

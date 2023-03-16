@@ -519,33 +519,6 @@ class PropTopicRuleDynamoDBv2Action(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-dynamodbv2action.html#cfn-iot-topicrule-dynamodbv2action-rolearn"""
 
 @attr.s
-class PropJobTemplateMaintenanceWindow(Property):
-    """
-    AWS Object Type = "AWS::IoT::JobTemplate.MaintenanceWindow"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-jobtemplate-maintenancewindow.html
-
-    Property Document:
-    
-    - ``p_DurationInMinutes``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-jobtemplate-maintenancewindow.html#cfn-iot-jobtemplate-maintenancewindow-durationinminutes
-    - ``p_StartTime``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-jobtemplate-maintenancewindow.html#cfn-iot-jobtemplate-maintenancewindow-starttime
-    """
-    AWS_OBJECT_TYPE = "AWS::IoT::JobTemplate.MaintenanceWindow"
-    
-    p_DurationInMinutes: int = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "DurationInMinutes"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-jobtemplate-maintenancewindow.html#cfn-iot-jobtemplate-maintenancewindow-durationinminutes"""
-    p_StartTime: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "StartTime"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-jobtemplate-maintenancewindow.html#cfn-iot-jobtemplate-maintenancewindow-starttime"""
-
-@attr.s
 class PropTopicRuleCloudwatchMetricAction(Property):
     """
     AWS Object Type = "AWS::IoT::TopicRule.CloudwatchMetricAction"
@@ -717,47 +690,6 @@ class PropTopicRuleElasticsearchAction(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-elasticsearchaction.html#cfn-iot-topicrule-elasticsearchaction-type"""
 
 @attr.s
-class PropJobTemplateAbortCriteria(Property):
-    """
-    AWS Object Type = "AWS::IoT::JobTemplate.AbortCriteria"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-jobtemplate-abortcriteria.html
-
-    Property Document:
-    
-    - ``rp_Action``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-jobtemplate-abortcriteria.html#cfn-iot-jobtemplate-abortcriteria-action
-    - ``rp_FailureType``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-jobtemplate-abortcriteria.html#cfn-iot-jobtemplate-abortcriteria-failuretype
-    - ``rp_MinNumberOfExecutedThings``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-jobtemplate-abortcriteria.html#cfn-iot-jobtemplate-abortcriteria-minnumberofexecutedthings
-    - ``rp_ThresholdPercentage``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-jobtemplate-abortcriteria.html#cfn-iot-jobtemplate-abortcriteria-thresholdpercentage
-    """
-    AWS_OBJECT_TYPE = "AWS::IoT::JobTemplate.AbortCriteria"
-    
-    rp_Action: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Action"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-jobtemplate-abortcriteria.html#cfn-iot-jobtemplate-abortcriteria-action"""
-    rp_FailureType: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "FailureType"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-jobtemplate-abortcriteria.html#cfn-iot-jobtemplate-abortcriteria-failuretype"""
-    rp_MinNumberOfExecutedThings: int = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(int),
-        metadata={AttrMeta.PROPERTY_NAME: "MinNumberOfExecutedThings"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-jobtemplate-abortcriteria.html#cfn-iot-jobtemplate-abortcriteria-minnumberofexecutedthings"""
-    rp_ThresholdPercentage: float = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(float),
-        metadata={AttrMeta.PROPERTY_NAME: "ThresholdPercentage"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-jobtemplate-abortcriteria.html#cfn-iot-jobtemplate-abortcriteria-thresholdpercentage"""
-
-@attr.s
 class PropTopicRuleKinesisAction(Property):
     """
     AWS Object Type = "AWS::IoT::TopicRule.KinesisAction"
@@ -792,33 +724,6 @@ class PropTopicRuleKinesisAction(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-kinesisaction.html#cfn-iot-topicrule-kinesisaction-partitionkey"""
 
 @attr.s
-class PropJobTemplateRateIncreaseCriteria(Property):
-    """
-    AWS Object Type = "AWS::IoT::JobTemplate.RateIncreaseCriteria"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-jobtemplate-rateincreasecriteria.html
-
-    Property Document:
-    
-    - ``p_NumberOfNotifiedThings``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-jobtemplate-rateincreasecriteria.html#cfn-iot-jobtemplate-rateincreasecriteria-numberofnotifiedthings
-    - ``p_NumberOfSucceededThings``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-jobtemplate-rateincreasecriteria.html#cfn-iot-jobtemplate-rateincreasecriteria-numberofsucceededthings
-    """
-    AWS_OBJECT_TYPE = "AWS::IoT::JobTemplate.RateIncreaseCriteria"
-    
-    p_NumberOfNotifiedThings: int = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "NumberOfNotifiedThings"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-jobtemplate-rateincreasecriteria.html#cfn-iot-jobtemplate-rateincreasecriteria-numberofnotifiedthings"""
-    p_NumberOfSucceededThings: int = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "NumberOfSucceededThings"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-jobtemplate-rateincreasecriteria.html#cfn-iot-jobtemplate-rateincreasecriteria-numberofsucceededthings"""
-
-@attr.s
 class PropAccountAuditConfigurationAuditNotificationTarget(Property):
     """
     AWS Object Type = "AWS::IoT::AccountAuditConfiguration.AuditNotificationTarget"
@@ -851,26 +756,6 @@ class PropAccountAuditConfigurationAuditNotificationTarget(Property):
         metadata={AttrMeta.PROPERTY_NAME: "TargetArn"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-accountauditconfiguration-auditnotificationtarget.html#cfn-iot-accountauditconfiguration-auditnotificationtarget-targetarn"""
-
-@attr.s
-class PropJobTemplateTimeoutConfig(Property):
-    """
-    AWS Object Type = "AWS::IoT::JobTemplate.TimeoutConfig"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-jobtemplate-timeoutconfig.html
-
-    Property Document:
-    
-    - ``rp_InProgressTimeoutInMinutes``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-jobtemplate-timeoutconfig.html#cfn-iot-jobtemplate-timeoutconfig-inprogresstimeoutinminutes
-    """
-    AWS_OBJECT_TYPE = "AWS::IoT::JobTemplate.TimeoutConfig"
-    
-    rp_InProgressTimeoutInMinutes: int = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(int),
-        metadata={AttrMeta.PROPERTY_NAME: "InProgressTimeoutInMinutes"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-jobtemplate-timeoutconfig.html#cfn-iot-jobtemplate-timeoutconfig-inprogresstimeoutinminutes"""
 
 @attr.s
 class PropTopicRuleCloudwatchAlarmAction(Property):
@@ -924,7 +809,6 @@ class PropTopicRuleCloudwatchLogsAction(Property):
     
     - ``rp_LogGroupName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-cloudwatchlogsaction.html#cfn-iot-topicrule-cloudwatchlogsaction-loggroupname
     - ``rp_RoleArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-cloudwatchlogsaction.html#cfn-iot-topicrule-cloudwatchlogsaction-rolearn
-    - ``p_BatchMode``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-cloudwatchlogsaction.html#cfn-iot-topicrule-cloudwatchlogsaction-batchmode
     """
     AWS_OBJECT_TYPE = "AWS::IoT::TopicRule.CloudwatchLogsAction"
     
@@ -940,12 +824,6 @@ class PropTopicRuleCloudwatchLogsAction(Property):
         metadata={AttrMeta.PROPERTY_NAME: "RoleArn"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-cloudwatchlogsaction.html#cfn-iot-topicrule-cloudwatchlogsaction-rolearn"""
-    p_BatchMode: bool = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(bool)),
-        metadata={AttrMeta.PROPERTY_NAME: "BatchMode"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-cloudwatchlogsaction.html#cfn-iot-topicrule-cloudwatchlogsaction-batchmode"""
 
 @attr.s
 class PropTopicRuleTimestreamDimension(Property):
@@ -1198,27 +1076,6 @@ class PropSecurityProfileMachineLearningDetectionConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-securityprofile-machinelearningdetectionconfig.html#cfn-iot-securityprofile-machinelearningdetectionconfig-confidencelevel"""
 
 @attr.s
-class PropJobTemplateAbortConfig(Property):
-    """
-    AWS Object Type = "AWS::IoT::JobTemplate.AbortConfig"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-jobtemplate-abortconfig.html
-
-    Property Document:
-    
-    - ``rp_CriteriaList``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-jobtemplate-abortconfig.html#cfn-iot-jobtemplate-abortconfig-criterialist
-    """
-    AWS_OBJECT_TYPE = "AWS::IoT::JobTemplate.AbortConfig"
-    
-    rp_CriteriaList: typing.List[typing.Union['PropJobTemplateAbortCriteria', dict]] = attr.ib(
-        default=None,
-        converter=PropJobTemplateAbortCriteria.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropJobTemplateAbortCriteria), iterable_validator=attr.validators.instance_of(list)),
-        metadata={AttrMeta.PROPERTY_NAME: "CriteriaList"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-jobtemplate-abortconfig.html#cfn-iot-jobtemplate-abortconfig-criterialist"""
-
-@attr.s
 class PropSecurityProfileMetricDimension(Property):
     """
     AWS Object Type = "AWS::IoT::SecurityProfile.MetricDimension"
@@ -1424,33 +1281,6 @@ class PropTopicRuleKafkaAction(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-kafkaaction.html#cfn-iot-topicrule-kafkaaction-partition"""
 
 @attr.s
-class PropJobTemplateRetryCriteria(Property):
-    """
-    AWS Object Type = "AWS::IoT::JobTemplate.RetryCriteria"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-jobtemplate-retrycriteria.html
-
-    Property Document:
-    
-    - ``p_FailureType``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-jobtemplate-retrycriteria.html#cfn-iot-jobtemplate-retrycriteria-failuretype
-    - ``p_NumberOfRetries``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-jobtemplate-retrycriteria.html#cfn-iot-jobtemplate-retrycriteria-numberofretries
-    """
-    AWS_OBJECT_TYPE = "AWS::IoT::JobTemplate.RetryCriteria"
-    
-    p_FailureType: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "FailureType"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-jobtemplate-retrycriteria.html#cfn-iot-jobtemplate-retrycriteria-failuretype"""
-    p_NumberOfRetries: int = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "NumberOfRetries"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-jobtemplate-retrycriteria.html#cfn-iot-jobtemplate-retrycriteria-numberofretries"""
-
-@attr.s
 class PropThingAttributePayload(Property):
     """
     AWS Object Type = "AWS::IoT::Thing.AttributePayload"
@@ -1496,68 +1326,6 @@ class PropFleetMetricAggregationType(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Values"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-fleetmetric-aggregationtype.html#cfn-iot-fleetmetric-aggregationtype-values"""
-
-@attr.s
-class PropJobTemplateExponentialRolloutRate(Property):
-    """
-    AWS Object Type = "AWS::IoT::JobTemplate.ExponentialRolloutRate"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-jobtemplate-exponentialrolloutrate.html
-
-    Property Document:
-    
-    - ``rp_BaseRatePerMinute``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-jobtemplate-exponentialrolloutrate.html#cfn-iot-jobtemplate-exponentialrolloutrate-baserateperminute
-    - ``rp_IncrementFactor``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-jobtemplate-exponentialrolloutrate.html#cfn-iot-jobtemplate-exponentialrolloutrate-incrementfactor
-    - ``rp_RateIncreaseCriteria``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-jobtemplate-exponentialrolloutrate.html#cfn-iot-jobtemplate-exponentialrolloutrate-rateincreasecriteria
-    """
-    AWS_OBJECT_TYPE = "AWS::IoT::JobTemplate.ExponentialRolloutRate"
-    
-    rp_BaseRatePerMinute: int = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(int),
-        metadata={AttrMeta.PROPERTY_NAME: "BaseRatePerMinute"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-jobtemplate-exponentialrolloutrate.html#cfn-iot-jobtemplate-exponentialrolloutrate-baserateperminute"""
-    rp_IncrementFactor: float = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(float),
-        metadata={AttrMeta.PROPERTY_NAME: "IncrementFactor"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-jobtemplate-exponentialrolloutrate.html#cfn-iot-jobtemplate-exponentialrolloutrate-incrementfactor"""
-    rp_RateIncreaseCriteria: typing.Union['PropJobTemplateRateIncreaseCriteria', dict] = attr.ib(
-        default=None,
-        converter=PropJobTemplateRateIncreaseCriteria.from_dict,
-        validator=attr.validators.instance_of(PropJobTemplateRateIncreaseCriteria),
-        metadata={AttrMeta.PROPERTY_NAME: "RateIncreaseCriteria"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-jobtemplate-exponentialrolloutrate.html#cfn-iot-jobtemplate-exponentialrolloutrate-rateincreasecriteria"""
-
-@attr.s
-class PropJobTemplatePresignedUrlConfig(Property):
-    """
-    AWS Object Type = "AWS::IoT::JobTemplate.PresignedUrlConfig"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-jobtemplate-presignedurlconfig.html
-
-    Property Document:
-    
-    - ``rp_RoleArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-jobtemplate-presignedurlconfig.html#cfn-iot-jobtemplate-presignedurlconfig-rolearn
-    - ``p_ExpiresInSec``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-jobtemplate-presignedurlconfig.html#cfn-iot-jobtemplate-presignedurlconfig-expiresinsec
-    """
-    AWS_OBJECT_TYPE = "AWS::IoT::JobTemplate.PresignedUrlConfig"
-    
-    rp_RoleArn: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "RoleArn"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-jobtemplate-presignedurlconfig.html#cfn-iot-jobtemplate-presignedurlconfig-rolearn"""
-    p_ExpiresInSec: int = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "ExpiresInSec"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-jobtemplate-presignedurlconfig.html#cfn-iot-jobtemplate-presignedurlconfig-expiresinsec"""
 
 @attr.s
 class PropTopicRuleFirehoseAction(Property):
@@ -2165,27 +1933,6 @@ class PropTopicRuleTimestreamAction(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-topicrule-timestreamaction.html#cfn-iot-topicrule-timestreamaction-timestamp"""
 
 @attr.s
-class PropJobTemplateJobExecutionsRetryConfig(Property):
-    """
-    AWS Object Type = "AWS::IoT::JobTemplate.JobExecutionsRetryConfig"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-jobtemplate-jobexecutionsretryconfig.html
-
-    Property Document:
-    
-    - ``p_RetryCriteriaList``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-jobtemplate-jobexecutionsretryconfig.html#cfn-iot-jobtemplate-jobexecutionsretryconfig-retrycriterialist
-    """
-    AWS_OBJECT_TYPE = "AWS::IoT::JobTemplate.JobExecutionsRetryConfig"
-    
-    p_RetryCriteriaList: typing.List[typing.Union['PropJobTemplateRetryCriteria', dict]] = attr.ib(
-        default=None,
-        converter=PropJobTemplateRetryCriteria.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropJobTemplateRetryCriteria), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "RetryCriteriaList"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-jobtemplate-jobexecutionsretryconfig.html#cfn-iot-jobtemplate-jobexecutionsretryconfig-retrycriterialist"""
-
-@attr.s
 class PropSecurityProfileBehavior(Property):
     """
     AWS Object Type = "AWS::IoT::SecurityProfile.Behavior"
@@ -2233,34 +1980,6 @@ class PropSecurityProfileBehavior(Property):
         metadata={AttrMeta.PROPERTY_NAME: "SuppressAlerts"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-securityprofile-behavior.html#cfn-iot-securityprofile-behavior-suppressalerts"""
-
-@attr.s
-class PropJobTemplateJobExecutionsRolloutConfig(Property):
-    """
-    AWS Object Type = "AWS::IoT::JobTemplate.JobExecutionsRolloutConfig"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-jobtemplate-jobexecutionsrolloutconfig.html
-
-    Property Document:
-    
-    - ``p_ExponentialRolloutRate``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-jobtemplate-jobexecutionsrolloutconfig.html#cfn-iot-jobtemplate-jobexecutionsrolloutconfig-exponentialrolloutrate
-    - ``p_MaximumPerMinute``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-jobtemplate-jobexecutionsrolloutconfig.html#cfn-iot-jobtemplate-jobexecutionsrolloutconfig-maximumperminute
-    """
-    AWS_OBJECT_TYPE = "AWS::IoT::JobTemplate.JobExecutionsRolloutConfig"
-    
-    p_ExponentialRolloutRate: typing.Union['PropJobTemplateExponentialRolloutRate', dict] = attr.ib(
-        default=None,
-        converter=PropJobTemplateExponentialRolloutRate.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropJobTemplateExponentialRolloutRate)),
-        metadata={AttrMeta.PROPERTY_NAME: "ExponentialRolloutRate"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-jobtemplate-jobexecutionsrolloutconfig.html#cfn-iot-jobtemplate-jobexecutionsrolloutconfig-exponentialrolloutrate"""
-    p_MaximumPerMinute: int = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(int)),
-        metadata={AttrMeta.PROPERTY_NAME: "MaximumPerMinute"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iot-jobtemplate-jobexecutionsrolloutconfig.html#cfn-iot-jobtemplate-jobexecutionsrolloutconfig-maximumperminute"""
 
 @attr.s
 class PropAccountAuditConfigurationAuditCheckConfigurations(Property):
@@ -3103,7 +2822,6 @@ class TopicRule(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Tag',
-                "DuplicatesAllowed": True,
             }
         },
     )
@@ -3342,7 +3060,6 @@ class DomainConfiguration(Resource):
                 "Required": False,
                 "Type": 'List',
                 "PrimitiveItemType": 'String',
-                "DuplicatesAllowed": True,
             }
         },
     )
@@ -3384,12 +3101,16 @@ class DomainConfiguration(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Tag',
-                "DuplicatesAllowed": True,
             }
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-domainconfiguration.html#cfn-iot-domainconfiguration-tags"""
 
+    
+    @property
+    def rv_Arn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-domainconfiguration.html#aws-resource-iot-domainconfiguration-return-values"""
+        return GetAtt(resource=self, attr_name="Arn")
     
     @property
     def rv_DomainType(self) -> GetAtt:
@@ -3400,11 +3121,6 @@ class DomainConfiguration(Resource):
     def rv_ServerCertificates(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-domainconfiguration.html#aws-resource-iot-domainconfiguration-return-values"""
         return GetAtt(resource=self, attr_name="ServerCertificates")
-    
-    @property
-    def rv_Arn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-domainconfiguration.html#aws-resource-iot-domainconfiguration-return-values"""
-        return GetAtt(resource=self, attr_name="Arn")
     
 
 @attr.s
@@ -3605,7 +3321,6 @@ class Authorizer(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Tag',
-                "DuplicatesAllowed": True,
             }
         },
     )
@@ -3722,9 +3437,9 @@ class Thing(Resource):
         metadata={
             AttrMeta.PROPERTY_NAME: "AttributePayload",
             AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
                 "Required": False,
                 "Type": 'AttributePayload',
+                "UpdateType": 'Mutable',
             }
         },
     )
@@ -3735,24 +3450,14 @@ class Thing(Resource):
         metadata={
             AttrMeta.PROPERTY_NAME: "ThingName",
             AttrMeta.DATA: {
-                "UpdateType": 'Immutable',
-                "Required": False,
                 "PrimitiveType": 'String',
+                "Required": False,
+                "UpdateType": 'Immutable',
             }
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-thing.html#cfn-iot-thing-thingname"""
 
-    
-    @property
-    def rv_Id(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-thing.html#aws-resource-iot-thing-return-values"""
-        return GetAtt(resource=self, attr_name="Id")
-    
-    @property
-    def rv_Arn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-thing.html#aws-resource-iot-thing-return-values"""
-        return GetAtt(resource=self, attr_name="Arn")
     
 
 @attr.s
@@ -3994,9 +3699,7 @@ class JobTemplate(Resource):
     - ``p_Document``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-jobtemplate.html#cfn-iot-jobtemplate-document
     - ``p_DocumentSource``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-jobtemplate.html#cfn-iot-jobtemplate-documentsource
     - ``p_JobArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-jobtemplate.html#cfn-iot-jobtemplate-jobarn
-    - ``p_JobExecutionsRetryConfig``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-jobtemplate.html#cfn-iot-jobtemplate-jobexecutionsretryconfig
     - ``p_JobExecutionsRolloutConfig``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-jobtemplate.html#cfn-iot-jobtemplate-jobexecutionsrolloutconfig
-    - ``p_MaintenanceWindows``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-jobtemplate.html#cfn-iot-jobtemplate-maintenancewindows
     - ``p_PresignedUrlConfig``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-jobtemplate.html#cfn-iot-jobtemplate-presignedurlconfig
     - ``p_TimeoutConfig``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-jobtemplate.html#cfn-iot-jobtemplate-timeoutconfig
     - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-jobtemplate.html#cfn-iot-jobtemplate-tags
@@ -4030,16 +3733,15 @@ class JobTemplate(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-jobtemplate.html#cfn-iot-jobtemplate-jobtemplateid"""
-    p_AbortConfig: typing.Union['PropJobTemplateAbortConfig', dict] = attr.ib(
+    p_AbortConfig: dict = attr.ib(
         default=None,
-        converter=PropJobTemplateAbortConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropJobTemplateAbortConfig)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={
             AttrMeta.PROPERTY_NAME: "AbortConfig",
             AttrMeta.DATA: {
                 "UpdateType": 'Immutable',
                 "Required": False,
-                "Type": 'AbortConfig',
+                "PrimitiveType": 'Json',
             }
         },
     )
@@ -4083,74 +3785,41 @@ class JobTemplate(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-jobtemplate.html#cfn-iot-jobtemplate-jobarn"""
-    p_JobExecutionsRetryConfig: typing.Union['PropJobTemplateJobExecutionsRetryConfig', dict] = attr.ib(
+    p_JobExecutionsRolloutConfig: dict = attr.ib(
         default=None,
-        converter=PropJobTemplateJobExecutionsRetryConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropJobTemplateJobExecutionsRetryConfig)),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "JobExecutionsRetryConfig",
-            AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
-                "Required": False,
-                "Type": 'JobExecutionsRetryConfig',
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-jobtemplate.html#cfn-iot-jobtemplate-jobexecutionsretryconfig"""
-    p_JobExecutionsRolloutConfig: typing.Union['PropJobTemplateJobExecutionsRolloutConfig', dict] = attr.ib(
-        default=None,
-        converter=PropJobTemplateJobExecutionsRolloutConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropJobTemplateJobExecutionsRolloutConfig)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={
             AttrMeta.PROPERTY_NAME: "JobExecutionsRolloutConfig",
             AttrMeta.DATA: {
                 "UpdateType": 'Immutable',
                 "Required": False,
-                "Type": 'JobExecutionsRolloutConfig',
+                "PrimitiveType": 'Json',
             }
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-jobtemplate.html#cfn-iot-jobtemplate-jobexecutionsrolloutconfig"""
-    p_MaintenanceWindows: typing.List[typing.Union['PropJobTemplateMaintenanceWindow', dict]] = attr.ib(
+    p_PresignedUrlConfig: dict = attr.ib(
         default=None,
-        converter=PropJobTemplateMaintenanceWindow.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropJobTemplateMaintenanceWindow), iterable_validator=attr.validators.instance_of(list))),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "MaintenanceWindows",
-            AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
-                "Required": False,
-                "Type": 'List',
-                "ItemType": 'MaintenanceWindow',
-                "DuplicatesAllowed": True,
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-jobtemplate.html#cfn-iot-jobtemplate-maintenancewindows"""
-    p_PresignedUrlConfig: typing.Union['PropJobTemplatePresignedUrlConfig', dict] = attr.ib(
-        default=None,
-        converter=PropJobTemplatePresignedUrlConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropJobTemplatePresignedUrlConfig)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={
             AttrMeta.PROPERTY_NAME: "PresignedUrlConfig",
             AttrMeta.DATA: {
                 "UpdateType": 'Immutable',
                 "Required": False,
-                "Type": 'PresignedUrlConfig',
+                "PrimitiveType": 'Json',
             }
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-jobtemplate.html#cfn-iot-jobtemplate-presignedurlconfig"""
-    p_TimeoutConfig: typing.Union['PropJobTemplateTimeoutConfig', dict] = attr.ib(
+    p_TimeoutConfig: dict = attr.ib(
         default=None,
-        converter=PropJobTemplateTimeoutConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropJobTemplateTimeoutConfig)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={
             AttrMeta.PROPERTY_NAME: "TimeoutConfig",
             AttrMeta.DATA: {
                 "UpdateType": 'Immutable',
                 "Required": False,
-                "Type": 'TimeoutConfig',
+                "PrimitiveType": 'Json',
             }
         },
     )
@@ -4246,7 +3915,6 @@ class RoleAlias(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Tag',
-                "DuplicatesAllowed": True,
             }
         },
     )
@@ -4383,7 +4051,6 @@ class ProvisioningTemplate(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Tag',
-                "DuplicatesAllowed": True,
             }
         },
     )
@@ -4785,14 +4452,14 @@ class TopicRuleDestination(Resource):
 
     
     @property
-    def rv_StatusReason(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-topicruledestination.html#aws-resource-iot-topicruledestination-return-values"""
-        return GetAtt(resource=self, attr_name="StatusReason")
-    
-    @property
     def rv_Arn(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-topicruledestination.html#aws-resource-iot-topicruledestination-return-values"""
         return GetAtt(resource=self, attr_name="Arn")
+    
+    @property
+    def rv_StatusReason(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iot-topicruledestination.html#aws-resource-iot-topicruledestination-return-values"""
+        return GetAtt(resource=self, attr_name="StatusReason")
     
 
 @attr.s

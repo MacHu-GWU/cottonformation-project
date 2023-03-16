@@ -843,26 +843,6 @@ class PropResponseHeadersPolicyAccessControlExposeHeaders(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-accesscontrolexposeheaders.html#cfn-cloudfront-responseheaderspolicy-accesscontrolexposeheaders-items"""
 
 @attr.s
-class PropResponseHeadersPolicyRemoveHeader(Property):
-    """
-    AWS Object Type = "AWS::CloudFront::ResponseHeadersPolicy.RemoveHeader"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-removeheader.html
-
-    Property Document:
-    
-    - ``rp_Header``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-removeheader.html#cfn-cloudfront-responseheaderspolicy-removeheader-header
-    """
-    AWS_OBJECT_TYPE = "AWS::CloudFront::ResponseHeadersPolicy.RemoveHeader"
-    
-    rp_Header: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Header"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-removeheader.html#cfn-cloudfront-responseheaderspolicy-removeheader-header"""
-
-@attr.s
 class PropDistributionGeoRestriction(Property):
     """
     AWS Object Type = "AWS::CloudFront::Distribution.GeoRestriction"
@@ -888,27 +868,6 @@ class PropDistributionGeoRestriction(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Locations"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-distribution-georestriction.html#cfn-cloudfront-distribution-georestriction-locations"""
-
-@attr.s
-class PropResponseHeadersPolicyRemoveHeadersConfig(Property):
-    """
-    AWS Object Type = "AWS::CloudFront::ResponseHeadersPolicy.RemoveHeadersConfig"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-removeheadersconfig.html
-
-    Property Document:
-    
-    - ``rp_Items``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-removeheadersconfig.html#cfn-cloudfront-responseheaderspolicy-removeheadersconfig-items
-    """
-    AWS_OBJECT_TYPE = "AWS::CloudFront::ResponseHeadersPolicy.RemoveHeadersConfig"
-    
-    rp_Items: typing.List[typing.Union['PropResponseHeadersPolicyRemoveHeader', dict]] = attr.ib(
-        default=None,
-        converter=PropResponseHeadersPolicyRemoveHeader.from_list,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropResponseHeadersPolicyRemoveHeader), iterable_validator=attr.validators.instance_of(list)),
-        metadata={AttrMeta.PROPERTY_NAME: "Items"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-removeheadersconfig.html#cfn-cloudfront-responseheaderspolicy-removeheadersconfig-items"""
 
 @attr.s
 class PropResponseHeadersPolicyAccessControlAllowMethods(Property):
@@ -2507,7 +2466,6 @@ class PropResponseHeadersPolicyResponseHeadersPolicyConfig(Property):
     - ``p_Comment``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-responseheaderspolicyconfig.html#cfn-cloudfront-responseheaderspolicy-responseheaderspolicyconfig-comment
     - ``p_CorsConfig``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-responseheaderspolicyconfig.html#cfn-cloudfront-responseheaderspolicy-responseheaderspolicyconfig-corsconfig
     - ``p_CustomHeadersConfig``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-responseheaderspolicyconfig.html#cfn-cloudfront-responseheaderspolicy-responseheaderspolicyconfig-customheadersconfig
-    - ``p_RemoveHeadersConfig``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-responseheaderspolicyconfig.html#cfn-cloudfront-responseheaderspolicy-responseheaderspolicyconfig-removeheadersconfig
     - ``p_SecurityHeadersConfig``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-responseheaderspolicyconfig.html#cfn-cloudfront-responseheaderspolicy-responseheaderspolicyconfig-securityheadersconfig
     - ``p_ServerTimingHeadersConfig``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-responseheaderspolicyconfig.html#cfn-cloudfront-responseheaderspolicy-responseheaderspolicyconfig-servertimingheadersconfig
     """
@@ -2539,13 +2497,6 @@ class PropResponseHeadersPolicyResponseHeadersPolicyConfig(Property):
         metadata={AttrMeta.PROPERTY_NAME: "CustomHeadersConfig"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-responseheaderspolicyconfig.html#cfn-cloudfront-responseheaderspolicy-responseheaderspolicyconfig-customheadersconfig"""
-    p_RemoveHeadersConfig: typing.Union['PropResponseHeadersPolicyRemoveHeadersConfig', dict] = attr.ib(
-        default=None,
-        converter=PropResponseHeadersPolicyRemoveHeadersConfig.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropResponseHeadersPolicyRemoveHeadersConfig)),
-        metadata={AttrMeta.PROPERTY_NAME: "RemoveHeadersConfig"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-cloudfront-responseheaderspolicy-responseheaderspolicyconfig.html#cfn-cloudfront-responseheaderspolicy-responseheaderspolicyconfig-removeheadersconfig"""
     p_SecurityHeadersConfig: typing.Union['PropResponseHeadersPolicySecurityHeadersConfig', dict] = attr.ib(
         default=None,
         converter=PropResponseHeadersPolicySecurityHeadersConfig.from_dict,
@@ -2815,14 +2766,14 @@ class CachePolicy(Resource):
 
     
     @property
-    def rv_LastModifiedTime(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-cachepolicy.html#aws-resource-cloudfront-cachepolicy-return-values"""
-        return GetAtt(resource=self, attr_name="LastModifiedTime")
-    
-    @property
     def rv_Id(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-cachepolicy.html#aws-resource-cloudfront-cachepolicy-return-values"""
         return GetAtt(resource=self, attr_name="Id")
+    
+    @property
+    def rv_LastModifiedTime(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-cachepolicy.html#aws-resource-cloudfront-cachepolicy-return-values"""
+        return GetAtt(resource=self, attr_name="LastModifiedTime")
     
 
 @attr.s
@@ -2892,42 +2843,14 @@ class Function(Resource):
 
     Property Document:
     
-    - ``rp_FunctionCode``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-function.html#cfn-cloudfront-function-functioncode
-    - ``rp_FunctionConfig``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-function.html#cfn-cloudfront-function-functionconfig
     - ``rp_Name``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-function.html#cfn-cloudfront-function-name
     - ``p_AutoPublish``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-function.html#cfn-cloudfront-function-autopublish
-    - ``p_FunctionMetadata``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-function.html#cfn-cloudfront-function-functionmetadata
+    - ``p_FunctionCode``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-function.html#cfn-cloudfront-function-functioncode
+    - ``p_FunctionConfig``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-function.html#cfn-cloudfront-function-functionconfig
     """
     AWS_OBJECT_TYPE = "AWS::CloudFront::Function"
 
     
-    rp_FunctionCode: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "FunctionCode",
-            AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
-                "Required": True,
-                "PrimitiveType": 'String',
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-function.html#cfn-cloudfront-function-functioncode"""
-    rp_FunctionConfig: typing.Union['PropFunctionFunctionConfig', dict] = attr.ib(
-        default=None,
-        converter=PropFunctionFunctionConfig.from_dict,
-        validator=attr.validators.instance_of(PropFunctionFunctionConfig),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "FunctionConfig",
-            AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
-                "Required": True,
-                "Type": 'FunctionConfig',
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-function.html#cfn-cloudfront-function-functionconfig"""
     rp_Name: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
@@ -2954,20 +2877,33 @@ class Function(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-function.html#cfn-cloudfront-function-autopublish"""
-    p_FunctionMetadata: typing.Union['PropFunctionFunctionMetadata', dict] = attr.ib(
+    p_FunctionCode: TypeHint.intrinsic_str = attr.ib(
         default=None,
-        converter=PropFunctionFunctionMetadata.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropFunctionFunctionMetadata)),
+        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
         metadata={
-            AttrMeta.PROPERTY_NAME: "FunctionMetadata",
+            AttrMeta.PROPERTY_NAME: "FunctionCode",
             AttrMeta.DATA: {
                 "UpdateType": 'Mutable',
                 "Required": False,
-                "Type": 'FunctionMetadata',
+                "PrimitiveType": 'String',
             }
         },
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-function.html#cfn-cloudfront-function-functionmetadata"""
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-function.html#cfn-cloudfront-function-functioncode"""
+    p_FunctionConfig: typing.Union['PropFunctionFunctionConfig', dict] = attr.ib(
+        default=None,
+        converter=PropFunctionFunctionConfig.from_dict,
+        validator=attr.validators.optional(attr.validators.instance_of(PropFunctionFunctionConfig)),
+        metadata={
+            AttrMeta.PROPERTY_NAME: "FunctionConfig",
+            AttrMeta.DATA: {
+                "UpdateType": 'Mutable',
+                "Required": False,
+                "Type": 'FunctionConfig',
+            }
+        },
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-function.html#cfn-cloudfront-function-functionconfig"""
 
     
     @property
@@ -3017,14 +2953,14 @@ class KeyGroup(Resource):
 
     
     @property
-    def rv_LastModifiedTime(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-keygroup.html#aws-resource-cloudfront-keygroup-return-values"""
-        return GetAtt(resource=self, attr_name="LastModifiedTime")
-    
-    @property
     def rv_Id(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-keygroup.html#aws-resource-cloudfront-keygroup-return-values"""
         return GetAtt(resource=self, attr_name="Id")
+    
+    @property
+    def rv_LastModifiedTime(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-keygroup.html#aws-resource-cloudfront-keygroup-return-values"""
+        return GetAtt(resource=self, attr_name="LastModifiedTime")
     
 
 @attr.s
@@ -3094,14 +3030,14 @@ class CloudFrontOriginAccessIdentity(Resource):
 
     
     @property
-    def rv_S3CanonicalUserId(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-cloudfrontoriginaccessidentity.html#aws-resource-cloudfront-cloudfrontoriginaccessidentity-return-values"""
-        return GetAtt(resource=self, attr_name="S3CanonicalUserId")
-    
-    @property
     def rv_Id(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-cloudfrontoriginaccessidentity.html#aws-resource-cloudfront-cloudfrontoriginaccessidentity-return-values"""
         return GetAtt(resource=self, attr_name="Id")
+    
+    @property
+    def rv_S3CanonicalUserId(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-cloudfrontoriginaccessidentity.html#aws-resource-cloudfront-cloudfrontoriginaccessidentity-return-values"""
+        return GetAtt(resource=self, attr_name="S3CanonicalUserId")
     
 
 @attr.s
@@ -3262,14 +3198,14 @@ class ResponseHeadersPolicy(Resource):
 
     
     @property
-    def rv_LastModifiedTime(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-responseheaderspolicy.html#aws-resource-cloudfront-responseheaderspolicy-return-values"""
-        return GetAtt(resource=self, attr_name="LastModifiedTime")
-    
-    @property
     def rv_Id(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-responseheaderspolicy.html#aws-resource-cloudfront-responseheaderspolicy-return-values"""
         return GetAtt(resource=self, attr_name="Id")
+    
+    @property
+    def rv_LastModifiedTime(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-responseheaderspolicy.html#aws-resource-cloudfront-responseheaderspolicy-return-values"""
+        return GetAtt(resource=self, attr_name="LastModifiedTime")
     
 
 @attr.s
@@ -3303,14 +3239,14 @@ class OriginRequestPolicy(Resource):
 
     
     @property
-    def rv_LastModifiedTime(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-originrequestpolicy.html#aws-resource-cloudfront-originrequestpolicy-return-values"""
-        return GetAtt(resource=self, attr_name="LastModifiedTime")
-    
-    @property
     def rv_Id(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-originrequestpolicy.html#aws-resource-cloudfront-originrequestpolicy-return-values"""
         return GetAtt(resource=self, attr_name="Id")
+    
+    @property
+    def rv_LastModifiedTime(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-cloudfront-originrequestpolicy.html#aws-resource-cloudfront-originrequestpolicy-return-values"""
+        return GetAtt(resource=self, attr_name="LastModifiedTime")
     
 
 @attr.s

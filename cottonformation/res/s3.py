@@ -189,26 +189,6 @@ class PropStorageLensCloudWatchMetrics(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-storagelens-cloudwatchmetrics.html#cfn-s3-storagelens-cloudwatchmetrics-isenabled"""
 
 @attr.s
-class PropAccessPointPolicyStatus(Property):
-    """
-    AWS Object Type = "AWS::S3::AccessPoint.PolicyStatus"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-accesspoint-policystatus.html
-
-    Property Document:
-    
-    - ``p_IsPublic``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-accesspoint-policystatus.html#cfn-s3-accesspoint-policystatus-ispublic
-    """
-    AWS_OBJECT_TYPE = "AWS::S3::AccessPoint.PolicyStatus"
-    
-    p_IsPublic: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "IsPublic"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-accesspoint-policystatus.html#cfn-s3-accesspoint-policystatus-ispublic"""
-
-@attr.s
 class PropBucketReplicationTimeValue(Property):
     """
     AWS Object Type = "AWS::S3::Bucket.ReplicationTimeValue"
@@ -1419,26 +1399,6 @@ class PropBucketTransition(Property):
         metadata={AttrMeta.PROPERTY_NAME: "TransitionInDays"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-bucket-lifecycleconfig-rule-transition.html#cfn-s3-bucket-lifecycleconfig-rule-transition-transitionindays"""
-
-@attr.s
-class PropMultiRegionAccessPointPolicyPolicyStatus(Property):
-    """
-    AWS Object Type = "AWS::S3::MultiRegionAccessPointPolicy.PolicyStatus"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-multiregionaccesspointpolicy-policystatus.html
-
-    Property Document:
-    
-    - ``rp_IsPublic``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-multiregionaccesspointpolicy-policystatus.html#cfn-s3-multiregionaccesspointpolicy-policystatus-ispublic
-    """
-    AWS_OBJECT_TYPE = "AWS::S3::MultiRegionAccessPointPolicy.PolicyStatus"
-    
-    rp_IsPublic: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "IsPublic"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-s3-multiregionaccesspointpolicy-policystatus.html#cfn-s3-multiregionaccesspointpolicy-policystatus-ispublic"""
 
 @attr.s
 class PropStorageLensPrefixLevelStorageMetrics(Property):
@@ -3143,16 +3103,15 @@ class AccessPoint(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3-accesspoint.html#cfn-s3-accesspoint-policy"""
-    p_PolicyStatus: typing.Union['PropAccessPointPolicyStatus', dict] = attr.ib(
+    p_PolicyStatus: dict = attr.ib(
         default=None,
-        converter=PropAccessPointPolicyStatus.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropAccessPointPolicyStatus)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={
             AttrMeta.PROPERTY_NAME: "PolicyStatus",
             AttrMeta.DATA: {
                 "UpdateType": 'Mutable',
                 "Required": False,
-                "Type": 'PolicyStatus',
+                "PrimitiveType": 'Json',
             }
         },
     )
@@ -3188,14 +3147,14 @@ class AccessPoint(Resource):
 
     
     @property
+    def rv_Name(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3-accesspoint.html#aws-resource-s3-accesspoint-return-values"""
+        return GetAtt(resource=self, attr_name="Name")
+    
+    @property
     def rv_Alias(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3-accesspoint.html#aws-resource-s3-accesspoint-return-values"""
         return GetAtt(resource=self, attr_name="Alias")
-    
-    @property
-    def rv_Arn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3-accesspoint.html#aws-resource-s3-accesspoint-return-values"""
-        return GetAtt(resource=self, attr_name="Arn")
     
     @property
     def rv_NetworkOrigin(self) -> GetAtt:
@@ -3203,9 +3162,9 @@ class AccessPoint(Resource):
         return GetAtt(resource=self, attr_name="NetworkOrigin")
     
     @property
-    def rv_Name(self) -> GetAtt:
+    def rv_Arn(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3-accesspoint.html#aws-resource-s3-accesspoint-return-values"""
-        return GetAtt(resource=self, attr_name="Name")
+        return GetAtt(resource=self, attr_name="Arn")
     
 
 @attr.s
@@ -3250,14 +3209,4 @@ class MultiRegionAccessPointPolicy(Resource):
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3-multiregionaccesspointpolicy.html#cfn-s3-multiregionaccesspointpolicy-policy"""
 
-    
-    @property
-    def rv_PolicyStatusIsPublic(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3-multiregionaccesspointpolicy.html#aws-resource-s3-multiregionaccesspointpolicy-return-values"""
-        return GetAtt(resource=self, attr_name="PolicyStatus.IsPublic")
-    
-    @property
-    def rv_PolicyStatus(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-s3-multiregionaccesspointpolicy.html#aws-resource-s3-multiregionaccesspointpolicy-return-values"""
-        return GetAtt(resource=self, attr_name="PolicyStatus")
     

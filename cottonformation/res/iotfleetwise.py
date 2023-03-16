@@ -39,21 +39,21 @@ class PropDecoderManifestObdInterface(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Name"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-obdinterface.html#cfn-iotfleetwise-decodermanifest-obdinterface-name"""
-    rp_RequestMessageId: TypeHint.intrinsic_str = attr.ib(
+    rp_RequestMessageId: dict = attr.ib(
         default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        validator=attr.validators.instance_of(dict),
         metadata={AttrMeta.PROPERTY_NAME: "RequestMessageId"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-obdinterface.html#cfn-iotfleetwise-decodermanifest-obdinterface-requestmessageid"""
-    p_DtcRequestIntervalSeconds: TypeHint.intrinsic_str = attr.ib(
+    p_DtcRequestIntervalSeconds: dict = attr.ib(
         default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "DtcRequestIntervalSeconds"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-obdinterface.html#cfn-iotfleetwise-decodermanifest-obdinterface-dtcrequestintervalseconds"""
-    p_HasTransmissionEcu: TypeHint.intrinsic_str = attr.ib(
+    p_HasTransmissionEcu: dict = attr.ib(
         default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "HasTransmissionEcu"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-obdinterface.html#cfn-iotfleetwise-decodermanifest-obdinterface-hastransmissionecu"""
@@ -63,15 +63,15 @@ class PropDecoderManifestObdInterface(Property):
         metadata={AttrMeta.PROPERTY_NAME: "ObdStandard"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-obdinterface.html#cfn-iotfleetwise-decodermanifest-obdinterface-obdstandard"""
-    p_PidRequestIntervalSeconds: TypeHint.intrinsic_str = attr.ib(
+    p_PidRequestIntervalSeconds: dict = attr.ib(
         default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "PidRequestIntervalSeconds"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-obdinterface.html#cfn-iotfleetwise-decodermanifest-obdinterface-pidrequestintervalseconds"""
-    p_UseExtendedIds: TypeHint.intrinsic_str = attr.ib(
+    p_UseExtendedIds: dict = attr.ib(
         default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "UseExtendedIds"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-obdinterface.html#cfn-iotfleetwise-decodermanifest-obdinterface-useextendedids"""
@@ -187,6 +187,41 @@ class PropSignalCatalogAttribute(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-signalcatalog-attribute.html#cfn-iotfleetwise-signalcatalog-attribute-unit"""
 
 @attr.s
+class PropDecoderManifestCanNetworkInterface(Property):
+    """
+    AWS Object Type = "AWS::IoTFleetWise::DecoderManifest.CanNetworkInterface"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-cannetworkinterface.html
+
+    Property Document:
+    
+    - ``rp_CanInterface``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-cannetworkinterface.html#cfn-iotfleetwise-decodermanifest-cannetworkinterface-caninterface
+    - ``rp_InterfaceId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-cannetworkinterface.html#cfn-iotfleetwise-decodermanifest-cannetworkinterface-interfaceid
+    - ``rp_Type``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-cannetworkinterface.html#cfn-iotfleetwise-decodermanifest-cannetworkinterface-type
+    """
+    AWS_OBJECT_TYPE = "AWS::IoTFleetWise::DecoderManifest.CanNetworkInterface"
+    
+    rp_CanInterface: typing.Union['PropDecoderManifestCanInterface', dict] = attr.ib(
+        default=None,
+        converter=PropDecoderManifestCanInterface.from_dict,
+        validator=attr.validators.instance_of(PropDecoderManifestCanInterface),
+        metadata={AttrMeta.PROPERTY_NAME: "CanInterface"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-cannetworkinterface.html#cfn-iotfleetwise-decodermanifest-cannetworkinterface-caninterface"""
+    rp_InterfaceId: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "InterfaceId"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-cannetworkinterface.html#cfn-iotfleetwise-decodermanifest-cannetworkinterface-interfaceid"""
+    rp_Type: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "Type"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-cannetworkinterface.html#cfn-iotfleetwise-decodermanifest-cannetworkinterface-type"""
+
+@attr.s
 class PropCampaignConditionBasedCollectionScheme(Property):
     """
     AWS Object Type = "AWS::IoTFleetWise::Campaign.ConditionBasedCollectionScheme"
@@ -226,6 +261,41 @@ class PropCampaignConditionBasedCollectionScheme(Property):
         metadata={AttrMeta.PROPERTY_NAME: "TriggerMode"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-campaign-conditionbasedcollectionscheme.html#cfn-iotfleetwise-campaign-conditionbasedcollectionscheme-triggermode"""
+
+@attr.s
+class PropDecoderManifestObdNetworkInterface(Property):
+    """
+    AWS Object Type = "AWS::IoTFleetWise::DecoderManifest.ObdNetworkInterface"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-obdnetworkinterface.html
+
+    Property Document:
+    
+    - ``rp_InterfaceId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-obdnetworkinterface.html#cfn-iotfleetwise-decodermanifest-obdnetworkinterface-interfaceid
+    - ``rp_ObdInterface``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-obdnetworkinterface.html#cfn-iotfleetwise-decodermanifest-obdnetworkinterface-obdinterface
+    - ``rp_Type``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-obdnetworkinterface.html#cfn-iotfleetwise-decodermanifest-obdnetworkinterface-type
+    """
+    AWS_OBJECT_TYPE = "AWS::IoTFleetWise::DecoderManifest.ObdNetworkInterface"
+    
+    rp_InterfaceId: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "InterfaceId"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-obdnetworkinterface.html#cfn-iotfleetwise-decodermanifest-obdnetworkinterface-interfaceid"""
+    rp_ObdInterface: typing.Union['PropDecoderManifestObdInterface', dict] = attr.ib(
+        default=None,
+        converter=PropDecoderManifestObdInterface.from_dict,
+        validator=attr.validators.instance_of(PropDecoderManifestObdInterface),
+        metadata={AttrMeta.PROPERTY_NAME: "ObdInterface"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-obdnetworkinterface.html#cfn-iotfleetwise-decodermanifest-obdnetworkinterface-obdinterface"""
+    rp_Type: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "Type"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-obdnetworkinterface.html#cfn-iotfleetwise-decodermanifest-obdnetworkinterface-type"""
 
 @attr.s
 class PropSignalCatalogActuator(Property):
@@ -364,45 +434,45 @@ class PropDecoderManifestCanSignal(Property):
     """
     AWS_OBJECT_TYPE = "AWS::IoTFleetWise::DecoderManifest.CanSignal"
     
-    rp_Factor: TypeHint.intrinsic_str = attr.ib(
+    rp_Factor: dict = attr.ib(
         default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        validator=attr.validators.instance_of(dict),
         metadata={AttrMeta.PROPERTY_NAME: "Factor"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-cansignal.html#cfn-iotfleetwise-decodermanifest-cansignal-factor"""
-    rp_IsBigEndian: TypeHint.intrinsic_str = attr.ib(
+    rp_IsBigEndian: dict = attr.ib(
         default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        validator=attr.validators.instance_of(dict),
         metadata={AttrMeta.PROPERTY_NAME: "IsBigEndian"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-cansignal.html#cfn-iotfleetwise-decodermanifest-cansignal-isbigendian"""
-    rp_IsSigned: TypeHint.intrinsic_str = attr.ib(
+    rp_IsSigned: dict = attr.ib(
         default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        validator=attr.validators.instance_of(dict),
         metadata={AttrMeta.PROPERTY_NAME: "IsSigned"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-cansignal.html#cfn-iotfleetwise-decodermanifest-cansignal-issigned"""
-    rp_Length: TypeHint.intrinsic_str = attr.ib(
+    rp_Length: dict = attr.ib(
         default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        validator=attr.validators.instance_of(dict),
         metadata={AttrMeta.PROPERTY_NAME: "Length"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-cansignal.html#cfn-iotfleetwise-decodermanifest-cansignal-length"""
-    rp_MessageId: TypeHint.intrinsic_str = attr.ib(
+    rp_MessageId: dict = attr.ib(
         default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        validator=attr.validators.instance_of(dict),
         metadata={AttrMeta.PROPERTY_NAME: "MessageId"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-cansignal.html#cfn-iotfleetwise-decodermanifest-cansignal-messageid"""
-    rp_Offset: TypeHint.intrinsic_str = attr.ib(
+    rp_Offset: dict = attr.ib(
         default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        validator=attr.validators.instance_of(dict),
         metadata={AttrMeta.PROPERTY_NAME: "Offset"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-cansignal.html#cfn-iotfleetwise-decodermanifest-cansignal-offset"""
-    rp_StartBit: TypeHint.intrinsic_str = attr.ib(
+    rp_StartBit: dict = attr.ib(
         default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        validator=attr.validators.instance_of(dict),
         metadata={AttrMeta.PROPERTY_NAME: "StartBit"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-cansignal.html#cfn-iotfleetwise-decodermanifest-cansignal-startbit"""
@@ -490,6 +560,48 @@ class PropCampaignCollectionScheme(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-campaign-collectionscheme.html#cfn-iotfleetwise-campaign-collectionscheme-timebasedcollectionscheme"""
 
 @attr.s
+class PropDecoderManifestCanSignalDecoder(Property):
+    """
+    AWS Object Type = "AWS::IoTFleetWise::DecoderManifest.CanSignalDecoder"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-cansignaldecoder.html
+
+    Property Document:
+    
+    - ``rp_CanSignal``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-cansignaldecoder.html#cfn-iotfleetwise-decodermanifest-cansignaldecoder-cansignal
+    - ``rp_FullyQualifiedName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-cansignaldecoder.html#cfn-iotfleetwise-decodermanifest-cansignaldecoder-fullyqualifiedname
+    - ``rp_InterfaceId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-cansignaldecoder.html#cfn-iotfleetwise-decodermanifest-cansignaldecoder-interfaceid
+    - ``rp_Type``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-cansignaldecoder.html#cfn-iotfleetwise-decodermanifest-cansignaldecoder-type
+    """
+    AWS_OBJECT_TYPE = "AWS::IoTFleetWise::DecoderManifest.CanSignalDecoder"
+    
+    rp_CanSignal: typing.Union['PropDecoderManifestCanSignal', dict] = attr.ib(
+        default=None,
+        converter=PropDecoderManifestCanSignal.from_dict,
+        validator=attr.validators.instance_of(PropDecoderManifestCanSignal),
+        metadata={AttrMeta.PROPERTY_NAME: "CanSignal"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-cansignaldecoder.html#cfn-iotfleetwise-decodermanifest-cansignaldecoder-cansignal"""
+    rp_FullyQualifiedName: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "FullyQualifiedName"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-cansignaldecoder.html#cfn-iotfleetwise-decodermanifest-cansignaldecoder-fullyqualifiedname"""
+    rp_InterfaceId: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "InterfaceId"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-cansignaldecoder.html#cfn-iotfleetwise-decodermanifest-cansignaldecoder-interfaceid"""
+    rp_Type: TypeHint.intrinsic_str = attr.ib(
+        default=None,
+        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        metadata={AttrMeta.PROPERTY_NAME: "Type"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-cansignaldecoder.html#cfn-iotfleetwise-decodermanifest-cansignaldecoder-type"""
+
+@attr.s
 class PropDecoderManifestObdSignal(Property):
     """
     AWS Object Type = "AWS::IoTFleetWise::DecoderManifest.ObdSignal"
@@ -510,103 +622,60 @@ class PropDecoderManifestObdSignal(Property):
     """
     AWS_OBJECT_TYPE = "AWS::IoTFleetWise::DecoderManifest.ObdSignal"
     
-    rp_ByteLength: TypeHint.intrinsic_str = attr.ib(
+    rp_ByteLength: dict = attr.ib(
         default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        validator=attr.validators.instance_of(dict),
         metadata={AttrMeta.PROPERTY_NAME: "ByteLength"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-obdsignal.html#cfn-iotfleetwise-decodermanifest-obdsignal-bytelength"""
-    rp_Offset: TypeHint.intrinsic_str = attr.ib(
+    rp_Offset: dict = attr.ib(
         default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        validator=attr.validators.instance_of(dict),
         metadata={AttrMeta.PROPERTY_NAME: "Offset"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-obdsignal.html#cfn-iotfleetwise-decodermanifest-obdsignal-offset"""
-    rp_Pid: TypeHint.intrinsic_str = attr.ib(
+    rp_Pid: dict = attr.ib(
         default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        validator=attr.validators.instance_of(dict),
         metadata={AttrMeta.PROPERTY_NAME: "Pid"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-obdsignal.html#cfn-iotfleetwise-decodermanifest-obdsignal-pid"""
-    rp_PidResponseLength: TypeHint.intrinsic_str = attr.ib(
+    rp_PidResponseLength: dict = attr.ib(
         default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        validator=attr.validators.instance_of(dict),
         metadata={AttrMeta.PROPERTY_NAME: "PidResponseLength"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-obdsignal.html#cfn-iotfleetwise-decodermanifest-obdsignal-pidresponselength"""
-    rp_Scaling: TypeHint.intrinsic_str = attr.ib(
+    rp_Scaling: dict = attr.ib(
         default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        validator=attr.validators.instance_of(dict),
         metadata={AttrMeta.PROPERTY_NAME: "Scaling"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-obdsignal.html#cfn-iotfleetwise-decodermanifest-obdsignal-scaling"""
-    rp_ServiceMode: TypeHint.intrinsic_str = attr.ib(
+    rp_ServiceMode: dict = attr.ib(
         default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        validator=attr.validators.instance_of(dict),
         metadata={AttrMeta.PROPERTY_NAME: "ServiceMode"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-obdsignal.html#cfn-iotfleetwise-decodermanifest-obdsignal-servicemode"""
-    rp_StartByte: TypeHint.intrinsic_str = attr.ib(
+    rp_StartByte: dict = attr.ib(
         default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
+        validator=attr.validators.instance_of(dict),
         metadata={AttrMeta.PROPERTY_NAME: "StartByte"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-obdsignal.html#cfn-iotfleetwise-decodermanifest-obdsignal-startbyte"""
-    p_BitMaskLength: TypeHint.intrinsic_str = attr.ib(
+    p_BitMaskLength: dict = attr.ib(
         default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "BitMaskLength"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-obdsignal.html#cfn-iotfleetwise-decodermanifest-obdsignal-bitmasklength"""
-    p_BitRightShift: TypeHint.intrinsic_str = attr.ib(
+    p_BitRightShift: dict = attr.ib(
         default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "BitRightShift"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-obdsignal.html#cfn-iotfleetwise-decodermanifest-obdsignal-bitrightshift"""
-
-@attr.s
-class PropDecoderManifestNetworkInterfacesItems(Property):
-    """
-    AWS Object Type = "AWS::IoTFleetWise::DecoderManifest.NetworkInterfacesItems"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-networkinterfacesitems.html
-
-    Property Document:
-    
-    - ``rp_InterfaceId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-networkinterfacesitems.html#cfn-iotfleetwise-decodermanifest-networkinterfacesitems-interfaceid
-    - ``rp_Type``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-networkinterfacesitems.html#cfn-iotfleetwise-decodermanifest-networkinterfacesitems-type
-    - ``p_CanInterface``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-networkinterfacesitems.html#cfn-iotfleetwise-decodermanifest-networkinterfacesitems-caninterface
-    - ``p_ObdInterface``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-networkinterfacesitems.html#cfn-iotfleetwise-decodermanifest-networkinterfacesitems-obdinterface
-    """
-    AWS_OBJECT_TYPE = "AWS::IoTFleetWise::DecoderManifest.NetworkInterfacesItems"
-    
-    rp_InterfaceId: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "InterfaceId"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-networkinterfacesitems.html#cfn-iotfleetwise-decodermanifest-networkinterfacesitems-interfaceid"""
-    rp_Type: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Type"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-networkinterfacesitems.html#cfn-iotfleetwise-decodermanifest-networkinterfacesitems-type"""
-    p_CanInterface: typing.Union['PropDecoderManifestCanInterface', dict] = attr.ib(
-        default=None,
-        converter=PropDecoderManifestCanInterface.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropDecoderManifestCanInterface)),
-        metadata={AttrMeta.PROPERTY_NAME: "CanInterface"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-networkinterfacesitems.html#cfn-iotfleetwise-decodermanifest-networkinterfacesitems-caninterface"""
-    p_ObdInterface: typing.Union['PropDecoderManifestObdInterface', dict] = attr.ib(
-        default=None,
-        converter=PropDecoderManifestObdInterface.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropDecoderManifestObdInterface)),
-        metadata={AttrMeta.PROPERTY_NAME: "ObdInterface"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-networkinterfacesitems.html#cfn-iotfleetwise-decodermanifest-networkinterfacesitems-obdinterface"""
 
 @attr.s
 class PropCampaignSignalInformation(Property):
@@ -750,54 +819,46 @@ class PropSignalCatalogNode(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-signalcatalog-node.html#cfn-iotfleetwise-signalcatalog-node-sensor"""
 
 @attr.s
-class PropDecoderManifestSignalDecodersItems(Property):
+class PropDecoderManifestObdSignalDecoder(Property):
     """
-    AWS Object Type = "AWS::IoTFleetWise::DecoderManifest.SignalDecodersItems"
+    AWS Object Type = "AWS::IoTFleetWise::DecoderManifest.ObdSignalDecoder"
 
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-signaldecodersitems.html
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-obdsignaldecoder.html
 
     Property Document:
     
-    - ``rp_FullyQualifiedName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-signaldecodersitems.html#cfn-iotfleetwise-decodermanifest-signaldecodersitems-fullyqualifiedname
-    - ``rp_InterfaceId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-signaldecodersitems.html#cfn-iotfleetwise-decodermanifest-signaldecodersitems-interfaceid
-    - ``rp_Type``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-signaldecodersitems.html#cfn-iotfleetwise-decodermanifest-signaldecodersitems-type
-    - ``p_CanSignal``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-signaldecodersitems.html#cfn-iotfleetwise-decodermanifest-signaldecodersitems-cansignal
-    - ``p_ObdSignal``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-signaldecodersitems.html#cfn-iotfleetwise-decodermanifest-signaldecodersitems-obdsignal
+    - ``rp_FullyQualifiedName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-obdsignaldecoder.html#cfn-iotfleetwise-decodermanifest-obdsignaldecoder-fullyqualifiedname
+    - ``rp_InterfaceId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-obdsignaldecoder.html#cfn-iotfleetwise-decodermanifest-obdsignaldecoder-interfaceid
+    - ``rp_ObdSignal``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-obdsignaldecoder.html#cfn-iotfleetwise-decodermanifest-obdsignaldecoder-obdsignal
+    - ``rp_Type``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-obdsignaldecoder.html#cfn-iotfleetwise-decodermanifest-obdsignaldecoder-type
     """
-    AWS_OBJECT_TYPE = "AWS::IoTFleetWise::DecoderManifest.SignalDecodersItems"
+    AWS_OBJECT_TYPE = "AWS::IoTFleetWise::DecoderManifest.ObdSignalDecoder"
     
     rp_FullyQualifiedName: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
         metadata={AttrMeta.PROPERTY_NAME: "FullyQualifiedName"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-signaldecodersitems.html#cfn-iotfleetwise-decodermanifest-signaldecodersitems-fullyqualifiedname"""
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-obdsignaldecoder.html#cfn-iotfleetwise-decodermanifest-obdsignaldecoder-fullyqualifiedname"""
     rp_InterfaceId: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
         metadata={AttrMeta.PROPERTY_NAME: "InterfaceId"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-signaldecodersitems.html#cfn-iotfleetwise-decodermanifest-signaldecodersitems-interfaceid"""
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-obdsignaldecoder.html#cfn-iotfleetwise-decodermanifest-obdsignaldecoder-interfaceid"""
+    rp_ObdSignal: typing.Union['PropDecoderManifestObdSignal', dict] = attr.ib(
+        default=None,
+        converter=PropDecoderManifestObdSignal.from_dict,
+        validator=attr.validators.instance_of(PropDecoderManifestObdSignal),
+        metadata={AttrMeta.PROPERTY_NAME: "ObdSignal"},
+    )
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-obdsignaldecoder.html#cfn-iotfleetwise-decodermanifest-obdsignaldecoder-obdsignal"""
     rp_Type: TypeHint.intrinsic_str = attr.ib(
         default=None,
         validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
         metadata={AttrMeta.PROPERTY_NAME: "Type"},
     )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-signaldecodersitems.html#cfn-iotfleetwise-decodermanifest-signaldecodersitems-type"""
-    p_CanSignal: typing.Union['PropDecoderManifestCanSignal', dict] = attr.ib(
-        default=None,
-        converter=PropDecoderManifestCanSignal.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropDecoderManifestCanSignal)),
-        metadata={AttrMeta.PROPERTY_NAME: "CanSignal"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-signaldecodersitems.html#cfn-iotfleetwise-decodermanifest-signaldecodersitems-cansignal"""
-    p_ObdSignal: typing.Union['PropDecoderManifestObdSignal', dict] = attr.ib(
-        default=None,
-        converter=PropDecoderManifestObdSignal.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropDecoderManifestObdSignal)),
-        metadata={AttrMeta.PROPERTY_NAME: "ObdSignal"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-signaldecodersitems.html#cfn-iotfleetwise-decodermanifest-signaldecodersitems-obdsignal"""
+    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-iotfleetwise-decodermanifest-obdsignaldecoder.html#cfn-iotfleetwise-decodermanifest-obdsignaldecoder-type"""
 
 
 #--- Resource declaration ---
@@ -907,9 +968,9 @@ class ModelManifest(Resource):
 
     
     @property
-    def rv_LastModificationTime(self) -> GetAtt:
+    def rv_Arn(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotfleetwise-modelmanifest.html#aws-resource-iotfleetwise-modelmanifest-return-values"""
-        return GetAtt(resource=self, attr_name="LastModificationTime")
+        return GetAtt(resource=self, attr_name="Arn")
     
     @property
     def rv_CreationTime(self) -> GetAtt:
@@ -917,9 +978,9 @@ class ModelManifest(Resource):
         return GetAtt(resource=self, attr_name="CreationTime")
     
     @property
-    def rv_Arn(self) -> GetAtt:
+    def rv_LastModificationTime(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotfleetwise-modelmanifest.html#aws-resource-iotfleetwise-modelmanifest-return-values"""
-        return GetAtt(resource=self, attr_name="Arn")
+        return GetAtt(resource=self, attr_name="LastModificationTime")
     
 
 @attr.s
@@ -981,34 +1042,30 @@ class DecoderManifest(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotfleetwise-decodermanifest.html#cfn-iotfleetwise-decodermanifest-description"""
-    p_NetworkInterfaces: typing.List[typing.Union['PropDecoderManifestNetworkInterfacesItems', dict]] = attr.ib(
+    p_NetworkInterfaces: typing.List[dict] = attr.ib(
         default=None,
-        converter=PropDecoderManifestNetworkInterfacesItems.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDecoderManifestNetworkInterfacesItems), iterable_validator=attr.validators.instance_of(list))),
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(dict), iterable_validator=attr.validators.instance_of(list))),
         metadata={
             AttrMeta.PROPERTY_NAME: "NetworkInterfaces",
             AttrMeta.DATA: {
                 "UpdateType": 'Mutable',
                 "Required": False,
                 "Type": 'List',
-                "ItemType": 'NetworkInterfacesItems',
-                "DuplicatesAllowed": True,
+                "PrimitiveItemType": 'Json',
             }
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotfleetwise-decodermanifest.html#cfn-iotfleetwise-decodermanifest-networkinterfaces"""
-    p_SignalDecoders: typing.List[typing.Union['PropDecoderManifestSignalDecodersItems', dict]] = attr.ib(
+    p_SignalDecoders: typing.List[dict] = attr.ib(
         default=None,
-        converter=PropDecoderManifestSignalDecodersItems.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDecoderManifestSignalDecodersItems), iterable_validator=attr.validators.instance_of(list))),
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(dict), iterable_validator=attr.validators.instance_of(list))),
         metadata={
             AttrMeta.PROPERTY_NAME: "SignalDecoders",
             AttrMeta.DATA: {
                 "UpdateType": 'Mutable',
                 "Required": False,
                 "Type": 'List',
-                "ItemType": 'SignalDecodersItems',
-                "DuplicatesAllowed": True,
+                "PrimitiveItemType": 'Json',
             }
         },
     )
@@ -1045,9 +1102,9 @@ class DecoderManifest(Resource):
 
     
     @property
-    def rv_LastModificationTime(self) -> GetAtt:
+    def rv_Arn(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotfleetwise-decodermanifest.html#aws-resource-iotfleetwise-decodermanifest-return-values"""
-        return GetAtt(resource=self, attr_name="LastModificationTime")
+        return GetAtt(resource=self, attr_name="Arn")
     
     @property
     def rv_CreationTime(self) -> GetAtt:
@@ -1055,9 +1112,9 @@ class DecoderManifest(Resource):
         return GetAtt(resource=self, attr_name="CreationTime")
     
     @property
-    def rv_Arn(self) -> GetAtt:
+    def rv_LastModificationTime(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotfleetwise-decodermanifest.html#aws-resource-iotfleetwise-decodermanifest-return-values"""
-        return GetAtt(resource=self, attr_name="Arn")
+        return GetAtt(resource=self, attr_name="LastModificationTime")
     
 
 @attr.s
@@ -1178,7 +1235,6 @@ class Campaign(Resource):
                 "Required": False,
                 "Type": 'List',
                 "PrimitiveItemType": 'String',
-                "DuplicatesAllowed": True,
             }
         },
     )
@@ -1259,7 +1315,6 @@ class Campaign(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'SignalInformation',
-                "DuplicatesAllowed": True,
             }
         },
     )
@@ -1314,14 +1369,14 @@ class Campaign(Resource):
         return GetAtt(resource=self, attr_name="Status")
     
     @property
-    def rv_LastModificationTime(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotfleetwise-campaign.html#aws-resource-iotfleetwise-campaign-return-values"""
-        return GetAtt(resource=self, attr_name="LastModificationTime")
-    
-    @property
     def rv_CreationTime(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotfleetwise-campaign.html#aws-resource-iotfleetwise-campaign-return-values"""
         return GetAtt(resource=self, attr_name="CreationTime")
+    
+    @property
+    def rv_LastModificationTime(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotfleetwise-campaign.html#aws-resource-iotfleetwise-campaign-return-values"""
+        return GetAtt(resource=self, attr_name="LastModificationTime")
     
     @property
     def rv_Arn(self) -> GetAtt:
@@ -1404,9 +1459,9 @@ class Fleet(Resource):
 
     
     @property
-    def rv_LastModificationTime(self) -> GetAtt:
+    def rv_Arn(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotfleetwise-fleet.html#aws-resource-iotfleetwise-fleet-return-values"""
-        return GetAtt(resource=self, attr_name="LastModificationTime")
+        return GetAtt(resource=self, attr_name="Arn")
     
     @property
     def rv_CreationTime(self) -> GetAtt:
@@ -1414,9 +1469,9 @@ class Fleet(Resource):
         return GetAtt(resource=self, attr_name="CreationTime")
     
     @property
-    def rv_Arn(self) -> GetAtt:
+    def rv_LastModificationTime(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotfleetwise-fleet.html#aws-resource-iotfleetwise-fleet-return-values"""
-        return GetAtt(resource=self, attr_name="Arn")
+        return GetAtt(resource=self, attr_name="LastModificationTime")
     
 
 @attr.s
@@ -1430,7 +1485,6 @@ class SignalCatalog(Resource):
     
     - ``p_Description``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotfleetwise-signalcatalog.html#cfn-iotfleetwise-signalcatalog-description
     - ``p_Name``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotfleetwise-signalcatalog.html#cfn-iotfleetwise-signalcatalog-name
-    - ``p_NodeCounts``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotfleetwise-signalcatalog.html#cfn-iotfleetwise-signalcatalog-nodecounts
     - ``p_Nodes``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotfleetwise-signalcatalog.html#cfn-iotfleetwise-signalcatalog-nodes
     - ``p_Tags``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotfleetwise-signalcatalog.html#cfn-iotfleetwise-signalcatalog-tags
     """
@@ -1463,20 +1517,6 @@ class SignalCatalog(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotfleetwise-signalcatalog.html#cfn-iotfleetwise-signalcatalog-name"""
-    p_NodeCounts: typing.Union['PropSignalCatalogNodeCounts', dict] = attr.ib(
-        default=None,
-        converter=PropSignalCatalogNodeCounts.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropSignalCatalogNodeCounts)),
-        metadata={
-            AttrMeta.PROPERTY_NAME: "NodeCounts",
-            AttrMeta.DATA: {
-                "UpdateType": 'Mutable',
-                "Required": False,
-                "Type": 'NodeCounts',
-            }
-        },
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotfleetwise-signalcatalog.html#cfn-iotfleetwise-signalcatalog-nodecounts"""
     p_Nodes: typing.List[typing.Union['PropSignalCatalogNode', dict]] = attr.ib(
         default=None,
         converter=PropSignalCatalogNode.from_list,
@@ -1487,8 +1527,8 @@ class SignalCatalog(Resource):
                 "UpdateType": 'Mutable',
                 "Required": False,
                 "Type": 'List',
-                "ItemType": 'Node',
                 "DuplicatesAllowed": False,
+                "ItemType": 'Node',
             }
         },
     )
@@ -1512,6 +1552,16 @@ class SignalCatalog(Resource):
 
     
     @property
+    def rv_Arn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotfleetwise-signalcatalog.html#aws-resource-iotfleetwise-signalcatalog-return-values"""
+        return GetAtt(resource=self, attr_name="Arn")
+    
+    @property
+    def rv_CreationTime(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotfleetwise-signalcatalog.html#aws-resource-iotfleetwise-signalcatalog-return-values"""
+        return GetAtt(resource=self, attr_name="CreationTime")
+    
+    @property
     def rv_LastModificationTime(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotfleetwise-signalcatalog.html#aws-resource-iotfleetwise-signalcatalog-return-values"""
         return GetAtt(resource=self, attr_name="LastModificationTime")
@@ -1520,6 +1570,11 @@ class SignalCatalog(Resource):
     def rv_NodeCountsTotalNodes(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotfleetwise-signalcatalog.html#aws-resource-iotfleetwise-signalcatalog-return-values"""
         return GetAtt(resource=self, attr_name="NodeCounts.TotalNodes")
+    
+    @property
+    def rv_NodeCountsTotalBranches(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotfleetwise-signalcatalog.html#aws-resource-iotfleetwise-signalcatalog-return-values"""
+        return GetAtt(resource=self, attr_name="NodeCounts.TotalBranches")
     
     @property
     def rv_NodeCountsTotalSensors(self) -> GetAtt:
@@ -1532,24 +1587,9 @@ class SignalCatalog(Resource):
         return GetAtt(resource=self, attr_name="NodeCounts.TotalAttributes")
     
     @property
-    def rv_NodeCountsTotalBranches(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotfleetwise-signalcatalog.html#aws-resource-iotfleetwise-signalcatalog-return-values"""
-        return GetAtt(resource=self, attr_name="NodeCounts.TotalBranches")
-    
-    @property
     def rv_NodeCountsTotalActuators(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotfleetwise-signalcatalog.html#aws-resource-iotfleetwise-signalcatalog-return-values"""
         return GetAtt(resource=self, attr_name="NodeCounts.TotalActuators")
-    
-    @property
-    def rv_CreationTime(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotfleetwise-signalcatalog.html#aws-resource-iotfleetwise-signalcatalog-return-values"""
-        return GetAtt(resource=self, attr_name="CreationTime")
-    
-    @property
-    def rv_Arn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotfleetwise-signalcatalog.html#aws-resource-iotfleetwise-signalcatalog-return-values"""
-        return GetAtt(resource=self, attr_name="Arn")
     
 
 @attr.s
@@ -1656,9 +1696,9 @@ class Vehicle(Resource):
 
     
     @property
-    def rv_LastModificationTime(self) -> GetAtt:
+    def rv_Arn(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotfleetwise-vehicle.html#aws-resource-iotfleetwise-vehicle-return-values"""
-        return GetAtt(resource=self, attr_name="LastModificationTime")
+        return GetAtt(resource=self, attr_name="Arn")
     
     @property
     def rv_CreationTime(self) -> GetAtt:
@@ -1666,7 +1706,7 @@ class Vehicle(Resource):
         return GetAtt(resource=self, attr_name="CreationTime")
     
     @property
-    def rv_Arn(self) -> GetAtt:
+    def rv_LastModificationTime(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-iotfleetwise-vehicle.html#aws-resource-iotfleetwise-vehicle-return-values"""
-        return GetAtt(resource=self, attr_name="Arn")
+        return GetAtt(resource=self, attr_name="LastModificationTime")
     

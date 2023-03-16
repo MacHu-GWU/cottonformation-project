@@ -55,74 +55,6 @@ class PropScheduledQueryScheduleConfiguration(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-scheduledquery-scheduleconfiguration.html#cfn-timestream-scheduledquery-scheduleconfiguration-scheduleexpression"""
 
 @attr.s
-class PropTableS3Configuration(Property):
-    """
-    AWS Object Type = "AWS::Timestream::Table.S3Configuration"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-table-s3configuration.html
-
-    Property Document:
-    
-    - ``rp_BucketName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-table-s3configuration.html#cfn-timestream-table-s3configuration-bucketname
-    - ``rp_EncryptionOption``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-table-s3configuration.html#cfn-timestream-table-s3configuration-encryptionoption
-    - ``p_KmsKeyId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-table-s3configuration.html#cfn-timestream-table-s3configuration-kmskeyid
-    - ``p_ObjectKeyPrefix``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-table-s3configuration.html#cfn-timestream-table-s3configuration-objectkeyprefix
-    """
-    AWS_OBJECT_TYPE = "AWS::Timestream::Table.S3Configuration"
-    
-    rp_BucketName: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "BucketName"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-table-s3configuration.html#cfn-timestream-table-s3configuration-bucketname"""
-    rp_EncryptionOption: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "EncryptionOption"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-table-s3configuration.html#cfn-timestream-table-s3configuration-encryptionoption"""
-    p_KmsKeyId: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "KmsKeyId"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-table-s3configuration.html#cfn-timestream-table-s3configuration-kmskeyid"""
-    p_ObjectKeyPrefix: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "ObjectKeyPrefix"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-table-s3configuration.html#cfn-timestream-table-s3configuration-objectkeyprefix"""
-
-@attr.s
-class PropTableRetentionProperties(Property):
-    """
-    AWS Object Type = "AWS::Timestream::Table.RetentionProperties"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-table-retentionproperties.html
-
-    Property Document:
-    
-    - ``p_MagneticStoreRetentionPeriodInDays``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-table-retentionproperties.html#cfn-timestream-table-retentionproperties-magneticstoreretentionperiodindays
-    - ``p_MemoryStoreRetentionPeriodInHours``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-table-retentionproperties.html#cfn-timestream-table-retentionproperties-memorystoreretentionperiodinhours
-    """
-    AWS_OBJECT_TYPE = "AWS::Timestream::Table.RetentionProperties"
-    
-    p_MagneticStoreRetentionPeriodInDays: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "MagneticStoreRetentionPeriodInDays"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-table-retentionproperties.html#cfn-timestream-table-retentionproperties-magneticstoreretentionperiodindays"""
-    p_MemoryStoreRetentionPeriodInHours: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "MemoryStoreRetentionPeriodInHours"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-table-retentionproperties.html#cfn-timestream-table-retentionproperties-memorystoreretentionperiodinhours"""
-
-@attr.s
 class PropScheduledQueryNotificationConfiguration(Property):
     """
     AWS Object Type = "AWS::Timestream::ScheduledQuery.NotificationConfiguration"
@@ -239,27 +171,6 @@ class PropScheduledQueryMultiMeasureAttributeMapping(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-scheduledquery-multimeasureattributemapping.html#cfn-timestream-scheduledquery-multimeasureattributemapping-targetmultimeasureattributename"""
 
 @attr.s
-class PropTableMagneticStoreRejectedDataLocation(Property):
-    """
-    AWS Object Type = "AWS::Timestream::Table.MagneticStoreRejectedDataLocation"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-table-magneticstorerejecteddatalocation.html
-
-    Property Document:
-    
-    - ``p_S3Configuration``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-table-magneticstorerejecteddatalocation.html#cfn-timestream-table-magneticstorerejecteddatalocation-s3configuration
-    """
-    AWS_OBJECT_TYPE = "AWS::Timestream::Table.MagneticStoreRejectedDataLocation"
-    
-    p_S3Configuration: typing.Union['PropTableS3Configuration', dict] = attr.ib(
-        default=None,
-        converter=PropTableS3Configuration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropTableS3Configuration)),
-        metadata={AttrMeta.PROPERTY_NAME: "S3Configuration"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-table-magneticstorerejecteddatalocation.html#cfn-timestream-table-magneticstorerejecteddatalocation-s3configuration"""
-
-@attr.s
 class PropScheduledQueryErrorReportConfiguration(Property):
     """
     AWS Object Type = "AWS::Timestream::ScheduledQuery.ErrorReportConfiguration"
@@ -279,34 +190,6 @@ class PropScheduledQueryErrorReportConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "S3Configuration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-scheduledquery-errorreportconfiguration.html#cfn-timestream-scheduledquery-errorreportconfiguration-s3configuration"""
-
-@attr.s
-class PropTableMagneticStoreWriteProperties(Property):
-    """
-    AWS Object Type = "AWS::Timestream::Table.MagneticStoreWriteProperties"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-table-magneticstorewriteproperties.html
-
-    Property Document:
-    
-    - ``rp_EnableMagneticStoreWrites``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-table-magneticstorewriteproperties.html#cfn-timestream-table-magneticstorewriteproperties-enablemagneticstorewrites
-    - ``p_MagneticStoreRejectedDataLocation``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-table-magneticstorewriteproperties.html#cfn-timestream-table-magneticstorewriteproperties-magneticstorerejecteddatalocation
-    """
-    AWS_OBJECT_TYPE = "AWS::Timestream::Table.MagneticStoreWriteProperties"
-    
-    rp_EnableMagneticStoreWrites: bool = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(bool),
-        metadata={AttrMeta.PROPERTY_NAME: "EnableMagneticStoreWrites"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-table-magneticstorewriteproperties.html#cfn-timestream-table-magneticstorewriteproperties-enablemagneticstorewrites"""
-    p_MagneticStoreRejectedDataLocation: typing.Union['PropTableMagneticStoreRejectedDataLocation', dict] = attr.ib(
-        default=None,
-        converter=PropTableMagneticStoreRejectedDataLocation.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropTableMagneticStoreRejectedDataLocation)),
-        metadata={AttrMeta.PROPERTY_NAME: "MagneticStoreRejectedDataLocation"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-timestream-table-magneticstorewriteproperties.html#cfn-timestream-table-magneticstorewriteproperties-magneticstorerejecteddatalocation"""
 
 @attr.s
 class PropScheduledQueryMixedMeasureMapping(Property):
@@ -629,12 +512,26 @@ class ScheduledQuery(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Tag',
-                "DuplicatesAllowed": True,
             }
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-timestream-scheduledquery.html#cfn-timestream-scheduledquery-tags"""
 
+    
+    @property
+    def rv_Arn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-timestream-scheduledquery.html#aws-resource-timestream-scheduledquery-return-values"""
+        return GetAtt(resource=self, attr_name="Arn")
+    
+    @property
+    def rv_SQName(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-timestream-scheduledquery.html#aws-resource-timestream-scheduledquery-return-values"""
+        return GetAtt(resource=self, attr_name="SQName")
+    
+    @property
+    def rv_SQQueryString(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-timestream-scheduledquery.html#aws-resource-timestream-scheduledquery-return-values"""
+        return GetAtt(resource=self, attr_name="SQQueryString")
     
     @property
     def rv_SQScheduleConfiguration(self) -> GetAtt:
@@ -647,6 +544,16 @@ class ScheduledQuery(Resource):
         return GetAtt(resource=self, attr_name="SQNotificationConfiguration")
     
     @property
+    def rv_SQScheduledQueryExecutionRoleArn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-timestream-scheduledquery.html#aws-resource-timestream-scheduledquery-return-values"""
+        return GetAtt(resource=self, attr_name="SQScheduledQueryExecutionRoleArn")
+    
+    @property
+    def rv_SQTargetConfiguration(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-timestream-scheduledquery.html#aws-resource-timestream-scheduledquery-return-values"""
+        return GetAtt(resource=self, attr_name="SQTargetConfiguration")
+    
+    @property
     def rv_SQErrorReportConfiguration(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-timestream-scheduledquery.html#aws-resource-timestream-scheduledquery-return-values"""
         return GetAtt(resource=self, attr_name="SQErrorReportConfiguration")
@@ -655,31 +562,6 @@ class ScheduledQuery(Resource):
     def rv_SQKmsKeyId(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-timestream-scheduledquery.html#aws-resource-timestream-scheduledquery-return-values"""
         return GetAtt(resource=self, attr_name="SQKmsKeyId")
-    
-    @property
-    def rv_SQQueryString(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-timestream-scheduledquery.html#aws-resource-timestream-scheduledquery-return-values"""
-        return GetAtt(resource=self, attr_name="SQQueryString")
-    
-    @property
-    def rv_SQTargetConfiguration(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-timestream-scheduledquery.html#aws-resource-timestream-scheduledquery-return-values"""
-        return GetAtt(resource=self, attr_name="SQTargetConfiguration")
-    
-    @property
-    def rv_SQName(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-timestream-scheduledquery.html#aws-resource-timestream-scheduledquery-return-values"""
-        return GetAtt(resource=self, attr_name="SQName")
-    
-    @property
-    def rv_Arn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-timestream-scheduledquery.html#aws-resource-timestream-scheduledquery-return-values"""
-        return GetAtt(resource=self, attr_name="Arn")
-    
-    @property
-    def rv_SQScheduledQueryExecutionRoleArn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-timestream-scheduledquery.html#aws-resource-timestream-scheduledquery-return-values"""
-        return GetAtt(resource=self, attr_name="SQScheduledQueryExecutionRoleArn")
     
 
 @attr.s
@@ -735,7 +617,6 @@ class Database(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Tag',
-                "DuplicatesAllowed": True,
             }
         },
     )
@@ -779,30 +660,28 @@ class Table(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-timestream-table.html#cfn-timestream-table-databasename"""
-    p_MagneticStoreWriteProperties: typing.Union['PropTableMagneticStoreWriteProperties', dict] = attr.ib(
+    p_MagneticStoreWriteProperties: dict = attr.ib(
         default=None,
-        converter=PropTableMagneticStoreWriteProperties.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropTableMagneticStoreWriteProperties)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={
             AttrMeta.PROPERTY_NAME: "MagneticStoreWriteProperties",
             AttrMeta.DATA: {
                 "UpdateType": 'Mutable',
                 "Required": False,
-                "Type": 'MagneticStoreWriteProperties',
+                "PrimitiveType": 'Json',
             }
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-timestream-table.html#cfn-timestream-table-magneticstorewriteproperties"""
-    p_RetentionProperties: typing.Union['PropTableRetentionProperties', dict] = attr.ib(
+    p_RetentionProperties: dict = attr.ib(
         default=None,
-        converter=PropTableRetentionProperties.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropTableRetentionProperties)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={
             AttrMeta.PROPERTY_NAME: "RetentionProperties",
             AttrMeta.DATA: {
                 "UpdateType": 'Mutable',
                 "Required": False,
-                "Type": 'RetentionProperties',
+                "PrimitiveType": 'Json',
             }
         },
     )
@@ -831,7 +710,6 @@ class Table(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Tag',
-                "DuplicatesAllowed": True,
             }
         },
     )

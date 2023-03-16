@@ -815,7 +815,6 @@ class AnomalyDetector(Resource):
                 "Required": True,
                 "Type": 'List',
                 "ItemType": 'MetricSet',
-                "DuplicatesAllowed": True,
             }
         },
     )

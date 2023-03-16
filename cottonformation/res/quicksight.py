@@ -379,33 +379,6 @@ class PropDashboardDataSetReference(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-datasetreference.html#cfn-quicksight-dashboard-datasetreference-datasetplaceholder"""
 
 @attr.s
-class PropTemplateTemplateError(Property):
-    """
-    AWS Object Type = "AWS::QuickSight::Template.TemplateError"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-templateerror.html
-
-    Property Document:
-    
-    - ``p_Message``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-templateerror.html#cfn-quicksight-template-templateerror-message
-    - ``p_Type``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-templateerror.html#cfn-quicksight-template-templateerror-type
-    """
-    AWS_OBJECT_TYPE = "AWS::QuickSight::Template.TemplateError"
-    
-    p_Message: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Message"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-templateerror.html#cfn-quicksight-template-templateerror-message"""
-    p_Type: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Type"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-templateerror.html#cfn-quicksight-template-templateerror-type"""
-
-@attr.s
 class PropDashboardStringParameter(Property):
     """
     AWS Object Type = "AWS::QuickSight::Dashboard.StringParameter"
@@ -525,33 +498,6 @@ class PropThemeMarginStyle(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Show"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-marginstyle.html#cfn-quicksight-theme-marginstyle-show"""
-
-@attr.s
-class PropDashboardDashboardError(Property):
-    """
-    AWS Object Type = "AWS::QuickSight::Dashboard.DashboardError"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-dashboarderror.html
-
-    Property Document:
-    
-    - ``p_Message``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-dashboarderror.html#cfn-quicksight-dashboard-dashboarderror-message
-    - ``p_Type``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-dashboarderror.html#cfn-quicksight-dashboard-dashboarderror-type
-    """
-    AWS_OBJECT_TYPE = "AWS::QuickSight::Dashboard.DashboardError"
-    
-    p_Message: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Message"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-dashboarderror.html#cfn-quicksight-dashboard-dashboarderror-message"""
-    p_Type: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Type"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-dashboarderror.html#cfn-quicksight-dashboard-dashboarderror-type"""
 
 @attr.s
 class PropDataSourceAthenaParameters(Property):
@@ -1008,33 +954,6 @@ class PropDataSetUploadSettings(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-uploadsettings.html#cfn-quicksight-dataset-uploadsettings-textqualifier"""
 
 @attr.s
-class PropThemeThemeError(Property):
-    """
-    AWS Object Type = "AWS::QuickSight::Theme.ThemeError"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-themeerror.html
-
-    Property Document:
-    
-    - ``p_Message``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-themeerror.html#cfn-quicksight-theme-themeerror-message
-    - ``p_Type``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-themeerror.html#cfn-quicksight-theme-themeerror-type
-    """
-    AWS_OBJECT_TYPE = "AWS::QuickSight::Theme.ThemeError"
-    
-    p_Message: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Message"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-themeerror.html#cfn-quicksight-theme-themeerror-message"""
-    p_Type: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Type"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-themeerror.html#cfn-quicksight-theme-themeerror-type"""
-
-@attr.s
 class PropAnalysisDecimalParameter(Property):
     """
     AWS Object Type = "AWS::QuickSight::Analysis.DecimalParameter"
@@ -1144,33 +1063,6 @@ class PropDataSourceSnowflakeParameters(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-snowflakeparameters.html#cfn-quicksight-datasource-snowflakeparameters-warehouse"""
 
 @attr.s
-class PropTemplateSheet(Property):
-    """
-    AWS Object Type = "AWS::QuickSight::Template.Sheet"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-sheet.html
-
-    Property Document:
-    
-    - ``p_Name``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-sheet.html#cfn-quicksight-template-sheet-name
-    - ``p_SheetId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-sheet.html#cfn-quicksight-template-sheet-sheetid
-    """
-    AWS_OBJECT_TYPE = "AWS::QuickSight::Template.Sheet"
-    
-    p_Name: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Name"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-sheet.html#cfn-quicksight-template-sheet-name"""
-    p_SheetId: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "SheetId"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-sheet.html#cfn-quicksight-template-sheet-sheetid"""
-
-@attr.s
 class PropDataSourceSslProperties(Property):
     """
     AWS Object Type = "AWS::QuickSight::DataSource.SslProperties"
@@ -1257,60 +1149,6 @@ class PropDataSourceAmazonOpenSearchParameters(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Domain"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-amazonopensearchparameters.html#cfn-quicksight-datasource-amazonopensearchparameters-domain"""
-
-@attr.s
-class PropDataSourceDatabricksParameters(Property):
-    """
-    AWS Object Type = "AWS::QuickSight::DataSource.DatabricksParameters"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-databricksparameters.html
-
-    Property Document:
-    
-    - ``rp_Host``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-databricksparameters.html#cfn-quicksight-datasource-databricksparameters-host
-    - ``rp_Port``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-databricksparameters.html#cfn-quicksight-datasource-databricksparameters-port
-    - ``rp_SqlEndpointPath``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-databricksparameters.html#cfn-quicksight-datasource-databricksparameters-sqlendpointpath
-    """
-    AWS_OBJECT_TYPE = "AWS::QuickSight::DataSource.DatabricksParameters"
-    
-    rp_Host: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Host"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-databricksparameters.html#cfn-quicksight-datasource-databricksparameters-host"""
-    rp_Port: float = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(float),
-        metadata={AttrMeta.PROPERTY_NAME: "Port"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-databricksparameters.html#cfn-quicksight-datasource-databricksparameters-port"""
-    rp_SqlEndpointPath: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "SqlEndpointPath"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-databricksparameters.html#cfn-quicksight-datasource-databricksparameters-sqlendpointpath"""
-
-@attr.s
-class PropTemplateColumnGroupColumnSchema(Property):
-    """
-    AWS Object Type = "AWS::QuickSight::Template.ColumnGroupColumnSchema"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-columngroupcolumnschema.html
-
-    Property Document:
-    
-    - ``p_Name``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-columngroupcolumnschema.html#cfn-quicksight-template-columngroupcolumnschema-name
-    """
-    AWS_OBJECT_TYPE = "AWS::QuickSight::Template.ColumnGroupColumnSchema"
-    
-    p_Name: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Name"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-columngroupcolumnschema.html#cfn-quicksight-template-columngroupcolumnschema-name"""
 
 @attr.s
 class PropDashboardDashboardSourceTemplate(Property):
@@ -1644,40 +1482,6 @@ class PropThemeResourcePermission(Property):
         metadata={AttrMeta.PROPERTY_NAME: "Principal"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-resourcepermission.html#cfn-quicksight-theme-resourcepermission-principal"""
-
-@attr.s
-class PropTemplateColumnSchema(Property):
-    """
-    AWS Object Type = "AWS::QuickSight::Template.ColumnSchema"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-columnschema.html
-
-    Property Document:
-    
-    - ``p_DataType``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-columnschema.html#cfn-quicksight-template-columnschema-datatype
-    - ``p_GeographicRole``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-columnschema.html#cfn-quicksight-template-columnschema-geographicrole
-    - ``p_Name``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-columnschema.html#cfn-quicksight-template-columnschema-name
-    """
-    AWS_OBJECT_TYPE = "AWS::QuickSight::Template.ColumnSchema"
-    
-    p_DataType: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "DataType"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-columnschema.html#cfn-quicksight-template-columnschema-datatype"""
-    p_GeographicRole: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "GeographicRole"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-columnschema.html#cfn-quicksight-template-columnschema-geographicrole"""
-    p_Name: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Name"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-columnschema.html#cfn-quicksight-template-columnschema-name"""
 
 @attr.s
 class PropDashboardExportToCSVOption(Property):
@@ -2255,33 +2059,6 @@ class PropDataSetColumnTag(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-columntag.html#cfn-quicksight-dataset-columntag-columngeographicrole"""
 
 @attr.s
-class PropDashboardSheet(Property):
-    """
-    AWS Object Type = "AWS::QuickSight::Dashboard.Sheet"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-sheet.html
-
-    Property Document:
-    
-    - ``p_Name``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-sheet.html#cfn-quicksight-dashboard-sheet-name
-    - ``p_SheetId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-sheet.html#cfn-quicksight-dashboard-sheet-sheetid
-    """
-    AWS_OBJECT_TYPE = "AWS::QuickSight::Dashboard.Sheet"
-    
-    p_Name: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Name"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-sheet.html#cfn-quicksight-dashboard-sheet-name"""
-    p_SheetId: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "SheetId"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-sheet.html#cfn-quicksight-dashboard-sheet-sheetid"""
-
-@attr.s
 class PropDataSourceRdsParameters(Property):
     """
     AWS Object Type = "AWS::QuickSight::DataSource.RdsParameters"
@@ -2529,91 +2306,6 @@ class PropDataSetRelationalTable(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-relationaltable.html#cfn-quicksight-dataset-relationaltable-schema"""
 
 @attr.s
-class PropDashboardDashboardVersion(Property):
-    """
-    AWS Object Type = "AWS::QuickSight::Dashboard.DashboardVersion"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-dashboardversion.html
-
-    Property Document:
-    
-    - ``p_Arn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-dashboardversion.html#cfn-quicksight-dashboard-dashboardversion-arn
-    - ``p_CreatedTime``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-dashboardversion.html#cfn-quicksight-dashboard-dashboardversion-createdtime
-    - ``p_DataSetArns``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-dashboardversion.html#cfn-quicksight-dashboard-dashboardversion-datasetarns
-    - ``p_Description``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-dashboardversion.html#cfn-quicksight-dashboard-dashboardversion-description
-    - ``p_Errors``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-dashboardversion.html#cfn-quicksight-dashboard-dashboardversion-errors
-    - ``p_Sheets``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-dashboardversion.html#cfn-quicksight-dashboard-dashboardversion-sheets
-    - ``p_SourceEntityArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-dashboardversion.html#cfn-quicksight-dashboard-dashboardversion-sourceentityarn
-    - ``p_Status``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-dashboardversion.html#cfn-quicksight-dashboard-dashboardversion-status
-    - ``p_ThemeArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-dashboardversion.html#cfn-quicksight-dashboard-dashboardversion-themearn
-    - ``p_VersionNumber``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-dashboardversion.html#cfn-quicksight-dashboard-dashboardversion-versionnumber
-    """
-    AWS_OBJECT_TYPE = "AWS::QuickSight::Dashboard.DashboardVersion"
-    
-    p_Arn: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Arn"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-dashboardversion.html#cfn-quicksight-dashboard-dashboardversion-arn"""
-    p_CreatedTime: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "CreatedTime"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-dashboardversion.html#cfn-quicksight-dashboard-dashboardversion-createdtime"""
-    p_DataSetArns: typing.List[TypeHint.intrinsic_str] = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "DataSetArns"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-dashboardversion.html#cfn-quicksight-dashboard-dashboardversion-datasetarns"""
-    p_Description: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Description"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-dashboardversion.html#cfn-quicksight-dashboard-dashboardversion-description"""
-    p_Errors: typing.List[typing.Union['PropDashboardDashboardError', dict]] = attr.ib(
-        default=None,
-        converter=PropDashboardDashboardError.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDashboardDashboardError), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Errors"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-dashboardversion.html#cfn-quicksight-dashboard-dashboardversion-errors"""
-    p_Sheets: typing.List[typing.Union['PropDashboardSheet', dict]] = attr.ib(
-        default=None,
-        converter=PropDashboardSheet.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropDashboardSheet), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Sheets"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-dashboardversion.html#cfn-quicksight-dashboard-dashboardversion-sheets"""
-    p_SourceEntityArn: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "SourceEntityArn"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-dashboardversion.html#cfn-quicksight-dashboard-dashboardversion-sourceentityarn"""
-    p_Status: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Status"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-dashboardversion.html#cfn-quicksight-dashboard-dashboardversion-status"""
-    p_ThemeArn: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "ThemeArn"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-dashboardversion.html#cfn-quicksight-dashboard-dashboardversion-themearn"""
-    p_VersionNumber: float = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(float)),
-        metadata={AttrMeta.PROPERTY_NAME: "VersionNumber"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-dashboardversion.html#cfn-quicksight-dashboard-dashboardversion-versionnumber"""
-
-@attr.s
 class PropDataSetCustomSql(Property):
     """
     AWS Object Type = "AWS::QuickSight::DataSet.CustomSql"
@@ -2831,7 +2523,6 @@ class PropDataSourceDataSourceParameters(Property):
     - ``p_AthenaParameters``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-datasourceparameters.html#cfn-quicksight-datasource-datasourceparameters-athenaparameters
     - ``p_AuroraParameters``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-datasourceparameters.html#cfn-quicksight-datasource-datasourceparameters-auroraparameters
     - ``p_AuroraPostgreSqlParameters``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-datasourceparameters.html#cfn-quicksight-datasource-datasourceparameters-aurorapostgresqlparameters
-    - ``p_DatabricksParameters``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-datasourceparameters.html#cfn-quicksight-datasource-datasourceparameters-databricksparameters
     - ``p_MariaDbParameters``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-datasourceparameters.html#cfn-quicksight-datasource-datasourceparameters-mariadbparameters
     - ``p_MySqlParameters``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-datasourceparameters.html#cfn-quicksight-datasource-datasourceparameters-mysqlparameters
     - ``p_OracleParameters``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-datasourceparameters.html#cfn-quicksight-datasource-datasourceparameters-oracleparameters
@@ -2882,13 +2573,6 @@ class PropDataSourceDataSourceParameters(Property):
         metadata={AttrMeta.PROPERTY_NAME: "AuroraPostgreSqlParameters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-datasourceparameters.html#cfn-quicksight-datasource-datasourceparameters-aurorapostgresqlparameters"""
-    p_DatabricksParameters: typing.Union['PropDataSourceDatabricksParameters', dict] = attr.ib(
-        default=None,
-        converter=PropDataSourceDatabricksParameters.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropDataSourceDatabricksParameters)),
-        metadata={AttrMeta.PROPERTY_NAME: "DatabricksParameters"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-datasourceparameters.html#cfn-quicksight-datasource-datasourceparameters-databricksparameters"""
     p_MariaDbParameters: typing.Union['PropDataSourceMariaDbParameters', dict] = attr.ib(
         default=None,
         converter=PropDataSourceMariaDbParameters.from_dict,
@@ -2975,34 +2659,6 @@ class PropDataSourceDataSourceParameters(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-datasourceparameters.html#cfn-quicksight-datasource-datasourceparameters-teradataparameters"""
 
 @attr.s
-class PropTemplateColumnGroupSchema(Property):
-    """
-    AWS Object Type = "AWS::QuickSight::Template.ColumnGroupSchema"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-columngroupschema.html
-
-    Property Document:
-    
-    - ``p_ColumnGroupColumnSchemaList``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-columngroupschema.html#cfn-quicksight-template-columngroupschema-columngroupcolumnschemalist
-    - ``p_Name``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-columngroupschema.html#cfn-quicksight-template-columngroupschema-name
-    """
-    AWS_OBJECT_TYPE = "AWS::QuickSight::Template.ColumnGroupSchema"
-    
-    p_ColumnGroupColumnSchemaList: typing.List[typing.Union['PropTemplateColumnGroupColumnSchema', dict]] = attr.ib(
-        default=None,
-        converter=PropTemplateColumnGroupColumnSchema.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropTemplateColumnGroupColumnSchema), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "ColumnGroupColumnSchemaList"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-columngroupschema.html#cfn-quicksight-template-columngroupschema-columngroupcolumnschemalist"""
-    p_Name: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Name"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-columngroupschema.html#cfn-quicksight-template-columngroupschema-name"""
-
-@attr.s
 class PropDashboardDashboardSourceEntity(Property):
     """
     AWS Object Type = "AWS::QuickSight::Dashboard.DashboardSourceEntity"
@@ -3066,27 +2722,6 @@ class PropDashboardParameters(Property):
         metadata={AttrMeta.PROPERTY_NAME: "StringParameters"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dashboard-parameters.html#cfn-quicksight-dashboard-parameters-stringparameters"""
-
-@attr.s
-class PropTemplateDataSetSchema(Property):
-    """
-    AWS Object Type = "AWS::QuickSight::Template.DataSetSchema"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-datasetschema.html
-
-    Property Document:
-    
-    - ``p_ColumnSchemaList``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-datasetschema.html#cfn-quicksight-template-datasetschema-columnschemalist
-    """
-    AWS_OBJECT_TYPE = "AWS::QuickSight::Template.DataSetSchema"
-    
-    p_ColumnSchemaList: typing.List[typing.Union['PropTemplateColumnSchema', dict]] = attr.ib(
-        default=None,
-        converter=PropTemplateColumnSchema.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropTemplateColumnSchema), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "ColumnSchemaList"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-datasetschema.html#cfn-quicksight-template-datasetschema-columnschemalist"""
 
 @attr.s
 class PropDashboardDashboardPublishOptions(Property):
@@ -3266,76 +2901,6 @@ class PropDataSourceCredentialPair(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-credentialpair.html#cfn-quicksight-datasource-credentialpair-alternatedatasourceparameters"""
 
 @attr.s
-class PropThemeThemeVersion(Property):
-    """
-    AWS Object Type = "AWS::QuickSight::Theme.ThemeVersion"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-themeversion.html
-
-    Property Document:
-    
-    - ``p_Arn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-themeversion.html#cfn-quicksight-theme-themeversion-arn
-    - ``p_BaseThemeId``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-themeversion.html#cfn-quicksight-theme-themeversion-basethemeid
-    - ``p_Configuration``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-themeversion.html#cfn-quicksight-theme-themeversion-configuration
-    - ``p_CreatedTime``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-themeversion.html#cfn-quicksight-theme-themeversion-createdtime
-    - ``p_Description``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-themeversion.html#cfn-quicksight-theme-themeversion-description
-    - ``p_Errors``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-themeversion.html#cfn-quicksight-theme-themeversion-errors
-    - ``p_Status``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-themeversion.html#cfn-quicksight-theme-themeversion-status
-    - ``p_VersionNumber``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-themeversion.html#cfn-quicksight-theme-themeversion-versionnumber
-    """
-    AWS_OBJECT_TYPE = "AWS::QuickSight::Theme.ThemeVersion"
-    
-    p_Arn: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Arn"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-themeversion.html#cfn-quicksight-theme-themeversion-arn"""
-    p_BaseThemeId: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "BaseThemeId"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-themeversion.html#cfn-quicksight-theme-themeversion-basethemeid"""
-    p_Configuration: typing.Optional[dict] = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(dict)),
-        metadata={AttrMeta.PROPERTY_NAME: "Configuration"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-themeversion.html#cfn-quicksight-theme-themeversion-configuration"""
-    p_CreatedTime: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "CreatedTime"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-themeversion.html#cfn-quicksight-theme-themeversion-createdtime"""
-    p_Description: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Description"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-themeversion.html#cfn-quicksight-theme-themeversion-description"""
-    p_Errors: typing.List[typing.Union['PropThemeThemeError', dict]] = attr.ib(
-        default=None,
-        converter=PropThemeThemeError.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropThemeThemeError), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Errors"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-themeversion.html#cfn-quicksight-theme-themeversion-errors"""
-    p_Status: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Status"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-themeversion.html#cfn-quicksight-theme-themeversion-status"""
-    p_VersionNumber: float = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(float)),
-        metadata={AttrMeta.PROPERTY_NAME: "VersionNumber"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-theme-themeversion.html#cfn-quicksight-theme-themeversion-versionnumber"""
-
-@attr.s
 class PropDataSetPhysicalTable(Property):
     """
     AWS Object Type = "AWS::QuickSight::DataSet.PhysicalTable"
@@ -3408,42 +2973,6 @@ class PropDataSourceDataSourceCredentials(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-datasource-datasourcecredentials.html#cfn-quicksight-datasource-datasourcecredentials-secretarn"""
 
 @attr.s
-class PropTemplateDataSetConfiguration(Property):
-    """
-    AWS Object Type = "AWS::QuickSight::Template.DataSetConfiguration"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-datasetconfiguration.html
-
-    Property Document:
-    
-    - ``p_ColumnGroupSchemaList``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-datasetconfiguration.html#cfn-quicksight-template-datasetconfiguration-columngroupschemalist
-    - ``p_DataSetSchema``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-datasetconfiguration.html#cfn-quicksight-template-datasetconfiguration-datasetschema
-    - ``p_Placeholder``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-datasetconfiguration.html#cfn-quicksight-template-datasetconfiguration-placeholder
-    """
-    AWS_OBJECT_TYPE = "AWS::QuickSight::Template.DataSetConfiguration"
-    
-    p_ColumnGroupSchemaList: typing.List[typing.Union['PropTemplateColumnGroupSchema', dict]] = attr.ib(
-        default=None,
-        converter=PropTemplateColumnGroupSchema.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropTemplateColumnGroupSchema), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "ColumnGroupSchemaList"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-datasetconfiguration.html#cfn-quicksight-template-datasetconfiguration-columngroupschemalist"""
-    p_DataSetSchema: typing.Union['PropTemplateDataSetSchema', dict] = attr.ib(
-        default=None,
-        converter=PropTemplateDataSetSchema.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropTemplateDataSetSchema)),
-        metadata={AttrMeta.PROPERTY_NAME: "DataSetSchema"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-datasetconfiguration.html#cfn-quicksight-template-datasetconfiguration-datasetschema"""
-    p_Placeholder: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Placeholder"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-datasetconfiguration.html#cfn-quicksight-template-datasetconfiguration-placeholder"""
-
-@attr.s
 class PropDataSetLogicalTable(Property):
     """
     AWS Object Type = "AWS::QuickSight::DataSet.LogicalTable"
@@ -3477,85 +3006,6 @@ class PropDataSetLogicalTable(Property):
         metadata={AttrMeta.PROPERTY_NAME: "DataTransforms"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-dataset-logicaltable.html#cfn-quicksight-dataset-logicaltable-datatransforms"""
-
-@attr.s
-class PropTemplateTemplateVersion(Property):
-    """
-    AWS Object Type = "AWS::QuickSight::Template.TemplateVersion"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-templateversion.html
-
-    Property Document:
-    
-    - ``p_CreatedTime``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-templateversion.html#cfn-quicksight-template-templateversion-createdtime
-    - ``p_DataSetConfigurations``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-templateversion.html#cfn-quicksight-template-templateversion-datasetconfigurations
-    - ``p_Description``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-templateversion.html#cfn-quicksight-template-templateversion-description
-    - ``p_Errors``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-templateversion.html#cfn-quicksight-template-templateversion-errors
-    - ``p_Sheets``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-templateversion.html#cfn-quicksight-template-templateversion-sheets
-    - ``p_SourceEntityArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-templateversion.html#cfn-quicksight-template-templateversion-sourceentityarn
-    - ``p_Status``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-templateversion.html#cfn-quicksight-template-templateversion-status
-    - ``p_ThemeArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-templateversion.html#cfn-quicksight-template-templateversion-themearn
-    - ``p_VersionNumber``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-templateversion.html#cfn-quicksight-template-templateversion-versionnumber
-    """
-    AWS_OBJECT_TYPE = "AWS::QuickSight::Template.TemplateVersion"
-    
-    p_CreatedTime: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "CreatedTime"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-templateversion.html#cfn-quicksight-template-templateversion-createdtime"""
-    p_DataSetConfigurations: typing.List[typing.Union['PropTemplateDataSetConfiguration', dict]] = attr.ib(
-        default=None,
-        converter=PropTemplateDataSetConfiguration.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropTemplateDataSetConfiguration), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "DataSetConfigurations"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-templateversion.html#cfn-quicksight-template-templateversion-datasetconfigurations"""
-    p_Description: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Description"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-templateversion.html#cfn-quicksight-template-templateversion-description"""
-    p_Errors: typing.List[typing.Union['PropTemplateTemplateError', dict]] = attr.ib(
-        default=None,
-        converter=PropTemplateTemplateError.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropTemplateTemplateError), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Errors"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-templateversion.html#cfn-quicksight-template-templateversion-errors"""
-    p_Sheets: typing.List[typing.Union['PropTemplateSheet', dict]] = attr.ib(
-        default=None,
-        converter=PropTemplateSheet.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropTemplateSheet), iterable_validator=attr.validators.instance_of(list))),
-        metadata={AttrMeta.PROPERTY_NAME: "Sheets"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-templateversion.html#cfn-quicksight-template-templateversion-sheets"""
-    p_SourceEntityArn: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "SourceEntityArn"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-templateversion.html#cfn-quicksight-template-templateversion-sourceentityarn"""
-    p_Status: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Status"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-templateversion.html#cfn-quicksight-template-templateversion-status"""
-    p_ThemeArn: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "ThemeArn"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-templateversion.html#cfn-quicksight-template-templateversion-themearn"""
-    p_VersionNumber: float = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(float)),
-        metadata={AttrMeta.PROPERTY_NAME: "VersionNumber"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-quicksight-template-templateversion.html#cfn-quicksight-template-templateversion-versionnumber"""
 
 
 #--- Resource declaration ---
@@ -3675,7 +3125,6 @@ class Dashboard(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'ResourcePermission',
-                "DuplicatesAllowed": True,
             }
         },
     )
@@ -3717,7 +3166,6 @@ class Dashboard(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Tag',
-                "DuplicatesAllowed": True,
             }
         },
     )
@@ -3725,9 +3173,9 @@ class Dashboard(Resource):
 
     
     @property
-    def rv_VersionStatus(self) -> GetAtt:
+    def rv_Arn(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-dashboard.html#aws-resource-quicksight-dashboard-return-values"""
-        return GetAtt(resource=self, attr_name="Version.Status")
+        return GetAtt(resource=self, attr_name="Arn")
     
     @property
     def rv_CreatedTime(self) -> GetAtt:
@@ -3735,69 +3183,14 @@ class Dashboard(Resource):
         return GetAtt(resource=self, attr_name="CreatedTime")
     
     @property
-    def rv_LastUpdatedTime(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-dashboard.html#aws-resource-quicksight-dashboard-return-values"""
-        return GetAtt(resource=self, attr_name="LastUpdatedTime")
-    
-    @property
-    def rv_VersionVersionNumber(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-dashboard.html#aws-resource-quicksight-dashboard-return-values"""
-        return GetAtt(resource=self, attr_name="Version.VersionNumber")
-    
-    @property
-    def rv_VersionSheets(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-dashboard.html#aws-resource-quicksight-dashboard-return-values"""
-        return GetAtt(resource=self, attr_name="Version.Sheets")
-    
-    @property
-    def rv_VersionArn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-dashboard.html#aws-resource-quicksight-dashboard-return-values"""
-        return GetAtt(resource=self, attr_name="Version.Arn")
-    
-    @property
-    def rv_VersionThemeArn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-dashboard.html#aws-resource-quicksight-dashboard-return-values"""
-        return GetAtt(resource=self, attr_name="Version.ThemeArn")
-    
-    @property
-    def rv_VersionErrors(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-dashboard.html#aws-resource-quicksight-dashboard-return-values"""
-        return GetAtt(resource=self, attr_name="Version.Errors")
-    
-    @property
-    def rv_VersionCreatedTime(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-dashboard.html#aws-resource-quicksight-dashboard-return-values"""
-        return GetAtt(resource=self, attr_name="Version.CreatedTime")
-    
-    @property
-    def rv_VersionDescription(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-dashboard.html#aws-resource-quicksight-dashboard-return-values"""
-        return GetAtt(resource=self, attr_name="Version.Description")
-    
-    @property
     def rv_LastPublishedTime(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-dashboard.html#aws-resource-quicksight-dashboard-return-values"""
         return GetAtt(resource=self, attr_name="LastPublishedTime")
     
     @property
-    def rv_Version(self) -> GetAtt:
+    def rv_LastUpdatedTime(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-dashboard.html#aws-resource-quicksight-dashboard-return-values"""
-        return GetAtt(resource=self, attr_name="Version")
-    
-    @property
-    def rv_VersionDataSetArns(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-dashboard.html#aws-resource-quicksight-dashboard-return-values"""
-        return GetAtt(resource=self, attr_name="Version.DataSetArns")
-    
-    @property
-    def rv_Arn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-dashboard.html#aws-resource-quicksight-dashboard-return-values"""
-        return GetAtt(resource=self, attr_name="Arn")
-    
-    @property
-    def rv_VersionSourceEntityArn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-dashboard.html#aws-resource-quicksight-dashboard-return-values"""
-        return GetAtt(resource=self, attr_name="Version.SourceEntityArn")
+        return GetAtt(resource=self, attr_name="LastUpdatedTime")
     
 
 @attr.s
@@ -3898,7 +3291,6 @@ class Theme(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'ResourcePermission',
-                "DuplicatesAllowed": True,
             }
         },
     )
@@ -3927,7 +3319,6 @@ class Theme(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Tag',
-                "DuplicatesAllowed": True,
             }
         },
     )
@@ -3935,19 +3326,9 @@ class Theme(Resource):
 
     
     @property
-    def rv_VersionConfigurationTypography(self) -> GetAtt:
+    def rv_Arn(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-theme.html#aws-resource-quicksight-theme-return-values"""
-        return GetAtt(resource=self, attr_name="Version.Configuration.Typography")
-    
-    @property
-    def rv_VersionStatus(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-theme.html#aws-resource-quicksight-theme-return-values"""
-        return GetAtt(resource=self, attr_name="Version.Status")
-    
-    @property
-    def rv_VersionBaseThemeId(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-theme.html#aws-resource-quicksight-theme-return-values"""
-        return GetAtt(resource=self, attr_name="Version.BaseThemeId")
+        return GetAtt(resource=self, attr_name="Arn")
     
     @property
     def rv_CreatedTime(self) -> GetAtt:
@@ -3955,69 +3336,14 @@ class Theme(Resource):
         return GetAtt(resource=self, attr_name="CreatedTime")
     
     @property
-    def rv_VersionConfiguration(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-theme.html#aws-resource-quicksight-theme-return-values"""
-        return GetAtt(resource=self, attr_name="Version.Configuration")
-    
-    @property
-    def rv_VersionConfigurationDataColorPalette(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-theme.html#aws-resource-quicksight-theme-return-values"""
-        return GetAtt(resource=self, attr_name="Version.Configuration.DataColorPalette")
-    
-    @property
     def rv_LastUpdatedTime(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-theme.html#aws-resource-quicksight-theme-return-values"""
         return GetAtt(resource=self, attr_name="LastUpdatedTime")
     
     @property
-    def rv_VersionConfigurationUIColorPalette(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-theme.html#aws-resource-quicksight-theme-return-values"""
-        return GetAtt(resource=self, attr_name="Version.Configuration.UIColorPalette")
-    
-    @property
-    def rv_VersionVersionNumber(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-theme.html#aws-resource-quicksight-theme-return-values"""
-        return GetAtt(resource=self, attr_name="Version.VersionNumber")
-    
-    @property
-    def rv_VersionArn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-theme.html#aws-resource-quicksight-theme-return-values"""
-        return GetAtt(resource=self, attr_name="Version.Arn")
-    
-    @property
-    def rv_VersionErrors(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-theme.html#aws-resource-quicksight-theme-return-values"""
-        return GetAtt(resource=self, attr_name="Version.Errors")
-    
-    @property
-    def rv_VersionDescription(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-theme.html#aws-resource-quicksight-theme-return-values"""
-        return GetAtt(resource=self, attr_name="Version.Description")
-    
-    @property
-    def rv_VersionCreatedTime(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-theme.html#aws-resource-quicksight-theme-return-values"""
-        return GetAtt(resource=self, attr_name="Version.CreatedTime")
-    
-    @property
     def rv_Type(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-theme.html#aws-resource-quicksight-theme-return-values"""
         return GetAtt(resource=self, attr_name="Type")
-    
-    @property
-    def rv_Version(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-theme.html#aws-resource-quicksight-theme-return-values"""
-        return GetAtt(resource=self, attr_name="Version")
-    
-    @property
-    def rv_Arn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-theme.html#aws-resource-quicksight-theme-return-values"""
-        return GetAtt(resource=self, attr_name="Arn")
-    
-    @property
-    def rv_VersionConfigurationSheet(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-theme.html#aws-resource-quicksight-theme-return-values"""
-        return GetAtt(resource=self, attr_name="Version.Configuration.Sheet")
     
 
 @attr.s
@@ -4093,7 +3419,6 @@ class Analysis(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'AnalysisError',
-                "DuplicatesAllowed": True,
             }
         },
     )
@@ -4136,7 +3461,6 @@ class Analysis(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'ResourcePermission',
-                "DuplicatesAllowed": True,
             }
         },
     )
@@ -4165,7 +3489,6 @@ class Analysis(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Tag',
-                "DuplicatesAllowed": True,
             }
         },
     )
@@ -4173,9 +3496,9 @@ class Analysis(Resource):
 
     
     @property
-    def rv_Status(self) -> GetAtt:
+    def rv_Arn(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-analysis.html#aws-resource-quicksight-analysis-return-values"""
-        return GetAtt(resource=self, attr_name="Status")
+        return GetAtt(resource=self, attr_name="Arn")
     
     @property
     def rv_CreatedTime(self) -> GetAtt:
@@ -4193,14 +3516,14 @@ class Analysis(Resource):
         return GetAtt(resource=self, attr_name="LastUpdatedTime")
     
     @property
-    def rv_Arn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-analysis.html#aws-resource-quicksight-analysis-return-values"""
-        return GetAtt(resource=self, attr_name="Arn")
-    
-    @property
     def rv_Sheets(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-analysis.html#aws-resource-quicksight-analysis-return-values"""
         return GetAtt(resource=self, attr_name="Sheets")
+    
+    @property
+    def rv_Status(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-analysis.html#aws-resource-quicksight-analysis-return-values"""
+        return GetAtt(resource=self, attr_name="Status")
     
 
 @attr.s
@@ -4287,7 +3610,6 @@ class Template(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'ResourcePermission',
-                "DuplicatesAllowed": True,
             }
         },
     )
@@ -4316,7 +3638,6 @@ class Template(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Tag',
-                "DuplicatesAllowed": True,
             }
         },
     )
@@ -4324,9 +3645,9 @@ class Template(Resource):
 
     
     @property
-    def rv_VersionStatus(self) -> GetAtt:
+    def rv_Arn(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-template.html#aws-resource-quicksight-template-return-values"""
-        return GetAtt(resource=self, attr_name="Version.Status")
+        return GetAtt(resource=self, attr_name="Arn")
     
     @property
     def rv_CreatedTime(self) -> GetAtt:
@@ -4334,59 +3655,9 @@ class Template(Resource):
         return GetAtt(resource=self, attr_name="CreatedTime")
     
     @property
-    def rv_VersionDataSetConfigurations(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-template.html#aws-resource-quicksight-template-return-values"""
-        return GetAtt(resource=self, attr_name="Version.DataSetConfigurations")
-    
-    @property
     def rv_LastUpdatedTime(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-template.html#aws-resource-quicksight-template-return-values"""
         return GetAtt(resource=self, attr_name="LastUpdatedTime")
-    
-    @property
-    def rv_VersionVersionNumber(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-template.html#aws-resource-quicksight-template-return-values"""
-        return GetAtt(resource=self, attr_name="Version.VersionNumber")
-    
-    @property
-    def rv_VersionSheets(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-template.html#aws-resource-quicksight-template-return-values"""
-        return GetAtt(resource=self, attr_name="Version.Sheets")
-    
-    @property
-    def rv_VersionThemeArn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-template.html#aws-resource-quicksight-template-return-values"""
-        return GetAtt(resource=self, attr_name="Version.ThemeArn")
-    
-    @property
-    def rv_VersionErrors(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-template.html#aws-resource-quicksight-template-return-values"""
-        return GetAtt(resource=self, attr_name="Version.Errors")
-    
-    @property
-    def rv_VersionCreatedTime(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-template.html#aws-resource-quicksight-template-return-values"""
-        return GetAtt(resource=self, attr_name="Version.CreatedTime")
-    
-    @property
-    def rv_VersionDescription(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-template.html#aws-resource-quicksight-template-return-values"""
-        return GetAtt(resource=self, attr_name="Version.Description")
-    
-    @property
-    def rv_Version(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-template.html#aws-resource-quicksight-template-return-values"""
-        return GetAtt(resource=self, attr_name="Version")
-    
-    @property
-    def rv_Arn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-template.html#aws-resource-quicksight-template-return-values"""
-        return GetAtt(resource=self, attr_name="Arn")
-    
-    @property
-    def rv_VersionSourceEntityArn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-template.html#aws-resource-quicksight-template-return-values"""
-        return GetAtt(resource=self, attr_name="Version.SourceEntityArn")
     
 
 @attr.s
@@ -4425,7 +3696,6 @@ class DataSource(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'DataSourceParameters',
-                "DuplicatesAllowed": True,
             }
         },
     )
@@ -4522,7 +3792,6 @@ class DataSource(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'ResourcePermission',
-                "DuplicatesAllowed": True,
             }
         },
     )
@@ -4579,7 +3848,6 @@ class DataSource(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Tag',
-                "DuplicatesAllowed": True,
             }
         },
     )
@@ -4587,9 +3855,9 @@ class DataSource(Resource):
 
     
     @property
-    def rv_Status(self) -> GetAtt:
+    def rv_Arn(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-datasource.html#aws-resource-quicksight-datasource-return-values"""
-        return GetAtt(resource=self, attr_name="Status")
+        return GetAtt(resource=self, attr_name="Arn")
     
     @property
     def rv_CreatedTime(self) -> GetAtt:
@@ -4602,9 +3870,9 @@ class DataSource(Resource):
         return GetAtt(resource=self, attr_name="LastUpdatedTime")
     
     @property
-    def rv_Arn(self) -> GetAtt:
+    def rv_Status(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-datasource.html#aws-resource-quicksight-datasource-return-values"""
-        return GetAtt(resource=self, attr_name="Arn")
+        return GetAtt(resource=self, attr_name="Status")
     
 
 @attr.s
@@ -4658,7 +3926,6 @@ class DataSet(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'ColumnGroup',
-                "DuplicatesAllowed": True,
             }
         },
     )
@@ -4674,7 +3941,6 @@ class DataSet(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'ColumnLevelPermissionRule',
-                "DuplicatesAllowed": True,
             }
         },
     )
@@ -4787,7 +4053,6 @@ class DataSet(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'ResourcePermission',
-                "DuplicatesAllowed": True,
             }
         },
     )
@@ -4832,12 +4097,21 @@ class DataSet(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Tag',
-                "DuplicatesAllowed": True,
             }
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-dataset.html#cfn-quicksight-dataset-tags"""
 
+    
+    @property
+    def rv_Arn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-dataset.html#aws-resource-quicksight-dataset-return-values"""
+        return GetAtt(resource=self, attr_name="Arn")
+    
+    @property
+    def rv_ConsumedSpiceCapacityInBytes(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-dataset.html#aws-resource-quicksight-dataset-return-values"""
+        return GetAtt(resource=self, attr_name="ConsumedSpiceCapacityInBytes")
     
     @property
     def rv_CreatedTime(self) -> GetAtt:
@@ -4853,14 +4127,4 @@ class DataSet(Resource):
     def rv_OutputColumns(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-dataset.html#aws-resource-quicksight-dataset-return-values"""
         return GetAtt(resource=self, attr_name="OutputColumns")
-    
-    @property
-    def rv_ConsumedSpiceCapacityInBytes(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-dataset.html#aws-resource-quicksight-dataset-return-values"""
-        return GetAtt(resource=self, attr_name="ConsumedSpiceCapacityInBytes")
-    
-    @property
-    def rv_Arn(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-quicksight-dataset.html#aws-resource-quicksight-dataset-return-values"""
-        return GetAtt(resource=self, attr_name="Arn")
     

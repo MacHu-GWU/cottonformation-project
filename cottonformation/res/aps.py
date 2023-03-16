@@ -113,11 +113,6 @@ class Workspace(Resource):
 
     
     @property
-    def rv_PrometheusEndpoint(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-aps-workspace.html#aws-resource-aps-workspace-return-values"""
-        return GetAtt(resource=self, attr_name="PrometheusEndpoint")
-    
-    @property
     def rv_WorkspaceId(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-aps-workspace.html#aws-resource-aps-workspace-return-values"""
         return GetAtt(resource=self, attr_name="WorkspaceId")
@@ -126,6 +121,11 @@ class Workspace(Resource):
     def rv_Arn(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-aps-workspace.html#aws-resource-aps-workspace-return-values"""
         return GetAtt(resource=self, attr_name="Arn")
+    
+    @property
+    def rv_PrometheusEndpoint(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-aps-workspace.html#aws-resource-aps-workspace-return-values"""
+        return GetAtt(resource=self, attr_name="PrometheusEndpoint")
     
 
 @attr.s

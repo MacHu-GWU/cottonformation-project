@@ -15,26 +15,6 @@ from ..core.constant import AttrMeta
 #--- Property declaration ---
 
 @attr.s
-class PropProfilingGroupAgentPermissions(Property):
-    """
-    AWS Object Type = "AWS::CodeGuruProfiler::ProfilingGroup.AgentPermissions"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codeguruprofiler-profilinggroup-agentpermissions.html
-
-    Property Document:
-    
-    - ``rp_Principals``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codeguruprofiler-profilinggroup-agentpermissions.html#cfn-codeguruprofiler-profilinggroup-agentpermissions-principals
-    """
-    AWS_OBJECT_TYPE = "AWS::CodeGuruProfiler::ProfilingGroup.AgentPermissions"
-    
-    rp_Principals: typing.List[TypeHint.intrinsic_str] = attr.ib(
-        default=None,
-        validator=attr.validators.deep_iterable(member_validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type), iterable_validator=attr.validators.instance_of(list)),
-        metadata={AttrMeta.PROPERTY_NAME: "Principals"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-codeguruprofiler-profilinggroup-agentpermissions.html#cfn-codeguruprofiler-profilinggroup-agentpermissions-principals"""
-
-@attr.s
 class PropProfilingGroupChannel(Property):
     """
     AWS Object Type = "AWS::CodeGuruProfiler::ProfilingGroup.Channel"
@@ -95,16 +75,15 @@ class ProfilingGroup(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-codeguruprofiler-profilinggroup.html#cfn-codeguruprofiler-profilinggroup-profilinggroupname"""
-    p_AgentPermissions: typing.Union['PropProfilingGroupAgentPermissions', dict] = attr.ib(
+    p_AgentPermissions: dict = attr.ib(
         default=None,
-        converter=PropProfilingGroupAgentPermissions.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropProfilingGroupAgentPermissions)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={
             AttrMeta.PROPERTY_NAME: "AgentPermissions",
             AttrMeta.DATA: {
                 "UpdateType": 'Mutable',
                 "Required": False,
-                "Type": 'AgentPermissions',
+                "PrimitiveType": 'Json',
             }
         },
     )
@@ -120,7 +99,6 @@ class ProfilingGroup(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Channel',
-                "DuplicatesAllowed": True,
             }
         },
     )

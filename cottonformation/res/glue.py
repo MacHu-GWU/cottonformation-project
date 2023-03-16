@@ -3960,7 +3960,6 @@ class Schema(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Tag',
-                "DuplicatesAllowed": True,
             }
         },
     )
@@ -3968,14 +3967,14 @@ class Schema(Resource):
 
     
     @property
-    def rv_InitialSchemaVersionId(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-schema.html#aws-resource-glue-schema-return-values"""
-        return GetAtt(resource=self, attr_name="InitialSchemaVersionId")
-    
-    @property
     def rv_Arn(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-schema.html#aws-resource-glue-schema-return-values"""
         return GetAtt(resource=self, attr_name="Arn")
+    
+    @property
+    def rv_InitialSchemaVersionId(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-glue-schema.html#aws-resource-glue-schema-return-values"""
+        return GetAtt(resource=self, attr_name="InitialSchemaVersionId")
     
 
 @attr.s
@@ -4090,7 +4089,6 @@ class Registry(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Tag',
-                "DuplicatesAllowed": True,
             }
         },
     )

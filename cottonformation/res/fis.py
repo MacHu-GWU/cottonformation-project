@@ -69,53 +69,6 @@ class PropExperimentTemplateExperimentTemplateStopCondition(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fis-experimenttemplate-experimenttemplatestopcondition.html#cfn-fis-experimenttemplate-experimenttemplatestopcondition-value"""
 
 @attr.s
-class PropExperimentTemplateS3Configuration(Property):
-    """
-    AWS Object Type = "AWS::FIS::ExperimentTemplate.S3Configuration"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fis-experimenttemplate-s3configuration.html
-
-    Property Document:
-    
-    - ``rp_BucketName``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fis-experimenttemplate-s3configuration.html#cfn-fis-experimenttemplate-s3configuration-bucketname
-    - ``p_Prefix``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fis-experimenttemplate-s3configuration.html#cfn-fis-experimenttemplate-s3configuration-prefix
-    """
-    AWS_OBJECT_TYPE = "AWS::FIS::ExperimentTemplate.S3Configuration"
-    
-    rp_BucketName: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "BucketName"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fis-experimenttemplate-s3configuration.html#cfn-fis-experimenttemplate-s3configuration-bucketname"""
-    p_Prefix: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(TypeCheck.intrinsic_str_type)),
-        metadata={AttrMeta.PROPERTY_NAME: "Prefix"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fis-experimenttemplate-s3configuration.html#cfn-fis-experimenttemplate-s3configuration-prefix"""
-
-@attr.s
-class PropExperimentTemplateCloudWatchLogsConfiguration(Property):
-    """
-    AWS Object Type = "AWS::FIS::ExperimentTemplate.CloudWatchLogsConfiguration"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fis-experimenttemplate-cloudwatchlogsconfiguration.html
-
-    Property Document:
-    
-    - ``rp_LogGroupArn``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fis-experimenttemplate-cloudwatchlogsconfiguration.html#cfn-fis-experimenttemplate-cloudwatchlogsconfiguration-loggrouparn
-    """
-    AWS_OBJECT_TYPE = "AWS::FIS::ExperimentTemplate.CloudWatchLogsConfiguration"
-    
-    rp_LogGroupArn: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "LogGroupArn"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fis-experimenttemplate-cloudwatchlogsconfiguration.html#cfn-fis-experimenttemplate-cloudwatchlogsconfiguration-loggrouparn"""
-
-@attr.s
 class PropExperimentTemplateExperimentTemplateLogConfiguration(Property):
     """
     AWS Object Type = "AWS::FIS::ExperimentTemplate.ExperimentTemplateLogConfiguration"
@@ -136,17 +89,15 @@ class PropExperimentTemplateExperimentTemplateLogConfiguration(Property):
         metadata={AttrMeta.PROPERTY_NAME: "LogSchemaVersion"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fis-experimenttemplate-experimenttemplatelogconfiguration.html#cfn-fis-experimenttemplate-experimenttemplatelogconfiguration-logschemaversion"""
-    p_CloudWatchLogsConfiguration: typing.Union['PropExperimentTemplateCloudWatchLogsConfiguration', dict] = attr.ib(
+    p_CloudWatchLogsConfiguration: dict = attr.ib(
         default=None,
-        converter=PropExperimentTemplateCloudWatchLogsConfiguration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropExperimentTemplateCloudWatchLogsConfiguration)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "CloudWatchLogsConfiguration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fis-experimenttemplate-experimenttemplatelogconfiguration.html#cfn-fis-experimenttemplate-experimenttemplatelogconfiguration-cloudwatchlogsconfiguration"""
-    p_S3Configuration: typing.Union['PropExperimentTemplateS3Configuration', dict] = attr.ib(
+    p_S3Configuration: dict = attr.ib(
         default=None,
-        converter=PropExperimentTemplateS3Configuration.from_dict,
-        validator=attr.validators.optional(attr.validators.instance_of(PropExperimentTemplateS3Configuration)),
+        validator=attr.validators.optional(attr.validators.instance_of(dict)),
         metadata={AttrMeta.PROPERTY_NAME: "S3Configuration"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-fis-experimenttemplate-experimenttemplatelogconfiguration.html#cfn-fis-experimenttemplate-experimenttemplatelogconfiguration-s3configuration"""
@@ -315,7 +266,6 @@ class ExperimentTemplate(Resource):
                 "Required": True,
                 "Type": 'List',
                 "ItemType": 'ExperimentTemplateStopCondition',
-                "DuplicatesAllowed": True,
             }
         },
     )

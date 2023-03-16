@@ -143,6 +143,19 @@ class PropScheduleDeadLetterConfig(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-scheduler-schedule-deadletterconfig.html#cfn-scheduler-schedule-deadletterconfig-arn"""
 
 @attr.s
+class PropScheduleTagMap(Property):
+    """
+    AWS Object Type = "AWS::Scheduler::Schedule.TagMap"
+
+    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-scheduler-schedule-tagmap.html
+
+    Property Document:
+    
+    """
+    AWS_OBJECT_TYPE = "AWS::Scheduler::Schedule.TagMap"
+    
+
+@attr.s
 class PropScheduleEventBridgeParameters(Property):
     """
     AWS Object Type = "AWS::Scheduler::Schedule.EventBridgeParameters"
@@ -453,9 +466,10 @@ class PropScheduleEcsParameters(Property):
         metadata={AttrMeta.PROPERTY_NAME: "TaskCount"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-scheduler-schedule-ecsparameters.html#cfn-scheduler-schedule-ecsparameters-taskcount"""
-    p_Tags: dict = attr.ib(
+    p_Tags: typing.List[typing.Union['PropScheduleTagMap', dict]] = attr.ib(
         default=None,
-        validator=attr.validators.optional(attr.validators.instance_of(dict)),
+        converter=PropScheduleTagMap.from_list,
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropScheduleTagMap), iterable_validator=attr.validators.instance_of(list))),
         metadata={AttrMeta.PROPERTY_NAME: "Tags"},
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-scheduler-schedule-ecsparameters.html#cfn-scheduler-schedule-ecsparameters-tags"""
@@ -592,7 +606,6 @@ class ScheduleGroup(Resource):
                 "Required": False,
                 "Type": 'List',
                 "ItemType": 'Tag',
-                "DuplicatesAllowed": True,
             }
         },
     )
@@ -600,14 +613,14 @@ class ScheduleGroup(Resource):
 
     
     @property
+    def rv_Arn(self) -> GetAtt:
+        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-scheduler-schedulegroup.html#aws-resource-scheduler-schedulegroup-return-values"""
+        return GetAtt(resource=self, attr_name="Arn")
+    
+    @property
     def rv_CreationDate(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-scheduler-schedulegroup.html#aws-resource-scheduler-schedulegroup-return-values"""
         return GetAtt(resource=self, attr_name="CreationDate")
-    
-    @property
-    def rv_State(self) -> GetAtt:
-        """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-scheduler-schedulegroup.html#aws-resource-scheduler-schedulegroup-return-values"""
-        return GetAtt(resource=self, attr_name="State")
     
     @property
     def rv_LastModificationDate(self) -> GetAtt:
@@ -615,9 +628,9 @@ class ScheduleGroup(Resource):
         return GetAtt(resource=self, attr_name="LastModificationDate")
     
     @property
-    def rv_Arn(self) -> GetAtt:
+    def rv_State(self) -> GetAtt:
         """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-scheduler-schedulegroup.html#aws-resource-scheduler-schedulegroup-return-values"""
-        return GetAtt(resource=self, attr_name="Arn")
+        return GetAtt(resource=self, attr_name="State")
     
 
 @attr.s

@@ -119,33 +119,6 @@ class PropSamplingRuleSamplingRule(Property):
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-xray-samplingrule-samplingrule.html#cfn-xray-samplingrule-samplingrule-version"""
 
 @attr.s
-class PropGroupTagsItems(Property):
-    """
-    AWS Object Type = "AWS::XRay::Group.TagsItems"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-xray-group-tagsitems.html
-
-    Property Document:
-    
-    - ``rp_Key``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-xray-group-tagsitems.html#cfn-xray-group-tagsitems-key
-    - ``rp_Value``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-xray-group-tagsitems.html#cfn-xray-group-tagsitems-value
-    """
-    AWS_OBJECT_TYPE = "AWS::XRay::Group.TagsItems"
-    
-    rp_Key: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Key"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-xray-group-tagsitems.html#cfn-xray-group-tagsitems-key"""
-    rp_Value: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Value"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-xray-group-tagsitems.html#cfn-xray-group-tagsitems-value"""
-
-@attr.s
 class PropGroupInsightsConfiguration(Property):
     """
     AWS Object Type = "AWS::XRay::Group.InsightsConfiguration"
@@ -304,33 +277,6 @@ class PropSamplingRuleSamplingRuleRecord(Property):
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-xray-samplingrule-samplingrulerecord.html#cfn-xray-samplingrule-samplingrulerecord-samplingrule"""
 
-@attr.s
-class PropSamplingRuleTagsItems(Property):
-    """
-    AWS Object Type = "AWS::XRay::SamplingRule.TagsItems"
-
-    Resource Document: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-xray-samplingrule-tagsitems.html
-
-    Property Document:
-    
-    - ``rp_Key``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-xray-samplingrule-tagsitems.html#cfn-xray-samplingrule-tagsitems-key
-    - ``rp_Value``: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-xray-samplingrule-tagsitems.html#cfn-xray-samplingrule-tagsitems-value
-    """
-    AWS_OBJECT_TYPE = "AWS::XRay::SamplingRule.TagsItems"
-    
-    rp_Key: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Key"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-xray-samplingrule-tagsitems.html#cfn-xray-samplingrule-tagsitems-key"""
-    rp_Value: TypeHint.intrinsic_str = attr.ib(
-        default=None,
-        validator=attr.validators.instance_of(TypeCheck.intrinsic_str_type),
-        metadata={AttrMeta.PROPERTY_NAME: "Value"},
-    )
-    """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-xray-samplingrule-tagsitems.html#cfn-xray-samplingrule-tagsitems-value"""
-
 
 #--- Resource declaration ---
 
@@ -391,18 +337,16 @@ class Group(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-xray-group.html#cfn-xray-group-insightsconfiguration"""
-    p_Tags: typing.List[typing.Union['PropGroupTagsItems', dict]] = attr.ib(
+    p_Tags: typing.List[dict] = attr.ib(
         default=None,
-        converter=PropGroupTagsItems.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropGroupTagsItems), iterable_validator=attr.validators.instance_of(list))),
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(dict), iterable_validator=attr.validators.instance_of(list))),
         metadata={
             AttrMeta.PROPERTY_NAME: "Tags",
             AttrMeta.DATA: {
                 "UpdateType": 'Mutable',
                 "Required": False,
                 "Type": 'List',
-                "ItemType": 'TagsItems',
-                "DuplicatesAllowed": True,
+                "PrimitiveItemType": 'Json',
             }
         },
     )
@@ -546,18 +490,16 @@ class SamplingRule(Resource):
         },
     )
     """Doc: http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-resource-xray-samplingrule.html#cfn-xray-samplingrule-samplingruleupdate"""
-    p_Tags: typing.List[typing.Union['PropSamplingRuleTagsItems', dict]] = attr.ib(
+    p_Tags: typing.List[dict] = attr.ib(
         default=None,
-        converter=PropSamplingRuleTagsItems.from_list,
-        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(PropSamplingRuleTagsItems), iterable_validator=attr.validators.instance_of(list))),
+        validator=attr.validators.optional(attr.validators.deep_iterable(member_validator=attr.validators.instance_of(dict), iterable_validator=attr.validators.instance_of(list))),
         metadata={
             AttrMeta.PROPERTY_NAME: "Tags",
             AttrMeta.DATA: {
                 "UpdateType": 'Mutable',
                 "Required": False,
                 "Type": 'List',
-                "ItemType": 'TagsItems',
-                "DuplicatesAllowed": True,
+                "PrimitiveItemType": 'Json',
             }
         },
     )
